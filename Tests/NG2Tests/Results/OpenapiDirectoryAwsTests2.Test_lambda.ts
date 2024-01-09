@@ -105,21 +105,17 @@ export namespace MyNS {
 
 	/** Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>. */
 	export interface AliasConfiguration {
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		AliasArn?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion?: string | null;
 
@@ -136,21 +132,17 @@ export namespace MyNS {
 
 	/** Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>. */
 	export interface AliasConfigurationFormProperties {
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		AliasArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion: FormControl<string | null | undefined>,
 
@@ -164,8 +156,8 @@ export namespace MyNS {
 	export function CreateAliasConfigurationFormGroup() {
 		return new FormGroup<AliasConfigurationFormProperties>({
 			AliasArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_]+)')]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(\$LATEST|[0-9]+)')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -219,11 +211,7 @@ export namespace MyNS {
 		 * Maximum: 10
 		 */
 		ParallelizationFactor?: number | null;
-
-		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		EventSourceArn?: string | null;
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
 		LastModified?: Date | null;
 		LastProcessingResult?: string | null;
@@ -268,11 +256,7 @@ export namespace MyNS {
 		 * Maximum: 10
 		 */
 		ParallelizationFactor: FormControl<number | null | undefined>,
-
-		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		EventSourceArn: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
 		LastProcessingResult: FormControl<string | null | undefined>,
@@ -338,7 +322,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 350
 		 * Min length: 0
-		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
 		Destination?: string | null;
 	}
@@ -349,13 +332,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 350
 		 * Min length: 0
-		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
 		Destination: FormControl<string | null | undefined>,
 	}
 	export function CreateOnSuccessFormGroup() {
 		return new FormGroup<OnSuccessFormProperties>({
-			Destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(350), Validators.minLength(0)]),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(350), Validators.minLength(0), Validators.pattern('^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)')]),
 		});
 
 	}
@@ -367,7 +349,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 350
 		 * Min length: 0
-		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
 		Destination?: string | null;
 	}
@@ -378,13 +359,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 350
 		 * Min length: 0
-		 * Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
 		Destination: FormControl<string | null | undefined>,
 	}
 	export function CreateOnFailureFormGroup() {
 		return new FormGroup<OnFailureFormProperties>({
-			Destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(350), Validators.minLength(0)]),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(350), Validators.minLength(0), Validators.pattern('^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)')]),
 		});
 
 	}
@@ -396,21 +376,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 170
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName?: string | null;
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
 		Runtime?: FunctionConfigurationRuntime | null;
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role?: string | null;
 
-		/**
-		 * Max length: 128
-		 * Pattern: [^\s]+
-		 */
+		/** Max length: 128 */
 		Handler?: string | null;
 		CodeSize?: number | null;
 
@@ -434,7 +406,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		Version?: string | null;
 
@@ -446,14 +417,10 @@ export namespace MyNS {
 
 		/** The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error. */
 		Environment?: EnvironmentResponse;
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. */
 		TracingConfig?: TracingConfigResponse;
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		MasterArn?: string | null;
 		RevisionId?: string | null;
 		Layers?: Array<Layer>;
@@ -471,21 +438,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 170
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
 		Runtime: FormControl<FunctionConfigurationRuntime | null | undefined>,
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 128
-		 * Pattern: [^\s]+
-		 */
+		/** Max length: 128 */
 		Handler: FormControl<string | null | undefined>,
 		CodeSize: FormControl<number | null | undefined>,
 
@@ -509,14 +468,9 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		Version: FormControl<string | null | undefined>,
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		MasterArn: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 		State: FormControl<FunctionConfigurationState | null | undefined>,
@@ -528,18 +482,18 @@ export namespace MyNS {
 	}
 	export function CreateFunctionConfigurationFormGroup() {
 		return new FormGroup<FunctionConfigurationFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(170), Validators.minLength(1)]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(170), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 			FunctionArn: new FormControl<string | null | undefined>(undefined),
 			Runtime: new FormControl<FunctionConfigurationRuntime | null | undefined>(undefined),
 			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[^\s]+')]),
 			CodeSize: new FormControl<number | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
 			LastModified: new FormControl<string | null | undefined>(undefined),
 			CodeSha256: new FormControl<string | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(\$LATEST|[0-9]+)')]),
 			KMSKeyArn: new FormControl<string | null | undefined>(undefined),
 			MasterArn: new FormControl<string | null | undefined>(undefined),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
@@ -581,15 +535,11 @@ export namespace MyNS {
 
 	/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 	export interface DeadLetterConfig {
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn?: string | null;
 	}
 
 	/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 	export interface DeadLetterConfigFormProperties {
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeadLetterConfigFormGroup() {
@@ -673,7 +623,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		Arn?: string | null;
 		CodeSize?: number | null;
@@ -685,14 +634,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		Arn: FormControl<string | null | undefined>,
 		CodeSize: FormControl<number | null | undefined>,
 	}
 	export function CreateLayerFormGroup() {
 		return new FormGroup<LayerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+')]),
 			CodeSize: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -881,8 +829,6 @@ export namespace MyNS {
 
 	export interface FunctionEventInvokeConfig {
 		LastModified?: Date | null;
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
 
 		/**
@@ -902,8 +848,6 @@ export namespace MyNS {
 	}
 	export interface FunctionEventInvokeConfigFormProperties {
 		LastModified: FormControl<Date | null | undefined>,
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
 
 		/**
@@ -936,14 +880,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
 		 */
 		LayerArn?: string | null;
 
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		LayerVersionArn?: string | null;
 
@@ -966,14 +908,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
 		 */
 		LayerArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		LayerVersionArn: FormControl<string | null | undefined>,
 
@@ -990,8 +930,8 @@ export namespace MyNS {
 	}
 	export function CreateGetLayerVersionResponseFormGroup() {
 		return new FormGroup<GetLayerVersionResponseFormProperties>({
-			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
-			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+')]),
+			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreatedDate: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
@@ -1393,7 +1333,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		LayerVersionArn?: string | null;
 		Version?: number | null;
@@ -1418,7 +1357,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		LayerVersionArn: FormControl<string | null | undefined>,
 		Version: FormControl<number | null | undefined>,
@@ -1435,7 +1373,7 @@ export namespace MyNS {
 	}
 	export function CreateLayerVersionsListItemFormGroup() {
 		return new FormGroup<LayerVersionsListItemFormProperties>({
-			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+')]),
 			Version: new FormControl<number | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreatedDate: new FormControl<string | null | undefined>(undefined),
@@ -1465,14 +1403,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+
 		 */
 		LayerName?: string | null;
 
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
 		 */
 		LayerArn?: string | null;
 
@@ -1486,21 +1422,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+
 		 */
 		LayerName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
 		 */
 		LayerArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLayersListItemFormGroup() {
 		return new FormGroup<LayersListItemFormProperties>({
-			LayerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
-			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			LayerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+')]),
+			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+')]),
 		});
 
 	}
@@ -1522,8 +1456,6 @@ export namespace MyNS {
 
 	/** Details about the provisioned concurrency configuration for a function alias or version. */
 	export interface ProvisionedConcurrencyConfigListItem {
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn?: string | null;
 
 		/** Minimum: 1 */
@@ -1541,8 +1473,6 @@ export namespace MyNS {
 
 	/** Details about the provisioned concurrency configuration for a function alias or version. */
 	export interface ProvisionedConcurrencyConfigListItemFormProperties {
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))? */
 		FunctionArn: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
@@ -1603,14 +1533,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
 		 */
 		LayerArn?: string | null;
 
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		LayerVersionArn?: string | null;
 
@@ -1633,14 +1561,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+
 		 */
 		LayerArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+
 		 */
 		LayerVersionArn: FormControl<string | null | undefined>,
 
@@ -1657,8 +1583,8 @@ export namespace MyNS {
 	}
 	export function CreatePublishLayerVersionResponseFormGroup() {
 		return new FormGroup<PublishLayerVersionResponseFormProperties>({
-			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
-			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			LayerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+')]),
+			LayerVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreatedDate: new FormControl<string | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
@@ -1713,23 +1639,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: string;
 
-		/**
-		 * Required
-		 * Pattern: lambda:GetLayerVersion
-		 */
+		/** Required */
 		Action: string;
 
-		/**
-		 * Required
-		 * Pattern: \d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root
-		 */
+		/** Required */
 		Principal: string;
-
-		/** Pattern: o-[a-z0-9]{10,32} */
 		OrganizationId?: string | null;
 	}
 	export interface AddLayerVersionPermissionRequestFormProperties {
@@ -1738,28 +1655,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: lambda:GetLayerVersion
-		 */
+		/** Required */
 		Action: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root
-		 */
+		/** Required */
 		Principal: FormControl<string | null | undefined>,
-
-		/** Pattern: o-[a-z0-9]{10,32} */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddLayerVersionPermissionRequestFormGroup() {
 		return new FormGroup<AddLayerVersionPermissionRequestFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('([a-zA-Z0-9-_]+)')]),
 			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OrganizationId: new FormControl<string | null | undefined>(undefined),
@@ -1773,32 +1681,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: string;
 
-		/**
-		 * Required
-		 * Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
-		 */
+		/** Required */
 		Action: string;
 
-		/**
-		 * Required
-		 * Pattern: .*
-		 */
+		/** Required */
 		Principal: string;
-
-		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		SourceArn?: string | null;
-
-		/** Pattern: \d{12} */
 		SourceAccount?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9._\-]+
 		 */
 		EventSourceToken?: string | null;
 		RevisionId?: string | null;
@@ -1809,44 +1705,32 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
-		 */
+		/** Required */
 		Action: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*
-		 */
+		/** Required */
 		Principal: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*) */
 		SourceArn: FormControl<string | null | undefined>,
-
-		/** Pattern: \d{12} */
 		SourceAccount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9._\-]+
 		 */
 		EventSourceToken: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddPermissionRequestFormGroup() {
 		return new FormGroup<AddPermissionRequestFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('([a-zA-Z0-9-_]+)')]),
 			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			SourceAccount: new FormControl<string | null | undefined>(undefined),
-			EventSourceToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			EventSourceToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9._\-]+')]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1858,7 +1742,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
 		 */
 		Name: string;
 
@@ -1866,7 +1749,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion: string;
 
@@ -1885,7 +1767,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1893,7 +1774,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion: FormControl<string | null | undefined>,
 
@@ -1905,8 +1785,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAliasRequestFormGroup() {
 		return new FormGroup<CreateAliasRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_]+)')]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(\$LATEST|[0-9]+)')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
@@ -1916,17 +1796,13 @@ export namespace MyNS {
 
 	export interface CreateEventSourceMappingRequest {
 
-		/**
-		 * Required
-		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
-		 */
+		/** Required */
 		EventSourceArn: string;
 
 		/**
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: string;
 		Enabled?: boolean | null;
@@ -1969,17 +1845,13 @@ export namespace MyNS {
 	}
 	export interface CreateEventSourceMappingRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
-		 */
+		/** Required */
 		EventSourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
@@ -2020,7 +1892,7 @@ export namespace MyNS {
 	export function CreateCreateEventSourceMappingRequestFormGroup() {
 		return new FormGroup<CreateEventSourceMappingRequestFormProperties>({
 			EventSourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
@@ -2042,7 +1914,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket?: string | null;
 
@@ -2066,7 +1937,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket: FormControl<string | null | undefined>,
 
@@ -2085,7 +1955,7 @@ export namespace MyNS {
 	export function CreateFunctionCodeFormGroup() {
 		return new FormGroup<FunctionCodeFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9A-Za-z\.\-_]*(?<!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
@@ -2150,23 +2020,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: string;
 
 		/** Required */
 		Runtime: CreateFunctionRequestRuntime;
 
-		/**
-		 * Required
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
-		 */
+		/** Required */
 		Role: string;
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [^\s]+
 		 */
 		Handler: string;
 
@@ -2200,8 +2065,6 @@ export namespace MyNS {
 
 		/** A function's environment variable settings. */
 		Environment?: Environment;
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
@@ -2215,23 +2078,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: FormControl<string | null | undefined>,
 
 		/** Required */
 		Runtime: FormControl<CreateFunctionRequestRuntime | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
-		 */
+		/** Required */
 		Role: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [^\s]+
 		 */
 		Handler: FormControl<string | null | undefined>,
 
@@ -2250,16 +2108,14 @@ export namespace MyNS {
 		 */
 		MemorySize: FormControl<number | null | undefined>,
 		Publish: FormControl<boolean | null | undefined>,
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFunctionRequestFormGroup() {
 		return new FormGroup<CreateFunctionRequestFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 			Runtime: new FormControl<CreateFunctionRequestRuntime | null | undefined>(undefined, [Validators.required]),
 			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('[^\s]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
@@ -2514,7 +2370,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket?: string | null;
 
@@ -2538,7 +2393,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket: FormControl<string | null | undefined>,
 
@@ -2557,7 +2411,7 @@ export namespace MyNS {
 	}
 	export function CreateLayerVersionContentInputFormGroup() {
 		return new FormGroup<LayerVersionContentInputFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9A-Za-z\.\-_]*(?<!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ZipFile: new FormControl<string | null | undefined>(undefined),
@@ -2856,7 +2710,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion?: string | null;
 
@@ -2875,7 +2728,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion: FormControl<string | null | undefined>,
 
@@ -2888,7 +2740,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAliasRequestFormGroup() {
 		return new FormGroup<UpdateAliasRequestFormProperties>({
-			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(\$LATEST|[0-9]+)')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2900,7 +2752,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName?: string | null;
 		Enabled?: boolean | null;
@@ -2944,7 +2795,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
@@ -2982,7 +2832,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEventSourceMappingRequestFormGroup() {
 		return new FormGroup<UpdateEventSourceMappingRequestFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
@@ -3000,7 +2850,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket?: string | null;
 
@@ -3025,7 +2874,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket: FormControl<string | null | undefined>,
 
@@ -3047,7 +2895,7 @@ export namespace MyNS {
 	export function CreateUpdateFunctionCodeRequestFormGroup() {
 		return new FormGroup<UpdateFunctionCodeRequestFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9A-Za-z\.\-_]*(?<!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Publish: new FormControl<boolean | null | undefined>(undefined),
@@ -3058,14 +2906,9 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFunctionConfigurationRequest {
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role?: string | null;
 
-		/**
-		 * Max length: 128
-		 * Pattern: [^\s]+
-		 */
+		/** Max length: 128 */
 		Handler?: string | null;
 
 		/**
@@ -3092,8 +2935,6 @@ export namespace MyNS {
 
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 		DeadLetterConfig?: DeadLetterConfig;
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
@@ -3102,14 +2943,9 @@ export namespace MyNS {
 		Layers?: Array<string>;
 	}
 	export interface UpdateFunctionConfigurationRequestFormProperties {
-
-		/** Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+ */
 		Role: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 128
-		 * Pattern: [^\s]+
-		 */
+		/** Max length: 128 */
 		Handler: FormControl<string | null | undefined>,
 
 		/**
@@ -3127,15 +2963,13 @@ export namespace MyNS {
 		 */
 		MemorySize: FormControl<number | null | undefined>,
 		Runtime: FormControl<UpdateFunctionConfigurationRequestRuntime | null | undefined>,
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		KMSKeyArn: FormControl<string | null | undefined>,
 		RevisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFunctionConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateFunctionConfigurationRequestFormProperties>({
 			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[^\s]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
@@ -3735,28 +3569,22 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: string;
 
 		/**
 		 * The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.
 		 * Required
-		 * Pattern: lambda:GetLayerVersion
 		 */
 		Action: string;
 
 		/**
 		 * An account ID, or <code>*</code> to grant permission to all AWS accounts.
 		 * Required
-		 * Pattern: \d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root
 		 */
 		Principal: string;
 
-		/**
-		 * With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.
-		 * Pattern: o-[a-z0-9]{10,32}
-		 */
+		/** With the principal set to <code>*</code>, grant permission to all accounts in the specified organization. */
 		OrganizationId?: string | null;
 	}
 	export interface AddLayerVersionPermissionPostBodyFormProperties {
@@ -3766,33 +3594,27 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
 		/**
 		 * The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.
 		 * Required
-		 * Pattern: lambda:GetLayerVersion
 		 */
 		Action: FormControl<string | null | undefined>,
 
 		/**
 		 * An account ID, or <code>*</code> to grant permission to all AWS accounts.
 		 * Required
-		 * Pattern: \d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root
 		 */
 		Principal: FormControl<string | null | undefined>,
 
-		/**
-		 * With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.
-		 * Pattern: o-[a-z0-9]{10,32}
-		 */
+		/** With the principal set to <code>*</code>, grant permission to all accounts in the specified organization. */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddLayerVersionPermissionPostBodyFormGroup() {
 		return new FormGroup<AddLayerVersionPermissionPostBodyFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('([a-zA-Z0-9-_]+)')]),
 			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			OrganizationId: new FormControl<string | null | undefined>(undefined),
@@ -3807,41 +3629,31 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: string;
 
 		/**
 		 * The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.
 		 * Required
-		 * Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
 		 */
 		Action: string;
 
 		/**
 		 * The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.
 		 * Required
-		 * Pattern: .*
 		 */
 		Principal: string;
 
-		/**
-		 * For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
-		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
-		 */
+		/** For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic. */
 		SourceArn?: string | null;
 
-		/**
-		 * For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
-		 * Pattern: \d{12}
-		 */
+		/** For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account. */
 		SourceAccount?: string | null;
 
 		/**
 		 * For Alexa Smart Home functions, a token that must be supplied by the invoker.
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9._\-]+
 		 */
 		EventSourceToken?: string | null;
 
@@ -3855,41 +3667,31 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ([a-zA-Z0-9-_]+)
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
 		/**
 		 * The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.
 		 * Required
-		 * Pattern: (lambda:[*]|lambda:[a-zA-Z]+|[*])
 		 */
 		Action: FormControl<string | null | undefined>,
 
 		/**
 		 * The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.
 		 * Required
-		 * Pattern: .*
 		 */
 		Principal: FormControl<string | null | undefined>,
 
-		/**
-		 * For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
-		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
-		 */
+		/** For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic. */
 		SourceArn: FormControl<string | null | undefined>,
 
-		/**
-		 * For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
-		 * Pattern: \d{12}
-		 */
+		/** For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account. */
 		SourceAccount: FormControl<string | null | undefined>,
 
 		/**
 		 * For Alexa Smart Home functions, a token that must be supplied by the invoker.
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9._\-]+
 		 */
 		EventSourceToken: FormControl<string | null | undefined>,
 
@@ -3898,12 +3700,12 @@ export namespace MyNS {
 	}
 	export function CreateAddPermissionPostBodyFormGroup() {
 		return new FormGroup<AddPermissionPostBodyFormProperties>({
-			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			StatementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('([a-zA-Z0-9-_]+)')]),
 			Action: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Principal: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SourceArn: new FormControl<string | null | undefined>(undefined),
 			SourceAccount: new FormControl<string | null | undefined>(undefined),
-			EventSourceToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			EventSourceToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9._\-]+')]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3916,7 +3718,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
 		 */
 		Name: string;
 
@@ -3925,7 +3726,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion: string;
 
@@ -3946,7 +3746,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_]+)
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3955,7 +3754,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion: FormControl<string | null | undefined>,
 
@@ -3968,8 +3766,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAliasPostBodyFormGroup() {
 		return new FormGroup<CreateAliasPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_]+)')]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(\$LATEST|[0-9]+)')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 		});
 
@@ -3991,7 +3789,6 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li> </ul>
 		 * Required
-		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
 		EventSourceArn: string;
 
@@ -4000,7 +3797,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: string;
 
@@ -4059,7 +3855,6 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li> </ul>
 		 * Required
-		 * Pattern: arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)
 		 */
 		EventSourceArn: FormControl<string | null | undefined>,
 
@@ -4068,7 +3863,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: FormControl<string | null | undefined>,
 
@@ -4122,7 +3916,7 @@ export namespace MyNS {
 	export function CreateCreateEventSourceMappingPostBodyFormGroup() {
 		return new FormGroup<CreateEventSourceMappingPostBodyFormProperties>({
 			EventSourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
@@ -4159,7 +3953,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: string;
 
@@ -4172,7 +3965,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the function's execution role.
 		 * Required
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		 */
 		Role: string;
 
@@ -4180,7 +3972,6 @@ export namespace MyNS {
 		 * The name of the method within your code that Lambda calls to execute your function. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
 		 * Required
 		 * Max length: 128
-		 * Pattern: [^\s]+
 		 */
 		Handler: string;
 
@@ -4222,10 +4013,7 @@ export namespace MyNS {
 		/** A function's environment variable settings. */
 		Environment?: CreateFunctionPostBodyEnvironment;
 
-		/**
-		 * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()
-		 */
+		/** The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key. */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
@@ -4244,7 +4032,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: FormControl<string | null | undefined>,
 
@@ -4257,7 +4044,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the function's execution role.
 		 * Required
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		 */
 		Role: FormControl<string | null | undefined>,
 
@@ -4265,7 +4051,6 @@ export namespace MyNS {
 		 * The name of the method within your code that Lambda calls to execute your function. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
 		 * Required
 		 * Max length: 128
-		 * Pattern: [^\s]+
 		 */
 		Handler: FormControl<string | null | undefined>,
 
@@ -4292,10 +4077,7 @@ export namespace MyNS {
 		/** Set to true to publish the first version of the function during creation. */
 		Publish: FormControl<boolean | null | undefined>,
 
-		/**
-		 * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()
-		 */
+		/** The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key. */
 		KMSKeyArn: FormControl<string | null | undefined>,
 
 		/** A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function. */
@@ -4303,10 +4085,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateFunctionPostBodyFormGroup() {
 		return new FormGroup<CreateFunctionPostBodyFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 			Runtime: new FormControl<CreateFunctionPostBodyRuntime | null | undefined>(undefined, [Validators.required]),
 			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('[^\s]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
@@ -4325,7 +4107,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket?: string | null;
 
@@ -4347,7 +4128,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket: FormControl<string | null | undefined>,
 
@@ -4366,7 +4146,7 @@ export namespace MyNS {
 	export function CreateCreateFunctionPostBodyCodeFormGroup() {
 		return new FormGroup<CreateFunctionPostBodyCodeFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9A-Za-z\.\-_]*(?<!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
@@ -4390,13 +4170,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateFunctionPostBodyDeadLetterConfig {
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn?: string | null;
 	}
 	export interface CreateFunctionPostBodyDeadLetterConfigFormProperties {
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateFunctionPostBodyDeadLetterConfigFormGroup() {
@@ -4436,7 +4212,6 @@ export namespace MyNS {
 		 * The function version that the alias invokes.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion?: string | null;
 
@@ -4459,7 +4234,6 @@ export namespace MyNS {
 		 * The function version that the alias invokes.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (\$LATEST|[0-9]+)
 		 */
 		FunctionVersion: FormControl<string | null | undefined>,
 
@@ -4475,7 +4249,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAliasPutBodyFormGroup() {
 		return new FormGroup<UpdateAliasPutBodyFormProperties>({
-			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			FunctionVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(\$LATEST|[0-9]+)')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			RevisionId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4499,7 +4273,6 @@ export namespace MyNS {
 		 * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName?: string | null;
 
@@ -4553,7 +4326,6 @@ export namespace MyNS {
 		 * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
 		 * Max length: 140
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionName: FormControl<string | null | undefined>,
 
@@ -4600,7 +4372,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEventSourceMappingPutBodyFormGroup() {
 		return new FormGroup<UpdateEventSourceMappingPutBodyFormProperties>({
-			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1)]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(140), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			BatchSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			MaximumBatchingWindowInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(300)]),
@@ -4798,16 +4570,12 @@ export namespace MyNS {
 
 	export interface UpdateFunctionConfigurationPutBody {
 
-		/**
-		 * The Amazon Resource Name (ARN) of the function's execution role.
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
-		 */
+		/** The Amazon Resource Name (ARN) of the function's execution role. */
 		Role?: string | null;
 
 		/**
 		 * The name of the method within your code that Lambda calls to execute your function. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
 		 * Max length: 128
-		 * Pattern: [^\s]+
 		 */
 		Handler?: string | null;
 
@@ -4843,10 +4611,7 @@ export namespace MyNS {
 		/** The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations. */
 		DeadLetterConfig?: UpdateFunctionConfigurationPutBodyDeadLetterConfig;
 
-		/**
-		 * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()
-		 */
+		/** The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key. */
 		KMSKeyArn?: string | null;
 
 		/** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>. */
@@ -4860,16 +4625,12 @@ export namespace MyNS {
 	}
 	export interface UpdateFunctionConfigurationPutBodyFormProperties {
 
-		/**
-		 * The Amazon Resource Name (ARN) of the function's execution role.
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
-		 */
+		/** The Amazon Resource Name (ARN) of the function's execution role. */
 		Role: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the method within your code that Lambda calls to execute your function. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
 		 * Max length: 128
-		 * Pattern: [^\s]+
 		 */
 		Handler: FormControl<string | null | undefined>,
 
@@ -4896,10 +4657,7 @@ export namespace MyNS {
 		/** The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. */
 		Runtime: FormControl<UpdateFunctionConfigurationPutBodyRuntime | null | undefined>,
 
-		/**
-		 * The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()
-		 */
+		/** The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key. */
 		KMSKeyArn: FormControl<string | null | undefined>,
 
 		/** Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it. */
@@ -4908,7 +4666,7 @@ export namespace MyNS {
 	export function CreateUpdateFunctionConfigurationPutBodyFormGroup() {
 		return new FormGroup<UpdateFunctionConfigurationPutBodyFormProperties>({
 			Role: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[^\s]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			MemorySize: new FormControl<number | null | undefined>(undefined, [Validators.min(128), Validators.max(3008)]),
@@ -4949,13 +4707,9 @@ export namespace MyNS {
 	export enum UpdateFunctionConfigurationPutBodyRuntime { nodejs = 0, nodejs4_3 = 1, nodejs6_10 = 2, nodejs8_10 = 3, nodejs10_x = 4, nodejs12_x = 5, java8 = 6, java11 = 7, python2_7 = 8, python3_6 = 9, python3_7 = 10, python3_8 = 11, dotnetcore1_0 = 12, dotnetcore2_0 = 13, dotnetcore2_1 = 14, dotnetcore3_1 = 15, nodejs4_3_edge = 16, go1_x = 17, ruby2_5 = 18, ruby2_7 = 19, provided = 20 }
 
 	export interface UpdateFunctionConfigurationPutBodyDeadLetterConfig {
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn?: string | null;
 	}
 	export interface UpdateFunctionConfigurationPutBodyDeadLetterConfigFormProperties {
-
-		/** Pattern: (arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|() */
 		TargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFunctionConfigurationPutBodyDeadLetterConfigFormGroup() {
@@ -5077,7 +4831,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket?: string | null;
 
@@ -5099,7 +4852,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket: FormControl<string | null | undefined>,
 
@@ -5118,7 +4870,7 @@ export namespace MyNS {
 	}
 	export function CreatePublishLayerVersionPostBodyContentFormGroup() {
 		return new FormGroup<PublishLayerVersionPostBodyContentFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9A-Za-z\.\-_]*(?<!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			ZipFile: new FormControl<string | null | undefined>(undefined),
@@ -5199,7 +4951,6 @@ export namespace MyNS {
 		 * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket?: string | null;
 
@@ -5235,7 +4986,6 @@ export namespace MyNS {
 		 * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^[0-9A-Za-z\.\-_]*(?<!\.)$
 		 */
 		S3Bucket: FormControl<string | null | undefined>,
 
@@ -5265,7 +5015,7 @@ export namespace MyNS {
 	export function CreateUpdateFunctionCodePutBodyFormGroup() {
 		return new FormGroup<UpdateFunctionCodePutBodyFormProperties>({
 			ZipFile: new FormControl<string | null | undefined>(undefined),
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9A-Za-z\.\-_]*(?<!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Publish: new FormControl<boolean | null | undefined>(undefined),

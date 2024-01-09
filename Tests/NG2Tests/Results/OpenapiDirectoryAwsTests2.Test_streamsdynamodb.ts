@@ -37,7 +37,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 
@@ -71,7 +70,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
@@ -88,7 +86,7 @@ export namespace MyNS {
 			StreamStatus: new FormControl<StreamDescriptionStreamStatus | null | undefined>(undefined),
 			StreamViewType: new FormControl<StreamDescriptionStreamViewType | null | undefined>(undefined),
 			CreationRequestDateTime: new FormControl<Date | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			LastEvaluatedShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
 		});
 
@@ -661,7 +659,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 		StreamLabel?: string | null;
@@ -679,7 +676,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		StreamLabel: FormControl<string | null | undefined>,
@@ -687,7 +683,7 @@ export namespace MyNS {
 	export function CreateStreamFormGroup() {
 		return new FormGroup<StreamFormProperties>({
 			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			StreamLabel: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -700,7 +696,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 
@@ -720,7 +715,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
@@ -735,7 +729,7 @@ export namespace MyNS {
 	}
 	export function CreateListStreamsInputFormGroup() {
 		return new FormGroup<ListStreamsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ExclusiveStartStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
 		});

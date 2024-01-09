@@ -10,7 +10,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 2
-		 * Pattern: [0-9a-zA-Z._:-]+
 		 */
 		userId?: string | null;
 		sessionId?: string | null;
@@ -22,7 +21,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 2
-		 * Pattern: [0-9a-zA-Z._:-]+
 		 */
 		userId: FormControl<string | null | undefined>,
 		sessionId: FormControl<string | null | undefined>,
@@ -31,7 +29,7 @@ export namespace MyNS {
 		return new FormGroup<DeleteSessionResponseFormProperties>({
 			botName: new FormControl<string | null | undefined>(undefined),
 			botAlias: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(2)]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(2), Validators.pattern('[0-9a-zA-Z._:-]+')]),
 			sessionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -118,7 +116,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		checkpointLabel?: string | null;
 		slots?: StringMap;
@@ -137,7 +134,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		checkpointLabel: FormControl<string | null | undefined>,
 		confirmationStatus: FormControl<IntentSummaryConfirmationStatus | null | undefined>,
@@ -150,7 +146,7 @@ export namespace MyNS {
 	export function CreateIntentSummaryFormGroup() {
 		return new FormGroup<IntentSummaryFormProperties>({
 			intentName: new FormControl<string | null | undefined>(undefined),
-			checkpointLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			checkpointLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
 			confirmationStatus: new FormControl<IntentSummaryConfirmationStatus | null | undefined>(undefined),
 			dialogActionType: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined, [Validators.required]),
 			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),

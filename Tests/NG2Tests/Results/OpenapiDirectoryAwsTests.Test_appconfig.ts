@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Application {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
 
 		/**
@@ -21,8 +19,6 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 	export interface ApplicationFormProperties {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
 
 		/**
@@ -67,11 +63,7 @@ export namespace MyNS {
 	}
 
 	export interface ConfigurationProfile {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
 
 		/**
@@ -95,7 +87,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn?: string | null;
 
@@ -106,11 +97,7 @@ export namespace MyNS {
 		Validators?: Array<Validator>;
 	}
 	export interface ConfigurationProfileFormProperties {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
 
 		/**
@@ -134,7 +121,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 	}
@@ -145,7 +131,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+')]),
 		});
 
 	}
@@ -199,8 +185,6 @@ export namespace MyNS {
 	}
 
 	export interface DeploymentStrategy {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
 
 		/**
@@ -236,8 +220,6 @@ export namespace MyNS {
 		ReplicateTo?: DeploymentStrategyReplicateTo | null;
 	}
 	export interface DeploymentStrategyFormProperties {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
 
 		/**
@@ -291,11 +273,7 @@ export namespace MyNS {
 	export enum DeploymentStrategyReplicateTo { NONE = 0, SSM_DOCUMENT = 1 }
 
 	export interface Environment {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
 
 		/**
@@ -318,11 +296,7 @@ export namespace MyNS {
 		Monitors?: Array<Monitor>;
 	}
 	export interface EnvironmentFormProperties {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
 
 		/**
@@ -358,14 +332,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		AlarmArn?: string | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		AlarmRoleArn?: string | null;
 	}
@@ -376,21 +348,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		AlarmArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		AlarmRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateMonitorFormGroup() {
 		return new FormGroup<MonitorFormProperties>({
-			AlarmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			AlarmRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			AlarmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+')]),
+			AlarmRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+')]),
 		});
 
 	}
@@ -419,17 +389,9 @@ export namespace MyNS {
 	}
 
 	export interface Deployment {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
-
-		/** Pattern: [a-z0-9]{4,7} */
 		EnvironmentId?: string | null;
-
-		/** Pattern: [a-z0-9]{4,7} */
 		DeploymentStrategyId?: string | null;
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ConfigurationProfileId?: string | null;
 		DeploymentNumber?: number | null;
 
@@ -487,17 +449,9 @@ export namespace MyNS {
 		CompletedAt?: Date | null;
 	}
 	export interface DeploymentFormProperties {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-z0-9]{4,7} */
 		EnvironmentId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-z0-9]{4,7} */
 		DeploymentStrategyId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ConfigurationProfileId: FormControl<string | null | undefined>,
 		DeploymentNumber: FormControl<number | null | undefined>,
 
@@ -669,11 +623,7 @@ export namespace MyNS {
 
 	/** A summary of a configuration profile. */
 	export interface ConfigurationProfileSummary {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId?: string | null;
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id?: string | null;
 
 		/**
@@ -697,11 +647,7 @@ export namespace MyNS {
 
 	/** A summary of a configuration profile. */
 	export interface ConfigurationProfileSummaryFormProperties {
-
-		/** Pattern: [a-z0-9]{4,7} */
 		ApplicationId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-z0-9]{4,7} */
 		Id: FormControl<string | null | undefined>,
 
 		/**
@@ -991,7 +937,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn: string;
 
@@ -1028,7 +973,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 	}
@@ -1037,7 +981,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+')]),
 		});
 
 	}
@@ -1349,16 +1293,10 @@ export namespace MyNS {
 
 	export interface StartDeploymentRequest {
 
-		/**
-		 * Required
-		 * Pattern: ([a-z0-9]{4,7}|arn:aws.*)
-		 */
+		/** Required */
 		DeploymentStrategyId: string;
 
-		/**
-		 * Required
-		 * Pattern: [a-z0-9]{4,7}
-		 */
+		/** Required */
 		ConfigurationProfileId: string;
 
 		/**
@@ -1377,16 +1315,10 @@ export namespace MyNS {
 	}
 	export interface StartDeploymentRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ([a-z0-9]{4,7}|arn:aws.*)
-		 */
+		/** Required */
 		DeploymentStrategyId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [a-z0-9]{4,7}
-		 */
+		/** Required */
 		ConfigurationProfileId: FormControl<string | null | undefined>,
 
 		/**
@@ -1498,7 +1430,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn?: string | null;
 
@@ -1525,7 +1456,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 	}
@@ -1533,7 +1463,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateConfigurationProfileRequestFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+')]),
 		});
 
 	}
@@ -2065,7 +1995,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn: string;
 
@@ -2109,7 +2038,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 
@@ -2121,7 +2049,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+')]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2361,7 +2289,6 @@ export namespace MyNS {
 		 * The ARN of an IAM role with permission to access the configuration at the specified LocationUri.
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn?: string | null;
 
@@ -2392,7 +2319,6 @@ export namespace MyNS {
 		 * The ARN of an IAM role with permission to access the configuration at the specified LocationUri.
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+
 		 */
 		RetrievalRoleArn: FormControl<string | null | undefined>,
 	}
@@ -2400,7 +2326,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateConfigurationProfilePatchBodyFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			RetrievalRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:(aws[a-zA-Z-]*)?:[a-z]+:([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+')]),
 		});
 
 	}
@@ -2534,14 +2460,12 @@ export namespace MyNS {
 		/**
 		 * The deployment strategy ID.
 		 * Required
-		 * Pattern: ([a-z0-9]{4,7}|arn:aws.*)
 		 */
 		DeploymentStrategyId: string;
 
 		/**
 		 * The configuration profile ID.
 		 * Required
-		 * Pattern: [a-z0-9]{4,7}
 		 */
 		ConfigurationProfileId: string;
 
@@ -2568,14 +2492,12 @@ export namespace MyNS {
 		/**
 		 * The deployment strategy ID.
 		 * Required
-		 * Pattern: ([a-z0-9]{4,7}|arn:aws.*)
 		 */
 		DeploymentStrategyId: FormControl<string | null | undefined>,
 
 		/**
 		 * The configuration profile ID.
 		 * Required
-		 * Pattern: [a-z0-9]{4,7}
 		 */
 		ConfigurationProfileId: FormControl<string | null | undefined>,
 

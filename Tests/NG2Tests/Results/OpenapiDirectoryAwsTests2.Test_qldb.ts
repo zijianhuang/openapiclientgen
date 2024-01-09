@@ -8,7 +8,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		StreamId?: string | null;
 	}
@@ -17,13 +16,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		StreamId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelJournalKinesisStreamResponseFormGroup() {
 		return new FormGroup<CancelJournalKinesisStreamResponseFormProperties>({
-			StreamId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
+			StreamId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 		});
 
 	}
@@ -63,7 +61,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name?: string | null;
 
@@ -81,7 +78,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -96,7 +92,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateLedgerResponseFormGroup() {
 		return new FormGroup<CreateLedgerResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(20)]),
 			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -158,7 +154,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		LedgerName: string;
 		CreationTime?: Date | null;
@@ -176,7 +171,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		StreamId: string;
 
@@ -200,7 +194,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		StreamName: string;
 	}
@@ -212,7 +205,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		LedgerName: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
@@ -230,7 +222,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		StreamId: FormControl<string | null | undefined>,
 
@@ -248,22 +239,21 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateJournalKinesisStreamDescriptionFormGroup() {
 		return new FormGroup<JournalKinesisStreamDescriptionFormProperties>({
-			LedgerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			LedgerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined),
 			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
 			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
-			StreamId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			StreamId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(20)]),
 			Status: new FormControl<JournalKinesisStreamDescriptionStatus | null | undefined>(undefined, [Validators.required]),
 			ErrorCause: new FormControl<JournalKinesisStreamDescriptionErrorCause | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 		});
 
 	}
@@ -328,7 +318,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		LedgerName: string;
 
@@ -336,7 +325,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		ExportId: string;
 
@@ -373,7 +361,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		LedgerName: FormControl<string | null | undefined>,
 
@@ -381,7 +368,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		ExportId: FormControl<string | null | undefined>,
 
@@ -406,8 +392,8 @@ export namespace MyNS {
 	}
 	export function CreateJournalS3ExportDescriptionFormGroup() {
 		return new FormGroup<JournalS3ExportDescriptionFormProperties>({
-			LedgerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
-			ExportId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			LedgerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
+			ExportId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 			ExportCreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Status: new FormControl<JournalS3ExportDescriptionStatus | null | undefined>(undefined, [Validators.required]),
 			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -427,7 +413,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z-0-9-_.]+$
 		 */
 		Bucket: string;
 
@@ -452,7 +437,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z-0-9-_.]+$
 		 */
 		Bucket: FormControl<string | null | undefined>,
 
@@ -465,7 +449,7 @@ export namespace MyNS {
 	}
 	export function CreateS3ExportConfigurationFormGroup() {
 		return new FormGroup<S3ExportConfigurationFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('^[A-Za-z-0-9-_.]+$')]),
 			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
 		});
 
@@ -512,7 +496,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name?: string | null;
 
@@ -530,7 +513,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -545,7 +527,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeLedgerResponseFormGroup() {
 		return new FormGroup<DescribeLedgerResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(20)]),
 			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -560,7 +542,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		ExportId: string;
 	}
@@ -570,13 +551,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		ExportId: FormControl<string | null | undefined>,
 	}
 	export function CreateExportJournalToS3ResponseFormGroup() {
 		return new FormGroup<ExportJournalToS3ResponseFormProperties>({
-			ExportId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			ExportId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 		});
 
 	}
@@ -683,7 +663,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken?: string | null;
 	}
@@ -692,13 +671,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJournalKinesisStreamsForLedgerResponseFormGroup() {
 		return new FormGroup<ListJournalKinesisStreamsForLedgerResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}
@@ -709,7 +687,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken?: string | null;
 	}
@@ -718,13 +695,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJournalS3ExportsResponseFormGroup() {
 		return new FormGroup<ListJournalS3ExportsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}
@@ -735,7 +711,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken?: string | null;
 	}
@@ -744,13 +719,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJournalS3ExportsForLedgerResponseFormGroup() {
 		return new FormGroup<ListJournalS3ExportsForLedgerResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}
@@ -761,7 +735,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken?: string | null;
 	}
@@ -770,13 +743,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListLedgersResponseFormGroup() {
 		return new FormGroup<ListLedgersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}
@@ -788,7 +760,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name?: string | null;
 		State?: CreateLedgerResponseState | null;
@@ -801,7 +772,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 		State: FormControl<CreateLedgerResponseState | null | undefined>,
@@ -809,7 +779,7 @@ export namespace MyNS {
 	}
 	export function CreateLedgerSummaryFormGroup() {
 		return new FormGroup<LedgerSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -842,7 +812,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		StreamId?: string | null;
 	}
@@ -851,13 +820,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		StreamId: FormControl<string | null | undefined>,
 	}
 	export function CreateStreamJournalToKinesisResponseFormGroup() {
 		return new FormGroup<StreamJournalToKinesisResponseFormProperties>({
-			StreamId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
+			StreamId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 		});
 
 	}
@@ -887,7 +855,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name?: string | null;
 
@@ -905,7 +872,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -920,7 +886,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateLedgerResponseFormGroup() {
 		return new FormGroup<UpdateLedgerResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(20)]),
 			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -947,7 +913,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: string;
 		Tags?: Tags;
@@ -962,7 +927,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -972,7 +936,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateLedgerRequestFormGroup() {
 		return new FormGroup<CreateLedgerRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 			PermissionsMode: new FormControl<PermissionsMode | null | undefined>(undefined, [Validators.required]),
 			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1111,7 +1075,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		DocumentId: string;
 
@@ -1124,13 +1087,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		DocumentId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRevisionRequestFormGroup() {
 		return new FormGroup<GetRevisionRequestFormProperties>({
-			DocumentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			DocumentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 		});
 
 	}
@@ -1213,7 +1175,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		StreamName: string;
 	}
@@ -1234,7 +1195,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
@@ -1243,7 +1203,7 @@ export namespace MyNS {
 			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
 			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 		});
 
 	}
@@ -1504,7 +1464,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: string;
 
@@ -1527,7 +1486,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1545,7 +1503,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateLedgerPostBodyFormGroup() {
 		return new FormGroup<CreateLedgerPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			PermissionsMode: new FormControl<PermissionsMode | null | undefined>(undefined, [Validators.required]),
 			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
@@ -1634,7 +1592,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z-0-9-_.]+$
 		 */
 		Bucket?: string | null;
 
@@ -1652,7 +1609,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z-0-9-_.]+$
 		 */
 		Bucket: FormControl<string | null | undefined>,
 
@@ -1664,7 +1620,7 @@ export namespace MyNS {
 	}
 	export function CreateExportJournalToS3PostBodyS3ExportConfigurationFormGroup() {
 		return new FormGroup<ExportJournalToS3PostBodyS3ExportConfigurationFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('^[A-Za-z-0-9-_.]+$')]),
 			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 		});
 
@@ -1748,7 +1704,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		DocumentId: string;
 
@@ -1762,13 +1717,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		DocumentId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRevisionPostBodyFormGroup() {
 		return new FormGroup<GetRevisionPostBodyFormProperties>({
-			DocumentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			DocumentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 		});
 
 	}
@@ -1852,7 +1806,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		StreamName: string;
 	}
@@ -1883,7 +1836,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
@@ -1893,7 +1845,7 @@ export namespace MyNS {
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 		});
 
 	}

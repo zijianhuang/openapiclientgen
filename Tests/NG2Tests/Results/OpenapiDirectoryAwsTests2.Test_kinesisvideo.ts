@@ -8,7 +8,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN?: string | null;
 	}
@@ -17,13 +16,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSignalingChannelOutputFormGroup() {
 		return new FormGroup<CreateSignalingChannelOutputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -36,7 +34,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: string;
 
@@ -44,7 +41,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
 		 */
 		Value: string;
 	}
@@ -56,7 +52,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 
@@ -64,14 +59,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[\p{L}\p{Z}\p{N}_.:/=+\-@]*')]),
 		});
 
 	}
@@ -141,7 +135,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 	}
@@ -150,13 +143,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateStreamOutputFormGroup() {
 		return new FormGroup<CreateStreamOutputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -261,14 +253,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN?: string | null;
 		ChannelType?: ChannelInfoChannelType | null;
@@ -281,7 +271,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		Version?: string | null;
 	}
@@ -292,14 +281,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 		ChannelType: FormControl<ChannelInfoChannelType | null | undefined>,
@@ -309,18 +296,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateChannelInfoFormGroup() {
 		return new FormGroup<ChannelInfoFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
 			ChannelStatus: new FormControl<ChannelInfoChannelStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 		});
 
 	}
@@ -376,42 +362,36 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType?: string | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: .+
 		 */
 		KmsKeyId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		Version?: string | null;
 		Status?: ChannelInfoChannelStatus | null;
@@ -427,42 +407,36 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: .+
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		Version: FormControl<string | null | undefined>,
 		Status: FormControl<ChannelInfoChannelStatus | null | undefined>,
@@ -473,12 +447,12 @@ export namespace MyNS {
 	}
 	export function CreateStreamInfoFormGroup() {
 		return new FormGroup<StreamInfoFormProperties>({
-			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*')]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.+')]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 			Status: new FormControl<ChannelInfoChannelStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
@@ -542,7 +516,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 	}
@@ -551,13 +524,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSignalingChannelsOutputFormGroup() {
 		return new FormGroup<ListSignalingChannelsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -570,7 +542,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 	}
@@ -579,13 +550,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsOutputFormGroup() {
 		return new FormGroup<ListStreamsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -595,7 +565,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 		Tags?: ResourceTags;
@@ -605,13 +574,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceOutputFormGroup() {
 		return new FormGroup<ListTagsForResourceOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -631,7 +599,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 		Tags?: ResourceTags;
@@ -641,13 +608,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForStreamOutputFormGroup() {
 		return new FormGroup<ListTagsForStreamOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -746,7 +712,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue?: string | null;
 	}
@@ -758,14 +723,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateChannelNameConditionFormGroup() {
 		return new FormGroup<ChannelNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -776,7 +740,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName: string;
 		ChannelType?: ChannelInfoChannelType | null;
@@ -796,14 +759,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 		ChannelType: FormControl<ChannelInfoChannelType | null | undefined>,
 	}
 	export function CreateCreateSignalingChannelInputFormGroup() {
 		return new FormGroup<CreateSignalingChannelInputFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
 		});
 
@@ -814,7 +776,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName?: string | null;
 
@@ -822,21 +783,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType?: string | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: .+
 		 */
 		KmsKeyId?: string | null;
 
@@ -849,7 +807,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
@@ -857,21 +814,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: .+
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
@@ -880,10 +834,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateStreamInputFormGroup() {
 		return new FormGroup<CreateStreamInputFormProperties>({
-			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*')]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.+')]),
 			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -895,14 +849,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion?: string | null;
 	}
@@ -912,21 +864,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSignalingChannelInputFormGroup() {
 		return new FormGroup<DeleteSignalingChannelInputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 		});
 
 	}
@@ -937,14 +887,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: string;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion?: string | null;
 	}
@@ -954,21 +902,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStreamInputFormGroup() {
 		return new FormGroup<DeleteStreamInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 		});
 
 	}
@@ -978,14 +924,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN?: string | null;
 	}
@@ -994,21 +938,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSignalingChannelInputFormGroup() {
 		return new FormGroup<DescribeSignalingChannelInputFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -1018,14 +960,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 	}
@@ -1034,21 +974,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamInputFormGroup() {
 		return new FormGroup<DescribeStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -1058,14 +996,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -1077,14 +1013,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -1093,8 +1027,8 @@ export namespace MyNS {
 	}
 	export function CreateGetDataEndpointInputFormGroup() {
 		return new FormGroup<GetDataEndpointInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 			APIName: new FormControl<APIName | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1129,7 +1063,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -1142,13 +1075,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSignalingChannelEndpointInputFormGroup() {
 		return new FormGroup<GetSignalingChannelEndpointInputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -1164,7 +1096,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
@@ -1182,14 +1113,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSignalingChannelsInputFormGroup() {
 		return new FormGroup<ListSignalingChannelsInputFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -1202,7 +1132,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue?: string | null;
 	}
@@ -1214,14 +1143,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateStreamNameConditionFormGroup() {
 		return new FormGroup<StreamNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1237,7 +1165,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
@@ -1255,14 +1182,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsInputFormGroup() {
 		return new FormGroup<ListStreamsInputFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -1272,7 +1198,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
@@ -1280,7 +1205,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: string;
 	}
@@ -1289,7 +1213,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1297,14 +1220,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -1314,21 +1236,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 	}
@@ -1337,29 +1256,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForStreamInputFormGroup() {
 		return new FormGroup<ListTagsForStreamInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1370,7 +1286,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: string;
 
@@ -1387,13 +1302,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -1403,14 +1317,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -1422,21 +1334,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateTagStreamInputFormGroup() {
 		return new FormGroup<TagStreamInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1447,7 +1357,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: string;
 
@@ -1464,13 +1373,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -1480,14 +1388,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -1503,21 +1409,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagStreamInputFormGroup() {
 		return new FormGroup<UntagStreamInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1529,14 +1433,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -1544,7 +1446,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: string;
 
@@ -1562,14 +1463,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -1577,7 +1476,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 
@@ -1592,9 +1490,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDataRetentionInputFormGroup() {
 		return new FormGroup<UpdateDataRetentionInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined, [Validators.required]),
 			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
@@ -1607,7 +1505,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -1615,7 +1512,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: string;
 
@@ -1628,7 +1524,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
@@ -1636,14 +1531,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSignalingChannelInputFormGroup() {
 		return new FormGroup<UpdateSignalingChannelInputFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 		});
 
 	}
@@ -1653,14 +1547,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -1668,21 +1560,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType?: string | null;
 	}
@@ -1691,14 +1580,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -1706,31 +1593,28 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStreamInputFormGroup() {
 		return new FormGroup<UpdateStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*')]),
 		});
 
 	}
@@ -1923,7 +1807,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName: string;
 
@@ -1947,7 +1830,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
@@ -1956,7 +1838,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<CreateSignalingChannelPostBodyFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ChannelType: new FormControl<ChannelInfoChannelType | null | undefined>(undefined),
 		});
 
@@ -1991,7 +1873,6 @@ export namespace MyNS {
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p> </note>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName?: string | null;
 
@@ -2000,7 +1881,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2008,7 +1888,6 @@ export namespace MyNS {
 		 * <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p> <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType?: string | null;
 
@@ -2016,7 +1895,6 @@ export namespace MyNS {
 		 * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: .+
 		 */
 		KmsKeyId?: string | null;
 
@@ -2035,7 +1913,6 @@ export namespace MyNS {
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p> </note>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
@@ -2044,7 +1921,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2052,7 +1928,6 @@ export namespace MyNS {
 		 * <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p> <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType: FormControl<string | null | undefined>,
 
@@ -2060,7 +1935,6 @@ export namespace MyNS {
 		 * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: .+
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
@@ -2075,10 +1949,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateStreamPostBodyFormGroup() {
 		return new FormGroup<CreateStreamPostBodyFormProperties>({
-			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*')]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.+')]),
 			DataRetentionInHours: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -2092,7 +1966,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -2100,7 +1973,6 @@ export namespace MyNS {
 		 * The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion?: string | null;
 	}
@@ -2111,7 +1983,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
@@ -2119,14 +1990,13 @@ export namespace MyNS {
 		 * The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<DeleteSignalingChannelPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 		});
 
 	}
@@ -2138,7 +2008,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: string;
 
@@ -2146,7 +2015,6 @@ export namespace MyNS {
 		 * <p>Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion?: string | null;
 	}
@@ -2157,7 +2025,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2165,14 +2032,13 @@ export namespace MyNS {
 		 * <p>Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteStreamPostBodyFormGroup() {
 		return new FormGroup<DeleteStreamPostBodyFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 		});
 
 	}
@@ -2183,7 +2049,6 @@ export namespace MyNS {
 		 * The name of the signaling channel that you want to describe.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName?: string | null;
 
@@ -2191,7 +2056,6 @@ export namespace MyNS {
 		 * The ARN of the signaling channel that you want to describe.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN?: string | null;
 	}
@@ -2201,7 +2065,6 @@ export namespace MyNS {
 		 * The name of the signaling channel that you want to describe.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
@@ -2209,14 +2072,13 @@ export namespace MyNS {
 		 * The ARN of the signaling channel that you want to describe.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<DescribeSignalingChannelPostBodyFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -2227,7 +2089,6 @@ export namespace MyNS {
 		 * The name of the stream.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -2235,7 +2096,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 	}
@@ -2245,7 +2105,6 @@ export namespace MyNS {
 		 * The name of the stream.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2253,14 +2112,13 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamPostBodyFormGroup() {
 		return new FormGroup<DescribeStreamPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -2271,7 +2129,6 @@ export namespace MyNS {
 		 * The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -2279,7 +2136,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -2295,7 +2151,6 @@ export namespace MyNS {
 		 * The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2303,7 +2158,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2315,8 +2169,8 @@ export namespace MyNS {
 	}
 	export function CreateGetDataEndpointPostBodyFormGroup() {
 		return new FormGroup<GetDataEndpointPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 			APIName: new FormControl<APIName | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2329,7 +2183,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -2343,13 +2196,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSignalingChannelEndpointPostBodyFormGroup() {
 		return new FormGroup<GetSignalingChannelEndpointPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -2386,7 +2238,6 @@ export namespace MyNS {
 		 * If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
@@ -2406,14 +2257,13 @@ export namespace MyNS {
 		 * If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListSignalingChannelsPostBodyFormGroup() {
 		return new FormGroup<ListSignalingChannelsPostBodyFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -2424,7 +2274,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue?: string | null;
 	}
@@ -2434,14 +2283,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateListSignalingChannelsPostBodyChannelNameConditionFormGroup() {
 		return new FormGroup<ListSignalingChannelsPostBodyChannelNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2459,7 +2307,6 @@ export namespace MyNS {
 		 * If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
@@ -2479,14 +2326,13 @@ export namespace MyNS {
 		 * If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsPostBodyFormGroup() {
 		return new FormGroup<ListStreamsPostBodyFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
 		});
 
 	}
@@ -2497,7 +2343,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue?: string | null;
 	}
@@ -2507,14 +2352,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ComparisonValue: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsPostBodyStreamNameConditionFormGroup() {
 		return new FormGroup<ListStreamsPostBodyStreamNameConditionFormProperties>({
 			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
-			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ComparisonValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2525,7 +2369,6 @@ export namespace MyNS {
 		 * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
@@ -2534,7 +2377,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: string;
 	}
@@ -2544,7 +2386,6 @@ export namespace MyNS {
 		 * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2553,14 +2394,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourcePostBodyFormGroup() {
 		return new FormGroup<ListTagsForResourcePostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -2571,7 +2411,6 @@ export namespace MyNS {
 		 * If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken?: string | null;
 
@@ -2579,7 +2418,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream that you want to list tags for.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -2587,7 +2425,6 @@ export namespace MyNS {
 		 * The name of the stream that you want to list tags for.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 	}
@@ -2597,7 +2434,6 @@ export namespace MyNS {
 		 * If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.
 		 * Max length: 512
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9+/=]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2605,7 +2441,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream that you want to list tags for.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2613,15 +2448,14 @@ export namespace MyNS {
 		 * The name of the stream that you want to list tags for.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForStreamPostBodyFormGroup() {
 		return new FormGroup<ListTagsForStreamPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9+/=]*')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2633,7 +2467,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: string;
 
@@ -2652,13 +2485,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -2669,7 +2501,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -2677,7 +2508,6 @@ export namespace MyNS {
 		 * The name of the stream that you want to add the tag or tags to.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -2693,7 +2523,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2701,7 +2530,6 @@ export namespace MyNS {
 		 * The name of the stream that you want to add the tag or tags to.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2713,8 +2541,8 @@ export namespace MyNS {
 	}
 	export function CreateTagStreamPostBodyFormGroup() {
 		return new FormGroup<TagStreamPostBodyFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2727,7 +2555,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: string;
 
@@ -2746,13 +2573,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -2763,7 +2589,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream that you want to remove tags from.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -2771,7 +2596,6 @@ export namespace MyNS {
 		 * The name of the stream that you want to remove tags from.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -2789,7 +2613,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream that you want to remove tags from.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2797,14 +2620,13 @@ export namespace MyNS {
 		 * The name of the stream that you want to remove tags from.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagStreamPostBodyFormGroup() {
 		return new FormGroup<UntagStreamPostBodyFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2815,7 +2637,6 @@ export namespace MyNS {
 		 * The name of the stream whose retention period you want to change.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -2823,7 +2644,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream whose retention period you want to change.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -2832,7 +2652,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: string;
 
@@ -2855,7 +2674,6 @@ export namespace MyNS {
 		 * The name of the stream whose retention period you want to change.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2863,7 +2681,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the stream whose retention period you want to change.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2872,7 +2689,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 
@@ -2891,9 +2707,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDataRetentionPostBodyFormGroup() {
 		return new FormGroup<UpdateDataRetentionPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 			Operation: new FormControl<UpdateDataRetentionOperation | null | undefined>(undefined, [Validators.required]),
 			DataRetentionChangeInHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
@@ -2907,7 +2723,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -2916,7 +2731,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: string;
 
@@ -2930,7 +2744,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
@@ -2939,14 +2752,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSignalingChannelPostBodyFormGroup() {
 		return new FormGroup<UpdateSignalingChannelPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
 		});
 
 	}
@@ -2980,7 +2792,6 @@ export namespace MyNS {
 		 * <p>The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -2988,7 +2799,6 @@ export namespace MyNS {
 		 * The ARN of the stream whose metadata you want to update.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -2997,7 +2807,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: string;
 
@@ -3005,7 +2814,6 @@ export namespace MyNS {
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p> </note>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName?: string | null;
 
@@ -3013,7 +2821,6 @@ export namespace MyNS {
 		 * <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType?: string | null;
 	}
@@ -3023,7 +2830,6 @@ export namespace MyNS {
 		 * <p>The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -3031,7 +2837,6 @@ export namespace MyNS {
 		 * The ARN of the stream whose metadata you want to update.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -3040,7 +2845,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9]+
 		 */
 		CurrentVersion: FormControl<string | null | undefined>,
 
@@ -3048,7 +2852,6 @@ export namespace MyNS {
 		 * <p>The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p> </note>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DeviceName: FormControl<string | null | undefined>,
 
@@ -3056,17 +2859,16 @@ export namespace MyNS {
 		 * <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*
 		 */
 		MediaType: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStreamPostBodyFormGroup() {
 		return new FormGroup<UpdateStreamPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9]+')]),
+			DeviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MediaType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\-\.\+]+/[\w\-\.\+]+(,[\w\-\.\+]+/[\w\-\.\+]+)*')]),
 		});
 
 	}

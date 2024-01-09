@@ -696,7 +696,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId?: string | null;
 		Slots?: string | null;
@@ -711,7 +710,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId: FormControl<string | null | undefined>,
 		Slots: FormControl<string | null | undefined>,
@@ -720,7 +718,7 @@ export namespace MyNS {
 	}
 	export function CreateNodeGroupConfigurationFormGroup() {
 		return new FormGroup<NodeGroupConfigurationFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1)]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
 			Slots: new FormControl<string | null | undefined>(undefined),
 			ReplicaCount: new FormControl<number | null | undefined>(undefined),
 			PrimaryAvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -1556,7 +1554,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId: string;
 
@@ -1572,7 +1569,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId: FormControl<string | null | undefined>,
 
@@ -1581,7 +1577,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigureShardFormGroup() {
 		return new FormGroup<ConfigureShardFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1)]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
 			NewReplicaCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2530,7 +2526,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId?: string | null;
 		PreferredAvailabilityZones?: Array<string>;
@@ -2542,13 +2537,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateReshardingConfigurationFormGroup() {
 		return new FormGroup<ReshardingConfigurationFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1)]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
 		});
 
 	}
@@ -4700,7 +4694,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId: string;
 	}
@@ -4713,14 +4706,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 4
 		 * Min length: 1
-		 * Pattern: \d+
 		 */
 		NodeGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateTestFailoverMessageFormGroup() {
 		return new FormGroup<TestFailoverMessageFormProperties>({
 			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1)]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
 		});
 
 	}

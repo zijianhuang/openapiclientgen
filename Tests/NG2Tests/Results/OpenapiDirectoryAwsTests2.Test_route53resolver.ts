@@ -38,10 +38,7 @@ export namespace MyNS {
 		 */
 		Arn?: string | null;
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 		SecurityGroupIds?: Array<string>;
 		Direction?: ResolverEndpointDirection | null;
@@ -91,10 +88,7 @@ export namespace MyNS {
 		 */
 		Arn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 		Direction: FormControl<ResolverEndpointDirection | null | undefined>,
 		IpAddressCount: FormControl<number | null | undefined>,
@@ -126,7 +120,7 @@ export namespace MyNS {
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 			Direction: new FormControl<ResolverEndpointDirection | null | undefined>(undefined),
 			IpAddressCount: new FormControl<number | null | undefined>(undefined),
 			HostVPCId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
@@ -325,10 +319,7 @@ export namespace MyNS {
 		 */
 		ResolverRuleId?: string | null;
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 
 		/**
@@ -357,10 +348,7 @@ export namespace MyNS {
 		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
@@ -377,7 +365,7 @@ export namespace MyNS {
 		return new FormGroup<ResolverRuleAssociationFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			Status: new FormControl<ResolverRuleAssociationStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
@@ -396,10 +384,7 @@ export namespace MyNS {
 		 */
 		ResolverRuleId: string;
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 
 		/**
@@ -418,10 +403,7 @@ export namespace MyNS {
 		 */
 		ResolverRuleId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
@@ -434,7 +416,7 @@ export namespace MyNS {
 	export function CreateAssociateResolverRuleRequestFormGroup() {
 		return new FormGroup<AssociateResolverRuleRequestFormProperties>({
 			ResolverRuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
@@ -472,10 +454,7 @@ export namespace MyNS {
 		 */
 		CreatorRequestId: string;
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 
 		/** Required */
@@ -501,10 +480,7 @@ export namespace MyNS {
 		 */
 		CreatorRequestId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -513,7 +489,7 @@ export namespace MyNS {
 	export function CreateCreateResolverEndpointRequestFormGroup() {
 		return new FormGroup<CreateResolverEndpointRequestFormProperties>({
 			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 			Direction: new FormControl<ResolverEndpointDirection | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -627,10 +603,7 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 		RuleType?: ResolverRuleRuleType | null;
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 
 		/** Minimum items: 1 */
@@ -682,10 +655,7 @@ export namespace MyNS {
 		StatusMessage: FormControl<string | null | undefined>,
 		RuleType: FormControl<ResolverRuleRuleType | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
@@ -710,7 +680,7 @@ export namespace MyNS {
 			Status: new FormControl<ResolverRuleStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			RuleType: new FormControl<ResolverRuleRuleType | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(12)]),
 			ShareStatus: new FormControl<ResolverRuleShareStatus | null | undefined>(undefined),
@@ -775,10 +745,7 @@ export namespace MyNS {
 		 */
 		CreatorRequestId: string;
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 
 		/** Required */
@@ -810,10 +777,7 @@ export namespace MyNS {
 		 */
 		CreatorRequestId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -835,7 +799,7 @@ export namespace MyNS {
 	export function CreateCreateResolverRuleRequestFormGroup() {
 		return new FormGroup<CreateResolverRuleRequestFormProperties>({
 			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 			RuleType: new FormControl<ResolverRuleRuleType | null | undefined>(undefined, [Validators.required]),
 			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
@@ -1779,10 +1743,7 @@ export namespace MyNS {
 		 */
 		ResolverEndpointId: string;
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 	}
 	export interface UpdateResolverEndpointRequestFormProperties {
@@ -1794,16 +1755,13 @@ export namespace MyNS {
 		 */
 		ResolverEndpointId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateResolverEndpointRequestFormGroup() {
 		return new FormGroup<UpdateResolverEndpointRequestFormProperties>({
 			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 		});
 
 	}
@@ -1856,10 +1814,7 @@ export namespace MyNS {
 	/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
 	export interface ResolverRuleConfig {
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name?: string | null;
 
 		/** Minimum items: 1 */
@@ -1875,10 +1830,7 @@ export namespace MyNS {
 	/** In an <a>UpdateResolverRule</a> request, information about the changes that you want to make. */
 	export interface ResolverRuleConfigFormProperties {
 
-		/**
-		 * Max length: 64
-		 * Pattern: (?!^[0-9]+$)([a-zA-Z0-9-_' ']+)
-		 */
+		/** Max length: 64 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
@@ -1889,7 +1841,7 @@ export namespace MyNS {
 	}
 	export function CreateResolverRuleConfigFormGroup() {
 		return new FormGroup<ResolverRuleConfigFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('(?!^[0-9]+$)([a-zA-Z0-9-_\' \']+)')]),
 			ResolverEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 		});
 

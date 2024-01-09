@@ -78,16 +78,10 @@ export namespace MyNS {
 	/** A resource that represents your subscription to a supported standard. */
 	export interface StandardsSubscription {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		StandardsSubscriptionArn: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		StandardsArn: string;
 
 		/** Required */
@@ -100,16 +94,10 @@ export namespace MyNS {
 	/** A resource that represents your subscription to a supported standard. */
 	export interface StandardsSubscriptionFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		StandardsSubscriptionArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		StandardsArn: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -151,10 +139,7 @@ export namespace MyNS {
 	/** The standard that you want to enable. */
 	export interface StandardsSubscriptionRequest {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		StandardsArn: string;
 		StandardsInput?: StandardsInputParameterMap;
 	}
@@ -162,10 +147,7 @@ export namespace MyNS {
 	/** The standard that you want to enable. */
 	export interface StandardsSubscriptionRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		StandardsArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStandardsSubscriptionRequestFormGroup() {
@@ -204,44 +186,26 @@ export namespace MyNS {
 	/** The list of the findings that cannot be imported. For each finding, the list provides the error. */
 	export interface ImportFindingsError {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorCode: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorMessage: string;
 	}
 
 	/** The list of the findings that cannot be imported. For each finding, the list provides the error. */
 	export interface ImportFindingsErrorFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorCode: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateImportFindingsErrorFormGroup() {
@@ -257,55 +221,30 @@ export namespace MyNS {
 	/** <p>Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code> format enables you to share findings between AWS security services and third-party solutions, and security standards checks.</p> <note> <p>A finding is a potential security issue generated either by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the integrated third-party solutions and standards checks.</p> </note> */
 	export interface AwsSecurityFinding {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		SchemaVersion: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GeneratorId: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		AwsAccountId: string;
 
 		/** Required */
 		Types: Array<string>;
-
-		/** Pattern: .*\S.* */
 		FirstObservedAt?: string | null;
-
-		/** Pattern: .*\S.* */
 		LastObservedAt?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		CreatedAt: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedAt: string;
 
 		/**
@@ -316,22 +255,14 @@ export namespace MyNS {
 		Confidence?: number | null;
 		Criticality?: number | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Title: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Description: string;
 
 		/** Details about the remediation steps for a finding. */
 		Remediation?: Remediation;
-
-		/** Pattern: .*\S.* */
 		SourceUrl?: string | null;
 		ProductFields?: FieldMap;
 		UserDefinedFields?: FieldMap;
@@ -366,69 +297,36 @@ export namespace MyNS {
 	/** <p>Provides consistent format for the contents of the Security Hub-aggregated findings. <code>AwsSecurityFinding</code> format enables you to share findings between AWS security services and third-party solutions, and security standards checks.</p> <note> <p>A finding is a potential security issue generated either by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the integrated third-party solutions and standards checks.</p> </note> */
 	export interface AwsSecurityFindingFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		SchemaVersion: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GeneratorId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		AwsAccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		FirstObservedAt: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		LastObservedAt: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		CreatedAt: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedAt: FormControl<string | null | undefined>,
 		Confidence: FormControl<number | null | undefined>,
 		Criticality: FormControl<number | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Title: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Description: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SourceUrl: FormControl<string | null | undefined>,
 		VerificationState: FormControl<AwsSecurityFindingVerificationState | null | undefined>,
 
@@ -465,8 +363,6 @@ export namespace MyNS {
 		Product?: number | null;
 		Label?: SeverityLabel | null;
 		Normalized?: number | null;
-
-		/** Pattern: .*\S.* */
 		Original?: string | null;
 	}
 
@@ -475,8 +371,6 @@ export namespace MyNS {
 		Product: FormControl<number | null | undefined>,
 		Label: FormControl<SeverityLabel | null | undefined>,
 		Normalized: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Original: FormControl<string | null | undefined>,
 	}
 	export function CreateSeverityFormGroup() {
@@ -511,21 +405,13 @@ export namespace MyNS {
 
 	/** A recommendation on how to remediate the issue identified in a finding. */
 	export interface Recommendation {
-
-		/** Pattern: .*\S.* */
 		Text?: string | null;
-
-		/** Pattern: .*\S.* */
 		Url?: string | null;
 	}
 
 	/** A recommendation on how to remediate the issue identified in a finding. */
 	export interface RecommendationFormProperties {
-
-		/** Pattern: .*\S.* */
 		Text: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Url: FormControl<string | null | undefined>,
 	}
 	export function CreateRecommendationFormGroup() {
@@ -550,14 +436,9 @@ export namespace MyNS {
 	/** A list of malware related to a finding. */
 	export interface Malware {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: string;
 		Type?: MalwareType | null;
-
-		/** Pattern: .*\S.* */
 		Path?: string | null;
 		State?: MalwareState | null;
 	}
@@ -565,14 +446,9 @@ export namespace MyNS {
 	/** A list of malware related to a finding. */
 	export interface MalwareFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<MalwareType | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Path: FormControl<string | null | undefined>,
 		State: FormControl<MalwareState | null | undefined>,
 	}
@@ -594,62 +470,30 @@ export namespace MyNS {
 	/** The details of network-related information about a finding. */
 	export interface Network {
 		Direction?: NetworkDirection | null;
-
-		/** Pattern: .*\S.* */
 		Protocol?: string | null;
-
-		/** Pattern: .*\S.* */
 		SourceIpV4?: string | null;
-
-		/** Pattern: .*\S.* */
 		SourceIpV6?: string | null;
 		SourcePort?: number | null;
-
-		/** Pattern: .*\S.* */
 		SourceDomain?: string | null;
-
-		/** Pattern: .*\S.* */
 		SourceMac?: string | null;
-
-		/** Pattern: .*\S.* */
 		DestinationIpV4?: string | null;
-
-		/** Pattern: .*\S.* */
 		DestinationIpV6?: string | null;
 		DestinationPort?: number | null;
-
-		/** Pattern: .*\S.* */
 		DestinationDomain?: string | null;
 	}
 
 	/** The details of network-related information about a finding. */
 	export interface NetworkFormProperties {
 		Direction: FormControl<NetworkDirection | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Protocol: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SourceIpV4: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SourceIpV6: FormControl<string | null | undefined>,
 		SourcePort: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SourceDomain: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SourceMac: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DestinationIpV4: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DestinationIpV6: FormControl<string | null | undefined>,
 		DestinationPort: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DestinationDomain: FormControl<string | null | undefined>,
 	}
 	export function CreateNetworkFormGroup() {
@@ -674,37 +518,21 @@ export namespace MyNS {
 
 	/** The details of process-related information about a finding. */
 	export interface ProcessDetails {
-
-		/** Pattern: .*\S.* */
 		Name?: string | null;
-
-		/** Pattern: .*\S.* */
 		Path?: string | null;
 		Pid?: number | null;
 		ParentPid?: number | null;
-
-		/** Pattern: .*\S.* */
 		LaunchedAt?: string | null;
-
-		/** Pattern: .*\S.* */
 		TerminatedAt?: string | null;
 	}
 
 	/** The details of process-related information about a finding. */
 	export interface ProcessDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Path: FormControl<string | null | undefined>,
 		Pid: FormControl<number | null | undefined>,
 		ParentPid: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		LaunchedAt: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		TerminatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateProcessDetailsFormGroup() {
@@ -723,36 +551,20 @@ export namespace MyNS {
 	/** Details about the threat intelligence related to a finding. */
 	export interface ThreatIntelIndicator {
 		Type?: ThreatIntelIndicatorType | null;
-
-		/** Pattern: .*\S.* */
 		Value?: string | null;
 		Category?: ThreatIntelIndicatorCategory | null;
-
-		/** Pattern: .*\S.* */
 		LastObservedAt?: string | null;
-
-		/** Pattern: .*\S.* */
 		Source?: string | null;
-
-		/** Pattern: .*\S.* */
 		SourceUrl?: string | null;
 	}
 
 	/** Details about the threat intelligence related to a finding. */
 	export interface ThreatIntelIndicatorFormProperties {
 		Type: FormControl<ThreatIntelIndicatorType | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Value: FormControl<string | null | undefined>,
 		Category: FormControl<ThreatIntelIndicatorCategory | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		LastObservedAt: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Source: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SourceUrl: FormControl<string | null | undefined>,
 	}
 	export function CreateThreatIntelIndicatorFormGroup() {
@@ -775,20 +587,12 @@ export namespace MyNS {
 	/** A resource related to a finding. */
 	export interface Resource {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Type: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: string;
 		Partition?: ResourcePartition | null;
-
-		/** Pattern: .*\S.* */
 		Region?: string | null;
 		Tags?: FieldMap;
 
@@ -799,20 +603,12 @@ export namespace MyNS {
 	/** A resource related to a finding. */
 	export interface ResourceFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Type: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 		Partition: FormControl<ResourcePartition | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Region: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceFormGroup() {
@@ -902,20 +698,14 @@ export namespace MyNS {
 
 	/** Information about an AWS CodeBuild project. */
 	export interface AwsCodeBuildProjectDetails {
-
-		/** Pattern: .*\S.* */
 		EncryptionKey?: string | null;
 
 		/** Information about the build environment for this build project. */
 		Environment?: AwsCodeBuildProjectEnvironment;
-
-		/** Pattern: .*\S.* */
 		Name?: string | null;
 
 		/** Information about the build input source code for this build project. */
 		Source?: AwsCodeBuildProjectSource;
-
-		/** Pattern: .*\S.* */
 		ServiceRole?: string | null;
 
 		/** Information about the VPC configuration that AWS CodeBuild accesses. */
@@ -924,14 +714,8 @@ export namespace MyNS {
 
 	/** Information about an AWS CodeBuild project. */
 	export interface AwsCodeBuildProjectDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		EncryptionKey: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ServiceRole: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCodeBuildProjectDetailsFormGroup() {
@@ -946,30 +730,18 @@ export namespace MyNS {
 
 	/** Information about the build environment for this build project. */
 	export interface AwsCodeBuildProjectEnvironment {
-
-		/** Pattern: .*\S.* */
 		Certificate?: string | null;
-
-		/** Pattern: .*\S.* */
 		ImagePullCredentialsType?: string | null;
 
 		/** The credentials for access to a private registry. */
 		RegistryCredential?: AwsCodeBuildProjectEnvironmentRegistryCredential;
-
-		/** Pattern: .*\S.* */
 		Type?: string | null;
 	}
 
 	/** Information about the build environment for this build project. */
 	export interface AwsCodeBuildProjectEnvironmentFormProperties {
-
-		/** Pattern: .*\S.* */
 		Certificate: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ImagePullCredentialsType: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCodeBuildProjectEnvironmentFormGroup() {
@@ -984,21 +756,13 @@ export namespace MyNS {
 
 	/** The credentials for access to a private registry. */
 	export interface AwsCodeBuildProjectEnvironmentRegistryCredential {
-
-		/** Pattern: .*\S.* */
 		Credential?: string | null;
-
-		/** Pattern: .*\S.* */
 		CredentialProvider?: string | null;
 	}
 
 	/** The credentials for access to a private registry. */
 	export interface AwsCodeBuildProjectEnvironmentRegistryCredentialFormProperties {
-
-		/** Pattern: .*\S.* */
 		Credential: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CredentialProvider: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCodeBuildProjectEnvironmentRegistryCredentialFormGroup() {
@@ -1012,11 +776,7 @@ export namespace MyNS {
 
 	/** Information about the build input source code for this build project. */
 	export interface AwsCodeBuildProjectSource {
-
-		/** Pattern: .*\S.* */
 		Type?: string | null;
-
-		/** Pattern: .*\S.* */
 		Location?: string | null;
 		GitCloneDepth?: number | null;
 		InsecureSsl?: boolean | null;
@@ -1024,11 +784,7 @@ export namespace MyNS {
 
 	/** Information about the build input source code for this build project. */
 	export interface AwsCodeBuildProjectSourceFormProperties {
-
-		/** Pattern: .*\S.* */
 		Type: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Location: FormControl<string | null | undefined>,
 		GitCloneDepth: FormControl<number | null | undefined>,
 		InsecureSsl: FormControl<boolean | null | undefined>,
@@ -1046,8 +802,6 @@ export namespace MyNS {
 
 	/** Information about the VPC configuration that AWS CodeBuild accesses. */
 	export interface AwsCodeBuildProjectVpcConfig {
-
-		/** Pattern: .*\S.* */
 		VpcId?: string | null;
 		Subnets?: Array<string>;
 		SecurityGroupIds?: Array<string>;
@@ -1055,8 +809,6 @@ export namespace MyNS {
 
 	/** Information about the VPC configuration that AWS CodeBuild accesses. */
 	export interface AwsCodeBuildProjectVpcConfigFormProperties {
-
-		/** Pattern: .*\S.* */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCodeBuildProjectVpcConfigFormGroup() {
@@ -1069,14 +821,8 @@ export namespace MyNS {
 
 	/** A distribution configuration. */
 	export interface AwsCloudFrontDistributionDetails {
-
-		/** Pattern: .*\S.* */
 		DomainName?: string | null;
-
-		/** Pattern: .*\S.* */
 		ETag?: string | null;
-
-		/** Pattern: .*\S.* */
 		LastModifiedTime?: string | null;
 
 		/** A complex type that controls whether access logs are written for the distribution. */
@@ -1084,30 +830,16 @@ export namespace MyNS {
 
 		/** A complex type that contains information about origins and origin groups for this distribution. */
 		Origins?: AwsCloudFrontDistributionOrigins;
-
-		/** Pattern: .*\S.* */
 		Status?: string | null;
-
-		/** Pattern: .*\S.* */
 		WebAclId?: string | null;
 	}
 
 	/** A distribution configuration. */
 	export interface AwsCloudFrontDistributionDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		DomainName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ETag: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		LastModifiedTime: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Status: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		WebAclId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCloudFrontDistributionDetailsFormGroup() {
@@ -1124,25 +856,17 @@ export namespace MyNS {
 
 	/** A complex type that controls whether access logs are written for the distribution. */
 	export interface AwsCloudFrontDistributionLogging {
-
-		/** Pattern: .*\S.* */
 		Bucket?: string | null;
 		Enabled?: boolean | null;
 		IncludeCookies?: boolean | null;
-
-		/** Pattern: .*\S.* */
 		Prefix?: string | null;
 	}
 
 	/** A complex type that controls whether access logs are written for the distribution. */
 	export interface AwsCloudFrontDistributionLoggingFormProperties {
-
-		/** Pattern: .*\S.* */
 		Bucket: FormControl<string | null | undefined>,
 		Enabled: FormControl<boolean | null | undefined>,
 		IncludeCookies: FormControl<boolean | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCloudFrontDistributionLoggingFormGroup() {
@@ -1173,27 +897,15 @@ export namespace MyNS {
 
 	/** A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon Elemental MediaStore, or other server from which CloudFront gets your files. */
 	export interface AwsCloudFrontDistributionOriginItem {
-
-		/** Pattern: .*\S.* */
 		DomainName?: string | null;
-
-		/** Pattern: .*\S.* */
 		Id?: string | null;
-
-		/** Pattern: .*\S.* */
 		OriginPath?: string | null;
 	}
 
 	/** A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon Elemental MediaStore, or other server from which CloudFront gets your files. */
 	export interface AwsCloudFrontDistributionOriginItemFormProperties {
-
-		/** Pattern: .*\S.* */
 		DomainName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Id: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		OriginPath: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCloudFrontDistributionOriginItemFormGroup() {
@@ -1208,53 +920,25 @@ export namespace MyNS {
 
 	/** The details of an Amazon EC2 instance. */
 	export interface AwsEc2InstanceDetails {
-
-		/** Pattern: .*\S.* */
 		Type?: string | null;
-
-		/** Pattern: .*\S.* */
 		ImageId?: string | null;
 		IpV4Addresses?: Array<string>;
 		IpV6Addresses?: Array<string>;
-
-		/** Pattern: .*\S.* */
 		KeyName?: string | null;
-
-		/** Pattern: .*\S.* */
 		IamInstanceProfileArn?: string | null;
-
-		/** Pattern: .*\S.* */
 		VpcId?: string | null;
-
-		/** Pattern: .*\S.* */
 		SubnetId?: string | null;
-
-		/** Pattern: .*\S.* */
 		LaunchedAt?: string | null;
 	}
 
 	/** The details of an Amazon EC2 instance. */
 	export interface AwsEc2InstanceDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		Type: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ImageId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KeyName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		IamInstanceProfileArn: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		VpcId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SubnetId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		LaunchedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2InstanceDetailsFormGroup() {
@@ -1276,8 +960,6 @@ export namespace MyNS {
 
 		/** Information about the network interface attachment. */
 		Attachment?: AwsEc2NetworkInterfaceAttachment;
-
-		/** Pattern: .*\S.* */
 		NetworkInterfaceId?: string | null;
 		SecurityGroups?: Array<AwsEc2NetworkInterfaceSecurityGroup>;
 		SourceDestCheck?: boolean | null;
@@ -1285,8 +967,6 @@ export namespace MyNS {
 
 	/** Details about the network interface */
 	export interface AwsEc2NetworkInterfaceDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		NetworkInterfaceId: FormControl<string | null | undefined>,
 		SourceDestCheck: FormControl<boolean | null | undefined>,
 	}
@@ -1301,43 +981,23 @@ export namespace MyNS {
 
 	/** Information about the network interface attachment. */
 	export interface AwsEc2NetworkInterfaceAttachment {
-
-		/** Pattern: .*\S.* */
 		AttachTime?: string | null;
-
-		/** Pattern: .*\S.* */
 		AttachmentId?: string | null;
 		DeleteOnTermination?: boolean | null;
 		DeviceIndex?: number | null;
-
-		/** Pattern: .*\S.* */
 		InstanceId?: string | null;
-
-		/** Pattern: .*\S.* */
 		InstanceOwnerId?: string | null;
-
-		/** Pattern: .*\S.* */
 		Status?: string | null;
 	}
 
 	/** Information about the network interface attachment. */
 	export interface AwsEc2NetworkInterfaceAttachmentFormProperties {
-
-		/** Pattern: .*\S.* */
 		AttachTime: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		AttachmentId: FormControl<string | null | undefined>,
 		DeleteOnTermination: FormControl<boolean | null | undefined>,
 		DeviceIndex: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		InstanceId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		InstanceOwnerId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Status: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2NetworkInterfaceAttachmentFormGroup() {
@@ -1356,21 +1016,13 @@ export namespace MyNS {
 
 	/** A security group associated with the network interface. */
 	export interface AwsEc2NetworkInterfaceSecurityGroup {
-
-		/** Pattern: .*\S.* */
 		GroupName?: string | null;
-
-		/** Pattern: .*\S.* */
 		GroupId?: string | null;
 	}
 
 	/** A security group associated with the network interface. */
 	export interface AwsEc2NetworkInterfaceSecurityGroupFormProperties {
-
-		/** Pattern: .*\S.* */
 		GroupName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		GroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2NetworkInterfaceSecurityGroupFormGroup() {
@@ -1384,17 +1036,9 @@ export namespace MyNS {
 
 	/** Details about an EC2 security group. */
 	export interface AwsEc2SecurityGroupDetails {
-
-		/** Pattern: .*\S.* */
 		GroupName?: string | null;
-
-		/** Pattern: .*\S.* */
 		GroupId?: string | null;
-
-		/** Pattern: .*\S.* */
 		OwnerId?: string | null;
-
-		/** Pattern: .*\S.* */
 		VpcId?: string | null;
 		IpPermissions?: Array<AwsEc2SecurityGroupIpPermission>;
 		IpPermissionsEgress?: Array<AwsEc2SecurityGroupIpPermission>;
@@ -1402,17 +1046,9 @@ export namespace MyNS {
 
 	/** Details about an EC2 security group. */
 	export interface AwsEc2SecurityGroupDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		GroupName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		GroupId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		OwnerId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2SecurityGroupDetailsFormGroup() {
@@ -1428,8 +1064,6 @@ export namespace MyNS {
 
 	/** An IP permission for an EC2 security group. */
 	export interface AwsEc2SecurityGroupIpPermission {
-
-		/** Pattern: .*\S.* */
 		IpProtocol?: string | null;
 		FromPort?: number | null;
 		ToPort?: number | null;
@@ -1441,8 +1075,6 @@ export namespace MyNS {
 
 	/** An IP permission for an EC2 security group. */
 	export interface AwsEc2SecurityGroupIpPermissionFormProperties {
-
-		/** Pattern: .*\S.* */
 		IpProtocol: FormControl<string | null | undefined>,
 		FromPort: FormControl<number | null | undefined>,
 		ToPort: FormControl<number | null | undefined>,
@@ -1459,45 +1091,21 @@ export namespace MyNS {
 
 	/** A relationship between a security group and a user. */
 	export interface AwsEc2SecurityGroupUserIdGroupPair {
-
-		/** Pattern: .*\S.* */
 		GroupId?: string | null;
-
-		/** Pattern: .*\S.* */
 		GroupName?: string | null;
-
-		/** Pattern: .*\S.* */
 		PeeringStatus?: string | null;
-
-		/** Pattern: .*\S.* */
 		UserId?: string | null;
-
-		/** Pattern: .*\S.* */
 		VpcId?: string | null;
-
-		/** Pattern: .*\S.* */
 		VpcPeeringConnectionId?: string | null;
 	}
 
 	/** A relationship between a security group and a user. */
 	export interface AwsEc2SecurityGroupUserIdGroupPairFormProperties {
-
-		/** Pattern: .*\S.* */
 		GroupId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		GroupName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		PeeringStatus: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		UserId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		VpcId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		VpcPeeringConnectionId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2SecurityGroupUserIdGroupPairFormGroup() {
@@ -1515,15 +1123,11 @@ export namespace MyNS {
 
 	/** A range of IPv4 addresses. */
 	export interface AwsEc2SecurityGroupIpRange {
-
-		/** Pattern: .*\S.* */
 		CidrIp?: string | null;
 	}
 
 	/** A range of IPv4 addresses. */
 	export interface AwsEc2SecurityGroupIpRangeFormProperties {
-
-		/** Pattern: .*\S.* */
 		CidrIp: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2SecurityGroupIpRangeFormGroup() {
@@ -1536,15 +1140,11 @@ export namespace MyNS {
 
 	/** A range of IPv6 addresses. */
 	export interface AwsEc2SecurityGroupIpv6Range {
-
-		/** Pattern: .*\S.* */
 		CidrIpv6?: string | null;
 	}
 
 	/** A range of IPv6 addresses. */
 	export interface AwsEc2SecurityGroupIpv6RangeFormProperties {
-
-		/** Pattern: .*\S.* */
 		CidrIpv6: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2SecurityGroupIpv6RangeFormGroup() {
@@ -1557,15 +1157,11 @@ export namespace MyNS {
 
 	/** A prefix list ID. */
 	export interface AwsEc2SecurityGroupPrefixListId {
-
-		/** Pattern: .*\S.* */
 		PrefixListId?: string | null;
 	}
 
 	/** A prefix list ID. */
 	export interface AwsEc2SecurityGroupPrefixListIdFormProperties {
-
-		/** Pattern: .*\S.* */
 		PrefixListId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsEc2SecurityGroupPrefixListIdFormGroup() {
@@ -1579,55 +1175,27 @@ export namespace MyNS {
 	/** Information about a load balancer. */
 	export interface AwsElbv2LoadBalancerDetails {
 		AvailabilityZones?: Array<AvailabilityZone>;
-
-		/** Pattern: .*\S.* */
 		CanonicalHostedZoneId?: string | null;
-
-		/** Pattern: .*\S.* */
 		CreatedTime?: string | null;
-
-		/** Pattern: .*\S.* */
 		DNSName?: string | null;
-
-		/** Pattern: .*\S.* */
 		IpAddressType?: string | null;
-
-		/** Pattern: .*\S.* */
 		Scheme?: string | null;
 		SecurityGroups?: Array<string>;
 
 		/** Information about the state of the load balancer. */
 		State?: LoadBalancerState;
-
-		/** Pattern: .*\S.* */
 		Type?: string | null;
-
-		/** Pattern: .*\S.* */
 		VpcId?: string | null;
 	}
 
 	/** Information about a load balancer. */
 	export interface AwsElbv2LoadBalancerDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		CanonicalHostedZoneId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CreatedTime: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DNSName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		IpAddressType: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Scheme: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Type: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsElbv2LoadBalancerDetailsFormGroup() {
@@ -1646,21 +1214,13 @@ export namespace MyNS {
 
 	/** Information about an Availability Zone. */
 	export interface AvailabilityZone {
-
-		/** Pattern: .*\S.* */
 		ZoneName?: string | null;
-
-		/** Pattern: .*\S.* */
 		SubnetId?: string | null;
 	}
 
 	/** Information about an Availability Zone. */
 	export interface AvailabilityZoneFormProperties {
-
-		/** Pattern: .*\S.* */
 		ZoneName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SubnetId: FormControl<string | null | undefined>,
 	}
 	export function CreateAvailabilityZoneFormGroup() {
@@ -1674,21 +1234,13 @@ export namespace MyNS {
 
 	/** Information about the state of the load balancer. */
 	export interface LoadBalancerState {
-
-		/** Pattern: .*\S.* */
 		Code?: string | null;
-
-		/** Pattern: .*\S.* */
 		Reason?: string | null;
 	}
 
 	/** Information about the state of the load balancer. */
 	export interface LoadBalancerStateFormProperties {
-
-		/** Pattern: .*\S.* */
 		Code: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Reason: FormControl<string | null | undefined>,
 	}
 	export function CreateLoadBalancerStateFormGroup() {
@@ -1702,24 +1254,14 @@ export namespace MyNS {
 
 	/** Information about an Elasticsearch domain. */
 	export interface AwsElasticsearchDomainDetails {
-
-		/** Pattern: .*\S.* */
 		AccessPolicies?: string | null;
 
 		/** Additional options for the domain endpoint, such as whether to require HTTPS for all traffic. */
 		DomainEndpointOptions?: AwsElasticsearchDomainDomainEndpointOptions;
-
-		/** Pattern: .*\S.* */
 		DomainId?: string | null;
-
-		/** Pattern: .*\S.* */
 		DomainName?: string | null;
-
-		/** Pattern: .*\S.* */
 		Endpoint?: string | null;
 		Endpoints?: FieldMap;
-
-		/** Pattern: .*\S.* */
 		ElasticsearchVersion?: string | null;
 
 		/** Details about the configuration for encryption at rest. */
@@ -1734,20 +1276,10 @@ export namespace MyNS {
 
 	/** Information about an Elasticsearch domain. */
 	export interface AwsElasticsearchDomainDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		AccessPolicies: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DomainId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DomainName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Endpoint: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ElasticsearchVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsElasticsearchDomainDetailsFormGroup() {
@@ -1765,16 +1297,12 @@ export namespace MyNS {
 	/** Additional options for the domain endpoint, such as whether to require HTTPS for all traffic. */
 	export interface AwsElasticsearchDomainDomainEndpointOptions {
 		EnforceHTTPS?: boolean | null;
-
-		/** Pattern: .*\S.* */
 		TLSSecurityPolicy?: string | null;
 	}
 
 	/** Additional options for the domain endpoint, such as whether to require HTTPS for all traffic. */
 	export interface AwsElasticsearchDomainDomainEndpointOptionsFormProperties {
 		EnforceHTTPS: FormControl<boolean | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		TLSSecurityPolicy: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsElasticsearchDomainDomainEndpointOptionsFormGroup() {
@@ -1789,16 +1317,12 @@ export namespace MyNS {
 	/** Details about the configuration for encryption at rest. */
 	export interface AwsElasticsearchDomainEncryptionAtRestOptions {
 		Enabled?: boolean | null;
-
-		/** Pattern: .*\S.* */
 		KmsKeyId?: string | null;
 	}
 
 	/** Details about the configuration for encryption at rest. */
 	export interface AwsElasticsearchDomainEncryptionAtRestOptionsFormProperties {
 		Enabled: FormControl<boolean | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KmsKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsElasticsearchDomainEncryptionAtRestOptionsFormGroup() {
@@ -1832,15 +1356,11 @@ export namespace MyNS {
 		AvailabilityZones?: Array<string>;
 		SecurityGroupIds?: Array<string>;
 		SubnetIds?: Array<string>;
-
-		/** Pattern: .*\S.* */
 		VPCId?: string | null;
 	}
 
 	/** Information that Amazon ES derives based on <code>VPCOptions</code> for the domain. */
 	export interface AwsElasticsearchDomainVPCOptionsFormProperties {
-
-		/** Pattern: .*\S.* */
 		VPCId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsElasticsearchDomainVPCOptionsFormGroup() {
@@ -1853,14 +1373,8 @@ export namespace MyNS {
 
 	/** The details of an Amazon S3 bucket. */
 	export interface AwsS3BucketDetails {
-
-		/** Pattern: .*\S.* */
 		OwnerId?: string | null;
-
-		/** Pattern: .*\S.* */
 		OwnerName?: string | null;
-
-		/** Pattern: .*\S.* */
 		CreatedAt?: string | null;
 
 		/** The encryption configuration for the S3 bucket. */
@@ -1869,14 +1383,8 @@ export namespace MyNS {
 
 	/** The details of an Amazon S3 bucket. */
 	export interface AwsS3BucketDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		OwnerId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		OwnerName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CreatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsS3BucketDetailsFormGroup() {
@@ -1923,21 +1431,13 @@ export namespace MyNS {
 
 	/** Specifies the default server-side encryption to apply to new objects in the bucket. */
 	export interface AwsS3BucketServerSideEncryptionByDefault {
-
-		/** Pattern: .*\S.* */
 		SSEAlgorithm?: string | null;
-
-		/** Pattern: .*\S.* */
 		KMSMasterKeyID?: string | null;
 	}
 
 	/** Specifies the default server-side encryption to apply to new objects in the bucket. */
 	export interface AwsS3BucketServerSideEncryptionByDefaultFormProperties {
-
-		/** Pattern: .*\S.* */
 		SSEAlgorithm: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KMSMasterKeyID: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsS3BucketServerSideEncryptionByDefaultFormGroup() {
@@ -1951,45 +1451,21 @@ export namespace MyNS {
 
 	/** Details about an Amazon S3 object. */
 	export interface AwsS3ObjectDetails {
-
-		/** Pattern: .*\S.* */
 		LastModified?: string | null;
-
-		/** Pattern: .*\S.* */
 		ETag?: string | null;
-
-		/** Pattern: .*\S.* */
 		VersionId?: string | null;
-
-		/** Pattern: .*\S.* */
 		ContentType?: string | null;
-
-		/** Pattern: .*\S.* */
 		ServerSideEncryption?: string | null;
-
-		/** Pattern: .*\S.* */
 		SSEKMSKeyId?: string | null;
 	}
 
 	/** Details about an Amazon S3 object. */
 	export interface AwsS3ObjectDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		LastModified: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ETag: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		VersionId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ContentType: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ServerSideEncryption: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SSEKMSKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsS3ObjectDetailsFormGroup() {
@@ -2007,41 +1483,21 @@ export namespace MyNS {
 
 	/** IAM access key details related to a finding. */
 	export interface AwsIamAccessKeyDetails {
-
-		/** Pattern: .*\S.* */
 		UserName?: string | null;
 		Status?: AwsIamAccessKeyDetailsStatus | null;
-
-		/** Pattern: .*\S.* */
 		CreatedAt?: string | null;
-
-		/** Pattern: .*\S.* */
 		PrincipalId?: string | null;
-
-		/** Pattern: .*\S.* */
 		PrincipalType?: string | null;
-
-		/** Pattern: .*\S.* */
 		PrincipalName?: string | null;
 	}
 
 	/** IAM access key details related to a finding. */
 	export interface AwsIamAccessKeyDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		UserName: FormControl<string | null | undefined>,
 		Status: FormControl<AwsIamAccessKeyDetailsStatus | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CreatedAt: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		PrincipalId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		PrincipalType: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		PrincipalName: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsIamAccessKeyDetailsFormGroup() {
@@ -2065,21 +1521,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 131072
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+
 		 */
 		AssumeRolePolicyDocument?: string | null;
-
-		/** Pattern: .*\S.* */
 		CreateDate?: string | null;
-
-		/** Pattern: .*\S.* */
 		RoleId?: string | null;
-
-		/** Pattern: .*\S.* */
 		RoleName?: string | null;
 		MaxSessionDuration?: number | null;
-
-		/** Pattern: .*\S.* */
 		Path?: string | null;
 	}
 
@@ -2089,26 +1536,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 131072
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+
 		 */
 		AssumeRolePolicyDocument: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CreateDate: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		RoleId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		RoleName: FormControl<string | null | undefined>,
 		MaxSessionDuration: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Path: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsIamRoleDetailsFormGroup() {
 		return new FormGroup<AwsIamRoleDetailsFormProperties>({
-			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1)]),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+')]),
 			CreateDate: new FormControl<string | null | undefined>(undefined),
 			RoleId: new FormControl<string | null | undefined>(undefined),
 			RoleName: new FormControl<string | null | undefined>(undefined),
@@ -2121,41 +1559,21 @@ export namespace MyNS {
 
 	/** Contains metadata about a customer master key (CMK). */
 	export interface AwsKmsKeyDetails {
-
-		/** Pattern: .*\S.* */
 		AWSAccountId?: string | null;
 		CreationDate?: number | null;
-
-		/** Pattern: .*\S.* */
 		KeyId?: string | null;
-
-		/** Pattern: .*\S.* */
 		KeyManager?: string | null;
-
-		/** Pattern: .*\S.* */
 		KeyState?: string | null;
-
-		/** Pattern: .*\S.* */
 		Origin?: string | null;
 	}
 
 	/** Contains metadata about a customer master key (CMK). */
 	export interface AwsKmsKeyDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		AWSAccountId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KeyId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KeyManager: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KeyState: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Origin: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsKmsKeyDetailsFormGroup() {
@@ -2176,8 +1594,6 @@ export namespace MyNS {
 
 		/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
 		Code?: AwsLambdaFunctionCode;
-
-		/** Pattern: .*\S.* */
 		CodeSha256?: string | null;
 
 		/** The dead-letter queue for failed asynchronous invocations. */
@@ -2185,31 +1601,15 @@ export namespace MyNS {
 
 		/** A function's environment variable settings. */
 		Environment?: AwsLambdaFunctionEnvironment;
-
-		/** Pattern: .*\S.* */
 		FunctionName?: string | null;
-
-		/** Pattern: .*\S.* */
 		Handler?: string | null;
-
-		/** Pattern: .*\S.* */
 		KmsKeyArn?: string | null;
-
-		/** Pattern: .*\S.* */
 		LastModified?: string | null;
 		Layers?: Array<AwsLambdaFunctionLayer>;
-
-		/** Pattern: .*\S.* */
 		MasterArn?: string | null;
 		MemorySize?: number | null;
-
-		/** Pattern: .*\S.* */
 		RevisionId?: string | null;
-
-		/** Pattern: .*\S.* */
 		Role?: string | null;
-
-		/** Pattern: .*\S.* */
 		Runtime?: string | null;
 		Timeout?: number | null;
 
@@ -2218,44 +1618,22 @@ export namespace MyNS {
 
 		/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC Settings. */
 		VpcConfig?: AwsLambdaFunctionVpcConfig;
-
-		/** Pattern: .*\S.* */
 		Version?: string | null;
 	}
 
 	/** Details about a function's configuration. */
 	export interface AwsLambdaFunctionDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		CodeSha256: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		FunctionName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Handler: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KmsKeyArn: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		LastModified: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		MasterArn: FormControl<string | null | undefined>,
 		MemorySize: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		RevisionId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Role: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Runtime: FormControl<string | null | undefined>,
 		Timeout: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsLambdaFunctionDetailsFormGroup() {
@@ -2279,33 +1657,17 @@ export namespace MyNS {
 
 	/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
 	export interface AwsLambdaFunctionCode {
-
-		/** Pattern: .*\S.* */
 		S3Bucket?: string | null;
-
-		/** Pattern: .*\S.* */
 		S3Key?: string | null;
-
-		/** Pattern: .*\S.* */
 		S3ObjectVersion?: string | null;
-
-		/** Pattern: .*\S.* */
 		ZipFile?: string | null;
 	}
 
 	/** The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly. */
 	export interface AwsLambdaFunctionCodeFormProperties {
-
-		/** Pattern: .*\S.* */
 		S3Bucket: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		S3Key: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		S3ObjectVersion: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ZipFile: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsLambdaFunctionCodeFormGroup() {
@@ -2321,15 +1683,11 @@ export namespace MyNS {
 
 	/** The dead-letter queue for failed asynchronous invocations. */
 	export interface AwsLambdaFunctionDeadLetterConfig {
-
-		/** Pattern: .*\S.* */
 		TargetArn?: string | null;
 	}
 
 	/** The dead-letter queue for failed asynchronous invocations. */
 	export interface AwsLambdaFunctionDeadLetterConfigFormProperties {
-
-		/** Pattern: .*\S.* */
 		TargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsLambdaFunctionDeadLetterConfigFormGroup() {
@@ -2360,21 +1718,13 @@ export namespace MyNS {
 
 	/** Error messages for environment variables that couldn't be applied. */
 	export interface AwsLambdaFunctionEnvironmentError {
-
-		/** Pattern: .*\S.* */
 		ErrorCode?: string | null;
-
-		/** Pattern: .*\S.* */
 		Message?: string | null;
 	}
 
 	/** Error messages for environment variables that couldn't be applied. */
 	export interface AwsLambdaFunctionEnvironmentErrorFormProperties {
-
-		/** Pattern: .*\S.* */
 		ErrorCode: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Message: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsLambdaFunctionEnvironmentErrorFormGroup() {
@@ -2388,16 +1738,12 @@ export namespace MyNS {
 
 	/** An AWS Lambda layer. */
 	export interface AwsLambdaFunctionLayer {
-
-		/** Pattern: .*\S.* */
 		Arn?: string | null;
 		CodeSize?: number | null;
 	}
 
 	/** An AWS Lambda layer. */
 	export interface AwsLambdaFunctionLayerFormProperties {
-
-		/** Pattern: .*\S.* */
 		Arn: FormControl<string | null | undefined>,
 		CodeSize: FormControl<number | null | undefined>,
 	}
@@ -2412,15 +1758,11 @@ export namespace MyNS {
 
 	/** The function's AWS X-Ray tracing configuration. */
 	export interface AwsLambdaFunctionTracingConfig {
-
-		/** Pattern: .*\S.* */
 		Mode?: string | null;
 	}
 
 	/** The function's AWS X-Ray tracing configuration. */
 	export interface AwsLambdaFunctionTracingConfigFormProperties {
-
-		/** Pattern: .*\S.* */
 		Mode: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsLambdaFunctionTracingConfigFormGroup() {
@@ -2435,15 +1777,11 @@ export namespace MyNS {
 	export interface AwsLambdaFunctionVpcConfig {
 		SecurityGroupIds?: Array<string>;
 		SubnetIds?: Array<string>;
-
-		/** Pattern: .*\S.* */
 		VpcId?: string | null;
 	}
 
 	/** The VPC security groups and subnets that are attached to a Lambda function. For more information, see VPC Settings. */
 	export interface AwsLambdaFunctionVpcConfigFormProperties {
-
-		/** Pattern: .*\S.* */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsLambdaFunctionVpcConfigFormGroup() {
@@ -2458,16 +1796,12 @@ export namespace MyNS {
 	export interface AwsLambdaLayerVersionDetails {
 		Version?: number | null;
 		CompatibleRuntimes?: Array<string>;
-
-		/** Pattern: .*\S.* */
 		CreatedDate?: string | null;
 	}
 
 	/** Details about a Lambda layer version. */
 	export interface AwsLambdaLayerVersionDetailsFormProperties {
 		Version: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CreatedDate: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsLambdaLayerVersionDetailsFormGroup() {
@@ -2482,89 +1816,45 @@ export namespace MyNS {
 	/** Contains the details of an Amazon RDS DB instance. */
 	export interface AwsRdsDbInstanceDetails {
 		AssociatedRoles?: Array<AwsRdsDbInstanceAssociatedRole>;
-
-		/** Pattern: .*\S.* */
 		CACertificateIdentifier?: string | null;
-
-		/** Pattern: .*\S.* */
 		DBClusterIdentifier?: string | null;
-
-		/** Pattern: .*\S.* */
 		DBInstanceIdentifier?: string | null;
-
-		/** Pattern: .*\S.* */
 		DBInstanceClass?: string | null;
 		DbInstancePort?: number | null;
-
-		/** Pattern: .*\S.* */
 		DbiResourceId?: string | null;
-
-		/** Pattern: .*\S.* */
 		DBName?: string | null;
 		DeletionProtection?: boolean | null;
 
 		/** Specifies the connection endpoint. */
 		Endpoint?: AwsRdsDbInstanceEndpoint;
-
-		/** Pattern: .*\S.* */
 		Engine?: string | null;
-
-		/** Pattern: .*\S.* */
 		EngineVersion?: string | null;
 		IAMDatabaseAuthenticationEnabled?: boolean | null;
-
-		/** Pattern: .*\S.* */
 		InstanceCreateTime?: string | null;
-
-		/** Pattern: .*\S.* */
 		KmsKeyId?: string | null;
 		PubliclyAccessible?: boolean | null;
 		StorageEncrypted?: boolean | null;
-
-		/** Pattern: .*\S.* */
 		TdeCredentialArn?: string | null;
 		VpcSecurityGroups?: Array<AwsRdsDbInstanceVpcSecurityGroup>;
 	}
 
 	/** Contains the details of an Amazon RDS DB instance. */
 	export interface AwsRdsDbInstanceDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		CACertificateIdentifier: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DBClusterIdentifier: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DBInstanceClass: FormControl<string | null | undefined>,
 		DbInstancePort: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DbiResourceId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DBName: FormControl<string | null | undefined>,
 		DeletionProtection: FormControl<boolean | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Engine: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		EngineVersion: FormControl<string | null | undefined>,
 		IAMDatabaseAuthenticationEnabled: FormControl<boolean | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		InstanceCreateTime: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KmsKeyId: FormControl<string | null | undefined>,
 		PubliclyAccessible: FormControl<boolean | null | undefined>,
 		StorageEncrypted: FormControl<boolean | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		TdeCredentialArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsRdsDbInstanceDetailsFormGroup() {
@@ -2592,27 +1882,15 @@ export namespace MyNS {
 
 	/** An AWS Identity and Access Management (IAM) role associated with the DB instance. */
 	export interface AwsRdsDbInstanceAssociatedRole {
-
-		/** Pattern: .*\S.* */
 		RoleArn?: string | null;
-
-		/** Pattern: .*\S.* */
 		FeatureName?: string | null;
-
-		/** Pattern: .*\S.* */
 		Status?: string | null;
 	}
 
 	/** An AWS Identity and Access Management (IAM) role associated with the DB instance. */
 	export interface AwsRdsDbInstanceAssociatedRoleFormProperties {
-
-		/** Pattern: .*\S.* */
 		RoleArn: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		FeatureName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Status: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsRdsDbInstanceAssociatedRoleFormGroup() {
@@ -2627,23 +1905,15 @@ export namespace MyNS {
 
 	/** Specifies the connection endpoint. */
 	export interface AwsRdsDbInstanceEndpoint {
-
-		/** Pattern: .*\S.* */
 		Address?: string | null;
 		Port?: number | null;
-
-		/** Pattern: .*\S.* */
 		HostedZoneId?: string | null;
 	}
 
 	/** Specifies the connection endpoint. */
 	export interface AwsRdsDbInstanceEndpointFormProperties {
-
-		/** Pattern: .*\S.* */
 		Address: FormControl<string | null | undefined>,
 		Port: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		HostedZoneId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsRdsDbInstanceEndpointFormGroup() {
@@ -2658,21 +1928,13 @@ export namespace MyNS {
 
 	/** A VPC security groups that the DB instance belongs to. */
 	export interface AwsRdsDbInstanceVpcSecurityGroup {
-
-		/** Pattern: .*\S.* */
 		VpcSecurityGroupId?: string | null;
-
-		/** Pattern: .*\S.* */
 		Status?: string | null;
 	}
 
 	/** A VPC security groups that the DB instance belongs to. */
 	export interface AwsRdsDbInstanceVpcSecurityGroupFormProperties {
-
-		/** Pattern: .*\S.* */
 		VpcSecurityGroupId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Status: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsRdsDbInstanceVpcSecurityGroupFormGroup() {
@@ -2686,28 +1948,16 @@ export namespace MyNS {
 
 	/** A wrapper type for the topic's Amazon Resource Name (ARN). */
 	export interface AwsSnsTopicDetails {
-
-		/** Pattern: .*\S.* */
 		KmsMasterKeyId?: string | null;
 		Subscription?: Array<AwsSnsTopicSubscription>;
-
-		/** Pattern: .*\S.* */
 		TopicName?: string | null;
-
-		/** Pattern: .*\S.* */
 		Owner?: string | null;
 	}
 
 	/** A wrapper type for the topic's Amazon Resource Name (ARN). */
 	export interface AwsSnsTopicDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		KmsMasterKeyId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		TopicName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Owner: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsSnsTopicDetailsFormGroup() {
@@ -2722,21 +1972,13 @@ export namespace MyNS {
 
 	/** A wrapper type for the attributes of an Amazon SNS subscription. */
 	export interface AwsSnsTopicSubscription {
-
-		/** Pattern: .*\S.* */
 		Endpoint?: string | null;
-
-		/** Pattern: .*\S.* */
 		Protocol?: string | null;
 	}
 
 	/** A wrapper type for the attributes of an Amazon SNS subscription. */
 	export interface AwsSnsTopicSubscriptionFormProperties {
-
-		/** Pattern: .*\S.* */
 		Endpoint: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Protocol: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsSnsTopicSubscriptionFormGroup() {
@@ -2751,28 +1993,16 @@ export namespace MyNS {
 	/** Data about a queue. */
 	export interface AwsSqsQueueDetails {
 		KmsDataKeyReusePeriodSeconds?: number | null;
-
-		/** Pattern: .*\S.* */
 		KmsMasterKeyId?: string | null;
-
-		/** Pattern: .*\S.* */
 		QueueName?: string | null;
-
-		/** Pattern: .*\S.* */
 		DeadLetterTargetArn?: string | null;
 	}
 
 	/** Data about a queue. */
 	export interface AwsSqsQueueDetailsFormProperties {
 		KmsDataKeyReusePeriodSeconds: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		KmsMasterKeyId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		QueueName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DeadLetterTargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsSqsQueueDetailsFormGroup() {
@@ -2788,28 +2018,16 @@ export namespace MyNS {
 
 	/** Details about a WAF WebACL. */
 	export interface AwsWafWebAclDetails {
-
-		/** Pattern: .*\S.* */
 		Name?: string | null;
-
-		/** Pattern: .*\S.* */
 		DefaultAction?: string | null;
 		Rules?: Array<AwsWafWebAclRule>;
-
-		/** Pattern: .*\S.* */
 		WebAclId?: string | null;
 	}
 
 	/** Details about a WAF WebACL. */
 	export interface AwsWafWebAclDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DefaultAction: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		WebAclId: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsWafWebAclDetailsFormGroup() {
@@ -2832,22 +2050,14 @@ export namespace MyNS {
 		/** Details about an override action for a rule. */
 		OverrideAction?: WafOverrideAction;
 		Priority?: number | null;
-
-		/** Pattern: .*\S.* */
 		RuleId?: string | null;
-
-		/** Pattern: .*\S.* */
 		Type?: string | null;
 	}
 
 	/** Details for a rule in a WAF WebACL. */
 	export interface AwsWafWebAclRuleFormProperties {
 		Priority: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		RuleId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsWafWebAclRuleFormGroup() {
@@ -2862,15 +2072,11 @@ export namespace MyNS {
 
 	/** Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.  */
 	export interface WafAction {
-
-		/** Pattern: .*\S.* */
 		Type?: string | null;
 	}
 
 	/** Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.  */
 	export interface WafActionFormProperties {
-
-		/** Pattern: .*\S.* */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateWafActionFormGroup() {
@@ -2883,15 +2089,11 @@ export namespace MyNS {
 
 	/** Details about a rule to exclude from a rule group. */
 	export interface WafExcludedRule {
-
-		/** Pattern: .*\S.* */
 		RuleId?: string | null;
 	}
 
 	/** Details about a rule to exclude from a rule group. */
 	export interface WafExcludedRuleFormProperties {
-
-		/** Pattern: .*\S.* */
 		RuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateWafExcludedRuleFormGroup() {
@@ -2904,15 +2106,11 @@ export namespace MyNS {
 
 	/** Details about an override action for a rule. */
 	export interface WafOverrideAction {
-
-		/** Pattern: .*\S.* */
 		Type?: string | null;
 	}
 
 	/** Details about an override action for a rule. */
 	export interface WafOverrideActionFormProperties {
-
-		/** Pattern: .*\S.* */
 		Type: FormControl<string | null | undefined>,
 	}
 	export function CreateWafOverrideActionFormGroup() {
@@ -2925,33 +2123,17 @@ export namespace MyNS {
 
 	/** Container details related to a finding. */
 	export interface ContainerDetails {
-
-		/** Pattern: .*\S.* */
 		Name?: string | null;
-
-		/** Pattern: .*\S.* */
 		ImageId?: string | null;
-
-		/** Pattern: .*\S.* */
 		ImageName?: string | null;
-
-		/** Pattern: .*\S.* */
 		LaunchedAt?: string | null;
 	}
 
 	/** Container details related to a finding. */
 	export interface ContainerDetailsFormProperties {
-
-		/** Pattern: .*\S.* */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ImageId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ImageName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		LaunchedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateContainerDetailsFormGroup() {
@@ -2989,26 +2171,16 @@ export namespace MyNS {
 	/** Provides additional context for the value of <code>Compliance.Status</code>. */
 	export interface StatusReason {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ReasonCode: string;
-
-		/** Pattern: .*\S.* */
 		Description?: string | null;
 	}
 
 	/** Provides additional context for the value of <code>Compliance.Status</code>. */
 	export interface StatusReasonFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ReasonCode: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateStatusReasonFormGroup() {
@@ -3048,32 +2220,20 @@ export namespace MyNS {
 	/** Details about a related finding. */
 	export interface RelatedFinding {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: string;
 	}
 
 	/** Details about a related finding. */
 	export interface RelatedFindingFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateRelatedFindingFormGroup() {
@@ -3088,44 +2248,26 @@ export namespace MyNS {
 	/** A user-defined note added to a finding. */
 	export interface Note {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Text: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedBy: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedAt: string;
 	}
 
 	/** A user-defined note added to a finding. */
 	export interface NoteFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Text: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedBy: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateNoteFormGroup() {
@@ -3157,32 +2299,20 @@ export namespace MyNS {
 	/** Identifies a finding to update using <code>BatchUpdateFindings</code>. */
 	export interface AwsSecurityFindingIdentifier {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: string;
 	}
 
 	/** Identifies a finding to update using <code>BatchUpdateFindings</code>. */
 	export interface AwsSecurityFindingIdentifierFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsSecurityFindingIdentifierFormGroup() {
@@ -3203,32 +2333,20 @@ export namespace MyNS {
 		 */
 		FindingIdentifier: AwsSecurityFindingIdentifier;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorCode: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorMessage: string;
 	}
 
 	/** A finding from a <code>BatchUpdateFindings</code> request that Security Hub was unable to update. */
 	export interface BatchUpdateFindingsUnprocessedFindingFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorCode: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ErrorMessage: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchUpdateFindingsUnprocessedFindingFormGroup() {
@@ -3241,18 +2359,12 @@ export namespace MyNS {
 
 	export interface CreateActionTargetResponse {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ActionTargetArn: string;
 	}
 	export interface CreateActionTargetResponseFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ActionTargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateActionTargetResponseFormGroup() {
@@ -3274,18 +2386,12 @@ export namespace MyNS {
 
 	export interface CreateInsightResponse {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: string;
 	}
 	export interface CreateInsightResponseFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInsightResponseFormGroup() {
@@ -3298,16 +2404,12 @@ export namespace MyNS {
 
 	/** A string filter for querying findings. */
 	export interface StringFilter {
-
-		/** Pattern: .*\S.* */
 		Value?: string | null;
 		Comparison?: StringFilterComparison | null;
 	}
 
 	/** A string filter for querying findings. */
 	export interface StringFilterFormProperties {
-
-		/** Pattern: .*\S.* */
 		Value: FormControl<string | null | undefined>,
 		Comparison: FormControl<StringFilterComparison | null | undefined>,
 	}
@@ -3324,11 +2426,7 @@ export namespace MyNS {
 
 	/** A date filter for querying findings. */
 	export interface DateFilter {
-
-		/** Pattern: .*\S.* */
 		Start?: string | null;
-
-		/** Pattern: .*\S.* */
 		End?: string | null;
 
 		/** A date range for the date filter. */
@@ -3337,11 +2435,7 @@ export namespace MyNS {
 
 	/** A date filter for querying findings. */
 	export interface DateFilterFormProperties {
-
-		/** Pattern: .*\S.* */
 		Start: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		End: FormControl<string | null | undefined>,
 	}
 	export function CreateDateFilterFormGroup() {
@@ -3400,22 +2494,14 @@ export namespace MyNS {
 
 	/** The map filter for querying findings. */
 	export interface MapFilter {
-
-		/** Pattern: .*\S.* */
 		Key?: string | null;
-
-		/** Pattern: .*\S.* */
 		Value?: string | null;
 		Comparison?: MapFilterComparison | null;
 	}
 
 	/** The map filter for querying findings. */
 	export interface MapFilterFormProperties {
-
-		/** Pattern: .*\S.* */
 		Key: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Value: FormControl<string | null | undefined>,
 		Comparison: FormControl<MapFilterComparison | null | undefined>,
 	}
@@ -3433,15 +2519,11 @@ export namespace MyNS {
 
 	/** The IP filter for querying findings. */
 	export interface IpFilter {
-
-		/** Pattern: .*\S.* */
 		Cidr?: string | null;
 	}
 
 	/** The IP filter for querying findings. */
 	export interface IpFilterFormProperties {
-
-		/** Pattern: .*\S.* */
 		Cidr: FormControl<string | null | undefined>,
 	}
 	export function CreateIpFilterFormGroup() {
@@ -3454,15 +2536,11 @@ export namespace MyNS {
 
 	/** A keyword filter for querying findings. */
 	export interface KeywordFilter {
-
-		/** Pattern: .*\S.* */
 		Value?: string | null;
 	}
 
 	/** A keyword filter for querying findings. */
 	export interface KeywordFilterFormProperties {
-
-		/** Pattern: .*\S.* */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateKeywordFilterFormGroup() {
@@ -3487,16 +2565,12 @@ export namespace MyNS {
 	/** Details about the account that was not processed. */
 	export interface Result {
 		AccountId?: string | null;
-
-		/** Pattern: .*\S.* */
 		ProcessingResult?: string | null;
 	}
 
 	/** Details about the account that was not processed. */
 	export interface ResultFormProperties {
 		AccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ProcessingResult: FormControl<string | null | undefined>,
 	}
 	export function CreateResultFormGroup() {
@@ -3511,16 +2585,12 @@ export namespace MyNS {
 	/** The details of an AWS account. */
 	export interface AccountDetails {
 		AccountId?: string | null;
-
-		/** Pattern: .*\S.* */
 		Email?: string | null;
 	}
 
 	/** The details of an AWS account. */
 	export interface AccountDetailsFormProperties {
 		AccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Email: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountDetailsFormGroup() {
@@ -3544,18 +2614,12 @@ export namespace MyNS {
 
 	export interface DeleteActionTargetResponse {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ActionTargetArn: string;
 	}
 	export interface DeleteActionTargetResponseFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ActionTargetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteActionTargetResponseFormGroup() {
@@ -3567,18 +2631,12 @@ export namespace MyNS {
 
 	export interface DeleteInsightResponse {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: string;
 	}
 	export interface DeleteInsightResponseFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInsightResponseFormGroup() {
@@ -3630,44 +2688,26 @@ export namespace MyNS {
 	/** An <code>ActionTarget</code> object. */
 	export interface ActionTarget {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ActionTargetArn: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Description: string;
 	}
 
 	/** An <code>ActionTarget</code> object. */
 	export interface ActionTargetFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ActionTargetArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateActionTargetFormGroup() {
@@ -3680,19 +2720,11 @@ export namespace MyNS {
 	}
 
 	export interface DescribeHubResponse {
-
-		/** Pattern: .*\S.* */
 		HubArn?: string | null;
-
-		/** Pattern: .*\S.* */
 		SubscribedAt?: string | null;
 	}
 	export interface DescribeHubResponseFormProperties {
-
-		/** Pattern: .*\S.* */
 		HubArn: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		SubscribedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeHubResponseFormGroup() {
@@ -3723,58 +2755,28 @@ export namespace MyNS {
 	/** Contains details about a product. */
 	export interface Product {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: string;
-
-		/** Pattern: .*\S.* */
 		ProductName?: string | null;
-
-		/** Pattern: .*\S.* */
 		CompanyName?: string | null;
-
-		/** Pattern: .*\S.* */
 		Description?: string | null;
 		Categories?: Array<string>;
 		IntegrationTypes?: Array<IntegrationType>;
-
-		/** Pattern: .*\S.* */
 		MarketplaceUrl?: string | null;
-
-		/** Pattern: .*\S.* */
 		ActivationUrl?: string | null;
-
-		/** Pattern: .*\S.* */
 		ProductSubscriptionResourcePolicy?: string | null;
 	}
 
 	/** Contains details about a product. */
 	export interface ProductFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ProductName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CompanyName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Description: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		MarketplaceUrl: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ActivationUrl: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ProductSubscriptionResourcePolicy: FormControl<string | null | undefined>,
 	}
 	export function CreateProductFormGroup() {
@@ -3809,28 +2811,16 @@ export namespace MyNS {
 
 	/** Provides information about a specific standard. */
 	export interface Standard {
-
-		/** Pattern: .*\S.* */
 		StandardsArn?: string | null;
-
-		/** Pattern: .*\S.* */
 		Name?: string | null;
-
-		/** Pattern: .*\S.* */
 		Description?: string | null;
 		EnabledByDefault?: boolean | null;
 	}
 
 	/** Provides information about a specific standard. */
 	export interface StandardFormProperties {
-
-		/** Pattern: .*\S.* */
 		StandardsArn: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Description: FormControl<string | null | undefined>,
 		EnabledByDefault: FormControl<boolean | null | undefined>,
 	}
@@ -3861,25 +2851,13 @@ export namespace MyNS {
 
 	/** Details for an individual security standard control. */
 	export interface StandardsControl {
-
-		/** Pattern: .*\S.* */
 		StandardsControlArn?: string | null;
 		ControlStatus?: StandardsControlControlStatus | null;
-
-		/** Pattern: .*\S.* */
 		DisabledReason?: string | null;
 		ControlStatusUpdatedAt?: Date | null;
-
-		/** Pattern: .*\S.* */
 		ControlId?: string | null;
-
-		/** Pattern: .*\S.* */
 		Title?: string | null;
-
-		/** Pattern: .*\S.* */
 		Description?: string | null;
-
-		/** Pattern: .*\S.* */
 		RemediationUrl?: string | null;
 		SeverityRating?: StandardsControlSeverityRating | null;
 		RelatedRequirements?: Array<string>;
@@ -3887,25 +2865,13 @@ export namespace MyNS {
 
 	/** Details for an individual security standard control. */
 	export interface StandardsControlFormProperties {
-
-		/** Pattern: .*\S.* */
 		StandardsControlArn: FormControl<string | null | undefined>,
 		ControlStatus: FormControl<StandardsControlControlStatus | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DisabledReason: FormControl<string | null | undefined>,
 		ControlStatusUpdatedAt: FormControl<Date | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		ControlId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Title: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Description: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		RemediationUrl: FormControl<string | null | undefined>,
 		SeverityRating: FormControl<StandardsControlSeverityRating | null | undefined>,
 	}
@@ -3969,13 +2935,9 @@ export namespace MyNS {
 	}
 
 	export interface EnableImportFindingsForProductResponse {
-
-		/** Pattern: .*\S.* */
 		ProductSubscriptionArn?: string | null;
 	}
 	export interface EnableImportFindingsForProductResponseFormProperties {
-
-		/** Pattern: .*\S.* */
 		ProductSubscriptionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableImportFindingsForProductResponseFormGroup() {
@@ -4038,16 +3000,12 @@ export namespace MyNS {
 
 	/** A collection of finding attributes used to sort findings. */
 	export interface SortCriterion {
-
-		/** Pattern: .*\S.* */
 		Field?: string | null;
 		SortOrder?: SortCriterionSortOrder | null;
 	}
 
 	/** A collection of finding attributes used to sort findings. */
 	export interface SortCriterionFormProperties {
-
-		/** Pattern: .*\S.* */
 		Field: FormControl<string | null | undefined>,
 		SortOrder: FormControl<SortCriterionSortOrder | null | undefined>,
 	}
@@ -4081,16 +3039,10 @@ export namespace MyNS {
 	/** The insight results returned by the <code>GetInsightResults</code> operation. */
 	export interface InsightResults {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttribute: string;
 
 		/** Required */
@@ -4100,16 +3052,10 @@ export namespace MyNS {
 	/** The insight results returned by the <code>GetInsightResults</code> operation. */
 	export interface InsightResultsFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttribute: FormControl<string | null | undefined>,
 	}
 	export function CreateInsightResultsFormGroup() {
@@ -4124,10 +3070,7 @@ export namespace MyNS {
 	/** The insight result values returned by the <code>GetInsightResults</code> operation. */
 	export interface InsightResultValue {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttributeValue: string;
 
 		/** Required */
@@ -4137,10 +3080,7 @@ export namespace MyNS {
 	/** The insight result values returned by the <code>GetInsightResults</code> operation. */
 	export interface InsightResultValueFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttributeValue: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -4174,16 +3114,10 @@ export namespace MyNS {
 	/** Contains information about a Security Hub insight. */
 	export interface Insight {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: string;
 
 		/**
@@ -4192,32 +3126,20 @@ export namespace MyNS {
 		 */
 		Filters: AwsSecurityFindingFilters;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttribute: string;
 	}
 
 	/** Contains information about a Security Hub insight. */
 	export interface InsightFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InsightArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttribute: FormControl<string | null | undefined>,
 	}
 	export function CreateInsightFormGroup() {
@@ -4357,24 +3279,16 @@ export namespace MyNS {
 	/** Details about an invitation. */
 	export interface Invitation {
 		AccountId?: string | null;
-
-		/** Pattern: .*\S.* */
 		InvitationId?: string | null;
 		InvitedAt?: Date | null;
-
-		/** Pattern: .*\S.* */
 		MemberStatus?: string | null;
 	}
 
 	/** Details about an invitation. */
 	export interface InvitationFormProperties {
 		AccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		InvitationId: FormControl<string | null | undefined>,
 		InvitedAt: FormControl<Date | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		MemberStatus: FormControl<string | null | undefined>,
 	}
 	export function CreateInvitationFormGroup() {
@@ -4403,14 +3317,8 @@ export namespace MyNS {
 	/** The details about a member account. */
 	export interface Member {
 		AccountId?: string | null;
-
-		/** Pattern: .*\S.* */
 		Email?: string | null;
-
-		/** Pattern: .*\S.* */
 		MasterId?: string | null;
-
-		/** Pattern: .*\S.* */
 		MemberStatus?: string | null;
 		InvitedAt?: Date | null;
 		UpdatedAt?: Date | null;
@@ -4419,14 +3327,8 @@ export namespace MyNS {
 	/** The details about a member account. */
 	export interface MemberFormProperties {
 		AccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Email: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		MasterId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		MemberStatus: FormControl<string | null | undefined>,
 		InvitedAt: FormControl<Date | null | undefined>,
 		UpdatedAt: FormControl<Date | null | undefined>,
@@ -4470,13 +3372,9 @@ export namespace MyNS {
 
 	export interface ListInvitationsResponse {
 		Invitations?: Array<Invitation>;
-
-		/** Pattern: .*\S.* */
 		NextToken?: string | null;
 	}
 	export interface ListInvitationsResponseFormProperties {
-
-		/** Pattern: .*\S.* */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListInvitationsResponseFormGroup() {
@@ -4488,13 +3386,9 @@ export namespace MyNS {
 
 	export interface ListMembersResponse {
 		Members?: Array<Member>;
-
-		/** Pattern: .*\S.* */
 		NextToken?: string | null;
 	}
 	export interface ListMembersResponseFormProperties {
-
-		/** Pattern: .*\S.* */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListMembersResponseFormGroup() {
@@ -4587,30 +3481,18 @@ export namespace MyNS {
 
 	export interface AcceptInvitationRequest {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		MasterId: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InvitationId: string;
 	}
 	export interface AcceptInvitationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		MasterId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		InvitationId: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptInvitationRequestFormGroup() {
@@ -4682,32 +3564,20 @@ export namespace MyNS {
 	/** The updated note. */
 	export interface NoteUpdate {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Text: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedBy: string;
 	}
 
 	/** The updated note. */
 	export interface NoteUpdateFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Text: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UpdatedBy: FormControl<string | null | undefined>,
 	}
 	export function CreateNoteUpdateFormGroup() {
@@ -4826,42 +3696,24 @@ export namespace MyNS {
 
 	export interface CreateActionTargetRequest {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Description: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: string;
 	}
 	export interface CreateActionTargetRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Description: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateActionTargetRequestFormGroup() {
@@ -4875,10 +3727,7 @@ export namespace MyNS {
 
 	export interface CreateInsightRequest {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: string;
 
 		/**
@@ -4887,24 +3736,15 @@ export namespace MyNS {
 		 */
 		Filters: AwsSecurityFindingFilters;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttribute: string;
 	}
 	export interface CreateInsightRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		GroupByAttribute: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInsightRequestFormGroup() {
@@ -5093,18 +3933,12 @@ export namespace MyNS {
 
 	export interface EnableImportFindingsForProductRequest {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: string;
 	}
 	export interface EnableImportFindingsForProductRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		ProductArn: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableImportFindingsForProductRequestFormGroup() {
@@ -5343,19 +4177,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateActionTargetRequest {
-
-		/** Pattern: .*\S.* */
 		Name?: string | null;
-
-		/** Pattern: .*\S.* */
 		Description?: string | null;
 	}
 	export interface UpdateActionTargetRequestFormProperties {
-
-		/** Pattern: .*\S.* */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateActionTargetRequestFormGroup() {
@@ -5389,22 +4215,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateInsightRequest {
-
-		/** Pattern: .*\S.* */
 		Name?: string | null;
 
 		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
 		Filters?: AwsSecurityFindingFilters;
-
-		/** Pattern: .*\S.* */
 		GroupByAttribute?: string | null;
 	}
 	export interface UpdateInsightRequestFormProperties {
-
-		/** Pattern: .*\S.* */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		GroupByAttribute: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateInsightRequestFormGroup() {
@@ -5417,14 +4235,10 @@ export namespace MyNS {
 
 	export interface UpdateStandardsControlRequest {
 		ControlStatus?: StandardsControlControlStatus | null;
-
-		/** Pattern: .*\S.* */
 		DisabledReason?: string | null;
 	}
 	export interface UpdateStandardsControlRequestFormProperties {
 		ControlStatus: FormControl<StandardsControlControlStatus | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		DisabledReason: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStandardsControlRequestFormGroup() {
@@ -5858,14 +4672,12 @@ export namespace MyNS {
 		/**
 		 * The account ID of the Security Hub master account that sent the invitation.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		MasterId: string;
 
 		/**
 		 * The ID of the invitation sent from the Security Hub master account.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		InvitationId: string;
 	}
@@ -5874,14 +4686,12 @@ export namespace MyNS {
 		/**
 		 * The account ID of the Security Hub master account that sent the invitation.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		MasterId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the invitation sent from the Security Hub master account.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		InvitationId: FormControl<string | null | undefined>,
 	}
@@ -6021,19 +4831,11 @@ export namespace MyNS {
 	}
 
 	export interface BatchUpdateFindingsPatchBodyNote {
-
-		/** Pattern: .*\S.* */
 		Text?: string | null;
-
-		/** Pattern: .*\S.* */
 		UpdatedBy?: string | null;
 	}
 	export interface BatchUpdateFindingsPatchBodyNoteFormProperties {
-
-		/** Pattern: .*\S.* */
 		Text: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		UpdatedBy: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchUpdateFindingsPatchBodyNoteFormGroup() {
@@ -6091,21 +4893,18 @@ export namespace MyNS {
 		/**
 		 * The name of the custom action target.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
 		/**
 		 * The description for the custom action target.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Description: string;
 
 		/**
 		 * The ID for the custom action target.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Id: string;
 	}
@@ -6114,21 +4913,18 @@ export namespace MyNS {
 		/**
 		 * The name of the custom action target.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description for the custom action target.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID for the custom action target.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Id: FormControl<string | null | undefined>,
 	}
@@ -6146,7 +4942,6 @@ export namespace MyNS {
 		/**
 		 * The name of the custom insight to create.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -6159,7 +4954,6 @@ export namespace MyNS {
 		/**
 		 * The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		GroupByAttribute: string;
 	}
@@ -6168,14 +4962,12 @@ export namespace MyNS {
 		/**
 		 * The name of the custom insight to create.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		GroupByAttribute: FormControl<string | null | undefined>,
 	}
@@ -6312,30 +5104,18 @@ export namespace MyNS {
 
 	export interface UpdateActionTargetPatchBody {
 
-		/**
-		 * The updated name of the custom action target.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated name of the custom action target. */
 		Name?: string | null;
 
-		/**
-		 * The updated description for the custom action target.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated description for the custom action target. */
 		Description?: string | null;
 	}
 	export interface UpdateActionTargetPatchBodyFormProperties {
 
-		/**
-		 * The updated name of the custom action target.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated name of the custom action target. */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * The updated description for the custom action target.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated description for the custom action target. */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateActionTargetPatchBodyFormGroup() {
@@ -6348,33 +5128,21 @@ export namespace MyNS {
 
 	export interface UpdateInsightPatchBody {
 
-		/**
-		 * The updated name for the insight.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated name for the insight. */
 		Name?: string | null;
 
 		/** A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a subset of findings that are included in this insight. */
 		Filters?: UpdateInsightPatchBodyFilters;
 
-		/**
-		 * The updated <code>GroupBy</code> attribute that defines this insight.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated <code>GroupBy</code> attribute that defines this insight. */
 		GroupByAttribute?: string | null;
 	}
 	export interface UpdateInsightPatchBodyFormProperties {
 
-		/**
-		 * The updated name for the insight.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated name for the insight. */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * The updated <code>GroupBy</code> attribute that defines this insight.
-		 * Pattern: .*\S.*
-		 */
+		/** The updated <code>GroupBy</code> attribute that defines this insight. */
 		GroupByAttribute: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateInsightPatchBodyFormGroup() {
@@ -6585,7 +5353,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the product to enable the integration for.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		ProductArn: string;
 	}
@@ -6594,7 +5361,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the product to enable the integration for.
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		ProductArn: FormControl<string | null | undefined>,
 	}
@@ -6897,19 +5663,11 @@ export namespace MyNS {
 	}
 
 	export interface UpdateFindingsPatchBodyNote {
-
-		/** Pattern: .*\S.* */
 		Text?: string | null;
-
-		/** Pattern: .*\S.* */
 		UpdatedBy?: string | null;
 	}
 	export interface UpdateFindingsPatchBodyNoteFormProperties {
-
-		/** Pattern: .*\S.* */
 		Text: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		UpdatedBy: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFindingsPatchBodyNoteFormGroup() {
@@ -7012,10 +5770,7 @@ export namespace MyNS {
 		/** The updated status of the security standard control. */
 		ControlStatus?: StandardsControlControlStatus | null;
 
-		/**
-		 * A description of the reason why you are disabling a security standard control.
-		 * Pattern: .*\S.*
-		 */
+		/** A description of the reason why you are disabling a security standard control. */
 		DisabledReason?: string | null;
 	}
 	export interface UpdateStandardsControlPatchBodyFormProperties {
@@ -7023,10 +5778,7 @@ export namespace MyNS {
 		/** The updated status of the security standard control. */
 		ControlStatus: FormControl<StandardsControlControlStatus | null | undefined>,
 
-		/**
-		 * A description of the reason why you are disabling a security standard control.
-		 * Pattern: .*\S.*
-		 */
+		/** A description of the reason why you are disabling a security standard control. */
 		DisabledReason: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateStandardsControlPatchBodyFormGroup() {

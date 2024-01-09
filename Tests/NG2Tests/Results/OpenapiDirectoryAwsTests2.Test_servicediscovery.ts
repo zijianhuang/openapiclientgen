@@ -312,8 +312,6 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		Arn?: string | null;
-
-		/** Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$) */
 		Name?: string | null;
 
 		/** Max length: 64 */
@@ -345,8 +343,6 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		Arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$) */
 		Name: FormControl<string | null | undefined>,
 
 		/** Max length: 64 */
@@ -513,10 +509,7 @@ export namespace MyNS {
 
 	export interface CreateServiceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)
-		 */
+		/** Required */
 		Name: string;
 
 		/** Max length: 64 */
@@ -545,10 +538,7 @@ export namespace MyNS {
 	}
 	export interface CreateServiceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 
 		/** Max length: 64 */
@@ -766,8 +756,6 @@ export namespace MyNS {
 
 		/** Max length: 1024 */
 		NamespaceName?: string | null;
-
-		/** Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$) */
 		ServiceName?: string | null;
 		HealthStatus?: HttpInstanceSummaryHealthStatus | null;
 		Attributes?: Attributes;
@@ -781,8 +769,6 @@ export namespace MyNS {
 
 		/** Max length: 1024 */
 		NamespaceName: FormControl<string | null | undefined>,
-
-		/** Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$) */
 		ServiceName: FormControl<string | null | undefined>,
 		HealthStatus: FormControl<HttpInstanceSummaryHealthStatus | null | undefined>,
 	}
@@ -816,10 +802,7 @@ export namespace MyNS {
 		 */
 		NamespaceName: string;
 
-		/**
-		 * Required
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)
-		 */
+		/** Required */
 		ServiceName: string;
 
 		/**
@@ -838,10 +821,7 @@ export namespace MyNS {
 		 */
 		NamespaceName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)
-		 */
+		/** Required */
 		ServiceName: FormControl<string | null | undefined>,
 
 		/**
@@ -1674,8 +1654,6 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		Arn?: string | null;
-
-		/** Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$) */
 		Name?: string | null;
 
 		/** Max length: 1024 */
@@ -1701,8 +1679,6 @@ export namespace MyNS {
 
 		/** Max length: 255 */
 		Arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$) */
 		Name: FormControl<string | null | undefined>,
 
 		/** Max length: 1024 */

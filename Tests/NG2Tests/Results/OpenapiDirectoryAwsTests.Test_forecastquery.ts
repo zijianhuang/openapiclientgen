@@ -46,7 +46,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):forecast:.*:.*:.+
 		 */
 		ForecastArn: string;
 		StartDate?: string | null;
@@ -66,7 +65,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):forecast:.*:.*:.+
 		 */
 		ForecastArn: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
@@ -80,7 +78,7 @@ export namespace MyNS {
 	}
 	export function CreateQueryForecastRequestFormGroup() {
 		return new FormGroup<QueryForecastRequestFormProperties>({
-			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):forecast:.*:.*:.+')]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),

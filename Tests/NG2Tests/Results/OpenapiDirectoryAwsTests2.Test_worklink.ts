@@ -153,13 +153,9 @@ export namespace MyNS {
 	}
 
 	export interface DescribeAuditStreamConfigurationResponse {
-
-		/** Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$ */
 		AuditStreamArn?: string | null;
 	}
 	export interface DescribeAuditStreamConfigurationResponseFormProperties {
-
-		/** Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$ */
 		AuditStreamArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAuditStreamConfigurationResponseFormGroup() {
@@ -170,8 +166,6 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCompanyNetworkConfigurationResponse {
-
-		/** Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$ */
 		VpcId?: string | null;
 		SubnetIds?: Array<string>;
 
@@ -179,8 +173,6 @@ export namespace MyNS {
 		SecurityGroupIds?: Array<string>;
 	}
 	export interface DescribeCompanyNetworkConfigurationResponseFormProperties {
-
-		/** Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$ */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCompanyNetworkConfigurationResponseFormGroup() {
@@ -294,7 +286,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		DeviceCaCertificate?: string | null;
 	}
@@ -303,13 +294,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		DeviceCaCertificate: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDevicePolicyConfigurationResponseFormGroup() {
 		return new FormGroup<DescribeDevicePolicyConfigurationResponseFormProperties>({
-			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
+			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
 		});
 
 	}
@@ -319,7 +309,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName?: string | null;
 
@@ -327,8 +316,6 @@ export namespace MyNS {
 		DisplayName?: string | null;
 		CreatedTime?: Date | null;
 		DomainStatus?: DescribeDomainResponseDomainStatus | null;
-
-		/** Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)* */
 		AcmCertificateArn?: string | null;
 	}
 	export interface DescribeDomainResponseFormProperties {
@@ -336,7 +323,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -344,13 +330,11 @@ export namespace MyNS {
 		DisplayName: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
 		DomainStatus: FormControl<DescribeDomainResponseDomainStatus | null | undefined>,
-
-		/** Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)* */
 		AcmCertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDomainResponseFormGroup() {
 		return new FormGroup<DescribeDomainResponseFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			DomainStatus: new FormControl<DescribeDomainResponseDomainStatus | null | undefined>(undefined),
@@ -368,7 +352,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName?: string | null;
 
@@ -391,7 +374,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName: FormControl<string | null | undefined>,
 
@@ -410,7 +392,7 @@ export namespace MyNS {
 		return new FormGroup<DescribeFleetMetadataResponseFormProperties>({
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
-			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1)]),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1), Validators.pattern('^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
 			CompanyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
@@ -477,7 +459,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		Certificate?: string | null;
 		CreatedTime?: Date | null;
@@ -490,7 +471,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		Certificate: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
@@ -500,7 +480,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWebsiteCertificateAuthorityResponseFormGroup() {
 		return new FormGroup<DescribeWebsiteCertificateAuthorityResponseFormProperties>({
-			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
@@ -543,7 +523,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 	}
@@ -552,13 +531,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDevicesResponseFormGroup() {
 		return new FormGroup<ListDevicesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -599,7 +577,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 	}
@@ -608,13 +585,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListDomainsResponseFormGroup() {
 		return new FormGroup<ListDomainsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -627,7 +603,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 
@@ -648,7 +623,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -663,7 +637,7 @@ export namespace MyNS {
 	}
 	export function CreateDomainSummaryFormGroup() {
 		return new FormGroup<DomainSummaryFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			DomainStatus: new FormControl<DescribeDomainResponseDomainStatus | null | undefined>(undefined, [Validators.required]),
@@ -677,7 +651,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 	}
@@ -686,13 +659,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListFleetsResponseFormGroup() {
 		return new FormGroup<ListFleetsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -712,7 +684,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName?: string | null;
 
@@ -742,7 +713,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName: FormControl<string | null | undefined>,
 
@@ -761,7 +731,7 @@ export namespace MyNS {
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
-			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1)]),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1), Validators.pattern('^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			CompanyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			FleetStatus: new FormControl<DescribeFleetMetadataResponseFleetStatus | null | undefined>(undefined),
@@ -786,7 +756,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 	}
@@ -795,13 +764,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListWebsiteAuthorizationProvidersResponseFormGroup() {
 		return new FormGroup<ListWebsiteAuthorizationProvidersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -822,7 +790,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName?: string | null;
 		CreatedTime?: Date | null;
@@ -843,7 +810,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
@@ -852,7 +818,7 @@ export namespace MyNS {
 		return new FormGroup<WebsiteAuthorizationProviderSummaryFormProperties>({
 			AuthorizationProviderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			AuthorizationProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined, [Validators.required]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -864,7 +830,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 	}
@@ -873,13 +838,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListWebsiteCertificateAuthoritiesResponseFormGroup() {
 		return new FormGroup<ListWebsiteCertificateAuthoritiesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -1044,17 +1008,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 
 		/** Max length: 100 */
 		DisplayName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*
-		 */
+		/** Required */
 		AcmCertificateArn: string;
 	}
 	export interface AssociateDomainRequestFormProperties {
@@ -1070,23 +1030,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
 		/** Max length: 100 */
 		DisplayName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*
-		 */
+		/** Required */
 		AcmCertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateDomainRequestFormGroup() {
 		return new FormGroup<AssociateDomainRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			AcmCertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1110,7 +1066,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName?: string | null;
 	}
@@ -1129,7 +1084,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1137,7 +1091,7 @@ export namespace MyNS {
 		return new FormGroup<AssociateWebsiteAuthorizationProviderRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			AuthorizationProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined, [Validators.required]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -1155,7 +1109,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		Certificate: string;
 
@@ -1175,7 +1128,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		Certificate: FormControl<string | null | undefined>,
 
@@ -1185,7 +1137,7 @@ export namespace MyNS {
 	export function CreateAssociateWebsiteCertificateAuthorityRequestFormGroup() {
 		return new FormGroup<AssociateWebsiteCertificateAuthorityRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -1197,7 +1149,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName: string;
 
@@ -1212,7 +1163,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName: FormControl<string | null | undefined>,
 
@@ -1222,7 +1172,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateFleetRequestFormGroup() {
 		return new FormGroup<CreateFleetRequestFormProperties>({
-			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1)]),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1), Validators.pattern('^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1384,7 +1334,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -1401,14 +1350,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDomainRequestFormGroup() {
 		return new FormGroup<DescribeDomainRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -1522,7 +1470,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -1539,14 +1486,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateDomainRequestFormGroup() {
 		return new FormGroup<DisassociateDomainRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -1643,7 +1589,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -1662,7 +1607,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1672,7 +1616,7 @@ export namespace MyNS {
 	export function CreateListDevicesRequestFormGroup() {
 		return new FormGroup<ListDevicesRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -1690,7 +1634,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -1709,7 +1652,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1719,7 +1661,7 @@ export namespace MyNS {
 	export function CreateListDomainsRequestFormGroup() {
 		return new FormGroup<ListDomainsRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -1730,7 +1672,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -1742,7 +1683,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1751,7 +1691,7 @@ export namespace MyNS {
 	}
 	export function CreateListFleetsRequestFormGroup() {
 		return new FormGroup<ListFleetsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -1779,7 +1719,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -1798,7 +1737,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1808,7 +1746,7 @@ export namespace MyNS {
 	export function CreateListWebsiteAuthorizationProvidersRequestFormGroup() {
 		return new FormGroup<ListWebsiteAuthorizationProvidersRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -1829,7 +1767,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 	}
@@ -1848,7 +1785,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1856,7 +1792,7 @@ export namespace MyNS {
 		return new FormGroup<ListWebsiteCertificateAuthoritiesRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -1874,7 +1810,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -1891,14 +1826,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreDomainAccessRequestFormGroup() {
 		return new FormGroup<RestoreDomainAccessRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -1916,7 +1850,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -1933,14 +1866,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateRevokeDomainAccessRequestFormGroup() {
 		return new FormGroup<RevokeDomainAccessRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -2016,8 +1948,6 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		FleetArn: string;
-
-		/** Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$ */
 		AuditStreamArn?: string | null;
 	}
 	export interface UpdateAuditStreamConfigurationRequestFormProperties {
@@ -2028,8 +1958,6 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		FleetArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$ */
 		AuditStreamArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAuditStreamConfigurationRequestFormGroup() {
@@ -2049,10 +1977,7 @@ export namespace MyNS {
 		 */
 		FleetArn: string;
 
-		/**
-		 * Required
-		 * Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$
-		 */
+		/** Required */
 		VpcId: string;
 
 		/** Required */
@@ -2073,10 +1998,7 @@ export namespace MyNS {
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$
-		 */
+		/** Required */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCompanyNetworkConfigurationRequestFormGroup() {
@@ -2099,7 +2021,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32768
 		 * Min length: 1
-		 * Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		DeviceCaCertificate?: string | null;
 	}
@@ -2115,14 +2036,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 32768
 		 * Min length: 1
-		 * Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		DeviceCaCertificate: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDevicePolicyConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateDevicePolicyConfigurationRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(1)]),
+			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(1), Validators.pattern('(-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
 		});
 
 	}
@@ -2140,7 +2060,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 
@@ -2160,7 +2079,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2170,7 +2088,7 @@ export namespace MyNS {
 	export function CreateUpdateDomainMetadataRequestFormGroup() {
 		return new FormGroup<UpdateDomainMetadataRequestFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -2588,7 +2506,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 
@@ -2601,7 +2518,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of an issued ACM certificate that is valid for the domain being associated.
 		 * Required
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		AcmCertificateArn: string;
 	}
@@ -2620,7 +2536,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2633,14 +2548,13 @@ export namespace MyNS {
 		/**
 		 * The ARN of an issued ACM certificate that is valid for the domain being associated.
 		 * Required
-		 * Pattern: arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=/,.@-]+)*
 		 */
 		AcmCertificateArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateDomainPostBodyFormGroup() {
 		return new FormGroup<AssociateDomainPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			AcmCertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2667,7 +2581,6 @@ export namespace MyNS {
 		 * The domain name of the authorization provider. This applies only to SAML-based authorization providers.
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName?: string | null;
 	}
@@ -2691,7 +2604,6 @@ export namespace MyNS {
 		 * The domain name of the authorization provider. This applies only to SAML-based authorization providers.
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2699,7 +2611,7 @@ export namespace MyNS {
 		return new FormGroup<AssociateWebsiteAuthorizationProviderPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			AuthorizationProviderType: new FormControl<DescribeIdentityProviderConfigurationResponseIdentityProviderType | null | undefined>(undefined, [Validators.required]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -2719,7 +2631,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		Certificate: string;
 
@@ -2744,7 +2655,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		Certificate: FormControl<string | null | undefined>,
 
@@ -2757,7 +2667,7 @@ export namespace MyNS {
 	export function CreateAssociateWebsiteCertificateAuthorityPostBodyFormGroup() {
 		return new FormGroup<AssociateWebsiteCertificateAuthorityPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -2770,7 +2680,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName: string;
 
@@ -2793,7 +2702,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		 */
 		FleetName: FormControl<string | null | undefined>,
 
@@ -2811,7 +2719,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateFleetPostBodyFormGroup() {
 		return new FormGroup<CreateFleetPostBodyFormProperties>({
-			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1)]),
+			FleetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1), Validators.pattern('^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			OptimizeForEndUserLocation: new FormControl<boolean | null | undefined>(undefined),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -2986,7 +2894,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -3005,14 +2912,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeDomainPostBodyFormGroup() {
 		return new FormGroup<DescribeDomainPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -3130,7 +3036,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -3149,14 +3054,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateDomainPostBodyFormGroup() {
 		return new FormGroup<DisassociateDomainPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -3263,7 +3167,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -3287,7 +3190,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3300,7 +3202,7 @@ export namespace MyNS {
 	export function CreateListDevicesPostBodyFormGroup() {
 		return new FormGroup<ListDevicesPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -3320,7 +3222,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -3344,7 +3245,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3357,7 +3257,7 @@ export namespace MyNS {
 	export function CreateListDomainsPostBodyFormGroup() {
 		return new FormGroup<ListDomainsPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -3369,7 +3269,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -3385,7 +3284,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3397,7 +3295,7 @@ export namespace MyNS {
 	}
 	export function CreateListFleetsPostBodyFormGroup() {
 		return new FormGroup<ListFleetsPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -3440,7 +3338,6 @@ export namespace MyNS {
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 
@@ -3464,7 +3361,6 @@ export namespace MyNS {
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3477,7 +3373,7 @@ export namespace MyNS {
 	export function CreateListWebsiteAuthorizationProvidersPostBodyFormGroup() {
 		return new FormGroup<ListWebsiteAuthorizationProvidersPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -3503,7 +3399,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken?: string | null;
 	}
@@ -3527,7 +3422,6 @@ export namespace MyNS {
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 		 * Max length: 4096
 		 * Min length: 1
-		 * Pattern: [\w\-]+
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3535,7 +3429,7 @@ export namespace MyNS {
 		return new FormGroup<ListWebsiteCertificateAuthoritiesPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -3555,7 +3449,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -3574,14 +3467,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreDomainAccessPostBodyFormGroup() {
 		return new FormGroup<RestoreDomainAccessPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -3601,7 +3493,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 	}
@@ -3620,14 +3511,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateRevokeDomainAccessPostBodyFormGroup() {
 		return new FormGroup<RevokeDomainAccessPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -3686,10 +3576,7 @@ export namespace MyNS {
 		 */
 		FleetArn: string;
 
-		/**
-		 * The ARN of the Amazon Kinesis data stream that receives the audit events.
-		 * Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$
-		 */
+		/** The ARN of the Amazon Kinesis data stream that receives the audit events. */
 		AuditStreamArn?: string | null;
 	}
 	export interface UpdateAuditStreamConfigurationPostBodyFormProperties {
@@ -3702,10 +3589,7 @@ export namespace MyNS {
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
-		/**
-		 * The ARN of the Amazon Kinesis data stream that receives the audit events.
-		 * Pattern: ^arn:aws:kinesis:.+:[0-9]{12}:stream/AmazonWorkLink-.*$
-		 */
+		/** The ARN of the Amazon Kinesis data stream that receives the audit events. */
 		AuditStreamArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAuditStreamConfigurationPostBodyFormGroup() {
@@ -3729,7 +3613,6 @@ export namespace MyNS {
 		/**
 		 * The VPC with connectivity to associated websites.
 		 * Required
-		 * Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$
 		 */
 		VpcId: string;
 
@@ -3759,7 +3642,6 @@ export namespace MyNS {
 		/**
 		 * The VPC with connectivity to associated websites.
 		 * Required
-		 * Pattern: ^vpc-([0-9a-f]{8}|[0-9a-f]{17})$
 		 */
 		VpcId: FormControl<string | null | undefined>,
 	}
@@ -3785,7 +3667,6 @@ export namespace MyNS {
 		 * The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
 		 * Max length: 32768
 		 * Min length: 1
-		 * Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		DeviceCaCertificate?: string | null;
 	}
@@ -3803,14 +3684,13 @@ export namespace MyNS {
 		 * The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
 		 * Max length: 32768
 		 * Min length: 1
-		 * Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		 */
 		DeviceCaCertificate: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDevicePolicyConfigurationPostBodyFormGroup() {
 		return new FormGroup<UpdateDevicePolicyConfigurationPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(1)]),
+			DeviceCaCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(1), Validators.pattern('(-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
 		});
 
 	}
@@ -3830,7 +3710,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: string;
 
@@ -3855,7 +3734,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 253
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -3868,7 +3746,7 @@ export namespace MyNS {
 	export function CreateUpdateDomainMetadataPostBodyFormGroup() {
 		return new FormGroup<UpdateDomainMetadataPostBodyFormProperties>({
 			FleetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 

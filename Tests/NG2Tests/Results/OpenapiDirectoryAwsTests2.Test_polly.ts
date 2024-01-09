@@ -128,16 +128,12 @@ export namespace MyNS {
 	/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
 	export interface Lexicon {
 		Content?: string | null;
-
-		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name?: string | null;
 	}
 
 	/** Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>. */
 	export interface LexiconFormProperties {
 		Content: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateLexiconFormGroup() {
@@ -199,16 +195,12 @@ export namespace MyNS {
 	/** SynthesisTask object that provides information about a speech synthesis task. */
 	export interface SynthesisTask {
 		Engine?: Engine | null;
-
-		/** Pattern: ^[a-zA-Z0-9_-]{1,100}$ */
 		TaskId?: string | null;
 		TaskStatus?: SynthesisTaskTaskStatus | null;
 		TaskStatusReason?: string | null;
 		OutputUri?: string | null;
 		CreationTime?: Date | null;
 		RequestCharacters?: number | null;
-
-		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn?: string | null;
 
 		/** Maximum items: 5 */
@@ -226,16 +218,12 @@ export namespace MyNS {
 	/** SynthesisTask object that provides information about a speech synthesis task. */
 	export interface SynthesisTaskFormProperties {
 		Engine: FormControl<Engine | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9_-]{1,100}$ */
 		TaskId: FormControl<string | null | undefined>,
 		TaskStatus: FormControl<SynthesisTaskTaskStatus | null | undefined>,
 		TaskStatusReason: FormControl<string | null | undefined>,
 		OutputUri: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		RequestCharacters: FormControl<number | null | undefined>,
-
-		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn: FormControl<string | null | undefined>,
 		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
 		SampleRate: FormControl<string | null | undefined>,
@@ -319,8 +307,6 @@ export namespace MyNS {
 
 	/** Describes the content of the lexicon. */
 	export interface LexiconDescription {
-
-		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name?: string | null;
 
 		/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
@@ -329,8 +315,6 @@ export namespace MyNS {
 
 	/** Describes the content of the lexicon. */
 	export interface LexiconDescriptionFormProperties {
-
-		/** Pattern: [0-9A-Za-z]{1,20} */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateLexiconDescriptionFormGroup() {
@@ -655,17 +639,10 @@ export namespace MyNS {
 		/** Required */
 		OutputFormat: SynthesisTaskOutputFormat;
 
-		/**
-		 * Required
-		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
-		 */
+		/** Required */
 		OutputS3BucketName: string;
-
-		/** Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$ */
 		OutputS3KeyPrefix?: string | null;
 		SampleRate?: string | null;
-
-		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn?: string | null;
 
 		/** Maximum items: 4 */
@@ -685,17 +662,10 @@ export namespace MyNS {
 		/** Required */
 		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
-		 */
+		/** Required */
 		OutputS3BucketName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$ */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
 		SampleRate: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$ */
 		SnsTopicArn: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -921,23 +891,16 @@ export namespace MyNS {
 		/**
 		 * Amazon S3 bucket name to which the output file will be saved.
 		 * Required
-		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
 		 */
 		OutputS3BucketName: string;
 
-		/**
-		 * The Amazon S3 key prefix for the output speech file.
-		 * Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$
-		 */
+		/** The Amazon S3 key prefix for the output speech file. */
 		OutputS3KeyPrefix?: string | null;
 
 		/** <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p> */
 		SampleRate?: string | null;
 
-		/**
-		 * ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.
-		 * Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$
-		 */
+		/** ARN for the SNS topic optionally used for providing status notification for a speech synthesis task. */
 		SnsTopicArn?: string | null;
 
 		/**
@@ -978,23 +941,16 @@ export namespace MyNS {
 		/**
 		 * Amazon S3 bucket name to which the output file will be saved.
 		 * Required
-		 * Pattern: ^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$
 		 */
 		OutputS3BucketName: FormControl<string | null | undefined>,
 
-		/**
-		 * The Amazon S3 key prefix for the output speech file.
-		 * Pattern: ^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$
-		 */
+		/** The Amazon S3 key prefix for the output speech file. */
 		OutputS3KeyPrefix: FormControl<string | null | undefined>,
 
 		/** <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p> */
 		SampleRate: FormControl<string | null | undefined>,
 
-		/**
-		 * ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.
-		 * Pattern: ^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$
-		 */
+		/** ARN for the SNS topic optionally used for providing status notification for a speech synthesis task. */
 		SnsTopicArn: FormControl<string | null | undefined>,
 
 		/**

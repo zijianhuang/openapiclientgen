@@ -15,16 +15,10 @@ export namespace MyNS {
 
 	export interface AssociateDelegateToResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: string;
 
 		/**
@@ -36,16 +30,10 @@ export namespace MyNS {
 	}
 	export interface AssociateDelegateToResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -126,10 +114,7 @@ export namespace MyNS {
 
 	export interface AssociateMemberToGroupRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -148,10 +133,7 @@ export namespace MyNS {
 	}
 	export interface AssociateMemberToGroupRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -219,10 +201,7 @@ export namespace MyNS {
 
 	export interface CreateAliasRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -236,16 +215,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Alias: string;
 	}
 	export interface CreateAliasRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -259,7 +234,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Alias: FormControl<string | null | undefined>,
 	}
@@ -267,7 +241,7 @@ export namespace MyNS {
 		return new FormGroup<CreateAliasRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EntityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(12)]),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1)]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
 		});
 
 	}
@@ -337,40 +311,32 @@ export namespace MyNS {
 
 	export interface CreateGroupRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Name: string;
 	}
 	export interface CreateGroupRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGroupRequestFormGroup() {
 		return new FormGroup<CreateGroupRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]+')]),
 		});
 
 	}
@@ -396,13 +362,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateResourceResponse {
-
-		/** Pattern: ^r-[0-9a-f]{32}$ */
 		ResourceId?: string | null;
 	}
 	export interface CreateResourceResponseFormProperties {
-
-		/** Pattern: ^r-[0-9a-f]{32}$ */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateResourceResponseFormGroup() {
@@ -414,17 +376,13 @@ export namespace MyNS {
 
 	export interface CreateResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
 		 * Required
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: string;
 
@@ -433,17 +391,13 @@ export namespace MyNS {
 	}
 	export interface CreateResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -453,7 +407,7 @@ export namespace MyNS {
 	export function CreateCreateResourceRequestFormGroup() {
 		return new FormGroup<CreateResourceRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(1), Validators.pattern('[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?')]),
 			Type: new FormControl<CreateResourceRequestType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -486,17 +440,13 @@ export namespace MyNS {
 
 	export interface CreateUserRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: string;
 
@@ -509,23 +459,18 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Password: string;
 	}
 	export interface CreateUserRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -538,16 +483,15 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[\u0020-\u00FF]+')]),
 		});
 
 	}
@@ -574,40 +518,32 @@ export namespace MyNS {
 
 	export interface DeleteAccessControlRuleRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: string;
 	}
 	export interface DeleteAccessControlRuleRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAccessControlRuleRequestFormGroup() {
 		return new FormGroup<DeleteAccessControlRuleRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 		});
 
 	}
@@ -624,10 +560,7 @@ export namespace MyNS {
 
 	export interface DeleteAliasRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -641,16 +574,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Alias: string;
 	}
 	export interface DeleteAliasRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -664,7 +593,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Alias: FormControl<string | null | undefined>,
 	}
@@ -672,7 +600,7 @@ export namespace MyNS {
 		return new FormGroup<DeleteAliasRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EntityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(12)]),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1)]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
 		});
 
 	}
@@ -689,10 +617,7 @@ export namespace MyNS {
 
 	export interface DeleteGroupRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -704,10 +629,7 @@ export namespace MyNS {
 	}
 	export interface DeleteGroupRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -737,10 +659,7 @@ export namespace MyNS {
 
 	export interface DeleteMailboxPermissionsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -759,10 +678,7 @@ export namespace MyNS {
 	}
 	export interface DeleteMailboxPermissionsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -800,30 +716,18 @@ export namespace MyNS {
 
 	export interface DeleteResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: string;
 	}
 	export interface DeleteResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteResourceRequestFormGroup() {
@@ -846,40 +750,32 @@ export namespace MyNS {
 
 	export interface DeleteRetentionPolicyRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Id: string;
 	}
 	export interface DeleteRetentionPolicyRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRetentionPolicyRequestFormGroup() {
 		return new FormGroup<DeleteRetentionPolicyRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 		});
 
 	}
@@ -896,10 +792,7 @@ export namespace MyNS {
 
 	export interface DeleteUserRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -911,10 +804,7 @@ export namespace MyNS {
 	}
 	export interface DeleteUserRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -944,10 +834,7 @@ export namespace MyNS {
 
 	export interface DeregisterFromWorkMailRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -959,10 +846,7 @@ export namespace MyNS {
 	}
 	export interface DeregisterFromWorkMailRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -991,14 +875,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email?: string | null;
 		State?: DescribeGroupResponseState | null;
@@ -1016,14 +898,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 		State: FormControl<DescribeGroupResponseState | null | undefined>,
@@ -1033,8 +913,8 @@ export namespace MyNS {
 	export function CreateDescribeGroupResponseFormGroup() {
 		return new FormGroup<DescribeGroupResponseFormProperties>({
 			GroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(12)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]+')]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
 			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
 			EnabledDate: new FormControl<Date | null | undefined>(undefined),
 			DisabledDate: new FormControl<Date | null | undefined>(undefined),
@@ -1046,10 +926,7 @@ export namespace MyNS {
 
 	export interface DescribeGroupRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -1061,10 +938,7 @@ export namespace MyNS {
 	}
 	export interface DescribeGroupRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -1083,14 +957,11 @@ export namespace MyNS {
 	}
 
 	export interface DescribeOrganizationResponse {
-
-		/** Pattern: ^m-[0-9a-f]{32}$ */
 		OrganizationId?: string | null;
 
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias?: string | null;
 
@@ -1117,14 +988,11 @@ export namespace MyNS {
 		ARN?: string | null;
 	}
 	export interface DescribeOrganizationResponseFormProperties {
-
-		/** Pattern: ^m-[0-9a-f]{32}$ */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias: FormControl<string | null | undefined>,
 
@@ -1153,7 +1021,7 @@ export namespace MyNS {
 	export function CreateDescribeOrganizationResponseFormGroup() {
 		return new FormGroup<DescribeOrganizationResponseFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1)]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
 			State: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			DirectoryType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
@@ -1167,18 +1035,12 @@ export namespace MyNS {
 
 	export interface DescribeOrganizationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 	}
 	export interface DescribeOrganizationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeOrganizationRequestFormGroup() {
@@ -1189,21 +1051,17 @@ export namespace MyNS {
 	}
 
 	export interface DescribeResourceResponse {
-
-		/** Pattern: ^r-[0-9a-f]{32}$ */
 		ResourceId?: string | null;
 
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email?: string | null;
 
 		/**
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name?: string | null;
 		Type?: CreateResourceRequestType | null;
@@ -1215,21 +1073,17 @@ export namespace MyNS {
 		DisabledDate?: Date | null;
 	}
 	export interface DescribeResourceResponseFormProperties {
-
-		/** Pattern: ^r-[0-9a-f]{32}$ */
 		ResourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<CreateResourceRequestType | null | undefined>,
@@ -1240,8 +1094,8 @@ export namespace MyNS {
 	export function CreateDescribeResourceResponseFormGroup() {
 		return new FormGroup<DescribeResourceResponseFormProperties>({
 			ResourceId: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1), Validators.pattern('[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?')]),
 			Type: new FormControl<CreateResourceRequestType | null | undefined>(undefined),
 			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
 			EnabledDate: new FormControl<Date | null | undefined>(undefined),
@@ -1275,30 +1129,18 @@ export namespace MyNS {
 
 	export interface DescribeResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: string;
 	}
 	export interface DescribeResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeResourceRequestFormGroup() {
@@ -1320,14 +1162,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email?: string | null;
 
@@ -1349,14 +1189,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 
@@ -1370,8 +1208,8 @@ export namespace MyNS {
 	export function CreateDescribeUserResponseFormGroup() {
 		return new FormGroup<DescribeUserResponseFormProperties>({
 			UserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(12)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?')]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
 			UserRole: new FormControl<DescribeUserResponseUserRole | null | undefined>(undefined),
@@ -1385,10 +1223,7 @@ export namespace MyNS {
 
 	export interface DescribeUserRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -1400,10 +1235,7 @@ export namespace MyNS {
 	}
 	export interface DescribeUserRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -1433,16 +1265,10 @@ export namespace MyNS {
 
 	export interface DisassociateDelegateFromResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: string;
 
 		/**
@@ -1454,16 +1280,10 @@ export namespace MyNS {
 	}
 	export interface DisassociateDelegateFromResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 
 		/**
@@ -1494,10 +1314,7 @@ export namespace MyNS {
 
 	export interface DisassociateMemberFromGroupRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -1516,10 +1333,7 @@ export namespace MyNS {
 	}
 	export interface DisassociateMemberFromGroupRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -1568,17 +1382,13 @@ export namespace MyNS {
 
 	export interface GetAccessControlEffectRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
 		 * Required
 		 * Max length: 15
 		 * Min length: 1
-		 * Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$
 		 */
 		IpAddress: string;
 
@@ -1586,7 +1396,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z]+
 		 */
 		Action: string;
 
@@ -1599,17 +1408,13 @@ export namespace MyNS {
 	}
 	export interface GetAccessControlEffectRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 15
 		 * Min length: 1
-		 * Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$
 		 */
 		IpAddress: FormControl<string | null | undefined>,
 
@@ -1617,7 +1422,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z]+
 		 */
 		Action: FormControl<string | null | undefined>,
 
@@ -1631,8 +1435,8 @@ export namespace MyNS {
 	export function CreateGetAccessControlEffectRequestFormGroup() {
 		return new FormGroup<GetAccessControlEffectRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			IpAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(1)]),
-			Action: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			IpAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(1), Validators.pattern('^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$')]),
+			Action: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z]+')]),
 			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(12)]),
 		});
 
@@ -1643,14 +1447,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Id?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name?: string | null;
 
@@ -1663,14 +1465,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Id: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1679,8 +1479,8 @@ export namespace MyNS {
 	}
 	export function CreateGetDefaultRetentionPolicyResponseFormGroup() {
 		return new FormGroup<GetDefaultRetentionPolicyResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -1733,18 +1533,12 @@ export namespace MyNS {
 
 	export interface GetDefaultRetentionPolicyRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 	}
 	export interface GetDefaultRetentionPolicyRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDefaultRetentionPolicyRequestFormGroup() {
@@ -1780,10 +1574,7 @@ export namespace MyNS {
 
 	export interface GetMailboxDetailsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -1795,10 +1586,7 @@ export namespace MyNS {
 	}
 	export interface GetMailboxDetailsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -1839,7 +1627,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name?: string | null;
 		Effect?: GetAccessControlEffectResponseEffect | null;
@@ -1847,7 +1634,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 0
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Description?: string | null;
 
@@ -1896,7 +1682,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 		Effect: FormControl<GetAccessControlEffectResponseEffect | null | undefined>,
@@ -1904,7 +1689,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 0
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Description: FormControl<string | null | undefined>,
 		DateCreated: FormControl<Date | null | undefined>,
@@ -1912,9 +1696,9 @@ export namespace MyNS {
 	}
 	export function CreateAccessControlRuleFormGroup() {
 		return new FormGroup<AccessControlRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 			Effect: new FormControl<GetAccessControlEffectResponseEffect | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0), Validators.pattern('[\u0020-\u00FF]+')]),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateModified: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1923,18 +1707,12 @@ export namespace MyNS {
 
 	export interface ListAccessControlRulesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 	}
 	export interface ListAccessControlRulesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreateListAccessControlRulesRequestFormGroup() {
@@ -1970,10 +1748,7 @@ export namespace MyNS {
 
 	export interface ListAliasesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -1997,10 +1772,7 @@ export namespace MyNS {
 	}
 	export interface ListAliasesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -2100,10 +1872,7 @@ export namespace MyNS {
 
 	export interface ListGroupMembersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -2127,10 +1896,7 @@ export namespace MyNS {
 	}
 	export interface ListGroupMembersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -2199,14 +1965,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Name?: string | null;
 		State?: DescribeGroupResponseState | null;
@@ -2226,14 +1990,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Name: FormControl<string | null | undefined>,
 		State: FormControl<DescribeGroupResponseState | null | undefined>,
@@ -2243,8 +2005,8 @@ export namespace MyNS {
 	export function CreateGroupFormGroup() {
 		return new FormGroup<GroupFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(12)]),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]+')]),
 			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
 			EnabledDate: new FormControl<Date | null | undefined>(undefined),
 			DisabledDate: new FormControl<Date | null | undefined>(undefined),
@@ -2254,10 +2016,7 @@ export namespace MyNS {
 
 	export interface ListGroupsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -2274,10 +2033,7 @@ export namespace MyNS {
 	}
 	export interface ListGroupsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -2368,10 +2124,7 @@ export namespace MyNS {
 
 	export interface ListMailboxPermissionsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -2395,10 +2148,7 @@ export namespace MyNS {
 	}
 	export interface ListMailboxPermissionsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -2457,14 +2207,11 @@ export namespace MyNS {
 
 	/** The representation of an organization. */
 	export interface OrganizationSummary {
-
-		/** Pattern: ^m-[0-9a-f]{32}$ */
 		OrganizationId?: string | null;
 
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias?: string | null;
 
@@ -2477,14 +2224,11 @@ export namespace MyNS {
 
 	/** The representation of an organization. */
 	export interface OrganizationSummaryFormProperties {
-
-		/** Pattern: ^m-[0-9a-f]{32}$ */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias: FormControl<string | null | undefined>,
 
@@ -2497,7 +2241,7 @@ export namespace MyNS {
 	export function CreateOrganizationSummaryFormGroup() {
 		return new FormGroup<OrganizationSummaryFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1)]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			State: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
@@ -2600,10 +2344,7 @@ export namespace MyNS {
 
 	export interface ListResourceDelegatesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -2627,10 +2368,7 @@ export namespace MyNS {
 	}
 	export interface ListResourceDelegatesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -2699,14 +2437,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email?: string | null;
 
 		/**
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name?: string | null;
 		Type?: CreateResourceRequestType | null;
@@ -2727,14 +2463,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<CreateResourceRequestType | null | undefined>,
@@ -2745,8 +2479,8 @@ export namespace MyNS {
 	export function CreateResourceFormGroup() {
 		return new FormGroup<ResourceFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(12)]),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1), Validators.pattern('[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?')]),
 			Type: new FormControl<CreateResourceRequestType | null | undefined>(undefined),
 			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
 			EnabledDate: new FormControl<Date | null | undefined>(undefined),
@@ -2757,10 +2491,7 @@ export namespace MyNS {
 
 	export interface ListResourcesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -2777,10 +2508,7 @@ export namespace MyNS {
 	}
 	export interface ListResourcesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -2936,14 +2664,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name?: string | null;
 
@@ -2967,14 +2693,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2988,8 +2712,8 @@ export namespace MyNS {
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(12)]),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?')]),
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			State: new FormControl<DescribeGroupResponseState | null | undefined>(undefined),
 			UserRole: new FormControl<DescribeUserResponseUserRole | null | undefined>(undefined),
@@ -3001,10 +2725,7 @@ export namespace MyNS {
 
 	export interface ListUsersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -3021,10 +2742,7 @@ export namespace MyNS {
 	}
 	export interface ListUsersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -3064,7 +2782,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: string;
 
@@ -3075,7 +2792,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 0
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Description: string;
 
@@ -3115,10 +2831,7 @@ export namespace MyNS {
 		 */
 		NotUserIds?: Array<string>;
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 	}
 	export interface PutAccessControlRuleRequestFormProperties {
@@ -3127,7 +2840,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3138,21 +2850,17 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 0
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Description: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAccessControlRuleRequestFormGroup() {
 		return new FormGroup<PutAccessControlRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 			Effect: new FormControl<GetAccessControlEffectResponseEffect | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(0), Validators.pattern('[\u0020-\u00FF]+')]),
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3170,10 +2878,7 @@ export namespace MyNS {
 
 	export interface PutMailboxPermissionsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -3195,10 +2900,7 @@ export namespace MyNS {
 	}
 	export interface PutMailboxPermissionsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -3236,16 +2938,12 @@ export namespace MyNS {
 
 	export interface PutRetentionPolicyRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Id?: string | null;
 
@@ -3253,14 +2951,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: string;
 
-		/**
-		 * Max length: 256
-		 * Pattern: [\w\d\s\S\-!?=,.;:'_]+
-		 */
+		/** Max length: 256 */
 		Description?: string | null;
 
 		/** Required */
@@ -3268,16 +2962,12 @@ export namespace MyNS {
 	}
 	export interface PutRetentionPolicyRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Id: FormControl<string | null | undefined>,
 
@@ -3285,22 +2975,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 256
-		 * Pattern: [\w\d\s\S\-!?=,.;:'_]+
-		 */
+		/** Max length: 256 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRetentionPolicyRequestFormGroup() {
 		return new FormGroup<PutRetentionPolicyRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('[\w\d\s\S\-!?=,.;:\'_]+')]),
 		});
 
 	}
@@ -3317,10 +3003,7 @@ export namespace MyNS {
 
 	export interface RegisterToWorkMailRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -3334,16 +3017,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: string;
 	}
 	export interface RegisterToWorkMailRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -3357,7 +3036,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 	}
@@ -3365,7 +3043,7 @@ export namespace MyNS {
 		return new FormGroup<RegisterToWorkMailRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EntityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(12)]),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
 		});
 
 	}
@@ -3392,10 +3070,7 @@ export namespace MyNS {
 
 	export interface ResetPasswordRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -3408,16 +3083,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Password: string;
 	}
 	export interface ResetPasswordRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -3430,7 +3101,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Password: FormControl<string | null | undefined>,
 	}
@@ -3438,7 +3108,7 @@ export namespace MyNS {
 		return new FormGroup<ResetPasswordRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(12)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[\u0020-\u00FF]+')]),
 		});
 
 	}
@@ -3549,10 +3219,7 @@ export namespace MyNS {
 
 	export interface UpdateMailboxQuotaRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -3570,10 +3237,7 @@ export namespace MyNS {
 	}
 	export interface UpdateMailboxQuotaRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -3610,10 +3274,7 @@ export namespace MyNS {
 
 	export interface UpdatePrimaryEmailAddressRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
 		/**
@@ -3627,16 +3288,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: string;
 	}
 	export interface UpdatePrimaryEmailAddressRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
 		/**
@@ -3650,7 +3307,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 254
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		 */
 		Email: FormControl<string | null | undefined>,
 	}
@@ -3658,7 +3314,7 @@ export namespace MyNS {
 		return new FormGroup<UpdatePrimaryEmailAddressRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EntityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(12)]),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1)]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(254), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
 		});
 
 	}
@@ -3675,22 +3331,15 @@ export namespace MyNS {
 
 	export interface UpdateResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: string;
 
 		/**
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name?: string | null;
 
@@ -3699,22 +3348,15 @@ export namespace MyNS {
 	}
 	export interface UpdateResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^m-[0-9a-f]{32}$
-		 */
+		/** Required */
 		OrganizationId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^r-[0-9a-f]{32}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 20
 		 * Min length: 1
-		 * Pattern: [\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3722,7 +3364,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateResourceRequestFormProperties>({
 			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1), Validators.pattern('[\w\-.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z0-9]{2,})?')]),
 		});
 
 	}

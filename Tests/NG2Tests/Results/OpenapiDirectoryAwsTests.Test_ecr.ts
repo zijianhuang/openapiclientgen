@@ -18,8 +18,6 @@ export namespace MyNS {
 
 	/** An object representing an Amazon ECR image layer. */
 	export interface Layer {
-
-		/** Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+ */
 		layerDigest?: string | null;
 		layerAvailability?: LayerLayerAvailability | null;
 		layerSize?: number | null;
@@ -28,8 +26,6 @@ export namespace MyNS {
 
 	/** An object representing an Amazon ECR image layer. */
 	export interface LayerFormProperties {
-
-		/** Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+ */
 		layerDigest: FormControl<string | null | undefined>,
 		layerAvailability: FormControl<LayerLayerAvailability | null | undefined>,
 		layerSize: FormControl<number | null | undefined>,
@@ -83,15 +79,12 @@ export namespace MyNS {
 	export enum LayerFailureFailureCode { InvalidLayerDigest = 0, MissingLayerDigest = 1 }
 
 	export interface BatchCheckLayerAvailabilityRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -103,22 +96,19 @@ export namespace MyNS {
 		layerDigests: Array<string>;
 	}
 	export interface BatchCheckLayerAvailabilityRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchCheckLayerAvailabilityRequestFormGroup() {
 		return new FormGroup<BatchCheckLayerAvailabilityRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
@@ -228,15 +218,12 @@ export namespace MyNS {
 
 	/** Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>. */
 	export interface BatchDeleteImageRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -250,22 +237,19 @@ export namespace MyNS {
 
 	/** Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>. */
 	export interface BatchDeleteImageRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDeleteImageRequestFormGroup() {
 		return new FormGroup<BatchDeleteImageRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
@@ -285,14 +269,11 @@ export namespace MyNS {
 
 	/** An object representing an Amazon ECR image. */
 	export interface Image {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -309,14 +290,11 @@ export namespace MyNS {
 
 	/** An object representing an Amazon ECR image. */
 	export interface ImageFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -330,7 +308,7 @@ export namespace MyNS {
 	export function CreateImageFormGroup() {
 		return new FormGroup<ImageFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			imageManifest: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4194304), Validators.minLength(1)]),
 			imageManifestMediaType: new FormControl<string | null | undefined>(undefined),
 		});
@@ -338,15 +316,12 @@ export namespace MyNS {
 	}
 
 	export interface BatchGetImageRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -364,66 +339,49 @@ export namespace MyNS {
 		acceptedMediaTypes?: Array<string>;
 	}
 	export interface BatchGetImageRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchGetImageRequestFormGroup() {
 		return new FormGroup<BatchGetImageRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
 
 	export interface CompleteLayerUploadResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
-
-		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		uploadId?: string | null;
-
-		/** Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+ */
 		layerDigest?: string | null;
 	}
 	export interface CompleteLayerUploadResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		uploadId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+ */
 		layerDigest: FormControl<string | null | undefined>,
 	}
 	export function CreateCompleteLayerUploadResponseFormGroup() {
 		return new FormGroup<CompleteLayerUploadResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			uploadId: new FormControl<string | null | undefined>(undefined),
 			layerDigest: new FormControl<string | null | undefined>(undefined),
 		});
@@ -431,22 +389,16 @@ export namespace MyNS {
 	}
 
 	export interface CompleteLayerUploadRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
-		 */
+		/** Required */
 		uploadId: string;
 
 		/**
@@ -457,28 +409,22 @@ export namespace MyNS {
 		layerDigests: Array<string>;
 	}
 	export interface CompleteLayerUploadRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
-		 */
+		/** Required */
 		uploadId: FormControl<string | null | undefined>,
 	}
 	export function CreateCompleteLayerUploadRequestFormGroup() {
 		return new FormGroup<CompleteLayerUploadRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -551,14 +497,11 @@ export namespace MyNS {
 	/** An object representing a repository. */
 	export interface Repository {
 		repositoryArn?: string | null;
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 		repositoryUri?: string | null;
@@ -572,14 +515,11 @@ export namespace MyNS {
 	/** An object representing a repository. */
 	export interface RepositoryFormProperties {
 		repositoryArn: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		repositoryUri: FormControl<string | null | undefined>,
@@ -590,7 +530,7 @@ export namespace MyNS {
 		return new FormGroup<RepositoryFormProperties>({
 			repositoryArn: new FormControl<string | null | undefined>(undefined),
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			repositoryUri: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			imageTagMutability: new FormControl<RepositoryImageTagMutability | null | undefined>(undefined),
@@ -623,7 +563,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 		tags?: Array<Tag>;
@@ -638,14 +577,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		imageTagMutability: FormControl<RepositoryImageTagMutability | null | undefined>,
 	}
 	export function CreateCreateRepositoryRequestFormGroup() {
 		return new FormGroup<CreateRepositoryRequestFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			imageTagMutability: new FormControl<RepositoryImageTagMutability | null | undefined>(undefined),
 		});
 
@@ -712,14 +650,11 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLifecyclePolicyResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -731,14 +666,11 @@ export namespace MyNS {
 		lastEvaluatedAt?: Date | null;
 	}
 	export interface DeleteLifecyclePolicyResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -752,7 +684,7 @@ export namespace MyNS {
 	export function CreateDeleteLifecyclePolicyResponseFormGroup() {
 		return new FormGroup<DeleteLifecyclePolicyResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			lifecyclePolicyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30720), Validators.minLength(100)]),
 			lastEvaluatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -760,35 +692,29 @@ export namespace MyNS {
 	}
 
 	export interface DeleteLifecyclePolicyRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 	}
 	export interface DeleteLifecyclePolicyRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLifecyclePolicyRequestFormGroup() {
 		return new FormGroup<DeleteLifecyclePolicyRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
@@ -817,29 +743,23 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRepositoryRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 		force?: boolean | null;
 	}
 	export interface DeleteRepositoryRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		force: FormControl<boolean | null | undefined>,
@@ -847,7 +767,7 @@ export namespace MyNS {
 	export function CreateDeleteRepositoryRequestFormGroup() {
 		return new FormGroup<DeleteRepositoryRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -864,14 +784,11 @@ export namespace MyNS {
 	}
 
 	export interface DeleteRepositoryPolicyResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -882,14 +799,11 @@ export namespace MyNS {
 		policyText?: string | null;
 	}
 	export interface DeleteRepositoryPolicyResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -902,42 +816,36 @@ export namespace MyNS {
 	export function CreateDeleteRepositoryPolicyResponseFormGroup() {
 		return new FormGroup<DeleteRepositoryPolicyResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			policyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface DeleteRepositoryPolicyRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 	}
 	export interface DeleteRepositoryPolicyRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRepositoryPolicyRequestFormGroup() {
 		return new FormGroup<DeleteRepositoryPolicyRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
@@ -953,14 +861,11 @@ export namespace MyNS {
 	}
 
 	export interface DescribeImageScanFindingsResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -975,14 +880,11 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 	export interface DescribeImageScanFindingsResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -990,7 +892,7 @@ export namespace MyNS {
 	export function CreateDescribeImageScanFindingsResponseFormGroup() {
 		return new FormGroup<DescribeImageScanFindingsResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1127,15 +1029,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeImageScanFindingsRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -1153,15 +1052,12 @@ export namespace MyNS {
 		maxResults?: number | null;
 	}
 	export interface DescribeImageScanFindingsRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1175,7 +1071,7 @@ export namespace MyNS {
 	export function CreateDescribeImageScanFindingsRequestFormGroup() {
 		return new FormGroup<DescribeImageScanFindingsRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
@@ -1219,14 +1115,11 @@ export namespace MyNS {
 
 	/** An object that describes an image returned by a <a>DescribeImages</a> operation. */
 	export interface ImageDetail {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 		imageDigest?: string | null;
@@ -1243,14 +1136,11 @@ export namespace MyNS {
 
 	/** An object that describes an image returned by a <a>DescribeImages</a> operation. */
 	export interface ImageDetailFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		imageDigest: FormControl<string | null | undefined>,
@@ -1260,7 +1150,7 @@ export namespace MyNS {
 	export function CreateImageDetailFormGroup() {
 		return new FormGroup<ImageDetailFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			imageDigest: new FormControl<string | null | undefined>(undefined),
 			imageSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			imagePushedAt: new FormControl<Date | null | undefined>(undefined),
@@ -1290,15 +1180,12 @@ export namespace MyNS {
 	}
 
 	export interface DescribeImagesRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -1319,15 +1206,12 @@ export namespace MyNS {
 		filter?: DescribeImagesFilter;
 	}
 	export interface DescribeImagesRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1341,7 +1225,7 @@ export namespace MyNS {
 	export function CreateDescribeImagesRequestFormGroup() {
 		return new FormGroup<DescribeImagesRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
@@ -1382,8 +1266,6 @@ export namespace MyNS {
 	}
 
 	export interface DescribeRepositoriesRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
@@ -1400,8 +1282,6 @@ export namespace MyNS {
 		maxResults?: number | null;
 	}
 	export interface DescribeRepositoriesRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 
@@ -1434,8 +1314,6 @@ export namespace MyNS {
 
 	/** An object representing authorization data for an Amazon ECR registry. */
 	export interface AuthorizationData {
-
-		/** Pattern: ^\S+$ */
 		authorizationToken?: string | null;
 		expiresAt?: Date | null;
 		proxyEndpoint?: string | null;
@@ -1443,8 +1321,6 @@ export namespace MyNS {
 
 	/** An object representing authorization data for an Amazon ECR registry. */
 	export interface AuthorizationDataFormProperties {
-
-		/** Pattern: ^\S+$ */
 		authorizationToken: FormControl<string | null | undefined>,
 		expiresAt: FormControl<Date | null | undefined>,
 		proxyEndpoint: FormControl<string | null | undefined>,
@@ -1476,14 +1352,10 @@ export namespace MyNS {
 
 	export interface GetDownloadUrlForLayerResponse {
 		downloadUrl?: string | null;
-
-		/** Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+ */
 		layerDigest?: string | null;
 	}
 	export interface GetDownloadUrlForLayerResponseFormProperties {
 		downloadUrl: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+ */
 		layerDigest: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDownloadUrlForLayerResponseFormGroup() {
@@ -1495,47 +1367,35 @@ export namespace MyNS {
 	}
 
 	export interface GetDownloadUrlForLayerRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+
-		 */
+		/** Required */
 		layerDigest: string;
 	}
 	export interface GetDownloadUrlForLayerRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9-_+.]+:[a-fA-F0-9]+
-		 */
+		/** Required */
 		layerDigest: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDownloadUrlForLayerRequestFormGroup() {
 		return new FormGroup<GetDownloadUrlForLayerRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			layerDigest: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1562,14 +1422,11 @@ export namespace MyNS {
 	}
 
 	export interface GetLifecyclePolicyResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -1581,14 +1438,11 @@ export namespace MyNS {
 		lastEvaluatedAt?: Date | null;
 	}
 	export interface GetLifecyclePolicyResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -1602,7 +1456,7 @@ export namespace MyNS {
 	export function CreateGetLifecyclePolicyResponseFormGroup() {
 		return new FormGroup<GetLifecyclePolicyResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			lifecyclePolicyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30720), Validators.minLength(100)]),
 			lastEvaluatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1610,48 +1464,39 @@ export namespace MyNS {
 	}
 
 	export interface GetLifecyclePolicyRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 	}
 	export interface GetLifecyclePolicyRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLifecyclePolicyRequestFormGroup() {
 		return new FormGroup<GetLifecyclePolicyRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
 
 	export interface GetLifecyclePolicyPreviewResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -1668,14 +1513,11 @@ export namespace MyNS {
 		summary?: LifecyclePolicyPreviewSummary;
 	}
 	export interface GetLifecyclePolicyPreviewResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -1690,7 +1532,7 @@ export namespace MyNS {
 	export function CreateGetLifecyclePolicyPreviewResponseFormGroup() {
 		return new FormGroup<GetLifecyclePolicyPreviewResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			lifecyclePolicyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30720), Validators.minLength(100)]),
 			status: new FormControl<GetLifecyclePolicyPreviewResponseStatus | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -1772,15 +1614,12 @@ export namespace MyNS {
 	}
 
 	export interface GetLifecyclePolicyPreviewRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -1801,15 +1640,12 @@ export namespace MyNS {
 		filter?: LifecyclePolicyPreviewFilter;
 	}
 	export interface GetLifecyclePolicyPreviewRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1823,7 +1659,7 @@ export namespace MyNS {
 	export function CreateGetLifecyclePolicyPreviewRequestFormGroup() {
 		return new FormGroup<GetLifecyclePolicyPreviewRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -1858,14 +1694,11 @@ export namespace MyNS {
 	}
 
 	export interface GetRepositoryPolicyResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -1876,14 +1709,11 @@ export namespace MyNS {
 		policyText?: string | null;
 	}
 	export interface GetRepositoryPolicyResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -1896,57 +1726,47 @@ export namespace MyNS {
 	export function CreateGetRepositoryPolicyResponseFormGroup() {
 		return new FormGroup<GetRepositoryPolicyResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			policyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface GetRepositoryPolicyRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 	}
 	export interface GetRepositoryPolicyRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRepositoryPolicyRequestFormGroup() {
 		return new FormGroup<GetRepositoryPolicyRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
 
 	export interface InitiateLayerUploadResponse {
-
-		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		uploadId?: string | null;
 
 		/** Minimum: 0 */
 		partSize?: number | null;
 	}
 	export interface InitiateLayerUploadResponseFormProperties {
-
-		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		uploadId: FormControl<string | null | undefined>,
 
 		/** Minimum: 0 */
@@ -1961,35 +1781,29 @@ export namespace MyNS {
 	}
 
 	export interface InitiateLayerUploadRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 	}
 	export interface InitiateLayerUploadRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateInitiateLayerUploadRequestFormGroup() {
 		return new FormGroup<InitiateLayerUploadRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
@@ -2014,15 +1828,12 @@ export namespace MyNS {
 	}
 
 	export interface ListImagesRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 		nextToken?: string | null;
@@ -2037,15 +1848,12 @@ export namespace MyNS {
 		filter?: ListImagesFilter;
 	}
 	export interface ListImagesRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -2059,7 +1867,7 @@ export namespace MyNS {
 	export function CreateListImagesRequestFormGroup() {
 		return new FormGroup<ListImagesRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
@@ -2125,15 +1933,12 @@ export namespace MyNS {
 	}
 
 	export interface PutImageRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -2152,15 +1957,12 @@ export namespace MyNS {
 		imageTag?: string | null;
 	}
 	export interface PutImageRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2181,7 +1983,7 @@ export namespace MyNS {
 	export function CreatePutImageRequestFormGroup() {
 		return new FormGroup<PutImageRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			imageManifest: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4194304), Validators.minLength(1)]),
 			imageManifestMediaType: new FormControl<string | null | undefined>(undefined),
 			imageTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
@@ -2220,14 +2022,11 @@ export namespace MyNS {
 	}
 
 	export interface PutImageScanningConfigurationResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -2235,35 +2034,29 @@ export namespace MyNS {
 		imageScanningConfiguration?: ImageScanningConfiguration;
 	}
 	export interface PutImageScanningConfigurationResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutImageScanningConfigurationResponseFormGroup() {
 		return new FormGroup<PutImageScanningConfigurationResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
 
 	export interface PutImageScanningConfigurationRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -2274,48 +2067,39 @@ export namespace MyNS {
 		imageScanningConfiguration: ImageScanningConfiguration;
 	}
 	export interface PutImageScanningConfigurationRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutImageScanningConfigurationRequestFormGroup() {
 		return new FormGroup<PutImageScanningConfigurationRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
 
 	export interface PutImageTagMutabilityResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 		imageTagMutability?: RepositoryImageTagMutability | null;
 	}
 	export interface PutImageTagMutabilityResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		imageTagMutability: FormControl<RepositoryImageTagMutability | null | undefined>,
@@ -2323,22 +2107,19 @@ export namespace MyNS {
 	export function CreatePutImageTagMutabilityResponseFormGroup() {
 		return new FormGroup<PutImageTagMutabilityResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			imageTagMutability: new FormControl<RepositoryImageTagMutability | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PutImageTagMutabilityRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -2346,15 +2127,12 @@ export namespace MyNS {
 		imageTagMutability: RepositoryImageTagMutability;
 	}
 	export interface PutImageTagMutabilityRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2364,21 +2142,18 @@ export namespace MyNS {
 	export function CreatePutImageTagMutabilityRequestFormGroup() {
 		return new FormGroup<PutImageTagMutabilityRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			imageTagMutability: new FormControl<RepositoryImageTagMutability | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface PutLifecyclePolicyResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -2389,14 +2164,11 @@ export namespace MyNS {
 		lifecyclePolicyText?: string | null;
 	}
 	export interface PutLifecyclePolicyResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2409,22 +2181,19 @@ export namespace MyNS {
 	export function CreatePutLifecyclePolicyResponseFormGroup() {
 		return new FormGroup<PutLifecyclePolicyResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			lifecyclePolicyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30720), Validators.minLength(100)]),
 		});
 
 	}
 
 	export interface PutLifecyclePolicyRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -2436,15 +2205,12 @@ export namespace MyNS {
 		lifecyclePolicyText: string;
 	}
 	export interface PutLifecyclePolicyRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2458,21 +2224,18 @@ export namespace MyNS {
 	export function CreatePutLifecyclePolicyRequestFormGroup() {
 		return new FormGroup<PutLifecyclePolicyRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			lifecyclePolicyText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30720), Validators.minLength(100)]),
 		});
 
 	}
 
 	export interface SetRepositoryPolicyResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -2483,14 +2246,11 @@ export namespace MyNS {
 		policyText?: string | null;
 	}
 	export interface SetRepositoryPolicyResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2503,22 +2263,19 @@ export namespace MyNS {
 	export function CreateSetRepositoryPolicyResponseFormGroup() {
 		return new FormGroup<SetRepositoryPolicyResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			policyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240), Validators.minLength(0)]),
 		});
 
 	}
 
 	export interface SetRepositoryPolicyRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -2531,15 +2288,12 @@ export namespace MyNS {
 		force?: boolean | null;
 	}
 	export interface SetRepositoryPolicyRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2554,7 +2308,7 @@ export namespace MyNS {
 	export function CreateSetRepositoryPolicyRequestFormGroup() {
 		return new FormGroup<SetRepositoryPolicyRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			policyText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(0)]),
 			force: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2562,14 +2316,11 @@ export namespace MyNS {
 	}
 
 	export interface StartImageScanResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -2580,35 +2331,29 @@ export namespace MyNS {
 		imageScanStatus?: ImageScanStatus;
 	}
 	export interface StartImageScanResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartImageScanResponseFormGroup() {
 		return new FormGroup<StartImageScanResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
 
 	export interface StartImageScanRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -2619,22 +2364,19 @@ export namespace MyNS {
 		imageId: ImageIdentifier;
 	}
 	export interface StartImageScanRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartImageScanRequestFormGroup() {
 		return new FormGroup<StartImageScanRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 		});
 
 	}
@@ -2650,14 +2392,11 @@ export namespace MyNS {
 	}
 
 	export interface StartLifecyclePolicyPreviewResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
 
@@ -2669,14 +2408,11 @@ export namespace MyNS {
 		status?: GetLifecyclePolicyPreviewResponseStatus | null;
 	}
 	export interface StartLifecyclePolicyPreviewResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2690,7 +2426,7 @@ export namespace MyNS {
 	export function CreateStartLifecyclePolicyPreviewResponseFormGroup() {
 		return new FormGroup<StartLifecyclePolicyPreviewResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			lifecyclePolicyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30720), Validators.minLength(100)]),
 			status: new FormControl<GetLifecyclePolicyPreviewResponseStatus | null | undefined>(undefined),
 		});
@@ -2698,15 +2434,12 @@ export namespace MyNS {
 	}
 
 	export interface StartLifecyclePolicyPreviewRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
@@ -2717,15 +2450,12 @@ export namespace MyNS {
 		lifecyclePolicyText?: string | null;
 	}
 	export interface StartLifecyclePolicyPreviewRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2738,7 +2468,7 @@ export namespace MyNS {
 	export function CreateStartLifecyclePolicyPreviewRequestFormGroup() {
 		return new FormGroup<StartLifecyclePolicyPreviewRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			lifecyclePolicyText: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30720), Validators.minLength(100)]),
 		});
 
@@ -2815,36 +2545,26 @@ export namespace MyNS {
 	}
 
 	export interface UploadLayerPartResponse {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName?: string | null;
-
-		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		uploadId?: string | null;
 
 		/** Minimum: 0 */
 		lastByteReceived?: number | null;
 	}
 	export interface UploadLayerPartResponseFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12} */
 		uploadId: FormControl<string | null | undefined>,
 
 		/** Minimum: 0 */
@@ -2853,7 +2573,7 @@ export namespace MyNS {
 	export function CreateUploadLayerPartResponseFormGroup() {
 		return new FormGroup<UploadLayerPartResponseFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			uploadId: new FormControl<string | null | undefined>(undefined),
 			lastByteReceived: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -2861,22 +2581,16 @@ export namespace MyNS {
 	}
 
 	export interface UploadLayerPartRequest {
-
-		/** Pattern: [0-9]{12} */
 		registryId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: string;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
-		 */
+		/** Required */
 		uploadId: string;
 
 		/**
@@ -2899,22 +2613,16 @@ export namespace MyNS {
 		layerPartBlob: string;
 	}
 	export interface UploadLayerPartRequestFormProperties {
-
-		/** Pattern: [0-9]{12} */
 		registryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 2
-		 * Pattern: (?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
-		 */
+		/** Required */
 		uploadId: FormControl<string | null | undefined>,
 
 		/**
@@ -2939,7 +2647,7 @@ export namespace MyNS {
 	export function CreateUploadLayerPartRequestFormGroup() {
 		return new FormGroup<UploadLayerPartRequestFormProperties>({
 			registryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(2), Validators.pattern('(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*')]),
 			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			partFirstByte: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			partLastByte: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),

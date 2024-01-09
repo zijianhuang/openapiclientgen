@@ -19,21 +19,16 @@ export namespace MyNS {
 
 	/** This structure contains all information about one canary in your account. */
 	export interface Canary {
-
-		/** Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$ */
 		Id?: string | null;
 
 		/**
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name?: string | null;
 
 		/** This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics. */
 		Code?: CanaryCodeOutput;
-
-		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn?: string | null;
 
 		/** How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value. */
@@ -65,8 +60,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ArtifactS3Location?: string | null;
-
-		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		EngineArn?: string | null;
 
 		/**
@@ -82,18 +75,13 @@ export namespace MyNS {
 
 	/** This structure contains all information about one canary in your account. */
 	export interface CanaryFormProperties {
-
-		/** Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$ */
 		Id: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
@@ -113,8 +101,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ArtifactS3Location: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		EngineArn: FormControl<string | null | undefined>,
 
 		/**
@@ -126,7 +112,7 @@ export namespace MyNS {
 	export function CreateCanaryFormGroup() {
 		return new FormGroup<CanaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
 			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
@@ -411,13 +397,9 @@ export namespace MyNS {
 
 	export interface DescribeCanariesResponse {
 		Canaries?: Array<Canary>;
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface DescribeCanariesResponseFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCanariesResponseFormGroup() {
@@ -429,13 +411,9 @@ export namespace MyNS {
 
 	export interface DescribeCanariesLastRunResponse {
 		CanariesLastRun?: Array<CanaryLastRun>;
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface DescribeCanariesLastRunResponseFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCanariesLastRunResponseFormGroup() {
@@ -452,7 +430,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		CanaryName?: string | null;
 
@@ -466,13 +443,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		CanaryName: FormControl<string | null | undefined>,
 	}
 	export function CreateCanaryLastRunFormGroup() {
 		return new FormGroup<CanaryLastRunFormProperties>({
-			CanaryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1)]),
+			CanaryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
 		});
 
 	}
@@ -484,7 +460,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name?: string | null;
 
@@ -507,7 +482,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -519,7 +493,7 @@ export namespace MyNS {
 	}
 	export function CreateCanaryRunFormGroup() {
 		return new FormGroup<CanaryRunFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
 			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
@@ -584,13 +558,9 @@ export namespace MyNS {
 
 	export interface DescribeRuntimeVersionsResponse {
 		RuntimeVersions?: Array<RuntimeVersion>;
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface DescribeRuntimeVersionsResponseFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeRuntimeVersionsResponseFormGroup() {
@@ -661,13 +631,9 @@ export namespace MyNS {
 
 	export interface GetCanaryRunsResponse {
 		CanaryRuns?: Array<CanaryRun>;
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 	}
 	export interface GetCanaryRunsResponseFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCanaryRunsResponseFormGroup() {
@@ -943,7 +909,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name: string;
 
@@ -960,10 +925,7 @@ export namespace MyNS {
 		 */
 		ArtifactS3Location: string;
 
-		/**
-		 * Required
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
-		 */
+		/** Required */
 		ExecutionRoleArn: string;
 
 		/**
@@ -1004,7 +966,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1015,10 +976,7 @@ export namespace MyNS {
 		 */
 		ArtifactS3Location: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
-		 */
+		/** Required */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
@@ -1042,7 +1000,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCanaryRequestFormGroup() {
 		return new FormGroup<CreateCanaryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
 			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
@@ -1063,8 +1021,6 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCanariesLastRunRequest {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 
 		/**
@@ -1074,8 +1030,6 @@ export namespace MyNS {
 		MaxResults?: number | null;
 	}
 	export interface DescribeCanariesLastRunRequestFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1093,8 +1047,6 @@ export namespace MyNS {
 	}
 
 	export interface DescribeCanariesRequest {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 
 		/**
@@ -1104,8 +1056,6 @@ export namespace MyNS {
 		MaxResults?: number | null;
 	}
 	export interface DescribeCanariesRequestFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1123,8 +1073,6 @@ export namespace MyNS {
 	}
 
 	export interface DescribeRuntimeVersionsRequest {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 
 		/**
@@ -1134,8 +1082,6 @@ export namespace MyNS {
 		MaxResults?: number | null;
 	}
 	export interface DescribeRuntimeVersionsRequestFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1163,8 +1109,6 @@ export namespace MyNS {
 	}
 
 	export interface GetCanaryRunsRequest {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken?: string | null;
 
 		/**
@@ -1174,8 +1118,6 @@ export namespace MyNS {
 		MaxResults?: number | null;
 	}
 	export interface GetCanaryRunsRequestFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$ */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1249,8 +1191,6 @@ export namespace MyNS {
 
 		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
 		Code?: CanaryCodeInput;
-
-		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn?: string | null;
 
 		/**
@@ -1281,8 +1221,6 @@ export namespace MyNS {
 		VpcConfig?: VpcConfigInput;
 	}
 	export interface UpdateCanaryRequestFormProperties {
-
-		/** Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
@@ -1461,7 +1399,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name: string;
 
@@ -1482,7 +1419,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
 		 * Required
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
 		 */
 		ExecutionRoleArn: string;
 
@@ -1530,7 +1466,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 1
-		 * Pattern: ^[0-9a-z_\-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1545,7 +1480,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
 		 * Required
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
@@ -1576,7 +1510,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCanaryPostBodyFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
 			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
@@ -1761,10 +1695,7 @@ export namespace MyNS {
 		/** Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. */
 		Code?: UpdateCanaryPatchBodyCode;
 
-		/**
-		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
-		 */
+		/** <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul> */
 		ExecutionRoleArn?: string | null;
 
 		/**
@@ -1799,10 +1730,7 @@ export namespace MyNS {
 	}
 	export interface UpdateCanaryPatchBodyFormProperties {
 
-		/**
-		 * <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$
-		 */
+		/** <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul> */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
@@ -2007,10 +1935,7 @@ export namespace MyNS {
 
 	export interface DescribeCanariesPostBody {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results. */
 		NextToken?: string | null;
 
 		/**
@@ -2022,10 +1947,7 @@ export namespace MyNS {
 	}
 	export interface DescribeCanariesPostBodyFormProperties {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results. */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -2045,10 +1967,7 @@ export namespace MyNS {
 
 	export interface DescribeCanariesLastRunPostBody {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results. */
 		NextToken?: string | null;
 
 		/**
@@ -2060,10 +1979,7 @@ export namespace MyNS {
 	}
 	export interface DescribeCanariesLastRunPostBodyFormProperties {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results. */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -2083,10 +1999,7 @@ export namespace MyNS {
 
 	export interface DescribeRuntimeVersionsPostBody {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results. */
 		NextToken?: string | null;
 
 		/**
@@ -2098,10 +2011,7 @@ export namespace MyNS {
 	}
 	export interface DescribeRuntimeVersionsPostBodyFormProperties {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results. */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -2121,10 +2031,7 @@ export namespace MyNS {
 
 	export interface GetCanaryRunsPostBody {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results. */
 		NextToken?: string | null;
 
 		/**
@@ -2136,10 +2043,7 @@ export namespace MyNS {
 	}
 	export interface GetCanaryRunsPostBodyFormProperties {
 
-		/**
-		 * A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.
-		 * Pattern: ^[a-zA-Z0-9=/+_.-]{4,252}$
-		 */
+		/** A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results. */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**

@@ -84,7 +84,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: string;
 
@@ -103,7 +102,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: FormControl<string | null | undefined>,
 
@@ -115,7 +113,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPersonalizedRankingRequestFormGroup() {
 		return new FormGroup<GetPersonalizedRankingRequestFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			userId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
@@ -126,7 +124,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: string;
 
@@ -140,10 +137,7 @@ export namespace MyNS {
 		numResults?: number | null;
 		context?: Context;
 
-		/**
-		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
-		 */
+		/** Max length: 256 */
 		filterArn?: string | null;
 	}
 	export interface GetRecommendationsRequestFormProperties {
@@ -151,7 +145,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: FormControl<string | null | undefined>,
 
@@ -164,19 +157,16 @@ export namespace MyNS {
 		/** Minimum: 0 */
 		numResults: FormControl<number | null | undefined>,
 
-		/**
-		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
-		 */
+		/** Max length: 256 */
 		filterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRecommendationsRequestFormGroup() {
 		return new FormGroup<GetRecommendationsRequestFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			itemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			numResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 		});
 
 	}
@@ -211,7 +201,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: string;
 
@@ -237,7 +226,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: FormControl<string | null | undefined>,
 
@@ -253,7 +241,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPersonalizedRankingPostBodyFormGroup() {
 		return new FormGroup<GetPersonalizedRankingPostBodyFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			userId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 			context: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -266,7 +254,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: string;
 
@@ -294,7 +281,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		filterArn?: string | null;
 	}
@@ -304,7 +290,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.
 		 * Required
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		campaignArn: FormControl<string | null | undefined>,
 
@@ -332,18 +317,17 @@ export namespace MyNS {
 		/**
 		 * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with Amazon Personalize.
 		 * Max length: 256
-		 * Pattern: arn:([a-z\d-]+):personalize:.*:.*:.+
 		 */
 		filterArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRecommendationsPostBodyFormGroup() {
 		return new FormGroup<GetRecommendationsPostBodyFormProperties>({
-			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			itemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			numResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			context: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 		});
 
 	}

@@ -23,7 +23,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName?: string | null;
 
@@ -49,7 +48,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		key?: string | null;
 		evaluationMethod?: DetectorModelConfigurationEvaluationMethod | null;
@@ -61,7 +59,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: FormControl<string | null | undefined>,
 
@@ -87,14 +84,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		key: FormControl<string | null | undefined>,
 		evaluationMethod: FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>,
 	}
 	export function CreateDetectorModelConfigurationFormGroup() {
 		return new FormGroup<DetectorModelConfigurationFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			detectorModelVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			detectorModelArn: new FormControl<string | null | undefined>(undefined),
@@ -102,7 +98,7 @@ export namespace MyNS {
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<DetectorModelConfigurationStatus | null | undefined>(undefined),
-			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$')]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
 
@@ -262,7 +258,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		variableName: string;
 
@@ -281,7 +276,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		variableName: FormControl<string | null | undefined>,
 
@@ -294,7 +288,7 @@ export namespace MyNS {
 	}
 	export function CreateSetVariableActionFormGroup() {
 		return new FormGroup<SetVariableActionFormProperties>({
-			variableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			variableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
 			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
@@ -553,7 +547,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: string;
 
@@ -568,13 +561,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: FormControl<string | null | undefined>,
 	}
 	export function CreateIotEventsActionFormGroup() {
 		return new FormGroup<IotEventsActionFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
 		});
 
 	}
@@ -612,8 +604,6 @@ export namespace MyNS {
 
 		/** Required */
 		deliveryStreamName: string;
-
-		/** Pattern: ([\n\t])|(\r\n)|(,) */
 		separator?: string | null;
 
 		/** <p>Information needed to configure the payload.</p> <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p> */
@@ -625,8 +615,6 @@ export namespace MyNS {
 
 		/** Required */
 		deliveryStreamName: FormControl<string | null | undefined>,
-
-		/** Pattern: ([\n\t])|(\r\n)|(,) */
 		separator: FormControl<string | null | undefined>,
 	}
 	export function CreateFirehoseActionFormGroup() {
@@ -1046,7 +1034,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: string;
 
@@ -1073,7 +1060,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: FormControl<string | null | undefined>,
 
@@ -1094,7 +1080,7 @@ export namespace MyNS {
 	}
 	export function CreateInputConfigurationFormGroup() {
 		return new FormGroup<InputConfigurationFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
 			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			inputArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			creationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -1114,7 +1100,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		jsonPath: string;
 	}
@@ -1126,13 +1111,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		jsonPath: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeFormGroup() {
 		return new FormGroup<AttributeFormProperties>({
-			jsonPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			jsonPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$')]),
 		});
 
 	}
@@ -1358,14 +1342,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\-_:]+$
 		 */
 		keyValue?: string | null;
 	}
@@ -1377,21 +1359,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\-_:]+$
 		 */
 		keyValue: FormControl<string | null | undefined>,
 	}
 	export function CreateDetectorDebugOptionFormGroup() {
 		return new FormGroup<DetectorDebugOptionFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			keyValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
+			keyValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\-_:]+$')]),
 		});
 
 	}
@@ -1427,7 +1407,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName?: string | null;
 
@@ -1455,7 +1434,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: FormControl<string | null | undefined>,
 
@@ -1478,7 +1456,7 @@ export namespace MyNS {
 	}
 	export function CreateDetectorModelVersionSummaryFormGroup() {
 		return new FormGroup<DetectorModelVersionSummaryFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			detectorModelVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			detectorModelArn: new FormControl<string | null | undefined>(undefined),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
@@ -1511,7 +1489,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName?: string | null;
 
@@ -1526,7 +1503,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: FormControl<string | null | undefined>,
 
@@ -1536,7 +1512,7 @@ export namespace MyNS {
 	}
 	export function CreateDetectorModelSummaryFormGroup() {
 		return new FormGroup<DetectorModelSummaryFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1564,7 +1540,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName?: string | null;
 
@@ -1582,7 +1557,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: FormControl<string | null | undefined>,
 
@@ -1595,7 +1569,7 @@ export namespace MyNS {
 	}
 	export function CreateInputSummaryFormGroup() {
 		return new FormGroup<InputSummaryFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
 			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			inputArn: new FormControl<string | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1672,7 +1646,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: string;
 
@@ -1688,7 +1661,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		key?: string | null;
 
@@ -1707,7 +1679,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: FormControl<string | null | undefined>,
 
@@ -1717,7 +1688,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		key: FormControl<string | null | undefined>,
 
@@ -1731,9 +1701,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDetectorModelRequestFormGroup() {
 		return new FormGroup<CreateDetectorModelRequestFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
@@ -1746,7 +1716,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: string;
 
@@ -1766,7 +1735,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: FormControl<string | null | undefined>,
 
@@ -1775,7 +1743,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateInputRequestFormGroup() {
 		return new FormGroup<CreateInputRequestFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
 			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
@@ -2153,7 +2121,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: string;
 
@@ -2173,7 +2140,6 @@ export namespace MyNS {
 		 * The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		key?: string | null;
 
@@ -2198,7 +2164,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		detectorModelName: FormControl<string | null | undefined>,
 
@@ -2212,7 +2177,6 @@ export namespace MyNS {
 		 * The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		 */
 		key: FormControl<string | null | undefined>,
 
@@ -2229,9 +2193,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDetectorModelPostBodyFormGroup() {
 		return new FormGroup<CreateDetectorModelPostBodyFormProperties>({
-			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			detectorModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			detectorModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 			evaluationMethod: new FormControl<DetectorModelConfigurationEvaluationMethod | null | undefined>(undefined),
 		});
@@ -2271,7 +2235,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: string;
 
@@ -2297,7 +2260,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: FormControl<string | null | undefined>,
 
@@ -2309,7 +2271,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateInputPostBodyFormGroup() {
 		return new FormGroup<CreateInputPostBodyFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
 			inputDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 

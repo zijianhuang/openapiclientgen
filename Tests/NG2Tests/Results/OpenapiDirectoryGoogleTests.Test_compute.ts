@@ -56,10 +56,7 @@ export namespace MyNS {
 		/** [Output Only] Maximum accelerator cards allowed per instance. */
 		maximumCardsPerInstance?: number | null;
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name?: string | null;
 
 		/** [Output Only] Server-defined fully-qualified URL for this resource. */
@@ -90,10 +87,7 @@ export namespace MyNS {
 		/** [Output Only] Maximum accelerator cards allowed per instance. */
 		maximumCardsPerInstance: FormControl<number | null | undefined>,
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined fully-qualified URL for this resource. */
@@ -552,10 +546,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#address for addresses. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name?: string | null;
 
 		/** The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose. */
@@ -628,10 +619,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#address for addresses. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name: FormControl<string | null | undefined>,
 
 		/** The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose. */
@@ -1577,10 +1565,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction. */
@@ -1633,10 +1618,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction. */
@@ -2390,10 +2372,7 @@ export namespace MyNS {
 		/** Type of the resource. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -2424,10 +2403,7 @@ export namespace MyNS {
 		/** Type of the resource. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -2656,10 +2632,7 @@ export namespace MyNS {
 		/** The available logging options for the load balancer traffic served by this backend service. */
 		logConfig?: BackendServiceLogConfig;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL. */
@@ -2759,10 +2732,7 @@ export namespace MyNS {
 		 */
 		localityLbPolicy: FormControl<BackendServiceLocalityLbPolicy | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** The URL of the network to which this backend service belongs. This field can only be spcified when the load balancing scheme is set to INTERNAL. */
@@ -3761,10 +3731,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#commitment for commitments. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years). */
@@ -3813,10 +3780,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#commitment for commitments. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years). */
@@ -3876,10 +3840,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#reservations for reservations. */
 		kind?: string | null;
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** [Output Only] Server-defined fully-qualified URL for this resource. */
@@ -3916,10 +3877,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#reservations for reservations. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined fully-qualified URL for this resource. */
@@ -4448,10 +4406,7 @@ export namespace MyNS {
 		/** A list of publicly visible licenses. Reserved for Google's use. */
 		licenses?: Array<string>;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** Internal use only. */
@@ -4561,10 +4516,7 @@ export namespace MyNS {
 		/** [Output Only] Last detach timestamp in RFC3339 text format. */
 		lastDetachTimestamp: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** Internal use only. */
@@ -5055,10 +5007,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#diskType for disk types. */
 		kind?: string | null;
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name?: string | null;
 
 		/** [Output Only] URL of the region where the disk type resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
@@ -5099,10 +5048,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#diskType for disk types. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] URL of the region where the disk type resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
@@ -5674,10 +5620,7 @@ export namespace MyNS {
 		/** Labels to apply to this ExternalVpnGateway resource. These can be later modified by the setLabels method. Each label key/value must comply with RFC1035. Label values may be empty. */
 		labels?: {[id: string]: string };
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** Indicates the user-supplied redundancy type of this external VPN gateway. */
@@ -5711,10 +5654,7 @@ export namespace MyNS {
 		/** Labels to apply to this ExternalVpnGateway resource. These can be later modified by the setLabels method. Each label key/value must comply with RFC1035. Label values may be empty. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** Indicates the user-supplied redundancy type of this external VPN gateway. */
@@ -5910,10 +5850,7 @@ export namespace MyNS {
 		/** The available logging options for a firewall rule. */
 		logConfig?: FirewallLogConfig;
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name?: string | null;
 
 		/**
@@ -5972,10 +5909,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#firewall for firewall rules. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -6313,10 +6247,7 @@ export namespace MyNS {
 		 */
 		metadataFilters?: Array<MetadataFilter>;
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/**
@@ -6362,7 +6293,6 @@ export namespace MyNS {
 		 * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.
 		 * The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 		 * This field is only used for internal load balancing.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
 		 */
 		serviceLabel?: string | null;
 
@@ -6463,10 +6393,7 @@ export namespace MyNS {
 		 */
 		loadBalancingScheme: FormControl<ForwardingRuleLoadBalancingScheme | null | undefined>,
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -6504,7 +6431,6 @@ export namespace MyNS {
 		 * An optional prefix to the service name for this Forwarding Rule. If specified, the prefix is the first label of the fully qualified service name.
 		 * The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 		 * This field is only used for internal load balancing.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
 		 */
 		serviceLabel: FormControl<string | null | undefined>,
 
@@ -7683,10 +7609,7 @@ export namespace MyNS {
 		/** Type of the resource. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** [Output Only] Region where the health check resides. Not applicable to global health checks. */
@@ -7734,10 +7657,7 @@ export namespace MyNS {
 		/** Type of the resource. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Region where the health check resides. Not applicable to global health checks. */
@@ -8591,10 +8511,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#httpHealthCheck for HTTP health checks. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** The TCP port number for the HTTP health check request. The default value is 80. */
@@ -8640,10 +8557,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#httpHealthCheck for HTTP health checks. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** The TCP port number for the HTTP health check request. The default value is 80. */
@@ -9306,10 +9220,7 @@ export namespace MyNS {
 		/** Type of the resource. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** The TCP port number for the HTTPS health check request. The default value is 443. */
@@ -9355,10 +9266,7 @@ export namespace MyNS {
 		/** Type of the resource. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** The TCP port number for the HTTPS health check request. The default value is 443. */
@@ -9549,10 +9457,7 @@ export namespace MyNS {
 		/** Any applicable license URI. */
 		licenses?: Array<string>;
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** The parameters of the raw disk image. */
@@ -9653,10 +9558,7 @@ export namespace MyNS {
 		/** Labels to apply to this image. These can be later modified by the setLabels method. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -9732,10 +9634,7 @@ export namespace MyNS {
 		/** The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created. */
 		containerType?: ImageRawDiskContainerType | null;
 
-		/**
-		 * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
-		 * Pattern: [a-f0-9]{40}
-		 */
+		/** [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created. */
 		sha1Checksum?: string | null;
 
 		/** The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both. */
@@ -9746,10 +9645,7 @@ export namespace MyNS {
 		/** The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created. */
 		containerType: FormControl<ImageRawDiskContainerType | null | undefined>,
 
-		/**
-		 * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
-		 * Pattern: [a-f0-9]{40}
-		 */
+		/** [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created. */
 		sha1Checksum: FormControl<string | null | undefined>,
 
 		/** The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both. */
@@ -9943,10 +9839,7 @@ export namespace MyNS {
 		/** Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". */
 		minCpuPlatform?: string | null;
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance. */
@@ -10050,10 +9943,7 @@ export namespace MyNS {
 		/** Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". */
 		minCpuPlatform: FormControl<string | null | undefined>,
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for this resource. */
@@ -10135,10 +10025,7 @@ export namespace MyNS {
 
 	export interface MetadataItems {
 
-		/**
-		 * Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project.
-		 * Pattern: [a-zA-Z0-9-_]{1,128}
-		 */
+		/** Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project. */
 		key?: string | null;
 
 		/** Value for the metadata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 262144 bytes (256 KiB). */
@@ -10146,10 +10033,7 @@ export namespace MyNS {
 	}
 	export interface MetadataItemsFormProperties {
 
-		/**
-		 * Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project.
-		 * Pattern: [a-zA-Z0-9-_]{1,128}
-		 */
+		/** Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project. */
 		key: FormControl<string | null | undefined>,
 
 		/** Value for the metadata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 262144 bytes (256 KiB). */
@@ -10668,10 +10552,7 @@ export namespace MyNS {
 		/** [Output Only] The resource type, which is always compute#instanceGroup for instance groups. */
 		kind?: string | null;
 
-		/**
-		 * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035. */
 		name?: string | null;
 
 		/**
@@ -10726,10 +10607,7 @@ export namespace MyNS {
 		/** [Output Only] The resource type, which is always compute#instanceGroup for instance groups. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the instance group. The name must be 1-63 characters long, and comply with RFC1035. */
 		name: FormControl<string | null | undefined>,
 
 		/** The URL of the network to which all instances in the instance group belong. */
@@ -11082,10 +10960,7 @@ export namespace MyNS {
 		/** The autohealing policy for this managed instance group. You can specify only one value. */
 		autoHealingPolicies?: Array<InstanceGroupManagerAutoHealingPolicy>;
 
-		/**
-		 * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
-		 * Pattern: [a-z][-a-z0-9]{0,57}
-		 */
+		/** The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035. */
 		baseInstanceName?: string | null;
 
 		/** [Output Only] The creation timestamp for this managed instance group in RFC3339 text format. */
@@ -11114,10 +10989,7 @@ export namespace MyNS {
 		/** [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups. */
 		kind?: string | null;
 
-		/**
-		 * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035. */
 		name?: string | null;
 
 		/** Named ports configured for the Instance Groups complementary to this Instance Group Manager. */
@@ -11155,10 +11027,7 @@ export namespace MyNS {
 	 */
 	export interface InstanceGroupManagerFormProperties {
 
-		/**
-		 * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
-		 * Pattern: [a-z][-a-z0-9]{0,57}
-		 */
+		/** The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035. */
 		baseInstanceName: FormControl<string | null | undefined>,
 
 		/** [Output Only] The creation timestamp for this managed instance group in RFC3339 text format. */
@@ -11185,10 +11054,7 @@ export namespace MyNS {
 		/** [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] The URL of the region where the managed instance group resides (for regional resources). */
@@ -12783,10 +12649,7 @@ export namespace MyNS {
 		/** [Output Only] The resource type, which is always compute#instanceTemplate for instance templates. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 		properties?: InstanceProperties;
 
@@ -12822,10 +12685,7 @@ export namespace MyNS {
 		/** [Output Only] The resource type, which is always compute#instanceTemplate for instance templates. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] The URL for this instance template. The server defines this URL. */
@@ -13157,10 +13017,7 @@ export namespace MyNS {
 		/** URL of the InterconnectLocation object that represents where this connection is to be provisioned. */
 		location?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Stackdriver logs alerting and Cloud Notifications. */
@@ -13242,10 +13099,7 @@ export namespace MyNS {
 		/** URL of the InterconnectLocation object that represents where this connection is to be provisioned. */
 		location: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Stackdriver logs alerting and Cloud Notifications. */
@@ -13503,10 +13357,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/**
@@ -13618,10 +13469,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect attachments. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -14629,10 +14477,7 @@ export namespace MyNS {
 		/** [Output Only] The unique code used to attach this license to images, snapshots, and disks. */
 		licenseCode?: string | null;
 
-		/**
-		 * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. The name must be 1-63 characters long and comply with RFC1035. */
 		name?: string | null;
 		resourceRequirements?: LicenseResourceRequirements;
 
@@ -14667,10 +14512,7 @@ export namespace MyNS {
 		/** [Output Only] The unique code used to attach this license to images, snapshots, and disks. */
 		licenseCode: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. The name must be 1-63 characters long and comply with RFC1035. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -14740,10 +14582,7 @@ export namespace MyNS {
 		/** [Output Only] URL and description aliases of Licenses with the same License Code. */
 		licenseAlias?: Array<LicenseCodeLicenseAlias>;
 
-		/**
-		 * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
-		 * Pattern: [0-9]{0,20}?
-		 */
+		/** [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer. */
 		name?: string | null;
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -14774,10 +14613,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#licenseCode for licenses. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
-		 * Pattern: [0-9]{0,20}?
-		 */
+		/** [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -14960,10 +14796,7 @@ export namespace MyNS {
 		/** [Output Only] The amount of physical memory available to the instance, defined in MB. */
 		memoryMb?: number | null;
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name?: string | null;
 
 		/** [Output Only] A list of extended scratch disks assigned to the instance. */
@@ -15012,10 +14845,7 @@ export namespace MyNS {
 		/** [Output Only] The amount of physical memory available to the instance, defined in MB. */
 		memoryMb: FormControl<number | null | undefined>,
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -15341,10 +15171,7 @@ export namespace MyNS {
 	 */
 	export interface Network {
 
-		/**
-		 * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-		 * Pattern: [0-9]{1,3}(?:\.[0-9]{1,3}){3}/[0-9]{1,2}
-		 */
+		/** Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created. */
 		IPv4Range?: string | null;
 
 		/**
@@ -15359,10 +15186,7 @@ export namespace MyNS {
 		/** An optional description of this resource. Provide this field when you create the resource. */
 		description?: string | null;
 
-		/**
-		 * [Output Only] The gateway address for default routing out of the network, selected by GCP.
-		 * Pattern: [0-9]{1,3}(?:\.[0-9]{1,3}){3}
-		 */
+		/** [Output Only] The gateway address for default routing out of the network, selected by GCP. */
 		gatewayIPv4?: string | null;
 
 		/** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
@@ -15371,10 +15195,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#network for networks. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name?: string | null;
 
 		/** [Output Only] A list of network peerings for the resource. */
@@ -15396,10 +15217,7 @@ export namespace MyNS {
 	 */
 	export interface NetworkFormProperties {
 
-		/**
-		 * Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
-		 * Pattern: [0-9]{1,3}(?:\.[0-9]{1,3}){3}/[0-9]{1,2}
-		 */
+		/** Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created. */
 		IPv4Range: FormControl<string | null | undefined>,
 
 		/**
@@ -15414,10 +15232,7 @@ export namespace MyNS {
 		/** An optional description of this resource. Provide this field when you create the resource. */
 		description: FormControl<string | null | undefined>,
 
-		/**
-		 * [Output Only] The gateway address for default routing out of the network, selected by GCP.
-		 * Pattern: [0-9]{1,3}(?:\.[0-9]{1,3}){3}
-		 */
+		/** [Output Only] The gateway address for default routing out of the network, selected by GCP. */
 		gatewayIPv4: FormControl<string | null | undefined>,
 
 		/** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
@@ -15426,10 +15241,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#network for networks. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -17273,10 +17085,7 @@ export namespace MyNS {
 		/** [Output Only] The amount of physical memory available to the node type, defined in MB. */
 		memoryMb?: number | null;
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name?: string | null;
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -17316,10 +17125,7 @@ export namespace MyNS {
 		/** [Output Only] The amount of physical memory available to the node type, defined in MB. */
 		memoryMb: FormControl<number | null | undefined>,
 
-		/**
-		 * [Output Only] Name of the resource.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** [Output Only] Name of the resource. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -18205,10 +18011,7 @@ export namespace MyNS {
 		kind?: string | null;
 		mirroredResources?: PacketMirroringMirroredResourceInfo;
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 		network?: PacketMirroringNetworkInfo;
 
@@ -18246,10 +18049,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -19961,10 +19761,7 @@ export namespace MyNS {
 		/** Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances. */
 		instanceState?: InstanceGroupsListInstancesRequestInstanceState | null;
 
-		/**
-		 * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances. */
 		portName?: string | null;
 	}
 	export interface RegionInstanceGroupsListInstancesRequestFormProperties {
@@ -19972,10 +19769,7 @@ export namespace MyNS {
 		/** Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances. */
 		instanceState: FormControl<InstanceGroupsListInstancesRequestInstanceState | null | undefined>,
 
-		/**
-		 * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances. */
 		portName: FormControl<string | null | undefined>,
 	}
 	export function CreateRegionInstanceGroupsListInstancesRequestFormGroup() {
@@ -20244,10 +20038,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#urlMaps for url maps. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** The list of named PathMatchers to use against the URL. */
@@ -20298,10 +20089,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#urlMaps for url maps. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
@@ -20711,10 +20499,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#resource_policies for resource policies. */
 		kind?: string | null;
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 		region?: string | null;
 
@@ -20744,10 +20529,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#resource_policies for resource policies. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 		region: FormControl<string | null | undefined>,
 
@@ -21321,10 +21103,7 @@ export namespace MyNS {
 		/** [Output Only] Type of this resource. Always compute#routes for Route resources. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name?: string | null;
 
 		/** Fully-qualified URL of the network that this route applies to. */
@@ -21392,10 +21171,7 @@ export namespace MyNS {
 		/** [Output Only] Type of this resource. Always compute#routes for Route resources. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
 		name: FormControl<string | null | undefined>,
 
 		/** Fully-qualified URL of the network that this route applies to. */
@@ -21639,10 +21415,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#router for routers. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** A list of NAT services created in this router. */
@@ -21676,10 +21449,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#router for routers. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** URI of the network to which this router belongs. */
@@ -21797,10 +21567,7 @@ export namespace MyNS {
 		 */
 		managementType?: RouterBgpPeerManagementType | null;
 
-		/**
-		 * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value. */
@@ -21830,10 +21597,7 @@ export namespace MyNS {
 		 */
 		managementType: FormControl<RouterBgpPeerManagementType | null | undefined>,
 
-		/**
-		 * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value. */
@@ -21876,10 +21640,7 @@ export namespace MyNS {
 		 */
 		managementType?: RouterBgpPeerManagementType | null;
 
-		/**
-		 * Name of this interface entry. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of this interface entry. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 	}
 	export interface RouterInterfaceFormProperties {
@@ -21900,10 +21661,7 @@ export namespace MyNS {
 		 */
 		managementType: FormControl<RouterBgpPeerManagementType | null | undefined>,
 
-		/**
-		 * Name of this interface entry. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of this interface entry. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateRouterInterfaceFormGroup() {
@@ -21933,10 +21691,7 @@ export namespace MyNS {
 		/** Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the value of this field is 50, at least 64 ports are allocated to a VM. */
 		minPortsPerVm?: number | null;
 
-		/**
-		 * Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035. */
 		name?: string | null;
 
 		/**
@@ -21979,10 +21734,7 @@ export namespace MyNS {
 		/** Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the value of this field is 50, at least 64 ports are allocated to a VM. */
 		minPortsPerVm: FormControl<number | null | undefined>,
 
-		/**
-		 * Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035. */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -22606,10 +22358,7 @@ export namespace MyNS {
 		/** [Output only] Type of the resource. Always compute#securityPolicyfor security policies */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a security policy, a default rule with action "allow" will be added. */
@@ -22643,10 +22392,7 @@ export namespace MyNS {
 		/** [Output only] Type of the resource. Always compute#securityPolicyfor security policies */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -22980,10 +22726,7 @@ export namespace MyNS {
 	/** Represents a customer-supplied Signing Key used by Cloud CDN Signed URLs */
 	export interface SignedUrlKey {
 
-		/**
-		 * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		keyName?: string | null;
 
 		/** 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string. */
@@ -22993,10 +22736,7 @@ export namespace MyNS {
 	/** Represents a customer-supplied Signing Key used by Cloud CDN Signed URLs */
 	export interface SignedUrlKeyFormProperties {
 
-		/**
-		 * Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the key. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		keyName: FormControl<string | null | undefined>,
 
 		/** 128-bit key value used for signing the URL. The key value must be a valid RFC 4648 Section 5 base64url encoded string. */
@@ -23053,10 +22793,7 @@ export namespace MyNS {
 		/** [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image). */
 		licenses?: Array<string>;
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -23123,10 +22860,7 @@ export namespace MyNS {
 		/** Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/**
-		 * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] Server-defined URL for the resource. */
@@ -23303,10 +23037,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** A write-only private key in PEM format. Only insert requests will include this field. */
@@ -23346,10 +23077,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** A write-only private key in PEM format. Only insert requests will include this field. */
@@ -23731,10 +23459,7 @@ export namespace MyNS {
 		/** The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2. */
 		minTlsVersion?: SslPolicyMinTlsVersion | null;
 
-		/**
-		 * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field. */
@@ -23774,10 +23499,7 @@ export namespace MyNS {
 		/** The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2. */
 		minTlsVersion: FormControl<SslPolicyMinTlsVersion | null | undefined>,
 
-		/**
-		 * Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field. */
@@ -23978,10 +23700,7 @@ export namespace MyNS {
 		/** The available logging options for this subnetwork. */
 		logConfig?: SubnetworkLogConfig;
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time. */
@@ -24042,10 +23761,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time. */
@@ -24524,10 +24240,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies. */
@@ -24562,10 +24275,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies. */
@@ -24831,10 +24541,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/**
@@ -24890,10 +24597,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -25256,10 +24960,7 @@ export namespace MyNS {
 		/** [Output Only] The type of the resource. Always compute#targetInstance for target instances. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported. */
@@ -25298,10 +24999,7 @@ export namespace MyNS {
 		/** [Output Only] The type of the resource. Always compute#targetInstance for target instances. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported. */
@@ -25643,10 +25341,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#targetPool for target pools. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** [Output Only] URL of the region where the target pool resides. */
@@ -25696,10 +25391,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#targetPool for target pools. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** [Output Only] URL of the region where the target pool resides. */
@@ -26165,10 +25857,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. */
@@ -26205,10 +25894,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. */
@@ -26393,10 +26079,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#targetTcpProxy for target TCP proxies. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. */
@@ -26427,10 +26110,7 @@ export namespace MyNS {
 		/** [Output Only] Type of the resource. Always compute#targetTcpProxy for target TCP proxies. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. */
@@ -26580,10 +26260,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways. */
 		kind?: string | null;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created. */
@@ -26620,10 +26297,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#targetVpnGateway for target VPN gateways. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created. */
@@ -27689,10 +27363,7 @@ export namespace MyNS {
 		/** Labels to apply to this VpnGateway resource. These can be later modified by the setLabels method. Each label key/value must comply with RFC1035. Label values may be empty. */
 		labels?: {[id: string]: string };
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created. */
@@ -27732,10 +27403,7 @@ export namespace MyNS {
 		/** Labels to apply to this VpnGateway resource. These can be later modified by the setLabels method. Each label key/value must comply with RFC1035. Label values may be empty. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created. */
@@ -28218,10 +27886,7 @@ export namespace MyNS {
 		/** Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported. */
 		localTrafficSelector?: Array<string>;
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name?: string | null;
 
 		/** URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway. */
@@ -28308,10 +27973,7 @@ export namespace MyNS {
 		/** [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels. */
 		kind: FormControl<string | null | undefined>,
 
-		/**
-		 * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-		 * Pattern: [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
-		 */
+		/** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
 		name: FormControl<string | null | undefined>,
 
 		/** URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway. */

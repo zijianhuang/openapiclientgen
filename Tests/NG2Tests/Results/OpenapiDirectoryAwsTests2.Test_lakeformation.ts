@@ -483,8 +483,6 @@ export namespace MyNS {
 	/** A structure containing information about an AWS Lake Formation resource. */
 	export interface ResourceInfo {
 		ResourceArn?: string | null;
-
-		/** Pattern: arn:aws:iam::[0-9]*:role/.* */
 		RoleArn?: string | null;
 		LastModified?: Date | null;
 	}
@@ -492,8 +490,6 @@ export namespace MyNS {
 	/** A structure containing information about an AWS Lake Formation resource. */
 	export interface ResourceInfoFormProperties {
 		ResourceArn: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:aws:iam::[0-9]*:role/.* */
 		RoleArn: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
 	}
@@ -929,8 +925,6 @@ export namespace MyNS {
 		/** Required */
 		ResourceArn: string;
 		UseServiceLinkedRole?: boolean | null;
-
-		/** Pattern: arn:aws:iam::[0-9]*:role/.* */
 		RoleArn?: string | null;
 	}
 	export interface RegisterResourceRequestFormProperties {
@@ -938,8 +932,6 @@ export namespace MyNS {
 		/** Required */
 		ResourceArn: FormControl<string | null | undefined>,
 		UseServiceLinkedRole: FormControl<boolean | null | undefined>,
-
-		/** Pattern: arn:aws:iam::[0-9]*:role/.* */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterResourceRequestFormGroup() {
@@ -1022,10 +1014,7 @@ export namespace MyNS {
 
 	export interface UpdateResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws:iam::[0-9]*:role/.*
-		 */
+		/** Required */
 		RoleArn: string;
 
 		/** Required */
@@ -1033,10 +1022,7 @@ export namespace MyNS {
 	}
 	export interface UpdateResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws:iam::[0-9]*:role/.*
-		 */
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 
 		/** Required */

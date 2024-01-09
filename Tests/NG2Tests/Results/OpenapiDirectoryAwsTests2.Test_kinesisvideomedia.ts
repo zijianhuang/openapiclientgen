@@ -88,7 +88,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9]+$
 		 */
 		AfterFragmentNumber?: string | null;
 		StartTimestamp?: Date | null;
@@ -96,7 +95,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
 		 */
 		ContinuationToken?: string | null;
 	}
@@ -110,7 +108,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9]+$
 		 */
 		AfterFragmentNumber: FormControl<string | null | undefined>,
 		StartTimestamp: FormControl<Date | null | undefined>,
@@ -118,16 +115,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
 		 */
 		ContinuationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSelectorFormGroup() {
 		return new FormGroup<StartSelectorFormProperties>({
 			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined, [Validators.required]),
-			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9]+$')]),
 			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\.\-]+$')]),
 		});
 
 	}
@@ -137,14 +133,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -159,21 +153,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMediaInputFormGroup() {
 		return new FormGroup<GetMediaInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -199,7 +191,6 @@ export namespace MyNS {
 		 * The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -207,7 +198,6 @@ export namespace MyNS {
 		 * The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN?: string | null;
 
@@ -223,7 +213,6 @@ export namespace MyNS {
 		 * The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -231,14 +220,13 @@ export namespace MyNS {
 		 * The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMediaPostBodyFormGroup() {
 		return new FormGroup<GetMediaPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -249,7 +237,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9]+$
 		 */
 		AfterFragmentNumber?: string | null;
 		StartTimestamp?: Date | null;
@@ -257,7 +244,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
 		 */
 		ContinuationToken?: string | null;
 	}
@@ -267,7 +253,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9]+$
 		 */
 		AfterFragmentNumber: FormControl<string | null | undefined>,
 		StartTimestamp: FormControl<Date | null | undefined>,
@@ -275,16 +260,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_\.\-]+$
 		 */
 		ContinuationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMediaPostBodyStartSelectorFormGroup() {
 		return new FormGroup<GetMediaPostBodyStartSelectorFormProperties>({
 			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined),
-			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9]+$')]),
 			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\.\-]+$')]),
 		});
 
 	}

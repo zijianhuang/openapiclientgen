@@ -26,7 +26,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -51,13 +50,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBudgetRequestFormGroup() {
 		return new FormGroup<CreateBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
 		});
 
 	}
@@ -71,7 +69,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -115,7 +112,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 
@@ -136,7 +132,7 @@ export namespace MyNS {
 	}
 	export function CreateBudgetFormGroup() {
 		return new FormGroup<BudgetFormProperties>({
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 			TimeUnit: new FormControl<BudgetTimeUnit | null | undefined>(undefined, [Validators.required]),
 			BudgetType: new FormControl<BudgetBudgetType | null | undefined>(undefined, [Validators.required]),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
@@ -153,7 +149,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
-		 * Pattern: ([0-9]*\.)?[0-9]+
 		 */
 		Amount: string;
 
@@ -162,7 +157,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
-		 * Pattern: .*
 		 */
 		Unit: string;
 	}
@@ -175,7 +169,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
-		 * Pattern: ([0-9]*\.)?[0-9]+
 		 */
 		Amount: FormControl<string | null | undefined>,
 
@@ -184,14 +177,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
-		 * Pattern: .*
 		 */
 		Unit: FormControl<string | null | undefined>,
 	}
 	export function CreateSpendFormGroup() {
 		return new FormGroup<SpendFormProperties>({
-			Amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1)]),
-			Unit: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1)]),
+			Amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1), Validators.pattern('([0-9]*\.)?[0-9]+')]),
+			Unit: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1), Validators.pattern('.*')]),
 		});
 
 	}
@@ -440,7 +432,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
-		 * Pattern: (.*[\n\r\t\f\ ]?)*
 		 */
 		Address: string;
 	}
@@ -459,14 +450,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2147483647
 		 * Min length: 1
-		 * Pattern: (.*[\n\r\t\f\ ]?)*
 		 */
 		Address: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscriberFormGroup() {
 		return new FormGroup<SubscriberFormProperties>({
 			SubscriptionType: new FormControl<SubscriberSubscriptionType | null | undefined>(undefined, [Validators.required]),
-			Address: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1)]),
+			Address: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1), Validators.pattern('(.*[\n\r\t\f\ ]?)*')]),
 		});
 
 	}
@@ -546,7 +536,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -555,7 +544,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -582,7 +570,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -591,14 +578,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNotificationRequestFormGroup() {
 		return new FormGroup<CreateNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -636,7 +622,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -645,7 +630,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -670,7 +654,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -679,14 +662,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSubscriberRequestFormGroup() {
 		return new FormGroup<CreateSubscriberRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -714,7 +696,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -723,7 +704,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 	}
@@ -736,7 +716,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -745,14 +724,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBudgetRequestFormGroup() {
 		return new FormGroup<DeleteBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -780,7 +758,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -789,7 +766,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -808,7 +784,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -817,14 +792,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteNotificationRequestFormGroup() {
 		return new FormGroup<DeleteNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -852,7 +826,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -861,7 +834,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -886,7 +858,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -895,14 +866,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSubscriberRequestFormGroup() {
 		return new FormGroup<DeleteSubscriberRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -933,7 +903,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -942,7 +911,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 	}
@@ -955,7 +923,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -964,14 +931,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBudgetRequestFormGroup() {
 		return new FormGroup<DescribeBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -985,7 +951,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -995,13 +960,12 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBudgetPerformanceHistoryResponseFormGroup() {
 		return new FormGroup<DescribeBudgetPerformanceHistoryResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1014,7 +978,6 @@ export namespace MyNS {
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName?: string | null;
 
@@ -1039,7 +1002,6 @@ export namespace MyNS {
 		 * A string that represents the budget name. The ":" and "\" characters aren't allowed.
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 
@@ -1051,7 +1013,7 @@ export namespace MyNS {
 	}
 	export function CreateBudgetPerformanceHistoryFormGroup() {
 		return new FormGroup<BudgetPerformanceHistoryFormProperties>({
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 			BudgetType: new FormControl<BudgetBudgetType | null | undefined>(undefined),
 			TimeUnit: new FormControl<BudgetTimeUnit | null | undefined>(undefined),
 		});
@@ -1088,7 +1050,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -1097,7 +1058,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -1115,7 +1075,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -1126,7 +1085,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1135,7 +1093,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 
@@ -1150,16 +1107,15 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBudgetPerformanceHistoryRequestFormGroup() {
 		return new FormGroup<DescribeBudgetPerformanceHistoryRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1195,7 +1151,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -1207,13 +1162,12 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBudgetsResponseFormGroup() {
 		return new FormGroup<DescribeBudgetsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1227,7 +1181,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -1242,7 +1195,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -1255,7 +1207,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1270,15 +1221,14 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBudgetsRequestFormGroup() {
 		return new FormGroup<DescribeBudgetsRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1294,7 +1244,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -1306,13 +1255,12 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeNotificationsForBudgetResponseFormGroup() {
 		return new FormGroup<DescribeNotificationsForBudgetResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1326,7 +1274,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -1335,7 +1282,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -1350,7 +1296,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -1363,7 +1308,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1372,7 +1316,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 
@@ -1387,16 +1330,15 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeNotificationsForBudgetRequestFormGroup() {
 		return new FormGroup<DescribeNotificationsForBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1416,7 +1358,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -1428,13 +1369,12 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSubscribersForNotificationResponseFormGroup() {
 		return new FormGroup<DescribeSubscribersForNotificationResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1448,7 +1388,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -1457,7 +1396,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -1478,7 +1416,6 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken?: string | null;
 	}
@@ -1491,7 +1428,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1500,7 +1436,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 
@@ -1515,16 +1450,15 @@ export namespace MyNS {
 		 * A generic string.
 		 * Max length: 2147483647
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeSubscribersForNotificationRequestFormGroup() {
 		return new FormGroup<DescribeSubscribersForNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1552,7 +1486,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -1571,13 +1504,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateBudgetRequestFormGroup() {
 		return new FormGroup<UpdateBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
 		});
 
 	}
@@ -1605,7 +1537,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -1614,7 +1545,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -1639,7 +1569,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1648,14 +1577,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateNotificationRequestFormGroup() {
 		return new FormGroup<UpdateNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -1683,7 +1611,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: string;
 
@@ -1692,7 +1619,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: string;
 
@@ -1723,7 +1649,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: \d{12}
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1732,14 +1657,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [^:\\]+
 		 */
 		BudgetName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSubscriberRequestFormGroup() {
 		return new FormGroup<UpdateSubscriberRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
 		});
 
 	}

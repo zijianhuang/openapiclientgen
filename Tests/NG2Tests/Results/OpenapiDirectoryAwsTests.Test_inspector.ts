@@ -320,18 +320,12 @@ export namespace MyNS {
 
 	export interface CreateExclusionsPreviewResponse {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		previewToken: string;
 	}
 	export interface CreateExclusionsPreviewResponseFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		previewToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateExclusionsPreviewResponseFormGroup() {
@@ -2186,10 +2180,7 @@ export namespace MyNS {
 		 */
 		assessmentTemplateArn: string;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		previewToken: string;
 
 		/**
@@ -2209,10 +2200,7 @@ export namespace MyNS {
 		 */
 		assessmentTemplateArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		previewToken: FormControl<string | null | undefined>,
 
 		/**

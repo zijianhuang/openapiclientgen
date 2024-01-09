@@ -26,7 +26,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: string;
 
@@ -45,13 +44,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateScalingPlanRequestFormGroup() {
 		return new FormGroup<CreateScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 		});
 
 	}
@@ -475,7 +473,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: string;
 
@@ -488,7 +485,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 
@@ -497,7 +493,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteScalingPlanRequestFormGroup() {
 		return new FormGroup<DeleteScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -535,7 +531,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: string;
 
@@ -568,7 +563,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 
@@ -594,7 +588,7 @@ export namespace MyNS {
 	}
 	export function CreateScalingPlanResourceFormGroup() {
 		return new FormGroup<ScalingPlanResourceFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
@@ -615,7 +609,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: string;
 
@@ -633,7 +626,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: FormControl<string | null | undefined>,
 
@@ -642,7 +634,7 @@ export namespace MyNS {
 	}
 	export function CreateScalingPolicyFormGroup() {
 		return new FormGroup<ScalingPolicyFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
 			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -658,7 +650,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: string;
 
@@ -673,7 +664,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 
@@ -684,7 +674,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeScalingPlanResourcesRequestFormGroup() {
 		return new FormGroup<DescribeScalingPlanResourcesRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -724,7 +714,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: string;
 
@@ -754,7 +743,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 
@@ -769,7 +757,7 @@ export namespace MyNS {
 	}
 	export function CreateScalingPlanFormGroup() {
 		return new FormGroup<ScalingPlanFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StatusCode: new FormControl<ScalingPlanStatusCode | null | undefined>(undefined, [Validators.required]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
@@ -841,7 +829,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: string;
 
@@ -872,7 +859,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 
@@ -899,7 +885,7 @@ export namespace MyNS {
 	}
 	export function CreateGetScalingPlanResourceForecastDataRequestFormGroup() {
 		return new FormGroup<GetScalingPlanResourceForecastDataRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -931,7 +917,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: string;
 
@@ -948,7 +933,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{Print}&&[^|:/]]+
 		 */
 		ScalingPlanName: FormControl<string | null | undefined>,
 
@@ -957,7 +941,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateScalingPlanRequestFormGroup() {
 		return new FormGroup<UpdateScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 

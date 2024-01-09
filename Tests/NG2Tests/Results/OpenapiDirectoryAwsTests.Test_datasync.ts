@@ -20,7 +20,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
 		 */
 		TaskExecutionArn: string;
 	}
@@ -31,13 +30,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
 		 */
 		TaskExecutionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelTaskExecutionRequestFormGroup() {
 		return new FormGroup<CancelTaskExecutionRequestFormProperties>({
-			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -66,25 +64,19 @@ export namespace MyNS {
 	/** CreateAgentResponse */
 	export interface CreateAgentResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		AgentArn?: string | null;
 	}
 
 	/** CreateAgentResponse */
 	export interface CreateAgentResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		AgentArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAgentResponseFormGroup() {
 		return new FormGroup<CreateAgentResponseFormProperties>({
-			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -96,14 +88,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 29
-		 * Pattern: [A-Z0-9]{5}(-[A-Z0-9]{5}){4}
 		 */
 		ActivationKey: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		AgentName?: string | null;
 
@@ -112,8 +102,6 @@ export namespace MyNS {
 		 * Maximum items: 55
 		 */
 		Tags?: Array<TagListEntry>;
-
-		/** Pattern: ^vpce-[0-9a-f]{17}$ */
 		VpcEndpointId?: string | null;
 
 		/**
@@ -135,24 +123,20 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 29
-		 * Pattern: [A-Z0-9]{5}(-[A-Z0-9]{5}){4}
 		 */
 		ActivationKey: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		AgentName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^vpce-[0-9a-f]{17}$ */
 		VpcEndpointId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAgentRequestFormGroup() {
 		return new FormGroup<CreateAgentRequestFormProperties>({
-			ActivationKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(29)]),
-			AgentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ActivationKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(29), Validators.pattern('[A-Z0-9]{5}(-[A-Z0-9]{5}){4}')]),
+			AgentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 			VpcEndpointId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -166,14 +150,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:/-]+$
 		 */
 		Key: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Value?: string | null;
 	}
@@ -185,21 +167,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:/-]+$
 		 */
 		Key: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagListEntryFormGroup() {
 		return new FormGroup<TagListEntryFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:/-]+$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -208,25 +188,19 @@ export namespace MyNS {
 	/** CreateLocationEfs */
 	export interface CreateLocationEfsResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 	}
 
 	/** CreateLocationEfs */
 	export interface CreateLocationEfsResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationEfsResponseFormGroup() {
 		return new FormGroup<CreateLocationEfsResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -235,16 +209,12 @@ export namespace MyNS {
 	/** CreateLocationEfsRequest */
 	export interface CreateLocationEfsRequest {
 
-		/**
-		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$
-		 */
+		/** Max length: 4096 */
 		Subdirectory?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.*$
 		 */
 		EfsFilesystemArn: string;
 
@@ -264,23 +234,19 @@ export namespace MyNS {
 	/** CreateLocationEfsRequest */
 	export interface CreateLocationEfsRequestFormProperties {
 
-		/**
-		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$
-		 */
+		/** Max length: 4096 */
 		Subdirectory: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.*$
 		 */
 		EfsFilesystemArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationEfsRequestFormGroup() {
 		return new FormGroup<CreateLocationEfsRequestFormProperties>({
-			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
-			EfsFilesystemArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.pattern('^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$')]),
+			EfsFilesystemArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):elasticfilesystem:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.*$')]),
 		});
 
 	}
@@ -292,7 +258,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):ec2:[a-z\-0-9]*:[0-9]{12}:subnet/.*$
 		 */
 		SubnetArn: string;
 
@@ -310,52 +275,41 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):ec2:[a-z\-0-9]*:[0-9]{12}:subnet/.*$
 		 */
 		SubnetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateEc2ConfigFormGroup() {
 		return new FormGroup<Ec2ConfigFormProperties>({
-			SubnetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			SubnetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):ec2:[a-z\-0-9]*:[0-9]{12}:subnet/.*$')]),
 		});
 
 	}
 
 	export interface CreateLocationFsxWindowsResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 	}
 	export interface CreateLocationFsxWindowsResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationFsxWindowsResponseFormGroup() {
 		return new FormGroup<CreateLocationFsxWindowsResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
 
 	export interface CreateLocationFsxWindowsRequest {
 
-		/**
-		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$
-		 */
+		/** Max length: 4096 */
 		Subdirectory?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.*$
 		 */
 		FsxFilesystemArn: string;
 
@@ -375,65 +329,51 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
 		 */
 		User: string;
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^.{0,104}$
 		 */
 		Password: string;
 	}
 	export interface CreateLocationFsxWindowsRequestFormProperties {
 
-		/**
-		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$
-		 */
+		/** Max length: 4096 */
 		Subdirectory: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.*$
 		 */
 		FsxFilesystemArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
 		 */
 		User: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^.{0,104}$
 		 */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationFsxWindowsRequestFormGroup() {
 		return new FormGroup<CreateLocationFsxWindowsRequestFormProperties>({
-			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
-			FsxFilesystemArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
-			User: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104)]),
-			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104)]),
+			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.pattern('^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$')]),
+			FsxFilesystemArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):fsx:[a-z\-0-9]*:[0-9]{12}:file-system/fs-.*$')]),
+			User: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104), Validators.pattern('^[^\x5B\x5D\\/:;|=,+*?]{1,104}$')]),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.pattern('^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104), Validators.pattern('^.{0,104}$')]),
 		});
 
 	}
@@ -442,25 +382,19 @@ export namespace MyNS {
 	/** CreateLocationNfsResponse */
 	export interface CreateLocationNfsResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 	}
 
 	/** CreateLocationNfsResponse */
 	export interface CreateLocationNfsResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationNfsResponseFormGroup() {
 		return new FormGroup<CreateLocationNfsResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -472,14 +406,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]+$
 		 */
 		Subdirectory: string;
 
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: ^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$
 		 */
 		ServerHostname: string;
 
@@ -505,21 +437,19 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]+$
 		 */
 		Subdirectory: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: ^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$
 		 */
 		ServerHostname: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationNfsRequestFormGroup() {
 		return new FormGroup<CreateLocationNfsRequestFormProperties>({
-			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096)]),
-			ServerHostname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.pattern('^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]+$')]),
+			ServerHostname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.pattern('^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$')]),
 		});
 
 	}
@@ -568,25 +498,19 @@ export namespace MyNS {
 	/** CreateLocationS3Response */
 	export interface CreateLocationS3Response {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 	}
 
 	/** CreateLocationS3Response */
 	export interface CreateLocationS3ResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationS3ResponseFormGroup() {
 		return new FormGroup<CreateLocationS3ResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -595,16 +519,12 @@ export namespace MyNS {
 	/** CreateLocationS3Request */
 	export interface CreateLocationS3Request {
 
-		/**
-		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$
-		 */
+		/** Max length: 4096 */
 		Subdirectory?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 76
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3:::([^/]*)$
 		 */
 		S3BucketArn: string;
 		S3StorageClass?: CreateLocationS3RequestS3StorageClass | null;
@@ -625,24 +545,20 @@ export namespace MyNS {
 	/** CreateLocationS3Request */
 	export interface CreateLocationS3RequestFormProperties {
 
-		/**
-		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$
-		 */
+		/** Max length: 4096 */
 		Subdirectory: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 76
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3:::([^/]*)$
 		 */
 		S3BucketArn: FormControl<string | null | undefined>,
 		S3StorageClass: FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>,
 	}
 	export function CreateCreateLocationS3RequestFormGroup() {
 		return new FormGroup<CreateLocationS3RequestFormProperties>({
-			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
-			S3BucketArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(76)]),
+			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.pattern('^[a-zA-Z0-9_\-\+\./\(\)\p{Zs}]*$')]),
+			S3BucketArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(76), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3:::([^/]*)$')]),
 			S3StorageClass: new FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>(undefined),
 		});
 
@@ -657,7 +573,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$
 		 */
 		BucketAccessRoleArn: string;
 	}
@@ -668,13 +583,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$
 		 */
 		BucketAccessRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ConfigFormGroup() {
 		return new FormGroup<S3ConfigFormProperties>({
-			BucketAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			BucketAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):iam::[0-9]{12}:role/.*$')]),
 		});
 
 	}
@@ -683,25 +597,19 @@ export namespace MyNS {
 	/** CreateLocationSmbResponse */
 	export interface CreateLocationSmbResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 	}
 
 	/** CreateLocationSmbResponse */
 	export interface CreateLocationSmbResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationSmbResponseFormGroup() {
 		return new FormGroup<CreateLocationSmbResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -713,34 +621,27 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$
 		 */
 		Subdirectory: string;
 
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: ^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$
 		 */
 		ServerHostname: string;
 
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
 		 */
 		User: string;
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^.{0,104}$
 		 */
 		Password: string;
 
@@ -767,44 +668,37 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 4096
-		 * Pattern: ^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$
 		 */
 		Subdirectory: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: ^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$
 		 */
 		ServerHostname: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
 		 */
 		User: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 104
-		 * Pattern: ^.{0,104}$
 		 */
 		Password: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLocationSmbRequestFormGroup() {
 		return new FormGroup<CreateLocationSmbRequestFormProperties>({
-			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096)]),
-			ServerHostname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
-			User: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104)]),
-			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104)]),
+			Subdirectory: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.pattern('^[a-zA-Z0-9_\-\+\./\(\)\$\p{Zs}]+$')]),
+			ServerHostname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.pattern('^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$')]),
+			User: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104), Validators.pattern('^[^\x5B\x5D\\/:;|=,+*?]{1,104}$')]),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.pattern('^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(104), Validators.pattern('^.{0,104}$')]),
 		});
 
 	}
@@ -832,25 +726,19 @@ export namespace MyNS {
 	/** CreateTaskResponse */
 	export interface CreateTaskResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn?: string | null;
 	}
 
 	/** CreateTaskResponse */
 	export interface CreateTaskResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTaskResponseFormGroup() {
 		return new FormGroup<CreateTaskResponseFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -862,27 +750,21 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		SourceLocationArn: string;
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		DestinationLocationArn: string;
 
-		/**
-		 * Max length: 562
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$
-		 */
+		/** Max length: 562 */
 		CloudWatchLogGroupArn?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name?: string | null;
 
@@ -911,36 +793,30 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		SourceLocationArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		DestinationLocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 562
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$
-		 */
+		/** Max length: 562 */
 		CloudWatchLogGroupArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTaskRequestFormGroup() {
 		return new FormGroup<CreateTaskRequestFormProperties>({
-			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
-			DestinationLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
-			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			DestinationLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -1019,38 +895,26 @@ export namespace MyNS {
 	/** Specifies which files, folders and objects to include or exclude when transferring files from source to destination. */
 	export interface FilterRule {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^[A-Z0-9_]+$
-		 */
+		/** Max length: 128 */
 		FilterType?: FilterRuleFilterType | null;
 
-		/**
-		 * Max length: 409600
-		 * Pattern: ^[^\x00]+$
-		 */
+		/** Max length: 409600 */
 		Value?: string | null;
 	}
 
 	/** Specifies which files, folders and objects to include or exclude when transferring files from source to destination. */
 	export interface FilterRuleFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^[A-Z0-9_]+$
-		 */
+		/** Max length: 128 */
 		FilterType: FormControl<FilterRuleFilterType | null | undefined>,
 
-		/**
-		 * Max length: 409600
-		 * Pattern: ^[^\x00]+$
-		 */
+		/** Max length: 409600 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterRuleFormGroup() {
 		return new FormGroup<FilterRuleFormProperties>({
-			FilterType: new FormControl<FilterRuleFilterType | null | undefined>(undefined, [Validators.maxLength(128)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(409600)]),
+			FilterType: new FormControl<FilterRuleFilterType | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^[A-Z0-9_]+$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(409600), Validators.pattern('^[^\x00]+$')]),
 		});
 
 	}
@@ -1064,7 +928,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9\ \_\*\?\,\|\^\-\/\#\s\(\)\+]*$
 		 */
 		ScheduleExpression: string;
 	}
@@ -1075,13 +938,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9\ \_\*\?\,\|\^\-\/\#\s\(\)\+]*$
 		 */
 		ScheduleExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskScheduleFormGroup() {
 		return new FormGroup<TaskScheduleFormProperties>({
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\ \_\*\?\,\|\^\-\/\#\s\(\)\+]*$')]),
 		});
 
 	}
@@ -1103,7 +965,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
 		 */
 		AgentArn: string;
 	}
@@ -1114,13 +975,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
 		 */
 		AgentArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAgentRequestFormGroup() {
 		return new FormGroup<DeleteAgentRequestFormProperties>({
-			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -1142,7 +1002,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: string;
 	}
@@ -1153,13 +1012,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLocationRequestFormGroup() {
 		return new FormGroup<DeleteLocationRequestFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -1181,7 +1039,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: string;
 	}
@@ -1192,13 +1049,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTaskRequestFormGroup() {
 		return new FormGroup<DeleteTaskRequestFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -1207,16 +1063,12 @@ export namespace MyNS {
 	/** DescribeAgentResponse */
 	export interface DescribeAgentResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		AgentArn?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name?: string | null;
 		Status?: DescribeAgentResponseStatus | null;
@@ -1231,16 +1083,12 @@ export namespace MyNS {
 	/** DescribeAgentResponse */
 	export interface DescribeAgentResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		AgentArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeAgentResponseStatus | null | undefined>,
@@ -1250,8 +1098,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAgentResponseFormGroup() {
 		return new FormGroup<DescribeAgentResponseFormProperties>({
-			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 			Status: new FormControl<DescribeAgentResponseStatus | null | undefined>(undefined),
 			LastConnectionTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1267,14 +1115,11 @@ export namespace MyNS {
 
 	/** The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud). */
 	export interface PrivateLinkConfig {
-
-		/** Pattern: ^vpce-[0-9a-f]{17}$ */
 		VpcEndpointId?: string | null;
 
 		/**
 		 * Max length: 15
 		 * Min length: 7
-		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
 		 */
 		PrivateLinkEndpoint?: string | null;
 
@@ -1293,21 +1138,18 @@ export namespace MyNS {
 
 	/** The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud). */
 	export interface PrivateLinkConfigFormProperties {
-
-		/** Pattern: ^vpce-[0-9a-f]{17}$ */
 		VpcEndpointId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 15
 		 * Min length: 7
-		 * Pattern: \A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z
 		 */
 		PrivateLinkEndpoint: FormControl<string | null | undefined>,
 	}
 	export function CreatePrivateLinkConfigFormGroup() {
 		return new FormGroup<PrivateLinkConfigFormProperties>({
 			VpcEndpointId: new FormControl<string | null | undefined>(undefined),
-			PrivateLinkEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(7)]),
+			PrivateLinkEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(7), Validators.pattern('\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z')]),
 		});
 
 	}
@@ -1319,7 +1161,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
 		 */
 		AgentArn: string;
 	}
@@ -1330,13 +1171,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
 		 */
 		AgentArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAgentRequestFormGroup() {
 		return new FormGroup<DescribeAgentRequestFormProperties>({
-			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -1345,16 +1185,10 @@ export namespace MyNS {
 	/** DescribeLocationEfsResponse */
 	export interface DescribeLocationEfsResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri?: string | null;
 
 		/** The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified. */
@@ -1365,23 +1199,17 @@ export namespace MyNS {
 	/** DescribeLocationEfsResponse */
 	export interface DescribeLocationEfsResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeLocationEfsResponseFormGroup() {
 		return new FormGroup<DescribeLocationEfsResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356), Validators.pattern('^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1394,7 +1222,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: string;
 	}
@@ -1405,29 +1232,22 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLocationEfsRequestFormGroup() {
 		return new FormGroup<DescribeLocationEfsRequestFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
 
 	export interface DescribeLocationFsxWindowsResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri?: string | null;
 
 		/**
@@ -1437,52 +1257,34 @@ export namespace MyNS {
 		SecurityGroupArns?: Array<string>;
 		CreationTime?: Date | null;
 
-		/**
-		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
-		 */
+		/** Max length: 104 */
 		User?: string | null;
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain?: string | null;
 	}
 	export interface DescribeLocationFsxWindowsResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 
-		/**
-		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
-		 */
+		/** Max length: 104 */
 		User: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLocationFsxWindowsResponseFormGroup() {
 		return new FormGroup<DescribeLocationFsxWindowsResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356), Validators.pattern('^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			User: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(104)]),
-			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253)]),
+			User: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(104), Validators.pattern('^[^\x5B\x5D\\/:;|=,+*?]{1,104}$')]),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.pattern('^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$')]),
 		});
 
 	}
@@ -1492,7 +1294,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: string;
 	}
@@ -1501,13 +1302,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLocationFsxWindowsRequestFormGroup() {
 		return new FormGroup<DescribeLocationFsxWindowsRequestFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -1516,16 +1316,10 @@ export namespace MyNS {
 	/** DescribeLocationNfsResponse */
 	export interface DescribeLocationNfsResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri?: string | null;
 
 		/** A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location. */
@@ -1539,23 +1333,17 @@ export namespace MyNS {
 	/** DescribeLocationNfsResponse */
 	export interface DescribeLocationNfsResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeLocationNfsResponseFormGroup() {
 		return new FormGroup<DescribeLocationNfsResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356), Validators.pattern('^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1568,7 +1356,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: string;
 	}
@@ -1579,13 +1366,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLocationNfsRequestFormGroup() {
 		return new FormGroup<DescribeLocationNfsRequestFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -1594,16 +1380,10 @@ export namespace MyNS {
 	/** DescribeLocationS3Response */
 	export interface DescribeLocationS3Response {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri?: string | null;
 		S3StorageClass?: CreateLocationS3RequestS3StorageClass | null;
 
@@ -1615,24 +1395,18 @@ export namespace MyNS {
 	/** DescribeLocationS3Response */
 	export interface DescribeLocationS3ResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri: FormControl<string | null | undefined>,
 		S3StorageClass: FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeLocationS3ResponseFormGroup() {
 		return new FormGroup<DescribeLocationS3ResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356), Validators.pattern('^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$')]),
 			S3StorageClass: new FormControl<CreateLocationS3RequestS3StorageClass | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1646,7 +1420,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: string;
 	}
@@ -1657,13 +1430,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLocationS3RequestFormGroup() {
 		return new FormGroup<DescribeLocationS3RequestFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -1672,16 +1444,10 @@ export namespace MyNS {
 	/** DescribeLocationSmbResponse */
 	export interface DescribeLocationSmbResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri?: string | null;
 
 		/**
@@ -1690,16 +1456,10 @@ export namespace MyNS {
 		 */
 		AgentArns?: Array<string>;
 
-		/**
-		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
-		 */
+		/** Max length: 104 */
 		User?: string | null;
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain?: string | null;
 
 		/** Represents the mount options that are available for DataSync to access an SMB location. */
@@ -1710,37 +1470,25 @@ export namespace MyNS {
 	/** DescribeLocationSmbResponse */
 	export interface DescribeLocationSmbResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 104
-		 * Pattern: ^[^\x5B\x5D\\/:;|=,+*?]{1,104}$
-		 */
+		/** Max length: 104 */
 		User: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 253
-		 * Pattern: ^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$
-		 */
+		/** Max length: 253 */
 		Domain: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateDescribeLocationSmbResponseFormGroup() {
 		return new FormGroup<DescribeLocationSmbResponseFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356)]),
-			User: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(104)]),
-			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356), Validators.pattern('^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$')]),
+			User: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(104), Validators.pattern('^[^\x5B\x5D\\/:;|=,+*?]{1,104}$')]),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.pattern('^([A-Za-z0-9]+[A-Za-z0-9-.]*)*[A-Za-z0-9-]*[A-Za-z0-9]$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1753,7 +1501,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: string;
 	}
@@ -1764,13 +1511,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
 		 */
 		LocationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeLocationSmbRequestFormGroup() {
 		return new FormGroup<DescribeLocationSmbRequestFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -1779,42 +1525,26 @@ export namespace MyNS {
 	/** DescribeTaskResponse */
 	export interface DescribeTaskResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn?: string | null;
 		Status?: DescribeTaskResponseStatus | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name?: string | null;
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		CurrentTaskExecutionArn?: string | null;
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		SourceLocationArn?: string | null;
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		DestinationLocationArn?: string | null;
 
-		/**
-		 * Max length: 562
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$
-		 */
+		/** Max length: 562 */
 		CloudWatchLogGroupArn?: string | null;
 		SourceNetworkInterfaceArns?: Array<string>;
 		DestinationNetworkInterfaceArns?: Array<string>;
@@ -1838,42 +1568,26 @@ export namespace MyNS {
 	/** DescribeTaskResponse */
 	export interface DescribeTaskResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeTaskResponseStatus | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		CurrentTaskExecutionArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		SourceLocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		DestinationLocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 562
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$
-		 */
+		/** Max length: 562 */
 		CloudWatchLogGroupArn: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
 		ErrorDetail: FormControl<string | null | undefined>,
@@ -1881,13 +1595,13 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTaskResponseFormGroup() {
 		return new FormGroup<DescribeTaskResponseFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 			Status: new FormControl<DescribeTaskResponseStatus | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			CurrentTaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			DestinationLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			CurrentTaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$')]),
+			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			DestinationLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$')]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorDetail: new FormControl<string | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1904,7 +1618,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: string;
 	}
@@ -1915,13 +1628,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTaskRequestFormGroup() {
 		return new FormGroup<DescribeTaskRequestFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -1930,10 +1642,7 @@ export namespace MyNS {
 	/** DescribeTaskExecutionResponse */
 	export interface DescribeTaskExecutionResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskExecutionArn?: string | null;
 		Status?: DescribeTaskExecutionResponseStatus | null;
 
@@ -1965,10 +1674,7 @@ export namespace MyNS {
 	/** DescribeTaskExecutionResponse */
 	export interface DescribeTaskExecutionResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskExecutionArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeTaskExecutionResponseStatus | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
@@ -1980,7 +1686,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTaskExecutionResponseFormGroup() {
 		return new FormGroup<DescribeTaskExecutionResponseFormProperties>({
-			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$')]),
 			Status: new FormControl<DescribeTaskExecutionResponseStatus | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EstimatedFilesToTransfer: new FormControl<number | null | undefined>(undefined),
@@ -2060,7 +1766,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
 		 */
 		TaskExecutionArn: string;
 	}
@@ -2071,13 +1776,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
 		 */
 		TaskExecutionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTaskExecutionRequestFormGroup() {
 		return new FormGroup<DescribeTaskExecutionRequestFormProperties>({
-			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -2087,25 +1791,19 @@ export namespace MyNS {
 	export interface ListAgentsResponse {
 		Agents?: Array<AgentListEntry>;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
 	/** ListAgentsResponse */
 	export interface ListAgentsResponseFormProperties {
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAgentsResponseFormGroup() {
 		return new FormGroup<ListAgentsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2114,16 +1812,12 @@ export namespace MyNS {
 	/** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called. */
 	export interface AgentListEntry {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		AgentArn?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name?: string | null;
 		Status?: DescribeAgentResponseStatus | null;
@@ -2132,24 +1826,20 @@ export namespace MyNS {
 	/** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called. */
 	export interface AgentListEntryFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		AgentArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeAgentResponseStatus | null | undefined>,
 	}
 	export function CreateAgentListEntryFormGroup() {
 		return new FormGroup<AgentListEntryFormProperties>({
-			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 			Status: new FormControl<DescribeAgentResponseStatus | null | undefined>(undefined),
 		});
 
@@ -2165,10 +1855,7 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
@@ -2181,16 +1868,13 @@ export namespace MyNS {
 		 */
 		MaxResults: FormControl<number | null | undefined>,
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListAgentsRequestFormGroup() {
 		return new FormGroup<ListAgentsRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2200,25 +1884,19 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 		Locations?: Array<LocationListEntry>;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
 	/** ListLocationsResponse */
 	export interface ListLocationsResponseFormProperties {
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListLocationsResponseFormGroup() {
 		return new FormGroup<ListLocationsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2227,38 +1905,26 @@ export namespace MyNS {
 	/** Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called. */
 	export interface LocationListEntry {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn?: string | null;
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri?: string | null;
 	}
 
 	/** Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called. */
 	export interface LocationListEntryFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$
-		 */
+		/** Max length: 128 */
 		LocationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 4356
-		 * Pattern: ^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$
-		 */
+		/** Max length: 4356 */
 		LocationUri: FormControl<string | null | undefined>,
 	}
 	export function CreateLocationListEntryFormGroup() {
 		return new FormGroup<LocationListEntryFormProperties>({
-			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356)]),
+			LocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
+			LocationUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4356), Validators.pattern('^(efs|nfs|s3|smb|fsxw)://[a-zA-Z0-9.\-]+$')]),
 		});
 
 	}
@@ -2273,10 +1939,7 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
@@ -2289,16 +1952,13 @@ export namespace MyNS {
 		 */
 		MaxResults: FormControl<number | null | undefined>,
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListLocationsRequestFormGroup() {
 		return new FormGroup<ListLocationsRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2313,25 +1973,19 @@ export namespace MyNS {
 		 */
 		Tags?: Array<TagListEntry>;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
 	/** ListTagsForResourceResponse */
 	export interface ListTagsForResourceResponseFormProperties {
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2343,7 +1997,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$
 		 */
 		ResourceArn: string;
 
@@ -2353,10 +2006,7 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
@@ -2366,7 +2016,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 
@@ -2376,17 +2025,14 @@ export namespace MyNS {
 		 */
 		MaxResults: FormControl<number | null | undefined>,
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2396,25 +2042,19 @@ export namespace MyNS {
 	export interface ListTaskExecutionsResponse {
 		TaskExecutions?: Array<TaskExecutionListEntry>;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
 	/** ListTaskExecutionsResponse */
 	export interface ListTaskExecutionsResponseFormProperties {
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTaskExecutionsResponseFormGroup() {
 		return new FormGroup<ListTaskExecutionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2423,10 +2063,7 @@ export namespace MyNS {
 	/** Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called. */
 	export interface TaskExecutionListEntry {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskExecutionArn?: string | null;
 		Status?: DescribeTaskExecutionResponseStatus | null;
 	}
@@ -2434,16 +2071,13 @@ export namespace MyNS {
 	/** Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called. */
 	export interface TaskExecutionListEntryFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskExecutionArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeTaskExecutionResponseStatus | null | undefined>,
 	}
 	export function CreateTaskExecutionListEntryFormGroup() {
 		return new FormGroup<TaskExecutionListEntryFormProperties>({
-			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$')]),
 			Status: new FormControl<DescribeTaskExecutionResponseStatus | null | undefined>(undefined),
 		});
 
@@ -2453,10 +2087,7 @@ export namespace MyNS {
 	/** ListTaskExecutions */
 	export interface ListTaskExecutionsRequest {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn?: string | null;
 
 		/**
@@ -2465,20 +2096,14 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
 	/** ListTaskExecutions */
 	export interface ListTaskExecutionsRequestFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn: FormControl<string | null | undefined>,
 
 		/**
@@ -2487,17 +2112,14 @@ export namespace MyNS {
 		 */
 		MaxResults: FormControl<number | null | undefined>,
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTaskExecutionsRequestFormGroup() {
 		return new FormGroup<ListTaskExecutionsRequestFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2507,25 +2129,19 @@ export namespace MyNS {
 	export interface ListTasksResponse {
 		Tasks?: Array<TaskListEntry>;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
 	/** ListTasksResponse */
 	export interface ListTasksResponseFormProperties {
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTasksResponseFormGroup() {
 		return new FormGroup<ListTasksResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2534,17 +2150,13 @@ export namespace MyNS {
 	/** Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks. */
 	export interface TaskListEntry {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn?: string | null;
 		Status?: DescribeTaskResponseStatus | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name?: string | null;
 	}
@@ -2552,25 +2164,21 @@ export namespace MyNS {
 	/** Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks. */
 	export interface TaskListEntryFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeTaskResponseStatus | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateTaskListEntryFormGroup() {
 		return new FormGroup<TaskListEntryFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 			Status: new FormControl<DescribeTaskResponseStatus | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -2585,10 +2193,7 @@ export namespace MyNS {
 		 */
 		MaxResults?: number | null;
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken?: string | null;
 	}
 
@@ -2601,16 +2206,13 @@ export namespace MyNS {
 		 */
 		MaxResults: FormControl<number | null | undefined>,
 
-		/**
-		 * Max length: 65535
-		 * Pattern: [a-zA-Z0-9=_-]+
-		 */
+		/** Max length: 65535 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTasksRequestFormGroup() {
 		return new FormGroup<ListTasksRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65535), Validators.pattern('[a-zA-Z0-9=_-]+')]),
 		});
 
 	}
@@ -2619,25 +2221,19 @@ export namespace MyNS {
 	/** StartTaskExecutionResponse */
 	export interface StartTaskExecutionResponse {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskExecutionArn?: string | null;
 	}
 
 	/** StartTaskExecutionResponse */
 	export interface StartTaskExecutionResponseFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$
-		 */
+		/** Max length: 128 */
 		TaskExecutionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTaskExecutionResponseFormGroup() {
 		return new FormGroup<StartTaskExecutionResponseFormProperties>({
-			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -2649,7 +2245,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: string;
 
@@ -2669,13 +2264,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTaskExecutionRequestFormGroup() {
 		return new FormGroup<StartTaskExecutionRequestFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -2697,7 +2291,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$
 		 */
 		ResourceArn: string;
 
@@ -2715,13 +2308,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -2743,7 +2335,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$
 		 */
 		ResourceArn: string;
 
@@ -2761,13 +2352,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:(agent|task|location)/(agent|task|loc)-[0-9a-z]{17}$')]),
 		});
 
 	}
@@ -2789,14 +2379,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
 		 */
 		AgentArn: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name?: string | null;
 	}
@@ -2807,21 +2395,19 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$
 		 */
 		AgentArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAgentRequestFormGroup() {
 		return new FormGroup<UpdateAgentRequestFormProperties>({
-			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -2843,7 +2429,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: string;
 
@@ -2862,14 +2447,10 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name?: string | null;
 
-		/**
-		 * Max length: 562
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$
-		 */
+		/** Max length: 562 */
 		CloudWatchLogGroupArn?: string | null;
 	}
 
@@ -2879,28 +2460,23 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$
 		 */
 		TaskArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9\s+=._:@/-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 562
-		 * Pattern: ^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$
-		 */
+		/** Max length: 562 */
 		CloudWatchLogGroupArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTaskRequestFormGroup() {
 		return new FormGroup<UpdateTaskRequestFormProperties>({
-			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562)]),
+			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$')]),
 		});
 
 	}

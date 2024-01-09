@@ -31,7 +31,6 @@ export namespace MyNS {
 		/**
 		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
 		 */
 		ReportName?: string | null;
 	}
@@ -42,13 +41,12 @@ export namespace MyNS {
 		/**
 		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
 		 */
 		ReportName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteReportDefinitionRequestFormGroup() {
 		return new FormGroup<DeleteReportDefinitionRequestFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()]+')]),
 		});
 
 	}
@@ -105,7 +103,6 @@ export namespace MyNS {
 		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
 		 * Required
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
 		 */
 		ReportName: string;
 
@@ -144,7 +141,6 @@ export namespace MyNS {
 		 * The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.
 		 * Required
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()/]*
 		 */
 		S3Prefix: string;
 
@@ -167,7 +163,6 @@ export namespace MyNS {
 		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
 		 * Required
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
 		 */
 		ReportName: FormControl<string | null | undefined>,
 
@@ -200,7 +195,6 @@ export namespace MyNS {
 		 * The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.
 		 * Required
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()/]*
 		 */
 		S3Prefix: FormControl<string | null | undefined>,
 
@@ -214,12 +208,12 @@ export namespace MyNS {
 	}
 	export function CreateReportDefinitionFormGroup() {
 		return new FormGroup<ReportDefinitionFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()]+')]),
 			TimeUnit: new FormControl<ReportDefinitionTimeUnit | null | undefined>(undefined, [Validators.required]),
 			Format: new FormControl<ReportDefinitionFormat | null | undefined>(undefined, [Validators.required]),
 			Compression: new FormControl<ReportDefinitionCompression | null | undefined>(undefined, [Validators.required]),
 			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
-			S3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			S3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()/]*')]),
 			S3Region: new FormControl<ReportDefinitionS3Region | null | undefined>(undefined, [Validators.required]),
 			RefreshClosedReports: new FormControl<boolean | null | undefined>(undefined),
 			ReportVersioning: new FormControl<ReportDefinitionReportVersioning | null | undefined>(undefined),
@@ -297,7 +291,6 @@ export namespace MyNS {
 		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
 		 * Required
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
 		 */
 		ReportName: string;
 
@@ -313,13 +306,12 @@ export namespace MyNS {
 		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
 		 * Required
 		 * Max length: 256
-		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
 		 */
 		ReportName: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyReportDefinitionRequestFormGroup() {
 		return new FormGroup<ModifyReportDefinitionRequestFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()]+')]),
 		});
 
 	}

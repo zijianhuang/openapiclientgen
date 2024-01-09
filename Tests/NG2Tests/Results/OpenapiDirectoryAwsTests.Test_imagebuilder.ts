@@ -16,8 +16,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn?: string | null;
 	}
 	export interface CancelImageCreationResponseFormProperties {
@@ -33,8 +31,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelImageCreationResponseFormGroup() {
@@ -139,8 +135,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentBuildVersionArn?: string | null;
 	}
 	export interface CreateComponentResponseFormProperties {
@@ -156,8 +150,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentBuildVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateComponentResponseFormGroup() {
@@ -202,8 +194,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn?: string | null;
 	}
 	export interface CreateDistributionConfigurationResponseFormProperties {
@@ -219,8 +209,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDistributionConfigurationResponseFormGroup() {
@@ -272,7 +260,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 127
 		 * Min length: 1
-		 * Pattern: ^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}]+[-_A-Za-z0-9}]$
 		 */
 		name?: string | null;
 
@@ -293,7 +280,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 127
 		 * Min length: 1
-		 * Pattern: ^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}]+[-_A-Za-z0-9}]$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -305,7 +291,7 @@ export namespace MyNS {
 	}
 	export function CreateAmiDistributionConfigurationFormGroup() {
 		return new FormGroup<AmiDistributionConfigurationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1), Validators.pattern('^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}]+[-_A-Za-z0-9}]$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
@@ -360,8 +346,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn?: string | null;
 	}
 	export interface CreateImageResponseFormProperties {
@@ -377,8 +361,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateImageResponseFormGroup() {
@@ -403,8 +385,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$ */
 		imagePipelineArn?: string | null;
 	}
 	export interface CreateImagePipelineResponseFormProperties {
@@ -420,8 +400,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$ */
 		imagePipelineArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateImagePipelineResponseFormGroup() {
@@ -448,8 +426,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$ */
 		imageRecipeArn?: string | null;
 	}
 	export interface CreateImageRecipeResponseFormProperties {
@@ -465,8 +441,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$ */
 		imageRecipeArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateImageRecipeResponseFormGroup() {
@@ -482,20 +456,14 @@ export namespace MyNS {
 	/**  Configuration details of the component.  */
 	export interface ComponentConfiguration {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/(?:(?:(\d+|x)\.(\d+|x)\.(\d+|x))|(?:\d+\.\d+\.\d+/\d+))$
-		 */
+		/** Required */
 		componentArn: string;
 	}
 
 	/**  Configuration details of the component.  */
 	export interface ComponentConfigurationFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/(?:(?:(\d+|x)\.(\d+|x)\.(\d+|x))|(?:\d+\.\d+\.\d+/\d+))$
-		 */
+		/** Required */
 		componentArn: FormControl<string | null | undefined>,
 	}
 	export function CreateComponentConfigurationFormGroup() {
@@ -651,8 +619,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$ */
 		infrastructureConfigurationArn?: string | null;
 	}
 	export interface CreateInfrastructureConfigurationResponseFormProperties {
@@ -668,8 +634,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$ */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInfrastructureConfigurationResponseFormGroup() {
@@ -728,8 +692,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentBuildVersionArn?: string | null;
 	}
 	export interface DeleteComponentResponseFormProperties {
@@ -739,8 +701,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentBuildVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteComponentResponseFormGroup() {
@@ -768,8 +728,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn?: string | null;
 	}
 	export interface DeleteDistributionConfigurationResponseFormProperties {
@@ -779,8 +737,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDistributionConfigurationResponseFormGroup() {
@@ -798,8 +754,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn?: string | null;
 	}
 	export interface DeleteImageResponseFormProperties {
@@ -809,8 +763,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteImageResponseFormGroup() {
@@ -828,8 +780,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$ */
 		imagePipelineArn?: string | null;
 	}
 	export interface DeleteImagePipelineResponseFormProperties {
@@ -839,8 +789,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$ */
 		imagePipelineArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteImagePipelineResponseFormGroup() {
@@ -858,8 +806,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$ */
 		imageRecipeArn?: string | null;
 	}
 	export interface DeleteImageRecipeResponseFormProperties {
@@ -869,8 +815,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$ */
 		imageRecipeArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteImageRecipeResponseFormGroup() {
@@ -888,8 +832,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$ */
 		infrastructureConfigurationArn?: string | null;
 	}
 	export interface DeleteInfrastructureConfigurationResponseFormProperties {
@@ -899,8 +841,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$ */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInfrastructureConfigurationResponseFormGroup() {
@@ -940,14 +880,8 @@ export namespace MyNS {
 
 	/** A detailed view of a component. */
 	export interface Component {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version?: string | null;
 
 		/**
@@ -989,14 +923,8 @@ export namespace MyNS {
 
 	/** A detailed view of a component. */
 	export interface ComponentFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version: FormControl<string | null | undefined>,
 
 		/**
@@ -1125,11 +1053,7 @@ export namespace MyNS {
 
 	/** A distribution configuration. */
 	export interface DistributionConfiguration {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
 
 		/**
@@ -1152,11 +1076,7 @@ export namespace MyNS {
 
 	/** A distribution configuration. */
 	export interface DistributionConfigurationFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -1215,14 +1135,8 @@ export namespace MyNS {
 
 	/** An image build version. */
 	export interface Image {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version?: string | null;
 		platform?: ComponentPlatform | null;
 		enhancedImageMetadataEnabled?: boolean | null;
@@ -1235,8 +1149,6 @@ export namespace MyNS {
 
 		/** An image recipe. */
 		imageRecipe?: ImageRecipe;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		sourcePipelineName?: string | null;
 		sourcePipelineArn?: string | null;
 
@@ -1257,22 +1169,14 @@ export namespace MyNS {
 
 	/** An image build version. */
 	export interface ImageFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version: FormControl<string | null | undefined>,
 		platform: FormControl<ComponentPlatform | null | undefined>,
 		enhancedImageMetadataEnabled: FormControl<boolean | null | undefined>,
 
 		/** Min length: 1 */
 		osVersion: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		sourcePipelineName: FormControl<string | null | undefined>,
 		sourcePipelineArn: FormControl<string | null | undefined>,
 		dateCreated: FormControl<string | null | undefined>,
@@ -1327,11 +1231,7 @@ export namespace MyNS {
 
 	/** An image recipe. */
 	export interface ImageRecipe {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
 
 		/**
@@ -1346,8 +1246,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		owner?: string | null;
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version?: string | null;
 
 		/** Minimum items: 1 */
@@ -1365,11 +1263,7 @@ export namespace MyNS {
 
 	/** An image recipe. */
 	export interface ImageRecipeFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -1384,8 +1278,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		owner: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version: FormControl<string | null | undefined>,
 
 		/**
@@ -1412,11 +1304,7 @@ export namespace MyNS {
 
 	/** Details of the infrastructure configuration. */
 	export interface InfrastructureConfiguration {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
 
 		/**
@@ -1461,11 +1349,7 @@ export namespace MyNS {
 
 	/** Details of the infrastructure configuration. */
 	export interface InfrastructureConfigurationFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -1677,11 +1561,7 @@ export namespace MyNS {
 
 	/** Details of an image pipeline. */
 	export interface ImagePipeline {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
 
 		/**
@@ -1710,11 +1590,7 @@ export namespace MyNS {
 
 	/** Details of an image pipeline. */
 	export interface ImagePipelineFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -1925,8 +1801,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentBuildVersionArn?: string | null;
 	}
 	export interface ImportComponentResponseFormProperties {
@@ -1942,8 +1816,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentBuildVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateImportComponentResponseFormGroup() {
@@ -1995,14 +1867,8 @@ export namespace MyNS {
 
 	/** A high-level summary of a component. */
 	export interface ComponentSummary {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version?: string | null;
 		platform?: ComponentPlatform | null;
 
@@ -2036,14 +1902,8 @@ export namespace MyNS {
 
 	/** A high-level summary of a component. */
 	export interface ComponentSummaryFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version: FormControl<string | null | undefined>,
 		platform: FormControl<ComponentPlatform | null | undefined>,
 		type: FormControl<ComponentType | null | undefined>,
@@ -2132,14 +1992,8 @@ export namespace MyNS {
 
 	/** A high-level overview of a component semantic version. */
 	export interface ComponentVersion {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version?: string | null;
 
 		/**
@@ -2166,14 +2020,8 @@ export namespace MyNS {
 
 	/** A high-level overview of a component semantic version. */
 	export interface ComponentVersionFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version: FormControl<string | null | undefined>,
 
 		/**
@@ -2208,8 +2056,6 @@ export namespace MyNS {
 
 	/** A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.  */
 	export interface Filter {
-
-		/** Pattern: ^[a-zA-Z]{1,1024}$ */
 		name?: string | null;
 
 		/**
@@ -2221,8 +2067,6 @@ export namespace MyNS {
 
 	/** A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.  */
 	export interface FilterFormProperties {
-
-		/** Pattern: ^[a-zA-Z]{1,1024}$ */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
@@ -2272,11 +2116,7 @@ export namespace MyNS {
 
 	/** A high-level overview of a distribution configuration. */
 	export interface DistributionConfigurationSummary {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
 
 		/**
@@ -2291,11 +2131,7 @@ export namespace MyNS {
 
 	/** A high-level overview of a distribution configuration. */
 	export interface DistributionConfigurationSummaryFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -2357,14 +2193,8 @@ export namespace MyNS {
 
 	/** An image summary. */
 	export interface ImageSummary {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version?: string | null;
 		platform?: ComponentPlatform | null;
 
@@ -2388,14 +2218,8 @@ export namespace MyNS {
 
 	/** An image summary. */
 	export interface ImageSummaryFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version: FormControl<string | null | undefined>,
 		platform: FormControl<ComponentPlatform | null | undefined>,
 
@@ -2536,11 +2360,7 @@ export namespace MyNS {
 
 	/** A summary of an image recipe. */
 	export interface ImageRecipeSummary {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
 		platform?: ComponentPlatform | null;
 
@@ -2561,11 +2381,7 @@ export namespace MyNS {
 
 	/** A summary of an image recipe. */
 	export interface ImageRecipeSummaryFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
 		platform: FormControl<ComponentPlatform | null | undefined>,
 
@@ -2634,14 +2450,8 @@ export namespace MyNS {
 
 	/** An image semantic version. */
 	export interface ImageVersion {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version?: string | null;
 		platform?: ComponentPlatform | null;
 
@@ -2658,14 +2468,8 @@ export namespace MyNS {
 
 	/** An image semantic version. */
 	export interface ImageVersionFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$ */
 		version: FormControl<string | null | undefined>,
 		platform: FormControl<ComponentPlatform | null | undefined>,
 
@@ -2732,11 +2536,7 @@ export namespace MyNS {
 
 	/** The infrastructure used when building EC2 AMIs. */
 	export interface InfrastructureConfigurationSummary {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn?: string | null;
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name?: string | null;
 
 		/**
@@ -2751,11 +2551,7 @@ export namespace MyNS {
 
 	/** The infrastructure used when building EC2 AMIs. */
 	export interface InfrastructureConfigurationSummaryFormProperties {
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$ */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -2805,8 +2601,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentArn?: string | null;
 	}
 	export interface PutComponentPolicyResponseFormProperties {
@@ -2816,8 +2610,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		componentArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutComponentPolicyResponseFormGroup() {
@@ -2845,8 +2637,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageArn?: string | null;
 	}
 	export interface PutImagePolicyResponseFormProperties {
@@ -2856,8 +2646,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutImagePolicyResponseFormGroup() {
@@ -2875,8 +2663,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$ */
 		imageRecipeArn?: string | null;
 	}
 	export interface PutImageRecipePolicyResponseFormProperties {
@@ -2886,8 +2672,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		requestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$ */
 		imageRecipeArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutImageRecipePolicyResponseFormGroup() {
@@ -2911,8 +2695,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn?: string | null;
 	}
 	export interface StartImagePipelineExecutionResponseFormProperties {
@@ -2928,8 +2710,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$ */
 		imageBuildVersionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartImagePipelineExecutionResponseFormGroup() {
@@ -2974,8 +2754,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn?: string | null;
 	}
 	export interface UpdateDistributionConfigurationResponseFormProperties {
@@ -2991,8 +2769,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDistributionConfigurationResponseFormGroup() {
@@ -3017,8 +2793,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$ */
 		imagePipelineArn?: string | null;
 	}
 	export interface UpdateImagePipelineResponseFormProperties {
@@ -3034,8 +2808,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$ */
 		imagePipelineArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateImagePipelineResponseFormGroup() {
@@ -3060,8 +2832,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken?: string | null;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$ */
 		infrastructureConfigurationArn?: string | null;
 	}
 	export interface UpdateInfrastructureConfigurationResponseFormProperties {
@@ -3077,8 +2847,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$ */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateInfrastructureConfigurationResponseFormGroup() {
@@ -3092,10 +2860,7 @@ export namespace MyNS {
 
 	export interface CancelImageCreationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
-		 */
+		/** Required */
 		imageBuildVersionArn: string;
 
 		/**
@@ -3107,10 +2872,7 @@ export namespace MyNS {
 	}
 	export interface CancelImageCreationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
-		 */
+		/** Required */
 		imageBuildVersionArn: FormControl<string | null | undefined>,
 
 		/**
@@ -3134,16 +2896,10 @@ export namespace MyNS {
 
 	export interface CreateComponentRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: string;
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
-		 */
+		/** Required */
 		semanticVersion: string;
 
 		/**
@@ -3190,16 +2946,10 @@ export namespace MyNS {
 	}
 	export interface CreateComponentRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
-		 */
+		/** Required */
 		semanticVersion: FormControl<string | null | undefined>,
 
 		/**
@@ -3254,10 +3004,7 @@ export namespace MyNS {
 
 	export interface CreateDistributionConfigurationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: string;
 
 		/**
@@ -3279,10 +3026,7 @@ export namespace MyNS {
 	}
 	export interface CreateDistributionConfigurationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -3311,10 +3055,7 @@ export namespace MyNS {
 
 	export interface CreateImagePipelineRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: string;
 
 		/**
@@ -3323,19 +3064,11 @@ export namespace MyNS {
 		 */
 		description?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: string;
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: string;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
@@ -3356,10 +3089,7 @@ export namespace MyNS {
 	}
 	export interface CreateImagePipelineRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -3368,19 +3098,11 @@ export namespace MyNS {
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 		enhancedImageMetadataEnabled: FormControl<boolean | null | undefined>,
 		status: FormControl<ImagePipelineStatus | null | undefined>,
@@ -3408,10 +3130,7 @@ export namespace MyNS {
 
 	export interface CreateImageRecipeRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: string;
 
 		/**
@@ -3420,10 +3139,7 @@ export namespace MyNS {
 		 */
 		description?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
-		 */
+		/** Required */
 		semanticVersion: string;
 
 		/**
@@ -3450,10 +3166,7 @@ export namespace MyNS {
 	}
 	export interface CreateImageRecipeRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -3462,10 +3175,7 @@ export namespace MyNS {
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
-		 */
+		/** Required */
 		semanticVersion: FormControl<string | null | undefined>,
 
 		/**
@@ -3495,19 +3205,11 @@ export namespace MyNS {
 
 	export interface CreateImageRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: string;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: string;
 
 		/** Image tests configuration. */
@@ -3524,19 +3226,11 @@ export namespace MyNS {
 	}
 	export interface CreateImageRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 		enhancedImageMetadataEnabled: FormControl<boolean | null | undefined>,
 
@@ -3560,10 +3254,7 @@ export namespace MyNS {
 
 	export interface CreateInfrastructureConfigurationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: string;
 
 		/**
@@ -3596,8 +3287,6 @@ export namespace MyNS {
 		 */
 		keyPair?: string | null;
 		terminateInstanceOnFailure?: boolean | null;
-
-		/** Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$ */
 		snsTopicArn?: string | null;
 		tags?: TagMap;
 
@@ -3610,10 +3299,7 @@ export namespace MyNS {
 	}
 	export interface CreateInfrastructureConfigurationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: FormControl<string | null | undefined>,
 
 		/**
@@ -3641,8 +3327,6 @@ export namespace MyNS {
 		 */
 		keyPair: FormControl<string | null | undefined>,
 		terminateInstanceOnFailure: FormControl<boolean | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$ */
 		snsTopicArn: FormControl<string | null | undefined>,
 
 		/**
@@ -3826,16 +3510,10 @@ export namespace MyNS {
 
 	export interface ImportComponentRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: string;
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
-		 */
+		/** Required */
 		semanticVersion: string;
 
 		/**
@@ -3882,16 +3560,10 @@ export namespace MyNS {
 	}
 	export interface ImportComponentRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
-		 */
+		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
-		 */
+		/** Required */
 		semanticVersion: FormControl<string | null | undefined>,
 
 		/**
@@ -3954,10 +3626,7 @@ export namespace MyNS {
 
 	export interface ListComponentBuildVersionsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		componentVersionArn: string;
 
 		/**
@@ -3974,10 +3643,7 @@ export namespace MyNS {
 	}
 	export interface ListComponentBuildVersionsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		componentVersionArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4092,10 +3758,7 @@ export namespace MyNS {
 
 	export interface ListImageBuildVersionsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageVersionArn: string;
 
 		/**
@@ -4118,10 +3781,7 @@ export namespace MyNS {
 	}
 	export interface ListImageBuildVersionsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageVersionArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4147,10 +3807,7 @@ export namespace MyNS {
 
 	export interface ListImagePipelineImagesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
-		 */
+		/** Required */
 		imagePipelineArn: string;
 
 		/**
@@ -4173,10 +3830,7 @@ export namespace MyNS {
 	}
 	export interface ListImagePipelineImagesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
-		 */
+		/** Required */
 		imagePipelineArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4386,10 +4040,7 @@ export namespace MyNS {
 
 	export interface PutComponentPolicyRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
-		 */
+		/** Required */
 		componentArn: string;
 
 		/**
@@ -4401,10 +4052,7 @@ export namespace MyNS {
 	}
 	export interface PutComponentPolicyRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
-		 */
+		/** Required */
 		componentArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4424,10 +4072,7 @@ export namespace MyNS {
 
 	export interface PutImagePolicyRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
-		 */
+		/** Required */
 		imageArn: string;
 
 		/**
@@ -4439,10 +4084,7 @@ export namespace MyNS {
 	}
 	export interface PutImagePolicyRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
-		 */
+		/** Required */
 		imageArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4462,10 +4104,7 @@ export namespace MyNS {
 
 	export interface PutImageRecipePolicyRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: string;
 
 		/**
@@ -4477,10 +4116,7 @@ export namespace MyNS {
 	}
 	export interface PutImageRecipePolicyRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4500,10 +4136,7 @@ export namespace MyNS {
 
 	export interface StartImagePipelineExecutionRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
-		 */
+		/** Required */
 		imagePipelineArn: string;
 
 		/**
@@ -4515,10 +4148,7 @@ export namespace MyNS {
 	}
 	export interface StartImagePipelineExecutionRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
-		 */
+		/** Required */
 		imagePipelineArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4561,10 +4191,7 @@ export namespace MyNS {
 
 	export interface UpdateDistributionConfigurationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		distributionConfigurationArn: string;
 
 		/**
@@ -4585,10 +4212,7 @@ export namespace MyNS {
 	}
 	export interface UpdateDistributionConfigurationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4615,10 +4239,7 @@ export namespace MyNS {
 
 	export interface UpdateImagePipelineRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
-		 */
+		/** Required */
 		imagePipelineArn: string;
 
 		/**
@@ -4627,19 +4248,11 @@ export namespace MyNS {
 		 */
 		description?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: string;
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: string;
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
@@ -4659,10 +4272,7 @@ export namespace MyNS {
 	}
 	export interface UpdateImagePipelineRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
-		 */
+		/** Required */
 		imagePipelineArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4671,19 +4281,11 @@ export namespace MyNS {
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
-		 */
+		/** Required */
 		imageRecipeArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$ */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 		enhancedImageMetadataEnabled: FormControl<boolean | null | undefined>,
 		status: FormControl<ImagePipelineStatus | null | undefined>,
@@ -4711,10 +4313,7 @@ export namespace MyNS {
 
 	export interface UpdateInfrastructureConfigurationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: string;
 
 		/**
@@ -4747,8 +4346,6 @@ export namespace MyNS {
 		 */
 		keyPair?: string | null;
 		terminateInstanceOnFailure?: boolean | null;
-
-		/** Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$ */
 		snsTopicArn?: string | null;
 
 		/**
@@ -4760,10 +4357,7 @@ export namespace MyNS {
 	}
 	export interface UpdateInfrastructureConfigurationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
-		 */
+		/** Required */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 
 		/**
@@ -4791,8 +4385,6 @@ export namespace MyNS {
 		 */
 		keyPair: FormControl<string | null | undefined>,
 		terminateInstanceOnFailure: FormControl<boolean | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$ */
 		snsTopicArn: FormControl<string | null | undefined>,
 
 		/**
@@ -5242,7 +4834,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		imageBuildVersionArn: string;
 
@@ -5259,7 +4850,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		imageBuildVersionArn: FormControl<string | null | undefined>,
 
@@ -5284,14 +4874,12 @@ export namespace MyNS {
 		/**
 		 * The name of the component.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
 		/**
 		 * The semantic version of the component. This version follows the semantic version syntax. For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
 		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: string;
 
@@ -5355,14 +4943,12 @@ export namespace MyNS {
 		/**
 		 * The name of the component.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The semantic version of the component. This version follows the semantic version syntax. For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
 		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: FormControl<string | null | undefined>,
 
@@ -5435,7 +5021,6 @@ export namespace MyNS {
 		/**
 		 * The name of the distribution configuration.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
@@ -5468,7 +5053,6 @@ export namespace MyNS {
 		/**
 		 * The name of the distribution configuration.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -5505,20 +5089,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
 
-		/**
-		 * The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline. */
 		distributionConfigurationArn?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
 
@@ -5544,20 +5123,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: FormControl<string | null | undefined>,
 
-		/**
-		 * The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline. */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 
@@ -5618,7 +5192,6 @@ export namespace MyNS {
 		/**
 		 * The name of the image pipeline.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
@@ -5632,21 +5205,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
 
-		/**
-		 * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline. */
 		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
@@ -5677,7 +5245,6 @@ export namespace MyNS {
 		/**
 		 * The name of the image pipeline.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -5691,21 +5258,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline. */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 
 		/** Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. */
@@ -5797,7 +5359,6 @@ export namespace MyNS {
 		/**
 		 * The name of the image recipe.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
@@ -5811,7 +5372,6 @@ export namespace MyNS {
 		/**
 		 * The semantic version of the image recipe.
 		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: string;
 
@@ -5849,7 +5409,6 @@ export namespace MyNS {
 		/**
 		 * The name of the image recipe.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -5863,7 +5422,6 @@ export namespace MyNS {
 		/**
 		 * The semantic version of the image recipe.
 		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: FormControl<string | null | undefined>,
 
@@ -5903,7 +5461,6 @@ export namespace MyNS {
 		/**
 		 * The name of the infrastructure configuration.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
@@ -5948,10 +5505,7 @@ export namespace MyNS {
 		/** The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. */
 		terminateInstanceOnFailure?: boolean | null;
 
-		/**
-		 * The SNS topic on which to send image build events.
-		 * Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$
-		 */
+		/** The SNS topic on which to send image build events. */
 		snsTopicArn?: string | null;
 
 		/** The tags of the infrastructure configuration. */
@@ -5970,7 +5524,6 @@ export namespace MyNS {
 		/**
 		 * The name of the infrastructure configuration.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -6006,10 +5559,7 @@ export namespace MyNS {
 		/** The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. */
 		terminateInstanceOnFailure: FormControl<boolean | null | undefined>,
 
-		/**
-		 * The SNS topic on which to send image build events.
-		 * Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$
-		 */
+		/** The SNS topic on which to send image build events. */
 		snsTopicArn: FormControl<string | null | undefined>,
 
 		/** The tags of the infrastructure configuration. */
@@ -6056,14 +5606,12 @@ export namespace MyNS {
 		/**
 		 * The name of the component.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: string;
 
 		/**
 		 * The semantic version of the component. This version follows the semantic version syntax. For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
 		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: string;
 
@@ -6132,14 +5680,12 @@ export namespace MyNS {
 		/**
 		 * The name of the component.
 		 * Required
-		 * Pattern: ^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The semantic version of the component. This version follows the semantic version syntax. For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
 		 * Required
-		 * Pattern: ^[0-9]+\.[0-9]+\.[0-9]+$
 		 */
 		semanticVersion: FormControl<string | null | undefined>,
 
@@ -6226,7 +5772,6 @@ export namespace MyNS {
 		/**
 		 * The component version Amazon Resource Name (ARN) whose versions you want to list.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		componentVersionArn: string;
 
@@ -6249,7 +5794,6 @@ export namespace MyNS {
 		/**
 		 * The component version Amazon Resource Name (ARN) whose versions you want to list.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		componentVersionArn: FormControl<string | null | undefined>,
 
@@ -6382,7 +5926,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageVersionArn: string;
 
@@ -6412,7 +5955,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageVersionArn: FormControl<string | null | undefined>,
 
@@ -6444,7 +5986,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: string;
 
@@ -6474,7 +6015,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: FormControl<string | null | undefined>,
 
@@ -6731,7 +6271,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the component that this policy should be applied to.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		componentArn: string;
 
@@ -6748,7 +6287,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the component that this policy should be applied to.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		componentArn: FormControl<string | null | undefined>,
 
@@ -6773,7 +6311,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image that this policy should be applied to.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		imageArn: string;
 
@@ -6790,7 +6327,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image that this policy should be applied to.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$
 		 */
 		imageArn: FormControl<string | null | undefined>,
 
@@ -6815,7 +6351,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
 
@@ -6832,7 +6367,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: FormControl<string | null | undefined>,
 
@@ -6857,7 +6391,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: string;
 
@@ -6874,7 +6407,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: FormControl<string | null | undefined>,
 
@@ -6899,7 +6431,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the distribution configuration that you want to update.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
 		 */
 		distributionConfigurationArn: string;
 
@@ -6929,7 +6460,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the distribution configuration that you want to update.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
 		 */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 
@@ -6962,7 +6492,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline that you want to update.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: string;
 
@@ -6976,21 +6505,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
 
-		/**
-		 * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline. */
 		distributionConfigurationArn?: string | null;
 
 		/** Image tests configuration. */
@@ -7018,7 +6542,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image pipeline that you want to update.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$
 		 */
 		imagePipelineArn: FormControl<string | null | undefined>,
 
@@ -7032,21 +6555,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$
 		 */
 		imageRecipeArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 
-		/**
-		 * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$
-		 */
+		/** The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline. */
 		distributionConfigurationArn: FormControl<string | null | undefined>,
 
 		/** Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. */
@@ -7134,7 +6652,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: string;
 
@@ -7179,10 +6696,7 @@ export namespace MyNS {
 		/** The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. */
 		terminateInstanceOnFailure?: boolean | null;
 
-		/**
-		 * The SNS topic on which to send image build events.
-		 * Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$
-		 */
+		/** The SNS topic on which to send image build events. */
 		snsTopicArn?: string | null;
 
 		/**
@@ -7198,7 +6712,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
 		 * Required
-		 * Pattern: ^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$
 		 */
 		infrastructureConfigurationArn: FormControl<string | null | undefined>,
 
@@ -7234,10 +6747,7 @@ export namespace MyNS {
 		/** The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. */
 		terminateInstanceOnFailure: FormControl<boolean | null | undefined>,
 
-		/**
-		 * The SNS topic on which to send image build events.
-		 * Pattern: ^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$
-		 */
+		/** The SNS topic on which to send image build events. */
 		snsTopicArn: FormControl<string | null | undefined>,
 
 		/**

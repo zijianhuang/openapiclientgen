@@ -147,7 +147,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: string;
 
@@ -155,7 +154,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: string;
 
@@ -176,7 +174,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: FormControl<string | null | undefined>,
 
@@ -184,7 +181,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: FormControl<string | null | undefined>,
 
@@ -196,8 +192,8 @@ export namespace MyNS {
 	}
 	export function CreatePlacementDescriptionFormGroup() {
 		return new FormGroup<PlacementDescriptionFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -233,15 +229,12 @@ export namespace MyNS {
 
 	/** An object providing detailed information for a particular project associated with an AWS account and region. */
 	export interface ProjectDescription {
-
-		/** Pattern: ^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$ */
 		arn?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: string;
 
@@ -264,15 +257,12 @@ export namespace MyNS {
 
 	/** An object providing detailed information for a particular project associated with an AWS account and region. */
 	export interface ProjectDescriptionFormProperties {
-
-		/** Pattern: ^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$ */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: FormControl<string | null | undefined>,
 
@@ -291,7 +281,7 @@ export namespace MyNS {
 	export function CreateProjectDescriptionFormGroup() {
 		return new FormGroup<ProjectDescriptionFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined),
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -392,7 +382,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: string;
 
@@ -400,7 +389,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: string;
 
@@ -418,7 +406,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: FormControl<string | null | undefined>,
 
@@ -426,7 +413,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: FormControl<string | null | undefined>,
 
@@ -438,8 +424,8 @@ export namespace MyNS {
 	}
 	export function CreatePlacementSummaryFormGroup() {
 		return new FormGroup<PlacementSummaryFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -475,15 +461,12 @@ export namespace MyNS {
 
 	/** An object providing summary information for a particular project for an associated AWS account and region. */
 	export interface ProjectSummary {
-
-		/** Pattern: ^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$ */
 		arn?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: string;
 
@@ -497,15 +480,12 @@ export namespace MyNS {
 
 	/** An object providing summary information for a particular project for an associated AWS account and region. */
 	export interface ProjectSummaryFormProperties {
-
-		/** Pattern: ^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$ */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: FormControl<string | null | undefined>,
 
@@ -518,7 +498,7 @@ export namespace MyNS {
 	export function CreateProjectSummaryFormGroup() {
 		return new FormGroup<ProjectSummaryFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined),
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -607,7 +587,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: string;
 		attributes?: PlacementAttributeMap;
@@ -618,13 +597,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePlacementRequestFormGroup() {
 		return new FormGroup<CreatePlacementRequestFormProperties>({
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 		});
 
 	}
@@ -635,7 +613,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: string;
 
@@ -655,7 +632,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: FormControl<string | null | undefined>,
 
@@ -667,7 +643,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectRequestFormGroup() {
 		return new FormGroup<CreateProjectRequestFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 		});
 
@@ -1066,7 +1042,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: string;
 
@@ -1080,7 +1055,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		placementName: FormControl<string | null | undefined>,
 
@@ -1089,7 +1063,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePlacementPostBodyFormGroup() {
 		return new FormGroup<CreatePlacementPostBodyFormProperties>({
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1102,7 +1076,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: string;
 
@@ -1126,7 +1099,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z_-]+$
 		 */
 		projectName: FormControl<string | null | undefined>,
 
@@ -1142,7 +1114,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectPostBodyFormGroup() {
 		return new FormGroup<CreateProjectPostBodyFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});

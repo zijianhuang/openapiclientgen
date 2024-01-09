@@ -327,14 +327,10 @@ export namespace MyNS {
 
 	export interface RegisterUsageResult {
 		PublicKeyRotationTimestamp?: Date | null;
-
-		/** Pattern: \S+ */
 		Signature?: string | null;
 	}
 	export interface RegisterUsageResultFormProperties {
 		PublicKeyRotationTimestamp: FormControl<Date | null | undefined>,
-
-		/** Pattern: \S+ */
 		Signature: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterUsageResultFormGroup() {
@@ -464,20 +460,14 @@ export namespace MyNS {
 	/** Contains input to the ResolveCustomer operation. */
 	export interface ResolveCustomerRequest {
 
-		/**
-		 * Required
-		 * Pattern: \S+
-		 */
+		/** Required */
 		RegistrationToken: string;
 	}
 
 	/** Contains input to the ResolveCustomer operation. */
 	export interface ResolveCustomerRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \S+
-		 */
+		/** Required */
 		RegistrationToken: FormControl<string | null | undefined>,
 	}
 	export function CreateResolveCustomerRequestFormGroup() {

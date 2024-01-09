@@ -17,11 +17,7 @@ export namespace MyNS {
 
 	/** Describes the API operation. */
 	export interface Operation {
-
-		/** Pattern: .*\S.* */
 		id?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		resourceName?: string | null;
 		resourceType?: OperationResourceType | null;
 		createdAt?: Date | null;
@@ -39,11 +35,7 @@ export namespace MyNS {
 
 	/** Describes the API operation. */
 	export interface OperationFormProperties {
-
-		/** Pattern: .*\S.* */
 		id: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		resourceName: FormControl<string | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
@@ -102,18 +94,12 @@ export namespace MyNS {
 
 	export interface AllocateStaticIpRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: string;
 	}
 	export interface AllocateStaticIpRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: FormControl<string | null | undefined>,
 	}
 	export function CreateAllocateStaticIpRequestFormGroup() {
@@ -206,42 +192,24 @@ export namespace MyNS {
 
 	export interface AttachDiskRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: string;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		diskPath: string;
 	}
 	export interface AttachDiskRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		diskPath: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachDiskRequestFormGroup() {
@@ -266,10 +234,7 @@ export namespace MyNS {
 
 	export interface AttachInstancesToLoadBalancerRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
 		/** Required */
@@ -277,10 +242,7 @@ export namespace MyNS {
 	}
 	export interface AttachInstancesToLoadBalancerRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachInstancesToLoadBalancerRequestFormGroup() {
@@ -303,30 +265,18 @@ export namespace MyNS {
 
 	export interface AttachLoadBalancerTlsCertificateRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		certificateName: string;
 	}
 	export interface AttachLoadBalancerTlsCertificateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		certificateName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachLoadBalancerTlsCertificateRequestFormGroup() {
@@ -350,30 +300,18 @@ export namespace MyNS {
 
 	export interface AttachStaticIpRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: string;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface AttachStaticIpRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachStaticIpRequestFormGroup() {
@@ -405,18 +343,12 @@ export namespace MyNS {
 		 */
 		portInfo: PortInfo;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface CloseInstancePublicPortsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCloseInstancePublicPortsRequestFormGroup() {
@@ -485,34 +417,24 @@ export namespace MyNS {
 	}
 
 	export interface CopySnapshotRequest {
-
-		/** Pattern: \w[\w\-]*\w */
 		sourceSnapshotName?: string | null;
 		sourceResourceName?: string | null;
 		restoreDate?: string | null;
 		useLatestRestorableAutoSnapshot?: boolean | null;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		targetSnapshotName: string;
 
 		/** Required */
 		sourceRegion: CopySnapshotRequestSourceRegion;
 	}
 	export interface CopySnapshotRequestFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		sourceSnapshotName: FormControl<string | null | undefined>,
 		sourceResourceName: FormControl<string | null | undefined>,
 		restoreDate: FormControl<string | null | undefined>,
 		useLatestRestorableAutoSnapshot: FormControl<boolean | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		targetSnapshotName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -560,16 +482,10 @@ export namespace MyNS {
 	/** Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation. */
 	export interface InstanceEntry {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		sourceName: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		instanceType: string;
 
 		/** Required */
@@ -583,16 +499,10 @@ export namespace MyNS {
 	/** Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation. */
 	export interface InstanceEntryFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		sourceName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		instanceType: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -673,16 +583,10 @@ export namespace MyNS {
 
 	export interface CreateDiskRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		availabilityZone: string;
 
 		/** Required */
@@ -692,16 +596,10 @@ export namespace MyNS {
 	}
 	export interface CreateDiskRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		availabilityZone: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -765,15 +663,11 @@ export namespace MyNS {
 
 	/** <p>Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.</p> <p>When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:</p> <ul> <li> <p>If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> </ul> */
 	export interface AutoSnapshotAddOnRequest {
-
-		/** Pattern: ^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$ */
 		snapshotTimeOfDay?: string | null;
 	}
 
 	/** <p>Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.</p> <p>When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:</p> <ul> <li> <p>If an automatic snapshot has been created for the current day, and you change the snapshot time to a later time of day, then the new snapshot time will be effective the following day. This ensures that two snapshots are not created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to an earlier time of day, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day.</p> </li> <li> <p>If an automatic snapshot has not yet been created for the current day, and you change the snapshot time to a time that is within 30 minutes from your current time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li> </ul> */
 	export interface AutoSnapshotAddOnRequestFormProperties {
-
-		/** Pattern: ^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$ */
 		snapshotTimeOfDay: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoSnapshotAddOnRequestFormGroup() {
@@ -796,19 +690,11 @@ export namespace MyNS {
 
 	export interface CreateDiskFromSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: string;
-
-		/** Pattern: \w[\w\-]*\w */
 		diskSnapshotName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		availabilityZone: string;
 
 		/** Required */
@@ -821,19 +707,11 @@ export namespace MyNS {
 	}
 	export interface CreateDiskFromSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		diskSnapshotName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		availabilityZone: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -867,32 +745,18 @@ export namespace MyNS {
 	}
 
 	export interface CreateDiskSnapshotRequest {
-
-		/** Pattern: \w[\w\-]*\w */
 		diskName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskSnapshotName: string;
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceName?: string | null;
 		tags?: Array<Tag>;
 	}
 	export interface CreateDiskSnapshotRequestFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		diskName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskSnapshotName: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDiskSnapshotRequestFormGroup() {
@@ -974,8 +838,6 @@ export namespace MyNS {
 
 	/** Describes a domain recordset entry. */
 	export interface DomainEntry {
-
-		/** Pattern: .*\S.* */
 		id?: string | null;
 		name?: string | null;
 		target?: string | null;
@@ -986,8 +848,6 @@ export namespace MyNS {
 
 	/** Describes a domain recordset entry. */
 	export interface DomainEntryFormProperties {
-
-		/** Pattern: .*\S.* */
 		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		target: FormControl<string | null | undefined>,
@@ -1028,31 +888,19 @@ export namespace MyNS {
 
 	export interface CreateInstanceSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceSnapshotName: string;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 		tags?: Array<Tag>;
 	}
 	export interface CreateInstanceSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceSnapshotName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInstanceSnapshotRequestFormGroup() {
@@ -1081,24 +929,14 @@ export namespace MyNS {
 
 		/** Required */
 		availabilityZone: string;
-
-		/** Pattern: \w[\w\-]*\w */
 		customImageName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		blueprintId: string;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		bundleId: string;
 		userData?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		keyPairName?: string | null;
 		tags?: Array<Tag>;
 		addOns?: Array<AddOnRequest>;
@@ -1107,24 +945,14 @@ export namespace MyNS {
 
 		/** Required */
 		availabilityZone: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		customImageName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		blueprintId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		bundleId: FormControl<string | null | undefined>,
 		userData: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		keyPairName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateInstancesRequestFormGroup() {
@@ -1158,18 +986,11 @@ export namespace MyNS {
 
 		/** Required */
 		availabilityZone: string;
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceSnapshotName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		bundleId: string;
 		userData?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		keyPairName?: string | null;
 		tags?: Array<Tag>;
 		addOns?: Array<AddOnRequest>;
@@ -1181,18 +1002,11 @@ export namespace MyNS {
 
 		/** Required */
 		availabilityZone: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceSnapshotName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		bundleId: FormControl<string | null | undefined>,
 		userData: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		keyPairName: FormControl<string | null | undefined>,
 		sourceInstanceName: FormControl<string | null | undefined>,
 		restoreDate: FormControl<string | null | undefined>,
@@ -1247,11 +1061,7 @@ export namespace MyNS {
 
 	/** Describes the SSH key pair. */
 	export interface KeyPair {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -1265,11 +1075,7 @@ export namespace MyNS {
 
 	/** Describes the SSH key pair. */
 	export interface KeyPairFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
@@ -1290,19 +1096,13 @@ export namespace MyNS {
 
 	export interface CreateKeyPairRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: string;
 		tags?: Array<Tag>;
 	}
 	export interface CreateKeyPairRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateKeyPairRequestFormGroup() {
@@ -1325,10 +1125,7 @@ export namespace MyNS {
 
 	export interface CreateLoadBalancerRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
 		/**
@@ -1338,8 +1135,6 @@ export namespace MyNS {
 		 */
 		instancePort: number;
 		healthCheckPath?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		certificateName?: string | null;
 		certificateDomainName?: string | null;
 		certificateAlternativeNames?: Array<string>;
@@ -1347,10 +1142,7 @@ export namespace MyNS {
 	}
 	export interface CreateLoadBalancerRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 
 		/**
@@ -1360,8 +1152,6 @@ export namespace MyNS {
 		 */
 		instancePort: FormControl<number | null | undefined>,
 		healthCheckPath: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		certificateName: FormControl<string | null | undefined>,
 		certificateDomainName: FormControl<string | null | undefined>,
 	}
@@ -1389,16 +1179,10 @@ export namespace MyNS {
 
 	export interface CreateLoadBalancerTlsCertificateRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		certificateName: string;
 
 		/** Required */
@@ -1408,16 +1192,10 @@ export namespace MyNS {
 	}
 	export interface CreateLoadBalancerTlsCertificateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		certificateName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -1445,10 +1223,7 @@ export namespace MyNS {
 
 	export interface CreateRelationalDatabaseRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 		availabilityZone?: string | null;
 
@@ -1471,10 +1246,7 @@ export namespace MyNS {
 	}
 	export interface CreateRelationalDatabaseRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 		availabilityZone: FormControl<string | null | undefined>,
 
@@ -1523,19 +1295,12 @@ export namespace MyNS {
 
 	export interface CreateRelationalDatabaseFromSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 		availabilityZone?: string | null;
 		publiclyAccessible?: boolean | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		relationalDatabaseSnapshotName?: string | null;
 		relationalDatabaseBundleId?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		sourceRelationalDatabaseName?: string | null;
 		restoreTime?: Date | null;
 		useLatestRestorableTime?: boolean | null;
@@ -1543,19 +1308,12 @@ export namespace MyNS {
 	}
 	export interface CreateRelationalDatabaseFromSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 		availabilityZone: FormControl<string | null | undefined>,
 		publiclyAccessible: FormControl<boolean | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		relationalDatabaseSnapshotName: FormControl<string | null | undefined>,
 		relationalDatabaseBundleId: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		sourceRelationalDatabaseName: FormControl<string | null | undefined>,
 		restoreTime: FormControl<Date | null | undefined>,
 		useLatestRestorableTime: FormControl<boolean | null | undefined>,
@@ -1587,31 +1345,19 @@ export namespace MyNS {
 
 	export interface CreateRelationalDatabaseSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseSnapshotName: string;
 		tags?: Array<Tag>;
 	}
 	export interface CreateRelationalDatabaseSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRelationalDatabaseSnapshotRequestFormGroup() {
@@ -1635,18 +1381,12 @@ export namespace MyNS {
 
 	export interface DeleteAlarmRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		alarmName: string;
 	}
 	export interface DeleteAlarmRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		alarmName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAlarmRequestFormGroup() {
@@ -1669,30 +1409,18 @@ export namespace MyNS {
 
 	export interface DeleteAutoSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: string;
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-		 */
+		/** Required */
 		date: string;
 	}
 	export interface DeleteAutoSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
-		 */
+		/** Required */
 		date: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAutoSnapshotRequestFormGroup() {
@@ -1744,19 +1472,13 @@ export namespace MyNS {
 
 	export interface DeleteDiskRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: string;
 		forceDeleteAddOns?: boolean | null;
 	}
 	export interface DeleteDiskRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: FormControl<string | null | undefined>,
 		forceDeleteAddOns: FormControl<boolean | null | undefined>,
 	}
@@ -1781,18 +1503,12 @@ export namespace MyNS {
 
 	export interface DeleteDiskSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskSnapshotName: string;
 	}
 	export interface DeleteDiskSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDiskSnapshotRequestFormGroup() {
@@ -1881,19 +1597,13 @@ export namespace MyNS {
 
 	export interface DeleteInstanceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 		forceDeleteAddOns?: boolean | null;
 	}
 	export interface DeleteInstanceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 		forceDeleteAddOns: FormControl<boolean | null | undefined>,
 	}
@@ -1918,18 +1628,12 @@ export namespace MyNS {
 
 	export interface DeleteInstanceSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceSnapshotName: string;
 	}
 	export interface DeleteInstanceSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteInstanceSnapshotRequestFormGroup() {
@@ -1954,18 +1658,12 @@ export namespace MyNS {
 
 	export interface DeleteKeyPairRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: string;
 	}
 	export interface DeleteKeyPairRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteKeyPairRequestFormGroup() {
@@ -1988,18 +1686,12 @@ export namespace MyNS {
 
 	export interface DeleteKnownHostKeysRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface DeleteKnownHostKeysRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteKnownHostKeysRequestFormGroup() {
@@ -2022,18 +1714,12 @@ export namespace MyNS {
 
 	export interface DeleteLoadBalancerRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 	}
 	export interface DeleteLoadBalancerRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLoadBalancerRequestFormGroup() {
@@ -2056,31 +1742,19 @@ export namespace MyNS {
 
 	export interface DeleteLoadBalancerTlsCertificateRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		certificateName: string;
 		force?: boolean | null;
 	}
 	export interface DeleteLoadBalancerTlsCertificateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		certificateName: FormControl<string | null | undefined>,
 		force: FormControl<boolean | null | undefined>,
 	}
@@ -2106,26 +1780,16 @@ export namespace MyNS {
 
 	export interface DeleteRelationalDatabaseRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 		skipFinalSnapshot?: boolean | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		finalRelationalDatabaseSnapshotName?: string | null;
 	}
 	export interface DeleteRelationalDatabaseRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 		skipFinalSnapshot: FormControl<boolean | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		finalRelationalDatabaseSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRelationalDatabaseRequestFormGroup() {
@@ -2150,18 +1814,12 @@ export namespace MyNS {
 
 	export interface DeleteRelationalDatabaseSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseSnapshotName: string;
 	}
 	export interface DeleteRelationalDatabaseSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRelationalDatabaseSnapshotRequestFormGroup() {
@@ -2184,18 +1842,12 @@ export namespace MyNS {
 
 	export interface DetachDiskRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: string;
 	}
 	export interface DetachDiskRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachDiskRequestFormGroup() {
@@ -2218,10 +1870,7 @@ export namespace MyNS {
 
 	export interface DetachInstancesFromLoadBalancerRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
 		/** Required */
@@ -2229,10 +1878,7 @@ export namespace MyNS {
 	}
 	export interface DetachInstancesFromLoadBalancerRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachInstancesFromLoadBalancerRequestFormGroup() {
@@ -2255,18 +1901,12 @@ export namespace MyNS {
 
 	export interface DetachStaticIpRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: string;
 	}
 	export interface DetachStaticIpRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachStaticIpRequestFormGroup() {
@@ -2292,10 +1932,7 @@ export namespace MyNS {
 		/** Required */
 		addOnType: AddOnRequestAddOnType;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: string;
 	}
 	export interface DisableAddOnRequestFormProperties {
@@ -2303,10 +1940,7 @@ export namespace MyNS {
 		/** Required */
 		addOnType: FormControl<AddOnRequestAddOnType | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableAddOnRequestFormGroup() {
@@ -2356,10 +1990,7 @@ export namespace MyNS {
 
 	export interface EnableAddOnRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: string;
 
 		/**
@@ -2370,10 +2001,7 @@ export namespace MyNS {
 	}
 	export interface EnableAddOnRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableAddOnRequestFormGroup() {
@@ -2396,18 +2024,12 @@ export namespace MyNS {
 
 	export interface ExportSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		sourceSnapshotName: string;
 	}
 	export interface ExportSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		sourceSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateExportSnapshotRequestFormGroup() {
@@ -2461,11 +2083,7 @@ export namespace MyNS {
 
 	/** <p>Describes an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p> */
 	export interface Alarm {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		createdAt?: Date | null;
 
@@ -2498,11 +2116,7 @@ export namespace MyNS {
 
 	/** <p>Describes an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p> */
 	export interface AlarmFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
@@ -2549,22 +2163,14 @@ export namespace MyNS {
 
 	/** <p>Describes resource being monitored by an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p> */
 	export interface MonitoredResourceInfo {
-
-		/** Pattern: ^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$ */
 		arn?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
 		resourceType?: OperationResourceType | null;
 	}
 
 	/** <p>Describes resource being monitored by an alarm.</p> <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p> */
 	export interface MonitoredResourceInfoFormProperties {
-
-		/** Pattern: ^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$ */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
 	}
@@ -2592,21 +2198,13 @@ export namespace MyNS {
 	export enum ContactProtocol { Email = 0, SMS = 1 }
 
 	export interface GetAlarmsRequest {
-
-		/** Pattern: \w[\w\-]*\w */
 		alarmName?: string | null;
 		pageToken?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		monitoredResourceName?: string | null;
 	}
 	export interface GetAlarmsRequestFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		alarmName: FormControl<string | null | undefined>,
 		pageToken: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		monitoredResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAlarmsRequestFormGroup() {
@@ -2619,15 +2217,11 @@ export namespace MyNS {
 	}
 
 	export interface GetAutoSnapshotsResult {
-
-		/** Pattern: \w[\w\-]*\w */
 		resourceName?: string | null;
 		resourceType?: OperationResourceType | null;
 		autoSnapshots?: Array<AutoSnapshotDetails>;
 	}
 	export interface GetAutoSnapshotsResultFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		resourceName: FormControl<string | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
 	}
@@ -2687,18 +2281,12 @@ export namespace MyNS {
 
 	export interface GetAutoSnapshotsRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: string;
 	}
 	export interface GetAutoSnapshotsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAutoSnapshotsRequestFormGroup() {
@@ -2725,14 +2313,8 @@ export namespace MyNS {
 
 	/** Describes a blueprint (a virtual private server image). */
 	export interface Blueprint {
-
-		/** Pattern: .*\S.* */
 		blueprintId?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		group?: string | null;
 		type?: BlueprintType | null;
 		description?: string | null;
@@ -2747,14 +2329,8 @@ export namespace MyNS {
 
 	/** Describes a blueprint (a virtual private server image). */
 	export interface BlueprintFormProperties {
-
-		/** Pattern: .*\S.* */
 		blueprintId: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		group: FormControl<string | null | undefined>,
 		type: FormControl<BlueprintType | null | undefined>,
 		description: FormControl<string | null | undefined>,
@@ -2824,8 +2400,6 @@ export namespace MyNS {
 		price?: number | null;
 		cpuCount?: number | null;
 		diskSizeInGb?: number | null;
-
-		/** Pattern: .*\S.* */
 		bundleId?: string | null;
 		instanceType?: string | null;
 		isActive?: boolean | null;
@@ -2841,8 +2415,6 @@ export namespace MyNS {
 		price: FormControl<number | null | undefined>,
 		cpuCount: FormControl<number | null | undefined>,
 		diskSizeInGb: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		bundleId: FormControl<string | null | undefined>,
 		instanceType: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
@@ -2902,11 +2474,7 @@ export namespace MyNS {
 
 	/** <p>Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.</p> <p>A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.</p> */
 	export interface CloudFormationStackRecord {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		createdAt?: Date | null;
 
@@ -2922,11 +2490,7 @@ export namespace MyNS {
 
 	/** <p>Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation.</p> <p>A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.</p> */
 	export interface CloudFormationStackRecordFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
@@ -2949,22 +2513,14 @@ export namespace MyNS {
 	/** Describes the source of a CloudFormation stack record (i.e., the export snapshot record). */
 	export interface CloudFormationStackRecordSourceInfo {
 		resourceType?: CloudFormationStackRecordSourceInfoResourceType | null;
-
-		/** Pattern: .*\S.* */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 	}
 
 	/** Describes the source of a CloudFormation stack record (i.e., the export snapshot record). */
 	export interface CloudFormationStackRecordSourceInfoFormProperties {
 		resourceType: FormControl<CloudFormationStackRecordSourceInfoResourceType | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudFormationStackRecordSourceInfoFormGroup() {
@@ -2981,21 +2537,13 @@ export namespace MyNS {
 
 	/** Describes the destination of a record. */
 	export interface DestinationInfo {
-
-		/** Pattern: .*\S.* */
 		id?: string | null;
-
-		/** Pattern: .*\S.* */
 		service?: string | null;
 	}
 
 	/** Describes the destination of a record. */
 	export interface DestinationInfoFormProperties {
-
-		/** Pattern: .*\S.* */
 		id: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		service: FormControl<string | null | undefined>,
 	}
 	export function CreateDestinationInfoFormGroup() {
@@ -3033,16 +2581,10 @@ export namespace MyNS {
 
 	/** <p>Describes a contact method.</p> <p>A contact method is a way to send you notifications. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p> */
 	export interface ContactMethod {
-
-		/** Pattern: .*\S.* */
 		contactEndpoint?: string | null;
 		status?: ContactMethodStatus | null;
 		protocol?: CreateContactMethodRequestProtocol | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		createdAt?: Date | null;
 
@@ -3054,16 +2596,10 @@ export namespace MyNS {
 
 	/** <p>Describes a contact method.</p> <p>A contact method is a way to send you notifications. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p> */
 	export interface ContactMethodFormProperties {
-
-		/** Pattern: .*\S.* */
 		contactEndpoint: FormControl<string | null | undefined>,
 		status: FormControl<ContactMethodStatus | null | undefined>,
 		protocol: FormControl<CreateContactMethodRequestProtocol | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
@@ -3112,11 +2648,7 @@ export namespace MyNS {
 
 	/** Describes a system disk or a block storage disk. */
 	export interface Disk {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -3131,8 +2663,6 @@ export namespace MyNS {
 		iops?: number | null;
 		path?: string | null;
 		state?: DiskState | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		attachedTo?: string | null;
 		isAttached?: boolean | null;
 		attachmentState?: string | null;
@@ -3141,11 +2671,7 @@ export namespace MyNS {
 
 	/** Describes a system disk or a block storage disk. */
 	export interface DiskFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
@@ -3155,8 +2681,6 @@ export namespace MyNS {
 		iops: FormControl<number | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		state: FormControl<DiskState | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		attachedTo: FormControl<string | null | undefined>,
 		isAttached: FormControl<boolean | null | undefined>,
 		attachmentState: FormControl<string | null | undefined>,
@@ -3187,11 +2711,7 @@ export namespace MyNS {
 	export interface AddOn {
 		name?: string | null;
 		status?: string | null;
-
-		/** Pattern: ^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$ */
 		snapshotTimeOfDay?: string | null;
-
-		/** Pattern: ^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$ */
 		nextSnapshotTimeOfDay?: string | null;
 	}
 
@@ -3199,11 +2719,7 @@ export namespace MyNS {
 	export interface AddOnFormProperties {
 		name: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$ */
 		snapshotTimeOfDay: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$ */
 		nextSnapshotTimeOfDay: FormControl<string | null | undefined>,
 	}
 	export function CreateAddOnFormGroup() {
@@ -3220,18 +2736,12 @@ export namespace MyNS {
 
 	export interface GetDiskRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: string;
 	}
 	export interface GetDiskRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDiskRequestFormGroup() {
@@ -3257,11 +2767,7 @@ export namespace MyNS {
 
 	/** Describes a block storage disk snapshot. */
 	export interface DiskSnapshot {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -3273,28 +2779,16 @@ export namespace MyNS {
 		sizeInGb?: number | null;
 		state?: DiskSnapshotState | null;
 		progress?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		fromDiskName?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromDiskArn?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		fromInstanceName?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromInstanceArn?: string | null;
 		isFromAutoSnapshot?: boolean | null;
 	}
 
 	/** Describes a block storage disk snapshot. */
 	export interface DiskSnapshotFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
@@ -3302,17 +2796,9 @@ export namespace MyNS {
 		sizeInGb: FormControl<number | null | undefined>,
 		state: FormControl<DiskSnapshotState | null | undefined>,
 		progress: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		fromDiskName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromDiskArn: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		fromInstanceName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromInstanceArn: FormControl<string | null | undefined>,
 		isFromAutoSnapshot: FormControl<boolean | null | undefined>,
 	}
@@ -3339,18 +2825,12 @@ export namespace MyNS {
 
 	export interface GetDiskSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskSnapshotName: string;
 	}
 	export interface GetDiskSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		diskSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDiskSnapshotRequestFormGroup() {
@@ -3430,11 +2910,7 @@ export namespace MyNS {
 
 	/** Describes a domain where you are storing recordsets in Lightsail. */
 	export interface Domain {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -3448,11 +2924,7 @@ export namespace MyNS {
 
 	/** Describes a domain where you are storing recordsets in Lightsail. */
 	export interface DomainFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
@@ -3530,11 +3002,7 @@ export namespace MyNS {
 
 	/** Describes an export snapshot record. */
 	export interface ExportSnapshotRecord {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		createdAt?: Date | null;
 
@@ -3552,11 +3020,7 @@ export namespace MyNS {
 
 	/** Describes an export snapshot record. */
 	export interface ExportSnapshotRecordFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
@@ -3578,17 +3042,9 @@ export namespace MyNS {
 	export interface ExportSnapshotRecordSourceInfo {
 		resourceType?: ExportSnapshotRecordSourceInfoResourceType | null;
 		createdAt?: Date | null;
-
-		/** Pattern: .*\S.* */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromResourceName?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromResourceArn?: string | null;
 
 		/** Describes an instance snapshot. */
@@ -3602,17 +3058,9 @@ export namespace MyNS {
 	export interface ExportSnapshotRecordSourceInfoFormProperties {
 		resourceType: FormControl<ExportSnapshotRecordSourceInfoResourceType | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromResourceName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateExportSnapshotRecordSourceInfoFormGroup() {
@@ -3632,22 +3080,14 @@ export namespace MyNS {
 
 	/** Describes an instance snapshot. */
 	export interface InstanceSnapshotInfo {
-
-		/** Pattern: .*\S.* */
 		fromBundleId?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromBlueprintId?: string | null;
 		fromDiskInfo?: Array<DiskInfo>;
 	}
 
 	/** Describes an instance snapshot. */
 	export interface InstanceSnapshotInfoFormProperties {
-
-		/** Pattern: .*\S.* */
 		fromBundleId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromBlueprintId: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceSnapshotInfoFormGroup() {
@@ -3662,8 +3102,6 @@ export namespace MyNS {
 	/** Describes a disk. */
 	export interface DiskInfo {
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		path?: string | null;
 		sizeInGb?: number | null;
 		isSystemDisk?: boolean | null;
@@ -3672,8 +3110,6 @@ export namespace MyNS {
 	/** Describes a disk. */
 	export interface DiskInfoFormProperties {
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		path: FormControl<string | null | undefined>,
 		sizeInGb: FormControl<number | null | undefined>,
 		isSystemDisk: FormControl<boolean | null | undefined>,
@@ -3734,11 +3170,7 @@ export namespace MyNS {
 
 	/** Describes an instance (a virtual private server). */
 	export interface Instance {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -3747,25 +3179,13 @@ export namespace MyNS {
 		location?: ResourceLocation;
 		resourceType?: OperationResourceType | null;
 		tags?: Array<Tag>;
-
-		/** Pattern: .*\S.* */
 		blueprintId?: string | null;
-
-		/** Pattern: .*\S.* */
 		blueprintName?: string | null;
-
-		/** Pattern: .*\S.* */
 		bundleId?: string | null;
 		addOns?: Array<AddOn>;
 		isStaticIp?: boolean | null;
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		privateIpAddress?: string | null;
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		publicIpAddress?: string | null;
-
-		/** Pattern: ([A-F0-9]{1,4}:){7}[A-F0-9]{1,4} */
 		ipv6Address?: string | null;
 
 		/** Describes the hardware for the instance. */
@@ -3776,49 +3196,25 @@ export namespace MyNS {
 
 		/** Describes the virtual private server (or <i>instance</i>) status. */
 		state?: InstanceState;
-
-		/** Pattern: .*\S.* */
 		username?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		sshKeyName?: string | null;
 	}
 
 	/** Describes an instance (a virtual private server). */
 	export interface InstanceFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		blueprintId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		blueprintName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		bundleId: FormControl<string | null | undefined>,
 		isStaticIp: FormControl<boolean | null | undefined>,
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		privateIpAddress: FormControl<string | null | undefined>,
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		publicIpAddress: FormControl<string | null | undefined>,
-
-		/** Pattern: ([A-F0-9]{1,4}:){7}[A-F0-9]{1,4} */
 		ipv6Address: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		username: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		sshKeyName: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceFormGroup() {
@@ -3980,18 +3376,12 @@ export namespace MyNS {
 
 	export interface GetInstanceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface GetInstanceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInstanceRequestFormGroup() {
@@ -4019,8 +3409,6 @@ export namespace MyNS {
 	export interface InstanceAccessDetails {
 		certKey?: string | null;
 		expiresAt?: Date | null;
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		ipAddress?: string | null;
 		password?: string | null;
 
@@ -4028,8 +3416,6 @@ export namespace MyNS {
 		passwordData?: PasswordData;
 		privateKey?: string | null;
 		protocol?: InstanceAccessDetailsProtocol | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceName?: string | null;
 		username?: string | null;
 		hostKeys?: Array<HostKeyAttributes>;
@@ -4039,14 +3425,10 @@ export namespace MyNS {
 	export interface InstanceAccessDetailsFormProperties {
 		certKey: FormControl<string | null | undefined>,
 		expiresAt: FormControl<Date | null | undefined>,
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		ipAddress: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		privateKey: FormControl<string | null | undefined>,
 		protocol: FormControl<InstanceAccessDetailsProtocol | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceName: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
 	}
@@ -4068,16 +3450,12 @@ export namespace MyNS {
 	/** The password data for the Windows Server-based instance, including the ciphertext and the key pair name. */
 	export interface PasswordData {
 		ciphertext?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		keyPairName?: string | null;
 	}
 
 	/** The password data for the Windows Server-based instance, including the ciphertext and the key pair name. */
 	export interface PasswordDataFormProperties {
 		ciphertext: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		keyPairName: FormControl<string | null | undefined>,
 	}
 	export function CreatePasswordDataFormGroup() {
@@ -4127,19 +3505,13 @@ export namespace MyNS {
 
 	export interface GetInstanceAccessDetailsRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 		protocol?: InstanceAccessDetailsProtocol | null;
 	}
 	export interface GetInstanceAccessDetailsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 		protocol: FormControl<InstanceAccessDetailsProtocol | null | undefined>,
 	}
@@ -4206,10 +3578,7 @@ export namespace MyNS {
 
 	export interface GetInstanceMetricDataRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 
 		/** Required */
@@ -4236,10 +3605,7 @@ export namespace MyNS {
 	}
 	export interface GetInstanceMetricDataRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -4340,18 +3706,12 @@ export namespace MyNS {
 
 	export interface GetInstancePortStatesRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface GetInstancePortStatesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInstancePortStatesRequestFormGroup() {
@@ -4377,11 +3737,7 @@ export namespace MyNS {
 
 	/** Describes an instance snapshot. */
 	export interface InstanceSnapshot {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -4393,11 +3749,7 @@ export namespace MyNS {
 		state?: InstanceSnapshotState | null;
 		progress?: string | null;
 		fromAttachedDisks?: Array<Disk>;
-
-		/** Pattern: \w[\w\-]*\w */
 		fromInstanceName?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromInstanceArn?: string | null;
 		fromBlueprintId?: string | null;
 		fromBundleId?: string | null;
@@ -4407,22 +3759,14 @@ export namespace MyNS {
 
 	/** Describes an instance snapshot. */
 	export interface InstanceSnapshotFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
 		state: FormControl<InstanceSnapshotState | null | undefined>,
 		progress: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		fromInstanceName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromInstanceArn: FormControl<string | null | undefined>,
 		fromBlueprintId: FormControl<string | null | undefined>,
 		fromBundleId: FormControl<string | null | undefined>,
@@ -4452,18 +3796,12 @@ export namespace MyNS {
 
 	export interface GetInstanceSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceSnapshotName: string;
 	}
 	export interface GetInstanceSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInstanceSnapshotRequestFormGroup() {
@@ -4515,18 +3853,12 @@ export namespace MyNS {
 
 	export interface GetInstanceStateRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface GetInstanceStateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInstanceStateRequestFormGroup() {
@@ -4578,18 +3910,12 @@ export namespace MyNS {
 
 	export interface GetKeyPairRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: string;
 	}
 	export interface GetKeyPairRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetKeyPairRequestFormGroup() {
@@ -4642,11 +3968,7 @@ export namespace MyNS {
 
 	/** Describes the Lightsail load balancer. */
 	export interface LoadBalancer {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -4655,14 +3977,10 @@ export namespace MyNS {
 		location?: ResourceLocation;
 		resourceType?: OperationResourceType | null;
 		tags?: Array<Tag>;
-
-		/** Pattern: .*\S.* */
 		dnsName?: string | null;
 		state?: LoadBalancerState | null;
 		protocol?: LoadBalancerProtocol | null;
 		publicPorts?: Array<number>;
-
-		/** Pattern: .*\S.* */
 		healthCheckPath?: string | null;
 		instancePort?: number | null;
 		instanceHealthSummary?: Array<InstanceHealthSummary>;
@@ -4672,22 +3990,14 @@ export namespace MyNS {
 
 	/** Describes the Lightsail load balancer. */
 	export interface LoadBalancerFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		dnsName: FormControl<string | null | undefined>,
 		state: FormControl<LoadBalancerState | null | undefined>,
 		protocol: FormControl<LoadBalancerProtocol | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		healthCheckPath: FormControl<string | null | undefined>,
 		instancePort: FormControl<number | null | undefined>,
 	}
@@ -4714,8 +4024,6 @@ export namespace MyNS {
 
 	/** Describes information about the health of the instance. */
 	export interface InstanceHealthSummary {
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceName?: string | null;
 		instanceHealth?: InstanceHealthSummaryInstanceHealth | null;
 		instanceHealthReason?: InstanceHealthSummaryInstanceHealthReason | null;
@@ -4723,8 +4031,6 @@ export namespace MyNS {
 
 	/** Describes information about the health of the instance. */
 	export interface InstanceHealthSummaryFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		instanceName: FormControl<string | null | undefined>,
 		instanceHealth: FormControl<InstanceHealthSummaryInstanceHealth | null | undefined>,
 		instanceHealthReason: FormControl<InstanceHealthSummaryInstanceHealthReason | null | undefined>,
@@ -4745,16 +4051,12 @@ export namespace MyNS {
 
 	/** Provides a summary of SSL/TLS certificate metadata. */
 	export interface LoadBalancerTlsCertificateSummary {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
 		isAttached?: boolean | null;
 	}
 
 	/** Provides a summary of SSL/TLS certificate metadata. */
 	export interface LoadBalancerTlsCertificateSummaryFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
 		isAttached: FormControl<boolean | null | undefined>,
 	}
@@ -4778,18 +4080,12 @@ export namespace MyNS {
 
 	export interface GetLoadBalancerRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 	}
 	export interface GetLoadBalancerRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLoadBalancerRequestFormGroup() {
@@ -4817,10 +4113,7 @@ export namespace MyNS {
 
 	export interface GetLoadBalancerMetricDataRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
 		/** Required */
@@ -4847,10 +4140,7 @@ export namespace MyNS {
 	}
 	export interface GetLoadBalancerMetricDataRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -4900,11 +4190,7 @@ export namespace MyNS {
 
 	/** <p>Describes a load balancer SSL/TLS certificate.</p> <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p> */
 	export interface LoadBalancerTlsCertificate {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -4913,8 +4199,6 @@ export namespace MyNS {
 		location?: ResourceLocation;
 		resourceType?: OperationResourceType | null;
 		tags?: Array<Tag>;
-
-		/** Pattern: \w[\w\-]*\w */
 		loadBalancerName?: string | null;
 		isAttached?: boolean | null;
 		status?: LoadBalancerTlsCertificateStatus | null;
@@ -4922,11 +4206,7 @@ export namespace MyNS {
 		domainValidationRecords?: Array<LoadBalancerTlsCertificateDomainValidationRecord>;
 		failureReason?: LoadBalancerTlsCertificateFailureReason | null;
 		issuedAt?: Date | null;
-
-		/** Pattern: .*\S.* */
 		issuer?: string | null;
-
-		/** Pattern: .*\S.* */
 		keyAlgorithm?: string | null;
 		notAfter?: Date | null;
 		notBefore?: Date | null;
@@ -4935,55 +4215,33 @@ export namespace MyNS {
 		renewalSummary?: LoadBalancerTlsCertificateRenewalSummary;
 		revocationReason?: LoadBalancerTlsCertificateRevocationReason | null;
 		revokedAt?: Date | null;
-
-		/** Pattern: .*\S.* */
 		serial?: string | null;
-
-		/** Pattern: .*\S.* */
 		signatureAlgorithm?: string | null;
-
-		/** Pattern: .*\S.* */
 		subject?: string | null;
 		subjectAlternativeNames?: Array<string>;
 	}
 
 	/** <p>Describes a load balancer SSL/TLS certificate.</p> <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p> */
 	export interface LoadBalancerTlsCertificateFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		loadBalancerName: FormControl<string | null | undefined>,
 		isAttached: FormControl<boolean | null | undefined>,
 		status: FormControl<LoadBalancerTlsCertificateStatus | null | undefined>,
 		domainName: FormControl<string | null | undefined>,
 		failureReason: FormControl<LoadBalancerTlsCertificateFailureReason | null | undefined>,
 		issuedAt: FormControl<Date | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		issuer: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		keyAlgorithm: FormControl<string | null | undefined>,
 		notAfter: FormControl<Date | null | undefined>,
 		notBefore: FormControl<Date | null | undefined>,
 		revocationReason: FormControl<LoadBalancerTlsCertificateRevocationReason | null | undefined>,
 		revokedAt: FormControl<Date | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		serial: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		signatureAlgorithm: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		subject: FormControl<string | null | undefined>,
 	}
 	export function CreateLoadBalancerTlsCertificateFormGroup() {
@@ -5017,14 +4275,8 @@ export namespace MyNS {
 
 	/** Describes the validation record of each domain name in the SSL/TLS certificate. */
 	export interface LoadBalancerTlsCertificateDomainValidationRecord {
-
-		/** Pattern: .*\S.* */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		type?: string | null;
-
-		/** Pattern: .*\S.* */
 		value?: string | null;
 		validationStatus?: LoadBalancerTlsCertificateDomainValidationRecordValidationStatus | null;
 		domainName?: string | null;
@@ -5032,14 +4284,8 @@ export namespace MyNS {
 
 	/** Describes the validation record of each domain name in the SSL/TLS certificate. */
 	export interface LoadBalancerTlsCertificateDomainValidationRecordFormProperties {
-
-		/** Pattern: .*\S.* */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		type: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		value: FormControl<string | null | undefined>,
 		validationStatus: FormControl<LoadBalancerTlsCertificateDomainValidationRecordValidationStatus | null | undefined>,
 		domainName: FormControl<string | null | undefined>,
@@ -5103,18 +4349,12 @@ export namespace MyNS {
 
 	export interface GetLoadBalancerTlsCertificatesRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 	}
 	export interface GetLoadBalancerTlsCertificatesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLoadBalancerTlsCertificatesRequestFormGroup() {
@@ -5166,18 +4406,12 @@ export namespace MyNS {
 
 	export interface GetOperationRequest {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		operationId: string;
 	}
 	export interface GetOperationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		operationId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetOperationRequestFormGroup() {
@@ -5233,19 +4467,13 @@ export namespace MyNS {
 
 	export interface GetOperationsForResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: string;
 		pageToken?: string | null;
 	}
 	export interface GetOperationsForResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: FormControl<string | null | undefined>,
 		pageToken: FormControl<string | null | undefined>,
 	}
@@ -5301,21 +4529,13 @@ export namespace MyNS {
 
 	/** Describes an Availability Zone. */
 	export interface AvailabilityZone {
-
-		/** Pattern: .*\S.* */
 		zoneName?: string | null;
-
-		/** Pattern: .*\S.* */
 		state?: string | null;
 	}
 
 	/** Describes an Availability Zone. */
 	export interface AvailabilityZoneFormProperties {
-
-		/** Pattern: .*\S.* */
 		zoneName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		state: FormControl<string | null | undefined>,
 	}
 	export function CreateAvailabilityZoneFormGroup() {
@@ -5358,11 +4578,7 @@ export namespace MyNS {
 
 	/** Describes a database. */
 	export interface RelationalDatabase {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -5371,42 +4587,24 @@ export namespace MyNS {
 		location?: ResourceLocation;
 		resourceType?: OperationResourceType | null;
 		tags?: Array<Tag>;
-
-		/** Pattern: .*\S.* */
 		relationalDatabaseBlueprintId?: string | null;
-
-		/** Pattern: .*\S.* */
 		relationalDatabaseBundleId?: string | null;
 		masterDatabaseName?: string | null;
 
 		/** Describes the hardware of a database. */
 		hardware?: RelationalDatabaseHardware;
-
-		/** Pattern: .*\S.* */
 		state?: string | null;
 		secondaryAvailabilityZone?: string | null;
 		backupRetentionEnabled?: boolean | null;
 
 		/** Describes a pending database value modification. */
 		pendingModifiedValues?: PendingModifiedRelationalDatabaseValues;
-
-		/** Pattern: .*\S.* */
 		engine?: string | null;
-
-		/** Pattern: .*\S.* */
 		engineVersion?: string | null;
 		latestRestorableTime?: Date | null;
-
-		/** Pattern: .*\S.* */
 		masterUsername?: string | null;
-
-		/** Pattern: .*\S.* */
 		parameterApplyStatus?: string | null;
-
-		/** Pattern: .*\S.* */
 		preferredBackupWindow?: string | null;
-
-		/** Pattern: .*\S.* */
 		preferredMaintenanceWindow?: string | null;
 		publiclyAccessible?: boolean | null;
 
@@ -5418,45 +4616,23 @@ export namespace MyNS {
 
 	/** Describes a database. */
 	export interface RelationalDatabaseFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		relationalDatabaseBlueprintId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		relationalDatabaseBundleId: FormControl<string | null | undefined>,
 		masterDatabaseName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		state: FormControl<string | null | undefined>,
 		secondaryAvailabilityZone: FormControl<string | null | undefined>,
 		backupRetentionEnabled: FormControl<boolean | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		engine: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		engineVersion: FormControl<string | null | undefined>,
 		latestRestorableTime: FormControl<Date | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		masterUsername: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		parameterApplyStatus: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		preferredBackupWindow: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		preferredMaintenanceWindow: FormControl<string | null | undefined>,
 		publiclyAccessible: FormControl<boolean | null | undefined>,
 		caCertificateIdentifier: FormControl<string | null | undefined>,
@@ -5537,16 +4713,12 @@ export namespace MyNS {
 	/** Describes an endpoint for a database. */
 	export interface RelationalDatabaseEndpoint {
 		port?: number | null;
-
-		/** Pattern: .*\S.* */
 		address?: string | null;
 	}
 
 	/** Describes an endpoint for a database. */
 	export interface RelationalDatabaseEndpointFormProperties {
 		port: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		address: FormControl<string | null | undefined>,
 	}
 	export function CreateRelationalDatabaseEndpointFormGroup() {
@@ -5560,22 +4732,14 @@ export namespace MyNS {
 
 	/** Describes a pending database maintenance action. */
 	export interface PendingMaintenanceAction {
-
-		/** Pattern: .*\S.* */
 		action?: string | null;
-
-		/** Pattern: .*\S.* */
 		description?: string | null;
 		currentApplyDate?: Date | null;
 	}
 
 	/** Describes a pending database maintenance action. */
 	export interface PendingMaintenanceActionFormProperties {
-
-		/** Pattern: .*\S.* */
 		action: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		description: FormControl<string | null | undefined>,
 		currentApplyDate: FormControl<Date | null | undefined>,
 	}
@@ -5590,18 +4754,12 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 	}
 	export interface GetRelationalDatabaseRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRelationalDatabaseRequestFormGroup() {
@@ -5757,8 +4915,6 @@ export namespace MyNS {
 
 	/** Describes an event for a database. */
 	export interface RelationalDatabaseEvent {
-
-		/** Pattern: \w[\w\-]*\w */
 		resource?: string | null;
 		createdAt?: Date | null;
 		message?: string | null;
@@ -5767,8 +4923,6 @@ export namespace MyNS {
 
 	/** Describes an event for a database. */
 	export interface RelationalDatabaseEventFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		resource: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		message: FormControl<string | null | undefined>,
@@ -5784,20 +4938,14 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseEventsRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 		durationInMinutes?: number | null;
 		pageToken?: string | null;
 	}
 	export interface GetRelationalDatabaseEventsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 		durationInMinutes: FormControl<number | null | undefined>,
 		pageToken: FormControl<string | null | undefined>,
@@ -5850,10 +4998,7 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseLogEventsRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 
 		/** Required */
@@ -5865,10 +5010,7 @@ export namespace MyNS {
 	}
 	export interface GetRelationalDatabaseLogEventsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -5903,18 +5045,12 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseLogStreamsRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 	}
 	export interface GetRelationalDatabaseLogStreamsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRelationalDatabaseLogStreamsRequestFormGroup() {
@@ -5942,19 +5078,13 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseMasterUserPasswordRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 		passwordVersion?: GetRelationalDatabaseMasterUserPasswordRequestPasswordVersion | null;
 	}
 	export interface GetRelationalDatabaseMasterUserPasswordRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 		passwordVersion: FormControl<GetRelationalDatabaseMasterUserPasswordRequestPasswordVersion | null | undefined>,
 	}
@@ -5986,10 +5116,7 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseMetricDataRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 
 		/** Required */
@@ -6016,10 +5143,7 @@ export namespace MyNS {
 	}
 	export interface GetRelationalDatabaseMetricDataRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -6109,19 +5233,13 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseParametersRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 		pageToken?: string | null;
 	}
 	export interface GetRelationalDatabaseParametersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 		pageToken: FormControl<string | null | undefined>,
 	}
@@ -6149,11 +5267,7 @@ export namespace MyNS {
 
 	/** Describes a database snapshot. */
 	export interface RelationalDatabaseSnapshot {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -6162,21 +5276,11 @@ export namespace MyNS {
 		location?: ResourceLocation;
 		resourceType?: OperationResourceType | null;
 		tags?: Array<Tag>;
-
-		/** Pattern: .*\S.* */
 		engine?: string | null;
-
-		/** Pattern: .*\S.* */
 		engineVersion?: string | null;
 		sizeInGb?: number | null;
-
-		/** Pattern: .*\S.* */
 		state?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromRelationalDatabaseName?: string | null;
-
-		/** Pattern: .*\S.* */
 		fromRelationalDatabaseArn?: string | null;
 		fromRelationalDatabaseBundleId?: string | null;
 		fromRelationalDatabaseBlueprintId?: string | null;
@@ -6184,30 +5288,16 @@ export namespace MyNS {
 
 	/** Describes a database snapshot. */
 	export interface RelationalDatabaseSnapshotFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		engine: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		engineVersion: FormControl<string | null | undefined>,
 		sizeInGb: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		state: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromRelationalDatabaseName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		fromRelationalDatabaseArn: FormControl<string | null | undefined>,
 		fromRelationalDatabaseBundleId: FormControl<string | null | undefined>,
 		fromRelationalDatabaseBlueprintId: FormControl<string | null | undefined>,
@@ -6233,18 +5323,12 @@ export namespace MyNS {
 
 	export interface GetRelationalDatabaseSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseSnapshotName: string;
 	}
 	export interface GetRelationalDatabaseSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRelationalDatabaseSnapshotRequestFormGroup() {
@@ -6324,11 +5408,7 @@ export namespace MyNS {
 
 	/** Describes the static IP. */
 	export interface StaticIp {
-
-		/** Pattern: \w[\w\-]*\w */
 		name?: string | null;
-
-		/** Pattern: .*\S.* */
 		arn?: string | null;
 		supportCode?: string | null;
 		createdAt?: Date | null;
@@ -6336,31 +5416,19 @@ export namespace MyNS {
 		/** Describes the resource location. */
 		location?: ResourceLocation;
 		resourceType?: OperationResourceType | null;
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		ipAddress?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		attachedTo?: string | null;
 		isAttached?: boolean | null;
 	}
 
 	/** Describes the static IP. */
 	export interface StaticIpFormProperties {
-
-		/** Pattern: \w[\w\-]*\w */
 		name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		arn: FormControl<string | null | undefined>,
 		supportCode: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		resourceType: FormControl<OperationResourceType | null | undefined>,
-
-		/** Pattern: ([0-9]{1,3}\.){3}[0-9]{1,3} */
 		ipAddress: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		attachedTo: FormControl<string | null | undefined>,
 		isAttached: FormControl<boolean | null | undefined>,
 	}
@@ -6380,18 +5448,12 @@ export namespace MyNS {
 
 	export interface GetStaticIpRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: string;
 	}
 	export interface GetStaticIpRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetStaticIpRequestFormGroup() {
@@ -6443,10 +5505,7 @@ export namespace MyNS {
 
 	export interface ImportKeyPairRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: string;
 
 		/** Required */
@@ -6454,10 +5513,7 @@ export namespace MyNS {
 	}
 	export interface ImportKeyPairRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		keyPairName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -6515,18 +5571,12 @@ export namespace MyNS {
 		 */
 		portInfo: PortInfo;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface OpenInstancePublicPortsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateOpenInstancePublicPortsRequestFormGroup() {
@@ -6572,19 +5622,13 @@ export namespace MyNS {
 
 	export interface PutAlarmRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		alarmName: string;
 
 		/** Required */
 		metricName: AlarmMetricName;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		monitoredResourceName: string;
 
 		/** Required */
@@ -6603,19 +5647,13 @@ export namespace MyNS {
 	}
 	export interface PutAlarmRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		alarmName: FormControl<string | null | undefined>,
 
 		/** Required */
 		metricName: FormControl<AlarmMetricName | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		monitoredResourceName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -6663,18 +5701,12 @@ export namespace MyNS {
 		/** Required */
 		portInfos: Array<PortInfo>;
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface PutInstancePublicPortsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutInstancePublicPortsRequestFormGroup() {
@@ -6697,18 +5729,12 @@ export namespace MyNS {
 
 	export interface RebootInstanceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface RebootInstanceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateRebootInstanceRequestFormGroup() {
@@ -6731,18 +5757,12 @@ export namespace MyNS {
 
 	export interface RebootRelationalDatabaseRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 	}
 	export interface RebootRelationalDatabaseRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 	}
 	export function CreateRebootRelationalDatabaseRequestFormGroup() {
@@ -6765,18 +5785,12 @@ export namespace MyNS {
 
 	export interface ReleaseStaticIpRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: string;
 	}
 	export interface ReleaseStaticIpRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		staticIpName: FormControl<string | null | undefined>,
 	}
 	export function CreateReleaseStaticIpRequestFormGroup() {
@@ -6829,18 +5843,12 @@ export namespace MyNS {
 
 	export interface StartInstanceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 	}
 	export interface StartInstanceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartInstanceRequestFormGroup() {
@@ -6863,18 +5871,12 @@ export namespace MyNS {
 
 	export interface StartRelationalDatabaseRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 	}
 	export interface StartRelationalDatabaseRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartRelationalDatabaseRequestFormGroup() {
@@ -6897,19 +5899,13 @@ export namespace MyNS {
 
 	export interface StopInstanceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: string;
 		force?: boolean | null;
 	}
 	export interface StopInstanceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		instanceName: FormControl<string | null | undefined>,
 		force: FormControl<boolean | null | undefined>,
 	}
@@ -6934,24 +5930,14 @@ export namespace MyNS {
 
 	export interface StopRelationalDatabaseRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
-
-		/** Pattern: \w[\w\-]*\w */
 		relationalDatabaseSnapshotName?: string | null;
 	}
 	export interface StopRelationalDatabaseRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		relationalDatabaseSnapshotName: FormControl<string | null | undefined>,
 	}
 	export function CreateStopRelationalDatabaseRequestFormGroup() {
@@ -6975,13 +5961,8 @@ export namespace MyNS {
 
 	export interface TagResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: string;
-
-		/** Pattern: ^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$ */
 		resourceArn?: string | null;
 
 		/** Required */
@@ -6989,13 +5970,8 @@ export namespace MyNS {
 	}
 	export interface TagResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$ */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
@@ -7019,10 +5995,7 @@ export namespace MyNS {
 
 	export interface TestAlarmRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		alarmName: string;
 
 		/** Required */
@@ -7030,10 +6003,7 @@ export namespace MyNS {
 	}
 	export interface TestAlarmRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		alarmName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -7083,13 +6053,8 @@ export namespace MyNS {
 
 	export interface UntagResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: string;
-
-		/** Pattern: ^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$ */
 		resourceArn?: string | null;
 
 		/** Required */
@@ -7097,13 +6062,8 @@ export namespace MyNS {
 	}
 	export interface UntagResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		resourceName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$ */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
@@ -7161,10 +6121,7 @@ export namespace MyNS {
 
 	export interface UpdateLoadBalancerAttributeRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: string;
 
 		/** Required */
@@ -7179,10 +6136,7 @@ export namespace MyNS {
 	}
 	export interface UpdateLoadBalancerAttributeRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		loadBalancerName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -7219,10 +6173,7 @@ export namespace MyNS {
 
 	export interface UpdateRelationalDatabaseRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 		masterUserPassword?: string | null;
 		rotateMasterUserPassword?: boolean | null;
@@ -7236,10 +6187,7 @@ export namespace MyNS {
 	}
 	export interface UpdateRelationalDatabaseRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 		masterUserPassword: FormControl<string | null | undefined>,
 		rotateMasterUserPassword: FormControl<boolean | null | undefined>,
@@ -7280,10 +6228,7 @@ export namespace MyNS {
 
 	export interface UpdateRelationalDatabaseParametersRequest {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: string;
 
 		/** Required */
@@ -7291,10 +6236,7 @@ export namespace MyNS {
 	}
 	export interface UpdateRelationalDatabaseParametersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \w[\w\-]*\w
-		 */
+		/** Required */
 		relationalDatabaseName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRelationalDatabaseParametersRequestFormGroup() {
@@ -7321,21 +6263,13 @@ export namespace MyNS {
 
 	/** Describes a block storage disk mapping. */
 	export interface DiskMap {
-
-		/** Pattern: .*\S.* */
 		originalDiskPath?: string | null;
-
-		/** Pattern: \w[\w\-]*\w */
 		newDiskName?: string | null;
 	}
 
 	/** Describes a block storage disk mapping. */
 	export interface DiskMapFormProperties {
-
-		/** Pattern: .*\S.* */
 		originalDiskPath: FormControl<string | null | undefined>,
-
-		/** Pattern: \w[\w\-]*\w */
 		newDiskName: FormControl<string | null | undefined>,
 	}
 	export function CreateDiskMapFormGroup() {

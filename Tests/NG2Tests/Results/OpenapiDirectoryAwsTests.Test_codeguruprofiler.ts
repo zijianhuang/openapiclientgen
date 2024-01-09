@@ -123,7 +123,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		name?: string | null;
 
@@ -140,7 +139,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		name: FormControl<string | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
@@ -149,7 +147,7 @@ export namespace MyNS {
 		return new FormGroup<ProfilingGroupDescriptionFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -282,10 +280,7 @@ export namespace MyNS {
 		/** Required */
 		policy: string;
 
-		/**
-		 * Required
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** Required */
 		revisionId: string;
 	}
 
@@ -295,10 +290,7 @@ export namespace MyNS {
 		/** Required */
 		policy: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPolicyResponseFormGroup() {
@@ -337,7 +329,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		nextToken?: string | null;
 
@@ -351,13 +342,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProfileTimesResponseFormGroup() {
 		return new FormGroup<ListProfileTimesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -386,7 +376,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		nextToken?: string | null;
 
@@ -401,13 +390,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListProfilingGroupsResponseFormGroup() {
 		return new FormGroup<ListProfilingGroupsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -433,10 +421,7 @@ export namespace MyNS {
 		/** Required */
 		policy: string;
 
-		/**
-		 * Required
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** Required */
 		revisionId: string;
 	}
 
@@ -446,10 +431,7 @@ export namespace MyNS {
 		/** Required */
 		policy: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionResponseFormGroup() {
@@ -467,10 +449,7 @@ export namespace MyNS {
 		/** Required */
 		policy: string;
 
-		/**
-		 * Required
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** Required */
 		revisionId: string;
 	}
 
@@ -480,10 +459,7 @@ export namespace MyNS {
 		/** Required */
 		policy: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** Required */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemovePermissionResponseFormGroup() {
@@ -525,7 +501,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-.:/]+$
 		 */
 		fleetInstanceId?: string | null;
 	}
@@ -536,13 +511,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-.:/]+$
 		 */
 		fleetInstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigureAgentRequestFormGroup() {
 		return new FormGroup<ConfigureAgentRequestFormProperties>({
-			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-.:/]+$')]),
 		});
 
 	}
@@ -558,7 +532,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		profilingGroupName: string;
 	}
@@ -570,13 +543,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		profilingGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProfilingGroupRequestFormGroup() {
 		return new FormGroup<CreateProfilingGroupRequestFormProperties>({
-			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -698,15 +670,11 @@ export namespace MyNS {
 		 * Maximum items: 50
 		 */
 		principals: Array<string>;
-
-		/** Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12} */
 		revisionId?: string | null;
 	}
 
 	/** The structure representing the putPermissionRequest. */
 	export interface PutPermissionRequestFormProperties {
-
-		/** Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12} */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionRequestFormGroup() {
@@ -898,7 +866,6 @@ export namespace MyNS {
 		 * <p/>
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-.:/]+$
 		 */
 		fleetInstanceId?: string | null;
 	}
@@ -908,13 +875,12 @@ export namespace MyNS {
 		 * <p/>
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-.:/]+$
 		 */
 		fleetInstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigureAgentPostBodyFormGroup() {
 		return new FormGroup<ConfigureAgentPostBodyFormProperties>({
-			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-.:/]+$')]),
 		});
 
 	}
@@ -929,7 +895,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		profilingGroupName: string;
 	}
@@ -940,13 +905,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		profilingGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProfilingGroupPostBodyFormGroup() {
 		return new FormGroup<CreateProfilingGroupPostBodyFormProperties>({
-			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -1026,18 +990,12 @@ export namespace MyNS {
 		 */
 		principals: Array<string>;
 
-		/**
-		 * A unique identifier for the current revision of the policy. This is required, if a policy exists for the profiling group. This is not required when creating the policy for the first time.
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** A unique identifier for the current revision of the policy. This is required, if a policy exists for the profiling group. This is not required when creating the policy for the first time. */
 		revisionId?: string | null;
 	}
 	export interface PutPermissionPutBodyFormProperties {
 
-		/**
-		 * A unique identifier for the current revision of the policy. This is required, if a policy exists for the profiling group. This is not required when creating the policy for the first time.
-		 * Pattern: [a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}
-		 */
+		/** A unique identifier for the current revision of the policy. This is required, if a policy exists for the profiling group. This is not required when creating the policy for the first time. */
 		revisionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionPutBodyFormGroup() {

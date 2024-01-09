@@ -11,7 +11,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -26,13 +25,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToStreamInputFormGroup() {
 		return new FormGroup<AddTagsToStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -123,7 +121,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -142,7 +139,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -155,7 +151,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateStreamInputFormGroup() {
 		return new FormGroup<CreateStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ShardCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(100000)]),
 		});
 
@@ -169,7 +165,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -188,7 +183,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -201,7 +195,7 @@ export namespace MyNS {
 	}
 	export function CreateDecreaseStreamRetentionPeriodInputFormGroup() {
 		return new FormGroup<DecreaseStreamRetentionPeriodInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(168)]),
 		});
 
@@ -215,7 +209,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 		EnforceConsumerDeletion?: boolean | null;
@@ -228,14 +221,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 		EnforceConsumerDeletion: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDeleteStreamInputFormGroup() {
 		return new FormGroup<DeleteStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			EnforceConsumerDeletion: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -246,21 +238,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName?: string | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN?: string | null;
 	}
@@ -269,29 +258,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterStreamConsumerInputFormGroup() {
 		return new FormGroup<DeregisterStreamConsumerInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws.*:kinesis:.*:\d{12}:stream/.*')]),
+			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+')]),
 		});
 
 	}
@@ -374,7 +360,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -382,7 +367,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: string;
 
@@ -423,7 +407,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -431,7 +414,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -460,8 +442,8 @@ export namespace MyNS {
 	}
 	export function CreateStreamDescriptionFormGroup() {
 		return new FormGroup<StreamDescriptionFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws.*:kinesis:.*:\d{12}:stream/.*')]),
 			StreamStatus: new FormControl<StreamDescriptionStreamStatus | null | undefined>(undefined, [Validators.required]),
 			HasMoreShards: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(168)]),
@@ -482,21 +464,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ParentShardId?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		AdjacentParentShardId?: string | null;
 
@@ -520,29 +499,26 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ParentShardId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		AdjacentParentShardId: FormControl<string | null | undefined>,
 	}
 	export function CreateShardFormGroup() {
 		return new FormGroup<ShardFormProperties>({
-			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ParentShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			AdjacentParentShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ParentShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			AdjacentParentShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -551,32 +527,20 @@ export namespace MyNS {
 	/** The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers. */
 	export interface HashKeyRange {
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,38})
-		 */
+		/** Required */
 		StartingHashKey: string;
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,38})
-		 */
+		/** Required */
 		EndingHashKey: string;
 	}
 
 	/** The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers. */
 	export interface HashKeyRangeFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,38})
-		 */
+		/** Required */
 		StartingHashKey: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,38})
-		 */
+		/** Required */
 		EndingHashKey: FormControl<string | null | undefined>,
 	}
 	export function CreateHashKeyRangeFormGroup() {
@@ -591,26 +555,16 @@ export namespace MyNS {
 	/** The range of possible sequence numbers for the shard. */
 	export interface SequenceNumberRange {
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		StartingSequenceNumber: string;
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		EndingSequenceNumber?: string | null;
 	}
 
 	/** The range of possible sequence numbers for the shard. */
 	export interface SequenceNumberRangeFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		StartingSequenceNumber: FormControl<string | null | undefined>,
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		EndingSequenceNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateSequenceNumberRangeFormGroup() {
@@ -653,7 +607,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -666,7 +619,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartShardId?: string | null;
 	}
@@ -678,7 +630,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -691,15 +642,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartShardId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamInputFormGroup() {
 		return new FormGroup<DescribeStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
-			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -728,7 +678,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: string;
 
@@ -736,7 +685,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: string;
 
@@ -750,7 +698,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: string;
 	}
@@ -762,7 +709,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: FormControl<string | null | undefined>,
 
@@ -770,7 +716,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: FormControl<string | null | undefined>,
 
@@ -784,17 +729,16 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 	}
 	export function CreateConsumerDescriptionFormGroup() {
 		return new FormGroup<ConsumerDescriptionFormProperties>({
-			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+')]),
 			ConsumerStatus: new FormControl<ConsumerDescriptionConsumerStatus | null | undefined>(undefined, [Validators.required]),
 			ConsumerCreationTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws.*:kinesis:.*:\d{12}:stream/.*')]),
 		});
 
 	}
@@ -806,21 +750,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName?: string | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN?: string | null;
 	}
@@ -829,29 +770,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamConsumerInputFormGroup() {
 		return new FormGroup<DescribeStreamConsumerInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws.*:kinesis:.*:\d{12}:stream/.*')]),
+			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+')]),
 		});
 
 	}
@@ -880,7 +818,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -888,7 +825,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: string;
 
@@ -936,7 +872,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -944,7 +879,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -983,8 +917,8 @@ export namespace MyNS {
 	}
 	export function CreateStreamDescriptionSummaryFormGroup() {
 		return new FormGroup<StreamDescriptionSummaryFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws.*:kinesis:.*:\d{12}:stream/.*')]),
 			StreamStatus: new FormControl<StreamDescriptionStreamStatus | null | undefined>(undefined, [Validators.required]),
 			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(100000)]),
 			StreamCreationTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -1002,7 +936,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 	}
@@ -1012,13 +945,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeStreamSummaryInputFormGroup() {
 		return new FormGroup<DescribeStreamSummaryInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1030,7 +962,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -1053,13 +984,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateEnhancedMonitoringOutputFormGroup() {
 		return new FormGroup<EnhancedMonitoringOutputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1072,7 +1002,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -1091,13 +1020,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableEnhancedMonitoringInputFormGroup() {
 		return new FormGroup<DisableEnhancedMonitoringInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1110,7 +1038,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -1129,13 +1056,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableEnhancedMonitoringInputFormGroup() {
 		return new FormGroup<EnableEnhancedMonitoringInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1181,10 +1107,7 @@ export namespace MyNS {
 	/** The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob. */
 	export interface Record {
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		SequenceNumber: string;
 		ApproximateArrivalTimestamp?: Date | null;
 
@@ -1207,10 +1130,7 @@ export namespace MyNS {
 	/** The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob. */
 	export interface RecordFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		SequenceNumber: FormControl<string | null | undefined>,
 		ApproximateArrivalTimestamp: FormControl<Date | null | undefined>,
 
@@ -1453,7 +1373,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -1461,14 +1380,11 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: string;
 
 		/** Required */
 		ShardIteratorType: GetShardIteratorInputShardIteratorType;
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		StartingSequenceNumber?: string | null;
 		Timestamp?: Date | null;
 	}
@@ -1480,7 +1396,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -1488,21 +1403,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: FormControl<string | null | undefined>,
 
 		/** Required */
 		ShardIteratorType: FormControl<GetShardIteratorInputShardIteratorType | null | undefined>,
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		StartingSequenceNumber: FormControl<string | null | undefined>,
 		Timestamp: FormControl<Date | null | undefined>,
 	}
 	export function CreateGetShardIteratorInputFormGroup() {
 		return new FormGroup<GetShardIteratorInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ShardIteratorType: new FormControl<GetShardIteratorInputShardIteratorType | null | undefined>(undefined, [Validators.required]),
 			StartingSequenceNumber: new FormControl<string | null | undefined>(undefined),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
@@ -1520,7 +1432,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -1539,7 +1450,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -1552,7 +1462,7 @@ export namespace MyNS {
 	}
 	export function CreateIncreaseStreamRetentionPeriodInputFormGroup() {
 		return new FormGroup<IncreaseStreamRetentionPeriodInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(168)]),
 		});
 
@@ -1587,7 +1497,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -1600,7 +1509,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartShardId?: string | null;
 
@@ -1616,7 +1524,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -1629,7 +1536,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartShardId: FormControl<string | null | undefined>,
 
@@ -1642,9 +1548,9 @@ export namespace MyNS {
 	}
 	export function CreateListShardsInputFormGroup() {
 		return new FormGroup<ListShardsInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048576), Validators.minLength(1)]),
-			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			StreamCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1700,7 +1606,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: string;
 
@@ -1708,7 +1613,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: string;
 
@@ -1726,7 +1630,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: FormControl<string | null | undefined>,
 
@@ -1734,7 +1637,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: FormControl<string | null | undefined>,
 
@@ -1746,8 +1648,8 @@ export namespace MyNS {
 	}
 	export function CreateConsumerFormGroup() {
 		return new FormGroup<ConsumerFormProperties>({
-			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+')]),
 			ConsumerStatus: new FormControl<ConsumerDescriptionConsumerStatus | null | undefined>(undefined, [Validators.required]),
 			ConsumerCreationTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1760,7 +1662,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: string;
 
@@ -1783,7 +1684,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -1802,7 +1702,7 @@ export namespace MyNS {
 	}
 	export function CreateListStreamConsumersInputFormGroup() {
 		return new FormGroup<ListStreamConsumersInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws.*:kinesis:.*:\d{12}:stream/.*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048576), Validators.minLength(1)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			StreamCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -1847,7 +1747,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartStreamName?: string | null;
 	}
@@ -1864,14 +1763,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartStreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateListStreamsInputFormGroup() {
 		return new FormGroup<ListStreamsInputFormProperties>({
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
-			ExclusiveStartStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ExclusiveStartStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1953,7 +1851,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -1977,7 +1874,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -1995,7 +1891,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForStreamInputFormGroup() {
 		return new FormGroup<ListTagsForStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ExclusiveStartTagKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
@@ -2010,7 +1906,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2018,7 +1913,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardToMerge: string;
 
@@ -2026,7 +1920,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		AdjacentShardToMerge: string;
 	}
@@ -2038,7 +1931,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2046,7 +1938,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardToMerge: FormControl<string | null | undefined>,
 
@@ -2054,15 +1945,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		AdjacentShardToMerge: FormControl<string | null | undefined>,
 	}
 	export function CreateMergeShardsInputFormGroup() {
 		return new FormGroup<MergeShardsInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ShardToMerge: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			AdjacentShardToMerge: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ShardToMerge: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			AdjacentShardToMerge: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2075,14 +1965,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: string;
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		SequenceNumber: string;
 		EncryptionType?: StreamDescriptionEncryptionType | null;
 	}
@@ -2094,20 +1980,16 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		SequenceNumber: FormControl<string | null | undefined>,
 		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
 	}
 	export function CreatePutRecordOutputFormGroup() {
 		return new FormGroup<PutRecordOutputFormProperties>({
-			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			SequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
 		});
@@ -2122,7 +2004,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2139,11 +2020,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PartitionKey: string;
-
-		/** Pattern: 0|([1-9]\d{0,38}) */
 		ExplicitHashKey?: string | null;
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		SequenceNumberForOrdering?: string | null;
 	}
 
@@ -2154,7 +2031,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2171,16 +2047,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PartitionKey: FormControl<string | null | undefined>,
-
-		/** Pattern: 0|([1-9]\d{0,38}) */
 		ExplicitHashKey: FormControl<string | null | undefined>,
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		SequenceNumberForOrdering: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRecordInputFormGroup() {
 		return new FormGroup<PutRecordInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Data: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1048576), Validators.minLength(0)]),
 			PartitionKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			ExplicitHashKey: new FormControl<string | null | undefined>(undefined),
@@ -2229,14 +2101,11 @@ export namespace MyNS {
 
 	/** Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result. */
 	export interface PutRecordsResultEntry {
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		SequenceNumber?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId?: string | null;
 		ErrorCode?: string | null;
@@ -2245,14 +2114,11 @@ export namespace MyNS {
 
 	/** Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result. */
 	export interface PutRecordsResultEntryFormProperties {
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		SequenceNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
@@ -2261,7 +2127,7 @@ export namespace MyNS {
 	export function CreatePutRecordsResultEntryFormGroup() {
 		return new FormGroup<PutRecordsResultEntryFormProperties>({
 			SequenceNumber: new FormControl<string | null | undefined>(undefined),
-			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2283,7 +2149,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 	}
@@ -2295,13 +2160,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRecordsInputFormGroup() {
 		return new FormGroup<PutRecordsInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2316,8 +2180,6 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		Data: string;
-
-		/** Pattern: 0|([1-9]\d{0,38}) */
 		ExplicitHashKey?: string | null;
 
 		/**
@@ -2337,8 +2199,6 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		Data: FormControl<string | null | undefined>,
-
-		/** Pattern: 0|([1-9]\d{0,38}) */
 		ExplicitHashKey: FormControl<string | null | undefined>,
 
 		/**
@@ -2379,7 +2239,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: string;
 
@@ -2387,7 +2246,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: string;
 	}
@@ -2397,7 +2255,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:aws.*:kinesis:.*:\d{12}:stream/.*
 		 */
 		StreamARN: FormControl<string | null | undefined>,
 
@@ -2405,14 +2262,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ConsumerName: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterStreamConsumerInputFormGroup() {
 		return new FormGroup<RegisterStreamConsumerInputFormProperties>({
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws.*:kinesis:.*:\d{12}:stream/.*')]),
+			ConsumerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2425,7 +2281,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2444,13 +2299,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromStreamInputFormGroup() {
 		return new FormGroup<RemoveTagsFromStreamInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2463,7 +2317,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2471,14 +2324,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardToSplit: string;
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,38})
-		 */
+		/** Required */
 		NewStartingHashKey: string;
 	}
 
@@ -2489,7 +2338,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2497,20 +2345,16 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardToSplit: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,38})
-		 */
+		/** Required */
 		NewStartingHashKey: FormControl<string | null | undefined>,
 	}
 	export function CreateSplitShardInputFormGroup() {
 		return new FormGroup<SplitShardInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ShardToSplit: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			ShardToSplit: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			NewStartingHashKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2522,7 +2366,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2542,7 +2385,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2558,7 +2400,7 @@ export namespace MyNS {
 	}
 	export function CreateStartStreamEncryptionInputFormGroup() {
 		return new FormGroup<StartStreamEncryptionInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined, [Validators.required]),
 			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
@@ -2571,7 +2413,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2591,7 +2432,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2607,7 +2447,7 @@ export namespace MyNS {
 	}
 	export function CreateStopStreamEncryptionInputFormGroup() {
 		return new FormGroup<StopStreamEncryptionInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined, [Validators.required]),
 			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
 		});
@@ -2619,7 +2459,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName?: string | null;
 
@@ -2640,7 +2479,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2658,7 +2496,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateShardCountOutputFormGroup() {
 		return new FormGroup<UpdateShardCountOutputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			CurrentShardCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100000)]),
 			TargetShardCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100000)]),
 		});
@@ -2671,7 +2509,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: string;
 
@@ -2691,7 +2528,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		StreamName: FormControl<string | null | undefined>,
 
@@ -2707,7 +2543,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateShardCountInputFormGroup() {
 		return new FormGroup<UpdateShardCountInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			TargetShardCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(100000)]),
 			ScalingType: new FormControl<UpdateShardCountInputScalingType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2741,8 +2577,6 @@ export namespace MyNS {
 
 		/** Required */
 		Type: GetShardIteratorInputShardIteratorType;
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		SequenceNumber?: string | null;
 		Timestamp?: Date | null;
 	}
@@ -2750,8 +2584,6 @@ export namespace MyNS {
 
 		/** Required */
 		Type: FormControl<GetShardIteratorInputShardIteratorType | null | undefined>,
-
-		/** Pattern: 0|([1-9]\d{0,128}) */
 		SequenceNumber: FormControl<string | null | undefined>,
 		Timestamp: FormControl<Date | null | undefined>,
 	}
@@ -2773,10 +2605,7 @@ export namespace MyNS {
 		/** Required */
 		Records: Array<Record>;
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		ContinuationSequenceNumber: string;
 
 		/**
@@ -2789,10 +2618,7 @@ export namespace MyNS {
 	/** After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of this type to your consumer.  */
 	export interface SubscribeToShardEventFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: 0|([1-9]\d{0,128})
-		 */
+		/** Required */
 		ContinuationSequenceNumber: FormControl<string | null | undefined>,
 
 		/**
@@ -2831,7 +2657,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: string;
 
@@ -2839,7 +2664,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: string;
 
@@ -2852,7 +2676,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+
 		 */
 		ConsumerARN: FormControl<string | null | undefined>,
 
@@ -2860,14 +2683,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ShardId: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribeToShardInputFormGroup() {
 		return new FormGroup<SubscribeToShardInputFormProperties>({
-			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+')]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}

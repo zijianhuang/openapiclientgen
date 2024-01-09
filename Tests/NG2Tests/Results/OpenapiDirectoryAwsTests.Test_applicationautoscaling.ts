@@ -575,7 +575,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: string;
 
@@ -620,7 +619,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: FormControl<string | null | undefined>,
 
@@ -646,7 +644,7 @@ export namespace MyNS {
 	export function CreateScalingPolicyFormGroup() {
 		return new FormGroup<ScalingPolicyFormProperties>({
 			PolicyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
 			ServiceNamespace: new FormControl<ScalingPolicyServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			ScalableDimension: new FormControl<ScalingPolicyScalableDimension | null | undefined>(undefined, [Validators.required]),
@@ -965,7 +963,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
 		 */
 		ScheduledActionName: string;
 
@@ -1010,7 +1007,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
 		 */
 		ScheduledActionName: FormControl<string | null | undefined>,
 
@@ -1046,7 +1042,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduledActionFormGroup() {
 		return new FormGroup<ScheduledActionFormProperties>({
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+')]),
 			ScheduledActionARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			ServiceNamespace: new FormControl<ScheduledActionServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
@@ -1159,7 +1155,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: string;
 
@@ -1189,7 +1184,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: FormControl<string | null | undefined>,
 
@@ -1209,7 +1203,7 @@ export namespace MyNS {
 	}
 	export function CreatePutScalingPolicyRequestFormGroup() {
 		return new FormGroup<PutScalingPolicyRequestFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
 			ServiceNamespace: new FormControl<PutScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			ScalableDimension: new FormControl<PutScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
@@ -1257,7 +1251,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
 		 */
 		ScheduledActionName: string;
 
@@ -1291,7 +1284,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: (?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+
 		 */
 		ScheduledActionName: FormControl<string | null | undefined>,
 
@@ -1311,7 +1303,7 @@ export namespace MyNS {
 		return new FormGroup<PutScheduledActionRequestFormProperties>({
 			ServiceNamespace: new FormControl<PutScheduledActionRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+')]),
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			ScalableDimension: new FormControl<PutScheduledActionRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),

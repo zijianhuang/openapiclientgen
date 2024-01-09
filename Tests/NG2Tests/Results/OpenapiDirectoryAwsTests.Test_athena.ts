@@ -46,8 +46,6 @@ export namespace MyNS {
 		 */
 		QueryString: string;
 		NamedQueryId?: string | null;
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup?: string | null;
 	}
 
@@ -81,8 +79,6 @@ export namespace MyNS {
 		 */
 		QueryString: FormControl<string | null | undefined>,
 		NamedQueryId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateNamedQueryFormGroup() {
@@ -204,8 +200,6 @@ export namespace MyNS {
 
 		/** The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run. */
 		Statistics?: QueryExecutionStatistics;
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup?: string | null;
 	}
 
@@ -219,8 +213,6 @@ export namespace MyNS {
 		 */
 		Query: FormControl<string | null | undefined>,
 		StatementType: FormControl<QueryExecutionStatementType | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryExecutionFormGroup() {
@@ -592,8 +584,6 @@ export namespace MyNS {
 		 * Min length: 32
 		 */
 		ClientRequestToken?: string | null;
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup?: string | null;
 	}
 	export interface CreateNamedQueryInputFormProperties {
@@ -630,8 +620,6 @@ export namespace MyNS {
 		 * Min length: 32
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNamedQueryInputFormGroup() {
@@ -658,10 +646,7 @@ export namespace MyNS {
 
 	export interface CreateWorkGroupInput {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		Name: string;
 
 		/** The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
@@ -676,10 +661,7 @@ export namespace MyNS {
 	}
 	export interface CreateWorkGroupInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 
 		/**
@@ -803,19 +785,13 @@ export namespace MyNS {
 
 	export interface DeleteWorkGroupInput {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		WorkGroup: string;
 		RecursiveDeleteOption?: boolean | null;
 	}
 	export interface DeleteWorkGroupInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		WorkGroup: FormControl<string | null | undefined>,
 		RecursiveDeleteOption: FormControl<boolean | null | undefined>,
 	}
@@ -1457,10 +1433,7 @@ export namespace MyNS {
 	/** A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
 	export interface WorkGroup {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		Name: string;
 		State?: WorkGroupState | null;
 
@@ -1478,10 +1451,7 @@ export namespace MyNS {
 	/** A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. */
 	export interface WorkGroupFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		State: FormControl<WorkGroupState | null | undefined>,
 
@@ -1506,18 +1476,12 @@ export namespace MyNS {
 
 	export interface GetWorkGroupInput {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		WorkGroup: string;
 	}
 	export interface GetWorkGroupInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		WorkGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateGetWorkGroupInputFormGroup() {
@@ -1734,8 +1698,6 @@ export namespace MyNS {
 		 * Maximum: 50
 		 */
 		MaxResults?: number | null;
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup?: string | null;
 	}
 	export interface ListNamedQueriesInputFormProperties {
@@ -1751,8 +1713,6 @@ export namespace MyNS {
 		 * Maximum: 50
 		 */
 		MaxResults: FormControl<number | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateListNamedQueriesInputFormGroup() {
@@ -1806,8 +1766,6 @@ export namespace MyNS {
 		 * Maximum: 50
 		 */
 		MaxResults?: number | null;
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup?: string | null;
 	}
 	export interface ListQueryExecutionsInputFormProperties {
@@ -1823,8 +1781,6 @@ export namespace MyNS {
 		 * Maximum: 50
 		 */
 		MaxResults: FormControl<number | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateListQueryExecutionsInputFormGroup() {
@@ -2050,8 +2006,6 @@ export namespace MyNS {
 
 	/** The summary information for the workgroup, which includes its name, state, description, and the date and time it was created. */
 	export interface WorkGroupSummary {
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		Name?: string | null;
 		State?: WorkGroupState | null;
 
@@ -2065,8 +2019,6 @@ export namespace MyNS {
 
 	/** The summary information for the workgroup, which includes its name, state, description, and the date and time it was created. */
 	export interface WorkGroupSummaryFormProperties {
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		Name: FormControl<string | null | undefined>,
 		State: FormControl<WorkGroupState | null | undefined>,
 
@@ -2156,8 +2108,6 @@ export namespace MyNS {
 
 		/** The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings. */
 		ResultConfiguration?: ResultConfiguration;
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup?: string | null;
 	}
 	export interface StartQueryExecutionInputFormProperties {
@@ -2174,8 +2124,6 @@ export namespace MyNS {
 		 * Min length: 32
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9._-]{1,128} */
 		WorkGroup: FormControl<string | null | undefined>,
 	}
 	export function CreateStartQueryExecutionInputFormGroup() {
@@ -2368,10 +2316,7 @@ export namespace MyNS {
 
 	export interface UpdateWorkGroupInput {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		WorkGroup: string;
 
 		/**
@@ -2386,10 +2331,7 @@ export namespace MyNS {
 	}
 	export interface UpdateWorkGroupInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9._-]{1,128}
-		 */
+		/** Required */
 		WorkGroup: FormControl<string | null | undefined>,
 
 		/**

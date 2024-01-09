@@ -277,10 +277,10 @@ export namespace MyNS {
 	}
 	export function CreateASN1SubjectFormGroup() {
 		return new FormGroup<ASN1SubjectFormProperties>({
-			Country: new FormControl<string | null | undefined>(undefined),
+			Country: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[A-Za-z]{2}')]),
 			Organization: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			OrganizationalUnit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			DistinguishedNameQualifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9'()+-.?:/= ]*')]),
+			DistinguishedNameQualifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9\'()+-.?:/= ]*')]),
 			State: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
 			CommonName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
 			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),

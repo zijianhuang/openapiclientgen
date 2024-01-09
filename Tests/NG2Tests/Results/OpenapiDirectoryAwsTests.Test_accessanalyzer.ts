@@ -6,15 +6,11 @@ export namespace MyNS {
 
 	/** The response to the request to create an analyzer. */
 	export interface CreateAnalyzerResponse {
-
-		/** Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$ */
 		arn?: string | null;
 	}
 
 	/** The response to the request to create an analyzer. */
 	export interface CreateAnalyzerResponseFormProperties {
-
-		/** Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$ */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAnalyzerResponseFormGroup() {
@@ -35,7 +31,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: string;
 	}
@@ -47,13 +42,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: FormControl<string | null | undefined>,
 	}
 	export function CreateInlineArchiveRuleFormGroup() {
 		return new FormGroup<InlineArchiveRuleFormProperties>({
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 		});
 
 	}
@@ -205,10 +199,7 @@ export namespace MyNS {
 		/** Required */
 		isPublic: boolean;
 
-		/**
-		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** Required */
 		resourceArn: string;
 
 		/** Required */
@@ -236,10 +227,7 @@ export namespace MyNS {
 		/** Required */
 		isPublic: FormControl<boolean | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -295,10 +283,7 @@ export namespace MyNS {
 	/** Contains information about the analyzer. */
 	export interface AnalyzerSummary {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		arn: string;
 
 		/** Required */
@@ -310,7 +295,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		name: string;
 
@@ -328,10 +312,7 @@ export namespace MyNS {
 	/** Contains information about the analyzer. */
 	export interface AnalyzerSummaryFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		arn: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -343,7 +324,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -359,7 +339,7 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastResourceAnalyzed: new FormControl<string | null | undefined>(undefined),
 			lastResourceAnalyzedAt: new FormControl<Date | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			status: new FormControl<AnalyzerSummaryStatus | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -437,7 +417,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: string;
 
@@ -455,7 +434,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: FormControl<string | null | undefined>,
 
@@ -465,7 +443,7 @@ export namespace MyNS {
 	export function CreateArchiveRuleSummaryFormGroup() {
 		return new FormGroup<ArchiveRuleSummaryFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -655,10 +633,7 @@ export namespace MyNS {
 	/** Contains the ARN of the analyzed resource. */
 	export interface AnalyzedResourceSummary {
 
-		/**
-		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** Required */
 		resourceArn: string;
 
 		/** Required */
@@ -671,10 +646,7 @@ export namespace MyNS {
 	/** Contains the ARN of the analyzed resource. */
 	export interface AnalyzedResourceSummaryFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -895,7 +867,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		analyzerName: string;
 		archiveRules?: Array<InlineArchiveRule>;
@@ -913,7 +884,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		analyzerName: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
@@ -923,7 +893,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAnalyzerRequestFormGroup() {
 		return new FormGroup<CreateAnalyzerRequestFormProperties>({
-			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -942,7 +912,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: string;
 	}
@@ -955,14 +924,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateArchiveRuleRequestFormGroup() {
 		return new FormGroup<CreateArchiveRuleRequestFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 		});
 
 	}
@@ -1057,10 +1025,7 @@ export namespace MyNS {
 	/** Retrieves a list of resources that have been analyzed. */
 	export interface ListAnalyzedResourcesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: string;
 		maxResults?: number | null;
 		nextToken?: string | null;
@@ -1070,10 +1035,7 @@ export namespace MyNS {
 	/** Retrieves a list of resources that have been analyzed. */
 	export interface ListAnalyzedResourcesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1143,10 +1105,7 @@ export namespace MyNS {
 	/** Retrieves a list of findings generated by the specified analyzer. */
 	export interface ListFindingsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: string;
 		filter?: FilterCriteriaMap;
 		maxResults?: number | null;
@@ -1159,10 +1118,7 @@ export namespace MyNS {
 	/** Retrieves a list of findings generated by the specified analyzer. */
 	export interface ListFindingsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1196,32 +1152,20 @@ export namespace MyNS {
 	/** Starts a scan of the policies applied to the specified resource. */
 	export interface StartResourceScanRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: string;
 
-		/**
-		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** Required */
 		resourceArn: string;
 	}
 
 	/** Starts a scan of the policies applied to the specified resource. */
 	export interface StartResourceScanRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartResourceScanRequestFormGroup() {
@@ -1287,15 +1231,10 @@ export namespace MyNS {
 	/** Updates findings with the new values provided in the request. */
 	export interface UpdateFindingsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: string;
 		clientToken?: string | null;
 		ids?: Array<string>;
-
-		/** Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$ */
 		resourceArn?: string | null;
 
 		/** Required */
@@ -1305,14 +1244,9 @@ export namespace MyNS {
 	/** Updates findings with the new values provided in the request. */
 	export interface UpdateFindingsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
-		 */
+		/** Required */
 		analyzerArn: FormControl<string | null | undefined>,
 		clientToken: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$ */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -1532,7 +1466,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		analyzerName: string;
 
@@ -1558,7 +1491,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		analyzerName: FormControl<string | null | undefined>,
 
@@ -1576,7 +1508,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAnalyzerPutBodyFormGroup() {
 		return new FormGroup<CreateAnalyzerPutBodyFormProperties>({
-			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined, [Validators.required]),
@@ -1600,7 +1532,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: string;
 	}
@@ -1620,7 +1551,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
 		 */
 		ruleName: FormControl<string | null | undefined>,
 	}
@@ -1628,7 +1558,7 @@ export namespace MyNS {
 		return new FormGroup<CreateArchiveRulePutBodyFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			filter: new FormControl<{[id: string]: Criterion } | null | undefined>(undefined, [Validators.required]),
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 		});
 
 	}
@@ -1668,7 +1598,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer to retrieve a list of analyzed resources from.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
 
@@ -1686,7 +1615,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer to retrieve a list of analyzed resources from.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: FormControl<string | null | undefined>,
 
@@ -1716,7 +1644,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer to retrieve findings from.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
 
@@ -1737,7 +1664,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer to retrieve findings from.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: FormControl<string | null | undefined>,
 
@@ -1781,7 +1707,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer that generated the findings to update.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
 
@@ -1791,10 +1716,7 @@ export namespace MyNS {
 		/** The IDs of the findings to update. */
 		ids?: Array<string>;
 
-		/**
-		 * The ARN of the resource identified in the finding.
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** The ARN of the resource identified in the finding. */
 		resourceArn?: string | null;
 
 		/**
@@ -1808,17 +1730,13 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer that generated the findings to update.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: FormControl<string | null | undefined>,
 
 		/** A client token. */
 		clientToken: FormControl<string | null | undefined>,
 
-		/**
-		 * The ARN of the resource identified in the finding.
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
-		 */
+		/** The ARN of the resource identified in the finding. */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/**
@@ -1865,14 +1783,12 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer to use to scan the policies applied to the specified resource.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: string;
 
 		/**
 		 * The ARN of the resource to scan.
 		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
 		 */
 		resourceArn: string;
 	}
@@ -1881,14 +1797,12 @@ export namespace MyNS {
 		/**
 		 * The ARN of the analyzer to use to scan the policies applied to the specified resource.
 		 * Required
-		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
 		 */
 		analyzerArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the resource to scan.
 		 * Required
-		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}

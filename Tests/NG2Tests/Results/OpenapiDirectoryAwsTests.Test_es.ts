@@ -55,7 +55,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		Region?: string | null;
@@ -73,7 +72,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Region: FormControl<string | null | undefined>,
@@ -81,7 +79,7 @@ export namespace MyNS {
 	export function CreateDomainInformationFormGroup() {
 		return new FormGroup<DomainInformationFormProperties>({
 			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -242,7 +240,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName?: string | null;
 		PackageType?: DomainPackageDetailsPackageType | null;
@@ -252,7 +249,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName?: string | null;
 		DomainPackageStatus?: DomainPackageDetailsDomainPackageStatus | null;
@@ -267,7 +263,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName: FormControl<string | null | undefined>,
 		PackageType: FormControl<DomainPackageDetailsPackageType | null | undefined>,
@@ -277,7 +272,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		DomainPackageStatus: FormControl<DomainPackageDetailsDomainPackageStatus | null | undefined>,
@@ -286,10 +280,10 @@ export namespace MyNS {
 	export function CreateDomainPackageDetailsFormGroup() {
 		return new FormGroup<DomainPackageDetailsFormProperties>({
 			PackageID: new FormControl<string | null | undefined>(undefined),
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			PackageType: new FormControl<DomainPackageDetailsPackageType | null | undefined>(undefined),
 			LastUpdated: new FormControl<Date | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			DomainPackageStatus: new FormControl<DomainPackageDetailsDomainPackageStatus | null | undefined>(undefined),
 			ReferencePath: new FormControl<string | null | undefined>(undefined),
 		});
@@ -427,7 +421,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -503,7 +496,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -527,7 +519,7 @@ export namespace MyNS {
 	export function CreateElasticsearchDomainStatusFormGroup() {
 		return new FormGroup<ElasticsearchDomainStatusFormProperties>({
 			DomainId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Created: new FormControl<boolean | null | undefined>(undefined),
 			Deleted: new FormControl<boolean | null | undefined>(undefined),
@@ -694,14 +686,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+_[0-9a-zA-Z]+
 		 */
 		UserPoolId?: string | null;
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 
@@ -719,14 +709,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+_[0-9a-zA-Z]+
 		 */
 		UserPoolId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 
@@ -739,8 +727,8 @@ export namespace MyNS {
 	export function CreateCognitoOptionsFormGroup() {
 		return new FormGroup<CognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -1024,7 +1012,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName?: string | null;
 		PackageType?: PackageDetailsPackageType | null;
@@ -1043,7 +1030,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName: FormControl<string | null | undefined>,
 		PackageType: FormControl<PackageDetailsPackageType | null | undefined>,
@@ -1056,7 +1042,7 @@ export namespace MyNS {
 	export function CreatePackageDetailsFormGroup() {
 		return new FormGroup<PackageDetailsFormProperties>({
 			PackageID: new FormControl<string | null | undefined>(undefined),
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			PackageType: new FormControl<PackageDetailsPackageType | null | undefined>(undefined),
 			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			PackageStatus: new FormControl<PackageDetailsPackageStatus | null | undefined>(undefined),
@@ -1842,8 +1828,6 @@ export namespace MyNS {
 
 	/** Details of a reserved Elasticsearch instance offering. */
 	export interface ReservedElasticsearchInstanceOffering {
-
-		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceOfferingId?: string | null;
 		ElasticsearchInstanceType?: ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null;
 		Duration?: number | null;
@@ -1856,8 +1840,6 @@ export namespace MyNS {
 
 	/** Details of a reserved Elasticsearch instance offering. */
 	export interface ReservedElasticsearchInstanceOfferingFormProperties {
-
-		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
 		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
@@ -1930,8 +1912,6 @@ export namespace MyNS {
 		 * Min length: 5
 		 */
 		ReservationName?: string | null;
-
-		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId?: string | null;
 		ReservedElasticsearchInstanceOfferingId?: string | null;
 		ElasticsearchInstanceType?: ReservedElasticsearchInstanceElasticsearchInstanceType | null;
@@ -1954,8 +1934,6 @@ export namespace MyNS {
 		 * Min length: 5
 		 */
 		ReservationName: FormControl<string | null | undefined>,
-
-		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId: FormControl<string | null | undefined>,
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
 		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceElasticsearchInstanceType | null | undefined>,
@@ -2156,7 +2134,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName?: string | null;
 	}
@@ -2166,13 +2143,12 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDomainInfoFormGroup() {
 		return new FormGroup<DomainInfoFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2281,8 +2257,6 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation. */
 	export interface PurchaseReservedElasticsearchInstanceOfferingResponse {
-
-		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId?: string | null;
 
 		/**
@@ -2294,8 +2268,6 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation. */
 	export interface PurchaseReservedElasticsearchInstanceOfferingResponseFormProperties {
-
-		/** Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12} */
 		ReservedElasticsearchInstanceId: FormControl<string | null | undefined>,
 
 		/**
@@ -2374,7 +2346,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName?: string | null;
 		TargetVersion?: string | null;
@@ -2388,7 +2359,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		TargetVersion: FormControl<string | null | undefined>,
@@ -2396,7 +2366,7 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainResponseFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainResponseFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2514,7 +2484,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -2527,13 +2496,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelElasticsearchServiceSoftwareUpdateRequestFormGroup() {
 		return new FormGroup<CancelElasticsearchServiceSoftwareUpdateRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2561,7 +2529,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		ElasticsearchVersion?: string | null;
@@ -2607,7 +2574,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		ElasticsearchVersion: FormControl<string | null | undefined>,
@@ -2617,7 +2583,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateElasticsearchDomainRequestFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
 			AccessPolicies: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2697,7 +2663,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName: string;
 
@@ -2721,7 +2686,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName: FormControl<string | null | undefined>,
 
@@ -2733,7 +2697,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePackageRequestFormGroup() {
 		return new FormGroup<CreatePackageRequestFormProperties>({
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			PackageType: new FormControl<CreatePackageRequestPackageType | null | undefined>(undefined, [Validators.required]),
 			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
@@ -3258,10 +3222,7 @@ export namespace MyNS {
 	/** Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code> */
 	export interface PurchaseReservedElasticsearchInstanceOfferingRequest {
 
-		/**
-		 * Required
-		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
-		 */
+		/** Required */
 		ReservedElasticsearchInstanceOfferingId: string;
 
 		/**
@@ -3281,10 +3242,7 @@ export namespace MyNS {
 	/** Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code> */
 	export interface PurchaseReservedElasticsearchInstanceOfferingRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
-		 */
+		/** Required */
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
 
 		/**
@@ -3364,7 +3322,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -3377,13 +3334,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartElasticsearchServiceSoftwareUpdateRequestFormGroup() {
 		return new FormGroup<StartElasticsearchServiceSoftwareUpdateRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -3443,7 +3399,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -3460,7 +3415,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -3470,7 +3424,7 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainRequestFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3906,7 +3860,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -3917,13 +3870,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
 		return new FormGroup<CancelElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -3935,7 +3887,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -3985,7 +3936,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -4003,7 +3953,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateElasticsearchDomainPostBodyFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
 			AccessPolicies: new FormControl<string | null | undefined>(undefined),
 			AdvancedOptions: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -4115,14 +4065,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+_[0-9a-zA-Z]+
 		 */
 		UserPoolId?: string | null;
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 
@@ -4138,14 +4086,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+_[0-9a-zA-Z]+
 		 */
 		UserPoolId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 
@@ -4158,8 +4104,8 @@ export namespace MyNS {
 	export function CreateCreateElasticsearchDomainPostBodyCognitoOptionsFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyCognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -4290,7 +4236,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName?: string | null;
 		Region?: string | null;
@@ -4307,7 +4252,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Region: FormControl<string | null | undefined>,
@@ -4315,7 +4259,7 @@ export namespace MyNS {
 	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormProperties>({
 			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4333,7 +4277,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName?: string | null;
 		Region?: string | null;
@@ -4350,7 +4293,6 @@ export namespace MyNS {
 		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Region: FormControl<string | null | undefined>,
@@ -4358,7 +4300,7 @@ export namespace MyNS {
 	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormProperties>({
 			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4371,7 +4313,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName: string;
 
@@ -4400,7 +4341,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		PackageName: FormControl<string | null | undefined>,
 
@@ -4418,7 +4358,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePackagePostBodyFormGroup() {
 		return new FormGroup<CreatePackagePostBodyFormProperties>({
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			PackageType: new FormControl<CreatePackagePostBodyPackageType | null | undefined>(undefined, [Validators.required]),
 			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
@@ -4608,14 +4548,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+_[0-9a-zA-Z]+
 		 */
 		UserPoolId?: string | null;
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 
@@ -4631,14 +4569,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+_[0-9a-zA-Z]+
 		 */
 		UserPoolId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 
@@ -4651,8 +4587,8 @@ export namespace MyNS {
 	export function CreateUpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormGroup() {
 		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -4817,7 +4753,6 @@ export namespace MyNS {
 		/**
 		 * The ID of the reserved Elasticsearch instance offering to purchase.
 		 * Required
-		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
 		 */
 		ReservedElasticsearchInstanceOfferingId: string;
 
@@ -4840,7 +4775,6 @@ export namespace MyNS {
 		/**
 		 * The ID of the reserved Elasticsearch instance offering to purchase.
 		 * Required
-		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
 		 */
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
 
@@ -4903,7 +4837,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -4914,13 +4847,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
 		return new FormGroup<StartElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -4932,7 +4864,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -4952,7 +4883,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -4967,7 +4897,7 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainPostBodyFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainPostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});

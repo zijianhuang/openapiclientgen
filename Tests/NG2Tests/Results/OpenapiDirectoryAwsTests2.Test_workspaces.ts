@@ -19,7 +19,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: string;
 
@@ -32,13 +31,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateIpGroupsRequestFormGroup() {
 		return new FormGroup<AssociateIpGroupsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 		});
 
 	}
@@ -115,10 +113,7 @@ export namespace MyNS {
 
 	export interface AuthorizeIpRulesRequest {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: string;
 
 		/** Required */
@@ -126,10 +121,7 @@ export namespace MyNS {
 	}
 	export interface AuthorizeIpRulesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateAuthorizeIpRulesRequestFormGroup() {
@@ -160,13 +152,9 @@ export namespace MyNS {
 	}
 
 	export interface CopyWorkspaceImageResult {
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId?: string | null;
 	}
 	export interface CopyWorkspaceImageResultFormProperties {
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyWorkspaceImageResultFormGroup() {
@@ -182,28 +170,22 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./()\\-]+$
 		 */
 		Name: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./() -]+$
 		 */
 		Description?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: wsi-[0-9a-z]{9,63}$
-		 */
+		/** Required */
 		SourceImageId: string;
 
 		/**
 		 * Required
 		 * Max length: 31
 		 * Min length: 1
-		 * Pattern: ^[-0-9a-z]{1,31}$
 		 */
 		SourceRegion: string;
 		Tags?: Array<Tag>;
@@ -214,37 +196,31 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./()\\-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./() -]+$
 		 */
 		Description: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: wsi-[0-9a-z]{9,63}$
-		 */
+		/** Required */
 		SourceImageId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 31
 		 * Min length: 1
-		 * Pattern: ^[-0-9a-z]{1,31}$
 		 */
 		SourceRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyWorkspaceImageRequestFormGroup() {
 		return new FormGroup<CopyWorkspaceImageRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_./()\\-]+$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_./() -]+$')]),
 			SourceImageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			SourceRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(31), Validators.minLength(1)]),
+			SourceRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(31), Validators.minLength(1), Validators.pattern('^[-0-9a-z]{1,31}$')]),
 		});
 
 	}
@@ -306,13 +282,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateIpGroupResult {
-
-		/** Pattern: wsipg-[0-9a-z]{8,63}$ */
 		GroupId?: string | null;
 	}
 	export interface CreateIpGroupResultFormProperties {
-
-		/** Pattern: wsipg-[0-9a-z]{8,63}$ */
 		GroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIpGroupResultFormGroup() {
@@ -433,7 +405,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: string;
 
@@ -444,10 +415,7 @@ export namespace MyNS {
 		 */
 		UserName: string;
 
-		/**
-		 * Required
-		 * Pattern: ^wsb-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		BundleId: string;
 		VolumeEncryptionKey?: string | null;
 		UserVolumeEncryptionEnabled?: boolean | null;
@@ -465,7 +433,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 
@@ -476,10 +443,7 @@ export namespace MyNS {
 		 */
 		UserName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^wsb-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		BundleId: FormControl<string | null | undefined>,
 		VolumeEncryptionKey: FormControl<string | null | undefined>,
 		UserVolumeEncryptionEnabled: FormControl<boolean | null | undefined>,
@@ -487,7 +451,7 @@ export namespace MyNS {
 	}
 	export function CreateWorkspaceRequestFormGroup() {
 		return new FormGroup<WorkspaceRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
 			BundleId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			VolumeEncryptionKey: new FormControl<string | null | undefined>(undefined),
@@ -533,14 +497,11 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace. */
 	export interface Workspace {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId?: string | null;
 
 		/**
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId?: string | null;
 
@@ -551,14 +512,11 @@ export namespace MyNS {
 		UserName?: string | null;
 		IpAddress?: string | null;
 		State?: WorkspaceState | null;
-
-		/** Pattern: ^wsb-[0-9a-z]{8,63}$ */
 		BundleId?: string | null;
 
 		/**
 		 * Max length: 24
 		 * Min length: 15
-		 * Pattern: ^(subnet-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		SubnetId?: string | null;
 		ErrorMessage?: string | null;
@@ -575,14 +533,11 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace. */
 	export interface WorkspaceFormProperties {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 
@@ -593,14 +548,11 @@ export namespace MyNS {
 		UserName: FormControl<string | null | undefined>,
 		IpAddress: FormControl<string | null | undefined>,
 		State: FormControl<WorkspaceState | null | undefined>,
-
-		/** Pattern: ^wsb-[0-9a-z]{8,63}$ */
 		BundleId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 24
 		 * Min length: 15
-		 * Pattern: ^(subnet-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		SubnetId: FormControl<string | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -613,12 +565,12 @@ export namespace MyNS {
 	export function CreateWorkspaceFormGroup() {
 		return new FormGroup<WorkspaceFormProperties>({
 			WorkspaceId: new FormControl<string | null | undefined>(undefined),
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 			IpAddress: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<WorkspaceState | null | undefined>(undefined),
 			BundleId: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(15)]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(15), Validators.pattern('^(subnet-([0-9a-f]{8}|[0-9a-f]{17}))$')]),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ComputerName: new FormControl<string | null | undefined>(undefined),
@@ -684,18 +636,12 @@ export namespace MyNS {
 
 	export interface DeleteIpGroupRequest {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: string;
 	}
 	export interface DeleteIpGroupRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIpGroupRequestFormGroup() {
@@ -763,18 +709,12 @@ export namespace MyNS {
 
 	export interface DeleteWorkspaceImageRequest {
 
-		/**
-		 * Required
-		 * Pattern: wsi-[0-9a-z]{9,63}$
-		 */
+		/** Required */
 		ImageId: string;
 	}
 	export interface DeleteWorkspaceImageRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: wsi-[0-9a-z]{9,63}$
-		 */
+		/** Required */
 		ImageId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteWorkspaceImageRequestFormGroup() {
@@ -800,7 +740,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: string;
 	}
@@ -810,27 +749,22 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterWorkspaceDirectoryRequestFormGroup() {
 		return new FormGroup<DeregisterWorkspaceDirectoryRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 		});
 
 	}
 
 	export interface DescribeAccountResult {
 		DedicatedTenancySupport?: DescribeAccountResultDedicatedTenancySupport | null;
-
-		/** Pattern: (^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.0\.0)(\/(16$))$ */
 		DedicatedTenancyManagementCidrRange?: string | null;
 	}
 	export interface DescribeAccountResultFormProperties {
 		DedicatedTenancySupport: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
-
-		/** Pattern: (^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.0\.0)(\/(16$))$ */
 		DedicatedTenancyManagementCidrRange: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAccountResultFormGroup() {
@@ -882,8 +816,6 @@ export namespace MyNS {
 	export interface AccountModification {
 		ModificationState?: AccountModificationModificationState | null;
 		DedicatedTenancySupport?: DescribeAccountResultDedicatedTenancySupport | null;
-
-		/** Pattern: (^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.0\.0)(\/(16$))$ */
 		DedicatedTenancyManagementCidrRange?: string | null;
 		StartTime?: Date | null;
 		ErrorCode?: string | null;
@@ -894,8 +826,6 @@ export namespace MyNS {
 	export interface AccountModificationFormProperties {
 		ModificationState: FormControl<AccountModificationModificationState | null | undefined>,
 		DedicatedTenancySupport: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
-
-		/** Pattern: (^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.0\.0)(\/(16$))$ */
 		DedicatedTenancyManagementCidrRange: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
@@ -1034,8 +964,6 @@ export namespace MyNS {
 
 	/** Describes an IP access control group. */
 	export interface WorkspacesIpGroup {
-
-		/** Pattern: wsipg-[0-9a-z]{8,63}$ */
 		groupId?: string | null;
 		groupName?: string | null;
 		groupDesc?: string | null;
@@ -1044,8 +972,6 @@ export namespace MyNS {
 
 	/** Describes an IP access control group. */
 	export interface WorkspacesIpGroupFormProperties {
-
-		/** Pattern: wsipg-[0-9a-z]{8,63}$ */
 		groupId: FormControl<string | null | undefined>,
 		groupName: FormControl<string | null | undefined>,
 		groupDesc: FormControl<string | null | undefined>,
@@ -1157,16 +1083,12 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace bundle. */
 	export interface WorkspaceBundle {
-
-		/** Pattern: ^wsb-[0-9a-z]{8,63}$ */
 		BundleId?: string | null;
 
 		/** Min length: 1 */
 		Name?: string | null;
 		Owner?: string | null;
 		Description?: string | null;
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId?: string | null;
 
 		/** Describes the root volume for a WorkSpace bundle. */
@@ -1182,16 +1104,12 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace bundle. */
 	export interface WorkspaceBundleFormProperties {
-
-		/** Pattern: ^wsb-[0-9a-z]{8,63}$ */
 		BundleId: FormControl<string | null | undefined>,
 
 		/** Min length: 1 */
 		Name: FormControl<string | null | undefined>,
 		Owner: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId: FormControl<string | null | undefined>,
 		LastUpdatedTime: FormControl<Date | null | undefined>,
 	}
@@ -1329,7 +1247,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId?: string | null;
 		Alias?: string | null;
@@ -1350,15 +1267,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		CustomerUserName?: string | null;
-
-		/** Pattern: ^arn:aws:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$ */
 		IamRoleId?: string | null;
 		DirectoryType?: WorkspaceDirectoryDirectoryType | null;
 
 		/**
 		 * Max length: 20
 		 * Min length: 11
-		 * Pattern: ^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		WorkspaceSecurityGroupId?: string | null;
 		State?: WorkspaceDirectoryState | null;
@@ -1381,7 +1295,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 		Alias: FormControl<string | null | undefined>,
@@ -1398,15 +1311,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		CustomerUserName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$ */
 		IamRoleId: FormControl<string | null | undefined>,
 		DirectoryType: FormControl<WorkspaceDirectoryDirectoryType | null | undefined>,
 
 		/**
 		 * Max length: 20
 		 * Min length: 11
-		 * Pattern: ^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		WorkspaceSecurityGroupId: FormControl<string | null | undefined>,
 		State: FormControl<WorkspaceDirectoryState | null | undefined>,
@@ -1414,14 +1324,14 @@ export namespace MyNS {
 	}
 	export function CreateWorkspaceDirectoryFormGroup() {
 		return new FormGroup<WorkspaceDirectoryFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 			Alias: new FormControl<string | null | undefined>(undefined),
 			DirectoryName: new FormControl<string | null | undefined>(undefined),
 			RegistrationCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(1)]),
 			CustomerUserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 			IamRoleId: new FormControl<string | null | undefined>(undefined),
 			DirectoryType: new FormControl<WorkspaceDirectoryDirectoryType | null | undefined>(undefined),
-			WorkspaceSecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(11)]),
+			WorkspaceSecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(11), Validators.pattern('^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$')]),
 			State: new FormControl<WorkspaceDirectoryState | null | undefined>(undefined),
 			Tenancy: new FormControl<WorkspaceDirectoryTenancy | null | undefined>(undefined),
 		});
@@ -1442,7 +1352,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 20
 		 * Min length: 11
-		 * Pattern: ^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		CustomSecurityGroupId?: string | null;
 		UserEnabledAsLocalAdministrator?: boolean | null;
@@ -1458,7 +1367,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 20
 		 * Min length: 11
-		 * Pattern: ^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		CustomSecurityGroupId: FormControl<string | null | undefined>,
 		UserEnabledAsLocalAdministrator: FormControl<boolean | null | undefined>,
@@ -1469,7 +1377,7 @@ export namespace MyNS {
 			EnableWorkDocs: new FormControl<boolean | null | undefined>(undefined),
 			EnableInternetAccess: new FormControl<boolean | null | undefined>(undefined),
 			DefaultOu: new FormControl<string | null | undefined>(undefined),
-			CustomSecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(11)]),
+			CustomSecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(11), Validators.pattern('^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$')]),
 			UserEnabledAsLocalAdministrator: new FormControl<boolean | null | undefined>(undefined),
 			EnableMaintenanceMode: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1613,21 +1521,17 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace image. */
 	export interface WorkspaceImage {
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./()\\-]+$
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./() -]+$
 		 */
 		Description?: string | null;
 
@@ -1641,21 +1545,17 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace image. */
 	export interface WorkspaceImageFormProperties {
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./()\\-]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./() -]+$
 		 */
 		Description: FormControl<string | null | undefined>,
 		State: FormControl<WorkspaceImageState | null | undefined>,
@@ -1666,8 +1566,8 @@ export namespace MyNS {
 	export function CreateWorkspaceImageFormGroup() {
 		return new FormGroup<WorkspaceImageFormProperties>({
 			ImageId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_./()\\-]+$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_./() -]+$')]),
 			State: new FormControl<WorkspaceImageState | null | undefined>(undefined),
 			RequiredTenancy: new FormControl<WorkspaceImageRequiredTenancy | null | undefined>(undefined),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
@@ -1772,18 +1672,12 @@ export namespace MyNS {
 
 	export interface DescribeWorkspaceSnapshotsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: string;
 	}
 	export interface DescribeWorkspaceSnapshotsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeWorkspaceSnapshotsRequestFormGroup() {
@@ -1828,7 +1722,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId?: string | null;
 
@@ -1837,8 +1730,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		UserName?: string | null;
-
-		/** Pattern: ^wsb-[0-9a-z]{8,63}$ */
 		BundleId?: string | null;
 
 		/**
@@ -1858,7 +1749,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 
@@ -1867,8 +1757,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		UserName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^wsb-[0-9a-z]{8,63}$ */
 		BundleId: FormControl<string | null | undefined>,
 
 		/**
@@ -1885,7 +1773,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWorkspacesRequestFormGroup() {
 		return new FormGroup<DescribeWorkspacesRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
 			BundleId: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
@@ -1921,8 +1809,6 @@ export namespace MyNS {
 
 	/** Describes the connection status of a WorkSpace. */
 	export interface WorkspaceConnectionStatus {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId?: string | null;
 		ConnectionState?: WorkspaceConnectionStatusConnectionState | null;
 		ConnectionStateCheckTimestamp?: Date | null;
@@ -1931,8 +1817,6 @@ export namespace MyNS {
 
 	/** Describes the connection status of a WorkSpace. */
 	export interface WorkspaceConnectionStatusFormProperties {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId: FormControl<string | null | undefined>,
 		ConnectionState: FormControl<WorkspaceConnectionStatusConnectionState | null | undefined>,
 		ConnectionStateCheckTimestamp: FormControl<Date | null | undefined>,
@@ -1995,7 +1879,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: string;
 
@@ -2008,25 +1891,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateIpGroupsRequestFormGroup() {
 		return new FormGroup<DisassociateIpGroupsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 		});
 
 	}
 
 	export interface ImportWorkspaceImageResult {
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId?: string | null;
 	}
 	export interface ImportWorkspaceImageResultFormProperties {
-
-		/** Pattern: wsi-[0-9a-z]{9,63}$ */
 		ImageId: FormControl<string | null | undefined>,
 	}
 	export function CreateImportWorkspaceImageResultFormGroup() {
@@ -2038,10 +1916,7 @@ export namespace MyNS {
 
 	export interface ImportWorkspaceImageRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ami\-([a-f0-9]{8}|[a-f0-9]{17})$
-		 */
+		/** Required */
 		Ec2ImageId: string;
 
 		/** Required */
@@ -2051,7 +1926,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./()\\-]+$
 		 */
 		ImageName: string;
 
@@ -2059,17 +1933,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./() -]+$
 		 */
 		ImageDescription: string;
 		Tags?: Array<Tag>;
 	}
 	export interface ImportWorkspaceImageRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ami\-([a-f0-9]{8}|[a-f0-9]{17})$
-		 */
+		/** Required */
 		Ec2ImageId: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -2079,7 +1949,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./()\\-]+$
 		 */
 		ImageName: FormControl<string | null | undefined>,
 
@@ -2087,7 +1956,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_./() -]+$
 		 */
 		ImageDescription: FormControl<string | null | undefined>,
 	}
@@ -2095,8 +1963,8 @@ export namespace MyNS {
 		return new FormGroup<ImportWorkspaceImageRequestFormProperties>({
 			Ec2ImageId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			IngestionProcess: new FormControl<ImportWorkspaceImageRequestIngestionProcess | null | undefined>(undefined, [Validators.required]),
-			ImageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			ImageDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ImageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_./()\\-]+$')]),
+			ImageDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_./() -]+$')]),
 		});
 
 	}
@@ -2129,10 +1997,7 @@ export namespace MyNS {
 
 	export interface ListAvailableManagementCidrRangesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/(3[0-2]|[1-2][0-9]|[0-9]))$
-		 */
+		/** Required */
 		ManagementCidrRangeConstraint: string;
 
 		/**
@@ -2149,10 +2014,7 @@ export namespace MyNS {
 	}
 	export interface ListAvailableManagementCidrRangesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/(3[0-2]|[1-2][0-9]|[0-9]))$
-		 */
+		/** Required */
 		ManagementCidrRangeConstraint: FormControl<string | null | undefined>,
 
 		/**
@@ -2177,19 +2039,11 @@ export namespace MyNS {
 	}
 
 	export interface MigrateWorkspaceResult {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		SourceWorkspaceId?: string | null;
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		TargetWorkspaceId?: string | null;
 	}
 	export interface MigrateWorkspaceResultFormProperties {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		SourceWorkspaceId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		TargetWorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateMigrateWorkspaceResultFormGroup() {
@@ -2202,30 +2056,18 @@ export namespace MyNS {
 
 	export interface MigrateWorkspaceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		SourceWorkspaceId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^wsb-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		BundleId: string;
 	}
 	export interface MigrateWorkspaceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		SourceWorkspaceId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^wsb-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		BundleId: FormControl<string | null | undefined>,
 	}
 	export function CreateMigrateWorkspaceRequestFormGroup() {
@@ -2258,14 +2100,10 @@ export namespace MyNS {
 
 	export interface ModifyAccountRequest {
 		DedicatedTenancySupport?: ModifyAccountRequestDedicatedTenancySupport | null;
-
-		/** Pattern: (^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.0\.0)(\/(16$))$ */
 		DedicatedTenancyManagementCidrRange?: string | null;
 	}
 	export interface ModifyAccountRequestFormProperties {
 		DedicatedTenancySupport: FormControl<ModifyAccountRequestDedicatedTenancySupport | null | undefined>,
-
-		/** Pattern: (^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.0\.0)(\/(16$))$ */
 		DedicatedTenancyManagementCidrRange: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyAccountRequestFormGroup() {
@@ -2333,7 +2171,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		ResourceId: string;
 
@@ -2349,13 +2186,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateModifySelfservicePermissionsRequestFormGroup() {
 		return new FormGroup<ModifySelfservicePermissionsRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 		});
 
 	}
@@ -2376,7 +2212,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		ResourceId: string;
 
@@ -2392,13 +2227,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyWorkspaceAccessPropertiesRequestFormGroup() {
 		return new FormGroup<ModifyWorkspaceAccessPropertiesRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 		});
 
 	}
@@ -2419,7 +2253,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		ResourceId: string;
 
@@ -2435,13 +2268,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyWorkspaceCreationPropertiesRequestFormGroup() {
 		return new FormGroup<ModifyWorkspaceCreationPropertiesRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 		});
 
 	}
@@ -2455,7 +2287,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 20
 		 * Min length: 11
-		 * Pattern: ^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		CustomSecurityGroupId?: string | null;
 		UserEnabledAsLocalAdministrator?: boolean | null;
@@ -2470,7 +2301,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 20
 		 * Min length: 11
-		 * Pattern: ^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$
 		 */
 		CustomSecurityGroupId: FormControl<string | null | undefined>,
 		UserEnabledAsLocalAdministrator: FormControl<boolean | null | undefined>,
@@ -2480,7 +2310,7 @@ export namespace MyNS {
 		return new FormGroup<WorkspaceCreationPropertiesFormProperties>({
 			EnableInternetAccess: new FormControl<boolean | null | undefined>(undefined),
 			DefaultOu: new FormControl<string | null | undefined>(undefined),
-			CustomSecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(11)]),
+			CustomSecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20), Validators.minLength(11), Validators.pattern('^(sg-([0-9a-f]{8}|[0-9a-f]{17}))$')]),
 			UserEnabledAsLocalAdministrator: new FormControl<boolean | null | undefined>(undefined),
 			EnableMaintenanceMode: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2499,10 +2329,7 @@ export namespace MyNS {
 
 	export interface ModifyWorkspacePropertiesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: string;
 
 		/**
@@ -2513,10 +2340,7 @@ export namespace MyNS {
 	}
 	export interface ModifyWorkspacePropertiesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateModifyWorkspacePropertiesRequestFormGroup() {
@@ -2548,10 +2372,7 @@ export namespace MyNS {
 
 	export interface ModifyWorkspaceStateRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: string;
 
 		/** Required */
@@ -2559,10 +2380,7 @@ export namespace MyNS {
 	}
 	export interface ModifyWorkspaceStateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -2592,8 +2410,6 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>). */
 	export interface FailedWorkspaceChangeRequest {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId?: string | null;
 		ErrorCode?: string | null;
 		ErrorMessage?: string | null;
@@ -2601,8 +2417,6 @@ export namespace MyNS {
 
 	/** Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>). */
 	export interface FailedWorkspaceChangeRequestFormProperties {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -2637,20 +2451,14 @@ export namespace MyNS {
 	/** Describes the information used to reboot a WorkSpace. */
 	export interface RebootRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: string;
 	}
 
 	/** Describes the information used to reboot a WorkSpace. */
 	export interface RebootRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRebootRequestFormGroup() {
@@ -2692,20 +2500,14 @@ export namespace MyNS {
 	/** Describes the information used to rebuild a WorkSpace. */
 	export interface RebuildRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: string;
 	}
 
 	/** Describes the information used to rebuild a WorkSpace. */
 	export interface RebuildRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRebuildRequestFormGroup() {
@@ -2731,7 +2533,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: string;
 
@@ -2750,7 +2551,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 65
 		 * Min length: 10
-		 * Pattern: ^d-[0-9a-f]{8,63}$
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 
@@ -2761,7 +2561,7 @@ export namespace MyNS {
 	}
 	export function CreateRegisterWorkspaceDirectoryRequestFormGroup() {
 		return new FormGroup<RegisterWorkspaceDirectoryRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(10), Validators.pattern('^d-[0-9a-f]{8,63}$')]),
 			EnableWorkDocs: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			EnableSelfService: new FormControl<boolean | null | undefined>(undefined),
 			Tenancy: new FormControl<WorkspaceDirectoryTenancy | null | undefined>(undefined),
@@ -2801,18 +2601,12 @@ export namespace MyNS {
 
 	export interface RestoreWorkspaceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: string;
 	}
 	export interface RestoreWorkspaceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreWorkspaceRequestFormGroup() {
@@ -2834,10 +2628,7 @@ export namespace MyNS {
 
 	export interface RevokeIpRulesRequest {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: string;
 
 		/** Required */
@@ -2845,10 +2636,7 @@ export namespace MyNS {
 	}
 	export interface RevokeIpRulesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateRevokeIpRulesRequestFormGroup() {
@@ -2889,15 +2677,11 @@ export namespace MyNS {
 
 	/** Information used to start a WorkSpace. */
 	export interface StartRequest {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId?: string | null;
 	}
 
 	/** Information used to start a WorkSpace. */
 	export interface StartRequestFormProperties {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartRequestFormGroup() {
@@ -2938,15 +2722,11 @@ export namespace MyNS {
 
 	/** Describes the information used to stop a WorkSpace. */
 	export interface StopRequest {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId?: string | null;
 	}
 
 	/** Describes the information used to stop a WorkSpace. */
 	export interface StopRequestFormProperties {
-
-		/** Pattern: ^ws-[0-9a-z]{8,63}$ */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopRequestFormGroup() {
@@ -2988,20 +2768,14 @@ export namespace MyNS {
 	/** Describes the information used to terminate a WorkSpace. */
 	export interface TerminateRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: string;
 	}
 
 	/** Describes the information used to terminate a WorkSpace. */
 	export interface TerminateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^ws-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		WorkspaceId: FormControl<string | null | undefined>,
 	}
 	export function CreateTerminateRequestFormGroup() {
@@ -3023,10 +2797,7 @@ export namespace MyNS {
 
 	export interface UpdateRulesOfIpGroupRequest {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: string;
 
 		/** Required */
@@ -3034,10 +2805,7 @@ export namespace MyNS {
 	}
 	export interface UpdateRulesOfIpGroupRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: wsipg-[0-9a-z]{8,63}$
-		 */
+		/** Required */
 		GroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRulesOfIpGroupRequestFormGroup() {

@@ -977,7 +977,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
 		 */
 		name: string;
 		version?: string | null;
@@ -1005,7 +1004,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
 		 */
 		name: FormControl<string | null | undefined>,
 		version: FormControl<string | null | undefined>,
@@ -1016,7 +1014,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z][A-Za-z0-9\-_]*')]),
 			version: new FormControl<string | null | undefined>(undefined),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
@@ -1587,7 +1585,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
 		 */
 		name: string;
 
@@ -1628,7 +1625,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1649,7 +1645,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterPostBodyFormGroup() {
 		return new FormGroup<CreateClusterPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z][A-Za-z0-9\-_]*')]),
 			version: new FormControl<string | null | undefined>(undefined),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),

@@ -82,14 +82,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value?: string | null;
 	}
@@ -101,21 +99,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -410,8 +406,6 @@ export namespace MyNS {
 
 	/** <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p> */
 	export interface RedirectActionConfig {
-
-		/** Pattern: ^(HTTPS?|#\{protocol\})$ */
 		Protocol?: string | null;
 		Port?: string | null;
 
@@ -439,8 +433,6 @@ export namespace MyNS {
 
 	/** <p>Information about a redirect action.</p> <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p> <p>You can reuse URI components using the following reserved keywords:</p> <ul> <li> <p>#{protocol}</p> </li> <li> <p>#{host}</p> </li> <li> <p>#{port}</p> </li> <li> <p>#{path} (the leading "/" is removed)</p> </li> <li> <p>#{query}</p> </li> </ul> <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p> */
 	export interface RedirectActionConfigFormProperties {
-
-		/** Pattern: ^(HTTPS?|#\{protocol\})$ */
 		Protocol: FormControl<string | null | undefined>,
 		Port: FormControl<string | null | undefined>,
 
@@ -489,10 +481,7 @@ export namespace MyNS {
 		 */
 		MessageBody?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: ^(2|4|5)\d\d$
-		 */
+		/** Required */
 		StatusCode: string;
 
 		/**
@@ -511,10 +500,7 @@ export namespace MyNS {
 		 */
 		MessageBody: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^(2|4|5)\d\d$
-		 */
+		/** Required */
 		StatusCode: FormControl<string | null | undefined>,
 
 		/**
@@ -1541,10 +1527,7 @@ export namespace MyNS {
 	/** Information about a load balancer attribute. */
 	export interface LoadBalancerAttribute {
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9._]+$
-		 */
+		/** Max length: 256 */
 		Key?: string | null;
 
 		/** Max length: 1024 */
@@ -1554,10 +1537,7 @@ export namespace MyNS {
 	/** Information about a load balancer attribute. */
 	export interface LoadBalancerAttributeFormProperties {
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9._]+$
-		 */
+		/** Max length: 256 */
 		Key: FormControl<string | null | undefined>,
 
 		/** Max length: 1024 */
@@ -1565,7 +1545,7 @@ export namespace MyNS {
 	}
 	export function CreateLoadBalancerAttributeFormGroup() {
 		return new FormGroup<LoadBalancerAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9._]+$')]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
@@ -1698,10 +1678,7 @@ export namespace MyNS {
 	/** Information about a target group attribute. */
 	export interface TargetGroupAttribute {
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9._]+$
-		 */
+		/** Max length: 256 */
 		Key?: string | null;
 		Value?: string | null;
 	}
@@ -1709,16 +1686,13 @@ export namespace MyNS {
 	/** Information about a target group attribute. */
 	export interface TargetGroupAttributeFormProperties {
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9._]+$
-		 */
+		/** Max length: 256 */
 		Key: FormControl<string | null | undefined>,
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetGroupAttributeFormGroup() {
 		return new FormGroup<TargetGroupAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9._]+$')]),
 			Value: new FormControl<string | null | undefined>(undefined),
 		});
 

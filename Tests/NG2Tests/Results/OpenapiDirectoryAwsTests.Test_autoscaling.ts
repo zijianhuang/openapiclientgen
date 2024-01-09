@@ -228,7 +228,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.-/_]+
 		 */
 		LaunchTemplateName?: string | null;
 
@@ -251,7 +250,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.-/_]+
 		 */
 		LaunchTemplateName: FormControl<string | null | undefined>,
 
@@ -264,7 +262,7 @@ export namespace MyNS {
 	export function CreateLaunchTemplateSpecificationFormGroup() {
 		return new FormGroup<LaunchTemplateSpecificationFormProperties>({
 			LaunchTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\(\)\.-/_]+')]),
 			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
@@ -360,7 +358,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: string;
 
@@ -395,7 +392,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: FormControl<string | null | undefined>,
 
@@ -424,7 +420,7 @@ export namespace MyNS {
 	}
 	export function CreateLifecycleHookSpecificationFormGroup() {
 		return new FormGroup<LifecycleHookSpecificationFormProperties>({
-			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_\/]+')]),
 			LifecycleTransition: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NotificationMetadata: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(1)]),
 			HeartbeatTimeout: new FormControl<number | null | undefined>(undefined),
@@ -1587,7 +1583,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName?: string | null;
 
@@ -1626,7 +1621,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: FormControl<string | null | undefined>,
 
@@ -1660,7 +1654,7 @@ export namespace MyNS {
 	}
 	export function CreateLifecycleHookFormGroup() {
 		return new FormGroup<LifecycleHookFormProperties>({
-			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_\/]+')]),
 			AutoScalingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
 			LifecycleTransition: new FormControl<string | null | undefined>(undefined),
 			NotificationTargetARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
@@ -2823,7 +2817,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: string;
 
@@ -2855,7 +2848,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: FormControl<string | null | undefined>,
 
@@ -2883,7 +2875,7 @@ export namespace MyNS {
 	}
 	export function CreateCompleteLifecycleActionTypeFormGroup() {
 		return new FormGroup<CompleteLifecycleActionTypeFormProperties>({
-			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_\/]+')]),
 			AutoScalingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			LifecycleActionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			LifecycleActionResult: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -3261,7 +3253,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: string;
 
@@ -3278,7 +3269,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: FormControl<string | null | undefined>,
 
@@ -3291,7 +3281,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLifecycleHookTypeFormGroup() {
 		return new FormGroup<DeleteLifecycleHookTypeFormProperties>({
-			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_\/]+')]),
 			AutoScalingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 		});
 
@@ -3980,7 +3970,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: string;
 
@@ -4018,7 +4007,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: FormControl<string | null | undefined>,
 
@@ -4052,7 +4040,7 @@ export namespace MyNS {
 	}
 	export function CreatePutLifecycleHookTypeFormGroup() {
 		return new FormGroup<PutLifecycleHookTypeFormProperties>({
-			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_\/]+')]),
 			AutoScalingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			LifecycleTransition: new FormControl<string | null | undefined>(undefined),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
@@ -4285,7 +4273,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: string;
 
@@ -4314,7 +4301,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_\/]+
 		 */
 		LifecycleHookName: FormControl<string | null | undefined>,
 
@@ -4339,7 +4325,7 @@ export namespace MyNS {
 	}
 	export function CreateRecordLifecycleActionHeartbeatTypeFormGroup() {
 		return new FormGroup<RecordLifecycleActionHeartbeatTypeFormProperties>({
-			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			LifecycleHookName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_\/]+')]),
 			AutoScalingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
 			LifecycleActionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36)]),
 			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(1)]),
@@ -5438,7 +5424,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.-/_]+
 		 */
 		LaunchTemplateName?: string | null;
 
@@ -5459,7 +5444,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.-/_]+
 		 */
 		LaunchTemplateName: FormControl<string | null | undefined>,
 
@@ -5472,7 +5456,7 @@ export namespace MyNS {
 	export function CreateGET_CreateAutoScalingGroupLaunchTemplateFormGroup() {
 		return new FormGroup<GET_CreateAutoScalingGroupLaunchTemplateFormProperties>({
 			LaunchTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\(\)\.-/_]+')]),
 			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
@@ -5826,7 +5810,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.-/_]+
 		 */
 		LaunchTemplateName?: string | null;
 
@@ -5847,7 +5830,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.-/_]+
 		 */
 		LaunchTemplateName: FormControl<string | null | undefined>,
 
@@ -5860,7 +5842,7 @@ export namespace MyNS {
 	export function CreateGET_UpdateAutoScalingGroupLaunchTemplateFormGroup() {
 		return new FormGroup<GET_UpdateAutoScalingGroupLaunchTemplateFormProperties>({
 			LaunchTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\(\)\.-/_]+')]),
 			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 

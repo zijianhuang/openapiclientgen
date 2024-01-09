@@ -842,7 +842,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		name?: string | null;
 		arn?: string | null;
@@ -930,7 +929,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		name: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -964,7 +962,7 @@ export namespace MyNS {
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
@@ -1036,14 +1034,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 127
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
 		 */
 		key?: string | null;
 
 		/**
 		 * Max length: 255
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
 		 */
 		value?: string | null;
 	}
@@ -1054,21 +1050,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 127
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
 		 */
 		key: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$
 		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1)]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$')]),
 		});
 
 	}
@@ -1515,7 +1509,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		name: string;
 
@@ -1606,7 +1599,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1641,7 +1633,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectInputFormGroup() {
 		return new FormGroup<CreateProjectInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
 			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
@@ -1749,7 +1741,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		projectName: string;
 		branchFilter?: string | null;
@@ -1761,14 +1752,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		projectName: FormControl<string | null | undefined>,
 		branchFilter: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateWebhookInputFormGroup() {
 		return new FormGroup<CreateWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 			branchFilter: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1982,7 +1972,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		projectName: string;
 	}
@@ -1992,13 +1981,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		projectName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteWebhookInputFormGroup() {
 		return new FormGroup<DeleteWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 		});
 
 	}
@@ -3248,7 +3236,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		projectName: string;
 		branchFilter?: string | null;
@@ -3261,7 +3248,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 2
-		 * Pattern: [A-Za-z0-9][A-Za-z0-9\-_]{1,254}
 		 */
 		projectName: FormControl<string | null | undefined>,
 		branchFilter: FormControl<string | null | undefined>,
@@ -3269,7 +3255,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWebhookInputFormGroup() {
 		return new FormGroup<UpdateWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 			branchFilter: new FormControl<string | null | undefined>(undefined),
 			rotateSecret: new FormControl<boolean | null | undefined>(undefined),
 		});

@@ -38,7 +38,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 16
-		 * Pattern: [\w]*
 		 */
 		AccessKeyId: string;
 
@@ -59,7 +58,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 16
-		 * Pattern: [\w]*
 		 */
 		AccessKeyId: FormControl<string | null | undefined>,
 
@@ -74,7 +72,7 @@ export namespace MyNS {
 	}
 	export function CreateCredentialsFormGroup() {
 		return new FormGroup<CredentialsFormProperties>({
-			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16), Validators.pattern('[\w]*')]),
 			SecretAccessKey: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Expiration: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -90,7 +88,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 193
 		 * Min length: 2
-		 * Pattern: [\w+=,.@:-]*
 		 */
 		AssumedRoleId: string;
 
@@ -98,7 +95,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		Arn: string;
 	}
@@ -110,7 +106,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 193
 		 * Min length: 2
-		 * Pattern: [\w+=,.@:-]*
 		 */
 		AssumedRoleId: FormControl<string | null | undefined>,
 
@@ -118,14 +113,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateAssumedRoleUserFormGroup() {
 		return new FormGroup<AssumedRoleUserFormProperties>({
-			AssumedRoleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(193), Validators.minLength(2)]),
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			AssumedRoleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(193), Validators.minLength(2), Validators.pattern('[\w+=,.@:-]*')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
 		});
 
 	}
@@ -137,7 +131,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		arn?: string | null;
 	}
@@ -148,13 +141,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
 	export function CreatePolicyDescriptorTypeFormGroup() {
 		return new FormGroup<PolicyDescriptorTypeFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
 		});
 
 	}
@@ -167,7 +159,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]+
 		 */
 		Key: string;
 
@@ -175,7 +166,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
 		 */
 		Value: string;
 	}
@@ -187,7 +177,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]+
 		 */
 		Key: FormControl<string | null | undefined>,
 
@@ -195,14 +184,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: [\p{L}\p{Z}\p{N}_.:/=+\-@]*
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{L}\p{Z}\p{N}_.:/=+\-@]+')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[\p{L}\p{Z}\p{N}_.:/=+\-@]*')]),
 		});
 
 	}
@@ -414,7 +402,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		Arn?: string | null;
 	}
@@ -427,7 +414,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
@@ -435,7 +421,7 @@ export namespace MyNS {
 		return new FormGroup<GetCallerIdentityResponseFormProperties>({
 			UserId: new FormControl<string | null | undefined>(undefined),
 			Account: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
 		});
 
 	}
@@ -475,7 +461,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 193
 		 * Min length: 2
-		 * Pattern: [\w+=,.@\:-]*
 		 */
 		FederatedUserId: string;
 
@@ -483,7 +468,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		Arn: string;
 	}
@@ -495,7 +479,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 193
 		 * Min length: 2
-		 * Pattern: [\w+=,.@\:-]*
 		 */
 		FederatedUserId: FormControl<string | null | undefined>,
 
@@ -503,14 +486,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateFederatedUserFormGroup() {
 		return new FormGroup<FederatedUserFormProperties>({
-			FederatedUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(193), Validators.minLength(2)]),
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			FederatedUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(193), Validators.minLength(2), Validators.pattern('[\w+=,.@\:-]*')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
 		});
 
 	}
@@ -538,7 +520,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		RoleArn: string;
 
@@ -546,7 +527,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [\w+=,.@-]*
 		 */
 		RoleSessionName: string;
 		PolicyArns?: Array<PolicyDescriptorType>;
@@ -554,7 +534,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy?: string | null;
 
@@ -573,21 +552,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 2
-		 * Pattern: [\w+=,.@:\/-]*
 		 */
 		ExternalId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 9
-		 * Pattern: [\w+=/:,.@-]*
 		 */
 		SerialNumber?: string | null;
 
 		/**
 		 * Max length: 6
 		 * Min length: 6
-		 * Pattern: [\d]*
 		 */
 		TokenCode?: string | null;
 	}
@@ -597,7 +573,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
@@ -605,14 +580,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [\w+=,.@-]*
 		 */
 		RoleSessionName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy: FormControl<string | null | undefined>,
 
@@ -625,33 +598,30 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 2
-		 * Pattern: [\w+=,.@:\/-]*
 		 */
 		ExternalId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 9
-		 * Pattern: [\w+=/:,.@-]*
 		 */
 		SerialNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 6
 		 * Min length: 6
-		 * Pattern: [\d]*
 		 */
 		TokenCode: FormControl<string | null | undefined>,
 	}
 	export function CreateAssumeRoleRequestFormGroup() {
 		return new FormGroup<AssumeRoleRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			RoleSessionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
+			RoleSessionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[\w+=,.@-]*')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(43200)]),
-			ExternalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(2)]),
-			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(9)]),
-			TokenCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
+			ExternalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(2), Validators.pattern('[\w+=,.@:\/-]*')]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(9), Validators.pattern('[\w+=/:,.@-]*')]),
+			TokenCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6), Validators.pattern('[\d]*')]),
 		});
 
 	}
@@ -662,7 +632,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		RoleArn: string;
 
@@ -670,7 +639,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		PrincipalArn: string;
 
@@ -685,7 +653,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy?: string | null;
 
@@ -701,7 +668,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
@@ -709,7 +675,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		PrincipalArn: FormControl<string | null | undefined>,
 
@@ -723,7 +688,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy: FormControl<string | null | undefined>,
 
@@ -735,10 +699,10 @@ export namespace MyNS {
 	}
 	export function CreateAssumeRoleWithSAMLRequestFormGroup() {
 		return new FormGroup<AssumeRoleWithSAMLRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			PrincipalArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
+			PrincipalArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
 			SAMLAssertion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100000), Validators.minLength(4)]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(43200)]),
 		});
 
@@ -750,7 +714,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		RoleArn: string;
 
@@ -758,7 +721,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [\w+=,.@-]*
 		 */
 		RoleSessionName: string;
 
@@ -779,7 +741,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy?: string | null;
 
@@ -795,7 +756,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
@@ -803,7 +763,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [\w+=,.@-]*
 		 */
 		RoleSessionName: FormControl<string | null | undefined>,
 
@@ -823,7 +782,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy: FormControl<string | null | undefined>,
 
@@ -835,11 +793,11 @@ export namespace MyNS {
 	}
 	export function CreateAssumeRoleWithWebIdentityRequestFormGroup() {
 		return new FormGroup<AssumeRoleWithWebIdentityRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			RoleSessionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]+')]),
+			RoleSessionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[\w+=,.@-]*')]),
 			WebIdentityToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(4)]),
 			ProviderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(4)]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(43200)]),
 		});
 
@@ -876,7 +834,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 16
-		 * Pattern: [\w]*
 		 */
 		AccessKeyId: string;
 	}
@@ -886,13 +843,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 16
-		 * Pattern: [\w]*
 		 */
 		AccessKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAccessKeyInfoRequestFormGroup() {
 		return new FormGroup<GetAccessKeyInfoRequestFormProperties>({
-			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16)]),
+			AccessKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(16), Validators.pattern('[\w]*')]),
 		});
 
 	}
@@ -913,14 +869,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 2
-		 * Pattern: [\w+=,.@-]*
 		 */
 		Name: string;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy?: string | null;
 		PolicyArns?: Array<PolicyDescriptorType>;
@@ -940,14 +894,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 2
-		 * Pattern: [\w+=,.@-]*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: [\u0009\u000A\u000D\u0020-\u00FF]+
 		 */
 		Policy: FormControl<string | null | undefined>,
 
@@ -959,8 +911,8 @@ export namespace MyNS {
 	}
 	export function CreateGetFederationTokenRequestFormGroup() {
 		return new FormGroup<GetFederationTokenRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(2)]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(2), Validators.pattern('[\w+=,.@-]*')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(129600)]),
 		});
 
@@ -977,14 +929,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 9
-		 * Pattern: [\w+=/:,.@-]*
 		 */
 		SerialNumber?: string | null;
 
 		/**
 		 * Max length: 6
 		 * Min length: 6
-		 * Pattern: [\d]*
 		 */
 		TokenCode?: string | null;
 	}
@@ -999,22 +949,20 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 9
-		 * Pattern: [\w+=/:,.@-]*
 		 */
 		SerialNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 6
 		 * Min length: 6
-		 * Pattern: [\d]*
 		 */
 		TokenCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSessionTokenRequestFormGroup() {
 		return new FormGroup<GetSessionTokenRequestFormProperties>({
 			DurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(900), Validators.max(129600)]),
-			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(9)]),
-			TokenCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
+			SerialNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(9), Validators.pattern('[\w+=/:,.@-]*')]),
+			TokenCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6), Validators.pattern('[\d]*')]),
 		});
 
 	}

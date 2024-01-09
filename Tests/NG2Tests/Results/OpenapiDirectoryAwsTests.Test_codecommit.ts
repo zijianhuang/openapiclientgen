@@ -16,7 +16,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 	}
@@ -33,14 +32,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateApprovalRuleTemplateWithRepositoryInputFormGroup() {
 		return new FormGroup<AssociateApprovalRuleTemplateWithRepositoryInputFormProperties>({
 			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -188,7 +186,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		errorCode?: string | null;
@@ -201,7 +198,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		errorCode: FormControl<string | null | undefined>,
@@ -209,7 +205,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchAssociateApprovalRuleTemplateWithRepositoriesErrorFormGroup() {
 		return new FormGroup<BatchAssociateApprovalRuleTemplateWithRepositoriesErrorFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			errorCode: new FormControl<string | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -568,7 +564,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -593,7 +588,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -613,7 +607,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchDescribeMergeConflictsInputFormGroup() {
 		return new FormGroup<BatchDescribeMergeConflictsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
@@ -785,7 +779,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		errorCode?: string | null;
@@ -798,7 +791,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		errorCode: FormControl<string | null | undefined>,
@@ -806,7 +798,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchDisassociateApprovalRuleTemplateFromRepositoriesErrorFormGroup() {
 		return new FormGroup<BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			errorCode: new FormControl<string | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -941,7 +933,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 	}
@@ -951,13 +942,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchGetCommitsInputFormGroup() {
 		return new FormGroup<BatchGetCommitsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -1007,7 +997,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 
@@ -1034,7 +1023,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -1056,7 +1044,7 @@ export namespace MyNS {
 		return new FormGroup<RepositoryMetadataFormProperties>({
 			accountId: new FormControl<string | null | undefined>(undefined),
 			repositoryId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			repositoryDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			defaultBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
@@ -1280,7 +1268,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -1302,7 +1289,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -1318,7 +1304,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBranchInputFormGroup() {
 		return new FormGroup<CreateBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1423,7 +1409,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -1448,7 +1433,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -1466,7 +1450,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCommitInputFormGroup() {
 		return new FormGroup<CreateCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			parentCommitId: new FormControl<string | null | undefined>(undefined),
 			authorName: new FormControl<string | null | undefined>(undefined),
@@ -1940,7 +1924,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		sourceReference?: string | null;
@@ -1959,7 +1942,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceReference: FormControl<string | null | undefined>,
@@ -1970,7 +1952,7 @@ export namespace MyNS {
 	}
 	export function CreatePullRequestTargetFormGroup() {
 		return new FormGroup<PullRequestTargetFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceReference: new FormControl<string | null | undefined>(undefined),
 			destinationReference: new FormControl<string | null | undefined>(undefined),
 			destinationCommit: new FormControl<string | null | undefined>(undefined),
@@ -2138,7 +2120,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -2154,7 +2135,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2164,7 +2144,7 @@ export namespace MyNS {
 	}
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceReference: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationReference: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2529,7 +2509,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -2545,7 +2524,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2554,7 +2532,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRepositoryInputFormGroup() {
 		return new FormGroup<CreateRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			repositoryDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
@@ -2662,7 +2640,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -2690,7 +2667,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -2711,7 +2687,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateUnreferencedMergeCommitInputFormGroup() {
 		return new FormGroup<CreateUnreferencedMergeCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
@@ -2979,7 +2955,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -2998,7 +2973,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -3011,7 +2985,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteBranchInputFormGroup() {
 		return new FormGroup<DeleteBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
@@ -3179,7 +3153,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -3206,7 +3179,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -3229,7 +3201,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileInputFormGroup() {
 		return new FormGroup<DeleteFileInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			parentCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -3325,7 +3297,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 	}
@@ -3337,13 +3308,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRepositoryInputFormGroup() {
 		return new FormGroup<DeleteRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -3393,7 +3363,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -3419,7 +3388,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -3441,7 +3409,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeMergeConflictsInputFormGroup() {
 		return new FormGroup<DescribeMergeConflictsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
@@ -3526,7 +3494,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		sourceCommitId?: string | null;
@@ -3540,7 +3507,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
@@ -3549,7 +3515,7 @@ export namespace MyNS {
 	}
 	export function CreatePullRequestCreatedEventMetadataFormGroup() {
 		return new FormGroup<PullRequestCreatedEventMetadataFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 			destinationCommitId: new FormControl<string | null | undefined>(undefined),
 			mergeBase: new FormControl<string | null | undefined>(undefined),
@@ -3581,7 +3547,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
@@ -3595,7 +3560,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -3604,7 +3568,7 @@ export namespace MyNS {
 	}
 	export function CreatePullRequestSourceReferenceUpdatedEventMetadataFormGroup() {
 		return new FormGroup<PullRequestSourceReferenceUpdatedEventMetadataFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			mergeBase: new FormControl<string | null | undefined>(undefined),
@@ -3619,7 +3583,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		destinationReference?: string | null;
@@ -3634,14 +3597,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		destinationReference: FormControl<string | null | undefined>,
 	}
 	export function CreatePullRequestMergedStateChangedEventMetadataFormGroup() {
 		return new FormGroup<PullRequestMergedStateChangedEventMetadataFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			destinationReference: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3816,7 +3778,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 	}
@@ -3833,14 +3794,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateApprovalRuleTemplateFromRepositoryInputFormGroup() {
 		return new FormGroup<DisassociateApprovalRuleTemplateFromRepositoryInputFormProperties>({
 			approvalRuleTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -4007,7 +3967,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -4022,7 +3981,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -4031,7 +3989,7 @@ export namespace MyNS {
 	}
 	export function CreateGetBlobInputFormGroup() {
 		return new FormGroup<GetBlobInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			blobId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4101,7 +4059,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 
@@ -4118,7 +4075,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -4130,7 +4086,7 @@ export namespace MyNS {
 	}
 	export function CreateGetBranchInputFormGroup() {
 		return new FormGroup<GetBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
@@ -4187,7 +4143,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
@@ -4206,7 +4161,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -4216,7 +4170,7 @@ export namespace MyNS {
 	}
 	export function CreateCommentsForComparedCommitFormGroup() {
 		return new FormGroup<CommentsForComparedCommitFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			beforeBlobId: new FormControl<string | null | undefined>(undefined),
@@ -4256,7 +4210,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		beforeCommitId?: string | null;
@@ -4272,7 +4225,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -4284,7 +4236,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCommentsForComparedCommitInputFormGroup() {
 		return new FormGroup<GetCommentsForComparedCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -4315,7 +4267,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
@@ -4335,7 +4286,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -4346,7 +4296,7 @@ export namespace MyNS {
 	export function CreateCommentsForPullRequestFormGroup() {
 		return new FormGroup<CommentsForPullRequestFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			beforeBlobId: new FormControl<string | null | undefined>(undefined),
@@ -4363,7 +4313,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
@@ -4379,7 +4328,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -4390,7 +4338,7 @@ export namespace MyNS {
 	export function CreateGetCommentsForPullRequestInputFormGroup() {
 		return new FormGroup<GetCommentsForPullRequestInputFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -4437,7 +4385,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -4452,7 +4399,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -4461,7 +4407,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCommitInputFormGroup() {
 		return new FormGroup<GetCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			commitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4543,7 +4489,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		beforeCommitSpecifier?: string | null;
@@ -4561,7 +4506,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitSpecifier: FormControl<string | null | undefined>,
@@ -4575,7 +4519,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDifferencesInputFormGroup() {
 		return new FormGroup<GetDifferencesInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitSpecifier: new FormControl<string | null | undefined>(undefined),
 			afterCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			beforePath: new FormControl<string | null | undefined>(undefined),
@@ -4660,7 +4604,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		commitSpecifier?: string | null;
@@ -4674,7 +4617,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		commitSpecifier: FormControl<string | null | undefined>,
@@ -4684,7 +4626,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFileInputFormGroup() {
 		return new FormGroup<GetFileInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			commitSpecifier: new FormControl<string | null | undefined>(undefined),
 			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -4826,7 +4768,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		commitSpecifier?: string | null;
@@ -4840,7 +4781,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		commitSpecifier: FormControl<string | null | undefined>,
@@ -4850,7 +4790,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFolderInputFormGroup() {
 		return new FormGroup<GetFolderInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			commitSpecifier: new FormControl<string | null | undefined>(undefined),
 			folderPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -4895,7 +4835,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -4913,7 +4852,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -4927,7 +4865,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMergeCommitInputFormGroup() {
 		return new FormGroup<GetMergeCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
@@ -4982,7 +4920,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -5005,7 +4942,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -5024,7 +4960,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMergeConflictsInputFormGroup() {
 		return new FormGroup<GetMergeConflictsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			mergeOption: new FormControl<BatchDescribeMergeConflictsInputMergeOption | null | undefined>(undefined, [Validators.required]),
@@ -5098,7 +5034,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -5116,7 +5051,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -5130,7 +5064,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMergeOptionsInputFormGroup() {
 		return new FormGroup<GetMergeOptionsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
@@ -5292,7 +5226,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 	}
@@ -5304,13 +5237,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRepositoryInputFormGroup() {
 		return new FormGroup<GetRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -5378,7 +5310,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 	}
@@ -5390,13 +5321,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRepositoryTriggersInputFormGroup() {
 		return new FormGroup<GetRepositoryTriggersInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -5451,7 +5381,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		nextToken?: string | null;
@@ -5463,7 +5392,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -5471,7 +5399,7 @@ export namespace MyNS {
 	}
 	export function CreateListAssociatedApprovalRuleTemplatesForRepositoryInputFormGroup() {
 		return new FormGroup<ListAssociatedApprovalRuleTemplatesForRepositoryInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 		});
@@ -5504,7 +5432,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		nextToken?: string | null;
@@ -5517,14 +5444,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListBranchesInputFormGroup() {
 		return new FormGroup<ListBranchesInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5552,7 +5478,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		authorArn?: string | null;
@@ -5566,7 +5491,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		authorArn: FormControl<string | null | undefined>,
@@ -5576,7 +5500,7 @@ export namespace MyNS {
 	}
 	export function CreateListPullRequestsInputFormGroup() {
 		return new FormGroup<ListPullRequestsInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			authorArn: new FormControl<string | null | undefined>(undefined),
 			pullRequestStatus: new FormControl<PullRequestPullRequestStatus | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -5640,7 +5564,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		repositoryId?: string | null;
@@ -5652,14 +5575,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		repositoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateRepositoryNameIdPairFormGroup() {
 		return new FormGroup<RepositoryNameIdPairFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			repositoryId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5833,7 +5755,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -5855,7 +5776,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -5873,7 +5793,7 @@ export namespace MyNS {
 	}
 	export function CreateMergeBranchesByFastForwardInputFormGroup() {
 		return new FormGroup<MergeBranchesByFastForwardInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			targetBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
@@ -5913,7 +5833,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -5944,7 +5863,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -5968,7 +5886,7 @@ export namespace MyNS {
 	}
 	export function CreateMergeBranchesBySquashInputFormGroup() {
 		return new FormGroup<MergeBranchesBySquashInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			targetBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
@@ -6004,7 +5922,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -6035,7 +5952,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -6059,7 +5975,7 @@ export namespace MyNS {
 	}
 	export function CreateMergeBranchesByThreeWayInputFormGroup() {
 		return new FormGroup<MergeBranchesByThreeWayInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			destinationCommitSpecifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			targetBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
@@ -6095,7 +6011,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		sourceCommitId?: string | null;
@@ -6109,7 +6024,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
@@ -6117,7 +6031,7 @@ export namespace MyNS {
 	export function CreateMergePullRequestByFastForwardInputFormGroup() {
 		return new FormGroup<MergePullRequestByFastForwardInputFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -6165,7 +6079,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		sourceCommitId?: string | null;
@@ -6188,7 +6101,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
@@ -6202,7 +6114,7 @@ export namespace MyNS {
 	export function CreateMergePullRequestBySquashInputFormGroup() {
 		return new FormGroup<MergePullRequestBySquashInputFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
@@ -6236,7 +6148,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		sourceCommitId?: string | null;
@@ -6259,7 +6170,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		sourceCommitId: FormControl<string | null | undefined>,
@@ -6273,7 +6183,7 @@ export namespace MyNS {
 	export function CreateMergePullRequestByThreeWayInputFormGroup() {
 		return new FormGroup<MergePullRequestByThreeWayInputFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			sourceCommitId: new FormControl<string | null | undefined>(undefined),
 			conflictDetailLevel: new FormControl<BatchDescribeMergeConflictsInputConflictDetailLevel | null | undefined>(undefined),
 			conflictResolutionStrategy: new FormControl<BatchDescribeMergeConflictsInputConflictResolutionStrategy | null | undefined>(undefined),
@@ -6351,7 +6261,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		beforeCommitId?: string | null;
@@ -6370,7 +6279,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -6380,7 +6288,7 @@ export namespace MyNS {
 	}
 	export function CreatePostCommentForComparedCommitOutputFormGroup() {
 		return new FormGroup<PostCommentForComparedCommitOutputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
 			beforeBlobId: new FormControl<string | null | undefined>(undefined),
@@ -6395,7 +6303,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 		beforeCommitId?: string | null;
@@ -6416,7 +6323,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		beforeCommitId: FormControl<string | null | undefined>,
@@ -6430,7 +6336,7 @@ export namespace MyNS {
 	}
 	export function CreatePostCommentForComparedCommitInputFormGroup() {
 		return new FormGroup<PostCommentForComparedCommitInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -6504,7 +6410,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName?: string | null;
 		pullRequestId?: string | null;
@@ -6524,7 +6429,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 		pullRequestId: FormControl<string | null | undefined>,
@@ -6535,7 +6439,7 @@ export namespace MyNS {
 	}
 	export function CreatePostCommentForPullRequestOutputFormGroup() {
 		return new FormGroup<PostCommentForPullRequestOutputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			pullRequestId: new FormControl<string | null | undefined>(undefined),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined),
 			afterCommitId: new FormControl<string | null | undefined>(undefined),
@@ -6554,7 +6458,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -6580,7 +6483,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -6597,7 +6499,7 @@ export namespace MyNS {
 	export function CreatePostCommentForPullRequestInputFormGroup() {
 		return new FormGroup<PostCommentForPullRequestInputFormProperties>({
 			pullRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			beforeCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			afterCommitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			content: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -6683,7 +6585,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -6714,7 +6615,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -6741,7 +6641,7 @@ export namespace MyNS {
 	}
 	export function CreatePutFileInputFormGroup() {
 		return new FormGroup<PutFileInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 			fileContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6291456)]),
 			filePath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -6799,7 +6699,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -6814,13 +6713,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutRepositoryTriggersInputFormGroup() {
 		return new FormGroup<PutRepositoryTriggersInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -7029,7 +6927,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -7044,13 +6941,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateTestRepositoryTriggersInputFormGroup() {
 		return new FormGroup<TestRepositoryTriggersInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}
@@ -7331,7 +7227,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -7350,7 +7245,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -7363,7 +7257,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDefaultBranchInputFormGroup() {
 		return new FormGroup<UpdateDefaultBranchInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			defaultBranchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
@@ -7686,7 +7580,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: string;
 
@@ -7701,7 +7594,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		repositoryName: FormControl<string | null | undefined>,
 
@@ -7710,7 +7602,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRepositoryDescriptionInputFormGroup() {
 		return new FormGroup<UpdateRepositoryDescriptionInputFormProperties>({
-			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			repositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 			repositoryDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
@@ -7724,7 +7616,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		oldName: string;
 
@@ -7732,7 +7623,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		newName: string;
 	}
@@ -7744,7 +7634,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		oldName: FormControl<string | null | undefined>,
 
@@ -7752,14 +7641,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [\w\.-]+
 		 */
 		newName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRepositoryNameInputFormGroup() {
 		return new FormGroup<UpdateRepositoryNameInputFormProperties>({
-			oldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			newName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			oldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
+			newName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[\w\.-]+')]),
 		});
 
 	}

@@ -84,7 +84,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -133,7 +132,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -161,7 +159,7 @@ export namespace MyNS {
 	export function CreateDomainStatusFormGroup() {
 		return new FormGroup<DomainStatusFormProperties>({
 			DomainId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			ARN: new FormControl<string | null | undefined>(undefined),
 			Created: new FormControl<boolean | null | undefined>(undefined),
 			Deleted: new FormControl<boolean | null | undefined>(undefined),
@@ -296,7 +294,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: string;
 
@@ -318,7 +315,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: FormControl<string | null | undefined>,
 
@@ -330,7 +326,7 @@ export namespace MyNS {
 	}
 	export function CreateAnalysisSchemeFormGroup() {
 		return new FormGroup<AnalysisSchemeFormProperties>({
-			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			AnalysisSchemeLanguage: new FormControl<AnalysisSchemeAnalysisSchemeLanguage | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -491,7 +487,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		ExpressionName: string;
 
@@ -512,7 +507,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		ExpressionName: FormControl<string | null | undefined>,
 
@@ -526,7 +520,7 @@ export namespace MyNS {
 	}
 	export function CreateExpressionFormGroup() {
 		return new FormGroup<ExpressionFormProperties>({
-			ExpressionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ExpressionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			ExpressionValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1)]),
 		});
 
@@ -586,7 +580,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)
 		 */
 		IndexFieldName: string;
 
@@ -637,7 +630,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)
 		 */
 		IndexFieldName: FormControl<string | null | undefined>,
 
@@ -649,7 +641,7 @@ export namespace MyNS {
 	}
 	export function CreateIndexFieldFormGroup() {
 		return new FormGroup<IndexFieldFormProperties>({
-			IndexFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			IndexFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)')]),
 			IndexFieldType: new FormControl<IndexFieldIndexFieldType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -666,7 +658,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -683,7 +674,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -694,7 +684,7 @@ export namespace MyNS {
 	export function CreateIntOptionsFormGroup() {
 		return new FormGroup<IntOptionsFormProperties>({
 			DefaultValue: new FormControl<number | null | undefined>(undefined),
-			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
 			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -712,7 +702,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -729,7 +718,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -740,7 +728,7 @@ export namespace MyNS {
 	export function CreateDoubleOptionsFormGroup() {
 		return new FormGroup<DoubleOptionsFormProperties>({
 			DefaultValue: new FormControl<number | null | undefined>(undefined),
-			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
 			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -764,7 +752,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -787,7 +774,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -798,7 +784,7 @@ export namespace MyNS {
 	export function CreateLiteralOptionsFormGroup() {
 		return new FormGroup<LiteralOptionsFormProperties>({
 			DefaultValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
 			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -822,14 +808,11 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField?: string | null;
 		ReturnEnabled?: boolean | null;
 		SortEnabled?: boolean | null;
 		HighlightEnabled?: boolean | null;
-
-		/** Pattern: [\S]+ */
 		AnalysisScheme?: string | null;
 	}
 
@@ -847,20 +830,17 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		ReturnEnabled: FormControl<boolean | null | undefined>,
 		SortEnabled: FormControl<boolean | null | undefined>,
 		HighlightEnabled: FormControl<boolean | null | undefined>,
-
-		/** Pattern: [\S]+ */
 		AnalysisScheme: FormControl<string | null | undefined>,
 	}
 	export function CreateTextOptionsFormGroup() {
 		return new FormGroup<TextOptionsFormProperties>({
 			DefaultValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
 			SortEnabled: new FormControl<boolean | null | undefined>(undefined),
 			HighlightEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -884,7 +864,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -907,7 +886,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -918,7 +896,7 @@ export namespace MyNS {
 	export function CreateDateOptionsFormGroup() {
 		return new FormGroup<DateOptionsFormProperties>({
 			DefaultValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
 			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -942,7 +920,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -965,7 +942,6 @@ export namespace MyNS {
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -976,7 +952,7 @@ export namespace MyNS {
 	export function CreateLatLonOptionsFormGroup() {
 		return new FormGroup<LatLonOptionsFormProperties>({
 			DefaultValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			FacetEnabled: new FormControl<boolean | null | undefined>(undefined),
 			SearchEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ReturnEnabled: new FormControl<boolean | null | undefined>(undefined),
@@ -989,8 +965,6 @@ export namespace MyNS {
 	/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
 	export interface IntArrayOptions {
 		DefaultValue?: number | null;
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields?: string | null;
 		FacetEnabled?: boolean | null;
 		SearchEnabled?: boolean | null;
@@ -1000,8 +974,6 @@ export namespace MyNS {
 	/** Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default. */
 	export interface IntArrayOptionsFormProperties {
 		DefaultValue: FormControl<number | null | undefined>,
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
 		SearchEnabled: FormControl<boolean | null | undefined>,
@@ -1022,8 +994,6 @@ export namespace MyNS {
 	/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
 	export interface DoubleArrayOptions {
 		DefaultValue?: number | null;
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields?: string | null;
 		FacetEnabled?: boolean | null;
 		SearchEnabled?: boolean | null;
@@ -1033,8 +1003,6 @@ export namespace MyNS {
 	/** Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default. */
 	export interface DoubleArrayOptionsFormProperties {
 		DefaultValue: FormControl<number | null | undefined>,
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
 		SearchEnabled: FormControl<boolean | null | undefined>,
@@ -1061,8 +1029,6 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		DefaultValue?: string | null;
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields?: string | null;
 		FacetEnabled?: boolean | null;
 		SearchEnabled?: boolean | null;
@@ -1078,8 +1044,6 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		DefaultValue: FormControl<string | null | undefined>,
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
 		SearchEnabled: FormControl<boolean | null | undefined>,
@@ -1106,13 +1070,9 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		DefaultValue?: string | null;
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields?: string | null;
 		ReturnEnabled?: boolean | null;
 		HighlightEnabled?: boolean | null;
-
-		/** Pattern: [\S]+ */
 		AnalysisScheme?: string | null;
 	}
 
@@ -1125,13 +1085,9 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		DefaultValue: FormControl<string | null | undefined>,
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields: FormControl<string | null | undefined>,
 		ReturnEnabled: FormControl<boolean | null | undefined>,
 		HighlightEnabled: FormControl<boolean | null | undefined>,
-
-		/** Pattern: [\S]+ */
 		AnalysisScheme: FormControl<string | null | undefined>,
 	}
 	export function CreateTextArrayOptionsFormGroup() {
@@ -1155,8 +1111,6 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		DefaultValue?: string | null;
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields?: string | null;
 		FacetEnabled?: boolean | null;
 		SearchEnabled?: boolean | null;
@@ -1172,8 +1126,6 @@ export namespace MyNS {
 		 * Min length: 0
 		 */
 		DefaultValue: FormControl<string | null | undefined>,
-
-		/** Pattern: \s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)* */
 		SourceFields: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
 		SearchEnabled: FormControl<boolean | null | undefined>,
@@ -1249,7 +1201,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: string;
 
@@ -1268,13 +1219,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: FormControl<string | null | undefined>,
 	}
 	export function CreateSuggesterFormGroup() {
 		return new FormGroup<SuggesterFormProperties>({
-			SuggesterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SuggesterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 		});
 
 	}
@@ -1288,7 +1238,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: string;
 		FuzzyMatching?: DocumentSuggesterOptionsFuzzyMatching | null;
@@ -1303,7 +1252,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FuzzyMatching: FormControl<DocumentSuggesterOptionsFuzzyMatching | null | undefined>,
@@ -1311,7 +1259,7 @@ export namespace MyNS {
 	}
 	export function CreateDocumentSuggesterOptionsFormGroup() {
 		return new FormGroup<DocumentSuggesterOptionsFormProperties>({
-			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SourceField: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			FuzzyMatching: new FormControl<DocumentSuggesterOptionsFuzzyMatching | null | undefined>(undefined),
 			SortExpression: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1927,7 +1875,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -1940,13 +1887,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateBuildSuggestersRequestFormGroup() {
 		return new FormGroup<BuildSuggestersRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -1960,7 +1906,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -1973,13 +1918,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDomainRequestFormGroup() {
 		return new FormGroup<CreateDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -1993,7 +1937,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2012,13 +1955,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDefineAnalysisSchemeRequestFormGroup() {
 		return new FormGroup<DefineAnalysisSchemeRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2032,7 +1974,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2051,13 +1992,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDefineExpressionRequestFormGroup() {
 		return new FormGroup<DefineExpressionRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2071,7 +2011,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2090,13 +2029,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDefineIndexFieldRequestFormGroup() {
 		return new FormGroup<DefineIndexFieldRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2110,7 +2048,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2129,13 +2066,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDefineSuggesterRequestFormGroup() {
 		return new FormGroup<DefineSuggesterRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2149,7 +2085,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2158,7 +2093,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: string;
 	}
@@ -2171,7 +2105,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2180,14 +2113,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAnalysisSchemeRequestFormGroup() {
 		return new FormGroup<DeleteAnalysisSchemeRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
-			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 		});
 
 	}
@@ -2201,7 +2133,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -2214,13 +2145,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDomainRequestFormGroup() {
 		return new FormGroup<DeleteDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2234,7 +2164,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2243,7 +2172,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		ExpressionName: string;
 	}
@@ -2256,7 +2184,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2265,14 +2192,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		ExpressionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteExpressionRequestFormGroup() {
 		return new FormGroup<DeleteExpressionRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
-			ExpressionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			ExpressionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 		});
 
 	}
@@ -2286,7 +2212,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2294,7 +2219,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)
 		 */
 		IndexFieldName: string;
 	}
@@ -2307,7 +2231,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2315,14 +2238,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)
 		 */
 		IndexFieldName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIndexFieldRequestFormGroup() {
 		return new FormGroup<DeleteIndexFieldRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
-			IndexFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			IndexFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)')]),
 		});
 
 	}
@@ -2336,7 +2258,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2345,7 +2266,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: string;
 	}
@@ -2358,7 +2278,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2367,14 +2286,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSuggesterRequestFormGroup() {
 		return new FormGroup<DeleteSuggesterRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
-			SuggesterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			SuggesterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 		});
 
 	}
@@ -2388,7 +2306,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		AnalysisSchemeNames?: Array<string>;
@@ -2403,14 +2320,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Deployed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeAnalysisSchemesRequestFormGroup() {
 		return new FormGroup<DescribeAnalysisSchemesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Deployed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2425,7 +2341,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		Deployed?: boolean | null;
@@ -2439,14 +2354,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Deployed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeAvailabilityOptionsRequestFormGroup() {
 		return new FormGroup<DescribeAvailabilityOptionsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Deployed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2461,7 +2375,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		Deployed?: boolean | null;
@@ -2475,14 +2388,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Deployed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeDomainEndpointOptionsRequestFormGroup() {
 		return new FormGroup<DescribeDomainEndpointOptionsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Deployed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2514,7 +2426,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		ExpressionNames?: Array<string>;
@@ -2529,14 +2440,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Deployed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeExpressionsRequestFormGroup() {
 		return new FormGroup<DescribeExpressionsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Deployed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2551,7 +2461,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		FieldNames?: Array<string>;
@@ -2566,14 +2475,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Deployed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeIndexFieldsRequestFormGroup() {
 		return new FormGroup<DescribeIndexFieldsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Deployed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2588,7 +2496,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -2601,13 +2508,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeScalingParametersRequestFormGroup() {
 		return new FormGroup<DescribeScalingParametersRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2621,7 +2527,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		Deployed?: boolean | null;
@@ -2635,14 +2540,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Deployed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeServiceAccessPoliciesRequestFormGroup() {
 		return new FormGroup<DescribeServiceAccessPoliciesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Deployed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2657,7 +2561,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 		SuggesterNames?: Array<string>;
@@ -2672,14 +2575,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 		Deployed: FormControl<boolean | null | undefined>,
 	}
 	export function CreateDescribeSuggestersRequestFormGroup() {
 		return new FormGroup<DescribeSuggestersRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Deployed: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2696,7 +2598,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 	}
@@ -2709,13 +2610,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateIndexDocumentsRequestFormGroup() {
 		return new FormGroup<IndexDocumentsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2733,7 +2633,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2749,7 +2648,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2758,7 +2656,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAvailabilityOptionsRequestFormGroup() {
 		return new FormGroup<UpdateAvailabilityOptionsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			MultiAZ: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2773,7 +2671,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2792,13 +2689,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDomainEndpointOptionsRequestFormGroup() {
 		return new FormGroup<UpdateDomainEndpointOptionsRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2812,7 +2708,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2831,13 +2726,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateScalingParametersRequestFormGroup() {
 		return new FormGroup<UpdateScalingParametersRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2851,7 +2745,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
 
@@ -2870,7 +2763,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 28
 		 * Min length: 3
-		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2882,7 +2774,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateServiceAccessPoliciesRequestFormGroup() {
 		return new FormGroup<UpdateServiceAccessPoliciesRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			AccessPolicies: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3186,7 +3078,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: string;
 
@@ -3206,7 +3097,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		AnalysisSchemeName: FormControl<string | null | undefined>,
 
@@ -3218,7 +3108,7 @@ export namespace MyNS {
 	}
 	export function CreateGET_DefineAnalysisSchemeAnalysisSchemeFormGroup() {
 		return new FormGroup<GET_DefineAnalysisSchemeAnalysisSchemeFormProperties>({
-			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AnalysisSchemeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			AnalysisSchemeLanguage: new FormControl<GET_DefineAnalysisSchemeAnalysisSchemeAnalysisSchemeLanguage | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3239,7 +3129,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		ExpressionName: string;
 
@@ -3258,7 +3147,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		ExpressionName: FormControl<string | null | undefined>,
 
@@ -3272,7 +3160,7 @@ export namespace MyNS {
 	}
 	export function CreateGET_DefineExpressionExpressionFormGroup() {
 		return new FormGroup<GET_DefineExpressionExpressionFormProperties>({
-			ExpressionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ExpressionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 			ExpressionValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1)]),
 		});
 
@@ -3290,7 +3178,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)
 		 */
 		IndexFieldName: string;
 
@@ -3339,7 +3226,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)
 		 */
 		IndexFieldName: FormControl<string | null | undefined>,
 
@@ -3351,7 +3237,7 @@ export namespace MyNS {
 	}
 	export function CreateGET_DefineIndexFieldIndexFieldFormGroup() {
 		return new FormGroup<GET_DefineIndexFieldIndexFieldFormProperties>({
-			IndexFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			IndexFieldName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('([a-z][a-z0-9_]*\*?|\*[a-z0-9_]*)')]),
 			IndexFieldType: new FormControl<GET_DefineIndexFieldIndexFieldIndexFieldType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3372,7 +3258,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: string;
 
@@ -3389,13 +3274,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z][a-z0-9_]*
 		 */
 		SuggesterName: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_DefineSuggesterSuggesterFormGroup() {
 		return new FormGroup<GET_DefineSuggesterSuggesterFormProperties>({
-			SuggesterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			SuggesterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z][a-z0-9_]*')]),
 		});
 
 	}

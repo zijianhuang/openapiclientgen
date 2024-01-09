@@ -50,7 +50,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName: string;
 
@@ -58,7 +57,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		Name: string;
 	}
@@ -73,7 +71,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName: FormControl<string | null | undefined>,
 
@@ -81,15 +78,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeKeyFormGroup() {
 		return new FormGroup<AttributeKeyFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._:-]*$')]),
 		});
 
 	}
@@ -380,10 +376,7 @@ export namespace MyNS {
 		/** Required */
 		SchemaArn: string;
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		TypedLinkName: string;
 	}
 
@@ -393,10 +386,7 @@ export namespace MyNS {
 		/** Required */
 		SchemaArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateTypedLinkSchemaAndFacetNameFormGroup() {
@@ -432,7 +422,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		AttributeName: string;
 
@@ -450,13 +439,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttributeNameAndValueFormGroup() {
 		return new FormGroup<AttributeNameAndValueFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._:-]*$')]),
 		});
 
 	}
@@ -618,7 +606,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName?: string | null;
 	}
@@ -630,14 +617,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateSchemaFacetFormGroup() {
 		return new FormGroup<SchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -915,7 +901,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName?: string | null;
 	}
@@ -927,14 +912,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateObjectIdentifierAndLinkNameTupleFormGroup() {
 		return new FormGroup<ObjectIdentifierAndLinkNameTupleFormProperties>({
 			ObjectIdentifier: new FormControl<string | null | undefined>(undefined),
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -1431,7 +1415,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		AttributeName?: string | null;
 
@@ -1448,13 +1431,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		AttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateTypedLinkAttributeRangeFormGroup() {
 		return new FormGroup<TypedLinkAttributeRangeFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(230), Validators.minLength(1)]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(230), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._:-]*$')]),
 		});
 
 	}
@@ -1895,7 +1877,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName?: string | null;
 		BatchReferenceName?: string | null;
@@ -1907,14 +1888,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 		BatchReferenceName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchCreateObjectFormGroup() {
 		return new FormGroup<BatchCreateObjectFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 			BatchReferenceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1940,7 +1920,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: string;
 	}
@@ -1952,13 +1931,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchAttachObjectFormGroup() {
 		return new FormGroup<BatchAttachObjectFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -1977,7 +1955,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: string;
 		BatchReferenceName?: string | null;
@@ -1990,14 +1967,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 		BatchReferenceName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchDetachObjectFormGroup() {
 		return new FormGroup<BatchDetachObjectFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 			BatchReferenceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2211,7 +2187,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName?: string | null;
 		BatchReferenceName?: string | null;
@@ -2226,7 +2201,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 		BatchReferenceName: FormControl<string | null | undefined>,
@@ -2234,7 +2208,7 @@ export namespace MyNS {
 	export function CreateBatchCreateIndexFormGroup() {
 		return new FormGroup<BatchCreateIndexFormProperties>({
 			IsUnique: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 			BatchReferenceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2429,7 +2403,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 
@@ -2448,7 +2421,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2461,7 +2433,7 @@ export namespace MyNS {
 	export function CreateCreateDirectoryResponseFormGroup() {
 		return new FormGroup<CreateDirectoryResponseFormProperties>({
 			DirectoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			ObjectIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AppliedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2496,7 +2468,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		Name: string;
 
@@ -2515,14 +2486,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		RequiredBehavior: FormControl<FacetAttributeRequiredBehavior | null | undefined>,
 	}
 	export function CreateFacetAttributeFormGroup() {
 		return new FormGroup<FacetAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._:-]*$')]),
 			RequiredBehavior: new FormControl<FacetAttributeRequiredBehavior | null | undefined>(undefined),
 		});
 
@@ -2576,7 +2546,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		TargetFacetName: string;
 
@@ -2584,7 +2553,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		TargetAttributeName: string;
 	}
@@ -2596,7 +2564,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		TargetFacetName: FormControl<string | null | undefined>,
 
@@ -2604,14 +2571,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		TargetAttributeName: FormControl<string | null | undefined>,
 	}
 	export function CreateFacetAttributeReferenceFormGroup() {
 		return new FormGroup<FacetAttributeReferenceFormProperties>({
-			TargetFacetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			TargetAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
+			TargetFacetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
+			TargetAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._:-]*$')]),
 		});
 
 	}
@@ -2705,7 +2671,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		Name: string;
 
@@ -2728,7 +2693,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 230
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._:-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2741,7 +2705,7 @@ export namespace MyNS {
 	}
 	export function CreateTypedLinkAttributeDefinitionFormGroup() {
 		return new FormGroup<TypedLinkAttributeDefinitionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(230), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._:-]*$')]),
 			Type: new FormControl<FacetAttributeDefinitionType | null | undefined>(undefined, [Validators.required]),
 			IsImmutable: new FormControl<boolean | null | undefined>(undefined),
 			RequiredBehavior: new FormControl<FacetAttributeRequiredBehavior | null | undefined>(undefined, [Validators.required]),
@@ -2995,7 +2959,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name?: string | null;
 		DirectoryArn?: string | null;
@@ -3009,7 +2972,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		DirectoryArn: FormControl<string | null | undefined>,
@@ -3018,7 +2980,7 @@ export namespace MyNS {
 	}
 	export function CreateDirectoryFormGroup() {
 		return new FormGroup<DirectoryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			DirectoryArn: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<DirectoryState | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3048,7 +3010,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name?: string | null;
 		ObjectType?: FacetObjectType | null;
@@ -3061,7 +3022,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		ObjectType: FormControl<FacetObjectType | null | undefined>,
@@ -3069,7 +3029,7 @@ export namespace MyNS {
 	}
 	export function CreateFacetFormGroup() {
 		return new FormGroup<FacetFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 			FacetStyle: new FormControl<FacetFacetStyle | null | undefined>(undefined),
 		});
@@ -3121,7 +3081,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name?: string | null;
 		Document?: string | null;
@@ -3131,14 +3090,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		Document: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSchemaAsJsonResponseFormGroup() {
 		return new FormGroup<GetSchemaAsJsonResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			Document: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3798,7 +3756,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: string;
 	}
@@ -3808,13 +3765,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachObjectRequestFormGroup() {
 		return new FormGroup<AttachObjectRequestFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -3928,7 +3884,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -3938,13 +3893,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectoryRequestFormGroup() {
 		return new FormGroup<CreateDirectoryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -3959,7 +3913,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 		Attributes?: Array<FacetAttribute>;
@@ -3972,7 +3925,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		ObjectType: FormControl<FacetObjectType | null | undefined>,
@@ -3980,7 +3932,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateFacetRequestFormGroup() {
 		return new FormGroup<CreateFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 			FacetStyle: new FormControl<FacetFacetStyle | null | undefined>(undefined),
 		});
@@ -4001,7 +3953,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName?: string | null;
 	}
@@ -4013,14 +3964,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIndexRequestFormGroup() {
 		return new FormGroup<CreateIndexRequestFormProperties>({
 			IsUnique: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -4037,7 +3987,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName?: string | null;
 	}
@@ -4046,13 +3995,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateObjectRequestFormGroup() {
 		return new FormGroup<CreateObjectRequestFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -4063,7 +4011,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -4073,13 +4020,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSchemaRequestFormGroup() {
 		return new FormGroup<CreateSchemaRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -4088,10 +4034,7 @@ export namespace MyNS {
 	/** Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API. */
 	export interface TypedLinkFacet {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: string;
 
 		/** Required */
@@ -4104,10 +4047,7 @@ export namespace MyNS {
 	/** Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API. */
 	export interface TypedLinkFacetFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateTypedLinkFacetFormGroup() {
@@ -4149,7 +4089,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -4159,13 +4098,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFacetRequestFormGroup() {
 		return new FormGroup<DeleteFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -4198,18 +4136,12 @@ export namespace MyNS {
 
 	export interface DeleteTypedLinkFacetRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: string;
 	}
 	export interface DeleteTypedLinkFacetRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTypedLinkFacetRequestFormGroup() {
@@ -4253,7 +4185,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: string;
 	}
@@ -4263,13 +4194,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachObjectRequestFormGroup() {
 		return new FormGroup<DetachObjectRequestFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -4371,7 +4301,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -4381,13 +4310,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFacetRequestFormGroup() {
 		return new FormGroup<GetFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -4467,18 +4395,12 @@ export namespace MyNS {
 
 	export interface GetTypedLinkFacetInformationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: string;
 	}
 	export interface GetTypedLinkFacetInformationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTypedLinkFacetInformationRequestFormGroup() {
@@ -4593,7 +4515,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 		NextToken?: string | null;
@@ -4607,7 +4528,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
@@ -4617,7 +4537,7 @@ export namespace MyNS {
 	}
 	export function CreateListFacetAttributesRequestFormGroup() {
 		return new FormGroup<ListFacetAttributesRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -4974,10 +4894,7 @@ export namespace MyNS {
 
 	export interface ListTypedLinkFacetAttributesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: string;
 		NextToken?: string | null;
 
@@ -4986,10 +4903,7 @@ export namespace MyNS {
 	}
 	export interface ListTypedLinkFacetAttributesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -5057,21 +4971,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Version: string;
 
 		/**
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion?: string | null;
 
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name?: string | null;
 	}
@@ -5081,29 +4992,26 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Version: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreatePublishSchemaRequestFormGroup() {
 		return new FormGroup<PublishSchemaRequestFormProperties>({
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
-			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -5225,7 +5133,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 		AttributeUpdates?: Array<FacetAttributeUpdate>;
@@ -5237,14 +5144,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		ObjectType: FormControl<FacetObjectType | null | undefined>,
 	}
 	export function CreateUpdateFacetRequestFormGroup() {
 		return new FormGroup<UpdateFacetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 		});
 
@@ -5294,7 +5200,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -5304,23 +5209,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSchemaRequestFormGroup() {
 		return new FormGroup<UpdateSchemaRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
 
 	export interface UpdateTypedLinkFacetRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: string;
 
 		/** Required */
@@ -5331,10 +5232,7 @@ export namespace MyNS {
 	}
 	export interface UpdateTypedLinkFacetRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTypedLinkFacetRequestFormGroup() {
@@ -5383,7 +5281,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion: string;
 		DryRun?: boolean | null;
@@ -5400,7 +5297,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
@@ -5409,7 +5305,7 @@ export namespace MyNS {
 		return new FormGroup<UpgradePublishedSchemaRequestFormProperties>({
 			DevelopmentSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -6084,7 +5980,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName?: string | null;
 	}
@@ -6094,14 +5989,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateAddFacetToObjectPutBodySchemaFacetFormGroup() {
 		return new FormGroup<AddFacetToObjectPutBodySchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -6161,7 +6055,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: string;
 	}
@@ -6172,13 +6065,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachObjectPutBodyFormGroup() {
 		return new FormGroup<AttachObjectPutBodyFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -6367,14 +6259,10 @@ export namespace MyNS {
 
 	export interface AttachTypedLinkPutBodyTypedLinkFacet {
 		SchemaArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName?: string | null;
 	}
 	export interface AttachTypedLinkPutBodyTypedLinkFacetFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateAttachTypedLinkPutBodyTypedLinkFacetFormGroup() {
@@ -6424,7 +6312,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -6435,13 +6322,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectoryPutBodyFormGroup() {
 		return new FormGroup<CreateDirectoryPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -6453,7 +6339,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 
@@ -6473,7 +6358,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -6485,7 +6369,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateFacetPutBodyFormGroup() {
 		return new FormGroup<CreateFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 			FacetStyle: new FormControl<FacetFacetStyle | null | undefined>(undefined),
 		});
@@ -6513,7 +6397,6 @@ export namespace MyNS {
 		 * The name of the link between the parent object and the index object.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName?: string | null;
 	}
@@ -6529,14 +6412,13 @@ export namespace MyNS {
 		 * The name of the link between the parent object and the index object.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIndexPutBodyFormGroup() {
 		return new FormGroup<CreateIndexPutBodyFormProperties>({
 			IsUnique: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -6572,7 +6454,6 @@ export namespace MyNS {
 		 * The name of link that is used to attach this object to a parent.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName?: string | null;
 	}
@@ -6582,13 +6463,12 @@ export namespace MyNS {
 		 * The name of link that is used to attach this object to a parent.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateObjectPutBodyFormGroup() {
 		return new FormGroup<CreateObjectPutBodyFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -6613,7 +6493,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -6624,13 +6503,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSchemaPutBodyFormGroup() {
 		return new FormGroup<CreateSchemaPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -6652,15 +6530,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateTypedLinkFacetPutBodyFacet {
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		Name?: string | null;
 		Attributes?: Array<TypedLinkAttributeDefinition>;
 		IdentityAttributeOrder?: Array<string>;
 	}
 	export interface CreateTypedLinkFacetPutBodyFacetFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTypedLinkFacetPutBodyFacetFormGroup() {
@@ -6677,7 +6551,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -6688,13 +6561,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFacetPutBodyFormGroup() {
 		return new FormGroup<DeleteFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -6733,7 +6605,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -6742,7 +6613,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6814,7 +6684,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: string;
 	}
@@ -6825,13 +6694,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [^\/\[\]\(\):\{\}#@!?\s\\;]+
 		 */
 		LinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateDetachObjectPutBodyFormGroup() {
 		return new FormGroup<DetachObjectPutBodyFormProperties>({
-			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			LinkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[^\/\[\]\(\):\{\}#@!?\s\\;]+')]),
 		});
 
 	}
@@ -6963,7 +6831,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -6974,13 +6841,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFacetPostBodyFormGroup() {
 		return new FormGroup<GetFacetPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -6992,7 +6858,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 
@@ -7009,7 +6874,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7018,7 +6882,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFacetPutBodyFormGroup() {
 		return new FormGroup<UpdateFacetPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			ObjectType: new FormControl<FacetObjectType | null | undefined>(undefined),
 		});
 
@@ -7120,7 +6984,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName?: string | null;
 	}
@@ -7130,14 +6993,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetObjectAttributesPostBodySchemaFacetFormGroup() {
 		return new FormGroup<GetObjectAttributesPostBodySchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -7199,7 +7061,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -7208,7 +7069,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7392,7 +7252,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 
@@ -7412,7 +7271,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7427,7 +7285,7 @@ export namespace MyNS {
 	}
 	export function CreateListFacetAttributesPostBodyFormGroup() {
 		return new FormGroup<ListFacetAttributesPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -7528,14 +7386,10 @@ export namespace MyNS {
 
 	export interface ListIncomingTypedLinksPostBodyFilterTypedLink {
 		SchemaArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName?: string | null;
 	}
 	export interface ListIncomingTypedLinksPostBodyFilterTypedLinkFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateListIncomingTypedLinksPostBodyFilterTypedLinkFormGroup() {
@@ -7693,7 +7547,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName?: string | null;
 	}
@@ -7703,14 +7556,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateListObjectAttributesPostBodyFacetFilterFormGroup() {
 		return new FormGroup<ListObjectAttributesPostBodyFacetFilterFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -7982,14 +7834,10 @@ export namespace MyNS {
 
 	export interface ListOutgoingTypedLinksPostBodyFilterTypedLink {
 		SchemaArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName?: string | null;
 	}
 	export interface ListOutgoingTypedLinksPostBodyFilterTypedLinkFormProperties {
 		SchemaArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9._-]*$ */
 		TypedLinkName: FormControl<string | null | undefined>,
 	}
 	export function CreateListOutgoingTypedLinksPostBodyFilterTypedLinkFormGroup() {
@@ -8134,7 +7982,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 
@@ -8152,7 +7999,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -8260,7 +8106,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Version: string;
 
@@ -8268,7 +8113,6 @@ export namespace MyNS {
 		 * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion?: string | null;
 
@@ -8276,7 +8120,6 @@ export namespace MyNS {
 		 * The new name under which the schema will be published. If this is not provided, the development schema is considered.
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name?: string | null;
 	}
@@ -8287,7 +8130,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Version: FormControl<string | null | undefined>,
 
@@ -8295,7 +8137,6 @@ export namespace MyNS {
 		 * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion: FormControl<string | null | undefined>,
 
@@ -8303,15 +8144,14 @@ export namespace MyNS {
 		 * The new name under which the schema will be published. If this is not provided, the development schema is considered.
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreatePublishSchemaPutBodyFormGroup() {
 		return new FormGroup<PublishSchemaPutBodyFormProperties>({
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
-			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -8344,7 +8184,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName?: string | null;
 	}
@@ -8354,14 +8193,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		FacetName: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveFacetFromObjectPutBodySchemaFacetFormGroup() {
 		return new FormGroup<RemoveFacetFromObjectPutBodySchemaFacetFormProperties>({
 			SchemaArn: new FormControl<string | null | undefined>(undefined),
-			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			FacetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -8521,7 +8359,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 	}
@@ -8532,13 +8369,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSchemaPutBodyFormGroup() {
 		return new FormGroup<UpdateSchemaPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 		});
 
 	}
@@ -8548,7 +8384,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: string;
 
@@ -8569,7 +8404,6 @@ export namespace MyNS {
 		/**
 		 * The unique name of the typed link facet.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -8642,7 +8476,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion: string;
 
@@ -8668,7 +8501,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9._-]*$
 		 */
 		MinorVersion: FormControl<string | null | undefined>,
 
@@ -8679,7 +8511,7 @@ export namespace MyNS {
 		return new FormGroup<UpgradePublishedSchemaPutBodyFormProperties>({
 			DevelopmentSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PublishedSchemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1)]),
+			MinorVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9._-]*$')]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 

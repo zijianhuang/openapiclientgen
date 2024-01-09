@@ -148,7 +148,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName?: string | null;
 		channelArn?: string | null;
@@ -161,14 +160,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: FormControl<string | null | undefined>,
 		channelArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateChannelResponseFormGroup() {
 		return new FormGroup<CreateChannelResponseFormProperties>({
-			channelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			channelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			channelArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -220,14 +218,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: string;
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix?: string | null;
 
@@ -246,14 +242,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix: FormControl<string | null | undefined>,
 
@@ -266,8 +260,8 @@ export namespace MyNS {
 	}
 	export function CreateCustomerManagedChannelS3StorageFormGroup() {
 		return new FormGroup<CustomerManagedChannelS3StorageFormProperties>({
-			bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9.\-_]*$')]),
+			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9!_.*\'()/{}:-]*/$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -342,7 +336,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName?: string | null;
 		datasetArn?: string | null;
@@ -355,14 +348,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: FormControl<string | null | undefined>,
 		datasetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetResponseFormGroup() {
 		return new FormGroup<CreateDatasetResponseFormProperties>({
-			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			datasetArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -375,7 +367,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		actionName?: string | null;
 
@@ -392,13 +383,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		actionName: FormControl<string | null | undefined>,
 	}
 	export function CreateDatasetActionFormGroup() {
 		return new FormGroup<DatasetActionFormProperties>({
-			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -626,7 +616,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: string;
 	}
@@ -638,13 +627,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: FormControl<string | null | undefined>,
 	}
 	export function CreateDatasetContentVersionValueFormGroup() {
 		return new FormGroup<DatasetContentVersionValueFormProperties>({
-			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -653,20 +641,14 @@ export namespace MyNS {
 	/** The value of the variable as a structure that specifies an output file URI. */
 	export interface OutputFileUriValue {
 
-		/**
-		 * Required
-		 * Pattern: [\w\.-]{1,255}
-		 */
+		/** Required */
 		fileName: string;
 	}
 
 	/** The value of the variable as a structure that specifies an output file URI. */
 	export interface OutputFileUriValueFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [\w\.-]{1,255}
-		 */
+		/** Required */
 		fileName: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputFileUriValueFormGroup() {
@@ -721,7 +703,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name: string;
 	}
@@ -733,13 +714,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateTriggeringDatasetFormGroup() {
 		return new FormGroup<TriggeringDatasetFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -795,7 +775,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: string;
 
@@ -814,7 +793,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		 */
 		inputName: FormControl<string | null | undefined>,
 
@@ -827,7 +805,7 @@ export namespace MyNS {
 	}
 	export function CreateIotEventsDestinationConfigurationFormGroup() {
 		return new FormGroup<IotEventsDestinationConfigurationFormProperties>({
-			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			inputName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -841,7 +819,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: string;
 
@@ -849,7 +826,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*$
 		 */
 		key: string;
 
@@ -871,7 +847,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: FormControl<string | null | undefined>,
 
@@ -879,7 +854,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*$
 		 */
 		key: FormControl<string | null | undefined>,
 
@@ -892,8 +866,8 @@ export namespace MyNS {
 	}
 	export function CreateS3DestinationConfigurationFormGroup() {
 		return new FormGroup<S3DestinationConfigurationFormProperties>({
-			bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9.\-_]*$')]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9!_.*\'()/{}:-]*$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -971,7 +945,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName?: string | null;
 		datastoreArn?: string | null;
@@ -984,14 +957,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: FormControl<string | null | undefined>,
 		datastoreArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatastoreResponseFormGroup() {
 		return new FormGroup<CreateDatastoreResponseFormProperties>({
-			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			datastoreArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1019,14 +991,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: string;
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix?: string | null;
 
@@ -1045,14 +1015,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix: FormControl<string | null | undefined>,
 
@@ -1065,8 +1033,8 @@ export namespace MyNS {
 	}
 	export function CreateCustomerManagedDatastoreS3StorageFormGroup() {
 		return new FormGroup<CustomerManagedDatastoreS3StorageFormProperties>({
-			bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9.\-_]*$')]),
+			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9!_.*\'()/{}:-]*/$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -1077,7 +1045,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName?: string | null;
 		pipelineArn?: string | null;
@@ -1087,14 +1054,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 		pipelineArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePipelineResponseFormGroup() {
 		return new FormGroup<CreatePipelineResponseFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			pipelineArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1159,7 +1125,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: string;
 
@@ -1184,7 +1149,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: FormControl<string | null | undefined>,
 
@@ -1197,7 +1161,7 @@ export namespace MyNS {
 	export function CreateChannelActivityFormGroup() {
 		return new FormGroup<ChannelActivityFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			next: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
@@ -1218,7 +1182,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		lambdaName: string;
 
@@ -1250,7 +1213,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_-]+$
 		 */
 		lambdaName: FormControl<string | null | undefined>,
 
@@ -1270,7 +1232,7 @@ export namespace MyNS {
 	export function CreateLambdaActivityFormGroup() {
 		return new FormGroup<LambdaActivityFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			lambdaName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			lambdaName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			batchSize: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 			next: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
@@ -1292,7 +1254,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: string;
 	}
@@ -1311,14 +1272,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: FormControl<string | null | undefined>,
 	}
 	export function CreateDatastoreActivityFormGroup() {
 		return new FormGroup<DatastoreActivityFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -1802,7 +1762,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name?: string | null;
 
@@ -1823,7 +1782,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -1833,7 +1791,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelFormGroup() {
 		return new FormGroup<ChannelFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ChannelStatus | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1921,7 +1879,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name?: string | null;
 		arn?: string | null;
@@ -1960,7 +1917,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -1970,7 +1926,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetFormGroup() {
 		return new FormGroup<DatasetFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ChannelStatus | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
@@ -2032,7 +1988,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name?: string | null;
 
@@ -2053,7 +2008,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -2063,7 +2017,7 @@ export namespace MyNS {
 	}
 	export function CreateDatastoreFormGroup() {
 		return new FormGroup<DatastoreFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ChannelStatus | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
@@ -2187,7 +2141,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name?: string | null;
 		arn?: string | null;
@@ -2208,7 +2161,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		name: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
@@ -2217,7 +2169,7 @@ export namespace MyNS {
 	}
 	export function CreatePipelineFormGroup() {
 		return new FormGroup<PipelineFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2330,7 +2282,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName?: string | null;
 
@@ -2347,7 +2298,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: FormControl<string | null | undefined>,
 		status: FormControl<ChannelStatus | null | undefined>,
@@ -2356,7 +2306,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelSummaryFormGroup() {
 		return new FormGroup<ChannelSummaryFormProperties>({
-			channelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			channelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			status: new FormControl<ChannelStatus | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2405,14 +2355,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket?: string | null;
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix?: string | null;
 
@@ -2429,14 +2377,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix: FormControl<string | null | undefined>,
 
@@ -2448,8 +2394,8 @@ export namespace MyNS {
 	}
 	export function CreateCustomerManagedChannelS3StorageSummaryFormGroup() {
 		return new FormGroup<CustomerManagedChannelS3StorageSummaryFormProperties>({
-			bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9.\-_]*$')]),
+			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9!_.*\'()/{}:-]*/$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -2529,7 +2475,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName?: string | null;
 		status?: ChannelStatus | null;
@@ -2555,7 +2500,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: FormControl<string | null | undefined>,
 		status: FormControl<ChannelStatus | null | undefined>,
@@ -2564,7 +2508,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetSummaryFormGroup() {
 		return new FormGroup<DatasetSummaryFormProperties>({
-			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			status: new FormControl<ChannelStatus | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2579,7 +2523,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		actionName?: string | null;
 		actionType?: DatasetActionSummaryActionType | null;
@@ -2591,14 +2534,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		actionName: FormControl<string | null | undefined>,
 		actionType: FormControl<DatasetActionSummaryActionType | null | undefined>,
 	}
 	export function CreateDatasetActionSummaryFormGroup() {
 		return new FormGroup<DatasetActionSummaryFormProperties>({
-			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			actionType: new FormControl<DatasetActionSummaryActionType | null | undefined>(undefined),
 		});
 
@@ -2627,7 +2569,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName?: string | null;
 
@@ -2644,7 +2585,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: FormControl<string | null | undefined>,
 		status: FormControl<ChannelStatus | null | undefined>,
@@ -2653,7 +2593,7 @@ export namespace MyNS {
 	}
 	export function CreateDatastoreSummaryFormGroup() {
 		return new FormGroup<DatastoreSummaryFormProperties>({
-			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			status: new FormControl<ChannelStatus | null | undefined>(undefined),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2702,14 +2642,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket?: string | null;
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix?: string | null;
 
@@ -2726,14 +2664,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9.\-_]*$
 		 */
 		bucket: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!_.*'()/{}:-]*/$
 		 */
 		keyPrefix: FormControl<string | null | undefined>,
 
@@ -2745,8 +2681,8 @@ export namespace MyNS {
 	}
 	export function CreateCustomerManagedDatastoreS3StorageSummaryFormGroup() {
 		return new FormGroup<CustomerManagedDatastoreS3StorageSummaryFormProperties>({
-			bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9.\-_]*$')]),
+			keyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9!_.*\'()/{}:-]*/$')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
 		});
 
@@ -2773,7 +2709,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName?: string | null;
 		reprocessingSummaries?: Array<ReprocessingSummary>;
@@ -2787,7 +2722,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 		creationTime: FormControl<Date | null | undefined>,
@@ -2795,7 +2729,7 @@ export namespace MyNS {
 	}
 	export function CreatePipelineSummaryFormGroup() {
 		return new FormGroup<PipelineSummaryFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 			creationTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2894,7 +2828,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: string;
 
@@ -2907,13 +2840,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchPutMessageRequestFormGroup() {
 		return new FormGroup<BatchPutMessageRequestFormProperties>({
-			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -2936,7 +2868,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: string;
 
@@ -2958,13 +2889,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateChannelRequestFormGroup() {
 		return new FormGroup<CreateChannelRequestFormProperties>({
-			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -2985,7 +2915,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: string;
 
@@ -3026,13 +2955,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetRequestFormGroup() {
 		return new FormGroup<CreateDatasetRequestFormProperties>({
-			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -3043,7 +2971,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: string;
 
@@ -3065,13 +2992,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatastoreRequestFormGroup() {
 		return new FormGroup<CreateDatastoreRequestFormProperties>({
-			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -3082,7 +3008,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName: string;
 
@@ -3105,13 +3030,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePipelineRequestFormGroup() {
 		return new FormGroup<CreatePipelineRequestFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -3834,7 +3758,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: string;
 
@@ -3851,13 +3774,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: FormControl<string | null | undefined>,
 	}
 	export function CreateBatchPutMessagePostBodyFormGroup() {
 		return new FormGroup<BatchPutMessagePostBodyFormProperties>({
-			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -3869,7 +3791,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: string;
 
@@ -3893,13 +3814,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		channelName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateChannelPostBodyFormGroup() {
 		return new FormGroup<CreateChannelPostBodyFormProperties>({
-			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			channelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -3947,7 +3867,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: string;
 
@@ -3993,13 +3912,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datasetName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatasetPostBodyFormGroup() {
 		return new FormGroup<CreateDatasetPostBodyFormProperties>({
-			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			datasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -4057,7 +3975,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: string;
 
@@ -4081,13 +3998,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		datastoreName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDatastorePostBodyFormGroup() {
 		return new FormGroup<CreateDatastorePostBodyFormProperties>({
-			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			datastoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}
@@ -4135,7 +4051,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName: string;
 
@@ -4161,13 +4076,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9_]+$
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePipelinePostBodyFormGroup() {
 		return new FormGroup<CreatePipelinePostBodyFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_]+$')]),
 		});
 
 	}

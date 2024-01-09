@@ -70,8 +70,6 @@ export namespace MyNS {
 
 		/** Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements. */
 		Geometry?: Geometry;
-
-		/** Pattern: .*\S.* */
 		Id?: string | null;
 		Relationships?: Array<Relationship>;
 		EntityTypes?: Array<EntityType>;
@@ -103,8 +101,6 @@ export namespace MyNS {
 
 		/** Minimum: 0 */
 		ColumnSpan: FormControl<number | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Id: FormControl<string | null | undefined>,
 		SelectionStatus: FormControl<BlockSelectionStatus | null | undefined>,
 
@@ -307,21 +303,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [0-9A-Za-z\.\-_]*
 		 */
 		Bucket?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Version?: string | null;
 	}
@@ -332,29 +325,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [0-9A-Za-z\.\-_]*
 		 */
 		Bucket: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Version: FormControl<string | null | undefined>,
 	}
 	export function CreateS3ObjectFormGroup() {
 		return new FormGroup<S3ObjectFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[0-9A-Za-z\.\-_]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -369,7 +359,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*
 		 */
 		HumanLoopName: string;
 
@@ -390,7 +379,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 
@@ -402,7 +390,7 @@ export namespace MyNS {
 	}
 	export function CreateHumanLoopConfigFormGroup() {
 		return new FormGroup<HumanLoopConfigFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
@@ -569,7 +557,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken?: string | null;
 		Blocks?: Array<Block>;
@@ -583,7 +570,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
@@ -592,7 +578,7 @@ export namespace MyNS {
 	export function CreateGetDocumentAnalysisResponseFormGroup() {
 		return new FormGroup<GetDocumentAnalysisResponseFormProperties>({
 			JobStatus: new FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			AnalyzeDocumentModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -625,7 +611,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId: string;
 
@@ -635,7 +620,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken?: string | null;
 	}
@@ -645,7 +629,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId: FormControl<string | null | undefined>,
 
@@ -655,15 +638,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDocumentAnalysisRequestFormGroup() {
 		return new FormGroup<GetDocumentAnalysisRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -687,7 +669,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken?: string | null;
 		Blocks?: Array<Block>;
@@ -701,7 +682,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		StatusMessage: FormControl<string | null | undefined>,
@@ -710,7 +690,7 @@ export namespace MyNS {
 	export function CreateGetDocumentTextDetectionResponseFormGroup() {
 		return new FormGroup<GetDocumentTextDetectionResponseFormProperties>({
 			JobStatus: new FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			DetectDocumentTextModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -723,7 +703,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId: string;
 
@@ -733,7 +712,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken?: string | null;
 	}
@@ -743,7 +721,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId: FormControl<string | null | undefined>,
 
@@ -753,15 +730,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDocumentTextDetectionRequestFormGroup() {
 		return new FormGroup<GetDocumentTextDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -771,7 +747,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId?: string | null;
 	}
@@ -780,13 +755,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentAnalysisResponseFormGroup() {
 		return new FormGroup<StartDocumentAnalysisResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -805,14 +779,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		ClientRequestToken?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.\-:]+
 		 */
 		JobTag?: string | null;
 
@@ -824,21 +796,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.\-:]+
 		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentAnalysisRequestFormGroup() {
 		return new FormGroup<StartDocumentAnalysisRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -868,7 +838,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 20
-		 * Pattern: (^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)
 		 */
 		SNSTopicArn: string;
 
@@ -876,7 +845,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		 */
 		RoleArn: string;
 	}
@@ -888,7 +856,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 20
-		 * Pattern: (^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)
 		 */
 		SNSTopicArn: FormControl<string | null | undefined>,
 
@@ -896,14 +863,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateNotificationChannelFormGroup() {
 		return new FormGroup<NotificationChannelFormProperties>({
-			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(20)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(20), Validators.pattern('(^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
 
 	}
@@ -933,7 +899,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId?: string | null;
 	}
@@ -942,13 +907,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentTextDetectionResponseFormGroup() {
 		return new FormGroup<StartDocumentTextDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -964,14 +928,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		ClientRequestToken?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.\-:]+
 		 */
 		JobTag?: string | null;
 
@@ -983,21 +945,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.\-:]+
 		 */
 		JobTag: FormControl<string | null | undefined>,
 	}
 	export function CreateStartDocumentTextDetectionRequestFormGroup() {
 		return new FormGroup<StartDocumentTextDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}

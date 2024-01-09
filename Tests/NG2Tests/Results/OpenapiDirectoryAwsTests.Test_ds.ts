@@ -19,18 +19,10 @@ export namespace MyNS {
 
 	/** Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted. */
 	export interface SharedDirectory {
-
-		/** Pattern: ^(\d{12})$ */
 		OwnerAccountId?: string | null;
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		OwnerDirectoryId?: string | null;
 		ShareMethod?: SharedDirectoryShareMethod | null;
-
-		/** Pattern: ^(\d{12})$ */
 		SharedAccountId?: string | null;
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId?: string | null;
 		ShareStatus?: SharedDirectoryShareStatus | null;
 
@@ -42,18 +34,10 @@ export namespace MyNS {
 
 	/** Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted. */
 	export interface SharedDirectoryFormProperties {
-
-		/** Pattern: ^(\d{12})$ */
 		OwnerAccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		OwnerDirectoryId: FormControl<string | null | undefined>,
 		ShareMethod: FormControl<SharedDirectoryShareMethod | null | undefined>,
-
-		/** Pattern: ^(\d{12})$ */
 		SharedAccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId: FormControl<string | null | undefined>,
 		ShareStatus: FormControl<SharedDirectoryShareStatus | null | undefined>,
 
@@ -83,18 +67,12 @@ export namespace MyNS {
 
 	export interface AcceptSharedDirectoryRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SharedDirectoryId: string;
 	}
 	export interface AcceptSharedDirectoryRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SharedDirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptSharedDirectoryRequestFormGroup() {
@@ -166,10 +144,7 @@ export namespace MyNS {
 
 	export interface AddIpRoutesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/** Required */
@@ -178,10 +153,7 @@ export namespace MyNS {
 	}
 	export interface AddIpRoutesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 		UpdateSecurityGroupForDirectoryControllers: FormControl<boolean | null | undefined>,
 	}
@@ -196,35 +168,29 @@ export namespace MyNS {
 
 	/** IP address block. This is often the address block of the DNS server used for your on-premises domain.  */
 	export interface IpRoute {
-
-		/** Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([1-9]|[1-2][0-9]|3[0-2]))$ */
 		CidrIp?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description?: string | null;
 	}
 
 	/** IP address block. This is often the address block of the DNS server used for your on-premises domain.  */
 	export interface IpRouteFormProperties {
-
-		/** Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([1-9]|[1-2][0-9]|3[0-2]))$ */
 		CidrIp: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
 	export function CreateIpRouteFormGroup() {
 		return new FormGroup<IpRouteFormProperties>({
 			CidrIp: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
@@ -271,10 +237,7 @@ export namespace MyNS {
 
 	export interface AddTagsToResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[d]-[0-9a-f]{10}$
-		 */
+		/** Required */
 		ResourceId: string;
 
 		/** Required */
@@ -282,10 +245,7 @@ export namespace MyNS {
 	}
 	export interface AddTagsToResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[d]-[0-9a-f]{10}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateAddTagsToResourceRequestFormGroup() {
@@ -303,7 +263,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: string;
 
@@ -311,7 +270,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value: string;
 	}
@@ -323,7 +281,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 
@@ -331,14 +288,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -365,30 +321,18 @@ export namespace MyNS {
 
 	export interface CancelSchemaExtensionRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^e-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SchemaExtensionId: string;
 	}
 	export interface CancelSchemaExtensionRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^e-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SchemaExtensionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelSchemaExtensionRequestFormGroup() {
@@ -402,15 +346,11 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>ConnectDirectory</a> operation. */
 	export interface ConnectDirectoryResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 	}
 
 	/** Contains the results of the <a>ConnectDirectory</a> operation. */
 	export interface ConnectDirectoryResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateConnectDirectoryResultFormGroup() {
@@ -424,13 +364,8 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>ConnectDirectory</a> operation. */
 	export interface ConnectDirectoryRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$
-		 */
+		/** Required */
 		Name: string;
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName?: string | null;
 
 		/**
@@ -443,7 +378,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description?: string | null;
 
@@ -461,13 +395,8 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>ConnectDirectory</a> operation. */
 	export interface ConnectDirectoryRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName: FormControl<string | null | undefined>,
 
 		/**
@@ -480,7 +409,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -492,7 +420,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ShortName: new FormControl<string | null | undefined>(undefined),
 			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -504,10 +432,7 @@ export namespace MyNS {
 	/** Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created. */
 	export interface DirectoryConnectSettings {
 
-		/**
-		 * Required
-		 * Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$
-		 */
+		/** Required */
 		VpcId: string;
 
 		/** Required */
@@ -519,7 +444,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
 		 */
 		CustomerUserName: string;
 	}
@@ -527,23 +451,19 @@ export namespace MyNS {
 	/** Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created. */
 	export interface DirectoryConnectSettingsFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$
-		 */
+		/** Required */
 		VpcId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
 		 */
 		CustomerUserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDirectoryConnectSettingsFormGroup() {
 		return new FormGroup<DirectoryConnectSettingsFormProperties>({
 			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			CustomerUserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
+			CustomerUserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
 		});
 
 	}
@@ -561,35 +481,29 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>CreateAlias</a> operation. */
 	export interface CreateAliasResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias?: string | null;
 	}
 
 	/** Contains the results of the <a>CreateAlias</a> operation. */
 	export interface CreateAliasResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAliasResultFormGroup() {
 		return new FormGroup<CreateAliasResultFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1)]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
 		});
 
 	}
@@ -598,17 +512,13 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateAlias</a> operation. */
 	export interface CreateAliasRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
 		 * Required
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias: string;
 	}
@@ -616,24 +526,20 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateAlias</a> operation. */
 	export interface CreateAliasRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAliasRequestFormGroup() {
 		return new FormGroup<CreateAliasRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(62), Validators.minLength(1)]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
 		});
 
 	}
@@ -662,7 +568,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [&\w+-.@]+
 		 */
 		ComputerId?: string | null;
 
@@ -680,7 +585,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [&\w+-.@]+
 		 */
 		ComputerId: FormControl<string | null | undefined>,
 
@@ -692,7 +596,7 @@ export namespace MyNS {
 	}
 	export function CreateComputerFormGroup() {
 		return new FormGroup<ComputerFormProperties>({
-			ComputerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ComputerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
 			ComputerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(1)]),
 		});
 
@@ -726,10 +630,7 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateComputer</a> operation. */
 	export interface CreateComputerRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
@@ -743,7 +644,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 8
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Password: string;
 
@@ -758,10 +658,7 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateComputer</a> operation. */
 	export interface CreateComputerRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
@@ -775,7 +672,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 8
-		 * Pattern: [\u0020-\u00FF]+
 		 */
 		Password: FormControl<string | null | undefined>,
 
@@ -789,7 +685,7 @@ export namespace MyNS {
 		return new FormGroup<CreateComputerRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ComputerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(1)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(8)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(8), Validators.pattern('[\u0020-\u00FF]+')]),
 			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
 		});
 
@@ -833,16 +729,10 @@ export namespace MyNS {
 	/** Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain. */
 	export interface CreateConditionalForwarderRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: string;
 
 		/** Required */
@@ -852,16 +742,10 @@ export namespace MyNS {
 	/** Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain. */
 	export interface CreateConditionalForwarderRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConditionalForwarderRequestFormGroup() {
@@ -875,15 +759,11 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>CreateDirectory</a> operation. */
 	export interface CreateDirectoryResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 	}
 
 	/** Contains the results of the <a>CreateDirectory</a> operation. */
 	export interface CreateDirectoryResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDirectoryResultFormGroup() {
@@ -897,25 +777,16 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateDirectory</a> operation.  */
 	export interface CreateDirectoryRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$
-		 */
+		/** Required */
 		Name: string;
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: (?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*
-		 */
+		/** Required */
 		Password: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description?: string | null;
 
@@ -930,25 +801,16 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateDirectory</a> operation.  */
 	export interface CreateDirectoryRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: (?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*
-		 */
+		/** Required */
 		Password: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -960,7 +822,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ShortName: new FormControl<string | null | undefined>(undefined),
 			Password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -970,10 +832,7 @@ export namespace MyNS {
 	/** Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation. */
 	export interface DirectoryVpcSettings {
 
-		/**
-		 * Required
-		 * Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$
-		 */
+		/** Required */
 		VpcId: string;
 
 		/** Required */
@@ -983,10 +842,7 @@ export namespace MyNS {
 	/** Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation. */
 	export interface DirectoryVpcSettingsFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$
-		 */
+		/** Required */
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateDirectoryVpcSettingsFormGroup() {
@@ -1008,40 +864,32 @@ export namespace MyNS {
 
 	export interface CreateLogSubscriptionRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
 		 * Required
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [-._/#A-Za-z0-9]+
 		 */
 		LogGroupName: string;
 	}
 	export interface CreateLogSubscriptionRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [-._/#A-Za-z0-9]+
 		 */
 		LogGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateLogSubscriptionRequestFormGroup() {
 		return new FormGroup<CreateLogSubscriptionRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[-._/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -1059,15 +907,11 @@ export namespace MyNS {
 
 	/** Result of a CreateMicrosoftAD request. */
 	export interface CreateMicrosoftADResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 	}
 
 	/** Result of a CreateMicrosoftAD request. */
 	export interface CreateMicrosoftADResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMicrosoftADResultFormGroup() {
@@ -1081,25 +925,16 @@ export namespace MyNS {
 	/** Creates an AWS Managed Microsoft AD directory. */
 	export interface CreateMicrosoftADRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$
-		 */
+		/** Required */
 		Name: string;
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: (?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*
-		 */
+		/** Required */
 		Password: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description?: string | null;
 
@@ -1115,25 +950,16 @@ export namespace MyNS {
 	/** Creates an AWS Managed Microsoft AD directory. */
 	export interface CreateMicrosoftADRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$
-		 */
+		/** Required */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: (?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*
-		 */
+		/** Required */
 		Password: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 		Edition: FormControl<CreateMicrosoftADRequestEdition | null | undefined>,
@@ -1143,7 +969,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ShortName: new FormControl<string | null | undefined>(undefined),
 			Password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Edition: new FormControl<CreateMicrosoftADRequestEdition | null | undefined>(undefined),
 		});
 
@@ -1154,15 +980,11 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>CreateSnapshot</a> operation. */
 	export interface CreateSnapshotResult {
-
-		/** Pattern: ^s-[0-9a-f]{10}$ */
 		SnapshotId?: string | null;
 	}
 
 	/** Contains the results of the <a>CreateSnapshot</a> operation. */
 	export interface CreateSnapshotResultFormProperties {
-
-		/** Pattern: ^s-[0-9a-f]{10}$ */
 		SnapshotId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSnapshotResultFormGroup() {
@@ -1176,16 +998,12 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateSnapshot</a> operation. */
 	export interface CreateSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Name?: string | null;
 	}
@@ -1193,23 +1011,19 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>CreateSnapshot</a> operation. */
 	export interface CreateSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSnapshotRequestFormGroup() {
 		return new FormGroup<CreateSnapshotRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
@@ -1227,15 +1041,11 @@ export namespace MyNS {
 
 	/** The result of a CreateTrust request. */
 	export interface CreateTrustResult {
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId?: string | null;
 	}
 
 	/** The result of a CreateTrust request. */
 	export interface CreateTrustResultFormProperties {
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateTrustResultFormGroup() {
@@ -1249,23 +1059,16 @@ export namespace MyNS {
 	/** <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p> <p>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p> */
 	export interface CreateTrustRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: string;
 
 		/**
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (.|\s)*\S(.|\s)*
 		 */
 		TrustPassword: string;
 
@@ -1279,23 +1082,16 @@ export namespace MyNS {
 	/** <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p> <p>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p> */
 	export interface CreateTrustRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: (.|\s)*\S(.|\s)*
 		 */
 		TrustPassword: FormControl<string | null | undefined>,
 
@@ -1308,7 +1104,7 @@ export namespace MyNS {
 		return new FormGroup<CreateTrustRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TrustPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			TrustPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('(.|\s)*\S(.|\s)*')]),
 			TrustDirection: new FormControl<CreateTrustRequestTrustDirection | null | undefined>(undefined, [Validators.required]),
 			TrustType: new FormControl<CreateTrustRequestTrustType | null | undefined>(undefined),
 			SelectiveAuth: new FormControl<CreateTrustRequestSelectiveAuth | null | undefined>(undefined),
@@ -1340,32 +1136,20 @@ export namespace MyNS {
 	/** Deletes a conditional forwarder. */
 	export interface DeleteConditionalForwarderRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: string;
 	}
 
 	/** Deletes a conditional forwarder. */
 	export interface DeleteConditionalForwarderRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConditionalForwarderRequestFormGroup() {
@@ -1379,15 +1163,11 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>DeleteDirectory</a> operation. */
 	export interface DeleteDirectoryResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 	}
 
 	/** Contains the results of the <a>DeleteDirectory</a> operation. */
 	export interface DeleteDirectoryResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDirectoryResultFormGroup() {
@@ -1401,20 +1181,14 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>DeleteDirectory</a> operation. */
 	export interface DeleteDirectoryRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 	}
 
 	/** Contains the inputs for the <a>DeleteDirectory</a> operation. */
 	export interface DeleteDirectoryRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDirectoryRequestFormGroup() {
@@ -1436,18 +1210,12 @@ export namespace MyNS {
 
 	export interface DeleteLogSubscriptionRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 	}
 	export interface DeleteLogSubscriptionRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLogSubscriptionRequestFormGroup() {
@@ -1460,15 +1228,11 @@ export namespace MyNS {
 
 	/** Contains the results of the <a>DeleteSnapshot</a> operation. */
 	export interface DeleteSnapshotResult {
-
-		/** Pattern: ^s-[0-9a-f]{10}$ */
 		SnapshotId?: string | null;
 	}
 
 	/** Contains the results of the <a>DeleteSnapshot</a> operation. */
 	export interface DeleteSnapshotResultFormProperties {
-
-		/** Pattern: ^s-[0-9a-f]{10}$ */
 		SnapshotId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSnapshotResultFormGroup() {
@@ -1482,20 +1246,14 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>DeleteSnapshot</a> operation. */
 	export interface DeleteSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^s-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SnapshotId: string;
 	}
 
 	/** Contains the inputs for the <a>DeleteSnapshot</a> operation. */
 	export interface DeleteSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^s-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SnapshotId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSnapshotRequestFormGroup() {
@@ -1508,15 +1266,11 @@ export namespace MyNS {
 
 	/** The result of a DeleteTrust request. */
 	export interface DeleteTrustResult {
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId?: string | null;
 	}
 
 	/** The result of a DeleteTrust request. */
 	export interface DeleteTrustResultFormProperties {
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTrustResultFormGroup() {
@@ -1530,10 +1284,7 @@ export namespace MyNS {
 	/** Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain. */
 	export interface DeleteTrustRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^t-[0-9a-f]{10}$
-		 */
+		/** Required */
 		TrustId: string;
 		DeleteAssociatedConditionalForwarder?: boolean | null;
 	}
@@ -1541,10 +1292,7 @@ export namespace MyNS {
 	/** Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain. */
 	export interface DeleteTrustRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^t-[0-9a-f]{10}$
-		 */
+		/** Required */
 		TrustId: FormControl<string | null | undefined>,
 		DeleteAssociatedConditionalForwarder: FormControl<boolean | null | undefined>,
 	}
@@ -1568,30 +1316,18 @@ export namespace MyNS {
 
 	export interface DeregisterCertificateRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^c-[0-9a-f]{10}$
-		 */
+		/** Required */
 		CertificateId: string;
 	}
 	export interface DeregisterCertificateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^c-[0-9a-f]{10}$
-		 */
+		/** Required */
 		CertificateId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterCertificateRequestFormGroup() {
@@ -1650,17 +1386,13 @@ export namespace MyNS {
 	/** Removes the specified directory as a publisher to the specified SNS topic. */
 	export interface DeregisterEventTopicRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		TopicName: string;
 	}
@@ -1668,24 +1400,20 @@ export namespace MyNS {
 	/** Removes the specified directory as a publisher to the specified SNS topic. */
 	export interface DeregisterEventTopicRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		TopicName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterEventTopicRequestFormGroup() {
 		return new FormGroup<DeregisterEventTopicRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 		});
 
 	}
@@ -1706,8 +1434,6 @@ export namespace MyNS {
 
 	/** Information about the certificate. */
 	export interface Certificate {
-
-		/** Pattern: ^c-[0-9a-f]{10}$ */
 		CertificateId?: string | null;
 		State?: CertificateState | null;
 		StateReason?: string | null;
@@ -1718,8 +1444,6 @@ export namespace MyNS {
 
 	/** Information about the certificate. */
 	export interface CertificateFormProperties {
-
-		/** Pattern: ^c-[0-9a-f]{10}$ */
 		CertificateId: FormControl<string | null | undefined>,
 		State: FormControl<CertificateState | null | undefined>,
 		StateReason: FormControl<string | null | undefined>,
@@ -1743,30 +1467,18 @@ export namespace MyNS {
 
 	export interface DescribeCertificateRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^c-[0-9a-f]{10}$
-		 */
+		/** Required */
 		CertificateId: string;
 	}
 	export interface DescribeCertificateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^c-[0-9a-f]{10}$
-		 */
+		/** Required */
 		CertificateId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCertificateRequestFormGroup() {
@@ -1795,8 +1507,6 @@ export namespace MyNS {
 
 	/** Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain. */
 	export interface ConditionalForwarder {
-
-		/** Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$ */
 		RemoteDomainName?: string | null;
 		DnsIpAddrs?: Array<string>;
 		ReplicationScope?: ConditionalForwarderReplicationScope | null;
@@ -1804,8 +1514,6 @@ export namespace MyNS {
 
 	/** Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain. */
 	export interface ConditionalForwarderFormProperties {
-
-		/** Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$ */
 		RemoteDomainName: FormControl<string | null | undefined>,
 		ReplicationScope: FormControl<ConditionalForwarderReplicationScope | null | undefined>,
 	}
@@ -1823,10 +1531,7 @@ export namespace MyNS {
 	/** Describes a conditional forwarder. */
 	export interface DescribeConditionalForwardersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 		RemoteDomainNames?: Array<string>;
 	}
@@ -1834,10 +1539,7 @@ export namespace MyNS {
 	/** Describes a conditional forwarder. */
 	export interface DescribeConditionalForwardersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeConditionalForwardersRequestFormGroup() {
@@ -1870,14 +1572,8 @@ export namespace MyNS {
 
 	/** Contains information about an AWS Directory Service directory. */
 	export interface DirectoryDescription {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
-
-		/** Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$ */
 		Name?: string | null;
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName?: string | null;
 		Size?: ConnectDirectoryRequestSize | null;
 		Edition?: CreateMicrosoftADRequestEdition | null;
@@ -1885,7 +1581,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias?: string | null;
 
@@ -1898,7 +1593,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description?: string | null;
 		DnsIpAddrs?: Array<string>;
@@ -1933,14 +1627,8 @@ export namespace MyNS {
 
 	/** Contains information about an AWS Directory Service directory. */
 	export interface DirectoryDescriptionFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$ */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$ */
 		ShortName: FormControl<string | null | undefined>,
 		Size: FormControl<ConnectDirectoryRequestSize | null | undefined>,
 		Edition: FormControl<CreateMicrosoftADRequestEdition | null | undefined>,
@@ -1948,7 +1636,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 62
 		 * Min length: 1
-		 * Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*
 		 */
 		Alias: FormControl<string | null | undefined>,
 
@@ -1961,7 +1648,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 		Stage: FormControl<DirectoryDescriptionStage | null | undefined>,
@@ -1987,9 +1673,9 @@ export namespace MyNS {
 			ShortName: new FormControl<string | null | undefined>(undefined),
 			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined),
 			Edition: new FormControl<CreateMicrosoftADRequestEdition | null | undefined>(undefined),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1)]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
 			AccessUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Stage: new FormControl<DirectoryDescriptionStage | null | undefined>(undefined),
 			ShareStatus: new FormControl<SharedDirectoryShareStatus | null | undefined>(undefined),
 			ShareMethod: new FormControl<SharedDirectoryShareMethod | null | undefined>(undefined),
@@ -2012,23 +1698,15 @@ export namespace MyNS {
 
 	/** Contains information about the directory. */
 	export interface DirectoryVpcSettingsDescription {
-
-		/** Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$ */
 		VpcId?: string | null;
 		SubnetIds?: Array<string>;
-
-		/** Pattern: ^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$ */
 		SecurityGroupId?: string | null;
 		AvailabilityZones?: Array<string>;
 	}
 
 	/** Contains information about the directory. */
 	export interface DirectoryVpcSettingsDescriptionFormProperties {
-
-		/** Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$ */
 		VpcId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$ */
 		SecurityGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateDirectoryVpcSettingsDescriptionFormGroup() {
@@ -2042,18 +1720,11 @@ export namespace MyNS {
 
 	/** Contains information about an AD Connector directory. */
 	export interface DirectoryConnectSettingsDescription {
-
-		/** Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$ */
 		VpcId?: string | null;
 		SubnetIds?: Array<string>;
 
-		/**
-		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
-		 */
+		/** Min length: 1 */
 		CustomerUserName?: string | null;
-
-		/** Pattern: ^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$ */
 		SecurityGroupId?: string | null;
 		AvailabilityZones?: Array<string>;
 		ConnectIps?: Array<string>;
@@ -2061,23 +1732,16 @@ export namespace MyNS {
 
 	/** Contains information about an AD Connector directory. */
 	export interface DirectoryConnectSettingsDescriptionFormProperties {
-
-		/** Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$ */
 		VpcId: FormControl<string | null | undefined>,
 
-		/**
-		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
-		 */
+		/** Min length: 1 */
 		CustomerUserName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$ */
 		SecurityGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateDirectoryConnectSettingsDescriptionFormGroup() {
 		return new FormGroup<DirectoryConnectSettingsDescriptionFormProperties>({
 			VpcId: new FormControl<string | null | undefined>(undefined),
-			CustomerUserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			CustomerUserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
 			SecurityGroupId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2176,11 +1840,7 @@ export namespace MyNS {
 
 	/** Describes the directory owner account details that have been shared to the directory consumer account. */
 	export interface OwnerDirectoryDescription {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
-
-		/** Pattern: ^(\d{12})$ */
 		AccountId?: string | null;
 		DnsIpAddrs?: Array<string>;
 
@@ -2194,11 +1854,7 @@ export namespace MyNS {
 
 	/** Describes the directory owner account details that have been shared to the directory consumer account. */
 	export interface OwnerDirectoryDescriptionFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(\d{12})$ */
 		AccountId: FormControl<string | null | undefined>,
 		RadiusStatus: FormControl<DirectoryDescriptionRadiusStatus | null | undefined>,
 	}
@@ -2265,20 +1921,10 @@ export namespace MyNS {
 
 	/** Contains information about the domain controllers for a specified directory. */
 	export interface DomainController {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
-
-		/** Pattern: ^dc-[0-9a-f]{10}$ */
 		DomainControllerId?: string | null;
-
-		/** Pattern: ^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$ */
 		DnsIpAddr?: string | null;
-
-		/** Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$ */
 		VpcId?: string | null;
-
-		/** Pattern: ^(subnet-[0-9a-f]{8}|subnet-[0-9a-f]{17})$ */
 		SubnetId?: string | null;
 		AvailabilityZone?: string | null;
 		Status?: DomainControllerStatus | null;
@@ -2289,20 +1935,10 @@ export namespace MyNS {
 
 	/** Contains information about the domain controllers for a specified directory. */
 	export interface DomainControllerFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^dc-[0-9a-f]{10}$ */
 		DomainControllerId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$ */
 		DnsIpAddr: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$ */
 		VpcId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(subnet-[0-9a-f]{8}|subnet-[0-9a-f]{17})$ */
 		SubnetId: FormControl<string | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 		Status: FormControl<DomainControllerStatus | null | undefined>,
@@ -2330,10 +1966,7 @@ export namespace MyNS {
 
 	export interface DescribeDomainControllersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 		DomainControllerIds?: Array<string>;
 		NextToken?: string | null;
@@ -2343,10 +1976,7 @@ export namespace MyNS {
 	}
 	export interface DescribeDomainControllersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2380,14 +2010,11 @@ export namespace MyNS {
 
 	/** Information about SNS topic and AWS Directory Service directory associations. */
 	export interface EventTopic {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		TopicName?: string | null;
 		TopicArn?: string | null;
@@ -2397,14 +2024,11 @@ export namespace MyNS {
 
 	/** Information about SNS topic and AWS Directory Service directory associations. */
 	export interface EventTopicFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		TopicName: FormControl<string | null | undefined>,
 		TopicArn: FormControl<string | null | undefined>,
@@ -2414,7 +2038,7 @@ export namespace MyNS {
 	export function CreateEventTopicFormGroup() {
 		return new FormGroup<EventTopicFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 			TopicArn: new FormControl<string | null | undefined>(undefined),
 			CreatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<EventTopicStatus | null | undefined>(undefined),
@@ -2427,16 +2051,12 @@ export namespace MyNS {
 
 	/** Describes event topics. */
 	export interface DescribeEventTopicsRequest {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 		TopicNames?: Array<string>;
 	}
 
 	/** Describes event topics. */
 	export interface DescribeEventTopicsRequestFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeEventTopicsRequestFormGroup() {
@@ -2487,10 +2107,7 @@ export namespace MyNS {
 
 	export interface DescribeLDAPSSettingsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 		Type?: DescribeLDAPSSettingsRequestType | null;
 		NextToken?: string | null;
@@ -2503,10 +2120,7 @@ export namespace MyNS {
 	}
 	export interface DescribeLDAPSSettingsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 		Type: FormControl<DescribeLDAPSSettingsRequestType | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
@@ -2545,10 +2159,7 @@ export namespace MyNS {
 
 	export interface DescribeSharedDirectoriesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		OwnerDirectoryId: string;
 
 		/** A list of directory identifiers. */
@@ -2560,10 +2171,7 @@ export namespace MyNS {
 	}
 	export interface DescribeSharedDirectoriesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		OwnerDirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2602,18 +2210,13 @@ export namespace MyNS {
 
 	/** Describes a directory snapshot. */
 	export interface Snapshot {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
-
-		/** Pattern: ^s-[0-9a-f]{10}$ */
 		SnapshotId?: string | null;
 		Type?: SnapshotType | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Name?: string | null;
 		Status?: DirectoryDescriptionRadiusStatus | null;
@@ -2622,18 +2225,13 @@ export namespace MyNS {
 
 	/** Describes a directory snapshot. */
 	export interface SnapshotFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^s-[0-9a-f]{10}$ */
 		SnapshotId: FormControl<string | null | undefined>,
 		Type: FormControl<SnapshotType | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<DirectoryDescriptionRadiusStatus | null | undefined>,
@@ -2644,7 +2242,7 @@ export namespace MyNS {
 			DirectoryId: new FormControl<string | null | undefined>(undefined),
 			SnapshotId: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<SnapshotType | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Status: new FormControl<DirectoryDescriptionRadiusStatus | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2656,8 +2254,6 @@ export namespace MyNS {
 
 	/** Contains the inputs for the <a>DescribeSnapshots</a> operation. */
 	export interface DescribeSnapshotsRequest {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 
 		/** A list of directory snapshot identifiers. */
@@ -2670,8 +2266,6 @@ export namespace MyNS {
 
 	/** Contains the inputs for the <a>DescribeSnapshots</a> operation. */
 	export interface DescribeSnapshotsRequestFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2708,14 +2302,8 @@ export namespace MyNS {
 
 	/** Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
 	export interface Trust {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId?: string | null;
-
-		/** Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$ */
 		RemoteDomainName?: string | null;
 		TrustType?: CreateTrustRequestTrustType | null;
 		TrustDirection?: TrustTrustDirection | null;
@@ -2729,14 +2317,8 @@ export namespace MyNS {
 
 	/** Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
 	export interface TrustFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$ */
 		RemoteDomainName: FormControl<string | null | undefined>,
 		TrustType: FormControl<CreateTrustRequestTrustType | null | undefined>,
 		TrustDirection: FormControl<TrustTrustDirection | null | undefined>,
@@ -2771,8 +2353,6 @@ export namespace MyNS {
 
 	/** Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships. */
 	export interface DescribeTrustsRequest {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 		TrustIds?: Array<string>;
 		NextToken?: string | null;
@@ -2783,8 +2363,6 @@ export namespace MyNS {
 
 	/** Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships. */
 	export interface DescribeTrustsRequestFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2812,10 +2390,7 @@ export namespace MyNS {
 
 	export interface DisableLDAPSRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/** Required */
@@ -2823,10 +2398,7 @@ export namespace MyNS {
 	}
 	export interface DisableLDAPSRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -2868,20 +2440,14 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>DisableRadius</a> operation. */
 	export interface DisableRadiusRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 	}
 
 	/** Contains the inputs for the <a>DisableRadius</a> operation. */
 	export interface DisableRadiusRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableRadiusRequestFormGroup() {
@@ -2909,16 +2475,10 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>DisableSso</a> operation. */
 	export interface DisableSsoRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
-		 */
+		/** Min length: 1 */
 		UserName?: string | null;
 
 		/**
@@ -2931,16 +2491,10 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>DisableSso</a> operation. */
 	export interface DisableSsoRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
-		 */
+		/** Min length: 1 */
 		UserName: FormControl<string | null | undefined>,
 
 		/**
@@ -2952,7 +2506,7 @@ export namespace MyNS {
 	export function CreateDisableSsoRequestFormGroup() {
 		return new FormGroup<DisableSsoRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
 			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
@@ -2970,10 +2524,7 @@ export namespace MyNS {
 
 	export interface EnableLDAPSRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/** Required */
@@ -2981,10 +2532,7 @@ export namespace MyNS {
 	}
 	export interface EnableLDAPSRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -3026,10 +2574,7 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>EnableRadius</a> operation. */
 	export interface EnableRadiusRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
@@ -3042,10 +2587,7 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>EnableRadius</a> operation. */
 	export interface EnableRadiusRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateEnableRadiusRequestFormGroup() {
@@ -3073,16 +2615,10 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>EnableSso</a> operation. */
 	export interface EnableSsoRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
-		 */
+		/** Min length: 1 */
 		UserName?: string | null;
 
 		/**
@@ -3095,16 +2631,10 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>EnableSso</a> operation. */
 	export interface EnableSsoRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9._-]+
-		 */
+		/** Min length: 1 */
 		UserName: FormControl<string | null | undefined>,
 
 		/**
@@ -3116,7 +2646,7 @@ export namespace MyNS {
 	export function CreateEnableSsoRequestFormGroup() {
 		return new FormGroup<EnableSsoRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
 			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
@@ -3270,20 +2800,14 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>GetSnapshotLimits</a> operation. */
 	export interface GetSnapshotLimitsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 	}
 
 	/** Contains the inputs for the <a>GetSnapshotLimits</a> operation. */
 	export interface GetSnapshotLimitsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSnapshotLimitsRequestFormGroup() {
@@ -3310,8 +2834,6 @@ export namespace MyNS {
 
 	/** Contains general information about a certificate. */
 	export interface CertificateInfo {
-
-		/** Pattern: ^c-[0-9a-f]{10}$ */
 		CertificateId?: string | null;
 		CommonName?: string | null;
 		State?: CertificateState | null;
@@ -3320,8 +2842,6 @@ export namespace MyNS {
 
 	/** Contains general information about a certificate. */
 	export interface CertificateInfoFormProperties {
-
-		/** Pattern: ^c-[0-9a-f]{10}$ */
 		CertificateId: FormControl<string | null | undefined>,
 		CommonName: FormControl<string | null | undefined>,
 		State: FormControl<CertificateState | null | undefined>,
@@ -3339,10 +2859,7 @@ export namespace MyNS {
 
 	export interface ListCertificatesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 		NextToken?: string | null;
 
@@ -3354,10 +2871,7 @@ export namespace MyNS {
 	}
 	export interface ListCertificatesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3393,11 +2907,7 @@ export namespace MyNS {
 
 	/** Information about one or more IP address blocks. */
 	export interface IpRouteInfo {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
-
-		/** Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([1-9]|[1-2][0-9]|3[0-2]))$ */
 		CidrIp?: string | null;
 		IpRouteStatusMsg?: IpRouteInfoIpRouteStatusMsg | null;
 		AddedDateTime?: Date | null;
@@ -3406,18 +2916,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description?: string | null;
 	}
 
 	/** Information about one or more IP address blocks. */
 	export interface IpRouteInfoFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([1-9]|[1-2][0-9]|3[0-2]))$ */
 		CidrIp: FormControl<string | null | undefined>,
 		IpRouteStatusMsg: FormControl<IpRouteInfoIpRouteStatusMsg | null | undefined>,
 		AddedDateTime: FormControl<Date | null | undefined>,
@@ -3426,7 +2931,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -3437,7 +2941,7 @@ export namespace MyNS {
 			IpRouteStatusMsg: new FormControl<IpRouteInfoIpRouteStatusMsg | null | undefined>(undefined),
 			AddedDateTime: new FormControl<Date | null | undefined>(undefined),
 			IpRouteStatusReason: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
@@ -3446,10 +2950,7 @@ export namespace MyNS {
 
 	export interface ListIpRoutesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 		NextToken?: string | null;
 
@@ -3458,10 +2959,7 @@ export namespace MyNS {
 	}
 	export interface ListIpRoutesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3494,14 +2992,11 @@ export namespace MyNS {
 
 	/** Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination. */
 	export interface LogSubscription {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [-._/#A-Za-z0-9]+
 		 */
 		LogGroupName?: string | null;
 		SubscriptionCreatedDateTime?: Date | null;
@@ -3509,14 +3004,11 @@ export namespace MyNS {
 
 	/** Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination. */
 	export interface LogSubscriptionFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [-._/#A-Za-z0-9]+
 		 */
 		LogGroupName: FormControl<string | null | undefined>,
 		SubscriptionCreatedDateTime: FormControl<Date | null | undefined>,
@@ -3524,15 +3016,13 @@ export namespace MyNS {
 	export function CreateLogSubscriptionFormGroup() {
 		return new FormGroup<LogSubscriptionFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[-._/#A-Za-z0-9]+')]),
 			SubscriptionCreatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ListLogSubscriptionsRequest {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
 		NextToken?: string | null;
 
@@ -3540,8 +3030,6 @@ export namespace MyNS {
 		Limit?: number | null;
 	}
 	export interface ListLogSubscriptionsRequestFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3574,17 +3062,12 @@ export namespace MyNS {
 
 	/** Information about a schema extension. */
 	export interface SchemaExtensionInfo {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId?: string | null;
-
-		/** Pattern: ^e-[0-9a-f]{10}$ */
 		SchemaExtensionId?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description?: string | null;
 		SchemaExtensionStatus?: SchemaExtensionInfoSchemaExtensionStatus | null;
@@ -3595,17 +3078,12 @@ export namespace MyNS {
 
 	/** Information about a schema extension. */
 	export interface SchemaExtensionInfoFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		DirectoryId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^e-[0-9a-f]{10}$ */
 		SchemaExtensionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 		SchemaExtensionStatus: FormControl<SchemaExtensionInfoSchemaExtensionStatus | null | undefined>,
@@ -3617,7 +3095,7 @@ export namespace MyNS {
 		return new FormGroup<SchemaExtensionInfoFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined),
 			SchemaExtensionId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			SchemaExtensionStatus: new FormControl<SchemaExtensionInfoSchemaExtensionStatus | null | undefined>(undefined),
 			SchemaExtensionStatusReason: new FormControl<string | null | undefined>(undefined),
 			StartDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3630,10 +3108,7 @@ export namespace MyNS {
 
 	export interface ListSchemaExtensionsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 		NextToken?: string | null;
 
@@ -3642,10 +3117,7 @@ export namespace MyNS {
 	}
 	export interface ListSchemaExtensionsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3677,10 +3149,7 @@ export namespace MyNS {
 
 	export interface ListTagsForResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[d]-[0-9a-f]{10}$
-		 */
+		/** Required */
 		ResourceId: string;
 		NextToken?: string | null;
 
@@ -3689,10 +3158,7 @@ export namespace MyNS {
 	}
 	export interface ListTagsForResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[d]-[0-9a-f]{10}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3709,13 +3175,9 @@ export namespace MyNS {
 	}
 
 	export interface RegisterCertificateResult {
-
-		/** Pattern: ^c-[0-9a-f]{10}$ */
 		CertificateId?: string | null;
 	}
 	export interface RegisterCertificateResultFormProperties {
-
-		/** Pattern: ^c-[0-9a-f]{10}$ */
 		CertificateId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterCertificateResultFormGroup() {
@@ -3727,10 +3189,7 @@ export namespace MyNS {
 
 	export interface RegisterCertificateRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
@@ -3742,10 +3201,7 @@ export namespace MyNS {
 	}
 	export interface RegisterCertificateRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
@@ -3811,17 +3267,13 @@ export namespace MyNS {
 	/** Registers a new event topic. */
 	export interface RegisterEventTopicRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		TopicName: string;
 	}
@@ -3829,36 +3281,28 @@ export namespace MyNS {
 	/** Registers a new event topic. */
 	export interface RegisterEventTopicRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_-]+
 		 */
 		TopicName: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterEventTopicRequestFormGroup() {
 		return new FormGroup<RegisterEventTopicRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
 		});
 
 	}
 
 	export interface RejectSharedDirectoryResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId?: string | null;
 	}
 	export interface RejectSharedDirectoryResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateRejectSharedDirectoryResultFormGroup() {
@@ -3870,18 +3314,12 @@ export namespace MyNS {
 
 	export interface RejectSharedDirectoryRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SharedDirectoryId: string;
 	}
 	export interface RejectSharedDirectoryRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SharedDirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateRejectSharedDirectoryRequestFormGroup() {
@@ -3903,10 +3341,7 @@ export namespace MyNS {
 
 	export interface RemoveIpRoutesRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/** Required */
@@ -3914,10 +3349,7 @@ export namespace MyNS {
 	}
 	export interface RemoveIpRoutesRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveIpRoutesRequestFormGroup() {
@@ -3939,10 +3371,7 @@ export namespace MyNS {
 
 	export interface RemoveTagsFromResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^[d]-[0-9a-f]{10}$
-		 */
+		/** Required */
 		ResourceId: string;
 
 		/** Required */
@@ -3950,10 +3379,7 @@ export namespace MyNS {
 	}
 	export interface RemoveTagsFromResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[d]-[0-9a-f]{10}$
-		 */
+		/** Required */
 		ResourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateRemoveTagsFromResourceRequestFormGroup() {
@@ -3975,17 +3401,13 @@ export namespace MyNS {
 
 	export interface ResetUserPasswordRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!.*\\|.*"|.*\/|.*\[|.*\]|.*:|.*;|.*\||.*=|.*,|.*\+|.*\*|.*\?|.*<|.*>|.*@).*$
 		 */
 		UserName: string;
 
@@ -3998,17 +3420,13 @@ export namespace MyNS {
 	}
 	export interface ResetUserPasswordRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!.*\\|.*"|.*\/|.*\[|.*\]|.*:|.*;|.*\||.*=|.*,|.*\+|.*\*|.*\?|.*<|.*>|.*@).*$
 		 */
 		UserName: FormControl<string | null | undefined>,
 
@@ -4022,7 +3440,7 @@ export namespace MyNS {
 	export function CreateResetUserPasswordRequestFormGroup() {
 		return new FormGroup<ResetUserPasswordRequestFormProperties>({
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!.*\\|.*"|.*\/|.*\[|.*\]|.*:|.*;|.*\||.*=|.*,|.*\+|.*\*|.*\?|.*<|.*>|.*@).*$')]),
 			NewPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(127), Validators.minLength(1)]),
 		});
 
@@ -4066,20 +3484,14 @@ export namespace MyNS {
 	/** An object representing the inputs for the <a>RestoreFromSnapshot</a> operation. */
 	export interface RestoreFromSnapshotRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^s-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SnapshotId: string;
 	}
 
 	/** An object representing the inputs for the <a>RestoreFromSnapshot</a> operation. */
 	export interface RestoreFromSnapshotRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^s-[0-9a-f]{10}$
-		 */
+		/** Required */
 		SnapshotId: FormControl<string | null | undefined>,
 	}
 	export function CreateRestoreFromSnapshotRequestFormGroup() {
@@ -4090,13 +3502,9 @@ export namespace MyNS {
 	}
 
 	export interface ShareDirectoryResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId?: string | null;
 	}
 	export interface ShareDirectoryResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateShareDirectoryResultFormGroup() {
@@ -4108,10 +3516,7 @@ export namespace MyNS {
 
 	export interface ShareDirectoryRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/** Max length: 1024 */
@@ -4128,10 +3533,7 @@ export namespace MyNS {
 	}
 	export interface ShareDirectoryRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/** Max length: 1024 */
@@ -4228,13 +3630,9 @@ export namespace MyNS {
 	}
 
 	export interface StartSchemaExtensionResult {
-
-		/** Pattern: ^e-[0-9a-f]{10}$ */
 		SchemaExtensionId?: string | null;
 	}
 	export interface StartSchemaExtensionResultFormProperties {
-
-		/** Pattern: ^e-[0-9a-f]{10}$ */
 		SchemaExtensionId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSchemaExtensionResultFormGroup() {
@@ -4246,10 +3644,7 @@ export namespace MyNS {
 
 	export interface StartSchemaExtensionRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/** Required */
@@ -4266,16 +3661,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: string;
 	}
 	export interface StartSchemaExtensionRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -4292,7 +3683,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 0
-		 * Pattern: ^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -4301,19 +3691,15 @@ export namespace MyNS {
 			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CreateSnapshotBeforeSchemaExtension: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			LdifContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500000), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
 
 	export interface UnshareDirectoryResult {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId?: string | null;
 	}
 	export interface UnshareDirectoryResultFormProperties {
-
-		/** Pattern: ^d-[0-9a-f]{10}$ */
 		SharedDirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateUnshareDirectoryResultFormGroup() {
@@ -4325,10 +3711,7 @@ export namespace MyNS {
 
 	export interface UnshareDirectoryRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
@@ -4339,10 +3722,7 @@ export namespace MyNS {
 	}
 	export interface UnshareDirectoryRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateUnshareDirectoryRequestFormGroup() {
@@ -4416,16 +3796,10 @@ export namespace MyNS {
 	/** Updates a conditional forwarder. */
 	export interface UpdateConditionalForwarderRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: string;
 
 		/** Required */
@@ -4435,16 +3809,10 @@ export namespace MyNS {
 	/** Updates a conditional forwarder. */
 	export interface UpdateConditionalForwarderRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$
-		 */
+		/** Required */
 		RemoteDomainName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateConditionalForwarderRequestFormGroup() {
@@ -4467,10 +3835,7 @@ export namespace MyNS {
 
 	export interface UpdateNumberOfDomainControllersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
@@ -4481,10 +3846,7 @@ export namespace MyNS {
 	}
 	export interface UpdateNumberOfDomainControllersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 
 		/**
@@ -4529,10 +3891,7 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>UpdateRadius</a> operation. */
 	export interface UpdateRadiusRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: string;
 
 		/**
@@ -4545,10 +3904,7 @@ export namespace MyNS {
 	/** Contains the inputs for the <a>UpdateRadius</a> operation. */
 	export interface UpdateRadiusRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^d-[0-9a-f]{10}$
-		 */
+		/** Required */
 		DirectoryId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRadiusRequestFormGroup() {
@@ -4560,24 +3916,14 @@ export namespace MyNS {
 
 	export interface UpdateTrustResult {
 
-		/**
-		 * The AWS request identifier.
-		 * Pattern: ^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$
-		 */
+		/** The AWS request identifier. */
 		RequestId?: string | null;
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId?: string | null;
 	}
 	export interface UpdateTrustResultFormProperties {
 
-		/**
-		 * The AWS request identifier.
-		 * Pattern: ^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$
-		 */
+		/** The AWS request identifier. */
 		RequestId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTrustResultFormGroup() {
@@ -4590,19 +3936,13 @@ export namespace MyNS {
 
 	export interface UpdateTrustRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^t-[0-9a-f]{10}$
-		 */
+		/** Required */
 		TrustId: string;
 		SelectiveAuth?: CreateTrustRequestSelectiveAuth | null;
 	}
 	export interface UpdateTrustRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^t-[0-9a-f]{10}$
-		 */
+		/** Required */
 		TrustId: FormControl<string | null | undefined>,
 		SelectiveAuth: FormControl<CreateTrustRequestSelectiveAuth | null | undefined>,
 	}
@@ -4617,15 +3957,11 @@ export namespace MyNS {
 
 	/** Result of a VerifyTrust request. */
 	export interface VerifyTrustResult {
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId?: string | null;
 	}
 
 	/** Result of a VerifyTrust request. */
 	export interface VerifyTrustResultFormProperties {
-
-		/** Pattern: ^t-[0-9a-f]{10}$ */
 		TrustId: FormControl<string | null | undefined>,
 	}
 	export function CreateVerifyTrustResultFormGroup() {
@@ -4639,20 +3975,14 @@ export namespace MyNS {
 	/** Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
 	export interface VerifyTrustRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^t-[0-9a-f]{10}$
-		 */
+		/** Required */
 		TrustId: string;
 	}
 
 	/** Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
 	export interface VerifyTrustRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^t-[0-9a-f]{10}$
-		 */
+		/** Required */
 		TrustId: FormControl<string | null | undefined>,
 	}
 	export function CreateVerifyTrustRequestFormGroup() {

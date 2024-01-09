@@ -19,7 +19,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: string;
 	}
@@ -29,13 +28,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelClusterRequestFormGroup() {
 		return new FormGroup<CancelClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -86,7 +84,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: string;
 	}
@@ -96,13 +93,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateCancelJobRequestFormGroup() {
 		return new FormGroup<CancelJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -147,7 +143,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId?: string | null;
 
@@ -195,7 +190,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 
@@ -238,7 +232,7 @@ export namespace MyNS {
 	}
 	export function CreateAddressFormGroup() {
 		return new FormGroup<AddressFormProperties>({
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Company: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Street1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -281,7 +275,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId?: string | null;
 	}
@@ -290,13 +283,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateClusterResultFormGroup() {
 		return new FormGroup<CreateClusterResultFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39)]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -319,20 +311,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: string;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
 		 */
 		RoleARN: string;
 		SnowballType?: CreateClusterRequestSnowballType | null;
@@ -346,7 +333,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId?: string | null;
 
@@ -365,20 +351,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
 		 */
 		RoleARN: FormControl<string | null | undefined>,
 		SnowballType: FormControl<CreateClusterRequestSnowballType | null | undefined>,
@@ -389,7 +370,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
@@ -397,12 +377,12 @@ export namespace MyNS {
 		return new FormGroup<CreateClusterRequestFormProperties>({
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40)]),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:kms:.*:[0-9]{12}:key/.*')]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined, [Validators.required]),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -529,7 +509,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 12
-		 * Pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
 		 */
 		AmiId: string;
 
@@ -544,7 +523,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 12
-		 * Pattern: (ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})
 		 */
 		AmiId: FormControl<string | null | undefined>,
 
@@ -553,7 +531,7 @@ export namespace MyNS {
 	}
 	export function CreateEc2AmiResourceFormGroup() {
 		return new FormGroup<Ec2AmiResourceFormProperties>({
-			AmiId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(12)]),
+			AmiId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(12), Validators.pattern('(ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})')]),
 			SnowballAmiId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -567,10 +545,7 @@ export namespace MyNS {
 	/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 	export interface Notification {
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
-		 */
+		/** Max length: 255 */
 		SnsTopicARN?: string | null;
 		JobStatesToNotify?: Array<JobState>;
 		NotifyAll?: boolean | null;
@@ -579,16 +554,13 @@ export namespace MyNS {
 	/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
 	export interface NotificationFormProperties {
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:sns:.*:[0-9]{12}:.*
-		 */
+		/** Max length: 255 */
 		SnsTopicARN: FormControl<string | null | undefined>,
 		NotifyAll: FormControl<boolean | null | undefined>,
 	}
 	export function CreateNotificationFormGroup() {
 		return new FormGroup<NotificationFormProperties>({
-			SnsTopicARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			SnsTopicARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:sns:.*:[0-9]{12}:.*')]),
 			NotifyAll: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -616,15 +588,11 @@ export namespace MyNS {
 
 	/** The tax documents required in AWS Regions in India. */
 	export interface INDTaxDocuments {
-
-		/** Pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1} */
 		GSTIN?: string | null;
 	}
 
 	/** The tax documents required in AWS Regions in India. */
 	export interface INDTaxDocumentsFormProperties {
-
-		/** Pattern: \d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1} */
 		GSTIN: FormControl<string | null | undefined>,
 	}
 	export function CreateINDTaxDocumentsFormGroup() {
@@ -659,7 +627,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId?: string | null;
 	}
@@ -668,13 +635,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateJobResultFormGroup() {
 		return new FormGroup<CreateJobResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -691,20 +657,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId?: string | null;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN?: string | null;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN?: string | null;
 		SnowballCapacityPreference?: CreateJobRequestSnowballCapacityPreference | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
@@ -715,7 +674,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId?: string | null;
 		SnowballType?: CreateClusterRequestSnowballType | null;
@@ -723,7 +681,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId?: string | null;
 
@@ -739,20 +696,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN: FormControl<string | null | undefined>,
 		SnowballCapacityPreference: FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
@@ -760,7 +710,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: FormControl<string | null | undefined>,
 		SnowballType: FormControl<CreateClusterRequestSnowballType | null | undefined>,
@@ -768,7 +717,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
@@ -776,14 +724,14 @@ export namespace MyNS {
 		return new FormGroup<CreateJobRequestFormProperties>({
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:kms:.*:[0-9]{12}:key/.*')]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39)]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -819,7 +767,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: string;
 	}
@@ -829,13 +776,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAddressRequestFormGroup() {
 		return new FormGroup<DescribeAddressRequestFormProperties>({
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -921,16 +867,10 @@ export namespace MyNS {
 		/** Min length: 1 */
 		Description?: string | null;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN?: string | null;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN?: string | null;
 		ClusterState?: ClusterMetadataClusterState | null;
 		JobType?: CreateClusterRequestJobType | null;
@@ -943,7 +883,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId?: string | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
@@ -954,7 +893,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId?: string | null;
 
@@ -971,16 +909,10 @@ export namespace MyNS {
 		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN: FormControl<string | null | undefined>,
 		ClusterState: FormControl<ClusterMetadataClusterState | null | undefined>,
 		JobType: FormControl<CreateClusterRequestJobType | null | undefined>,
@@ -990,7 +922,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
@@ -998,7 +929,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
@@ -1006,15 +936,15 @@ export namespace MyNS {
 		return new FormGroup<ClusterMetadataFormProperties>({
 			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:kms:.*:[0-9]{12}:key/.*')]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
 			ClusterState: new FormControl<ClusterMetadataClusterState | null | undefined>(undefined),
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1027,7 +957,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: string;
 	}
@@ -1037,13 +966,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeClusterRequestFormGroup() {
 		return new FormGroup<DescribeClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1079,22 +1007,15 @@ export namespace MyNS {
 		/** Min length: 1 */
 		Description?: string | null;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN?: string | null;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN?: string | null;
 
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId?: string | null;
 
@@ -1117,7 +1038,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId?: string | null;
 
@@ -1138,22 +1058,15 @@ export namespace MyNS {
 		/** Min length: 1 */
 		Description: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/.*
-		 */
+		/** Max length: 255 */
 		KmsKeyARN: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 		SnowballCapacityPreference: FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>,
@@ -1164,7 +1077,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
@@ -1176,12 +1088,12 @@ export namespace MyNS {
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:kms:.*:[0-9]{12}:key/.*')]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
 			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1304,7 +1216,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: string;
 	}
@@ -1314,13 +1225,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeJobRequestFormGroup() {
 		return new FormGroup<DescribeJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1348,7 +1258,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: string;
 	}
@@ -1358,13 +1267,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobManifestRequestFormGroup() {
 		return new FormGroup<GetJobManifestRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1392,7 +1300,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: string;
 	}
@@ -1402,13 +1309,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobUnlockCodeRequestFormGroup() {
 		return new FormGroup<GetJobUnlockCodeRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1462,7 +1368,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: string;
 	}
@@ -1472,13 +1377,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSoftwareUpdatesRequestFormGroup() {
 		return new FormGroup<GetSoftwareUpdatesRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1550,7 +1454,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: string;
 
@@ -1569,7 +1472,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: FormControl<string | null | undefined>,
 
@@ -1584,7 +1486,7 @@ export namespace MyNS {
 	}
 	export function CreateListClusterJobsRequestFormGroup() {
 		return new FormGroup<ListClusterJobsRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
@@ -1813,14 +1715,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: string;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN?: string | null;
 
 		/** Min length: 1 */
@@ -1832,7 +1730,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId?: string | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
@@ -1843,7 +1740,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId?: string | null;
 	}
@@ -1853,14 +1749,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ClusterId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN: FormControl<string | null | undefined>,
 
 		/** Min length: 1 */
@@ -1869,7 +1761,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
@@ -1877,18 +1768,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateClusterRequestFormGroup() {
 		return new FormGroup<UpdateClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1909,14 +1799,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: string;
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p> */
@@ -1928,7 +1814,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId?: string | null;
 		ShippingOption?: CreateClusterRequestShippingOption | null;
@@ -1940,7 +1825,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId?: string | null;
 	}
@@ -1950,20 +1834,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 39
 		 * Min length: 39
-		 * Pattern: (M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		JobId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 255
-		 * Pattern: arn:aws.*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 255 */
 		RoleARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		AddressId: FormControl<string | null | undefined>,
 		ShippingOption: FormControl<CreateClusterRequestShippingOption | null | undefined>,
@@ -1975,19 +1854,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 40
 		 * Min length: 40
-		 * Pattern: ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		 */
 		ForwardingAddressId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateJobRequestFormGroup() {
 		return new FormGroup<UpdateJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39)]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40)]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}

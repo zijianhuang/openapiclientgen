@@ -673,7 +673,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: .+/.+
 		 */
 		SourceLocation: string;
 	}
@@ -691,7 +690,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: .+/.+
 		 */
 		SourceLocation: FormControl<string | null | undefined>,
 	}
@@ -699,7 +697,7 @@ export namespace MyNS {
 		return new FormGroup<SourceBuildInformationFormProperties>({
 			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined, [Validators.required]),
 			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined, [Validators.required]),
-			SourceLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			SourceLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('.+/.+')]),
 		});
 
 	}
@@ -2589,17 +2587,11 @@ export namespace MyNS {
 	export interface BuildConfiguration {
 		ArtifactName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		CodeBuildServiceRole: string;
 		ComputeType?: ComputeType | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Image: string;
 		TimeoutInMinutes?: number | null;
 	}
@@ -2608,17 +2600,11 @@ export namespace MyNS {
 	export interface BuildConfigurationFormProperties {
 		ArtifactName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		CodeBuildServiceRole: FormControl<string | null | undefined>,
 		ComputeType: FormControl<ComputeType | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Image: FormControl<string | null | undefined>,
 		TimeoutInMinutes: FormControl<number | null | undefined>,
 	}
@@ -5148,7 +5134,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: .+/.+
 		 */
 		SourceLocation: string;
 	}
@@ -5164,7 +5149,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: .+/.+
 		 */
 		SourceLocation: FormControl<string | null | undefined>,
 	}
@@ -5172,7 +5156,7 @@ export namespace MyNS {
 		return new FormGroup<GET_CreateApplicationVersionSourceBuildInformationFormProperties>({
 			SourceType: new FormControl<SourceBuildInformationSourceType | null | undefined>(undefined, [Validators.required]),
 			SourceRepository: new FormControl<SourceBuildInformationSourceRepository | null | undefined>(undefined, [Validators.required]),
-			SourceLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			SourceLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('.+/.+')]),
 		});
 
 	}
@@ -5204,34 +5188,22 @@ export namespace MyNS {
 	export interface GET_CreateApplicationVersionBuildConfiguration {
 		ArtifactName?: string | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		CodeBuildServiceRole: string;
 		ComputeType?: ComputeType | null;
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Image: string;
 		TimeoutInMinutes?: number | null;
 	}
 	export interface GET_CreateApplicationVersionBuildConfigurationFormProperties {
 		ArtifactName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		CodeBuildServiceRole: FormControl<string | null | undefined>,
 		ComputeType: FormControl<ComputeType | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		Image: FormControl<string | null | undefined>,
 		TimeoutInMinutes: FormControl<number | null | undefined>,
 	}

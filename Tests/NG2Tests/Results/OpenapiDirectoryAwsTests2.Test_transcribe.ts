@@ -8,7 +8,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
@@ -21,7 +20,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
@@ -31,7 +29,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMedicalVocabularyResponseFormGroup() {
 		return new FormGroup<CreateMedicalVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -50,7 +48,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 
@@ -61,7 +58,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri: string;
 	}
@@ -71,7 +67,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 
@@ -82,15 +77,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<CreateMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<CreateMedicalVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2000), Validators.minLength(1)]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -142,7 +136,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		LanguageCode?: CreateVocabularyResponseLanguageCode | null;
@@ -155,7 +148,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<CreateVocabularyResponseLanguageCode | null | undefined>,
@@ -165,7 +157,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateVocabularyResponseFormGroup() {
 		return new FormGroup<CreateVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<CreateVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -182,7 +174,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 
@@ -193,7 +184,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri?: string | null;
 	}
@@ -203,7 +193,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 
@@ -213,15 +202,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVocabularyRequestFormGroup() {
 		return new FormGroup<CreateVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<CreateVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -233,7 +221,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName?: string | null;
 		LanguageCode?: CreateVocabularyFilterResponseLanguageCode | null;
@@ -244,7 +231,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<CreateVocabularyFilterResponseLanguageCode | null | undefined>,
@@ -252,7 +238,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateVocabularyFilterResponseFormGroup() {
 		return new FormGroup<CreateVocabularyFilterResponseFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<CreateVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -267,7 +253,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: string;
 
@@ -280,7 +265,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFilterFileUri?: string | null;
 	}
@@ -290,7 +274,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 
@@ -300,15 +283,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFilterFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVocabularyFilterRequestFormGroup() {
 		return new FormGroup<CreateVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<CreateVocabularyFilterRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -321,7 +303,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: string;
 	}
@@ -331,13 +312,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMedicalTranscriptionJobRequestFormGroup() {
 		return new FormGroup<DeleteMedicalTranscriptionJobRequestFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -348,7 +328,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 	}
@@ -358,13 +337,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<DeleteMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -385,7 +363,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: string;
 	}
@@ -395,13 +372,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTranscriptionJobRequestFormGroup() {
 		return new FormGroup<DeleteTranscriptionJobRequestFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -412,7 +388,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 	}
@@ -422,13 +397,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVocabularyRequestFormGroup() {
 		return new FormGroup<DeleteVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -439,7 +413,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: string;
 	}
@@ -449,13 +422,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteVocabularyFilterRequestFormGroup() {
 		return new FormGroup<DeleteVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -480,7 +452,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName?: string | null;
 		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
@@ -515,7 +486,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
 		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
@@ -536,7 +506,7 @@ export namespace MyNS {
 	}
 	export function CreateMedicalTranscriptionJobFormGroup() {
 		return new FormGroup<MedicalTranscriptionJobFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
 			LanguageCode: new FormControl<MedicalTranscriptionJobLanguageCode | null | undefined>(undefined),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
@@ -564,7 +534,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		MediaFileUri?: string | null;
 	}
@@ -575,13 +544,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		MediaFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateMediaFormGroup() {
 		return new FormGroup<MediaFormProperties>({
-			MediaFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			MediaFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -593,7 +561,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		TranscriptFileUri?: string | null;
 	}
@@ -604,13 +571,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		TranscriptFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateMedicalTranscriptFormGroup() {
 		return new FormGroup<MedicalTranscriptFormProperties>({
-			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -637,7 +603,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 	}
@@ -663,7 +628,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 	}
@@ -674,7 +638,7 @@ export namespace MyNS {
 			ChannelIdentification: new FormControl<boolean | null | undefined>(undefined),
 			ShowAlternatives: new FormControl<boolean | null | undefined>(undefined),
 			MaxAlternatives: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -689,7 +653,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: string;
 	}
@@ -699,13 +662,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMedicalTranscriptionJobRequestFormGroup() {
 		return new FormGroup<GetMedicalTranscriptionJobRequestFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -715,7 +677,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		LanguageCode?: GetMedicalVocabularyResponseLanguageCode | null;
@@ -726,7 +687,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		DownloadUri?: string | null;
 	}
@@ -735,7 +695,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<GetMedicalVocabularyResponseLanguageCode | null | undefined>,
@@ -746,18 +705,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		DownloadUri: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMedicalVocabularyResponseFormGroup() {
 		return new FormGroup<GetMedicalVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<GetMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
-			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -770,7 +728,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 	}
@@ -780,13 +737,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<GetMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -811,7 +767,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName?: string | null;
 		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
@@ -850,7 +805,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: FormControl<string | null | undefined>,
 		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
@@ -869,7 +823,7 @@ export namespace MyNS {
 	}
 	export function CreateTranscriptionJobFormGroup() {
 		return new FormGroup<TranscriptionJobFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
 			LanguageCode: new FormControl<TranscriptionJobLanguageCode | null | undefined>(undefined),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
@@ -891,14 +845,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		TranscriptFileUri?: string | null;
 
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		RedactedTranscriptFileUri?: string | null;
 	}
@@ -909,21 +861,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		TranscriptFileUri: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		RedactedTranscriptFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateTranscriptFormGroup() {
 		return new FormGroup<TranscriptFormProperties>({
-			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
-			RedactedTranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			RedactedTranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -935,7 +885,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		ShowSpeakerLabels?: boolean | null;
@@ -957,7 +906,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName?: string | null;
 		VocabularyFilterMethod?: SettingsVocabularyFilterMethod | null;
@@ -969,7 +917,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		ShowSpeakerLabels: FormControl<boolean | null | undefined>,
@@ -991,20 +938,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 		VocabularyFilterMethod: FormControl<SettingsVocabularyFilterMethod | null | undefined>,
 	}
 	export function CreateSettingsFormGroup() {
 		return new FormGroup<SettingsFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			ShowSpeakerLabels: new FormControl<boolean | null | undefined>(undefined),
 			MaxSpeakerLabels: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
 			ChannelIdentification: new FormControl<boolean | null | undefined>(undefined),
 			ShowAlternatives: new FormControl<boolean | null | undefined>(undefined),
 			MaxAlternatives: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			VocabularyFilterMethod: new FormControl<SettingsVocabularyFilterMethod | null | undefined>(undefined),
 		});
 
@@ -1016,16 +962,12 @@ export namespace MyNS {
 	/** Provides information about when a transcription job should be executed. */
 	export interface JobExecutionSettings {
 		AllowDeferredExecution?: boolean | null;
-
-		/** Pattern: ^arn:aws:iam::[0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		DataAccessRoleArn?: string | null;
 	}
 
 	/** Provides information about when a transcription job should be executed. */
 	export interface JobExecutionSettingsFormProperties {
 		AllowDeferredExecution: FormControl<boolean | null | undefined>,
-
-		/** Pattern: ^arn:aws:iam::[0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1023}$ */
 		DataAccessRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateJobExecutionSettingsFormGroup() {
@@ -1074,7 +1016,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: string;
 	}
@@ -1084,13 +1025,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTranscriptionJobRequestFormGroup() {
 		return new FormGroup<GetTranscriptionJobRequestFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1100,7 +1040,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		LanguageCode?: GetVocabularyResponseLanguageCode | null;
@@ -1111,7 +1050,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		DownloadUri?: string | null;
 	}
@@ -1120,7 +1058,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<GetVocabularyResponseLanguageCode | null | undefined>,
@@ -1131,18 +1068,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		DownloadUri: FormControl<string | null | undefined>,
 	}
 	export function CreateGetVocabularyResponseFormGroup() {
 		return new FormGroup<GetVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<GetVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
-			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -1155,7 +1091,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 	}
@@ -1165,13 +1100,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetVocabularyRequestFormGroup() {
 		return new FormGroup<GetVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1181,7 +1115,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName?: string | null;
 		LanguageCode?: GetVocabularyFilterResponseLanguageCode | null;
@@ -1190,7 +1123,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		DownloadUri?: string | null;
 	}
@@ -1199,7 +1131,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<GetVocabularyFilterResponseLanguageCode | null | undefined>,
@@ -1208,16 +1139,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		DownloadUri: FormControl<string | null | undefined>,
 	}
 	export function CreateGetVocabularyFilterResponseFormGroup() {
 		return new FormGroup<GetVocabularyFilterResponseFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<GetVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -1230,7 +1160,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: string;
 	}
@@ -1240,13 +1169,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetVocabularyFilterRequestFormGroup() {
 		return new FormGroup<GetVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1254,26 +1182,20 @@ export namespace MyNS {
 	export interface ListMedicalTranscriptionJobsResponse {
 		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 		MedicalTranscriptionJobSummaries?: Array<MedicalTranscriptionJobSummary>;
 	}
 	export interface ListMedicalTranscriptionJobsResponseFormProperties {
 		Status: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListMedicalTranscriptionJobsResponseFormGroup() {
 		return new FormGroup<ListMedicalTranscriptionJobsResponseFormProperties>({
 			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 		});
 
 	}
@@ -1285,7 +1207,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName?: string | null;
 		CreationTime?: Date | null;
@@ -1305,7 +1226,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
@@ -1320,7 +1240,7 @@ export namespace MyNS {
 	}
 	export function CreateMedicalTranscriptionJobSummaryFormGroup() {
 		return new FormGroup<MedicalTranscriptionJobSummaryFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			CompletionTime: new FormControl<Date | null | undefined>(undefined),
@@ -1344,14 +1264,10 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		JobNameContains?: string | null;
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 
 		/**
@@ -1366,14 +1282,10 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		JobNameContains: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1385,8 +1297,8 @@ export namespace MyNS {
 	export function CreateListMedicalTranscriptionJobsRequestFormGroup() {
 		return new FormGroup<ListMedicalTranscriptionJobsRequestFormProperties>({
 			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1395,26 +1307,20 @@ export namespace MyNS {
 	export interface ListMedicalVocabulariesResponse {
 		Status?: CreateMedicalVocabularyResponseVocabularyState | null;
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 		Vocabularies?: Array<VocabularyInfo>;
 	}
 	export interface ListMedicalVocabulariesResponseFormProperties {
 		Status: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListMedicalVocabulariesResponseFormGroup() {
 		return new FormGroup<ListMedicalVocabulariesResponseFormProperties>({
 			Status: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 		});
 
 	}
@@ -1426,7 +1332,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		LanguageCode?: VocabularyInfoLanguageCode | null;
@@ -1440,7 +1345,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<VocabularyInfoLanguageCode | null | undefined>,
@@ -1449,7 +1353,7 @@ export namespace MyNS {
 	}
 	export function CreateVocabularyInfoFormGroup() {
 		return new FormGroup<VocabularyInfoFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<VocabularyInfoLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
@@ -1461,10 +1365,7 @@ export namespace MyNS {
 
 	export interface ListMedicalVocabulariesRequest {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 
 		/**
@@ -1477,16 +1378,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		NameContains?: string | null;
 	}
 	export interface ListMedicalVocabulariesRequestFormProperties {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1499,16 +1396,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		NameContains: FormControl<string | null | undefined>,
 	}
 	export function CreateListMedicalVocabulariesRequestFormGroup() {
 		return new FormGroup<ListMedicalVocabulariesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StateEquals: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1516,26 +1412,20 @@ export namespace MyNS {
 	export interface ListTranscriptionJobsResponse {
 		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 		TranscriptionJobSummaries?: Array<TranscriptionJobSummary>;
 	}
 	export interface ListTranscriptionJobsResponseFormProperties {
 		Status: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTranscriptionJobsResponseFormGroup() {
 		return new FormGroup<ListTranscriptionJobsResponseFormProperties>({
 			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 		});
 
 	}
@@ -1547,7 +1437,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName?: string | null;
 		CreationTime?: Date | null;
@@ -1568,7 +1457,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
@@ -1581,7 +1469,7 @@ export namespace MyNS {
 	}
 	export function CreateTranscriptionJobSummaryFormGroup() {
 		return new FormGroup<TranscriptionJobSummaryFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			CompletionTime: new FormControl<Date | null | undefined>(undefined),
@@ -1601,14 +1489,10 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		JobNameContains?: string | null;
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 
 		/**
@@ -1623,14 +1507,10 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		JobNameContains: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1642,8 +1522,8 @@ export namespace MyNS {
 	export function CreateListTranscriptionJobsRequestFormGroup() {
 		return new FormGroup<ListTranscriptionJobsRequestFormProperties>({
 			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1652,36 +1532,27 @@ export namespace MyNS {
 	export interface ListVocabulariesResponse {
 		Status?: CreateMedicalVocabularyResponseVocabularyState | null;
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 		Vocabularies?: Array<VocabularyInfo>;
 	}
 	export interface ListVocabulariesResponseFormProperties {
 		Status: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListVocabulariesResponseFormGroup() {
 		return new FormGroup<ListVocabulariesResponseFormProperties>({
 			Status: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 		});
 
 	}
 
 	export interface ListVocabulariesRequest {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 
 		/**
@@ -1694,16 +1565,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		NameContains?: string | null;
 	}
 	export interface ListVocabulariesRequestFormProperties {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1716,40 +1583,33 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		NameContains: FormControl<string | null | undefined>,
 	}
 	export function CreateListVocabulariesRequestFormGroup() {
 		return new FormGroup<ListVocabulariesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StateEquals: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
 
 	export interface ListVocabularyFiltersResponse {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 		VocabularyFilters?: Array<VocabularyFilterInfo>;
 	}
 	export interface ListVocabularyFiltersResponseFormProperties {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListVocabularyFiltersResponseFormGroup() {
 		return new FormGroup<ListVocabularyFiltersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 		});
 
 	}
@@ -1761,7 +1621,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName?: string | null;
 		LanguageCode?: VocabularyFilterInfoLanguageCode | null;
@@ -1774,7 +1633,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<VocabularyFilterInfoLanguageCode | null | undefined>,
@@ -1782,7 +1640,7 @@ export namespace MyNS {
 	}
 	export function CreateVocabularyFilterInfoFormGroup() {
 		return new FormGroup<VocabularyFilterInfoFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<VocabularyFilterInfoLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1793,10 +1651,7 @@ export namespace MyNS {
 
 	export interface ListVocabularyFiltersRequest {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 
 		/**
@@ -1808,16 +1663,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		NameContains?: string | null;
 	}
 	export interface ListVocabularyFiltersRequestFormProperties {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .+
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1829,15 +1680,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		NameContains: FormControl<string | null | undefined>,
 	}
 	export function CreateListVocabularyFiltersRequestFormGroup() {
 		return new FormGroup<ListVocabularyFiltersRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1861,7 +1711,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: string;
 
@@ -1884,14 +1733,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 64
-		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
 		 */
 		OutputBucketName: string;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$
 		 */
 		OutputEncryptionKMSKeyId?: string | null;
 
@@ -1910,7 +1757,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
 
@@ -1927,14 +1773,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 64
-		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
 		 */
 		OutputBucketName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$
 		 */
 		OutputEncryptionKMSKeyId: FormControl<string | null | undefined>,
 
@@ -1946,12 +1790,12 @@ export namespace MyNS {
 	}
 	export function CreateStartMedicalTranscriptionJobRequestFormGroup() {
 		return new FormGroup<StartMedicalTranscriptionJobRequestFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<StartMedicalTranscriptionJobRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
 			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
-			OutputBucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
-			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			OutputBucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.pattern('[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]')]),
+			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$')]),
 			Specialty: new FormControl<MedicalTranscriptionJobSpecialty | null | undefined>(undefined, [Validators.required]),
 			Type: new FormControl<MedicalTranscriptionJobType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1979,7 +1823,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: string;
 
@@ -1999,16 +1842,12 @@ export namespace MyNS {
 		 */
 		Media: Media;
 
-		/**
-		 * Max length: 64
-		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
-		 */
+		/** Max length: 64 */
 		OutputBucketName?: string | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$
 		 */
 		OutputEncryptionKMSKeyId?: string | null;
 
@@ -2027,7 +1866,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		TranscriptionJobName: FormControl<string | null | undefined>,
 
@@ -2041,27 +1879,23 @@ export namespace MyNS {
 		MediaSampleRateHertz: FormControl<number | null | undefined>,
 		MediaFormat: FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>,
 
-		/**
-		 * Max length: 64
-		 * Pattern: [a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]
-		 */
+		/** Max length: 64 */
 		OutputBucketName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$
 		 */
 		OutputEncryptionKMSKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTranscriptionJobRequestFormGroup() {
 		return new FormGroup<StartTranscriptionJobRequestFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<StartTranscriptionJobRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
 			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
-			OutputBucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
-			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			OutputBucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]')]),
+			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$')]),
 		});
 
 	}
@@ -2073,7 +1907,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		LanguageCode?: UpdateMedicalVocabularyResponseLanguageCode | null;
@@ -2085,7 +1918,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<UpdateMedicalVocabularyResponseLanguageCode | null | undefined>,
@@ -2094,7 +1926,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMedicalVocabularyResponseFormGroup() {
 		return new FormGroup<UpdateMedicalVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<UpdateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
@@ -2110,7 +1942,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 
@@ -2120,7 +1951,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri?: string | null;
 	}
@@ -2130,7 +1960,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 
@@ -2140,15 +1969,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<UpdateMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<UpdateMedicalVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -2160,7 +1988,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName?: string | null;
 		LanguageCode?: UpdateVocabularyResponseLanguageCode | null;
@@ -2172,7 +1999,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<UpdateVocabularyResponseLanguageCode | null | undefined>,
@@ -2181,7 +2007,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVocabularyResponseFormGroup() {
 		return new FormGroup<UpdateVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<UpdateVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
@@ -2197,7 +2023,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: string;
 
@@ -2208,7 +2033,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri?: string | null;
 	}
@@ -2218,7 +2042,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 
@@ -2228,15 +2051,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateVocabularyRequestFormGroup() {
 		return new FormGroup<UpdateVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<UpdateVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -2248,7 +2070,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName?: string | null;
 		LanguageCode?: UpdateVocabularyFilterResponseLanguageCode | null;
@@ -2259,7 +2080,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 		LanguageCode: FormControl<UpdateVocabularyFilterResponseLanguageCode | null | undefined>,
@@ -2267,7 +2087,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVocabularyFilterResponseFormGroup() {
 		return new FormGroup<UpdateVocabularyFilterResponseFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<UpdateVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2282,7 +2102,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: string;
 
@@ -2292,7 +2111,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFilterFileUri?: string | null;
 	}
@@ -2302,21 +2120,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 200
 		 * Min length: 1
-		 * Pattern: ^[0-9a-zA-Z._-]+
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: (s3://|http(s*)://).+
 		 */
 		VocabularyFilterFileUri: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateVocabularyFilterRequestFormGroup() {
 		return new FormGroup<UpdateVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1)]),
-			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}

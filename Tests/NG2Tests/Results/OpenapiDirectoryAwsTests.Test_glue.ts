@@ -1090,14 +1090,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [\.\-_/#A-Za-z0-9]+
 		 */
 		LogGroup?: string | null;
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [^:*]*
 		 */
 		LogStream?: string | null;
 
@@ -1122,14 +1120,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [\.\-_/#A-Za-z0-9]+
 		 */
 		LogGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [^:*]*
 		 */
 		LogStream: FormControl<string | null | undefined>,
 
@@ -1144,8 +1140,8 @@ export namespace MyNS {
 		return new FormGroup<LastCrawlInfoFormProperties>({
 			Status: new FormControl<LastCrawlInfoStatus | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
-			LogGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
-			LogStream: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			LogGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			LogStream: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
 			MessagePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1192,8 +1188,6 @@ export namespace MyNS {
 	/** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts. */
 	export interface DevEndpoint {
 		EndpointName?: string | null;
-
-		/** Pattern: arn:aws:iam::\d{12}:role/.* */
 		RoleArn?: string | null;
 		SecurityGroupIds?: Array<string>;
 		SubnetId?: string | null;
@@ -1207,7 +1201,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		NumberOfWorkers?: number | null;
@@ -1236,8 +1229,6 @@ export namespace MyNS {
 	/** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts. */
 	export interface DevEndpointFormProperties {
 		EndpointName: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:aws:iam::\d{12}:role/.* */
 		RoleArn: FormControl<string | null | undefined>,
 		SubnetId: FormControl<string | null | undefined>,
 		YarnEndpointAddress: FormControl<string | null | undefined>,
@@ -1250,7 +1241,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		NumberOfWorkers: FormControl<number | null | undefined>,
@@ -1282,7 +1272,7 @@ export namespace MyNS {
 			PublicAddress: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<string | null | undefined>(undefined),
 			WorkerType: new FormControl<DevEndpointWorkerType | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
 			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -1401,7 +1391,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 	}
@@ -1442,7 +1431,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 	}
@@ -1461,7 +1449,7 @@ export namespace MyNS {
 			WorkerType: new FormControl<JobWorkerType | null | undefined>(undefined),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
 			SecurityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 		});
 
 	}
@@ -1488,8 +1476,6 @@ export namespace MyNS {
 	export interface JobCommand {
 		Name?: string | null;
 		ScriptLocation?: string | null;
-
-		/** Pattern: ^[2-3]$ */
 		PythonVersion?: string | null;
 	}
 
@@ -1497,8 +1483,6 @@ export namespace MyNS {
 	export interface JobCommandFormProperties {
 		Name: FormControl<string | null | undefined>,
 		ScriptLocation: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[2-3]$ */
 		PythonVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateJobCommandFormGroup() {
@@ -2273,7 +2257,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 	}
@@ -2329,7 +2312,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 	}
@@ -2353,7 +2335,7 @@ export namespace MyNS {
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
 			SecurityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			LogGroupName: new FormControl<string | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 		});
 
 	}
@@ -2431,14 +2413,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [\.\-_/#A-Za-z0-9]+
 		 */
 		LogGroup?: string | null;
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [^:*]*
 		 */
 		LogStream?: string | null;
 	}
@@ -2458,14 +2438,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [\.\-_/#A-Za-z0-9]+
 		 */
 		LogGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: [^:*]*
 		 */
 		LogStream: FormControl<string | null | undefined>,
 	}
@@ -2475,8 +2453,8 @@ export namespace MyNS {
 			StartedOn: new FormControl<Date | null | undefined>(undefined),
 			CompletedOn: new FormControl<Date | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
-			LogGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
-			LogStream: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			LogGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			LogStream: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
 		});
 
 	}
@@ -2932,14 +2910,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		Delimiter?: string | null;
 
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		QuoteSymbol?: string | null;
 		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
@@ -2961,14 +2937,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		Delimiter: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		QuoteSymbol: FormControl<string | null | undefined>,
 		ContainsHeader: FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>,
@@ -2978,8 +2952,8 @@ export namespace MyNS {
 	export function CreateCreateCsvClassifierRequestFormGroup() {
 		return new FormGroup<CreateCsvClassifierRequestFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Delimiter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
-			QuoteSymbol: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			Delimiter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1), Validators.pattern('[^\r\n]')]),
+			QuoteSymbol: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1), Validators.pattern('[^\r\n]')]),
 			ContainsHeader: new FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>(undefined),
 			DisableValueTrimming: new FormControl<boolean | null | undefined>(undefined),
 			AllowSingleColumn: new FormControl<boolean | null | undefined>(undefined),
@@ -3406,8 +3380,6 @@ export namespace MyNS {
 		Status?: string | null;
 		SecurityGroupIds?: Array<string>;
 		SubnetId?: string | null;
-
-		/** Pattern: arn:aws:iam::\d{12}:role/.* */
 		RoleArn?: string | null;
 		YarnEndpointAddress?: string | null;
 		ZeppelinRemoteSparkInterpreterPort?: number | null;
@@ -3417,7 +3389,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		NumberOfWorkers?: number | null;
@@ -3439,8 +3410,6 @@ export namespace MyNS {
 		EndpointName: FormControl<string | null | undefined>,
 		Status: FormControl<string | null | undefined>,
 		SubnetId: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:aws:iam::\d{12}:role/.* */
 		RoleArn: FormControl<string | null | undefined>,
 		YarnEndpointAddress: FormControl<string | null | undefined>,
 		ZeppelinRemoteSparkInterpreterPort: FormControl<number | null | undefined>,
@@ -3450,7 +3419,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		NumberOfWorkers: FormControl<number | null | undefined>,
@@ -3477,7 +3445,7 @@ export namespace MyNS {
 			ZeppelinRemoteSparkInterpreterPort: new FormControl<number | null | undefined>(undefined),
 			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
 			WorkerType: new FormControl<CreateDevEndpointResponseWorkerType | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			VpcId: new FormControl<string | null | undefined>(undefined),
@@ -3497,10 +3465,7 @@ export namespace MyNS {
 		/** Required */
 		EndpointName: string;
 
-		/**
-		 * Required
-		 * Pattern: arn:aws:iam::\d{12}:role/.*
-		 */
+		/** Required */
 		RoleArn: string;
 		SecurityGroupIds?: Array<string>;
 		SubnetId?: string | null;
@@ -3514,7 +3479,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		NumberOfWorkers?: number | null;
@@ -3534,10 +3498,7 @@ export namespace MyNS {
 		/** Required */
 		EndpointName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: arn:aws:iam::\d{12}:role/.*
-		 */
+		/** Required */
 		RoleArn: FormControl<string | null | undefined>,
 		SubnetId: FormControl<string | null | undefined>,
 		PublicKey: FormControl<string | null | undefined>,
@@ -3547,7 +3508,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		NumberOfWorkers: FormControl<number | null | undefined>,
@@ -3568,7 +3528,7 @@ export namespace MyNS {
 			PublicKey: new FormControl<string | null | undefined>(undefined),
 			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
 			WorkerType: new FormControl<CreateDevEndpointRequestWorkerType | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
 			ExtraPythonLibsS3Path: new FormControl<string | null | undefined>(undefined),
 			ExtraJarsS3Path: new FormControl<string | null | undefined>(undefined),
@@ -3674,7 +3634,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		NumberOfWorkers?: number | null;
@@ -3714,7 +3673,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		NumberOfWorkers: FormControl<number | null | undefined>,
@@ -3731,7 +3689,7 @@ export namespace MyNS {
 			Timeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined),
 			SecurityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
 			WorkerType: new FormControl<CreateJobRequestWorkerType | null | undefined>(undefined),
 		});
@@ -3807,7 +3765,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		MaxCapacity?: number | null;
@@ -3840,7 +3797,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		MaxCapacity: FormControl<number | null | undefined>,
@@ -3856,7 +3812,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined),
 			WorkerType: new FormControl<CreateMLTransformRequestWorkerType | null | undefined>(undefined),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
@@ -4128,7 +4084,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z_][A-Za-z0-9_]*
 		 */
 		Id: string;
 
@@ -4151,7 +4106,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z_][A-Za-z0-9_]*
 		 */
 		Id: FormControl<string | null | undefined>,
 
@@ -4161,7 +4115,7 @@ export namespace MyNS {
 	}
 	export function CreateCodeGenNodeFormGroup() {
 		return new FormGroup<CodeGenNodeFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z_][A-Za-z0-9_]*')]),
 			NodeType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			LineNumber: new FormControl<number | null | undefined>(undefined),
 		});
@@ -4207,7 +4161,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z_][A-Za-z0-9_]*
 		 */
 		Source: string;
 
@@ -4215,7 +4168,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z_][A-Za-z0-9_]*
 		 */
 		Target: string;
 		TargetParameter?: string | null;
@@ -4228,7 +4180,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z_][A-Za-z0-9_]*
 		 */
 		Source: FormControl<string | null | undefined>,
 
@@ -4236,15 +4187,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [A-Za-z_][A-Za-z0-9_]*
 		 */
 		Target: FormControl<string | null | undefined>,
 		TargetParameter: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeGenEdgeFormGroup() {
 		return new FormGroup<CodeGenEdgeFormProperties>({
-			Source: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z_][A-Za-z0-9_]*')]),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[A-Za-z_][A-Za-z0-9_]*')]),
 			TargetParameter: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4334,16 +4284,12 @@ export namespace MyNS {
 	/** Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted. */
 	export interface S3Encryption {
 		S3EncryptionMode?: S3EncryptionS3EncryptionMode | null;
-
-		/** Pattern: arn:aws:kms:.* */
 		KmsKeyArn?: string | null;
 	}
 
 	/** Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted. */
 	export interface S3EncryptionFormProperties {
 		S3EncryptionMode: FormControl<S3EncryptionS3EncryptionMode | null | undefined>,
-
-		/** Pattern: arn:aws:kms:.* */
 		KmsKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateS3EncryptionFormGroup() {
@@ -4360,16 +4306,12 @@ export namespace MyNS {
 	/** Specifies how Amazon CloudWatch data should be encrypted. */
 	export interface CloudWatchEncryption {
 		CloudWatchEncryptionMode?: CloudWatchEncryptionCloudWatchEncryptionMode | null;
-
-		/** Pattern: arn:aws:kms:.* */
 		KmsKeyArn?: string | null;
 	}
 
 	/** Specifies how Amazon CloudWatch data should be encrypted. */
 	export interface CloudWatchEncryptionFormProperties {
 		CloudWatchEncryptionMode: FormControl<CloudWatchEncryptionCloudWatchEncryptionMode | null | undefined>,
-
-		/** Pattern: arn:aws:kms:.* */
 		KmsKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCloudWatchEncryptionFormGroup() {
@@ -4386,16 +4328,12 @@ export namespace MyNS {
 	/** Specifies how job bookmark data should be encrypted. */
 	export interface JobBookmarksEncryption {
 		JobBookmarksEncryptionMode?: JobBookmarksEncryptionJobBookmarksEncryptionMode | null;
-
-		/** Pattern: arn:aws:kms:.* */
 		KmsKeyArn?: string | null;
 	}
 
 	/** Specifies how job bookmark data should be encrypted. */
 	export interface JobBookmarksEncryptionFormProperties {
 		JobBookmarksEncryptionMode: FormControl<JobBookmarksEncryptionJobBookmarksEncryptionMode | null | undefined>,
-
-		/** Pattern: arn:aws:kms:.* */
 		KmsKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateJobBookmarksEncryptionFormGroup() {
@@ -5897,14 +5835,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		Delimiter?: string | null;
 
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		QuoteSymbol?: string | null;
 		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
@@ -5929,14 +5865,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		Delimiter: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		QuoteSymbol: FormControl<string | null | undefined>,
 		ContainsHeader: FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>,
@@ -5949,8 +5883,8 @@ export namespace MyNS {
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastUpdated: new FormControl<Date | null | undefined>(undefined),
 			Version: new FormControl<number | null | undefined>(undefined),
-			Delimiter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
-			QuoteSymbol: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			Delimiter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1), Validators.pattern('[^\r\n]')]),
+			QuoteSymbol: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1), Validators.pattern('[^\r\n]')]),
 			ContainsHeader: new FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>(undefined),
 			DisableValueTrimming: new FormControl<boolean | null | undefined>(undefined),
 			AllowSingleColumn: new FormControl<boolean | null | undefined>(undefined),
@@ -7535,7 +7469,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		MaxCapacity?: number | null;
@@ -7574,7 +7507,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		MaxCapacity: FormControl<number | null | undefined>,
@@ -7595,7 +7527,7 @@ export namespace MyNS {
 			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
 			LabelCount: new FormControl<number | null | undefined>(undefined),
 			Role: new FormControl<string | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined),
 			WorkerType: new FormControl<GetMLTransformResponseWorkerType | null | undefined>(undefined),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
@@ -7854,7 +7786,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		MaxCapacity?: number | null;
@@ -7895,7 +7826,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		MaxCapacity: FormControl<number | null | undefined>,
@@ -7916,7 +7846,7 @@ export namespace MyNS {
 			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
 			LabelCount: new FormControl<number | null | undefined>(undefined),
 			Role: new FormControl<string | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined),
 			WorkerType: new FormControl<MLTransformWorkerType | null | undefined>(undefined),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
@@ -7975,7 +7905,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		CreatedBefore?: Date | null;
@@ -8001,7 +7930,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		CreatedBefore: FormControl<Date | null | undefined>,
@@ -8014,7 +7942,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			TransformType: new FormControl<TransformParametersTransformType | null | undefined>(undefined),
 			Status: new FormControl<GetMLTransformResponseStatus | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			CreatedBefore: new FormControl<Date | null | undefined>(undefined),
 			CreatedAfter: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedBefore: new FormControl<Date | null | undefined>(undefined),
@@ -9094,7 +9022,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10240
 		 * Min length: 1
-		 * Pattern: arn:aws:glue:.*
 		 */
 		ResourceArn: string;
 	}
@@ -9104,13 +9031,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10240
 		 * Min length: 1
-		 * Pattern: arn:aws:glue:.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTagsRequestFormGroup() {
 		return new FormGroup<GetTagsRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1), Validators.pattern('arn:aws:glue:.*')]),
 		});
 
 	}
@@ -11013,7 +10939,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10240
 		 * Min length: 1
-		 * Pattern: arn:aws:glue:.*
 		 */
 		ResourceArn: string;
 
@@ -11026,13 +10951,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10240
 		 * Min length: 1
-		 * Pattern: arn:aws:glue:.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1), Validators.pattern('arn:aws:glue:.*')]),
 		});
 
 	}
@@ -11053,7 +10977,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10240
 		 * Min length: 1
-		 * Pattern: arn:aws:glue:.*
 		 */
 		ResourceArn: string;
 
@@ -11070,13 +10993,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10240
 		 * Min length: 1
-		 * Pattern: arn:aws:glue:.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1), Validators.pattern('arn:aws:glue:.*')]),
 		});
 
 	}
@@ -11252,14 +11174,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		Delimiter?: string | null;
 
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		QuoteSymbol?: string | null;
 		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
@@ -11281,14 +11201,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		Delimiter: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1
 		 * Min length: 1
-		 * Pattern: [^\r\n]
 		 */
 		QuoteSymbol: FormControl<string | null | undefined>,
 		ContainsHeader: FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>,
@@ -11298,8 +11216,8 @@ export namespace MyNS {
 	export function CreateUpdateCsvClassifierRequestFormGroup() {
 		return new FormGroup<UpdateCsvClassifierRequestFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Delimiter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
-			QuoteSymbol: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			Delimiter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1), Validators.pattern('[^\r\n]')]),
+			QuoteSymbol: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1), Validators.pattern('[^\r\n]')]),
 			ContainsHeader: new FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>(undefined),
 			DisableValueTrimming: new FormControl<boolean | null | undefined>(undefined),
 			AllowSingleColumn: new FormControl<boolean | null | undefined>(undefined),
@@ -11717,7 +11635,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 	}
@@ -11750,7 +11667,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 	}
@@ -11766,7 +11682,7 @@ export namespace MyNS {
 			WorkerType: new FormControl<JobUpdateWorkerType | null | undefined>(undefined),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
 			SecurityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 		});
 
 	}
@@ -11824,7 +11740,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion?: string | null;
 		MaxCapacity?: number | null;
@@ -11860,7 +11775,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^\w+\.\w+$
 		 */
 		GlueVersion: FormControl<string | null | undefined>,
 		MaxCapacity: FormControl<number | null | undefined>,
@@ -11877,7 +11791,7 @@ export namespace MyNS {
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
 			Role: new FormControl<string | null | undefined>(undefined),
-			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GlueVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^\w+\.\w+$')]),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined),
 			WorkerType: new FormControl<UpdateMLTransformRequestWorkerType | null | undefined>(undefined),
 			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),

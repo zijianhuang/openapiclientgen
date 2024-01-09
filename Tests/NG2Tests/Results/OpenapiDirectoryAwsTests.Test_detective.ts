@@ -44,13 +44,9 @@ export namespace MyNS {
 	}
 
 	export interface CreateGraphResponse {
-
-		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn?: string | null;
 	}
 	export interface CreateGraphResponseFormProperties {
-
-		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGraphResponseFormGroup() {
@@ -89,24 +85,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^.+@.+$
 		 */
 		EmailAddress?: string | null;
-
-		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn?: string | null;
 
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		MasterId?: string | null;
 		Status?: MemberDetailStatus | null;
@@ -123,24 +114,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^.+@.+$
 		 */
 		EmailAddress: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		GraphArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		MasterId: FormControl<string | null | undefined>,
 		Status: FormControl<MemberDetailStatus | null | undefined>,
@@ -152,10 +138,10 @@ export namespace MyNS {
 	}
 	export function CreateMemberDetailFormGroup() {
 		return new FormGroup<MemberDetailFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^[0-9]+$')]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^.+@.+$')]),
 			GraphArn: new FormControl<string | null | undefined>(undefined),
-			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^[0-9]+$')]),
 			Status: new FormControl<MemberDetailStatus | null | undefined>(undefined),
 			DisabledReason: new FormControl<MemberDetailDisabledReason | null | undefined>(undefined),
 			InvitedTime: new FormControl<Date | null | undefined>(undefined),
@@ -177,7 +163,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId?: string | null;
 		Reason?: string | null;
@@ -189,14 +174,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: FormControl<string | null | undefined>,
 		Reason: FormControl<string | null | undefined>,
 	}
 	export function CreateUnprocessedAccountFormGroup() {
 		return new FormGroup<UnprocessedAccountFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^[0-9]+$')]),
 			Reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -210,7 +194,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: string;
 
@@ -218,7 +201,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^.+@.+$
 		 */
 		EmailAddress: string;
 	}
@@ -230,7 +212,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -238,14 +219,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^.+@.+$
 		 */
 		EmailAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountFormGroup() {
 		return new FormGroup<AccountFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
-			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^[0-9]+$')]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^.+@.+$')]),
 		});
 
 	}
@@ -306,16 +286,12 @@ export namespace MyNS {
 
 	/** A behavior graph in Detective. */
 	export interface Graph {
-
-		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		Arn?: string | null;
 		CreatedTime?: Date | null;
 	}
 
 	/** A behavior graph in Detective. */
 	export interface GraphFormProperties {
-
-		/** Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$ */
 		Arn: FormControl<string | null | undefined>,
 		CreatedTime: FormControl<Date | null | undefined>,
 	}
@@ -377,18 +353,12 @@ export namespace MyNS {
 
 	export interface AcceptInvitationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 	}
 	export interface AcceptInvitationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceptInvitationRequestFormGroup() {
@@ -400,10 +370,7 @@ export namespace MyNS {
 
 	export interface CreateMembersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 
 		/**
@@ -421,10 +388,7 @@ export namespace MyNS {
 	}
 	export interface CreateMembersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 
 		/**
@@ -443,18 +407,12 @@ export namespace MyNS {
 
 	export interface DeleteGraphRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 	}
 	export interface DeleteGraphRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGraphRequestFormGroup() {
@@ -466,10 +424,7 @@ export namespace MyNS {
 
 	export interface DeleteMembersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 
 		/**
@@ -481,10 +436,7 @@ export namespace MyNS {
 	}
 	export interface DeleteMembersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMembersRequestFormGroup() {
@@ -496,18 +448,12 @@ export namespace MyNS {
 
 	export interface DisassociateMembershipRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 	}
 	export interface DisassociateMembershipRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDisassociateMembershipRequestFormGroup() {
@@ -519,10 +465,7 @@ export namespace MyNS {
 
 	export interface GetMembersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 
 		/**
@@ -534,10 +477,7 @@ export namespace MyNS {
 	}
 	export interface GetMembersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMembersRequestFormGroup() {
@@ -621,10 +561,7 @@ export namespace MyNS {
 
 	export interface ListMembersRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 
 		/**
@@ -641,10 +578,7 @@ export namespace MyNS {
 	}
 	export interface ListMembersRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 
 		/**
@@ -674,18 +608,12 @@ export namespace MyNS {
 
 	export interface RejectInvitationRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 	}
 	export interface RejectInvitationRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 	}
 	export function CreateRejectInvitationRequestFormGroup() {
@@ -697,40 +625,32 @@ export namespace MyNS {
 
 	export interface StartMonitoringMemberRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: string;
 
 		/**
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: string;
 	}
 	export interface StartMonitoringMemberRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
-		 */
+		/** Required */
 		GraphArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartMonitoringMemberRequestFormGroup() {
 		return new FormGroup<StartMonitoringMemberRequestFormProperties>({
 			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^[0-9]+$')]),
 		});
 
 	}
@@ -860,7 +780,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 	}
@@ -869,7 +788,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p> <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
@@ -885,7 +803,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph to invite the member accounts to contribute their data to.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
@@ -909,7 +826,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph to invite the member accounts to contribute their data to.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 
@@ -933,7 +849,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph to disable.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 	}
@@ -942,7 +857,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph to disable.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
@@ -958,7 +872,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph to delete members from.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
@@ -975,7 +888,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph to delete members from.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
@@ -991,7 +903,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 	}
@@ -1000,7 +911,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the behavior graph to remove the member account from.</p> <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
@@ -1016,7 +926,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph for which to request the member details.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
@@ -1033,7 +942,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph for which to request the member details.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
@@ -1129,7 +1037,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph for which to retrieve the list of member accounts.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
@@ -1152,7 +1059,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph for which to retrieve the list of member accounts.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 
@@ -1184,7 +1090,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 	}
@@ -1193,7 +1098,6 @@ export namespace MyNS {
 		/**
 		 * <p>The ARN of the behavior graph to reject the invitation to.</p> <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 	}
@@ -1209,7 +1113,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: string;
 
@@ -1218,7 +1121,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: string;
 	}
@@ -1227,7 +1129,6 @@ export namespace MyNS {
 		/**
 		 * The ARN of the behavior graph.
 		 * Required
-		 * Pattern: ^arn:aws[-\w]{0,10}?:detective:[-\w]{2,20}?:\d{12}?:graph:[abcdef\d]{32}?$
 		 */
 		GraphArn: FormControl<string | null | undefined>,
 
@@ -1236,14 +1137,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^[0-9]+$
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartMonitoringMemberPostBodyFormGroup() {
 		return new FormGroup<StartMonitoringMemberPostBodyFormProperties>({
 			GraphArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^[0-9]+$')]),
 		});
 
 	}

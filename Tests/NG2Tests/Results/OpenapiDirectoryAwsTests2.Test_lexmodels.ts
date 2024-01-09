@@ -8,7 +8,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -40,7 +39,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		locale?: CreateBotVersionResponseLocale | null;
@@ -52,7 +50,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -77,7 +74,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		locale: FormControl<CreateBotVersionResponseLocale | null | undefined>,
@@ -86,7 +82,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBotVersionResponseFormGroup() {
 		return new FormGroup<CreateBotVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -95,7 +91,7 @@ export namespace MyNS {
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
@@ -111,7 +107,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		intentName: string;
 
@@ -119,7 +114,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		intentVersion: string;
 	}
@@ -131,7 +125,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		intentName: FormControl<string | null | undefined>,
 
@@ -139,14 +132,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		intentVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateIntentFormGroup() {
 		return new FormGroup<IntentFormProperties>({
-			intentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			intentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			intentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
+			intentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -354,7 +346,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -400,7 +391,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		checksum?: string | null;
@@ -410,7 +400,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -426,19 +415,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIntentVersionResponseFormGroup() {
 		return new FormGroup<CreateIntentVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -452,7 +440,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z](-|_|.)?)+$
 		 */
 		name: string;
 
@@ -468,14 +455,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		slotType?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		slotTypeVersion?: string | null;
 
@@ -509,7 +494,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z](-|_|.)?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -525,14 +509,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		slotType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		slotTypeVersion: FormControl<string | null | undefined>,
 
@@ -551,11 +533,11 @@ export namespace MyNS {
 	}
 	export function CreateSlotFormGroup() {
 		return new FormGroup<SlotFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z](-|_|.)?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			slotConstraint: new FormControl<SlotSlotConstraint | null | undefined>(undefined, [Validators.required]),
-			slotType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			slotTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			slotType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
+			slotTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
 			obfuscationSetting: new FormControl<SlotObfuscationSetting | null | undefined>(undefined),
@@ -601,7 +583,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
 		 */
 		uri: string;
 
@@ -620,7 +601,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
 		 */
 		uri: FormControl<string | null | undefined>,
 
@@ -633,7 +613,7 @@ export namespace MyNS {
 	}
 	export function CreateCodeHookFormGroup() {
 		return new FormGroup<CodeHookFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?')]),
 			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(1)]),
 		});
 
@@ -670,7 +650,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -691,7 +670,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		checksum?: string | null;
@@ -700,7 +678,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature?: string | null;
 
@@ -715,7 +692,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -730,7 +706,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
@@ -739,20 +714,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSlotTypeVersionResponseFormGroup() {
 		return new FormGroup<CreateSlotTypeVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -850,7 +824,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -882,7 +855,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		locale?: GetBotResponseLocale | null;
@@ -894,7 +866,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -919,7 +890,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		locale: FormControl<GetBotResponseLocale | null | undefined>,
@@ -928,7 +898,7 @@ export namespace MyNS {
 	}
 	export function CreateGetBotResponseFormGroup() {
 		return new FormGroup<GetBotResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -937,7 +907,7 @@ export namespace MyNS {
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			locale: new FormControl<GetBotResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
@@ -952,7 +922,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -965,14 +934,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion?: string | null;
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName?: string | null;
 		lastUpdatedDate?: Date | null;
@@ -987,7 +954,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1000,14 +966,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
@@ -1016,10 +980,10 @@ export namespace MyNS {
 	}
 	export function CreateGetBotAliasResponseFormGroup() {
 		return new FormGroup<GetBotAliasResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -1035,7 +999,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
 		 */
 		iamRoleArn?: string | null;
 	}
@@ -1046,13 +1009,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
 		 */
 		iamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateConversationLogsResponseFormGroup() {
 		return new FormGroup<ConversationLogsResponseFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
 		});
 
 	}
@@ -1066,14 +1028,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
 		 */
 		kmsKeyArn?: string | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
 		 */
 		resourceArn?: string | null;
 
@@ -1089,14 +1049,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
 		 */
 		kmsKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 
@@ -1107,8 +1065,8 @@ export namespace MyNS {
 		return new FormGroup<LogSettingsResponseFormProperties>({
 			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined),
 			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined),
-			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$')]),
 			resourcePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
@@ -1139,7 +1097,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -1152,14 +1109,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion?: string | null;
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName?: string | null;
 		lastUpdatedDate?: Date | null;
@@ -1176,7 +1131,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1189,14 +1143,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
@@ -1205,10 +1157,10 @@ export namespace MyNS {
 	}
 	export function CreateBotAliasMetadataFormGroup() {
 		return new FormGroup<BotAliasMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -1221,7 +1173,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -1234,14 +1185,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botAlias?: string | null;
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName?: string | null;
 		createdDate?: Date | null;
@@ -1255,7 +1204,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1268,14 +1216,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botAlias: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName: FormControl<string | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
@@ -1285,10 +1231,10 @@ export namespace MyNS {
 	}
 	export function CreateGetBotChannelAssociationResponseFormGroup() {
 		return new FormGroup<GetBotChannelAssociationResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<GetBotChannelAssociationResponseType | null | undefined>(undefined),
 			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
@@ -1332,7 +1278,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -1345,14 +1290,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botAlias?: string | null;
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName?: string | null;
 		createdDate?: Date | null;
@@ -1368,7 +1311,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1381,14 +1323,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botAlias: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName: FormControl<string | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
@@ -1398,10 +1338,10 @@ export namespace MyNS {
 	}
 	export function CreateBotChannelAssociationFormGroup() {
 		return new FormGroup<BotChannelAssociationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<BotChannelAssociationType | null | undefined>(undefined),
 			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
@@ -1433,7 +1373,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -1449,7 +1388,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 	}
@@ -1460,7 +1398,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1476,18 +1413,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateBotMetadataFormGroup() {
 		return new FormGroup<BotMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -1609,14 +1545,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z_]+
 		 */
 		name?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [0-9]+
 		 */
 		version?: string | null;
 		resourceType?: GetExportResponseResourceType | null;
@@ -1630,14 +1564,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z_]+
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
@@ -1648,8 +1580,8 @@ export namespace MyNS {
 	}
 	export function CreateGetExportResponseFormGroup() {
 		return new FormGroup<GetExportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z_]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[0-9]+')]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			exportType: new FormControl<GetExportResponseExportType | null | undefined>(undefined),
 			exportStatus: new FormControl<GetExportResponseExportStatus | null | undefined>(undefined),
@@ -1670,7 +1602,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z_]+
 		 */
 		name?: string | null;
 		resourceType?: GetExportResponseResourceType | null;
@@ -1685,7 +1616,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z_]+
 		 */
 		name: FormControl<string | null | undefined>,
 		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
@@ -1696,7 +1626,7 @@ export namespace MyNS {
 	}
 	export function CreateGetImportResponseFormGroup() {
 		return new FormGroup<GetImportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z_]+')]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
 			importId: new FormControl<string | null | undefined>(undefined),
@@ -1715,7 +1645,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -1761,7 +1690,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		checksum?: string | null;
@@ -1771,7 +1699,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1787,19 +1714,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIntentResponseFormGroup() {
 		return new FormGroup<GetIntentResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1826,7 +1752,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -1841,7 +1766,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 	}
@@ -1852,7 +1776,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1867,17 +1790,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateIntentMetadataFormGroup() {
 		return new FormGroup<IntentMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -1901,7 +1823,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -1922,7 +1843,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		checksum?: string | null;
@@ -1931,7 +1851,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature?: string | null;
 
@@ -1946,7 +1865,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1961,7 +1879,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
@@ -1970,20 +1887,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSlotTypeResponseFormGroup() {
 		return new FormGroup<GetSlotTypeResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -2009,7 +1925,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -2024,7 +1939,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 	}
@@ -2035,7 +1949,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2050,17 +1963,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateSlotTypeMetadataFormGroup() {
 		return new FormGroup<SlotTypeMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -2084,7 +1996,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName?: string | null;
 		utterances?: Array<UtteranceList>;
@@ -2094,13 +2005,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName: FormControl<string | null | undefined>,
 	}
 	export function CreateGetUtterancesViewResponseFormGroup() {
 		return new FormGroup<GetUtterancesViewResponseFormProperties>({
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 		});
 
 	}
@@ -2112,7 +2022,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion?: string | null;
 		utterances?: Array<UtteranceData>;
@@ -2124,13 +2033,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: FormControl<string | null | undefined>,
 	}
 	export function CreateUtteranceListFormGroup() {
 		return new FormGroup<UtteranceListFormProperties>({
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -2239,7 +2147,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -2271,7 +2178,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		locale?: PutBotResponseLocale | null;
@@ -2290,7 +2196,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2315,7 +2220,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		locale: FormControl<PutBotResponseLocale | null | undefined>,
@@ -2325,7 +2229,7 @@ export namespace MyNS {
 	}
 	export function CreatePutBotResponseFormGroup() {
 		return new FormGroup<PutBotResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -2334,7 +2238,7 @@ export namespace MyNS {
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			locale: new FormControl<PutBotResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
@@ -2350,7 +2254,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -2363,14 +2266,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion?: string | null;
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName?: string | null;
 		lastUpdatedDate?: Date | null;
@@ -2391,7 +2292,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2404,14 +2304,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 50
 		 * Min length: 2
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		botName: FormControl<string | null | undefined>,
 		lastUpdatedDate: FormControl<Date | null | undefined>,
@@ -2420,10 +2318,10 @@ export namespace MyNS {
 	}
 	export function CreatePutBotAliasResponseFormGroup() {
 		return new FormGroup<PutBotAliasResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -2444,7 +2342,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
 		 */
 		kmsKeyArn?: string | null;
 
@@ -2452,7 +2349,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
 		 */
 		resourceArn: string;
 	}
@@ -2469,7 +2365,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$
 		 */
 		kmsKeyArn: FormControl<string | null | undefined>,
 
@@ -2477,7 +2372,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
@@ -2485,8 +2379,8 @@ export namespace MyNS {
 		return new FormGroup<LogSettingsRequestFormProperties>({
 			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined, [Validators.required]),
 			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined, [Validators.required]),
-			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$')]),
 		});
 
 	}
@@ -2496,7 +2390,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -2542,7 +2435,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		checksum?: string | null;
@@ -2553,7 +2445,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2569,7 +2460,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
@@ -2577,12 +2467,12 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentResponseFormGroup() {
 		return new FormGroup<PutIntentResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2594,7 +2484,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name?: string | null;
 
@@ -2615,7 +2504,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version?: string | null;
 		checksum?: string | null;
@@ -2625,7 +2513,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature?: string | null;
 
@@ -2640,7 +2527,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^([A-Za-z]_?)+$
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2655,7 +2541,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		version: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
@@ -2665,21 +2550,20 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
 	export function CreatePutSlotTypeResponseFormGroup() {
 		return new FormGroup<PutSlotTypeResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -2689,7 +2573,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z_]+
 		 */
 		name?: string | null;
 		resourceType?: GetExportResponseResourceType | null;
@@ -2709,7 +2592,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z_]+
 		 */
 		name: FormControl<string | null | undefined>,
 		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
@@ -2720,7 +2602,7 @@ export namespace MyNS {
 	}
 	export function CreateStartImportResponseFormGroup() {
 		return new FormGroup<StartImportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z_]+')]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
 			importId: new FormControl<string | null | undefined>(undefined),
@@ -2769,7 +2651,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
 		 */
 		iamRoleArn: string;
 	}
@@ -2781,13 +2662,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
 		 */
 		iamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateConversationLogsRequestFormGroup() {
 		return new FormGroup<ConversationLogsRequestFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
 		});
 
 	}
@@ -3155,7 +3035,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: string;
 		checksum?: string | null;
@@ -3181,7 +3060,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: FormControl<string | null | undefined>,
 		checksum: FormControl<string | null | undefined>,
@@ -3189,7 +3067,7 @@ export namespace MyNS {
 	export function CreatePutBotAliasRequestFormGroup() {
 		return new FormGroup<PutBotAliasRequestFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3357,7 +3235,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature?: string | null;
 
@@ -3381,7 +3258,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
@@ -3391,7 +3267,7 @@ export namespace MyNS {
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -3967,7 +3843,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: string;
 
@@ -3998,7 +3873,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: \$LATEST|[0-9]+
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
@@ -4008,7 +3882,7 @@ export namespace MyNS {
 	export function CreatePutBotAliasPutBodyFormGroup() {
 		return new FormGroup<PutBotAliasPutBodyFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4020,7 +3894,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
 		 */
 		iamRoleArn?: string | null;
 	}
@@ -4029,13 +3902,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$
 		 */
 		iamRoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePutBotAliasPutBodyConversationLogsFormGroup() {
 		return new FormGroup<PutBotAliasPutBodyConversationLogsFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
 		});
 
 	}
@@ -4453,7 +4325,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
 		 */
 		uri?: string | null;
 
@@ -4468,7 +4339,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?
 		 */
 		uri: FormControl<string | null | undefined>,
 
@@ -4480,7 +4350,7 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentPutBodyDialogCodeHookFormGroup() {
 		return new FormGroup<PutIntentPutBodyDialogCodeHookFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?')]),
 			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
 		});
 
@@ -4531,7 +4401,6 @@ export namespace MyNS {
 		 * <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature?: string | null;
 
@@ -4564,7 +4433,6 @@ export namespace MyNS {
 		 * <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}
@@ -4574,7 +4442,7 @@ export namespace MyNS {
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}

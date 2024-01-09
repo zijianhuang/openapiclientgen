@@ -47,7 +47,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 		CapacityUnits?: number | null;
@@ -66,7 +65,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		CapacityUnits: FormControl<number | null | undefined>,
@@ -75,7 +73,7 @@ export namespace MyNS {
 	}
 	export function CreateConsumedCapacityFormGroup() {
 		return new FormGroup<ConsumedCapacityFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			CapacityUnits: new FormControl<number | null | undefined>(undefined),
 			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
 			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
@@ -286,7 +284,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BackupName: string;
 
@@ -318,7 +315,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BackupName: FormControl<string | null | undefined>,
 
@@ -338,7 +334,7 @@ export namespace MyNS {
 	export function CreateBackupDetailsFormGroup() {
 		return new FormGroup<BackupDetailsFormProperties>({
 			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
-			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			BackupSizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			BackupStatus: new FormControl<BackupDetailsBackupStatus | null | undefined>(undefined, [Validators.required]),
 			BackupType: new FormControl<BackupDetailsBackupType | null | undefined>(undefined, [Validators.required]),
@@ -358,7 +354,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -366,7 +361,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BackupName: string;
 	}
@@ -376,7 +370,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
@@ -384,14 +377,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BackupName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBackupInputFormGroup() {
 		return new FormGroup<CreateBackupInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -470,7 +462,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName?: string | null;
 	}
@@ -484,7 +475,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
@@ -493,7 +483,7 @@ export namespace MyNS {
 			GlobalTableArn: new FormControl<string | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
 			GlobalTableStatus: new FormControl<GlobalTableDescriptionGlobalTableStatus | null | undefined>(undefined),
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -561,7 +551,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -575,13 +564,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexDescriptionFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -594,7 +582,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: string;
 
@@ -607,13 +594,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGlobalTableInputFormGroup() {
 		return new FormGroup<CreateGlobalTableInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -670,7 +656,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 
@@ -687,8 +672,6 @@ export namespace MyNS {
 		TableSizeBytes?: number | null;
 		ItemCount?: number | null;
 		TableArn?: string | null;
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId?: string | null;
 
 		/** Contains the details for the read/write capacity mode. */
@@ -724,7 +707,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		TableStatus: FormControl<TableDescriptionTableStatus | null | undefined>,
@@ -732,8 +714,6 @@ export namespace MyNS {
 		TableSizeBytes: FormControl<number | null | undefined>,
 		ItemCount: FormControl<number | null | undefined>,
 		TableArn: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId: FormControl<string | null | undefined>,
 		LatestStreamLabel: FormControl<string | null | undefined>,
 
@@ -746,7 +726,7 @@ export namespace MyNS {
 	}
 	export function CreateTableDescriptionFormGroup() {
 		return new FormGroup<TableDescriptionFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			TableStatus: new FormControl<TableDescriptionTableStatus | null | undefined>(undefined),
 			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
 			TableSizeBytes: new FormControl<number | null | undefined>(undefined),
@@ -908,7 +888,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -931,7 +910,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexSizeBytes: FormControl<number | null | undefined>,
@@ -940,7 +918,7 @@ export namespace MyNS {
 	}
 	export function CreateLocalSecondaryIndexDescriptionFormGroup() {
 		return new FormGroup<LocalSecondaryIndexDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			IndexSizeBytes: new FormControl<number | null | undefined>(undefined),
 			ItemCount: new FormControl<number | null | undefined>(undefined),
 			IndexArn: new FormControl<string | null | undefined>(undefined),
@@ -980,7 +958,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -1008,7 +985,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
@@ -1019,7 +995,7 @@ export namespace MyNS {
 	}
 	export function CreateGlobalSecondaryIndexDescriptionFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
 			Backfilling: new FormControl<boolean | null | undefined>(undefined),
 			IndexSizeBytes: new FormControl<number | null | undefined>(undefined),
@@ -1175,7 +1151,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -1207,14 +1182,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
 	}
 	export function CreateCreateTableInputFormGroup() {
 		return new FormGroup<CreateTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 		});
 
@@ -1228,7 +1202,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 
@@ -1253,13 +1226,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateLocalSecondaryIndexFormGroup() {
 		return new FormGroup<LocalSecondaryIndexFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1272,7 +1244,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 
@@ -1300,13 +1271,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalSecondaryIndexFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1472,14 +1442,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		TableId: string;
 		TableArn?: string | null;
 		TableSizeBytes?: number | null;
@@ -1512,14 +1478,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		TableId: FormControl<string | null | undefined>,
 		TableArn: FormControl<string | null | undefined>,
 		TableSizeBytes: FormControl<number | null | undefined>,
@@ -1533,7 +1495,7 @@ export namespace MyNS {
 	}
 	export function CreateSourceTableDetailsFormGroup() {
 		return new FormGroup<SourceTableDetailsFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			TableId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TableArn: new FormControl<string | null | undefined>(undefined),
 			TableSizeBytes: new FormControl<number | null | undefined>(undefined),
@@ -1576,7 +1538,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -1596,13 +1557,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateLocalSecondaryIndexInfoFormGroup() {
 		return new FormGroup<LocalSecondaryIndexInfoFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1614,7 +1574,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -1637,13 +1596,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalSecondaryIndexInfoFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexInfoFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1780,7 +1738,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -1805,7 +1762,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
@@ -1818,7 +1774,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteItemInputFormGroup() {
 		return new FormGroup<DeleteItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
 			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
@@ -1917,7 +1873,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 	}
@@ -1929,13 +1884,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteTableInputFormGroup() {
 		return new FormGroup<DeleteTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2046,7 +2000,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 	}
@@ -2056,13 +2009,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeContinuousBackupsInputFormGroup() {
 		return new FormGroup<DescribeContinuousBackupsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2072,14 +2024,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 		ContributorInsightsRuleList?: Array<string>;
@@ -2094,14 +2044,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
@@ -2109,8 +2057,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeContributorInsightsOutputFormGroup() {
 		return new FormGroup<DescribeContributorInsightsOutputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
 			LastUpdateDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2145,14 +2093,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 	}
@@ -2162,21 +2108,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeContributorInsightsInputFormGroup() {
 		return new FormGroup<DescribeContributorInsightsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2251,7 +2195,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: string;
 	}
@@ -2261,13 +2204,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGlobalTableInputFormGroup() {
 		return new FormGroup<DescribeGlobalTableInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2287,7 +2229,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName?: string | null;
 		ReplicaSettings?: Array<ReplicaSettingsDescription>;
@@ -2297,13 +2238,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGlobalTableSettingsOutputFormGroup() {
 		return new FormGroup<DescribeGlobalTableSettingsOutputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2398,7 +2338,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName?: string | null;
 
@@ -2412,13 +2351,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoScalingPolicyDescriptionFormGroup() {
 		return new FormGroup<AutoScalingPolicyDescriptionFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
 		});
 
 	}
@@ -2461,7 +2399,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
@@ -2486,7 +2423,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
@@ -2499,7 +2435,7 @@ export namespace MyNS {
 	}
 	export function CreateReplicaGlobalSecondaryIndexSettingsDescriptionFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexSettingsDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
 			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -2513,7 +2449,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: string;
 	}
@@ -2523,13 +2458,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGlobalTableSettingsInputFormGroup() {
 		return new FormGroup<DescribeGlobalTableSettingsInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2615,7 +2549,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 	}
@@ -2627,13 +2560,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTableInputFormGroup() {
 		return new FormGroup<DescribeTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2658,7 +2590,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 		TableStatus?: TableDescriptionTableStatus | null;
@@ -2671,14 +2602,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		TableStatus: FormControl<TableDescriptionTableStatus | null | undefined>,
 	}
 	export function CreateTableAutoScalingDescriptionFormGroup() {
 		return new FormGroup<TableAutoScalingDescriptionFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			TableStatus: new FormControl<TableDescriptionTableStatus | null | undefined>(undefined),
 		});
 
@@ -2718,7 +2648,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
@@ -2736,14 +2665,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexAutoScalingDescriptionFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexAutoScalingDescriptionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
 		});
 
@@ -2755,7 +2683,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 	}
@@ -2765,13 +2692,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTableReplicaAutoScalingInputFormGroup() {
 		return new FormGroup<DescribeTableReplicaAutoScalingInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2795,7 +2721,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 	}
@@ -2805,13 +2730,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTimeToLiveInputFormGroup() {
 		return new FormGroup<DescribeTimeToLiveInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -2842,7 +2766,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -2866,7 +2789,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ConsistentRead: FormControl<boolean | null | undefined>,
@@ -2877,7 +2799,7 @@ export namespace MyNS {
 	}
 	export function CreateGetItemInputFormGroup() {
 		return new FormGroup<GetItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
 			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
@@ -2916,11 +2838,8 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId?: string | null;
 		TableArn?: string | null;
 
@@ -2933,7 +2852,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BackupName?: string | null;
 		BackupCreationDateTime?: Date | null;
@@ -2951,11 +2869,8 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		TableId: FormControl<string | null | undefined>,
 		TableArn: FormControl<string | null | undefined>,
 
@@ -2968,7 +2883,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BackupName: FormControl<string | null | undefined>,
 		BackupCreationDateTime: FormControl<Date | null | undefined>,
@@ -2981,11 +2895,11 @@ export namespace MyNS {
 	}
 	export function CreateBackupSummaryFormGroup() {
 		return new FormGroup<BackupSummaryFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			TableId: new FormControl<string | null | undefined>(undefined),
 			TableArn: new FormControl<string | null | undefined>(undefined),
 			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
-			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			BackupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			BackupCreationDateTime: new FormControl<Date | null | undefined>(undefined),
 			BackupExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
 			BackupStatus: new FormControl<BackupDetailsBackupStatus | null | undefined>(undefined),
@@ -3000,7 +2914,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 
@@ -3024,7 +2937,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
@@ -3045,7 +2957,7 @@ export namespace MyNS {
 	}
 	export function CreateListBackupsInputFormGroup() {
 		return new FormGroup<ListBackupsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			TimeRangeLowerBound: new FormControl<Date | null | undefined>(undefined),
 			TimeRangeUpperBound: new FormControl<Date | null | undefined>(undefined),
@@ -3078,14 +2990,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
@@ -3097,22 +3007,20 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
 	}
 	export function CreateContributorInsightsSummaryFormGroup() {
 		return new FormGroup<ContributorInsightsSummaryFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
 		});
 
@@ -3123,7 +3031,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 		NextToken?: string | null;
@@ -3136,7 +3043,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
@@ -3146,7 +3052,7 @@ export namespace MyNS {
 	}
 	export function CreateListContributorInsightsInputFormGroup() {
 		return new FormGroup<ListContributorInsightsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.max(100)]),
 		});
@@ -3159,7 +3065,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		LastEvaluatedGlobalTableName?: string | null;
 	}
@@ -3168,13 +3073,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		LastEvaluatedGlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateListGlobalTablesOutputFormGroup() {
 		return new FormGroup<ListGlobalTablesOutputFormProperties>({
-			LastEvaluatedGlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			LastEvaluatedGlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -3186,7 +3090,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName?: string | null;
 		ReplicationGroup?: Array<Replica>;
@@ -3198,13 +3101,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalTableFormGroup() {
 		return new FormGroup<GlobalTableFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -3214,7 +3116,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartGlobalTableName?: string | null;
 
@@ -3227,7 +3128,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartGlobalTableName: FormControl<string | null | undefined>,
 
@@ -3237,7 +3137,7 @@ export namespace MyNS {
 	}
 	export function CreateListGlobalTablesInputFormGroup() {
 		return new FormGroup<ListGlobalTablesInputFormProperties>({
-			ExclusiveStartGlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			ExclusiveStartGlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			RegionName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3252,7 +3152,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		LastEvaluatedTableName?: string | null;
 	}
@@ -3263,13 +3162,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		LastEvaluatedTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateListTablesOutputFormGroup() {
 		return new FormGroup<ListTablesOutputFormProperties>({
-			LastEvaluatedTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			LastEvaluatedTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -3281,7 +3179,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartTableName?: string | null;
 
@@ -3298,7 +3195,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ExclusiveStartTableName: FormControl<string | null | undefined>,
 
@@ -3310,7 +3206,7 @@ export namespace MyNS {
 	}
 	export function CreateListTablesInputFormGroup() {
 		return new FormGroup<ListTablesInputFormProperties>({
-			ExclusiveStartTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			ExclusiveStartTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -3387,7 +3283,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -3412,7 +3307,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ReturnValues: FormControl<DeleteItemInputReturnValues | null | undefined>,
@@ -3425,7 +3319,7 @@ export namespace MyNS {
 	}
 	export function CreatePutItemInputFormGroup() {
 		return new FormGroup<PutItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
 			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
@@ -3478,14 +3372,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 		Select?: QueryInputSelect | null;
@@ -3518,14 +3410,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		Select: FormControl<QueryInputSelect | null | undefined>,
@@ -3544,8 +3434,8 @@ export namespace MyNS {
 	}
 	export function CreateQueryInputFormGroup() {
 		return new FormGroup<QueryInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Select: new FormControl<QueryInputSelect | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
@@ -3600,7 +3490,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TargetTableName: string;
 
@@ -3626,7 +3515,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TargetTableName: FormControl<string | null | undefined>,
 
@@ -3640,7 +3528,7 @@ export namespace MyNS {
 	}
 	export function CreateRestoreTableFromBackupInputFormGroup() {
 		return new FormGroup<RestoreTableFromBackupInputFormProperties>({
-			TargetTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TargetTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			BackupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
 			BillingModeOverride: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 		});
@@ -3676,7 +3564,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		SourceTableName?: string | null;
 
@@ -3684,7 +3571,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TargetTableName: string;
 		UseLatestRestorableTime?: boolean | null;
@@ -3705,7 +3591,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		SourceTableName: FormControl<string | null | undefined>,
 
@@ -3713,7 +3598,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TargetTableName: FormControl<string | null | undefined>,
 		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
@@ -3723,8 +3607,8 @@ export namespace MyNS {
 	export function CreateRestoreTableToPointInTimeInputFormGroup() {
 		return new FormGroup<RestoreTableToPointInTimeInputFormProperties>({
 			SourceTableArn: new FormControl<string | null | undefined>(undefined),
-			SourceTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			TargetTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			SourceTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			TargetTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			UseLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
 			RestoreDateTime: new FormControl<Date | null | undefined>(undefined),
 			BillingModeOverride: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
@@ -3785,14 +3669,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -3834,14 +3716,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 
@@ -3870,8 +3750,8 @@ export namespace MyNS {
 	}
 	export function CreateScanInputFormGroup() {
 		return new FormGroup<ScanInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Select: new FormControl<QueryInputSelect | null | undefined>(undefined),
 			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
@@ -4000,7 +3880,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 		ProjectionExpression?: string | null;
@@ -4014,14 +3893,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ProjectionExpression: FormControl<string | null | undefined>,
 	}
 	export function CreateGetFormGroup() {
 		return new FormGroup<GetFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4126,7 +4004,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -4144,7 +4021,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
@@ -4154,7 +4030,7 @@ export namespace MyNS {
 	}
 	export function CreateConditionCheckFormGroup() {
 		return new FormGroup<ConditionCheckFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ConditionExpression: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
@@ -4174,7 +4050,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 		ConditionExpression?: string | null;
@@ -4190,7 +4065,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionExpression: FormControl<string | null | undefined>,
@@ -4198,7 +4072,7 @@ export namespace MyNS {
 	}
 	export function CreatePutFormGroup() {
 		return new FormGroup<PutFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ConditionExpression: new FormControl<string | null | undefined>(undefined),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
@@ -4216,7 +4090,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 		ConditionExpression?: string | null;
@@ -4232,7 +4105,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionExpression: FormControl<string | null | undefined>,
@@ -4240,7 +4112,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFormGroup() {
 		return new FormGroup<DeleteFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ConditionExpression: new FormControl<string | null | undefined>(undefined),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
@@ -4261,7 +4133,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 		ConditionExpression?: string | null;
@@ -4280,7 +4151,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionExpression: FormControl<string | null | undefined>,
@@ -4289,7 +4159,7 @@ export namespace MyNS {
 	export function CreateUpdateFormGroup() {
 		return new FormGroup<UpdateFormProperties>({
 			UpdateExpression: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ConditionExpression: new FormControl<string | null | undefined>(undefined),
 			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
 		});
@@ -4363,7 +4233,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -4379,13 +4248,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateContinuousBackupsInputFormGroup() {
 		return new FormGroup<UpdateContinuousBackupsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4416,14 +4284,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName?: string | null;
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
@@ -4433,22 +4299,20 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
 	}
 	export function CreateUpdateContributorInsightsOutputFormGroup() {
 		return new FormGroup<UpdateContributorInsightsOutputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
 		});
 
@@ -4460,14 +4324,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -4480,14 +4342,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 
@@ -4496,8 +4356,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateContributorInsightsInputFormGroup() {
 		return new FormGroup<UpdateContributorInsightsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ContributorInsightsAction: new FormControl<UpdateContributorInsightsInputContributorInsightsAction | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4524,7 +4384,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: string;
 
@@ -4537,13 +4396,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGlobalTableInputFormGroup() {
 		return new FormGroup<UpdateGlobalTableInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4635,7 +4493,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName?: string | null;
 		ReplicaSettings?: Array<ReplicaSettingsDescription>;
@@ -4645,13 +4502,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGlobalTableSettingsOutputFormGroup() {
 		return new FormGroup<UpdateGlobalTableSettingsOutputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4662,7 +4518,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: string;
 		GlobalTableBillingMode?: BillingModeSummaryBillingMode | null;
@@ -4691,7 +4546,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		GlobalTableName: FormControl<string | null | undefined>,
 		GlobalTableBillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
@@ -4701,7 +4555,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGlobalTableSettingsInputFormGroup() {
 		return new FormGroup<UpdateGlobalTableSettingsInputFormProperties>({
-			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			GlobalTableBillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 			GlobalTableProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -4762,7 +4616,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName?: string | null;
 
@@ -4779,13 +4632,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: \p{Print}+
 		 */
 		PolicyName: FormControl<string | null | undefined>,
 	}
 	export function CreateAutoScalingPolicyUpdateFormGroup() {
 		return new FormGroup<AutoScalingPolicyUpdateFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
 		});
 
 	}
@@ -4828,7 +4680,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 
@@ -4846,7 +4697,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 
@@ -4855,7 +4705,7 @@ export namespace MyNS {
 	}
 	export function CreateGlobalTableGlobalSecondaryIndexSettingsUpdateFormGroup() {
 		return new FormGroup<GlobalTableGlobalSecondaryIndexSettingsUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -4906,7 +4756,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 
@@ -4924,7 +4773,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 
@@ -4933,7 +4781,7 @@ export namespace MyNS {
 	}
 	export function CreateReplicaGlobalSecondaryIndexSettingsUpdateFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexSettingsUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -4978,7 +4826,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -5005,7 +4852,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
@@ -5019,7 +4865,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateItemInputFormGroup() {
 		return new FormGroup<UpdateItemInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
 			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
 			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
@@ -5066,7 +4912,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 		BillingMode?: BillingModeSummaryBillingMode | null;
@@ -5092,14 +4937,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
 	}
 	export function CreateUpdateTableInputFormGroup() {
 		return new FormGroup<UpdateTableInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
 		});
 
@@ -5136,7 +4980,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 
@@ -5154,13 +4997,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGlobalSecondaryIndexActionFormGroup() {
 		return new FormGroup<UpdateGlobalSecondaryIndexActionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -5173,7 +5015,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 
@@ -5201,13 +5042,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGlobalSecondaryIndexActionFormGroup() {
 		return new FormGroup<CreateGlobalSecondaryIndexActionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -5220,7 +5060,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 	}
@@ -5232,13 +5071,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGlobalSecondaryIndexActionFormGroup() {
 		return new FormGroup<DeleteGlobalSecondaryIndexActionFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -5304,7 +5142,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: string;
 
@@ -5319,13 +5156,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -5403,7 +5239,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -5419,13 +5254,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTableReplicaAutoScalingInputFormGroup() {
 		return new FormGroup<UpdateTableReplicaAutoScalingInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -5437,7 +5271,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -5451,13 +5284,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateGlobalSecondaryIndexAutoScalingUpdateFormGroup() {
 		return new FormGroup<GlobalSecondaryIndexAutoScalingUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -5494,7 +5326,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName?: string | null;
 
@@ -5508,13 +5339,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		IndexName: FormControl<string | null | undefined>,
 	}
 	export function CreateReplicaGlobalSecondaryIndexAutoScalingUpdateFormGroup() {
 		return new FormGroup<ReplicaGlobalSecondaryIndexAutoScalingUpdateFormProperties>({
-			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			IndexName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -5576,7 +5406,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: string;
 
@@ -5594,13 +5423,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TableName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateTimeToLiveInputFormGroup() {
 		return new FormGroup<UpdateTimeToLiveInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}

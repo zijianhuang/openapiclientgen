@@ -29,16 +29,10 @@ export namespace MyNS {
 	/** Specifies a scheduled task used to back up a selection of resources. */
 	export interface BackupRuleInput {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		RuleName: string;
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		TargetBackupVaultName: string;
 		ScheduleExpression?: string | null;
 		StartWindowMinutes?: number | null;
@@ -53,16 +47,10 @@ export namespace MyNS {
 	/** Specifies a scheduled task used to back up a selection of resources. */
 	export interface BackupRuleInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		RuleName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		TargetBackupVaultName: FormControl<string | null | undefined>,
 		ScheduleExpression: FormControl<string | null | undefined>,
 		StartWindowMinutes: FormControl<number | null | undefined>,
@@ -240,15 +228,11 @@ export namespace MyNS {
 	export enum ConditionConditionType { STRINGEQUALS = 0 }
 
 	export interface CreateBackupVaultOutput {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		CreationDate?: Date | null;
 	}
 	export interface CreateBackupVaultOutputFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -306,8 +290,6 @@ export namespace MyNS {
 
 	export interface DescribeBackupJobOutput {
 		BackupJobId?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		RecoveryPointArn?: string | null;
@@ -322,8 +304,6 @@ export namespace MyNS {
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
 		CreatedBy?: RecoveryPointCreator;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 		BytesTransferred?: number | null;
 		ExpectedCompletionDate?: Date | null;
@@ -331,8 +311,6 @@ export namespace MyNS {
 	}
 	export interface DescribeBackupJobOutputFormProperties {
 		BackupJobId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		RecoveryPointArn: FormControl<string | null | undefined>,
@@ -344,8 +322,6 @@ export namespace MyNS {
 		PercentDone: FormControl<string | null | undefined>,
 		BackupSizeInBytes: FormControl<number | null | undefined>,
 		IamRoleArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 		BytesTransferred: FormControl<number | null | undefined>,
 		ExpectedCompletionDate: FormControl<Date | null | undefined>,
@@ -470,8 +446,6 @@ export namespace MyNS {
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
 		CreatedBy?: RecoveryPointCreator;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 	}
 
@@ -489,8 +463,6 @@ export namespace MyNS {
 		StatusMessage: FormControl<string | null | undefined>,
 		BackupSizeInBytes: FormControl<number | null | undefined>,
 		IamRoleArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateCopyJobFormGroup() {
@@ -516,15 +488,11 @@ export namespace MyNS {
 
 	export interface DescribeProtectedResourceOutput {
 		ResourceArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 		LastBackupTime?: Date | null;
 	}
 	export interface DescribeProtectedResourceOutputFormProperties {
 		ResourceArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 		LastBackupTime: FormControl<Date | null | undefined>,
 	}
@@ -539,13 +507,9 @@ export namespace MyNS {
 
 	export interface DescribeRecoveryPointOutput {
 		RecoveryPointArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		ResourceArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
@@ -568,13 +532,9 @@ export namespace MyNS {
 	}
 	export interface DescribeRecoveryPointOutputFormProperties {
 		RecoveryPointArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		ResourceArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 		IamRoleArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeRecoveryPointOutputStatus | null | undefined>,
@@ -771,16 +731,10 @@ export namespace MyNS {
 	/** Specifies a scheduled task used to back up a selection of resources. */
 	export interface BackupRule {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		RuleName: string;
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		TargetBackupVaultName: string;
 		ScheduleExpression?: string | null;
 		StartWindowMinutes?: number | null;
@@ -796,16 +750,10 @@ export namespace MyNS {
 	/** Specifies a scheduled task used to back up a selection of resources. */
 	export interface BackupRuleFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		RuleName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		TargetBackupVaultName: FormControl<string | null | undefined>,
 		ScheduleExpression: FormControl<string | null | undefined>,
 		StartWindowMinutes: FormControl<number | null | undefined>,
@@ -879,10 +827,7 @@ export namespace MyNS {
 	/** Used to specify a set of resources to a backup plan. */
 	export interface BackupSelection {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		SelectionName: string;
 
 		/** Required */
@@ -894,10 +839,7 @@ export namespace MyNS {
 	/** Used to specify a set of resources to a backup plan. */
 	export interface BackupSelectionFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		SelectionName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -912,15 +854,11 @@ export namespace MyNS {
 	}
 
 	export interface GetBackupVaultAccessPolicyOutput {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		Policy?: string | null;
 	}
 	export interface GetBackupVaultAccessPolicyOutputFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		Policy: FormControl<string | null | undefined>,
@@ -935,16 +873,12 @@ export namespace MyNS {
 	}
 
 	export interface GetBackupVaultNotificationsOutput {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		SNSTopicArn?: string | null;
 		BackupVaultEvents?: Array<BackupVaultEvent>;
 	}
 	export interface GetBackupVaultNotificationsOutputFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		SNSTopicArn: FormControl<string | null | undefined>,
@@ -1016,8 +950,6 @@ export namespace MyNS {
 	/** Contains detailed information about a backup job. */
 	export interface BackupJob {
 		BackupJobId?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		RecoveryPointArn?: string | null;
@@ -1034,8 +966,6 @@ export namespace MyNS {
 		CreatedBy?: RecoveryPointCreator;
 		ExpectedCompletionDate?: Date | null;
 		StartBy?: Date | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 		BytesTransferred?: number | null;
 	}
@@ -1043,8 +973,6 @@ export namespace MyNS {
 	/** Contains detailed information about a backup job. */
 	export interface BackupJobFormProperties {
 		BackupJobId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		RecoveryPointArn: FormControl<string | null | undefined>,
@@ -1058,8 +986,6 @@ export namespace MyNS {
 		IamRoleArn: FormControl<string | null | undefined>,
 		ExpectedCompletionDate: FormControl<Date | null | undefined>,
 		StartBy: FormControl<Date | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 		BytesTransferred: FormControl<number | null | undefined>,
 	}
@@ -1203,8 +1129,6 @@ export namespace MyNS {
 	/** Contains metadata about a <code>BackupSelection</code> object. */
 	export interface BackupSelectionsListMember {
 		SelectionId?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		SelectionName?: string | null;
 		BackupPlanId?: string | null;
 		CreationDate?: Date | null;
@@ -1215,8 +1139,6 @@ export namespace MyNS {
 	/** Contains metadata about a <code>BackupSelection</code> object. */
 	export interface BackupSelectionsListMemberFormProperties {
 		SelectionId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		SelectionName: FormControl<string | null | undefined>,
 		BackupPlanId: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -1252,8 +1174,6 @@ export namespace MyNS {
 
 	/** Contains metadata about a backup vault. */
 	export interface BackupVaultListMember {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		CreationDate?: Date | null;
@@ -1264,8 +1184,6 @@ export namespace MyNS {
 
 	/** Contains metadata about a backup vault. */
 	export interface BackupVaultListMemberFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -1317,8 +1235,6 @@ export namespace MyNS {
 	/** A structure that contains information about a backed-up resource. */
 	export interface ProtectedResource {
 		ResourceArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 		LastBackupTime?: Date | null;
 	}
@@ -1326,8 +1242,6 @@ export namespace MyNS {
 	/** A structure that contains information about a backed-up resource. */
 	export interface ProtectedResourceFormProperties {
 		ResourceArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 		LastBackupTime: FormControl<Date | null | undefined>,
 	}
@@ -1358,13 +1272,9 @@ export namespace MyNS {
 	/** Contains detailed information about the recovery points stored in a backup vault. */
 	export interface RecoveryPointByBackupVault {
 		RecoveryPointArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		ResourceArn?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
@@ -1388,13 +1298,9 @@ export namespace MyNS {
 	/** Contains detailed information about the recovery points stored in a backup vault. */
 	export interface RecoveryPointByBackupVaultFormProperties {
 		RecoveryPointArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 		BackupVaultArn: FormControl<string | null | undefined>,
 		ResourceArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 		IamRoleArn: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeRecoveryPointOutputStatus | null | undefined>,
@@ -1446,8 +1352,6 @@ export namespace MyNS {
 		Status?: DescribeRecoveryPointOutputStatus | null;
 		EncryptionKeyArn?: string | null;
 		BackupSizeBytes?: number | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName?: string | null;
 	}
 
@@ -1458,8 +1362,6 @@ export namespace MyNS {
 		Status: FormControl<DescribeRecoveryPointOutputStatus | null | undefined>,
 		EncryptionKeyArn: FormControl<string | null | undefined>,
 		BackupSizeBytes: FormControl<number | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		BackupVaultName: FormControl<string | null | undefined>,
 	}
 	export function CreateRecoveryPointByResourceFormGroup() {
@@ -2103,10 +2005,7 @@ export namespace MyNS {
 
 	export interface StartBackupJobInput {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		BackupVaultName: string;
 
 		/** Required */
@@ -2124,10 +2023,7 @@ export namespace MyNS {
 	}
 	export interface StartBackupJobInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		BackupVaultName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -2156,10 +2052,7 @@ export namespace MyNS {
 		/** Required */
 		RecoveryPointArn: string;
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		SourceBackupVaultName: string;
 
 		/** Required */
@@ -2177,10 +2070,7 @@ export namespace MyNS {
 		/** Required */
 		RecoveryPointArn: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** Required */
 		SourceBackupVaultName: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -2212,8 +2102,6 @@ export namespace MyNS {
 		/** Required */
 		IamRoleArn: string;
 		IdempotencyToken?: string | null;
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType?: string | null;
 	}
 	export interface StartRestoreJobInputFormProperties {
@@ -2224,8 +2112,6 @@ export namespace MyNS {
 		/** Required */
 		IamRoleArn: FormControl<string | null | undefined>,
 		IdempotencyToken: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		ResourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateStartRestoreJobInputFormGroup() {
@@ -2926,16 +2812,12 @@ export namespace MyNS {
 	}
 
 	export interface CreateBackupSelectionPutBodyBackupSelection {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		SelectionName?: string | null;
 		IamRoleArn?: string | null;
 		Resources?: Array<string>;
 		ListOfTags?: Array<Condition>;
 	}
 	export interface CreateBackupSelectionPutBodyBackupSelectionFormProperties {
-
-		/** Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$ */
 		SelectionName: FormControl<string | null | undefined>,
 		IamRoleArn: FormControl<string | null | undefined>,
 	}
@@ -3128,7 +3010,6 @@ export namespace MyNS {
 		/**
 		 * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
 		 */
 		BackupVaultName: string;
 
@@ -3164,7 +3045,6 @@ export namespace MyNS {
 		/**
 		 * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
 		 */
 		BackupVaultName: FormControl<string | null | undefined>,
 
@@ -3232,7 +3112,6 @@ export namespace MyNS {
 		/**
 		 * The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
 		 */
 		SourceBackupVaultName: string;
 
@@ -3265,7 +3144,6 @@ export namespace MyNS {
 		/**
 		 * The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
 		 * Required
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
 		 */
 		SourceBackupVaultName: FormControl<string | null | undefined>,
 
@@ -3334,10 +3212,7 @@ export namespace MyNS {
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartRestoreJob</code>. */
 		IdempotencyToken?: string | null;
 
-		/**
-		 * <p>Starts a job to restore a recovery point for one of the following resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> </ul>
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** <p>Starts a job to restore a recovery point for one of the following resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> </ul> */
 		ResourceType?: string | null;
 	}
 	export interface StartRestoreJobPutBodyFormProperties {
@@ -3363,10 +3238,7 @@ export namespace MyNS {
 		/** A customer chosen string that can be used to distinguish between calls to <code>StartRestoreJob</code>. */
 		IdempotencyToken: FormControl<string | null | undefined>,
 
-		/**
-		 * <p>Starts a job to restore a recovery point for one of the following resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> </ul>
-		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
-		 */
+		/** <p>Starts a job to restore a recovery point for one of the following resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> </ul> */
 		ResourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateStartRestoreJobPutBodyFormGroup() {

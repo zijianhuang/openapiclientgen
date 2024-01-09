@@ -457,7 +457,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 24
 		 * Min length: 24
-		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
 		 */
 		Md5Hash?: string | null;
 
@@ -490,7 +489,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 24
 		 * Min length: 24
-		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
 		 */
 		Md5Hash: FormControl<string | null | undefined>,
 
@@ -508,7 +506,7 @@ export namespace MyNS {
 		return new FormGroup<ImportAssetFromSignedUrlResponseDetailsFormProperties>({
 			AssetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(24)]),
+			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(24), Validators.pattern('/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/')]),
 			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SignedUrl: new FormControl<string | null | undefined>(undefined),
 			SignedUrlExpiresAt: new FormControl<Date | null | undefined>(undefined),
@@ -808,7 +806,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 24
 		 * Min length: 24
-		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
 		 */
 		Md5Hash: string;
 
@@ -838,7 +835,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 24
 		 * Min length: 24
-		 * Pattern: /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/
 		 */
 		Md5Hash: FormControl<string | null | undefined>,
 
@@ -852,7 +848,7 @@ export namespace MyNS {
 		return new FormGroup<ImportAssetFromSignedUrlRequestDetailsFormProperties>({
 			AssetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(24), Validators.minLength(24)]),
+			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(24), Validators.minLength(24), Validators.pattern('/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/')]),
 			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 

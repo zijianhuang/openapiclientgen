@@ -26,7 +26,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		acceleratorType?: string | null;
 
@@ -49,7 +48,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		acceleratorType: FormControl<string | null | undefined>,
 
@@ -67,7 +65,7 @@ export namespace MyNS {
 	}
 	export function CreateAcceleratorTypeOfferingFormGroup() {
 		return new FormGroup<AcceleratorTypeOfferingFormProperties>({
-			acceleratorType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			acceleratorType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^\S+$')]),
 			locationType: new FormControl<AcceleratorTypeOfferingLocationType | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
@@ -129,7 +127,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		acceleratorTypeName?: string | null;
 
@@ -149,13 +146,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		acceleratorTypeName: FormControl<string | null | undefined>,
 	}
 	export function CreateAcceleratorTypeFormGroup() {
 		return new FormGroup<AcceleratorTypeFormProperties>({
-			acceleratorTypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			acceleratorTypeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^\S+$')]),
 		});
 
 	}
@@ -184,7 +180,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		key?: string | null;
 		value?: number | null;
@@ -196,14 +191,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		key: FormControl<string | null | undefined>,
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateKeyValuePairFormGroup() {
 		return new FormGroup<KeyValuePairFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^\S+$')]),
 			value: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -215,7 +209,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
 		 */
 		nextToken?: string | null;
 	}
@@ -224,13 +217,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorsResponseFormGroup() {
 		return new FormGroup<DescribeAcceleratorsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9+/]+={0,2}$')]),
 		});
 
 	}
@@ -245,14 +237,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		acceleratorType?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^eia-[0-9a-f]+$
 		 */
 		acceleratorId?: string | null;
 
@@ -275,14 +265,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		acceleratorType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^eia-[0-9a-f]+$
 		 */
 		acceleratorId: FormControl<string | null | undefined>,
 
@@ -300,8 +288,8 @@ export namespace MyNS {
 	}
 	export function CreateElasticInferenceAcceleratorFormGroup() {
 		return new FormGroup<ElasticInferenceAcceleratorFormProperties>({
-			acceleratorType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			acceleratorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			acceleratorType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^\S+$')]),
+			acceleratorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^eia-[0-9a-f]+$')]),
 			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			attachedResource: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1283), Validators.minLength(1)]),
 		});
@@ -342,7 +330,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		name?: string | null;
 
@@ -359,13 +346,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^\S+$
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^\S+$')]),
 		});
 
 	}
@@ -479,7 +465,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
 		 */
 		nextToken?: string | null;
 	}
@@ -494,14 +479,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorsRequestFormGroup() {
 		return new FormGroup<DescribeAcceleratorsRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9+/]+={0,2}$')]),
 		});
 
 	}
@@ -668,7 +652,6 @@ export namespace MyNS {
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
 		 */
 		nextToken?: string | null;
 	}
@@ -685,14 +668,13 @@ export namespace MyNS {
 		 * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9+/]+={0,2}$
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAcceleratorsPostBodyFormGroup() {
 		return new FormGroup<DescribeAcceleratorsPostBodyFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9+/]+={0,2}$')]),
 		});
 
 	}

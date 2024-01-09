@@ -9,7 +9,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: string;
 
@@ -25,13 +24,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateConnectionOutputFormGroup() {
 		return new FormGroup<CreateConnectionOutputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 		});
 
 	}
@@ -146,7 +144,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: string;
 	}
@@ -156,13 +153,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteConnectionInputFormGroup() {
 		return new FormGroup<DeleteConnectionInputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 		});
 
 	}
@@ -203,7 +199,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn?: string | null;
 		ProviderType?: CreateConnectionInputProviderType | null;
@@ -211,7 +206,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: [0-9]{12}
 		 */
 		OwnerAccountId?: string | null;
 		ConnectionStatus?: ConnectionConnectionStatus | null;
@@ -229,7 +223,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 		ProviderType: FormControl<CreateConnectionInputProviderType | null | undefined>,
@@ -237,7 +230,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: [0-9]{12}
 		 */
 		OwnerAccountId: FormControl<string | null | undefined>,
 		ConnectionStatus: FormControl<ConnectionConnectionStatus | null | undefined>,
@@ -245,9 +237,9 @@ export namespace MyNS {
 	export function CreateConnectionFormGroup() {
 		return new FormGroup<ConnectionFormProperties>({
 			ConnectionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
-			OwnerAccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			OwnerAccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('[0-9]{12}')]),
 			ConnectionStatus: new FormControl<ConnectionConnectionStatus | null | undefined>(undefined),
 		});
 
@@ -261,7 +253,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: string;
 	}
@@ -271,13 +262,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetConnectionInputFormGroup() {
 		return new FormGroup<GetConnectionInputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 		});
 
 	}

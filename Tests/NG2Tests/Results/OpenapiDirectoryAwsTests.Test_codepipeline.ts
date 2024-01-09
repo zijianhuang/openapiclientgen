@@ -26,10 +26,7 @@ export namespace MyNS {
 	/** Represents the input of an AcknowledgeJob action. */
 	export interface AcknowledgeJobInput {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: string;
 
 		/**
@@ -43,10 +40,7 @@ export namespace MyNS {
 	/** Represents the input of an AcknowledgeJob action. */
 	export interface AcknowledgeJobInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
 
 		/**
@@ -253,7 +247,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		provider: string;
 
@@ -261,7 +254,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 9
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		version: string;
 	}
@@ -279,7 +271,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		provider: FormControl<string | null | undefined>,
 
@@ -287,7 +278,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 9
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		version: FormControl<string | null | undefined>,
 	}
@@ -295,8 +285,8 @@ export namespace MyNS {
 		return new FormGroup<ActionTypeIdFormProperties>({
 			category: new FormControl<ActionTypeIdCategory | null | undefined>(undefined, [Validators.required]),
 			owner: new FormControl<ActionTypeIdOwner | null | undefined>(undefined, [Validators.required]),
-			provider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(9), Validators.minLength(1)]),
+			provider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(1), Validators.pattern('[0-9A-Za-z_-]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(9), Validators.minLength(1), Validators.pattern('[0-9A-Za-z_-]+')]),
 		});
 
 	}
@@ -541,7 +531,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		provider: string;
 
@@ -549,7 +538,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 9
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		version: string;
 
@@ -583,7 +571,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		provider: FormControl<string | null | undefined>,
 
@@ -591,15 +578,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 9
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCustomActionTypeInputFormGroup() {
 		return new FormGroup<CreateCustomActionTypeInputFormProperties>({
 			category: new FormControl<ActionTypeIdCategory | null | undefined>(undefined, [Validators.required]),
-			provider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(9), Validators.minLength(1)]),
+			provider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(1), Validators.pattern('[0-9A-Za-z_-]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(9), Validators.minLength(1), Validators.pattern('[0-9A-Za-z_-]+')]),
 		});
 
 	}
@@ -670,14 +656,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*
 		 */
 		roleArn: string;
 
@@ -699,14 +683,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -715,8 +697,8 @@ export namespace MyNS {
 	}
 	export function CreatePipelineDeclarationFormGroup() {
 		return new FormGroup<PipelineDeclarationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*')]),
 			version: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -733,7 +715,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\-\.]+
 		 */
 		location: string;
 
@@ -751,14 +732,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\-\.]+
 		 */
 		location: FormControl<string | null | undefined>,
 	}
 	export function CreateArtifactStoreFormGroup() {
 		return new FormGroup<ArtifactStoreFormProperties>({
 			type: new FormControl<ArtifactStoreType | null | undefined>(undefined, [Validators.required]),
-			location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
+			location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\-\.]+')]),
 		});
 
 	}
@@ -821,7 +801,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 		blockers?: Array<BlockerDeclaration>;
@@ -837,13 +816,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateStageDeclarationFormGroup() {
 		return new FormGroup<StageDeclarationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -894,7 +872,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 
@@ -913,10 +890,7 @@ export namespace MyNS {
 		outputArtifacts?: Array<OutputArtifact>;
 		inputArtifacts?: Array<InputArtifact>;
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 1024 */
 		roleArn?: string | null;
 
 		/**
@@ -928,7 +902,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9@\-_]+
 		 */
 		namespace?: string | null;
 	}
@@ -940,7 +913,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -950,10 +922,7 @@ export namespace MyNS {
 		 */
 		runOrder: FormControl<number | null | undefined>,
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 1024 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
@@ -965,17 +934,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9@\-_]+
 		 */
 		namespace: FormControl<string | null | undefined>,
 	}
 	export function CreateActionDeclarationFormGroup() {
 		return new FormGroup<ActionDeclarationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			runOrder: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(999)]),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*')]),
 			region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(4)]),
-			namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9@\-_]+')]),
 		});
 
 	}
@@ -998,7 +966,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name: string;
 	}
@@ -1010,13 +977,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateOutputArtifactFormGroup() {
 		return new FormGroup<OutputArtifactFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\-]+')]),
 		});
 
 	}
@@ -1029,7 +995,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name: string;
 	}
@@ -1041,13 +1006,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateInputArtifactFormGroup() {
 		return new FormGroup<InputArtifactFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\-]+')]),
 		});
 
 	}
@@ -1134,7 +1098,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		provider: string;
 
@@ -1142,7 +1105,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 9
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		version: string;
 	}
@@ -1157,7 +1119,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		provider: FormControl<string | null | undefined>,
 
@@ -1165,15 +1126,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 9
 		 * Min length: 1
-		 * Pattern: [0-9A-Za-z_-]+
 		 */
 		version: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCustomActionTypeInputFormGroup() {
 		return new FormGroup<DeleteCustomActionTypeInputFormProperties>({
 			category: new FormControl<ActionTypeIdCategory | null | undefined>(undefined, [Validators.required]),
-			provider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(9), Validators.minLength(1)]),
+			provider: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(1), Validators.pattern('[0-9A-Za-z_-]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(9), Validators.minLength(1), Validators.pattern('[0-9A-Za-z_-]+')]),
 		});
 
 	}
@@ -1186,7 +1146,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 	}
@@ -1198,13 +1157,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePipelineInputFormGroup() {
 		return new FormGroup<DeletePipelineInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -1225,7 +1183,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 	}
@@ -1235,13 +1192,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteWebhookInputFormGroup() {
 		return new FormGroup<DeleteWebhookInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -1261,7 +1217,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		webhookName?: string | null;
 	}
@@ -1270,13 +1225,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		webhookName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterWebhookWithThirdPartyInputFormGroup() {
 		return new FormGroup<DeregisterWebhookWithThirdPartyInputFormProperties>({
-			webhookName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			webhookName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -1299,7 +1253,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
@@ -1307,7 +1260,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: string;
 
@@ -1318,7 +1270,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 300
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9!@ \(\)\.\*\?\-]+
 		 */
 		reason: string;
 	}
@@ -1330,7 +1281,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -1338,7 +1288,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: FormControl<string | null | undefined>,
 
@@ -1349,16 +1298,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 300
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9!@ \(\)\.\*\?\-]+
 		 */
 		reason: FormControl<string | null | undefined>,
 	}
 	export function CreateDisableStageTransitionInputFormGroup() {
 		return new FormGroup<DisableStageTransitionInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			transitionType: new FormControl<DisableStageTransitionInputTransitionType | null | undefined>(undefined, [Validators.required]),
-			reason: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1)]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(300), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9!@ \(\)\.\*\?\-]+')]),
 		});
 
 	}
@@ -1393,7 +1341,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
@@ -1401,7 +1348,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: string;
 
@@ -1416,7 +1362,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -1424,7 +1369,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: FormControl<string | null | undefined>,
 
@@ -1433,8 +1377,8 @@ export namespace MyNS {
 	}
 	export function CreateEnableStageTransitionInputFormGroup() {
 		return new FormGroup<EnableStageTransitionInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			transitionType: new FormControl<DisableStageTransitionInputTransitionType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1460,24 +1404,16 @@ export namespace MyNS {
 
 	/** Represents information about the details of a job. */
 	export interface JobDetails {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		id?: string | null;
 
 		/** Represents other information about a job required for a job worker to complete the job. */
 		data?: JobData;
-
-		/** Pattern: [0-9]{12} */
 		accountId?: string | null;
 	}
 
 	/** Represents information about the details of a job. */
 	export interface JobDetailsFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		id: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9]{12} */
 		accountId: FormControl<string | null | undefined>,
 	}
 	export function CreateJobDetailsFormGroup() {
@@ -1554,7 +1490,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName?: string | null;
 
@@ -1563,11 +1498,7 @@ export namespace MyNS {
 
 		/** Represents the context of an action in the stage of a pipeline to a job worker. */
 		action?: ActionContext;
-
-		/** Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+ */
 		pipelineArn?: string | null;
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 	}
 
@@ -1577,19 +1508,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
-
-		/** Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+ */
 		pipelineArn: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePipelineContextFormGroup() {
 		return new FormGroup<PipelineContextFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			pipelineArn: new FormControl<string | null | undefined>(undefined),
 			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1603,7 +1529,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name?: string | null;
 	}
@@ -1614,13 +1539,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateStageContextFormGroup() {
 		return new FormGroup<StageContextFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -1632,7 +1556,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name?: string | null;
 		actionExecutionId?: string | null;
@@ -1644,14 +1567,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 		actionExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateActionContextFormGroup() {
 		return new FormGroup<ActionContextFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			actionExecutionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1664,7 +1586,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name?: string | null;
 
@@ -1684,7 +1605,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1696,7 +1616,7 @@ export namespace MyNS {
 	}
 	export function CreateArtifactFormGroup() {
 		return new FormGroup<ArtifactFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\-]+')]),
 			revision: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1500), Validators.minLength(1)]),
 		});
 
@@ -1789,20 +1709,14 @@ export namespace MyNS {
 	/** Represents the input of a <code>GetJobDetails</code> action. */
 	export interface GetJobDetailsInput {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: string;
 	}
 
 	/** Represents the input of a <code>GetJobDetails</code> action. */
 	export interface GetJobDetailsInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetJobDetailsInputFormGroup() {
@@ -1835,8 +1749,6 @@ export namespace MyNS {
 
 	/** Information about a pipeline. */
 	export interface PipelineMetadata {
-
-		/** Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+ */
 		pipelineArn?: string | null;
 		created?: Date | null;
 		updated?: Date | null;
@@ -1844,8 +1756,6 @@ export namespace MyNS {
 
 	/** Information about a pipeline. */
 	export interface PipelineMetadataFormProperties {
-
-		/** Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+ */
 		pipelineArn: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		updated: FormControl<Date | null | undefined>,
@@ -1867,7 +1777,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 
@@ -1882,7 +1791,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1891,7 +1799,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPipelineInputFormGroup() {
 		return new FormGroup<GetPipelineInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			version: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -1931,14 +1839,11 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName?: string | null;
 
 		/** Minimum: 1 */
 		pipelineVersion?: number | null;
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 		status?: PipelineExecutionStatus | null;
 		artifactRevisions?: Array<ArtifactRevision>;
@@ -1950,20 +1855,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
 		pipelineVersion: FormControl<number | null | undefined>,
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 		status: FormControl<PipelineExecutionStatus | null | undefined>,
 	}
 	export function CreatePipelineExecutionFormGroup() {
 		return new FormGroup<PipelineExecutionFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			pipelineVersion: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<PipelineExecutionStatus | null | undefined>(undefined),
@@ -1980,7 +1882,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name?: string | null;
 
@@ -2016,7 +1917,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2047,7 +1947,7 @@ export namespace MyNS {
 	}
 	export function CreateArtifactRevisionFormGroup() {
 		return new FormGroup<ArtifactRevisionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\-]+')]),
 			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1500), Validators.minLength(1)]),
 			revisionChangeIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
 			revisionSummary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
@@ -2065,14 +1965,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: string;
 	}
 
@@ -2083,19 +1979,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPipelineExecutionInputFormGroup() {
 		return new FormGroup<GetPipelineExecutionInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			pipelineExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2118,7 +2010,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName?: string | null;
 
@@ -2135,7 +2026,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -2146,7 +2036,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPipelineStateOutputFormGroup() {
 		return new FormGroup<GetPipelineStateOutputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			pipelineVersion: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			created: new FormControl<Date | null | undefined>(undefined),
 			updated: new FormControl<Date | null | undefined>(undefined),
@@ -2161,7 +2051,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName?: string | null;
 
@@ -2179,13 +2068,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: FormControl<string | null | undefined>,
 	}
 	export function CreateStageStateFormGroup() {
 		return new FormGroup<StageStateFormProperties>({
-			stageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -2200,7 +2088,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 300
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9!@ \(\)\.\*\?\-]+
 		 */
 		disabledReason?: string | null;
 	}
@@ -2214,7 +2101,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 300
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9!@ \(\)\.\*\?\-]+
 		 */
 		disabledReason: FormControl<string | null | undefined>,
 	}
@@ -2223,7 +2109,7 @@ export namespace MyNS {
 			enabled: new FormControl<boolean | null | undefined>(undefined),
 			lastChangedBy: new FormControl<string | null | undefined>(undefined),
 			lastChangedAt: new FormControl<Date | null | undefined>(undefined),
-			disabledReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1)]),
+			disabledReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9!@ \(\)\.\*\?\-]+')]),
 		});
 
 	}
@@ -2235,7 +2121,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName?: string | null;
 
@@ -2264,7 +2149,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: FormControl<string | null | undefined>,
 
@@ -2282,7 +2166,7 @@ export namespace MyNS {
 	}
 	export function CreateActionStateFormGroup() {
 		return new FormGroup<ActionStateFormProperties>({
-			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			entityUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			revisionUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
@@ -2457,10 +2341,7 @@ export namespace MyNS {
 	/** Represents information about the run of a stage. */
 	export interface StageExecution {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: string;
 
 		/** Required */
@@ -2470,10 +2351,7 @@ export namespace MyNS {
 	/** Represents information about the run of a stage. */
 	export interface StageExecutionFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -2497,7 +2375,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 	}
@@ -2509,13 +2386,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPipelineStateInputFormGroup() {
 		return new FormGroup<GetPipelineStateInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -2705,8 +2581,6 @@ export namespace MyNS {
 
 	/** Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action.  */
 	export interface ActionExecutionDetail {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 		actionExecutionId?: string | null;
 
@@ -2716,14 +2590,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName?: string | null;
 		startTime?: Date | null;
@@ -2739,8 +2611,6 @@ export namespace MyNS {
 
 	/** Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action.  */
 	export interface ActionExecutionDetailFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 		actionExecutionId: FormControl<string | null | undefined>,
 
@@ -2750,14 +2620,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: FormControl<string | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
@@ -2769,8 +2637,8 @@ export namespace MyNS {
 			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
 			actionExecutionId: new FormControl<string | null | undefined>(undefined),
 			pipelineVersion: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			stageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			actionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<ActionExecutionStatus | null | undefined>(undefined),
@@ -2787,10 +2655,7 @@ export namespace MyNS {
 		configuration?: ActionConfigurationMap;
 		resolvedConfiguration?: ResolvedActionConfigurationMap;
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 1024 */
 		roleArn?: string | null;
 
 		/**
@@ -2803,7 +2668,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9@\-_]+
 		 */
 		namespace?: string | null;
 	}
@@ -2811,10 +2675,7 @@ export namespace MyNS {
 	/** Input information used for an action execution. */
 	export interface ActionExecutionInputFormProperties {
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*
-		 */
+		/** Max length: 1024 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
@@ -2826,15 +2687,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9@\-_]+
 		 */
 		namespace: FormControl<string | null | undefined>,
 	}
 	export function CreateActionExecutionInputFormGroup() {
 		return new FormGroup<ActionExecutionInputFormProperties>({
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('arn:aws(-[\w]+)*:iam::[0-9]{12}:role/.*')]),
 			region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(4)]),
-			namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9@\-_]+')]),
 		});
 
 	}
@@ -2856,7 +2716,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name?: string | null;
 
@@ -2870,13 +2729,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_\-]+
 		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateArtifactDetailFormGroup() {
 		return new FormGroup<ArtifactDetailFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\-]+')]),
 		});
 
 	}
@@ -2989,7 +2847,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
@@ -3014,7 +2871,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -3032,7 +2888,7 @@ export namespace MyNS {
 	}
 	export function CreateListActionExecutionsInputFormGroup() {
 		return new FormGroup<ListActionExecutionsInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
@@ -3042,15 +2898,11 @@ export namespace MyNS {
 
 	/** Filter values for the action execution. */
 	export interface ActionExecutionFilter {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 	}
 
 	/** Filter values for the action execution. */
 	export interface ActionExecutionFilterFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateActionExecutionFilterFormGroup() {
@@ -3161,8 +3013,6 @@ export namespace MyNS {
 
 	/** Summary information about a pipeline execution. */
 	export interface PipelineExecutionSummary {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 		status?: PipelineExecutionStatus | null;
 		startTime?: Date | null;
@@ -3178,8 +3028,6 @@ export namespace MyNS {
 
 	/** Summary information about a pipeline execution. */
 	export interface PipelineExecutionSummaryFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 		status: FormControl<PipelineExecutionStatus | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
@@ -3203,7 +3051,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: string;
 
@@ -3233,7 +3080,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: FormControl<string | null | undefined>,
 
@@ -3257,7 +3103,7 @@ export namespace MyNS {
 	}
 	export function CreateSourceRevisionFormGroup() {
 		return new FormGroup<SourceRevisionFormProperties>({
-			actionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			actionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1500), Validators.minLength(1)]),
 			revisionSummary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 			revisionUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
@@ -3326,7 +3172,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
@@ -3350,7 +3195,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -3368,7 +3212,7 @@ export namespace MyNS {
 	}
 	export function CreateListPipelineExecutionsInputFormGroup() {
 		return new FormGroup<ListPipelineExecutionsInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
@@ -3410,7 +3254,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name?: string | null;
 
@@ -3426,7 +3269,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3437,7 +3279,7 @@ export namespace MyNS {
 	}
 	export function CreatePipelineSummaryFormGroup() {
 		return new FormGroup<PipelineSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			version: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			created: new FormControl<Date | null | undefined>(undefined),
 			updated: new FormControl<Date | null | undefined>(undefined),
@@ -3498,10 +3340,7 @@ export namespace MyNS {
 
 	export interface ListTagsForResourceInput {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+
-		 */
+		/** Required */
 		resourceArn: string;
 
 		/**
@@ -3518,10 +3357,7 @@ export namespace MyNS {
 	}
 	export interface ListTagsForResourceInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+
-		 */
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 
 		/**
@@ -3645,7 +3481,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 
@@ -3653,7 +3488,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		targetPipeline: string;
 
@@ -3661,7 +3495,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		targetAction: string;
 
@@ -3688,7 +3521,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3696,7 +3528,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		targetPipeline: FormControl<string | null | undefined>,
 
@@ -3704,7 +3535,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		targetAction: FormControl<string | null | undefined>,
 
@@ -3713,9 +3543,9 @@ export namespace MyNS {
 	}
 	export function CreateWebhookDefinitionFormGroup() {
 		return new FormGroup<WebhookDefinitionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			targetPipeline: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			targetAction: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			targetPipeline: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			targetAction: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			authentication: new FormControl<WebhookDefinitionAuthentication | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3859,8 +3689,6 @@ export namespace MyNS {
 
 	/** Represents information about a job. */
 	export interface Job {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		id?: string | null;
 
 		/** Represents other information about a job required for a job worker to complete the job. */
@@ -3871,15 +3699,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nonce?: string | null;
-
-		/** Pattern: [0-9]{12} */
 		accountId?: string | null;
 	}
 
 	/** Represents information about a job. */
 	export interface JobFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		id: FormControl<string | null | undefined>,
 
 		/**
@@ -3887,8 +3711,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		nonce: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9]{12} */
 		accountId: FormControl<string | null | undefined>,
 	}
 	export function CreateJobFormGroup() {
@@ -3966,21 +3788,13 @@ export namespace MyNS {
 
 	/** A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action. */
 	export interface ThirdPartyJob {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		clientId?: string | null;
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		jobId?: string | null;
 	}
 
 	/** A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action. */
 	export interface ThirdPartyJobFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		clientId: FormControl<string | null | undefined>,
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		jobId: FormControl<string | null | undefined>,
 	}
 	export function CreateThirdPartyJobFormGroup() {
@@ -4022,16 +3836,12 @@ export namespace MyNS {
 	/** Represents the output of a <code>PutActionRevision</code> action. */
 	export interface PutActionRevisionOutput {
 		newRevision?: boolean | null;
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 	}
 
 	/** Represents the output of a <code>PutActionRevision</code> action. */
 	export interface PutActionRevisionOutputFormProperties {
 		newRevision: FormControl<boolean | null | undefined>,
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutActionRevisionOutputFormGroup() {
@@ -4050,7 +3860,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
@@ -4058,7 +3867,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: string;
 
@@ -4066,7 +3874,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: string;
 
@@ -4084,7 +3891,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -4092,7 +3898,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: FormControl<string | null | undefined>,
 
@@ -4100,15 +3905,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: FormControl<string | null | undefined>,
 	}
 	export function CreatePutActionRevisionInputFormGroup() {
 		return new FormGroup<PutActionRevisionInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			actionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			actionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -4148,7 +3952,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
@@ -4156,7 +3959,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: string;
 
@@ -4164,7 +3966,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: string;
 
@@ -4174,10 +3975,7 @@ export namespace MyNS {
 		 */
 		result: ApprovalResult;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		token: string;
 	}
 
@@ -4188,7 +3986,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -4196,7 +3993,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: FormControl<string | null | undefined>,
 
@@ -4204,21 +4000,17 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		actionName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		token: FormControl<string | null | undefined>,
 	}
 	export function CreatePutApprovalResultInputFormGroup() {
 		return new FormGroup<PutApprovalResultInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			actionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			actionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4286,10 +4078,7 @@ export namespace MyNS {
 	/** Represents the input of a <code>PutJobFailureResult</code> action. */
 	export interface PutJobFailureResultInput {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: string;
 
 		/**
@@ -4302,10 +4091,7 @@ export namespace MyNS {
 	/** Represents the input of a <code>PutJobFailureResult</code> action. */
 	export interface PutJobFailureResultInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
 	}
 	export function CreatePutJobFailureResultInputFormGroup() {
@@ -4380,10 +4166,7 @@ export namespace MyNS {
 	/** Represents the input of a <code>PutJobSuccessResult</code> action. */
 	export interface PutJobSuccessResultInput {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: string;
 
 		/** Represents information about a current revision. */
@@ -4403,10 +4186,7 @@ export namespace MyNS {
 	/** Represents the input of a <code>PutJobSuccessResult</code> action. */
 	export interface PutJobSuccessResultInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		jobId: FormControl<string | null | undefined>,
 
 		/**
@@ -4724,7 +4504,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		webhookName?: string | null;
 	}
@@ -4733,13 +4512,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		webhookName: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterWebhookWithThirdPartyInputFormGroup() {
 		return new FormGroup<RegisterWebhookWithThirdPartyInputFormProperties>({
-			webhookName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			webhookName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 		});
 
 	}
@@ -4747,15 +4525,11 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>RetryStageExecution</code> action. */
 	export interface RetryStageExecutionOutput {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 	}
 
 	/** Represents the output of a <code>RetryStageExecution</code> action. */
 	export interface RetryStageExecutionOutputFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateRetryStageExecutionOutputFormGroup() {
@@ -4773,7 +4547,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
@@ -4781,14 +4554,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: string;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: string;
 
 		/** Required */
@@ -4802,7 +4571,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
@@ -4810,14 +4578,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		stageName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -4825,8 +4589,8 @@ export namespace MyNS {
 	}
 	export function CreateRetryStageExecutionInputFormGroup() {
 		return new FormGroup<RetryStageExecutionInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			stageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			pipelineExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			retryMode: new FormControl<RetryStageExecutionInputRetryMode | null | undefined>(undefined, [Validators.required]),
 		});
@@ -4858,15 +4622,11 @@ export namespace MyNS {
 
 	/** Represents the output of a <code>StartPipelineExecution</code> action. */
 	export interface StartPipelineExecutionOutput {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 	}
 
 	/** Represents the output of a <code>StartPipelineExecution</code> action. */
 	export interface StartPipelineExecutionOutputFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartPipelineExecutionOutputFormGroup() {
@@ -4884,14 +4644,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-]+$
 		 */
 		clientRequestToken?: string | null;
 	}
@@ -4903,33 +4661,27 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9-]+$
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartPipelineExecutionInputFormGroup() {
 		return new FormGroup<StartPipelineExecutionInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-]+$')]),
 		});
 
 	}
 
 	export interface StopPipelineExecutionOutput {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId?: string | null;
 	}
 	export interface StopPipelineExecutionOutputFormProperties {
-
-		/** Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopPipelineExecutionOutputFormGroup() {
@@ -4945,14 +4697,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: string;
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: string;
 		abandon?: boolean | null;
 
@@ -4965,14 +4713,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9.@\-_]+
 		 */
 		pipelineName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
-		 */
+		/** Required */
 		pipelineExecutionId: FormControl<string | null | undefined>,
 		abandon: FormControl<boolean | null | undefined>,
 
@@ -4981,7 +4725,7 @@ export namespace MyNS {
 	}
 	export function CreateStopPipelineExecutionInputFormGroup() {
 		return new FormGroup<StopPipelineExecutionInputFormProperties>({
-			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pipelineName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[A-Za-z0-9.@\-_]+')]),
 			pipelineExecutionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			abandon: new FormControl<boolean | null | undefined>(undefined),
 			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
@@ -5021,10 +4765,7 @@ export namespace MyNS {
 
 	export interface TagResourceInput {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+
-		 */
+		/** Required */
 		resourceArn: string;
 
 		/** Required */
@@ -5032,10 +4773,7 @@ export namespace MyNS {
 	}
 	export interface TagResourceInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+
-		 */
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceInputFormGroup() {
@@ -5057,10 +4795,7 @@ export namespace MyNS {
 
 	export interface UntagResourceInput {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+
-		 */
+		/** Required */
 		resourceArn: string;
 
 		/** Required */
@@ -5068,10 +4803,7 @@ export namespace MyNS {
 	}
 	export interface UntagResourceInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: arn:aws(-[\w]+)*:codepipeline:.+:[0-9]{12}:.+
-		 */
+		/** Required */
 		resourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceInputFormGroup() {

@@ -4,13 +4,9 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateNotificationRuleResult {
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn?: string | null;
 	}
 	export interface CreateNotificationRuleResultFormProperties {
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNotificationRuleResultFormGroup() {
@@ -23,8 +19,6 @@ export namespace MyNS {
 
 	/** Information about the SNS topics associated with a notification rule. */
 	export interface Target {
-
-		/** Pattern: ^[A-Za-z]+$ */
 		TargetType?: string | null;
 
 		/**
@@ -36,8 +30,6 @@ export namespace MyNS {
 
 	/** Information about the SNS topics associated with a notification rule. */
 	export interface TargetFormProperties {
-
-		/** Pattern: ^[A-Za-z]+$ */
 		TargetType: FormControl<string | null | undefined>,
 
 		/**
@@ -115,13 +107,9 @@ export namespace MyNS {
 	}
 
 	export interface DeleteNotificationRuleResult {
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn?: string | null;
 	}
 	export interface DeleteNotificationRuleResultFormProperties {
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteNotificationRuleResultFormGroup() {
@@ -143,21 +131,15 @@ export namespace MyNS {
 
 	export interface DescribeNotificationRuleResult {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name?: string | null;
 		EventTypes?: Array<EventTypeSummary>;
-
-		/** Pattern: ^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$ */
 		Resource?: string | null;
 		Targets?: Array<TargetSummary>;
 		DetailType?: DescribeNotificationRuleResultDetailType | null;
@@ -171,20 +153,14 @@ export namespace MyNS {
 	}
 	export interface DescribeNotificationRuleResultFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$ */
 		Resource: FormControl<string | null | undefined>,
 		DetailType: FormControl<DescribeNotificationRuleResultDetailType | null | undefined>,
 
@@ -197,7 +173,7 @@ export namespace MyNS {
 	export function CreateDescribeNotificationRuleResultFormGroup() {
 		return new FormGroup<DescribeNotificationRuleResultFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
 			Resource: new FormControl<string | null | undefined>(undefined),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined),
 			CreatedBy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -220,10 +196,7 @@ export namespace MyNS {
 		ServiceName?: string | null;
 		EventTypeName?: string | null;
 
-		/**
-		 * Min length: 1
-		 * Pattern: ^([a-zA-Z0-9-])+$
-		 */
+		/** Min length: 1 */
 		ResourceType?: string | null;
 	}
 
@@ -238,10 +211,7 @@ export namespace MyNS {
 		ServiceName: FormControl<string | null | undefined>,
 		EventTypeName: FormControl<string | null | undefined>,
 
-		/**
-		 * Min length: 1
-		 * Pattern: ^([a-zA-Z0-9-])+$
-		 */
+		/** Min length: 1 */
 		ResourceType: FormControl<string | null | undefined>,
 	}
 	export function CreateEventTypeSummaryFormGroup() {
@@ -249,7 +219,7 @@ export namespace MyNS {
 			EventTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
 			EventTypeName: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('^([a-zA-Z0-9-])+$')]),
 		});
 
 	}
@@ -263,8 +233,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		TargetAddress?: string | null;
-
-		/** Pattern: ^[A-Za-z]+$ */
 		TargetType?: string | null;
 		TargetStatus?: TargetSummaryTargetStatus | null;
 	}
@@ -277,8 +245,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		TargetAddress: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[A-Za-z]+$ */
 		TargetType: FormControl<string | null | undefined>,
 		TargetStatus: FormControl<TargetSummaryTargetStatus | null | undefined>,
 	}
@@ -319,13 +285,9 @@ export namespace MyNS {
 
 	export interface ListEventTypesResult {
 		EventTypes?: Array<EventTypeSummary>;
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken?: string | null;
 	}
 	export interface ListEventTypesResultFormProperties {
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListEventTypesResultFormGroup() {
@@ -376,14 +338,10 @@ export namespace MyNS {
 	}
 
 	export interface ListNotificationRulesResult {
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken?: string | null;
 		NotificationRules?: Array<NotificationRuleSummary>;
 	}
 	export interface ListNotificationRulesResultFormProperties {
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListNotificationRulesResultFormGroup() {
@@ -402,8 +360,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Id?: string | null;
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn?: string | null;
 	}
 
@@ -415,8 +371,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Id: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateNotificationRuleSummaryFormGroup() {
@@ -470,13 +424,9 @@ export namespace MyNS {
 
 	export interface ListTargetsResult {
 		Targets?: Array<TargetSummary>;
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken?: string | null;
 	}
 	export interface ListTargetsResultFormProperties {
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTargetsResultFormGroup() {
@@ -517,13 +467,9 @@ export namespace MyNS {
 	export enum ListTargetsFilterName { TARGET_TYPE = 0, TARGET_ADDRESS = 1, TARGET_STATUS = 2 }
 
 	export interface SubscribeResult {
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn?: string | null;
 	}
 	export interface SubscribeResultFormProperties {
-
-		/** Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$ */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribeResultFormGroup() {
@@ -546,18 +492,12 @@ export namespace MyNS {
 
 	export interface UnsubscribeResult {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 	}
 	export interface UnsubscribeResultFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateUnsubscribeResultFormGroup() {
@@ -597,17 +537,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: string;
 
 		/** Required */
 		EventTypeIds: Array<string>;
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$
-		 */
+		/** Required */
 		Resource: string;
 
 		/**
@@ -622,7 +558,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken?: string | null;
 		Tags?: Tags;
@@ -634,14 +569,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$
-		 */
+		/** Required */
 		Resource: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -650,17 +581,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeNotificationRuleResultStatus | null | undefined>,
 	}
 	export function CreateCreateNotificationRuleRequestFormGroup() {
 		return new FormGroup<CreateNotificationRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
 			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 		});
 
@@ -668,18 +598,12 @@ export namespace MyNS {
 
 	export interface DeleteNotificationRuleRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 	}
 	export interface DeleteNotificationRuleRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteNotificationRuleRequestFormGroup() {
@@ -719,18 +643,12 @@ export namespace MyNS {
 
 	export interface DescribeNotificationRuleRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 	}
 	export interface DescribeNotificationRuleRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeNotificationRuleRequestFormGroup() {
@@ -742,8 +660,6 @@ export namespace MyNS {
 
 	export interface ListEventTypesRequest {
 		Filters?: Array<ListEventTypesFilter>;
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken?: string | null;
 
 		/**
@@ -753,8 +669,6 @@ export namespace MyNS {
 		MaxResults?: number | null;
 	}
 	export interface ListEventTypesRequestFormProperties {
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -773,8 +687,6 @@ export namespace MyNS {
 
 	export interface ListNotificationRulesRequest {
 		Filters?: Array<ListNotificationRulesFilter>;
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken?: string | null;
 
 		/**
@@ -784,8 +696,6 @@ export namespace MyNS {
 		MaxResults?: number | null;
 	}
 	export interface ListNotificationRulesRequestFormProperties {
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -804,18 +714,12 @@ export namespace MyNS {
 
 	export interface ListTagsForResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 	}
 	export interface ListTagsForResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
@@ -827,8 +731,6 @@ export namespace MyNS {
 
 	export interface ListTargetsRequest {
 		Filters?: Array<ListTargetsFilter>;
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken?: string | null;
 
 		/**
@@ -838,8 +740,6 @@ export namespace MyNS {
 		MaxResults?: number | null;
 	}
 	export interface ListTargetsRequestFormProperties {
-
-		/** Pattern: ^[\w/+=]+$ */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -858,10 +758,7 @@ export namespace MyNS {
 
 	export interface SubscribeRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 
 		/**
@@ -873,39 +770,31 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken?: string | null;
 	}
 	export interface SubscribeRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribeRequestFormGroup() {
 		return new FormGroup<SubscribeRequestFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
 		});
 
 	}
 
 	export interface TagResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 
 		/** Required */
@@ -913,10 +802,7 @@ export namespace MyNS {
 	}
 	export interface TagResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
@@ -930,10 +816,7 @@ export namespace MyNS {
 
 	export interface UnsubscribeRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 
 		/**
@@ -945,10 +828,7 @@ export namespace MyNS {
 	}
 	export interface UnsubscribeRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 
 		/**
@@ -968,10 +848,7 @@ export namespace MyNS {
 
 	export interface UntagResourceRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 
 		/** Required */
@@ -979,10 +856,7 @@ export namespace MyNS {
 	}
 	export interface UntagResourceRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
@@ -994,16 +868,12 @@ export namespace MyNS {
 
 	export interface UpdateNotificationRuleRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: string;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name?: string | null;
 		Status?: DescribeNotificationRuleResultStatus | null;
@@ -1015,16 +885,12 @@ export namespace MyNS {
 	}
 	export interface UpdateNotificationRuleRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
-		 */
+		/** Required */
 		Arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<DescribeNotificationRuleResultStatus | null | undefined>,
@@ -1033,7 +899,7 @@ export namespace MyNS {
 	export function CreateUpdateNotificationRuleRequestFormGroup() {
 		return new FormGroup<UpdateNotificationRuleRequestFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined),
 		});
@@ -1176,7 +1042,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: string;
 
@@ -1189,7 +1054,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$
 		 */
 		Resource: string;
 
@@ -1210,7 +1074,6 @@ export namespace MyNS {
 		 * <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> </note>
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken?: string | null;
 
@@ -1227,14 +1090,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$
 		 */
 		Resource: FormControl<string | null | undefined>,
 
@@ -1248,7 +1109,6 @@ export namespace MyNS {
 		 * <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> </note>
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -1260,10 +1120,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateNotificationRulePostBodyFormGroup() {
 		return new FormGroup<CreateNotificationRulePostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
 			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 		});
@@ -1275,7 +1135,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule you want to delete.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 	}
@@ -1284,7 +1143,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule you want to delete.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
@@ -1334,7 +1192,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 	}
@@ -1343,7 +1200,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
@@ -1359,10 +1215,7 @@ export namespace MyNS {
 		/** The filters to use to return information by service or resource type. */
 		Filters?: Array<ListEventTypesFilter>;
 
-		/**
-		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Pattern: ^[\w/+=]+$
-		 */
+		/** An enumeration token that, when provided in a request, returns the next batch of the results. */
 		NextToken?: string | null;
 
 		/**
@@ -1374,10 +1227,7 @@ export namespace MyNS {
 	}
 	export interface ListEventTypesPostBodyFormProperties {
 
-		/**
-		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Pattern: ^[\w/+=]+$
-		 */
+		/** An enumeration token that, when provided in a request, returns the next batch of the results. */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1400,10 +1250,7 @@ export namespace MyNS {
 		/** <p>The filters to use to return information by service or resource type. For valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note> */
 		Filters?: Array<ListNotificationRulesFilter>;
 
-		/**
-		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Pattern: ^[\w/+=]+$
-		 */
+		/** An enumeration token that, when provided in a request, returns the next batch of the results. */
 		NextToken?: string | null;
 
 		/**
@@ -1415,10 +1262,7 @@ export namespace MyNS {
 	}
 	export interface ListNotificationRulesPostBodyFormProperties {
 
-		/**
-		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Pattern: ^[\w/+=]+$
-		 */
+		/** An enumeration token that, when provided in a request, returns the next batch of the results. */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1441,7 +1285,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) for the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 	}
@@ -1450,7 +1293,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) for the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
@@ -1466,10 +1308,7 @@ export namespace MyNS {
 		/** <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note> */
 		Filters?: Array<ListTargetsFilter>;
 
-		/**
-		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Pattern: ^[\w/+=]+$
-		 */
+		/** An enumeration token that, when provided in a request, returns the next batch of the results. */
 		NextToken?: string | null;
 
 		/**
@@ -1481,10 +1320,7 @@ export namespace MyNS {
 	}
 	export interface ListTargetsPostBodyFormProperties {
 
-		/**
-		 * An enumeration token that, when provided in a request, returns the next batch of the results.
-		 * Pattern: ^[\w/+=]+$
-		 */
+		/** An enumeration token that, when provided in a request, returns the next batch of the results. */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
@@ -1507,7 +1343,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
@@ -1521,7 +1356,6 @@ export namespace MyNS {
 		 * An enumeration token that, when provided in a request, returns the next batch of the results.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -1530,7 +1364,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -1538,21 +1371,18 @@ export namespace MyNS {
 		 * An enumeration token that, when provided in a request, returns the next batch of the results.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^[\w:/-]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribePostBodyFormGroup() {
 		return new FormGroup<SubscribePostBodyFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
 		});
 
 	}
 
 	export interface SubscribePostBodyTarget {
-
-		/** Pattern: ^[A-Za-z]+$ */
 		TargetType?: string | null;
 
 		/**
@@ -1562,8 +1392,6 @@ export namespace MyNS {
 		TargetAddress?: string | null;
 	}
 	export interface SubscribePostBodyTargetFormProperties {
-
-		/** Pattern: ^[A-Za-z]+$ */
 		TargetType: FormControl<string | null | undefined>,
 
 		/**
@@ -1585,7 +1413,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule to tag.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
@@ -1600,7 +1427,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule to tag.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -1623,7 +1449,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
@@ -1640,7 +1465,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -1665,7 +1489,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
@@ -1680,7 +1503,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
@@ -1696,7 +1518,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: string;
 
@@ -1704,7 +1525,6 @@ export namespace MyNS {
 		 * The name of the notification rule.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name?: string | null;
 
@@ -1728,7 +1548,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the notification rule.
 		 * Required
-		 * Pattern: ^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -1736,7 +1555,6 @@ export namespace MyNS {
 		 * The name of the notification rule.
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [A-Za-z0-9\-_ ]+$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1749,7 +1567,7 @@ export namespace MyNS {
 	export function CreateUpdateNotificationRulePostBodyFormGroup() {
 		return new FormGroup<UpdateNotificationRulePostBodyFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined),
 		});

@@ -11,7 +11,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -20,13 +19,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateByteMatchSetResponseFormGroup() {
 		return new FormGroup<CreateByteMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -39,14 +37,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -61,21 +57,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateByteMatchSetFormGroup() {
 		return new FormGroup<ByteMatchSetFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -131,7 +125,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Data?: string | null;
 	}
@@ -145,14 +138,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Data: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldToMatchFormGroup() {
 		return new FormGroup<FieldToMatchFormProperties>({
 			Type: new FormControl<FieldToMatchType | null | undefined>(undefined, [Validators.required]),
-			Data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -169,7 +161,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -177,7 +168,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -187,7 +177,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -195,14 +184,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateByteMatchSetRequestFormGroup() {
 		return new FormGroup<CreateByteMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -275,7 +263,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -284,13 +271,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGeoMatchSetResponseFormGroup() {
 		return new FormGroup<CreateGeoMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -303,14 +289,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -325,21 +309,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoMatchSetFormGroup() {
 		return new FormGroup<GeoMatchSetFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -382,7 +364,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -390,7 +371,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -400,7 +380,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -408,14 +387,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateGeoMatchSetRequestFormGroup() {
 		return new FormGroup<CreateGeoMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -428,7 +406,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -437,13 +414,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIPSetResponseFormGroup() {
 		return new FormGroup<CreateIPSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -456,14 +432,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -478,21 +452,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateIPSetFormGroup() {
 		return new FormGroup<IPSetFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -508,7 +480,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Value: string;
 	}
@@ -523,14 +494,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateIPSetDescriptorFormGroup() {
 		return new FormGroup<IPSetDescriptorFormProperties>({
 			Type: new FormControl<IPSetDescriptorType | null | undefined>(undefined, [Validators.required]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -543,7 +513,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -551,7 +520,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -561,7 +529,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -569,14 +536,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateIPSetRequestFormGroup() {
 		return new FormGroup<CreateIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -589,7 +555,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -598,13 +563,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRateBasedRuleResponseFormGroup() {
 		return new FormGroup<CreateRateBasedRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -617,21 +581,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName?: string | null;
 
@@ -656,21 +617,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
@@ -686,9 +644,9 @@ export namespace MyNS {
 	}
 	export function CreateRateBasedRuleFormGroup() {
 		return new FormGroup<RateBasedRuleFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			RateKey: new FormControl<RateBasedRuleRateKey | null | undefined>(undefined, [Validators.required]),
 			RateLimit: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(100), Validators.max(2000000000)]),
 		});
@@ -709,7 +667,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		DataId: string;
 	}
@@ -727,7 +684,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		DataId: FormControl<string | null | undefined>,
 	}
@@ -735,7 +691,7 @@ export namespace MyNS {
 		return new FormGroup<PredicateFormProperties>({
 			Negated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			Type: new FormControl<PredicateType | null | undefined>(undefined, [Validators.required]),
-			DataId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			DataId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -750,7 +706,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -758,7 +713,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: string;
 
@@ -776,7 +730,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -789,7 +742,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -797,7 +749,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
@@ -815,17 +766,16 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRateBasedRuleRequestFormGroup() {
 		return new FormGroup<CreateRateBasedRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			RateKey: new FormControl<RateBasedRuleRateKey | null | undefined>(undefined, [Validators.required]),
 			RateLimit: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(100), Validators.max(2000000000)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -838,7 +788,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Key: string;
 
@@ -846,7 +795,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		Value: string;
 	}
@@ -858,7 +806,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Key: FormControl<string | null | undefined>,
 
@@ -866,14 +813,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: .*
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('.*')]),
 		});
 
 	}
@@ -916,7 +862,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -925,13 +870,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRegexMatchSetResponseFormGroup() {
 		return new FormGroup<CreateRegexMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -943,14 +887,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 		RegexMatchTuples?: Array<RegexMatchTuple>;
@@ -962,21 +904,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexMatchSetFormGroup() {
 		return new FormGroup<RegexMatchSetFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -998,7 +938,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: string;
 	}
@@ -1013,14 +952,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexMatchTupleFormGroup() {
 		return new FormGroup<RegexMatchTupleFormProperties>({
 			TextTransformation: new FormControl<ByteMatchTupleTextTransformation | null | undefined>(undefined, [Validators.required]),
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1031,7 +969,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -1039,7 +976,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -1049,7 +985,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1057,14 +992,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRegexMatchSetRequestFormGroup() {
 		return new FormGroup<CreateRegexMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1077,7 +1011,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -1086,13 +1019,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRegexPatternSetResponseFormGroup() {
 		return new FormGroup<CreateRegexPatternSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1105,14 +1037,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -1130,21 +1060,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexPatternSetFormGroup() {
 		return new FormGroup<RegexPatternSetFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1155,7 +1083,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -1163,7 +1090,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -1173,7 +1099,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1181,14 +1106,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRegexPatternSetRequestFormGroup() {
 		return new FormGroup<CreateRegexPatternSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1201,7 +1125,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -1210,13 +1133,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRuleResponseFormGroup() {
 		return new FormGroup<CreateRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1229,21 +1151,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName?: string | null;
 
@@ -1258,29 +1177,26 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleFormGroup() {
 		return new FormGroup<RuleFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1291,7 +1207,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -1299,7 +1214,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: string;
 
@@ -1307,7 +1221,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -1320,7 +1233,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1328,7 +1240,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
@@ -1336,15 +1247,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRuleRequestFormGroup() {
 		return new FormGroup<CreateRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1357,7 +1267,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -1366,13 +1275,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRuleGroupResponseFormGroup() {
 		return new FormGroup<CreateRuleGroupResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1385,21 +1293,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName?: string | null;
 	}
@@ -1411,29 +1316,26 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleGroupFormGroup() {
 		return new FormGroup<RuleGroupFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1444,7 +1346,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -1452,7 +1353,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: string;
 
@@ -1460,7 +1360,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -1473,7 +1372,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1481,7 +1379,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
@@ -1489,15 +1386,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRuleGroupRequestFormGroup() {
 		return new FormGroup<CreateRuleGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1510,7 +1406,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -1519,13 +1414,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSizeConstraintSetResponseFormGroup() {
 		return new FormGroup<CreateSizeConstraintSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1538,14 +1432,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -1560,21 +1452,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateSizeConstraintSetFormGroup() {
 		return new FormGroup<SizeConstraintSetFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1636,7 +1526,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -1644,7 +1533,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -1654,7 +1542,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1662,14 +1549,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<CreateSizeConstraintSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1684,7 +1570,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -1695,13 +1580,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSqlInjectionMatchSetResponseFormGroup() {
 		return new FormGroup<CreateSqlInjectionMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1714,14 +1598,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -1736,21 +1618,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateSqlInjectionMatchSetFormGroup() {
 		return new FormGroup<SqlInjectionMatchSetFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1790,7 +1670,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -1798,7 +1677,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -1810,7 +1688,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1818,14 +1695,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<CreateSqlInjectionMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1838,7 +1714,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -1847,13 +1722,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateWebACLResponseFormGroup() {
 		return new FormGroup<CreateWebACLResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1866,21 +1740,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName?: string | null;
 
@@ -1896,7 +1767,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLArn?: string | null;
 	}
@@ -1908,37 +1778,33 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLArn: FormControl<string | null | undefined>,
 	}
 	export function CreateWebACLFormGroup() {
 		return new FormGroup<WebACLFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			WebACLArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			WebACLArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1977,7 +1843,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
@@ -2000,7 +1865,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 		Type: FormControl<ActivatedRuleType | null | undefined>,
@@ -2008,7 +1872,7 @@ export namespace MyNS {
 	export function CreateActivatedRuleFormGroup() {
 		return new FormGroup<ActivatedRuleFormProperties>({
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Type: new FormControl<ActivatedRuleType | null | undefined>(undefined),
 		});
 
@@ -2047,7 +1911,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 	}
@@ -2059,13 +1922,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateExcludedRuleFormGroup() {
 		return new FormGroup<ExcludedRuleFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2076,7 +1938,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -2084,7 +1945,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: string;
 
@@ -2098,7 +1958,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -2111,7 +1970,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2119,7 +1977,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
@@ -2127,15 +1984,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateWebACLRequestFormGroup() {
 		return new FormGroup<CreateWebACLRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2169,7 +2025,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: string;
 
@@ -2177,7 +2032,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^aws-waf-migration-[0-9A-Za-z\.\-_]*
 		 */
 		S3BucketName: string;
 
@@ -2190,7 +2044,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: FormControl<string | null | undefined>,
 
@@ -2198,7 +2051,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 3
-		 * Pattern: ^aws-waf-migration-[0-9A-Za-z\.\-_]*
 		 */
 		S3BucketName: FormControl<string | null | undefined>,
 
@@ -2207,8 +2059,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebACLMigrationStackRequestFormGroup() {
 		return new FormGroup<CreateWebACLMigrationStackRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^aws-waf-migration-[0-9A-Za-z\.\-_]*')]),
 			IgnoreUnsupportedType: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2254,7 +2106,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2265,13 +2116,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateXssMatchSetResponseFormGroup() {
 		return new FormGroup<CreateXssMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2284,14 +2134,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -2306,21 +2154,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateXssMatchSetFormGroup() {
 		return new FormGroup<XssMatchSetFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2360,7 +2206,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -2368,7 +2213,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2380,7 +2224,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2388,14 +2231,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateXssMatchSetRequestFormGroup() {
 		return new FormGroup<CreateXssMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2405,7 +2247,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2414,13 +2255,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteByteMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteByteMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2431,7 +2271,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: string;
 
@@ -2439,7 +2278,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2449,7 +2287,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: FormControl<string | null | undefined>,
 
@@ -2457,14 +2294,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteByteMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteByteMatchSetRequestFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2494,7 +2330,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2503,13 +2338,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGeoMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteGeoMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2520,7 +2354,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: string;
 
@@ -2528,7 +2361,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2538,7 +2370,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: FormControl<string | null | undefined>,
 
@@ -2546,14 +2377,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGeoMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteGeoMatchSetRequestFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2563,7 +2393,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2572,13 +2401,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIPSetResponseFormGroup() {
 		return new FormGroup<DeleteIPSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2589,7 +2417,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: string;
 
@@ -2597,7 +2424,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2607,7 +2433,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: FormControl<string | null | undefined>,
 
@@ -2615,14 +2440,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteIPSetRequestFormGroup() {
 		return new FormGroup<DeleteIPSetRequestFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2643,7 +2467,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: string;
 	}
@@ -2653,13 +2476,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteLoggingConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteLoggingConfigurationRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2680,7 +2502,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: string;
 	}
@@ -2690,13 +2511,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePermissionPolicyRequestFormGroup() {
 		return new FormGroup<DeletePermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2706,7 +2526,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2715,13 +2534,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRateBasedRuleResponseFormGroup() {
 		return new FormGroup<DeleteRateBasedRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2732,7 +2550,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
@@ -2740,7 +2557,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2750,7 +2566,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
@@ -2758,14 +2573,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRateBasedRuleRequestFormGroup() {
 		return new FormGroup<DeleteRateBasedRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2775,7 +2589,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2784,13 +2597,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRegexMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteRegexMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2801,7 +2613,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: string;
 
@@ -2809,7 +2620,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2819,7 +2629,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: FormControl<string | null | undefined>,
 
@@ -2827,14 +2636,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRegexMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteRegexMatchSetRequestFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2844,7 +2652,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2853,13 +2660,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRegexPatternSetResponseFormGroup() {
 		return new FormGroup<DeleteRegexPatternSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2870,7 +2676,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: string;
 
@@ -2878,7 +2683,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2888,7 +2692,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: FormControl<string | null | undefined>,
 
@@ -2896,14 +2699,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRegexPatternSetRequestFormGroup() {
 		return new FormGroup<DeleteRegexPatternSetRequestFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2913,7 +2715,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2922,13 +2723,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRuleResponseFormGroup() {
 		return new FormGroup<DeleteRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2939,7 +2739,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
@@ -2947,7 +2746,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -2957,7 +2755,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
@@ -2965,14 +2762,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRuleRequestFormGroup() {
 		return new FormGroup<DeleteRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2982,7 +2778,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -2991,13 +2786,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRuleGroupResponseFormGroup() {
 		return new FormGroup<DeleteRuleGroupResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3008,7 +2802,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: string;
 
@@ -3016,7 +2809,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -3026,7 +2818,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: FormControl<string | null | undefined>,
 
@@ -3034,14 +2825,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRuleGroupRequestFormGroup() {
 		return new FormGroup<DeleteRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3051,7 +2841,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -3060,13 +2849,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSizeConstraintSetResponseFormGroup() {
 		return new FormGroup<DeleteSizeConstraintSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3077,7 +2865,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: string;
 
@@ -3085,7 +2872,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -3095,7 +2881,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: FormControl<string | null | undefined>,
 
@@ -3103,14 +2888,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<DeleteSizeConstraintSetRequestFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3122,7 +2906,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -3133,13 +2916,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSqlInjectionMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteSqlInjectionMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3152,7 +2934,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: string;
 
@@ -3160,7 +2941,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -3172,7 +2952,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: FormControl<string | null | undefined>,
 
@@ -3180,14 +2959,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteSqlInjectionMatchSetRequestFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3197,7 +2975,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -3206,13 +2983,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteWebACLResponseFormGroup() {
 		return new FormGroup<DeleteWebACLResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3223,7 +2999,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: string;
 
@@ -3231,7 +3006,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -3241,7 +3015,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: FormControl<string | null | undefined>,
 
@@ -3249,14 +3022,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteWebACLRequestFormGroup() {
 		return new FormGroup<DeleteWebACLRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3268,7 +3040,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -3279,13 +3050,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteXssMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteXssMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3298,7 +3068,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: string;
 
@@ -3306,7 +3075,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -3318,7 +3086,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: FormControl<string | null | undefined>,
 
@@ -3326,14 +3093,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteXssMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteXssMatchSetRequestFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3357,7 +3123,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: string;
 	}
@@ -3367,13 +3132,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetByteMatchSetRequestFormGroup() {
 		return new FormGroup<GetByteMatchSetRequestFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3383,7 +3147,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -3392,13 +3155,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetChangeTokenResponseFormGroup() {
 		return new FormGroup<GetChangeTokenResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3434,7 +3196,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -3444,13 +3205,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetChangeTokenStatusRequestFormGroup() {
 		return new FormGroup<GetChangeTokenStatusRequestFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3474,7 +3234,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: string;
 	}
@@ -3484,13 +3243,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetGeoMatchSetRequestFormGroup() {
 		return new FormGroup<GetGeoMatchSetRequestFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3514,7 +3272,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: string;
 	}
@@ -3524,13 +3281,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIPSetRequestFormGroup() {
 		return new FormGroup<GetIPSetRequestFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3556,7 +3312,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: string;
 
@@ -3576,13 +3331,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLoggingConfigurationFormGroup() {
 		return new FormGroup<LoggingConfigurationFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3593,7 +3347,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: string;
 	}
@@ -3603,13 +3356,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetLoggingConfigurationRequestFormGroup() {
 		return new FormGroup<GetLoggingConfigurationRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3619,7 +3371,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 395000
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Policy?: string | null;
 	}
@@ -3628,13 +3379,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 395000
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPermissionPolicyResponseFormGroup() {
 		return new FormGroup<GetPermissionPolicyResponseFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(395000), Validators.minLength(1)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(395000), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3645,7 +3395,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: string;
 	}
@@ -3655,13 +3404,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGetPermissionPolicyRequestFormGroup() {
 		return new FormGroup<GetPermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3685,7 +3433,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 	}
@@ -3695,13 +3442,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRateBasedRuleRequestFormGroup() {
 		return new FormGroup<GetRateBasedRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3712,7 +3458,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 	}
@@ -3721,13 +3466,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRateBasedRuleManagedKeysResponseFormGroup() {
 		return new FormGroup<GetRateBasedRuleManagedKeysResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3738,14 +3482,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 	}
@@ -3755,21 +3497,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRateBasedRuleManagedKeysRequestFormGroup() {
 		return new FormGroup<GetRateBasedRuleManagedKeysRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3793,7 +3533,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: string;
 	}
@@ -3803,13 +3542,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRegexMatchSetRequestFormGroup() {
 		return new FormGroup<GetRegexMatchSetRequestFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3833,7 +3571,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: string;
 	}
@@ -3843,13 +3580,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRegexPatternSetRequestFormGroup() {
 		return new FormGroup<GetRegexPatternSetRequestFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3873,7 +3609,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 	}
@@ -3883,13 +3618,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRuleRequestFormGroup() {
 		return new FormGroup<GetRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3913,7 +3647,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: string;
 	}
@@ -3923,13 +3656,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRuleGroupRequestFormGroup() {
 		return new FormGroup<GetRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3972,7 +3704,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleWithinRuleGroup?: string | null;
 	}
@@ -3991,7 +3722,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleWithinRuleGroup: FormControl<string | null | undefined>,
 	}
@@ -4000,7 +3730,7 @@ export namespace MyNS {
 			Weight: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
 			Action: new FormControl<string | null | undefined>(undefined),
-			RuleWithinRuleGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			RuleWithinRuleGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4089,7 +3819,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebAclId: string;
 
@@ -4097,7 +3826,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
@@ -4120,7 +3848,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebAclId: FormControl<string | null | undefined>,
 
@@ -4128,7 +3855,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
@@ -4141,8 +3867,8 @@ export namespace MyNS {
 	}
 	export function CreateGetSampledRequestsRequestFormGroup() {
 		return new FormGroup<GetSampledRequestsRequestFormProperties>({
-			WebAclId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			WebAclId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(500)]),
 		});
 
@@ -4167,7 +3893,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: string;
 	}
@@ -4177,13 +3902,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<GetSizeConstraintSetRequestFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4213,7 +3937,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: string;
 	}
@@ -4225,13 +3948,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<GetSqlInjectionMatchSetRequestFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4255,7 +3977,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: string;
 	}
@@ -4265,13 +3986,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetWebACLRequestFormGroup() {
 		return new FormGroup<GetWebACLRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4301,7 +4021,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: string;
 	}
@@ -4313,13 +4032,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetXssMatchSetRequestFormGroup() {
 		return new FormGroup<GetXssMatchSetRequestFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4329,7 +4047,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		ActivatedRules?: Array<ActivatedRule>;
@@ -4339,13 +4056,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListActivatedRulesInRuleGroupResponseFormGroup() {
 		return new FormGroup<ListActivatedRulesInRuleGroupResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4355,14 +4071,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId?: string | null;
 
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -4377,14 +4091,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -4396,8 +4108,8 @@ export namespace MyNS {
 	}
 	export function CreateListActivatedRulesInRuleGroupRequestFormGroup() {
 		return new FormGroup<ListActivatedRulesInRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4408,7 +4120,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		ByteMatchSets?: Array<ByteMatchSetSummary>;
@@ -4418,13 +4129,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListByteMatchSetsResponseFormGroup() {
 		return new FormGroup<ListByteMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4437,7 +4147,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: string;
 
@@ -4445,7 +4154,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -4457,7 +4165,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: FormControl<string | null | undefined>,
 
@@ -4465,14 +4172,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateByteMatchSetSummaryFormGroup() {
 		return new FormGroup<ByteMatchSetSummaryFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4482,7 +4188,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -4497,7 +4202,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -4509,7 +4213,7 @@ export namespace MyNS {
 	}
 	export function CreateListByteMatchSetsRequestFormGroup() {
 		return new FormGroup<ListByteMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4520,7 +4224,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		GeoMatchSets?: Array<GeoMatchSetSummary>;
@@ -4530,13 +4233,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListGeoMatchSetsResponseFormGroup() {
 		return new FormGroup<ListGeoMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4549,7 +4251,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: string;
 
@@ -4557,7 +4258,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -4569,7 +4269,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: FormControl<string | null | undefined>,
 
@@ -4577,14 +4276,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoMatchSetSummaryFormGroup() {
 		return new FormGroup<GeoMatchSetSummaryFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4594,7 +4292,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -4609,7 +4306,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -4621,7 +4317,7 @@ export namespace MyNS {
 	}
 	export function CreateListGeoMatchSetsRequestFormGroup() {
 		return new FormGroup<ListGeoMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4632,7 +4328,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		IPSets?: Array<IPSetSummary>;
@@ -4642,13 +4337,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListIPSetsResponseFormGroup() {
 		return new FormGroup<ListIPSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4661,7 +4355,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: string;
 
@@ -4669,7 +4362,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -4681,7 +4373,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: FormControl<string | null | undefined>,
 
@@ -4689,14 +4380,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateIPSetSummaryFormGroup() {
 		return new FormGroup<IPSetSummaryFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4706,7 +4396,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -4721,7 +4410,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -4733,7 +4421,7 @@ export namespace MyNS {
 	}
 	export function CreateListIPSetsRequestFormGroup() {
 		return new FormGroup<ListIPSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4745,7 +4433,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 	}
@@ -4754,13 +4441,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListLoggingConfigurationsResponseFormGroup() {
 		return new FormGroup<ListLoggingConfigurationsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4770,7 +4456,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -4785,7 +4470,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -4797,7 +4481,7 @@ export namespace MyNS {
 	}
 	export function CreateListLoggingConfigurationsRequestFormGroup() {
 		return new FormGroup<ListLoggingConfigurationsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4808,7 +4492,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		Rules?: Array<RuleSummary>;
@@ -4818,13 +4501,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListRateBasedRulesResponseFormGroup() {
 		return new FormGroup<ListRateBasedRulesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4837,7 +4519,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
@@ -4845,7 +4526,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -4857,7 +4537,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
@@ -4865,14 +4544,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleSummaryFormGroup() {
 		return new FormGroup<RuleSummaryFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4882,7 +4560,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -4897,7 +4574,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -4909,7 +4585,7 @@ export namespace MyNS {
 	}
 	export function CreateListRateBasedRulesRequestFormGroup() {
 		return new FormGroup<ListRateBasedRulesRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4920,7 +4596,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		RegexMatchSets?: Array<RegexMatchSetSummary>;
@@ -4930,13 +4605,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListRegexMatchSetsResponseFormGroup() {
 		return new FormGroup<ListRegexMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4949,7 +4623,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: string;
 
@@ -4957,7 +4630,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -4969,7 +4641,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: FormControl<string | null | undefined>,
 
@@ -4977,14 +4648,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexMatchSetSummaryFormGroup() {
 		return new FormGroup<RegexMatchSetSummaryFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4994,7 +4664,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5009,7 +4678,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5021,7 +4689,7 @@ export namespace MyNS {
 	}
 	export function CreateListRegexMatchSetsRequestFormGroup() {
 		return new FormGroup<ListRegexMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5032,7 +4700,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		RegexPatternSets?: Array<RegexPatternSetSummary>;
@@ -5042,13 +4709,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListRegexPatternSetsResponseFormGroup() {
 		return new FormGroup<ListRegexPatternSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5061,7 +4727,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: string;
 
@@ -5069,7 +4734,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -5081,7 +4745,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: FormControl<string | null | undefined>,
 
@@ -5089,14 +4752,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexPatternSetSummaryFormGroup() {
 		return new FormGroup<RegexPatternSetSummaryFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5106,7 +4768,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5121,7 +4782,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5133,7 +4793,7 @@ export namespace MyNS {
 	}
 	export function CreateListRegexPatternSetsRequestFormGroup() {
 		return new FormGroup<ListRegexPatternSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5144,7 +4804,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		RuleGroups?: Array<RuleGroupSummary>;
@@ -5154,13 +4813,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListRuleGroupsResponseFormGroup() {
 		return new FormGroup<ListRuleGroupsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5173,7 +4831,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: string;
 
@@ -5181,7 +4838,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -5193,7 +4849,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: FormControl<string | null | undefined>,
 
@@ -5201,14 +4856,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleGroupSummaryFormGroup() {
 		return new FormGroup<RuleGroupSummaryFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5218,7 +4872,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5233,7 +4886,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5245,7 +4897,7 @@ export namespace MyNS {
 	}
 	export function CreateListRuleGroupsRequestFormGroup() {
 		return new FormGroup<ListRuleGroupsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5256,7 +4908,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		Rules?: Array<RuleSummary>;
@@ -5266,13 +4917,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListRulesResponseFormGroup() {
 		return new FormGroup<ListRulesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5282,7 +4932,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5297,7 +4946,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5309,7 +4957,7 @@ export namespace MyNS {
 	}
 	export function CreateListRulesRequestFormGroup() {
 		return new FormGroup<ListRulesRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5320,7 +4968,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		SizeConstraintSets?: Array<SizeConstraintSetSummary>;
@@ -5330,13 +4977,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListSizeConstraintSetsResponseFormGroup() {
 		return new FormGroup<ListSizeConstraintSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5349,7 +4995,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: string;
 
@@ -5357,7 +5002,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -5369,7 +5013,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: FormControl<string | null | undefined>,
 
@@ -5377,14 +5020,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateSizeConstraintSetSummaryFormGroup() {
 		return new FormGroup<SizeConstraintSetSummaryFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5394,7 +5036,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5409,7 +5050,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5421,7 +5061,7 @@ export namespace MyNS {
 	}
 	export function CreateListSizeConstraintSetsRequestFormGroup() {
 		return new FormGroup<ListSizeConstraintSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5434,7 +5074,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		SqlInjectionMatchSets?: Array<SqlInjectionMatchSetSummary>;
@@ -5446,13 +5085,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListSqlInjectionMatchSetsResponseFormGroup() {
 		return new FormGroup<ListSqlInjectionMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5465,7 +5103,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: string;
 
@@ -5473,7 +5110,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -5485,7 +5121,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: FormControl<string | null | undefined>,
 
@@ -5493,14 +5128,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateSqlInjectionMatchSetSummaryFormGroup() {
 		return new FormGroup<SqlInjectionMatchSetSummaryFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5512,7 +5146,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5529,7 +5162,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5541,7 +5173,7 @@ export namespace MyNS {
 	}
 	export function CreateListSqlInjectionMatchSetsRequestFormGroup() {
 		return new FormGroup<ListSqlInjectionMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5552,7 +5184,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		RuleGroups?: Array<SubscribedRuleGroupSummary>;
@@ -5562,13 +5193,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListSubscribedRuleGroupsResponseFormGroup() {
 		return new FormGroup<ListSubscribedRuleGroupsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5581,7 +5211,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: string;
 
@@ -5589,7 +5218,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -5597,7 +5225,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: string;
 	}
@@ -5609,7 +5236,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: FormControl<string | null | undefined>,
 
@@ -5617,7 +5243,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5625,15 +5250,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		MetricName: FormControl<string | null | undefined>,
 	}
 	export function CreateSubscribedRuleGroupSummaryFormGroup() {
 		return new FormGroup<SubscribedRuleGroupSummaryFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5643,7 +5267,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5658,7 +5281,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5670,7 +5292,7 @@ export namespace MyNS {
 	}
 	export function CreateListSubscribedRuleGroupsRequestFormGroup() {
 		return new FormGroup<ListSubscribedRuleGroupsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5681,7 +5303,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5693,13 +5314,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5711,7 +5331,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN?: string | null;
 
@@ -5725,13 +5344,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagInfoForResourceFormGroup() {
 		return new FormGroup<TagInfoForResourceFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5741,7 +5359,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5755,7 +5372,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN: string;
 	}
@@ -5764,7 +5380,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5778,15 +5393,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5796,7 +5410,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		WebACLs?: Array<WebACLSummary>;
@@ -5806,13 +5419,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListWebACLsResponseFormGroup() {
 		return new FormGroup<ListWebACLsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5825,7 +5437,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: string;
 
@@ -5833,7 +5444,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -5845,7 +5455,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: FormControl<string | null | undefined>,
 
@@ -5853,14 +5462,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateWebACLSummaryFormGroup() {
 		return new FormGroup<WebACLSummaryFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5870,7 +5478,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -5885,7 +5492,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -5897,7 +5503,7 @@ export namespace MyNS {
 	}
 	export function CreateListWebACLsRequestFormGroup() {
 		return new FormGroup<ListWebACLsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5910,7 +5516,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 		XssMatchSets?: Array<XssMatchSetSummary>;
@@ -5922,13 +5527,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 	}
 	export function CreateListXssMatchSetsResponseFormGroup() {
 		return new FormGroup<ListXssMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5941,7 +5545,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: string;
 
@@ -5949,7 +5552,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -5961,7 +5563,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: FormControl<string | null | undefined>,
 
@@ -5969,14 +5570,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateXssMatchSetSummaryFormGroup() {
 		return new FormGroup<XssMatchSetSummaryFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5988,7 +5588,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker?: string | null;
 
@@ -6005,7 +5604,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		NextMarker: FormControl<string | null | undefined>,
 
@@ -6017,7 +5615,7 @@ export namespace MyNS {
 	}
 	export function CreateListXssMatchSetsRequestFormGroup() {
 		return new FormGroup<ListXssMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1)]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -6078,7 +5676,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: string;
 
@@ -6086,7 +5683,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 395000
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Policy: string;
 	}
@@ -6096,7 +5692,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 
@@ -6104,14 +5699,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 395000
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Policy: FormControl<string | null | undefined>,
 	}
 	export function CreatePutPermissionPolicyRequestFormGroup() {
 		return new FormGroup<PutPermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(395000), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(395000), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6142,7 +5736,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN: string;
 
@@ -6158,13 +5751,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6185,7 +5777,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN: string;
 
@@ -6201,13 +5792,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1224
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6217,7 +5807,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6226,13 +5815,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateByteMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateByteMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6243,7 +5831,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: string;
 
@@ -6251,7 +5838,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -6267,7 +5853,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ByteMatchSetId: FormControl<string | null | undefined>,
 
@@ -6275,14 +5860,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateByteMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateByteMatchSetRequestFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6331,7 +5915,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6340,13 +5923,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGeoMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateGeoMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6357,7 +5939,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: string;
 
@@ -6365,7 +5946,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -6381,7 +5961,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GeoMatchSetId: FormControl<string | null | undefined>,
 
@@ -6389,14 +5968,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateGeoMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateGeoMatchSetRequestFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6433,7 +6011,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6442,13 +6019,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateIPSetResponseFormGroup() {
 		return new FormGroup<UpdateIPSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6459,7 +6035,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: string;
 
@@ -6467,7 +6042,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -6483,7 +6057,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		IPSetId: FormControl<string | null | undefined>,
 
@@ -6491,14 +6064,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateIPSetRequestFormGroup() {
 		return new FormGroup<UpdateIPSetRequestFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6535,7 +6107,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6544,13 +6115,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRateBasedRuleResponseFormGroup() {
 		return new FormGroup<UpdateRateBasedRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6561,7 +6131,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
@@ -6569,7 +6138,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -6589,7 +6157,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
@@ -6597,7 +6164,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 
@@ -6610,8 +6176,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRateBasedRuleRequestFormGroup() {
 		return new FormGroup<UpdateRateBasedRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			RateLimit: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(100), Validators.max(2000000000)]),
 		});
 
@@ -6649,7 +6215,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6658,13 +6223,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRegexMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateRegexMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6675,7 +6239,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: string;
 
@@ -6689,7 +6252,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -6699,7 +6261,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexMatchSetId: FormControl<string | null | undefined>,
 
@@ -6707,14 +6268,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRegexMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateRegexMatchSetRequestFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6751,7 +6311,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6760,13 +6319,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRegexPatternSetResponseFormGroup() {
 		return new FormGroup<UpdateRegexPatternSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6777,7 +6335,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: string;
 
@@ -6791,7 +6348,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -6801,7 +6357,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RegexPatternSetId: FormControl<string | null | undefined>,
 
@@ -6809,14 +6364,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRegexPatternSetRequestFormGroup() {
 		return new FormGroup<UpdateRegexPatternSetRequestFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6832,7 +6386,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: .*
 		 */
 		RegexPatternString: string;
 	}
@@ -6847,14 +6400,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: .*
 		 */
 		RegexPatternString: FormControl<string | null | undefined>,
 	}
 	export function CreateRegexPatternSetUpdateFormGroup() {
 		return new FormGroup<RegexPatternSetUpdateFormProperties>({
 			Action: new FormControl<ByteMatchSetUpdateAction | null | undefined>(undefined, [Validators.required]),
-			RegexPatternString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			RegexPatternString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('.*')]),
 		});
 
 	}
@@ -6874,7 +6426,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6883,13 +6434,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRuleResponseFormGroup() {
 		return new FormGroup<UpdateRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6900,7 +6450,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: string;
 
@@ -6908,7 +6457,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -6921,7 +6469,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleId: FormControl<string | null | undefined>,
 
@@ -6929,14 +6476,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRuleRequestFormGroup() {
 		return new FormGroup<UpdateRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6946,7 +6492,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -6955,13 +6500,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRuleGroupResponseFormGroup() {
 		return new FormGroup<UpdateRuleGroupResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6972,7 +6516,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: string;
 
@@ -6986,7 +6529,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 	}
@@ -6996,7 +6538,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		RuleGroupId: FormControl<string | null | undefined>,
 
@@ -7004,14 +6545,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRuleGroupRequestFormGroup() {
 		return new FormGroup<UpdateRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7048,7 +6588,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -7057,13 +6596,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSizeConstraintSetResponseFormGroup() {
 		return new FormGroup<UpdateSizeConstraintSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7074,7 +6612,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: string;
 
@@ -7082,7 +6619,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -7098,7 +6634,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SizeConstraintSetId: FormControl<string | null | undefined>,
 
@@ -7106,14 +6641,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<UpdateSizeConstraintSetRequestFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7152,7 +6686,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -7163,13 +6696,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSqlInjectionMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateSqlInjectionMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7182,7 +6714,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: string;
 
@@ -7190,7 +6721,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -7208,7 +6738,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		SqlInjectionMatchSetId: FormControl<string | null | undefined>,
 
@@ -7216,14 +6745,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateSqlInjectionMatchSetRequestFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7260,7 +6788,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -7269,13 +6796,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateWebACLResponseFormGroup() {
 		return new FormGroup<UpdateWebACLResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7286,7 +6812,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: string;
 
@@ -7294,7 +6819,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 		Updates?: Array<WebACLUpdate>;
@@ -7308,7 +6832,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		WebACLId: FormControl<string | null | undefined>,
 
@@ -7316,14 +6839,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateWebACLRequestFormGroup() {
 		return new FormGroup<UpdateWebACLRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7372,7 +6894,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken?: string | null;
 	}
@@ -7383,13 +6904,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateXssMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateXssMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7402,7 +6922,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: string;
 
@@ -7410,7 +6929,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: string;
 
@@ -7428,7 +6946,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		XssMatchSetId: FormControl<string | null | undefined>,
 
@@ -7436,14 +6953,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ChangeToken: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateXssMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateXssMatchSetRequestFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}

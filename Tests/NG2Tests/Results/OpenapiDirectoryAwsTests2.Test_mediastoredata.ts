@@ -96,20 +96,15 @@ export namespace MyNS {
 
 	/** A metadata entry for a folder or object. */
 	export interface Item {
-
-		/** Pattern: [A-Za-z0-9_\.\-\~]+ */
 		Name?: string | null;
 		Type?: ItemType | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [0-9A-Fa-f]+
 		 */
 		ETag?: string | null;
 		LastModified?: Date | null;
-
-		/** Pattern: ^[\w\-\/\.\+]{1,255}$ */
 		ContentType?: string | null;
 
 		/** Minimum: 0 */
@@ -118,20 +113,15 @@ export namespace MyNS {
 
 	/** A metadata entry for a folder or object. */
 	export interface ItemFormProperties {
-
-		/** Pattern: [A-Za-z0-9_\.\-\~]+ */
 		Name: FormControl<string | null | undefined>,
 		Type: FormControl<ItemType | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [0-9A-Fa-f]+
 		 */
 		ETag: FormControl<string | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
-
-		/** Pattern: ^[\w\-\/\.\+]{1,255}$ */
 		ContentType: FormControl<string | null | undefined>,
 
 		/** Minimum: 0 */
@@ -141,7 +131,7 @@ export namespace MyNS {
 		return new FormGroup<ItemFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<ItemType | null | undefined>(undefined),
-			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[0-9A-Fa-f]+')]),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
 			ContentType: new FormControl<string | null | undefined>(undefined),
 			ContentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
@@ -156,14 +146,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 64
-		 * Pattern: [0-9A-Fa-f]{64}
 		 */
 		ContentSHA256?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [0-9A-Fa-f]+
 		 */
 		ETag?: string | null;
 
@@ -178,14 +166,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 64
-		 * Pattern: [0-9A-Fa-f]{64}
 		 */
 		ContentSHA256: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [0-9A-Fa-f]+
 		 */
 		ETag: FormControl<string | null | undefined>,
 
@@ -197,8 +183,8 @@ export namespace MyNS {
 	}
 	export function CreatePutObjectResponseFormGroup() {
 		return new FormGroup<PutObjectResponseFormProperties>({
-			ContentSHA256: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(64)]),
-			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ContentSHA256: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(64), Validators.pattern('[0-9A-Fa-f]{64}')]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[0-9A-Fa-f]+')]),
 			StorageClass: new FormControl<PutObjectResponseStorageClass | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1)]),
 		});
 

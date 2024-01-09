@@ -1234,8 +1234,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Username: string;
-
-		/** Pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/ */
 		Password?: string | null;
 
 		/** Contains information about the identity of a user. */
@@ -1268,8 +1266,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Username: FormControl<string | null | undefined>,
-
-		/** Pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/ */
 		Password: FormControl<string | null | undefined>,
 		DirectoryUserId: FormControl<string | null | undefined>,
 
@@ -2235,10 +2231,7 @@ export namespace MyNS {
 		 */
 		Username: string;
 
-		/**
-		 * The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.
-		 * Pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/
-		 */
+		/** The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password. */
 		Password?: string | null;
 
 		/** Contains information about the identity of a user. */
@@ -2283,10 +2276,7 @@ export namespace MyNS {
 		 */
 		Username: FormControl<string | null | undefined>,
 
-		/**
-		 * The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.
-		 * Pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\S]{8,64}$/
-		 */
+		/** The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password. */
 		Password: FormControl<string | null | undefined>,
 
 		/** <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p> <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p> */

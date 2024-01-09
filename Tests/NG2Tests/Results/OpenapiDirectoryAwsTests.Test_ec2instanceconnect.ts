@@ -25,7 +25,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 10
-		 * Pattern: ^i-[a-f0-9]+$
 		 */
 		InstanceId: string;
 
@@ -33,7 +32,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z_][A-Za-z0-9\@\._-]{0,30}[A-Za-z0-9\$_-]?$
 		 */
 		InstanceOSUser: string;
 
@@ -48,7 +46,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 6
-		 * Pattern: ^(\w+-){2,3}\d+\w+$
 		 */
 		AvailabilityZone: string;
 	}
@@ -58,7 +55,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 10
-		 * Pattern: ^i-[a-f0-9]+$
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
@@ -66,7 +62,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z_][A-Za-z0-9\@\._-]{0,30}[A-Za-z0-9\$_-]?$
 		 */
 		InstanceOSUser: FormControl<string | null | undefined>,
 
@@ -81,16 +76,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 6
-		 * Pattern: ^(\w+-){2,3}\d+\w+$
 		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
 	}
 	export function CreateSendSSHPublicKeyRequestFormGroup() {
 		return new FormGroup<SendSSHPublicKeyRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(10)]),
-			InstanceOSUser: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(10), Validators.pattern('^i-[a-f0-9]+$')]),
+			InstanceOSUser: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[A-Za-z_][A-Za-z0-9\@\._-]{0,30}[A-Za-z0-9\$_-]?$')]),
 			SSHPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(256)]),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(6)]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(6), Validators.pattern('^(\w+-){2,3}\d+\w+$')]),
 		});
 
 	}

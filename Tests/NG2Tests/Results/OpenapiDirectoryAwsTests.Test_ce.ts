@@ -8,7 +8,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn?: string | null;
 
@@ -16,7 +15,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart?: string | null;
 	}
@@ -25,7 +23,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 
@@ -33,14 +30,13 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateCostCategoryDefinitionResponseFormGroup() {
 		return new FormGroup<CreateCostCategoryDefinitionResponseFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
 		});
 
 	}
@@ -189,7 +185,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Key?: string | null;
 		Values?: Array<string>;
@@ -202,13 +197,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateTagValuesFormGroup() {
 		return new FormGroup<TagValuesFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -268,7 +262,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn?: string | null;
 
@@ -276,7 +269,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveEnd?: string | null;
 	}
@@ -285,7 +277,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 
@@ -293,14 +284,13 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveEnd: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCostCategoryDefinitionResponseFormGroup() {
 		return new FormGroup<DeleteCostCategoryDefinitionResponseFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			EffectiveEnd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
+			EffectiveEnd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
 		});
 
 	}
@@ -311,7 +301,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: string;
 	}
@@ -321,13 +310,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteCostCategoryDefinitionRequestFormGroup() {
 		return new FormGroup<DeleteCostCategoryDefinitionRequestFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
 		});
 
 	}
@@ -363,7 +351,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: string;
 
@@ -372,7 +359,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart: string;
 
@@ -380,7 +366,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveEnd?: string | null;
 
@@ -413,7 +398,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 
@@ -422,7 +406,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart: FormControl<string | null | undefined>,
 
@@ -430,7 +413,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveEnd: FormControl<string | null | undefined>,
 
@@ -450,9 +432,9 @@ export namespace MyNS {
 	}
 	export function CreateCostCategoryFormGroup() {
 		return new FormGroup<CostCategoryFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(20)]),
-			EffectiveEnd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
+			EffectiveEnd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 			RuleVersion: new FormControl<CostCategoryRuleVersion | null | undefined>(undefined, [Validators.required]),
 		});
@@ -467,7 +449,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: string;
 
@@ -475,7 +456,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveOn?: string | null;
 	}
@@ -485,7 +465,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 
@@ -493,14 +472,13 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveOn: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeCostCategoryDefinitionRequestFormGroup() {
 		return new FormGroup<DescribeCostCategoryDefinitionRequestFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			EffectiveOn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
+			EffectiveOn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
 		});
 
 	}
@@ -510,7 +488,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 		GroupDefinitions?: Array<GroupDefinition>;
@@ -521,13 +498,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCostAndUsageResponseFormGroup() {
 		return new FormGroup<GetCostAndUsageResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -540,7 +516,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Key?: string | null;
 	}
@@ -552,14 +527,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateGroupDefinitionFormGroup() {
 		return new FormGroup<GroupDefinitionFormProperties>({
 			Type: new FormControl<GroupDefinitionType | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -596,7 +570,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 0
-		 * Pattern: (\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?
 		 */
 		Start: string;
 
@@ -604,7 +577,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 0
-		 * Pattern: (\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?
 		 */
 		End: string;
 	}
@@ -616,7 +588,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 0
-		 * Pattern: (\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?
 		 */
 		Start: FormControl<string | null | undefined>,
 
@@ -624,14 +595,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 40
 		 * Min length: 0
-		 * Pattern: (\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?
 		 */
 		End: FormControl<string | null | undefined>,
 	}
 	export function CreateDateIntervalFormGroup() {
 		return new FormGroup<DateIntervalFormProperties>({
-			Start: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(0)]),
-			End: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(0)]),
+			Start: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(0), Validators.pattern('(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?')]),
+			End: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(0), Validators.pattern('(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?')]),
 		});
 
 	}
@@ -679,7 +649,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -689,14 +658,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCostAndUsageRequestFormGroup() {
 		return new FormGroup<GetCostAndUsageRequestFormProperties>({
 			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -748,7 +716,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 		GroupDefinitions?: Array<GroupDefinition>;
@@ -759,13 +726,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCostAndUsageWithResourcesResponseFormGroup() {
 		return new FormGroup<GetCostAndUsageWithResourcesResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -787,7 +753,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -797,14 +762,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetCostAndUsageWithResourcesRequestFormGroup() {
 		return new FormGroup<GetCostAndUsageWithResourcesRequestFormProperties>({
 			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -853,21 +817,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MeanValue?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		PredictionIntervalLowerBound?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		PredictionIntervalUpperBound?: string | null;
 	}
@@ -878,29 +839,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MeanValue: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		PredictionIntervalLowerBound: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		PredictionIntervalUpperBound: FormControl<string | null | undefined>,
 	}
 	export function CreateForecastResultFormGroup() {
 		return new FormGroup<ForecastResultFormProperties>({
-			MeanValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			PredictionIntervalLowerBound: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			PredictionIntervalUpperBound: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			MeanValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			PredictionIntervalLowerBound: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			PredictionIntervalUpperBound: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -967,7 +925,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -982,7 +939,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
@@ -990,7 +946,7 @@ export namespace MyNS {
 		return new FormGroup<GetDimensionValuesResponseFormProperties>({
 			ReturnSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			TotalSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1002,7 +958,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Value?: string | null;
 		Attributes?: Attributes;
@@ -1014,13 +969,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateDimensionValuesWithAttributesFormGroup() {
 		return new FormGroup<DimensionValuesWithAttributesFormProperties>({
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1040,7 +994,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SearchString?: string | null;
 
@@ -1057,7 +1010,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -1066,7 +1018,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SearchString: FormControl<string | null | undefined>,
 
@@ -1077,16 +1028,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDimensionValuesRequestFormGroup() {
 		return new FormGroup<GetDimensionValuesRequestFormProperties>({
-			SearchString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			SearchString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			Dimension: new FormControl<DimensionValuesKey | null | undefined>(undefined, [Validators.required]),
 			Context: new FormControl<GetDimensionValuesRequestContext | null | undefined>(undefined),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1104,7 +1054,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -1113,13 +1062,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetReservationCoverageResponseFormGroup() {
 		return new FormGroup<GetReservationCoverageResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1274,7 +1222,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -1286,14 +1233,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetReservationCoverageRequestFormGroup() {
 		return new FormGroup<GetReservationCoverageRequestFormProperties>({
 			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1307,7 +1253,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -1316,13 +1261,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetReservationPurchaseRecommendationResponseFormGroup() {
 		return new FormGroup<GetReservationPurchaseRecommendationResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1334,14 +1278,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendationId?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		GenerationTimestamp?: string | null;
 	}
@@ -1352,21 +1294,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		GenerationTimestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateReservationPurchaseRecommendationMetadataFormGroup() {
 		return new FormGroup<ReservationPurchaseRecommendationMetadataFormProperties>({
-			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			GenerationTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			GenerationTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1455,7 +1395,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId?: string | null;
 
@@ -1465,119 +1404,102 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendedNumberOfInstancesToPurchase?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendedNormalizedUnitsToPurchase?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MinimumNumberOfInstancesUsedPerHour?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MinimumNormalizedUnitsUsedPerHour?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaximumNumberOfInstancesUsedPerHour?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaximumNormalizedUnitsUsedPerHour?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AverageNumberOfInstancesUsedPerHour?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AverageNormalizedUnitsUsedPerHour?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AverageUtilization?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedBreakEvenInMonths?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsAmount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsPercentage?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlyOnDemandCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedReservationCostForLookbackPeriod?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UpfrontCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecurringStandardMonthlyCost?: string | null;
 	}
@@ -1588,149 +1510,131 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendedNumberOfInstancesToPurchase: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendedNormalizedUnitsToPurchase: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MinimumNumberOfInstancesUsedPerHour: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MinimumNormalizedUnitsUsedPerHour: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaximumNumberOfInstancesUsedPerHour: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaximumNormalizedUnitsUsedPerHour: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AverageNumberOfInstancesUsedPerHour: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AverageNormalizedUnitsUsedPerHour: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AverageUtilization: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedBreakEvenInMonths: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsPercentage: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlyOnDemandCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedReservationCostForLookbackPeriod: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UpfrontCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecurringStandardMonthlyCost: FormControl<string | null | undefined>,
 	}
 	export function CreateReservationPurchaseRecommendationDetailFormGroup() {
 		return new FormGroup<ReservationPurchaseRecommendationDetailFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			RecommendedNumberOfInstancesToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			RecommendedNormalizedUnitsToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			MinimumNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			MinimumNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			MaximumNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			MaximumNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			AverageNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			AverageNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			AverageUtilization: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedBreakEvenInMonths: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedMonthlySavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedMonthlyOnDemandCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedReservationCostForLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			UpfrontCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			RecurringStandardMonthlyCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			RecommendedNumberOfInstancesToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			RecommendedNormalizedUnitsToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			MinimumNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			MinimumNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			MaximumNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			MaximumNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			AverageNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			AverageNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			AverageUtilization: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedBreakEvenInMonths: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedMonthlySavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedMonthlyOnDemandCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedReservationCostForLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			UpfrontCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			RecurringStandardMonthlyCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -1771,42 +1675,36 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceType?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AvailabilityZone?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Platform?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Tenancy?: string | null;
 		CurrentGeneration?: boolean | null;
@@ -1819,42 +1717,36 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AvailabilityZone: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Platform: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Tenancy: FormControl<string | null | undefined>,
 		CurrentGeneration: FormControl<boolean | null | undefined>,
@@ -1862,12 +1754,12 @@ export namespace MyNS {
 	}
 	export function CreateEC2InstanceDetailsFormGroup() {
 		return new FormGroup<EC2InstanceDetailsFormProperties>({
-			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Platform: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Tenancy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Tenancy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
 			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1881,49 +1773,42 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceType?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DatabaseEngine?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DatabaseEdition?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DeploymentOption?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		LicenseModel?: string | null;
 		CurrentGeneration?: boolean | null;
@@ -1936,49 +1821,42 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DatabaseEngine: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DatabaseEdition: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DeploymentOption: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		LicenseModel: FormControl<string | null | undefined>,
 		CurrentGeneration: FormControl<boolean | null | undefined>,
@@ -1986,13 +1864,13 @@ export namespace MyNS {
 	}
 	export function CreateRDSInstanceDetailsFormGroup() {
 		return new FormGroup<RDSInstanceDetailsFormProperties>({
-			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			DatabaseEngine: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			DatabaseEdition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			DeploymentOption: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			LicenseModel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			DatabaseEngine: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			DatabaseEdition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			DeploymentOption: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			LicenseModel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
 			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2006,21 +1884,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NodeType?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region?: string | null;
 		CurrentGeneration?: boolean | null;
@@ -2033,21 +1908,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NodeType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region: FormControl<string | null | undefined>,
 		CurrentGeneration: FormControl<boolean | null | undefined>,
@@ -2055,9 +1927,9 @@ export namespace MyNS {
 	}
 	export function CreateRedshiftInstanceDetailsFormGroup() {
 		return new FormGroup<RedshiftInstanceDetailsFormProperties>({
-			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			NodeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			NodeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
 			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2071,28 +1943,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NodeType?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		ProductDescription?: string | null;
 		CurrentGeneration?: boolean | null;
@@ -2105,28 +1973,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Family: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NodeType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		ProductDescription: FormControl<string | null | undefined>,
 		CurrentGeneration: FormControl<boolean | null | undefined>,
@@ -2134,10 +1998,10 @@ export namespace MyNS {
 	}
 	export function CreateElastiCacheInstanceDetailsFormGroup() {
 		return new FormGroup<ElastiCacheInstanceDetailsFormProperties>({
-			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			NodeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			ProductDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Family: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			NodeType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			ProductDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
 			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2151,21 +2015,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceClass?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceSize?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region?: string | null;
 		CurrentGeneration?: boolean | null;
@@ -2178,21 +2039,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceClass: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceSize: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region: FormControl<string | null | undefined>,
 		CurrentGeneration: FormControl<boolean | null | undefined>,
@@ -2200,9 +2058,9 @@ export namespace MyNS {
 	}
 	export function CreateESInstanceDetailsFormGroup() {
 		return new FormGroup<ESInstanceDetailsFormProperties>({
-			InstanceClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			InstanceSize: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			InstanceClass: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			InstanceSize: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
 			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2216,21 +2074,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalEstimatedMonthlySavingsAmount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalEstimatedMonthlySavingsPercentage?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode?: string | null;
 	}
@@ -2241,29 +2096,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalEstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalEstimatedMonthlySavingsPercentage: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode: FormControl<string | null | undefined>,
 	}
 	export function CreateReservationPurchaseRecommendationSummaryFormGroup() {
 		return new FormGroup<ReservationPurchaseRecommendationSummaryFormProperties>({
-			TotalEstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			TotalEstimatedMonthlySavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			TotalEstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			TotalEstimatedMonthlySavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -2273,7 +2125,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId?: string | null;
 
@@ -2281,7 +2132,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Service: string;
 		AccountScope?: ReservationPurchaseRecommendationAccountScope | null;
@@ -2298,7 +2148,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -2307,7 +2156,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -2315,7 +2163,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Service: FormControl<string | null | undefined>,
 		AccountScope: FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>,
@@ -2329,20 +2176,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetReservationPurchaseRecommendationRequestFormGroup() {
 		return new FormGroup<GetReservationPurchaseRecommendationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Service: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Service: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			AccountScope: new FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>(undefined),
 			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined),
 			TermInYears: new FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>(undefined),
 			PaymentOption: new FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>(undefined),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -2358,7 +2204,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -2367,13 +2212,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetReservationUtilizationResponseFormGroup() {
 		return new FormGroup<GetReservationUtilizationResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -2495,7 +2339,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -2505,14 +2348,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetReservationUtilizationRequestFormGroup() {
 		return new FormGroup<GetReservationUtilizationRequestFormProperties>({
 			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -2529,7 +2371,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 
@@ -2541,13 +2382,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRightsizingRecommendationResponseFormGroup() {
 		return new FormGroup<GetRightsizingRecommendationResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -2559,14 +2399,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendationId?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		GenerationTimestamp?: string | null;
 		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays | null;
@@ -2578,22 +2416,20 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		GenerationTimestamp: FormControl<string | null | undefined>,
 		LookbackPeriodInDays: FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>,
 	}
 	export function CreateRightsizingRecommendationMetadataFormGroup() {
 		return new FormGroup<RightsizingRecommendationMetadataFormProperties>({
-			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			GenerationTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			GenerationTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined),
 		});
 
@@ -2606,28 +2442,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalRecommendationCount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedTotalMonthlySavingsAmount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SavingsCurrencyCode?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SavingsPercentage?: string | null;
 	}
@@ -2638,37 +2470,33 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalRecommendationCount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedTotalMonthlySavingsAmount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SavingsCurrencyCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SavingsPercentage: FormControl<string | null | undefined>,
 	}
 	export function CreateRightsizingRecommendationSummaryFormGroup() {
 		return new FormGroup<RightsizingRecommendationSummaryFormProperties>({
-			TotalRecommendationCount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedTotalMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			SavingsCurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			SavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			TotalRecommendationCount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedTotalMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			SavingsCurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			SavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -2680,7 +2508,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId?: string | null;
 
@@ -2701,14 +2528,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId: FormControl<string | null | undefined>,
 		RightsizingType: FormControl<RightsizingRecommendationRightsizingType | null | undefined>,
 	}
 	export function CreateRightsizingRecommendationFormGroup() {
 		return new FormGroup<RightsizingRecommendationFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			RightsizingType: new FormControl<RightsizingRecommendationRightsizingType | null | undefined>(undefined),
 		});
 
@@ -2721,7 +2547,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		ResourceId?: string | null;
 		Tags?: Array<TagValues>;
@@ -2735,42 +2560,36 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		ReservationCoveredHoursInLookbackPeriod?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SavingsPlansCoveredHoursInLookbackPeriod?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OnDemandHoursInLookbackPeriod?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalRunningHoursInLookbackPeriod?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MonthlyCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode?: string | null;
 	}
@@ -2781,61 +2600,54 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		ReservationCoveredHoursInLookbackPeriod: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SavingsPlansCoveredHoursInLookbackPeriod: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OnDemandHoursInLookbackPeriod: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalRunningHoursInLookbackPeriod: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MonthlyCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode: FormControl<string | null | undefined>,
 	}
 	export function CreateCurrentInstanceFormGroup() {
 		return new FormGroup<CurrentInstanceFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			ReservationCoveredHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			SavingsPlansCoveredHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			OnDemandHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			TotalRunningHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			MonthlyCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			ReservationCoveredHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			SavingsPlansCoveredHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			OnDemandHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			TotalRunningHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			MonthlyCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -2864,63 +2676,54 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		HourlyOnDemandRate?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceType?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Platform?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Sku?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Memory?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NetworkPerformance?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Storage?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Vcpu?: string | null;
 	}
@@ -2931,77 +2734,68 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		HourlyOnDemandRate: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Platform: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Sku: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Memory: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NetworkPerformance: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Storage: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Vcpu: FormControl<string | null | undefined>,
 	}
 	export function CreateEC2ResourceDetailsFormGroup() {
 		return new FormGroup<EC2ResourceDetailsFormProperties>({
-			HourlyOnDemandRate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Platform: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Sku: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Memory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			NetworkPerformance: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Storage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			Vcpu: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			HourlyOnDemandRate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Platform: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Sku: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Memory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			NetworkPerformance: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Storage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			Vcpu: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3030,21 +2824,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaxCpuUtilizationPercentage?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaxMemoryUtilizationPercentage?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaxStorageUtilizationPercentage?: string | null;
 	}
@@ -3055,29 +2846,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaxCpuUtilizationPercentage: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaxMemoryUtilizationPercentage: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		MaxStorageUtilizationPercentage: FormControl<string | null | undefined>,
 	}
 	export function CreateEC2ResourceUtilizationFormGroup() {
 		return new FormGroup<EC2ResourceUtilizationFormProperties>({
-			MaxCpuUtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			MaxMemoryUtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			MaxStorageUtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			MaxCpuUtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			MaxMemoryUtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			MaxStorageUtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3106,21 +2894,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlyCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavings?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode?: string | null;
 		DefaultTargetInstance?: boolean | null;
@@ -3138,30 +2923,27 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlyCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavings: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode: FormControl<string | null | undefined>,
 		DefaultTargetInstance: FormControl<boolean | null | undefined>,
 	}
 	export function CreateTargetInstanceFormGroup() {
 		return new FormGroup<TargetInstanceFormProperties>({
-			EstimatedMonthlyCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedMonthlySavings: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			EstimatedMonthlyCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedMonthlySavings: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			DefaultTargetInstance: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3174,14 +2956,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavings?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode?: string | null;
 	}
@@ -3192,21 +2972,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavings: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode: FormControl<string | null | undefined>,
 	}
 	export function CreateTerminateRecommendationDetailFormGroup() {
 		return new FormGroup<TerminateRecommendationDetailFormProperties>({
-			EstimatedMonthlySavings: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			EstimatedMonthlySavings: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3253,7 +3031,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Service: string;
 
@@ -3263,7 +3040,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -3273,7 +3049,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Service: FormControl<string | null | undefined>,
 
@@ -3283,15 +3058,14 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetRightsizingRecommendationRequestFormGroup() {
 		return new FormGroup<GetRightsizingRecommendationRequestFormProperties>({
-			Service: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			Service: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3304,7 +3078,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken?: string | null;
 	}
@@ -3313,13 +3086,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSavingsPlansCoverageResponseFormGroup() {
 		return new FormGroup<GetSavingsPlansCoverageResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3352,28 +3124,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SpendCoveredBySavingsPlans?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OnDemandCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CoveragePercentage?: string | null;
 	}
@@ -3384,37 +3152,33 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SpendCoveredBySavingsPlans: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OnDemandCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CoveragePercentage: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansCoverageDataFormGroup() {
 		return new FormGroup<SavingsPlansCoverageDataFormProperties>({
-			SpendCoveredBySavingsPlans: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			OnDemandCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			TotalCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CoveragePercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			SpendCoveredBySavingsPlans: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			OnDemandCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			TotalCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CoveragePercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3436,7 +3200,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken?: string | null;
 
@@ -3449,7 +3212,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -3459,7 +3221,7 @@ export namespace MyNS {
 	export function CreateGetSavingsPlansCoverageRequestFormGroup() {
 		return new FormGroup<GetSavingsPlansCoverageRequestFormProperties>({
 			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -3476,7 +3238,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -3485,13 +3246,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSavingsPlansPurchaseRecommendationResponseFormGroup() {
 		return new FormGroup<GetSavingsPlansPurchaseRecommendationResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3503,14 +3263,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendationId?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		GenerationTimestamp?: string | null;
 	}
@@ -3521,21 +3279,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		RecommendationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		GenerationTimestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansPurchaseRecommendationMetadataFormGroup() {
 		return new FormGroup<SavingsPlansPurchaseRecommendationMetadataFormProperties>({
-			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			GenerationTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			GenerationTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3585,105 +3341,90 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UpfrontCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedROI?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSPCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedOnDemandCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedOnDemandCostWithCurrentCommitment?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsAmount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsPercentage?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		HourlyCommitmentToPurchase?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedAverageUtilization?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsAmount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentMinimumHourlyOnDemandSpend?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentMaximumHourlyOnDemandSpend?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentAverageHourlyOnDemandSpend?: string | null;
 	}
@@ -3694,125 +3435,110 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UpfrontCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedROI: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSPCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedOnDemandCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedOnDemandCostWithCurrentCommitment: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsAmount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsPercentage: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		HourlyCommitmentToPurchase: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedAverageUtilization: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentMinimumHourlyOnDemandSpend: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentMaximumHourlyOnDemandSpend: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentAverageHourlyOnDemandSpend: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansPurchaseRecommendationDetailFormGroup() {
 		return new FormGroup<SavingsPlansPurchaseRecommendationDetailFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			UpfrontCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedROI: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedSPCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedOnDemandCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedOnDemandCostWithCurrentCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedSavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedSavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			HourlyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedAverageUtilization: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrentMinimumHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrentMaximumHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrentAverageHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			UpfrontCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedROI: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedSPCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedOnDemandCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedOnDemandCostWithCurrentCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedSavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedSavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			HourlyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedAverageUtilization: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrentMinimumHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrentMaximumHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrentAverageHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3824,21 +3550,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceFamily?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OfferingId?: string | null;
 	}
@@ -3849,29 +3572,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		Region: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		InstanceFamily: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OfferingId: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansDetailsFormGroup() {
 		return new FormGroup<SavingsPlansDetailsFormProperties>({
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			InstanceFamily: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			OfferingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			InstanceFamily: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			OfferingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -3883,77 +3603,66 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedROI?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedTotalCost?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentOnDemandSpend?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsAmount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalRecommendationCount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DailyCommitmentToPurchase?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		HourlyCommitmentToPurchase?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsPercentage?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsAmount?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedOnDemandCostWithCurrentCommitment?: string | null;
 	}
@@ -3964,93 +3673,82 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedROI: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrencyCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedTotalCost: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		CurrentOnDemandSpend: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsAmount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalRecommendationCount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		DailyCommitmentToPurchase: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		HourlyCommitmentToPurchase: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedSavingsPercentage: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		EstimatedOnDemandCostWithCurrentCommitment: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansPurchaseRecommendationSummaryFormGroup() {
 		return new FormGroup<SavingsPlansPurchaseRecommendationSummaryFormProperties>({
-			EstimatedROI: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedTotalCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			CurrentOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedSavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			TotalRecommendationCount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			DailyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			HourlyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedSavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			EstimatedOnDemandCostWithCurrentCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			EstimatedROI: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedTotalCost: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			CurrentOnDemandSpend: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedSavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			TotalRecommendationCount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			DailyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			HourlyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedSavingsPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			EstimatedOnDemandCostWithCurrentCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -4070,7 +3768,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 
@@ -4098,7 +3795,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 
@@ -4114,7 +3810,7 @@ export namespace MyNS {
 			TermInYears: new FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>(undefined, [Validators.required]),
 			PaymentOption: new FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>(undefined, [Validators.required]),
 			AccountScope: new FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>(undefined),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined, [Validators.required]),
 		});
@@ -4177,28 +3873,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalCommitment?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UsedCommitment?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UnusedCommitment?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UtilizationPercentage?: string | null;
 	}
@@ -4209,37 +3901,33 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalCommitment: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UsedCommitment: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UnusedCommitment: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		UtilizationPercentage: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansUtilizationFormGroup() {
 		return new FormGroup<SavingsPlansUtilizationFormProperties>({
-			TotalCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			UsedCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			UnusedCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			UtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			TotalCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			UsedCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			UnusedCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			UtilizationPercentage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -4251,14 +3939,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NetSavings?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OnDemandCostEquivalent?: string | null;
 	}
@@ -4269,21 +3955,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NetSavings: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		OnDemandCostEquivalent: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansSavingsFormGroup() {
 		return new FormGroup<SavingsPlansSavingsFormProperties>({
-			NetSavings: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			OnDemandCostEquivalent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			NetSavings: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			OnDemandCostEquivalent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -4295,21 +3979,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AmortizedRecurringCommitment?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AmortizedUpfrontCommitment?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalAmortizedCommitment?: string | null;
 	}
@@ -4320,29 +4001,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AmortizedRecurringCommitment: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		AmortizedUpfrontCommitment: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TotalAmortizedCommitment: FormControl<string | null | undefined>,
 	}
 	export function CreateSavingsPlansAmortizedCommitmentFormGroup() {
 		return new FormGroup<SavingsPlansAmortizedCommitmentFormProperties>({
-			AmortizedRecurringCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			AmortizedUpfrontCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			TotalAmortizedCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			AmortizedRecurringCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			AmortizedUpfrontCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			TotalAmortizedCommitment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -4412,7 +4090,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken?: string | null;
 	}
@@ -4421,13 +4098,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSavingsPlansUtilizationDetailsResponseFormGroup() {
 		return new FormGroup<GetSavingsPlansUtilizationDetailsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -4473,7 +4149,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken?: string | null;
 
@@ -4485,7 +4160,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -4494,7 +4168,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSavingsPlansUtilizationDetailsRequestFormGroup() {
 		return new FormGroup<GetSavingsPlansUtilizationDetailsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -4505,7 +4179,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 
@@ -4523,7 +4196,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 
@@ -4535,7 +4207,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTagsResponseFormGroup() {
 		return new FormGroup<GetTagsResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			ReturnSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			TotalSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -4547,7 +4219,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SearchString?: string | null;
 
@@ -4560,14 +4231,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TagKey?: string | null;
 
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken?: string | null;
 	}
@@ -4576,29 +4245,26 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		SearchString: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		TagKey: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTagsRequestFormGroup() {
 		return new FormGroup<GetTagsRequestFormProperties>({
-			SearchString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			TagKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			SearchString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			TagKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -4679,7 +4345,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken?: string | null;
 	}
@@ -4688,13 +4353,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListCostCategoryDefinitionsResponseFormGroup() {
 		return new FormGroup<ListCostCategoryDefinitionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 		});
 
 	}
@@ -4706,7 +4370,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn?: string | null;
 
@@ -4721,7 +4384,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart?: string | null;
 
@@ -4729,7 +4391,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveEnd?: string | null;
 
@@ -4743,7 +4404,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 
@@ -4758,7 +4418,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart: FormControl<string | null | undefined>,
 
@@ -4766,7 +4425,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveEnd: FormControl<string | null | undefined>,
 
@@ -4775,10 +4433,10 @@ export namespace MyNS {
 	}
 	export function CreateCostCategoryReferenceFormGroup() {
 		return new FormGroup<CostCategoryReferenceFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
-			EffectiveEnd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
+			EffectiveEnd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
 			NumberOfRules: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -4790,14 +4448,12 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveOn?: string | null;
 
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken?: string | null;
 
@@ -4813,14 +4469,12 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveOn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 8192
 		 * Min length: 0
-		 * Pattern: [\S\s]*
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -4832,8 +4486,8 @@ export namespace MyNS {
 	}
 	export function CreateListCostCategoryDefinitionsRequestFormGroup() {
 		return new FormGroup<ListCostCategoryDefinitionsRequestFormProperties>({
-			EffectiveOn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			EffectiveOn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\S\s]*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -4844,7 +4498,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn?: string | null;
 
@@ -4852,7 +4505,6 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart?: string | null;
 	}
@@ -4861,7 +4513,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 
@@ -4869,14 +4520,13 @@ export namespace MyNS {
 		 * The time period that you want the usage and costs for.
 		 * Max length: 25
 		 * Min length: 20
-		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateCostCategoryDefinitionResponseFormGroup() {
 		return new FormGroup<UpdateCostCategoryDefinitionResponseFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(20), Validators.pattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$')]),
 		});
 
 	}
@@ -4887,7 +4537,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: string;
 
@@ -4910,7 +4559,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+
 		 */
 		CostCategoryArn: FormControl<string | null | undefined>,
 
@@ -4922,7 +4570,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCostCategoryDefinitionRequestFormGroup() {
 		return new FormGroup<UpdateCostCategoryDefinitionRequestFormProperties>({
-			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+')]),
 			RuleVersion: new FormControl<UpdateCostCategoryDefinitionRequestRuleVersion | null | undefined>(undefined, [Validators.required]),
 		});
 

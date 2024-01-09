@@ -25,14 +25,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value?: string | null;
 	}
@@ -44,21 +42,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -816,38 +812,26 @@ export namespace MyNS {
 	/** This data type is reserved. */
 	export interface AdditionalAttribute {
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9.]+$
-		 */
+		/** Max length: 256 */
 		Key?: string | null;
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9.]+$
-		 */
+		/** Max length: 256 */
 		Value?: string | null;
 	}
 
 	/** This data type is reserved. */
 	export interface AdditionalAttributeFormProperties {
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9.]+$
-		 */
+		/** Max length: 256 */
 		Key: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 256
-		 * Pattern: ^[a-zA-Z0-9.]+$
-		 */
+		/** Max length: 256 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateAdditionalAttributeFormGroup() {
 		return new FormGroup<AdditionalAttributeFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9.]+$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9.]+$')]),
 		});
 
 	}
@@ -1330,7 +1314,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key?: string | null;
 	}
@@ -1341,13 +1324,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 	}
 	export function CreateTagKeyOnlyFormGroup() {
 		return new FormGroup<TagKeyOnlyFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}

@@ -431,25 +431,19 @@ export namespace MyNS {
 	/** Settings for Avail Blanking */
 	export interface AvailBlanking {
 
-		/**
-		 * Min length: 14
-		 * Pattern: ^((s3://(.*?)\.(bmp|BMP|png|PNG))|(https?://(.*?)\.(bmp|BMP|png|PNG)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
-		 */
+		/** Min length: 14 */
 		AvailBlankingImage?: string | null;
 	}
 
 	/** Settings for Avail Blanking */
 	export interface AvailBlankingFormProperties {
 
-		/**
-		 * Min length: 14
-		 * Pattern: ^((s3://(.*?)\.(bmp|BMP|png|PNG))|(https?://(.*?)\.(bmp|BMP|png|PNG)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
-		 */
+		/** Min length: 14 */
 		AvailBlankingImage: FormControl<string | null | undefined>,
 	}
 	export function CreateAvailBlankingFormGroup() {
 		return new FormGroup<AvailBlankingFormProperties>({
-			AvailBlankingImage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(14)]),
+			AvailBlankingImage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(14), Validators.pattern('^((s3://(.*?)\.(bmp|BMP|png|PNG))|(https?://(.*?)\.(bmp|BMP|png|PNG)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
 		});
 
 	}
@@ -490,15 +484,11 @@ export namespace MyNS {
 
 	/** ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025. */
 	export interface EsamManifestConfirmConditionNotification {
-
-		/** Pattern: ^\s*<(.|\n)*ManifestConfirmConditionNotification(.|\n)*>\s*$ */
 		MccXml?: string | null;
 	}
 
 	/** ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025. */
 	export interface EsamManifestConfirmConditionNotificationFormProperties {
-
-		/** Pattern: ^\s*<(.|\n)*ManifestConfirmConditionNotification(.|\n)*>\s*$ */
 		MccXml: FormControl<string | null | undefined>,
 	}
 	export function CreateEsamManifestConfirmConditionNotificationFormGroup() {
@@ -511,15 +501,11 @@ export namespace MyNS {
 
 	/** ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025. */
 	export interface EsamSignalProcessingNotification {
-
-		/** Pattern: ^\s*<(.|\n)*SignalProcessingNotification(.|\n)*>\s*$ */
 		SccXml?: string | null;
 	}
 
 	/** ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025. */
 	export interface EsamSignalProcessingNotificationFormProperties {
-
-		/** Pattern: ^\s*<(.|\n)*SignalProcessingNotification(.|\n)*>\s*$ */
 		SccXml: FormControl<string | null | undefined>,
 	}
 	export function CreateEsamSignalProcessingNotificationFormGroup() {
@@ -547,8 +533,6 @@ export namespace MyNS {
 
 		/** Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs. */
 		DenoiseFilter?: InputDeblockFilter | null;
-
-		/** Pattern: ^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL])))(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$ */
 		FileInput?: string | null;
 
 		/** Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type. */
@@ -583,7 +567,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 11
 		 * Min length: 11
-		 * Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$
 		 */
 		TimecodeStart?: string | null;
 
@@ -599,8 +582,6 @@ export namespace MyNS {
 
 		/** Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs. */
 		DenoiseFilter: FormControl<InputDeblockFilter | null | undefined>,
-
-		/** Pattern: ^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL])))(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$ */
 		FileInput: FormControl<string | null | undefined>,
 
 		/** Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type. */
@@ -627,7 +608,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 11
 		 * Min length: 11
-		 * Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$
 		 */
 		TimecodeStart: FormControl<string | null | undefined>,
 	}
@@ -641,7 +621,7 @@ export namespace MyNS {
 			ProgramNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			PsiControl: new FormControl<InputPsiControl | null | undefined>(undefined),
 			TimecodeSource: new FormControl<InputTimecodeSource | null | undefined>(undefined),
-			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11)]),
+			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
 		});
 
 	}
@@ -754,21 +734,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 24
-		 * Pattern: ^[A-Za-z0-9+\/]+={0,2}$
 		 */
 		EncryptedDecryptionKey?: string | null;
 
 		/**
 		 * Max length: 24
 		 * Min length: 16
-		 * Pattern: ^[A-Za-z0-9+\/]{22}==$|^[A-Za-z0-9+\/]{16}$
 		 */
 		InitializationVector?: string | null;
 
 		/**
 		 * Max length: 19
 		 * Min length: 9
-		 * Pattern: ^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$
 		 */
 		KmsKeyRegion?: string | null;
 	}
@@ -782,30 +759,27 @@ export namespace MyNS {
 		/**
 		 * Max length: 512
 		 * Min length: 24
-		 * Pattern: ^[A-Za-z0-9+\/]+={0,2}$
 		 */
 		EncryptedDecryptionKey: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 24
 		 * Min length: 16
-		 * Pattern: ^[A-Za-z0-9+\/]{22}==$|^[A-Za-z0-9+\/]{16}$
 		 */
 		InitializationVector: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 19
 		 * Min length: 9
-		 * Pattern: ^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$
 		 */
 		KmsKeyRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateInputDecryptionSettingsFormGroup() {
 		return new FormGroup<InputDecryptionSettingsFormProperties>({
 			DecryptionMode: new FormControl<InputDecryptionSettingsDecryptionMode | null | undefined>(undefined),
-			EncryptedDecryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(24)]),
-			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(16)]),
-			KmsKeyRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(9)]),
+			EncryptedDecryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(24), Validators.pattern('^[A-Za-z0-9+\/]+={0,2}$')]),
+			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(16), Validators.pattern('^[A-Za-z0-9+\/]{22}==$|^[A-Za-z0-9+\/]{16}$')]),
+			KmsKeyRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(9), Validators.pattern('^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$')]),
 		});
 
 	}
@@ -857,10 +831,7 @@ export namespace MyNS {
 		 */
 		Height?: number | null;
 
-		/**
-		 * Min length: 14
-		 * Pattern: ^((s3://(.*?)\.(bmp|BMP|png|PNG|tga|TGA))|(https?://(.*?)\.(bmp|BMP|png|PNG|tga|TGA)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
-		 */
+		/** Min length: 14 */
 		ImageInserterInput?: string | null;
 
 		/**
@@ -886,8 +857,6 @@ export namespace MyNS {
 		 * Maximum: 100
 		 */
 		Opacity?: number | null;
-
-		/** Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$ */
 		StartTime?: string | null;
 
 		/**
@@ -924,10 +893,7 @@ export namespace MyNS {
 		 */
 		Height: FormControl<number | null | undefined>,
 
-		/**
-		 * Min length: 14
-		 * Pattern: ^((s3://(.*?)\.(bmp|BMP|png|PNG|tga|TGA))|(https?://(.*?)\.(bmp|BMP|png|PNG|tga|TGA)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
-		 */
+		/** Min length: 14 */
 		ImageInserterInput: FormControl<string | null | undefined>,
 
 		/**
@@ -953,8 +919,6 @@ export namespace MyNS {
 		 * Maximum: 100
 		 */
 		Opacity: FormControl<number | null | undefined>,
-
-		/** Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$ */
 		StartTime: FormControl<string | null | undefined>,
 
 		/**
@@ -969,7 +933,7 @@ export namespace MyNS {
 			FadeIn: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			FadeOut: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			Height: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
-			ImageInserterInput: new FormControl<string | null | undefined>(undefined, [Validators.minLength(14)]),
+			ImageInserterInput: new FormControl<string | null | undefined>(undefined, [Validators.minLength(14), Validators.pattern('^((s3://(.*?)\.(bmp|BMP|png|PNG|tga|TGA))|(https?://(.*?)\.(bmp|BMP|png|PNG|tga|TGA)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
 			ImageX: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			ImageY: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			Layer: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(99)]),
@@ -983,21 +947,13 @@ export namespace MyNS {
 
 	/** To transcode only portions of your input (clips), include one Input clipping (one instance of InputClipping in the JSON job file) for each input clip. All input clips you specify will be included in every output of the job. */
 	export interface InputClipping {
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		EndTimecode?: string | null;
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		StartTimecode?: string | null;
 	}
 
 	/** To transcode only portions of your input (clips), include one Input clipping (one instance of InputClipping in the JSON job file) for each input clip. All input clips you specify will be included in every output of the job. */
 	export interface InputClippingFormProperties {
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		EndTimecode: FormControl<string | null | undefined>,
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		StartTimecode: FormControl<string | null | undefined>,
 	}
 	export function CreateInputClippingFormGroup() {
@@ -1271,7 +1227,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1285
 		 * Min length: 14
-		 * Pattern: ^((s3://(.*)(\.mov|[0-9]+\.png))|(https?://(.*)(\.mov|[0-9]+\.png)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
 		 */
 		Input?: string | null;
 
@@ -1287,7 +1242,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 11
 		 * Min length: 11
-		 * Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$
 		 */
 		StartTime?: string | null;
 	}
@@ -1298,7 +1252,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1285
 		 * Min length: 14
-		 * Pattern: ^((s3://(.*)(\.mov|[0-9]+\.png))|(https?://(.*)(\.mov|[0-9]+\.png)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
 		 */
 		Input: FormControl<string | null | undefined>,
 
@@ -1311,16 +1264,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 11
 		 * Min length: 11
-		 * Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$
 		 */
 		StartTime: FormControl<string | null | undefined>,
 	}
 	export function CreateMotionImageInserterFormGroup() {
 		return new FormGroup<MotionImageInserterFormProperties>({
-			Input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1285), Validators.minLength(14)]),
+			Input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1285), Validators.minLength(14), Validators.pattern('^((s3://(.*)(\.mov|[0-9]+\.png))|(https?://(.*)(\.mov|[0-9]+\.png)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
 			InsertionMode: new FormControl<MotionImageInserterInsertionMode | null | undefined>(undefined),
 			Playback: new FormControl<MotionImageInserterPlayback | null | undefined>(undefined),
-			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11)]),
+			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
 		});
 
 	}
@@ -1510,8 +1462,6 @@ export namespace MyNS {
 
 		/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
 		CodecSpecification?: CmafGroupSettingsCodecSpecification | null;
-
-		/** Pattern: ^s3:\/\/ */
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
@@ -1573,8 +1523,6 @@ export namespace MyNS {
 
 		/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
 		CodecSpecification: FormControl<CmafGroupSettingsCodecSpecification | null | undefined>,
-
-		/** Pattern: ^s3:\/\/ */
 		Destination: FormControl<string | null | undefined>,
 
 		/**
@@ -1734,8 +1682,6 @@ export namespace MyNS {
 
 		/** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn). */
 		EncryptionType?: S3EncryptionSettingsEncryptionType | null;
-
-		/** Pattern: ^arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$ */
 		KmsKeyArn?: string | null;
 	}
 
@@ -1744,8 +1690,6 @@ export namespace MyNS {
 
 		/** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn). */
 		EncryptionType: FormControl<S3EncryptionSettingsEncryptionType | null | undefined>,
-
-		/** Pattern: ^arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$ */
 		KmsKeyArn: FormControl<string | null | undefined>,
 	}
 	export function CreateS3EncryptionSettingsFormGroup() {
@@ -1765,7 +1709,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 32
-		 * Pattern: ^[0-9a-fA-F]{32}$
 		 */
 		ConstantInitializationVector?: string | null;
 
@@ -1791,7 +1734,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 32
-		 * Pattern: ^[0-9a-fA-F]{32}$
 		 */
 		ConstantInitializationVector: FormControl<string | null | undefined>,
 
@@ -1806,7 +1748,7 @@ export namespace MyNS {
 	}
 	export function CreateCmafEncryptionSettingsFormGroup() {
 		return new FormGroup<CmafEncryptionSettingsFormProperties>({
-			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32)]),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32), Validators.pattern('^[0-9a-fA-F]{32}$')]),
 			EncryptionMethod: new FormControl<CmafEncryptionSettingsEncryptionMethod | null | undefined>(undefined),
 			InitializationVectorInManifest: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
 			Type: new FormControl<CmafEncryptionSettingsType | null | undefined>(undefined),
@@ -1821,29 +1763,17 @@ export namespace MyNS {
 
 	/** If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead. */
 	export interface SpekeKeyProviderCmaf {
-
-		/** Pattern: ^arn:aws(-us-gov)?:acm: */
 		CertificateArn?: string | null;
 		DashSignaledSystemIds?: Array<string>;
 		HlsSignaledSystemIds?: Array<string>;
-
-		/** Pattern: ^[\w-]+$ */
 		ResourceId?: string | null;
-
-		/** Pattern: ^https:\/\/ */
 		Url?: string | null;
 	}
 
 	/** If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead. */
 	export interface SpekeKeyProviderCmafFormProperties {
-
-		/** Pattern: ^arn:aws(-us-gov)?:acm: */
 		CertificateArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[\w-]+$ */
 		ResourceId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^https:\/\/ */
 		Url: FormControl<string | null | undefined>,
 	}
 	export function CreateSpekeKeyProviderCmafFormGroup() {
@@ -1858,28 +1788,16 @@ export namespace MyNS {
 
 	/** Use these settings to set up encryption with a static key provider. */
 	export interface StaticKeyProvider {
-
-		/** Pattern: ^(identity|[A-Za-z]{2,6}(\.[A-Za-z0-9-]{1,63})+)$ */
 		KeyFormat?: string | null;
-
-		/** Pattern: ^(\d+(\/\d+)*)$ */
 		KeyFormatVersions?: string | null;
-
-		/** Pattern: ^[A-Za-z0-9]{32}$ */
 		StaticKeyValue?: string | null;
 		Url?: string | null;
 	}
 
 	/** Use these settings to set up encryption with a static key provider. */
 	export interface StaticKeyProviderFormProperties {
-
-		/** Pattern: ^(identity|[A-Za-z]{2,6}(\.[A-Za-z0-9-]{1,63})+)$ */
 		KeyFormat: FormControl<string | null | undefined>,
-
-		/** Pattern: ^(\d+(\/\d+)*)$ */
 		KeyFormatVersions: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[A-Za-z0-9]{32}$ */
 		StaticKeyValue: FormControl<string | null | undefined>,
 		Url: FormControl<string | null | undefined>,
 	}
@@ -1908,8 +1826,6 @@ export namespace MyNS {
 	export interface DashIsoGroupSettings {
 		AdditionalManifests?: Array<DashAdditionalManifest>;
 		BaseUrl?: string | null;
-
-		/** Pattern: ^s3:\/\/ */
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
@@ -1952,8 +1868,6 @@ export namespace MyNS {
 	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS. */
 	export interface DashIsoGroupSettingsFormProperties {
 		BaseUrl: FormControl<string | null | undefined>,
-
-		/** Pattern: ^s3:\/\/ */
 		Destination: FormControl<string | null | undefined>,
 
 		/**
@@ -2052,24 +1966,16 @@ export namespace MyNS {
 
 	/** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead. */
 	export interface SpekeKeyProvider {
-
-		/** Pattern: ^arn:aws(-us-gov)?:acm: */
 		CertificateArn?: string | null;
 		ResourceId?: string | null;
 		SystemIds?: Array<string>;
-
-		/** Pattern: ^https:\/\/ */
 		Url?: string | null;
 	}
 
 	/** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead. */
 	export interface SpekeKeyProviderFormProperties {
-
-		/** Pattern: ^arn:aws(-us-gov)?:acm: */
 		CertificateArn: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^https:\/\/ */
 		Url: FormControl<string | null | undefined>,
 	}
 	export function CreateSpekeKeyProviderFormGroup() {
@@ -2086,8 +1992,6 @@ export namespace MyNS {
 
 	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS. */
 	export interface FileGroupSettings {
-
-		/** Pattern: ^s3:\/\/ */
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
@@ -2096,8 +2000,6 @@ export namespace MyNS {
 
 	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS. */
 	export interface FileGroupSettingsFormProperties {
-
-		/** Pattern: ^s3:\/\/ */
 		Destination: FormControl<string | null | undefined>,
 	}
 	export function CreateFileGroupSettingsFormGroup() {
@@ -2123,8 +2025,6 @@ export namespace MyNS {
 
 		/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
 		CodecSpecification?: CmafGroupSettingsCodecSpecification | null;
-
-		/** Pattern: ^s3:\/\/ */
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
@@ -2207,8 +2107,6 @@ export namespace MyNS {
 
 		/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
 		CodecSpecification: FormControl<CmafGroupSettingsCodecSpecification | null | undefined>,
-
-		/** Pattern: ^s3:\/\/ */
 		Destination: FormControl<string | null | undefined>,
 
 		/** Indicates whether segments should be placed in subdirectories. */
@@ -2335,7 +2233,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z]{3}$
 		 */
 		CustomLanguageCode?: string | null;
 
@@ -2356,7 +2253,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z]{3}$
 		 */
 		CustomLanguageCode: FormControl<string | null | undefined>,
 
@@ -2367,7 +2263,7 @@ export namespace MyNS {
 	export function CreateHlsCaptionLanguageMappingFormGroup() {
 		return new FormGroup<HlsCaptionLanguageMappingFormProperties>({
 			CaptionChannel: new FormControl<number | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 			LanguageDescription: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2387,7 +2283,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 32
-		 * Pattern: ^[0-9a-fA-F]{32}$
 		 */
 		ConstantInitializationVector?: string | null;
 
@@ -2416,7 +2311,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 32
-		 * Pattern: ^[0-9a-fA-F]{32}$
 		 */
 		ConstantInitializationVector: FormControl<string | null | undefined>,
 
@@ -2434,7 +2328,7 @@ export namespace MyNS {
 	}
 	export function CreateHlsEncryptionSettingsFormGroup() {
 		return new FormGroup<HlsEncryptionSettingsFormProperties>({
-			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32)]),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32), Validators.pattern('^[0-9a-fA-F]{32}$')]),
 			EncryptionMethod: new FormControl<HlsEncryptionSettingsEncryptionMethod | null | undefined>(undefined),
 			InitializationVectorInManifest: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
 			OfflineEncrypted: new FormControl<InputDeblockFilter | null | undefined>(undefined),
@@ -2456,8 +2350,6 @@ export namespace MyNS {
 
 		/** COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream. */
 		AudioDeduplication?: MsSmoothGroupSettingsAudioDeduplication | null;
-
-		/** Pattern: ^s3:\/\/ */
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
@@ -2481,8 +2373,6 @@ export namespace MyNS {
 
 		/** COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream. */
 		AudioDeduplication: FormControl<MsSmoothGroupSettingsAudioDeduplication | null | undefined>,
-
-		/** Pattern: ^s3:\/\/ */
 		Destination: FormControl<string | null | undefined>,
 
 		/**
@@ -2610,8 +2500,6 @@ export namespace MyNS {
 
 		/** Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings */
 		CodecSettings?: AudioCodecSettings;
-
-		/** Pattern: ^[A-Za-z]{2,3}(-[A-Za-z-]+)?$ */
 		CustomLanguageCode?: string | null;
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
@@ -2622,8 +2510,6 @@ export namespace MyNS {
 
 		/** Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides. */
 		RemixSettings?: RemixSettings;
-
-		/** Pattern: ^[\w\s]*$ */
 		StreamName?: string | null;
 	}
 
@@ -2639,8 +2525,6 @@ export namespace MyNS {
 
 		/** When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD. */
 		AudioTypeControl: FormControl<AudioDescriptionAudioTypeControl | null | undefined>,
-
-		/** Pattern: ^[A-Za-z]{2,3}(-[A-Za-z-]+)?$ */
 		CustomLanguageCode: FormControl<string | null | undefined>,
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
@@ -2648,8 +2532,6 @@ export namespace MyNS {
 
 		/** Specify which source for language code takes precedence for this audio track. When you choose Follow input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you specify. */
 		LanguageCodeControl: FormControl<AudioDescriptionAudioTypeControl | null | undefined>,
-
-		/** Pattern: ^[\w\s]*$ */
 		StreamName: FormControl<string | null | undefined>,
 	}
 	export function CreateAudioDescriptionFormGroup() {
@@ -3719,8 +3601,6 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		CaptionSelectorName?: string | null;
-
-		/** Pattern: ^[A-Za-z]{2,3}(-[A-Za-z-]+)?$ */
 		CustomLanguageCode?: string | null;
 
 		/** Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext. */
@@ -3736,8 +3616,6 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		CaptionSelectorName: FormControl<string | null | undefined>,
-
-		/** Pattern: ^[A-Za-z]{2,3}(-[A-Za-z-]+)?$ */
 		CustomLanguageCode: FormControl<string | null | undefined>,
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
@@ -4320,7 +4198,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[1-8][0-9a-fA-F][0-9a-eA-E]$
 		 */
 		PageNumber?: string | null;
 		PageTypes?: Array<TeletextPageType>;
@@ -4332,13 +4209,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[1-8][0-9a-fA-F][0-9a-eA-E]$
 		 */
 		PageNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateTeletextDestinationSettingsFormGroup() {
 		return new FormGroup<TeletextDestinationSettingsFormProperties>({
-			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[1-8][0-9a-fA-F][0-9a-eA-E]$')]),
 		});
 
 	}
@@ -7792,8 +7668,6 @@ export namespace MyNS {
 
 		/** Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video. */
 		Position?: TimecodeBurninPosition | null;
-
-		/** Pattern: ^[ -~]+$ */
 		Prefix?: string | null;
 	}
 
@@ -7808,8 +7682,6 @@ export namespace MyNS {
 
 		/** Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video. */
 		Position: FormControl<TimecodeBurninPosition | null | undefined>,
-
-		/** Pattern: ^[ -~]+$ */
 		Prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateTimecodeBurninFormGroup() {
@@ -7826,33 +7698,21 @@ export namespace MyNS {
 
 	/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
 	export interface TimecodeConfig {
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		Anchor?: string | null;
 
 		/** Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value. */
 		Source?: InputTimecodeSource | null;
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		Start?: string | null;
-
-		/** Pattern: ^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$ */
 		TimestampOffset?: string | null;
 	}
 
 	/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
 	export interface TimecodeConfigFormProperties {
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		Anchor: FormControl<string | null | undefined>,
 
 		/** Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value. */
 		Source: FormControl<InputTimecodeSource | null | undefined>,
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		Start: FormControl<string | null | undefined>,
-
-		/** Pattern: ^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$ */
 		TimestampOffset: FormControl<string | null | undefined>,
 	}
 	export function CreateTimecodeConfigFormGroup() {
@@ -7883,21 +7743,13 @@ export namespace MyNS {
 
 	/** To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion). */
 	export interface Id3Insertion {
-
-		/** Pattern: ^[A-Za-z0-9+\/]+={0,2}$ */
 		Id3?: string | null;
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		Timecode?: string | null;
 	}
 
 	/** To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion). */
 	export interface Id3InsertionFormProperties {
-
-		/** Pattern: ^[A-Za-z0-9+\/]+={0,2}$ */
 		Id3: FormControl<string | null | undefined>,
-
-		/** Pattern: ^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$ */
 		Timecode: FormControl<string | null | undefined>,
 	}
 	export function CreateId3InsertionFormGroup() {
@@ -8128,7 +7980,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 11
 		 * Min length: 11
-		 * Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$
 		 */
 		TimecodeStart?: string | null;
 
@@ -8169,7 +8020,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 11
 		 * Min length: 11
-		 * Pattern: ^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$
 		 */
 		TimecodeStart: FormControl<string | null | undefined>,
 	}
@@ -8182,7 +8032,7 @@ export namespace MyNS {
 			ProgramNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			PsiControl: new FormControl<InputPsiControl | null | undefined>(undefined),
 			TimecodeSource: new FormControl<InputTimecodeSource | null | undefined>(undefined),
-			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11)]),
+			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
 		});
 
 	}
@@ -8272,8 +8122,6 @@ export namespace MyNS {
 
 	/** Caption Description for preset */
 	export interface CaptionDescriptionPreset {
-
-		/** Pattern: ^[A-Za-z]{2,3}(-[A-Za-z-]+)?$ */
 		CustomLanguageCode?: string | null;
 
 		/** Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext. */
@@ -8286,8 +8134,6 @@ export namespace MyNS {
 
 	/** Caption Description for preset */
 	export interface CaptionDescriptionPresetFormProperties {
-
-		/** Pattern: ^[A-Za-z]{2,3}(-[A-Za-z-]+)?$ */
 		CustomLanguageCode: FormControl<string | null | undefined>,
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
@@ -8883,14 +8729,11 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z]{3}$
 		 */
 		CustomLanguageCode?: string | null;
 
 		/** Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio. */
 		DefaultSelection?: AudioDefaultSelection | null;
-
-		/** Pattern: ^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([wW][eE][bB][mM]|[mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[aA][aA][cC]|[aA][iI][fF][fF]|[mM][pP]2|[aA][cC]3|[eE][cC]3|[dD][tT][sS][eE]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[aA][aA][cC]|[aA][iI][fF][fF]|[mM][pP]2|[aA][cC]3|[eE][cC]3|[dD][tT][sS][eE])))(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$ */
 		ExternalAudioFileInput?: string | null;
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
@@ -8923,14 +8766,11 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z]{3}$
 		 */
 		CustomLanguageCode: FormControl<string | null | undefined>,
 
 		/** Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio. */
 		DefaultSelection: FormControl<AudioDefaultSelection | null | undefined>,
-
-		/** Pattern: ^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([wW][eE][bB][mM]|[mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[aA][aA][cC]|[aA][iI][fF][fF]|[mM][pP]2|[aA][cC]3|[eE][cC]3|[dD][tT][sS][eE]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[aA][aA][cC]|[aA][iI][fF][fF]|[mM][pP]2|[aA][cC]3|[eE][cC]3|[dD][tT][sS][eE])))(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$ */
 		ExternalAudioFileInput: FormControl<string | null | undefined>,
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
@@ -8953,7 +8793,7 @@ export namespace MyNS {
 	}
 	export function CreateAudioSelectorFormGroup() {
 		return new FormGroup<AudioSelectorFormProperties>({
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
 			DefaultSelection: new FormControl<AudioDefaultSelection | null | undefined>(undefined),
 			ExternalAudioFileInput: new FormControl<string | null | undefined>(undefined),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
@@ -9181,10 +9021,7 @@ export namespace MyNS {
 		/** Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps. */
 		Framerate?: CaptionSourceFramerate;
 
-		/**
-		 * Min length: 14
-		 * Pattern: ^((s3://(.*?)\.(scc|SCC|ttml|TTML|dfxp|DFXP|stl|STL|srt|SRT|xml|XML|smi|SMI))|(https?://(.*?)\.(scc|SCC|ttml|TTML|dfxp|DFXP|stl|STL|srt|SRT|xml|XML|smi|SMI)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
-		 */
+		/** Min length: 14 */
 		SourceFile?: string | null;
 
 		/**
@@ -9200,10 +9037,7 @@ export namespace MyNS {
 		/** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708. */
 		Convert608To708: FormControl<AncillaryConvert608To708 | null | undefined>,
 
-		/**
-		 * Min length: 14
-		 * Pattern: ^((s3://(.*?)\.(scc|SCC|ttml|TTML|dfxp|DFXP|stl|STL|srt|SRT|xml|XML|smi|SMI))|(https?://(.*?)\.(scc|SCC|ttml|TTML|dfxp|DFXP|stl|STL|srt|SRT|xml|XML|smi|SMI)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$
-		 */
+		/** Min length: 14 */
 		SourceFile: FormControl<string | null | undefined>,
 
 		/**
@@ -9215,7 +9049,7 @@ export namespace MyNS {
 	export function CreateFileSourceSettingsFormGroup() {
 		return new FormGroup<FileSourceSettingsFormProperties>({
 			Convert608To708: new FormControl<AncillaryConvert608To708 | null | undefined>(undefined),
-			SourceFile: new FormControl<string | null | undefined>(undefined, [Validators.minLength(14)]),
+			SourceFile: new FormControl<string | null | undefined>(undefined, [Validators.minLength(14), Validators.pattern('^((s3://(.*?)\.(scc|SCC|ttml|TTML|dfxp|DFXP|stl|STL|srt|SRT|xml|XML|smi|SMI))|(https?://(.*?)\.(scc|SCC|ttml|TTML|dfxp|DFXP|stl|STL|srt|SRT|xml|XML|smi|SMI)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
 			TimeDelta: new FormControl<number | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
 		});
 
@@ -9270,7 +9104,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[1-8][0-9a-fA-F][0-9a-eA-E]$
 		 */
 		PageNumber?: string | null;
 	}
@@ -9281,13 +9114,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[1-8][0-9a-fA-F][0-9a-eA-E]$
 		 */
 		PageNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateTeletextSourceSettingsFormGroup() {
 		return new FormGroup<TeletextSourceSettingsFormProperties>({
-			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[1-8][0-9a-fA-F][0-9a-eA-E]$')]),
 		});
 
 	}
@@ -9326,7 +9158,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z]{3}$
 		 */
 		CustomLanguageCode?: string | null;
 
@@ -9343,7 +9174,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 3
-		 * Pattern: ^[A-Za-z]{3}$
 		 */
 		CustomLanguageCode: FormControl<string | null | undefined>,
 
@@ -9352,7 +9182,7 @@ export namespace MyNS {
 	}
 	export function CreateCaptionSelectorFormGroup() {
 		return new FormGroup<CaptionSelectorFormProperties>({
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 		});
 

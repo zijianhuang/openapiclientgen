@@ -23,14 +23,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^hrc-[a-z0-9]{12}$
 		 */
 		ControlId?: string | null;
 
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion?: string | null;
 
@@ -45,22 +43,20 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^hrc-[a-z0-9]{12}$
 		 */
 		ControlId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion: FormControl<string | null | undefined>,
 		RequestedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateHomeRegionControlFormGroup() {
 		return new FormGroup<HomeRegionControlFormProperties>({
-			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^hrc-[a-z0-9]{12}$')]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 			RequestedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -76,7 +72,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^\d{12}$
 		 */
 		Id?: string | null;
 	}
@@ -90,14 +85,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 12
 		 * Min length: 12
-		 * Pattern: ^\d{12}$
 		 */
 		Id: FormControl<string | null | undefined>,
 	}
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
 			Type: new FormControl<TargetType | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^\d{12}$')]),
 		});
 
 	}
@@ -110,7 +104,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion: string;
 
@@ -127,14 +120,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion: FormControl<string | null | undefined>,
 		DryRun: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateHomeRegionControlRequestFormGroup() {
 		return new FormGroup<CreateHomeRegionControlRequestFormProperties>({
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -208,7 +200,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 0
-		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
 		 */
 		NextToken?: string | null;
 	}
@@ -217,13 +208,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 0
-		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeHomeRegionControlsResultFormGroup() {
 		return new FormGroup<DescribeHomeRegionControlsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9\/\+\=]{0,2048}$')]),
 		});
 
 	}
@@ -233,14 +223,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^hrc-[a-z0-9]{12}$
 		 */
 		ControlId?: string | null;
 
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion?: string | null;
 
@@ -256,7 +244,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 0
-		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
 		 */
 		NextToken?: string | null;
 	}
@@ -265,14 +252,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^hrc-[a-z0-9]{12}$
 		 */
 		ControlId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion: FormControl<string | null | undefined>,
 
@@ -285,16 +270,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 0
-		 * Pattern: ^[a-zA-Z0-9\/\+\=]{0,2048}$
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeHomeRegionControlsRequestFormGroup() {
 		return new FormGroup<DescribeHomeRegionControlsRequestFormProperties>({
-			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^hrc-[a-z0-9]{12}$')]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9\/\+\=]{0,2048}$')]),
 		});
 
 	}
@@ -304,7 +288,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion?: string | null;
 	}
@@ -313,13 +296,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 50
 		 * Min length: 1
-		 * Pattern: ^([a-z]+)-([a-z]+)-([0-9]+)$
 		 */
 		HomeRegion: FormControl<string | null | undefined>,
 	}
 	export function CreateGetHomeRegionResultFormGroup() {
 		return new FormGroup<GetHomeRegionResultFormProperties>({
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 		});
 
 	}

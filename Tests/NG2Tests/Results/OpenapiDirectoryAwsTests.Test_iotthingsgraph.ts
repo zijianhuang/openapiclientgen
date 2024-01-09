@@ -19,14 +19,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: string;
 
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		entityId: string;
 		namespaceVersion?: number | null;
@@ -37,22 +35,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		entityId: FormControl<string | null | undefined>,
 		namespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateAssociateEntityToThingRequestFormGroup() {
 		return new FormGroup<AssociateEntityToThingRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			entityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
+			entityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -115,10 +111,7 @@ export namespace MyNS {
 	/** An object that contains summary information about a workflow. */
 	export interface FlowTemplateSummary {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 		arn?: string | null;
 		revisionNumber?: number | null;
@@ -128,10 +121,7 @@ export namespace MyNS {
 	/** An object that contains summary information about a workflow. */
 	export interface FlowTemplateSummaryFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
@@ -139,7 +129,7 @@ export namespace MyNS {
 	}
 	export function CreateFlowTemplateSummaryFormGroup() {
 		return new FormGroup<FlowTemplateSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -239,10 +229,7 @@ export namespace MyNS {
 	/** An object that contains summary information about a system instance. */
 	export interface SystemInstanceSummary {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 		arn?: string | null;
 		status?: SystemInstanceSummaryStatus | null;
@@ -257,10 +244,7 @@ export namespace MyNS {
 	/** An object that contains summary information about a system instance. */
 	export interface SystemInstanceSummaryFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		status: FormControl<SystemInstanceSummaryStatus | null | undefined>,
@@ -273,7 +257,7 @@ export namespace MyNS {
 	}
 	export function CreateSystemInstanceSummaryFormGroup() {
 		return new FormGroup<SystemInstanceSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<SystemInstanceSummaryStatus | null | undefined>(undefined),
 			target: new FormControl<SystemInstanceSummaryTarget | null | undefined>(undefined),
@@ -349,7 +333,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		key: string;
 
@@ -368,7 +351,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		key: FormControl<string | null | undefined>,
 
@@ -381,7 +363,7 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
 		});
 
@@ -434,10 +416,7 @@ export namespace MyNS {
 	/** An object that contains information about a system. */
 	export interface SystemTemplateSummary {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 		arn?: string | null;
 		revisionNumber?: number | null;
@@ -447,10 +426,7 @@ export namespace MyNS {
 	/** An object that contains information about a system. */
 	export interface SystemTemplateSummaryFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
@@ -458,7 +434,7 @@ export namespace MyNS {
 	}
 	export function CreateSystemTemplateSummaryFormGroup() {
 		return new FormGroup<SystemTemplateSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -500,7 +476,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 	}
@@ -509,13 +484,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFlowTemplateRequestFormGroup() {
 		return new FormGroup<DeleteFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -572,23 +546,17 @@ export namespace MyNS {
 
 	export interface DeleteSystemInstanceRequest {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 	}
 	export interface DeleteSystemInstanceRequestFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSystemInstanceRequestFormGroup() {
 		return new FormGroup<DeleteSystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -608,7 +576,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 	}
@@ -617,13 +584,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSystemTemplateRequestFormGroup() {
 		return new FormGroup<DeleteSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -649,23 +615,17 @@ export namespace MyNS {
 
 	export interface DeploySystemInstanceRequest {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 	}
 	export interface DeploySystemInstanceRequestFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeploySystemInstanceRequestFormGroup() {
 		return new FormGroup<DeploySystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -685,7 +645,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 	}
@@ -694,13 +653,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprecateFlowTemplateRequestFormGroup() {
 		return new FormGroup<DeprecateFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -720,7 +678,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 	}
@@ -729,13 +686,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDeprecateSystemTemplateRequestFormGroup() {
 		return new FormGroup<DeprecateSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -806,7 +762,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: string;
 
@@ -819,7 +774,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: FormControl<string | null | undefined>,
 
@@ -828,7 +782,7 @@ export namespace MyNS {
 	}
 	export function CreateDissociateEntityFromThingRequestFormGroup() {
 		return new FormGroup<DissociateEntityFromThingRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 			entityType: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -851,10 +805,7 @@ export namespace MyNS {
 	/** Describes the properties of an entity. */
 	export interface EntityDescription {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 		arn?: string | null;
 		type?: DissociateEntityFromThingRequestEntityType | null;
@@ -867,10 +818,7 @@ export namespace MyNS {
 	/** Describes the properties of an entity. */
 	export interface EntityDescriptionFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
 		type: FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>,
@@ -878,7 +826,7 @@ export namespace MyNS {
 	}
 	export function CreateEntityDescriptionFormGroup() {
 		return new FormGroup<EntityDescriptionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			arn: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
@@ -947,7 +895,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 		revisionNumber?: number | null;
@@ -957,14 +904,13 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFlowTemplateRequestFormGroup() {
 		return new FormGroup<GetFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -989,7 +935,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 		nextToken?: string | null;
@@ -1005,7 +950,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1018,7 +962,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFlowTemplateRevisionsRequestFormGroup() {
 		return new FormGroup<GetFlowTemplateRevisionsRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
@@ -1128,10 +1072,7 @@ export namespace MyNS {
 	/** An object that contains the ID and revision number of a workflow or system that is part of a deployment. */
 	export interface DependencyRevision {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 		revisionNumber?: number | null;
 	}
@@ -1139,16 +1080,13 @@ export namespace MyNS {
 	/** An object that contains the ID and revision number of a workflow or system that is part of a deployment. */
 	export interface DependencyRevisionFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateDependencyRevisionFormGroup() {
 		return new FormGroup<DependencyRevisionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1159,7 +1097,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 	}
@@ -1168,13 +1105,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSystemInstanceRequestFormGroup() {
 		return new FormGroup<GetSystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -1220,7 +1156,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 		revisionNumber?: number | null;
@@ -1230,14 +1165,13 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 		revisionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSystemTemplateRequestFormGroup() {
 		return new FormGroup<GetSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			revisionNumber: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1262,7 +1196,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 		nextToken?: string | null;
@@ -1278,7 +1211,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1291,7 +1223,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSystemTemplateRevisionsRequestFormGroup() {
 		return new FormGroup<GetSystemTemplateRevisionsRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 		});
@@ -1600,16 +1532,10 @@ export namespace MyNS {
 		flowExecutionId?: string | null;
 		status?: FlowExecutionSummaryStatus | null;
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		systemInstanceId?: string | null;
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		flowTemplateId?: string | null;
 		createdAt?: Date | null;
 		updatedAt?: Date | null;
@@ -1620,16 +1546,10 @@ export namespace MyNS {
 		flowExecutionId: FormControl<string | null | undefined>,
 		status: FormControl<FlowExecutionSummaryStatus | null | undefined>,
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		systemInstanceId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		flowTemplateId: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
@@ -1638,8 +1558,8 @@ export namespace MyNS {
 		return new FormGroup<FlowExecutionSummaryFormProperties>({
 			flowExecutionId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<FlowExecutionSummaryStatus | null | undefined>(undefined),
-			systemInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
-			flowTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			systemInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
+			flowTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1653,7 +1573,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		systemInstanceId: string;
 		flowExecutionId?: string | null;
@@ -1672,7 +1591,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		systemInstanceId: FormControl<string | null | undefined>,
 		flowExecutionId: FormControl<string | null | undefined>,
@@ -1688,7 +1606,7 @@ export namespace MyNS {
 	}
 	export function CreateSearchFlowExecutionsRequestFormGroup() {
 		return new FormGroup<SearchFlowExecutionsRequestFormProperties>({
-			systemInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			systemInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			flowExecutionId: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
@@ -1915,7 +1833,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName?: string | null;
 	}
@@ -1927,14 +1844,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: FormControl<string | null | undefined>,
 	}
 	export function CreateThingFormGroup() {
 		return new FormGroup<ThingFormProperties>({
 			thingArn: new FormControl<string | null | undefined>(undefined),
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 		});
 
 	}
@@ -1944,7 +1860,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		entityId: string;
 		nextToken?: string | null;
@@ -1961,7 +1876,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		entityId: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1975,7 +1889,7 @@ export namespace MyNS {
 	}
 	export function CreateSearchThingsRequestFormGroup() {
 		return new FormGroup<SearchThingsRequestFormProperties>({
-			entityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			entityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
@@ -2040,23 +1954,17 @@ export namespace MyNS {
 
 	export interface UndeploySystemInstanceRequest {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id?: string | null;
 	}
 	export interface UndeploySystemInstanceRequestFormProperties {
 
-		/**
-		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
-		 */
+		/** Max length: 160 */
 		id: FormControl<string | null | undefined>,
 	}
 	export function CreateUndeploySystemInstanceRequestFormGroup() {
 		return new FormGroup<UndeploySystemInstanceRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 		});
 
 	}
@@ -2121,7 +2029,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 
@@ -2137,14 +2044,13 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 		compatibleNamespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFlowTemplateRequestFormGroup() {
 		return new FormGroup<UpdateFlowTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2168,7 +2074,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: string;
 
@@ -2184,14 +2089,13 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 160
-		 * Pattern: ^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$
 		 */
 		id: FormControl<string | null | undefined>,
 		compatibleNamespaceVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSystemTemplateRequestFormGroup() {
 		return new FormGroup<UpdateSystemTemplateRequestFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
 

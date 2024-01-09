@@ -195,10 +195,7 @@ export namespace MyNS {
 		 */
 		OwnerGid: number;
 
-		/**
-		 * Required
-		 * Pattern: ^[0-7]{3,4}$
-		 */
+		/** Required */
 		Permissions: string;
 	}
 
@@ -219,10 +216,7 @@ export namespace MyNS {
 		 */
 		OwnerGid: FormControl<number | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^[0-7]{3,4}$
-		 */
+		/** Required */
 		Permissions: FormControl<string | null | undefined>,
 	}
 	export function CreateCreationInfoFormGroup() {

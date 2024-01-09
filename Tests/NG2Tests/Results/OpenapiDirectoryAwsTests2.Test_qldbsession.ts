@@ -41,7 +41,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		SessionToken?: string | null;
 	}
@@ -52,13 +51,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		SessionToken: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSessionResultFormGroup() {
 		return new FormGroup<StartSessionResultFormProperties>({
-			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
+			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}
@@ -70,7 +68,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId?: string | null;
 	}
@@ -81,13 +78,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartTransactionResultFormGroup() {
 		return new FormGroup<StartTransactionResultFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 		});
 
 	}
@@ -113,7 +109,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId?: string | null;
 		CommitDigest?: string | null;
@@ -125,14 +120,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 		CommitDigest: FormControl<string | null | undefined>,
 	}
 	export function CreateCommitTransactionResultFormGroup() {
 		return new FormGroup<CommitTransactionResultFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 			CommitDigest: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -177,7 +171,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextPageToken?: string | null;
 	}
@@ -188,13 +181,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreatePageFormGroup() {
 		return new FormGroup<PageFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}
@@ -261,7 +253,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		SessionToken?: string | null;
 
@@ -291,13 +282,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		SessionToken: FormControl<string | null | undefined>,
 	}
 	export function CreateSendCommandRequestFormGroup() {
 		return new FormGroup<SendCommandRequestFormProperties>({
-			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4)]),
+			SessionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}
@@ -310,7 +300,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		LedgerName: string;
 	}
@@ -322,13 +311,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		 */
 		LedgerName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartSessionRequestFormGroup() {
 		return new FormGroup<StartSessionRequestFormProperties>({
-			LedgerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			LedgerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('(?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$')]),
 		});
 
 	}
@@ -369,7 +357,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: string;
 
@@ -384,7 +371,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
@@ -393,7 +379,7 @@ export namespace MyNS {
 	}
 	export function CreateCommitTransactionRequestFormGroup() {
 		return new FormGroup<CommitTransactionRequestFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 			CommitDigest: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -421,7 +407,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: string;
 
@@ -441,7 +426,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
@@ -454,7 +438,7 @@ export namespace MyNS {
 	}
 	export function CreateExecuteStatementRequestFormGroup() {
 		return new FormGroup<ExecuteStatementRequestFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
 			Statement: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100000), Validators.minLength(1)]),
 		});
 
@@ -468,7 +452,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: string;
 
@@ -476,7 +459,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextPageToken: string;
 	}
@@ -488,7 +470,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^[A-Za-z-0-9]+$
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
@@ -496,14 +477,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 4
-		 * Pattern: ^[A-Za-z-0-9+/=]+$
 		 */
 		NextPageToken: FormControl<string | null | undefined>,
 	}
 	export function CreateFetchPageRequestFormGroup() {
 		return new FormGroup<FetchPageRequestFormProperties>({
-			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22)]),
-			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(4)]),
+			TransactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^[A-Za-z-0-9]+$')]),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(4), Validators.pattern('^[A-Za-z-0-9+/=]+$')]),
 		});
 
 	}

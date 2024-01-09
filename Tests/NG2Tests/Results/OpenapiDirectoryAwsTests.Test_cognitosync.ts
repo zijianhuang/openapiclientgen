@@ -10,7 +10,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 	}
@@ -21,13 +20,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateBulkPublishResponseFormGroup() {
 		return new FormGroup<BulkPublishResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -182,14 +180,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityId?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.:-]+
 		 */
 		DatasetName?: string | null;
 		CreationDate?: Date | null;
@@ -205,14 +201,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.:-]+
 		 */
 		DatasetName: FormControl<string | null | undefined>,
 		CreationDate: FormControl<Date | null | undefined>,
@@ -223,8 +217,8 @@ export namespace MyNS {
 	}
 	export function CreateDatasetFormGroup() {
 		return new FormGroup<DatasetFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
-			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.:-]+')]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
@@ -317,7 +311,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 		SyncSessionsCount?: number | null;
@@ -331,7 +324,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 		SyncSessionsCount: FormControl<number | null | undefined>,
@@ -340,7 +332,7 @@ export namespace MyNS {
 	}
 	export function CreateIdentityPoolUsageFormGroup() {
 		return new FormGroup<IdentityPoolUsageFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			SyncSessionsCount: new FormControl<number | null | undefined>(undefined),
 			DataStorage: new FormControl<number | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
@@ -372,14 +364,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityId?: string | null;
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 		LastModifiedDate?: Date | null;
@@ -393,14 +383,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 		LastModifiedDate: FormControl<Date | null | undefined>,
@@ -409,8 +397,8 @@ export namespace MyNS {
 	}
 	export function CreateIdentityUsageFormGroup() {
 		return new FormGroup<IdentityUsageFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			DatasetCount: new FormControl<number | null | undefined>(undefined),
 			DataStorage: new FormControl<number | null | undefined>(undefined),
@@ -425,7 +413,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 		BulkPublishStartTime?: Date | null;
@@ -440,7 +427,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 		BulkPublishStartTime: FormControl<Date | null | undefined>,
@@ -450,7 +436,7 @@ export namespace MyNS {
 	}
 	export function CreateGetBulkPublishDetailsResponseFormGroup() {
 		return new FormGroup<GetBulkPublishDetailsResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			BulkPublishStartTime: new FormControl<Date | null | undefined>(undefined),
 			BulkPublishCompleteTime: new FormControl<Date | null | undefined>(undefined),
 			BulkPublishStatus: new FormControl<GetBulkPublishDetailsResponseBulkPublishStatus | null | undefined>(undefined),
@@ -493,7 +479,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 
@@ -510,13 +495,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIdentityPoolConfigurationResponseFormGroup() {
 		return new FormGroup<GetIdentityPoolConfigurationResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -529,7 +513,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn?: string | null;
 	}
@@ -540,13 +523,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreatePushSyncFormGroup() {
 		return new FormGroup<PushSyncFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 		});
 
 	}
@@ -564,7 +546,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn?: string | null;
 		StreamingStatus?: CognitoStreamsStreamingStatus | null;
@@ -582,7 +563,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 		StreamingStatus: FormControl<CognitoStreamsStreamingStatus | null | undefined>,
@@ -590,7 +570,7 @@ export namespace MyNS {
 	export function CreateCognitoStreamsFormGroup() {
 		return new FormGroup<CognitoStreamsFormProperties>({
 			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
 		});
 
@@ -777,7 +757,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId?: string | null;
 
@@ -794,13 +773,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 55
 		 * Min length: 1
-		 * Pattern: [\w-]+:[0-9a-f-]+
 		 */
 		IdentityPoolId: FormControl<string | null | undefined>,
 	}
 	export function CreateSetIdentityPoolConfigurationResponseFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -1563,7 +1541,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn?: string | null;
 	}
@@ -1572,13 +1549,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
 	export function CreateSetIdentityPoolConfigurationPostBodyPushSyncFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationPostBodyPushSyncFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 		});
 
 	}
@@ -1594,7 +1570,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn?: string | null;
 		StreamingStatus?: CognitoStreamsStreamingStatus | null;
@@ -1610,7 +1585,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:aws:iam::\d+:role/.*
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 		StreamingStatus: FormControl<CognitoStreamsStreamingStatus | null | undefined>,
@@ -1618,7 +1592,7 @@ export namespace MyNS {
 	export function CreateSetIdentityPoolConfigurationPostBodyCognitoStreamsFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationPostBodyCognitoStreamsFormProperties>({
 			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
 		});
 

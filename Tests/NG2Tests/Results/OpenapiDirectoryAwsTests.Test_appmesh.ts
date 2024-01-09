@@ -1832,7 +1832,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
 		 */
 		namespaceName: string;
 
@@ -1840,7 +1839,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
 		 */
 		serviceName: string;
 	}
@@ -1855,7 +1853,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
 		 */
 		namespaceName: FormControl<string | null | undefined>,
 
@@ -1863,14 +1860,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)
 		 */
 		serviceName: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCloudMapServiceDiscoveryFormGroup() {
 		return new FormGroup<AwsCloudMapServiceDiscoveryFormProperties>({
-			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			serviceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)')]),
+			serviceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)')]),
 		});
 
 	}
@@ -1886,7 +1882,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!-~]+$
 		 */
 		key: string;
 
@@ -1894,7 +1889,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^([a-zA-Z0-9!-~][ ta-zA-Z0-9!-~]*){0,1}[a-zA-Z0-9!-~]{0,1}$
 		 */
 		value: string;
 	}
@@ -1909,7 +1903,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z0-9!-~]+$
 		 */
 		key: FormControl<string | null | undefined>,
 
@@ -1917,14 +1910,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^([a-zA-Z0-9!-~][ ta-zA-Z0-9!-~]*){0,1}[a-zA-Z0-9!-~]{0,1}$
 		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateAwsCloudMapInstanceAttributeFormGroup() {
 		return new FormGroup<AwsCloudMapInstanceAttributeFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9!-~]+$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^([a-zA-Z0-9!-~][ ta-zA-Z0-9!-~]*){0,1}[a-zA-Z0-9!-~]{0,1}$')]),
 		});
 
 	}

@@ -15,19 +15,13 @@ export namespace MyNS {
 
 	export interface CloseTunnelRequest {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
-		 */
+		/** Required */
 		tunnelId: string;
 		delete?: boolean | null;
 	}
 	export interface CloseTunnelRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
-		 */
+		/** Required */
 		tunnelId: FormControl<string | null | undefined>,
 		delete: FormControl<boolean | null | undefined>,
 	}
@@ -65,8 +59,6 @@ export namespace MyNS {
 
 	/** A connection between a source computer and a destination device. */
 	export interface Tunnel {
-
-		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId?: string | null;
 
 		/**
@@ -81,8 +73,6 @@ export namespace MyNS {
 
 		/** The state of a connection. */
 		destinationConnectionState?: ConnectionState;
-
-		/** Pattern: [^\p{C}]{1,2048} */
 		description?: string | null;
 
 		/** The destination configuration. */
@@ -102,8 +92,6 @@ export namespace MyNS {
 
 	/** A connection between a source computer and a destination device. */
 	export interface TunnelFormProperties {
-
-		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId: FormControl<string | null | undefined>,
 
 		/**
@@ -112,8 +100,6 @@ export namespace MyNS {
 		 */
 		tunnelArn: FormControl<string | null | undefined>,
 		status: FormControl<TunnelStatus | null | undefined>,
-
-		/** Pattern: [^\p{C}]{1,2048} */
 		description: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		lastUpdatedAt: FormControl<Date | null | undefined>,
@@ -162,7 +148,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: string;
 
@@ -181,13 +166,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: FormControl<string | null | undefined>,
 	}
 	export function CreateDestinationConfigFormGroup() {
 		return new FormGroup<DestinationConfigFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 		});
 
 	}
@@ -227,7 +211,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		key: string;
 
@@ -235,7 +218,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		value: string;
 	}
@@ -247,7 +229,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		key: FormControl<string | null | undefined>,
 
@@ -255,32 +236,25 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
 
 	export interface DescribeTunnelRequest {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
-		 */
+		/** Required */
 		tunnelId: string;
 	}
 	export interface DescribeTunnelRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9_\-+=:]{1,128}
-		 */
+		/** Required */
 		tunnelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeTunnelRequestFormGroup() {
@@ -333,13 +307,9 @@ export namespace MyNS {
 
 	export interface ListTunnelsResponse {
 		tunnelSummaries?: Array<TunnelSummary>;
-
-		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken?: string | null;
 	}
 	export interface ListTunnelsResponseFormProperties {
-
-		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTunnelsResponseFormGroup() {
@@ -352,8 +322,6 @@ export namespace MyNS {
 
 	/** Information about the tunnel. */
 	export interface TunnelSummary {
-
-		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId?: string | null;
 
 		/**
@@ -362,8 +330,6 @@ export namespace MyNS {
 		 */
 		tunnelArn?: string | null;
 		status?: TunnelStatus | null;
-
-		/** Pattern: [^\p{C}]{1,2048} */
 		description?: string | null;
 		createdAt?: Date | null;
 		lastUpdatedAt?: Date | null;
@@ -371,8 +337,6 @@ export namespace MyNS {
 
 	/** Information about the tunnel. */
 	export interface TunnelSummaryFormProperties {
-
-		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId: FormControl<string | null | undefined>,
 
 		/**
@@ -381,8 +345,6 @@ export namespace MyNS {
 		 */
 		tunnelArn: FormControl<string | null | undefined>,
 		status: FormControl<TunnelStatus | null | undefined>,
-
-		/** Pattern: [^\p{C}]{1,2048} */
 		description: FormControl<string | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		lastUpdatedAt: FormControl<Date | null | undefined>,
@@ -404,7 +366,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName?: string | null;
 
@@ -413,8 +374,6 @@ export namespace MyNS {
 		 * Maximum: 100
 		 */
 		maxResults?: number | null;
-
-		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken?: string | null;
 	}
 	export interface ListTunnelsRequestFormProperties {
@@ -422,7 +381,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:_-]+
 		 */
 		thingName: FormControl<string | null | undefined>,
 
@@ -431,13 +389,11 @@ export namespace MyNS {
 		 * Maximum: 100
 		 */
 		maxResults: FormControl<number | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9_=-]{1,4096} */
 		nextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListTunnelsRequestFormGroup() {
 		return new FormGroup<ListTunnelsRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -445,8 +401,6 @@ export namespace MyNS {
 	}
 
 	export interface OpenTunnelResponse {
-
-		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId?: string | null;
 
 		/**
@@ -458,8 +412,6 @@ export namespace MyNS {
 		destinationAccessToken?: string | null;
 	}
 	export interface OpenTunnelResponseFormProperties {
-
-		/** Pattern: [a-zA-Z0-9_\-+=:]{1,128} */
 		tunnelId: FormControl<string | null | undefined>,
 
 		/**
@@ -481,8 +433,6 @@ export namespace MyNS {
 	}
 
 	export interface OpenTunnelRequest {
-
-		/** Pattern: [^\p{C}]{1,2048} */
 		description?: string | null;
 
 		/**
@@ -498,8 +448,6 @@ export namespace MyNS {
 		timeoutConfig?: TimeoutConfig;
 	}
 	export interface OpenTunnelRequestFormProperties {
-
-		/** Pattern: [^\p{C}]{1,2048} */
 		description: FormControl<string | null | undefined>,
 	}
 	export function CreateOpenTunnelRequestFormGroup() {

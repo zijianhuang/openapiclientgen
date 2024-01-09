@@ -20,7 +20,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		TicketId: string;
 
@@ -37,7 +36,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		TicketId: FormControl<string | null | undefined>,
 
@@ -46,7 +44,7 @@ export namespace MyNS {
 	}
 	export function CreateAcceptMatchInputFormGroup() {
 		return new FormGroup<AcceptMatchInputFormProperties>({
-			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 			AcceptanceType: new FormControl<AcceptMatchInputAcceptanceType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -114,49 +112,42 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
 		 */
 		GameServerGroupArn?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId?: string | null;
 
 		/**
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^i-[0-9a-zA-Z]{17}$
 		 */
 		InstanceId?: string | null;
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ConnectionInfo?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		CustomSortKey?: string | null;
 		ClaimStatus?: GameServerClaimStatus | null;
@@ -172,49 +163,42 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
 		 */
 		GameServerGroupArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^i-[0-9a-zA-Z]{17}$
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ConnectionInfo: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		CustomSortKey: FormControl<string | null | undefined>,
 		ClaimStatus: FormControl<GameServerClaimStatus | null | undefined>,
@@ -225,13 +209,13 @@ export namespace MyNS {
 	}
 	export function CreateGameServerFormGroup() {
 		return new FormGroup<GameServerFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			GameServerGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
-			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19)]),
-			ConnectionInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
-			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CustomSortKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+')]),
+			GameServerGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*')]),
+			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9-\.]+')]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^i-[0-9a-zA-Z]{17}$')]),
+			ConnectionInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			CustomSortKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+')]),
 			ClaimStatus: new FormControl<GameServerClaimStatus | null | undefined>(undefined),
 			UtilizationStatus: new FormControl<GameServerUtilizationStatus | null | undefined>(undefined),
 			RegistrationTime: new FormControl<Date | null | undefined>(undefined),
@@ -251,21 +235,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData?: string | null;
 	}
@@ -275,29 +256,26 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData: FormControl<string | null | undefined>,
 	}
 	export function CreateClaimGameServerInputFormGroup() {
 		return new FormGroup<ClaimGameServerInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
-			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
+			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9-\.]+')]),
+			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -352,18 +330,13 @@ export namespace MyNS {
 
 	/** <p>Properties that describe an alias resource.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
 	export interface Alias {
-
-		/** Pattern: ^alias-\S+ */
 		AliasId?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
-
-		/** Pattern: ^arn:.*:alias\/alias-\S+ */
 		AliasArn?: string | null;
 		Description?: string | null;
 
@@ -375,18 +348,13 @@ export namespace MyNS {
 
 	/** <p>Properties that describe an alias resource.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
 	export interface AliasFormProperties {
-
-		/** Pattern: ^alias-\S+ */
 		AliasId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:alias\/alias-\S+ */
 		AliasArn: FormControl<string | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
@@ -395,7 +363,7 @@ export namespace MyNS {
 	export function CreateAliasFormGroup() {
 		return new FormGroup<AliasFormProperties>({
 			AliasId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			AliasArn: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -408,8 +376,6 @@ export namespace MyNS {
 	/** <p>The routing configuration for a fleet alias.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
 	export interface RoutingStrategy {
 		Type?: RoutingStrategyType | null;
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 		Message?: string | null;
 	}
@@ -417,8 +383,6 @@ export namespace MyNS {
 	/** <p>The routing configuration for a fleet alias.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> */
 	export interface RoutingStrategyFormProperties {
 		Type: FormControl<RoutingStrategyType | null | undefined>,
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 		Message: FormControl<string | null | undefined>,
 	}
@@ -441,7 +405,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -471,7 +434,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -483,7 +445,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAliasInputFormGroup() {
 		return new FormGroup<CreateAliasInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
@@ -579,11 +541,7 @@ export namespace MyNS {
 
 	/** <p>Properties describing a custom game build.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul> */
 	export interface Build {
-
-		/** Pattern: ^build-\S+ */
 		BuildId?: string | null;
-
-		/** Pattern: ^arn:.*:build\/build-\S+ */
 		BuildArn?: string | null;
 		Name?: string | null;
 		Version?: string | null;
@@ -597,11 +555,7 @@ export namespace MyNS {
 
 	/** <p>Properties describing a custom game build.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul> */
 	export interface BuildFormProperties {
-
-		/** Pattern: ^build-\S+ */
 		BuildId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:build\/build-\S+ */
 		BuildArn: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Version: FormControl<string | null | undefined>,
@@ -779,11 +733,7 @@ export namespace MyNS {
 
 	/** <p>General properties describing a fleet.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
 	export interface FleetAttributes {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn?: string | null;
 		FleetType?: FleetAttributesFleetType | null;
 		InstanceType?: FleetAttributesInstanceType | null;
@@ -802,17 +752,9 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 		TerminationTime?: Date | null;
 		Status?: FleetAttributesStatus | null;
-
-		/** Pattern: ^build-\S+ */
 		BuildId?: string | null;
-
-		/** Pattern: ^arn:.*:build\/build-\S+ */
 		BuildArn?: string | null;
-
-		/** Pattern: ^script-\S+ */
 		ScriptId?: string | null;
-
-		/** Pattern: ^arn:.*:script\/script-\S+ */
 		ScriptArn?: string | null;
 
 		/**
@@ -851,11 +793,7 @@ export namespace MyNS {
 
 	/** <p>General properties describing a fleet.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
 	export interface FleetAttributesFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn: FormControl<string | null | undefined>,
 		FleetType: FormControl<FleetAttributesFleetType | null | undefined>,
 		InstanceType: FormControl<FleetAttributesInstanceType | null | undefined>,
@@ -874,17 +812,9 @@ export namespace MyNS {
 		CreationTime: FormControl<Date | null | undefined>,
 		TerminationTime: FormControl<Date | null | undefined>,
 		Status: FormControl<FleetAttributesStatus | null | undefined>,
-
-		/** Pattern: ^build-\S+ */
 		BuildId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:build\/build-\S+ */
 		BuildArn: FormControl<string | null | undefined>,
-
-		/** Pattern: ^script-\S+ */
 		ScriptId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:script\/script-\S+ */
 		ScriptArn: FormControl<string | null | undefined>,
 
 		/**
@@ -1005,11 +935,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Description?: string | null;
-
-		/** Pattern: ^build-\S+|^arn:.*:build\/build-\S+ */
 		BuildId?: string | null;
-
-		/** Pattern: ^script-\S+|^arn:.*:script\/script-\S+ */
 		ScriptId?: string | null;
 
 		/**
@@ -1082,11 +1008,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Description: FormControl<string | null | undefined>,
-
-		/** Pattern: ^build-\S+|^arn:.*:build\/build-\S+ */
 		BuildId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^script-\S+|^arn:.*:script\/script-\S+ */
 		ScriptId: FormControl<string | null | undefined>,
 
 		/**
@@ -1159,10 +1081,7 @@ export namespace MyNS {
 		 */
 		ToPort: number;
 
-		/**
-		 * Required
-		 * Pattern: [^\s]+
-		 */
+		/** Required */
 		IpRange: string;
 
 		/** Required */
@@ -1186,10 +1105,7 @@ export namespace MyNS {
 		 */
 		ToPort: FormControl<number | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [^\s]+
-		 */
+		/** Required */
 		IpRange: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -1328,21 +1244,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
 		 */
 		GameServerGroupArn?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:role\/[\w+=,.@-]+
 		 */
 		RoleArn?: string | null;
 
@@ -1382,21 +1295,18 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*
 		 */
 		GameServerGroupArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:role\/[\w+=,.@-]+
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 		BalancingStrategy: FormControl<GameServerGroupBalancingStrategy | null | undefined>,
@@ -1419,9 +1329,9 @@ export namespace MyNS {
 	}
 	export function CreateGameServerGroupFormGroup() {
 		return new FormGroup<GameServerGroupFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			GameServerGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+')]),
+			GameServerGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^arn:.*:role\/[\w+=,.@-]+')]),
 			BalancingStrategy: new FormControl<GameServerGroupBalancingStrategy | null | undefined>(undefined),
 			GameServerProtectionPolicy: new FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>(undefined),
 			AutoScalingGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
@@ -1443,7 +1353,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 1
-		 * Pattern: ^[\u0031-\u0039][\u0030-\u0039]{0,2}$
 		 */
 		WeightedCapacity?: string | null;
 	}
@@ -1457,14 +1366,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 3
 		 * Min length: 1
-		 * Pattern: ^[\u0031-\u0039][\u0030-\u0039]{0,2}$
 		 */
 		WeightedCapacity: FormControl<string | null | undefined>,
 	}
 	export function CreateInstanceDefinitionFormGroup() {
 		return new FormGroup<InstanceDefinitionFormProperties>({
 			InstanceType: new FormControl<InstanceDefinitionInstanceType | null | undefined>(undefined, [Validators.required]),
-			WeightedCapacity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			WeightedCapacity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1), Validators.pattern('^[\u0031-\u0039][\u0030-\u0039]{0,2}$')]),
 		});
 
 	}
@@ -1485,7 +1393,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
@@ -1493,7 +1400,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:role\/[\w+=,.@-]+
 		 */
 		RoleArn: string;
 
@@ -1545,7 +1451,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
@@ -1553,7 +1458,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:role\/[\w+=,.@-]+
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
@@ -1573,8 +1477,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateGameServerGroupInputFormGroup() {
 		return new FormGroup<CreateGameServerGroupInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^arn:.*:role\/[\w+=,.@-]+')]),
 			MinSize: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			MaxSize: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			BalancingStrategy: new FormControl<GameServerGroupBalancingStrategy | null | undefined>(undefined),
@@ -1596,7 +1500,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.\-/_]+
 		 */
 		LaunchTemplateName?: string | null;
 
@@ -1619,7 +1522,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9\(\)\.\-/_]+
 		 */
 		LaunchTemplateName: FormControl<string | null | undefined>,
 
@@ -1632,7 +1534,7 @@ export namespace MyNS {
 	export function CreateLaunchTemplateSpecificationFormGroup() {
 		return new FormGroup<LaunchTemplateSpecificationFormProperties>({
 			LaunchTemplateId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3)]),
+			LaunchTemplateName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\(\)\.\-/_]+')]),
 			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
 		});
 
@@ -1724,11 +1626,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Name?: string | null;
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn?: string | null;
 		CreationTime?: Date | null;
 		TerminationTime?: Date | null;
@@ -1786,11 +1684,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		TerminationTime: FormControl<Date | null | undefined>,
@@ -1902,11 +1796,7 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface CreateGameSessionInput {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId?: string | null;
 
 		/**
@@ -1933,14 +1823,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		GameSessionId?: string | null;
 
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		IdempotencyToken?: string | null;
 
@@ -1953,11 +1841,7 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface CreateGameSessionInputFormProperties {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId: FormControl<string | null | undefined>,
 
 		/**
@@ -1981,14 +1865,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		IdempotencyToken: FormControl<string | null | undefined>,
 
@@ -2005,8 +1887,8 @@ export namespace MyNS {
 			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			CreatorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1)]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
 			GameSessionData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
 		});
 
@@ -2076,14 +1958,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		GameSessionQueueArn?: string | null;
 
@@ -2099,14 +1979,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		GameSessionQueueArn: FormControl<string | null | undefined>,
 
@@ -2115,8 +1993,8 @@ export namespace MyNS {
 	}
 	export function CreateGameSessionQueueFormGroup() {
 		return new FormGroup<GameSessionQueueFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			GameSessionQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
+			GameSessionQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+')]),
 			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -2157,7 +2035,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		DestinationArn?: string | null;
 	}
@@ -2168,13 +2045,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		DestinationArn: FormControl<string | null | undefined>,
 	}
 	export function CreateGameSessionQueueDestinationFormGroup() {
 		return new FormGroup<GameSessionQueueDestinationFormProperties>({
-			DestinationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			DestinationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 		});
 
 	}
@@ -2187,7 +2063,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		Name: string;
 
@@ -2210,7 +2085,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2219,7 +2093,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGameSessionQueueInputFormGroup() {
 		return new FormGroup<CreateGameSessionQueueInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
 			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -2246,16 +2120,10 @@ export namespace MyNS {
 	/** Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration. */
 	export interface MatchmakingConfiguration {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		Name?: string | null;
 
-		/**
-		 * Data type used for Matchmaking Configuration ARN.
-		 * Pattern: ^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking Configuration ARN. */
 		ConfigurationArn?: string | null;
 
 		/**
@@ -2278,22 +2146,15 @@ export namespace MyNS {
 		AcceptanceTimeoutSeconds?: number | null;
 		AcceptanceRequired?: boolean | null;
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		RuleSetName?: string | null;
 
-		/**
-		 * Data type used for Matchmaking RuleSet ARN.
-		 * Pattern: ^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking RuleSet ARN. */
 		RuleSetArn?: string | null;
 
 		/**
 		 * Max length: 300
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9:_/-]*
 		 */
 		NotificationTarget?: string | null;
 
@@ -2321,16 +2182,10 @@ export namespace MyNS {
 	/** Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration. */
 	export interface MatchmakingConfigurationFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Data type used for Matchmaking Configuration ARN.
-		 * Pattern: ^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking Configuration ARN. */
 		ConfigurationArn: FormControl<string | null | undefined>,
 
 		/**
@@ -2352,22 +2207,15 @@ export namespace MyNS {
 		AcceptanceTimeoutSeconds: FormControl<number | null | undefined>,
 		AcceptanceRequired: FormControl<boolean | null | undefined>,
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		RuleSetName: FormControl<string | null | undefined>,
 
-		/**
-		 * Data type used for Matchmaking RuleSet ARN.
-		 * Pattern: ^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking RuleSet ARN. */
 		RuleSetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 300
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9:_/-]*
 		 */
 		NotificationTarget: FormControl<string | null | undefined>,
 
@@ -2390,15 +2238,15 @@ export namespace MyNS {
 	}
 	export function CreateMatchmakingConfigurationFormGroup() {
 		return new FormGroup<MatchmakingConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 			ConfigurationArn: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			RequestTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(43200)]),
 			AcceptanceTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(600)]),
 			AcceptanceRequired: new FormControl<boolean | null | undefined>(undefined),
-			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 			RuleSetArn: new FormControl<string | null | undefined>(undefined),
-			NotificationTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0)]),
+			NotificationTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9:_/-]*')]),
 			AdditionalPlayerCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			CustomEventData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -2417,7 +2265,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		Name: string;
 
@@ -2450,14 +2297,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		RuleSetName: string;
 
 		/**
 		 * Max length: 300
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9:_/-]*
 		 */
 		NotificationTarget?: string | null;
 
@@ -2493,7 +2338,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2523,14 +2367,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		RuleSetName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 300
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9:_/-]*
 		 */
 		NotificationTarget: FormControl<string | null | undefined>,
 
@@ -2552,13 +2394,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateMatchmakingConfigurationInputFormGroup() {
 		return new FormGroup<CreateMatchmakingConfigurationInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			RequestTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(43200)]),
 			AcceptanceTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(600)]),
 			AcceptanceRequired: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			NotificationTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0)]),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*')]),
+			NotificationTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9:_/-]*')]),
 			AdditionalPlayerCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			CustomEventData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			GameSessionData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
@@ -2591,16 +2433,10 @@ export namespace MyNS {
 	/** <p>Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. </p> </li> <li> <p>Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.</p> </li> <li> <p>Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. </p> </li> <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li> </ul> */
 	export interface MatchmakingRuleSet {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		RuleSetName?: string | null;
 
-		/**
-		 * Data type used for Matchmaking RuleSet ARN.
-		 * Pattern: ^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking RuleSet ARN. */
 		RuleSetArn?: string | null;
 
 		/**
@@ -2615,16 +2451,10 @@ export namespace MyNS {
 	/** <p>Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. </p> </li> <li> <p>Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.</p> </li> <li> <p>Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. </p> </li> <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li> </ul> */
 	export interface MatchmakingRuleSetFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		RuleSetName: FormControl<string | null | undefined>,
 
-		/**
-		 * Data type used for Matchmaking RuleSet ARN.
-		 * Pattern: ^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking RuleSet ARN. */
 		RuleSetArn: FormControl<string | null | undefined>,
 
 		/**
@@ -2637,7 +2467,7 @@ export namespace MyNS {
 	}
 	export function CreateMatchmakingRuleSetFormGroup() {
 		return new FormGroup<MatchmakingRuleSetFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 			RuleSetArn: new FormControl<string | null | undefined>(undefined),
 			RuleSetBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65535), Validators.minLength(1)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -2652,7 +2482,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		Name: string;
 
@@ -2676,7 +2505,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2689,7 +2517,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMatchmakingRuleSetInputFormGroup() {
 		return new FormGroup<CreateMatchmakingRuleSetInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 			RuleSetBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65535), Validators.minLength(1)]),
 		});
 
@@ -2715,8 +2543,6 @@ export namespace MyNS {
 
 	/** <p>Properties describing a player session. Player session objects are created either by creating a player session for a specific game session, or as part of a game session placement. A player session represents either a player reservation for a game session (status <code>RESERVED</code>) or actual player activity in a game session (status <code>ACTIVE</code>). A player session object (including player data) is automatically passed to a game session when the player connects to the game session and is validated.</p> <p>When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the player session object is retained for 30 days and then removed.</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
 	export interface PlayerSession {
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId?: string | null;
 
 		/**
@@ -2730,11 +2556,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		GameSessionId?: string | null;
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn?: string | null;
 		CreationTime?: Date | null;
 		TerminationTime?: Date | null;
@@ -2757,8 +2579,6 @@ export namespace MyNS {
 
 	/** <p>Properties describing a player session. Player session objects are created either by creating a player session for a specific game session, or as part of a game session placement. A player session represents either a player reservation for a game session (status <code>RESERVED</code>) or actual player activity in a game session (status <code>ACTIVE</code>). A player session object (including player data) is automatically passed to a game session when the player connects to the game session and is validated.</p> <p>When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the player session object is retained for 30 days and then removed.</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p> <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul> */
 	export interface PlayerSessionFormProperties {
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId: FormControl<string | null | undefined>,
 
 		/**
@@ -2772,11 +2592,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn: FormControl<string | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		TerminationTime: FormControl<Date | null | undefined>,
@@ -2824,7 +2640,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: string;
 
@@ -2849,7 +2664,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
 
@@ -2868,7 +2682,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePlayerSessionInputFormGroup() {
 		return new FormGroup<CreatePlayerSessionInputFormProperties>({
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 			PlayerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 			PlayerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
 		});
@@ -2918,7 +2732,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: string;
 
@@ -2938,13 +2751,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePlayerSessionsInputFormGroup() {
 		return new FormGroup<CreatePlayerSessionsInputFormProperties>({
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 		});
 
 	}
@@ -2975,11 +2787,7 @@ export namespace MyNS {
 
 	/** <p>Properties describing a Realtime script.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateScript</a> </p> </li> <li> <p> <a>ListScripts</a> </p> </li> <li> <p> <a>DescribeScript</a> </p> </li> <li> <p> <a>UpdateScript</a> </p> </li> <li> <p> <a>DeleteScript</a> </p> </li> </ul> */
 	export interface Script {
-
-		/** Pattern: ^script-\S+ */
 		ScriptId?: string | null;
-
-		/** Pattern: ^arn:.*:script\/script-\S+ */
 		ScriptArn?: string | null;
 
 		/**
@@ -3004,11 +2812,7 @@ export namespace MyNS {
 
 	/** <p>Properties describing a Realtime script.</p> <p> <b>Related operations</b> </p> <ul> <li> <p> <a>CreateScript</a> </p> </li> <li> <p> <a>ListScripts</a> </p> </li> <li> <p> <a>DescribeScript</a> </p> </li> <li> <p> <a>UpdateScript</a> </p> </li> <li> <p> <a>DeleteScript</a> </p> </li> </ul> */
 	export interface ScriptFormProperties {
-
-		/** Pattern: ^script-\S+ */
 		ScriptId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:script\/script-\S+ */
 		ScriptArn: FormControl<string | null | undefined>,
 
 		/**
@@ -3225,10 +3029,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface CreateVpcPeeringConnectionInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/**
@@ -3249,10 +3050,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface CreateVpcPeeringConnectionInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 
 		/**
@@ -3282,20 +3080,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DeleteAliasInput {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DeleteAliasInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAliasInputFormGroup() {
@@ -3309,20 +3101,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DeleteBuildInput {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DeleteBuildInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBuildInputFormGroup() {
@@ -3336,20 +3122,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DeleteFleetInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DeleteFleetInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteFleetInputFormGroup() {
@@ -3378,7 +3158,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 		DeleteOption?: DeleteGameServerGroupInputDeleteOption | null;
@@ -3389,14 +3168,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 		DeleteOption: FormControl<DeleteGameServerGroupInputDeleteOption | null | undefined>,
 	}
 	export function CreateDeleteGameServerGroupInputFormGroup() {
 		return new FormGroup<DeleteGameServerGroupInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
 			DeleteOption: new FormControl<DeleteGameServerGroupInputDeleteOption | null | undefined>(undefined),
 		});
 
@@ -3422,7 +3200,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		Name: string;
 	}
@@ -3434,13 +3211,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteGameSessionQueueInputFormGroup() {
 		return new FormGroup<DeleteGameSessionQueueInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+')]),
 		});
 
 	}
@@ -3463,7 +3239,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		Name: string;
 	}
@@ -3475,13 +3250,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMatchmakingConfigurationInputFormGroup() {
 		return new FormGroup<DeleteMatchmakingConfigurationInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*')]),
 		});
 
 	}
@@ -3508,7 +3282,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		Name: string;
 	}
@@ -3520,13 +3293,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMatchmakingRuleSetInputFormGroup() {
 		return new FormGroup<DeleteMatchmakingRuleSetInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*')]),
 		});
 
 	}
@@ -3542,10 +3314,7 @@ export namespace MyNS {
 		 */
 		Name: string;
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 	}
 
@@ -3559,10 +3328,7 @@ export namespace MyNS {
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteScalingPolicyInputFormGroup() {
@@ -3575,18 +3341,12 @@ export namespace MyNS {
 
 	export interface DeleteScriptInput {
 
-		/**
-		 * Required
-		 * Pattern: ^script-\S+|^arn:.*:script\/script-\S+
-		 */
+		/** Required */
 		ScriptId: string;
 	}
 	export interface DeleteScriptInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^script-\S+|^arn:.*:script\/script-\S+
-		 */
+		/** Required */
 		ScriptId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteScriptInputFormGroup() {
@@ -3664,10 +3424,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DeleteVpcPeeringConnectionInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/**
@@ -3681,10 +3438,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DeleteVpcPeeringConnectionInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 
 		/**
@@ -3708,7 +3462,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
@@ -3716,7 +3469,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: string;
 	}
@@ -3726,7 +3478,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
@@ -3734,14 +3485,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeregisterGameServerInputFormGroup() {
 		return new FormGroup<DeregisterGameServerInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
+			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9-\.]+')]),
 		});
 
 	}
@@ -3767,20 +3517,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeAliasInput {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DescribeAliasInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeAliasInputFormGroup() {
@@ -3811,20 +3555,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeBuildInput {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DescribeBuildInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeBuildInputFormGroup() {
@@ -3997,8 +3735,6 @@ export namespace MyNS {
 
 	/** <p>Information about the fleet's capacity. Fleet capacity is measured in EC2 instances. By default, new fleets have a capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by the fleet's instance type.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
 	export interface FleetCapacity {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 		InstanceType?: FleetCapacityInstanceType | null;
 
@@ -4008,8 +3744,6 @@ export namespace MyNS {
 
 	/** <p>Information about the fleet's capacity. Fleet capacity is measured in EC2 instances. By default, new fleets have a capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by the fleet's instance type.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
 	export interface FleetCapacityFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 		InstanceType: FormControl<FleetCapacityInstanceType | null | undefined>,
 	}
@@ -4223,10 +3957,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeFleetEventsInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
@@ -4244,10 +3975,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeFleetEventsInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
@@ -4293,20 +4021,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeFleetPortSettingsInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DescribeFleetPortSettingsInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeFleetPortSettingsInputFormGroup() {
@@ -4347,8 +4069,6 @@ export namespace MyNS {
 
 	/** <p>Current status of fleet utilization, including the number of game and player sessions being hosted.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
 	export interface FleetUtilization {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 
 		/** Minimum: 0 */
@@ -4366,8 +4086,6 @@ export namespace MyNS {
 
 	/** <p>Current status of fleet utilization, including the number of game and player sessions being hosted.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul> */
 	export interface FleetUtilizationFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 
 		/** Minimum: 0 */
@@ -4449,7 +4167,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
@@ -4457,7 +4174,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: string;
 	}
@@ -4467,7 +4183,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
@@ -4475,14 +4190,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGameServerInputFormGroup() {
 		return new FormGroup<DescribeGameServerInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
+			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9-\.]+')]),
 		});
 
 	}
@@ -4506,7 +4220,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 	}
@@ -4516,13 +4229,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGameServerGroupInputFormGroup() {
 		return new FormGroup<DescribeGameServerGroupInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
 		});
 
 	}
@@ -4578,18 +4290,13 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface DescribeGameSessionDetailsInput {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId?: string | null;
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId?: string | null;
 
 		/**
@@ -4610,18 +4317,13 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface DescribeGameSessionDetailsInputFormProperties {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId: FormControl<string | null | undefined>,
 
 		/**
@@ -4642,7 +4344,7 @@ export namespace MyNS {
 	export function CreateDescribeGameSessionDetailsInputFormGroup() {
 		return new FormGroup<DescribeGameSessionDetailsInputFormProperties>({
 			FleetId: new FormControl<string | null | undefined>(undefined),
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 			AliasId: new FormControl<string | null | undefined>(undefined),
 			StatusFilter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -4675,14 +4377,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		GameSessionQueueName?: string | null;
 		Status?: GameSessionPlacementStatus | null;
@@ -4748,14 +4448,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		GameSessionQueueName: FormControl<string | null | undefined>,
 		Status: FormControl<GameSessionPlacementStatus | null | undefined>,
@@ -4811,8 +4509,8 @@ export namespace MyNS {
 	}
 	export function CreateGameSessionPlacementFormGroup() {
 		return new FormGroup<GameSessionPlacementFormProperties>({
-			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1)]),
-			GameSessionQueueName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(48), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
+			GameSessionQueueName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
 			Status: new FormControl<GameSessionPlacementStatus | null | undefined>(undefined),
 			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			GameSessionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
@@ -4884,8 +4582,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PlayerId?: string | null;
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId?: string | null;
 	}
 
@@ -4897,8 +4593,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PlayerId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId: FormControl<string | null | undefined>,
 	}
 	export function CreatePlacedPlayerSessionFormGroup() {
@@ -4917,7 +4611,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId: string;
 	}
@@ -4929,13 +4622,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeGameSessionPlacementInputFormGroup() {
 		return new FormGroup<DescribeGameSessionPlacementInputFormProperties>({
-			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1)]),
+			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
 		});
 
 	}
@@ -5034,18 +4726,13 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface DescribeGameSessionsInput {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId?: string | null;
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId?: string | null;
 
 		/**
@@ -5066,18 +4753,13 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface DescribeGameSessionsInputFormProperties {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId: FormControl<string | null | undefined>,
 
 		/**
@@ -5098,7 +4780,7 @@ export namespace MyNS {
 	export function CreateDescribeGameSessionsInputFormGroup() {
 		return new FormGroup<DescribeGameSessionsInputFormProperties>({
 			FleetId: new FormControl<string | null | undefined>(undefined),
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 			AliasId: new FormControl<string | null | undefined>(undefined),
 			StatusFilter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -5138,11 +4820,7 @@ export namespace MyNS {
 
 	/** Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet may contain zero or more instances. */
 	export interface Instance {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: [a-zA-Z0-9\.-]+ */
 		InstanceId?: string | null;
 		IpAddress?: string | null;
 		DnsName?: string | null;
@@ -5154,11 +4832,7 @@ export namespace MyNS {
 
 	/** Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet may contain zero or more instances. */
 	export interface InstanceFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9\.-]+ */
 		InstanceId: FormControl<string | null | undefined>,
 		IpAddress: FormControl<string | null | undefined>,
 		DnsName: FormControl<string | null | undefined>,
@@ -5189,13 +4863,8 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeInstancesInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
-
-		/** Pattern: [a-zA-Z0-9\.-]+ */
 		InstanceId?: string | null;
 
 		/** Minimum: 1 */
@@ -5211,13 +4880,8 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeInstancesInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9\.-]+ */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
@@ -5258,22 +4922,13 @@ export namespace MyNS {
 	/** Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a> with the ticket ID. */
 	export interface MatchmakingTicket {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		TicketId?: string | null;
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		ConfigurationName?: string | null;
 
-		/**
-		 * Data type used for Matchmaking Configuration ARN.
-		 * Pattern: ^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking Configuration ARN. */
 		ConfigurationArn?: string | null;
 		Status?: MatchmakingTicketStatus | null;
 		StatusReason?: string | null;
@@ -5292,22 +4947,13 @@ export namespace MyNS {
 	/** Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a> with the ticket ID. */
 	export interface MatchmakingTicketFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		TicketId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		ConfigurationName: FormControl<string | null | undefined>,
 
-		/**
-		 * Data type used for Matchmaking Configuration ARN.
-		 * Pattern: ^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
-		 */
+		/** Data type used for Matchmaking Configuration ARN. */
 		ConfigurationArn: FormControl<string | null | undefined>,
 		Status: FormControl<MatchmakingTicketStatus | null | undefined>,
 		StatusReason: FormControl<string | null | undefined>,
@@ -5320,8 +4966,8 @@ export namespace MyNS {
 	}
 	export function CreateMatchmakingTicketFormGroup() {
 		return new FormGroup<MatchmakingTicketFormProperties>({
-			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
+			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 			ConfigurationArn: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<MatchmakingTicketStatus | null | undefined>(undefined),
 			StatusReason: new FormControl<string | null | undefined>(undefined),
@@ -5404,7 +5050,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionArn?: string | null;
 		IpAddress?: string | null;
@@ -5421,7 +5066,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionArn: FormControl<string | null | undefined>,
 		IpAddress: FormControl<string | null | undefined>,
@@ -5432,7 +5076,7 @@ export namespace MyNS {
 	}
 	export function CreateGameSessionConnectionInfoFormGroup() {
 		return new FormGroup<GameSessionConnectionInfoFormProperties>({
-			GameSessionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 			IpAddress: new FormControl<string | null | undefined>(undefined),
 			DnsName: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -5449,8 +5093,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PlayerId?: string | null;
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId?: string | null;
 	}
 
@@ -5462,8 +5104,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PlayerId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId: FormControl<string | null | undefined>,
 	}
 	export function CreateMatchedPlayerSessionFormGroup() {
@@ -5527,7 +5167,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		RuleSetName?: string | null;
 
@@ -5547,7 +5186,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		RuleSetName: FormControl<string | null | undefined>,
 
@@ -5562,7 +5200,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeMatchmakingConfigurationsInputFormGroup() {
 		return new FormGroup<DescribeMatchmakingConfigurationsInputFormProperties>({
-			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
@@ -5680,7 +5318,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId?: string | null;
 
@@ -5689,8 +5326,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PlayerId?: string | null;
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId?: string | null;
 
 		/**
@@ -5715,7 +5350,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
 
@@ -5724,8 +5358,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		PlayerId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^psess-\S+ */
 		PlayerSessionId: FormControl<string | null | undefined>,
 
 		/**
@@ -5745,7 +5377,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribePlayerSessionsInputFormGroup() {
 		return new FormGroup<DescribePlayerSessionsInputFormProperties>({
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 			PlayerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			PlayerSessionId: new FormControl<string | null | undefined>(undefined),
 			PlayerSessionStatusFilter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
@@ -5776,20 +5408,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeRuntimeConfigurationInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DescribeRuntimeConfigurationInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeRuntimeConfigurationInputFormGroup() {
@@ -5830,8 +5456,6 @@ export namespace MyNS {
 
 	/** <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.</p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p> <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul> */
 	export interface ScalingPolicy {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 
 		/**
@@ -5856,8 +5480,6 @@ export namespace MyNS {
 
 	/** <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.</p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p> <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul> */
 	export interface ScalingPolicyFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 
 		/**
@@ -5927,10 +5549,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeScalingPoliciesInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 		StatusFilter?: ScalingPolicyStatus | null;
 
@@ -5947,10 +5566,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface DescribeScalingPoliciesInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 		StatusFilter: FormControl<ScalingPolicyStatus | null | undefined>,
 
@@ -5988,18 +5604,12 @@ export namespace MyNS {
 
 	export interface DescribeScriptInput {
 
-		/**
-		 * Required
-		 * Pattern: ^script-\S+|^arn:.*:script\/script-\S+
-		 */
+		/** Required */
 		ScriptId: string;
 	}
 	export interface DescribeScriptInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^script-\S+|^arn:.*:script\/script-\S+
-		 */
+		/** Required */
 		ScriptId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeScriptInputFormGroup() {
@@ -6048,11 +5658,7 @@ export namespace MyNS {
 
 	/** <p>Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p> <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> </p> </li> </ul> */
 	export interface VpcPeeringConnection {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn?: string | null;
 
 		/**
@@ -6085,11 +5691,7 @@ export namespace MyNS {
 
 	/** <p>Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p> <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> </p> </li> </ul> */
 	export interface VpcPeeringConnectionFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
@@ -6171,15 +5773,11 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface DescribeVpcPeeringConnectionsInput {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 	}
 
 	/** Represents the input for a request action. */
 	export interface DescribeVpcPeeringConnectionsInputFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeVpcPeeringConnectionsInputFormGroup() {
@@ -6224,7 +5822,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: string;
 	}
@@ -6236,13 +5833,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetGameSessionLogUrlInputFormGroup() {
 		return new FormGroup<GetGameSessionLogUrlInputFormProperties>({
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 		});
 
 	}
@@ -6267,11 +5863,7 @@ export namespace MyNS {
 
 	/** Information required to remotely connect to a fleet instance. Access is requested by calling <a>GetInstanceAccess</a>.  */
 	export interface InstanceAccess {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: [a-zA-Z0-9\.-]+ */
 		InstanceId?: string | null;
 		IpAddress?: string | null;
 		OperatingSystem?: BuildOperatingSystem | null;
@@ -6282,11 +5874,7 @@ export namespace MyNS {
 
 	/** Information required to remotely connect to a fleet instance. Access is requested by calling <a>GetInstanceAccess</a>.  */
 	export interface InstanceAccessFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-zA-Z0-9\.-]+ */
 		InstanceId: FormControl<string | null | undefined>,
 		IpAddress: FormControl<string | null | undefined>,
 		OperatingSystem: FormControl<BuildOperatingSystem | null | undefined>,
@@ -6333,32 +5921,20 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface GetInstanceAccessInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9\.-]+
-		 */
+		/** Required */
 		InstanceId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface GetInstanceAccessInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: [a-zA-Z0-9\.-]+
-		 */
+		/** Required */
 		InstanceId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInstanceAccessInputFormGroup() {
@@ -6515,11 +6091,7 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface ListFleetsInput {
-
-		/** Pattern: ^build-\S+|^arn:.*:build\/build-\S+ */
 		BuildId?: string | null;
-
-		/** Pattern: ^script-\S+|^arn:.*:script\/script-\S+ */
 		ScriptId?: string | null;
 
 		/** Minimum: 1 */
@@ -6534,11 +6106,7 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface ListFleetsInputFormProperties {
-
-		/** Pattern: ^build-\S+|^arn:.*:build\/build-\S+ */
 		BuildId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^script-\S+|^arn:.*:script\/script-\S+ */
 		ScriptId: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
@@ -6644,7 +6212,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 		SortOrder?: ListGameServersInputSortOrder | null;
@@ -6664,7 +6231,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 		SortOrder: FormControl<ListGameServersInputSortOrder | null | undefined>,
@@ -6680,7 +6246,7 @@ export namespace MyNS {
 	}
 	export function CreateListGameServersInputFormGroup() {
 		return new FormGroup<ListGameServersInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
 			SortOrder: new FormControl<ListGameServersInputSortOrder | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
@@ -6811,10 +6377,7 @@ export namespace MyNS {
 		 */
 		Name: string;
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 		ScalingAdjustment?: number | null;
 		ScalingAdjustmentType?: ScalingPolicyScalingAdjustmentType | null;
@@ -6842,10 +6405,7 @@ export namespace MyNS {
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 		ScalingAdjustment: FormControl<number | null | undefined>,
 		ScalingAdjustmentType: FormControl<ScalingPolicyScalingAdjustmentType | null | undefined>,
@@ -6893,7 +6453,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
@@ -6901,7 +6460,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: string;
 
@@ -6909,28 +6467,24 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^i-[0-9a-zA-Z]{17}$
 		 */
 		InstanceId: string;
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ConnectionInfo?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		CustomSortKey?: string | null;
 
@@ -6946,7 +6500,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
@@ -6954,7 +6507,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: FormControl<string | null | undefined>,
 
@@ -6962,39 +6514,35 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^i-[0-9a-zA-Z]{17}$
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 512
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ConnectionInfo: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		CustomSortKey: FormControl<string | null | undefined>,
 	}
 	export function CreateRegisterGameServerInputFormGroup() {
 		return new FormGroup<RegisterGameServerInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
-			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			ConnectionInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
-			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CustomSortKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
+			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9-\.]+')]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^i-[0-9a-zA-Z]{17}$')]),
+			ConnectionInfo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			CustomSortKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+')]),
 		});
 
 	}
@@ -7023,20 +6571,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface RequestUploadCredentialsInput {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface RequestUploadCredentialsInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: FormControl<string | null | undefined>,
 	}
 	export function CreateRequestUploadCredentialsInputFormGroup() {
@@ -7049,21 +6591,13 @@ export namespace MyNS {
 
 	/** Represents the returned data in response to a request action. */
 	export interface ResolveAliasOutput {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn?: string | null;
 	}
 
 	/** Represents the returned data in response to a request action. */
 	export interface ResolveAliasOutputFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^arn:.*:fleet\/fleet-\S+ */
 		FleetArn: FormControl<string | null | undefined>,
 	}
 	export function CreateResolveAliasOutputFormGroup() {
@@ -7078,20 +6612,14 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface ResolveAliasInput {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: string;
 	}
 
 	/** Represents the input for a request action. */
 	export interface ResolveAliasInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: FormControl<string | null | undefined>,
 	}
 	export function CreateResolveAliasInputFormGroup() {
@@ -7120,7 +6648,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
@@ -7137,13 +6664,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateResumeGameServerGroupInputFormGroup() {
 		return new FormGroup<ResumeGameServerGroupInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
 		});
 
 	}
@@ -7179,11 +6705,7 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface SearchGameSessionsInput {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId?: string | null;
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId?: string | null;
 
 		/**
@@ -7210,11 +6732,7 @@ export namespace MyNS {
 
 	/** Represents the input for a request action. */
 	export interface SearchGameSessionsInputFormProperties {
-
-		/** Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+ */
 		AliasId: FormControl<string | null | undefined>,
 
 		/**
@@ -7262,10 +6780,7 @@ export namespace MyNS {
 
 	export interface StartFleetActionsInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/**
@@ -7277,10 +6792,7 @@ export namespace MyNS {
 	}
 	export interface StartFleetActionsInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartFleetActionsInputFormGroup() {
@@ -7315,7 +6827,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId: string;
 
@@ -7323,7 +6834,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		GameSessionQueueName: string;
 
@@ -7358,7 +6868,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId: FormControl<string | null | undefined>,
 
@@ -7366,7 +6875,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		GameSessionQueueName: FormControl<string | null | undefined>,
 
@@ -7390,8 +6898,8 @@ export namespace MyNS {
 	}
 	export function CreateStartGameSessionPlacementInputFormGroup() {
 		return new FormGroup<StartGameSessionPlacementInputFormProperties>({
-			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1)]),
-			GameSessionQueueName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
+			GameSessionQueueName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+')]),
 			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			GameSessionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			GameSessionData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
@@ -7460,17 +6968,13 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface StartMatchBackfillInput {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		TicketId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		ConfigurationName: string;
 
@@ -7478,7 +6982,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionArn: string;
 
@@ -7489,17 +6992,13 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface StartMatchBackfillInputFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		TicketId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		ConfigurationName: FormControl<string | null | undefined>,
 
@@ -7507,15 +7006,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartMatchBackfillInputFormGroup() {
 		return new FormGroup<StartMatchBackfillInputFormProperties>({
-			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			GameSessionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*')]),
+			GameSessionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 		});
 
 	}
@@ -7541,17 +7039,13 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface StartMatchmakingInput {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		TicketId?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		ConfigurationName: string;
 
@@ -7562,24 +7056,20 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface StartMatchmakingInputFormProperties {
 
-		/**
-		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
-		 */
+		/** Max length: 128 */
 		TicketId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		ConfigurationName: FormControl<string | null | undefined>,
 	}
 	export function CreateStartMatchmakingInputFormGroup() {
 		return new FormGroup<StartMatchmakingInputFormProperties>({
-			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
-			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
+			ConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*')]),
 		});
 
 	}
@@ -7596,10 +7086,7 @@ export namespace MyNS {
 
 	export interface StopFleetActionsInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/**
@@ -7611,10 +7098,7 @@ export namespace MyNS {
 	}
 	export interface StopFleetActionsInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopFleetActionsInputFormGroup() {
@@ -7649,7 +7133,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId: string;
 	}
@@ -7661,13 +7144,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 48
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+
 		 */
 		PlacementId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopGameSessionPlacementInputFormGroup() {
 		return new FormGroup<StopGameSessionPlacementInputFormProperties>({
-			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1)]),
+			PlacementId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(48), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
 		});
 
 	}
@@ -7689,7 +7171,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		TicketId: string;
 	}
@@ -7700,13 +7181,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 128
-		 * Pattern: [a-zA-Z0-9-\.]*
 		 */
 		TicketId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopMatchmakingInputFormGroup() {
 		return new FormGroup<StopMatchmakingInputFormProperties>({
-			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128)]),
+			TicketId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9-\.]*')]),
 		});
 
 	}
@@ -7730,7 +7210,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
@@ -7747,13 +7226,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateSuspendGameServerGroupInputFormGroup() {
 		return new FormGroup<SuspendGameServerGroupInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
 		});
 
 	}
@@ -7863,16 +7341,12 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateAliasInput {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: string;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -7889,16 +7363,12 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateAliasInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^alias-\S+|^arn:.*:alias\/alias-\S+
-		 */
+		/** Required */
 		AliasId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -7911,7 +7381,7 @@ export namespace MyNS {
 	export function CreateUpdateAliasInputFormGroup() {
 		return new FormGroup<UpdateAliasInputFormProperties>({
 			AliasId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
 
@@ -7938,10 +7408,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateBuildInput {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: string;
 
 		/**
@@ -7960,10 +7427,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateBuildInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^build-\S+|^arn:.*:build\/build-\S+
-		 */
+		/** Required */
 		BuildId: FormControl<string | null | undefined>,
 
 		/**
@@ -7990,15 +7454,11 @@ export namespace MyNS {
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetAttributesOutput {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 	}
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetAttributesOutputFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFleetAttributesOutputFormGroup() {
@@ -8012,10 +7472,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateFleetAttributesInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/**
@@ -8041,10 +7498,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateFleetAttributesInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 
 		/**
@@ -8073,15 +7527,11 @@ export namespace MyNS {
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetCapacityOutput {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 	}
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetCapacityOutputFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFleetCapacityOutputFormGroup() {
@@ -8095,10 +7545,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateFleetCapacityInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/** Minimum: 0 */
@@ -8114,10 +7561,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateFleetCapacityInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 
 		/** Minimum: 0 */
@@ -8142,15 +7586,11 @@ export namespace MyNS {
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetPortSettingsOutput {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId?: string | null;
 	}
 
 	/** Represents the returned data in response to a request action. */
 	export interface UpdateFleetPortSettingsOutputFormProperties {
-
-		/** Pattern: ^fleet-\S+ */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFleetPortSettingsOutputFormGroup() {
@@ -8164,10 +7604,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateFleetPortSettingsInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/** Maximum items: 50 */
@@ -8180,10 +7617,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateFleetPortSettingsInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateFleetPortSettingsInputFormGroup() {
@@ -8212,7 +7646,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
@@ -8220,21 +7653,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: string;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		CustomSortKey?: string | null;
 		UtilizationStatus?: GameServerUtilizationStatus | null;
@@ -8246,7 +7676,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
@@ -8254,21 +7683,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 3
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		GameServerId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		GameServerData: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+
 		 */
 		CustomSortKey: FormControl<string | null | undefined>,
 		UtilizationStatus: FormControl<GameServerUtilizationStatus | null | undefined>,
@@ -8276,10 +7702,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGameServerInputFormGroup() {
 		return new FormGroup<UpdateGameServerInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3)]),
-			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CustomSortKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
+			GameServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9-\.]+')]),
+			GameServerData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			CustomSortKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+')]),
 			UtilizationStatus: new FormControl<GameServerUtilizationStatus | null | undefined>(undefined),
 			HealthCheck: new FormControl<UpdateGameServerInputHealthCheck | null | undefined>(undefined),
 		});
@@ -8307,14 +7733,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:role\/[\w+=,.@-]+
 		 */
 		RoleArn?: string | null;
 
@@ -8332,14 +7756,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+
 		 */
 		GameServerGroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: ^arn:.*:role\/[\w+=,.@-]+
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 		GameServerProtectionPolicy: FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>,
@@ -8347,8 +7769,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGameServerGroupInputFormGroup() {
 		return new FormGroup<UpdateGameServerGroupInputFormProperties>({
-			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GameServerGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]+|^arn:.*:gameservergroup\/[a-zA-Z0-9-\.]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^arn:.*:role\/[\w+=,.@-]+')]),
 			GameServerProtectionPolicy: new FormControl<GameServerGroupGameServerProtectionPolicy | null | undefined>(undefined),
 			BalancingStrategy: new FormControl<GameServerGroupBalancingStrategy | null | undefined>(undefined),
 		});
@@ -8380,7 +7802,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: string;
 
@@ -8403,7 +7824,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9:/-]+
 		 */
 		GameSessionId: FormControl<string | null | undefined>,
 
@@ -8420,7 +7840,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGameSessionInputFormGroup() {
 		return new FormGroup<UpdateGameSessionInputFormProperties>({
-			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GameSessionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:/-]+')]),
 			MaximumPlayerSessionCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			PlayerSessionCreationPolicy: new FormControl<GameSessionPlayerSessionCreationPolicy | null | undefined>(undefined),
@@ -8454,7 +7874,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		Name: string;
 
@@ -8471,7 +7890,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -8480,7 +7898,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGameSessionQueueInputFormGroup() {
 		return new FormGroup<UpdateGameSessionQueueInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+|^arn:.*:gamesessionqueue\/[a-zA-Z0-9-]+')]),
 			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -8511,7 +7929,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		Name: string;
 
@@ -8538,14 +7955,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		RuleSetName?: string | null;
 
 		/**
 		 * Max length: 300
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9:_/-]*
 		 */
 		NotificationTarget?: string | null;
 
@@ -8576,7 +7991,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -8602,14 +8016,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*
 		 */
 		RuleSetName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 300
 		 * Min length: 0
-		 * Pattern: [a-zA-Z0-9:_/-]*
 		 */
 		NotificationTarget: FormControl<string | null | undefined>,
 
@@ -8631,13 +8043,13 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMatchmakingConfigurationInputFormGroup() {
 		return new FormGroup<UpdateMatchmakingConfigurationInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingconfiguration\/[a-zA-Z0-9-\.]*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 			RequestTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(43200)]),
 			AcceptanceTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(600)]),
 			AcceptanceRequired: new FormControl<boolean | null | undefined>(undefined),
-			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			NotificationTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0)]),
+			RuleSetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-\.]*|^arn:.*:matchmakingruleset\/[a-zA-Z0-9-\.]*')]),
+			NotificationTarget: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(300), Validators.minLength(0), Validators.pattern('[a-zA-Z0-9:_/-]*')]),
 			AdditionalPlayerCount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			CustomEventData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
 			GameSessionData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
@@ -8667,10 +8079,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateRuntimeConfigurationInput {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: string;
 
 		/**
@@ -8683,10 +8092,7 @@ export namespace MyNS {
 	/** Represents the input for a request action. */
 	export interface UpdateRuntimeConfigurationInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^fleet-\S+|^arn:.*:fleet\/fleet-\S+
-		 */
+		/** Required */
 		FleetId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateRuntimeConfigurationInputFormGroup() {
@@ -8711,10 +8117,7 @@ export namespace MyNS {
 
 	export interface UpdateScriptInput {
 
-		/**
-		 * Required
-		 * Pattern: ^script-\S+|^arn:.*:script\/script-\S+
-		 */
+		/** Required */
 		ScriptId: string;
 
 		/**
@@ -8737,10 +8140,7 @@ export namespace MyNS {
 	}
 	export interface UpdateScriptInputFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^script-\S+|^arn:.*:script\/script-\S+
-		 */
+		/** Required */
 		ScriptId: FormControl<string | null | undefined>,
 
 		/**

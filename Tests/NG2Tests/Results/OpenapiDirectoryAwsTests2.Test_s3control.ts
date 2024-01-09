@@ -8,7 +8,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId?: string | null;
 	}
@@ -17,13 +16,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateJobResultFormGroup() {
 		return new FormGroup<CreateJobResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 		});
 
 	}
@@ -35,7 +33,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionArn?: string | null;
 	}
@@ -46,13 +43,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: (arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?
 		 */
 		FunctionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateLambdaInvokeOperationFormGroup() {
 		return new FormGroup<LambdaInvokeOperationFormProperties>({
-			FunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			FunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 		});
 
 	}
@@ -64,7 +60,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:.*
 		 */
 		TargetResource?: string | null;
 		CannedAccessControlList?: S3CopyObjectOperationCannedAccessControlList | null;
@@ -107,7 +102,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:.*
 		 */
 		TargetResource: FormControl<string | null | undefined>,
 		CannedAccessControlList: FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>,
@@ -140,7 +134,7 @@ export namespace MyNS {
 	}
 	export function CreateS3CopyObjectOperationFormGroup() {
 		return new FormGroup<S3CopyObjectOperationFormProperties>({
-			TargetResource: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			TargetResource: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:.*')]),
 			CannedAccessControlList: new FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>(undefined),
 			MetadataDirective: new FormControl<S3CopyObjectOperationMetadataDirective | null | undefined>(undefined),
 			ModifiedSinceConstraint: new FormControl<Date | null | undefined>(undefined),
@@ -357,14 +351,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
 		 */
 		Key: string;
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
 		 */
 		Value: string;
 	}
@@ -376,21 +368,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateS3TagFormGroup() {
 		return new FormGroup<S3TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$')]),
 		});
 
 	}
@@ -664,7 +654,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:.*
 		 */
 		ObjectArn: string;
 
@@ -689,7 +678,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2000
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:.*
 		 */
 		ObjectArn: FormControl<string | null | undefined>,
 
@@ -708,7 +696,7 @@ export namespace MyNS {
 	}
 	export function CreateJobManifestLocationFormGroup() {
 		return new FormGroup<JobManifestLocationFormProperties>({
-			ObjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2000), Validators.minLength(1)]),
+			ObjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:.*')]),
 			ObjectVersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
 			ETag: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
 		});
@@ -795,7 +783,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId?: string | null;
 		ConfirmationRequired?: boolean | null;
@@ -809,7 +796,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*
 		 */
 		JobArn?: string | null;
 		Status?: JobDescriptorStatus | null;
@@ -844,7 +830,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
 		 */
 		RoleArn?: string | null;
 		SuspendedDate?: Date | null;
@@ -862,7 +847,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId: FormControl<string | null | undefined>,
 		ConfirmationRequired: FormControl<boolean | null | undefined>,
@@ -876,7 +860,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*
 		 */
 		JobArn: FormControl<string | null | undefined>,
 		Status: FormControl<JobDescriptorStatus | null | undefined>,
@@ -898,7 +881,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 		SuspendedDate: FormControl<Date | null | undefined>,
@@ -911,16 +893,16 @@ export namespace MyNS {
 	}
 	export function CreateJobDescriptorFormGroup() {
 		return new FormGroup<JobDescriptorFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 			ConfirmationRequired: new FormControl<boolean | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			JobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			JobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*')]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			TerminationDate: new FormControl<Date | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:[^:]+:iam::\d{12}:role/.*')]),
 			SuspendedDate: new FormControl<Date | null | undefined>(undefined),
 			SuspendedCause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
 		});
@@ -1072,7 +1054,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:.*
 		 */
 		Bucket?: string | null;
 		Format?: JobReportFormat | null;
@@ -1094,7 +1075,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:s3:.*
 		 */
 		Bucket: FormControl<string | null | undefined>,
 		Format: FormControl<JobReportFormat | null | undefined>,
@@ -1111,7 +1091,7 @@ export namespace MyNS {
 	}
 	export function CreateJobReportFormGroup() {
 		return new FormGroup<JobReportFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:.*')]),
 			Format: new FormControl<JobReportFormat | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
@@ -1385,7 +1365,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9\+\:\/\=\?\#-_]+$
 		 */
 		NextToken?: string | null;
 		Jobs?: Array<JobListDescriptor>;
@@ -1395,13 +1374,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^[A-Za-z0-9\+\:\/\=\?\#-_]+$
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListJobsResultFormGroup() {
 		return new FormGroup<ListJobsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9\+\:\/\=\?\#-_]+$')]),
 		});
 
 	}
@@ -1413,7 +1391,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId?: string | null;
 
@@ -1443,7 +1420,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId: FormControl<string | null | undefined>,
 
@@ -1465,7 +1441,7 @@ export namespace MyNS {
 	}
 	export function CreateJobListDescriptorFormGroup() {
 		return new FormGroup<JobListDescriptorFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Operation: new FormControl<JobListDescriptorOperation | null | undefined>(undefined),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
@@ -1526,7 +1502,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId: string;
 
@@ -1543,7 +1518,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId: FormControl<string | null | undefined>,
 
@@ -1556,7 +1530,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobPriorityResultFormGroup() {
 		return new FormGroup<UpdateJobPriorityResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(5)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
 		});
 
@@ -1567,7 +1541,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId?: string | null;
 		Status?: JobDescriptorStatus | null;
@@ -1583,7 +1556,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 36
 		 * Min length: 5
-		 * Pattern: [a-zA-Z0-9\-\_]+
 		 */
 		JobId: FormControl<string | null | undefined>,
 		Status: FormControl<JobDescriptorStatus | null | undefined>,
@@ -1596,7 +1568,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobStatusResultFormGroup() {
 		return new FormGroup<UpdateJobStatusResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
 			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 		});
@@ -1691,7 +1663,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
 		 */
 		RoleArn: string;
 		Tags?: Array<S3Tag>;
@@ -1723,7 +1694,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 1
-		 * Pattern: arn:[^:]+:iam::\d{12}:role/.*
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
@@ -1733,7 +1703,7 @@ export namespace MyNS {
 			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:[^:]+:iam::\d{12}:role/.*')]),
 		});
 
 	}

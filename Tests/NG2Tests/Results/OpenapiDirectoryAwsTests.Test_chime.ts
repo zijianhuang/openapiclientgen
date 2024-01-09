@@ -107,8 +107,6 @@ export namespace MyNS {
 
 	/** If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages. */
 	export interface PhoneNumberError {
-
-		/** Pattern: .*\S.* */
 		PhoneNumberId?: string | null;
 		ErrorCode?: PhoneNumberErrorErrorCode | null;
 		ErrorMessage?: string | null;
@@ -116,8 +114,6 @@ export namespace MyNS {
 
 	/** If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages. */
 	export interface PhoneNumberErrorFormProperties {
-
-		/** Pattern: .*\S.* */
 		PhoneNumberId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<PhoneNumberErrorErrorCode | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -157,15 +153,11 @@ export namespace MyNS {
 
 	/** An Active Directory (AD) group whose members are granted permission to act as delegates. */
 	export interface SigninDelegateGroup {
-
-		/** Pattern: .*\S.* */
 		GroupName?: string | null;
 	}
 
 	/** An Active Directory (AD) group whose members are granted permission to act as delegates. */
 	export interface SigninDelegateGroupFormProperties {
-
-		/** Pattern: .*\S.* */
 		GroupName: FormControl<string | null | undefined>,
 	}
 	export function CreateSigninDelegateGroupFormGroup() {
@@ -196,8 +188,6 @@ export namespace MyNS {
 		 * Min length: 2
 		 */
 		ExternalUserId?: string | null;
-
-		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		AttendeeId?: string | null;
 
 		/**
@@ -215,8 +205,6 @@ export namespace MyNS {
 		 * Min length: 2
 		 */
 		ExternalUserId: FormControl<string | null | undefined>,
-
-		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		AttendeeId: FormControl<string | null | undefined>,
 
 		/**
@@ -370,8 +358,6 @@ export namespace MyNS {
 
 	/** The list of errors returned when a member action results in an error. */
 	export interface MemberError {
-
-		/** Pattern: .*\S.* */
 		MemberId?: string | null;
 		ErrorCode?: PhoneNumberErrorErrorCode | null;
 		ErrorMessage?: string | null;
@@ -379,8 +365,6 @@ export namespace MyNS {
 
 	/** The list of errors returned when a member action results in an error. */
 	export interface MemberErrorFormProperties {
-
-		/** Pattern: .*\S.* */
 		MemberId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<PhoneNumberErrorErrorCode | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -397,16 +381,12 @@ export namespace MyNS {
 
 	/** Membership details, such as member ID and member role. */
 	export interface MembershipItem {
-
-		/** Pattern: .*\S.* */
 		MemberId?: string | null;
 		Role?: MembershipItemRole | null;
 	}
 
 	/** Membership details, such as member ID and member role. */
 	export interface MembershipItemFormProperties {
-
-		/** Pattern: .*\S.* */
 		MemberId: FormControl<string | null | undefined>,
 		Role: FormControl<MembershipItemRole | null | undefined>,
 	}
@@ -445,8 +425,6 @@ export namespace MyNS {
 
 	/** The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages. */
 	export interface UserError {
-
-		/** Pattern: .*\S.* */
 		UserId?: string | null;
 		ErrorCode?: PhoneNumberErrorErrorCode | null;
 		ErrorMessage?: string | null;
@@ -454,8 +432,6 @@ export namespace MyNS {
 
 	/** The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages. */
 	export interface UserErrorFormProperties {
-
-		/** Pattern: .*\S.* */
 		UserId: FormControl<string | null | undefined>,
 		ErrorCode: FormControl<PhoneNumberErrorErrorCode | null | undefined>,
 		ErrorMessage: FormControl<string | null | undefined>,
@@ -495,28 +471,18 @@ export namespace MyNS {
 	/** The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions. */
 	export interface UpdatePhoneNumberRequestItem {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		PhoneNumberId: string;
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 	}
 
 	/** The phone number ID, product type, or calling name fields to update, used with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions. */
 	export interface UpdatePhoneNumberRequestItemFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		PhoneNumberId: FormControl<string | null | undefined>,
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePhoneNumberRequestItemFormGroup() {
@@ -545,10 +511,7 @@ export namespace MyNS {
 	/** The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action. */
 	export interface UpdateUserRequestItem {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UserId: string;
 		LicenseType?: UpdateUserRequestItemLicenseType | null;
 		UserType?: UpdateUserRequestItemUserType | null;
@@ -560,10 +523,7 @@ export namespace MyNS {
 	/** The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action. */
 	export interface UpdateUserRequestItemFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		UserId: FormControl<string | null | undefined>,
 		LicenseType: FormControl<UpdateUserRequestItemLicenseType | null | undefined>,
 		UserType: FormControl<UpdateUserRequestItemUserType | null | undefined>,
@@ -749,8 +709,6 @@ export namespace MyNS {
 
 	/** A meeting created using the Amazon Chime SDK. */
 	export interface Meeting {
-
-		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		MeetingId?: string | null;
 
 		/**
@@ -766,8 +724,6 @@ export namespace MyNS {
 
 	/** A meeting created using the Amazon Chime SDK. */
 	export interface MeetingFormProperties {
-
-		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		MeetingId: FormControl<string | null | undefined>,
 
 		/**
@@ -865,8 +821,6 @@ export namespace MyNS {
 
 	/** The details of a phone number order created for Amazon Chime. */
 	export interface PhoneNumberOrder {
-
-		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		PhoneNumberOrderId?: string | null;
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
 		Status?: PhoneNumberOrderStatus | null;
@@ -877,8 +831,6 @@ export namespace MyNS {
 
 	/** The details of a phone number order created for Amazon Chime. */
 	export interface PhoneNumberOrderFormProperties {
-
-		/** Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12} */
 		PhoneNumberOrderId: FormControl<string | null | undefined>,
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
 		Status: FormControl<PhoneNumberOrderStatus | null | undefined>,
@@ -901,16 +853,12 @@ export namespace MyNS {
 
 	/** A phone number for which an order has been placed. */
 	export interface OrderedPhoneNumber {
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber?: string | null;
 		Status?: OrderedPhoneNumberStatus | null;
 	}
 
 	/** A phone number for which an order has been placed. */
 	export interface OrderedPhoneNumberFormProperties {
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber: FormControl<string | null | undefined>,
 		Status: FormControl<OrderedPhoneNumberStatus | null | undefined>,
 	}
@@ -944,14 +892,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		VoiceConnectorId?: string | null;
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ProxySessionId?: string | null;
 
@@ -979,14 +925,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		VoiceConnectorId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		ProxySessionId: FormControl<string | null | undefined>,
 
@@ -1004,8 +948,8 @@ export namespace MyNS {
 	}
 	export function CreateProxySessionFormGroup() {
 		return new FormGroup<ProxySessionFormProperties>({
-			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			ProxySessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ProxySessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Status: new FormControl<ProxySessionStatus | null | undefined>(undefined),
 			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -1025,21 +969,13 @@ export namespace MyNS {
 
 	/** The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session. */
 	export interface Participant {
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		PhoneNumber?: string | null;
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		ProxyPhoneNumber?: string | null;
 	}
 
 	/** The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session. */
 	export interface ParticipantFormProperties {
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		PhoneNumber: FormControl<string | null | undefined>,
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		ProxyPhoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateParticipantFormGroup() {
@@ -1058,32 +994,20 @@ export namespace MyNS {
 	/** The country and area code for a proxy phone number in a proxy phone session. */
 	export interface GeoMatchParams {
 
-		/**
-		 * Required
-		 * Pattern: ^$|^[A-Z]{2,2}$
-		 */
+		/** Required */
 		Country: string;
 
-		/**
-		 * Required
-		 * Pattern: ^$|^[0-9]{3,3}$
-		 */
+		/** Required */
 		AreaCode: string;
 	}
 
 	/** The country and area code for a proxy phone number in a proxy phone session. */
 	export interface GeoMatchParamsFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^$|^[A-Z]{2,2}$
-		 */
+		/** Required */
 		Country: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^$|^[0-9]{3,3}$
-		 */
+		/** Required */
 		AreaCode: FormControl<string | null | undefined>,
 	}
 	export function CreateGeoMatchParamsFormGroup() {
@@ -1110,15 +1034,9 @@ export namespace MyNS {
 
 	/** The Amazon Chime chat room details. */
 	export interface Room {
-
-		/** Pattern: .*\S.* */
 		RoomId?: string | null;
 		Name?: string | null;
-
-		/** Pattern: .*\S.* */
 		AccountId?: string | null;
-
-		/** Pattern: .*\S.* */
 		CreatedBy?: string | null;
 		CreatedTimestamp?: Date | null;
 		UpdatedTimestamp?: Date | null;
@@ -1126,15 +1044,9 @@ export namespace MyNS {
 
 	/** The Amazon Chime chat room details. */
 	export interface RoomFormProperties {
-
-		/** Pattern: .*\S.* */
 		RoomId: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		AccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		CreatedBy: FormControl<string | null | undefined>,
 		CreatedTimestamp: FormControl<Date | null | undefined>,
 		UpdatedTimestamp: FormControl<Date | null | undefined>,
@@ -1167,27 +1079,19 @@ export namespace MyNS {
 
 	/** The room membership details. */
 	export interface RoomMembership {
-
-		/** Pattern: .*\S.* */
 		RoomId?: string | null;
 
 		/** The member details, such as email address, name, member ID, and member type. */
 		Member?: Member;
 		Role?: MembershipItemRole | null;
-
-		/** Pattern: .*\S.* */
 		InvitedBy?: string | null;
 		UpdatedTimestamp?: Date | null;
 	}
 
 	/** The room membership details. */
 	export interface RoomMembershipFormProperties {
-
-		/** Pattern: .*\S.* */
 		RoomId: FormControl<string | null | undefined>,
 		Role: FormControl<MembershipItemRole | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		InvitedBy: FormControl<string | null | undefined>,
 		UpdatedTimestamp: FormControl<Date | null | undefined>,
 	}
@@ -1204,27 +1108,19 @@ export namespace MyNS {
 
 	/** The member details, such as email address, name, member ID, and member type. */
 	export interface Member {
-
-		/** Pattern: .*\S.* */
 		MemberId?: string | null;
 		MemberType?: MemberMemberType | null;
 		Email?: string | null;
 		FullName?: string | null;
-
-		/** Pattern: .*\S.* */
 		AccountId?: string | null;
 	}
 
 	/** The member details, such as email address, name, member ID, and member type. */
 	export interface MemberFormProperties {
-
-		/** Pattern: .*\S.* */
 		MemberId: FormControl<string | null | undefined>,
 		MemberType: FormControl<MemberMemberType | null | undefined>,
 		Email: FormControl<string | null | undefined>,
 		FullName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberFormGroup() {
@@ -1270,8 +1166,6 @@ export namespace MyNS {
 		/** Required */
 		UserId: string;
 		AccountId?: string | null;
-
-		/** Pattern: .+@.+\..+ */
 		PrimaryEmail?: string | null;
 		PrimaryProvisionedNumber?: string | null;
 		DisplayName?: string | null;
@@ -1293,8 +1187,6 @@ export namespace MyNS {
 		/** Required */
 		UserId: FormControl<string | null | undefined>,
 		AccountId: FormControl<string | null | undefined>,
-
-		/** Pattern: .+@.+\..+ */
 		PrimaryEmail: FormControl<string | null | undefined>,
 		PrimaryProvisionedNumber: FormControl<string | null | undefined>,
 		DisplayName: FormControl<string | null | undefined>,
@@ -1344,8 +1236,6 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
 	export interface VoiceConnector {
-
-		/** Pattern: .*\S.* */
 		VoiceConnectorId?: string | null;
 		AwsRegion?: VoiceConnectorAwsRegion | null;
 
@@ -1362,8 +1252,6 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector configuration, including outbound host name and encryption settings. */
 	export interface VoiceConnectorFormProperties {
-
-		/** Pattern: .*\S.* */
 		VoiceConnectorId: FormControl<string | null | undefined>,
 		AwsRegion: FormControl<VoiceConnectorAwsRegion | null | undefined>,
 
@@ -1408,8 +1296,6 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
 	export interface VoiceConnectorGroup {
-
-		/** Pattern: .*\S.* */
 		VoiceConnectorGroupId?: string | null;
 
 		/**
@@ -1424,8 +1310,6 @@ export namespace MyNS {
 
 	/** The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events. */
 	export interface VoiceConnectorGroupFormProperties {
-
-		/** Pattern: .*\S.* */
 		VoiceConnectorGroupId: FormControl<string | null | undefined>,
 
 		/**
@@ -1450,10 +1334,7 @@ export namespace MyNS {
 	/** For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group. */
 	export interface VoiceConnectorItem {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		VoiceConnectorId: string;
 
 		/**
@@ -1467,10 +1348,7 @@ export namespace MyNS {
 	/** For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group. */
 	export interface VoiceConnectorItemFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		VoiceConnectorId: FormControl<string | null | undefined>,
 
 		/**
@@ -1738,8 +1616,6 @@ export namespace MyNS {
 	/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
 	export interface PhoneNumber {
 		PhoneNumberId?: string | null;
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber?: string | null;
 		Type?: PhoneNumberType | null;
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
@@ -1748,8 +1624,6 @@ export namespace MyNS {
 		/** The phone number capabilities for Amazon Chime Business Calling phone numbers, such as enabled inbound and outbound calling and text messaging. */
 		Capabilities?: PhoneNumberCapabilities;
 		Associations?: Array<PhoneNumberAssociation>;
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 		CallingNameStatus?: PhoneNumberCallingNameStatus | null;
 		CreatedTimestamp?: Date | null;
@@ -1760,14 +1634,10 @@ export namespace MyNS {
 	/** A phone number used for Amazon Chime Business Calling or an Amazon Chime Voice Connector. */
 	export interface PhoneNumberFormProperties {
 		PhoneNumberId: FormControl<string | null | undefined>,
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		E164PhoneNumber: FormControl<string | null | undefined>,
 		Type: FormControl<PhoneNumberType | null | undefined>,
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
 		Status: FormControl<PhoneNumberStatus | null | undefined>,
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 		CallingNameStatus: FormControl<PhoneNumberCallingNameStatus | null | undefined>,
 		CreatedTimestamp: FormControl<Date | null | undefined>,
@@ -1867,14 +1737,10 @@ export namespace MyNS {
 	}
 
 	export interface GetPhoneNumberSettingsResponse {
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 		CallingNameUpdatedTimestamp?: Date | null;
 	}
 	export interface GetPhoneNumberSettingsResponseFormProperties {
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 		CallingNameUpdatedTimestamp: FormControl<Date | null | undefined>,
 	}
@@ -2249,8 +2115,6 @@ export namespace MyNS {
 	export interface Proxy {
 		DefaultSessionExpiryMinutes?: number | null;
 		Disabled?: boolean | null;
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber?: string | null;
 		PhoneNumberCountries?: Array<string>;
 	}
@@ -2259,8 +2123,6 @@ export namespace MyNS {
 	export interface ProxyFormProperties {
 		DefaultSessionExpiryMinutes: FormControl<number | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateProxyFormGroup() {
@@ -2363,8 +2225,6 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		CpsLimit?: number | null;
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber?: string | null;
 		CallingRegions?: Array<string>;
 		CidrAllowedList?: Array<string>;
@@ -2376,8 +2236,6 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		CpsLimit: FormControl<number | null | undefined>,
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber: FormControl<string | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
@@ -2439,8 +2297,6 @@ export namespace MyNS {
 	export interface Invite {
 		InviteId?: string | null;
 		Status?: UserUserInvitationStatus | null;
-
-		/** Pattern: .+@.+\..+ */
 		EmailAddress?: string | null;
 		EmailStatus?: InviteEmailStatus | null;
 	}
@@ -2449,8 +2305,6 @@ export namespace MyNS {
 	export interface InviteFormProperties {
 		InviteId: FormControl<string | null | undefined>,
 		Status: FormControl<UserUserInvitationStatus | null | undefined>,
-
-		/** Pattern: .+@.+\..+ */
 		EmailAddress: FormControl<string | null | undefined>,
 		EmailStatus: FormControl<InviteEmailStatus | null | undefined>,
 	}
@@ -3022,18 +2876,12 @@ export namespace MyNS {
 
 	export interface AssociatePhoneNumberWithUserRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^\+?[1-9]\d{1,14}$
-		 */
+		/** Required */
 		E164PhoneNumber: string;
 	}
 	export interface AssociatePhoneNumberWithUserRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^\+?[1-9]\d{1,14}$
-		 */
+		/** Required */
 		E164PhoneNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociatePhoneNumberWithUserRequestFormGroup() {
@@ -3200,7 +3048,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -3210,13 +3057,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAccountRequestFormGroup() {
 		return new FormGroup<CreateAccountRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3256,16 +3102,12 @@ export namespace MyNS {
 
 		/** Required */
 		DisplayName: string;
-
-		/** Pattern: .*\S.* */
 		Domain?: string | null;
 	}
 	export interface CreateBotRequestFormProperties {
 
 		/** Required */
 		DisplayName: FormControl<string | null | undefined>,
-
-		/** Pattern: .*\S.* */
 		Domain: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBotRequestFormGroup() {
@@ -3283,14 +3125,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SnsTopicArn?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SqsQueueArn?: string | null;
 	}
@@ -3301,21 +3141,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SnsTopicArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SqsQueueArn: FormControl<string | null | undefined>,
 	}
 	export function CreateMeetingNotificationConfigurationFormGroup() {
 		return new FormGroup<MeetingNotificationConfigurationFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -3326,7 +3164,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken: string;
 
@@ -3358,7 +3195,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -3377,7 +3213,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMeetingRequestFormGroup() {
 		return new FormGroup<CreateMeetingRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
 			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
@@ -3419,8 +3255,6 @@ export namespace MyNS {
 		 * Maximum items: 2
 		 */
 		ParticipantPhoneNumbers: Array<string>;
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{0,30}$ */
 		Name?: string | null;
 
 		/** Minimum: 1 */
@@ -3435,8 +3269,6 @@ export namespace MyNS {
 		GeoMatchParams?: GeoMatchParams;
 	}
 	export interface CreateProxySessionRequestFormProperties {
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{0,30}$ */
 		Name: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
@@ -3458,19 +3290,13 @@ export namespace MyNS {
 
 	export interface CreateRoomMembershipRequest {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		MemberId: string;
 		Role?: MembershipItemRole | null;
 	}
 	export interface CreateRoomMembershipRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: .*\S.*
-		 */
+		/** Required */
 		MemberId: FormControl<string | null | undefined>,
 		Role: FormControl<MembershipItemRole | null | undefined>,
 	}
@@ -3490,7 +3316,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -3502,14 +3327,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRoomRequestFormGroup() {
 		return new FormGroup<CreateRoomRequestFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
 		});
 
 	}
@@ -3518,15 +3342,11 @@ export namespace MyNS {
 
 	export interface CreateUserRequest {
 		Username?: string | null;
-
-		/** Pattern: .+@.+\..+ */
 		Email?: string | null;
 		UserType?: UpdateUserRequestItemUserType | null;
 	}
 	export interface CreateUserRequestFormProperties {
 		Username: FormControl<string | null | undefined>,
-
-		/** Pattern: .+@.+\..+ */
 		Email: FormControl<string | null | undefined>,
 		UserType: FormControl<UpdateUserRequestItemUserType | null | undefined>,
 	}
@@ -4285,8 +4105,6 @@ export namespace MyNS {
 		 * Maximum items: 100
 		 */
 		PhoneNumberPoolCountries: Array<string>;
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber?: string | null;
 		Disabled?: boolean | null;
 	}
@@ -4294,8 +4112,6 @@ export namespace MyNS {
 
 		/** Required */
 		DefaultSessionExpiryMinutes: FormControl<number | null | undefined>,
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		FallBackPhoneNumber: FormControl<string | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
@@ -4453,7 +4269,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: string;
 
@@ -4470,13 +4285,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -4521,7 +4335,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: string;
 
@@ -4538,13 +4351,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -4554,7 +4366,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 	}
@@ -4563,13 +4374,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAccountRequestFormGroup() {
 		return new FormGroup<UpdateAccountRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4627,14 +4437,10 @@ export namespace MyNS {
 
 	export interface UpdatePhoneNumberRequest {
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName?: string | null;
 	}
 	export interface UpdatePhoneNumberRequestFormProperties {
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
-
-		/** Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$ */
 		CallingName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePhoneNumberRequestFormGroup() {
@@ -4647,18 +4453,12 @@ export namespace MyNS {
 
 	export interface UpdatePhoneNumberSettingsRequest {
 
-		/**
-		 * Required
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
-		 */
+		/** Required */
 		CallingName: string;
 	}
 	export interface UpdatePhoneNumberSettingsRequestFormProperties {
 
-		/**
-		 * Required
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
-		 */
+		/** Required */
 		CallingName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePhoneNumberSettingsRequestFormGroup() {
@@ -6053,7 +5853,6 @@ export namespace MyNS {
 		/**
 		 * The phone number, in E.164 format.
 		 * Required
-		 * Pattern: ^\+?[1-9]\d{1,14}$
 		 */
 		E164PhoneNumber: string;
 	}
@@ -6062,7 +5861,6 @@ export namespace MyNS {
 		/**
 		 * The phone number, in E.164 format.
 		 * Required
-		 * Pattern: ^\+?[1-9]\d{1,14}$
 		 */
 		E164PhoneNumber: FormControl<string | null | undefined>,
 	}
@@ -6271,7 +6069,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 	}
@@ -6282,13 +6079,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateAccountPostBodyFormGroup() {
 		return new FormGroup<CreateAccountPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6335,10 +6131,7 @@ export namespace MyNS {
 		 */
 		DisplayName: string;
 
-		/**
-		 * The domain of the Amazon Chime Enterprise account.
-		 * Pattern: .*\S.*
-		 */
+		/** The domain of the Amazon Chime Enterprise account. */
 		Domain?: string | null;
 	}
 	export interface CreateBotPostBodyFormProperties {
@@ -6349,10 +6142,7 @@ export namespace MyNS {
 		 */
 		DisplayName: FormControl<string | null | undefined>,
 
-		/**
-		 * The domain of the Amazon Chime Enterprise account.
-		 * Pattern: .*\S.*
-		 */
+		/** The domain of the Amazon Chime Enterprise account. */
 		Domain: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBotPostBodyFormGroup() {
@@ -6370,7 +6160,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken: string;
 
@@ -6408,7 +6197,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -6431,7 +6219,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMeetingPostBodyFormGroup() {
 		return new FormGroup<CreateMeetingPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
 			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
@@ -6444,14 +6232,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SnsTopicArn?: string | null;
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SqsQueueArn?: string | null;
 	}
@@ -6460,21 +6246,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SnsTopicArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		SqsQueueArn: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMeetingPostBodyNotificationsConfigurationFormGroup() {
 		return new FormGroup<CreateMeetingPostBodyNotificationsConfigurationFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -6518,10 +6302,7 @@ export namespace MyNS {
 		 */
 		ParticipantPhoneNumbers: Array<string>;
 
-		/**
-		 * The name of the proxy session.
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{0,30}$
-		 */
+		/** The name of the proxy session. */
 		Name?: string | null;
 
 		/**
@@ -6547,10 +6328,7 @@ export namespace MyNS {
 	}
 	export interface CreateProxySessionPostBodyFormProperties {
 
-		/**
-		 * The name of the proxy session.
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{0,30}$
-		 */
+		/** The name of the proxy session. */
 		Name: FormControl<string | null | undefined>,
 
 		/**
@@ -6576,19 +6354,11 @@ export namespace MyNS {
 	}
 
 	export interface CreateProxySessionPostBodyGeoMatchParams {
-
-		/** Pattern: ^$|^[A-Z]{2,2}$ */
 		Country?: string | null;
-
-		/** Pattern: ^$|^[0-9]{3,3}$ */
 		AreaCode?: string | null;
 	}
 	export interface CreateProxySessionPostBodyGeoMatchParamsFormProperties {
-
-		/** Pattern: ^$|^[A-Z]{2,2}$ */
 		Country: FormControl<string | null | undefined>,
-
-		/** Pattern: ^$|^[0-9]{3,3}$ */
 		AreaCode: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateProxySessionPostBodyGeoMatchParamsFormGroup() {
@@ -6611,7 +6381,6 @@ export namespace MyNS {
 		 * The idempotency token for the request.
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -6627,14 +6396,13 @@ export namespace MyNS {
 		 * The idempotency token for the request.
 		 * Max length: 64
 		 * Min length: 2
-		 * Pattern: [-_a-zA-Z0-9]*
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRoomPostBodyFormGroup() {
 		return new FormGroup<CreateRoomPostBodyFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
 		});
 
 	}
@@ -6644,7 +6412,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Chime member ID (user ID or bot ID).
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		MemberId: string;
 
@@ -6656,7 +6423,6 @@ export namespace MyNS {
 		/**
 		 * The Amazon Chime member ID (user ID or bot ID).
 		 * Required
-		 * Pattern: .*\S.*
 		 */
 		MemberId: FormControl<string | null | undefined>,
 
@@ -6678,10 +6444,7 @@ export namespace MyNS {
 		/** The user name. */
 		Username?: string | null;
 
-		/**
-		 * The user's email address.
-		 * Pattern: .+@.+\..+
-		 */
+		/** The user's email address. */
 		Email?: string | null;
 
 		/** The user type. */
@@ -6692,10 +6455,7 @@ export namespace MyNS {
 		/** The user name. */
 		Username: FormControl<string | null | undefined>,
 
-		/**
-		 * The user's email address.
-		 * Pattern: .+@.+\..+
-		 */
+		/** The user's email address. */
 		Email: FormControl<string | null | undefined>,
 
 		/** The user type. */
@@ -6795,7 +6555,6 @@ export namespace MyNS {
 		 * The new name for the specified Amazon Chime account.
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 	}
@@ -6805,13 +6564,12 @@ export namespace MyNS {
 		 * The new name for the specified Amazon Chime account.
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateAccountPostBodyFormGroup() {
 		return new FormGroup<UpdateAccountPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6845,10 +6603,7 @@ export namespace MyNS {
 		/** The product type. */
 		ProductType?: UpdatePhoneNumberRequestItemProductType | null;
 
-		/**
-		 * The outbound calling name associated with the phone number.
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
-		 */
+		/** The outbound calling name associated with the phone number. */
 		CallingName?: string | null;
 	}
 	export interface UpdatePhoneNumberPostBodyFormProperties {
@@ -6856,10 +6611,7 @@ export namespace MyNS {
 		/** The product type. */
 		ProductType: FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>,
 
-		/**
-		 * The outbound calling name associated with the phone number.
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
-		 */
+		/** The outbound calling name associated with the phone number. */
 		CallingName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePhoneNumberPostBodyFormGroup() {
@@ -7052,10 +6804,7 @@ export namespace MyNS {
 		 */
 		PhoneNumberPoolCountries: Array<string>;
 
-		/**
-		 * The phone number to route calls to after a proxy session expires.
-		 * Pattern: ^\+?[1-9]\d{1,14}$
-		 */
+		/** The phone number to route calls to after a proxy session expires. */
 		FallBackPhoneNumber?: string | null;
 
 		/** When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector. */
@@ -7069,10 +6818,7 @@ export namespace MyNS {
 		 */
 		DefaultSessionExpiryMinutes: FormControl<number | null | undefined>,
 
-		/**
-		 * The phone number to route calls to after a proxy session expires.
-		 * Pattern: ^\+?[1-9]\d{1,14}$
-		 */
+		/** The phone number to route calls to after a proxy session expires. */
 		FallBackPhoneNumber: FormControl<string | null | undefined>,
 
 		/** When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector. */
@@ -7149,8 +6895,6 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		CpsLimit?: number | null;
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber?: string | null;
 		CallingRegions?: Array<string>;
 		CidrAllowedList?: Array<string>;
@@ -7160,8 +6904,6 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		CpsLimit: FormControl<number | null | undefined>,
-
-		/** Pattern: ^\+?[1-9]\d{1,14}$ */
 		DefaultPhoneNumber: FormControl<string | null | undefined>,
 		Disabled: FormControl<boolean | null | undefined>,
 	}
@@ -7342,7 +7084,6 @@ export namespace MyNS {
 		/**
 		 * The default outbound calling name for the account.
 		 * Required
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
 		 */
 		CallingName: string;
 	}
@@ -7351,7 +7092,6 @@ export namespace MyNS {
 		/**
 		 * The default outbound calling name for the account.
 		 * Required
-		 * Pattern: ^$|^[a-zA-Z0-9 ]{2,15}$
 		 */
 		CallingName: FormControl<string | null | undefined>,
 	}
@@ -7593,7 +7333,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: string;
 
@@ -7612,13 +7351,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -7668,7 +7406,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: string;
 
@@ -7687,13 +7424,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}

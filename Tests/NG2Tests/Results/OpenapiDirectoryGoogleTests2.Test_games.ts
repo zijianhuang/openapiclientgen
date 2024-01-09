@@ -2809,10 +2809,7 @@ export namespace MyNS {
 		/** The new score being submitted. */
 		score?: string | null;
 
-		/**
-		 * Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-		 * Pattern: [a-zA-Z0-9-._~]{0,64}
-		 */
+		/** Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986. */
 		scoreTag?: string | null;
 
 		/** Signature Values will contain URI-safe characters as defined by section 2.3 of RFC 3986. */
@@ -2831,10 +2828,7 @@ export namespace MyNS {
 		/** The new score being submitted. */
 		score: FormControl<string | null | undefined>,
 
-		/**
-		 * Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986.
-		 * Pattern: [a-zA-Z0-9-._~]{0,64}
-		 */
+		/** Additional information about this score. Values will contain no more than 64 URI-safe characters as defined by section 2.3 of RFC 3986. */
 		scoreTag: FormControl<string | null | undefined>,
 
 		/** Signature Values will contain URI-safe characters as defined by section 2.3 of RFC 3986. */

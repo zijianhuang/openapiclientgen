@@ -10,7 +10,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
@@ -22,14 +21,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateAddTagsOutputFormGroup() {
 		return new FormGroup<AddTagsOutputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
 		});
 
@@ -49,7 +47,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: string;
 
@@ -62,7 +59,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 
@@ -71,7 +67,7 @@ export namespace MyNS {
 	}
 	export function CreateAddTagsInputFormGroup() {
 		return new FormGroup<AddTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -84,14 +80,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value?: string | null;
 	}
@@ -102,21 +96,19 @@ export namespace MyNS {
 		/**
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Key: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -234,7 +226,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId?: string | null;
 	}
@@ -245,13 +236,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBatchPredictionOutputFormGroup() {
 		return new FormGroup<CreateBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -262,14 +252,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: string;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		BatchPredictionName?: string | null;
 
@@ -277,7 +265,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 
@@ -285,7 +272,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionDataSourceId: string;
 
@@ -293,7 +279,6 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		OutputUri: string;
 	}
@@ -303,14 +288,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		BatchPredictionName: FormControl<string | null | undefined>,
 
@@ -318,7 +301,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
@@ -326,7 +308,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
 
@@ -334,17 +315,16 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		OutputUri: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateBatchPredictionInputFormGroup() {
 		return new FormGroup<CreateBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			BatchPredictionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			BatchPredictionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 		});
 
 	}
@@ -380,7 +360,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId?: string | null;
 	}
@@ -391,13 +370,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceFromRDSOutputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRDSOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -408,14 +386,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: string;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName?: string | null;
 
@@ -440,14 +416,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName: FormControl<string | null | undefined>,
 
@@ -462,8 +436,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSourceFromRDSInputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRDSInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(110), Validators.minLength(1)]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -498,7 +472,6 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		S3StagingLocation: string;
 		DataRearrangement?: string | null;
@@ -512,7 +485,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaUri?: string | null;
 
@@ -556,7 +528,6 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		S3StagingLocation: FormControl<string | null | undefined>,
 		DataRearrangement: FormControl<string | null | undefined>,
@@ -570,7 +541,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaUri: FormControl<string | null | undefined>,
 
@@ -598,10 +568,10 @@ export namespace MyNS {
 	export function CreateRDSDataSpecFormGroup() {
 		return new FormGroup<RDSDataSpecFormProperties>({
 			SelectSqlQuery: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16777216), Validators.minLength(1)]),
-			S3StagingLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			S3StagingLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
 			DataSchema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
-			DataSchemaUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			DataSchemaUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			ResourceRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			ServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
@@ -618,7 +588,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: [a-z0-9-]+
 		 */
 		InstanceIdentifier: string;
 
@@ -639,7 +608,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: [a-z0-9-]+
 		 */
 		InstanceIdentifier: FormControl<string | null | undefined>,
 
@@ -653,7 +621,7 @@ export namespace MyNS {
 	}
 	export function CreateRDSDatabaseFormGroup() {
 		return new FormGroup<RDSDatabaseFormProperties>({
-			InstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			InstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-z0-9-]+')]),
 			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
@@ -714,7 +682,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId?: string | null;
 	}
@@ -725,13 +692,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceFromRedshiftOutputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRedshiftOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -742,14 +708,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: string;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName?: string | null;
 
@@ -774,14 +738,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName: FormControl<string | null | undefined>,
 
@@ -796,8 +758,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDataSourceFromRedshiftInputFormGroup() {
 		return new FormGroup<CreateDataSourceFromRedshiftInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(110), Validators.minLength(1)]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -832,7 +794,6 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		S3StagingLocation: string;
 		DataRearrangement?: string | null;
@@ -846,7 +807,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaUri?: string | null;
 	}
@@ -866,7 +826,6 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		S3StagingLocation: FormControl<string | null | undefined>,
 		DataRearrangement: FormControl<string | null | undefined>,
@@ -880,17 +839,16 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaUri: FormControl<string | null | undefined>,
 	}
 	export function CreateRedshiftDataSpecFormGroup() {
 		return new FormGroup<RedshiftDataSpecFormProperties>({
 			SelectSqlQuery: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16777216), Validators.minLength(1)]),
-			S3StagingLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			S3StagingLocation: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
 			DataSchema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
-			DataSchemaUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			DataSchemaUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 		});
 
 	}
@@ -904,7 +862,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z0-9]+
 		 */
 		DatabaseName: string;
 
@@ -913,7 +870,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: [a-z0-9-]+
 		 */
 		ClusterIdentifier: string;
 	}
@@ -926,7 +882,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-z0-9]+
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
@@ -935,14 +890,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: [a-z0-9-]+
 		 */
 		ClusterIdentifier: FormControl<string | null | undefined>,
 	}
 	export function CreateRedshiftDatabaseFormGroup() {
 		return new FormGroup<RedshiftDatabaseFormProperties>({
-			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-z0-9]+')]),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-z0-9-]+')]),
 		});
 
 	}
@@ -1002,7 +956,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId?: string | null;
 	}
@@ -1013,13 +966,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateDataSourceFromS3OutputFormGroup() {
 		return new FormGroup<CreateDataSourceFromS3OutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1030,14 +982,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: string;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName?: string | null;
 
@@ -1054,22 +1004,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName: FormControl<string | null | undefined>,
 		ComputeStatistics: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateDataSourceFromS3InputFormGroup() {
 		return new FormGroup<CreateDataSourceFromS3InputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1083,7 +1031,6 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataLocationS3: string;
 		DataRearrangement?: string | null;
@@ -1097,7 +1044,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaLocationS3?: string | null;
 	}
@@ -1109,7 +1055,6 @@ export namespace MyNS {
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Required
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataLocationS3: FormControl<string | null | undefined>,
 		DataRearrangement: FormControl<string | null | undefined>,
@@ -1123,16 +1068,15 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataSchemaLocationS3: FormControl<string | null | undefined>,
 	}
 	export function CreateS3DataSpecFormGroup() {
 		return new FormGroup<S3DataSpecFormProperties>({
-			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
 			DataSchema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
-			DataSchemaLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			DataSchemaLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 		});
 
 	}
@@ -1144,7 +1088,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId?: string | null;
 	}
@@ -1155,13 +1098,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEvaluationOutputFormGroup() {
 		return new FormGroup<CreateEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1172,14 +1114,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: string;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EvaluationName?: string | null;
 
@@ -1187,7 +1127,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 
@@ -1195,7 +1134,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationDataSourceId: string;
 	}
@@ -1205,14 +1143,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EvaluationName: FormControl<string | null | undefined>,
 
@@ -1220,7 +1156,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
@@ -1228,16 +1163,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationDataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateEvaluationInputFormGroup() {
 		return new FormGroup<CreateEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			EvaluationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			EvaluationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1249,7 +1183,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 	}
@@ -1260,13 +1193,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMLModelOutputFormGroup() {
 		return new FormGroup<CreateMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1277,14 +1209,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		MLModelName?: string | null;
 
@@ -1296,7 +1226,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TrainingDataSourceId: string;
 
@@ -1306,7 +1235,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		RecipeUri?: string | null;
 	}
@@ -1316,14 +1244,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		MLModelName: FormControl<string | null | undefined>,
 
@@ -1334,7 +1260,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TrainingDataSourceId: FormControl<string | null | undefined>,
 
@@ -1344,18 +1269,17 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		RecipeUri: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateMLModelInputFormGroup() {
 		return new FormGroup<CreateMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			MLModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MLModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined, [Validators.required]),
-			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Recipe: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131071)]),
-			RecipeUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			RecipeUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 		});
 
 	}
@@ -1379,7 +1303,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
@@ -1393,13 +1316,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRealtimeEndpointOutputFormGroup() {
 		return new FormGroup<CreateRealtimeEndpointOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1414,10 +1336,7 @@ export namespace MyNS {
 		/** A timestamp represented in epoch time. */
 		CreatedAt?: Date | null;
 
-		/**
-		 * Max length: 2048
-		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
-		 */
+		/** Max length: 2048 */
 		EndpointUrl?: string | null;
 		EndpointStatus?: RealtimeEndpointInfoEndpointStatus | null;
 	}
@@ -1431,10 +1350,7 @@ export namespace MyNS {
 		/** A timestamp represented in epoch time. */
 		CreatedAt: FormControl<Date | null | undefined>,
 
-		/**
-		 * Max length: 2048
-		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
-		 */
+		/** Max length: 2048 */
 		EndpointUrl: FormControl<string | null | undefined>,
 		EndpointStatus: FormControl<RealtimeEndpointInfoEndpointStatus | null | undefined>,
 	}
@@ -1442,7 +1358,7 @@ export namespace MyNS {
 		return new FormGroup<RealtimeEndpointInfoFormProperties>({
 			PeakRequestsPerSecond: new FormControl<number | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
-			EndpointUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			EndpointUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?')]),
 			EndpointStatus: new FormControl<RealtimeEndpointInfoEndpointStatus | null | undefined>(undefined),
 		});
 
@@ -1456,7 +1372,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 	}
@@ -1466,13 +1381,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateRealtimeEndpointInputFormGroup() {
 		return new FormGroup<CreateRealtimeEndpointInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1484,7 +1398,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId?: string | null;
 	}
@@ -1495,13 +1408,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBatchPredictionOutputFormGroup() {
 		return new FormGroup<DeleteBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1512,7 +1424,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: string;
 	}
@@ -1522,13 +1433,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteBatchPredictionInputFormGroup() {
 		return new FormGroup<DeleteBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1540,7 +1450,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId?: string | null;
 	}
@@ -1551,13 +1460,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDataSourceOutputFormGroup() {
 		return new FormGroup<DeleteDataSourceOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1568,7 +1476,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: string;
 	}
@@ -1578,13 +1485,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteDataSourceInputFormGroup() {
 		return new FormGroup<DeleteDataSourceInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1596,7 +1502,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId?: string | null;
 	}
@@ -1607,13 +1512,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEvaluationOutputFormGroup() {
 		return new FormGroup<DeleteEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1624,7 +1528,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: string;
 	}
@@ -1634,13 +1537,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteEvaluationInputFormGroup() {
 		return new FormGroup<DeleteEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1652,7 +1554,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 	}
@@ -1663,13 +1564,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMLModelOutputFormGroup() {
 		return new FormGroup<DeleteMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1680,7 +1580,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 	}
@@ -1690,13 +1589,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteMLModelInputFormGroup() {
 		return new FormGroup<DeleteMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1708,7 +1606,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
@@ -1722,13 +1619,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRealtimeEndpointOutputFormGroup() {
 		return new FormGroup<DeleteRealtimeEndpointOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1739,7 +1635,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 	}
@@ -1749,13 +1644,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteRealtimeEndpointInputFormGroup() {
 		return new FormGroup<DeleteRealtimeEndpointInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1767,7 +1661,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
@@ -1779,14 +1672,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateDeleteTagsOutputFormGroup() {
 		return new FormGroup<DeleteTagsOutputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
 		});
 
@@ -1804,7 +1696,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: string;
 
@@ -1817,7 +1708,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 
@@ -1826,7 +1716,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTagsInputFormGroup() {
 		return new FormGroup<DeleteTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1861,35 +1751,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -1901,7 +1784,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name?: string | null;
 
@@ -1911,7 +1793,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		OutputUri?: string | null;
 
@@ -1943,35 +1824,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -1983,7 +1857,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1993,7 +1866,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		OutputUri: FormControl<string | null | undefined>,
 
@@ -2020,16 +1892,16 @@ export namespace MyNS {
 	}
 	export function CreateBatchPredictionFormGroup() {
 		return new FormGroup<BatchPredictionFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
-			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
 			FinishedAt: new FormControl<Date | null | undefined>(undefined),
@@ -2050,49 +1922,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix?: string | null;
 
@@ -2116,49 +1981,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix: FormControl<string | null | undefined>,
 
@@ -2177,13 +2035,13 @@ export namespace MyNS {
 	export function CreateDescribeBatchPredictionsInputFormGroup() {
 		return new FormGroup<DescribeBatchPredictionsInputFormProperties>({
 			FilterVariable: new FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -2224,22 +2082,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataLocationS3?: string | null;
 		DataRearrangement?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -2257,7 +2110,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name?: string | null;
 
@@ -2300,22 +2152,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataLocationS3: FormControl<string | null | undefined>,
 		DataRearrangement: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -2333,7 +2180,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2365,15 +2211,15 @@ export namespace MyNS {
 	}
 	export function CreateDataSourceFormGroup() {
 		return new FormGroup<DataSourceFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			NumberOfFiles: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(110), Validators.minLength(1)]),
@@ -2526,49 +2372,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix?: string | null;
 
@@ -2592,49 +2431,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix: FormControl<string | null | undefined>,
 
@@ -2653,13 +2485,13 @@ export namespace MyNS {
 	export function CreateDescribeDataSourcesInputFormGroup() {
 		return new FormGroup<DescribeDataSourcesInputFormProperties>({
 			FilterVariable: new FormControl<DescribeDataSourcesInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -2698,35 +2530,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -2738,7 +2563,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name?: string | null;
 
@@ -2770,35 +2594,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationDataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -2810,7 +2627,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2834,14 +2650,14 @@ export namespace MyNS {
 	}
 	export function CreateEvaluationFormGroup() {
 		return new FormGroup<EvaluationFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
@@ -2884,49 +2700,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix?: string | null;
 
@@ -2950,49 +2759,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix: FormControl<string | null | undefined>,
 
@@ -3011,13 +2813,13 @@ export namespace MyNS {
 	export function CreateDescribeEvaluationsInputFormGroup() {
 		return new FormGroup<DescribeEvaluationsInputFormProperties>({
 			FilterVariable: new FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -3054,21 +2856,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TrainingDataSourceId?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -3093,7 +2890,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3?: string | null;
 
@@ -3127,21 +2923,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TrainingDataSourceId: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -3162,7 +2953,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3: FormControl<string | null | undefined>,
 
@@ -3191,15 +2981,15 @@ export namespace MyNS {
 	}
 	export function CreateMLModelFormGroup() {
 		return new FormGroup<MLModelFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			SizeInBytes: new FormControl<number | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			Algorithm: new FormControl<MLModelAlgorithm | null | undefined>(undefined),
 			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
 			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
@@ -3220,49 +3010,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE?: string | null;
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix?: string | null;
 
@@ -3284,49 +3067,42 @@ export namespace MyNS {
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EQ: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LT: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		GE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		LE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		NE: FormControl<string | null | undefined>,
 
 		/**
 		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Prefix: FormControl<string | null | undefined>,
 
@@ -3345,13 +3121,13 @@ export namespace MyNS {
 	export function CreateDescribeMLModelsInputFormGroup() {
 		return new FormGroup<DescribeMLModelsInputFormProperties>({
 			FilterVariable: new FormControl<DescribeMLModelsInputFilterVariable | null | undefined>(undefined),
-			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			EQ: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LT: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			GE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			LE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			NE: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -3368,7 +3144,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
@@ -3383,14 +3158,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
 	}
 	export function CreateDescribeTagsOutputFormGroup() {
 		return new FormGroup<DescribeTagsOutputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
 		});
 
@@ -3402,7 +3176,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: string;
 
@@ -3415,7 +3188,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ResourceId: FormControl<string | null | undefined>,
 
@@ -3424,7 +3196,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTagsInputFormGroup() {
 		return new FormGroup<DescribeTagsInputFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3437,35 +3209,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -3477,7 +3242,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name?: string | null;
 
@@ -3487,7 +3251,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		OutputUri?: string | null;
 		LogUri?: string | null;
@@ -3520,35 +3283,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -3560,7 +3316,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3570,7 +3325,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		OutputUri: FormControl<string | null | undefined>,
 		LogUri: FormControl<string | null | undefined>,
@@ -3598,16 +3352,16 @@ export namespace MyNS {
 	}
 	export function CreateGetBatchPredictionOutputFormGroup() {
 		return new FormGroup<GetBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
-			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			OutputUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			LogUri: new FormControl<string | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
 			ComputeTime: new FormControl<number | null | undefined>(undefined),
@@ -3625,7 +3379,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: string;
 	}
@@ -3635,13 +3388,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBatchPredictionInputFormGroup() {
 		return new FormGroup<GetBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -3653,22 +3405,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataLocationS3?: string | null;
 		DataRearrangement?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -3686,7 +3433,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name?: string | null;
 
@@ -3736,22 +3482,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		DataLocationS3: FormControl<string | null | undefined>,
 		DataRearrangement: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -3769,7 +3510,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3808,15 +3548,15 @@ export namespace MyNS {
 	}
 	export function CreateGetDataSourceOutputFormGroup() {
 		return new FormGroup<GetDataSourceOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			DataRearrangement: new FormControl<string | null | undefined>(undefined),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			NumberOfFiles: new FormControl<number | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			LogUri: new FormControl<string | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
@@ -3836,7 +3576,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: string;
 
@@ -3849,7 +3588,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
@@ -3858,7 +3596,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDataSourceInputFormGroup() {
 		return new FormGroup<GetDataSourceInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Verbose: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3871,35 +3609,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationDataSourceId?: string | null;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -3911,7 +3642,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name?: string | null;
 
@@ -3944,35 +3674,28 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationDataSourceId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -3984,7 +3707,6 @@ export namespace MyNS {
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4009,14 +3731,14 @@ export namespace MyNS {
 	}
 	export function CreateGetEvaluationOutputFormGroup() {
 		return new FormGroup<GetEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			LogUri: new FormControl<string | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240)]),
@@ -4033,7 +3755,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: string;
 	}
@@ -4043,13 +3764,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetEvaluationInputFormGroup() {
 		return new FormGroup<GetEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4061,21 +3781,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TrainingDataSourceId?: string | null;
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser?: string | null;
 
 		/** A timestamp represented in epoch time. */
@@ -4100,7 +3815,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3?: string | null;
 		MLModelType?: CreateMLModelInputMLModelType | null;
@@ -4141,21 +3855,16 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		TrainingDataSourceId: FormControl<string | null | undefined>,
 
-		/**
-		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
-		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
-		 */
+		/** An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user. */
 		CreatedByIamUser: FormControl<string | null | undefined>,
 
 		/** A timestamp represented in epoch time. */
@@ -4176,7 +3885,6 @@ export namespace MyNS {
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
 		 * Max length: 2048
-		 * Pattern: s3://([^/]+)(/.*)?
 		 */
 		InputDataLocationS3: FormControl<string | null | undefined>,
 		MLModelType: FormControl<CreateMLModelInputMLModelType | null | undefined>,
@@ -4212,15 +3920,15 @@ export namespace MyNS {
 	}
 	export function CreateGetMLModelOutputFormGroup() {
 		return new FormGroup<GetMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
 			SizeInBytes: new FormControl<number | null | undefined>(undefined),
-			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('s3://([^/]+)(/.*)?')]),
 			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
 			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
 			ScoreThresholdLastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
@@ -4241,7 +3949,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 
@@ -4254,7 +3961,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
@@ -4263,7 +3969,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMLModelInputFormGroup() {
 		return new FormGroup<GetMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Verbose: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4346,7 +4052,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 
@@ -4359,7 +4064,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
 		 */
 		PredictEndpoint: string;
 	}
@@ -4369,21 +4073,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?
 		 */
 		PredictEndpoint: FormControl<string | null | undefined>,
 	}
 	export function CreatePredictInputFormGroup() {
 		return new FormGroup<PredictInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			PredictEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			PredictEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('https://[a-zA-Z0-9-.]*\.amazon(aws)?\.com[/]?')]),
 		});
 
 	}
@@ -4454,7 +4156,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId?: string | null;
 	}
@@ -4465,13 +4166,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateBatchPredictionOutputFormGroup() {
 		return new FormGroup<UpdateBatchPredictionOutputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4482,7 +4182,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: string;
 
@@ -4490,7 +4189,6 @@ export namespace MyNS {
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		BatchPredictionName: string;
 	}
@@ -4500,7 +4198,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		BatchPredictionId: FormControl<string | null | undefined>,
 
@@ -4508,14 +4205,13 @@ export namespace MyNS {
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		BatchPredictionName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateBatchPredictionInputFormGroup() {
 		return new FormGroup<UpdateBatchPredictionInputFormProperties>({
-			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			BatchPredictionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			BatchPredictionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 		});
 
 	}
@@ -4527,7 +4223,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId?: string | null;
 	}
@@ -4538,13 +4233,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDataSourceOutputFormGroup() {
 		return new FormGroup<UpdateDataSourceOutputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4555,7 +4249,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: string;
 
@@ -4563,7 +4256,6 @@ export namespace MyNS {
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName: string;
 	}
@@ -4573,7 +4265,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		DataSourceId: FormControl<string | null | undefined>,
 
@@ -4581,14 +4272,13 @@ export namespace MyNS {
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		DataSourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateDataSourceInputFormGroup() {
 		return new FormGroup<UpdateDataSourceInputFormProperties>({
-			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			DataSourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			DataSourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 		});
 
 	}
@@ -4600,7 +4290,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId?: string | null;
 	}
@@ -4611,13 +4300,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateEvaluationOutputFormGroup() {
 		return new FormGroup<UpdateEvaluationOutputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4628,7 +4316,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: string;
 
@@ -4636,7 +4323,6 @@ export namespace MyNS {
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EvaluationName: string;
 	}
@@ -4646,7 +4332,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		EvaluationId: FormControl<string | null | undefined>,
 
@@ -4654,14 +4339,13 @@ export namespace MyNS {
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		EvaluationName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateEvaluationInputFormGroup() {
 		return new FormGroup<UpdateEvaluationInputFormProperties>({
-			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			EvaluationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			EvaluationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			EvaluationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 		});
 
 	}
@@ -4673,7 +4357,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId?: string | null;
 	}
@@ -4684,13 +4367,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateMLModelOutputFormGroup() {
 		return new FormGroup<UpdateMLModelOutputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -4701,14 +4383,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: string;
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		MLModelName?: string | null;
 		ScoreThreshold?: number | null;
@@ -4719,22 +4399,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		MLModelId: FormControl<string | null | undefined>,
 
 		/**
 		 * A user-supplied name or description of the Amazon ML resource.
 		 * Max length: 1024
-		 * Pattern: .*\S.*|^$
 		 */
 		MLModelName: FormControl<string | null | undefined>,
 		ScoreThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateMLModelInputFormGroup() {
 		return new FormGroup<UpdateMLModelInputFormProperties>({
-			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			MLModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			MLModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MLModelName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*\S.*|^$')]),
 			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
 		});
 

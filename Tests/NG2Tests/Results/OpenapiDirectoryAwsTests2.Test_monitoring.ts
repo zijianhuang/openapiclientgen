@@ -442,12 +442,9 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace?: string | null;
 		Statistic?: MetricAlarmStatistic | null;
-
-		/** Pattern: p(\d{1,2}(\.\d{0,2})?|100) */
 		ExtendedStatistic?: string | null;
 
 		/** Maximum items: 10 */
@@ -531,12 +528,9 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 		Statistic: FormControl<MetricAlarmStatistic | null | undefined>,
-
-		/** Pattern: p(\d{1,2}(\.\d{0,2})?|100) */
 		ExtendedStatistic: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
@@ -581,7 +575,7 @@ export namespace MyNS {
 			StateReasonData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000), Validators.minLength(0)]),
 			StateUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
 			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -711,7 +705,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace?: string | null;
 
@@ -731,7 +724,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 
@@ -743,7 +735,7 @@ export namespace MyNS {
 	}
 	export function CreateMetricFormGroup() {
 		return new FormGroup<MetricFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
@@ -783,7 +775,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace?: string | null;
 
@@ -795,8 +786,6 @@ export namespace MyNS {
 
 		/** Maximum items: 10 */
 		Dimensions?: Array<Dimension>;
-
-		/** Pattern: (SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)? */
 		Stat?: string | null;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
@@ -810,7 +799,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 
@@ -819,14 +807,12 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		MetricName: FormControl<string | null | undefined>,
-
-		/** Pattern: (SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)? */
 		Stat: FormControl<string | null | undefined>,
 		StateValue: FormControl<AnomalyDetectorStateValue | null | undefined>,
 	}
 	export function CreateAnomalyDetectorFormGroup() {
 		return new FormGroup<AnomalyDetectorFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			Stat: new FormControl<string | null | undefined>(undefined),
 			StateValue: new FormControl<AnomalyDetectorStateValue | null | undefined>(undefined),
@@ -839,25 +825,19 @@ export namespace MyNS {
 	export interface AnomalyDetectorConfiguration {
 		ExcludedTimeRanges?: Array<Range>;
 
-		/**
-		 * Max length: 50
-		 * Pattern: .*
-		 */
+		/** Max length: 50 */
 		MetricTimezone?: string | null;
 	}
 
 	/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
 	export interface AnomalyDetectorConfigurationFormProperties {
 
-		/**
-		 * Max length: 50
-		 * Pattern: .*
-		 */
+		/** Max length: 50 */
 		MetricTimezone: FormControl<string | null | undefined>,
 	}
 	export function CreateAnomalyDetectorConfigurationFormGroup() {
 		return new FormGroup<AnomalyDetectorConfigurationFormProperties>({
-			MetricTimezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
+			MetricTimezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.pattern('.*')]),
 		});
 
 	}
@@ -914,7 +894,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		Name: string;
 
@@ -922,7 +901,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		State: string;
 
@@ -933,7 +911,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: [\x00-\x7F]+
 		 */
 		Definition: string;
 	}
@@ -945,7 +922,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -953,7 +929,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		State: FormControl<string | null | undefined>,
 
@@ -964,16 +939,15 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: [\x00-\x7F]+
 		 */
 		Definition: FormControl<string | null | undefined>,
 	}
 	export function CreateInsightRuleFormGroup() {
 		return new FormGroup<InsightRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			State: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
+			State: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
 			Schema: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Definition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
+			Definition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('[\x00-\x7F]+')]),
 		});
 
 	}
@@ -1697,7 +1671,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: string;
 
@@ -1711,10 +1684,7 @@ export namespace MyNS {
 		/** Maximum items: 10 */
 		Dimensions?: Array<Dimension>;
 
-		/**
-		 * Required
-		 * Pattern: (SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?
-		 */
+		/** Required */
 		Stat: string;
 	}
 	export interface DeleteAnomalyDetectorInputFormProperties {
@@ -1723,7 +1693,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 
@@ -1734,15 +1703,12 @@ export namespace MyNS {
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: (SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?
-		 */
+		/** Required */
 		Stat: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteAnomalyDetectorInputFormGroup() {
 		return new FormGroup<DeleteAnomalyDetectorInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 			Stat: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1842,12 +1808,9 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: string;
 		Statistic?: MetricAlarmStatistic | null;
-
-		/** Pattern: p(\d{1,2}(\.\d{0,2})?|100) */
 		ExtendedStatistic?: string | null;
 
 		/** Maximum items: 10 */
@@ -1870,12 +1833,9 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 		Statistic: FormControl<MetricAlarmStatistic | null | undefined>,
-
-		/** Pattern: p(\d{1,2}(\.\d{0,2})?|100) */
 		ExtendedStatistic: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
@@ -1885,7 +1845,7 @@ export namespace MyNS {
 	export function CreateDescribeAlarmsForMetricInputFormGroup() {
 		return new FormGroup<DescribeAlarmsForMetricInputFormProperties>({
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
 			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -1990,7 +1950,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace?: string | null;
 
@@ -2012,7 +1971,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 
@@ -2026,7 +1984,7 @@ export namespace MyNS {
 		return new FormGroup<DescribeAnomalyDetectorsInputFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 		});
 
@@ -2139,7 +2097,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		RuleName: string;
 
@@ -2160,7 +2117,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		OrderBy?: string | null;
 	}
@@ -2170,7 +2126,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		RuleName: FormControl<string | null | undefined>,
 
@@ -2190,18 +2145,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		OrderBy: FormControl<string | null | undefined>,
 	}
 	export function CreateGetInsightRuleReportInputFormGroup() {
 		return new FormGroup<GetInsightRuleReportInputFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			MaxContributorCount: new FormControl<number | null | undefined>(undefined),
-			OrderBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
+			OrderBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
 		});
 
 	}
@@ -2248,7 +2202,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: string;
 
@@ -2293,7 +2246,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 
@@ -2319,7 +2271,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMetricStatisticsInputFormGroup() {
 		return new FormGroup<GetMetricStatisticsInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -2372,7 +2324,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace?: string | null;
 
@@ -2391,7 +2342,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 
@@ -2404,7 +2354,7 @@ export namespace MyNS {
 	}
 	export function CreateListMetricsInputFormGroup() {
 		return new FormGroup<ListMetricsInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2444,7 +2394,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: string;
 
@@ -2458,10 +2407,7 @@ export namespace MyNS {
 		/** Maximum items: 10 */
 		Dimensions?: Array<Dimension>;
 
-		/**
-		 * Required
-		 * Pattern: (SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?
-		 */
+		/** Required */
 		Stat: string;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
@@ -2473,7 +2419,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 
@@ -2484,15 +2429,12 @@ export namespace MyNS {
 		 */
 		MetricName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: (SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?
-		 */
+		/** Required */
 		Stat: FormControl<string | null | undefined>,
 	}
 	export function CreatePutAnomalyDetectorInputFormGroup() {
 		return new FormGroup<PutAnomalyDetectorInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
 			Stat: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2595,14 +2537,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		RuleName: string;
 
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		RuleState?: string | null;
 
@@ -2610,7 +2550,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: [\x00-\x7F]+
 		 */
 		RuleDefinition: string;
 		Tags?: Array<Tag>;
@@ -2621,14 +2560,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 128
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		RuleName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 32
 		 * Min length: 1
-		 * Pattern: [\x20-\x7E]+
 		 */
 		RuleState: FormControl<string | null | undefined>,
 
@@ -2636,15 +2573,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 8192
 		 * Min length: 1
-		 * Pattern: [\x00-\x7F]+
 		 */
 		RuleDefinition: FormControl<string | null | undefined>,
 	}
 	export function CreatePutInsightRuleInputFormGroup() {
 		return new FormGroup<PutInsightRuleInputFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			RuleState: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			RuleDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
+			RuleState: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
+			RuleDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('[\x00-\x7F]+')]),
 		});
 
 	}
@@ -2683,12 +2619,9 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace?: string | null;
 		Statistic?: MetricAlarmStatistic | null;
-
-		/** Pattern: p(\d{1,2}(\.\d{0,2})?|100) */
 		ExtendedStatistic?: string | null;
 
 		/** Maximum items: 10 */
@@ -2756,12 +2689,9 @@ export namespace MyNS {
 		/**
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 		Statistic: FormControl<MetricAlarmStatistic | null | undefined>,
-
-		/** Pattern: p(\d{1,2}(\.\d{0,2})?|100) */
 		ExtendedStatistic: FormControl<string | null | undefined>,
 
 		/** Minimum: 1 */
@@ -2805,7 +2735,7 @@ export namespace MyNS {
 			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
 			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
 			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
 			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -2829,7 +2759,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: string;
 
@@ -2842,13 +2771,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 255
 		 * Min length: 1
-		 * Pattern: [^:].*
 		 */
 		Namespace: FormControl<string | null | undefined>,
 	}
 	export function CreatePutMetricDataInputFormGroup() {
 		return new FormGroup<PutMetricDataInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
 		});
 
 	}
@@ -3503,23 +3431,17 @@ export namespace MyNS {
 	export interface GET_PutAnomalyDetectorConfiguration {
 		ExcludedTimeRanges?: Array<Range>;
 
-		/**
-		 * Max length: 50
-		 * Pattern: .*
-		 */
+		/** Max length: 50 */
 		MetricTimezone?: string | null;
 	}
 	export interface GET_PutAnomalyDetectorConfigurationFormProperties {
 
-		/**
-		 * Max length: 50
-		 * Pattern: .*
-		 */
+		/** Max length: 50 */
 		MetricTimezone: FormControl<string | null | undefined>,
 	}
 	export function CreateGET_PutAnomalyDetectorConfigurationFormGroup() {
 		return new FormGroup<GET_PutAnomalyDetectorConfigurationFormProperties>({
-			MetricTimezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
+			MetricTimezone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.pattern('.*')]),
 		});
 
 	}

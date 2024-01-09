@@ -9,15 +9,11 @@ export namespace MyNS {
 
 		/** Minimum items: 0 */
 		Entitlements?: Array<Entitlement>;
-
-		/** Pattern: \S+ */
 		NextToken?: string | null;
 	}
 
 	/** The GetEntitlementsRequest contains results from the GetEntitlements operation. */
 	export interface GetEntitlementsResultFormProperties {
-
-		/** Pattern: \S+ */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateGetEntitlementsResultFormGroup() {
@@ -36,11 +32,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ProductCode?: string | null;
-
-		/** Pattern: \S+ */
 		Dimension?: string | null;
-
-		/** Pattern: \S+ */
 		CustomerIdentifier?: string | null;
 
 		/** The EntitlementValue represents the amount of capacity that the customer is entitled to for the product. */
@@ -56,11 +48,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ProductCode: FormControl<string | null | undefined>,
-
-		/** Pattern: \S+ */
 		Dimension: FormControl<string | null | undefined>,
-
-		/** Pattern: \S+ */
 		CustomerIdentifier: FormControl<string | null | undefined>,
 		ExpirationDate: FormControl<Date | null | undefined>,
 	}
@@ -111,8 +99,6 @@ export namespace MyNS {
 		 */
 		ProductCode: string;
 		Filter?: GetEntitlementFilters;
-
-		/** Pattern: \S+ */
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
@@ -126,8 +112,6 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ProductCode: FormControl<string | null | undefined>,
-
-		/** Pattern: \S+ */
 		NextToken: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 	}

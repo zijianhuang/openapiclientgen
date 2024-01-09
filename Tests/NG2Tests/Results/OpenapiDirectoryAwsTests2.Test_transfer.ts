@@ -9,7 +9,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -19,13 +18,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateServerResponseFormGroup() {
 		return new FormGroup<CreateServerResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -51,7 +49,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		LoggingRole?: string | null;
 
@@ -82,7 +79,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		LoggingRole: FormControl<string | null | undefined>,
 	}
@@ -92,7 +88,7 @@ export namespace MyNS {
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
 			HostKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 			IdentityProviderType: new FormControl<CreateServerRequestIdentityProviderType | null | undefined>(undefined),
-			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
 		});
 
 	}
@@ -106,7 +102,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^vpce-[0-9a-f]{17}$
 		 */
 		VpcEndpointId?: string | null;
 		VpcId?: string | null;
@@ -118,14 +113,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 22
 		 * Min length: 22
-		 * Pattern: ^vpce-[0-9a-f]{17}$
 		 */
 		VpcEndpointId: FormControl<string | null | undefined>,
 		VpcId: FormControl<string | null | undefined>,
 	}
 	export function CreateEndpointDetailsFormGroup() {
 		return new FormGroup<EndpointDetailsFormProperties>({
-			VpcEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22)]),
+			VpcEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(22), Validators.minLength(22), Validators.pattern('^vpce-[0-9a-f]{17}$')]),
 			VpcId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -143,7 +137,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		InvocationRole?: string | null;
 	}
@@ -157,14 +150,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		InvocationRole: FormControl<string | null | undefined>,
 	}
 	export function CreateIdentityProviderDetailsFormGroup() {
 		return new FormGroup<IdentityProviderDetailsFormProperties>({
 			Url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			InvocationRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			InvocationRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
 		});
 
 	}
@@ -279,7 +271,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -287,7 +278,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
@@ -297,7 +287,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -305,24 +294,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserResponseFormGroup() {
 		return new FormGroup<CreateUserResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
 
 	export interface CreateUserRequest {
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory?: string | null;
 		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
 
@@ -339,7 +324,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role: string;
 
@@ -347,14 +331,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
-		/**
-		 * Max length: 2048
-		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
-		 */
+		/** Max length: 2048 */
 		SshPublicKeyBody?: string | null;
 
 		/**
@@ -367,16 +347,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
 	export interface CreateUserRequestFormProperties {
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
 
@@ -387,7 +363,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role: FormControl<string | null | undefined>,
 
@@ -395,33 +370,28 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 2048
-		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
-		 */
+		/** Max length: 2048 */
 		SshPublicKeyBody: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
-			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^$|/.*')]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
 			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -435,14 +405,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: ^/.*
 		 */
 		Entry: string;
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: ^/.*
 		 */
 		Target: string;
 	}
@@ -453,21 +421,19 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: ^/.*
 		 */
 		Entry: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: ^/.*
 		 */
 		Target: FormControl<string | null | undefined>,
 	}
 	export function CreateHomeDirectoryMapEntryFormGroup() {
 		return new FormGroup<HomeDirectoryMapEntryFormProperties>({
-			Entry: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
-			Target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			Entry: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('^/.*')]),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('^/.*')]),
 		});
 
 	}
@@ -488,7 +454,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -498,13 +463,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteServerRequestFormGroup() {
 		return new FormGroup<DeleteServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -515,7 +479,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -523,7 +486,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 21
-		 * Pattern: ^key-[0-9a-f]{17}$
 		 */
 		SshPublicKeyId: string;
 
@@ -531,7 +493,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
@@ -541,7 +502,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -549,7 +509,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 21
-		 * Pattern: ^key-[0-9a-f]{17}$
 		 */
 		SshPublicKeyId: FormControl<string | null | undefined>,
 
@@ -557,15 +516,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteSshPublicKeyRequestFormGroup() {
 		return new FormGroup<DeleteSshPublicKeyRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21), Validators.pattern('^key-[0-9a-f]{17}$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -576,7 +534,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -584,7 +541,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
@@ -594,7 +550,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -602,14 +557,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDeleteUserRequestFormGroup() {
 		return new FormGroup<DeleteUserRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -638,7 +592,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: string;
 
@@ -659,7 +612,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		LoggingRole?: string | null;
 
@@ -672,7 +624,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId?: string | null;
 
@@ -694,7 +645,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -709,14 +659,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		LoggingRole: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -726,13 +674,13 @@ export namespace MyNS {
 	}
 	export function CreateDescribedServerFormGroup() {
 		return new FormGroup<DescribedServerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
 			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600)]),
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
 			HostKeyFingerprint: new FormControl<string | null | undefined>(undefined),
 			IdentityProviderType: new FormControl<CreateServerRequestIdentityProviderType | null | undefined>(undefined),
-			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19)]),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 			State: new FormControl<DescribedServerState | null | undefined>(undefined),
 			UserCount: new FormControl<number | null | undefined>(undefined),
 		});
@@ -747,7 +695,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -757,13 +704,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeServerRequestFormGroup() {
 		return new FormGroup<DescribeServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -774,7 +720,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -790,13 +735,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUserResponseFormGroup() {
 		return new FormGroup<DescribeUserResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -809,14 +753,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: string;
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory?: string | null;
 
 		/**
@@ -832,7 +772,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role?: string | null;
 
@@ -848,7 +787,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName?: string | null;
 	}
@@ -860,14 +798,10 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
 
@@ -877,25 +811,23 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribedUserFormGroup() {
 		return new FormGroup<DescribedUserFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
-			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^$|/.*')]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
 			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(3)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -910,7 +842,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
 		 */
 		SshPublicKeyBody: string;
 
@@ -918,7 +849,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 21
-		 * Pattern: ^key-[0-9a-f]{17}$
 		 */
 		SshPublicKeyId: string;
 	}
@@ -932,7 +862,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
 		 */
 		SshPublicKeyBody: FormControl<string | null | undefined>,
 
@@ -940,15 +869,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 21
-		 * Pattern: ^key-[0-9a-f]{17}$
 		 */
 		SshPublicKeyId: FormControl<string | null | undefined>,
 	}
 	export function CreateSshPublicKeyFormGroup() {
 		return new FormGroup<SshPublicKeyFormProperties>({
 			DateImported: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
-			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21)]),
+			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$')]),
+			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21), Validators.pattern('^key-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -959,7 +887,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -967,7 +894,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
@@ -977,7 +903,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -985,14 +910,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeUserRequestFormGroup() {
 		return new FormGroup<DescribeUserRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -1005,7 +929,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -1013,7 +936,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 21
-		 * Pattern: ^key-[0-9a-f]{17}$
 		 */
 		SshPublicKeyId: string;
 
@@ -1021,7 +943,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
@@ -1033,7 +954,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -1041,7 +961,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 21
 		 * Min length: 21
-		 * Pattern: ^key-[0-9a-f]{17}$
 		 */
 		SshPublicKeyId: FormControl<string | null | undefined>,
 
@@ -1049,15 +968,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateImportSshPublicKeyResponseFormGroup() {
 		return new FormGroup<ImportSshPublicKeyResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			SshPublicKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(21), Validators.pattern('^key-[0-9a-f]{17}$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -1068,14 +986,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
 		 */
 		SshPublicKeyBody: string;
 
@@ -1083,7 +999,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
@@ -1093,14 +1008,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 2048
-		 * Pattern: ^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$
 		 */
 		SshPublicKeyBody: FormControl<string | null | undefined>,
 
@@ -1108,15 +1021,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateImportSshPublicKeyRequestFormGroup() {
 		return new FormGroup<ImportSshPublicKeyRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			SshPublicKeyBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -1155,7 +1067,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: string;
 
@@ -1166,14 +1077,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		LoggingRole?: string | null;
 
 		/**
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId?: string | null;
 
@@ -1189,7 +1098,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -1200,14 +1108,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		LoggingRole: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -1217,11 +1123,11 @@ export namespace MyNS {
 	}
 	export function CreateListedServerFormGroup() {
 		return new FormGroup<ListedServerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
 			IdentityProviderType: new FormControl<CreateServerRequestIdentityProviderType | null | undefined>(undefined),
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
-			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19)]),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 			State: new FormControl<DescribedServerState | null | undefined>(undefined),
 			UserCount: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1279,7 +1185,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn?: string | null;
 
@@ -1300,7 +1205,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -1312,7 +1216,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(20)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
 		});
 
@@ -1324,7 +1228,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: string;
 
@@ -1346,7 +1249,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 
@@ -1364,7 +1266,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
 		});
@@ -1383,7 +1285,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -1402,14 +1303,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateListUsersResponseFormGroup() {
 		return new FormGroup<ListUsersResponseFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1422,21 +1322,16 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: string;
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory?: string | null;
 		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
 
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role?: string | null;
 		SshPublicKeyCount?: number | null;
@@ -1444,7 +1339,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName?: string | null;
 	}
@@ -1456,21 +1350,16 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
 
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role: FormControl<string | null | undefined>,
 		SshPublicKeyCount: FormControl<number | null | undefined>,
@@ -1478,18 +1367,17 @@ export namespace MyNS {
 		/**
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateListedUserFormGroup() {
 		return new FormGroup<ListedUserFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
-			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^$|/.*')]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
 			SshPublicKeyCount: new FormControl<number | null | undefined>(undefined),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(3)]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
@@ -1512,7 +1400,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -1534,7 +1421,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
@@ -1542,7 +1428,7 @@ export namespace MyNS {
 		return new FormGroup<ListUsersRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1553,7 +1439,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -1563,13 +1448,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateStartServerRequestFormGroup() {
 		return new FormGroup<StartServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1580,7 +1464,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -1590,13 +1473,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateStopServerRequestFormGroup() {
 		return new FormGroup<StopServerRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1607,7 +1489,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: string;
 
@@ -1624,13 +1505,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
 		});
 
 	}
@@ -1677,22 +1557,17 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 		ServerProtocol?: Protocol | null;
 
-		/**
-		 * Max length: 32
-		 * Pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
-		 */
+		/** Max length: 32 */
 		SourceIp?: string | null;
 
 		/**
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 
@@ -1705,22 +1580,17 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 		ServerProtocol: FormControl<Protocol | null | undefined>,
 
-		/**
-		 * Max length: 32
-		 * Pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
-		 */
+		/** Max length: 32 */
 		SourceIp: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 
@@ -1729,10 +1599,10 @@ export namespace MyNS {
 	}
 	export function CreateTestIdentityProviderRequestFormGroup() {
 		return new FormGroup<TestIdentityProviderRequestFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 			ServerProtocol: new FormControl<Protocol | null | undefined>(undefined),
-			SourceIp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			SourceIp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.pattern('^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 			UserPassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
@@ -1744,7 +1614,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: string;
 
@@ -1761,13 +1630,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 20
-		 * Pattern: arn:.*
 		 */
 		Arn: FormControl<string | null | undefined>,
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(20), Validators.pattern('arn:.*')]),
 		});
 
 	}
@@ -1778,7 +1646,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -1788,13 +1655,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateServerResponseFormGroup() {
 		return new FormGroup<UpdateServerResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1814,10 +1680,7 @@ export namespace MyNS {
 		/** Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication. */
 		IdentityProviderDetails?: IdentityProviderDetails;
 
-		/**
-		 * Max length: 2048
-		 * Pattern: ^$|arn:.*role/.*
-		 */
+		/** Max length: 2048 */
 		LoggingRole?: string | null;
 
 		/**
@@ -1830,7 +1693,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 	}
@@ -1843,17 +1705,13 @@ export namespace MyNS {
 		/** Max length: 4096 */
 		HostKey: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 2048
-		 * Pattern: ^$|arn:.*role/.*
-		 */
+		/** Max length: 2048 */
 		LoggingRole: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 	}
@@ -1862,8 +1720,8 @@ export namespace MyNS {
 			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600)]),
 			EndpointType: new FormControl<CreateServerRequestEndpointType | null | undefined>(undefined),
 			HostKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
-			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
+			LoggingRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('^$|arn:.*role/.*')]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1886,7 +1744,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -1894,7 +1751,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
@@ -1906,7 +1762,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -1914,24 +1769,20 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserResponseFormGroup() {
 		return new FormGroup<UpdateUserResponseFormProperties>({
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}
 
 	export interface UpdateUserRequest {
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory?: string | null;
 		HomeDirectoryType?: CreateUserRequestHomeDirectoryType | null;
 
@@ -1947,7 +1798,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role?: string | null;
 
@@ -1955,7 +1805,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: string;
 
@@ -1963,16 +1812,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: string;
 	}
 	export interface UpdateUserRequestFormProperties {
 
-		/**
-		 * Max length: 1024
-		 * Pattern: ^$|/.*
-		 */
+		/** Max length: 1024 */
 		HomeDirectory: FormControl<string | null | undefined>,
 		HomeDirectoryType: FormControl<CreateUserRequestHomeDirectoryType | null | undefined>,
 
@@ -1982,7 +1827,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 2048
 		 * Min length: 20
-		 * Pattern: arn:.*role/.*
 		 */
 		Role: FormControl<string | null | undefined>,
 
@@ -1990,7 +1834,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 19
 		 * Min length: 19
-		 * Pattern: ^s-([0-9a-f]{17})$
 		 */
 		ServerId: FormControl<string | null | undefined>,
 
@@ -1998,18 +1841,17 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 3
-		 * Pattern: ^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$
 		 */
 		UserName: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdateUserRequestFormGroup() {
 		return new FormGroup<UpdateUserRequestFormProperties>({
-			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			HomeDirectory: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^$|/.*')]),
 			HomeDirectoryType: new FormControl<CreateUserRequestHomeDirectoryType | null | undefined>(undefined),
 			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19)]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3)]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:.*role/.*')]),
+			ServerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^s-([0-9a-f]{17})$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(3), Validators.pattern('^[a-zA-Z0-9_][a-zA-Z0-9_-]{2,31}$')]),
 		});
 
 	}

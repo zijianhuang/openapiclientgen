@@ -22,14 +22,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Username?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Password?: string | null;
 
@@ -46,14 +44,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Username: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Password: FormControl<string | null | undefined>,
 
@@ -65,8 +61,8 @@ export namespace MyNS {
 	}
 	export function CreateIceServerFormGroup() {
 		return new FormGroup<IceServerFormProperties>({
-			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Ttl: new FormControl<number | null | undefined>(undefined, [Validators.min(30), Validators.max(86400)]),
 		});
 
@@ -163,14 +159,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ClientId?: string | null;
 		Service?: Service | null;
@@ -178,7 +172,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Username?: string | null;
 	}
@@ -188,14 +181,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ClientId: FormControl<string | null | undefined>,
 		Service: FormControl<Service | null | undefined>,
@@ -203,16 +194,15 @@ export namespace MyNS {
 		/**
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Username: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIceServerConfigRequestFormGroup() {
 		return new FormGroup<GetIceServerConfigRequestFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Service: new FormControl<Service | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -223,7 +213,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -231,7 +220,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		SenderClientId: string;
 
@@ -239,7 +227,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10000
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9+/=]+
 		 */
 		MessagePayload: string;
 	}
@@ -249,7 +236,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
@@ -257,7 +243,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		SenderClientId: FormControl<string | null | undefined>,
 
@@ -265,15 +250,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10000
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9+/=]+
 		 */
 		MessagePayload: FormControl<string | null | undefined>,
 	}
 	export function CreateSendAlexaOfferToMasterRequestFormGroup() {
 		return new FormGroup<SendAlexaOfferToMasterRequestFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			SenderClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			MessagePayload: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			SenderClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MessagePayload: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9+/=]+')]),
 		});
 
 	}
@@ -309,7 +293,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -317,7 +300,6 @@ export namespace MyNS {
 		 * Unique identifier for the viewer. Must be unique within the signaling channel.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ClientId?: string | null;
 
@@ -328,7 +310,6 @@ export namespace MyNS {
 		 * An optional user ID to be associated with the credentials.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Username?: string | null;
 	}
@@ -339,7 +320,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
@@ -347,7 +327,6 @@ export namespace MyNS {
 		 * Unique identifier for the viewer. Must be unique within the signaling channel.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		ClientId: FormControl<string | null | undefined>,
 
@@ -358,16 +337,15 @@ export namespace MyNS {
 		 * An optional user ID to be associated with the credentials.
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		Username: FormControl<string | null | undefined>,
 	}
 	export function CreateGetIceServerConfigPostBodyFormGroup() {
 		return new FormGroup<GetIceServerConfigPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Service: new FormControl<Service | null | undefined>(undefined),
-			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -379,7 +357,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: string;
 
@@ -388,7 +365,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		SenderClientId: string;
 
@@ -397,7 +373,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10000
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9+/=]+
 		 */
 		MessagePayload: string;
 	}
@@ -408,7 +383,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1024
 		 * Min length: 1
-		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		 */
 		ChannelARN: FormControl<string | null | undefined>,
 
@@ -417,7 +391,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9_.-]+
 		 */
 		SenderClientId: FormControl<string | null | undefined>,
 
@@ -426,15 +399,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 10000
 		 * Min length: 1
-		 * Pattern: [a-zA-Z0-9+/=]+
 		 */
 		MessagePayload: FormControl<string | null | undefined>,
 	}
 	export function CreateSendAlexaOfferToMasterPostBodyFormGroup() {
 		return new FormGroup<SendAlexaOfferToMasterPostBodyFormProperties>({
-			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			SenderClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			MessagePayload: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
+			ChannelARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			SenderClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			MessagePayload: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9+/=]+')]),
 		});
 
 	}

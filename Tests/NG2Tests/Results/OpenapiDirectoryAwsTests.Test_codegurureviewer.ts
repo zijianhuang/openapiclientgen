@@ -29,28 +29,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		AssociationArn?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
@@ -77,28 +73,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		AssociationArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
@@ -115,10 +107,10 @@ export namespace MyNS {
 	export function CreateRepositoryAssociationFormGroup() {
 		return new FormGroup<RepositoryAssociationFormProperties>({
 			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			AssociationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			AssociationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$')]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S(.*\S)?$')]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<RepositoryAssociationState | null | undefined>(undefined),
 			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
@@ -140,7 +132,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: string;
 	}
@@ -152,13 +143,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeCommitRepositoryFormGroup() {
 		return new FormGroup<CodeCommitRepositoryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
 		});
 
 	}
@@ -171,7 +161,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: string;
 
@@ -179,7 +168,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: string;
 
@@ -187,7 +175,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner: string;
 	}
@@ -199,7 +186,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -207,7 +193,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 
@@ -215,15 +200,14 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner: FormControl<string | null | undefined>,
 	}
 	export function CreateThirdPartySourceRepositoryFormGroup() {
 		return new FormGroup<ThirdPartySourceRepositoryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
-			Owner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S(.*\S)?$')]),
 		});
 
 	}
@@ -298,28 +282,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		RepositoryName?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
@@ -353,28 +333,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		RepositoryName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
@@ -397,10 +373,10 @@ export namespace MyNS {
 	}
 	export function CreateCodeReviewFormGroup() {
 		return new FormGroup<CodeReviewFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			RepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$')]),
+			RepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S(.*\S)?$')]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<CodeReviewState | null | undefined>(undefined),
 			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
@@ -523,7 +499,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn?: string | null;
 
@@ -554,7 +529,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
 
@@ -574,7 +548,7 @@ export namespace MyNS {
 	}
 	export function CreateRecommendationFeedbackFormGroup() {
 		return new FormGroup<RecommendationFeedbackFormProperties>({
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$')]),
 			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
 			UserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
 			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
@@ -652,28 +626,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		RepositoryName?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
@@ -698,28 +668,24 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		RepositoryName: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
@@ -736,10 +702,10 @@ export namespace MyNS {
 	}
 	export function CreateCodeReviewSummaryFormGroup() {
 		return new FormGroup<CodeReviewSummaryFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			RepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$')]),
+			RepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S(.*\S)?$')]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<CodeReviewState | null | undefined>(undefined),
 			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
@@ -958,14 +924,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		AssociationArn?: string | null;
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn?: string | null;
 		LastUpdatedTimeStamp?: Date | null;
@@ -979,14 +943,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name?: string | null;
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner?: string | null;
 		ProviderType?: RepositoryAssociationProviderType | null;
@@ -999,14 +961,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		AssociationArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 256
 		 * Min length: 0
-		 * Pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
 		 */
 		ConnectionArn: FormControl<string | null | undefined>,
 		LastUpdatedTimeStamp: FormControl<Date | null | undefined>,
@@ -1020,14 +980,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S[\w.-]*$
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Max length: 100
 		 * Min length: 1
-		 * Pattern: ^\S(.*\S)?$
 		 */
 		Owner: FormControl<string | null | undefined>,
 		ProviderType: FormControl<RepositoryAssociationProviderType | null | undefined>,
@@ -1035,12 +993,12 @@ export namespace MyNS {
 	}
 	export function CreateRepositoryAssociationSummaryFormGroup() {
 		return new FormGroup<RepositoryAssociationSummaryFormProperties>({
-			AssociationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			AssociationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$')]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 			LastUpdatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
 			AssociationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S[\w.-]*$')]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^\S(.*\S)?$')]),
 			ProviderType: new FormControl<RepositoryAssociationProviderType | null | undefined>(undefined),
 			State: new FormControl<RepositoryAssociationState | null | undefined>(undefined),
 		});
@@ -1088,7 +1046,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -1097,13 +1054,12 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateRepositoryRequestFormGroup() {
 		return new FormGroup<AssociateRepositoryRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -1196,7 +1152,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn: string;
 
@@ -1220,7 +1175,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
 
@@ -1233,7 +1187,7 @@ export namespace MyNS {
 	}
 	export function CreatePutRecommendationFeedbackRequestFormGroup() {
 		return new FormGroup<PutRecommendationFeedbackRequestFormProperties>({
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$')]),
 			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 
@@ -1373,7 +1327,6 @@ export namespace MyNS {
 		 * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p> <p>To add a new repository association, this parameter specifies a unique identifier for the new repository association that helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a ClientRequestToken yourself for new versions and include that value in the request.</p> <p>You typically interact with this value if you implement your own retry logic and want to ensure that a given repository association is not created twice. We recommend that you generate a UUID-type value to ensure uniqueness within the specified repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -1383,13 +1336,12 @@ export namespace MyNS {
 		 * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p> <p>To add a new repository association, this parameter specifies a unique identifier for the new repository association that helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a ClientRequestToken yourself for new versions and include that value in the request.</p> <p>You typically interact with this value if you implement your own retry logic and want to ensure that a given repository association is not created twice. We recommend that you generate a UUID-type value to ensure uniqueness within the specified repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^[\w-]+$
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
 	export function CreateAssociateRepositoryPostBodyFormGroup() {
 		return new FormGroup<AssociateRepositoryPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -1417,7 +1369,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn: string;
 
@@ -1444,7 +1395,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 1600
 		 * Min length: 1
-		 * Pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
 		 */
 		CodeReviewArn: FormControl<string | null | undefined>,
 
@@ -1458,7 +1408,7 @@ export namespace MyNS {
 	}
 	export function CreatePutRecommendationFeedbackPutBodyFormGroup() {
 		return new FormGroup<PutRecommendationFeedbackPutBodyFormProperties>({
-			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			CodeReviewArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$')]),
 			RecommendationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
 		});
 

@@ -67,21 +67,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: string;
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
 		 */
 		HumanLoopArn: string;
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
 		 */
 		FlowDefinitionArn: string;
 
@@ -102,21 +99,18 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
 		 */
 		HumanLoopArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
 		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
@@ -126,9 +120,9 @@ export namespace MyNS {
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 			FailureCode: new FormControl<string | null | undefined>(undefined),
 			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined, [Validators.required]),
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
-			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*')]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 		});
 
 	}
@@ -161,23 +155,17 @@ export namespace MyNS {
 		/** Required */
 		HumanLoopSummaries: Array<HumanLoopSummary>;
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .*
-		 */
+		/** Max length: 8192 */
 		NextToken?: string | null;
 	}
 	export interface ListHumanLoopsResponseFormProperties {
 
-		/**
-		 * Max length: 8192
-		 * Pattern: .*
-		 */
+		/** Max length: 8192 */
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateListHumanLoopsResponseFormGroup() {
 		return new FormGroup<ListHumanLoopsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.*')]),
 		});
 
 	}
@@ -189,7 +177,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName?: string | null;
 		HumanLoopStatus?: DescribeHumanLoopResponseHumanLoopStatus | null;
@@ -198,10 +185,7 @@ export namespace MyNS {
 		/** Max length: 1024 */
 		FailureReason?: string | null;
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
-		 */
+		/** Max length: 1024 */
 		FlowDefinitionArn?: string | null;
 	}
 
@@ -211,7 +195,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 		HumanLoopStatus: FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>,
@@ -220,42 +203,33 @@ export namespace MyNS {
 		/** Max length: 1024 */
 		FailureReason: FormControl<string | null | undefined>,
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
-		 */
+		/** Max length: 1024 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateHumanLoopSummaryFormGroup() {
 		return new FormGroup<HumanLoopSummaryFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1)]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 		});
 
 	}
 
 	export interface StartHumanLoopResponse {
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
-		 */
+		/** Max length: 1024 */
 		HumanLoopArn?: string | null;
 	}
 	export interface StartHumanLoopResponseFormProperties {
 
-		/**
-		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*
-		 */
+		/** Max length: 1024 */
 		HumanLoopArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartHumanLoopResponseFormGroup() {
 		return new FormGroup<StartHumanLoopResponseFormProperties>({
-			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*')]),
 		});
 
 	}
@@ -379,14 +353,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: string;
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
 		 */
 		FlowDefinitionArn: string;
 
@@ -405,21 +377,19 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
 		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartHumanLoopRequestFormGroup() {
 		return new FormGroup<StartHumanLoopRequestFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 		});
 
 	}
@@ -430,7 +400,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: string;
 	}
@@ -440,13 +409,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 	}
 	export function CreateStopHumanLoopRequestFormGroup() {
 		return new FormGroup<StopHumanLoopRequestFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 		});
 
 	}
@@ -517,7 +485,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: string;
 
@@ -525,7 +492,6 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
 		 */
 		FlowDefinitionArn: string;
 
@@ -545,7 +511,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 
@@ -553,14 +518,13 @@ export namespace MyNS {
 		 * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
 		 * Required
 		 * Max length: 1024
-		 * Pattern: arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*
 		 */
 		FlowDefinitionArn: FormControl<string | null | undefined>,
 	}
 	export function CreateStartHumanLoopPostBodyFormGroup() {
 		return new FormGroup<StartHumanLoopPostBodyFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
-			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 		});
 
 	}
@@ -602,7 +566,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: string;
 	}
@@ -613,13 +576,12 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 63
 		 * Min length: 1
-		 * Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		 */
 		HumanLoopName: FormControl<string | null | undefined>,
 	}
 	export function CreateStopHumanLoopPostBodyFormGroup() {
 		return new FormGroup<StopHumanLoopPostBodyFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1)]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 		});
 
 	}

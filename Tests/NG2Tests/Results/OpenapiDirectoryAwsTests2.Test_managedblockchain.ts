@@ -51,7 +51,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 16
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
 		 */
 		AdminUsername: string;
 
@@ -59,7 +58,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 8
-		 * Pattern: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[@'\\"/])[a-zA-Z0-9\S]*$
 		 */
 		AdminPassword: string;
 	}
@@ -71,7 +69,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 16
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
 		 */
 		AdminUsername: FormControl<string | null | undefined>,
 
@@ -79,14 +76,13 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 32
 		 * Min length: 8
-		 * Pattern: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[@'\\"/])[a-zA-Z0-9\S]*$
 		 */
 		AdminPassword: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberFabricConfigurationFormGroup() {
 		return new FormGroup<MemberFabricConfigurationFormProperties>({
-			AdminUsername: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16), Validators.minLength(1)]),
-			AdminPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(8)]),
+			AdminUsername: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9]*$')]),
+			AdminPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[@\'\\"/])[a-zA-Z0-9\S]*$')]),
 		});
 
 	}
@@ -528,7 +524,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name?: string | null;
 
@@ -562,7 +557,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -575,7 +569,7 @@ export namespace MyNS {
 		return new FormGroup<MemberFormProperties>({
 			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Status: new FormControl<MemberStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
@@ -607,7 +601,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 16
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
 		 */
 		AdminUsername?: string | null;
 		CaEndpoint?: string | null;
@@ -619,14 +612,13 @@ export namespace MyNS {
 		/**
 		 * Max length: 16
 		 * Min length: 1
-		 * Pattern: ^[a-zA-Z][a-zA-Z0-9]*$
 		 */
 		AdminUsername: FormControl<string | null | undefined>,
 		CaEndpoint: FormControl<string | null | undefined>,
 	}
 	export function CreateMemberFabricAttributesFormGroup() {
 		return new FormGroup<MemberFabricAttributesFormProperties>({
-			AdminUsername: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1)]),
+			AdminUsername: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9]*$')]),
 			CaEndpoint: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -660,7 +652,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -696,7 +687,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -716,7 +706,7 @@ export namespace MyNS {
 	export function CreateNetworkFormGroup() {
 		return new FormGroup<NetworkFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Framework: new FormControl<NetworkFramework | null | undefined>(undefined),
 			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1)]),
@@ -952,7 +942,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		ProposedByMemberName?: string | null;
 		Status?: ProposalStatus | null;
@@ -990,7 +979,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		ProposedByMemberName: FormControl<string | null | undefined>,
 		Status: FormControl<ProposalStatus | null | undefined>,
@@ -1006,7 +994,7 @@ export namespace MyNS {
 			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			ProposedByMemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			ProposedByMemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ProposedByMemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			Status: new FormControl<ProposalStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
@@ -1107,7 +1095,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name?: string | null;
 
@@ -1136,7 +1123,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1155,7 +1141,7 @@ export namespace MyNS {
 	export function CreateNetworkSummaryFormGroup() {
 		return new FormGroup<NetworkSummaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Framework: new FormControl<NetworkFramework | null | undefined>(undefined),
 			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1)]),
@@ -1196,7 +1182,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name?: string | null;
 
@@ -1219,7 +1204,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1232,7 +1216,7 @@ export namespace MyNS {
 	export function CreateMemberSummaryFormGroup() {
 		return new FormGroup<MemberSummaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Status: new FormControl<MemberStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
@@ -1342,7 +1326,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		MemberName?: string | null;
 
@@ -1360,7 +1343,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		MemberName: FormControl<string | null | undefined>,
 
@@ -1373,7 +1355,7 @@ export namespace MyNS {
 	export function CreateVoteSummaryFormGroup() {
 		return new FormGroup<VoteSummaryFormProperties>({
 			Vote: new FormControl<VoteSummaryVote | null | undefined>(undefined),
-			MemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			MemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 		});
 
@@ -1421,7 +1403,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		ProposedByMemberName?: string | null;
 		Status?: ProposalStatus | null;
@@ -1450,7 +1431,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		ProposedByMemberName: FormControl<string | null | undefined>,
 		Status: FormControl<ProposalStatus | null | undefined>,
@@ -1462,7 +1442,7 @@ export namespace MyNS {
 			ProposalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			ProposedByMemberId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			ProposedByMemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ProposedByMemberName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			Status: new FormControl<ProposalStatus | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
@@ -1530,7 +1510,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name: string;
 
@@ -1554,7 +1533,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1563,7 +1541,7 @@ export namespace MyNS {
 	}
 	export function CreateMemberConfigurationFormGroup() {
 		return new FormGroup<MemberConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
@@ -1647,7 +1625,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -1692,7 +1669,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1712,7 +1688,7 @@ export namespace MyNS {
 	export function CreateCreateNetworkInputFormGroup() {
 		return new FormGroup<CreateNetworkInputFormProperties>({
 			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Framework: new FormControl<NetworkFramework | null | undefined>(undefined, [Validators.required]),
 			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
@@ -2330,7 +2306,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name?: string | null;
 
@@ -2348,7 +2323,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2357,7 +2331,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMemberPostBodyMemberConfigurationFormGroup() {
 		return new FormGroup<CreateMemberPostBodyMemberConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 
@@ -2378,7 +2352,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: string;
 
@@ -2432,7 +2405,6 @@ export namespace MyNS {
 		 * Required
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: .*\S.*
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2459,7 +2431,7 @@ export namespace MyNS {
 	export function CreateCreateNetworkPostBodyFormGroup() {
 		return new FormGroup<CreateNetworkPostBodyFormProperties>({
 			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Framework: new FormControl<NetworkFramework | null | undefined>(undefined, [Validators.required]),
 			FrameworkVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
@@ -2498,7 +2470,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name?: string | null;
 
@@ -2516,7 +2487,6 @@ export namespace MyNS {
 		/**
 		 * Max length: 64
 		 * Min length: 1
-		 * Pattern: ^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2525,7 +2495,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateNetworkPostBodyMemberConfigurationFormGroup() {
 		return new FormGroup<CreateNetworkPostBodyMemberConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 		});
 

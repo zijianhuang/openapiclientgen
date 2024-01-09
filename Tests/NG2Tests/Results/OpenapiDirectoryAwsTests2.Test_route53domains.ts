@@ -662,7 +662,6 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: [a-zA-Z0-9_\-.]*
 		 */
 		Name: string;
 		GlueIps?: Array<string>;
@@ -674,13 +673,12 @@ export namespace MyNS {
 		/**
 		 * Required
 		 * Max length: 255
-		 * Pattern: [a-zA-Z0-9_\-.]*
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
 	export function CreateNameserverFormGroup() {
 		return new FormGroup<NameserverFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_\-.]*')]),
 		});
 
 	}
@@ -1718,10 +1716,7 @@ export namespace MyNS {
 		 */
 		DomainName: string;
 
-		/**
-		 * Required
-		 * Pattern: ^(\d{12})$
-		 */
+		/** Required */
 		AccountId: string;
 	}
 
@@ -1734,10 +1729,7 @@ export namespace MyNS {
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
-		/**
-		 * Required
-		 * Pattern: ^(\d{12})$
-		 */
+		/** Required */
 		AccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateTransferDomainToAnotherAwsAccountRequestFormGroup() {
