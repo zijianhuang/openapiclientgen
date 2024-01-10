@@ -622,6 +622,30 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		protected override void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
+		{
+			base.AddValidationAttributes(fieldSchema, memberField);
+
+			if (!string.IsNullOrEmpty(fieldSchema.Pattern))
+			{
+				var escapedPattern = fieldSchema.Pattern
+					.Replace("\\'", "\\\\'") // must run first before escaping single quote
+					.Replace("'", "\\'")
+					.Replace("\\0", "0o")
+					;
+
+				var escapedPattern2 = RegexFunctions.EscapeRegexCapturingGroup(escapedPattern);
+				/* sometimes the regex contains symbols of single quote. And https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_octal
+				openapi-directory\APIs\amazonaws.com\AWSMigrationHub\2017-05-31 has the deprecated expression of octal
+
+				OpenApi yaml uses double quote to escape quote, while json prefers backslash quote.
+				for example: openapi-directory\APIs\amazonaws.com\cur\2017-01-06
+				*/
+				CodeSnippetExpression patternTextExpression = new(escapedPattern2);
+				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
+				memberField.CustomAttributes.Add(pa);
+			}
+		}
 	}
 
 }

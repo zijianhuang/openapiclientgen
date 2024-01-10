@@ -532,55 +532,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected static void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
+		protected virtual void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
 		{
-			if (fieldSchema.MaxLength.HasValue || fieldSchema.MinLength.HasValue)
+			if (fieldSchema.MinLength.HasValue)
 			{
-				if (fieldSchema.Type == "string")
-				{
-					List<CodeAttributeArgument> attributeParams = new();
+				CodeSnippetExpression len = new(fieldSchema.MinLength.Value.ToString());
+				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
+				memberField.CustomAttributes.Add(cad);
+			}
 
-					// StringLength() accepts only maximumLength as parameter, and optional named attribute parameter MimimumLength.
-					// If you want to define only mimimunLength, then something is like StringLength(int.MaxValue, MinimumLength=4).
-					if (fieldSchema.MaxLength.HasValue)
-					{
-						CodeSnippetExpression max = new(fieldSchema.MaxLength.Value.ToString());
-						attributeParams.Add(new CodeAttributeArgument(max));
-					}
-					else
-					{
-						CodeSnippetExpression max = new("int.MaxValue");
-						attributeParams.Add(new CodeAttributeArgument(max));
-					}
-
-					if (fieldSchema.MinLength.HasValue)
-					{
-						CodeSnippetExpression min = new(fieldSchema.MinLength.Value.ToString());
-						attributeParams.Add(new CodeAttributeArgument("MinimumLength", min));
-					}
-
-					CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.StringLength", attributeParams.ToArray());
-					memberField.CustomAttributes.Add(cad);
-				}
-				else
-				{
-					if (fieldSchema.MinLength.HasValue)
-					{
-						CodeSnippetExpression len = new(fieldSchema.MinLength.Value.ToString());
-						CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-						CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MinLength", attributeParams);
-						memberField.CustomAttributes.Add(cad);
-					}
-
-					if (fieldSchema.MaxLength.HasValue)
-					{
-						CodeSnippetExpression len = new(fieldSchema.MaxLength.Value.ToString());
-						CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
-						CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
-						memberField.CustomAttributes.Add(cad);
-					}
-
-				}
+			if (fieldSchema.MaxLength.HasValue)
+			{
+				CodeSnippetExpression len = new(fieldSchema.MaxLength.Value.ToString());
+				CodeAttributeArgument[] attributeParams = new CodeAttributeArgument[] { new CodeAttributeArgument(len) };
+				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
+				memberField.CustomAttributes.Add(cad);
 			}
 
 			if (fieldSchema.Maximum.HasValue || fieldSchema.Minimum.HasValue)
@@ -635,18 +602,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.MaxLength", attributeParams);
 				memberField.CustomAttributes.Add(cad);
 			}
-
-			if (!string.IsNullOrEmpty(fieldSchema.Pattern))
-			{
-				var escapedPattern = fieldSchema.Pattern.Replace("'", "\\'").Replace("\\0", "0o"); //sometimes the regex contains symbols of single quote. And https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_octal
-																								   //openapi-directory\APIs\amazonaws.com\AWSMigrationHub\2017-05-31 has the deprecated expression of octal
-
-				CodeSnippetExpression patternTextExpression = new(escapedPattern);
-				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
-				memberField.CustomAttributes.Add(pa);
-			}
-
-
 		}
 
 

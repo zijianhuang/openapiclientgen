@@ -462,7 +462,7 @@ namespace MyNS
 		/// Reimbursement lines description (max length 50)
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string Description { get; set; }
 		
 		/// <summary>
@@ -853,7 +853,7 @@ namespace MyNS
 		/// Name of the earnings rate (max length = 100)
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -865,7 +865,7 @@ namespace MyNS
 		/// Type of units used to record earnings (max length = 50). Only When RateType is RATEPERUNIT
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string TypeOfUnits { get; set; }
 		
 		/// <summary>
@@ -982,7 +982,7 @@ namespace MyNS
 		/// Name of the earnings rate (max length = 100)
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1040,7 +1040,7 @@ namespace MyNS
 		/// Name of the earnings rate (max length = 100)
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -1091,7 +1091,7 @@ namespace MyNS
 		/// Name of the earnings rate (max length = 100)
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Name { get; set; }
 		
 		/// <summary>

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -79,7 +80,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				currentTypeName = currentTypeName.ToPascalCase();
 			}
-			
+
 			RegisterSchemaRefIdToBeAdded(item.Key);
 			OpenApiSchema schema = item.Value;
 
@@ -260,7 +261,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						stringMemberValue = stringMemberValue.ToPascalCase();
 					}
-					
+
 					string memberName = NameFunc.RefineEnumMemberName(stringMemberValue, settings);
 					bool hasFunkyMemberName = memberName != stringMemberValue;
 					int intValue = k;
@@ -367,12 +368,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		protected override void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = NameFunc.RefinePropertyName(p.Key);
-			
+
 			if (settings.UsePascalCase)
 			{
 				propertyName = propertyName.ToPascalCase();
 			}
-			
+
 			if (propertyName == currentTypeName)
 			{
 				Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
@@ -463,7 +464,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (propertySchema.AdditionalProperties.Properties.Count == 0 //not casual type
 						&& propertySchema.AdditionalProperties.Reference == null // not complex type
 						&& propertySchema.AdditionalProperties.Items == null // not casual array type
-						&& (propertySchema.AdditionalProperties.Type == null || propertySchema.AdditionalProperties.Type == "object")) 
+						&& (propertySchema.AdditionalProperties.Type == null || propertySchema.AdditionalProperties.Type == "object"))
 					{
 						dicValueTypeRef = new CodeTypeReference(typeof(object));
 					}
@@ -478,7 +479,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Enum.Count == 0) // for primitive type
 				{
 					Type simpleType;
-					bool isDateOnly=false;
+					bool isDateOnly = false;
 					if (primitivePropertyType == "string" && propertySchema.Format == "date" && !settings.DateToDateOnly)
 					{
 						simpleType = typeof(DateTimeOffset);
@@ -657,7 +658,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (s.Type == "string")
 					{
 						// Handle a blank default date/date-time otherwise the code generated is invalid DateOnly or DateTimeOffset name { get; set; } = "";
-						if (s.Format is "date" or "date-time") 
+						if (s.Format is "date" or "date-time")
 						{
 							if (string.IsNullOrEmpty(stringValue.Value))
 							{
@@ -858,6 +859,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 
 				return PodGenHelper.CreatePodClientClass(foundNamespace, typeName);
+			}
+		}
+
+		protected override void AddValidationAttributes(OpenApiSchema fieldSchema, CodeMemberField memberField)
+		{
+			base.AddValidationAttributes(fieldSchema, memberField);
+
+			if (!string.IsNullOrEmpty(fieldSchema.Pattern))
+			{
+				var escapedPattern = fieldSchema.Pattern.Replace("\"", "\"\"").Replace("\\0", "0o"); //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_octal
+																			   //openapi-directory\APIs\amazonaws.com\AWSMigrationHub\2017-05-31 has the deprecated expression of octal
+				var ps = $"@\"{escapedPattern}\"";
+				CodeSnippetExpression patternTextExpression = new(ps);
+				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
+				memberField.CustomAttributes.Add(pa);
 			}
 		}
 

@@ -30,63 +30,63 @@ namespace MyNS
 		/// max length = 500
 		/// Max length: 500
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(500)]
+		[System.ComponentModel.DataAnnotations.MaxLength(500)]
 		public string AddressLine1 { get; set; }
 		
 		/// <summary>
 		/// max length = 500
 		/// Max length: 500
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(500)]
+		[System.ComponentModel.DataAnnotations.MaxLength(500)]
 		public string AddressLine2 { get; set; }
 		
 		/// <summary>
 		/// max length = 500
 		/// Max length: 500
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(500)]
+		[System.ComponentModel.DataAnnotations.MaxLength(500)]
 		public string AddressLine3 { get; set; }
 		
 		/// <summary>
 		/// max length = 500
 		/// Max length: 500
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(500)]
+		[System.ComponentModel.DataAnnotations.MaxLength(500)]
 		public string AddressLine4 { get; set; }
 		
 		/// <summary>
 		/// max length = 255
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string City { get; set; }
 		
 		/// <summary>
 		/// max length = 255
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string Region { get; set; }
 		
 		/// <summary>
 		/// max length = 50
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string PostalCode { get; set; }
 		
 		/// <summary>
 		/// max length = 50, [A-Z], [a-z] only
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string Country { get; set; }
 		
 		/// <summary>
 		/// max length = 255
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string AttentionTo { get; set; }
 	}
 	
@@ -109,21 +109,21 @@ namespace MyNS
 		/// max length = 50
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string PhoneNumber { get; set; }
 		
 		/// <summary>
 		/// max length = 10
 		/// Max length: 10
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(10)]
+		[System.ComponentModel.DataAnnotations.MaxLength(10)]
 		public string PhoneAreaCode { get; set; }
 		
 		/// <summary>
 		/// max length = 20
 		/// Max length: 20
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(20)]
+		[System.ComponentModel.DataAnnotations.MaxLength(20)]
 		public string PhoneCountryCode { get; set; }
 	}
 	
@@ -154,14 +154,14 @@ namespace MyNS
 		/// Customer defined alpha numeric account code e.g 200 or SALES (max length = 10)
 		/// Max length: 10
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(10)]
+		[System.ComponentModel.DataAnnotations.MaxLength(10)]
 		public string Code { get; set; }
 		
 		/// <summary>
 		/// Name of account (max length = 150)
 		/// Max length: 150
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(150)]
+		[System.ComponentModel.DataAnnotations.MaxLength(150)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -926,14 +926,14 @@ namespace MyNS
 		/// This can be updated via the API only i.e. This field is read only on the Xero contact screen, used to identify contacts in external systems (max length = 50). If the Contact Number is used, this is displayed as Contact Code in the Contacts UI in Xero.
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string ContactNumber { get; set; }
 		
 		/// <summary>
 		/// A user defined account number. This can be updated via the API and the Xero UI (max length = 50)
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string AccountNumber { get; set; }
 		
 		/// <summary>
@@ -945,28 +945,28 @@ namespace MyNS
 		/// Full name of contact/organisation (max length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// First name of contact person (max length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string FirstName { get; set; }
 		
 		/// <summary>
 		/// Last name of contact person (max length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string LastName { get; set; }
 		
 		/// <summary>
 		/// Email address of contact person (umlauts not supported) (max length  = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string EmailAddress { get; set; }
 		
 		/// <summary>
@@ -988,7 +988,7 @@ namespace MyNS
 		/// Tax number of contact � this is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global) in the Xero UI depending on which regionalized version of Xero you are using (max length = 50)
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string TaxNumber { get; set; }
 		
 		/// <summary>
@@ -1717,7 +1717,7 @@ namespace MyNS
 		/// The name of the tracking category
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -2175,35 +2175,35 @@ namespace MyNS
 		/// (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
 		/// Max length: 12
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(12)]
+		[System.ComponentModel.DataAnnotations.MaxLength(12)]
 		public string Reference { get; set; }
 		
 		/// <summary>
 		/// (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
 		/// Max length: 12
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(12)]
+		[System.ComponentModel.DataAnnotations.MaxLength(12)]
 		public string Particulars { get; set; }
 		
 		/// <summary>
 		/// (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
 		/// Max length: 12
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(12)]
+		[System.ComponentModel.DataAnnotations.MaxLength(12)]
 		public string Code { get; set; }
 		
 		/// <summary>
 		/// (Non-NZ Only) These details are sent to the org�s bank as a reference for the batch payment transaction. They will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement imported into Xero. Maximum field length = 18
 		/// Max length: 18
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(18)]
+		[System.ComponentModel.DataAnnotations.MaxLength(18)]
 		public string Details { get; set; }
 		
 		/// <summary>
 		/// (UK Only) Only shows on the statement line in Xero. Max length =18
 		/// Max length: 18
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(18)]
+		[System.ComponentModel.DataAnnotations.MaxLength(18)]
 		public string Narrative { get; set; }
 		
 		/// <summary>
@@ -2397,14 +2397,14 @@ namespace MyNS
 		/// ACCREC � Unique alpha numeric code identifying invoice (when missing will auto-generate from your Organisation Invoice Settings) (max length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string InvoiceNumber { get; set; }
 		
 		/// <summary>
 		/// ACCREC only � additional reference number (max length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string Reference { get; set; }
 		
 		/// <summary>
@@ -4381,21 +4381,21 @@ namespace MyNS
 		/// (Non-NZ Only) These details are sent to the org�s bank as a reference for the batch payment transaction. They will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement imported into Xero. Maximum field length = 18
 		/// Max length: 18
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(18)]
+		[System.ComponentModel.DataAnnotations.MaxLength(18)]
 		public string Details { get; set; }
 		
 		/// <summary>
 		/// (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
 		/// Max length: 12
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(12)]
+		[System.ComponentModel.DataAnnotations.MaxLength(12)]
 		public string Code { get; set; }
 		
 		/// <summary>
 		/// (NZ Only) Optional references for the batch payment transaction. It will also show with the batch payment transaction in the bank reconciliation Find & Match screen. Depending on your individual bank, the detail may also show on the bank statement you import into Xero.
 		/// Max length: 12
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(12)]
+		[System.ComponentModel.DataAnnotations.MaxLength(12)]
 		public string Reference { get; set; }
 	}
 	
@@ -4892,14 +4892,14 @@ namespace MyNS
 		/// First name of an employee (max length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string FirstName { get; set; }
 		
 		/// <summary>
 		/// Last name of an employee (max length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string LastName { get; set; }
 		
 		public ExternalLink ExternalLink { get; set; }
@@ -5262,7 +5262,7 @@ namespace MyNS
 		/// Max length: 30
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.ComponentModel.DataAnnotations.StringLength(30)]
+		[System.ComponentModel.DataAnnotations.MaxLength(30)]
 		public string Code { get; set; }
 		
 		/// <summary>
@@ -5274,7 +5274,7 @@ namespace MyNS
 		/// The name of the item (max length = 50)
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -5291,14 +5291,14 @@ namespace MyNS
 		/// The sales description of the item (max length = 4000)
 		/// Max length: 4000
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(4000)]
+		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
 		public string Description { get; set; }
 		
 		/// <summary>
 		/// The purchase description of the item (max length = 4000)
 		/// Max length: 4000
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(4000)]
+		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
 		public string PurchaseDescription { get; set; }
 		
 		public Purchase PurchaseDetails { get; set; }
@@ -5550,14 +5550,14 @@ namespace MyNS
 		/// The name of the tracking category e.g. Department, Region (max length = 100)
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Name { get; set; }
 		
 		/// <summary>
 		/// The option name of the tracking option e.g. East, West (max length = 100)
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Option { get; set; }
 		
 		/// <summary>
@@ -5583,7 +5583,7 @@ namespace MyNS
 		/// The name of the tracking option e.g. Marketing, East (max length = 50)
 		/// Max length: 50
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(50)]
+		[System.ComponentModel.DataAnnotations.MaxLength(50)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -8426,21 +8426,21 @@ namespace MyNS
 		/// Unique alpha numeric code identifying a quote (Max Length = 255)
 		/// Max length: 255
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(255)]
+		[System.ComponentModel.DataAnnotations.MaxLength(255)]
 		public string QuoteNumber { get; set; }
 		
 		/// <summary>
 		/// Additional reference number
 		/// Max length: 4000
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(4000)]
+		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
 		public string Reference { get; set; }
 		
 		/// <summary>
 		/// Terms of the quote
 		/// Max length: 4000
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(4000)]
+		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
 		public string Terms { get; set; }
 		
 		public Contact Contact { get; set; }
@@ -8509,14 +8509,14 @@ namespace MyNS
 		/// Title text for the quote
 		/// Max length: 100
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(100)]
+		[System.ComponentModel.DataAnnotations.MaxLength(100)]
 		public string Title { get; set; }
 		
 		/// <summary>
 		/// Summary text for the quote
 		/// Max length: 3000
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.StringLength(3000)]
+		[System.ComponentModel.DataAnnotations.MaxLength(3000)]
 		public string Summary { get; set; }
 		
 		/// <summary>

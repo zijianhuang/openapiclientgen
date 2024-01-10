@@ -229,12 +229,12 @@ namespace Fonlow.TypeScriptCodeDom
 						case "System.ComponentModel.DataAnnotations.Range": // for minimum and maximum
 							AddNumberRangeValidations(ca, validatorList);
 							break;
-						case "System.ComponentModel.DataAnnotations.StringLength":
-							AddStringLengthValidations(ca, validatorList);
-							break;
-						case "System.ComponentModel.DataAnnotations.EmailAddress":
-							validatorList.Add("Validators.email");
-							break;
+						//case "System.ComponentModel.DataAnnotations.StringLength":
+						//	AddStringLengthValidations(ca, validatorList);
+						//	break;
+						//case "System.ComponentModel.DataAnnotations.EmailAddress":
+						//	validatorList.Add("Validators.email");
+						//	break;
 						case "System.ComponentModel.DataAnnotations.RegularExpressionAttribute":
 							AddRegexValidations(ca, validatorList);
 							break;
@@ -329,7 +329,7 @@ namespace Fonlow.TypeScriptCodeDom
 			Debug.Assert(ca.Arguments.Count == 1);
 			var arg0 = ca.Arguments[0];
 			var arg0VExpression = arg0.Value as CodeSnippetExpression;
-			validatorList.Add($"Validators.pattern('{arg0VExpression.Value}')");
+			validatorList.Add($"Validators.pattern('{arg0VExpression.Value}')"); // overall better than quoting with / /g.
 		}
 
 		void WriteAngularFormTypeMembersAndCloseBracing(CodeTypeDeclaration typeDeclaration, TextWriter w, CodeGeneratorOptions o)
