@@ -82,7 +82,7 @@ namespace My.Pet.Client
 		/// Min length: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public string Name { get; set; }
 		
 		/// <summary>
@@ -272,7 +272,7 @@ namespace My.Pet.Client
 		/// Min length: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public string Name { get; set; }
 	}
 	
@@ -305,7 +305,7 @@ namespace My.Pet.Client
 		/// Min length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="username")]
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=4)]
+		[System.ComponentModel.DataAnnotations.MinLength(4)]
 		public string Username { get; set; }
 		
 		/// <summary>
@@ -313,7 +313,7 @@ namespace My.Pet.Client
 		/// Min length: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="firstName")]
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public string FirstName { get; set; }
 		
 		/// <summary>
@@ -321,7 +321,7 @@ namespace My.Pet.Client
 		/// Min length: 1
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lastName")]
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=1)]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		public string LastName { get; set; }
 		
 		/// <summary>
@@ -336,7 +336,8 @@ namespace My.Pet.Client
 		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="password")]
-		[System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength=8)]
+		[System.ComponentModel.DataAnnotations.MinLength(8)]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/")]
 		public string Password { get; set; }
 		
 		/// <summary>
@@ -344,6 +345,7 @@ namespace My.Pet.Client
 		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phone")]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/^\+(?:[0-9]-?){6,14}[0-9]$/")]
 		public string Phone { get; set; }
 		
 		/// <summary>

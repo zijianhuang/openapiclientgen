@@ -873,6 +873,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var ps = $"@\"{escapedPattern}\"";
 				CodeSnippetExpression patternTextExpression = new(ps);
 				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));
+				//Console.WriteLine(ps);
 				memberField.CustomAttributes.Add(pa);
 			}
 		}
