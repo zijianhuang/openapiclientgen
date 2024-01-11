@@ -12,9 +12,12 @@ namespace SwagTests
 	/// </summary>
 	public class NG2OpenApiDirTestHelper: NG2TestHelper
 	{
-		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output): base(genType, output, new CasualTestingSettings(true, true))
+		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output, string defaultDefFile="openapi.yaml") : base(genType, output, new CasualTestingSettings(true, true))
 		{
+			this.defaultDefFile = defaultDefFile;
 		}
+
+		readonly string defaultDefFile;
 
 		/// <summary>
 		/// Just generate and build, not assertion for comparing previous. Ignore the settings in appsettings.json
@@ -26,7 +29,7 @@ namespace SwagTests
 			var m = (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod();
 			var targetFileName = $"{m.DeclaringType.Name}.{m.Name}.ts";
 			var targetFilePath = System.IO.Path.Combine("Results", targetFileName);
-			var filePath = Path.Combine(openapiDir, "openapi.yaml");
+			var filePath = Path.Combine(openapiDir, defaultDefFile);
 			GenerateAndAssertAndBuild(filePath, targetFilePath, mySettings);
 		}
 	}

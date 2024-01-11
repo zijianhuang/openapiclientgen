@@ -2,7 +2,7 @@ using SwagTests;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace NG2Tests
+namespace SwagTests
 {
 	/// <summary>
 	/// Generated test cases for Google APIs

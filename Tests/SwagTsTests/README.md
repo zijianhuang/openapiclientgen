@@ -9,7 +9,7 @@ The option could be altered through changing appsettings.json. And after all tes
 	"UpdateGenerated":  false
 ```
 
-Each ng guild upon generated codes of a definition file may take around 15 seconds to 20 seconds on an Intel i7 NUC box, or around 5.5 seconds on "13th Gen Intel Core i7-13700KF 3.40 GHz". The total time estimated should be multiplication by the total number of cases.
+Each `ng build` upon generated codes of a definition file may take around 15 seconds to 20 seconds on an Intel i7 NUC box, or around 5.5 seconds on "13th Gen Intel Core i7-13700KF 3.40 GHz". The total time estimated should be multiplication by the total number of cases.
 
 The XXXResults folder should contains codes generated, the total number of files should be equal to the total number of test cases. After a full run, copy the generated codes from bin/Debug/Netx.0/XXXResults to XXXResults. 
 
