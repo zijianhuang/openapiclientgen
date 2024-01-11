@@ -43,4 +43,6 @@
     <Exec Command="cp $(ProjectDir)NG2BuildResults/*.ts $(TargetDir)NG2BuildResults/ ;mkdir -p $(TargetDir)Results &#xA;&#xA; cp $(ProjectDir)Results/*.ts $_;" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
   </Target>
 
+  <Import Project="..\OpenApiDirShared\OpenApiDirShared.projitems" Label="Shared" />
+
 </Project>

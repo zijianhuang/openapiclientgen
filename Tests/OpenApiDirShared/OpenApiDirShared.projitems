@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>917c07f5-e9f5-4116-b6b1-cdbd8aeef717</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>OpenApiDirShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ODAzureTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ODAzureTests2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ODMiscTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenApiDirectoryAwsTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenApiDirectoryAwsTests2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenApiDirectoryGoogleTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenApiDirectoryGoogleTests2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenApiDirectoryTests.cs" />
+  </ItemGroup>
+</Project>
