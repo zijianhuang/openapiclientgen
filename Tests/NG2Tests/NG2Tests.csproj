@@ -38,6 +38,12 @@
     <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="SwagMock\pet.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy $(ProjectDir)NG2BuildResults\*.ts $(TargetDir)NG2BuildResults\ /D /Y&#xD;&#xA;xcopy $(ProjectDir)Results\*.ts $(TargetDir)Results\ /D /Y&#xD;&#xA;" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
     <Exec Command="cp $(ProjectDir)NG2BuildResults/*.ts $(TargetDir)NG2BuildResults/ ;mkdir -p $(TargetDir)Results &#xA;&#xA; cp $(ProjectDir)Results/*.ts $_;" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />

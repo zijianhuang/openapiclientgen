@@ -37,7 +37,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ParameterDescriptor = new ParameterDescriptor()
 					{
 						IsRequired = p.Required,
-						ParameterName = refinedName,
+						ParameterName = p.Name, // what appear in the HTTP query name, for example: "?api-version=" + api_version
 						ParameterType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(p.Schema.Type, p.Schema.Format),
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},

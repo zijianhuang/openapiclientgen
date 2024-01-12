@@ -367,20 +367,7 @@ namespace Fonlow.TypeScriptCodeDom
 				var currentIndent = o.IndentString;
 				o.IndentString += BasicIndent;
 				w.WriteLine();
-				if (typeDeclaration.BaseTypes.Count > 0)
-				{
-					var parentTypeReference = typeDeclaration.BaseTypes[0];
-					var parentTypeName = TypeMapper.MapCodeTypeReferenceToTsText(parentTypeReference); //namspace prefix included
-																									   //Console.WriteLine("parentTypeName: " + parentTypeName);
-					var parentCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(parentTypeName);
-					if (parentCodeTypeDeclaration != null)
-					{
-						for (int i = 0; i < parentCodeTypeDeclaration.Members.Count; i++)
-						{
-							WriteCodeTypeMemberOfAngularFormGroup(parentCodeTypeDeclaration.Members[i], w, o);
-						};
-					}
-				}
+				WriteParentFommGroupMembers(typeDeclaration, w, o);
 
 				for (int i = 0; i < typeDeclaration.Members.Count; i++)
 				{
@@ -390,6 +377,28 @@ namespace Fonlow.TypeScriptCodeDom
 				w.WriteLine();
 				o.IndentString = currentIndent;
 			}
+		}
+
+		void WriteParentFommGroupMembers(CodeTypeDeclaration typeDeclaration, TextWriter w, CodeGeneratorOptions o)
+		{
+			if (typeDeclaration.BaseTypes.Count > 0)
+			{
+				var parentTypeReference = typeDeclaration.BaseTypes[0];
+				var parentTypeName = TypeMapper.MapCodeTypeReferenceToTsText(parentTypeReference); //namspace prefix included
+																								   //Console.WriteLine("parentTypeName: " + parentTypeName);
+				var parentCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(parentTypeName);
+
+				WriteParentFommGroupMembers(parentCodeTypeDeclaration, w, o); //recrusively check parent's parent
+
+				if (parentCodeTypeDeclaration != null)
+				{
+					for (int i = 0; i < parentCodeTypeDeclaration.Members.Count; i++)
+					{
+						WriteCodeTypeMemberOfAngularFormGroup(parentCodeTypeDeclaration.Members[i], w, o);
+					};
+				}
+			}
+
 		}
 
 		/// <summary>

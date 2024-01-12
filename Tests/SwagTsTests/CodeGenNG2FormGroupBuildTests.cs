@@ -33,6 +33,12 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPetSuper()
+		{
+			helper.GenerateAndAssertBuild("SwagMock\\petSuper.yaml", "NG2FormGroupResults\\PetSuper.txt");
+		}
+
+		[Fact]
 		public void TestPetByTags()
 		{
 			helper.GenerateAndAssertBuild("SwagMock\\petByTags.yaml", "NG2FormGroupResults\\PetByTags.txt");

@@ -459,6 +459,15 @@ namespace SwagTests
 			GenerateAndAssertAndBuild("SwagMock\\googleBooksOpenApi.yaml", "Results\\googleBooksOpenApi.txt");
 		}
 
+		[Fact(Skip ="Not sure")]
+		public void TestAzureSecurityInsights()
+		{
+			GenerateAndAssertAndBuild("SwagMock\\AzureSecurityInsights.yaml", "Results\\AzureSecurityInsights.txt");
+			// AlertRules_CreateOrUpdateAction in generated codes should be mapped to
+			// https://learn.microsoft.com/en-us/dotnet/api/azure.resourcemanager.securityinsights.securityinsightsalertruleactioncollection.createorupdate?view=azure-dotnet#azure-resourcemanager-securityinsights-securityinsightsalertruleactioncollection-createorupdate(azure-waituntil-system-string-azure-resourcemanager-securityinsights-models-securityinsightsalertruleactioncreateorupdatecontent-system-threading-cancellationtoken)
+			// I am not sure if the yaml is ever correct, or there should be an updated one somewhere?
+		}
+
 		/// <summary>
 		/// OpenApi v3.1
 		/// </summary>

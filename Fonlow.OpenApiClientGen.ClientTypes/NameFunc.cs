@@ -152,14 +152,27 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				.Replace(' ', '_'));
 		}
 
-		public static string RefineTsPropertyName(string s)
-		{
-			if (String.IsNullOrEmpty(s))
-			{
-				return s;
-			}
+		///// <summary>
+		///// obsolete
+		///// </summary>
+		///// <param name="s"></param>
+		///// <returns></returns>
+		//public static string RefineTsPropertyName(string s)
+		//{
+		//	if (String.IsNullOrEmpty(s))
+		//	{
+		//		return s;
+		//	}
 
-			return s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace(' ', '_');
+		//	return s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace(' ', '_').Replace('.', '_');
+		//}
+
+		public static bool IsKeyNameValidTsPropertyName(string s)
+		{
+			var ok1 = !(s.Contains('.') || s.Contains('$') || s.Contains(':') || s.Contains('-') || s.Contains('.') || s.Contains('[') || s.Contains(']')
+				|| s.Contains('/') || s.Contains('#') || s.Contains(' '));
+			var ok2 = Char.IsLetter(s[0]) || s[0] == '_';
+			return ok1 && ok2;
 		}
 
 		public static string ToTitleCase(string s)

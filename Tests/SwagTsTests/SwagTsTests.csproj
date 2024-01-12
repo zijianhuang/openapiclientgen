@@ -35,7 +35,6 @@
     <None Remove="SwagMock\myswagger.json" />
     <None Remove="SwagMock\PathItemValues.json" />
     <None Remove="SwagMock\pet.json" />
-    <None Remove="SwagMock\pet.yaml" />
     <None Remove="SwagMock\petBackup.yaml" />
     <None Remove="SwagMock\petByNumbers.yaml" />
     <None Remove="SwagMock\petByStatus.yaml" />
@@ -192,7 +191,7 @@
     <Content Include="SwagMock\pet.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="SwagMock\pet.yaml">
+    <Content Include="SwagMock\petSuper.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SwagMock\petBackup.yaml">
@@ -904,6 +903,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="SwagMock\googleBooksOpenApi.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SwagMock\pet.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

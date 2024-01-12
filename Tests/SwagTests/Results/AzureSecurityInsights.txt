@@ -16,1547 +16,1298 @@ namespace MyNS
 	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
-
-
+	
+	
 	/// <summary>
 	/// Represents AAD (Azure Active Directory) data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AADDataConnector
 	{
-
+		
 		/// <summary>
 		/// AAD (Azure Active Directory) data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public AADDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// AAD (Azure Active Directory) data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AADDataConnectorProperties
 	{
 	}
-
+	
 	/// <summary>
 	/// Represents AATP (Azure Advanced Threat Protection) data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AATPDataConnector
 	{
-
+		
 		/// <summary>
 		/// AATP (Azure Advanced Threat Protection) data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public AATPDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// AATP (Azure Advanced Threat Protection) data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AATPDataConnectorProperties
 	{
 	}
-
+	
 	/// <summary>
 	/// Represents ASC (Azure Security Center) data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ASCDataConnector
 	{
-
+		
 		/// <summary>
 		/// ASC (Azure Security Center) data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public ASCDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// ASC (Azure Security Center) data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ASCDataConnectorProperties
 	{
-
+		
 		/// <summary>
 		/// The subscription id to connect to, and get the data from.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "subscriptionId")]
 		public string SubscriptionId { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Action property bag base.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ActionPropertiesBase
 	{
-
+		
 		/// <summary>
 		/// Logic App Resource Id, providers/Microsoft.Logic/workflows/{WorkflowID}.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "logicAppResourceId")]
 		public string LogicAppResourceId { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Action for alert rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ActionRequest
 	{
-
+		
 		/// <summary>
 		/// Action property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public ActionRequestProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Action property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ActionRequestProperties
 	{
-
+		
 		/// <summary>
 		/// Logic App Callback URL for this specific workflow.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "triggerUri")]
 		public string TriggerUri { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Action for alert rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ActionResponse
 	{
-
+		
 		/// <summary>
 		/// Etag of the action.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "etag")]
 		public string Etag { get; set; }
-
+		
 		/// <summary>
 		/// Action property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public ActionResponseProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Action property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ActionResponseProperties
 	{
-
+		
 		/// <summary>
 		/// The name of the logic app's workflow.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "workflowId")]
 		public string WorkflowId { get; set; }
 	}
-
+	
 	/// <summary>
 	/// List all the actions.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ActionsList
 	{
-
+		
 		/// <summary>
 		/// URL to fetch the next set of actions.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "nextLink")]
 		public string NextLink { get; set; }
-
+		
 		/// <summary>
 		/// Array of actions.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
 		public ActionResponse[] Value { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Alert rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AlertRule
 	{
 	}
-
+	
 	/// <summary>
 	/// Describes an Azure resource with kind.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AlertRuleKind
 	{
-
+		
 		/// <summary>
 		/// The kind of the alert rule
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "kind")]
 		public AlertRuleKindKind Kind { get; set; }
 	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	
 	public enum AlertRuleKindKind
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Scheduled = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		MicrosoftSecurityIncidentCreation = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Fusion = 2,
 	}
-
+	
 	/// <summary>
 	/// Alert rule template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AlertRuleTemplate
 	{
 	}
-
+	
 	/// <summary>
 	/// alert rule template data sources
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AlertRuleTemplateDataSource
 	{
-
+		
 		/// <summary>
 		/// The connector id that provides the following data types
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "connectorId")]
 		public string ConnectorId { get; set; }
-
+		
 		/// <summary>
 		/// The data types used by the alert rule template
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dataTypes")]
 		public string[] DataTypes { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Base alert rule template property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AlertRuleTemplatePropertiesBase
 	{
-
+		
 		/// <summary>
 		/// the number of alert rules that were created by this template
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "alertRulesCreatedByTemplateCount")]
 		public System.Nullable<System.Int32> AlertRulesCreatedByTemplateCount { get; set; }
-
+		
 		/// <summary>
 		/// The time that this alert rule template has been added.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "createdDateUTC")]
 		public System.Nullable<System.DateTimeOffset> CreatedDateUTC { get; set; }
-
+		
 		/// <summary>
 		/// The description of the alert rule template.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "description")]
 		public string Description { get; set; }
-
+		
 		/// <summary>
 		/// The display name for alert rule template.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "displayName")]
 		public string DisplayName { get; set; }
-
+		
 		/// <summary>
 		/// The required data connectors for this template
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "requiredDataConnectors")]
 		public AlertRuleTemplateDataSource[] RequiredDataConnectors { get; set; }
-
+		
 		/// <summary>
 		/// The alert rule template status.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "status")]
 		public System.Nullable<AlertRuleTemplatePropertiesBaseStatus> Status { get; set; }
 	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	
 	public enum AlertRuleTemplatePropertiesBaseStatus
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Installed = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Available = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		NotAvailable = 2,
 	}
-
+	
 	/// <summary>
 	/// The operation against the threshold that triggers alert rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public enum AlertRuleTriggerOperator
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		GreaterThan = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		LessThan = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Equal = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		NotEqual = 3,
 	}
-
+	
 	/// <summary>
 	/// List all the alert rules.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AlertRulesList
 	{
-
+		
 		/// <summary>
 		/// URL to fetch the next set of alert rules.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "nextLink")]
 		public string NextLink { get; set; }
-
+		
 		/// <summary>
 		/// Array of alert rules.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
 		public AlertRule[] Value { get; set; }
 	}
-
+	
 	/// <summary>
 	/// The severity of the alert
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public enum AlertSeverity
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		High = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Medium = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Low = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Informational = 3,
 	}
-
+	
 	/// <summary>
 	/// Alerts data type for data connectors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AlertsDataTypeOfDataConnector
 	{
-
+		
 		/// <summary>
 		/// Alerts data type connection.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "alerts")]
 		public string Alerts { get; set; }
 	}
-
+	
 	/// <summary>
 	/// The severity for alerts created by this alert rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public enum AttackTactic
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		InitialAccess = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Execution = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Persistence = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		PrivilegeEscalation = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		DefenseEvasion = 4,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		CredentialAccess = 5,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Discovery = 6,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		LateralMovement = 7,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Collection = 8,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Exfiltration = 9,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		CommandAndControl = 10,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Impact = 11,
 	}
-
+	
 	/// <summary>
 	/// Represents Amazon Web Services CloudTrail data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AwsCloudTrailDataConnector
 	{
-
+		
 		/// <summary>
 		/// Amazon Web Services CloudTrail data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public AwsCloudTrailDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Amazon Web Services CloudTrail data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AwsCloudTrailDataConnectorProperties
 	{
-
+		
 		/// <summary>
 		/// The Aws Role Arn (with CloudTrailReadOnly policy) that is used to access the Aws account.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "awsRoleArn")]
 		public string AwsRoleArn { get; set; }
-
+		
 		/// <summary>
 		/// The available data types for Amazon Web Services CloudTrail data connector.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dataTypes")]
 		public AwsCloudTrailDataConnectorDataTypes DataTypes { get; set; }
 	}
-
+	
 	/// <summary>
 	/// The available data types for Amazon Web Services CloudTrail data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class AwsCloudTrailDataConnectorDataTypes
 	{
-
+		
 		/// <summary>
 		/// Logs data type.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "logs")]
 		public string Logs { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Error response structure.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class CloudError
 	{
-
+		
 		/// <summary>
 		/// Error details.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "error")]
 		public CloudErrorBody Error { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Error details.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class CloudErrorBody
 	{
-
+		
 		/// <summary>
 		/// An identifier for the error. Codes are invariant and are intended to be consumed programmatically.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "code")]
 		public string Code { get; set; }
-
+		
 		/// <summary>
 		/// A message describing the error, intended to be suitable for display in a user interface.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "message")]
 		public string Message { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class DataConnector
 	{
 	}
-
+	
 	/// <summary>
 	/// Common field for data type in data connectors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class DataConnectorDataTypeCommon
 	{
-
+		
 		/// <summary>
 		/// Describe whether this data type connection is enabled or not.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "state")]
 		public System.Nullable<DataConnectorDataTypeCommonState> State { get; set; }
 	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	
 	public enum DataConnectorDataTypeCommonState
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Enabled = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Disabled = 1,
 	}
-
+	
 	/// <summary>
 	/// Describes an Azure resource with kind.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class DataConnectorKind
 	{
-
+		
 		/// <summary>
 		/// The kind of the data connector
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "kind")]
 		public System.Nullable<DataConnectorKindKind> Kind { get; set; }
 	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	
 	public enum DataConnectorKindKind
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		AzureActiveDirectory = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		AzureSecurityCenter = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		MicrosoftCloudAppSecurity = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		ThreatIntelligence = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Office365 = 4,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		AmazonWebServicesCloudTrail = 5,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		AzureAdvancedThreatProtection = 6,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		MicrosoftDefenderAdvancedThreatProtection = 7,
 	}
-
+	
 	/// <summary>
 	/// List all the data connectors.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class DataConnectorList
 	{
-
+		
 		/// <summary>
 		/// URL to fetch the next set of data connectors.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "nextLink")]
 		public string NextLink { get; set; }
-
+		
 		/// <summary>
 		/// Array of data connectors.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
 		public DataConnector[] Value { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Properties data connector on tenant level.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class DataConnectorTenantId
 	{
-
+		
 		/// <summary>
 		/// The tenant id to connect to, and get the data from.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "tenantId")]
 		public string TenantId { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class DataConnectorWithAlertsProperties
 	{
-
+		
 		/// <summary>
 		/// Alerts data type for data connectors.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dataTypes")]
 		public AlertsDataTypeOfDataConnector DataTypes { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Represents Fusion alert rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class FusionAlertRule
 	{
-
+		
 		/// <summary>
 		/// Fusion alert rule base property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public FusionAlertRuleProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Fusion alert rule base property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class FusionAlertRuleProperties
 	{
-
+		
 		/// <summary>
 		/// The Name of the alert rule template used to create this rule.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "alertRuleTemplateName")]
 		public string AlertRuleTemplateName { get; set; }
-
+		
 		/// <summary>
 		/// The description of the alert rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "description")]
 		public string Description { get; set; }
-
+		
 		/// <summary>
 		/// The display name for alerts created by this alert rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "displayName")]
 		public string DisplayName { get; set; }
-
+		
 		/// <summary>
 		/// Determines whether this alert rule is enabled or disabled.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "enabled")]
 		public bool Enabled { get; set; }
-
+		
 		/// <summary>
 		/// The last time that this alert has been modified.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "lastModifiedUtc")]
 		public System.Nullable<System.DateTimeOffset> LastModifiedUtc { get; set; }
-
+		
 		/// <summary>
 		/// The severity of the alert
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "severity")]
 		public AlertSeverity Severity { get; set; }
-
+		
 		/// <summary>
 		/// The tactics of the alert rule
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "tactics")]
 		public AttackTactic[] Tactics { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Represents Fusion alert rule template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class FusionAlertRuleTemplate
 	{
-
+		
 		/// <summary>
 		/// Fusion alert rule template properties
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public AlertRuleTemplatePropertiesBase Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Describes related incident information for the bookmark
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class IncidentInfo
 	{
-
+		
 		/// <summary>
 		/// Incident Id
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "incidentId")]
 		public string IncidentId { get; set; }
-
+		
 		/// <summary>
 		/// Relation Name
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "relationName")]
 		public string RelationName { get; set; }
-
+		
 		/// <summary>
 		/// The severity of the incident
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "severity")]
 		public IncidentInfoSeverity Severity { get; set; }
-
+		
 		/// <summary>
 		/// The title of the incident
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "title")]
 		public string Title { get; set; }
 	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	
 	public enum IncidentInfoSeverity
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Critical = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		High = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Medium = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Low = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		Informational = 4,
 	}
-
+	
 	/// <summary>
 	/// Represents MCAS (Microsoft Cloud App Security) data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MCASDataConnector
 	{
-
+		
 		/// <summary>
 		/// MCAS (Microsoft Cloud App Security) data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public MCASDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// MCAS (Microsoft Cloud App Security) data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MCASDataConnectorProperties
 	{
-
+		
 		/// <summary>
 		/// The available data types for MCAS (Microsoft Cloud App Security) data connector.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dataTypes")]
 		public MCASDataConnectorDataTypes DataTypes { get; set; }
 	}
-
+	
 	/// <summary>
 	/// The available data types for MCAS (Microsoft Cloud App Security) data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MCASDataConnectorDataTypes
 	{
-
+		
 		/// <summary>
 		/// Discovery log data type connection.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "discoveryLogs")]
 		public string DiscoveryLogs { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Represents MDATP (Microsoft Defender Advanced Threat Protection) data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MDATPDataConnector
 	{
-
+		
 		/// <summary>
 		/// MDATP (Microsoft Defender Advanced Threat Protection) data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public MDATPDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// MDATP (Microsoft Defender Advanced Threat Protection) data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MDATPDataConnectorProperties
 	{
 	}
-
+	
 	/// <summary>
 	/// Represents MicrosoftSecurityIncidentCreation rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MicrosoftSecurityIncidentCreationAlertRule
 	{
-
+		
 		/// <summary>
 		/// MicrosoftSecurityIncidentCreation rule property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public MicrosoftSecurityIncidentCreationAlertRuleProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// MicrosoftSecurityIncidentCreation rule property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MicrosoftSecurityIncidentCreationAlertRuleProperties
 	{
-
+		
 		/// <summary>
 		/// The Name of the alert rule template used to create this rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "alertRuleTemplateName")]
 		public string AlertRuleTemplateName { get; set; }
-
+		
 		/// <summary>
 		/// The description of the alert rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "description")]
 		public string Description { get; set; }
-
+		
 		/// <summary>
 		/// The display name for alerts created by this alert rule.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "displayName")]
 		public string DisplayName { get; set; }
-
+		
 		/// <summary>
 		/// Determines whether this alert rule is enabled or disabled.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "enabled")]
 		public bool Enabled { get; set; }
-
+		
 		/// <summary>
 		/// The last time that this alert has been modified.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "lastModifiedUtc")]
 		public System.Nullable<System.DateTimeOffset> LastModifiedUtc { get; set; }
 	}
-
+	
 	/// <summary>
 	/// MicrosoftSecurityIncidentCreation rule common property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MicrosoftSecurityIncidentCreationAlertRuleCommonProperties
 	{
-
+		
 		/// <summary>
 		/// the alerts' displayNames on which the cases will be generated
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "displayNamesFilter")]
 		public string[] DisplayNamesFilter { get; set; }
-
+		
 		/// <summary>
 		/// The alerts' productName on which the cases will be generated
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "productFilter")]
 		public MicrosoftSecurityIncidentCreationAlertRuleCommonPropertiesProductFilter ProductFilter { get; set; }
-
+		
 		/// <summary>
 		/// the alerts' severities on which the cases will be generated
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "severitiesFilter")]
 		public AlertSeverity[] SeveritiesFilter { get; set; }
 	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	
 	public enum MicrosoftSecurityIncidentCreationAlertRuleCommonPropertiesProductFilter
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Microsoft Cloud App Security")]
+		
 		Microsoft_Cloud_App_Security = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Azure Security Center")]
+		
 		Azure_Security_Center = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Azure Advanced Threat Protection")]
+		
 		Azure_Advanced_Threat_Protection = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Azure Active Directory Identity Protection")]
+		
 		Azure_Active_Directory_Identity_Protection = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Azure Security Center for IoT")]
+		
 		Azure_Security_Center_for_IoT = 4,
 	}
-
+	
 	/// <summary>
 	/// Represents MicrosoftSecurityIncidentCreation rule template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class MicrosoftSecurityIncidentCreationAlertRuleTemplate
 	{
-
+		
 		/// <summary>
 		/// MicrosoftSecurityIncidentCreation rule template properties
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public AlertRuleTemplatePropertiesBase Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Consent for Office365 tenant that already made.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class OfficeConsent
 	{
-
+		
 		/// <summary>
 		/// Consent property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public OfficeConsentProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Consent property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class OfficeConsentProperties
 	{
-
+		
 		/// <summary>
 		/// The tenantId of the Office365 with the consent.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "tenantId")]
 		public string TenantId { get; set; }
-
+		
 		/// <summary>
 		/// The tenant name of the Office365 with the consent.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "tenantName")]
 		public string TenantName { get; set; }
 	}
-
+	
 	/// <summary>
 	/// List of all the office365 consents.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class OfficeConsentList
 	{
-
+		
 		/// <summary>
 		/// URL to fetch the next set of office consents.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "nextLink")]
 		public string NextLink { get; set; }
-
+		
 		/// <summary>
 		/// Array of the consents.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
 		public OfficeConsent[] Value { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Represents office data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class OfficeDataConnector
 	{
-
+		
 		/// <summary>
 		/// Office data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public OfficeDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Office data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class OfficeDataConnectorProperties
 	{
-
+		
 		/// <summary>
 		/// The available data types for office data connector.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dataTypes")]
 		public OfficeDataConnectorDataTypes DataTypes { get; set; }
 	}
-
+	
 	/// <summary>
 	/// The available data types for office data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class OfficeDataConnectorDataTypes
 	{
-
+		
 		/// <summary>
 		/// Exchange data type connection.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "exchange")]
 		public string Exchange { get; set; }
-
+		
 		/// <summary>
 		/// SharePoint data type connection.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "sharePoint")]
 		public string SharePoint { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Operation provided by provider
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class Operation
 	{
-
+		
 		/// <summary>
 		/// Properties of the operation
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "display")]
 		public OperationDisplay Display { get; set; }
-
+		
 		/// <summary>
 		/// Name of the operation
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
 	}
-
+	
 	public class OperationDisplay
 	{
-
+		
 		/// <summary>
 		/// Description of the operation
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "description")]
 		public string Description { get; set; }
-
+		
 		/// <summary>
 		/// Operation name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "operation")]
 		public string Operation { get; set; }
-
+		
 		/// <summary>
 		/// Provider name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "provider")]
 		public string Provider { get; set; }
-
+		
 		/// <summary>
 		/// Resource name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "resource")]
 		public string Resource { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Lists the operations available in the SecurityInsights RP.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class OperationsList
 	{
-
+		
 		/// <summary>
 		/// URL to fetch the next set of operations.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "nextLink")]
 		public string NextLink { get; set; }
-
+		
 		/// <summary>
 		/// Array of operations
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
 		public Operation[] Value { get; set; }
 	}
-
+	
 	/// <summary>
 	/// An azure resource object
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class Resource
 	{
-
+		
 		/// <summary>
 		/// Azure resource Id
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "id")]
 		public string Id { get; set; }
-
+		
 		/// <summary>
 		/// Azure resource name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
-
+		
 		/// <summary>
 		/// Azure resource type
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "type")]
 		public string Type { get; set; }
 	}
-
+	
 	/// <summary>
 	/// An azure resource object with an Etag property
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ResourceWithEtag
 	{
-
+		
 		/// <summary>
 		/// Etag of the azure resource
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "etag")]
 		public string Etag { get; set; }
-
+		
 		/// <summary>
 		/// Azure resource Id
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "id")]
 		public string Id { get; set; }
-
+		
 		/// <summary>
 		/// Azure resource name
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
-
+		
 		/// <summary>
 		/// Azure resource type
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "type")]
 		public string Type { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Represents scheduled alert rule.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ScheduledAlertRule
 	{
-
+		
 		/// <summary>
 		/// Scheduled alert rule base property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public ScheduledAlertRuleProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Scheduled alert rule base property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ScheduledAlertRuleProperties
 	{
-
+		
 		/// <summary>
 		/// The Name of the alert rule template used to create this rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "alertRuleTemplateName")]
 		public string AlertRuleTemplateName { get; set; }
-
+		
 		/// <summary>
 		/// The description of the alert rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "description")]
 		public string Description { get; set; }
-
+		
 		/// <summary>
 		/// The display name for alerts created by this alert rule.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "displayName")]
 		public string DisplayName { get; set; }
-
+		
 		/// <summary>
 		/// Determines whether this alert rule is enabled or disabled.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "enabled")]
 		public bool Enabled { get; set; }
-
+		
 		/// <summary>
 		/// The last time that this alert rule has been modified.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "lastModifiedUtc")]
 		public System.Nullable<System.DateTimeOffset> LastModifiedUtc { get; set; }
-
+		
 		/// <summary>
 		/// The suppression (in ISO 8601 duration format) to wait since last time this alert rule been triggered.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "suppressionDuration")]
 		public string SuppressionDuration { get; set; }
-
+		
 		/// <summary>
 		/// Determines whether the suppression for this alert rule is enabled or disabled.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "suppressionEnabled")]
 		public bool SuppressionEnabled { get; set; }
-
+		
 		/// <summary>
 		/// The tactics of the alert rule
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "tactics")]
 		public AttackTactic[] Tactics { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Schedule alert rule template property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ScheduledAlertRuleCommonProperties
 	{
-
+		
 		/// <summary>
 		/// The query that creates alerts for this rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "query")]
 		public string Query { get; set; }
-
+		
 		/// <summary>
 		/// The frequency (in ISO 8601 duration format) for this alert rule to run.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "queryFrequency")]
 		public string QueryFrequency { get; set; }
-
+		
 		/// <summary>
 		/// The period (in ISO 8601 duration format) that this alert rule looks at.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "queryPeriod")]
 		public string QueryPeriod { get; set; }
-
+		
 		/// <summary>
 		/// The severity of the alert
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "severity")]
 		public AlertSeverity Severity { get; set; }
-
+		
 		/// <summary>
 		/// The operation against the threshold that triggers alert rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "triggerOperator")]
 		public AlertRuleTriggerOperator TriggerOperator { get; set; }
-
+		
 		/// <summary>
 		/// The threshold triggers this alert rule.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "triggerThreshold")]
 		public System.Nullable<System.Int32> TriggerThreshold { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Represents scheduled alert rule template.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ScheduledAlertRuleTemplate
 	{
-
+		
 		/// <summary>
 		/// Scheduled alert rule template properties
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public AlertRuleTemplatePropertiesBase Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// The Setting.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class Settings
 	{
 	}
-
+	
 	/// <summary>
 	/// Describes an Azure resource with kind.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class SettingsKind
 	{
-
+		
 		/// <summary>
 		/// The kind of the setting
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "kind")]
 		public System.Nullable<SettingsKindKind> Kind { get; set; }
 	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	
 	public enum SettingsKindKind
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		UebaSettings = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		
 		ToggleSettings = 1,
 	}
-
+	
 	/// <summary>
 	/// Represents threat intelligence data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class TIDataConnector
 	{
-
+		
 		/// <summary>
 		/// TI (Threat Intelligence) data connector properties.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public TIDataConnectorProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// TI (Threat Intelligence) data connector properties.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class TIDataConnectorProperties
 	{
-
+		
 		/// <summary>
 		/// The available data types for TI (Threat Intelligence) data connector.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dataTypes")]
 		public TIDataConnectorDataTypes DataTypes { get; set; }
 	}
-
+	
 	/// <summary>
 	/// The available data types for TI (Threat Intelligence) data connector.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class TIDataConnectorDataTypes
 	{
-
+		
 		/// <summary>
 		/// Data type for indicators connection.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "indicators")]
 		public string Indicators { get; set; }
 	}
-
+	
 	/// <summary>
 	/// ThreatIntelligence property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ThreatIntelligence
 	{
-
+		
 		/// <summary>
 		/// Confidence (must be between 0 and 1)
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "confidence")]
 		public System.Nullable<System.Double> Confidence { get; set; }
-
+		
 		/// <summary>
 		/// Name of the provider from whom this Threat Intelligence information was received
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "providerName")]
 		public string ProviderName { get; set; }
-
+		
 		/// <summary>
 		/// Report link
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "reportLink")]
 		public string ReportLink { get; set; }
-
+		
 		/// <summary>
 		/// Threat description (free text)
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "threatDescription")]
 		public string ThreatDescription { get; set; }
-
+		
 		/// <summary>
 		/// Threat name (e.g. "Jedobot malware")
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "threatName")]
 		public string ThreatName { get; set; }
-
+		
 		/// <summary>
 		/// Threat type (e.g. "Botnet")
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "threatType")]
 		public string ThreatType { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Settings with single toggle.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ToggleSettings
 	{
-
+		
 		/// <summary>
 		/// toggle property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public ToggleSettingsProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// toggle property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class ToggleSettingsProperties
 	{
-
+		
 		/// <summary>
 		/// Determines whether the setting is enable or disabled.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "isEnabled")]
 		public System.Nullable<System.Boolean> IsEnabled { get; set; }
 	}
-
+	
 	/// <summary>
 	/// Represents settings for User and Entity Behavior Analytics enablement.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class UebaSettings
 	{
-
+		
 		/// <summary>
 		/// User and Entity Behavior Analytics settings property bag.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
 		public UebaSettingsProperties Properties { get; set; }
 	}
-
+	
 	/// <summary>
 	/// User and Entity Behavior Analytics settings property bag.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class UebaSettingsProperties
 	{
-
+		
 		/// <summary>
 		/// Determines whether the tenant has ATP (Advanced Threat Protection) license.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "atpLicenseStatus")]
 		public DataConnectorDataTypeCommonState AtpLicenseStatus { get; set; }
-
+		
 		/// <summary>
 		/// Determines whether User and Entity Behavior Analytics is enabled for this workspace.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "isEnabled")]
 		public System.Nullable<System.Boolean> IsEnabled { get; set; }
-
+		
 		/// <summary>
 		/// Determines whether User and Entity Behavior Analytics is enabled from MCAS (Microsoft Cloud App Security).
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "statusInMcas")]
 		public DataConnectorDataTypeCommonState StatusInMcas { get; set; }
 	}
-
+	
 	/// <summary>
 	/// User information that made some action
 	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
 	public class UserInfo
 	{
-
+		
 		/// <summary>
 		/// The email of the user.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "email")]
 		public string Email { get; set; }
-
+		
 		/// <summary>
 		/// The name of the user.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
-
+		
 		/// <summary>
 		/// The object id of the user.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "objectId")]
 		public string ObjectId { get; set; }
 	}
-
-	public partial class Misc
+	
+	public partial class MyClient
 	{
-
+		
 		private System.Net.Http.HttpClient client;
-
+		
 		private JsonSerializerSettings jsonSerializerSettings;
-
-		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings = null)
+		
+		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -1567,7 +1318,7 @@ namespace MyNS
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
-
+		
 		/// <summary>
 		/// Lists all operations available Azure Security Insights Resource Provider.
 		/// Operations_List providers/Microsoft.SecurityInsights/operations
@@ -1579,24 +1330,53 @@ namespace MyNS
 			var requestUri = "providers/Microsoft.SecurityInsights/operations?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<OperationsList>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<OperationsList>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Lists all operations available Azure Security Insights Resource Provider.
+		/// Operations_List providers/Microsoft.SecurityInsights/operations
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <returns>OK. Successfully retrieved operations list.</returns>
+		public OperationsList Operations_List(Operations_ListApi_version api_version)
+		{
+			var requestUri = "providers/Microsoft.SecurityInsights/operations?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<OperationsList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Gets all alert rules.
 		/// AlertRules_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules
@@ -1608,27 +1388,59 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<AlertRulesList> AlertRules_ListAsync(AlertRules_ListApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<AlertRulesList>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AlertRulesList>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Gets all alert rules.
+		/// AlertRules_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <returns>OK</returns>
+		public AlertRulesList AlertRules_List(AlertRules_ListApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AlertRulesList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Gets the alert rule.
 		/// AlertRules_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}
@@ -1641,27 +1453,60 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<AlertRule> AlertRules_GetAsync(AlertRules_GetApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules/" + (ruleId == null ? "" : Uri.EscapeDataString(ruleId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<AlertRule>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AlertRule>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Gets the alert rule.
+		/// AlertRules_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="ruleId">Alert rule ID</param>
+		/// <returns>OK</returns>
+		public AlertRule AlertRules_Get(AlertRules_GetApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AlertRule>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Creates or updates the alert rule.
 		/// AlertRules_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}
@@ -1675,34 +1520,75 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<AlertRule> AlertRules_CreateOrUpdateAsync(AlertRules_CreateOrUpdateApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, AlertRule requestBody)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules/" + (ruleId == null ? "" : Uri.EscapeDataString(ruleId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
-				using (var requestWriter = new System.IO.StringWriter())
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					httpRequestMessage.Content = content;
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = JsonSerializer.Create(jsonSerializerSettings);
-							return serializer.Deserialize<AlertRule>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AlertRule>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Creates or updates the alert rule.
+		/// AlertRules_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="ruleId">Alert rule ID</param>
+		/// <param name="requestBody">The alert rule</param>
+		/// <returns>OK</returns>
+		public AlertRule AlertRules_CreateOrUpdate(AlertRules_CreateOrUpdateApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, AlertRule requestBody)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<AlertRule>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Delete the alert rule.
 		/// AlertRules_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}
@@ -1715,21 +1601,48 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task AlertRules_DeleteAsync(AlertRules_DeleteApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules/" + (ruleId == null ? "" : Uri.EscapeDataString(ruleId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
-
+		
+		/// <summary>
+		/// Delete the alert rule.
+		/// AlertRules_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="ruleId">Alert rule ID</param>
+		/// <returns>OK</returns>
+		public void AlertRules_Delete(AlertRules_DeleteApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Gets all actions of alert rule.
 		/// Actions_ListByAlertRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions
@@ -1742,27 +1655,60 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<ActionsList> Actions_ListByAlertRuleAsync(Actions_ListByAlertRuleApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules/" + (ruleId == null ? "" : Uri.EscapeDataString(ruleId)) + "/actions?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<ActionsList>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ActionsList>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Gets all actions of alert rule.
+		/// Actions_ListByAlertRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="ruleId">Alert rule ID</param>
+		/// <returns>OK</returns>
+		public ActionsList Actions_ListByAlertRule(Actions_ListByAlertRuleApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ActionsList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Gets the action of alert rule.
 		/// AlertRules_GetAction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions/{actionId}
@@ -1776,27 +1722,61 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<ActionResponse> AlertRules_GetActionAsync(AlertRules_GetActionApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, string actionId)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules/" + (ruleId == null ? "" : Uri.EscapeDataString(ruleId)) + "/actions/" + (actionId == null ? "" : Uri.EscapeDataString(actionId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions/"+ (actionId==null? "" : Uri.EscapeDataString(actionId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<ActionResponse>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ActionResponse>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Gets the action of alert rule.
+		/// AlertRules_GetAction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions/{actionId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="ruleId">Alert rule ID</param>
+		/// <param name="actionId">Action ID</param>
+		/// <returns>OK</returns>
+		public ActionResponse AlertRules_GetAction(AlertRules_GetActionApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, string actionId)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions/"+ (actionId==null? "" : Uri.EscapeDataString(actionId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ActionResponse>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Creates or updates the action of alert rule.
 		/// AlertRules_CreateOrUpdateAction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions/{actionId}
@@ -1811,34 +1791,76 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<ActionResponse> AlertRules_CreateOrUpdateActionAsync(AlertRules_CreateOrUpdateActionApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, string actionId, Action requestBody)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules/" + (ruleId == null ? "" : Uri.EscapeDataString(ruleId)) + "/actions/" + (actionId == null ? "" : Uri.EscapeDataString(actionId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions/"+ (actionId==null? "" : Uri.EscapeDataString(actionId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
-				using (var requestWriter = new System.IO.StringWriter())
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					httpRequestMessage.Content = content;
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = JsonSerializer.Create(jsonSerializerSettings);
-							return serializer.Deserialize<ActionResponse>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ActionResponse>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Creates or updates the action of alert rule.
+		/// AlertRules_CreateOrUpdateAction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions/{actionId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="ruleId">Alert rule ID</param>
+		/// <param name="actionId">Action ID</param>
+		/// <param name="requestBody">The action</param>
+		/// <returns>OK</returns>
+		public ActionResponse AlertRules_CreateOrUpdateAction(AlertRules_CreateOrUpdateActionApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, string actionId, Action requestBody)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions/"+ (actionId==null? "" : Uri.EscapeDataString(actionId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<ActionResponse>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Delete the action of alert rule.
 		/// AlertRules_DeleteAction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions/{actionId}
@@ -1852,21 +1874,49 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task AlertRules_DeleteActionAsync(AlertRules_DeleteActionApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, string actionId)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/alertRules/" + (ruleId == null ? "" : Uri.EscapeDataString(ruleId)) + "/actions/" + (actionId == null ? "" : Uri.EscapeDataString(actionId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions/"+ (actionId==null? "" : Uri.EscapeDataString(actionId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
-
+		
+		/// <summary>
+		/// Delete the action of alert rule.
+		/// AlertRules_DeleteAction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/alertRules/{ruleId}/actions/{actionId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="ruleId">Alert rule ID</param>
+		/// <param name="actionId">Action ID</param>
+		/// <returns>OK</returns>
+		public void AlertRules_DeleteAction(AlertRules_DeleteActionApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string ruleId, string actionId)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/alertRules/"+ (ruleId==null? "" : Uri.EscapeDataString(ruleId))+"/actions/"+ (actionId==null? "" : Uri.EscapeDataString(actionId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Gets all data connectors.
 		/// DataConnectors_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors
@@ -1878,27 +1928,59 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<DataConnectorList> DataConnectors_ListAsync(DataConnectors_ListApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/dataConnectors?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<DataConnectorList>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DataConnectorList>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Gets all data connectors.
+		/// DataConnectors_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <returns>OK</returns>
+		public DataConnectorList DataConnectors_List(DataConnectors_ListApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DataConnectorList>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Gets a data connector.
 		/// DataConnectors_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors/{dataConnectorId}
@@ -1911,27 +1993,60 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<DataConnector> DataConnectors_GetAsync(DataConnectors_GetApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string dataConnectorId)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/dataConnectors/" + (dataConnectorId == null ? "" : Uri.EscapeDataString(dataConnectorId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors/"+ (dataConnectorId==null? "" : Uri.EscapeDataString(dataConnectorId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<DataConnector>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DataConnector>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Gets a data connector.
+		/// DataConnectors_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors/{dataConnectorId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="dataConnectorId">Connector ID</param>
+		/// <returns>OK</returns>
+		public DataConnector DataConnectors_Get(DataConnectors_GetApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string dataConnectorId)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors/"+ (dataConnectorId==null? "" : Uri.EscapeDataString(dataConnectorId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DataConnector>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Creates or updates the data connector.
 		/// DataConnectors_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors/{dataConnectorId}
@@ -1945,34 +2060,75 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task<DataConnector> DataConnectors_CreateOrUpdateAsync(DataConnectors_CreateOrUpdateApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string dataConnectorId, DataConnector requestBody)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/dataConnectors/" + (dataConnectorId == null ? "" : Uri.EscapeDataString(dataConnectorId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors/"+ (dataConnectorId==null? "" : Uri.EscapeDataString(dataConnectorId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
-				using (var requestWriter = new System.IO.StringWriter())
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 				{
-					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-					requestSerializer.Serialize(requestWriter, requestBody);
-					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-					httpRequestMessage.Content = content;
-					var responseMessage = await client.SendAsync(httpRequestMessage);
-					try
-					{
-						responseMessage.EnsureSuccessStatusCodeEx();
-						var stream = await responseMessage.Content.ReadAsStreamAsync();
-						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-						{
-							var serializer = JsonSerializer.Create(jsonSerializerSettings);
-							return serializer.Deserialize<DataConnector>(jsonReader);
-						}
-					}
-					finally
-					{
-						responseMessage.Dispose();
-					}
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DataConnector>(jsonReader);
 				}
 			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
 		}
-
+		
+		/// <summary>
+		/// Creates or updates the data connector.
+		/// DataConnectors_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors/{dataConnectorId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="dataConnectorId">Connector ID</param>
+		/// <param name="requestBody">The data connector</param>
+		/// <returns>OK</returns>
+		public DataConnector DataConnectors_CreateOrUpdate(DataConnectors_CreateOrUpdateApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string dataConnectorId, DataConnector requestBody)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors/"+ (dataConnectorId==null? "" : Uri.EscapeDataString(dataConnectorId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+			using (var requestWriter = new System.IO.StringWriter())
+			{
+			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+			requestSerializer.Serialize(requestWriter, requestBody);
+			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			httpRequestMessage.Content = content;
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				{
+				var serializer = JsonSerializer.Create(jsonSerializerSettings);
+				return serializer.Deserialize<DataConnector>(jsonReader);
+				}
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+			}
+		}
+		
 		/// <summary>
 		/// Delete the data connector.
 		/// DataConnectors_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors/{dataConnectorId}
@@ -1985,110 +2141,124 @@ namespace MyNS
 		/// <returns>OK</returns>
 		public async Task DataConnectors_DeleteAsync(DataConnectors_DeleteApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string dataConnectorId)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourceGroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.OperationalInsights/workspaces/" + (workspaceName == null ? "" : Uri.EscapeDataString(workspaceName)) + "/providers/Microsoft.SecurityInsights/dataConnectors/" + (dataConnectorId == null ? "" : Uri.EscapeDataString(dataConnectorId)) + "?api-version=" + api_version;
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors/"+ (dataConnectorId==null? "" : Uri.EscapeDataString(dataConnectorId))+"?api-version=" + api_version;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
+			var responseMessage = await client.SendAsync(httpRequestMessage);
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
+			}
+		}
+		
+		/// <summary>
+		/// Delete the data connector.
+		/// DataConnectors_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectors/{dataConnectorId}
+		/// </summary>
+		/// <param name="api_version">API version for the operation</param>
+		/// <param name="subscriptionId">Azure subscription ID</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="workspaceName">The name of the workspace.</param>
+		/// <param name="dataConnectorId">Connector ID</param>
+		/// <returns>OK</returns>
+		public void DataConnectors_Delete(DataConnectors_DeleteApi_version api_version, string subscriptionId, string resourceGroupName, string workspaceName, string dataConnectorId)
+		{
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.OperationalInsights/workspaces/"+ (workspaceName==null? "" : Uri.EscapeDataString(workspaceName))+"/providers/Microsoft.SecurityInsights/dataConnectors/"+ (dataConnectorId==null? "" : Uri.EscapeDataString(dataConnectorId))+"?api-version=" + api_version;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			try
+			{
+				responseMessage.EnsureSuccessStatusCodeEx();
+			}
+			finally
+			{
+				responseMessage.Dispose();
+			}
 			}
 		}
 	}
-
+	
 	public enum Operations_ListApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum AlertRules_ListApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum AlertRules_GetApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum AlertRules_CreateOrUpdateApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum AlertRules_DeleteApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum Actions_ListByAlertRuleApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum AlertRules_GetActionApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum AlertRules_CreateOrUpdateActionApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum AlertRules_DeleteActionApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum DataConnectors_ListApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum DataConnectors_GetApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum DataConnectors_CreateOrUpdateApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
-
+	
 	public enum DataConnectors_DeleteApi_version
 	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "2020-01-01")]
+		
 		_2020_01_01 = 0,
 	}
 }
