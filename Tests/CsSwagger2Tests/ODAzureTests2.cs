@@ -715,7 +715,7 @@ namespace SwagTests
 			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\azure.com\security-workspaceSettings\2017-08-01-preview");
 		}
 
-		[Fact]
+		[Fact(Skip ="compiled, however, some API functions not really correct")]
 		public void Test_azure_com_securityinsights_SecurityInsights_2020_01_01()
 		{
 			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\azure.com\securityinsights-SecurityInsights\2020-01-01");

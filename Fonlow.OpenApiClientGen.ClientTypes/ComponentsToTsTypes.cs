@@ -263,9 +263,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					clientProperty = CreateProperty(complexCodeTypeReference, tsInterfacePropertyName, isRequired);
 					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
-				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
+				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type like Category.sub => CategorySub
 				{
-					string casualTypeName = currentTypeName + refinedPropertyName;
+					string casualTypeName = currentTypeName + NameFunc.ToTitleCase(refinedPropertyName);
 					if (FindCodeTypeDeclarationInNamespaces(casualTypeName, ns) != null)
 					{
 						return;
