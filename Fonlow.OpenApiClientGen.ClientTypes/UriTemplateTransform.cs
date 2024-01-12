@@ -77,12 +77,12 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						string arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
+						string arrayQuery = $"String.Join(\"&\", {d.Name}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
 						return newUriText + "\"+" + arrayQuery;
 					}
 					else
 					{
-						string arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{z}}\"))+\"";
+						string arrayQuery = $"String.Join(\"&\", {d.Name}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{z}}\"))+\"";
 						return newUriText + "\"+" + arrayQuery;
 					}
 				}
@@ -132,12 +132,12 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						string arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
+						string arrayQuery = $"String.Join(\"&\", {d.Name}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{Uri.EscapeDataString(z.ToString())}}\"))+\"";
 						return newUriText + "\"+" + arrayQuery;
 					}
 					else
 					{
-						string arrayQuery = $"String.Join(\"&\", {d.ParameterDescriptor.ParameterName}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{z}}\"))+\"";
+						string arrayQuery = $"String.Join(\"&\", {d.Name}.Select(z => $\"{d.ParameterDescriptor.ParameterName}={{z}}\"))+\"";
 						return newUriText + "\"+" + arrayQuery;
 					}
 				}
@@ -175,12 +175,12 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						string arrayQuery = $"{d.ParameterDescriptor.ParameterName}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
+						string arrayQuery = $"{d.Name}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
 						return newUriText + "' + " + arrayQuery + " + '";
 					}
 					else
 					{
-						string arrayQuery = $"{d.ParameterDescriptor.ParameterName}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{z}}`).join('&')";
+						string arrayQuery = $"{d.Name}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{z}}`).join('&')";
 						return newUriText + "' + " + arrayQuery + " + '";
 					}
 				}
@@ -230,13 +230,13 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						string arrayQuery = $"{d.ParameterDescriptor.ParameterName}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
+						string arrayQuery = $"{d.Name}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{encodeURIComponent(z)}}`).join('&')";
 						string placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}";
 						return newUriText.Replace(placeHolder, "' + " + arrayQuery);
 					}
 					else
 					{
-						string arrayQuery = $"{d.ParameterDescriptor.ParameterName}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{z}}`).join('&')";
+						string arrayQuery = $"{d.Name}{questionMarkForSafeTransform}.map(z => `{d.ParameterDescriptor.ParameterName}=${{z}}`).join('&')";
 						string placeHolder = $"{d.ParameterDescriptor.ParameterName}={{{d.ParameterDescriptor.ParameterName}}}";
 						return newUriText.Replace(placeHolder, "' + " + arrayQuery);
 					}
