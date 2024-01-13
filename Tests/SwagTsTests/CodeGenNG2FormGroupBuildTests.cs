@@ -269,6 +269,12 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestMozillaKinto()
+		{
+			helper.GenerateAndAssertBuild("SwagMock\\MozillaKinto.yaml", "NG2FormGroupResults\\MozillaKinto.txt");
+		}
+
+		[Fact]
 		public void TestGoogleBooks()
 		{
 			helper.GenerateAndAssertAndBuild("SwagMock\\googleBooksOpenApi.yaml", "NG2FormGroupResults\\googleBooksOpenApi.txt");

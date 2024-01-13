@@ -170,7 +170,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public static bool IsKeyNameValidTsPropertyName(string s)
 		{
 			var ok1 = !(s.Contains('.') || s.Contains('$') || s.Contains(':') || s.Contains('-') || s.Contains('.') || s.Contains('[') || s.Contains(']')
-				|| s.Contains('/') || s.Contains('#') || s.Contains(' '));
+				|| s.Contains('/') || s.Contains('#') || s.Contains(' ') || s.Contains(',') || s.Contains('+'));
 			var ok2 = Char.IsLetter(s[0]) || s[0] == '_';
 			return ok1 && ok2;
 		}

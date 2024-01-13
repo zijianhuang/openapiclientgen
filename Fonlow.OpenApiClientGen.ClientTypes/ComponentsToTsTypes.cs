@@ -309,7 +309,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
-							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							? propertySchema.Enum.Cast<OpenApiString>().Select(m =>
+							{
+								var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(m.Value);
+								return isValidEnumName ? m.Value
+								: (Char.IsDigit(m.Value[0]) ? NameFunc.RefineEnumMemberName(m.Value) : $"'{m.Value}'");
+							}).ToArray()
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 					}
@@ -537,8 +542,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(stringMember.Value);
-					bool hasFunkyMemberName = memberName != stringMember.Value;
+					var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(stringMember.Value);
+					string memberName = isValidEnumName ? stringMember.Value : (Char.IsDigit(stringMember.Value[0]) ? NameFunc.RefineEnumMemberName(stringMember.Value)
+						: $"'{stringMember.Value}'");
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{

@@ -183,6 +183,12 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void Test_mathTools()
+		{
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\math.tools\1.5", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+		}
+
+		[Fact]
 		public void Test_ipinfodb()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\ipinfodb.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -280,6 +286,7 @@ namespace SwagTests
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\gov.bc.ca\bcgnws\3.x.x", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
+
 
 		//[Fact]
 		//public void Test_geocoder()has invalid url sites/{siteID}/subsites.{outputFormat} and sites/{siteID}.{outputFormat},  https://stackoverflow.com/questions/3856693/a-url-resource-that-is-a-dot-2e

@@ -9,6 +9,7 @@
     <Import_RootNamespace>OpenApiDirShared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MiscSwaggerTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ODAzureTests.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ODAzureTests2.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ODMiscTests.cs" />

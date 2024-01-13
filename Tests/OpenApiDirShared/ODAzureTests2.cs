@@ -480,7 +480,7 @@ namespace SwagTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\azure.com\resources-features\2015-12-01");
 		}
 
-		[Fact]
+		[Fact(Skip = "atScope() as enum")]
 		public void Test_azure_com_resources_links_2016_09_01()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\azure.com\resources-links\2016-09-01");

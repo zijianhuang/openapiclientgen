@@ -55,6 +55,10 @@ namespace Fonlow.CodeDom.Web
 			{
 				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
 			}
+			catch (FormatException ex)
+			{
+				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
+			}
 
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
 				return null;

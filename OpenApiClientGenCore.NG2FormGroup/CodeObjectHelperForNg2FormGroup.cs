@@ -356,6 +356,10 @@ namespace Fonlow.TypeScriptCodeDom
 
 		void WriteAngularFormGroupMembersAndCloseBracing(CodeTypeDeclaration typeDeclaration, TextWriter w, CodeGeneratorOptions o)
 		{
+			if (typeDeclaration == null)
+			{
+				return;
+			}
 
 			if (typeDeclaration.IsEnum)
 			{
@@ -367,7 +371,7 @@ namespace Fonlow.TypeScriptCodeDom
 				var currentIndent = o.IndentString;
 				o.IndentString += BasicIndent;
 				w.WriteLine();
-				WriteParentFommGroupMembers(typeDeclaration, w, o);
+				WriteParentFormGroupMembers(typeDeclaration, w, o);
 
 				for (int i = 0; i < typeDeclaration.Members.Count; i++)
 				{
@@ -379,7 +383,7 @@ namespace Fonlow.TypeScriptCodeDom
 			}
 		}
 
-		void WriteParentFommGroupMembers(CodeTypeDeclaration typeDeclaration, TextWriter w, CodeGeneratorOptions o)
+		void WriteParentFormGroupMembers(CodeTypeDeclaration typeDeclaration, TextWriter w, CodeGeneratorOptions o)
 		{
 			if (typeDeclaration.BaseTypes.Count > 0)
 			{
@@ -388,10 +392,10 @@ namespace Fonlow.TypeScriptCodeDom
 																								   //Console.WriteLine("parentTypeName: " + parentTypeName);
 				var parentCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(parentTypeName);
 
-				WriteParentFommGroupMembers(parentCodeTypeDeclaration, w, o); //recrusively check parent's parent
-
 				if (parentCodeTypeDeclaration != null)
 				{
+					WriteParentFormGroupMembers(parentCodeTypeDeclaration, w, o); //recrusively check parent's parent
+
 					for (int i = 0; i < parentCodeTypeDeclaration.Members.Count; i++)
 					{
 						WriteCodeTypeMemberOfAngularFormGroup(parentCodeTypeDeclaration.Members[i], w, o);
