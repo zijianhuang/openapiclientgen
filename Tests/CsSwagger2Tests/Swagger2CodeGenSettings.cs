@@ -2,7 +2,7 @@
 
 namespace SwagTests
 {
-	public static class CodeGenSettings
+	public static class Swagger2CodeGenSettings
 	{
 		public static readonly Settings Default = new()
 		{

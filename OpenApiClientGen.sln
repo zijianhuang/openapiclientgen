@@ -76,6 +76,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsTestHelpers", "Tests\CsTe
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OpenApiDirShared", "Tests\OpenApiDirShared\OpenApiDirShared.shproj", "{917C07F5-E9F5-4116-B6B1-CDBD8AEEF717}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SwaggerDirShared", "Tests\SwaggerDirShared\SwaggerDirShared.shproj", "{8F4A7BB0-81FD-4EDD-8B6D-12D165ABCC2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -222,12 +224,16 @@ Global
 		{3D000729-E7E6-4176-A7C5-B2AB61EC5B33} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{85F64AB6-8C61-4000-A9BA-77E726FAEE1F} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{917C07F5-E9F5-4116-B6B1-CDBD8AEEF717} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
+		{8F4A7BB0-81FD-4EDD-8B6D-12D165ABCC2C} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BEA7BD1-2BD3-4E85-8E05-D98DE5C44574}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Tests\OpenApiDirShared\OpenApiDirShared.projitems*{1ebc3fd0-2b56-43d0-afe5-3fc77b82d168}*SharedItemsImports = 5
+		Tests\SwaggerDirShared\SwaggerDirShared.projitems*{1ebc3fd0-2b56-43d0-afe5-3fc77b82d168}*SharedItemsImports = 5
+		Tests\OpenApiDirShared\OpenApiDirShared.projitems*{49672cc3-d716-408c-a143-33211c9b464c}*SharedItemsImports = 5
+		Tests\SwaggerDirShared\SwaggerDirShared.projitems*{8f4a7bb0-81fd-4edd-8b6d-12d165abcc2c}*SharedItemsImports = 13
 		Tests\OpenApiDirShared\OpenApiDirShared.projitems*{917c07f5-e9f5-4116-b6b1-cdbd8aeef717}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

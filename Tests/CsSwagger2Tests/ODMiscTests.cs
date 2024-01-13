@@ -14,7 +14,7 @@ namespace SwagTests
 
 		void GenerateFromOpenApiAndBuild(string filePath, Settings mySettings = null)
 		{
-			Settings settings = mySettings ?? CodeGenSettings.Default;
+			Settings settings = mySettings ?? Swagger2CodeGenSettings.Default;
 			helper.GenerateFromOpenApiAndBuild(filePath, settings);
 		}
 
@@ -48,18 +48,6 @@ namespace SwagTests
 			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\evemarketer.com\1.0.1");
 		}
 
-		//[Fact]
-		//public void Test_github_com_v3() it has multiple parameters sharing the same name though in path and query, however, the url template defines one.
-		//{
-		//	GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\github.com\v3", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
-		//}
-
-		//[Fact]
-		//public void Test_gitlab_com_v3() it has properties with question mask as suffix
-		//{
-		//	GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\gitlab.com\v3");
-		//}
-
 		[Fact]
 		public void Test_globalwinescore_com_8234aab51481d37a30757d925b7f4221a659427e()
 		{
@@ -75,7 +63,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_greenpeace_org_1_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\greenpeace.org\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\greenpeace.org\1.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -396,7 +384,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_spotify_com_v1()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\spotify.com\v1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\spotify.com\v1", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -408,7 +396,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_staging_ecotaco_com_1_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\staging-ecotaco.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\staging-ecotaco.com\1.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -444,7 +432,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_surrey_ca_open511_0_1()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\surrey.ca\open511\0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\surrey.ca\open511\0.1", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -516,31 +504,31 @@ namespace SwagTests
 		[Fact]
 		public void Test_thetvdb_com_2_2_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\thetvdb.com\2.2.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\thetvdb.com\2.2.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tinyuid_com_1_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\tinyuid.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\tinyuid.com\1.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_traccar_org_4_6()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\traccar.org\4.6", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\traccar.org\4.6", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_tradematic_com_1_0_2()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\tradematic.com\1.0.2", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\tradematic.com\1.0.2", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_transavia_com_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\transavia.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\transavia.com\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -588,7 +576,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_twilio_com_2010_04_01() //pretty complex path and query
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\twilio.com\2010-04-01", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\twilio.com\2010-04-01", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -612,7 +600,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_uebermaps_com_2_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\uebermaps.com\2.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\uebermaps.com\2.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -648,19 +636,19 @@ namespace SwagTests
 		[Fact]
 		public void Test_visiblethread_com_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\visiblethread.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\visiblethread.com\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_vocadb_net_v1()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\vocadb.net\v1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\vocadb.net\v1", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_voodoomfg_com_2_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\voodoomfg.com\2.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\voodoomfg.com\2.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -708,7 +696,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_waterlinked_com_1_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\waterlinked.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\waterlinked.com\1.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -738,13 +726,13 @@ namespace SwagTests
 		[Fact]
 		public void Test_wedpax_com_v1()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wedpax.com\v1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wedpax.com\v1", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_whapi_com_accounts_2_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\whapi.com\accounts\2.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\whapi.com\accounts\2.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -780,13 +768,13 @@ namespace SwagTests
 		[Fact]
 		public void Test_who_hosts_this_com_0_0_1()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\who-hosts-this.com\0.0.1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\who-hosts-this.com\0.0.1", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_wikimedia_org_1_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wikimedia.org\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wikimedia.org\1.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -858,37 +846,37 @@ namespace SwagTests
 		[Fact]
 		public void Test_wmata_com_bus_realtime_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\bus-realtime\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\bus-realtime\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_wmata_com_bus_route_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\bus-route\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\bus-route\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_wmata_com_incidents_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\incidents\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\incidents\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_wmata_com_rail_realtime_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\rail-realtime\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\rail-realtime\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_wmata_com_rail_station_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\rail-station\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wmata.com\rail-station\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_wordassociations_net_1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wordassociations.net\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wordassociations.net\1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -906,13 +894,13 @@ namespace SwagTests
 		[Fact]
 		public void Test_wso2apistore_com_transform_1_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wso2apistore.com\transform\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\wso2apistore.com\transform\1.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_xero_com_2_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\xero.com\2.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\xero.com\2.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -930,7 +918,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_zalando_com_v1_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zalando.com\v1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zalando.com\v1.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -942,7 +930,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_zenoti_com_1_0_0()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zenoti.com\1.0.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zenoti.com\1.0.0", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]
@@ -954,7 +942,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_zoomconnect_com_1()
 		{
-			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zoomconnect.com\1", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
+			GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zoomconnect.com\1", Swagger2CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 

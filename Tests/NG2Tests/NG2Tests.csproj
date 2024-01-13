@@ -51,4 +51,6 @@
 
   <Import Project="..\OpenApiDirShared\OpenApiDirShared.projitems" Label="Shared" />
 
+  <Import Project="..\SwaggerDirShared\SwaggerDirShared.projitems" Label="Shared" />
+
 </Project>

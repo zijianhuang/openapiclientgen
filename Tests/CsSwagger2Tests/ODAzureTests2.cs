@@ -14,7 +14,7 @@ namespace SwagTests
 
 		void GenerateFromOpenApiAndBuild(string filePath, Settings mySettings = null)
 		{
-			Settings settings = mySettings ?? CodeGenSettings.Default;
+			Settings settings = mySettings ?? Swagger2CodeGenSettings.Default;
 			helper.GenerateFromOpenApiAndBuild(filePath, settings);
 		}
 

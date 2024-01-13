@@ -31,9 +31,9 @@ namespace SwagTests
 			return TranslateDefToCode(defFilePath, settings);
 		}
 
-		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings)
-		{
-			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings);
+		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings= null)
+		{ 
+			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings ?? CodeGenSettings.Default);
 			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
 			if (!r.Success)
 			{

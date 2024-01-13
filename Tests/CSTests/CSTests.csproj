@@ -29,4 +29,6 @@
     <ProjectReference Include="..\CsTestHelpers\CsTestHelpers.csproj" />
   </ItemGroup>
 
+  <Import Project="..\OpenApiDirShared\OpenApiDirShared.projitems" Label="Shared" />
+
 </Project>
