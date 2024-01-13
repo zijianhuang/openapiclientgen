@@ -1,62 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <IsPackable>false</IsPackable>
-    <Version>2.0.0</Version>
+	<TargetFramework>net8.0</TargetFramework>
+	<IsPackable>false</IsPackable>
+	<Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="SwagMock\*.yaml" />
-    <None Remove="SwagMock\*.json" />
+	<None Remove="appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
-	  <Content Include="SwagMock\*.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwagMock\*.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+	<Content Include="appsettings.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="appsettings.json" />
+	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+	<PackageReference Include="xunit" Version="2.6.5" />
+	<PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="coverlet.collector" Version="6.0.0">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="xunit" Version="2.6.5" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="6.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
-    <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="SwagMock\pet.yaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+	<ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
+	<ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(ProjectDir)Results\*.ts $(TargetDir)Results\ /D /Y&#xD;&#xA;" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
-    <Exec Command="cp $(ProjectDir)NG2BuildResults/*.ts $(TargetDir)NG2BuildResults/ ;mkdir -p $(TargetDir)Results &#xA;&#xA; cp $(ProjectDir)Results/*.ts $_;" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
+	<Exec Command="xcopy $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)Results\*.* $(TargetDir)Results\ /D /Y /S&#xD;&#xA;" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
+	<Exec Command="cp $(ProjectDir)NG2BuildResults/*.ts $(TargetDir)NG2BuildResults/ ;mkdir -p $(TargetDir)Results &#xA;&#xA; cp $(ProjectDir)Results/*.ts $_;" Condition="!$([MSBuild]::IsOSPlatform('Windows'))" />
   </Target>
 
   <Import Project="..\OpenApiDirShared\OpenApiDirShared.projitems" Label="Shared" />

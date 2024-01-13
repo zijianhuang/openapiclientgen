@@ -7,37 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Remove="Results\*.txt" />
-		<None Remove="Results\Vsts\*.txt" />
-		<None Remove="SwagMock\*.json" />
-		<None Remove="SwagMock\*.yaml" />
-		<None Remove="SwagMock\Vsts\*.json" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Content Include="Results\*.txt">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="Results\Vsts\*.txt">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="SwagMock\*.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="SwagMock\*.yaml">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Include="SwagMock\Vsts\*.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="appsettings.json" />
-	  <None Remove="Results\webhook31.yaml" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Content Include="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
@@ -64,10 +33,8 @@
 		<ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Content Update="Results\ValuesPaths.txt">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="xcopy $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)Results\*.* $(TargetDir)Results\ /D /Y /S&#xD;&#xA;" />
+	</Target>
 
 </Project>
