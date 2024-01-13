@@ -68,11 +68,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum FacetsSortKeys { scoredesc = 0, spatial_areaasc = 1, spatial_areadesc = 2, temporal_durationasc = 3, temporal_durationdesc = 4, updateddesc = 5 }
+	export enum FacetsSortKeys { 'score,,desc' = 0, 'spatial_area,,asc' = 1, 'spatial_area,,desc' = 2, 'temporal_duration,,asc' = 3, 'temporal_duration,,desc' = 4, 'updated,,desc' = 5 }
 
 	export enum FacetsSource { NSIDC = 0, ADE = 1 }
 
-	export enum Open_searchSortKeys { scoredesc = 0, spatial_areaasc = 1, spatial_areadesc = 2, temporal_durationasc = 3, temporal_durationdesc = 4, updateddesc = 5 }
+	export enum Open_searchSortKeys { 'score,,desc' = 0, 'spatial_area,,asc' = 1, 'spatial_area,,desc' = 2, 'temporal_duration,,asc' = 3, 'temporal_duration,,desc' = 4, 'updated,,desc' = 5 }
 
 }
 

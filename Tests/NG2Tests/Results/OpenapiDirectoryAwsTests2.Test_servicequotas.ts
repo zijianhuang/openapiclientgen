@@ -161,9 +161,9 @@ export namespace MyNS {
 	}
 	export function CreateDeleteServiceQuotaIncreaseRequestFromTemplateRequestFormGroup() {
 		return new FormGroup<DeleteServiceQuotaIncreaseRequestFromTemplateRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 		});
 
 	}
@@ -298,10 +298,10 @@ export namespace MyNS {
 	}
 	export function CreateServiceQuotaFormGroup() {
 		return new FormGroup<ServiceQuotaFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
 			QuotaArn: new FormControl<string | null | undefined>(undefined),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			QuotaName: new FormControl<string | null | undefined>(undefined),
 			Value: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000000000)]),
 			Unit: new FormControl<string | null | undefined>(undefined),
@@ -340,7 +340,7 @@ export namespace MyNS {
 		return new FormGroup<MetricInfoFormProperties>({
 			MetricNamespace: new FormControl<string | null | undefined>(undefined),
 			MetricName: new FormControl<string | null | undefined>(undefined),
-			MetricStatisticRecommendation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('(Sum|Maximum)')]),
+			MetricStatisticRecommendation: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('(Sum|Maximum)')]),
 		});
 
 	}
@@ -433,8 +433,8 @@ export namespace MyNS {
 	}
 	export function CreateGetAWSDefaultServiceQuotaRequestFormGroup() {
 		return new FormGroup<GetAWSDefaultServiceQuotaRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 		});
 
 	}
@@ -555,11 +555,11 @@ export namespace MyNS {
 	}
 	export function CreateRequestedServiceQuotaChangeFormGroup() {
 		return new FormGroup<RequestedServiceQuotaChangeFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[0-9a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[0-9a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			CaseId: new FormControl<string | null | undefined>(undefined),
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			QuotaName: new FormControl<string | null | undefined>(undefined),
 			DesiredValue: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000000000)]),
 			Status: new FormControl<RequestedServiceQuotaChangeStatus | null | undefined>(undefined),
@@ -595,7 +595,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRequestedServiceQuotaChangeRequestFormGroup() {
 		return new FormGroup<GetRequestedServiceQuotaChangeRequestFormProperties>({
-			RequestId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[0-9a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			RequestId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[0-9a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 		});
 
 	}
@@ -647,8 +647,8 @@ export namespace MyNS {
 	}
 	export function CreateGetServiceQuotaRequestFormGroup() {
 		return new FormGroup<GetServiceQuotaRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 		});
 
 	}
@@ -732,12 +732,12 @@ export namespace MyNS {
 	}
 	export function CreateServiceQuotaIncreaseRequestInTemplateFormGroup() {
 		return new FormGroup<ServiceQuotaIncreaseRequestInTemplateFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			QuotaName: new FormControl<string | null | undefined>(undefined),
 			DesiredValue: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000000000)]),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			Unit: new FormControl<string | null | undefined>(undefined),
 			GlobalQuota: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -792,9 +792,9 @@ export namespace MyNS {
 	}
 	export function CreateGetServiceQuotaIncreaseRequestFromTemplateRequestFormGroup() {
 		return new FormGroup<GetServiceQuotaIncreaseRequestFromTemplateRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 		});
 
 	}
@@ -855,7 +855,7 @@ export namespace MyNS {
 	}
 	export function CreateListAWSDefaultServiceQuotasRequestFormGroup() {
 		return new FormGroup<ListAWSDefaultServiceQuotasRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('^[a-zA-Z0-9/+]*={0,2}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -928,7 +928,7 @@ export namespace MyNS {
 	}
 	export function CreateListRequestedServiceQuotaChangeHistoryRequestFormGroup() {
 		return new FormGroup<ListRequestedServiceQuotaChangeHistoryRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
 			Status: new FormControl<RequestedServiceQuotaChangeStatus | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('^[a-zA-Z0-9/+]*={0,2}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -1008,8 +1008,8 @@ export namespace MyNS {
 	}
 	export function CreateListRequestedServiceQuotaChangeHistoryByQuotaRequestFormGroup() {
 		return new FormGroup<ListRequestedServiceQuotaChangeHistoryByQuotaRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			Status: new FormControl<RequestedServiceQuotaChangeStatus | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('^[a-zA-Z0-9/+]*={0,2}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -1083,8 +1083,8 @@ export namespace MyNS {
 	}
 	export function CreateListServiceQuotaIncreaseRequestsInTemplateRequestFormGroup() {
 		return new FormGroup<ListServiceQuotaIncreaseRequestsInTemplateRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('^[a-zA-Z0-9/+]*={0,2}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -1147,7 +1147,7 @@ export namespace MyNS {
 	}
 	export function CreateListServiceQuotasRequestFormGroup() {
 		return new FormGroup<ListServiceQuotasRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('^[a-zA-Z0-9/+]*={0,2}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 	}
 	export function CreateServiceInfoFormGroup() {
 		return new FormGroup<ServiceInfoFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1307,9 +1307,9 @@ export namespace MyNS {
 	}
 	export function CreatePutServiceQuotaIncreaseRequestIntoTemplateRequestFormGroup() {
 		return new FormGroup<PutServiceQuotaIncreaseRequestIntoTemplateRequestFormProperties>({
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			DesiredValue: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(10000000000)]),
 		});
 
@@ -1386,8 +1386,8 @@ export namespace MyNS {
 	}
 	export function CreateRequestServiceQuotaIncreaseRequestFormGroup() {
 		return new FormGroup<RequestServiceQuotaIncreaseRequestFormProperties>({
-			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
-			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
+			ServiceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,63}')]),
+			QuotaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][a-zA-Z0-9-]{1,128}')]),
 			DesiredValue: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(10000000000)]),
 		});
 
@@ -1583,37 +1583,37 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateServiceQuotaTemplateX_Amz_Target { ServiceQuotasV20190624_AssociateServiceQuotaTemplate = 0 }
+	export enum AssociateServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.AssociateServiceQuotaTemplate' = 0 }
 
-	export enum DeleteServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { ServiceQuotasV20190624_DeleteServiceQuotaIncreaseRequestFromTemplate = 0 }
+	export enum DeleteServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { 'ServiceQuotasV20190624.DeleteServiceQuotaIncreaseRequestFromTemplate' = 0 }
 
-	export enum DisassociateServiceQuotaTemplateX_Amz_Target { ServiceQuotasV20190624_DisassociateServiceQuotaTemplate = 0 }
+	export enum DisassociateServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.DisassociateServiceQuotaTemplate' = 0 }
 
-	export enum GetAWSDefaultServiceQuotaX_Amz_Target { ServiceQuotasV20190624_GetAWSDefaultServiceQuota = 0 }
+	export enum GetAWSDefaultServiceQuotaX_Amz_Target { 'ServiceQuotasV20190624.GetAWSDefaultServiceQuota' = 0 }
 
-	export enum GetAssociationForServiceQuotaTemplateX_Amz_Target { ServiceQuotasV20190624_GetAssociationForServiceQuotaTemplate = 0 }
+	export enum GetAssociationForServiceQuotaTemplateX_Amz_Target { 'ServiceQuotasV20190624.GetAssociationForServiceQuotaTemplate' = 0 }
 
-	export enum GetRequestedServiceQuotaChangeX_Amz_Target { ServiceQuotasV20190624_GetRequestedServiceQuotaChange = 0 }
+	export enum GetRequestedServiceQuotaChangeX_Amz_Target { 'ServiceQuotasV20190624.GetRequestedServiceQuotaChange' = 0 }
 
-	export enum GetServiceQuotaX_Amz_Target { ServiceQuotasV20190624_GetServiceQuota = 0 }
+	export enum GetServiceQuotaX_Amz_Target { 'ServiceQuotasV20190624.GetServiceQuota' = 0 }
 
-	export enum GetServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { ServiceQuotasV20190624_GetServiceQuotaIncreaseRequestFromTemplate = 0 }
+	export enum GetServiceQuotaIncreaseRequestFromTemplateX_Amz_Target { 'ServiceQuotasV20190624.GetServiceQuotaIncreaseRequestFromTemplate' = 0 }
 
-	export enum ListAWSDefaultServiceQuotasX_Amz_Target { ServiceQuotasV20190624_ListAWSDefaultServiceQuotas = 0 }
+	export enum ListAWSDefaultServiceQuotasX_Amz_Target { 'ServiceQuotasV20190624.ListAWSDefaultServiceQuotas' = 0 }
 
-	export enum ListRequestedServiceQuotaChangeHistoryX_Amz_Target { ServiceQuotasV20190624_ListRequestedServiceQuotaChangeHistory = 0 }
+	export enum ListRequestedServiceQuotaChangeHistoryX_Amz_Target { 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistory' = 0 }
 
-	export enum ListRequestedServiceQuotaChangeHistoryByQuotaX_Amz_Target { ServiceQuotasV20190624_ListRequestedServiceQuotaChangeHistoryByQuota = 0 }
+	export enum ListRequestedServiceQuotaChangeHistoryByQuotaX_Amz_Target { 'ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistoryByQuota' = 0 }
 
-	export enum ListServiceQuotaIncreaseRequestsInTemplateX_Amz_Target { ServiceQuotasV20190624_ListServiceQuotaIncreaseRequestsInTemplate = 0 }
+	export enum ListServiceQuotaIncreaseRequestsInTemplateX_Amz_Target { 'ServiceQuotasV20190624.ListServiceQuotaIncreaseRequestsInTemplate' = 0 }
 
-	export enum ListServiceQuotasX_Amz_Target { ServiceQuotasV20190624_ListServiceQuotas = 0 }
+	export enum ListServiceQuotasX_Amz_Target { 'ServiceQuotasV20190624.ListServiceQuotas' = 0 }
 
-	export enum ListServicesX_Amz_Target { ServiceQuotasV20190624_ListServices = 0 }
+	export enum ListServicesX_Amz_Target { 'ServiceQuotasV20190624.ListServices' = 0 }
 
-	export enum PutServiceQuotaIncreaseRequestIntoTemplateX_Amz_Target { ServiceQuotasV20190624_PutServiceQuotaIncreaseRequestIntoTemplate = 0 }
+	export enum PutServiceQuotaIncreaseRequestIntoTemplateX_Amz_Target { 'ServiceQuotasV20190624.PutServiceQuotaIncreaseRequestIntoTemplate' = 0 }
 
-	export enum RequestServiceQuotaIncreaseX_Amz_Target { ServiceQuotasV20190624_RequestServiceQuotaIncrease = 0 }
+	export enum RequestServiceQuotaIncreaseX_Amz_Target { 'ServiceQuotasV20190624.RequestServiceQuotaIncrease' = 0 }
 
 }
 

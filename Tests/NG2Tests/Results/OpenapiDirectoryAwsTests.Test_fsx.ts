@@ -24,7 +24,7 @@ export namespace MyNS {
 	export function CreateCancelDataRepositoryTaskResponseFormGroup() {
 		return new FormGroup<CancelDataRepositoryTaskResponseFormProperties>({
 			Lifecycle: new FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>(undefined),
-			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(task-[0-9a-f]{17,})$')]),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(task-[0-9a-f]{17,})$')]),
 		});
 
 	}
@@ -55,7 +55,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelDataRepositoryTaskRequestFormGroup() {
 		return new FormGroup<CancelDataRepositoryTaskRequestFormProperties>({
-			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(task-[0-9a-f]{17,})$')]),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(task-[0-9a-f]{17,})$')]),
 		});
 
 	}
@@ -250,13 +250,13 @@ export namespace MyNS {
 	}
 	export function CreateBackupFormGroup() {
 		return new FormGroup<BackupFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
 			Lifecycle: new FormControl<BackupLifecycle | null | undefined>(undefined, [Validators.required]),
 			Type: new FormControl<BackupType | null | undefined>(undefined, [Validators.required]),
 			ProgressPercent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^.{1,2048}$')]),
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(8), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^.{1,2048}$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(8), Validators.maxLength(512), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
 		});
 
 	}
@@ -287,7 +287,7 @@ export namespace MyNS {
 	}
 	export function CreateBackupFailureDetailsFormGroup() {
 		return new FormGroup<BackupFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -332,8 +332,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -501,17 +501,17 @@ export namespace MyNS {
 	}
 	export function CreateFileSystemFormGroup() {
 		return new FormGroup<FileSystemFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^\d{12}$')]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^\d{12}$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(11), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(11), Validators.maxLength(21), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
 			FileSystemType: new FormControl<FileSystemFileSystemType | null | undefined>(undefined),
 			Lifecycle: new FormControl<FileSystemLifecycle | null | undefined>(undefined),
 			StorageCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(12), Validators.pattern('^(vpc-[0-9a-f]{8,})$')]),
-			DNSName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(275), Validators.minLength(16), Validators.pattern('^(fsi?-[0-9a-f]{8,}\..{4,253})$')]),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^.{1,2048}$')]),
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(8), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(21), Validators.pattern('^(vpc-[0-9a-f]{8,})$')]),
+			DNSName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(16), Validators.maxLength(275), Validators.pattern('^(fsi?-[0-9a-f]{8,}\..{4,253})$')]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^.{1,2048}$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(8), Validators.maxLength(512), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
 		});
 
 	}
@@ -544,7 +544,7 @@ export namespace MyNS {
 	}
 	export function CreateFileSystemFailureDetailsFormGroup() {
 		return new FormGroup<FileSystemFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -682,14 +682,14 @@ export namespace MyNS {
 	}
 	export function CreateWindowsFileSystemConfigurationFormGroup() {
 		return new FormGroup<WindowsFileSystemConfigurationFormProperties>({
-			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^d-[0-9a-f]{10}$')]),
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^d-[0-9a-f]{10}$')]),
 			DeploymentType: new FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>(undefined),
-			RemoteAdministrationEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(275), Validators.minLength(16), Validators.pattern('^(fsi?-[0-9a-f]{8,}\..{4,253})$')]),
-			PreferredSubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(15), Validators.pattern('^(subnet-[0-9a-f]{8,})$')]),
-			PreferredFileServerIp: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(7), Validators.pattern('^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$')]),
+			RemoteAdministrationEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.minLength(16), Validators.maxLength(275), Validators.pattern('^(fsi?-[0-9a-f]{8,}\..{4,253})$')]),
+			PreferredSubnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(15), Validators.maxLength(24), Validators.pattern('^(subnet-[0-9a-f]{8,})$')]),
+			PreferredFileServerIp: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(15), Validators.pattern('^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$')]),
 			ThroughputCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(8), Validators.max(2048)]),
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
-			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(5), Validators.pattern('^([01]\d|2[0-3]):?([0-5]\d)$')]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(5), Validators.pattern('^([01]\d|2[0-3]):?([0-5]\d)$')]),
 			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(35)]),
 			CopyTagsToBackups: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -760,10 +760,10 @@ export namespace MyNS {
 	}
 	export function CreateSelfManagedActiveDirectoryAttributesFormGroup() {
 		return new FormGroup<SelfManagedActiveDirectoryAttributesFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^.{1,255}$')]),
-			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('^.{1,2000}$')]),
-			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^.{1,256}$')]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^.{1,256}$')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^.{1,255}$')]),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('^.{1,2000}$')]),
+			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^.{1,256}$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^.{1,256}$')]),
 		});
 
 	}
@@ -827,10 +827,10 @@ export namespace MyNS {
 	}
 	export function CreateLustreFileSystemConfigurationFormGroup() {
 		return new FormGroup<LustreFileSystemConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
 			DeploymentType: new FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>(undefined),
 			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(200)]),
-			MountName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1), Validators.pattern('^([A-Za-z0-9_-]{1,8})$')]),
+			MountName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8), Validators.pattern('^([A-Za-z0-9_-]{1,8})$')]),
 		});
 
 	}
@@ -881,8 +881,8 @@ export namespace MyNS {
 	}
 	export function CreateDataRepositoryConfigurationFormGroup() {
 		return new FormGroup<DataRepositoryConfigurationFormProperties>({
-			ImportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3), Validators.pattern('^.{3,900}$')]),
-			ExportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3), Validators.pattern('^.{3,900}$')]),
+			ImportPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(900), Validators.pattern('^.{3,900}$')]),
+			ExportPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(900), Validators.pattern('^.{3,900}$')]),
 			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(512000)]),
 		});
 
@@ -966,7 +966,7 @@ export namespace MyNS {
 	}
 	export function CreateAdministrativeActionFailureDetailsFormGroup() {
 		return new FormGroup<AdministrativeActionFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1005,8 +1005,8 @@ export namespace MyNS {
 	}
 	export function CreateActiveDirectoryBackupAttributesFormGroup() {
 		return new FormGroup<ActiveDirectoryBackupAttributesFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^.{1,255}$')]),
-			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^d-[0-9a-f]{10}$')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^.{1,255}$')]),
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1058,8 +1058,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateBackupRequestFormGroup() {
 		return new FormGroup<CreateBackupRequestFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(21), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
 		});
 
 	}
@@ -1218,14 +1218,14 @@ export namespace MyNS {
 	}
 	export function CreateDataRepositoryTaskFormGroup() {
 		return new FormGroup<DataRepositoryTaskFormProperties>({
-			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(task-[0-9a-f]{17,})$')]),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(task-[0-9a-f]{17,})$')]),
 			Lifecycle: new FormControl<CancelDataRepositoryTaskResponseLifecycle | null | undefined>(undefined, [Validators.required]),
 			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(8), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
-			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(8), Validators.maxLength(512), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(21), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
 		});
 
 	}
@@ -1256,7 +1256,7 @@ export namespace MyNS {
 	}
 	export function CreateDataRepositoryTaskFailureDetailsFormGroup() {
 		return new FormGroup<DataRepositoryTaskFailureDetailsFormProperties>({
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 	export function CreateCompletionReportFormGroup() {
 		return new FormGroup<CompletionReportFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3), Validators.pattern('^.{3,900}$')]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(900), Validators.pattern('^.{3,900}$')]),
 			Format: new FormControl<CompletionReportFormat | null | undefined>(undefined),
 			Scope: new FormControl<CompletionReportScope | null | undefined>(undefined),
 		});
@@ -1390,8 +1390,8 @@ export namespace MyNS {
 	export function CreateCreateDataRepositoryTaskRequestFormGroup() {
 		return new FormGroup<CreateDataRepositoryTaskRequestFormProperties>({
 			Type: new FormControl<DataRepositoryTaskType | null | undefined>(undefined, [Validators.required]),
-			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(21), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
 		});
 
 	}
@@ -1521,11 +1521,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemRequestFormGroup() {
 		return new FormGroup<CreateFileSystemRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
 			FileSystemType: new FormControl<FileSystemFileSystemType | null | undefined>(undefined, [Validators.required]),
 			StorageCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
 			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^.{1,2048}$')]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^.{1,2048}$')]),
 		});
 
 	}
@@ -1631,12 +1631,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemWindowsConfigurationFormGroup() {
 		return new FormGroup<CreateFileSystemWindowsConfigurationFormProperties>({
-			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^d-[0-9a-f]{10}$')]),
+			ActiveDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^d-[0-9a-f]{10}$')]),
 			DeploymentType: new FormControl<WindowsFileSystemConfigurationDeploymentType | null | undefined>(undefined),
-			PreferredSubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(15), Validators.pattern('^(subnet-[0-9a-f]{8,})$')]),
+			PreferredSubnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(15), Validators.maxLength(24), Validators.pattern('^(subnet-[0-9a-f]{8,})$')]),
 			ThroughputCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(8), Validators.max(2048)]),
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
-			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(5), Validators.pattern('^([01]\d|2[0-3]):?([0-5]\d)$')]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(5), Validators.pattern('^([01]\d|2[0-3]):?([0-5]\d)$')]),
 			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(35)]),
 			CopyTagsToBackups: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1726,11 +1726,11 @@ export namespace MyNS {
 	}
 	export function CreateSelfManagedActiveDirectoryConfigurationFormGroup() {
 		return new FormGroup<SelfManagedActiveDirectoryConfigurationFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^.{1,255}$')]),
-			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('^.{1,2000}$')]),
-			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^.{1,256}$')]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^.{1,256}$')]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^.{1,256}$')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^.{1,255}$')]),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('^.{1,2000}$')]),
+			FileSystemAdministratorsGroup: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^.{1,256}$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^.{1,256}$')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^.{1,256}$')]),
 		});
 
 	}
@@ -1809,9 +1809,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemLustreConfigurationFormGroup() {
 		return new FormGroup<CreateFileSystemLustreConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
-			ImportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3), Validators.pattern('^.{3,900}$')]),
-			ExportPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(900), Validators.minLength(3), Validators.pattern('^.{3,900}$')]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
+			ImportPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(900), Validators.pattern('^.{3,900}$')]),
+			ExportPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(900), Validators.pattern('^.{3,900}$')]),
 			ImportedFileChunkSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(512000)]),
 			DeploymentType: new FormControl<LustreFileSystemConfigurationDeploymentType | null | undefined>(undefined),
 			PerUnitStorageThroughput: new FormControl<number | null | undefined>(undefined, [Validators.min(50), Validators.max(200)]),
@@ -1965,8 +1965,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemFromBackupRequestFormGroup() {
 		return new FormGroup<CreateFileSystemFromBackupRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
 			StorageType: new FormControl<FileSystemStorageType | null | undefined>(undefined),
 		});
 
@@ -2012,7 +2012,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteBackupResponseFormGroup() {
 		return new FormGroup<DeleteBackupResponseFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
 			Lifecycle: new FormControl<BackupLifecycle | null | undefined>(undefined),
 		});
 
@@ -2058,8 +2058,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteBackupRequestFormGroup() {
 		return new FormGroup<DeleteBackupRequestFormProperties>({
-			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
+			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
 		});
 
 	}
@@ -2107,7 +2107,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileSystemResponseFormGroup() {
 		return new FormGroup<DeleteFileSystemResponseFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(11), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(11), Validators.maxLength(21), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
 			Lifecycle: new FormControl<FileSystemLifecycle | null | undefined>(undefined),
 		});
 
@@ -2144,7 +2144,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileSystemWindowsResponseFormGroup() {
 		return new FormGroup<DeleteFileSystemWindowsResponseFormProperties>({
-			FinalBackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(12), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
+			FinalBackupId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(128), Validators.pattern('^(backup-[0-9a-f]{8,})$')]),
 		});
 
 	}
@@ -2192,8 +2192,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFileSystemRequestFormGroup() {
 		return new FormGroup<DeleteFileSystemRequestFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(21), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
 		});
 
 	}
@@ -2252,7 +2252,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBackupsResponseFormGroup() {
 		return new FormGroup<DescribeBackupsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2308,7 +2308,7 @@ export namespace MyNS {
 	export function CreateDescribeBackupsRequestFormGroup() {
 		return new FormGroup<DescribeBackupsRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2340,7 +2340,7 @@ export namespace MyNS {
 
 	}
 
-	export enum FilterName { file_system_id = 0, backup_type = 1 }
+	export enum FilterName { 'file-system-id' = 0, 'backup-type' = 1 }
 
 	export interface DescribeDataRepositoryTasksResponse {
 
@@ -2365,7 +2365,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDataRepositoryTasksResponseFormGroup() {
 		return new FormGroup<DescribeDataRepositoryTasksResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2411,7 +2411,7 @@ export namespace MyNS {
 	export function CreateDescribeDataRepositoryTasksRequestFormGroup() {
 		return new FormGroup<DescribeDataRepositoryTasksRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2436,7 +2436,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataRepositoryTaskFilterName { file_system_id = 0, task_lifecycle = 1 }
+	export enum DataRepositoryTaskFilterName { 'file-system-id' = 0, 'task-lifecycle' = 1 }
 
 
 	/** The response object for <code>DescribeFileSystems</code> operation. */
@@ -2468,7 +2468,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeFileSystemsResponseFormGroup() {
 		return new FormGroup<DescribeFileSystemsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2518,7 +2518,7 @@ export namespace MyNS {
 	export function CreateDescribeFileSystemsRequestFormGroup() {
 		return new FormGroup<DescribeFileSystemsRequestFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2554,7 +2554,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2613,9 +2613,9 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(8), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(8), Validators.maxLength(512), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$')]),
 		});
 
 	}
@@ -2698,7 +2698,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(8), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(8), Validators.maxLength(512), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
 		});
 
 	}
@@ -2751,7 +2751,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(8), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(8), Validators.maxLength(512), Validators.pattern('^arn:(?=[^:]+:fsx:[^:]+:\d{12}:)((|(?=[a-z0-9-.]{1,63})(?!\d{1,3}(\.\d{1,3}){3})(?![^:]*-{2})(?![^:]*-\.)(?![^:]*\.-)[a-z0-9].*(?<!-)):){4}(?!/).{0,1024}$')]),
 		});
 
 	}
@@ -2833,8 +2833,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFileSystemRequestFormGroup() {
 		return new FormGroup<UpdateFileSystemRequestFormProperties>({
-			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(11), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
+			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(21), Validators.pattern('^(fs-[0-9a-f]{8,})$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('[A-za-z0-9_.-]{0,63}$')]),
 			StorageCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 		});
 
@@ -2909,8 +2909,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFileSystemWindowsConfigurationFormGroup() {
 		return new FormGroup<UpdateFileSystemWindowsConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
-			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(5), Validators.pattern('^([01]\d|2[0-3]):?([0-5]\d)$')]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
+			DailyAutomaticBackupStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(5), Validators.pattern('^([01]\d|2[0-3]):?([0-5]\d)$')]),
 			AutomaticBackupRetentionDays: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(35)]),
 			ThroughputCapacity: new FormControl<number | null | undefined>(undefined, [Validators.min(8), Validators.max(2048)]),
 		});
@@ -2957,8 +2957,8 @@ export namespace MyNS {
 	}
 	export function CreateSelfManagedActiveDirectoryConfigurationUpdatesFormGroup() {
 		return new FormGroup<SelfManagedActiveDirectoryConfigurationUpdatesFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^.{1,256}$')]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^.{1,256}$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^.{1,256}$')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^.{1,256}$')]),
 		});
 
 	}
@@ -2987,7 +2987,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFileSystemLustreConfigurationFormGroup() {
 		return new FormGroup<UpdateFileSystemLustreConfigurationFormProperties>({
-			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
+			WeeklyMaintenanceStartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(7), Validators.pattern('^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$')]),
 		});
 
 	}
@@ -3154,33 +3154,33 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelDataRepositoryTaskX_Amz_Target { AWSSimbaAPIService_v20180301_CancelDataRepositoryTask = 0 }
+	export enum CancelDataRepositoryTaskX_Amz_Target { 'AWSSimbaAPIService_v20180301.CancelDataRepositoryTask' = 0 }
 
-	export enum CreateBackupX_Amz_Target { AWSSimbaAPIService_v20180301_CreateBackup = 0 }
+	export enum CreateBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateBackup' = 0 }
 
-	export enum CreateDataRepositoryTaskX_Amz_Target { AWSSimbaAPIService_v20180301_CreateDataRepositoryTask = 0 }
+	export enum CreateDataRepositoryTaskX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateDataRepositoryTask' = 0 }
 
-	export enum CreateFileSystemX_Amz_Target { AWSSimbaAPIService_v20180301_CreateFileSystem = 0 }
+	export enum CreateFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileSystem' = 0 }
 
-	export enum CreateFileSystemFromBackupX_Amz_Target { AWSSimbaAPIService_v20180301_CreateFileSystemFromBackup = 0 }
+	export enum CreateFileSystemFromBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.CreateFileSystemFromBackup' = 0 }
 
-	export enum DeleteBackupX_Amz_Target { AWSSimbaAPIService_v20180301_DeleteBackup = 0 }
+	export enum DeleteBackupX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteBackup' = 0 }
 
-	export enum DeleteFileSystemX_Amz_Target { AWSSimbaAPIService_v20180301_DeleteFileSystem = 0 }
+	export enum DeleteFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.DeleteFileSystem' = 0 }
 
-	export enum DescribeBackupsX_Amz_Target { AWSSimbaAPIService_v20180301_DescribeBackups = 0 }
+	export enum DescribeBackupsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeBackups' = 0 }
 
-	export enum DescribeDataRepositoryTasksX_Amz_Target { AWSSimbaAPIService_v20180301_DescribeDataRepositoryTasks = 0 }
+	export enum DescribeDataRepositoryTasksX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks' = 0 }
 
-	export enum DescribeFileSystemsX_Amz_Target { AWSSimbaAPIService_v20180301_DescribeFileSystems = 0 }
+	export enum DescribeFileSystemsX_Amz_Target { 'AWSSimbaAPIService_v20180301.DescribeFileSystems' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AWSSimbaAPIService_v20180301_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.ListTagsForResource' = 0 }
 
-	export enum TagResourceX_Amz_Target { AWSSimbaAPIService_v20180301_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { AWSSimbaAPIService_v20180301_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSSimbaAPIService_v20180301.UntagResource' = 0 }
 
-	export enum UpdateFileSystemX_Amz_Target { AWSSimbaAPIService_v20180301_UpdateFileSystem = 0 }
+	export enum UpdateFileSystemX_Amz_Target { 'AWSSimbaAPIService_v20180301.UpdateFileSystem' = 0 }
 
 }
 

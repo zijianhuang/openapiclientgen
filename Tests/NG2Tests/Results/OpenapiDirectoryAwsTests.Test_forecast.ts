@@ -63,10 +63,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateDatasetRequestFormGroup() {
 		return new FormGroup<CreateDatasetRequestFormProperties>({
-			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined, [Validators.required]),
 			DatasetType: new FormControl<CreateDatasetRequestDatasetType | null | undefined>(undefined, [Validators.required]),
-			DataFrequency: new FormControl<string | null | undefined>(undefined),
+			DataFrequency: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^Y|M|W|D|H|30min|15min|10min|5min|1min$')]),
 		});
 
 	}
@@ -114,13 +114,13 @@ export namespace MyNS {
 	}
 	export function CreateSchemaAttributeFormGroup() {
 		return new FormGroup<SchemaAttributeFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			AttributeType: new FormControl<SchemaAttributeAttributeType | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum SchemaAttributeAttributeType { _string = 0, integer = 1, _float = 2, timestamp = 3 }
+	export enum SchemaAttributeAttributeType { string = 0, integer = 1, float = 2, timestamp = 3 }
 
 
 	/** An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a> requests. */
@@ -236,7 +236,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDatasetGroupRequestFormGroup() {
 		return new FormGroup<CreateDatasetGroupRequestFormProperties>({
-			DatasetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -323,9 +323,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDatasetImportJobRequestFormGroup() {
 		return new FormGroup<CreateDatasetImportJobRequestFormProperties>({
-			DatasetImportJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetImportJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			DatasetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			TimestampFormat: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\:\.\,\'\s]+$')]),
+			TimestampFormat: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\:\.\,\\\'\s]+$')]),
 		});
 
 	}
@@ -384,7 +384,7 @@ export namespace MyNS {
 	}
 	export function CreateS3ConfigFormGroup() {
 		return new FormGroup<S3ConfigFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^s3://[a-z0-9].+$')]),
 			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			KMSKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws:kms:.*:key/.*')]),
 		});
@@ -446,7 +446,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateForecastRequestFormGroup() {
 		return new FormGroup<CreateForecastRequestFormProperties>({
-			ForecastName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			ForecastName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			PredictorArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 		});
 
@@ -507,7 +507,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateForecastExportJobRequestFormGroup() {
 		return new FormGroup<CreateForecastExportJobRequestFormProperties>({
-			ForecastExportJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			ForecastExportJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 		});
 
@@ -608,7 +608,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePredictorRequestFormGroup() {
 		return new FormGroup<CreatePredictorRequestFormProperties>({
-			PredictorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			PredictorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			ForecastHorizon: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			PerformAutoML: new FormControl<boolean | null | undefined>(undefined),
@@ -727,7 +727,7 @@ export namespace MyNS {
 	}
 	export function CreateCategoricalParameterRangeFormGroup() {
 		return new FormGroup<CategoricalParameterRangeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 		});
 
 	}
@@ -770,7 +770,7 @@ export namespace MyNS {
 	}
 	export function CreateContinuousParameterRangeFormGroup() {
 		return new FormGroup<ContinuousParameterRangeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			MaxValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MinValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ScalingType: new FormControl<ContinuousParameterRangeScalingType | null | undefined>(undefined),
@@ -818,7 +818,7 @@ export namespace MyNS {
 	}
 	export function CreateIntegerParameterRangeFormGroup() {
 		return new FormGroup<IntegerParameterRangeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			MaxValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MinValue: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ScalingType: new FormControl<ContinuousParameterRangeScalingType | null | undefined>(undefined),
@@ -895,7 +895,7 @@ export namespace MyNS {
 	}
 	export function CreateSupplementaryFeatureFormGroup() {
 		return new FormGroup<SupplementaryFeatureFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\_\-]+$')]),
 		});
 
@@ -929,7 +929,7 @@ export namespace MyNS {
 	}
 	export function CreateFeaturizationConfigFormGroup() {
 		return new FormGroup<FeaturizationConfigFormProperties>({
-			ForecastFrequency: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ForecastFrequency: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^Y|M|W|D|H|30min|15min|10min|5min|1min$')]),
 		});
 
 	}
@@ -964,7 +964,7 @@ export namespace MyNS {
 	}
 	export function CreateFeaturizationFormGroup() {
 		return new FormGroup<FeaturizationFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 		});
 
 	}
@@ -1188,10 +1188,10 @@ export namespace MyNS {
 	export function CreateDescribeDatasetResponseFormGroup() {
 		return new FormGroup<DescribeDatasetResponseFormProperties>({
 			DatasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
 			DatasetType: new FormControl<CreateDatasetRequestDatasetType | null | undefined>(undefined),
-			DataFrequency: new FormControl<string | null | undefined>(undefined),
+			DataFrequency: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^Y|M|W|D|H|30min|15min|10min|5min|1min$')]),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1259,7 +1259,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDatasetGroupResponseFormGroup() {
 		return new FormGroup<DescribeDatasetGroupResponseFormProperties>({
-			DatasetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			DatasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
@@ -1346,10 +1346,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDatasetImportJobResponseFormGroup() {
 		return new FormGroup<DescribeDatasetImportJobResponseFormProperties>({
-			DatasetImportJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetImportJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			DatasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			DatasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			TimestampFormat: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\:\.\,\'\s]+$')]),
+			TimestampFormat: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\:\.\,\\\'\s]+$')]),
 			DataSize: new FormControl<number | null | undefined>(undefined),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			Message: new FormControl<string | null | undefined>(undefined),
@@ -1447,7 +1447,7 @@ export namespace MyNS {
 	export function CreateDescribeForecastResponseFormGroup() {
 		return new FormGroup<DescribeForecastResponseFormProperties>({
 			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			ForecastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			ForecastName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			PredictorArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			DatasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\_]+$')]),
@@ -1527,7 +1527,7 @@ export namespace MyNS {
 	export function CreateDescribeForecastExportJobResponseFormGroup() {
 		return new FormGroup<DescribeForecastExportJobResponseFormProperties>({
 			ForecastExportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			ForecastExportJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			ForecastExportJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			Message: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
@@ -1635,8 +1635,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribePredictorResponseFormGroup() {
 		return new FormGroup<DescribePredictorResponseFormProperties>({
-			PredictorArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
-			PredictorName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			PredictorArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			PredictorName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			ForecastHorizon: new FormControl<number | null | undefined>(undefined),
 			PerformAutoML: new FormControl<boolean | null | undefined>(undefined),
@@ -1888,7 +1888,7 @@ export namespace MyNS {
 	}
 	export function CreateListDatasetGroupsResponseFormGroup() {
 		return new FormGroup<ListDatasetGroupsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 		});
 
 	}
@@ -1926,7 +1926,7 @@ export namespace MyNS {
 	export function CreateDatasetGroupSummaryFormGroup() {
 		return new FormGroup<DatasetGroupSummaryFormProperties>({
 			DatasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			DatasetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModificationTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1963,7 +1963,7 @@ export namespace MyNS {
 	}
 	export function CreateListDatasetGroupsRequestFormGroup() {
 		return new FormGroup<ListDatasetGroupsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1998,7 +1998,7 @@ export namespace MyNS {
 	}
 	export function CreateListDatasetImportJobsResponseFormGroup() {
 		return new FormGroup<ListDatasetImportJobsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 		});
 
 	}
@@ -2047,7 +2047,7 @@ export namespace MyNS {
 	export function CreateDatasetImportJobSummaryFormGroup() {
 		return new FormGroup<DatasetImportJobSummaryFormProperties>({
 			DatasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			DatasetImportJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetImportJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			Message: new FormControl<string | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -2087,7 +2087,7 @@ export namespace MyNS {
 	}
 	export function CreateListDatasetImportJobsRequestFormGroup() {
 		return new FormGroup<ListDatasetImportJobsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2161,7 +2161,7 @@ export namespace MyNS {
 	}
 	export function CreateListDatasetsResponseFormGroup() {
 		return new FormGroup<ListDatasetsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 		});
 
 	}
@@ -2203,7 +2203,7 @@ export namespace MyNS {
 	export function CreateDatasetSummaryFormGroup() {
 		return new FormGroup<DatasetSummaryFormProperties>({
 			DatasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			DatasetType: new FormControl<CreateDatasetRequestDatasetType | null | undefined>(undefined),
 			Domain: new FormControl<CreateDatasetRequestDomain | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -2242,7 +2242,7 @@ export namespace MyNS {
 	}
 	export function CreateListDatasetsRequestFormGroup() {
 		return new FormGroup<ListDatasetsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2267,7 +2267,7 @@ export namespace MyNS {
 	}
 	export function CreateListForecastExportJobsResponseFormGroup() {
 		return new FormGroup<ListForecastExportJobsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 		});
 
 	}
@@ -2316,7 +2316,7 @@ export namespace MyNS {
 	export function CreateForecastExportJobSummaryFormGroup() {
 		return new FormGroup<ForecastExportJobSummaryFormProperties>({
 			ForecastExportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			ForecastExportJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			ForecastExportJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			Message: new FormControl<string | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -2356,7 +2356,7 @@ export namespace MyNS {
 	}
 	export function CreateListForecastExportJobsRequestFormGroup() {
 		return new FormGroup<ListForecastExportJobsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2381,7 +2381,7 @@ export namespace MyNS {
 	}
 	export function CreateListForecastsResponseFormGroup() {
 		return new FormGroup<ListForecastsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 		});
 
 	}
@@ -2439,7 +2439,7 @@ export namespace MyNS {
 	export function CreateForecastSummaryFormGroup() {
 		return new FormGroup<ForecastSummaryFormProperties>({
 			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			ForecastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			ForecastName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			PredictorArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\_]+$')]),
 			DatasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\_]+$')]),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
@@ -2481,7 +2481,7 @@ export namespace MyNS {
 	}
 	export function CreateListForecastsRequestFormGroup() {
 		return new FormGroup<ListForecastsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2506,7 +2506,7 @@ export namespace MyNS {
 	}
 	export function CreateListPredictorsResponseFormGroup() {
 		return new FormGroup<ListPredictorsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 		});
 
 	}
@@ -2558,7 +2558,7 @@ export namespace MyNS {
 	export function CreatePredictorSummaryFormGroup() {
 		return new FormGroup<PredictorSummaryFormProperties>({
 			PredictorArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
-			PredictorName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
+			PredictorName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z][a-zA-Z0-9_]*')]),
 			DatasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\-\_\.\/\:]+$')]),
 			Status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			Message: new FormControl<string | null | undefined>(undefined),
@@ -2599,7 +2599,7 @@ export namespace MyNS {
 	}
 	export function CreateListPredictorsRequestFormGroup() {
 		return new FormGroup<ListPredictorsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2641,7 +2641,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeType { _string = 0, integer = 1, _float = 2, timestamp = 3 }
+	export enum AttributeType { string = 0, integer = 1, float = 2, timestamp = 3 }
 
 	export enum ScalingType { Auto = 0, Linear = 1, Logarithmic = 2, ReverseLogarithmic = 3 }
 
@@ -2953,57 +2953,57 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateDatasetX_Amz_Target { AmazonForecast_CreateDataset = 0 }
+	export enum CreateDatasetX_Amz_Target { 'AmazonForecast.CreateDataset' = 0 }
 
-	export enum CreateDatasetGroupX_Amz_Target { AmazonForecast_CreateDatasetGroup = 0 }
+	export enum CreateDatasetGroupX_Amz_Target { 'AmazonForecast.CreateDatasetGroup' = 0 }
 
-	export enum CreateDatasetImportJobX_Amz_Target { AmazonForecast_CreateDatasetImportJob = 0 }
+	export enum CreateDatasetImportJobX_Amz_Target { 'AmazonForecast.CreateDatasetImportJob' = 0 }
 
-	export enum CreateForecastX_Amz_Target { AmazonForecast_CreateForecast = 0 }
+	export enum CreateForecastX_Amz_Target { 'AmazonForecast.CreateForecast' = 0 }
 
-	export enum CreateForecastExportJobX_Amz_Target { AmazonForecast_CreateForecastExportJob = 0 }
+	export enum CreateForecastExportJobX_Amz_Target { 'AmazonForecast.CreateForecastExportJob' = 0 }
 
-	export enum CreatePredictorX_Amz_Target { AmazonForecast_CreatePredictor = 0 }
+	export enum CreatePredictorX_Amz_Target { 'AmazonForecast.CreatePredictor' = 0 }
 
-	export enum DeleteDatasetX_Amz_Target { AmazonForecast_DeleteDataset = 0 }
+	export enum DeleteDatasetX_Amz_Target { 'AmazonForecast.DeleteDataset' = 0 }
 
-	export enum DeleteDatasetGroupX_Amz_Target { AmazonForecast_DeleteDatasetGroup = 0 }
+	export enum DeleteDatasetGroupX_Amz_Target { 'AmazonForecast.DeleteDatasetGroup' = 0 }
 
-	export enum DeleteDatasetImportJobX_Amz_Target { AmazonForecast_DeleteDatasetImportJob = 0 }
+	export enum DeleteDatasetImportJobX_Amz_Target { 'AmazonForecast.DeleteDatasetImportJob' = 0 }
 
-	export enum DeleteForecastX_Amz_Target { AmazonForecast_DeleteForecast = 0 }
+	export enum DeleteForecastX_Amz_Target { 'AmazonForecast.DeleteForecast' = 0 }
 
-	export enum DeleteForecastExportJobX_Amz_Target { AmazonForecast_DeleteForecastExportJob = 0 }
+	export enum DeleteForecastExportJobX_Amz_Target { 'AmazonForecast.DeleteForecastExportJob' = 0 }
 
-	export enum DeletePredictorX_Amz_Target { AmazonForecast_DeletePredictor = 0 }
+	export enum DeletePredictorX_Amz_Target { 'AmazonForecast.DeletePredictor' = 0 }
 
-	export enum DescribeDatasetX_Amz_Target { AmazonForecast_DescribeDataset = 0 }
+	export enum DescribeDatasetX_Amz_Target { 'AmazonForecast.DescribeDataset' = 0 }
 
-	export enum DescribeDatasetGroupX_Amz_Target { AmazonForecast_DescribeDatasetGroup = 0 }
+	export enum DescribeDatasetGroupX_Amz_Target { 'AmazonForecast.DescribeDatasetGroup' = 0 }
 
-	export enum DescribeDatasetImportJobX_Amz_Target { AmazonForecast_DescribeDatasetImportJob = 0 }
+	export enum DescribeDatasetImportJobX_Amz_Target { 'AmazonForecast.DescribeDatasetImportJob' = 0 }
 
-	export enum DescribeForecastX_Amz_Target { AmazonForecast_DescribeForecast = 0 }
+	export enum DescribeForecastX_Amz_Target { 'AmazonForecast.DescribeForecast' = 0 }
 
-	export enum DescribeForecastExportJobX_Amz_Target { AmazonForecast_DescribeForecastExportJob = 0 }
+	export enum DescribeForecastExportJobX_Amz_Target { 'AmazonForecast.DescribeForecastExportJob' = 0 }
 
-	export enum DescribePredictorX_Amz_Target { AmazonForecast_DescribePredictor = 0 }
+	export enum DescribePredictorX_Amz_Target { 'AmazonForecast.DescribePredictor' = 0 }
 
-	export enum GetAccuracyMetricsX_Amz_Target { AmazonForecast_GetAccuracyMetrics = 0 }
+	export enum GetAccuracyMetricsX_Amz_Target { 'AmazonForecast.GetAccuracyMetrics' = 0 }
 
-	export enum ListDatasetGroupsX_Amz_Target { AmazonForecast_ListDatasetGroups = 0 }
+	export enum ListDatasetGroupsX_Amz_Target { 'AmazonForecast.ListDatasetGroups' = 0 }
 
-	export enum ListDatasetImportJobsX_Amz_Target { AmazonForecast_ListDatasetImportJobs = 0 }
+	export enum ListDatasetImportJobsX_Amz_Target { 'AmazonForecast.ListDatasetImportJobs' = 0 }
 
-	export enum ListDatasetsX_Amz_Target { AmazonForecast_ListDatasets = 0 }
+	export enum ListDatasetsX_Amz_Target { 'AmazonForecast.ListDatasets' = 0 }
 
-	export enum ListForecastExportJobsX_Amz_Target { AmazonForecast_ListForecastExportJobs = 0 }
+	export enum ListForecastExportJobsX_Amz_Target { 'AmazonForecast.ListForecastExportJobs' = 0 }
 
-	export enum ListForecastsX_Amz_Target { AmazonForecast_ListForecasts = 0 }
+	export enum ListForecastsX_Amz_Target { 'AmazonForecast.ListForecasts' = 0 }
 
-	export enum ListPredictorsX_Amz_Target { AmazonForecast_ListPredictors = 0 }
+	export enum ListPredictorsX_Amz_Target { 'AmazonForecast.ListPredictors' = 0 }
 
-	export enum UpdateDatasetGroupX_Amz_Target { AmazonForecast_UpdateDatasetGroup = 0 }
+	export enum UpdateDatasetGroupX_Amz_Target { 'AmazonForecast.UpdateDatasetGroup' = 0 }
 
 }
 

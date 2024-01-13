@@ -390,9 +390,9 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionEncryptionType { awskms = 0, AES256 = 1 }
+	export enum EncryptionEncryptionType { 'aws:kms' = 0, AES256 = 1 }
 
-	export enum S3LocationCannedACL { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
+	export enum S3LocationCannedACL { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'aws-exec-read' = 3, 'authenticated-read' = 4, 'bucket-owner-read' = 5, 'bucket-owner-full-control' = 6 }
 
 
 	/** Contains information about a grant. */
@@ -1028,7 +1028,7 @@ export namespace MyNS {
 
 	export enum QuoteFields { ALWAYS = 0, ASNEEDED = 1 }
 
-	export enum CannedACL { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
+	export enum CannedACL { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'aws-exec-read' = 3, 'authenticated-read' = 4, 'bucket-owner-read' = 5, 'bucket-owner-full-control' = 6 }
 
 
 	/** Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource. */
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EncryptionType { awskms = 0, AES256 = 1 }
+	export enum EncryptionType { 'aws:kms' = 0, AES256 = 1 }
 
 	export enum ExpressionType { SQL = 0 }
 

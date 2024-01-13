@@ -29,7 +29,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConnectionOutputFormGroup() {
 		return new FormGroup<CreateConnectionOutputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 		});
 
 	}
@@ -72,8 +72,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -111,7 +111,7 @@ export namespace MyNS {
 	export function CreateCreateConnectionInputFormGroup() {
 		return new FormGroup<CreateConnectionInputFormProperties>({
 			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined, [Validators.required]),
-			ConnectionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			ConnectionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32)]),
 		});
 
 	}
@@ -158,7 +158,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteConnectionInputFormGroup() {
 		return new FormGroup<DeleteConnectionInputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 		});
 
 	}
@@ -236,10 +236,10 @@ export namespace MyNS {
 	}
 	export function CreateConnectionFormGroup() {
 		return new FormGroup<ConnectionFormProperties>({
-			ConnectionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
+			ConnectionName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32)]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
-			OwnerAccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('[0-9]{12}')]),
+			OwnerAccountId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12), Validators.pattern('[0-9]{12}')]),
 			ConnectionStatus: new FormControl<ConnectionConnectionStatus | null | undefined>(undefined),
 		});
 
@@ -267,7 +267,7 @@ export namespace MyNS {
 	}
 	export function CreateGetConnectionInputFormGroup() {
 		return new FormGroup<GetConnectionInputFormProperties>({
-			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+')]),
 		});
 
 	}
@@ -291,7 +291,7 @@ export namespace MyNS {
 	}
 	export function CreateListConnectionsOutputFormGroup() {
 		return new FormGroup<ListConnectionsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -330,7 +330,7 @@ export namespace MyNS {
 		return new FormGroup<ListConnectionsInputFormProperties>({
 			ProviderTypeFilter: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(5000)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -371,7 +371,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -413,7 +413,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -455,7 +455,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -535,19 +535,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateConnectionX_Amz_Target { com_amazonaws_codestar_connections_CodeStar_connections_20191201_CreateConnection = 0 }
+	export enum CreateConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateConnection' = 0 }
 
-	export enum DeleteConnectionX_Amz_Target { com_amazonaws_codestar_connections_CodeStar_connections_20191201_DeleteConnection = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteConnection' = 0 }
 
-	export enum GetConnectionX_Amz_Target { com_amazonaws_codestar_connections_CodeStar_connections_20191201_GetConnection = 0 }
+	export enum GetConnectionX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetConnection' = 0 }
 
-	export enum ListConnectionsX_Amz_Target { com_amazonaws_codestar_connections_CodeStar_connections_20191201_ListConnections = 0 }
+	export enum ListConnectionsX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListConnections' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { com_amazonaws_codestar_connections_CodeStar_connections_20191201_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.ListTagsForResource' = 0 }
 
-	export enum TagResourceX_Amz_Target { com_amazonaws_codestar_connections_CodeStar_connections_20191201_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { com_amazonaws_codestar_connections_CodeStar_connections_20191201_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'com.amazonaws.codestar.connections.CodeStar_connections_20191201.UntagResource' = 0 }
 
 }
 

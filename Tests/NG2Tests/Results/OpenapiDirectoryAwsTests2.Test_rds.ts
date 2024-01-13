@@ -2322,7 +2322,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DBProxyStatus { available = 0, modifying = 1, incompatible_network = 2, insufficient_resource_limits = 3, creating = 4, deleting = 5, suspended = 6, suspending = 7, reactivating = 8 }
+	export enum DBProxyStatus { available = 0, modifying = 1, 'incompatible-network' = 2, 'insufficient-resource-limits' = 3, creating = 4, deleting = 5, suspended = 6, suspending = 7, reactivating = 8 }
 
 
 	/** <note> <p>This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.</p> </note> <p>Returns the details of authentication used by a proxy to log in as a specific database user.</p> */
@@ -3367,7 +3367,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterApplyMethod { immediate = 0, pending_reboot = 1 }
+	export enum ParameterApplyMethod { immediate = 0, 'pending-reboot' = 1 }
 
 	export interface DescribeDBClusterSnapshotAttributesResult {
 
@@ -4118,7 +4118,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
+	export enum EventSourceType { 'db-instance' = 0, 'db-parameter-group' = 1, 'db-security-group' = 2, 'db-snapshot' = 3, 'db-cluster' = 4, 'db-cluster-snapshot' = 5 }
 
 	export interface ExportTasksMessage {
 		Marker?: string | null;
@@ -5677,7 +5677,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ApplyMethod { immediate = 0, pending_reboot = 1 }
+	export enum ApplyMethod { immediate = 0, 'pending-reboot' = 1 }
 
 
 	/** <p/> */
@@ -7976,13 +7976,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
+	export enum SourceType { 'db-instance' = 0, 'db-parameter-group' = 1, 'db-security-group' = 2, 'db-snapshot' = 3, 'db-cluster' = 4, 'db-cluster-snapshot' = 5 }
 
 
 	/** <p/> */
 	export interface DescribeEventsMessage {
 		SourceIdentifier?: string | null;
-		SourceType?: DescribeEventsMessageSourceType | null;
+		SourceType?: EventSourceType | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Duration?: number | null;
@@ -7995,7 +7995,7 @@ export namespace MyNS {
 	/** <p/> */
 	export interface DescribeEventsMessageFormProperties {
 		SourceIdentifier: FormControl<string | null | undefined>,
-		SourceType: FormControl<DescribeEventsMessageSourceType | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
@@ -8005,7 +8005,7 @@ export namespace MyNS {
 	export function CreateDescribeEventsMessageFormGroup() {
 		return new FormGroup<DescribeEventsMessageFormProperties>({
 			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceType: new FormControl<DescribeEventsMessageSourceType | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			Duration: new FormControl<number | null | undefined>(undefined),
@@ -8014,8 +8014,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum DescribeEventsMessageSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
 
 	export interface DescribeExportTasksMessage {
 		ExportTaskIdentifier?: string | null;
@@ -12639,7 +12637,7 @@ export namespace MyNS {
 
 	export enum POST_DescribeEventSubscriptionsVersion { _2014_10_31 = 0 }
 
-	export enum GET_DescribeEventsSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
+	export enum GET_DescribeEventsSourceType { 'db-instance' = 0, 'db-parameter-group' = 1, 'db-security-group' = 2, 'db-snapshot' = 3, 'db-cluster' = 4, 'db-cluster-snapshot' = 5 }
 
 	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
 

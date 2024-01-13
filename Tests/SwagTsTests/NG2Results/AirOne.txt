@@ -205,7 +205,7 @@ export namespace MyNS {
 		fileContent: string;
 	}
 
-	export enum ImmunisationHistoryStatementTypeMimeType { application_pdf = 0 }
+	export enum ImmunisationHistoryStatementTypeMimeType { 'application/pdf' = 0 }
 
 	export interface ImmunisationHistoryStatementResponseType {
 		statusCode: string;

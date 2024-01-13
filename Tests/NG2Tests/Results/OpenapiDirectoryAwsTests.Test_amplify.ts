@@ -183,20 +183,20 @@ export namespace MyNS {
 	}
 	export function CreateAppFormGroup() {
 		return new FormGroup<AppFormProperties>({
-			appId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			appId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			appArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 			repository: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined, [Validators.required]),
 			createTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
-			defaultDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
+			defaultDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -286,10 +286,10 @@ export namespace MyNS {
 	}
 	export function CreateCustomRuleFormGroup() {
 		return new FormGroup<CustomRuleFormProperties>({
-			source: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(3)]),
-			condition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			source: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			target: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(7)]),
+			condition: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -343,9 +343,9 @@ export namespace MyNS {
 	export function CreateProductionBranchFormGroup() {
 		return new FormGroup<ProductionBranchFormProperties>({
 			lastDeployTime: new FormControl<Date | null | undefined>(undefined),
-			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(3)]),
-			thumbnailUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(7)]),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -406,7 +406,7 @@ export namespace MyNS {
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
@@ -561,10 +561,10 @@ export namespace MyNS {
 	}
 	export function CreateBackendEnvironmentFormGroup() {
 		return new FormGroup<BackendEnvironmentFormProperties>({
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
-			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			stackName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			stackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			createTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -837,7 +837,7 @@ export namespace MyNS {
 	export function CreateBranchFormGroup() {
 		return new FormGroup<BranchFormProperties>({
 			branchArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined, [Validators.required]),
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
@@ -849,15 +849,15 @@ export namespace MyNS {
 			activeJobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 			totalNumberOfJobs: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			thumbnailUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000)]),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			ttl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
-			destinationBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			sourceBranch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			destinationBranch: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			sourceBranch: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -1088,7 +1088,7 @@ export namespace MyNS {
 	export function CreateSubDomainSettingFormGroup() {
 		return new FormGroup<SubDomainSettingFormProperties>({
 			prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 			webhookArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 			webhookId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
 			webhookUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000)]),
 			createTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -2230,17 +2230,17 @@ export namespace MyNS {
 	}
 	export function CreateCreateAppRequestFormGroup() {
 		return new FormGroup<CreateAppRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2294,9 +2294,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateBackendEnvironmentRequestFormGroup() {
 		return new FormGroup<CreateBackendEnvironmentRequestFormProperties>({
-			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			stackName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			stackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -2399,7 +2399,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBranchRequestFormGroup() {
 		return new FormGroup<CreateBranchRequestFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
 			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
@@ -2407,12 +2407,12 @@ export namespace MyNS {
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -2508,7 +2508,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebhookRequestFormGroup() {
 		return new FormGroup<CreateWebhookRequestFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
@@ -2785,7 +2785,7 @@ export namespace MyNS {
 	}
 	export function CreateListBackendEnvironmentsRequestFormGroup() {
 		return new FormGroup<ListBackendEnvironmentsRequestFormProperties>({
-			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -3089,18 +3089,18 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAppRequestFormGroup() {
 		return new FormGroup<UpdateAppRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -3195,12 +3195,12 @@ export namespace MyNS {
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -3256,7 +3256,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWebhookRequestFormGroup() {
 		return new FormGroup<UpdateWebhookRequestFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
@@ -3828,19 +3828,19 @@ export namespace MyNS {
 	}
 	export function CreateCreateAppPostBodyFormGroup() {
 		return new FormGroup<CreateAppPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3898,7 +3898,7 @@ export namespace MyNS {
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
@@ -3955,9 +3955,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateBackendEnvironmentPostBodyFormGroup() {
 		return new FormGroup<CreateBackendEnvironmentPostBodyFormProperties>({
-			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			stackName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			environmentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			stackName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			deploymentArtifacts: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -4120,7 +4120,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBranchPostBodyFormGroup() {
 		return new FormGroup<CreateBranchPostBodyFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			stage: new FormControl<AutoBranchCreationConfigStage | null | undefined>(undefined),
 			framework: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
@@ -4130,12 +4130,12 @@ export namespace MyNS {
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -4230,7 +4230,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebhookPostBodyFormGroup() {
 		return new FormGroup<CreateWebhookPostBodyFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 
@@ -4385,19 +4385,19 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAppPostBodyFormGroup() {
 		return new FormGroup<UpdateAppPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			platform: new FormControl<AppPlatform | null | undefined>(undefined),
-			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			iamServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			enableBranchAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enableAutoBranchCreation: new FormControl<boolean | null | undefined>(undefined),
 			repository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 			oauthToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			accessToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -4454,7 +4454,7 @@ export namespace MyNS {
 			enableAutoBuild: new FormControl<boolean | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
@@ -4605,12 +4605,12 @@ export namespace MyNS {
 			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			basicAuthCredentials: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			enableBasicAuth: new FormControl<boolean | null | undefined>(undefined),
-			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25000), Validators.minLength(1)]),
+			buildSpec: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(25000)]),
 			ttl: new FormControl<string | null | undefined>(undefined),
 			displayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			enablePullRequestPreview: new FormControl<boolean | null | undefined>(undefined),
 			pullRequestEnvironmentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
-			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			backendEnvironmentArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -4671,7 +4671,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWebhookPostBodyFormGroup() {
 		return new FormGroup<UpdateWebhookPostBodyFormProperties>({
-			branchName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			branchName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000)]),
 		});
 

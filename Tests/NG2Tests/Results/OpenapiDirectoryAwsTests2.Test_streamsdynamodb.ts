@@ -81,13 +81,13 @@ export namespace MyNS {
 	}
 	export function CreateStreamDescriptionFormGroup() {
 		return new FormGroup<StreamDescriptionFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(37), Validators.maxLength(1024)]),
 			StreamLabel: new FormControl<string | null | undefined>(undefined),
 			StreamStatus: new FormControl<StreamDescriptionStreamStatus | null | undefined>(undefined),
 			StreamViewType: new FormControl<StreamDescriptionStreamViewType | null | undefined>(undefined),
 			CreationRequestDateTime: new FormControl<Date | null | undefined>(undefined),
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			LastEvaluatedShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			LastEvaluatedShardId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(28), Validators.maxLength(65)]),
 		});
 
 	}
@@ -126,7 +126,7 @@ export namespace MyNS {
 	}
 	export function CreateKeySchemaElementFormGroup() {
 		return new FormGroup<KeySchemaElementFormProperties>({
-			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			KeyType: new FormControl<KeySchemaElementKeyType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -171,8 +171,8 @@ export namespace MyNS {
 	}
 	export function CreateShardFormGroup() {
 		return new FormGroup<ShardFormProperties>({
-			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
-			ParentShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(28), Validators.maxLength(65)]),
+			ParentShardId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(28), Validators.maxLength(65)]),
 		});
 
 	}
@@ -211,8 +211,8 @@ export namespace MyNS {
 	}
 	export function CreateSequenceNumberRangeFormGroup() {
 		return new FormGroup<SequenceNumberRangeFormProperties>({
-			StartingSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
-			EndingSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
+			StartingSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(21), Validators.maxLength(40)]),
+			EndingSequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(21), Validators.maxLength(40)]),
 		});
 
 	}
@@ -259,9 +259,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeStreamInputFormGroup() {
 		return new FormGroup<DescribeStreamInputFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(37), Validators.maxLength(1024)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(65), Validators.minLength(28)]),
+			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(28), Validators.maxLength(65)]),
 		});
 
 	}
@@ -323,7 +323,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRecordsOutputFormGroup() {
 		return new FormGroup<GetRecordsOutputFormProperties>({
-			NextShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			NextShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -401,7 +401,7 @@ export namespace MyNS {
 	export function CreateStreamRecordFormGroup() {
 		return new FormGroup<StreamRecordFormProperties>({
 			ApproximateCreationDateTime: new FormControl<Date | null | undefined>(undefined),
-			SequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
+			SequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(21), Validators.maxLength(40)]),
 			SizeBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			StreamViewType: new FormControl<StreamDescriptionStreamViewType | null | undefined>(undefined),
 		});
@@ -468,7 +468,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRecordsInputFormGroup() {
 		return new FormGroup<GetRecordsInputFormProperties>({
-			ShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -547,7 +547,7 @@ export namespace MyNS {
 	}
 	export function CreateGetShardIteratorOutputFormGroup() {
 		return new FormGroup<GetShardIteratorOutputFormProperties>({
-			ShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ShardIterator: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -608,10 +608,10 @@ export namespace MyNS {
 	}
 	export function CreateGetShardIteratorInputFormGroup() {
 		return new FormGroup<GetShardIteratorInputFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(37)]),
-			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65), Validators.minLength(28)]),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(37), Validators.maxLength(1024)]),
+			ShardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(28), Validators.maxLength(65)]),
 			ShardIteratorType: new FormControl<GetShardIteratorInputShardIteratorType | null | undefined>(undefined, [Validators.required]),
-			SequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(21)]),
+			SequenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(21), Validators.maxLength(40)]),
 		});
 
 	}
@@ -641,7 +641,7 @@ export namespace MyNS {
 	}
 	export function CreateListStreamsOutputFormGroup() {
 		return new FormGroup<ListStreamsOutputFormProperties>({
-			LastEvaluatedStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
+			LastEvaluatedStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(37), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -682,8 +682,8 @@ export namespace MyNS {
 	}
 	export function CreateStreamFormGroup() {
 		return new FormGroup<StreamFormProperties>({
-			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(37), Validators.maxLength(1024)]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			StreamLabel: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -729,9 +729,9 @@ export namespace MyNS {
 	}
 	export function CreateListStreamsInputFormGroup() {
 		return new FormGroup<ListStreamsInputFormProperties>({
-			TableName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			TableName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			ExclusiveStartStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(37)]),
+			ExclusiveStartStreamArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(37), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -832,13 +832,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeStreamX_Amz_Target { DynamoDBStreams_20120810_DescribeStream = 0 }
+	export enum DescribeStreamX_Amz_Target { 'DynamoDBStreams_20120810.DescribeStream' = 0 }
 
-	export enum GetRecordsX_Amz_Target { DynamoDBStreams_20120810_GetRecords = 0 }
+	export enum GetRecordsX_Amz_Target { 'DynamoDBStreams_20120810.GetRecords' = 0 }
 
-	export enum GetShardIteratorX_Amz_Target { DynamoDBStreams_20120810_GetShardIterator = 0 }
+	export enum GetShardIteratorX_Amz_Target { 'DynamoDBStreams_20120810.GetShardIterator' = 0 }
 
-	export enum ListStreamsX_Amz_Target { DynamoDBStreams_20120810_ListStreams = 0 }
+	export enum ListStreamsX_Amz_Target { 'DynamoDBStreams_20120810.ListStreams' = 0 }
 
 }
 

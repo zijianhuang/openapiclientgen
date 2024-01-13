@@ -106,17 +106,17 @@ export namespace MyNS {
 	}
 	export function CreateComprehendMedicalAsyncJobPropertiesFormGroup() {
 		return new FormGroup<ComprehendMedicalAsyncJobPropertiesFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
-			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 			JobStatus: new FormControl<ComprehendMedicalAsyncJobPropertiesJobStatus | null | undefined>(undefined),
 			Message: new FormControl<string | null | undefined>(undefined),
 			SubmitTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
 			LanguageCode: new FormControl<ComprehendMedicalAsyncJobPropertiesLanguageCode | null | undefined>(undefined),
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
-			ManifestFilePath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
-			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.*')]),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
+			ManifestFilePath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096)]),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('.*')]),
 			ModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -154,7 +154,7 @@ export namespace MyNS {
 	}
 	export function CreateInputDataConfigFormGroup() {
 		return new FormGroup<InputDataConfigFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9a-z\.\-_]*(?!\.)$')]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63), Validators.pattern('^[0-9a-z\.\-_]*(?!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*')]),
 		});
 
@@ -190,7 +190,7 @@ export namespace MyNS {
 	}
 	export function CreateOutputDataConfigFormGroup() {
 		return new FormGroup<OutputDataConfigFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^[0-9a-z\.\-_]*(?!\.)$')]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63), Validators.pattern('^[0-9a-z\.\-_]*(?!\.)$')]),
 			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*')]),
 		});
 
@@ -218,7 +218,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEntitiesDetectionV2JobRequestFormGroup() {
 		return new FormGroup<DescribeEntitiesDetectionV2JobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -296,7 +296,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeICD10CMInferenceJobRequestFormGroup() {
 		return new FormGroup<DescribeICD10CMInferenceJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -334,7 +334,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribePHIDetectionJobRequestFormGroup() {
 		return new FormGroup<DescribePHIDetectionJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -372,7 +372,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeRxNormInferenceJobRequestFormGroup() {
 		return new FormGroup<DescribeRxNormInferenceJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -566,7 +566,7 @@ export namespace MyNS {
 	}
 	export function CreateDetectEntitiesRequestFormGroup() {
 		return new FormGroup<DetectEntitiesRequestFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(1)]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(20000)]),
 		});
 
 	}
@@ -655,7 +655,7 @@ export namespace MyNS {
 	}
 	export function CreateDetectEntitiesV2RequestFormGroup() {
 		return new FormGroup<DetectEntitiesV2RequestFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(1)]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(20000)]),
 		});
 
 	}
@@ -713,7 +713,7 @@ export namespace MyNS {
 	}
 	export function CreateDetectPHIRequestFormGroup() {
 		return new FormGroup<DetectPHIRequestFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20000), Validators.minLength(1)]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(20000)]),
 		});
 
 	}
@@ -783,7 +783,7 @@ export namespace MyNS {
 	export function CreateICD10CMEntityFormGroup() {
 		return new FormGroup<ICD10CMEntityFormProperties>({
 			Id: new FormControl<number | null | undefined>(undefined),
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(1)]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000)]),
 			Category: new FormControl<ICD10CMEntityCategory | null | undefined>(undefined),
 			Type: new FormControl<ICD10CMEntityType | null | undefined>(undefined),
 			Score: new FormControl<number | null | undefined>(undefined),
@@ -912,7 +912,7 @@ export namespace MyNS {
 	}
 	export function CreateInferICD10CMRequestFormGroup() {
 		return new FormGroup<InferICD10CMRequestFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(10000)]),
 		});
 
 	}
@@ -982,7 +982,7 @@ export namespace MyNS {
 	export function CreateRxNormEntityFormGroup() {
 		return new FormGroup<RxNormEntityFormProperties>({
 			Id: new FormControl<number | null | undefined>(undefined),
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(1)]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000)]),
 			Category: new FormControl<RxNormEntityCategory | null | undefined>(undefined),
 			Type: new FormControl<RxNormEntityType | null | undefined>(undefined),
 			Score: new FormControl<number | null | undefined>(undefined),
@@ -1111,7 +1111,7 @@ export namespace MyNS {
 	}
 	export function CreateInferRxNormRequestFormGroup() {
 		return new FormGroup<InferRxNormRequestFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(10000)]),
 		});
 
 	}
@@ -1195,7 +1195,7 @@ export namespace MyNS {
 	}
 	export function CreateComprehendMedicalAsyncJobFilterFormGroup() {
 		return new FormGroup<ComprehendMedicalAsyncJobFilterFormProperties>({
-			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 			JobStatus: new FormControl<ComprehendMedicalAsyncJobPropertiesJobStatus | null | undefined>(undefined),
 			SubmitTimeBefore: new FormControl<Date | null | undefined>(undefined),
 			SubmitTimeAfter: new FormControl<Date | null | undefined>(undefined),
@@ -1384,7 +1384,7 @@ export namespace MyNS {
 	}
 	export function CreateStartEntitiesDetectionV2JobResponseFormGroup() {
 		return new FormGroup<StartEntitiesDetectionV2JobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1463,10 +1463,10 @@ export namespace MyNS {
 	}
 	export function CreateStartEntitiesDetectionV2JobRequestFormGroup() {
 		return new FormGroup<StartEntitiesDetectionV2JobRequestFormProperties>({
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
-			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-]+$')]),
-			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.*')]),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-]+$')]),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('.*')]),
 			LanguageCode: new FormControl<ComprehendMedicalAsyncJobPropertiesLanguageCode | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1490,7 +1490,7 @@ export namespace MyNS {
 	}
 	export function CreateStartICD10CMInferenceJobResponseFormGroup() {
 		return new FormGroup<StartICD10CMInferenceJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1569,10 +1569,10 @@ export namespace MyNS {
 	}
 	export function CreateStartICD10CMInferenceJobRequestFormGroup() {
 		return new FormGroup<StartICD10CMInferenceJobRequestFormProperties>({
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
-			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-]+$')]),
-			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.*')]),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-]+$')]),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('.*')]),
 			LanguageCode: new FormControl<ComprehendMedicalAsyncJobPropertiesLanguageCode | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1596,7 +1596,7 @@ export namespace MyNS {
 	}
 	export function CreateStartPHIDetectionJobResponseFormGroup() {
 		return new FormGroup<StartPHIDetectionJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1675,10 +1675,10 @@ export namespace MyNS {
 	}
 	export function CreateStartPHIDetectionJobRequestFormGroup() {
 		return new FormGroup<StartPHIDetectionJobRequestFormProperties>({
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
-			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-]+$')]),
-			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.*')]),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-]+$')]),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('.*')]),
 			LanguageCode: new FormControl<ComprehendMedicalAsyncJobPropertiesLanguageCode | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1702,7 +1702,7 @@ export namespace MyNS {
 	}
 	export function CreateStartRxNormInferenceJobResponseFormGroup() {
 		return new FormGroup<StartRxNormInferenceJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1781,10 +1781,10 @@ export namespace MyNS {
 	}
 	export function CreateStartRxNormInferenceJobRequestFormGroup() {
 		return new FormGroup<StartRxNormInferenceJobRequestFormProperties>({
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
-			JobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-]+$')]),
-			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('.*')]),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+')]),
+			JobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-]+$')]),
+			KMSKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('.*')]),
 			LanguageCode: new FormControl<ComprehendMedicalAsyncJobPropertiesLanguageCode | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1808,7 +1808,7 @@ export namespace MyNS {
 	}
 	export function CreateStopEntitiesDetectionV2JobResponseFormGroup() {
 		return new FormGroup<StopEntitiesDetectionV2JobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1833,7 +1833,7 @@ export namespace MyNS {
 	}
 	export function CreateStopEntitiesDetectionV2JobRequestFormGroup() {
 		return new FormGroup<StopEntitiesDetectionV2JobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1856,7 +1856,7 @@ export namespace MyNS {
 	}
 	export function CreateStopICD10CMInferenceJobResponseFormGroup() {
 		return new FormGroup<StopICD10CMInferenceJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1881,7 +1881,7 @@ export namespace MyNS {
 	}
 	export function CreateStopICD10CMInferenceJobRequestFormGroup() {
 		return new FormGroup<StopICD10CMInferenceJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1904,7 +1904,7 @@ export namespace MyNS {
 	}
 	export function CreateStopPHIDetectionJobResponseFormGroup() {
 		return new FormGroup<StopPHIDetectionJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1929,7 +1929,7 @@ export namespace MyNS {
 	}
 	export function CreateStopPHIDetectionJobRequestFormGroup() {
 		return new FormGroup<StopPHIDetectionJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1952,7 +1952,7 @@ export namespace MyNS {
 	}
 	export function CreateStopRxNormInferenceJobResponseFormGroup() {
 		return new FormGroup<StopRxNormInferenceJobResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -1977,7 +1977,7 @@ export namespace MyNS {
 	}
 	export function CreateStopRxNormInferenceJobRequestFormGroup() {
 		return new FormGroup<StopRxNormInferenceJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -2187,47 +2187,47 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeEntitiesDetectionV2JobX_Amz_Target { ComprehendMedical_20181030_DescribeEntitiesDetectionV2Job = 0 }
+	export enum DescribeEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.DescribeEntitiesDetectionV2Job' = 0 }
 
-	export enum DescribeICD10CMInferenceJobX_Amz_Target { ComprehendMedical_20181030_DescribeICD10CMInferenceJob = 0 }
+	export enum DescribeICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeICD10CMInferenceJob' = 0 }
 
-	export enum DescribePHIDetectionJobX_Amz_Target { ComprehendMedical_20181030_DescribePHIDetectionJob = 0 }
+	export enum DescribePHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.DescribePHIDetectionJob' = 0 }
 
-	export enum DescribeRxNormInferenceJobX_Amz_Target { ComprehendMedical_20181030_DescribeRxNormInferenceJob = 0 }
+	export enum DescribeRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.DescribeRxNormInferenceJob' = 0 }
 
-	export enum DetectEntitiesX_Amz_Target { ComprehendMedical_20181030_DetectEntities = 0 }
+	export enum DetectEntitiesX_Amz_Target { 'ComprehendMedical_20181030.DetectEntities' = 0 }
 
-	export enum DetectEntitiesV2X_Amz_Target { ComprehendMedical_20181030_DetectEntitiesV2 = 0 }
+	export enum DetectEntitiesV2X_Amz_Target { 'ComprehendMedical_20181030.DetectEntitiesV2' = 0 }
 
-	export enum DetectPHIX_Amz_Target { ComprehendMedical_20181030_DetectPHI = 0 }
+	export enum DetectPHIX_Amz_Target { 'ComprehendMedical_20181030.DetectPHI' = 0 }
 
-	export enum InferICD10CMX_Amz_Target { ComprehendMedical_20181030_InferICD10CM = 0 }
+	export enum InferICD10CMX_Amz_Target { 'ComprehendMedical_20181030.InferICD10CM' = 0 }
 
-	export enum InferRxNormX_Amz_Target { ComprehendMedical_20181030_InferRxNorm = 0 }
+	export enum InferRxNormX_Amz_Target { 'ComprehendMedical_20181030.InferRxNorm' = 0 }
 
-	export enum ListEntitiesDetectionV2JobsX_Amz_Target { ComprehendMedical_20181030_ListEntitiesDetectionV2Jobs = 0 }
+	export enum ListEntitiesDetectionV2JobsX_Amz_Target { 'ComprehendMedical_20181030.ListEntitiesDetectionV2Jobs' = 0 }
 
-	export enum ListICD10CMInferenceJobsX_Amz_Target { ComprehendMedical_20181030_ListICD10CMInferenceJobs = 0 }
+	export enum ListICD10CMInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListICD10CMInferenceJobs' = 0 }
 
-	export enum ListPHIDetectionJobsX_Amz_Target { ComprehendMedical_20181030_ListPHIDetectionJobs = 0 }
+	export enum ListPHIDetectionJobsX_Amz_Target { 'ComprehendMedical_20181030.ListPHIDetectionJobs' = 0 }
 
-	export enum ListRxNormInferenceJobsX_Amz_Target { ComprehendMedical_20181030_ListRxNormInferenceJobs = 0 }
+	export enum ListRxNormInferenceJobsX_Amz_Target { 'ComprehendMedical_20181030.ListRxNormInferenceJobs' = 0 }
 
-	export enum StartEntitiesDetectionV2JobX_Amz_Target { ComprehendMedical_20181030_StartEntitiesDetectionV2Job = 0 }
+	export enum StartEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.StartEntitiesDetectionV2Job' = 0 }
 
-	export enum StartICD10CMInferenceJobX_Amz_Target { ComprehendMedical_20181030_StartICD10CMInferenceJob = 0 }
+	export enum StartICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartICD10CMInferenceJob' = 0 }
 
-	export enum StartPHIDetectionJobX_Amz_Target { ComprehendMedical_20181030_StartPHIDetectionJob = 0 }
+	export enum StartPHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.StartPHIDetectionJob' = 0 }
 
-	export enum StartRxNormInferenceJobX_Amz_Target { ComprehendMedical_20181030_StartRxNormInferenceJob = 0 }
+	export enum StartRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StartRxNormInferenceJob' = 0 }
 
-	export enum StopEntitiesDetectionV2JobX_Amz_Target { ComprehendMedical_20181030_StopEntitiesDetectionV2Job = 0 }
+	export enum StopEntitiesDetectionV2JobX_Amz_Target { 'ComprehendMedical_20181030.StopEntitiesDetectionV2Job' = 0 }
 
-	export enum StopICD10CMInferenceJobX_Amz_Target { ComprehendMedical_20181030_StopICD10CMInferenceJob = 0 }
+	export enum StopICD10CMInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopICD10CMInferenceJob' = 0 }
 
-	export enum StopPHIDetectionJobX_Amz_Target { ComprehendMedical_20181030_StopPHIDetectionJob = 0 }
+	export enum StopPHIDetectionJobX_Amz_Target { 'ComprehendMedical_20181030.StopPHIDetectionJob' = 0 }
 
-	export enum StopRxNormInferenceJobX_Amz_Target { ComprehendMedical_20181030_StopRxNormInferenceJob = 0 }
+	export enum StopRxNormInferenceJobX_Amz_Target { 'ComprehendMedical_20181030.StopRxNormInferenceJob' = 0 }
 
 }
 

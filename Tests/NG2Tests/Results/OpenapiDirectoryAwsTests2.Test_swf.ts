@@ -71,7 +71,7 @@ export namespace MyNS {
 	}
 	export function CreateCountClosedWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<CountClosedWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -124,7 +124,7 @@ export namespace MyNS {
 	}
 	export function CreateWorkflowExecutionFilterFormGroup() {
 		return new FormGroup<WorkflowExecutionFilterFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -159,7 +159,7 @@ export namespace MyNS {
 	}
 	export function CreateWorkflowTypeFilterFormGroup() {
 		return new FormGroup<WorkflowTypeFilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 		});
 
@@ -189,7 +189,7 @@ export namespace MyNS {
 	}
 	export function CreateTagFilterFormGroup() {
 		return new FormGroup<TagFilterFormProperties>({
-			tag: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			tag: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -272,7 +272,7 @@ export namespace MyNS {
 	}
 	export function CreateCountOpenWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<CountOpenWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -333,7 +333,7 @@ export namespace MyNS {
 	}
 	export function CreateCountPendingActivityTasksInputFormGroup() {
 		return new FormGroup<CountPendingActivityTasksInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -362,7 +362,7 @@ export namespace MyNS {
 	}
 	export function CreateTaskListFormGroup() {
 		return new FormGroup<TaskListFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -393,7 +393,7 @@ export namespace MyNS {
 	}
 	export function CreateCountPendingDecisionTasksInputFormGroup() {
 		return new FormGroup<CountPendingDecisionTasksInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -424,7 +424,7 @@ export namespace MyNS {
 	}
 	export function CreateDeprecateActivityTypeInputFormGroup() {
 		return new FormGroup<DeprecateActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -467,8 +467,8 @@ export namespace MyNS {
 	}
 	export function CreateActivityTypeFormGroup() {
 		return new FormGroup<ActivityTypeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -503,7 +503,7 @@ export namespace MyNS {
 	}
 	export function CreateDeprecateDomainInputFormGroup() {
 		return new FormGroup<DeprecateDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -544,7 +544,7 @@ export namespace MyNS {
 	}
 	export function CreateDeprecateWorkflowTypeInputFormGroup() {
 		return new FormGroup<DeprecateWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -587,8 +587,8 @@ export namespace MyNS {
 	}
 	export function CreateWorkflowTypeFormGroup() {
 		return new FormGroup<WorkflowTypeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -739,7 +739,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeActivityTypeInputFormGroup() {
 		return new FormGroup<DescribeActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -818,10 +818,10 @@ export namespace MyNS {
 	}
 	export function CreateDomainInfoFormGroup() {
 		return new FormGroup<DomainInfoFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			status: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -850,7 +850,7 @@ export namespace MyNS {
 	}
 	export function CreateDomainConfigurationFormGroup() {
 		return new FormGroup<DomainConfigurationFormProperties>({
-			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
+			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
 		});
 
 	}
@@ -875,7 +875,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDomainInputFormGroup() {
 		return new FormGroup<DescribeDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1015,8 +1015,8 @@ export namespace MyNS {
 	}
 	export function CreateWorkflowExecutionFormGroup() {
 		return new FormGroup<WorkflowExecutionFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			runId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -1087,11 +1087,11 @@ export namespace MyNS {
 	}
 	export function CreateWorkflowExecutionConfigurationFormGroup() {
 		return new FormGroup<WorkflowExecutionConfigurationFormProperties>({
-			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
-			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
+			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
+			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
-			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -1199,7 +1199,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWorkflowExecutionInputFormGroup() {
 		return new FormGroup<DescribeWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1319,7 +1319,7 @@ export namespace MyNS {
 			defaultExecutionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultTaskPriority: new FormControl<string | null | undefined>(undefined),
 			defaultChildPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			defaultLambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			defaultLambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -1350,7 +1350,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWorkflowTypeInputFormGroup() {
 		return new FormGroup<DescribeWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1659,7 +1659,7 @@ export namespace MyNS {
 			taskPriority: new FormControl<string | null | undefined>(undefined),
 			continuedExecutionRunId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			parentInitiatedEventId: new FormControl<number | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -1956,12 +1956,12 @@ export namespace MyNS {
 		return new FormGroup<WorkflowExecutionContinuedAsNewEventAttributesFormProperties>({
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			newExecutionRunId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			newExecutionRunId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
 			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
-			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -2269,7 +2269,7 @@ export namespace MyNS {
 	}
 	export function CreateActivityTaskScheduledEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskScheduledEventAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			scheduleToStartTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
@@ -2500,7 +2500,7 @@ export namespace MyNS {
 	export function CreateActivityTaskCancelRequestedEventAttributesFormGroup() {
 		return new FormGroup<ActivityTaskCancelRequestedEventAttributesFormProperties>({
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -2540,7 +2540,7 @@ export namespace MyNS {
 	}
 	export function CreateWorkflowExecutionSignaledEventAttributesFormGroup() {
 		return new FormGroup<WorkflowExecutionSignaledEventAttributesFormProperties>({
-			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			externalInitiatedEventId: new FormControl<number | null | undefined>(undefined),
 		});
@@ -2583,7 +2583,7 @@ export namespace MyNS {
 	}
 	export function CreateMarkerRecordedEventAttributesFormGroup() {
 		return new FormGroup<MarkerRecordedEventAttributesFormProperties>({
-			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2626,7 +2626,7 @@ export namespace MyNS {
 	}
 	export function CreateRecordMarkerFailedEventAttributesFormGroup() {
 		return new FormGroup<RecordMarkerFailedEventAttributesFormProperties>({
-			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			cause: new FormControl<RecordMarkerFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2685,9 +2685,9 @@ export namespace MyNS {
 	}
 	export function CreateTimerStartedEventAttributesFormGroup() {
 		return new FormGroup<TimerStartedEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
-			startToFireTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
+			startToFireTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2723,7 +2723,7 @@ export namespace MyNS {
 	}
 	export function CreateTimerFiredEventAttributesFormGroup() {
 		return new FormGroup<TimerFiredEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2765,7 +2765,7 @@ export namespace MyNS {
 	}
 	export function CreateTimerCanceledEventAttributesFormGroup() {
 		return new FormGroup<TimerCanceledEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2861,7 +2861,7 @@ export namespace MyNS {
 	}
 	export function CreateStartChildWorkflowExecutionInitiatedEventAttributesFormGroup() {
 		return new FormGroup<StartChildWorkflowExecutionInitiatedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
@@ -2869,7 +2869,7 @@ export namespace MyNS {
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined, [Validators.required]),
 			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
-			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -3204,9 +3204,9 @@ export namespace MyNS {
 	}
 	export function CreateSignalExternalWorkflowExecutionInitiatedEventAttributesFormGroup() {
 		return new FormGroup<SignalExternalWorkflowExecutionInitiatedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
-			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
@@ -3295,7 +3295,7 @@ export namespace MyNS {
 	}
 	export function CreateSignalExternalWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<SignalExternalWorkflowExecutionFailedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			cause: new FormControl<SignalExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -3376,7 +3376,7 @@ export namespace MyNS {
 	}
 	export function CreateRequestCancelExternalWorkflowExecutionInitiatedEventAttributesFormGroup() {
 		return new FormGroup<RequestCancelExternalWorkflowExecutionInitiatedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
@@ -3438,7 +3438,7 @@ export namespace MyNS {
 	}
 	export function CreateRequestCancelExternalWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<RequestCancelExternalWorkflowExecutionFailedEventAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			cause: new FormControl<RequestCancelExternalWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -3492,7 +3492,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleActivityTaskFailedEventAttributesFormGroup() {
 		return new FormGroup<ScheduleActivityTaskFailedEventAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			cause: new FormControl<ScheduleActivityTaskFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3537,7 +3537,7 @@ export namespace MyNS {
 	}
 	export function CreateRequestCancelActivityTaskFailedEventAttributesFormGroup() {
 		return new FormGroup<RequestCancelActivityTaskFailedEventAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			cause: new FormControl<RequestCancelActivityTaskFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3582,7 +3582,7 @@ export namespace MyNS {
 	}
 	export function CreateStartTimerFailedEventAttributesFormGroup() {
 		return new FormGroup<StartTimerFailedEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			cause: new FormControl<StartTimerFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3627,7 +3627,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelTimerFailedEventAttributesFormGroup() {
 		return new FormGroup<CancelTimerFailedEventAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			cause: new FormControl<CancelTimerFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3691,7 +3691,7 @@ export namespace MyNS {
 	export function CreateStartChildWorkflowExecutionFailedEventAttributesFormGroup() {
 		return new FormGroup<StartChildWorkflowExecutionFailedEventAttributesFormProperties>({
 			cause: new FormControl<StartChildWorkflowExecutionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			initiatedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
@@ -3769,10 +3769,10 @@ export namespace MyNS {
 	}
 	export function CreateLambdaFunctionScheduledEventAttributesFormGroup() {
 		return new FormGroup<LambdaFunctionScheduledEventAttributesFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
-			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(32768)]),
 			startToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3958,8 +3958,8 @@ export namespace MyNS {
 	}
 	export function CreateScheduleLambdaFunctionFailedEventAttributesFormGroup() {
 		return new FormGroup<ScheduleLambdaFunctionFailedEventAttributesFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			cause: new FormControl<ScheduleLambdaFunctionFailedEventAttributesCause | null | undefined>(undefined, [Validators.required]),
 			decisionTaskCompletedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -4043,7 +4043,7 @@ export namespace MyNS {
 	}
 	export function CreateGetWorkflowExecutionHistoryInputFormGroup() {
 		return new FormGroup<GetWorkflowExecutionHistoryInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
@@ -4133,8 +4133,8 @@ export namespace MyNS {
 	}
 	export function CreateListActivityTypesInputFormGroup() {
 		return new FormGroup<ListActivityTypesInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
 			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
@@ -4225,7 +4225,7 @@ export namespace MyNS {
 	}
 	export function CreateListClosedWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<ListClosedWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
@@ -4352,7 +4352,7 @@ export namespace MyNS {
 	}
 	export function CreateListOpenWorkflowExecutionsInputFormGroup() {
 		return new FormGroup<ListOpenWorkflowExecutionsInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			reverseOrder: new FormControl<boolean | null | undefined>(undefined),
@@ -4401,7 +4401,7 @@ export namespace MyNS {
 	}
 	export function CreateResourceTagFormGroup() {
 		return new FormGroup<ResourceTagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -4427,7 +4427,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -4524,8 +4524,8 @@ export namespace MyNS {
 	}
 	export function CreateListWorkflowTypesInputFormGroup() {
 		return new FormGroup<ListWorkflowTypesInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			registrationStatus: new FormControl<ActivityTypeInfoStatus | null | undefined>(undefined, [Validators.required]),
 			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
@@ -4596,8 +4596,8 @@ export namespace MyNS {
 	}
 	export function CreateActivityTaskFormGroup() {
 		return new FormGroup<ActivityTaskFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
@@ -4636,7 +4636,7 @@ export namespace MyNS {
 	}
 	export function CreatePollForActivityTaskInputFormGroup() {
 		return new FormGroup<PollForActivityTaskInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			identity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -4695,7 +4695,7 @@ export namespace MyNS {
 	}
 	export function CreateDecisionTaskFormGroup() {
 		return new FormGroup<DecisionTaskFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			startedEventId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			previousStartedEventId: new FormControl<number | null | undefined>(undefined),
@@ -4755,7 +4755,7 @@ export namespace MyNS {
 	}
 	export function CreatePollForDecisionTaskInputFormGroup() {
 		return new FormGroup<PollForDecisionTaskInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			identity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			nextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 			maximumPageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
@@ -4811,7 +4811,7 @@ export namespace MyNS {
 	}
 	export function CreateRecordActivityTaskHeartbeatInputFormGroup() {
 		return new FormGroup<RecordActivityTaskHeartbeatInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048)]),
 		});
 
@@ -4900,9 +4900,9 @@ export namespace MyNS {
 	}
 	export function CreateRegisterActivityTypeInputFormGroup() {
 		return new FormGroup<RegisterActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultTaskHeartbeatTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
@@ -4964,9 +4964,9 @@ export namespace MyNS {
 	}
 	export function CreateRegisterDomainInputFormGroup() {
 		return new FormGroup<RegisterDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
+			workflowExecutionRetentionPeriodInDays: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
 		});
 
 	}
@@ -5076,15 +5076,15 @@ export namespace MyNS {
 	}
 	export function CreateRegisterWorkflowTypeInputFormGroup() {
 		return new FormGroup<RegisterWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			defaultTaskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultExecutionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			defaultTaskPriority: new FormControl<string | null | undefined>(undefined),
 			defaultChildPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			defaultLambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			defaultLambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -5129,8 +5129,8 @@ export namespace MyNS {
 	}
 	export function CreateRequestCancelWorkflowExecutionInputFormGroup() {
 		return new FormGroup<RequestCancelWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 		});
 
@@ -5162,7 +5162,7 @@ export namespace MyNS {
 	}
 	export function CreateRespondActivityTaskCanceledInputFormGroup() {
 		return new FormGroup<RespondActivityTaskCanceledInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
@@ -5194,7 +5194,7 @@ export namespace MyNS {
 	}
 	export function CreateRespondActivityTaskCompletedInputFormGroup() {
 		return new FormGroup<RespondActivityTaskCompletedInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
@@ -5232,7 +5232,7 @@ export namespace MyNS {
 	}
 	export function CreateRespondActivityTaskFailedInputFormGroup() {
 		return new FormGroup<RespondActivityTaskFailedInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
@@ -5270,7 +5270,7 @@ export namespace MyNS {
 	}
 	export function CreateRespondDecisionTaskCompletedInputFormGroup() {
 		return new FormGroup<RespondDecisionTaskCompletedInputFormProperties>({
-			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			taskToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			executionContext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
@@ -5409,7 +5409,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleActivityTaskDecisionAttributesFormGroup() {
 		return new FormGroup<ScheduleActivityTaskDecisionAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			scheduleToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
@@ -5445,7 +5445,7 @@ export namespace MyNS {
 	}
 	export function CreateRequestCancelActivityTaskDecisionAttributesFormGroup() {
 		return new FormGroup<RequestCancelActivityTaskDecisionAttributesFormProperties>({
-			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			activityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -5587,8 +5587,8 @@ export namespace MyNS {
 			taskPriority: new FormControl<string | null | undefined>(undefined),
 			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			workflowTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			workflowTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -5623,7 +5623,7 @@ export namespace MyNS {
 	}
 	export function CreateRecordMarkerDecisionAttributesFormGroup() {
 		return new FormGroup<RecordMarkerDecisionAttributesFormProperties>({
-			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			markerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
@@ -5673,9 +5673,9 @@ export namespace MyNS {
 	}
 	export function CreateStartTimerDecisionAttributesFormGroup() {
 		return new FormGroup<StartTimerDecisionAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
-			startToFireTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8), Validators.minLength(1)]),
+			startToFireTimeout: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8)]),
 		});
 
 	}
@@ -5704,7 +5704,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelTimerDecisionAttributesFormGroup() {
 		return new FormGroup<CancelTimerDecisionAttributesFormProperties>({
-			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			timerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -5765,9 +5765,9 @@ export namespace MyNS {
 	}
 	export function CreateSignalExternalWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<SignalExternalWorkflowExecutionDecisionAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
-			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
@@ -5810,7 +5810,7 @@ export namespace MyNS {
 	}
 	export function CreateRequestCancelExternalWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<RequestCancelExternalWorkflowExecutionDecisionAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
@@ -5893,14 +5893,14 @@ export namespace MyNS {
 	}
 	export function CreateStartChildWorkflowExecutionDecisionAttributesFormGroup() {
 		return new FormGroup<StartChildWorkflowExecutionDecisionAttributesFormProperties>({
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
 			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -5967,10 +5967,10 @@ export namespace MyNS {
 	}
 	export function CreateScheduleLambdaFunctionDecisionAttributesFormGroup() {
 		return new FormGroup<ScheduleLambdaFunctionDecisionAttributesFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			control: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
-			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(0)]),
+			input: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(32768)]),
 			startToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 		});
 
@@ -6036,10 +6036,10 @@ export namespace MyNS {
 	}
 	export function CreateSignalWorkflowExecutionInputFormGroup() {
 		return new FormGroup<SignalWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
-			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			signalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 		});
 
@@ -6067,7 +6067,7 @@ export namespace MyNS {
 	}
 	export function CreateRunFormGroup() {
 		return new FormGroup<RunFormProperties>({
-			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			runId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -6152,14 +6152,14 @@ export namespace MyNS {
 	}
 	export function CreateStartWorkflowExecutionInputFormGroup() {
 		return new FormGroup<StartWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			taskPriority: new FormControl<string | null | undefined>(undefined),
 			input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
 			executionStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			taskStartToCloseTimeout: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8)]),
 			childPolicy: new FormControl<WorkflowExecutionConfigurationChildPolicy | null | undefined>(undefined),
-			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			lambdaRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -6207,7 +6207,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -6266,8 +6266,8 @@ export namespace MyNS {
 	}
 	export function CreateTerminateWorkflowExecutionInputFormGroup() {
 		return new FormGroup<TerminateWorkflowExecutionInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			workflowId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			runId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768)]),
@@ -6302,7 +6302,7 @@ export namespace MyNS {
 	}
 	export function CreateUndeprecateActivityTypeInputFormGroup() {
 		return new FormGroup<UndeprecateActivityTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6327,7 +6327,7 @@ export namespace MyNS {
 	}
 	export function CreateUndeprecateDomainInputFormGroup() {
 		return new FormGroup<UndeprecateDomainInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6358,7 +6358,7 @@ export namespace MyNS {
 	}
 	export function CreateUndeprecateWorkflowTypeInputFormGroup() {
 		return new FormGroup<UndeprecateWorkflowTypeInputFormProperties>({
-			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6386,7 +6386,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -6796,79 +6796,79 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CountClosedWorkflowExecutionsX_Amz_Target { SimpleWorkflowService_CountClosedWorkflowExecutions = 0 }
+	export enum CountClosedWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.CountClosedWorkflowExecutions' = 0 }
 
-	export enum CountOpenWorkflowExecutionsX_Amz_Target { SimpleWorkflowService_CountOpenWorkflowExecutions = 0 }
+	export enum CountOpenWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.CountOpenWorkflowExecutions' = 0 }
 
-	export enum CountPendingActivityTasksX_Amz_Target { SimpleWorkflowService_CountPendingActivityTasks = 0 }
+	export enum CountPendingActivityTasksX_Amz_Target { 'SimpleWorkflowService.CountPendingActivityTasks' = 0 }
 
-	export enum CountPendingDecisionTasksX_Amz_Target { SimpleWorkflowService_CountPendingDecisionTasks = 0 }
+	export enum CountPendingDecisionTasksX_Amz_Target { 'SimpleWorkflowService.CountPendingDecisionTasks' = 0 }
 
-	export enum DeprecateActivityTypeX_Amz_Target { SimpleWorkflowService_DeprecateActivityType = 0 }
+	export enum DeprecateActivityTypeX_Amz_Target { 'SimpleWorkflowService.DeprecateActivityType' = 0 }
 
-	export enum DeprecateDomainX_Amz_Target { SimpleWorkflowService_DeprecateDomain = 0 }
+	export enum DeprecateDomainX_Amz_Target { 'SimpleWorkflowService.DeprecateDomain' = 0 }
 
-	export enum DeprecateWorkflowTypeX_Amz_Target { SimpleWorkflowService_DeprecateWorkflowType = 0 }
+	export enum DeprecateWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.DeprecateWorkflowType' = 0 }
 
-	export enum DescribeActivityTypeX_Amz_Target { SimpleWorkflowService_DescribeActivityType = 0 }
+	export enum DescribeActivityTypeX_Amz_Target { 'SimpleWorkflowService.DescribeActivityType' = 0 }
 
-	export enum DescribeDomainX_Amz_Target { SimpleWorkflowService_DescribeDomain = 0 }
+	export enum DescribeDomainX_Amz_Target { 'SimpleWorkflowService.DescribeDomain' = 0 }
 
-	export enum DescribeWorkflowExecutionX_Amz_Target { SimpleWorkflowService_DescribeWorkflowExecution = 0 }
+	export enum DescribeWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.DescribeWorkflowExecution' = 0 }
 
-	export enum DescribeWorkflowTypeX_Amz_Target { SimpleWorkflowService_DescribeWorkflowType = 0 }
+	export enum DescribeWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.DescribeWorkflowType' = 0 }
 
-	export enum GetWorkflowExecutionHistoryX_Amz_Target { SimpleWorkflowService_GetWorkflowExecutionHistory = 0 }
+	export enum GetWorkflowExecutionHistoryX_Amz_Target { 'SimpleWorkflowService.GetWorkflowExecutionHistory' = 0 }
 
-	export enum ListActivityTypesX_Amz_Target { SimpleWorkflowService_ListActivityTypes = 0 }
+	export enum ListActivityTypesX_Amz_Target { 'SimpleWorkflowService.ListActivityTypes' = 0 }
 
-	export enum ListClosedWorkflowExecutionsX_Amz_Target { SimpleWorkflowService_ListClosedWorkflowExecutions = 0 }
+	export enum ListClosedWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.ListClosedWorkflowExecutions' = 0 }
 
-	export enum ListDomainsX_Amz_Target { SimpleWorkflowService_ListDomains = 0 }
+	export enum ListDomainsX_Amz_Target { 'SimpleWorkflowService.ListDomains' = 0 }
 
-	export enum ListOpenWorkflowExecutionsX_Amz_Target { SimpleWorkflowService_ListOpenWorkflowExecutions = 0 }
+	export enum ListOpenWorkflowExecutionsX_Amz_Target { 'SimpleWorkflowService.ListOpenWorkflowExecutions' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { SimpleWorkflowService_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'SimpleWorkflowService.ListTagsForResource' = 0 }
 
-	export enum ListWorkflowTypesX_Amz_Target { SimpleWorkflowService_ListWorkflowTypes = 0 }
+	export enum ListWorkflowTypesX_Amz_Target { 'SimpleWorkflowService.ListWorkflowTypes' = 0 }
 
-	export enum PollForActivityTaskX_Amz_Target { SimpleWorkflowService_PollForActivityTask = 0 }
+	export enum PollForActivityTaskX_Amz_Target { 'SimpleWorkflowService.PollForActivityTask' = 0 }
 
-	export enum PollForDecisionTaskX_Amz_Target { SimpleWorkflowService_PollForDecisionTask = 0 }
+	export enum PollForDecisionTaskX_Amz_Target { 'SimpleWorkflowService.PollForDecisionTask' = 0 }
 
-	export enum RecordActivityTaskHeartbeatX_Amz_Target { SimpleWorkflowService_RecordActivityTaskHeartbeat = 0 }
+	export enum RecordActivityTaskHeartbeatX_Amz_Target { 'SimpleWorkflowService.RecordActivityTaskHeartbeat' = 0 }
 
-	export enum RegisterActivityTypeX_Amz_Target { SimpleWorkflowService_RegisterActivityType = 0 }
+	export enum RegisterActivityTypeX_Amz_Target { 'SimpleWorkflowService.RegisterActivityType' = 0 }
 
-	export enum RegisterDomainX_Amz_Target { SimpleWorkflowService_RegisterDomain = 0 }
+	export enum RegisterDomainX_Amz_Target { 'SimpleWorkflowService.RegisterDomain' = 0 }
 
-	export enum RegisterWorkflowTypeX_Amz_Target { SimpleWorkflowService_RegisterWorkflowType = 0 }
+	export enum RegisterWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.RegisterWorkflowType' = 0 }
 
-	export enum RequestCancelWorkflowExecutionX_Amz_Target { SimpleWorkflowService_RequestCancelWorkflowExecution = 0 }
+	export enum RequestCancelWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.RequestCancelWorkflowExecution' = 0 }
 
-	export enum RespondActivityTaskCanceledX_Amz_Target { SimpleWorkflowService_RespondActivityTaskCanceled = 0 }
+	export enum RespondActivityTaskCanceledX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskCanceled' = 0 }
 
-	export enum RespondActivityTaskCompletedX_Amz_Target { SimpleWorkflowService_RespondActivityTaskCompleted = 0 }
+	export enum RespondActivityTaskCompletedX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskCompleted' = 0 }
 
-	export enum RespondActivityTaskFailedX_Amz_Target { SimpleWorkflowService_RespondActivityTaskFailed = 0 }
+	export enum RespondActivityTaskFailedX_Amz_Target { 'SimpleWorkflowService.RespondActivityTaskFailed' = 0 }
 
-	export enum RespondDecisionTaskCompletedX_Amz_Target { SimpleWorkflowService_RespondDecisionTaskCompleted = 0 }
+	export enum RespondDecisionTaskCompletedX_Amz_Target { 'SimpleWorkflowService.RespondDecisionTaskCompleted' = 0 }
 
-	export enum SignalWorkflowExecutionX_Amz_Target { SimpleWorkflowService_SignalWorkflowExecution = 0 }
+	export enum SignalWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.SignalWorkflowExecution' = 0 }
 
-	export enum StartWorkflowExecutionX_Amz_Target { SimpleWorkflowService_StartWorkflowExecution = 0 }
+	export enum StartWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.StartWorkflowExecution' = 0 }
 
-	export enum TagResourceX_Amz_Target { SimpleWorkflowService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'SimpleWorkflowService.TagResource' = 0 }
 
-	export enum TerminateWorkflowExecutionX_Amz_Target { SimpleWorkflowService_TerminateWorkflowExecution = 0 }
+	export enum TerminateWorkflowExecutionX_Amz_Target { 'SimpleWorkflowService.TerminateWorkflowExecution' = 0 }
 
-	export enum UndeprecateActivityTypeX_Amz_Target { SimpleWorkflowService_UndeprecateActivityType = 0 }
+	export enum UndeprecateActivityTypeX_Amz_Target { 'SimpleWorkflowService.UndeprecateActivityType' = 0 }
 
-	export enum UndeprecateDomainX_Amz_Target { SimpleWorkflowService_UndeprecateDomain = 0 }
+	export enum UndeprecateDomainX_Amz_Target { 'SimpleWorkflowService.UndeprecateDomain' = 0 }
 
-	export enum UndeprecateWorkflowTypeX_Amz_Target { SimpleWorkflowService_UndeprecateWorkflowType = 0 }
+	export enum UndeprecateWorkflowTypeX_Amz_Target { 'SimpleWorkflowService.UndeprecateWorkflowType' = 0 }
 
-	export enum UntagResourceX_Amz_Target { SimpleWorkflowService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'SimpleWorkflowService.UntagResource' = 0 }
 
 }
 

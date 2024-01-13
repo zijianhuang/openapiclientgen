@@ -352,11 +352,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeServicesX_Amz_Target { AWSPriceListService_DescribeServices = 0 }
+	export enum DescribeServicesX_Amz_Target { 'AWSPriceListService.DescribeServices' = 0 }
 
-	export enum GetAttributeValuesX_Amz_Target { AWSPriceListService_GetAttributeValues = 0 }
+	export enum GetAttributeValuesX_Amz_Target { 'AWSPriceListService.GetAttributeValues' = 0 }
 
-	export enum GetProductsX_Amz_Target { AWSPriceListService_GetProducts = 0 }
+	export enum GetProductsX_Amz_Target { 'AWSPriceListService.GetProducts' = 0 }
 
 }
 

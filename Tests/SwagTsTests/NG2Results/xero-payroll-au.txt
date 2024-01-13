@@ -272,7 +272,7 @@ export namespace MyNS {
 		NumberOfUnits?: number | null;
 	}
 
-	export enum LeaveLineCalculationType { NOCALCULATIONREQUIRED = 0, FIXEDAMOUNTEACHPERIOD = 1, ENTERRATEINPAYTEMPLATE = 2, BASEDONORDINARYEARNINGS = 3, _ = 4 }
+	export enum LeaveLineCalculationType { NOCALCULATIONREQUIRED = 0, FIXEDAMOUNTEACHPERIOD = 1, ENTERRATEINPAYTEMPLATE = 2, BASEDONORDINARYEARNINGS = 3, '' = 4 }
 
 	export enum LeaveLineEntitlementFinalPayPayoutType { NOTPAIDOUT = 0, PAIDOUT = 1 }
 

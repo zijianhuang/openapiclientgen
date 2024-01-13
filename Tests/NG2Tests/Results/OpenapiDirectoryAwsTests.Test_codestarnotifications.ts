@@ -11,7 +11,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateNotificationRuleResultFormGroup() {
 		return new FormGroup<CreateNotificationRuleResultFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -40,8 +40,8 @@ export namespace MyNS {
 	}
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
-			TargetType: new FormControl<string | null | undefined>(undefined),
-			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			TargetType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]+$')]),
+			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(320)]),
 		});
 
 	}
@@ -114,7 +114,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteNotificationRuleResultFormGroup() {
 		return new FormGroup<DeleteNotificationRuleResultFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -172,9 +172,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNotificationRuleResultFormGroup() {
 		return new FormGroup<DescribeNotificationRuleResultFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
-			Resource: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$')]),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined),
 			CreatedBy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
@@ -216,7 +216,7 @@ export namespace MyNS {
 	}
 	export function CreateEventTypeSummaryFormGroup() {
 		return new FormGroup<EventTypeSummaryFormProperties>({
-			EventTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1)]),
+			EventTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200)]),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
 			EventTypeName: new FormControl<string | null | undefined>(undefined),
 			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('^([a-zA-Z0-9-])+$')]),
@@ -250,8 +250,8 @@ export namespace MyNS {
 	}
 	export function CreateTargetSummaryFormGroup() {
 		return new FormGroup<TargetSummaryFormProperties>({
-			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
-			TargetType: new FormControl<string | null | undefined>(undefined),
+			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(320)]),
+			TargetType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]+$')]),
 			TargetStatus: new FormControl<TargetSummaryTargetStatus | null | undefined>(undefined),
 		});
 
@@ -292,7 +292,7 @@ export namespace MyNS {
 	}
 	export function CreateListEventTypesResultFormGroup() {
 		return new FormGroup<ListEventTypesResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 		});
 
 	}
@@ -346,7 +346,7 @@ export namespace MyNS {
 	}
 	export function CreateListNotificationRulesResultFormGroup() {
 		return new FormGroup<ListNotificationRulesResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 		});
 
 	}
@@ -375,8 +375,8 @@ export namespace MyNS {
 	}
 	export function CreateNotificationRuleSummaryFormGroup() {
 		return new FormGroup<NotificationRuleSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -431,7 +431,7 @@ export namespace MyNS {
 	}
 	export function CreateListTargetsResultFormGroup() {
 		return new FormGroup<ListTargetsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 		});
 
 	}
@@ -474,7 +474,7 @@ export namespace MyNS {
 	}
 	export function CreateSubscribeResultFormGroup() {
 		return new FormGroup<SubscribeResultFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -502,7 +502,7 @@ export namespace MyNS {
 	}
 	export function CreateUnsubscribeResultFormGroup() {
 		return new FormGroup<UnsubscribeResultFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -587,10 +587,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateNotificationRuleRequestFormGroup() {
 		return new FormGroup<CreateNotificationRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
-			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$')]),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w:/-]+$')]),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 		});
 
@@ -608,7 +608,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteNotificationRuleRequestFormGroup() {
 		return new FormGroup<DeleteNotificationRuleRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -635,7 +635,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTargetRequestFormGroup() {
 		return new FormGroup<DeleteTargetRequestFormProperties>({
-			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(320), Validators.minLength(1)]),
+			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(320)]),
 			ForceUnsubscribeAll: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -653,7 +653,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNotificationRuleRequestFormGroup() {
 		return new FormGroup<DescribeNotificationRuleRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -679,7 +679,7 @@ export namespace MyNS {
 	}
 	export function CreateListEventTypesRequestFormGroup() {
 		return new FormGroup<ListEventTypesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -706,7 +706,7 @@ export namespace MyNS {
 	}
 	export function CreateListNotificationRulesRequestFormGroup() {
 		return new FormGroup<ListNotificationRulesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -724,7 +724,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -750,7 +750,7 @@ export namespace MyNS {
 	}
 	export function CreateListTargetsRequestFormGroup() {
 		return new FormGroup<ListTargetsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -786,8 +786,8 @@ export namespace MyNS {
 	}
 	export function CreateSubscribeRequestFormGroup() {
 		return new FormGroup<SubscribeRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w:/-]+$')]),
 		});
 
 	}
@@ -807,7 +807,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -840,8 +840,8 @@ export namespace MyNS {
 	}
 	export function CreateUnsubscribeRequestFormGroup() {
 		return new FormGroup<UnsubscribeRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(320), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
+			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(320)]),
 		});
 
 	}
@@ -861,7 +861,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -898,8 +898,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateNotificationRuleRequestFormGroup() {
 		return new FormGroup<UpdateNotificationRuleRequestFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined),
 		});
@@ -1120,10 +1120,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateNotificationRulePostBodyFormGroup() {
 		return new FormGroup<CreateNotificationRulePostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
-			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:[^:\s]*:[^:\s]*:[0-9]{12}:[^\s]+$')]),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w:/-]+$')]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 		});
@@ -1148,7 +1148,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteNotificationRulePostBodyFormGroup() {
 		return new FormGroup<DeleteNotificationRulePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTargetPostBodyFormGroup() {
 		return new FormGroup<DeleteTargetPostBodyFormProperties>({
-			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(320), Validators.minLength(1)]),
+			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(320)]),
 			ForceUnsubscribeAll: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1205,7 +1205,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNotificationRulePostBodyFormGroup() {
 		return new FormGroup<DescribeNotificationRulePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -1239,7 +1239,7 @@ export namespace MyNS {
 	}
 	export function CreateListEventTypesPostBodyFormGroup() {
 		return new FormGroup<ListEventTypesPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1274,7 +1274,7 @@ export namespace MyNS {
 	}
 	export function CreateListNotificationRulesPostBodyFormGroup() {
 		return new FormGroup<ListNotificationRulesPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1298,7 +1298,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourcePostBodyFormGroup() {
 		return new FormGroup<ListTagsForResourcePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -1332,7 +1332,7 @@ export namespace MyNS {
 	}
 	export function CreateListTargetsPostBodyFormGroup() {
 		return new FormGroup<ListTargetsPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w/+=]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1376,8 +1376,8 @@ export namespace MyNS {
 	}
 	export function CreateSubscribePostBodyFormGroup() {
 		return new FormGroup<SubscribePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w:/-]+$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w:/-]+$')]),
 		});
 
 	}
@@ -1402,8 +1402,8 @@ export namespace MyNS {
 	}
 	export function CreateSubscribePostBodyTargetFormGroup() {
 		return new FormGroup<SubscribePostBodyTargetFormProperties>({
-			TargetType: new FormControl<string | null | undefined>(undefined),
-			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(320), Validators.minLength(1)]),
+			TargetType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]+$')]),
+			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(320)]),
 		});
 
 	}
@@ -1438,7 +1438,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1478,8 +1478,8 @@ export namespace MyNS {
 	}
 	export function CreateUnsubscribePostBodyFormGroup() {
 		return new FormGroup<UnsubscribePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(320), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
+			TargetAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(320)]),
 		});
 
 	}
@@ -1508,7 +1508,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
 		});
 
 	}
@@ -1566,8 +1566,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateNotificationRulePostBodyFormGroup() {
 		return new FormGroup<UpdateNotificationRulePostBodyFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:\s]*:codestar-notifications:[^:\s]+:\d{12}:notificationrule\/(.*\S)?$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Za-z0-9\-_ ]+$')]),
 			Status: new FormControl<DescribeNotificationRuleResultStatus | null | undefined>(undefined),
 			DetailType: new FormControl<DescribeNotificationRuleResultDetailType | null | undefined>(undefined),
 		});

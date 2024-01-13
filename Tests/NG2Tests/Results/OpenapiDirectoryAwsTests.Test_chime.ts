@@ -120,7 +120,7 @@ export namespace MyNS {
 	}
 	export function CreatePhoneNumberErrorFormGroup() {
 		return new FormGroup<PhoneNumberErrorFormProperties>({
-			PhoneNumberId: new FormControl<string | null | undefined>(undefined),
+			PhoneNumberId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			ErrorCode: new FormControl<PhoneNumberErrorErrorCode | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -162,7 +162,7 @@ export namespace MyNS {
 	}
 	export function CreateSigninDelegateGroupFormGroup() {
 		return new FormGroup<SigninDelegateGroupFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -215,9 +215,9 @@ export namespace MyNS {
 	}
 	export function CreateAttendeeFormGroup() {
 		return new FormGroup<AttendeeFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
-			AttendeeId: new FormControl<string | null | undefined>(undefined),
-			JoinToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(2)]),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
+			AttendeeId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}')]),
+			JoinToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -248,7 +248,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAttendeeErrorFormGroup() {
 		return new FormGroup<CreateAttendeeErrorFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -285,7 +285,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAttendeeRequestItemFormGroup() {
 		return new FormGroup<CreateAttendeeRequestItemFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(64)]),
 		});
 
 	}
@@ -328,8 +328,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -371,7 +371,7 @@ export namespace MyNS {
 	}
 	export function CreateMemberErrorFormGroup() {
 		return new FormGroup<MemberErrorFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			ErrorCode: new FormControl<PhoneNumberErrorErrorCode | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -392,7 +392,7 @@ export namespace MyNS {
 	}
 	export function CreateMembershipItemFormGroup() {
 		return new FormGroup<MembershipItemFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Role: new FormControl<MembershipItemRole | null | undefined>(undefined),
 		});
 
@@ -438,7 +438,7 @@ export namespace MyNS {
 	}
 	export function CreateUserErrorFormGroup() {
 		return new FormGroup<UserErrorFormProperties>({
-			UserId: new FormControl<string | null | undefined>(undefined),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			ErrorCode: new FormControl<PhoneNumberErrorErrorCode | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
 		});
@@ -487,9 +487,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePhoneNumberRequestItemFormGroup() {
 		return new FormGroup<UpdatePhoneNumberRequestItemFormProperties>({
-			PhoneNumberId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PhoneNumberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
-			CallingName: new FormControl<string | null | undefined>(undefined),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[a-zA-Z0-9 ]{2,15}$')]),
 		});
 
 	}
@@ -530,7 +530,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateUserRequestItemFormGroup() {
 		return new FormGroup<UpdateUserRequestItemFormProperties>({
-			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			LicenseType: new FormControl<UpdateUserRequestItemLicenseType | null | undefined>(undefined),
 			UserType: new FormControl<UpdateUserRequestItemUserType | null | undefined>(undefined),
 		});
@@ -735,8 +735,8 @@ export namespace MyNS {
 	}
 	export function CreateMeetingFormGroup() {
 		return new FormGroup<MeetingFormProperties>({
-			MeetingId: new FormControl<string | null | undefined>(undefined),
-			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			MeetingId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}')]),
+			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -839,7 +839,7 @@ export namespace MyNS {
 	}
 	export function CreatePhoneNumberOrderFormGroup() {
 		return new FormGroup<PhoneNumberOrderFormProperties>({
-			PhoneNumberOrderId: new FormControl<string | null | undefined>(undefined),
+			PhoneNumberOrderId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}')]),
 			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
 			Status: new FormControl<PhoneNumberOrderStatus | null | undefined>(undefined),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -864,7 +864,7 @@ export namespace MyNS {
 	}
 	export function CreateOrderedPhoneNumberFormGroup() {
 		return new FormGroup<OrderedPhoneNumberFormProperties>({
-			E164PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 			Status: new FormControl<OrderedPhoneNumberStatus | null | undefined>(undefined),
 		});
 
@@ -948,8 +948,8 @@ export namespace MyNS {
 	}
 	export function CreateProxySessionFormGroup() {
 		return new FormGroup<ProxySessionFormProperties>({
-			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ProxySessionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ProxySessionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
 			Status: new FormControl<ProxySessionStatus | null | undefined>(undefined),
 			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -980,8 +980,8 @@ export namespace MyNS {
 	}
 	export function CreateParticipantFormGroup() {
 		return new FormGroup<ParticipantFormProperties>({
-			PhoneNumber: new FormControl<string | null | undefined>(undefined),
-			ProxyPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
+			ProxyPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 		});
 
 	}
@@ -1012,8 +1012,8 @@ export namespace MyNS {
 	}
 	export function CreateGeoMatchParamsFormGroup() {
 		return new FormGroup<GeoMatchParamsFormProperties>({
-			Country: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AreaCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Country: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^$|^[A-Z]{2,2}$')]),
+			AreaCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^$|^[0-9]{3,3}$')]),
 		});
 
 	}
@@ -1053,10 +1053,10 @@ export namespace MyNS {
 	}
 	export function CreateRoomFormGroup() {
 		return new FormGroup<RoomFormProperties>({
-			RoomId: new FormControl<string | null | undefined>(undefined),
+			RoomId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Name: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			CreatedBy: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			CreatedBy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			UpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1097,9 +1097,9 @@ export namespace MyNS {
 	}
 	export function CreateRoomMembershipFormGroup() {
 		return new FormGroup<RoomMembershipFormProperties>({
-			RoomId: new FormControl<string | null | undefined>(undefined),
+			RoomId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Role: new FormControl<MembershipItemRole | null | undefined>(undefined),
-			InvitedBy: new FormControl<string | null | undefined>(undefined),
+			InvitedBy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			UpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1125,11 +1125,11 @@ export namespace MyNS {
 	}
 	export function CreateMemberFormGroup() {
 		return new FormGroup<MemberFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			MemberType: new FormControl<MemberMemberType | null | undefined>(undefined),
 			Email: new FormControl<string | null | undefined>(undefined),
 			FullName: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1202,7 +1202,7 @@ export namespace MyNS {
 		return new FormGroup<UserFormProperties>({
 			UserId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AccountId: new FormControl<string | null | undefined>(undefined),
-			PrimaryEmail: new FormControl<string | null | undefined>(undefined),
+			PrimaryEmail: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.+@.+\..+')]),
 			PrimaryProvisionedNumber: new FormControl<string | null | undefined>(undefined),
 			DisplayName: new FormControl<string | null | undefined>(undefined),
 			LicenseType: new FormControl<UpdateUserRequestItemLicenseType | null | undefined>(undefined),
@@ -1267,9 +1267,9 @@ export namespace MyNS {
 	}
 	export function CreateVoiceConnectorFormGroup() {
 		return new FormGroup<VoiceConnectorFormProperties>({
-			VoiceConnectorId: new FormControl<string | null | undefined>(undefined),
+			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			AwsRegion: new FormControl<VoiceConnectorAwsRegion | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			OutboundHostName: new FormControl<string | null | undefined>(undefined),
 			RequireEncryption: new FormControl<boolean | null | undefined>(undefined),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -1278,7 +1278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VoiceConnectorAwsRegion { us_east_1 = 0, us_west_2 = 1 }
+	export enum VoiceConnectorAwsRegion { 'us-east-1' = 0, 'us-west-2' = 1 }
 
 	export interface CreateVoiceConnectorGroupResponse {
 
@@ -1322,8 +1322,8 @@ export namespace MyNS {
 	}
 	export function CreateVoiceConnectorGroupFormGroup() {
 		return new FormGroup<VoiceConnectorGroupFormProperties>({
-			VoiceConnectorGroupId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			VoiceConnectorGroupId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			UpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1360,7 +1360,7 @@ export namespace MyNS {
 	}
 	export function CreateVoiceConnectorItemFormGroup() {
 		return new FormGroup<VoiceConnectorItemFormProperties>({
-			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			VoiceConnectorId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(99)]),
 		});
 
@@ -1647,11 +1647,11 @@ export namespace MyNS {
 	export function CreatePhoneNumberFormGroup() {
 		return new FormGroup<PhoneNumberFormProperties>({
 			PhoneNumberId: new FormControl<string | null | undefined>(undefined),
-			E164PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 			Type: new FormControl<PhoneNumberType | null | undefined>(undefined),
 			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
 			Status: new FormControl<PhoneNumberStatus | null | undefined>(undefined),
-			CallingName: new FormControl<string | null | undefined>(undefined),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[a-zA-Z0-9 ]{2,15}$')]),
 			CallingNameStatus: new FormControl<PhoneNumberCallingNameStatus | null | undefined>(undefined),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			UpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -1746,7 +1746,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPhoneNumberSettingsResponseFormGroup() {
 		return new FormGroup<GetPhoneNumberSettingsResponseFormProperties>({
-			CallingName: new FormControl<string | null | undefined>(undefined),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[a-zA-Z0-9 ]{2,15}$')]),
 			CallingNameUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2129,7 +2129,7 @@ export namespace MyNS {
 		return new FormGroup<ProxyFormProperties>({
 			DefaultSessionExpiryMinutes: new FormControl<number | null | undefined>(undefined),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
-			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 		});
 
 	}
@@ -2242,7 +2242,7 @@ export namespace MyNS {
 	export function CreateTerminationFormGroup() {
 		return new FormGroup<TerminationFormProperties>({
 			CpsLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			DefaultPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			DefaultPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 		return new FormGroup<InviteFormProperties>({
 			InviteId: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<UserUserInvitationStatus | null | undefined>(undefined),
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.+@.+\..+')]),
 			EmailStatus: new FormControl<InviteEmailStatus | null | undefined>(undefined),
 		});
 
@@ -2886,7 +2886,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociatePhoneNumberWithUserRequestFormGroup() {
 		return new FormGroup<AssociatePhoneNumberWithUserRequestFormProperties>({
-			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 		});
 
 	}
@@ -3062,7 +3062,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccountRequestFormGroup() {
 		return new FormGroup<CreateAccountRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3093,7 +3093,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAttendeeRequestFormGroup() {
 		return new FormGroup<CreateAttendeeRequestFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(64)]),
 		});
 
 	}
@@ -3113,7 +3113,7 @@ export namespace MyNS {
 	export function CreateCreateBotRequestFormGroup() {
 		return new FormGroup<CreateBotRequestFormProperties>({
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Domain: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3152,8 +3152,8 @@ export namespace MyNS {
 	}
 	export function CreateMeetingNotificationConfigurationFormGroup() {
 		return new FormGroup<MeetingNotificationConfigurationFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
-			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -3213,9 +3213,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateMeetingRequestFormGroup() {
 		return new FormGroup<CreateMeetingRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
-			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
-			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(64), Validators.pattern('[-_a-zA-Z0-9]*')]),
+			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
+			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3278,7 +3278,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProxySessionRequestFormGroup() {
 		return new FormGroup<CreateProxySessionRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[a-zA-Z0-9 ]{0,30}$')]),
 			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NumberSelectionBehavior: new FormControl<ProxySessionNumberSelectionBehavior | null | undefined>(undefined),
 			GeoMatchLevel: new FormControl<ProxySessionGeoMatchLevel | null | undefined>(undefined),
@@ -3302,7 +3302,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRoomMembershipRequestFormGroup() {
 		return new FormGroup<CreateRoomMembershipRequestFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			Role: new FormControl<MembershipItemRole | null | undefined>(undefined),
 		});
 
@@ -3333,7 +3333,7 @@ export namespace MyNS {
 	export function CreateCreateRoomRequestFormGroup() {
 		return new FormGroup<CreateRoomRequestFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64), Validators.pattern('[-_a-zA-Z0-9]*')]),
 		});
 
 	}
@@ -3353,7 +3353,7 @@ export namespace MyNS {
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
 			Username: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.+@.+\..+')]),
 			UserType: new FormControl<UpdateUserRequestItemUserType | null | undefined>(undefined),
 		});
 
@@ -3380,7 +3380,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateVoiceConnectorGroupRequestFormGroup() {
 		return new FormGroup<CreateVoiceConnectorGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -3393,7 +3393,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Name: string;
-		AwsRegion?: CreateVoiceConnectorRequestAwsRegion | null;
+		AwsRegion?: VoiceConnectorAwsRegion | null;
 
 		/** Required */
 		RequireEncryption: boolean;
@@ -3406,21 +3406,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Name: FormControl<string | null | undefined>,
-		AwsRegion: FormControl<CreateVoiceConnectorRequestAwsRegion | null | undefined>,
+		AwsRegion: FormControl<VoiceConnectorAwsRegion | null | undefined>,
 
 		/** Required */
 		RequireEncryption: FormControl<boolean | null | undefined>,
 	}
 	export function CreateCreateVoiceConnectorRequestFormGroup() {
 		return new FormGroup<CreateVoiceConnectorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			AwsRegion: new FormControl<CreateVoiceConnectorRequestAwsRegion | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			AwsRegion: new FormControl<VoiceConnectorAwsRegion | null | undefined>(undefined),
 			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum CreateVoiceConnectorRequestAwsRegion { us_east_1 = 0, us_west_2 = 1 }
 
 	export interface DeleteAccountRequest {
 	}
@@ -4118,7 +4116,7 @@ export namespace MyNS {
 	export function CreatePutVoiceConnectorProxyRequestFormGroup() {
 		return new FormGroup<PutVoiceConnectorProxyRequestFormProperties>({
 			DefaultSessionExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4290,7 +4288,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -4356,7 +4354,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -4379,7 +4377,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAccountRequestFormGroup() {
 		return new FormGroup<UpdateAccountRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4446,7 +4444,7 @@ export namespace MyNS {
 	export function CreateUpdatePhoneNumberRequestFormGroup() {
 		return new FormGroup<UpdatePhoneNumberRequestFormProperties>({
 			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
-			CallingName: new FormControl<string | null | undefined>(undefined),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[a-zA-Z0-9 ]{2,15}$')]),
 		});
 
 	}
@@ -4463,7 +4461,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePhoneNumberSettingsRequestFormGroup() {
 		return new FormGroup<UpdatePhoneNumberSettingsRequestFormProperties>({
-			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^$|^[a-zA-Z0-9 ]{2,15}$')]),
 		});
 
 	}
@@ -4572,7 +4570,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVoiceConnectorGroupRequestFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -4603,7 +4601,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVoiceConnectorRequestFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5846,7 +5844,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociatePhoneNumberWithUserOperation { associate_phone_number = 0 }
+	export enum AssociatePhoneNumberWithUserOperation { 'associate-phone-number' = 0 }
 
 	export interface AssociatePhoneNumberWithUserPostBody {
 
@@ -5866,12 +5864,12 @@ export namespace MyNS {
 	}
 	export function CreateAssociatePhoneNumberWithUserPostBodyFormGroup() {
 		return new FormGroup<AssociatePhoneNumberWithUserPostBodyFormProperties>({
-			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			E164PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 		});
 
 	}
 
-	export enum AssociatePhoneNumbersWithVoiceConnectorOperation { associate_phone_numbers = 0 }
+	export enum AssociatePhoneNumbersWithVoiceConnectorOperation { 'associate-phone-numbers' = 0 }
 
 	export interface AssociatePhoneNumbersWithVoiceConnectorPostBody {
 
@@ -5893,7 +5891,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociatePhoneNumbersWithVoiceConnectorGroupOperation { associate_phone_numbers = 0 }
+	export enum AssociatePhoneNumbersWithVoiceConnectorGroupOperation { 'associate-phone-numbers' = 0 }
 
 	export interface AssociatePhoneNumbersWithVoiceConnectorGroupPostBody {
 
@@ -5915,7 +5913,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AssociateSigninDelegateGroupsWithAccountOperation { associate_signin_delegate_groups = 0 }
+	export enum AssociateSigninDelegateGroupsWithAccountOperation { 'associate-signin-delegate-groups' = 0 }
 
 	export interface AssociateSigninDelegateGroupsWithAccountPostBody {
 
@@ -5933,7 +5931,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchCreateAttendeeOperation { batch_create = 0 }
+	export enum BatchCreateAttendeeOperation { 'batch-create' = 0 }
 
 	export interface BatchCreateAttendeePostBody {
 
@@ -5951,7 +5949,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchCreateRoomMembershipOperation { batch_create = 0 }
+	export enum BatchCreateRoomMembershipOperation { 'batch-create' = 0 }
 
 	export interface BatchCreateRoomMembershipPostBody {
 
@@ -5970,7 +5968,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchDeletePhoneNumberOperation { batch_delete = 0 }
+	export enum BatchDeletePhoneNumberOperation { 'batch-delete' = 0 }
 
 	export interface BatchDeletePhoneNumberPostBody {
 
@@ -6027,7 +6025,7 @@ export namespace MyNS {
 
 	}
 
-	export enum BatchUpdatePhoneNumberOperation { batch_update = 0 }
+	export enum BatchUpdatePhoneNumberOperation { 'batch-update' = 0 }
 
 	export interface BatchUpdatePhoneNumberPostBody {
 
@@ -6084,7 +6082,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccountPostBodyFormGroup() {
 		return new FormGroup<CreateAccountPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6118,7 +6116,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAttendeePostBodyFormGroup() {
 		return new FormGroup<CreateAttendeePostBodyFormProperties>({
-			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2)]),
+			ExternalUserId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(64)]),
 		});
 
 	}
@@ -6148,7 +6146,7 @@ export namespace MyNS {
 	export function CreateCreateBotPostBodyFormGroup() {
 		return new FormGroup<CreateBotPostBodyFormProperties>({
 			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Domain: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6219,9 +6217,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateMeetingPostBodyFormGroup() {
 		return new FormGroup<CreateMeetingPostBodyFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
-			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
-			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(64), Validators.pattern('[-_a-zA-Z0-9]*')]),
+			ExternalMeetingId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
+			MeetingHostId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
 			MediaRegion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -6257,8 +6255,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateMeetingPostBodyNotificationsConfigurationFormGroup() {
 		return new FormGroup<CreateMeetingPostBodyNotificationsConfigurationFormProperties>({
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
-			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			SqsQueueArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -6345,7 +6343,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProxySessionPostBodyFormGroup() {
 		return new FormGroup<CreateProxySessionPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[a-zA-Z0-9 ]{0,30}$')]),
 			ExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NumberSelectionBehavior: new FormControl<ProxySessionNumberSelectionBehavior | null | undefined>(undefined),
 			GeoMatchLevel: new FormControl<ProxySessionGeoMatchLevel | null | undefined>(undefined),
@@ -6363,8 +6361,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProxySessionPostBodyGeoMatchParamsFormGroup() {
 		return new FormGroup<CreateProxySessionPostBodyGeoMatchParamsFormProperties>({
-			Country: new FormControl<string | null | undefined>(undefined),
-			AreaCode: new FormControl<string | null | undefined>(undefined),
+			Country: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[A-Z]{2,2}$')]),
+			AreaCode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[0-9]{3,3}$')]),
 		});
 
 	}
@@ -6402,7 +6400,7 @@ export namespace MyNS {
 	export function CreateCreateRoomPostBodyFormGroup() {
 		return new FormGroup<CreateRoomPostBodyFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('[-_a-zA-Z0-9]*')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64), Validators.pattern('[-_a-zA-Z0-9]*')]),
 		});
 
 	}
@@ -6431,7 +6429,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRoomMembershipPostBodyFormGroup() {
 		return new FormGroup<CreateRoomMembershipPostBodyFormProperties>({
-			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MemberId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			Role: new FormControl<MembershipItemRole | null | undefined>(undefined),
 		});
 
@@ -6464,7 +6462,7 @@ export namespace MyNS {
 	export function CreateCreateUserPostBodyFormGroup() {
 		return new FormGroup<CreateUserPostBodyFormProperties>({
 			Username: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.+@.+\..+')]),
 			UserType: new FormControl<UpdateUserRequestItemUserType | null | undefined>(undefined),
 		});
 
@@ -6481,7 +6479,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>. */
-		AwsRegion?: CreateVoiceConnectorPostBodyAwsRegion | null;
+		AwsRegion?: VoiceConnectorAwsRegion | null;
 
 		/**
 		 * When enabled, requires encryption for the Amazon Chime Voice Connector.
@@ -6500,7 +6498,7 @@ export namespace MyNS {
 		Name: FormControl<string | null | undefined>,
 
 		/** The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code>. */
-		AwsRegion: FormControl<CreateVoiceConnectorPostBodyAwsRegion | null | undefined>,
+		AwsRegion: FormControl<VoiceConnectorAwsRegion | null | undefined>,
 
 		/**
 		 * When enabled, requires encryption for the Amazon Chime Voice Connector.
@@ -6510,14 +6508,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateVoiceConnectorPostBodyFormGroup() {
 		return new FormGroup<CreateVoiceConnectorPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			AwsRegion: new FormControl<CreateVoiceConnectorPostBodyAwsRegion | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			AwsRegion: new FormControl<VoiceConnectorAwsRegion | null | undefined>(undefined),
 			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum CreateVoiceConnectorPostBodyAwsRegion { us_east_1 = 0, us_west_2 = 1 }
 
 	export interface CreateVoiceConnectorGroupPostBody {
 
@@ -6544,7 +6540,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateVoiceConnectorGroupPostBodyFormGroup() {
 		return new FormGroup<CreateVoiceConnectorGroupPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6569,7 +6565,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAccountPostBodyFormGroup() {
 		return new FormGroup<UpdateAccountPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6617,7 +6613,7 @@ export namespace MyNS {
 	export function CreateUpdatePhoneNumberPostBodyFormGroup() {
 		return new FormGroup<UpdatePhoneNumberPostBodyFormProperties>({
 			ProductType: new FormControl<UpdatePhoneNumberRequestItemProductType | null | undefined>(undefined),
-			CallingName: new FormControl<string | null | undefined>(undefined),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|^[a-zA-Z0-9 ]{2,15}$')]),
 		});
 
 	}
@@ -6719,7 +6715,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVoiceConnectorPutBodyFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			RequireEncryption: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -6753,7 +6749,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVoiceConnectorGroupPutBodyFormGroup() {
 		return new FormGroup<UpdateVoiceConnectorGroupPutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6827,7 +6823,7 @@ export namespace MyNS {
 	export function CreatePutVoiceConnectorProxyPutBodyFormGroup() {
 		return new FormGroup<PutVoiceConnectorProxyPutBodyFormProperties>({
 			DefaultSessionExpiryMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			FallBackPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -6910,7 +6906,7 @@ export namespace MyNS {
 	export function CreatePutVoiceConnectorTerminationPutBodyTerminationFormGroup() {
 		return new FormGroup<PutVoiceConnectorTerminationPutBodyTerminationFormProperties>({
 			CpsLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			DefaultPhoneNumber: new FormControl<string | null | undefined>(undefined),
+			DefaultPhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\+?[1-9]\d{1,14}$')]),
 			Disabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -6931,9 +6927,9 @@ export namespace MyNS {
 
 	}
 
-	export enum DisassociatePhoneNumberFromUserOperation { disassociate_phone_number = 0 }
+	export enum DisassociatePhoneNumberFromUserOperation { 'disassociate-phone-number' = 0 }
 
-	export enum DisassociatePhoneNumbersFromVoiceConnectorOperation { disassociate_phone_numbers = 0 }
+	export enum DisassociatePhoneNumbersFromVoiceConnectorOperation { 'disassociate-phone-numbers' = 0 }
 
 	export interface DisassociatePhoneNumbersFromVoiceConnectorPostBody {
 
@@ -6948,7 +6944,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisassociatePhoneNumbersFromVoiceConnectorGroupOperation { disassociate_phone_numbers = 0 }
+	export enum DisassociatePhoneNumbersFromVoiceConnectorGroupOperation { 'disassociate-phone-numbers' = 0 }
 
 	export interface DisassociatePhoneNumbersFromVoiceConnectorGroupPostBody {
 
@@ -6963,7 +6959,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DisassociateSigninDelegateGroupsFromAccountOperation { disassociate_signin_delegate_groups = 0 }
+	export enum DisassociateSigninDelegateGroupsFromAccountOperation { 'disassociate-signin-delegate-groups' = 0 }
 
 	export interface DisassociateSigninDelegateGroupsFromAccountPostBody {
 
@@ -7097,7 +7093,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePhoneNumberSettingsPutBodyFormGroup() {
 		return new FormGroup<UpdatePhoneNumberSettingsPutBodyFormProperties>({
-			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CallingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^$|^[a-zA-Z0-9 ]{2,15}$')]),
 		});
 
 	}
@@ -7280,13 +7276,13 @@ export namespace MyNS {
 
 	export enum RedactConversationMessageOperation { redact = 0 }
 
-	export enum RegenerateSecurityTokenOperation { regenerate_security_token = 0 }
+	export enum RegenerateSecurityTokenOperation { 'regenerate-security-token' = 0 }
 
-	export enum ResetPersonalPINOperation { reset_personal_pin = 0 }
+	export enum ResetPersonalPINOperation { 'reset-personal-pin' = 0 }
 
 	export enum RestorePhoneNumberOperation { restore = 0 }
 
-	export enum SearchAvailablePhoneNumbersType { phone_numbers = 0 }
+	export enum SearchAvailablePhoneNumbersType { 'phone-numbers' = 0 }
 
 	export interface TagAttendeePostBody {
 
@@ -7324,7 +7320,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TagResourceOperation { tag_resource = 0 }
+	export enum TagResourceOperation { 'tag-resource' = 0 }
 
 	export interface TagResourcePostBody {
 
@@ -7356,7 +7352,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}
@@ -7397,7 +7393,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UntagResourceOperation { untag_resource = 0 }
+	export enum UntagResourceOperation { 'untag-resource' = 0 }
 
 	export interface UntagResourcePostBody {
 
@@ -7429,7 +7425,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^arn[\/\:\-\_\.a-zA-Z0-9]+$')]),
 		});
 
 	}

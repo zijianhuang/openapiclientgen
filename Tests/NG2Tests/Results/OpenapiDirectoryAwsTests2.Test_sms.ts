@@ -210,7 +210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VmServerVmManagerType { VSPHERE = 0, SCVMM = 1, HYPERV_MANAGER = 2 }
+	export enum VmServerVmManagerType { VSPHERE = 0, SCVMM = 1, 'HYPERV-MANAGER' = 2 }
 
 
 	/** A label that can be assigned to an application. */
@@ -904,7 +904,7 @@ export namespace MyNS {
 		status?: ConnectorStatus | null;
 		capabilityList?: Array<ConnectorCapability>;
 		vmManagerName?: string | null;
-		vmManagerType?: ConnectorVmManagerType | null;
+		vmManagerType?: VmServerVmManagerType | null;
 		vmManagerId?: string | null;
 		ipAddress?: string | null;
 		macAddress?: string | null;
@@ -917,7 +917,7 @@ export namespace MyNS {
 		version: FormControl<string | null | undefined>,
 		status: FormControl<ConnectorStatus | null | undefined>,
 		vmManagerName: FormControl<string | null | undefined>,
-		vmManagerType: FormControl<ConnectorVmManagerType | null | undefined>,
+		vmManagerType: FormControl<VmServerVmManagerType | null | undefined>,
 		vmManagerId: FormControl<string | null | undefined>,
 		ipAddress: FormControl<string | null | undefined>,
 		macAddress: FormControl<string | null | undefined>,
@@ -929,7 +929,7 @@ export namespace MyNS {
 			version: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ConnectorStatus | null | undefined>(undefined),
 			vmManagerName: new FormControl<string | null | undefined>(undefined),
-			vmManagerType: new FormControl<ConnectorVmManagerType | null | undefined>(undefined),
+			vmManagerType: new FormControl<VmServerVmManagerType | null | undefined>(undefined),
 			vmManagerId: new FormControl<string | null | undefined>(undefined),
 			ipAddress: new FormControl<string | null | undefined>(undefined),
 			macAddress: new FormControl<string | null | undefined>(undefined),
@@ -940,9 +940,7 @@ export namespace MyNS {
 
 	export enum ConnectorStatus { HEALTHY = 0, UNHEALTHY = 1 }
 
-	export enum ConnectorCapability { VSPHERE = 0, SCVMM = 1, HYPERV_MANAGER = 2, SNAPSHOT_BATCHING = 3 }
-
-	export enum ConnectorVmManagerType { VSPHERE = 0, SCVMM = 1, HYPERV_MANAGER = 2 }
+	export enum ConnectorCapability { VSPHERE = 0, SCVMM = 1, 'HYPERV-MANAGER' = 2, SNAPSHOT_BATCHING = 3 }
 
 	export interface GetConnectorsRequest {
 		nextToken?: string | null;
@@ -1544,7 +1542,7 @@ export namespace MyNS {
 
 	export enum AppStatus { CREATING = 0, ACTIVE = 1, UPDATING = 2, DELETING = 3, DELETED = 4, DELETE_FAILED = 5 }
 
-	export enum VmManagerType { VSPHERE = 0, SCVMM = 1, HYPERV_MANAGER = 2 }
+	export enum VmManagerType { VSPHERE = 0, SCVMM = 1, 'HYPERV-MANAGER' = 2 }
 
 	export enum LicenseType { AWS = 0, BYOL = 1 }
 
@@ -1820,61 +1818,61 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateAppX_Amz_Target { AWSServerMigrationService_V2016_10_24_CreateApp = 0 }
+	export enum CreateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.CreateApp' = 0 }
 
-	export enum CreateReplicationJobX_Amz_Target { AWSServerMigrationService_V2016_10_24_CreateReplicationJob = 0 }
+	export enum CreateReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.CreateReplicationJob' = 0 }
 
-	export enum DeleteAppX_Amz_Target { AWSServerMigrationService_V2016_10_24_DeleteApp = 0 }
+	export enum DeleteAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteApp' = 0 }
 
-	export enum DeleteAppLaunchConfigurationX_Amz_Target { AWSServerMigrationService_V2016_10_24_DeleteAppLaunchConfiguration = 0 }
+	export enum DeleteAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppLaunchConfiguration' = 0 }
 
-	export enum DeleteAppReplicationConfigurationX_Amz_Target { AWSServerMigrationService_V2016_10_24_DeleteAppReplicationConfiguration = 0 }
+	export enum DeleteAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteAppReplicationConfiguration' = 0 }
 
-	export enum DeleteReplicationJobX_Amz_Target { AWSServerMigrationService_V2016_10_24_DeleteReplicationJob = 0 }
+	export enum DeleteReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteReplicationJob' = 0 }
 
-	export enum DeleteServerCatalogX_Amz_Target { AWSServerMigrationService_V2016_10_24_DeleteServerCatalog = 0 }
+	export enum DeleteServerCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DeleteServerCatalog' = 0 }
 
-	export enum DisassociateConnectorX_Amz_Target { AWSServerMigrationService_V2016_10_24_DisassociateConnector = 0 }
+	export enum DisassociateConnectorX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.DisassociateConnector' = 0 }
 
-	export enum GenerateChangeSetX_Amz_Target { AWSServerMigrationService_V2016_10_24_GenerateChangeSet = 0 }
+	export enum GenerateChangeSetX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GenerateChangeSet' = 0 }
 
-	export enum GenerateTemplateX_Amz_Target { AWSServerMigrationService_V2016_10_24_GenerateTemplate = 0 }
+	export enum GenerateTemplateX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GenerateTemplate' = 0 }
 
-	export enum GetAppX_Amz_Target { AWSServerMigrationService_V2016_10_24_GetApp = 0 }
+	export enum GetAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetApp' = 0 }
 
-	export enum GetAppLaunchConfigurationX_Amz_Target { AWSServerMigrationService_V2016_10_24_GetAppLaunchConfiguration = 0 }
+	export enum GetAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppLaunchConfiguration' = 0 }
 
-	export enum GetAppReplicationConfigurationX_Amz_Target { AWSServerMigrationService_V2016_10_24_GetAppReplicationConfiguration = 0 }
+	export enum GetAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetAppReplicationConfiguration' = 0 }
 
-	export enum GetConnectorsX_Amz_Target { AWSServerMigrationService_V2016_10_24_GetConnectors = 0 }
+	export enum GetConnectorsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetConnectors' = 0 }
 
-	export enum GetReplicationJobsX_Amz_Target { AWSServerMigrationService_V2016_10_24_GetReplicationJobs = 0 }
+	export enum GetReplicationJobsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetReplicationJobs' = 0 }
 
-	export enum GetReplicationRunsX_Amz_Target { AWSServerMigrationService_V2016_10_24_GetReplicationRuns = 0 }
+	export enum GetReplicationRunsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetReplicationRuns' = 0 }
 
-	export enum GetServersX_Amz_Target { AWSServerMigrationService_V2016_10_24_GetServers = 0 }
+	export enum GetServersX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.GetServers' = 0 }
 
-	export enum ImportServerCatalogX_Amz_Target { AWSServerMigrationService_V2016_10_24_ImportServerCatalog = 0 }
+	export enum ImportServerCatalogX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ImportServerCatalog' = 0 }
 
-	export enum LaunchAppX_Amz_Target { AWSServerMigrationService_V2016_10_24_LaunchApp = 0 }
+	export enum LaunchAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.LaunchApp' = 0 }
 
-	export enum ListAppsX_Amz_Target { AWSServerMigrationService_V2016_10_24_ListApps = 0 }
+	export enum ListAppsX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.ListApps' = 0 }
 
-	export enum PutAppLaunchConfigurationX_Amz_Target { AWSServerMigrationService_V2016_10_24_PutAppLaunchConfiguration = 0 }
+	export enum PutAppLaunchConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppLaunchConfiguration' = 0 }
 
-	export enum PutAppReplicationConfigurationX_Amz_Target { AWSServerMigrationService_V2016_10_24_PutAppReplicationConfiguration = 0 }
+	export enum PutAppReplicationConfigurationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.PutAppReplicationConfiguration' = 0 }
 
-	export enum StartAppReplicationX_Amz_Target { AWSServerMigrationService_V2016_10_24_StartAppReplication = 0 }
+	export enum StartAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartAppReplication' = 0 }
 
-	export enum StartOnDemandReplicationRunX_Amz_Target { AWSServerMigrationService_V2016_10_24_StartOnDemandReplicationRun = 0 }
+	export enum StartOnDemandReplicationRunX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StartOnDemandReplicationRun' = 0 }
 
-	export enum StopAppReplicationX_Amz_Target { AWSServerMigrationService_V2016_10_24_StopAppReplication = 0 }
+	export enum StopAppReplicationX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.StopAppReplication' = 0 }
 
-	export enum TerminateAppX_Amz_Target { AWSServerMigrationService_V2016_10_24_TerminateApp = 0 }
+	export enum TerminateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.TerminateApp' = 0 }
 
-	export enum UpdateAppX_Amz_Target { AWSServerMigrationService_V2016_10_24_UpdateApp = 0 }
+	export enum UpdateAppX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.UpdateApp' = 0 }
 
-	export enum UpdateReplicationJobX_Amz_Target { AWSServerMigrationService_V2016_10_24_UpdateReplicationJob = 0 }
+	export enum UpdateReplicationJobX_Amz_Target { 'AWSServerMigrationService_V2016_10_24.UpdateReplicationJob' = 0 }
 
 }
 

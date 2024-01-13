@@ -1554,7 +1554,7 @@ export namespace MyNS {
 			AudioSelectorName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AudioType: new FormControl<AudioDescriptionAudioType | null | undefined>(undefined),
 			AudioTypeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
-			LanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			LanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(3)]),
 			LanguageCodeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StreamName: new FormControl<string | null | undefined>(undefined),
@@ -2362,7 +2362,7 @@ export namespace MyNS {
 	export function CreateBlackoutSlateFormGroup() {
 		return new FormGroup<BlackoutSlateFormProperties>({
 			NetworkEndBlackout: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
-			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(34), Validators.minLength(34)]),
+			NetworkId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(34), Validators.maxLength(34)]),
 			State: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 		});
 
@@ -3118,7 +3118,7 @@ export namespace MyNS {
 	export function CreateInputLossBehaviorFormGroup() {
 		return new FormGroup<InputLossBehaviorFormProperties>({
 			BlackFrameMsec: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000000)]),
-			InputLossImageColor: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
+			InputLossImageColor: new FormControl<string | null | undefined>(undefined, [Validators.minLength(6), Validators.maxLength(6)]),
 			InputLossImageType: new FormControl<InputLossBehaviorInputLossImageType | null | undefined>(undefined),
 			RepeatFrameMsec: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000000)]),
 		});
@@ -3613,7 +3613,7 @@ export namespace MyNS {
 			CaptionLanguageSetting: new FormControl<HlsGroupSettingsCaptionLanguageSetting | null | undefined>(undefined),
 			ClientCache: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
 			CodecSpecification: new FormControl<HlsGroupSettingsCodecSpecification | null | undefined>(undefined),
-			ConstantIv: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32)]),
+			ConstantIv: new FormControl<string | null | undefined>(undefined, [Validators.minLength(32), Validators.maxLength(32)]),
 			DirectoryStructure: new FormControl<HlsGroupSettingsDirectoryStructure | null | undefined>(undefined),
 			EncryptionType: new FormControl<HlsGroupSettingsEncryptionType | null | undefined>(undefined),
 			HlsId3SegmentTagging: new FormControl<Ac3SettingsLfeFilter | null | undefined>(undefined),
@@ -3706,7 +3706,7 @@ export namespace MyNS {
 	export function CreateCaptionLanguageMappingFormGroup() {
 		return new FormGroup<CaptionLanguageMappingFormProperties>({
 			CaptionChannel: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(4)]),
-			LanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3), Validators.minLength(3)]),
+			LanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(3)]),
 			LanguageDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
@@ -4119,7 +4119,7 @@ export namespace MyNS {
 	}
 	export function CreateStaticKeySettingsFormGroup() {
 		return new FormGroup<StaticKeySettingsFormProperties>({
-			StaticKeyValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(32)]),
+			StaticKeyValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(32), Validators.maxLength(32)]),
 		});
 
 	}
@@ -4529,7 +4529,7 @@ export namespace MyNS {
 	}
 	export function CreateOutputFormGroup() {
 		return new FormGroup<OutputFormProperties>({
-			OutputName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			OutputName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			VideoDescriptionName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5080,7 +5080,7 @@ export namespace MyNS {
 	export function CreateDvbNitSettingsFormGroup() {
 		return new FormGroup<DvbNitSettingsFormProperties>({
 			NetworkId: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(65536)]),
-			NetworkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			NetworkName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			RepInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(25), Validators.max(10000)]),
 		});
 
@@ -5146,8 +5146,8 @@ export namespace MyNS {
 		return new FormGroup<DvbSdtSettingsFormProperties>({
 			OutputSdt: new FormControl<DvbSdtSettingsOutputSdt | null | undefined>(undefined),
 			RepInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(25), Validators.max(2000)]),
-			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ServiceProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ServiceProviderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}

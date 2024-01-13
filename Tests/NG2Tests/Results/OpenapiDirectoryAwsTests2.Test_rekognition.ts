@@ -310,7 +310,7 @@ export namespace MyNS {
 	}
 	export function CreateImageFormGroup() {
 		return new FormGroup<ImageFormProperties>({
-			Bytes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5242880), Validators.minLength(1)]),
+			Bytes: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(5242880)]),
 		});
 
 	}
@@ -361,9 +361,9 @@ export namespace MyNS {
 	}
 	export function CreateS3ObjectFormGroup() {
 		return new FormGroup<S3ObjectFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[0-9A-Za-z\.\-_]*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255), Validators.pattern('[0-9A-Za-z\.\-_]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -493,7 +493,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCollectionRequestFormGroup() {
 		return new FormGroup<CreateCollectionRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -526,7 +526,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectResponseFormGroup() {
 		return new FormGroup<CreateProjectResponseFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 		});
 
 	}
@@ -551,7 +551,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectRequestFormGroup() {
 		return new FormGroup<CreateProjectRequestFormProperties>({
-			ProjectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			ProjectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -594,7 +594,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectVersionResponseFormGroup() {
 		return new FormGroup<CreateProjectVersionResponseFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 		});
 
 	}
@@ -651,8 +651,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectVersionRequestFormGroup() {
 		return new FormGroup<CreateProjectVersionRequestFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
-			VersionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			VersionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -685,7 +685,7 @@ export namespace MyNS {
 	}
 	export function CreateOutputConfigFormGroup() {
 		return new FormGroup<OutputConfigFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[0-9A-Za-z\.\-_]*')]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255), Validators.pattern('[0-9A-Za-z\.\-_]*')]),
 			S3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
@@ -776,7 +776,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateStreamProcessorResponseFormGroup() {
 		return new FormGroup<CreateStreamProcessorResponseFormProperties>({
-			StreamProcessorArn: new FormControl<string | null | undefined>(undefined),
+			StreamProcessorArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$)')]),
 		});
 
 	}
@@ -825,8 +825,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateStreamProcessorRequestFormGroup() {
 		return new FormGroup<CreateStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
 
 	}
@@ -860,7 +860,7 @@ export namespace MyNS {
 	}
 	export function CreateKinesisVideoStreamFormGroup() {
 		return new FormGroup<KinesisVideoStreamFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^arn:([a-z\d-]+):kinesisvideo:([a-z\d-]+):\d{12}:.+$)')]),
 		});
 
 	}
@@ -894,7 +894,7 @@ export namespace MyNS {
 	}
 	export function CreateKinesisDataStreamFormGroup() {
 		return new FormGroup<KinesisDataStreamFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^arn:([a-z\d-]+):kinesis:([a-z\d-]+):\d{12}:.+$)')]),
 		});
 
 	}
@@ -950,7 +950,7 @@ export namespace MyNS {
 	}
 	export function CreateFaceSearchSettingsFormGroup() {
 		return new FormGroup<FaceSearchSettingsFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -993,7 +993,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteCollectionRequestFormGroup() {
 		return new FormGroup<DeleteCollectionRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -1041,7 +1041,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFacesRequestFormGroup() {
 		return new FormGroup<DeleteFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -1081,7 +1081,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteProjectRequestFormGroup() {
 		return new FormGroup<DeleteProjectRequestFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 		});
 
 	}
@@ -1121,7 +1121,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteProjectVersionRequestFormGroup() {
 		return new FormGroup<DeleteProjectVersionRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 		});
 
 	}
@@ -1156,7 +1156,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteStreamProcessorRequestFormGroup() {
 		return new FormGroup<DeleteStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -1207,7 +1207,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCollectionRequestFormGroup() {
 		return new FormGroup<DescribeCollectionRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -1284,7 +1284,7 @@ export namespace MyNS {
 	}
 	export function CreateProjectVersionDescriptionFormGroup() {
 		return new FormGroup<ProjectVersionDescriptionFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
 			MinInferenceUnits: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Status: new FormControl<DeleteProjectVersionResponseStatus | null | undefined>(undefined),
@@ -1416,7 +1416,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeProjectVersionsRequestFormGroup() {
 		return new FormGroup<DescribeProjectVersionsRequestFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -1477,7 +1477,7 @@ export namespace MyNS {
 	}
 	export function CreateProjectDescriptionFormGroup() {
 		return new FormGroup<ProjectDescriptionFormProperties>({
-			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<DeleteProjectResponseStatus | null | undefined>(undefined),
 		});
@@ -1553,13 +1553,13 @@ export namespace MyNS {
 	}
 	export function CreateDescribeStreamProcessorResponseFormGroup() {
 		return new FormGroup<DescribeStreamProcessorResponseFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
-			StreamProcessorArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			StreamProcessorArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:streamprocessor\/.+$)')]),
 			Status: new FormControl<DescribeStreamProcessorResponseStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
 			LastUpdateTimestamp: new FormControl<Date | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
 
 	}
@@ -1586,7 +1586,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeStreamProcessorRequestFormGroup() {
 		return new FormGroup<DescribeStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 	}
 	export function CreateDetectCustomLabelsRequestFormGroup() {
 		return new FormGroup<DetectCustomLabelsRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
@@ -2418,7 +2418,7 @@ export namespace MyNS {
 	}
 	export function CreateHumanLoopConfigFormGroup() {
 		return new FormGroup<HumanLoopConfigFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
@@ -2657,7 +2657,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCelebrityInfoRequestFormGroup() {
 		return new FormGroup<GetCelebrityInfoRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('[0-9A-Za-z]*')]),
 		});
 
 	}
@@ -2789,7 +2789,7 @@ export namespace MyNS {
 	export function CreateCelebrityDetailFormGroup() {
 		return new FormGroup<CelebrityDetailFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[0-9A-Za-z]*')]),
 			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -2829,7 +2829,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCelebrityRecognitionRequestFormGroup() {
 		return new FormGroup<GetCelebrityRecognitionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetCelebrityRecognitionRequestSortBy | null | undefined>(undefined),
@@ -2923,7 +2923,7 @@ export namespace MyNS {
 	}
 	export function CreateGetContentModerationRequestFormGroup() {
 		return new FormGroup<GetContentModerationRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetContentModerationRequestSortBy | null | undefined>(undefined),
@@ -3012,7 +3012,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFaceDetectionRequestFormGroup() {
 		return new FormGroup<GetFaceDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
@@ -3161,9 +3161,9 @@ export namespace MyNS {
 	}
 	export function CreateFaceFormGroup() {
 		return new FormGroup<FaceFormProperties>({
-			FaceId: new FormControl<string | null | undefined>(undefined),
-			ImageId: new FormControl<string | null | undefined>(undefined),
-			ExternalImageId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			FaceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ImageId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ExternalImageId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 			Confidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -3203,7 +3203,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFaceSearchRequestFormGroup() {
 		return new FormGroup<GetFaceSearchRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetFaceSearchRequestSortBy | null | undefined>(undefined),
@@ -3297,7 +3297,7 @@ export namespace MyNS {
 	}
 	export function CreateGetLabelDetectionRequestFormGroup() {
 		return new FormGroup<GetLabelDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetContentModerationRequestSortBy | null | undefined>(undefined),
@@ -3386,7 +3386,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPersonTrackingRequestFormGroup() {
 		return new FormGroup<GetPersonTrackingRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SortBy: new FormControl<GetFaceSearchRequestSortBy | null | undefined>(undefined),
@@ -3476,7 +3476,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTextDetectionRequestFormGroup() {
 		return new FormGroup<GetTextDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
@@ -3588,8 +3588,8 @@ export namespace MyNS {
 	}
 	export function CreateIndexFacesRequestFormGroup() {
 		return new FormGroup<IndexFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
-			ExternalImageId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			ExternalImageId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 			MaxFaces: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
 		});
@@ -3700,7 +3700,7 @@ export namespace MyNS {
 	}
 	export function CreateListFacesRequestFormGroup() {
 		return new FormGroup<ListFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(4096)]),
 		});
@@ -3749,7 +3749,7 @@ export namespace MyNS {
 	}
 	export function CreateStreamProcessorFormGroup() {
 		return new FormGroup<StreamProcessorFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 			Status: new FormControl<DescribeStreamProcessorResponseStatus | null | undefined>(undefined),
 		});
 
@@ -3825,7 +3825,7 @@ export namespace MyNS {
 	export function CreateCelebrityFormGroup() {
 		return new FormGroup<CelebrityFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[0-9A-Za-z]*')]),
 			MatchConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -3858,7 +3858,7 @@ export namespace MyNS {
 	}
 	export function CreateSearchFacesResponseFormGroup() {
 		return new FormGroup<SearchFacesResponseFormProperties>({
-			SearchedFaceId: new FormControl<string | null | undefined>(undefined),
+			SearchedFaceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3914,8 +3914,8 @@ export namespace MyNS {
 	}
 	export function CreateSearchFacesRequestFormGroup() {
 		return new FormGroup<SearchFacesRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
-			FaceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			FaceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			MaxFaces: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4096)]),
 			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
@@ -4004,7 +4004,7 @@ export namespace MyNS {
 	}
 	export function CreateSearchFacesByImageRequestFormGroup() {
 		return new FormGroup<SearchFacesByImageRequestFormProperties>({
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 			MaxFaces: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(4096)]),
 			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
@@ -4030,7 +4030,7 @@ export namespace MyNS {
 	}
 	export function CreateStartCelebrityRecognitionResponseFormGroup() {
 		return new FormGroup<StartCelebrityRecognitionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -4074,8 +4074,8 @@ export namespace MyNS {
 	}
 	export function CreateStartCelebrityRecognitionRequestFormGroup() {
 		return new FormGroup<StartCelebrityRecognitionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -4119,8 +4119,8 @@ export namespace MyNS {
 	}
 	export function CreateNotificationChannelFormGroup() {
 		return new FormGroup<NotificationChannelFormProperties>({
-			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
 
 	}
@@ -4163,7 +4163,7 @@ export namespace MyNS {
 	}
 	export function CreateStartContentModerationResponseFormGroup() {
 		return new FormGroup<StartContentModerationResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -4220,8 +4220,8 @@ export namespace MyNS {
 	export function CreateStartContentModerationRequestFormGroup() {
 		return new FormGroup<StartContentModerationRequestFormProperties>({
 			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -4244,7 +4244,7 @@ export namespace MyNS {
 	}
 	export function CreateStartFaceDetectionResponseFormGroup() {
 		return new FormGroup<StartFaceDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -4290,9 +4290,9 @@ export namespace MyNS {
 	}
 	export function CreateStartFaceDetectionRequestFormGroup() {
 		return new FormGroup<StartFaceDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			FaceAttributes: new FormControl<Attribute | null | undefined>(undefined),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -4315,7 +4315,7 @@ export namespace MyNS {
 	}
 	export function CreateStartFaceSearchResponseFormGroup() {
 		return new FormGroup<StartFaceSearchResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -4385,10 +4385,10 @@ export namespace MyNS {
 	}
 	export function CreateStartFaceSearchRequestFormGroup() {
 		return new FormGroup<StartFaceSearchRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			CollectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -4411,7 +4411,7 @@ export namespace MyNS {
 	}
 	export function CreateStartLabelDetectionResponseFormGroup() {
 		return new FormGroup<StartLabelDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -4467,9 +4467,9 @@ export namespace MyNS {
 	}
 	export function CreateStartLabelDetectionRequestFormGroup() {
 		return new FormGroup<StartLabelDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MinConfidence: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -4492,7 +4492,7 @@ export namespace MyNS {
 	}
 	export function CreateStartPersonTrackingResponseFormGroup() {
 		return new FormGroup<StartPersonTrackingResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -4536,8 +4536,8 @@ export namespace MyNS {
 	}
 	export function CreateStartPersonTrackingRequestFormGroup() {
 		return new FormGroup<StartPersonTrackingRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -4587,7 +4587,7 @@ export namespace MyNS {
 	}
 	export function CreateStartProjectVersionRequestFormGroup() {
 		return new FormGroup<StartProjectVersionRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 			MinInferenceUnits: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
@@ -4623,7 +4623,7 @@ export namespace MyNS {
 	}
 	export function CreateStartStreamProcessorRequestFormGroup() {
 		return new FormGroup<StartStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -4646,7 +4646,7 @@ export namespace MyNS {
 	}
 	export function CreateStartTextDetectionResponseFormGroup() {
 		return new FormGroup<StartTextDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -4693,8 +4693,8 @@ export namespace MyNS {
 	}
 	export function CreateStartTextDetectionRequestFormGroup() {
 		return new FormGroup<StartTextDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -4755,7 +4755,7 @@ export namespace MyNS {
 	}
 	export function CreateStopProjectVersionRequestFormGroup() {
 		return new FormGroup<StopProjectVersionRequestFormProperties>({
-			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)')]),
 		});
 
 	}
@@ -4790,7 +4790,7 @@ export namespace MyNS {
 	}
 	export function CreateStopStreamProcessorRequestFormGroup() {
 		return new FormGroup<StopStreamProcessorRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.\-]+')]),
 		});
 
 	}
@@ -5260,95 +5260,95 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CompareFacesX_Amz_Target { RekognitionService_CompareFaces = 0 }
+	export enum CompareFacesX_Amz_Target { 'RekognitionService.CompareFaces' = 0 }
 
-	export enum CreateCollectionX_Amz_Target { RekognitionService_CreateCollection = 0 }
+	export enum CreateCollectionX_Amz_Target { 'RekognitionService.CreateCollection' = 0 }
 
-	export enum CreateProjectX_Amz_Target { RekognitionService_CreateProject = 0 }
+	export enum CreateProjectX_Amz_Target { 'RekognitionService.CreateProject' = 0 }
 
-	export enum CreateProjectVersionX_Amz_Target { RekognitionService_CreateProjectVersion = 0 }
+	export enum CreateProjectVersionX_Amz_Target { 'RekognitionService.CreateProjectVersion' = 0 }
 
-	export enum CreateStreamProcessorX_Amz_Target { RekognitionService_CreateStreamProcessor = 0 }
+	export enum CreateStreamProcessorX_Amz_Target { 'RekognitionService.CreateStreamProcessor' = 0 }
 
-	export enum DeleteCollectionX_Amz_Target { RekognitionService_DeleteCollection = 0 }
+	export enum DeleteCollectionX_Amz_Target { 'RekognitionService.DeleteCollection' = 0 }
 
-	export enum DeleteFacesX_Amz_Target { RekognitionService_DeleteFaces = 0 }
+	export enum DeleteFacesX_Amz_Target { 'RekognitionService.DeleteFaces' = 0 }
 
-	export enum DeleteProjectX_Amz_Target { RekognitionService_DeleteProject = 0 }
+	export enum DeleteProjectX_Amz_Target { 'RekognitionService.DeleteProject' = 0 }
 
-	export enum DeleteProjectVersionX_Amz_Target { RekognitionService_DeleteProjectVersion = 0 }
+	export enum DeleteProjectVersionX_Amz_Target { 'RekognitionService.DeleteProjectVersion' = 0 }
 
-	export enum DeleteStreamProcessorX_Amz_Target { RekognitionService_DeleteStreamProcessor = 0 }
+	export enum DeleteStreamProcessorX_Amz_Target { 'RekognitionService.DeleteStreamProcessor' = 0 }
 
-	export enum DescribeCollectionX_Amz_Target { RekognitionService_DescribeCollection = 0 }
+	export enum DescribeCollectionX_Amz_Target { 'RekognitionService.DescribeCollection' = 0 }
 
-	export enum DescribeProjectVersionsX_Amz_Target { RekognitionService_DescribeProjectVersions = 0 }
+	export enum DescribeProjectVersionsX_Amz_Target { 'RekognitionService.DescribeProjectVersions' = 0 }
 
-	export enum DescribeProjectsX_Amz_Target { RekognitionService_DescribeProjects = 0 }
+	export enum DescribeProjectsX_Amz_Target { 'RekognitionService.DescribeProjects' = 0 }
 
-	export enum DescribeStreamProcessorX_Amz_Target { RekognitionService_DescribeStreamProcessor = 0 }
+	export enum DescribeStreamProcessorX_Amz_Target { 'RekognitionService.DescribeStreamProcessor' = 0 }
 
-	export enum DetectCustomLabelsX_Amz_Target { RekognitionService_DetectCustomLabels = 0 }
+	export enum DetectCustomLabelsX_Amz_Target { 'RekognitionService.DetectCustomLabels' = 0 }
 
-	export enum DetectFacesX_Amz_Target { RekognitionService_DetectFaces = 0 }
+	export enum DetectFacesX_Amz_Target { 'RekognitionService.DetectFaces' = 0 }
 
-	export enum DetectLabelsX_Amz_Target { RekognitionService_DetectLabels = 0 }
+	export enum DetectLabelsX_Amz_Target { 'RekognitionService.DetectLabels' = 0 }
 
-	export enum DetectModerationLabelsX_Amz_Target { RekognitionService_DetectModerationLabels = 0 }
+	export enum DetectModerationLabelsX_Amz_Target { 'RekognitionService.DetectModerationLabels' = 0 }
 
-	export enum DetectTextX_Amz_Target { RekognitionService_DetectText = 0 }
+	export enum DetectTextX_Amz_Target { 'RekognitionService.DetectText' = 0 }
 
-	export enum GetCelebrityInfoX_Amz_Target { RekognitionService_GetCelebrityInfo = 0 }
+	export enum GetCelebrityInfoX_Amz_Target { 'RekognitionService.GetCelebrityInfo' = 0 }
 
-	export enum GetCelebrityRecognitionX_Amz_Target { RekognitionService_GetCelebrityRecognition = 0 }
+	export enum GetCelebrityRecognitionX_Amz_Target { 'RekognitionService.GetCelebrityRecognition' = 0 }
 
-	export enum GetContentModerationX_Amz_Target { RekognitionService_GetContentModeration = 0 }
+	export enum GetContentModerationX_Amz_Target { 'RekognitionService.GetContentModeration' = 0 }
 
-	export enum GetFaceDetectionX_Amz_Target { RekognitionService_GetFaceDetection = 0 }
+	export enum GetFaceDetectionX_Amz_Target { 'RekognitionService.GetFaceDetection' = 0 }
 
-	export enum GetFaceSearchX_Amz_Target { RekognitionService_GetFaceSearch = 0 }
+	export enum GetFaceSearchX_Amz_Target { 'RekognitionService.GetFaceSearch' = 0 }
 
-	export enum GetLabelDetectionX_Amz_Target { RekognitionService_GetLabelDetection = 0 }
+	export enum GetLabelDetectionX_Amz_Target { 'RekognitionService.GetLabelDetection' = 0 }
 
-	export enum GetPersonTrackingX_Amz_Target { RekognitionService_GetPersonTracking = 0 }
+	export enum GetPersonTrackingX_Amz_Target { 'RekognitionService.GetPersonTracking' = 0 }
 
-	export enum GetTextDetectionX_Amz_Target { RekognitionService_GetTextDetection = 0 }
+	export enum GetTextDetectionX_Amz_Target { 'RekognitionService.GetTextDetection' = 0 }
 
-	export enum IndexFacesX_Amz_Target { RekognitionService_IndexFaces = 0 }
+	export enum IndexFacesX_Amz_Target { 'RekognitionService.IndexFaces' = 0 }
 
-	export enum ListCollectionsX_Amz_Target { RekognitionService_ListCollections = 0 }
+	export enum ListCollectionsX_Amz_Target { 'RekognitionService.ListCollections' = 0 }
 
-	export enum ListFacesX_Amz_Target { RekognitionService_ListFaces = 0 }
+	export enum ListFacesX_Amz_Target { 'RekognitionService.ListFaces' = 0 }
 
-	export enum ListStreamProcessorsX_Amz_Target { RekognitionService_ListStreamProcessors = 0 }
+	export enum ListStreamProcessorsX_Amz_Target { 'RekognitionService.ListStreamProcessors' = 0 }
 
-	export enum RecognizeCelebritiesX_Amz_Target { RekognitionService_RecognizeCelebrities = 0 }
+	export enum RecognizeCelebritiesX_Amz_Target { 'RekognitionService.RecognizeCelebrities' = 0 }
 
-	export enum SearchFacesX_Amz_Target { RekognitionService_SearchFaces = 0 }
+	export enum SearchFacesX_Amz_Target { 'RekognitionService.SearchFaces' = 0 }
 
-	export enum SearchFacesByImageX_Amz_Target { RekognitionService_SearchFacesByImage = 0 }
+	export enum SearchFacesByImageX_Amz_Target { 'RekognitionService.SearchFacesByImage' = 0 }
 
-	export enum StartCelebrityRecognitionX_Amz_Target { RekognitionService_StartCelebrityRecognition = 0 }
+	export enum StartCelebrityRecognitionX_Amz_Target { 'RekognitionService.StartCelebrityRecognition' = 0 }
 
-	export enum StartContentModerationX_Amz_Target { RekognitionService_StartContentModeration = 0 }
+	export enum StartContentModerationX_Amz_Target { 'RekognitionService.StartContentModeration' = 0 }
 
-	export enum StartFaceDetectionX_Amz_Target { RekognitionService_StartFaceDetection = 0 }
+	export enum StartFaceDetectionX_Amz_Target { 'RekognitionService.StartFaceDetection' = 0 }
 
-	export enum StartFaceSearchX_Amz_Target { RekognitionService_StartFaceSearch = 0 }
+	export enum StartFaceSearchX_Amz_Target { 'RekognitionService.StartFaceSearch' = 0 }
 
-	export enum StartLabelDetectionX_Amz_Target { RekognitionService_StartLabelDetection = 0 }
+	export enum StartLabelDetectionX_Amz_Target { 'RekognitionService.StartLabelDetection' = 0 }
 
-	export enum StartPersonTrackingX_Amz_Target { RekognitionService_StartPersonTracking = 0 }
+	export enum StartPersonTrackingX_Amz_Target { 'RekognitionService.StartPersonTracking' = 0 }
 
-	export enum StartProjectVersionX_Amz_Target { RekognitionService_StartProjectVersion = 0 }
+	export enum StartProjectVersionX_Amz_Target { 'RekognitionService.StartProjectVersion' = 0 }
 
-	export enum StartStreamProcessorX_Amz_Target { RekognitionService_StartStreamProcessor = 0 }
+	export enum StartStreamProcessorX_Amz_Target { 'RekognitionService.StartStreamProcessor' = 0 }
 
-	export enum StartTextDetectionX_Amz_Target { RekognitionService_StartTextDetection = 0 }
+	export enum StartTextDetectionX_Amz_Target { 'RekognitionService.StartTextDetection' = 0 }
 
-	export enum StopProjectVersionX_Amz_Target { RekognitionService_StopProjectVersion = 0 }
+	export enum StopProjectVersionX_Amz_Target { 'RekognitionService.StopProjectVersion' = 0 }
 
-	export enum StopStreamProcessorX_Amz_Target { RekognitionService_StopStreamProcessor = 0 }
+	export enum StopStreamProcessorX_Amz_Target { 'RekognitionService.StopStreamProcessor' = 0 }
 
 }
 

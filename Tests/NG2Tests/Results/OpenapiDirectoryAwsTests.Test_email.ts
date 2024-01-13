@@ -611,7 +611,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SNSActionEncoding { UTF_8 = 0, Base64 = 1 }
+	export enum SNSActionEncoding { 'UTF-8' = 0, Base64 = 1 }
 
 	export interface InvalidSnsTopicException {
 	}
@@ -2691,7 +2691,7 @@ export namespace MyNS {
 	export function CreateDeleteIdentityPolicyRequestFormGroup() {
 		return new FormGroup<DeleteIdentityPolicyRequestFormProperties>({
 			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -3454,7 +3454,7 @@ export namespace MyNS {
 	export function CreatePutIdentityPolicyRequestFormGroup() {
 		return new FormGroup<PutIdentityPolicyRequestFormProperties>({
 			Identity: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 

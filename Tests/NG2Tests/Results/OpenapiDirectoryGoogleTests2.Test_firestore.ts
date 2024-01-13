@@ -3266,7 +3266,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Firestore_projects_databases_documents_get(name: string, mask_fieldPaths: Array<string> | null | undefined, readTime: string | null | undefined, transaction: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&' + mask_fieldPaths?.map(z => `mask_fieldPaths=${encodeURIComponent(z)}`).join('&') + '&readTime=' + (readTime == null ? '' : encodeURIComponent(readTime)) + '&transaction=' + (transaction == null ? '' : encodeURIComponent(transaction)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&' + mask_fieldPaths?.map(z => `mask.fieldPaths=${encodeURIComponent(z)}`).join('&') + '&readTime=' + (readTime == null ? '' : encodeURIComponent(readTime)) + '&transaction=' + (transaction == null ? '' : encodeURIComponent(transaction)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3285,7 +3285,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Firestore_projects_databases_documents_patch(name: string, currentDocument_exists: boolean | null | undefined, currentDocument_updateTime: string | null | undefined, mask_fieldPaths: Array<string> | null | undefined, updateMask_fieldPaths: Array<string> | null | undefined, requestBody: Document): Observable<HttpResponse<string>> {
-			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&currentDocument_exists=' + currentDocument_exists + '&currentDocument_updateTime=' + (currentDocument_updateTime == null ? '' : encodeURIComponent(currentDocument_updateTime)) + '&' + mask_fieldPaths?.map(z => `mask_fieldPaths=${encodeURIComponent(z)}`).join('&') + '&' + updateMask_fieldPaths?.map(z => `updateMask_fieldPaths=${encodeURIComponent(z)}`).join('&'), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
+			return this.http.patch(this.baseUri + 'v1/' + (name == null ? '' : encodeURIComponent(name)) + '&currentDocument_exists=' + currentDocument_exists + '&currentDocument_updateTime=' + (currentDocument_updateTime == null ? '' : encodeURIComponent(currentDocument_updateTime)) + '&' + mask_fieldPaths?.map(z => `mask.fieldPaths=${encodeURIComponent(z)}`).join('&') + '&' + updateMask_fieldPaths?.map(z => `updateMask.fieldPaths=${encodeURIComponent(z)}`).join('&'), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3455,7 +3455,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Firestore_projects_databases_documents_list(parent: string, collectionId: string, mask_fieldPaths: Array<string> | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, readTime: string | null | undefined, showMissing: boolean | null | undefined, transaction: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/' + (collectionId == null ? '' : encodeURIComponent(collectionId)) + '&' + mask_fieldPaths?.map(z => `mask_fieldPaths=${encodeURIComponent(z)}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&readTime=' + (readTime == null ? '' : encodeURIComponent(readTime)) + '&showMissing=' + showMissing + '&transaction=' + (transaction == null ? '' : encodeURIComponent(transaction)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/' + (collectionId == null ? '' : encodeURIComponent(collectionId)) + '&' + mask_fieldPaths?.map(z => `mask.fieldPaths=${encodeURIComponent(z)}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&readTime=' + (readTime == null ? '' : encodeURIComponent(readTime)) + '&showMissing=' + showMissing + '&transaction=' + (transaction == null ? '' : encodeURIComponent(transaction)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3472,7 +3472,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Firestore_projects_databases_documents_createDocument(parent: string, collectionId: string, documentId: string | null | undefined, mask_fieldPaths: Array<string> | null | undefined, requestBody: Document): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/' + (collectionId == null ? '' : encodeURIComponent(collectionId)) + '&documentId=' + (documentId == null ? '' : encodeURIComponent(documentId)) + '&' + mask_fieldPaths?.map(z => `mask_fieldPaths=${encodeURIComponent(z)}`).join('&'), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/' + (collectionId == null ? '' : encodeURIComponent(collectionId)) + '&documentId=' + (documentId == null ? '' : encodeURIComponent(documentId)) + '&' + mask_fieldPaths?.map(z => `mask.fieldPaths=${encodeURIComponent(z)}`).join('&'), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
 		/**

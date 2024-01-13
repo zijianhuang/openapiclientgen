@@ -110,7 +110,7 @@ export namespace MyNS {
 	}
 	export function CreateAssetErrorDetailsFormGroup() {
 		return new FormGroup<AssetErrorDetailsFormProperties>({
-			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 			code: new FormControl<AssetErrorDetailsCode | null | undefined>(undefined, [Validators.required]),
 			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -170,7 +170,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchPutAssetPropertyErrorEntryFormGroup() {
 		return new FormGroup<BatchPutAssetPropertyErrorEntryFormProperties>({
-			entryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
+			entryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 		});
 
 	}
@@ -313,10 +313,10 @@ export namespace MyNS {
 	}
 	export function CreatePutAssetPropertyValueEntryFormGroup() {
 		return new FormGroup<PutAssetPropertyValueEntryFormProperties>({
-			entryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
-			assetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			propertyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			propertyAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			entryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
+			assetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			propertyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			propertyAlias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -378,7 +378,7 @@ export namespace MyNS {
 	}
 	export function CreateVariantFormGroup() {
 		return new FormGroup<VariantFormProperties>({
-			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			integerValue: new FormControl<number | null | undefined>(undefined),
 			doubleValue: new FormControl<number | null | undefined>(undefined),
 			booleanValue: new FormControl<boolean | null | undefined>(undefined),
@@ -432,8 +432,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccessPolicyResponseFormGroup() {
 		return new FormGroup<CreateAccessPolicyResponseFormProperties>({
-			accessPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			accessPolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			accessPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			accessPolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -462,7 +462,7 @@ export namespace MyNS {
 	}
 	export function CreateUserIdentityFormGroup() {
 		return new FormGroup<UserIdentityFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\S+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('\S+')]),
 		});
 
 	}
@@ -491,7 +491,7 @@ export namespace MyNS {
 	}
 	export function CreateGroupIdentityFormGroup() {
 		return new FormGroup<GroupIdentityFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\S+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('\S+')]),
 		});
 
 	}
@@ -520,7 +520,7 @@ export namespace MyNS {
 	}
 	export function CreatePortalResourceFormGroup() {
 		return new FormGroup<PortalResourceFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 		});
 
 	}
@@ -549,7 +549,7 @@ export namespace MyNS {
 	}
 	export function CreateProjectResourceFormGroup() {
 		return new FormGroup<ProjectResourceFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 		});
 
 	}
@@ -594,8 +594,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssetResponseFormGroup() {
 		return new FormGroup<CreateAssetResponseFormProperties>({
-			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			assetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -706,8 +706,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssetModelResponseFormGroup() {
 		return new FormGroup<CreateAssetModelResponseFormProperties>({
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			assetModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -786,9 +786,9 @@ export namespace MyNS {
 	}
 	export function CreateAssetModelPropertyDefinitionFormGroup() {
 		return new FormGroup<AssetModelPropertyDefinitionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined, [Validators.required]),
-			unit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			unit: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -843,7 +843,7 @@ export namespace MyNS {
 	}
 	export function CreateAttributeFormGroup() {
 		return new FormGroup<AttributeFormProperties>({
-			defaultValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			defaultValue: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -889,7 +889,7 @@ export namespace MyNS {
 	}
 	export function CreateTransformFormGroup() {
 		return new FormGroup<TransformFormProperties>({
-			expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^[a-z0-9._+\-*%/^, ()]+$')]),
+			expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^[a-z0-9._+\-*%/^, ()]+$')]),
 		});
 
 	}
@@ -924,7 +924,7 @@ export namespace MyNS {
 	}
 	export function CreateExpressionVariableFormGroup() {
 		return new FormGroup<ExpressionVariableFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-z][a-z0-9_]*$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-z][a-z0-9_]*$')]),
 		});
 
 	}
@@ -965,8 +965,8 @@ export namespace MyNS {
 	}
 	export function CreateVariableValueFormGroup() {
 		return new FormGroup<VariableValueFormProperties>({
-			propertyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			propertyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -1004,7 +1004,7 @@ export namespace MyNS {
 	}
 	export function CreateMetricFormGroup() {
 		return new FormGroup<MetricFormProperties>({
-			expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^[a-z0-9._+\-*%/^, ()]+$')]),
+			expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^[a-z0-9._+\-*%/^, ()]+$')]),
 		});
 
 	}
@@ -1050,7 +1050,7 @@ export namespace MyNS {
 	}
 	export function CreateTumblingWindowFormGroup() {
 		return new FormGroup<TumblingWindowFormProperties>({
-			interval: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(3), Validators.minLength(2), Validators.pattern('1w|1d|1h|15m|5m|1m')]),
+			interval: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(3), Validators.pattern('1w|1d|1h|15m|5m|1m')]),
 		});
 
 	}
@@ -1093,8 +1093,8 @@ export namespace MyNS {
 	}
 	export function CreateAssetModelHierarchyDefinitionFormGroup() {
 		return new FormGroup<AssetModelHierarchyDefinitionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			childAssetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			childAssetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 		});
 
 	}
@@ -1133,8 +1133,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDashboardResponseFormGroup() {
 		return new FormGroup<CreateDashboardResponseFormProperties>({
-			dashboardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			dashboardArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			dashboardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			dashboardArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1173,8 +1173,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateGatewayResponseFormGroup() {
 		return new FormGroup<CreateGatewayResponseFormProperties>({
-			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			gatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			gatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1203,7 +1203,7 @@ export namespace MyNS {
 	}
 	export function CreateGreengrassFormGroup() {
 		return new FormGroup<GreengrassFormProperties>({
-			groupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			groupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1276,10 +1276,10 @@ export namespace MyNS {
 	}
 	export function CreateCreatePortalResponseFormGroup() {
 		return new FormGroup<CreatePortalResponseFormProperties>({
-			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			portalArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			portalStartUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^(http|https)\://\S+')]),
-			ssoApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[!-~]*')]),
+			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			portalArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			portalStartUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^(http|https)\://\S+')]),
+			ssoApplicationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[!-~]*')]),
 		});
 
 	}
@@ -1366,8 +1366,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectResponseFormGroup() {
 		return new FormGroup<CreateProjectResponseFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1514,8 +1514,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAccessPolicyResponseFormGroup() {
 		return new FormGroup<DescribeAccessPolicyResponseFormProperties>({
-			accessPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			accessPolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			accessPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			accessPolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined, [Validators.required]),
 			accessPolicyCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			accessPolicyLastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -1651,10 +1651,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAssetResponseFormGroup() {
 		return new FormGroup<DescribeAssetResponseFormProperties>({
-			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			assetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 			assetCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			assetLastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1732,11 +1732,11 @@ export namespace MyNS {
 	}
 	export function CreateAssetPropertyFormGroup() {
 		return new FormGroup<AssetPropertyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			alias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined, [Validators.required]),
-			unit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			unit: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -1807,8 +1807,8 @@ export namespace MyNS {
 	}
 	export function CreateAssetHierarchyFormGroup() {
 		return new FormGroup<AssetHierarchyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -1899,10 +1899,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAssetModelResponseFormGroup() {
 		return new FormGroup<DescribeAssetModelResponseFormProperties>({
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			assetModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			assetModelCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			assetModelLastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1969,10 +1969,10 @@ export namespace MyNS {
 	}
 	export function CreateAssetModelPropertyFormGroup() {
 		return new FormGroup<AssetModelPropertyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined, [Validators.required]),
-			unit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			unit: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -2027,9 +2027,9 @@ export namespace MyNS {
 	}
 	export function CreateAssetModelHierarchyFormGroup() {
 		return new FormGroup<AssetModelHierarchyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			childAssetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			childAssetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 		});
 
 	}
@@ -2088,9 +2088,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAssetPropertyResponseFormGroup() {
 		return new FormGroup<DescribeAssetPropertyResponseFormProperties>({
-			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 		});
 
 	}
@@ -2169,11 +2169,11 @@ export namespace MyNS {
 	}
 	export function CreatePropertyFormGroup() {
 		return new FormGroup<PropertyFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			alias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			dataType: new FormControl<AssetModelPropertyDefinitionDataType | null | undefined>(undefined, [Validators.required]),
-			unit: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			unit: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -2278,12 +2278,12 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDashboardResponseFormGroup() {
 		return new FormGroup<DescribeDashboardResponseFormProperties>({
-			dashboardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			dashboardArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(0), Validators.pattern('.+')]),
+			dashboardId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			dashboardArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(204800), Validators.pattern('.+')]),
 			dashboardCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			dashboardLastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2356,9 +2356,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeGatewayResponseFormGroup() {
 		return new FormGroup<DescribeGatewayResponseFormProperties>({
-			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			gatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			gatewayArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2415,7 +2415,7 @@ export namespace MyNS {
 	}
 	export function CreateGatewayCapabilitySummaryFormGroup() {
 		return new FormGroup<GatewayCapabilitySummaryFormProperties>({
-			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
 			capabilitySyncStatus: new FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2477,9 +2477,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeGatewayCapabilityConfigurationResponseFormGroup() {
 		return new FormGroup<DescribeGatewayCapabilityConfigurationResponseFormProperties>({
-			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
-			capabilityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(1)]),
+			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
+			capabilityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(204800)]),
 			capabilitySyncStatus: new FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2659,16 +2659,16 @@ export namespace MyNS {
 	}
 	export function CreateDescribePortalResponseFormGroup() {
 		return new FormGroup<DescribePortalResponseFormProperties>({
-			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			portalArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[!-~]*')]),
-			portalStartUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^(http|https)\://\S+')]),
-			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^@]+@[^@]+')]),
+			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			portalArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[!-~]*')]),
+			portalStartUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^(http|https)\://\S+')]),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^@]+@[^@]+')]),
 			portalCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			portalLastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -2711,8 +2711,8 @@ export namespace MyNS {
 	}
 	export function CreateImageLocationFormGroup() {
 		return new FormGroup<ImageLocationFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			url: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^(http|https)\://\S+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			url: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^(http|https)\://\S+')]),
 		});
 
 	}
@@ -2803,11 +2803,11 @@ export namespace MyNS {
 	}
 	export function CreateDescribeProjectResponseFormGroup() {
 		return new FormGroup<DescribeProjectResponseFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			projectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			projectCreationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			projectLastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2835,7 +2835,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAssetPropertyAggregatesResponseFormGroup() {
 		return new FormGroup<GetAssetPropertyAggregatesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -2940,7 +2940,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAssetPropertyValueHistoryResponseFormGroup() {
 		return new FormGroup<GetAssetPropertyValueHistoryResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -2966,7 +2966,7 @@ export namespace MyNS {
 	}
 	export function CreateListAccessPoliciesResponseFormGroup() {
 		return new FormGroup<ListAccessPoliciesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3017,7 +3017,7 @@ export namespace MyNS {
 	}
 	export function CreateAccessPolicySummaryFormGroup() {
 		return new FormGroup<AccessPolicySummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 			permission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined, [Validators.required]),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
@@ -3046,7 +3046,7 @@ export namespace MyNS {
 	}
 	export function CreateListAssetModelsResponseFormGroup() {
 		return new FormGroup<ListAssetModelsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3135,10 +3135,10 @@ export namespace MyNS {
 	}
 	export function CreateAssetModelSummaryFormGroup() {
 		return new FormGroup<AssetModelSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3166,7 +3166,7 @@ export namespace MyNS {
 	}
 	export function CreateListAssetsResponseFormGroup() {
 		return new FormGroup<ListAssetsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3258,10 +3258,10 @@ export namespace MyNS {
 	}
 	export function CreateAssetSummaryFormGroup() {
 		return new FormGroup<AssetSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3289,7 +3289,7 @@ export namespace MyNS {
 	}
 	export function CreateListAssociatedAssetsResponseFormGroup() {
 		return new FormGroup<ListAssociatedAssetsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3381,10 +3381,10 @@ export namespace MyNS {
 	}
 	export function CreateAssociatedAssetsSummaryFormGroup() {
 		return new FormGroup<AssociatedAssetsSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3412,7 +3412,7 @@ export namespace MyNS {
 	}
 	export function CreateListDashboardsResponseFormGroup() {
 		return new FormGroup<ListDashboardsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3471,9 +3471,9 @@ export namespace MyNS {
 	}
 	export function CreateDashboardSummaryFormGroup() {
 		return new FormGroup<DashboardSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -3501,7 +3501,7 @@ export namespace MyNS {
 	}
 	export function CreateListGatewaysResponseFormGroup() {
 		return new FormGroup<ListGatewaysResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3557,8 +3557,8 @@ export namespace MyNS {
 	}
 	export function CreateGatewaySummaryFormGroup() {
 		return new FormGroup<GatewaySummaryFormProperties>({
-			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			gatewayId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3584,7 +3584,7 @@ export namespace MyNS {
 	}
 	export function CreateListPortalsResponseFormGroup() {
 		return new FormGroup<ListPortalsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3669,13 +3669,13 @@ export namespace MyNS {
 	}
 	export function CreatePortalSummaryFormGroup() {
 		return new FormGroup<PortalSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			startUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^(http|https)\://\S+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			startUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^(http|https)\://\S+')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -3701,7 +3701,7 @@ export namespace MyNS {
 	}
 	export function CreateListProjectAssetsResponseFormGroup() {
 		return new FormGroup<ListProjectAssetsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3727,7 +3727,7 @@ export namespace MyNS {
 	}
 	export function CreateListProjectsResponseFormGroup() {
 		return new FormGroup<ListProjectsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[A-Za-z0-9+/=]+')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[A-Za-z0-9+/=]+')]),
 		});
 
 	}
@@ -3786,9 +3786,9 @@ export namespace MyNS {
 	}
 	export function CreateProjectSummaryFormGroup() {
 		return new FormGroup<ProjectSummaryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			creationDate: new FormControl<Date | null | undefined>(undefined),
 			lastUpdateDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -3936,7 +3936,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewayCapabilityConfigurationResponseFormGroup() {
 		return new FormGroup<UpdateGatewayCapabilityConfigurationResponseFormProperties>({
-			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
 			capabilitySyncStatus: new FormControl<GatewayCapabilitySummaryCapabilitySyncStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3988,7 +3988,7 @@ export namespace MyNS {
 	}
 	export function CreateImageFileFormGroup() {
 		return new FormGroup<ImageFileFormProperties>({
-			data: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1500000), Validators.minLength(1)]),
+			data: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1500000)]),
 			type: new FormControl<ImageFileType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4060,9 +4060,9 @@ export namespace MyNS {
 	}
 	export function CreateAssociateAssetsRequestFormGroup() {
 		return new FormGroup<AssociateAssetsRequestFormProperties>({
-			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4092,7 +4092,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchAssociateProjectAssetsRequestFormGroup() {
 		return new FormGroup<BatchAssociateProjectAssetsRequestFormProperties>({
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4122,7 +4122,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchDisassociateProjectAssetsRequestFormGroup() {
 		return new FormGroup<BatchDisassociateProjectAssetsRequestFormProperties>({
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4182,7 +4182,7 @@ export namespace MyNS {
 	export function CreateCreateAccessPolicyRequestFormGroup() {
 		return new FormGroup<CreateAccessPolicyRequestFormProperties>({
 			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4234,9 +4234,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssetModelRequestFormGroup() {
 		return new FormGroup<CreateAssetModelRequestFormProperties>({
-			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4288,9 +4288,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssetRequestFormGroup() {
 		return new FormGroup<CreateAssetRequestFormProperties>({
-			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4368,11 +4368,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateDashboardRequestFormGroup() {
 		return new FormGroup<CreateDashboardRequestFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(0), Validators.pattern('.+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(204800), Validators.pattern('.+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4404,7 +4404,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGatewayRequestFormGroup() {
 		return new FormGroup<CreateGatewayRequestFormProperties>({
-			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -4485,11 +4485,11 @@ export namespace MyNS {
 	}
 	export function CreateCreatePortalRequestFormGroup() {
 		return new FormGroup<CreatePortalRequestFormProperties>({
-			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^@]+@[^@]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^@]+@[^@]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 		});
 
 	}
@@ -4553,10 +4553,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectRequestFormGroup() {
 		return new FormGroup<CreateProjectRequestFormProperties>({
-			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4777,9 +4777,9 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateAssetsRequestFormGroup() {
 		return new FormGroup<DisassociateAssetsRequestFormProperties>({
-			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -4845,7 +4845,7 @@ export namespace MyNS {
 	}
 	export function CreateImageFormGroup() {
 		return new FormGroup<ImageFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 		});
 
 	}
@@ -5034,7 +5034,7 @@ export namespace MyNS {
 	export function CreateUpdateAccessPolicyRequestFormGroup() {
 		return new FormGroup<UpdateAccessPolicyRequestFormProperties>({
 			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -5085,9 +5085,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetModelRequestFormGroup() {
 		return new FormGroup<UpdateAssetModelRequestFormProperties>({
-			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -5124,9 +5124,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetPropertyRequestFormGroup() {
 		return new FormGroup<UpdateAssetPropertyRequestFormProperties>({
-			propertyAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			propertyAlias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			propertyNotificationState: new FormControl<PropertyNotificationState | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -5163,8 +5163,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetRequestFormGroup() {
 		return new FormGroup<UpdateAssetRequestFormProperties>({
-			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -5227,10 +5227,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDashboardRequestFormGroup() {
 		return new FormGroup<UpdateDashboardRequestFormProperties>({
-			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(0), Validators.pattern('.+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(204800), Validators.pattern('.+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -5269,8 +5269,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewayCapabilityConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateGatewayCapabilityConfigurationRequestFormProperties>({
-			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
-			capabilityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(1)]),
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
+			capabilityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(204800)]),
 		});
 
 	}
@@ -5295,7 +5295,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewayRequestFormGroup() {
 		return new FormGroup<UpdateGatewayRequestFormProperties>({
-			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -5375,11 +5375,11 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePortalRequestFormGroup() {
 		return new FormGroup<UpdatePortalRequestFormProperties>({
-			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^@]+@[^@]+')]),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^@]+@[^@]+')]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -5428,9 +5428,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateProjectRequestFormGroup() {
 		return new FormGroup<UpdateProjectRequestFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -6073,9 +6073,9 @@ export namespace MyNS {
 	}
 	export function CreateAssociateAssetsPostBodyFormGroup() {
 		return new FormGroup<AssociateAssetsPostBodyFormProperties>({
-			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -6108,7 +6108,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchAssociateProjectAssetsPostBodyFormGroup() {
 		return new FormGroup<BatchAssociateProjectAssetsPostBodyFormProperties>({
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -6141,7 +6141,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchDisassociateProjectAssetsPostBodyFormGroup() {
 		return new FormGroup<BatchDisassociateProjectAssetsPostBodyFormProperties>({
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -6213,7 +6213,7 @@ export namespace MyNS {
 	export function CreateCreateAccessPolicyPostBodyFormGroup() {
 		return new FormGroup<CreateAccessPolicyPostBodyFormProperties>({
 			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -6309,9 +6309,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssetPostBodyFormGroup() {
 		return new FormGroup<CreateAssetPostBodyFormProperties>({
-			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -6379,9 +6379,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAssetModelPostBodyFormGroup() {
 		return new FormGroup<CreateAssetModelPostBodyFormProperties>({
-			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -6475,11 +6475,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateDashboardPostBodyFormGroup() {
 		return new FormGroup<CreateDashboardPostBodyFormProperties>({
-			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(0), Validators.pattern('.+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			projectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(204800), Validators.pattern('.+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -6519,7 +6519,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGatewayPostBodyFormGroup() {
 		return new FormGroup<CreateGatewayPostBodyFormProperties>({
-			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -6629,11 +6629,11 @@ export namespace MyNS {
 	}
 	export function CreateCreatePortalPostBodyFormGroup() {
 		return new FormGroup<CreatePortalPostBodyFormProperties>({
-			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^@]+@[^@]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
+			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^@]+@[^@]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -6659,7 +6659,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePortalPostBodyPortalLogoImageFileFormGroup() {
 		return new FormGroup<CreatePortalPostBodyPortalLogoImageFileFormProperties>({
-			data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1500000), Validators.minLength(1)]),
+			data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1500000)]),
 			type: new FormControl<ImageFileType | null | undefined>(undefined),
 		});
 
@@ -6737,10 +6737,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectPostBodyFormGroup() {
 		return new FormGroup<CreateProjectPostBodyFormProperties>({
-			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			portalId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -6791,7 +6791,7 @@ export namespace MyNS {
 	export function CreateUpdateAccessPolicyPutBodyFormGroup() {
 		return new FormGroup<UpdateAccessPolicyPutBodyFormProperties>({
 			accessPolicyPermission: new FormControl<DescribeAccessPolicyResponseAccessPolicyPermission | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -6864,8 +6864,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetPutBodyFormGroup() {
 		return new FormGroup<UpdateAssetPutBodyFormProperties>({
-			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -6926,9 +6926,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetModelPutBodyFormGroup() {
 		return new FormGroup<UpdateAssetModelPutBodyFormProperties>({
-			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			assetModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			assetModelDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -6999,10 +6999,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDashboardPutBodyFormGroup() {
 		return new FormGroup<UpdateDashboardPutBodyFormProperties>({
-			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(0), Validators.pattern('.+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			dashboardName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			dashboardDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(204800), Validators.pattern('.+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -7029,7 +7029,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewayPutBodyFormGroup() {
 		return new FormGroup<UpdateGatewayPutBodyFormProperties>({
-			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			gatewayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 		});
 
 	}
@@ -7119,11 +7119,11 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePortalPutBodyFormGroup() {
 		return new FormGroup<UpdatePortalPutBodyFormProperties>({
-			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^@]+@[^@]+')]),
-			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1), Validators.pattern('.*')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			portalName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			portalContactEmail: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^@]+@[^@]+')]),
+			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600), Validators.pattern('.*')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -7149,7 +7149,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePortalPutBodyPortalLogoImageFormGroup() {
 		return new FormGroup<UpdatePortalPutBodyPortalLogoImageFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
 		});
 
 	}
@@ -7204,9 +7204,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateProjectPutBodyFormGroup() {
 		return new FormGroup<UpdateProjectPutBodyFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			projectDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -7251,9 +7251,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAssetPropertyPutBodyFormGroup() {
 		return new FormGroup<UpdateAssetPropertyPutBodyFormProperties>({
-			propertyAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
+			propertyAlias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[^\u0000-\u001F\u007F]+')]),
 			propertyNotificationState: new FormControl<PropertyNotificationState | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -7339,9 +7339,9 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateAssetsPostBodyFormGroup() {
 		return new FormGroup<DisassociateAssetsPostBodyFormProperties>({
-			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(36), Validators.pattern('\S{36,64}')]),
+			hierarchyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			childAssetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(36), Validators.maxLength(36), Validators.pattern('^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(36), Validators.maxLength(64), Validators.pattern('\S{36,64}')]),
 		});
 
 	}
@@ -7407,8 +7407,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGatewayCapabilityConfigurationPostBodyFormGroup() {
 		return new FormGroup<UpdateGatewayCapabilityConfigurationPostBodyFormProperties>({
-			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
-			capabilityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(204800), Validators.minLength(1)]),
+			capabilityNamespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$')]),
+			capabilityConfiguration: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(204800)]),
 		});
 
 	}

@@ -25,7 +25,7 @@ export namespace MyNS {
 	export function CreateDescribeAffectedAccountsForOrganizationResponseFormGroup() {
 		return new FormGroup<DescribeAffectedAccountsForOrganizationResponseFormProperties>({
 			eventScopeCode: new FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>(undefined),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -75,7 +75,7 @@ export namespace MyNS {
 	export function CreateDescribeAffectedAccountsForOrganizationRequestFormGroup() {
 		return new FormGroup<DescribeAffectedAccountsForOrganizationRequestFormProperties>({
 			eventArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}')]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
@@ -110,7 +110,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAffectedEntitiesResponseFormGroup() {
 		return new FormGroup<DescribeAffectedEntitiesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -227,8 +227,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAffectedEntitiesRequestFormGroup() {
 		return new FormGroup<DescribeAffectedEntitiesRequestFormProperties>({
-			locale: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('.{2,256}')]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			locale: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(256), Validators.pattern('.{2,256}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
@@ -334,7 +334,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAffectedEntitiesForOrganizationResponseFormGroup() {
 		return new FormGroup<DescribeAffectedEntitiesForOrganizationResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -422,8 +422,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAffectedEntitiesForOrganizationRequestFormGroup() {
 		return new FormGroup<DescribeAffectedEntitiesForOrganizationRequestFormProperties>({
-			locale: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('.{2,256}')]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			locale: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(256), Validators.pattern('.{2,256}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
@@ -533,7 +533,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventAggregatesResponseFormGroup() {
 		return new FormGroup<DescribeEventAggregatesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -599,7 +599,7 @@ export namespace MyNS {
 		return new FormGroup<DescribeEventAggregatesRequestFormProperties>({
 			aggregateField: new FormControl<DescribeEventAggregatesRequestAggregateField | null | undefined>(undefined, [Validators.required]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -814,11 +814,11 @@ export namespace MyNS {
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}')]),
-			service: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(2), Validators.pattern('[^:/]{2,30}')]),
-			eventTypeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\_\-]{3,100}')]),
-			eventTypeCategory: new FormControl<EventTypeCategory | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
-			region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(2), Validators.pattern('[^:/]{2,25}')]),
-			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(18), Validators.minLength(6), Validators.pattern('[a-z]{2}\-[0-9a-z\-]{4,16}')]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(30), Validators.pattern('[^:/]{2,30}')]),
+			eventTypeCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(100), Validators.pattern('[a-zA-Z0-9\_\-]{3,100}')]),
+			eventTypeCategory: new FormControl<EventTypeCategory | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255)]),
+			region: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(25), Validators.pattern('[^:/]{2,25}')]),
+			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.minLength(6), Validators.maxLength(18), Validators.pattern('[a-z]{2}\-[0-9a-z\-]{4,16}')]),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
@@ -907,7 +907,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventDetailsRequestFormGroup() {
 		return new FormGroup<DescribeEventDetailsRequestFormProperties>({
-			locale: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('.{2,256}')]),
+			locale: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(256), Validators.pattern('.{2,256}')]),
 		});
 
 	}
@@ -1011,7 +1011,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventDetailsForOrganizationRequestFormGroup() {
 		return new FormGroup<DescribeEventDetailsForOrganizationRequestFormProperties>({
-			locale: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('.{2,256}')]),
+			locale: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(256), Validators.pattern('.{2,256}')]),
 		});
 
 	}
@@ -1035,7 +1035,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventTypesResponseFormGroup() {
 		return new FormGroup<DescribeEventTypesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -1086,9 +1086,9 @@ export namespace MyNS {
 	}
 	export function CreateEventTypeFormGroup() {
 		return new FormGroup<EventTypeFormProperties>({
-			service: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(2), Validators.pattern('[^:/]{2,30}')]),
-			code: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\_\-]{3,100}')]),
-			category: new FormControl<EventTypeCategory | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(30), Validators.pattern('[^:/]{2,30}')]),
+			code: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(100), Validators.pattern('[a-zA-Z0-9\_\-]{3,100}')]),
+			category: new FormControl<EventTypeCategory | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1138,8 +1138,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventTypesRequestFormGroup() {
 		return new FormGroup<DescribeEventTypesRequestFormProperties>({
-			locale: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('.{2,256}')]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			locale: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(256), Validators.pattern('.{2,256}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
 		});
 
@@ -1196,7 +1196,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventsResponseFormGroup() {
 		return new FormGroup<DescribeEventsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -1246,9 +1246,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventsRequestFormGroup() {
 		return new FormGroup<DescribeEventsRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
-			locale: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('.{2,256}')]),
+			locale: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(256), Validators.pattern('.{2,256}')]),
 		});
 
 	}
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventsForOrganizationResponseFormGroup() {
 		return new FormGroup<DescribeEventsForOrganizationResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 		});
 
 	}
@@ -1352,11 +1352,11 @@ export namespace MyNS {
 	export function CreateOrganizationEventFormGroup() {
 		return new FormGroup<OrganizationEventFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}')]),
-			service: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(2), Validators.pattern('[^:/]{2,30}')]),
-			eventTypeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(3), Validators.pattern('[a-zA-Z0-9\_\-]{3,100}')]),
-			eventTypeCategory: new FormControl<EventTypeCategory | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(30), Validators.pattern('[^:/]{2,30}')]),
+			eventTypeCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(100), Validators.pattern('[a-zA-Z0-9\_\-]{3,100}')]),
+			eventTypeCategory: new FormControl<EventTypeCategory | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255)]),
 			eventScopeCode: new FormControl<DescribeAffectedAccountsForOrganizationResponseEventScopeCode | null | undefined>(undefined),
-			region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(25), Validators.minLength(2), Validators.pattern('[^:/]{2,25}')]),
+			region: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(25), Validators.pattern('[^:/]{2,25}')]),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
@@ -1410,9 +1410,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventsForOrganizationRequestFormGroup() {
 		return new FormGroup<DescribeEventsForOrganizationRequestFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(4), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(10000), Validators.pattern('[a-zA-Z0-9=/+_.-]{4,10000}')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(100)]),
-			locale: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(2), Validators.pattern('.{2,256}')]),
+			locale: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(256), Validators.pattern('.{2,256}')]),
 		});
 
 	}
@@ -1652,31 +1652,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeAffectedAccountsForOrganizationX_Amz_Target { AWSHealth_20160804_DescribeAffectedAccountsForOrganization = 0 }
+	export enum DescribeAffectedAccountsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedAccountsForOrganization' = 0 }
 
-	export enum DescribeAffectedEntitiesX_Amz_Target { AWSHealth_20160804_DescribeAffectedEntities = 0 }
+	export enum DescribeAffectedEntitiesX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedEntities' = 0 }
 
-	export enum DescribeAffectedEntitiesForOrganizationX_Amz_Target { AWSHealth_20160804_DescribeAffectedEntitiesForOrganization = 0 }
+	export enum DescribeAffectedEntitiesForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeAffectedEntitiesForOrganization' = 0 }
 
-	export enum DescribeEntityAggregatesX_Amz_Target { AWSHealth_20160804_DescribeEntityAggregates = 0 }
+	export enum DescribeEntityAggregatesX_Amz_Target { 'AWSHealth_20160804.DescribeEntityAggregates' = 0 }
 
-	export enum DescribeEventAggregatesX_Amz_Target { AWSHealth_20160804_DescribeEventAggregates = 0 }
+	export enum DescribeEventAggregatesX_Amz_Target { 'AWSHealth_20160804.DescribeEventAggregates' = 0 }
 
-	export enum DescribeEventDetailsX_Amz_Target { AWSHealth_20160804_DescribeEventDetails = 0 }
+	export enum DescribeEventDetailsX_Amz_Target { 'AWSHealth_20160804.DescribeEventDetails' = 0 }
 
-	export enum DescribeEventDetailsForOrganizationX_Amz_Target { AWSHealth_20160804_DescribeEventDetailsForOrganization = 0 }
+	export enum DescribeEventDetailsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeEventDetailsForOrganization' = 0 }
 
-	export enum DescribeEventTypesX_Amz_Target { AWSHealth_20160804_DescribeEventTypes = 0 }
+	export enum DescribeEventTypesX_Amz_Target { 'AWSHealth_20160804.DescribeEventTypes' = 0 }
 
-	export enum DescribeEventsX_Amz_Target { AWSHealth_20160804_DescribeEvents = 0 }
+	export enum DescribeEventsX_Amz_Target { 'AWSHealth_20160804.DescribeEvents' = 0 }
 
-	export enum DescribeEventsForOrganizationX_Amz_Target { AWSHealth_20160804_DescribeEventsForOrganization = 0 }
+	export enum DescribeEventsForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeEventsForOrganization' = 0 }
 
-	export enum DescribeHealthServiceStatusForOrganizationX_Amz_Target { AWSHealth_20160804_DescribeHealthServiceStatusForOrganization = 0 }
+	export enum DescribeHealthServiceStatusForOrganizationX_Amz_Target { 'AWSHealth_20160804.DescribeHealthServiceStatusForOrganization' = 0 }
 
-	export enum DisableHealthServiceAccessForOrganizationX_Amz_Target { AWSHealth_20160804_DisableHealthServiceAccessForOrganization = 0 }
+	export enum DisableHealthServiceAccessForOrganizationX_Amz_Target { 'AWSHealth_20160804.DisableHealthServiceAccessForOrganization' = 0 }
 
-	export enum EnableHealthServiceAccessForOrganizationX_Amz_Target { AWSHealth_20160804_EnableHealthServiceAccessForOrganization = 0 }
+	export enum EnableHealthServiceAccessForOrganizationX_Amz_Target { 'AWSHealth_20160804.EnableHealthServiceAccessForOrganization' = 0 }
 
 }
 

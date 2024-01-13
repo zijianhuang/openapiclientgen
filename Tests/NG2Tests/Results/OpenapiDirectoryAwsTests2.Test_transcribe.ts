@@ -29,7 +29,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMedicalVocabularyResponseFormGroup() {
 		return new FormGroup<CreateMedicalVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -38,7 +38,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
+	export enum CreateMedicalVocabularyResponseLanguageCode { 'en-US' = 0, 'es-US' = 1, 'en-AU' = 2, 'fr-CA' = 3, 'en-GB' = 4, 'de-DE' = 5, 'pt-BR' = 6, 'fr-FR' = 7, 'it-IT' = 8, 'ko-KR' = 9, 'es-ES' = 10, 'en-IN' = 11, 'hi-IN' = 12, 'ar-SA' = 13, 'ru-RU' = 14, 'zh-CN' = 15, 'nl-NL' = 16, 'id-ID' = 17, 'ta-IN' = 18, 'fa-IR' = 19, 'en-IE' = 20, 'en-AB' = 21, 'en-WL' = 22, 'pt-PT' = 23, 'te-IN' = 24, 'tr-TR' = 25, 'de-CH' = 26, 'he-IL' = 27, 'ms-MY' = 28, 'ja-JP' = 29, 'ar-AE' = 30 }
 
 	export enum CreateMedicalVocabularyResponseVocabularyState { PENDING = 0, READY = 1, FAILED = 2 }
 
@@ -52,7 +52,7 @@ export namespace MyNS {
 		VocabularyName: string;
 
 		/** Required */
-		LanguageCode: CreateMedicalVocabularyRequestLanguageCode;
+		LanguageCode: CreateMedicalVocabularyResponseLanguageCode;
 
 		/**
 		 * Required
@@ -71,7 +71,7 @@ export namespace MyNS {
 		VocabularyName: FormControl<string | null | undefined>,
 
 		/** Required */
-		LanguageCode: FormControl<CreateMedicalVocabularyRequestLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Required
@@ -82,14 +82,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<CreateMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<CreateMedicalVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined, [Validators.required]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum CreateMedicalVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface BadRequestException {
 	}
@@ -138,7 +136,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName?: string | null;
-		LanguageCode?: CreateVocabularyResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 		LastModifiedTime?: Date | null;
 		FailureReason?: string | null;
@@ -150,23 +148,21 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<CreateVocabularyResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 		FailureReason: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateVocabularyResponseFormGroup() {
 		return new FormGroup<CreateVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<CreateVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface CreateVocabularyRequest {
 
@@ -178,7 +174,7 @@ export namespace MyNS {
 		VocabularyName: string;
 
 		/** Required */
-		LanguageCode: CreateVocabularyRequestLanguageCode;
+		LanguageCode: CreateMedicalVocabularyResponseLanguageCode;
 		Phrases?: Array<string>;
 
 		/**
@@ -197,7 +193,7 @@ export namespace MyNS {
 		VocabularyName: FormControl<string | null | undefined>,
 
 		/** Required */
-		LanguageCode: FormControl<CreateVocabularyRequestLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Max length: 2000
@@ -207,14 +203,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateVocabularyRequestFormGroup() {
 		return new FormGroup<CreateVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<CreateVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined, [Validators.required]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum CreateVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface CreateVocabularyFilterResponse {
 
@@ -223,7 +217,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName?: string | null;
-		LanguageCode?: CreateVocabularyFilterResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 	}
 	export interface CreateVocabularyFilterResponseFormProperties {
@@ -233,19 +227,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<CreateVocabularyFilterResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateCreateVocabularyFilterResponseFormGroup() {
 		return new FormGroup<CreateVocabularyFilterResponseFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<CreateVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface CreateVocabularyFilterRequest {
 
@@ -257,7 +249,7 @@ export namespace MyNS {
 		VocabularyFilterName: string;
 
 		/** Required */
-		LanguageCode: CreateVocabularyFilterRequestLanguageCode;
+		LanguageCode: CreateMedicalVocabularyResponseLanguageCode;
 
 		/** Minimum items: 1 */
 		Words?: Array<string>;
@@ -278,7 +270,7 @@ export namespace MyNS {
 		VocabularyFilterName: FormControl<string | null | undefined>,
 
 		/** Required */
-		LanguageCode: FormControl<CreateVocabularyFilterRequestLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Max length: 2000
@@ -288,14 +280,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateVocabularyFilterRequestFormGroup() {
 		return new FormGroup<CreateVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<CreateVocabularyFilterRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined, [Validators.required]),
+			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum CreateVocabularyFilterRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface DeleteMedicalTranscriptionJobRequest {
 
@@ -317,7 +307,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteMedicalTranscriptionJobRequestFormGroup() {
 		return new FormGroup<DeleteMedicalTranscriptionJobRequestFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -342,7 +332,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<DeleteMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -377,7 +367,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTranscriptionJobRequestFormGroup() {
 		return new FormGroup<DeleteTranscriptionJobRequestFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -402,7 +392,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteVocabularyRequestFormGroup() {
 		return new FormGroup<DeleteVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -427,7 +417,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteVocabularyFilterRequestFormGroup() {
 		return new FormGroup<DeleteVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -455,7 +445,7 @@ export namespace MyNS {
 		 */
 		MedicalTranscriptionJobName?: string | null;
 		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
-		LanguageCode?: MedicalTranscriptionJobLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 
 		/**
 		 * Minimum: 8000
@@ -489,7 +479,7 @@ export namespace MyNS {
 		 */
 		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
 		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
-		LanguageCode: FormControl<MedicalTranscriptionJobLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Minimum: 8000
@@ -506,9 +496,9 @@ export namespace MyNS {
 	}
 	export function CreateMedicalTranscriptionJobFormGroup() {
 		return new FormGroup<MedicalTranscriptionJobFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			LanguageCode: new FormControl<MedicalTranscriptionJobLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
 			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
@@ -522,8 +512,6 @@ export namespace MyNS {
 	}
 
 	export enum MedicalTranscriptionJobTranscriptionJobStatus { QUEUED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
-
-	export enum MedicalTranscriptionJobLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export enum MedicalTranscriptionJobMediaFormat { mp3 = 0, mp4 = 1, wav = 2, flac = 3 }
 
@@ -549,7 +537,7 @@ export namespace MyNS {
 	}
 	export function CreateMediaFormGroup() {
 		return new FormGroup<MediaFormProperties>({
-			MediaFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			MediaFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -576,7 +564,7 @@ export namespace MyNS {
 	}
 	export function CreateMedicalTranscriptFormGroup() {
 		return new FormGroup<MedicalTranscriptFormProperties>({
-			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -638,7 +626,7 @@ export namespace MyNS {
 			ChannelIdentification: new FormControl<boolean | null | undefined>(undefined),
 			ShowAlternatives: new FormControl<boolean | null | undefined>(undefined),
 			MaxAlternatives: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -667,7 +655,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMedicalTranscriptionJobRequestFormGroup() {
 		return new FormGroup<GetMedicalTranscriptionJobRequestFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -679,7 +667,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName?: string | null;
-		LanguageCode?: GetMedicalVocabularyResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 		LastModifiedTime?: Date | null;
 		FailureReason?: string | null;
@@ -697,7 +685,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<GetMedicalVocabularyResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 		FailureReason: FormControl<string | null | undefined>,
@@ -710,17 +698,15 @@ export namespace MyNS {
 	}
 	export function CreateGetMedicalVocabularyResponseFormGroup() {
 		return new FormGroup<GetMedicalVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<GetMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
-			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum GetMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface GetMedicalVocabularyRequest {
 
@@ -742,7 +728,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<GetMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -770,7 +756,7 @@ export namespace MyNS {
 		 */
 		TranscriptionJobName?: string | null;
 		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
-		LanguageCode?: TranscriptionJobLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 
 		/**
 		 * Minimum: 8000
@@ -808,7 +794,7 @@ export namespace MyNS {
 		 */
 		TranscriptionJobName: FormControl<string | null | undefined>,
 		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
-		LanguageCode: FormControl<TranscriptionJobLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Minimum: 8000
@@ -823,9 +809,9 @@ export namespace MyNS {
 	}
 	export function CreateTranscriptionJobFormGroup() {
 		return new FormGroup<TranscriptionJobFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			LanguageCode: new FormControl<TranscriptionJobLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
 			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
@@ -835,8 +821,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum TranscriptionJobLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 
 	/** Identifies the location of a transcription. */
@@ -872,8 +856,8 @@ export namespace MyNS {
 	}
 	export function CreateTranscriptFormGroup() {
 		return new FormGroup<TranscriptFormProperties>({
-			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
-			RedactedTranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			TranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
+			RedactedTranscriptFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -944,13 +928,13 @@ export namespace MyNS {
 	}
 	export function CreateSettingsFormGroup() {
 		return new FormGroup<SettingsFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			ShowSpeakerLabels: new FormControl<boolean | null | undefined>(undefined),
 			MaxSpeakerLabels: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
 			ChannelIdentification: new FormControl<boolean | null | undefined>(undefined),
 			ShowAlternatives: new FormControl<boolean | null | undefined>(undefined),
 			MaxAlternatives: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			VocabularyFilterMethod: new FormControl<SettingsVocabularyFilterMethod | null | undefined>(undefined),
 		});
 
@@ -973,7 +957,7 @@ export namespace MyNS {
 	export function CreateJobExecutionSettingsFormGroup() {
 		return new FormGroup<JobExecutionSettingsFormProperties>({
 			AllowDeferredExecution: new FormControl<boolean | null | undefined>(undefined),
-			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:iam::[0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1023}$')]),
 		});
 
 	}
@@ -1030,7 +1014,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTranscriptionJobRequestFormGroup() {
 		return new FormGroup<GetTranscriptionJobRequestFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1042,7 +1026,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName?: string | null;
-		LanguageCode?: GetVocabularyResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 		LastModifiedTime?: Date | null;
 		FailureReason?: string | null;
@@ -1060,7 +1044,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<GetVocabularyResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 		FailureReason: FormControl<string | null | undefined>,
@@ -1073,17 +1057,15 @@ export namespace MyNS {
 	}
 	export function CreateGetVocabularyResponseFormGroup() {
 		return new FormGroup<GetVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<GetVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
-			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum GetVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface GetVocabularyRequest {
 
@@ -1105,7 +1087,7 @@ export namespace MyNS {
 	}
 	export function CreateGetVocabularyRequestFormGroup() {
 		return new FormGroup<GetVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1117,7 +1099,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName?: string | null;
-		LanguageCode?: GetVocabularyFilterResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 
 		/**
@@ -1133,7 +1115,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<GetVocabularyFilterResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 
 		/**
@@ -1144,15 +1126,13 @@ export namespace MyNS {
 	}
 	export function CreateGetVocabularyFilterResponseFormGroup() {
 		return new FormGroup<GetVocabularyFilterResponseFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<GetVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
-			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			DownloadUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum GetVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface GetVocabularyFilterRequest {
 
@@ -1174,7 +1154,7 @@ export namespace MyNS {
 	}
 	export function CreateGetVocabularyFilterRequestFormGroup() {
 		return new FormGroup<GetVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1212,7 +1192,7 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 		StartTime?: Date | null;
 		CompletionTime?: Date | null;
-		LanguageCode?: MedicalTranscriptionJobSummaryLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
 		FailureReason?: string | null;
 		OutputLocationType?: MedicalTranscriptionJobSummaryOutputLocationType | null;
@@ -1231,7 +1211,7 @@ export namespace MyNS {
 		CreationTime: FormControl<Date | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		CompletionTime: FormControl<Date | null | undefined>,
-		LanguageCode: FormControl<MedicalTranscriptionJobSummaryLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
 		FailureReason: FormControl<string | null | undefined>,
 		OutputLocationType: FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>,
@@ -1240,11 +1220,11 @@ export namespace MyNS {
 	}
 	export function CreateMedicalTranscriptionJobSummaryFormGroup() {
 		return new FormGroup<MedicalTranscriptionJobSummaryFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			CompletionTime: new FormControl<Date | null | undefined>(undefined),
-			LanguageCode: new FormControl<MedicalTranscriptionJobSummaryLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 			OutputLocationType: new FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>(undefined),
@@ -1253,8 +1233,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum MedicalTranscriptionJobSummaryLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export enum MedicalTranscriptionJobSummaryOutputLocationType { CUSTOMER_BUCKET = 0, SERVICE_BUCKET = 1 }
 
@@ -1297,7 +1275,7 @@ export namespace MyNS {
 	export function CreateListMedicalTranscriptionJobsRequestFormGroup() {
 		return new FormGroup<ListMedicalTranscriptionJobsRequestFormProperties>({
 			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -1334,7 +1312,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName?: string | null;
-		LanguageCode?: VocabularyInfoLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
@@ -1347,21 +1325,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<VocabularyInfoLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 	}
 	export function CreateVocabularyInfoFormGroup() {
 		return new FormGroup<VocabularyInfoFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<VocabularyInfoLanguageCode | null | undefined>(undefined),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum VocabularyInfoLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListMedicalVocabulariesRequest {
 
@@ -1404,7 +1380,7 @@ export namespace MyNS {
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StateEquals: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1442,7 +1418,7 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 		StartTime?: Date | null;
 		CompletionTime?: Date | null;
-		LanguageCode?: TranscriptionJobSummaryLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		TranscriptionJobStatus?: MedicalTranscriptionJobTranscriptionJobStatus | null;
 		FailureReason?: string | null;
 		OutputLocationType?: MedicalTranscriptionJobSummaryOutputLocationType | null;
@@ -1462,26 +1438,24 @@ export namespace MyNS {
 		CreationTime: FormControl<Date | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		CompletionTime: FormControl<Date | null | undefined>,
-		LanguageCode: FormControl<TranscriptionJobSummaryLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
 		FailureReason: FormControl<string | null | undefined>,
 		OutputLocationType: FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>,
 	}
 	export function CreateTranscriptionJobSummaryFormGroup() {
 		return new FormGroup<TranscriptionJobSummaryFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			CompletionTime: new FormControl<Date | null | undefined>(undefined),
-			LanguageCode: new FormControl<TranscriptionJobSummaryLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 			OutputLocationType: new FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum TranscriptionJobSummaryLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListTranscriptionJobsRequest {
 		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
@@ -1522,7 +1496,7 @@ export namespace MyNS {
 	export function CreateListTranscriptionJobsRequestFormGroup() {
 		return new FormGroup<ListTranscriptionJobsRequestFormProperties>({
 			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
-			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			JobNameContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -1591,7 +1565,7 @@ export namespace MyNS {
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StateEquals: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1623,7 +1597,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName?: string | null;
-		LanguageCode?: VocabularyFilterInfoLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 	}
 
@@ -1635,19 +1609,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<VocabularyFilterInfoLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateVocabularyFilterInfoFormGroup() {
 		return new FormGroup<VocabularyFilterInfoFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<VocabularyFilterInfoLanguageCode | null | undefined>(undefined),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum VocabularyFilterInfoLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListVocabularyFiltersRequest {
 
@@ -1687,7 +1659,7 @@ export namespace MyNS {
 		return new FormGroup<ListVocabularyFiltersRequestFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
 		});
 
 	}
@@ -1715,7 +1687,7 @@ export namespace MyNS {
 		MedicalTranscriptionJobName: string;
 
 		/** Required */
-		LanguageCode: StartMedicalTranscriptionJobRequestLanguageCode;
+		LanguageCode: CreateMedicalVocabularyResponseLanguageCode;
 
 		/**
 		 * Minimum: 8000
@@ -1761,7 +1733,7 @@ export namespace MyNS {
 		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
 
 		/** Required */
-		LanguageCode: FormControl<StartMedicalTranscriptionJobRequestLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Minimum: 8000
@@ -1790,19 +1762,17 @@ export namespace MyNS {
 	}
 	export function CreateStartMedicalTranscriptionJobRequestFormGroup() {
 		return new FormGroup<StartMedicalTranscriptionJobRequestFormProperties>({
-			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<StartMedicalTranscriptionJobRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined, [Validators.required]),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
 			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
 			OutputBucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.pattern('[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]')]),
-			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$')]),
+			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$')]),
 			Specialty: new FormControl<MedicalTranscriptionJobSpecialty | null | undefined>(undefined, [Validators.required]),
 			Type: new FormControl<MedicalTranscriptionJobType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum StartMedicalTranscriptionJobRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface StartTranscriptionJobResponse {
 
@@ -1827,7 +1797,7 @@ export namespace MyNS {
 		TranscriptionJobName: string;
 
 		/** Required */
-		LanguageCode: StartTranscriptionJobRequestLanguageCode;
+		LanguageCode: CreateMedicalVocabularyResponseLanguageCode;
 
 		/**
 		 * Minimum: 8000
@@ -1870,7 +1840,7 @@ export namespace MyNS {
 		TranscriptionJobName: FormControl<string | null | undefined>,
 
 		/** Required */
-		LanguageCode: FormControl<StartTranscriptionJobRequestLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Minimum: 8000
@@ -1890,17 +1860,15 @@ export namespace MyNS {
 	}
 	export function CreateStartTranscriptionJobRequestFormGroup() {
 		return new FormGroup<StartTranscriptionJobRequestFormProperties>({
-			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<StartTranscriptionJobRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined, [Validators.required]),
 			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined, [Validators.min(8000), Validators.max(48000)]),
 			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
 			OutputBucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.pattern('[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]')]),
-			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$')]),
+			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$')]),
 		});
 
 	}
-
-	export enum StartTranscriptionJobRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateMedicalVocabularyResponse {
 
@@ -1909,7 +1877,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName?: string | null;
-		LanguageCode?: UpdateMedicalVocabularyResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
@@ -1920,21 +1888,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<UpdateMedicalVocabularyResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 	}
 	export function CreateUpdateMedicalVocabularyResponseFormGroup() {
 		return new FormGroup<UpdateMedicalVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<UpdateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateMedicalVocabularyRequest {
 
@@ -1946,7 +1912,7 @@ export namespace MyNS {
 		VocabularyName: string;
 
 		/** Required */
-		LanguageCode: UpdateMedicalVocabularyRequestLanguageCode;
+		LanguageCode: CreateMedicalVocabularyResponseLanguageCode;
 
 		/**
 		 * Max length: 2000
@@ -1964,7 +1930,7 @@ export namespace MyNS {
 		VocabularyName: FormControl<string | null | undefined>,
 
 		/** Required */
-		LanguageCode: FormControl<UpdateMedicalVocabularyRequestLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Max length: 2000
@@ -1974,14 +1940,12 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMedicalVocabularyRequestFormGroup() {
 		return new FormGroup<UpdateMedicalVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<UpdateMedicalVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined, [Validators.required]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum UpdateMedicalVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyResponse {
 
@@ -1990,7 +1954,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName?: string | null;
-		LanguageCode?: UpdateVocabularyResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
@@ -2001,21 +1965,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<UpdateVocabularyResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
 	}
 	export function CreateUpdateVocabularyResponseFormGroup() {
 		return new FormGroup<UpdateVocabularyResponseFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<UpdateVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyRequest {
 
@@ -2027,7 +1989,7 @@ export namespace MyNS {
 		VocabularyName: string;
 
 		/** Required */
-		LanguageCode: UpdateVocabularyRequestLanguageCode;
+		LanguageCode: CreateMedicalVocabularyResponseLanguageCode;
 		Phrases?: Array<string>;
 
 		/**
@@ -2046,7 +2008,7 @@ export namespace MyNS {
 		VocabularyName: FormControl<string | null | undefined>,
 
 		/** Required */
-		LanguageCode: FormControl<UpdateVocabularyRequestLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 
 		/**
 		 * Max length: 2000
@@ -2056,14 +2018,12 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVocabularyRequestFormGroup() {
 		return new FormGroup<UpdateVocabularyRequestFormProperties>({
-			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<UpdateVocabularyRequestLanguageCode | null | undefined>(undefined, [Validators.required]),
-			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			VocabularyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined, [Validators.required]),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
-
-	export enum UpdateVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyFilterResponse {
 
@@ -2072,7 +2032,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName?: string | null;
-		LanguageCode?: UpdateVocabularyFilterResponseLanguageCode | null;
+		LanguageCode?: CreateMedicalVocabularyResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 	}
 	export interface UpdateVocabularyFilterResponseFormProperties {
@@ -2082,19 +2042,17 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		VocabularyFilterName: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<UpdateVocabularyFilterResponseLanguageCode | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 	}
 	export function CreateUpdateVocabularyFilterResponseFormGroup() {
 		return new FormGroup<UpdateVocabularyFilterResponseFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			LanguageCode: new FormControl<UpdateVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyFilterRequest {
 
@@ -2131,8 +2089,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVocabularyFilterRequestFormGroup() {
 		return new FormGroup<UpdateVocabularyFilterRequestFormProperties>({
-			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('^[0-9a-zA-Z._-]+')]),
-			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('(s3://|http(s*)://).+')]),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('^[0-9a-zA-Z._-]+')]),
+			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('(s3://|http(s*)://).+')]),
 		});
 
 	}
@@ -2141,7 +2099,7 @@ export namespace MyNS {
 
 	export enum RedactionOutput { redacted = 0, redacted_and_unredacted = 1 }
 
-	export enum LanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
+	export enum LanguageCode { 'en-US' = 0, 'es-US' = 1, 'en-AU' = 2, 'fr-CA' = 3, 'en-GB' = 4, 'de-DE' = 5, 'pt-BR' = 6, 'fr-FR' = 7, 'it-IT' = 8, 'ko-KR' = 9, 'es-ES' = 10, 'en-IN' = 11, 'hi-IN' = 12, 'ar-SA' = 13, 'ru-RU' = 14, 'zh-CN' = 15, 'nl-NL' = 16, 'id-ID' = 17, 'ta-IN' = 18, 'fa-IR' = 19, 'en-IE' = 20, 'en-AB' = 21, 'en-WL' = 22, 'pt-PT' = 23, 'te-IN' = 24, 'tr-TR' = 25, 'de-CH' = 26, 'he-IL' = 27, 'ms-MY' = 28, 'ja-JP' = 29, 'ar-AE' = 30 }
 
 	export enum VocabularyState { PENDING = 0, READY = 1, FAILED = 2 }
 
@@ -2380,51 +2338,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateMedicalVocabularyX_Amz_Target { Transcribe_CreateMedicalVocabulary = 0 }
+	export enum CreateMedicalVocabularyX_Amz_Target { 'Transcribe.CreateMedicalVocabulary' = 0 }
 
-	export enum CreateVocabularyX_Amz_Target { Transcribe_CreateVocabulary = 0 }
+	export enum CreateVocabularyX_Amz_Target { 'Transcribe.CreateVocabulary' = 0 }
 
-	export enum CreateVocabularyFilterX_Amz_Target { Transcribe_CreateVocabularyFilter = 0 }
+	export enum CreateVocabularyFilterX_Amz_Target { 'Transcribe.CreateVocabularyFilter' = 0 }
 
-	export enum DeleteMedicalTranscriptionJobX_Amz_Target { Transcribe_DeleteMedicalTranscriptionJob = 0 }
+	export enum DeleteMedicalTranscriptionJobX_Amz_Target { 'Transcribe.DeleteMedicalTranscriptionJob' = 0 }
 
-	export enum DeleteMedicalVocabularyX_Amz_Target { Transcribe_DeleteMedicalVocabulary = 0 }
+	export enum DeleteMedicalVocabularyX_Amz_Target { 'Transcribe.DeleteMedicalVocabulary' = 0 }
 
-	export enum DeleteTranscriptionJobX_Amz_Target { Transcribe_DeleteTranscriptionJob = 0 }
+	export enum DeleteTranscriptionJobX_Amz_Target { 'Transcribe.DeleteTranscriptionJob' = 0 }
 
-	export enum DeleteVocabularyX_Amz_Target { Transcribe_DeleteVocabulary = 0 }
+	export enum DeleteVocabularyX_Amz_Target { 'Transcribe.DeleteVocabulary' = 0 }
 
-	export enum DeleteVocabularyFilterX_Amz_Target { Transcribe_DeleteVocabularyFilter = 0 }
+	export enum DeleteVocabularyFilterX_Amz_Target { 'Transcribe.DeleteVocabularyFilter' = 0 }
 
-	export enum GetMedicalTranscriptionJobX_Amz_Target { Transcribe_GetMedicalTranscriptionJob = 0 }
+	export enum GetMedicalTranscriptionJobX_Amz_Target { 'Transcribe.GetMedicalTranscriptionJob' = 0 }
 
-	export enum GetMedicalVocabularyX_Amz_Target { Transcribe_GetMedicalVocabulary = 0 }
+	export enum GetMedicalVocabularyX_Amz_Target { 'Transcribe.GetMedicalVocabulary' = 0 }
 
-	export enum GetTranscriptionJobX_Amz_Target { Transcribe_GetTranscriptionJob = 0 }
+	export enum GetTranscriptionJobX_Amz_Target { 'Transcribe.GetTranscriptionJob' = 0 }
 
-	export enum GetVocabularyX_Amz_Target { Transcribe_GetVocabulary = 0 }
+	export enum GetVocabularyX_Amz_Target { 'Transcribe.GetVocabulary' = 0 }
 
-	export enum GetVocabularyFilterX_Amz_Target { Transcribe_GetVocabularyFilter = 0 }
+	export enum GetVocabularyFilterX_Amz_Target { 'Transcribe.GetVocabularyFilter' = 0 }
 
-	export enum ListMedicalTranscriptionJobsX_Amz_Target { Transcribe_ListMedicalTranscriptionJobs = 0 }
+	export enum ListMedicalTranscriptionJobsX_Amz_Target { 'Transcribe.ListMedicalTranscriptionJobs' = 0 }
 
-	export enum ListMedicalVocabulariesX_Amz_Target { Transcribe_ListMedicalVocabularies = 0 }
+	export enum ListMedicalVocabulariesX_Amz_Target { 'Transcribe.ListMedicalVocabularies' = 0 }
 
-	export enum ListTranscriptionJobsX_Amz_Target { Transcribe_ListTranscriptionJobs = 0 }
+	export enum ListTranscriptionJobsX_Amz_Target { 'Transcribe.ListTranscriptionJobs' = 0 }
 
-	export enum ListVocabulariesX_Amz_Target { Transcribe_ListVocabularies = 0 }
+	export enum ListVocabulariesX_Amz_Target { 'Transcribe.ListVocabularies' = 0 }
 
-	export enum ListVocabularyFiltersX_Amz_Target { Transcribe_ListVocabularyFilters = 0 }
+	export enum ListVocabularyFiltersX_Amz_Target { 'Transcribe.ListVocabularyFilters' = 0 }
 
-	export enum StartMedicalTranscriptionJobX_Amz_Target { Transcribe_StartMedicalTranscriptionJob = 0 }
+	export enum StartMedicalTranscriptionJobX_Amz_Target { 'Transcribe.StartMedicalTranscriptionJob' = 0 }
 
-	export enum StartTranscriptionJobX_Amz_Target { Transcribe_StartTranscriptionJob = 0 }
+	export enum StartTranscriptionJobX_Amz_Target { 'Transcribe.StartTranscriptionJob' = 0 }
 
-	export enum UpdateMedicalVocabularyX_Amz_Target { Transcribe_UpdateMedicalVocabulary = 0 }
+	export enum UpdateMedicalVocabularyX_Amz_Target { 'Transcribe.UpdateMedicalVocabulary' = 0 }
 
-	export enum UpdateVocabularyX_Amz_Target { Transcribe_UpdateVocabulary = 0 }
+	export enum UpdateVocabularyX_Amz_Target { 'Transcribe.UpdateVocabulary' = 0 }
 
-	export enum UpdateVocabularyFilterX_Amz_Target { Transcribe_UpdateVocabularyFilter = 0 }
+	export enum UpdateVocabularyFilterX_Amz_Target { 'Transcribe.UpdateVocabularyFilter' = 0 }
 
 }
 

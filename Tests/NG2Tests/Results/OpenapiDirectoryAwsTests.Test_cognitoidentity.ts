@@ -66,11 +66,11 @@ export namespace MyNS {
 	}
 	export function CreateIdentityPoolFormGroup() {
 		return new FormGroup<IdentityPoolFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\s+=,.@-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w\s+=,.@-]+')]),
 			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			AllowClassicFlow: new FormControl<boolean | null | undefined>(undefined),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w._-]+')]),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w._-]+')]),
 		});
 
 	}
@@ -121,8 +121,8 @@ export namespace MyNS {
 	}
 	export function CreateCognitoIdentityProviderFormGroup() {
 		return new FormGroup<CognitoIdentityProviderFormProperties>({
-			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w._:/-]+')]),
-			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w_]+')]),
+			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w._:/-]+')]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w_]+')]),
 			ServerSideTokenCheck: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -187,10 +187,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateIdentityPoolInputFormGroup() {
 		return new FormGroup<CreateIdentityPoolInputFormProperties>({
-			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\s+=,.@-]+')]),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w\s+=,.@-]+')]),
 			AllowUnauthenticatedIdentities: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			AllowClassicFlow: new FormControl<boolean | null | undefined>(undefined),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w._-]+')]),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w._-]+')]),
 		});
 
 	}
@@ -296,7 +296,7 @@ export namespace MyNS {
 	}
 	export function CreateUnprocessedIdentityIdFormGroup() {
 		return new FormGroup<UnprocessedIdentityIdFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			ErrorCode: new FormControl<UnprocessedIdentityIdErrorCode | null | undefined>(undefined),
 		});
 
@@ -349,7 +349,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteIdentityPoolInputFormGroup() {
 		return new FormGroup<DeleteIdentityPoolInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -391,7 +391,7 @@ export namespace MyNS {
 	}
 	export function CreateIdentityDescriptionFormGroup() {
 		return new FormGroup<IdentityDescriptionFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -422,7 +422,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeIdentityInputFormGroup() {
 		return new FormGroup<DescribeIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -451,7 +451,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeIdentityPoolInputFormGroup() {
 		return new FormGroup<DescribeIdentityPoolInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -481,7 +481,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCredentialsForIdentityResponseFormGroup() {
 		return new FormGroup<GetCredentialsForIdentityResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -549,8 +549,8 @@ export namespace MyNS {
 	}
 	export function CreateGetCredentialsForIdentityInputFormGroup() {
 		return new FormGroup<GetCredentialsForIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			CustomRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			CustomRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -607,7 +607,7 @@ export namespace MyNS {
 	}
 	export function CreateGetIdResponseFormGroup() {
 		return new FormGroup<GetIdResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -649,8 +649,8 @@ export namespace MyNS {
 	}
 	export function CreateGetIdInputFormGroup() {
 		return new FormGroup<GetIdInputFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(1), Validators.pattern('\d+')]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(15), Validators.pattern('\d+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -679,7 +679,7 @@ export namespace MyNS {
 	}
 	export function CreateGetIdentityPoolRolesResponseFormGroup() {
 		return new FormGroup<GetIdentityPoolRolesResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -728,7 +728,7 @@ export namespace MyNS {
 	}
 	export function CreateGetIdentityPoolRolesInputFormGroup() {
 		return new FormGroup<GetIdentityPoolRolesInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -757,7 +757,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOpenIdTokenResponseFormGroup() {
 		return new FormGroup<GetOpenIdTokenResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			Token: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -788,7 +788,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOpenIdTokenInputFormGroup() {
 		return new FormGroup<GetOpenIdTokenInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -817,7 +817,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOpenIdTokenForDeveloperIdentityResponseFormGroup() {
 		return new FormGroup<GetOpenIdTokenForDeveloperIdentityResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			Token: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -874,8 +874,8 @@ export namespace MyNS {
 	}
 	export function CreateGetOpenIdTokenForDeveloperIdentityInputFormGroup() {
 		return new FormGroup<GetOpenIdTokenForDeveloperIdentityInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			TokenDuration: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(86400)]),
 		});
 
@@ -920,7 +920,7 @@ export namespace MyNS {
 	}
 	export function CreateListIdentitiesResponseFormGroup() {
 		return new FormGroup<ListIdentitiesResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[\S]+')]),
 		});
 
@@ -972,7 +972,7 @@ export namespace MyNS {
 	}
 	export function CreateListIdentitiesInputFormGroup() {
 		return new FormGroup<ListIdentitiesInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(60)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[\S]+')]),
 			HideDisabled: new FormControl<boolean | null | undefined>(undefined),
@@ -1036,8 +1036,8 @@ export namespace MyNS {
 	}
 	export function CreateIdentityPoolShortDescriptionFormGroup() {
 		return new FormGroup<IdentityPoolShortDescriptionFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w\s+=,.@-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w\s+=,.@-]+')]),
 		});
 
 	}
@@ -1109,7 +1109,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1143,7 +1143,7 @@ export namespace MyNS {
 	}
 	export function CreateLookupDeveloperIdentityResponseFormGroup() {
 		return new FormGroup<LookupDeveloperIdentityResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[\S]+')]),
 		});
 
@@ -1215,9 +1215,9 @@ export namespace MyNS {
 	}
 	export function CreateLookupDeveloperIdentityInputFormGroup() {
 		return new FormGroup<LookupDeveloperIdentityInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(60)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[\S]+')]),
 		});
@@ -1246,7 +1246,7 @@ export namespace MyNS {
 	}
 	export function CreateMergeDeveloperIdentitiesResponseFormGroup() {
 		return new FormGroup<MergeDeveloperIdentitiesResponseFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -1317,10 +1317,10 @@ export namespace MyNS {
 	}
 	export function CreateMergeDeveloperIdentitiesInputFormGroup() {
 		return new FormGroup<MergeDeveloperIdentitiesInputFormProperties>({
-			SourceUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			DestinationUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w._-]+')]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			SourceUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			DestinationUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w._-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -1353,7 +1353,7 @@ export namespace MyNS {
 	}
 	export function CreateSetIdentityPoolRolesInputFormGroup() {
 		return new FormGroup<SetIdentityPoolRolesInputFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -1401,7 +1401,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1472,10 +1472,10 @@ export namespace MyNS {
 	}
 	export function CreateUnlinkDeveloperIdentityInputFormGroup() {
 		return new FormGroup<UnlinkDeveloperIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w._-]+')]),
-			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			DeveloperProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w._-]+')]),
+			DeveloperUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1510,7 +1510,7 @@ export namespace MyNS {
 	}
 	export function CreateUnlinkIdentityInputFormGroup() {
 		return new FormGroup<UnlinkIdentityInputFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -1548,7 +1548,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1617,10 +1617,10 @@ export namespace MyNS {
 	}
 	export function CreateMappingRuleFormGroup() {
 		return new FormGroup<MappingRuleFormProperties>({
-			Claim: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[\p{L}\p{M}\p{S}\p{N}\p{P}]+')]),
+			Claim: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[\p{L}\p{M}\p{S}\p{N}\p{P}]+')]),
 			MatchType: new FormControl<MappingRuleMatchType | null | undefined>(undefined, [Validators.required]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1870,47 +1870,47 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateIdentityPoolX_Amz_Target { AWSCognitoIdentityService_CreateIdentityPool = 0 }
+	export enum CreateIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.CreateIdentityPool' = 0 }
 
-	export enum DeleteIdentitiesX_Amz_Target { AWSCognitoIdentityService_DeleteIdentities = 0 }
+	export enum DeleteIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.DeleteIdentities' = 0 }
 
-	export enum DeleteIdentityPoolX_Amz_Target { AWSCognitoIdentityService_DeleteIdentityPool = 0 }
+	export enum DeleteIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.DeleteIdentityPool' = 0 }
 
-	export enum DescribeIdentityX_Amz_Target { AWSCognitoIdentityService_DescribeIdentity = 0 }
+	export enum DescribeIdentityX_Amz_Target { 'AWSCognitoIdentityService.DescribeIdentity' = 0 }
 
-	export enum DescribeIdentityPoolX_Amz_Target { AWSCognitoIdentityService_DescribeIdentityPool = 0 }
+	export enum DescribeIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.DescribeIdentityPool' = 0 }
 
-	export enum GetCredentialsForIdentityX_Amz_Target { AWSCognitoIdentityService_GetCredentialsForIdentity = 0 }
+	export enum GetCredentialsForIdentityX_Amz_Target { 'AWSCognitoIdentityService.GetCredentialsForIdentity' = 0 }
 
-	export enum GetIdX_Amz_Target { AWSCognitoIdentityService_GetId = 0 }
+	export enum GetIdX_Amz_Target { 'AWSCognitoIdentityService.GetId' = 0 }
 
-	export enum GetIdentityPoolRolesX_Amz_Target { AWSCognitoIdentityService_GetIdentityPoolRoles = 0 }
+	export enum GetIdentityPoolRolesX_Amz_Target { 'AWSCognitoIdentityService.GetIdentityPoolRoles' = 0 }
 
-	export enum GetOpenIdTokenX_Amz_Target { AWSCognitoIdentityService_GetOpenIdToken = 0 }
+	export enum GetOpenIdTokenX_Amz_Target { 'AWSCognitoIdentityService.GetOpenIdToken' = 0 }
 
-	export enum GetOpenIdTokenForDeveloperIdentityX_Amz_Target { AWSCognitoIdentityService_GetOpenIdTokenForDeveloperIdentity = 0 }
+	export enum GetOpenIdTokenForDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity' = 0 }
 
-	export enum ListIdentitiesX_Amz_Target { AWSCognitoIdentityService_ListIdentities = 0 }
+	export enum ListIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.ListIdentities' = 0 }
 
-	export enum ListIdentityPoolsX_Amz_Target { AWSCognitoIdentityService_ListIdentityPools = 0 }
+	export enum ListIdentityPoolsX_Amz_Target { 'AWSCognitoIdentityService.ListIdentityPools' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AWSCognitoIdentityService_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSCognitoIdentityService.ListTagsForResource' = 0 }
 
-	export enum LookupDeveloperIdentityX_Amz_Target { AWSCognitoIdentityService_LookupDeveloperIdentity = 0 }
+	export enum LookupDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.LookupDeveloperIdentity' = 0 }
 
-	export enum MergeDeveloperIdentitiesX_Amz_Target { AWSCognitoIdentityService_MergeDeveloperIdentities = 0 }
+	export enum MergeDeveloperIdentitiesX_Amz_Target { 'AWSCognitoIdentityService.MergeDeveloperIdentities' = 0 }
 
-	export enum SetIdentityPoolRolesX_Amz_Target { AWSCognitoIdentityService_SetIdentityPoolRoles = 0 }
+	export enum SetIdentityPoolRolesX_Amz_Target { 'AWSCognitoIdentityService.SetIdentityPoolRoles' = 0 }
 
-	export enum TagResourceX_Amz_Target { AWSCognitoIdentityService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSCognitoIdentityService.TagResource' = 0 }
 
-	export enum UnlinkDeveloperIdentityX_Amz_Target { AWSCognitoIdentityService_UnlinkDeveloperIdentity = 0 }
+	export enum UnlinkDeveloperIdentityX_Amz_Target { 'AWSCognitoIdentityService.UnlinkDeveloperIdentity' = 0 }
 
-	export enum UnlinkIdentityX_Amz_Target { AWSCognitoIdentityService_UnlinkIdentity = 0 }
+	export enum UnlinkIdentityX_Amz_Target { 'AWSCognitoIdentityService.UnlinkIdentity' = 0 }
 
-	export enum UntagResourceX_Amz_Target { AWSCognitoIdentityService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSCognitoIdentityService.UntagResource' = 0 }
 
-	export enum UpdateIdentityPoolX_Amz_Target { AWSCognitoIdentityService_UpdateIdentityPool = 0 }
+	export enum UpdateIdentityPoolX_Amz_Target { 'AWSCognitoIdentityService.UpdateIdentityPool' = 0 }
 
 }
 

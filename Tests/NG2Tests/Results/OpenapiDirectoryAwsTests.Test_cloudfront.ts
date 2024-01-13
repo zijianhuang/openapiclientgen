@@ -579,7 +579,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CustomOriginConfigOriginProtocolPolicy { http_only = 0, match_viewer = 1, https_only = 2 }
+	export enum CustomOriginConfigOriginProtocolPolicy { 'http-only' = 0, 'match-viewer' = 1, 'https-only' = 2 }
 
 
 	/** A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.  */
@@ -605,7 +605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SslProtocol { SSLv3 = 0, TLSv1 = 1, TLSv1_1 = 2, TLSv1_2 = 3 }
+	export enum SslProtocol { SSLv3 = 0, TLSv1 = 1, 'TLSv1.1' = 2, 'TLSv1.2' = 3 }
 
 
 	/** A complex data type for the origin groups specified for a distribution. */
@@ -984,7 +984,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DefaultCacheBehaviorViewerProtocolPolicy { allow_all = 0, https_only = 1, redirect_to_https = 2 }
+	export enum DefaultCacheBehaviorViewerProtocolPolicy { 'allow-all' = 0, 'https-only' = 1, 'redirect-to-https' = 2 }
 
 
 	/** <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> <ul> <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li> <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li> </ul> <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p> */
@@ -1092,7 +1092,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LambdaFunctionAssociationEventType { viewer_request = 0, viewer_response = 1, origin_request = 2, origin_response = 3 }
+	export enum LambdaFunctionAssociationEventType { 'viewer-request' = 0, 'viewer-response' = 1, 'origin-request' = 2, 'origin-response' = 3 }
 
 
 	/** A complex type that contains zero or more <code>CacheBehavior</code> elements.  */
@@ -1139,7 +1139,7 @@ export namespace MyNS {
 		TrustedSigners: TrustedSigners;
 
 		/** Required */
-		ViewerProtocolPolicy: CacheBehaviorViewerProtocolPolicy;
+		ViewerProtocolPolicy: DefaultCacheBehaviorViewerProtocolPolicy;
 
 		/** Required */
 		MinTTL: number;
@@ -1166,7 +1166,7 @@ export namespace MyNS {
 		TargetOriginId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ViewerProtocolPolicy: FormControl<CacheBehaviorViewerProtocolPolicy | null | undefined>,
+		ViewerProtocolPolicy: FormControl<DefaultCacheBehaviorViewerProtocolPolicy | null | undefined>,
 
 		/** Required */
 		MinTTL: FormControl<number | null | undefined>,
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 		return new FormGroup<CacheBehaviorFormProperties>({
 			PathPattern: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetOriginId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ViewerProtocolPolicy: new FormControl<CacheBehaviorViewerProtocolPolicy | null | undefined>(undefined, [Validators.required]),
+			ViewerProtocolPolicy: new FormControl<DefaultCacheBehaviorViewerProtocolPolicy | null | undefined>(undefined, [Validators.required]),
 			MinTTL: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			SmoothStreaming: new FormControl<boolean | null | undefined>(undefined),
 			DefaultTTL: new FormControl<number | null | undefined>(undefined),
@@ -1190,8 +1190,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum CacheBehaviorViewerProtocolPolicy { allow_all = 0, https_only = 1, redirect_to_https = 2 }
 
 
 	/** <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error messages before returning the response to the viewer.</p> </li> <li> <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> */
@@ -1324,9 +1322,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ViewerCertificateSSLSupportMethod { sni_only = 0, vip = 1 }
+	export enum ViewerCertificateSSLSupportMethod { 'sni-only' = 0, vip = 1 }
 
-	export enum ViewerCertificateMinimumProtocolVersion { SSLv3 = 0, TLSv1 = 1, TLSv1_2016 = 2, TLSv1_1_2016 = 3, TLSv1_2_2018 = 4 }
+	export enum ViewerCertificateMinimumProtocolVersion { SSLv3 = 0, TLSv1 = 1, TLSv1_2016 = 2, 'TLSv1.1_2016' = 3, 'TLSv1.2_2018' = 4 }
 
 	export enum ViewerCertificateCertificateSource { cloudfront = 0, iam = 1, acm = 2 }
 
@@ -1381,7 +1379,7 @@ export namespace MyNS {
 
 	export enum GeoRestrictionRestrictionType { blacklist = 0, whitelist = 1, none = 2 }
 
-	export enum DistributionConfigHttpVersion { http1_1 = 0, http2 = 1 }
+	export enum DistributionConfigHttpVersion { 'http1.1' = 0, http2 = 1 }
 
 
 	/** <p>AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.</p> <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.</p> */
@@ -1407,7 +1405,7 @@ export namespace MyNS {
 
 	export enum PriceClass { PriceClass_100 = 0, PriceClass_200 = 1, PriceClass_All = 2 }
 
-	export enum HttpVersion { http1_1 = 0, http2 = 1 }
+	export enum HttpVersion { 'http1.1' = 0, http2 = 1 }
 
 	export interface CNAMEAlreadyExists {
 	}
@@ -1889,8 +1887,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -3444,7 +3442,7 @@ export namespace MyNS {
 		WebACLId: string;
 
 		/** Required */
-		HttpVersion: DistributionSummaryHttpVersion;
+		HttpVersion: DistributionConfigHttpVersion;
 
 		/** Required */
 		IsIPV6Enabled: boolean;
@@ -3482,7 +3480,7 @@ export namespace MyNS {
 		WebACLId: FormControl<string | null | undefined>,
 
 		/** Required */
-		HttpVersion: FormControl<DistributionSummaryHttpVersion | null | undefined>,
+		HttpVersion: FormControl<DistributionConfigHttpVersion | null | undefined>,
 
 		/** Required */
 		IsIPV6Enabled: FormControl<boolean | null | undefined>,
@@ -3498,13 +3496,11 @@ export namespace MyNS {
 			PriceClass: new FormControl<DistributionConfigPriceClass | null | undefined>(undefined, [Validators.required]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			HttpVersion: new FormControl<DistributionSummaryHttpVersion | null | undefined>(undefined, [Validators.required]),
+			HttpVersion: new FormControl<DistributionConfigHttpVersion | null | undefined>(undefined, [Validators.required]),
 			IsIPV6Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum DistributionSummaryHttpVersion { http1_1 = 0, http2 = 1 }
 
 
 	/** The response to a request to list the distributions that are associated with a specified AWS WAF web ACL.  */
@@ -4175,7 +4171,7 @@ export namespace MyNS {
 
 	export enum ICPRecordalStatus { APPROVED = 0, SUSPENDED = 1, PENDING = 2 }
 
-	export enum ViewerProtocolPolicy { allow_all = 0, https_only = 1, redirect_to_https = 2 }
+	export enum ViewerProtocolPolicy { 'allow-all' = 0, 'https-only' = 1, 'redirect-to-https' = 2 }
 
 	export enum CertificateSource { cloudfront = 0, iam = 1, acm = 2 }
 
@@ -4403,7 +4399,7 @@ export namespace MyNS {
 
 	}
 
-	export enum OriginProtocolPolicy { http_only = 0, match_viewer = 1, https_only = 2 }
+	export enum OriginProtocolPolicy { 'http-only' = 0, 'match-viewer' = 1, 'https-only' = 2 }
 
 
 	/** Deletes a origin access identity. */
@@ -4477,7 +4473,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventType { viewer_request = 0, viewer_response = 1, origin_request = 2, origin_response = 3 }
+	export enum EventType { 'viewer-request' = 0, 'viewer-response' = 1, 'origin-request' = 2, 'origin-response' = 3 }
 
 	export enum GeoRestrictionType { blacklist = 0, whitelist = 1, none = 2 }
 
@@ -4753,9 +4749,9 @@ export namespace MyNS {
 
 	}
 
-	export enum MinimumProtocolVersion { SSLv3 = 0, TLSv1 = 1, TLSv1_2016 = 2, TLSv1_1_2016 = 3, TLSv1_2_2018 = 4 }
+	export enum MinimumProtocolVersion { SSLv3 = 0, TLSv1 = 1, TLSv1_2016 = 2, 'TLSv1.1_2016' = 3, 'TLSv1.2_2018' = 4 }
 
-	export enum SSLSupportMethod { sni_only = 0, vip = 1 }
+	export enum SSLSupportMethod { 'sni-only' = 0, vip = 1 }
 
 
 	/**  A complex type that contains zero or more <code>Tag</code> elements. */

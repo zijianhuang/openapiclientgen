@@ -57,7 +57,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateNodeRequestFormGroup() {
 		return new FormGroup<AssociateNodeRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			NodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.pattern('^[\-\p{Alnum}_:.]+$')]),
 		});
 
@@ -296,7 +296,7 @@ export namespace MyNS {
 			S3DataSize: new FormControl<number | null | undefined>(undefined),
 			S3DataUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			S3LogUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			ServiceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			Status: new FormControl<BackupStatus | null | undefined>(undefined),
 			StatusDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
@@ -342,7 +342,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBackupRequestFormGroup() {
 		return new FormGroup<CreateBackupRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 		});
 
@@ -386,8 +386,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -727,7 +727,7 @@ export namespace MyNS {
 			EngineModel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			EngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			BackupRetentionCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			InstanceProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.pattern('arn:aws:iam::[0-9]{12}:instance-profile/.*')]),
 			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			KeyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('.*')]),
@@ -812,7 +812,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteServerRequestFormGroup() {
 		return new FormGroup<DeleteServerRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 		});
 
 	}
@@ -922,7 +922,7 @@ export namespace MyNS {
 	export function CreateDescribeBackupsRequestFormGroup() {
 		return new FormGroup<DescribeBackupsRequestFormProperties>({
 			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(79), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-\.\:]*')]),
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -1027,7 +1027,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventsRequestFormGroup() {
 		return new FormGroup<DescribeEventsRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -1087,7 +1087,7 @@ export namespace MyNS {
 	export function CreateDescribeNodeAssociationStatusRequestFormGroup() {
 		return new FormGroup<DescribeNodeAssociationStatusRequestFormProperties>({
 			NodeAssociationStatusToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 		});
 
 	}
@@ -1140,7 +1140,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeServersRequestFormGroup() {
 		return new FormGroup<DescribeServersRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -1199,7 +1199,7 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateNodeRequestFormGroup() {
 		return new FormGroup<DisassociateNodeRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			NodeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.pattern('^[\-\p{Alnum}_:.]+$')]),
 		});
 
@@ -1226,7 +1226,7 @@ export namespace MyNS {
 	}
 	export function CreateExportServerEngineAttributeResponseFormGroup() {
 		return new FormGroup<ExportServerEngineAttributeResponseFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 		});
 
 	}
@@ -1265,7 +1265,7 @@ export namespace MyNS {
 	export function CreateExportServerEngineAttributeRequestFormGroup() {
 		return new FormGroup<ExportServerEngineAttributeRequestFormProperties>({
 			ExportAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 		});
 
 	}
@@ -1317,7 +1317,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -1379,7 +1379,7 @@ export namespace MyNS {
 	export function CreateRestoreServerRequestFormGroup() {
 		return new FormGroup<RestoreServerRequestFormProperties>({
 			BackupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(79), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-\.\:]*')]),
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 			KeyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('.*')]),
 		});
@@ -1420,7 +1420,7 @@ export namespace MyNS {
 	}
 	export function CreateStartMaintenanceRequestFormGroup() {
 		return new FormGroup<StartMaintenanceRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 		});
 
 	}
@@ -1454,7 +1454,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*')]),
 		});
 
 	}
@@ -1488,7 +1488,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws.*:opsworks-cm:.*:[0-9]{12}:.*')]),
 		});
 
 	}
@@ -1556,7 +1556,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateServerRequestFormProperties>({
 			DisableAutomatedBackup: new FormControl<boolean | null | undefined>(undefined),
 			BackupRetentionCount: new FormControl<number | null | undefined>(undefined),
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$')]),
 			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('^((Mon|Tue|Wed|Thu|Fri|Sat|Sun):)?([0-1][0-9]|2[0-3]):[0-5][0-9]$')]),
 		});
@@ -1616,8 +1616,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateServerEngineAttributesRequestFormGroup() {
 		return new FormGroup<UpdateServerEngineAttributesRequestFormProperties>({
-			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
-			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Z][A-Z0-9_]*')]),
+			ServerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40), Validators.pattern('[a-zA-Z][a-zA-Z0-9\-]*')]),
+			AttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Z][A-Z0-9_]*')]),
 			AttributeValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.pattern('\(\?s\).*')]),
 		});
 
@@ -1816,43 +1816,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateNodeX_Amz_Target { OpsWorksCM_V2016_11_01_AssociateNode = 0 }
+	export enum AssociateNodeX_Amz_Target { 'OpsWorksCM_V2016_11_01.AssociateNode' = 0 }
 
-	export enum CreateBackupX_Amz_Target { OpsWorksCM_V2016_11_01_CreateBackup = 0 }
+	export enum CreateBackupX_Amz_Target { 'OpsWorksCM_V2016_11_01.CreateBackup' = 0 }
 
-	export enum CreateServerX_Amz_Target { OpsWorksCM_V2016_11_01_CreateServer = 0 }
+	export enum CreateServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.CreateServer' = 0 }
 
-	export enum DeleteBackupX_Amz_Target { OpsWorksCM_V2016_11_01_DeleteBackup = 0 }
+	export enum DeleteBackupX_Amz_Target { 'OpsWorksCM_V2016_11_01.DeleteBackup' = 0 }
 
-	export enum DeleteServerX_Amz_Target { OpsWorksCM_V2016_11_01_DeleteServer = 0 }
+	export enum DeleteServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.DeleteServer' = 0 }
 
-	export enum DescribeAccountAttributesX_Amz_Target { OpsWorksCM_V2016_11_01_DescribeAccountAttributes = 0 }
+	export enum DescribeAccountAttributesX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeAccountAttributes' = 0 }
 
-	export enum DescribeBackupsX_Amz_Target { OpsWorksCM_V2016_11_01_DescribeBackups = 0 }
+	export enum DescribeBackupsX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeBackups' = 0 }
 
-	export enum DescribeEventsX_Amz_Target { OpsWorksCM_V2016_11_01_DescribeEvents = 0 }
+	export enum DescribeEventsX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeEvents' = 0 }
 
-	export enum DescribeNodeAssociationStatusX_Amz_Target { OpsWorksCM_V2016_11_01_DescribeNodeAssociationStatus = 0 }
+	export enum DescribeNodeAssociationStatusX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeNodeAssociationStatus' = 0 }
 
-	export enum DescribeServersX_Amz_Target { OpsWorksCM_V2016_11_01_DescribeServers = 0 }
+	export enum DescribeServersX_Amz_Target { 'OpsWorksCM_V2016_11_01.DescribeServers' = 0 }
 
-	export enum DisassociateNodeX_Amz_Target { OpsWorksCM_V2016_11_01_DisassociateNode = 0 }
+	export enum DisassociateNodeX_Amz_Target { 'OpsWorksCM_V2016_11_01.DisassociateNode' = 0 }
 
-	export enum ExportServerEngineAttributeX_Amz_Target { OpsWorksCM_V2016_11_01_ExportServerEngineAttribute = 0 }
+	export enum ExportServerEngineAttributeX_Amz_Target { 'OpsWorksCM_V2016_11_01.ExportServerEngineAttribute' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { OpsWorksCM_V2016_11_01_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.ListTagsForResource' = 0 }
 
-	export enum RestoreServerX_Amz_Target { OpsWorksCM_V2016_11_01_RestoreServer = 0 }
+	export enum RestoreServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.RestoreServer' = 0 }
 
-	export enum StartMaintenanceX_Amz_Target { OpsWorksCM_V2016_11_01_StartMaintenance = 0 }
+	export enum StartMaintenanceX_Amz_Target { 'OpsWorksCM_V2016_11_01.StartMaintenance' = 0 }
 
-	export enum TagResourceX_Amz_Target { OpsWorksCM_V2016_11_01_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { OpsWorksCM_V2016_11_01_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'OpsWorksCM_V2016_11_01.UntagResource' = 0 }
 
-	export enum UpdateServerX_Amz_Target { OpsWorksCM_V2016_11_01_UpdateServer = 0 }
+	export enum UpdateServerX_Amz_Target { 'OpsWorksCM_V2016_11_01.UpdateServer' = 0 }
 
-	export enum UpdateServerEngineAttributesX_Amz_Target { OpsWorksCM_V2016_11_01_UpdateServerEngineAttributes = 0 }
+	export enum UpdateServerEngineAttributesX_Amz_Target { 'OpsWorksCM_V2016_11_01.UpdateServerEngineAttributes' = 0 }
 
 }
 

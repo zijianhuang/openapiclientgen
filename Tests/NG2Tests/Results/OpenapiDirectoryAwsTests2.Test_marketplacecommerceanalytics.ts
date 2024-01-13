@@ -89,7 +89,7 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataSetRequestFormGroup() {
 		return new FormGroup<GenerateDataSetRequestFormProperties>({
-			dataSetType: new FormControl<GenerateDataSetRequestDataSetType | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			dataSetType: new FormControl<GenerateDataSetRequestDataSetType | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			dataSetPublicationDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			roleNameArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			destinationS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
@@ -207,7 +207,7 @@ export namespace MyNS {
 	}
 	export function CreateStartSupportDataExportRequestFormGroup() {
 		return new FormGroup<StartSupportDataExportRequestFormProperties>({
-			dataSetType: new FormControl<StartSupportDataExportRequestDataSetType | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			dataSetType: new FormControl<StartSupportDataExportRequestDataSetType | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			fromDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			roleNameArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			destinationS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
@@ -247,9 +247,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GenerateDataSetX_Amz_Target { MarketplaceCommerceAnalytics20150701_GenerateDataSet = 0 }
+	export enum GenerateDataSetX_Amz_Target { 'MarketplaceCommerceAnalytics20150701.GenerateDataSet' = 0 }
 
-	export enum StartSupportDataExportX_Amz_Target { MarketplaceCommerceAnalytics20150701_StartSupportDataExport = 0 }
+	export enum StartSupportDataExportX_Amz_Target { 'MarketplaceCommerceAnalytics20150701.StartSupportDataExport' = 0 }
 
 }
 

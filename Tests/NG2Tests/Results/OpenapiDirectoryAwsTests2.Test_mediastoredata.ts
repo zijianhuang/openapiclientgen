@@ -129,11 +129,11 @@ export namespace MyNS {
 	}
 	export function CreateItemFormGroup() {
 		return new FormGroup<ItemFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[A-Za-z0-9_\.\-\~]+')]),
 			Type: new FormControl<ItemType | null | undefined>(undefined),
-			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[0-9A-Fa-f]+')]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[0-9A-Fa-f]+')]),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w\-\/\.\+]{1,255}$')]),
 			ContentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -183,9 +183,9 @@ export namespace MyNS {
 	}
 	export function CreatePutObjectResponseFormGroup() {
 		return new FormGroup<PutObjectResponseFormProperties>({
-			ContentSHA256: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(64), Validators.pattern('[0-9A-Fa-f]{64}')]),
-			ETag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[0-9A-Fa-f]+')]),
-			StorageClass: new FormControl<PutObjectResponseStorageClass | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1)]),
+			ContentSHA256: new FormControl<string | null | undefined>(undefined, [Validators.minLength(64), Validators.maxLength(64), Validators.pattern('[0-9A-Fa-f]{64}')]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[0-9A-Fa-f]+')]),
+			StorageClass: new FormControl<PutObjectResponseStorageClass | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(16)]),
 		});
 
 	}

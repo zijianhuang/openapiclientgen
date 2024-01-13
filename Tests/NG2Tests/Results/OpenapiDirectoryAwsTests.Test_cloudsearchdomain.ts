@@ -342,7 +342,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ContentType { application_json = 0, application_xml = 1 }
+	export enum ContentType { 'application/json' = 0, 'application/xml' = 1 }
 
 
 	/** The statistics for a field calculated in the request. */
@@ -469,7 +469,7 @@ export namespace MyNS {
 		 * @param {number} size Specifies the maximum number of suggestions to return. 
 		 * @return {SuggestResponse} Success
 		 */
-		Suggest(q: string, suggester: string, size: number | null | undefined, format: SearchFormat, pretty: SuggestPretty): Observable<SuggestResponse> {
+		Suggest(q: string, suggester: string, size: number | null | undefined, format: SearchFormat, pretty: SearchPretty): Observable<SuggestResponse> {
 			return this.http.get<SuggestResponse>(this.baseUri + '2013-01-01/suggest#format=sdk&pretty=true&q&suggester?q=' + (q == null ? '' : encodeURIComponent(q)) + '&suggester=' + (suggester == null ? '' : encodeURIComponent(suggester)) + '&size=' + size + '&format=' + format + '&pretty=' + pretty, {});
 		}
 
@@ -485,11 +485,9 @@ export namespace MyNS {
 
 	export enum SearchFormat { sdk = 0 }
 
-	export enum SearchPretty { _true = 0 }
+	export enum SearchPretty { true = 0 }
 
-	export enum SuggestPretty { _true = 0 }
-
-	export enum UploadDocumentsContent_Type { application_json = 0, application_xml = 1 }
+	export enum UploadDocumentsContent_Type { 'application/json' = 0, 'application/xml' = 1 }
 
 	export interface UploadDocumentsPostBody {
 

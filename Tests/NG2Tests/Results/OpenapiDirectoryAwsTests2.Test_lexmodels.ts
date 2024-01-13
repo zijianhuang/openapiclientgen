@@ -82,8 +82,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateBotVersionResponseFormGroup() {
 		return new FormGroup<CreateBotVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
@@ -91,7 +91,7 @@ export namespace MyNS {
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
@@ -137,8 +137,8 @@ export namespace MyNS {
 	}
 	export function CreateIntentFormGroup() {
 		return new FormGroup<IntentFormProperties>({
-			intentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			intentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			intentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			intentVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -187,7 +187,7 @@ export namespace MyNS {
 	export function CreatePromptFormGroup() {
 		return new FormGroup<PromptFormProperties>({
 			maxAttempts: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(5)]),
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 		});
 
 	}
@@ -235,7 +235,7 @@ export namespace MyNS {
 	export function CreateMessageFormGroup() {
 		return new FormGroup<MessageFormProperties>({
 			contentType: new FormControl<MessageContentType | null | undefined>(undefined, [Validators.required]),
-			content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 			groupNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
 		});
 
@@ -272,14 +272,14 @@ export namespace MyNS {
 	}
 	export function CreateStatementFormGroup() {
 		return new FormGroup<StatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 		});
 
 	}
 
 	export enum CreateBotVersionResponseStatus { BUILDING = 0, READY = 1, READY_BASIC_TESTING = 2, FAILED = 3, NOT_BUILT = 4 }
 
-	export enum CreateBotVersionResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
+	export enum CreateBotVersionResponseLocale { 'en-US' = 0, 'en-GB' = 1, 'de-DE' = 2 }
 
 	export interface NotFoundException {
 	}
@@ -421,12 +421,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateIntentVersionResponseFormGroup() {
 		return new FormGroup<CreateIntentVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -533,13 +533,13 @@ export namespace MyNS {
 	}
 	export function CreateSlotFormGroup() {
 		return new FormGroup<SlotFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z](-|_|.)?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z](-|_|.)?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			slotConstraint: new FormControl<SlotSlotConstraint | null | undefined>(undefined, [Validators.required]),
-			slotType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
-			slotTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			slotType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
+			slotTypeVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 			obfuscationSetting: new FormControl<SlotObfuscationSetting | null | undefined>(undefined),
 		});
 
@@ -613,8 +613,8 @@ export namespace MyNS {
 	}
 	export function CreateCodeHookFormGroup() {
 		return new FormGroup<CodeHookFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?')]),
-			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5), Validators.minLength(1)]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?')]),
+			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(5)]),
 		});
 
 	}
@@ -719,14 +719,14 @@ export namespace MyNS {
 	}
 	export function CreateCreateSlotTypeVersionResponseFormGroup() {
 		return new FormGroup<CreateSlotTypeVersionResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -756,7 +756,7 @@ export namespace MyNS {
 	}
 	export function CreateEnumerationValueFormGroup() {
 		return new FormGroup<EnumerationValueFormProperties>({
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(140), Validators.minLength(1)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(140)]),
 		});
 
 	}
@@ -804,7 +804,7 @@ export namespace MyNS {
 	}
 	export function CreateSlotTypeRegexConfigurationFormGroup() {
 		return new FormGroup<SlotTypeRegexConfigurationFormProperties>({
-			pattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			pattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -857,7 +857,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		version?: string | null;
-		locale?: GetBotResponseLocale | null;
+		locale?: CreateBotVersionResponseLocale | null;
 		childDirected?: boolean | null;
 		detectSentiment?: boolean | null;
 	}
@@ -892,14 +892,14 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		version: FormControl<string | null | undefined>,
-		locale: FormControl<GetBotResponseLocale | null | undefined>,
+		locale: FormControl<CreateBotVersionResponseLocale | null | undefined>,
 		childDirected: FormControl<boolean | null | undefined>,
 		detectSentiment: FormControl<boolean | null | undefined>,
 	}
 	export function CreateGetBotResponseFormGroup() {
 		return new FormGroup<GetBotResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
@@ -907,15 +907,13 @@ export namespace MyNS {
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
-			locale: new FormControl<GetBotResponseLocale | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
+			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum GetBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface GetBotAliasResponse {
 
@@ -980,10 +978,10 @@ export namespace MyNS {
 	}
 	export function CreateGetBotAliasResponseFormGroup() {
 		return new FormGroup<GetBotAliasResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -1014,7 +1012,7 @@ export namespace MyNS {
 	}
 	export function CreateConversationLogsResponseFormGroup() {
 		return new FormGroup<ConversationLogsResponseFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
 		});
 
 	}
@@ -1065,8 +1063,8 @@ export namespace MyNS {
 		return new FormGroup<LogSettingsResponseFormProperties>({
 			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined),
 			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined),
-			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$')]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$')]),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$')]),
 			resourcePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
@@ -1157,10 +1155,10 @@ export namespace MyNS {
 	}
 	export function CreateBotAliasMetadataFormGroup() {
 		return new FormGroup<BotAliasMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -1231,10 +1229,10 @@ export namespace MyNS {
 	}
 	export function CreateGetBotChannelAssociationResponseFormGroup() {
 		return new FormGroup<GetBotChannelAssociationResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
+			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<GetBotChannelAssociationResponseType | null | undefined>(undefined),
 			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
@@ -1243,7 +1241,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GetBotChannelAssociationResponseType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
+	export enum GetBotChannelAssociationResponseType { Facebook = 0, Slack = 1, 'Twilio-Sms' = 2, Kik = 3 }
 
 	export interface ChannelConfigurationMap {
 	}
@@ -1299,7 +1297,7 @@ export namespace MyNS {
 		 */
 		botName?: string | null;
 		createdDate?: Date | null;
-		type?: BotChannelAssociationType | null;
+		type?: GetBotChannelAssociationResponseType | null;
 		botConfiguration?: ChannelConfigurationMap;
 		status?: GetBotChannelAssociationResponseStatus | null;
 		failureReason?: string | null;
@@ -1332,25 +1330,23 @@ export namespace MyNS {
 		 */
 		botName: FormControl<string | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
-		type: FormControl<BotChannelAssociationType | null | undefined>,
+		type: FormControl<GetBotChannelAssociationResponseType | null | undefined>,
 		status: FormControl<GetBotChannelAssociationResponseStatus | null | undefined>,
 		failureReason: FormControl<string | null | undefined>,
 	}
 	export function CreateBotChannelAssociationFormGroup() {
 		return new FormGroup<BotChannelAssociationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
+			botAlias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			type: new FormControl<BotChannelAssociationType | null | undefined>(undefined),
+			type: new FormControl<GetBotChannelAssociationResponseType | null | undefined>(undefined),
 			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum BotChannelAssociationType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
 
 	export interface GetBotVersionsResponse {
 		bots?: Array<BotMetadata>;
@@ -1418,12 +1414,12 @@ export namespace MyNS {
 	}
 	export function CreateBotMetadataFormGroup() {
 		return new FormGroup<BotMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -1457,7 +1453,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Locale { en_US = 0, en_GB = 1, de_DE = 2 }
+	export enum Locale { 'en-US' = 0, 'en-GB' = 1, 'de-DE' = 2 }
 
 
 	/** Provides information about a slot used in a built-in intent. */
@@ -1580,8 +1576,8 @@ export namespace MyNS {
 	}
 	export function CreateGetExportResponseFormGroup() {
 		return new FormGroup<GetExportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z_]+')]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[0-9]+')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[a-zA-Z_]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[0-9]+')]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			exportType: new FormControl<GetExportResponseExportType | null | undefined>(undefined),
 			exportStatus: new FormControl<GetExportResponseExportStatus | null | undefined>(undefined),
@@ -1626,7 +1622,7 @@ export namespace MyNS {
 	}
 	export function CreateGetImportResponseFormGroup() {
 		return new FormGroup<GetImportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z_]+')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[a-zA-Z_]+')]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
 			importId: new FormControl<string | null | undefined>(undefined),
@@ -1720,12 +1716,12 @@ export namespace MyNS {
 	}
 	export function CreateGetIntentResponseFormGroup() {
 		return new FormGroup<GetIntentResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1795,11 +1791,11 @@ export namespace MyNS {
 	}
 	export function CreateIntentMetadataFormGroup() {
 		return new FormGroup<IntentMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -1892,14 +1888,14 @@ export namespace MyNS {
 	}
 	export function CreateGetSlotTypeResponseFormGroup() {
 		return new FormGroup<GetSlotTypeResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -1968,11 +1964,11 @@ export namespace MyNS {
 	}
 	export function CreateSlotTypeMetadataFormGroup() {
 		return new FormGroup<SlotTypeMetadataFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -2010,7 +2006,7 @@ export namespace MyNS {
 	}
 	export function CreateGetUtterancesViewResponseFormGroup() {
 		return new FormGroup<GetUtterancesViewResponseFormProperties>({
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
 		});
 
 	}
@@ -2038,7 +2034,7 @@ export namespace MyNS {
 	}
 	export function CreateUtteranceListFormGroup() {
 		return new FormGroup<UtteranceListFormProperties>({
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 		});
 
 	}
@@ -2073,7 +2069,7 @@ export namespace MyNS {
 	}
 	export function CreateUtteranceDataFormGroup() {
 		return new FormGroup<UtteranceDataFormProperties>({
-			utteranceString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			utteranceString: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000)]),
 			count: new FormControl<number | null | undefined>(undefined),
 			distinctUsers: new FormControl<number | null | undefined>(undefined),
 			firstUtteredDate: new FormControl<Date | null | undefined>(undefined),
@@ -2136,8 +2132,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -2180,7 +2176,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		version?: string | null;
-		locale?: PutBotResponseLocale | null;
+		locale?: CreateBotVersionResponseLocale | null;
 		childDirected?: boolean | null;
 		createVersion?: boolean | null;
 		detectSentiment?: boolean | null;
@@ -2222,15 +2218,15 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		version: FormControl<string | null | undefined>,
-		locale: FormControl<PutBotResponseLocale | null | undefined>,
+		locale: FormControl<CreateBotVersionResponseLocale | null | undefined>,
 		childDirected: FormControl<boolean | null | undefined>,
 		createVersion: FormControl<boolean | null | undefined>,
 		detectSentiment: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePutBotResponseFormGroup() {
 		return new FormGroup<PutBotResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
 			failureReason: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
@@ -2238,16 +2234,14 @@ export namespace MyNS {
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
-			locale: new FormControl<PutBotResponseLocale | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
+			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined),
 			childDirected: new FormControl<boolean | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum PutBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutBotAliasResponse {
 
@@ -2318,10 +2312,10 @@ export namespace MyNS {
 	}
 	export function CreatePutBotAliasResponseFormGroup() {
 		return new FormGroup<PutBotAliasResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
-			botName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(2), Validators.pattern('^([A-Za-z]_?)+$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
+			botName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(50), Validators.pattern('^([A-Za-z]_?)+$')]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
@@ -2379,8 +2373,8 @@ export namespace MyNS {
 		return new FormGroup<LogSettingsRequestFormProperties>({
 			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined, [Validators.required]),
 			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined, [Validators.required]),
-			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$')]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$')]),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:[\w\-]+:kms:[\w\-]+:[\d]{12}:(?:key\/[\w\-]+|alias\/[a-zA-Z0-9:\/_\-]{1,256})$')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:[\w\-]+:(?:logs:[\w\-]+:[\d]{12}:log-group:[\.\-_/#A-Za-z0-9]{1,512}(?::\*)?|s3:::[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9])$')]),
 		});
 
 	}
@@ -2467,12 +2461,12 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentResponseFormGroup() {
 		return new FormGroup<PutIntentResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2555,15 +2549,15 @@ export namespace MyNS {
 	}
 	export function CreatePutSlotTypeResponseFormGroup() {
 		return new FormGroup<PutSlotTypeResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^([A-Za-z]_?)+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^([A-Za-z]_?)+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 			createdDate: new FormControl<Date | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -2602,7 +2596,7 @@ export namespace MyNS {
 	}
 	export function CreateStartImportResponseFormGroup() {
 		return new FormGroup<StartImportResponseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[a-zA-Z_]+')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[a-zA-Z_]+')]),
 			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
 			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
 			importId: new FormControl<string | null | undefined>(undefined),
@@ -2632,7 +2626,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ChannelType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
+	export enum ChannelType { Facebook = 0, Slack = 1, 'Twilio-Sms' = 2, Kik = 3 }
 
 	export enum ChannelStatus { IN_PROGRESS = 0, CREATED = 1, FAILED = 2 }
 
@@ -2667,7 +2661,7 @@ export namespace MyNS {
 	}
 	export function CreateConversationLogsRequestFormGroup() {
 		return new FormGroup<ConversationLogsRequestFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
 		});
 
 	}
@@ -3066,8 +3060,8 @@ export namespace MyNS {
 	}
 	export function CreatePutBotAliasRequestFormGroup() {
 		return new FormGroup<PutBotAliasRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3098,7 +3092,7 @@ export namespace MyNS {
 		processBehavior?: ProcessBehavior | null;
 
 		/** Required */
-		locale: PutBotRequestLocale;
+		locale: CreateBotVersionResponseLocale;
 
 		/** Required */
 		childDirected: boolean;
@@ -3129,7 +3123,7 @@ export namespace MyNS {
 		processBehavior: FormControl<ProcessBehavior | null | undefined>,
 
 		/** Required */
-		locale: FormControl<PutBotRequestLocale | null | undefined>,
+		locale: FormControl<CreateBotVersionResponseLocale | null | undefined>,
 
 		/** Required */
 		childDirected: FormControl<boolean | null | undefined>,
@@ -3138,20 +3132,18 @@ export namespace MyNS {
 	}
 	export function CreatePutBotRequestFormGroup() {
 		return new FormGroup<PutBotRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			processBehavior: new FormControl<ProcessBehavior | null | undefined>(undefined),
-			locale: new FormControl<PutBotRequestLocale | null | undefined>(undefined, [Validators.required]),
+			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined, [Validators.required]),
 			childDirected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum PutBotRequestLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutIntentRequest {
 
@@ -3207,7 +3199,7 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentRequestFormGroup() {
 		return new FormGroup<PutIntentRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
@@ -3263,11 +3255,11 @@ export namespace MyNS {
 	}
 	export function CreatePutSlotTypeRequestFormGroup() {
 		return new FormGroup<PutSlotTypeRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}
@@ -3881,8 +3873,8 @@ export namespace MyNS {
 	}
 	export function CreatePutBotAliasPutBodyFormGroup() {
 		return new FormGroup<PutBotAliasPutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
-			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('\$LATEST|[0-9]+')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
+			botVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('\$LATEST|[0-9]+')]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3907,14 +3899,14 @@ export namespace MyNS {
 	}
 	export function CreatePutBotAliasPutBodyConversationLogsFormGroup() {
 		return new FormGroup<PutBotAliasPutBodyConversationLogsFormProperties>({
-			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:[\w\-]+:iam::[\d]{12}:role\/[\w+=,\.@\-]{1,64}$')]),
 		});
 
 	}
 
-	export enum GetBuiltinIntentsLocale { en_US = 0, en_GB = 1, de_DE = 2 }
+	export enum GetBuiltinIntentsLocale { 'en-US' = 0, 'en-GB' = 1, 'de-DE' = 2 }
 
-	export enum GetBuiltinSlotTypesLocale { en_US = 0, en_GB = 1, de_DE = 2 }
+	export enum GetBuiltinSlotTypesLocale { 'en-US' = 0, 'en-GB' = 1, 'de-DE' = 2 }
 
 	export enum GetUtterancesViewView { aggregation = 0 }
 
@@ -3974,7 +3966,7 @@ export namespace MyNS {
 		 * <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p> <p>The default is <code>en-US</code>.</p>
 		 * Required
 		 */
-		locale: PutBotPutBodyLocale;
+		locale: CreateBotVersionResponseLocale;
 
 		/**
 		 * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
@@ -4024,7 +4016,7 @@ export namespace MyNS {
 		 * <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p> <p>The default is <code>en-US</code>.</p>
 		 * Required
 		 */
-		locale: FormControl<PutBotPutBodyLocale | null | undefined>,
+		locale: FormControl<CreateBotVersionResponseLocale | null | undefined>,
 
 		/**
 		 * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
@@ -4040,12 +4032,12 @@ export namespace MyNS {
 	}
 	export function CreatePutBotPutBodyFormGroup() {
 		return new FormGroup<PutBotPutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(86400)]),
 			voiceId: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			processBehavior: new FormControl<ProcessBehavior | null | undefined>(undefined),
-			locale: new FormControl<PutBotPutBodyLocale | null | undefined>(undefined, [Validators.required]),
+			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined, [Validators.required]),
 			childDirected: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
@@ -4090,7 +4082,7 @@ export namespace MyNS {
 	export function CreatePutBotPutBodyClarificationPromptFormGroup() {
 		return new FormGroup<PutBotPutBodyClarificationPromptFormProperties>({
 			maxAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 		});
 
 	}
@@ -4119,12 +4111,10 @@ export namespace MyNS {
 	}
 	export function CreatePutBotPutBodyAbortStatementFormGroup() {
 		return new FormGroup<PutBotPutBodyAbortStatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 		});
 
 	}
-
-	export enum PutBotPutBodyLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutIntentPutBody {
 
@@ -4196,7 +4186,7 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentPutBodyFormGroup() {
 		return new FormGroup<PutIntentPutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
@@ -4241,7 +4231,7 @@ export namespace MyNS {
 	export function CreatePutIntentPutBodyConfirmationPromptFormGroup() {
 		return new FormGroup<PutIntentPutBodyConfirmationPromptFormProperties>({
 			maxAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(5)]),
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 		});
 
 	}
@@ -4270,7 +4260,7 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentPutBodyRejectionStatementFormGroup() {
 		return new FormGroup<PutIntentPutBodyRejectionStatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 		});
 
 	}
@@ -4315,7 +4305,7 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentPutBodyConclusionStatementFormGroup() {
 		return new FormGroup<PutIntentPutBodyConclusionStatementFormProperties>({
-			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50000), Validators.minLength(1)]),
+			responseCard: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50000)]),
 		});
 
 	}
@@ -4350,8 +4340,8 @@ export namespace MyNS {
 	}
 	export function CreatePutIntentPutBodyDialogCodeHookFormGroup() {
 		return new FormGroup<PutIntentPutBodyDialogCodeHookFormProperties>({
-			uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?')]),
-			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			uri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws:lambda:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:function:[a-zA-Z0-9-_]+(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})?(:[a-zA-Z0-9-_]+)?')]),
+			messageVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(5)]),
 		});
 
 	}
@@ -4438,11 +4428,11 @@ export namespace MyNS {
 	}
 	export function CreatePutSlotTypePutBodyFormGroup() {
 		return new FormGroup<PutSlotTypePutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(200)]),
 			checksum: new FormControl<string | null | undefined>(undefined),
 			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
 			createVersion: new FormControl<boolean | null | undefined>(undefined),
-			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^((AMAZON\.)_?|[A-Za-z]_?)+')]),
 		});
 
 	}

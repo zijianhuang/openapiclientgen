@@ -49,7 +49,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateScalingPlanRequestFormGroup() {
 		return new FormGroup<CreateScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 		});
 
 	}
@@ -95,7 +95,7 @@ export namespace MyNS {
 	}
 	export function CreateTagFilterFormGroup() {
 		return new FormGroup<TagFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -174,7 +174,7 @@ export namespace MyNS {
 	export function CreateScalingInstructionFormGroup() {
 		return new FormGroup<ScalingInstructionFormProperties>({
 			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 			ScalableDimension: new FormControl<ScalingInstructionScalableDimension | null | undefined>(undefined, [Validators.required]),
 			MinCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -190,7 +190,7 @@ export namespace MyNS {
 
 	export enum ScalingInstructionServiceNamespace { autoscaling = 0, ecs = 1, ec2 = 2, rds = 3, dynamodb = 4 }
 
-	export enum ScalingInstructionScalableDimension { autoscalingautoScalingGroupDesiredCapacity = 0, ecsserviceDesiredCount = 1, ec2spot_fleet_requestTargetCapacity = 2, rdsclusterReadReplicaCount = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7 }
+	export enum ScalingInstructionScalableDimension { 'autoscaling:autoScalingGroup:DesiredCapacity' = 0, 'ecs:service:DesiredCount' = 1, 'ec2:spot-fleet-request:TargetCapacity' = 2, 'rds:cluster:ReadReplicaCount' = 3, 'dynamodb:table:ReadCapacityUnits' = 4, 'dynamodb:table:WriteCapacityUnits' = 5, 'dynamodb:index:ReadCapacityUnits' = 6, 'dynamodb:index:WriteCapacityUnits' = 7 }
 
 
 	/** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>. */
@@ -260,7 +260,7 @@ export namespace MyNS {
 	export function CreatePredefinedScalingMetricSpecificationFormGroup() {
 		return new FormGroup<PredefinedScalingMetricSpecificationFormProperties>({
 			PredefinedScalingMetricType: new FormControl<PredefinedScalingMetricSpecificationPredefinedScalingMetricType | null | undefined>(undefined, [Validators.required]),
-			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(1)]),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1023)]),
 		});
 
 	}
@@ -365,7 +365,7 @@ export namespace MyNS {
 	export function CreatePredefinedLoadMetricSpecificationFormGroup() {
 		return new FormGroup<PredefinedLoadMetricSpecificationFormProperties>({
 			PredefinedLoadMetricType: new FormControl<PredefinedLoadMetricSpecificationPredefinedLoadMetricType | null | undefined>(undefined, [Validators.required]),
-			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(1)]),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1023)]),
 		});
 
 	}
@@ -493,7 +493,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteScalingPlanRequestFormGroup() {
 		return new FormGroup<DeleteScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -548,7 +548,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: ScalingPlanResourceScalableDimension;
+		ScalableDimension: ScalingInstructionScalableDimension;
 		ScalingPolicies?: Array<ScalingPolicy>;
 
 		/** Required */
@@ -580,7 +580,7 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<ScalingPlanResourceScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<ScalingInstructionScalableDimension | null | undefined>,
 
 		/** Required */
 		ScalingStatusCode: FormControl<ScalingPlanResourceScalingStatusCode | null | undefined>,
@@ -588,18 +588,16 @@ export namespace MyNS {
 	}
 	export function CreateScalingPlanResourceFormGroup() {
 		return new FormGroup<ScalingPlanResourceFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<ScalingPlanResourceScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<ScalingInstructionScalableDimension | null | undefined>(undefined, [Validators.required]),
 			ScalingStatusCode: new FormControl<ScalingPlanResourceScalingStatusCode | null | undefined>(undefined, [Validators.required]),
 			ScalingStatusMessage: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ScalingPlanResourceScalableDimension { autoscalingautoScalingGroupDesiredCapacity = 0, ecsserviceDesiredCount = 1, ec2spot_fleet_requestTargetCapacity = 2, rdsclusterReadReplicaCount = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7 }
 
 
 	/** Represents a scaling policy. */
@@ -634,7 +632,7 @@ export namespace MyNS {
 	}
 	export function CreateScalingPolicyFormGroup() {
 		return new FormGroup<ScalingPolicyFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('\p{Print}+')]),
 			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -674,7 +672,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeScalingPlanResourcesRequestFormGroup() {
 		return new FormGroup<DescribeScalingPlanResourcesRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -757,7 +755,7 @@ export namespace MyNS {
 	}
 	export function CreateScalingPlanFormGroup() {
 		return new FormGroup<ScalingPlanFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StatusCode: new FormControl<ScalingPlanStatusCode | null | undefined>(undefined, [Validators.required]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
@@ -842,7 +840,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: GetScalingPlanResourceForecastDataRequestScalableDimension;
+		ScalableDimension: ScalingInstructionScalableDimension;
 
 		/** Required */
 		ForecastDataType: GetScalingPlanResourceForecastDataRequestForecastDataType;
@@ -872,7 +870,7 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<GetScalingPlanResourceForecastDataRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<ScalingInstructionScalableDimension | null | undefined>,
 
 		/** Required */
 		ForecastDataType: FormControl<GetScalingPlanResourceForecastDataRequestForecastDataType | null | undefined>,
@@ -885,19 +883,17 @@ export namespace MyNS {
 	}
 	export function CreateGetScalingPlanResourceForecastDataRequestFormGroup() {
 		return new FormGroup<GetScalingPlanResourceForecastDataRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined, [Validators.required]),
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ScalableDimension: new FormControl<GetScalingPlanResourceForecastDataRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ScalableDimension: new FormControl<ScalingInstructionScalableDimension | null | undefined>(undefined, [Validators.required]),
 			ForecastDataType: new FormControl<GetScalingPlanResourceForecastDataRequestForecastDataType | null | undefined>(undefined, [Validators.required]),
 			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum GetScalingPlanResourceForecastDataRequestScalableDimension { autoscalingautoScalingGroupDesiredCapacity = 0, ecsserviceDesiredCount = 1, ec2spot_fleet_requestTargetCapacity = 2, rdsclusterReadReplicaCount = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7 }
 
 	export enum GetScalingPlanResourceForecastDataRequestForecastDataType { CapacityForecast = 0, LoadForecast = 1, ScheduledActionMinCapacity = 2, ScheduledActionMaxCapacity = 3 }
 
@@ -941,7 +937,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateScalingPlanRequestFormGroup() {
 		return new FormGroup<UpdateScalingPlanRequestFormProperties>({
-			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{Print}&&[^|:/]]+')]),
 			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -953,7 +949,7 @@ export namespace MyNS {
 
 	export enum ServiceNamespace { autoscaling = 0, ecs = 1, ec2 = 2, rds = 3, dynamodb = 4 }
 
-	export enum ScalableDimension { autoscalingautoScalingGroupDesiredCapacity = 0, ecsserviceDesiredCount = 1, ec2spot_fleet_requestTargetCapacity = 2, rdsclusterReadReplicaCount = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7 }
+	export enum ScalableDimension { 'autoscaling:autoScalingGroup:DesiredCapacity' = 0, 'ecs:service:DesiredCount' = 1, 'ec2:spot-fleet-request:TargetCapacity' = 2, 'rds:cluster:ReadReplicaCount' = 3, 'dynamodb:table:ReadCapacityUnits' = 4, 'dynamodb:table:WriteCapacityUnits' = 5, 'dynamodb:index:ReadCapacityUnits' = 6, 'dynamodb:index:WriteCapacityUnits' = 7 }
 
 	export enum LoadMetricType { ASGTotalCPUUtilization = 0, ASGTotalNetworkIn = 1, ASGTotalNetworkOut = 2, ALBTargetGroupRequestCount = 3 }
 
@@ -1029,17 +1025,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateScalingPlanX_Amz_Target { AnyScaleScalingPlannerFrontendService_CreateScalingPlan = 0 }
+	export enum CreateScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.CreateScalingPlan' = 0 }
 
-	export enum DeleteScalingPlanX_Amz_Target { AnyScaleScalingPlannerFrontendService_DeleteScalingPlan = 0 }
+	export enum DeleteScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DeleteScalingPlan' = 0 }
 
-	export enum DescribeScalingPlanResourcesX_Amz_Target { AnyScaleScalingPlannerFrontendService_DescribeScalingPlanResources = 0 }
+	export enum DescribeScalingPlanResourcesX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlanResources' = 0 }
 
-	export enum DescribeScalingPlansX_Amz_Target { AnyScaleScalingPlannerFrontendService_DescribeScalingPlans = 0 }
+	export enum DescribeScalingPlansX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.DescribeScalingPlans' = 0 }
 
-	export enum GetScalingPlanResourceForecastDataX_Amz_Target { AnyScaleScalingPlannerFrontendService_GetScalingPlanResourceForecastData = 0 }
+	export enum GetScalingPlanResourceForecastDataX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.GetScalingPlanResourceForecastData' = 0 }
 
-	export enum UpdateScalingPlanX_Amz_Target { AnyScaleScalingPlannerFrontendService_UpdateScalingPlan = 0 }
+	export enum UpdateScalingPlanX_Amz_Target { 'AnyScaleScalingPlannerFrontendService.UpdateScalingPlan' = 0 }
 
 }
 

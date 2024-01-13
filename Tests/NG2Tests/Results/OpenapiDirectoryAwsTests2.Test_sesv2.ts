@@ -2488,8 +2488,8 @@ export namespace MyNS {
 	}
 	export function CreateDkimSigningAttributesFormGroup() {
 		return new FormGroup<DkimSigningAttributesFormProperties>({
-			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$')]),
-			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20480), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9+\/]+={0,2}$')]),
+			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$')]),
+			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(20480), Validators.pattern('^[a-zA-Z0-9+\/]+={0,2}$')]),
 		});
 
 	}
@@ -4148,8 +4148,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateEmailIdentityPostBodyDkimSigningAttributesFormGroup() {
 		return new FormGroup<CreateEmailIdentityPostBodyDkimSigningAttributesFormProperties>({
-			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$')]),
-			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20480), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9+\/]+={0,2}$')]),
+			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$')]),
+			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(20480), Validators.pattern('^[a-zA-Z0-9+\/]+={0,2}$')]),
 		});
 
 	}
@@ -4512,8 +4512,8 @@ export namespace MyNS {
 	}
 	export function CreatePutEmailIdentityDkimSigningAttributesPutBodySigningAttributesFormGroup() {
 		return new FormGroup<PutEmailIdentityDkimSigningAttributesPutBodySigningAttributesFormProperties>({
-			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$')]),
-			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20480), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9+\/]+={0,2}$')]),
+			DomainSigningSelector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]))$')]),
+			DomainSigningPrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(20480), Validators.pattern('^[a-zA-Z0-9+\/]+={0,2}$')]),
 		});
 
 	}

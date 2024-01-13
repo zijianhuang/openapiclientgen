@@ -33,7 +33,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateDRTLogBucketRequestFormGroup() {
 		return new FormGroup<AssociateDRTLogBucketRequestFormProperties>({
-			LogBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$')]),
+			LogBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63), Validators.pattern('^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$')]),
 		});
 
 	}
@@ -148,7 +148,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateDRTRoleRequestFormGroup() {
 		return new FormGroup<AssociateDRTRoleRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
 
 	}
@@ -197,8 +197,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateHealthCheckRequestFormGroup() {
 		return new FormGroup<AssociateHealthCheckRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
-			HealthCheckArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws:route53:::healthcheck/\S{36}$')]),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			HealthCheckArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws:route53:::healthcheck/\S{36}$')]),
 		});
 
 	}
@@ -278,9 +278,9 @@ export namespace MyNS {
 	}
 	export function CreateEmergencyContactFormGroup() {
 		return new FormGroup<EmergencyContactFormProperties>({
-			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(150), Validators.minLength(1), Validators.pattern('^\S+@\S+\.\S+$')]),
-			PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1), Validators.pattern('^.*$')]),
-			ContactNotes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^[\w\s\.\-,:/()+@]*$')]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(150), Validators.pattern('^\S+@\S+\.\S+$')]),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40), Validators.pattern('^.*$')]),
+			ContactNotes: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^[\w\s\.\-,:/()+@]*$')]),
 		});
 
 	}
@@ -303,7 +303,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProtectionResponseFormGroup() {
 		return new FormGroup<CreateProtectionResponseFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\\-]*')]),
 		});
 
 	}
@@ -342,8 +342,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProtectionRequestFormGroup() {
 		return new FormGroup<CreateProtectionRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[ a-zA-Z0-9_\\.\\-]*')]),
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[ a-zA-Z0-9_\\.\\-]*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws.*')]),
 		});
 
 	}
@@ -418,7 +418,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteProtectionRequestFormGroup() {
 		return new FormGroup<DeleteProtectionRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\\-]*')]),
 		});
 
 	}
@@ -508,8 +508,8 @@ export namespace MyNS {
 	}
 	export function CreateAttackDetailFormGroup() {
 		return new FormGroup<AttackDetailFormProperties>({
-			AttackId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws.*')]),
+			AttackId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws.*')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -684,7 +684,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAttackRequestFormGroup() {
 		return new FormGroup<DescribeAttackRequestFormProperties>({
-			AttackId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			AttackId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9\\-]*')]),
 		});
 
 	}
@@ -723,7 +723,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDRTAccessResponseFormGroup() {
 		return new FormGroup<DescribeDRTAccessResponseFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
 
 	}
@@ -824,9 +824,9 @@ export namespace MyNS {
 	}
 	export function CreateProtectionFormGroup() {
 		return new FormGroup<ProtectionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[ a-zA-Z0-9_\\.\\-]*')]),
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws.*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[ a-zA-Z0-9_\\.\\-]*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws.*')]),
 		});
 
 	}
@@ -861,8 +861,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeProtectionRequestFormGroup() {
 		return new FormGroup<DescribeProtectionRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws.*')]),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws.*')]),
 		});
 
 	}
@@ -998,7 +998,7 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateDRTLogBucketRequestFormGroup() {
 		return new FormGroup<DisassociateDRTLogBucketRequestFormProperties>({
-			LogBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$')]),
+			LogBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63), Validators.pattern('^([a-z]|(\d(?!\d{0,2}\.\d{1,3}\.\d{1,3}\.\d{1,3})))([a-z\d]|(\.(?!(\.|-)))|(-(?!\.))){1,61}[a-z\d]$')]),
 		});
 
 	}
@@ -1067,8 +1067,8 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateHealthCheckRequestFormGroup() {
 		return new FormGroup<DisassociateHealthCheckRequestFormProperties>({
-			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9\\-]*')]),
-			HealthCheckArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('^arn:aws:route53:::healthcheck/\S{36}$')]),
+			ProtectionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\\-]*')]),
+			HealthCheckArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('^arn:aws:route53:::healthcheck/\S{36}$')]),
 		});
 
 	}
@@ -1141,7 +1141,7 @@ export namespace MyNS {
 	}
 	export function CreateListAttacksResponseFormGroup() {
 		return new FormGroup<ListAttacksResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('^.*$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096), Validators.pattern('^.*$')]),
 		});
 
 	}
@@ -1231,7 +1231,7 @@ export namespace MyNS {
 	}
 	export function CreateListAttacksRequestFormGroup() {
 		return new FormGroup<ListAttacksRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('^.*$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096), Validators.pattern('^.*$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 	}
 	export function CreateListProtectionsResponseFormGroup() {
 		return new FormGroup<ListProtectionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('^.*$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096), Validators.pattern('^.*$')]),
 		});
 
 	}
@@ -1311,7 +1311,7 @@ export namespace MyNS {
 	}
 	export function CreateListProtectionsRequestFormGroup() {
 		return new FormGroup<ListProtectionsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('^.*$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096), Validators.pattern('^.*$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
 		});
 
@@ -1607,51 +1607,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateDRTLogBucketX_Amz_Target { AWSShield_20160616_AssociateDRTLogBucket = 0 }
+	export enum AssociateDRTLogBucketX_Amz_Target { 'AWSShield_20160616.AssociateDRTLogBucket' = 0 }
 
-	export enum AssociateDRTRoleX_Amz_Target { AWSShield_20160616_AssociateDRTRole = 0 }
+	export enum AssociateDRTRoleX_Amz_Target { 'AWSShield_20160616.AssociateDRTRole' = 0 }
 
-	export enum AssociateHealthCheckX_Amz_Target { AWSShield_20160616_AssociateHealthCheck = 0 }
+	export enum AssociateHealthCheckX_Amz_Target { 'AWSShield_20160616.AssociateHealthCheck' = 0 }
 
-	export enum AssociateProactiveEngagementDetailsX_Amz_Target { AWSShield_20160616_AssociateProactiveEngagementDetails = 0 }
+	export enum AssociateProactiveEngagementDetailsX_Amz_Target { 'AWSShield_20160616.AssociateProactiveEngagementDetails' = 0 }
 
-	export enum CreateProtectionX_Amz_Target { AWSShield_20160616_CreateProtection = 0 }
+	export enum CreateProtectionX_Amz_Target { 'AWSShield_20160616.CreateProtection' = 0 }
 
-	export enum CreateSubscriptionX_Amz_Target { AWSShield_20160616_CreateSubscription = 0 }
+	export enum CreateSubscriptionX_Amz_Target { 'AWSShield_20160616.CreateSubscription' = 0 }
 
-	export enum DeleteProtectionX_Amz_Target { AWSShield_20160616_DeleteProtection = 0 }
+	export enum DeleteProtectionX_Amz_Target { 'AWSShield_20160616.DeleteProtection' = 0 }
 
-	export enum DeleteSubscriptionX_Amz_Target { AWSShield_20160616_DeleteSubscription = 0 }
+	export enum DeleteSubscriptionX_Amz_Target { 'AWSShield_20160616.DeleteSubscription' = 0 }
 
-	export enum DescribeAttackX_Amz_Target { AWSShield_20160616_DescribeAttack = 0 }
+	export enum DescribeAttackX_Amz_Target { 'AWSShield_20160616.DescribeAttack' = 0 }
 
-	export enum DescribeDRTAccessX_Amz_Target { AWSShield_20160616_DescribeDRTAccess = 0 }
+	export enum DescribeDRTAccessX_Amz_Target { 'AWSShield_20160616.DescribeDRTAccess' = 0 }
 
-	export enum DescribeEmergencyContactSettingsX_Amz_Target { AWSShield_20160616_DescribeEmergencyContactSettings = 0 }
+	export enum DescribeEmergencyContactSettingsX_Amz_Target { 'AWSShield_20160616.DescribeEmergencyContactSettings' = 0 }
 
-	export enum DescribeProtectionX_Amz_Target { AWSShield_20160616_DescribeProtection = 0 }
+	export enum DescribeProtectionX_Amz_Target { 'AWSShield_20160616.DescribeProtection' = 0 }
 
-	export enum DescribeSubscriptionX_Amz_Target { AWSShield_20160616_DescribeSubscription = 0 }
+	export enum DescribeSubscriptionX_Amz_Target { 'AWSShield_20160616.DescribeSubscription' = 0 }
 
-	export enum DisableProactiveEngagementX_Amz_Target { AWSShield_20160616_DisableProactiveEngagement = 0 }
+	export enum DisableProactiveEngagementX_Amz_Target { 'AWSShield_20160616.DisableProactiveEngagement' = 0 }
 
-	export enum DisassociateDRTLogBucketX_Amz_Target { AWSShield_20160616_DisassociateDRTLogBucket = 0 }
+	export enum DisassociateDRTLogBucketX_Amz_Target { 'AWSShield_20160616.DisassociateDRTLogBucket' = 0 }
 
-	export enum DisassociateDRTRoleX_Amz_Target { AWSShield_20160616_DisassociateDRTRole = 0 }
+	export enum DisassociateDRTRoleX_Amz_Target { 'AWSShield_20160616.DisassociateDRTRole' = 0 }
 
-	export enum DisassociateHealthCheckX_Amz_Target { AWSShield_20160616_DisassociateHealthCheck = 0 }
+	export enum DisassociateHealthCheckX_Amz_Target { 'AWSShield_20160616.DisassociateHealthCheck' = 0 }
 
-	export enum EnableProactiveEngagementX_Amz_Target { AWSShield_20160616_EnableProactiveEngagement = 0 }
+	export enum EnableProactiveEngagementX_Amz_Target { 'AWSShield_20160616.EnableProactiveEngagement' = 0 }
 
-	export enum GetSubscriptionStateX_Amz_Target { AWSShield_20160616_GetSubscriptionState = 0 }
+	export enum GetSubscriptionStateX_Amz_Target { 'AWSShield_20160616.GetSubscriptionState' = 0 }
 
-	export enum ListAttacksX_Amz_Target { AWSShield_20160616_ListAttacks = 0 }
+	export enum ListAttacksX_Amz_Target { 'AWSShield_20160616.ListAttacks' = 0 }
 
-	export enum ListProtectionsX_Amz_Target { AWSShield_20160616_ListProtections = 0 }
+	export enum ListProtectionsX_Amz_Target { 'AWSShield_20160616.ListProtections' = 0 }
 
-	export enum UpdateEmergencyContactSettingsX_Amz_Target { AWSShield_20160616_UpdateEmergencyContactSettings = 0 }
+	export enum UpdateEmergencyContactSettingsX_Amz_Target { 'AWSShield_20160616.UpdateEmergencyContactSettings' = 0 }
 
-	export enum UpdateSubscriptionX_Amz_Target { AWSShield_20160616_UpdateSubscription = 0 }
+	export enum UpdateSubscriptionX_Amz_Target { 'AWSShield_20160616.UpdateSubscription' = 0 }
 
 }
 

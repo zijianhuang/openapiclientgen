@@ -55,7 +55,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBudgetRequestFormGroup() {
 		return new FormGroup<CreateBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
 		});
 
 	}
@@ -132,7 +132,7 @@ export namespace MyNS {
 	}
 	export function CreateBudgetFormGroup() {
 		return new FormGroup<BudgetFormProperties>({
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 			TimeUnit: new FormControl<BudgetTimeUnit | null | undefined>(undefined, [Validators.required]),
 			BudgetType: new FormControl<BudgetBudgetType | null | undefined>(undefined, [Validators.required]),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
@@ -182,8 +182,8 @@ export namespace MyNS {
 	}
 	export function CreateSpendFormGroup() {
 		return new FormGroup<SpendFormProperties>({
-			Amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1), Validators.pattern('([0-9]*\.)?[0-9]+')]),
-			Unit: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1), Validators.pattern('.*')]),
+			Amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2147483647), Validators.pattern('([0-9]*\.)?[0-9]+')]),
+			Unit: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -456,7 +456,7 @@ export namespace MyNS {
 	export function CreateSubscriberFormGroup() {
 		return new FormGroup<SubscriberFormProperties>({
 			SubscriptionType: new FormControl<SubscriberSubscriptionType | null | undefined>(undefined, [Validators.required]),
-			Address: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2147483647), Validators.minLength(1), Validators.pattern('(.*[\n\r\t\f\ ]?)*')]),
+			Address: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2147483647), Validators.pattern('(.*[\n\r\t\f\ ]?)*')]),
 		});
 
 	}
@@ -583,8 +583,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateNotificationRequestFormGroup() {
 		return new FormGroup<CreateNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -667,8 +667,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateSubscriberRequestFormGroup() {
 		return new FormGroup<CreateSubscriberRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -729,8 +729,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteBudgetRequestFormGroup() {
 		return new FormGroup<DeleteBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -797,8 +797,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteNotificationRequestFormGroup() {
 		return new FormGroup<DeleteNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -871,8 +871,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSubscriberRequestFormGroup() {
 		return new FormGroup<DeleteSubscriberRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -936,8 +936,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBudgetRequestFormGroup() {
 		return new FormGroup<DescribeBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -965,7 +965,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBudgetPerformanceHistoryResponseFormGroup() {
 		return new FormGroup<DescribeBudgetPerformanceHistoryResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1013,7 +1013,7 @@ export namespace MyNS {
 	}
 	export function CreateBudgetPerformanceHistoryFormGroup() {
 		return new FormGroup<BudgetPerformanceHistoryFormProperties>({
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 			BudgetType: new FormControl<BudgetBudgetType | null | undefined>(undefined),
 			TimeUnit: new FormControl<BudgetTimeUnit | null | undefined>(undefined),
 		});
@@ -1112,10 +1112,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBudgetPerformanceHistoryRequestFormGroup() {
 		return new FormGroup<DescribeBudgetPerformanceHistoryRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1167,7 +1167,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBudgetsResponseFormGroup() {
 		return new FormGroup<DescribeBudgetsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1226,9 +1226,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeBudgetsRequestFormGroup() {
 		return new FormGroup<DescribeBudgetsRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1260,7 +1260,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNotificationsForBudgetResponseFormGroup() {
 		return new FormGroup<DescribeNotificationsForBudgetResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1335,10 +1335,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNotificationsForBudgetRequestFormGroup() {
 		return new FormGroup<DescribeNotificationsForBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1374,7 +1374,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSubscribersForNotificationResponseFormGroup() {
 		return new FormGroup<DescribeSubscribersForNotificationResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1455,10 +1455,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSubscribersForNotificationRequestFormGroup() {
 		return new FormGroup<DescribeSubscribersForNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2147483647), Validators.minLength(0), Validators.pattern('.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2147483647), Validators.pattern('.*')]),
 		});
 
 	}
@@ -1509,7 +1509,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateBudgetRequestFormGroup() {
 		return new FormGroup<UpdateBudgetRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
 		});
 
 	}
@@ -1582,8 +1582,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateNotificationRequestFormGroup() {
 		return new FormGroup<UpdateNotificationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -1662,8 +1662,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSubscriberRequestFormGroup() {
 		return new FormGroup<UpdateSubscriberRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('[^:\\]+')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('[^:\\]+')]),
 		});
 
 	}
@@ -1826,33 +1826,33 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateBudgetX_Amz_Target { AWSBudgetServiceGateway_CreateBudget = 0 }
+	export enum CreateBudgetX_Amz_Target { 'AWSBudgetServiceGateway.CreateBudget' = 0 }
 
-	export enum CreateNotificationX_Amz_Target { AWSBudgetServiceGateway_CreateNotification = 0 }
+	export enum CreateNotificationX_Amz_Target { 'AWSBudgetServiceGateway.CreateNotification' = 0 }
 
-	export enum CreateSubscriberX_Amz_Target { AWSBudgetServiceGateway_CreateSubscriber = 0 }
+	export enum CreateSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.CreateSubscriber' = 0 }
 
-	export enum DeleteBudgetX_Amz_Target { AWSBudgetServiceGateway_DeleteBudget = 0 }
+	export enum DeleteBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DeleteBudget' = 0 }
 
-	export enum DeleteNotificationX_Amz_Target { AWSBudgetServiceGateway_DeleteNotification = 0 }
+	export enum DeleteNotificationX_Amz_Target { 'AWSBudgetServiceGateway.DeleteNotification' = 0 }
 
-	export enum DeleteSubscriberX_Amz_Target { AWSBudgetServiceGateway_DeleteSubscriber = 0 }
+	export enum DeleteSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.DeleteSubscriber' = 0 }
 
-	export enum DescribeBudgetX_Amz_Target { AWSBudgetServiceGateway_DescribeBudget = 0 }
+	export enum DescribeBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudget' = 0 }
 
-	export enum DescribeBudgetPerformanceHistoryX_Amz_Target { AWSBudgetServiceGateway_DescribeBudgetPerformanceHistory = 0 }
+	export enum DescribeBudgetPerformanceHistoryX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgetPerformanceHistory' = 0 }
 
-	export enum DescribeBudgetsX_Amz_Target { AWSBudgetServiceGateway_DescribeBudgets = 0 }
+	export enum DescribeBudgetsX_Amz_Target { 'AWSBudgetServiceGateway.DescribeBudgets' = 0 }
 
-	export enum DescribeNotificationsForBudgetX_Amz_Target { AWSBudgetServiceGateway_DescribeNotificationsForBudget = 0 }
+	export enum DescribeNotificationsForBudgetX_Amz_Target { 'AWSBudgetServiceGateway.DescribeNotificationsForBudget' = 0 }
 
-	export enum DescribeSubscribersForNotificationX_Amz_Target { AWSBudgetServiceGateway_DescribeSubscribersForNotification = 0 }
+	export enum DescribeSubscribersForNotificationX_Amz_Target { 'AWSBudgetServiceGateway.DescribeSubscribersForNotification' = 0 }
 
-	export enum UpdateBudgetX_Amz_Target { AWSBudgetServiceGateway_UpdateBudget = 0 }
+	export enum UpdateBudgetX_Amz_Target { 'AWSBudgetServiceGateway.UpdateBudget' = 0 }
 
-	export enum UpdateNotificationX_Amz_Target { AWSBudgetServiceGateway_UpdateNotification = 0 }
+	export enum UpdateNotificationX_Amz_Target { 'AWSBudgetServiceGateway.UpdateNotification' = 0 }
 
-	export enum UpdateSubscriberX_Amz_Target { AWSBudgetServiceGateway_UpdateSubscriber = 0 }
+	export enum UpdateSubscriberX_Amz_Target { 'AWSBudgetServiceGateway.UpdateSubscriber' = 0 }
 
 }
 

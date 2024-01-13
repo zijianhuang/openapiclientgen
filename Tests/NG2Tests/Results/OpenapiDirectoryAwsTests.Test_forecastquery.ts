@@ -81,7 +81,7 @@ export namespace MyNS {
 			ForecastArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):forecast:.*:.*:.+')]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			EndDate: new FormControl<string | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3000)]),
 		});
 
 	}
@@ -181,7 +181,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum QueryForecastX_Amz_Target { AmazonForecastRuntime_QueryForecast = 0 }
+	export enum QueryForecastX_Amz_Target { 'AmazonForecastRuntime.QueryForecast' = 0 }
 
 }
 

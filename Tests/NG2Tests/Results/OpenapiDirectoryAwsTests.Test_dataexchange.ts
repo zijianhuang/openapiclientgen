@@ -436,7 +436,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ExportServerSideEncryptionType { awskms = 0, AES256 = 1 }
+	export enum ExportServerSideEncryptionType { 'aws:kms' = 0, AES256 = 1 }
 
 
 	/** The details in the response for an import request, including the signed URL and other information. */
@@ -506,7 +506,7 @@ export namespace MyNS {
 		return new FormGroup<ImportAssetFromSignedUrlResponseDetailsFormProperties>({
 			AssetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(24), Validators.pattern('/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/')]),
+			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.minLength(24), Validators.maxLength(24), Validators.pattern('/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/')]),
 			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			SignedUrl: new FormControl<string | null | undefined>(undefined),
 			SignedUrlExpiresAt: new FormControl<Date | null | undefined>(undefined),
@@ -676,7 +676,7 @@ export namespace MyNS {
 
 	}
 
-	export enum JobErrorLimitName { Assets_per_revision = 0, Asset_size_in_GB = 1 }
+	export enum JobErrorLimitName { 'Assets per revision' = 0, 'Asset size in GB' = 1 }
 
 	export enum JobErrorResourceType { REVISION = 0, ASSET = 1 }
 
@@ -848,7 +848,7 @@ export namespace MyNS {
 		return new FormGroup<ImportAssetFromSignedUrlRequestDetailsFormProperties>({
 			AssetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(24), Validators.minLength(24), Validators.pattern('/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/')]),
+			Md5Hash: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(24), Validators.maxLength(24), Validators.pattern('/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/')]),
 			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -958,7 +958,7 @@ export namespace MyNS {
 	export function CreateCreateRevisionResponseFormGroup() {
 		return new FormGroup<CreateRevisionResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSetId: new FormControl<string | null | undefined>(undefined),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
@@ -1258,7 +1258,7 @@ export namespace MyNS {
 	export function CreateGetRevisionResponseFormGroup() {
 		return new FormGroup<GetRevisionResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSetId: new FormControl<string | null | undefined>(undefined),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
@@ -1378,7 +1378,7 @@ export namespace MyNS {
 	export function CreateRevisionEntryFormGroup() {
 		return new FormGroup<RevisionEntryFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			DataSetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
@@ -2010,7 +2010,7 @@ export namespace MyNS {
 	export function CreateUpdateRevisionResponseFormGroup() {
 		return new FormGroup<UpdateRevisionResponseFormProperties>({
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 			DataSetId: new FormControl<string | null | undefined>(undefined),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
@@ -2175,7 +2175,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRevisionRequestFormGroup() {
 		return new FormGroup<CreateRevisionRequestFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 		});
 
 	}
@@ -2212,7 +2212,7 @@ export namespace MyNS {
 
 
 	/** The types of encryption supported in export jobs to Amazon S3. */
-	export enum ServerSideEncryptionTypes { awskms = 0, AES256 = 1 }
+	export enum ServerSideEncryptionTypes { 'aws:kms' = 0, AES256 = 1 }
 
 	export interface GetAssetRequest {
 	}
@@ -2424,7 +2424,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRevisionRequestFormGroup() {
 		return new FormGroup<UpdateRevisionRequestFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2815,7 +2815,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRevisionPostBodyFormGroup() {
 		return new FormGroup<CreateRevisionPostBodyFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2894,7 +2894,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRevisionPatchBodyFormGroup() {
 		return new FormGroup<UpdateRevisionPatchBodyFormProperties>({
-			Comment: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(0)]),
+			Comment: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(16384)]),
 			Finalized: new FormControl<boolean | null | undefined>(undefined),
 		});
 

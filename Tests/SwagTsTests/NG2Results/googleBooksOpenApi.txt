@@ -2033,31 +2033,31 @@ export namespace MyNS {
 
 	export enum Books_mylibrary_bookshelves_volumes_listProjection { full = 0, lite = 1 }
 
-	export enum Books_mylibrary_readingpositions_setPositionAction { bookmark = 0, chapter = 1, next_page = 2, prev_page = 3, scroll = 4, search = 5 }
+	export enum Books_mylibrary_readingpositions_setPositionAction { bookmark = 0, chapter = 1, 'next-page' = 2, 'prev-page' = 3, scroll = 4, search = 5 }
 
-	export enum Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating { mature = 0, not_mature = 1 }
+	export enum Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating { mature = 0, 'not-mature' = 1 }
 
-	export enum Books_personalizedstream_getMaxAllowedMaturityRating { mature = 0, not_mature = 1 }
+	export enum Books_personalizedstream_getMaxAllowedMaturityRating { mature = 0, 'not-mature' = 1 }
 
 	export enum Books_volumes_listDownload { epub = 0 }
 
-	export enum Books_volumes_listFilter { ebooks = 0, free_ebooks = 1, full = 2, paid_ebooks = 3, partial = 4 }
+	export enum Books_volumes_listFilter { ebooks = 0, 'free-ebooks' = 1, full = 2, 'paid-ebooks' = 3, partial = 4 }
 
-	export enum Books_volumes_listLibraryRestrict { my_library = 0, no_restrict = 1 }
+	export enum Books_volumes_listLibraryRestrict { 'my-library' = 0, 'no-restrict' = 1 }
 
-	export enum Books_volumes_listMaxAllowedMaturityRating { mature = 0, not_mature = 1 }
+	export enum Books_volumes_listMaxAllowedMaturityRating { mature = 0, 'not-mature' = 1 }
 
 	export enum Books_volumes_listOrderBy { newest = 0, relevance = 1 }
 
 	export enum Books_volumes_listPrintType { all = 0, books = 1, magazines = 2 }
 
-	export enum Books_volumes_recommended_listMaxAllowedMaturityRating { mature = 0, not_mature = 1 }
+	export enum Books_volumes_recommended_listMaxAllowedMaturityRating { mature = 0, 'not-mature' = 1 }
 
 	export enum Books_volumes_recommended_rateRating { HAVE_IT = 0, NOT_INTERESTED = 1 }
 
-	export enum Books_volumes_associated_listAssociation { end_of_sample = 0, end_of_volume = 1, related_for_play = 2 }
+	export enum Books_volumes_associated_listAssociation { 'end-of-sample' = 0, 'end-of-volume' = 1, 'related-for-play' = 2 }
 
-	export enum Books_volumes_associated_listMaxAllowedMaturityRating { mature = 0, not_mature = 1 }
+	export enum Books_volumes_associated_listMaxAllowedMaturityRating { mature = 0, 'not-mature' = 1 }
 
 }
 

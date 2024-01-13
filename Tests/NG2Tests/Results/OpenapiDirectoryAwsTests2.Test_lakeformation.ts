@@ -66,7 +66,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchPermissionsRequestEntryFormGroup() {
 		return new FormGroup<BatchPermissionsRequestEntryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -93,7 +93,7 @@ export namespace MyNS {
 	}
 	export function CreateDataLakePrincipalFormGroup() {
 		return new FormGroup<DataLakePrincipalFormProperties>({
-			DataLakePrincipalIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			DataLakePrincipalIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -165,7 +165,7 @@ export namespace MyNS {
 	}
 	export function CreateDatabaseResourceFormGroup() {
 		return new FormGroup<DatabaseResourceFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -208,8 +208,8 @@ export namespace MyNS {
 	}
 	export function CreateTableResourceFormGroup() {
 		return new FormGroup<TableResourceFormProperties>({
-			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -252,8 +252,8 @@ export namespace MyNS {
 	}
 	export function CreateTableWithColumnsResourceFormGroup() {
 		return new FormGroup<TableWithColumnsResourceFormProperties>({
-			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			DatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -330,8 +330,8 @@ export namespace MyNS {
 	}
 	export function CreateErrorDetailFormGroup() {
 		return new FormGroup<ErrorDetailFormProperties>({
-			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -357,7 +357,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchGrantPermissionsRequestFormGroup() {
 		return new FormGroup<BatchGrantPermissionsRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -414,7 +414,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchRevokePermissionsRequestFormGroup() {
 		return new FormGroup<BatchRevokePermissionsRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -496,7 +496,7 @@ export namespace MyNS {
 	export function CreateResourceInfoFormGroup() {
 		return new FormGroup<ResourceInfoFormProperties>({
 			ResourceArn: new FormControl<string | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:aws:iam::[0-9]*:role/.*')]),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -590,7 +590,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDataLakeSettingsRequestFormGroup() {
 		return new FormGroup<GetDataLakeSettingsRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -669,7 +669,7 @@ export namespace MyNS {
 	}
 	export function CreateGetEffectivePermissionsForPathRequestFormGroup() {
 		return new FormGroup<GetEffectivePermissionsForPathRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
@@ -721,7 +721,7 @@ export namespace MyNS {
 	}
 	export function CreateGrantPermissionsRequestFormGroup() {
 		return new FormGroup<GrantPermissionsRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -790,7 +790,7 @@ export namespace MyNS {
 	}
 	export function CreateListPermissionsRequestFormGroup() {
 		return new FormGroup<ListPermissionsRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			ResourceType: new FormControl<ListPermissionsRequestResourceType | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
@@ -905,7 +905,7 @@ export namespace MyNS {
 	}
 	export function CreatePutDataLakeSettingsRequestFormGroup() {
 		return new FormGroup<PutDataLakeSettingsRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -938,7 +938,7 @@ export namespace MyNS {
 		return new FormGroup<RegisterResourceRequestFormProperties>({
 			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			UseServiceLinkedRole: new FormControl<boolean | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:aws:iam::[0-9]*:role/.*')]),
 		});
 
 	}
@@ -997,7 +997,7 @@ export namespace MyNS {
 	}
 	export function CreateRevokePermissionsRequestFormGroup() {
 		return new FormGroup<RevokePermissionsRequestFormProperties>({
-			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CatalogId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateResourceRequestFormGroup() {
 		return new FormGroup<UpdateResourceRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:iam::[0-9]*:role/.*')]),
 			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1171,31 +1171,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchGrantPermissionsX_Amz_Target { AWSLakeFormation_BatchGrantPermissions = 0 }
+	export enum BatchGrantPermissionsX_Amz_Target { 'AWSLakeFormation.BatchGrantPermissions' = 0 }
 
-	export enum BatchRevokePermissionsX_Amz_Target { AWSLakeFormation_BatchRevokePermissions = 0 }
+	export enum BatchRevokePermissionsX_Amz_Target { 'AWSLakeFormation.BatchRevokePermissions' = 0 }
 
-	export enum DeregisterResourceX_Amz_Target { AWSLakeFormation_DeregisterResource = 0 }
+	export enum DeregisterResourceX_Amz_Target { 'AWSLakeFormation.DeregisterResource' = 0 }
 
-	export enum DescribeResourceX_Amz_Target { AWSLakeFormation_DescribeResource = 0 }
+	export enum DescribeResourceX_Amz_Target { 'AWSLakeFormation.DescribeResource' = 0 }
 
-	export enum GetDataLakeSettingsX_Amz_Target { AWSLakeFormation_GetDataLakeSettings = 0 }
+	export enum GetDataLakeSettingsX_Amz_Target { 'AWSLakeFormation.GetDataLakeSettings' = 0 }
 
-	export enum GetEffectivePermissionsForPathX_Amz_Target { AWSLakeFormation_GetEffectivePermissionsForPath = 0 }
+	export enum GetEffectivePermissionsForPathX_Amz_Target { 'AWSLakeFormation.GetEffectivePermissionsForPath' = 0 }
 
-	export enum GrantPermissionsX_Amz_Target { AWSLakeFormation_GrantPermissions = 0 }
+	export enum GrantPermissionsX_Amz_Target { 'AWSLakeFormation.GrantPermissions' = 0 }
 
-	export enum ListPermissionsX_Amz_Target { AWSLakeFormation_ListPermissions = 0 }
+	export enum ListPermissionsX_Amz_Target { 'AWSLakeFormation.ListPermissions' = 0 }
 
-	export enum ListResourcesX_Amz_Target { AWSLakeFormation_ListResources = 0 }
+	export enum ListResourcesX_Amz_Target { 'AWSLakeFormation.ListResources' = 0 }
 
-	export enum PutDataLakeSettingsX_Amz_Target { AWSLakeFormation_PutDataLakeSettings = 0 }
+	export enum PutDataLakeSettingsX_Amz_Target { 'AWSLakeFormation.PutDataLakeSettings' = 0 }
 
-	export enum RegisterResourceX_Amz_Target { AWSLakeFormation_RegisterResource = 0 }
+	export enum RegisterResourceX_Amz_Target { 'AWSLakeFormation.RegisterResource' = 0 }
 
-	export enum RevokePermissionsX_Amz_Target { AWSLakeFormation_RevokePermissions = 0 }
+	export enum RevokePermissionsX_Amz_Target { 'AWSLakeFormation.RevokePermissions' = 0 }
 
-	export enum UpdateResourceX_Amz_Target { AWSLakeFormation_UpdateResource = 0 }
+	export enum UpdateResourceX_Amz_Target { 'AWSLakeFormation.UpdateResource' = 0 }
 
 }
 

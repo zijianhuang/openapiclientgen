@@ -104,8 +104,8 @@ export namespace MyNS {
 	export function CreateUsageRecordFormGroup() {
 		return new FormGroup<UsageRecordFormProperties>({
 			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			CustomerIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Dimension: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			CustomerIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Dimension: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			Quantity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 		});
 
@@ -144,7 +144,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchMeterUsageRequestFormGroup() {
 		return new FormGroup<BatchMeterUsageRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -286,9 +286,9 @@ export namespace MyNS {
 	}
 	export function CreateMeterUsageRequestFormGroup() {
 		return new FormGroup<MeterUsageRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			Timestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			UsageDimension: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			UsageDimension: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			UsageQuantity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -336,7 +336,7 @@ export namespace MyNS {
 	export function CreateRegisterUsageResultFormGroup() {
 		return new FormGroup<RegisterUsageResultFormProperties>({
 			PublicKeyRotationTimestamp: new FormControl<Date | null | undefined>(undefined),
-			Signature: new FormControl<string | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\S+')]),
 		});
 
 	}
@@ -379,7 +379,7 @@ export namespace MyNS {
 	}
 	export function CreateRegisterUsageRequestFormGroup() {
 		return new FormGroup<RegisterUsageRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			PublicKeyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			Nonce: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
@@ -450,8 +450,8 @@ export namespace MyNS {
 	}
 	export function CreateResolveCustomerResultFormGroup() {
 		return new FormGroup<ResolveCustomerResultFormProperties>({
-			CustomerIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			CustomerIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -472,7 +472,7 @@ export namespace MyNS {
 	}
 	export function CreateResolveCustomerRequestFormGroup() {
 		return new FormGroup<ResolveCustomerRequestFormProperties>({
-			RegistrationToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RegistrationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\S+')]),
 		});
 
 	}
@@ -539,13 +539,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchMeterUsageX_Amz_Target { AWSMPMeteringService_BatchMeterUsage = 0 }
+	export enum BatchMeterUsageX_Amz_Target { 'AWSMPMeteringService.BatchMeterUsage' = 0 }
 
-	export enum MeterUsageX_Amz_Target { AWSMPMeteringService_MeterUsage = 0 }
+	export enum MeterUsageX_Amz_Target { 'AWSMPMeteringService.MeterUsage' = 0 }
 
-	export enum RegisterUsageX_Amz_Target { AWSMPMeteringService_RegisterUsage = 0 }
+	export enum RegisterUsageX_Amz_Target { 'AWSMPMeteringService.RegisterUsage' = 0 }
 
-	export enum ResolveCustomerX_Amz_Target { AWSMPMeteringService_ResolveCustomer = 0 }
+	export enum ResolveCustomerX_Amz_Target { 'AWSMPMeteringService.ResolveCustomer' = 0 }
 
 }
 

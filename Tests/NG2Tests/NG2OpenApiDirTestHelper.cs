@@ -12,7 +12,13 @@ namespace SwagTests
 	/// </summary>
 	public class NG2OpenApiDirTestHelper: NG2TestHelper
 	{
-		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output, string defaultDefFile="openapi.yaml") : base(genType, output, new CasualTestingSettings(true, true))
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="genType"></param>
+		/// <param name="output"></param>
+		/// <param name="defaultDefFile">default is openapi.yaml</param>
+		public NG2OpenApiDirTestHelper(Type genType, ITestOutputHelper output, string defaultDefFile="openapi.yaml") : base(genType, output, TestHelpers.TestingSettings.Instance)
 		{
 			this.defaultDefFile = defaultDefFile;
 		}

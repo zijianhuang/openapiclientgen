@@ -47,7 +47,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateEntityToThingRequestFormGroup() {
 		return new FormGroup<AssociateEntityToThingRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 			entityId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(160), Validators.pattern('^urn:tdm:(([a-z]{2}-(gov-)?[a-z]{4,9}-[0-9]{1,3}/[0-9]+/)*[\p{Alnum}_]+(/[\p{Alnum}_]+)*):([\p{Alpha}]*):([\p{Alnum}_]+(/[\p{Alnum}_]+)*)$')]),
 			namespaceVersion: new FormControl<number | null | undefined>(undefined),
 		});
@@ -320,7 +320,7 @@ export namespace MyNS {
 			target: new FormControl<SystemInstanceSummaryTarget | null | undefined>(undefined, [Validators.required]),
 			greengrassGroupName: new FormControl<string | null | undefined>(undefined),
 			s3BucketName: new FormControl<string | null | undefined>(undefined),
-			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -363,8 +363,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -394,7 +394,7 @@ export namespace MyNS {
 	export function CreateMetricsConfigurationFormGroup() {
 		return new FormGroup<MetricsConfigurationFormProperties>({
 			cloudMetricEnabled: new FormControl<boolean | null | undefined>(undefined),
-			metricRuleRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			metricRuleRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -782,7 +782,7 @@ export namespace MyNS {
 	}
 	export function CreateDissociateEntityFromThingRequestFormGroup() {
 		return new FormGroup<DissociateEntityFromThingRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 			entityType: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 		return new FormGroup<SystemInstanceDescriptionFormProperties>({
 			s3BucketName: new FormControl<string | null | undefined>(undefined),
 			validatedNamespaceVersion: new FormControl<number | null | undefined>(undefined),
-			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1273,7 +1273,7 @@ export namespace MyNS {
 	}
 	export function CreateGetUploadStatusResponseFormGroup() {
 		return new FormGroup<GetUploadStatusResponseFormProperties>({
-			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
 			uploadStatus: new FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>(undefined, [Validators.required]),
 			namespaceArn: new FormControl<string | null | undefined>(undefined),
 			namespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128)]),
@@ -1303,7 +1303,7 @@ export namespace MyNS {
 	}
 	export function CreateGetUploadStatusRequestFormGroup() {
 		return new FormGroup<GetUploadStatusRequestFormProperties>({
-			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
 		});
 
 	}
@@ -1437,7 +1437,7 @@ export namespace MyNS {
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(250)]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1850,7 +1850,7 @@ export namespace MyNS {
 	export function CreateThingFormGroup() {
 		return new FormGroup<ThingFormProperties>({
 			thingArn: new FormControl<string | null | undefined>(undefined),
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 		});
 
 	}
@@ -1934,7 +1934,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2006,7 +2006,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2121,7 +2121,7 @@ export namespace MyNS {
 	}
 	export function CreateUploadEntityDefinitionsResponseFormGroup() {
 		return new FormGroup<UploadEntityDefinitionsResponseFormProperties>({
-			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
+			uploadId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
 		});
 
 	}
@@ -2502,75 +2502,75 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateEntityToThingX_Amz_Target { IotThingsGraphFrontEndService_AssociateEntityToThing = 0 }
+	export enum AssociateEntityToThingX_Amz_Target { 'IotThingsGraphFrontEndService.AssociateEntityToThing' = 0 }
 
-	export enum CreateFlowTemplateX_Amz_Target { IotThingsGraphFrontEndService_CreateFlowTemplate = 0 }
+	export enum CreateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.CreateFlowTemplate' = 0 }
 
-	export enum CreateSystemInstanceX_Amz_Target { IotThingsGraphFrontEndService_CreateSystemInstance = 0 }
+	export enum CreateSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.CreateSystemInstance' = 0 }
 
-	export enum CreateSystemTemplateX_Amz_Target { IotThingsGraphFrontEndService_CreateSystemTemplate = 0 }
+	export enum CreateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.CreateSystemTemplate' = 0 }
 
-	export enum DeleteFlowTemplateX_Amz_Target { IotThingsGraphFrontEndService_DeleteFlowTemplate = 0 }
+	export enum DeleteFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteFlowTemplate' = 0 }
 
-	export enum DeleteNamespaceX_Amz_Target { IotThingsGraphFrontEndService_DeleteNamespace = 0 }
+	export enum DeleteNamespaceX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteNamespace' = 0 }
 
-	export enum DeleteSystemInstanceX_Amz_Target { IotThingsGraphFrontEndService_DeleteSystemInstance = 0 }
+	export enum DeleteSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteSystemInstance' = 0 }
 
-	export enum DeleteSystemTemplateX_Amz_Target { IotThingsGraphFrontEndService_DeleteSystemTemplate = 0 }
+	export enum DeleteSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeleteSystemTemplate' = 0 }
 
-	export enum DeploySystemInstanceX_Amz_Target { IotThingsGraphFrontEndService_DeploySystemInstance = 0 }
+	export enum DeploySystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.DeploySystemInstance' = 0 }
 
-	export enum DeprecateFlowTemplateX_Amz_Target { IotThingsGraphFrontEndService_DeprecateFlowTemplate = 0 }
+	export enum DeprecateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeprecateFlowTemplate' = 0 }
 
-	export enum DeprecateSystemTemplateX_Amz_Target { IotThingsGraphFrontEndService_DeprecateSystemTemplate = 0 }
+	export enum DeprecateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.DeprecateSystemTemplate' = 0 }
 
-	export enum DescribeNamespaceX_Amz_Target { IotThingsGraphFrontEndService_DescribeNamespace = 0 }
+	export enum DescribeNamespaceX_Amz_Target { 'IotThingsGraphFrontEndService.DescribeNamespace' = 0 }
 
-	export enum DissociateEntityFromThingX_Amz_Target { IotThingsGraphFrontEndService_DissociateEntityFromThing = 0 }
+	export enum DissociateEntityFromThingX_Amz_Target { 'IotThingsGraphFrontEndService.DissociateEntityFromThing' = 0 }
 
-	export enum GetEntitiesX_Amz_Target { IotThingsGraphFrontEndService_GetEntities = 0 }
+	export enum GetEntitiesX_Amz_Target { 'IotThingsGraphFrontEndService.GetEntities' = 0 }
 
-	export enum GetFlowTemplateX_Amz_Target { IotThingsGraphFrontEndService_GetFlowTemplate = 0 }
+	export enum GetFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.GetFlowTemplate' = 0 }
 
-	export enum GetFlowTemplateRevisionsX_Amz_Target { IotThingsGraphFrontEndService_GetFlowTemplateRevisions = 0 }
+	export enum GetFlowTemplateRevisionsX_Amz_Target { 'IotThingsGraphFrontEndService.GetFlowTemplateRevisions' = 0 }
 
-	export enum GetNamespaceDeletionStatusX_Amz_Target { IotThingsGraphFrontEndService_GetNamespaceDeletionStatus = 0 }
+	export enum GetNamespaceDeletionStatusX_Amz_Target { 'IotThingsGraphFrontEndService.GetNamespaceDeletionStatus' = 0 }
 
-	export enum GetSystemInstanceX_Amz_Target { IotThingsGraphFrontEndService_GetSystemInstance = 0 }
+	export enum GetSystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemInstance' = 0 }
 
-	export enum GetSystemTemplateX_Amz_Target { IotThingsGraphFrontEndService_GetSystemTemplate = 0 }
+	export enum GetSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemTemplate' = 0 }
 
-	export enum GetSystemTemplateRevisionsX_Amz_Target { IotThingsGraphFrontEndService_GetSystemTemplateRevisions = 0 }
+	export enum GetSystemTemplateRevisionsX_Amz_Target { 'IotThingsGraphFrontEndService.GetSystemTemplateRevisions' = 0 }
 
-	export enum GetUploadStatusX_Amz_Target { IotThingsGraphFrontEndService_GetUploadStatus = 0 }
+	export enum GetUploadStatusX_Amz_Target { 'IotThingsGraphFrontEndService.GetUploadStatus' = 0 }
 
-	export enum ListFlowExecutionMessagesX_Amz_Target { IotThingsGraphFrontEndService_ListFlowExecutionMessages = 0 }
+	export enum ListFlowExecutionMessagesX_Amz_Target { 'IotThingsGraphFrontEndService.ListFlowExecutionMessages' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { IotThingsGraphFrontEndService_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'IotThingsGraphFrontEndService.ListTagsForResource' = 0 }
 
-	export enum SearchEntitiesX_Amz_Target { IotThingsGraphFrontEndService_SearchEntities = 0 }
+	export enum SearchEntitiesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchEntities' = 0 }
 
-	export enum SearchFlowExecutionsX_Amz_Target { IotThingsGraphFrontEndService_SearchFlowExecutions = 0 }
+	export enum SearchFlowExecutionsX_Amz_Target { 'IotThingsGraphFrontEndService.SearchFlowExecutions' = 0 }
 
-	export enum SearchFlowTemplatesX_Amz_Target { IotThingsGraphFrontEndService_SearchFlowTemplates = 0 }
+	export enum SearchFlowTemplatesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchFlowTemplates' = 0 }
 
-	export enum SearchSystemInstancesX_Amz_Target { IotThingsGraphFrontEndService_SearchSystemInstances = 0 }
+	export enum SearchSystemInstancesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchSystemInstances' = 0 }
 
-	export enum SearchSystemTemplatesX_Amz_Target { IotThingsGraphFrontEndService_SearchSystemTemplates = 0 }
+	export enum SearchSystemTemplatesX_Amz_Target { 'IotThingsGraphFrontEndService.SearchSystemTemplates' = 0 }
 
-	export enum SearchThingsX_Amz_Target { IotThingsGraphFrontEndService_SearchThings = 0 }
+	export enum SearchThingsX_Amz_Target { 'IotThingsGraphFrontEndService.SearchThings' = 0 }
 
-	export enum TagResourceX_Amz_Target { IotThingsGraphFrontEndService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'IotThingsGraphFrontEndService.TagResource' = 0 }
 
-	export enum UndeploySystemInstanceX_Amz_Target { IotThingsGraphFrontEndService_UndeploySystemInstance = 0 }
+	export enum UndeploySystemInstanceX_Amz_Target { 'IotThingsGraphFrontEndService.UndeploySystemInstance' = 0 }
 
-	export enum UntagResourceX_Amz_Target { IotThingsGraphFrontEndService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'IotThingsGraphFrontEndService.UntagResource' = 0 }
 
-	export enum UpdateFlowTemplateX_Amz_Target { IotThingsGraphFrontEndService_UpdateFlowTemplate = 0 }
+	export enum UpdateFlowTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.UpdateFlowTemplate' = 0 }
 
-	export enum UpdateSystemTemplateX_Amz_Target { IotThingsGraphFrontEndService_UpdateSystemTemplate = 0 }
+	export enum UpdateSystemTemplateX_Amz_Target { 'IotThingsGraphFrontEndService.UpdateSystemTemplate' = 0 }
 
-	export enum UploadEntityDefinitionsX_Amz_Target { IotThingsGraphFrontEndService_UploadEntityDefinitions = 0 }
+	export enum UploadEntityDefinitionsX_Amz_Target { 'IotThingsGraphFrontEndService.UploadEntityDefinitions' = 0 }
 
 }
 

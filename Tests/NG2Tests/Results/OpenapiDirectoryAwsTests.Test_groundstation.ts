@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigIdResponseConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
+	export enum ConfigIdResponseConfigType { 'antenna-downlink' = 0, 'antenna-downlink-demod-decode' = 1, 'antenna-uplink' = 2, 'dataflow-endpoint' = 3, tracking = 4, 'uplink-echo' = 5 }
 
 
 	/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
@@ -240,7 +240,7 @@ export namespace MyNS {
 	}
 	export function CreateDecodeConfigFormGroup() {
 		return new FormGroup<DecodeConfigFormProperties>({
-			unvalidatedJSON: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(2), Validators.pattern('^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$')]),
+			unvalidatedJSON: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(8192), Validators.pattern('^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$')]),
 		});
 
 	}
@@ -269,7 +269,7 @@ export namespace MyNS {
 	}
 	export function CreateDemodulationConfigFormGroup() {
 		return new FormGroup<DemodulationConfigFormProperties>({
-			unvalidatedJSON: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(2), Validators.pattern('^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$')]),
+			unvalidatedJSON: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(8192), Validators.pattern('^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$')]),
 		});
 
 	}
@@ -502,7 +502,7 @@ export namespace MyNS {
 	}
 	export function CreateDataflowEndpointFormGroup() {
 		return new FormGroup<DataflowEndpointFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 			status: new FormControl<DataflowEndpointStatus | null | undefined>(undefined),
 		});
 
@@ -690,7 +690,7 @@ export namespace MyNS {
 
 		/** Required */
 		configId: string;
-		configType?: GetConfigResponseConfigType | null;
+		configType?: ConfigIdResponseConfigType | null;
 
 		/** Required */
 		name: string;
@@ -705,7 +705,7 @@ export namespace MyNS {
 
 		/** Required */
 		configId: FormControl<string | null | undefined>,
-		configType: FormControl<GetConfigResponseConfigType | null | undefined>,
+		configType: FormControl<ConfigIdResponseConfigType | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
@@ -714,7 +714,7 @@ export namespace MyNS {
 		return new FormGroup<GetConfigResponseFormProperties>({
 			configArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			configId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			configType: new FormControl<GetConfigResponseConfigType | null | undefined>(undefined),
+			configType: new FormControl<ConfigIdResponseConfigType | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -751,8 +751,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum GetConfigResponseConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
 
 
 	/** <p/> */
@@ -914,7 +912,7 @@ export namespace MyNS {
 		return new FormGroup<GetSatelliteResponseFormProperties>({
 			noradSatelliteID: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(99999)]),
 			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			satelliteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}')]),
+			satelliteId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}')]),
 		});
 
 	}
@@ -942,7 +940,7 @@ export namespace MyNS {
 	export interface ConfigListItem {
 		configArn?: string | null;
 		configId?: string | null;
-		configType?: ConfigListItemConfigType | null;
+		configType?: ConfigIdResponseConfigType | null;
 		name?: string | null;
 	}
 
@@ -950,20 +948,18 @@ export namespace MyNS {
 	export interface ConfigListItemFormProperties {
 		configArn: FormControl<string | null | undefined>,
 		configId: FormControl<string | null | undefined>,
-		configType: FormControl<ConfigListItemConfigType | null | undefined>,
+		configType: FormControl<ConfigIdResponseConfigType | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateConfigListItemFormGroup() {
 		return new FormGroup<ConfigListItemFormProperties>({
 			configArn: new FormControl<string | null | undefined>(undefined),
 			configId: new FormControl<string | null | undefined>(undefined),
-			configType: new FormControl<ConfigListItemConfigType | null | undefined>(undefined),
+			configType: new FormControl<ConfigIdResponseConfigType | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ConfigListItemConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
 
 
 	/** <p/> */
@@ -1216,7 +1212,7 @@ export namespace MyNS {
 		return new FormGroup<SatelliteListItemFormProperties>({
 			noradSatelliteID: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(99999)]),
 			satelliteArn: new FormControl<string | null | undefined>(undefined),
-			satelliteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}')]),
+			satelliteId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}')]),
 		});
 
 	}
@@ -1282,7 +1278,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ConfigCapabilityType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
+	export enum ConfigCapabilityType { 'antenna-downlink' = 0, 'antenna-downlink-demod-decode' = 1, 'antenna-uplink' = 2, 'dataflow-endpoint' = 3, tracking = 4, 'uplink-echo' = 5 }
 
 
 	/** <p/> */
@@ -1315,7 +1311,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigRequestFormGroup() {
 		return new FormGroup<CreateConfigRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 		});
 
 	}
@@ -1413,7 +1409,7 @@ export namespace MyNS {
 			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(21600)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 			trackingConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1808,7 +1804,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateConfigRequestFormGroup() {
 		return new FormGroup<UpdateConfigRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 		});
 
 	}
@@ -1877,7 +1873,7 @@ export namespace MyNS {
 			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2179,7 +2175,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateConfigPostBodyFormGroup() {
 		return new FormGroup<CreateConfigPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2329,18 +2325,18 @@ export namespace MyNS {
 			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(21600)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			trackingConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
-	export enum DeleteConfigConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
+	export enum DeleteConfigConfigType { 'antenna-downlink' = 0, 'antenna-downlink-demod-decode' = 1, 'antenna-uplink' = 2, 'dataflow-endpoint' = 3, tracking = 4, 'uplink-echo' = 5 }
 
-	export enum GetConfigConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
+	export enum GetConfigConfigType { 'antenna-downlink' = 0, 'antenna-downlink-demod-decode' = 1, 'antenna-uplink' = 2, 'dataflow-endpoint' = 3, tracking = 4, 'uplink-echo' = 5 }
 
-	export enum UpdateConfigConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
+	export enum UpdateConfigConfigType { 'antenna-downlink' = 0, 'antenna-downlink-demod-decode' = 1, 'antenna-uplink' = 2, 'dataflow-endpoint' = 3, tracking = 4, 'uplink-echo' = 5 }
 
 	export interface UpdateConfigPutBody {
 
@@ -2370,7 +2366,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateConfigPutBodyFormGroup() {
 		return new FormGroup<UpdateConfigPutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 		});
 
 	}
@@ -2477,7 +2473,7 @@ export namespace MyNS {
 			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
 			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(21600)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[ a-zA-Z0-9_:-]{1,256}$')]),
 			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
 		});
 

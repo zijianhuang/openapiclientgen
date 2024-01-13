@@ -136,8 +136,8 @@ export namespace MyNS {
 	export function CreateCreateAgentRequestFormGroup() {
 		return new FormGroup<CreateAgentRequestFormProperties>({
 			ActivationKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(29), Validators.pattern('[A-Z0-9]{5}(-[A-Z0-9]{5}){4}')]),
-			AgentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
-			VpcEndpointId: new FormControl<string | null | undefined>(undefined),
+			AgentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			VpcEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^vpce-[0-9a-f]{17}$')]),
 		});
 
 	}
@@ -178,8 +178,8 @@ export namespace MyNS {
 	}
 	export function CreateTagListEntryFormGroup() {
 		return new FormGroup<TagListEntryFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:/-]+$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:/-]+$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -816,7 +816,7 @@ export namespace MyNS {
 			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 			DestinationLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -1099,7 +1099,7 @@ export namespace MyNS {
 	export function CreateDescribeAgentResponseFormGroup() {
 		return new FormGroup<DescribeAgentResponseFormProperties>({
 			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 			Status: new FormControl<DescribeAgentResponseStatus | null | undefined>(undefined),
 			LastConnectionTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1148,8 +1148,8 @@ export namespace MyNS {
 	}
 	export function CreatePrivateLinkConfigFormGroup() {
 		return new FormGroup<PrivateLinkConfigFormProperties>({
-			VpcEndpointId: new FormControl<string | null | undefined>(undefined),
-			PrivateLinkEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(7), Validators.pattern('\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z')]),
+			VpcEndpointId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^vpce-[0-9a-f]{17}$')]),
+			PrivateLinkEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(15), Validators.pattern('\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z')]),
 		});
 
 	}
@@ -1597,7 +1597,7 @@ export namespace MyNS {
 		return new FormGroup<DescribeTaskResponseFormProperties>({
 			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 			Status: new FormControl<DescribeTaskResponseStatus | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 			CurrentTaskExecutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$')]),
 			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
 			DestinationLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$')]),
@@ -1839,7 +1839,7 @@ export namespace MyNS {
 	export function CreateAgentListEntryFormGroup() {
 		return new FormGroup<AgentListEntryFormProperties>({
 			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 			Status: new FormControl<DescribeAgentResponseStatus | null | undefined>(undefined),
 		});
 
@@ -2178,7 +2178,7 @@ export namespace MyNS {
 		return new FormGroup<TaskListEntryFormProperties>({
 			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
 			Status: new FormControl<DescribeTaskResponseStatus | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -2407,7 +2407,7 @@ export namespace MyNS {
 	export function CreateUpdateAgentRequestFormGroup() {
 		return new FormGroup<UpdateAgentRequestFormProperties>({
 			AgentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]+:[0-9]{12}:agent/agent-[0-9a-z]{17}$')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 		});
 
 	}
@@ -2475,7 +2475,7 @@ export namespace MyNS {
 	export function CreateUpdateTaskRequestFormGroup() {
 		return new FormGroup<UpdateTaskRequestFormProperties>({
 			TaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9\s+=._:@/-]+$')]),
 			CloudWatchLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(562), Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):logs:[a-z\-0-9]*:[0-9]{12}:log-group:([^:\*]*)$')]),
 		});
 
@@ -2798,63 +2798,63 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelTaskExecutionX_Amz_Target { FmrsService_CancelTaskExecution = 0 }
+	export enum CancelTaskExecutionX_Amz_Target { 'FmrsService.CancelTaskExecution' = 0 }
 
-	export enum CreateAgentX_Amz_Target { FmrsService_CreateAgent = 0 }
+	export enum CreateAgentX_Amz_Target { 'FmrsService.CreateAgent' = 0 }
 
-	export enum CreateLocationEfsX_Amz_Target { FmrsService_CreateLocationEfs = 0 }
+	export enum CreateLocationEfsX_Amz_Target { 'FmrsService.CreateLocationEfs' = 0 }
 
-	export enum CreateLocationFsxWindowsX_Amz_Target { FmrsService_CreateLocationFsxWindows = 0 }
+	export enum CreateLocationFsxWindowsX_Amz_Target { 'FmrsService.CreateLocationFsxWindows' = 0 }
 
-	export enum CreateLocationNfsX_Amz_Target { FmrsService_CreateLocationNfs = 0 }
+	export enum CreateLocationNfsX_Amz_Target { 'FmrsService.CreateLocationNfs' = 0 }
 
-	export enum CreateLocationS3X_Amz_Target { FmrsService_CreateLocationS3 = 0 }
+	export enum CreateLocationS3X_Amz_Target { 'FmrsService.CreateLocationS3' = 0 }
 
-	export enum CreateLocationSmbX_Amz_Target { FmrsService_CreateLocationSmb = 0 }
+	export enum CreateLocationSmbX_Amz_Target { 'FmrsService.CreateLocationSmb' = 0 }
 
-	export enum CreateTaskX_Amz_Target { FmrsService_CreateTask = 0 }
+	export enum CreateTaskX_Amz_Target { 'FmrsService.CreateTask' = 0 }
 
-	export enum DeleteAgentX_Amz_Target { FmrsService_DeleteAgent = 0 }
+	export enum DeleteAgentX_Amz_Target { 'FmrsService.DeleteAgent' = 0 }
 
-	export enum DeleteLocationX_Amz_Target { FmrsService_DeleteLocation = 0 }
+	export enum DeleteLocationX_Amz_Target { 'FmrsService.DeleteLocation' = 0 }
 
-	export enum DeleteTaskX_Amz_Target { FmrsService_DeleteTask = 0 }
+	export enum DeleteTaskX_Amz_Target { 'FmrsService.DeleteTask' = 0 }
 
-	export enum DescribeAgentX_Amz_Target { FmrsService_DescribeAgent = 0 }
+	export enum DescribeAgentX_Amz_Target { 'FmrsService.DescribeAgent' = 0 }
 
-	export enum DescribeLocationEfsX_Amz_Target { FmrsService_DescribeLocationEfs = 0 }
+	export enum DescribeLocationEfsX_Amz_Target { 'FmrsService.DescribeLocationEfs' = 0 }
 
-	export enum DescribeLocationFsxWindowsX_Amz_Target { FmrsService_DescribeLocationFsxWindows = 0 }
+	export enum DescribeLocationFsxWindowsX_Amz_Target { 'FmrsService.DescribeLocationFsxWindows' = 0 }
 
-	export enum DescribeLocationNfsX_Amz_Target { FmrsService_DescribeLocationNfs = 0 }
+	export enum DescribeLocationNfsX_Amz_Target { 'FmrsService.DescribeLocationNfs' = 0 }
 
-	export enum DescribeLocationS3X_Amz_Target { FmrsService_DescribeLocationS3 = 0 }
+	export enum DescribeLocationS3X_Amz_Target { 'FmrsService.DescribeLocationS3' = 0 }
 
-	export enum DescribeLocationSmbX_Amz_Target { FmrsService_DescribeLocationSmb = 0 }
+	export enum DescribeLocationSmbX_Amz_Target { 'FmrsService.DescribeLocationSmb' = 0 }
 
-	export enum DescribeTaskX_Amz_Target { FmrsService_DescribeTask = 0 }
+	export enum DescribeTaskX_Amz_Target { 'FmrsService.DescribeTask' = 0 }
 
-	export enum DescribeTaskExecutionX_Amz_Target { FmrsService_DescribeTaskExecution = 0 }
+	export enum DescribeTaskExecutionX_Amz_Target { 'FmrsService.DescribeTaskExecution' = 0 }
 
-	export enum ListAgentsX_Amz_Target { FmrsService_ListAgents = 0 }
+	export enum ListAgentsX_Amz_Target { 'FmrsService.ListAgents' = 0 }
 
-	export enum ListLocationsX_Amz_Target { FmrsService_ListLocations = 0 }
+	export enum ListLocationsX_Amz_Target { 'FmrsService.ListLocations' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { FmrsService_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'FmrsService.ListTagsForResource' = 0 }
 
-	export enum ListTaskExecutionsX_Amz_Target { FmrsService_ListTaskExecutions = 0 }
+	export enum ListTaskExecutionsX_Amz_Target { 'FmrsService.ListTaskExecutions' = 0 }
 
-	export enum ListTasksX_Amz_Target { FmrsService_ListTasks = 0 }
+	export enum ListTasksX_Amz_Target { 'FmrsService.ListTasks' = 0 }
 
-	export enum StartTaskExecutionX_Amz_Target { FmrsService_StartTaskExecution = 0 }
+	export enum StartTaskExecutionX_Amz_Target { 'FmrsService.StartTaskExecution' = 0 }
 
-	export enum TagResourceX_Amz_Target { FmrsService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'FmrsService.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { FmrsService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'FmrsService.UntagResource' = 0 }
 
-	export enum UpdateAgentX_Amz_Target { FmrsService_UpdateAgent = 0 }
+	export enum UpdateAgentX_Amz_Target { 'FmrsService.UpdateAgent' = 0 }
 
-	export enum UpdateTaskX_Amz_Target { FmrsService_UpdateTask = 0 }
+	export enum UpdateTaskX_Amz_Target { 'FmrsService.UpdateTask' = 0 }
 
 }
 

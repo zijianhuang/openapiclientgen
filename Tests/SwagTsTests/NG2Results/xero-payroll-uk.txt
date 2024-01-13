@@ -382,7 +382,7 @@ export namespace MyNS {
 		status?: EmployeeStatutoryLeaveSummaryStatus | null;
 	}
 
-	export enum EmployeeStatutoryLeaveSummaryStatus { Pending = 0, In_Progress = 1, Completed = 2 }
+	export enum EmployeeStatutoryLeaveSummaryStatus { Pending = 0, 'In-Progress' = 1, Completed = 2 }
 
 	export interface EmployeeStatutorySickLeaves {
 		pagination?: Pagination;
@@ -853,7 +853,7 @@ export namespace MyNS {
 		fixedAmount?: number | null;
 	}
 
-	export enum EarningsRateEarningsType { OvertimeEarnings = 0, Allowance = 1, RegularEarnings = 2, Commission = 3, Bonus = 4, TipsDirect = 5, TipsNon_Direct = 6, Backpay = 7, OtherEarnings = 8, LumpSum = 9 }
+	export enum EarningsRateEarningsType { OvertimeEarnings = 0, Allowance = 1, RegularEarnings = 2, Commission = 3, Bonus = 4, 'Tips(Direct)' = 5, 'Tips(Non-Direct)' = 6, Backpay = 7, OtherEarnings = 8, LumpSum = 9 }
 
 	export enum EarningsRateRateType { RatePerUnit = 0, MultipleOfOrdinaryEarningsRate = 1, FixedAmount = 2 }
 

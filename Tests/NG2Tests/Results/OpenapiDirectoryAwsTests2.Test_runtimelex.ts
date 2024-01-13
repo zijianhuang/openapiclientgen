@@ -29,7 +29,7 @@ export namespace MyNS {
 		return new FormGroup<DeleteSessionResponseFormProperties>({
 			botName: new FormControl<string | null | undefined>(undefined),
 			botAlias: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(2), Validators.pattern('[0-9a-zA-Z._:-]+')]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(100), Validators.pattern('[0-9a-zA-Z._:-]+')]),
 			sessionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -146,7 +146,7 @@ export namespace MyNS {
 	export function CreateIntentSummaryFormGroup() {
 		return new FormGroup<IntentSummaryFormProperties>({
 			intentName: new FormControl<string | null | undefined>(undefined),
-			checkpointLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9-]+')]),
+			checkpointLabel: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-zA-Z0-9-]+')]),
 			confirmationStatus: new FormControl<IntentSummaryConfirmationStatus | null | undefined>(undefined),
 			dialogActionType: new FormControl<IntentSummaryDialogActionType | null | undefined>(undefined, [Validators.required]),
 			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
@@ -212,7 +212,7 @@ export namespace MyNS {
 			intentName: new FormControl<string | null | undefined>(undefined),
 			slotToElicit: new FormControl<string | null | undefined>(undefined),
 			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
 		});
 
@@ -330,7 +330,7 @@ export namespace MyNS {
 	export function CreatePostTextResponseFormGroup() {
 		return new FormGroup<PostTextResponseFormProperties>({
 			intentName: new FormControl<string | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
 			dialogState: new FormControl<PostTextResponseDialogState | null | undefined>(undefined),
 			slotToElicit: new FormControl<string | null | undefined>(undefined),
@@ -387,7 +387,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResponseCardContentType { application_vnd_amazonaws_card_generic = 0 }
+	export enum ResponseCardContentType { 'application/vnd.amazonaws.card.generic' = 0 }
 
 
 	/** Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text.  */
@@ -453,10 +453,10 @@ export namespace MyNS {
 	}
 	export function CreateGenericAttachmentFormGroup() {
 		return new FormGroup<GenericAttachmentFormProperties>({
-			title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
-			subTitle: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(80), Validators.minLength(1)]),
-			attachmentLinkUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			imageUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			title: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(80)]),
+			subTitle: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(80)]),
+			attachmentLinkUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			imageUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -499,8 +499,8 @@ export namespace MyNS {
 	}
 	export function CreateButtonFormGroup() {
 		return new FormGroup<ButtonFormProperties>({
-			text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(1)]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(15)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -526,7 +526,7 @@ export namespace MyNS {
 
 	export enum ConfirmationStatus { None = 0, Confirmed = 1, Denied = 2 }
 
-	export enum ContentType { application_vnd_amazonaws_card_generic = 0 }
+	export enum ContentType { 'application/vnd.amazonaws.card.generic' = 0 }
 
 	export interface DeleteSessionRequest {
 	}
@@ -589,7 +589,7 @@ export namespace MyNS {
 	}
 	export function CreatePostTextRequestFormGroup() {
 		return new FormGroup<PostTextRequestFormProperties>({
-			inputText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			inputText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -741,7 +741,7 @@ export namespace MyNS {
 			intentName: new FormControl<string | null | undefined>(undefined),
 			slotToElicit: new FormControl<string | null | undefined>(undefined),
 			fulfillmentState: new FormControl<IntentSummaryFulfillmentState | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			messageFormat: new FormControl<DialogActionMessageFormat | null | undefined>(undefined),
 		});
 
@@ -806,7 +806,7 @@ export namespace MyNS {
 		return new FormGroup<PostTextPostBodyFormProperties>({
 			sessionAttributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			requestAttributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			inputText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			inputText: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}

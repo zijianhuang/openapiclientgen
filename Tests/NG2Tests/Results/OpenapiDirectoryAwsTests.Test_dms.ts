@@ -284,7 +284,7 @@ export namespace MyNS {
 
 	export enum EndpointEndpointType { source = 0, target = 1 }
 
-	export enum EndpointSslMode { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
+	export enum EndpointSslMode { none = 0, require = 1, 'verify-ca' = 2, 'verify-full' = 3 }
 
 
 	/** Provides the Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint. */
@@ -386,13 +386,13 @@ export namespace MyNS {
 
 	export enum S3SettingsCompressionType { none = 0, gzip = 1 }
 
-	export enum S3SettingsEncryptionMode { sse_s3 = 0, sse_kms = 1 }
+	export enum S3SettingsEncryptionMode { 'sse-s3' = 0, 'sse-kms' = 1 }
 
 	export enum S3SettingsDataFormat { csv = 0, parquet = 1 }
 
-	export enum S3SettingsEncodingType { plain = 0, plain_dictionary = 1, rle_dictionary = 2 }
+	export enum S3SettingsEncodingType { plain = 0, 'plain-dictionary' = 1, 'rle-dictionary' = 2 }
 
-	export enum S3SettingsParquetVersion { parquet_1_0 = 0, parquet_2_0 = 1 }
+	export enum S3SettingsParquetVersion { 'parquet-1-0' = 0, 'parquet-2-0' = 1 }
 
 
 	/**  The settings in JSON format for the DMS Transfer type source endpoint.  */
@@ -466,7 +466,7 @@ export namespace MyNS {
 
 	export enum MongoDbSettingsAuthType { no = 0, password = 1 }
 
-	export enum MongoDbSettingsAuthMechanism { _default = 0, mongodb_cr = 1, scram_sha_1 = 2 }
+	export enum MongoDbSettingsAuthMechanism { default = 0, mongodb_cr = 1, scram_sha_1 = 2 }
 
 	export enum MongoDbSettingsNestingLevel { none = 0, one = 1 }
 
@@ -508,7 +508,7 @@ export namespace MyNS {
 
 	}
 
-	export enum KinesisSettingsMessageFormat { json = 0, json_unformatted = 1 }
+	export enum KinesisSettingsMessageFormat { json = 0, 'json-unformatted' = 1 }
 
 
 	/** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information. */
@@ -618,7 +618,7 @@ export namespace MyNS {
 		DatabaseName?: string | null;
 		DateFormat?: string | null;
 		EmptyAsNull?: boolean | null;
-		EncryptionMode?: RedshiftSettingsEncryptionMode | null;
+		EncryptionMode?: S3SettingsEncryptionMode | null;
 		FileTransferUploadStreams?: number | null;
 		LoadTimeout?: number | null;
 		MaxFileSize?: number | null;
@@ -647,7 +647,7 @@ export namespace MyNS {
 		DatabaseName: FormControl<string | null | undefined>,
 		DateFormat: FormControl<string | null | undefined>,
 		EmptyAsNull: FormControl<boolean | null | undefined>,
-		EncryptionMode: FormControl<RedshiftSettingsEncryptionMode | null | undefined>,
+		EncryptionMode: FormControl<S3SettingsEncryptionMode | null | undefined>,
 		FileTransferUploadStreams: FormControl<number | null | undefined>,
 		LoadTimeout: FormControl<number | null | undefined>,
 		MaxFileSize: FormControl<number | null | undefined>,
@@ -675,7 +675,7 @@ export namespace MyNS {
 			DatabaseName: new FormControl<string | null | undefined>(undefined),
 			DateFormat: new FormControl<string | null | undefined>(undefined),
 			EmptyAsNull: new FormControl<boolean | null | undefined>(undefined),
-			EncryptionMode: new FormControl<RedshiftSettingsEncryptionMode | null | undefined>(undefined),
+			EncryptionMode: new FormControl<S3SettingsEncryptionMode | null | undefined>(undefined),
 			FileTransferUploadStreams: new FormControl<number | null | undefined>(undefined),
 			LoadTimeout: new FormControl<number | null | undefined>(undefined),
 			MaxFileSize: new FormControl<number | null | undefined>(undefined),
@@ -695,8 +695,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum RedshiftSettingsEncryptionMode { sse_s3 = 0, sse_kms = 1 }
 
 
 	/** <p/> */
@@ -719,7 +717,7 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 		Tags?: Array<Tag>;
 		CertificateArn?: string | null;
-		SslMode?: CreateEndpointMessageSslMode | null;
+		SslMode?: EndpointSslMode | null;
 		ServiceAccessRoleArn?: string | null;
 		ExternalTableDefinition?: string | null;
 
@@ -770,7 +768,7 @@ export namespace MyNS {
 		ExtraConnectionAttributes: FormControl<string | null | undefined>,
 		KmsKeyId: FormControl<string | null | undefined>,
 		CertificateArn: FormControl<string | null | undefined>,
-		SslMode: FormControl<CreateEndpointMessageSslMode | null | undefined>,
+		SslMode: FormControl<EndpointSslMode | null | undefined>,
 		ServiceAccessRoleArn: FormControl<string | null | undefined>,
 		ExternalTableDefinition: FormControl<string | null | undefined>,
 	}
@@ -787,14 +785,12 @@ export namespace MyNS {
 			ExtraConnectionAttributes: new FormControl<string | null | undefined>(undefined),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined),
 			CertificateArn: new FormControl<string | null | undefined>(undefined),
-			SslMode: new FormControl<CreateEndpointMessageSslMode | null | undefined>(undefined),
+			SslMode: new FormControl<EndpointSslMode | null | undefined>(undefined),
 			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
 			ExternalTableDefinition: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateEndpointMessageSslMode { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
 
 	export interface KMSKeyNotAccessibleFault {
 	}
@@ -1448,7 +1444,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReplicationTaskMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
+	export enum ReplicationTaskMigrationType { 'full-load' = 0, cdc = 1, 'full-load-and-cdc' = 2 }
 
 
 	/** In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task. */
@@ -1514,7 +1510,7 @@ export namespace MyNS {
 		ReplicationInstanceArn: string;
 
 		/** Required */
-		MigrationType: CreateReplicationTaskMessageMigrationType;
+		MigrationType: ReplicationTaskMigrationType;
 
 		/** Required */
 		TableMappings: string;
@@ -1542,7 +1538,7 @@ export namespace MyNS {
 		ReplicationInstanceArn: FormControl<string | null | undefined>,
 
 		/** Required */
-		MigrationType: FormControl<CreateReplicationTaskMessageMigrationType | null | undefined>,
+		MigrationType: FormControl<ReplicationTaskMigrationType | null | undefined>,
 
 		/** Required */
 		TableMappings: FormControl<string | null | undefined>,
@@ -1558,7 +1554,7 @@ export namespace MyNS {
 			SourceEndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TargetEndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			MigrationType: new FormControl<CreateReplicationTaskMessageMigrationType | null | undefined>(undefined, [Validators.required]),
+			MigrationType: new FormControl<ReplicationTaskMigrationType | null | undefined>(undefined, [Validators.required]),
 			TableMappings: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationTaskSettings: new FormControl<string | null | undefined>(undefined),
 			CdcStartTime: new FormControl<Date | null | undefined>(undefined),
@@ -1568,8 +1564,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum CreateReplicationTaskMessageMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
 
 	export interface DeleteCertificateResponse {
 
@@ -2303,13 +2297,13 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceType { replication_instance = 0 }
+	export enum EventSourceType { 'replication-instance' = 0 }
 
 
 	/** <p/> */
 	export interface DescribeEventsMessage {
 		SourceIdentifier?: string | null;
-		SourceType?: DescribeEventsMessageSourceType | null;
+		SourceType?: EventSourceType | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Duration?: number | null;
@@ -2322,7 +2316,7 @@ export namespace MyNS {
 	/** <p/> */
 	export interface DescribeEventsMessageFormProperties {
 		SourceIdentifier: FormControl<string | null | undefined>,
-		SourceType: FormControl<DescribeEventsMessageSourceType | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
@@ -2332,7 +2326,7 @@ export namespace MyNS {
 	export function CreateDescribeEventsMessageFormGroup() {
 		return new FormGroup<DescribeEventsMessageFormProperties>({
 			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceType: new FormControl<DescribeEventsMessageSourceType | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			Duration: new FormControl<number | null | undefined>(undefined),
@@ -2341,8 +2335,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum DescribeEventsMessageSourceType { replication_instance = 0 }
 
 
 	/** <p/> */
@@ -3077,7 +3069,7 @@ export namespace MyNS {
 		DatabaseName?: string | null;
 		ExtraConnectionAttributes?: string | null;
 		CertificateArn?: string | null;
-		SslMode?: ModifyEndpointMessageSslMode | null;
+		SslMode?: EndpointSslMode | null;
 		ServiceAccessRoleArn?: string | null;
 		ExternalTableDefinition?: string | null;
 
@@ -3124,7 +3116,7 @@ export namespace MyNS {
 		DatabaseName: FormControl<string | null | undefined>,
 		ExtraConnectionAttributes: FormControl<string | null | undefined>,
 		CertificateArn: FormControl<string | null | undefined>,
-		SslMode: FormControl<ModifyEndpointMessageSslMode | null | undefined>,
+		SslMode: FormControl<EndpointSslMode | null | undefined>,
 		ServiceAccessRoleArn: FormControl<string | null | undefined>,
 		ExternalTableDefinition: FormControl<string | null | undefined>,
 	}
@@ -3141,14 +3133,12 @@ export namespace MyNS {
 			DatabaseName: new FormControl<string | null | undefined>(undefined),
 			ExtraConnectionAttributes: new FormControl<string | null | undefined>(undefined),
 			CertificateArn: new FormControl<string | null | undefined>(undefined),
-			SslMode: new FormControl<ModifyEndpointMessageSslMode | null | undefined>(undefined),
+			SslMode: new FormControl<EndpointSslMode | null | undefined>(undefined),
 			ServiceAccessRoleArn: new FormControl<string | null | undefined>(undefined),
 			ExternalTableDefinition: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ModifyEndpointMessageSslMode { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
 
 
 	/** <p/> */
@@ -3352,7 +3342,7 @@ export namespace MyNS {
 		/** Required */
 		ReplicationTaskArn: string;
 		ReplicationTaskIdentifier?: string | null;
-		MigrationType?: ModifyReplicationTaskMessageMigrationType | null;
+		MigrationType?: ReplicationTaskMigrationType | null;
 		TableMappings?: string | null;
 		ReplicationTaskSettings?: string | null;
 		CdcStartTime?: Date | null;
@@ -3367,7 +3357,7 @@ export namespace MyNS {
 		/** Required */
 		ReplicationTaskArn: FormControl<string | null | undefined>,
 		ReplicationTaskIdentifier: FormControl<string | null | undefined>,
-		MigrationType: FormControl<ModifyReplicationTaskMessageMigrationType | null | undefined>,
+		MigrationType: FormControl<ReplicationTaskMigrationType | null | undefined>,
 		TableMappings: FormControl<string | null | undefined>,
 		ReplicationTaskSettings: FormControl<string | null | undefined>,
 		CdcStartTime: FormControl<Date | null | undefined>,
@@ -3379,7 +3369,7 @@ export namespace MyNS {
 		return new FormGroup<ModifyReplicationTaskMessageFormProperties>({
 			ReplicationTaskArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationTaskIdentifier: new FormControl<string | null | undefined>(undefined),
-			MigrationType: new FormControl<ModifyReplicationTaskMessageMigrationType | null | undefined>(undefined),
+			MigrationType: new FormControl<ReplicationTaskMigrationType | null | undefined>(undefined),
 			TableMappings: new FormControl<string | null | undefined>(undefined),
 			ReplicationTaskSettings: new FormControl<string | null | undefined>(undefined),
 			CdcStartTime: new FormControl<Date | null | undefined>(undefined),
@@ -3389,8 +3379,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ModifyReplicationTaskMessageMigrationType { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
 
 	export interface RebootReplicationInstanceResponse {
 
@@ -3526,7 +3514,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ReloadTablesMessageReloadOption { data_reload = 0, validate_only = 1 }
+	export enum ReloadTablesMessageReloadOption { 'data-reload' = 0, 'validate-only' = 1 }
 
 
 	/** <p/> */
@@ -3620,7 +3608,7 @@ export namespace MyNS {
 
 	}
 
-	export enum StartReplicationTaskMessageStartReplicationTaskType { start_replication = 0, resume_processing = 1, reload_target = 2 }
+	export enum StartReplicationTaskMessageStartReplicationTaskType { 'start-replication' = 0, 'resume-processing' = 1, 'reload-target' = 2 }
 
 
 	/** <p/> */
@@ -3743,7 +3731,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AuthMechanismValue { _default = 0, mongodb_cr = 1, scram_sha_1 = 2 }
+	export enum AuthMechanismValue { default = 0, mongodb_cr = 1, scram_sha_1 = 2 }
 
 	export enum AuthTypeValue { no = 0, password = 1 }
 
@@ -3751,31 +3739,31 @@ export namespace MyNS {
 
 	export enum ReplicationEndpointTypeValue { source = 0, target = 1 }
 
-	export enum DmsSslModeValue { none = 0, require = 1, verify_ca = 2, verify_full = 3 }
+	export enum DmsSslModeValue { none = 0, require = 1, 'verify-ca' = 2, 'verify-full' = 3 }
 
-	export enum MigrationTypeValue { full_load = 0, cdc = 1, full_load_and_cdc = 2 }
+	export enum MigrationTypeValue { 'full-load' = 0, cdc = 1, 'full-load-and-cdc' = 2 }
 
 	export enum DataFormatValue { csv = 0, parquet = 1 }
 
-	export enum SourceType { replication_instance = 0 }
+	export enum SourceType { 'replication-instance' = 0 }
 
-	export enum EncodingTypeValue { plain = 0, plain_dictionary = 1, rle_dictionary = 2 }
+	export enum EncodingTypeValue { plain = 0, 'plain-dictionary' = 1, 'rle-dictionary' = 2 }
 
-	export enum EncryptionModeValue { sse_s3 = 0, sse_kms = 1 }
+	export enum EncryptionModeValue { 'sse-s3' = 0, 'sse-kms' = 1 }
 
-	export enum MessageFormatValue { json = 0, json_unformatted = 1 }
+	export enum MessageFormatValue { json = 0, 'json-unformatted' = 1 }
 
 	export enum NestingLevelValue { none = 0, one = 1 }
 
 	export enum ReleaseStatusValues { beta = 0 }
 
-	export enum ParquetVersionValue { parquet_1_0 = 0, parquet_2_0 = 1 }
+	export enum ParquetVersionValue { 'parquet-1-0' = 0, 'parquet-2-0' = 1 }
 
 	export enum RefreshSchemasStatusTypeValue { successful = 0, failed = 1, refreshing = 2 }
 
-	export enum ReloadOptionValue { data_reload = 0, validate_only = 1 }
+	export enum ReloadOptionValue { 'data-reload' = 0, 'validate-only' = 1 }
 
-	export enum StartReplicationTaskTypeValue { start_replication = 0, resume_processing = 1, reload_target = 2 }
+	export enum StartReplicationTaskTypeValue { 'start-replication' = 0, 'resume-processing' = 1, 'reload-target' = 2 }
 
 	@Injectable()
 	export class MyClient {
@@ -4236,99 +4224,99 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToResourceX_Amz_Target { AmazonDMSv20160101_AddTagsToResource = 0 }
+	export enum AddTagsToResourceX_Amz_Target { 'AmazonDMSv20160101.AddTagsToResource' = 0 }
 
-	export enum ApplyPendingMaintenanceActionX_Amz_Target { AmazonDMSv20160101_ApplyPendingMaintenanceAction = 0 }
+	export enum ApplyPendingMaintenanceActionX_Amz_Target { 'AmazonDMSv20160101.ApplyPendingMaintenanceAction' = 0 }
 
-	export enum CreateEndpointX_Amz_Target { AmazonDMSv20160101_CreateEndpoint = 0 }
+	export enum CreateEndpointX_Amz_Target { 'AmazonDMSv20160101.CreateEndpoint' = 0 }
 
-	export enum CreateEventSubscriptionX_Amz_Target { AmazonDMSv20160101_CreateEventSubscription = 0 }
+	export enum CreateEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.CreateEventSubscription' = 0 }
 
-	export enum CreateReplicationInstanceX_Amz_Target { AmazonDMSv20160101_CreateReplicationInstance = 0 }
+	export enum CreateReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationInstance' = 0 }
 
-	export enum CreateReplicationSubnetGroupX_Amz_Target { AmazonDMSv20160101_CreateReplicationSubnetGroup = 0 }
+	export enum CreateReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationSubnetGroup' = 0 }
 
-	export enum CreateReplicationTaskX_Amz_Target { AmazonDMSv20160101_CreateReplicationTask = 0 }
+	export enum CreateReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.CreateReplicationTask' = 0 }
 
-	export enum DeleteCertificateX_Amz_Target { AmazonDMSv20160101_DeleteCertificate = 0 }
+	export enum DeleteCertificateX_Amz_Target { 'AmazonDMSv20160101.DeleteCertificate' = 0 }
 
-	export enum DeleteConnectionX_Amz_Target { AmazonDMSv20160101_DeleteConnection = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'AmazonDMSv20160101.DeleteConnection' = 0 }
 
-	export enum DeleteEndpointX_Amz_Target { AmazonDMSv20160101_DeleteEndpoint = 0 }
+	export enum DeleteEndpointX_Amz_Target { 'AmazonDMSv20160101.DeleteEndpoint' = 0 }
 
-	export enum DeleteEventSubscriptionX_Amz_Target { AmazonDMSv20160101_DeleteEventSubscription = 0 }
+	export enum DeleteEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.DeleteEventSubscription' = 0 }
 
-	export enum DeleteReplicationInstanceX_Amz_Target { AmazonDMSv20160101_DeleteReplicationInstance = 0 }
+	export enum DeleteReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationInstance' = 0 }
 
-	export enum DeleteReplicationSubnetGroupX_Amz_Target { AmazonDMSv20160101_DeleteReplicationSubnetGroup = 0 }
+	export enum DeleteReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationSubnetGroup' = 0 }
 
-	export enum DeleteReplicationTaskX_Amz_Target { AmazonDMSv20160101_DeleteReplicationTask = 0 }
+	export enum DeleteReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.DeleteReplicationTask' = 0 }
 
-	export enum DescribeAccountAttributesX_Amz_Target { AmazonDMSv20160101_DescribeAccountAttributes = 0 }
+	export enum DescribeAccountAttributesX_Amz_Target { 'AmazonDMSv20160101.DescribeAccountAttributes' = 0 }
 
-	export enum DescribeCertificatesX_Amz_Target { AmazonDMSv20160101_DescribeCertificates = 0 }
+	export enum DescribeCertificatesX_Amz_Target { 'AmazonDMSv20160101.DescribeCertificates' = 0 }
 
-	export enum DescribeConnectionsX_Amz_Target { AmazonDMSv20160101_DescribeConnections = 0 }
+	export enum DescribeConnectionsX_Amz_Target { 'AmazonDMSv20160101.DescribeConnections' = 0 }
 
-	export enum DescribeEndpointTypesX_Amz_Target { AmazonDMSv20160101_DescribeEndpointTypes = 0 }
+	export enum DescribeEndpointTypesX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpointTypes' = 0 }
 
-	export enum DescribeEndpointsX_Amz_Target { AmazonDMSv20160101_DescribeEndpoints = 0 }
+	export enum DescribeEndpointsX_Amz_Target { 'AmazonDMSv20160101.DescribeEndpoints' = 0 }
 
-	export enum DescribeEventCategoriesX_Amz_Target { AmazonDMSv20160101_DescribeEventCategories = 0 }
+	export enum DescribeEventCategoriesX_Amz_Target { 'AmazonDMSv20160101.DescribeEventCategories' = 0 }
 
-	export enum DescribeEventSubscriptionsX_Amz_Target { AmazonDMSv20160101_DescribeEventSubscriptions = 0 }
+	export enum DescribeEventSubscriptionsX_Amz_Target { 'AmazonDMSv20160101.DescribeEventSubscriptions' = 0 }
 
-	export enum DescribeEventsX_Amz_Target { AmazonDMSv20160101_DescribeEvents = 0 }
+	export enum DescribeEventsX_Amz_Target { 'AmazonDMSv20160101.DescribeEvents' = 0 }
 
-	export enum DescribeOrderableReplicationInstancesX_Amz_Target { AmazonDMSv20160101_DescribeOrderableReplicationInstances = 0 }
+	export enum DescribeOrderableReplicationInstancesX_Amz_Target { 'AmazonDMSv20160101.DescribeOrderableReplicationInstances' = 0 }
 
-	export enum DescribePendingMaintenanceActionsX_Amz_Target { AmazonDMSv20160101_DescribePendingMaintenanceActions = 0 }
+	export enum DescribePendingMaintenanceActionsX_Amz_Target { 'AmazonDMSv20160101.DescribePendingMaintenanceActions' = 0 }
 
-	export enum DescribeRefreshSchemasStatusX_Amz_Target { AmazonDMSv20160101_DescribeRefreshSchemasStatus = 0 }
+	export enum DescribeRefreshSchemasStatusX_Amz_Target { 'AmazonDMSv20160101.DescribeRefreshSchemasStatus' = 0 }
 
-	export enum DescribeReplicationInstanceTaskLogsX_Amz_Target { AmazonDMSv20160101_DescribeReplicationInstanceTaskLogs = 0 }
+	export enum DescribeReplicationInstanceTaskLogsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs' = 0 }
 
-	export enum DescribeReplicationInstancesX_Amz_Target { AmazonDMSv20160101_DescribeReplicationInstances = 0 }
+	export enum DescribeReplicationInstancesX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationInstances' = 0 }
 
-	export enum DescribeReplicationSubnetGroupsX_Amz_Target { AmazonDMSv20160101_DescribeReplicationSubnetGroups = 0 }
+	export enum DescribeReplicationSubnetGroupsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationSubnetGroups' = 0 }
 
-	export enum DescribeReplicationTaskAssessmentResultsX_Amz_Target { AmazonDMSv20160101_DescribeReplicationTaskAssessmentResults = 0 }
+	export enum DescribeReplicationTaskAssessmentResultsX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults' = 0 }
 
-	export enum DescribeReplicationTasksX_Amz_Target { AmazonDMSv20160101_DescribeReplicationTasks = 0 }
+	export enum DescribeReplicationTasksX_Amz_Target { 'AmazonDMSv20160101.DescribeReplicationTasks' = 0 }
 
-	export enum DescribeSchemasX_Amz_Target { AmazonDMSv20160101_DescribeSchemas = 0 }
+	export enum DescribeSchemasX_Amz_Target { 'AmazonDMSv20160101.DescribeSchemas' = 0 }
 
-	export enum DescribeTableStatisticsX_Amz_Target { AmazonDMSv20160101_DescribeTableStatistics = 0 }
+	export enum DescribeTableStatisticsX_Amz_Target { 'AmazonDMSv20160101.DescribeTableStatistics' = 0 }
 
-	export enum ImportCertificateX_Amz_Target { AmazonDMSv20160101_ImportCertificate = 0 }
+	export enum ImportCertificateX_Amz_Target { 'AmazonDMSv20160101.ImportCertificate' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AmazonDMSv20160101_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonDMSv20160101.ListTagsForResource' = 0 }
 
-	export enum ModifyEndpointX_Amz_Target { AmazonDMSv20160101_ModifyEndpoint = 0 }
+	export enum ModifyEndpointX_Amz_Target { 'AmazonDMSv20160101.ModifyEndpoint' = 0 }
 
-	export enum ModifyEventSubscriptionX_Amz_Target { AmazonDMSv20160101_ModifyEventSubscription = 0 }
+	export enum ModifyEventSubscriptionX_Amz_Target { 'AmazonDMSv20160101.ModifyEventSubscription' = 0 }
 
-	export enum ModifyReplicationInstanceX_Amz_Target { AmazonDMSv20160101_ModifyReplicationInstance = 0 }
+	export enum ModifyReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationInstance' = 0 }
 
-	export enum ModifyReplicationSubnetGroupX_Amz_Target { AmazonDMSv20160101_ModifyReplicationSubnetGroup = 0 }
+	export enum ModifyReplicationSubnetGroupX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationSubnetGroup' = 0 }
 
-	export enum ModifyReplicationTaskX_Amz_Target { AmazonDMSv20160101_ModifyReplicationTask = 0 }
+	export enum ModifyReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.ModifyReplicationTask' = 0 }
 
-	export enum RebootReplicationInstanceX_Amz_Target { AmazonDMSv20160101_RebootReplicationInstance = 0 }
+	export enum RebootReplicationInstanceX_Amz_Target { 'AmazonDMSv20160101.RebootReplicationInstance' = 0 }
 
-	export enum RefreshSchemasX_Amz_Target { AmazonDMSv20160101_RefreshSchemas = 0 }
+	export enum RefreshSchemasX_Amz_Target { 'AmazonDMSv20160101.RefreshSchemas' = 0 }
 
-	export enum ReloadTablesX_Amz_Target { AmazonDMSv20160101_ReloadTables = 0 }
+	export enum ReloadTablesX_Amz_Target { 'AmazonDMSv20160101.ReloadTables' = 0 }
 
-	export enum RemoveTagsFromResourceX_Amz_Target { AmazonDMSv20160101_RemoveTagsFromResource = 0 }
+	export enum RemoveTagsFromResourceX_Amz_Target { 'AmazonDMSv20160101.RemoveTagsFromResource' = 0 }
 
-	export enum StartReplicationTaskX_Amz_Target { AmazonDMSv20160101_StartReplicationTask = 0 }
+	export enum StartReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTask' = 0 }
 
-	export enum StartReplicationTaskAssessmentX_Amz_Target { AmazonDMSv20160101_StartReplicationTaskAssessment = 0 }
+	export enum StartReplicationTaskAssessmentX_Amz_Target { 'AmazonDMSv20160101.StartReplicationTaskAssessment' = 0 }
 
-	export enum StopReplicationTaskX_Amz_Target { AmazonDMSv20160101_StopReplicationTask = 0 }
+	export enum StopReplicationTaskX_Amz_Target { 'AmazonDMSv20160101.StopReplicationTask' = 0 }
 
-	export enum TestConnectionX_Amz_Target { AmazonDMSv20160101_TestConnection = 0 }
+	export enum TestConnectionX_Amz_Target { 'AmazonDMSv20160101.TestConnection' = 0 }
 
 }
 

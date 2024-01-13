@@ -95,7 +95,7 @@ export namespace MyNS {
 		accessibility?: LighthouseCategoryV5;
 
 		/** A Lighthouse category. */
-		best_practices?: LighthouseCategoryV5;
+		'best-practices'?: LighthouseCategoryV5;
 
 		/** A Lighthouse category. */
 		performance?: LighthouseCategoryV5;

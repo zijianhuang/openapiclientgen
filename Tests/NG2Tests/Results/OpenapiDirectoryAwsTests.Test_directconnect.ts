@@ -262,8 +262,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -1947,32 +1947,30 @@ export namespace MyNS {
 
 	}
 
-	export enum LoaLoaContentType { application_pdf = 0 }
+	export enum LoaLoaContentType { 'application/pdf' = 0 }
 
 	export interface DescribeConnectionLoaRequest {
 
 		/** Required */
 		connectionId: string;
 		providerName?: string | null;
-		loaContentType?: DescribeConnectionLoaRequestLoaContentType | null;
+		loaContentType?: LoaLoaContentType | null;
 	}
 	export interface DescribeConnectionLoaRequestFormProperties {
 
 		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
-		loaContentType: FormControl<DescribeConnectionLoaRequestLoaContentType | null | undefined>,
+		loaContentType: FormControl<LoaLoaContentType | null | undefined>,
 	}
 	export function CreateDescribeConnectionLoaRequestFormGroup() {
 		return new FormGroup<DescribeConnectionLoaRequestFormProperties>({
 			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			providerName: new FormControl<string | null | undefined>(undefined),
-			loaContentType: new FormControl<DescribeConnectionLoaRequestLoaContentType | null | undefined>(undefined),
+			loaContentType: new FormControl<LoaLoaContentType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeConnectionLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Connections {
 		connections?: Array<Connection>;
@@ -2239,25 +2237,23 @@ export namespace MyNS {
 		/** Required */
 		interconnectId: string;
 		providerName?: string | null;
-		loaContentType?: DescribeInterconnectLoaRequestLoaContentType | null;
+		loaContentType?: LoaLoaContentType | null;
 	}
 	export interface DescribeInterconnectLoaRequestFormProperties {
 
 		/** Required */
 		interconnectId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
-		loaContentType: FormControl<DescribeInterconnectLoaRequestLoaContentType | null | undefined>,
+		loaContentType: FormControl<LoaLoaContentType | null | undefined>,
 	}
 	export function CreateDescribeInterconnectLoaRequestFormGroup() {
 		return new FormGroup<DescribeInterconnectLoaRequestFormProperties>({
 			interconnectId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			providerName: new FormControl<string | null | undefined>(undefined),
-			loaContentType: new FormControl<DescribeInterconnectLoaRequestLoaContentType | null | undefined>(undefined),
+			loaContentType: new FormControl<LoaLoaContentType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeInterconnectLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Interconnects {
 		interconnects?: Array<Interconnect>;
@@ -2312,25 +2308,23 @@ export namespace MyNS {
 		/** Required */
 		connectionId: string;
 		providerName?: string | null;
-		loaContentType?: DescribeLoaRequestLoaContentType | null;
+		loaContentType?: LoaLoaContentType | null;
 	}
 	export interface DescribeLoaRequestFormProperties {
 
 		/** Required */
 		connectionId: FormControl<string | null | undefined>,
 		providerName: FormControl<string | null | undefined>,
-		loaContentType: FormControl<DescribeLoaRequestLoaContentType | null | undefined>,
+		loaContentType: FormControl<LoaLoaContentType | null | undefined>,
 	}
 	export function CreateDescribeLoaRequestFormGroup() {
 		return new FormGroup<DescribeLoaRequestFormProperties>({
 			connectionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			providerName: new FormControl<string | null | undefined>(undefined),
-			loaContentType: new FormControl<DescribeLoaRequestLoaContentType | null | undefined>(undefined),
+			loaContentType: new FormControl<LoaLoaContentType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Locations {
 		locations?: Array<Location>;
@@ -2781,7 +2775,7 @@ export namespace MyNS {
 
 	export enum InterconnectState { requested = 0, pending = 1, available = 2, down = 3, deleting = 4, deleted = 5, unknown = 6 }
 
-	export enum LoaContentType { application_pdf = 0 }
+	export enum LoaContentType { 'application/pdf' = 0 }
 
 	export enum DirectConnectGatewayState { pending = 0, available = 1, deleting = 2, deleted = 3 }
 
@@ -3305,117 +3299,117 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptDirectConnectGatewayAssociationProposalX_Amz_Target { OvertureService_AcceptDirectConnectGatewayAssociationProposal = 0 }
+	export enum AcceptDirectConnectGatewayAssociationProposalX_Amz_Target { 'OvertureService.AcceptDirectConnectGatewayAssociationProposal' = 0 }
 
-	export enum AllocateConnectionOnInterconnectX_Amz_Target { OvertureService_AllocateConnectionOnInterconnect = 0 }
+	export enum AllocateConnectionOnInterconnectX_Amz_Target { 'OvertureService.AllocateConnectionOnInterconnect' = 0 }
 
-	export enum AllocateHostedConnectionX_Amz_Target { OvertureService_AllocateHostedConnection = 0 }
+	export enum AllocateHostedConnectionX_Amz_Target { 'OvertureService.AllocateHostedConnection' = 0 }
 
-	export enum AllocatePrivateVirtualInterfaceX_Amz_Target { OvertureService_AllocatePrivateVirtualInterface = 0 }
+	export enum AllocatePrivateVirtualInterfaceX_Amz_Target { 'OvertureService.AllocatePrivateVirtualInterface' = 0 }
 
-	export enum AllocatePublicVirtualInterfaceX_Amz_Target { OvertureService_AllocatePublicVirtualInterface = 0 }
+	export enum AllocatePublicVirtualInterfaceX_Amz_Target { 'OvertureService.AllocatePublicVirtualInterface' = 0 }
 
-	export enum AllocateTransitVirtualInterfaceX_Amz_Target { OvertureService_AllocateTransitVirtualInterface = 0 }
+	export enum AllocateTransitVirtualInterfaceX_Amz_Target { 'OvertureService.AllocateTransitVirtualInterface' = 0 }
 
-	export enum AssociateConnectionWithLagX_Amz_Target { OvertureService_AssociateConnectionWithLag = 0 }
+	export enum AssociateConnectionWithLagX_Amz_Target { 'OvertureService.AssociateConnectionWithLag' = 0 }
 
-	export enum AssociateHostedConnectionX_Amz_Target { OvertureService_AssociateHostedConnection = 0 }
+	export enum AssociateHostedConnectionX_Amz_Target { 'OvertureService.AssociateHostedConnection' = 0 }
 
-	export enum AssociateVirtualInterfaceX_Amz_Target { OvertureService_AssociateVirtualInterface = 0 }
+	export enum AssociateVirtualInterfaceX_Amz_Target { 'OvertureService.AssociateVirtualInterface' = 0 }
 
-	export enum ConfirmConnectionX_Amz_Target { OvertureService_ConfirmConnection = 0 }
+	export enum ConfirmConnectionX_Amz_Target { 'OvertureService.ConfirmConnection' = 0 }
 
-	export enum ConfirmPrivateVirtualInterfaceX_Amz_Target { OvertureService_ConfirmPrivateVirtualInterface = 0 }
+	export enum ConfirmPrivateVirtualInterfaceX_Amz_Target { 'OvertureService.ConfirmPrivateVirtualInterface' = 0 }
 
-	export enum ConfirmPublicVirtualInterfaceX_Amz_Target { OvertureService_ConfirmPublicVirtualInterface = 0 }
+	export enum ConfirmPublicVirtualInterfaceX_Amz_Target { 'OvertureService.ConfirmPublicVirtualInterface' = 0 }
 
-	export enum ConfirmTransitVirtualInterfaceX_Amz_Target { OvertureService_ConfirmTransitVirtualInterface = 0 }
+	export enum ConfirmTransitVirtualInterfaceX_Amz_Target { 'OvertureService.ConfirmTransitVirtualInterface' = 0 }
 
-	export enum CreateBGPPeerX_Amz_Target { OvertureService_CreateBGPPeer = 0 }
+	export enum CreateBGPPeerX_Amz_Target { 'OvertureService.CreateBGPPeer' = 0 }
 
-	export enum CreateConnectionX_Amz_Target { OvertureService_CreateConnection = 0 }
+	export enum CreateConnectionX_Amz_Target { 'OvertureService.CreateConnection' = 0 }
 
-	export enum CreateDirectConnectGatewayX_Amz_Target { OvertureService_CreateDirectConnectGateway = 0 }
+	export enum CreateDirectConnectGatewayX_Amz_Target { 'OvertureService.CreateDirectConnectGateway' = 0 }
 
-	export enum CreateDirectConnectGatewayAssociationX_Amz_Target { OvertureService_CreateDirectConnectGatewayAssociation = 0 }
+	export enum CreateDirectConnectGatewayAssociationX_Amz_Target { 'OvertureService.CreateDirectConnectGatewayAssociation' = 0 }
 
-	export enum CreateDirectConnectGatewayAssociationProposalX_Amz_Target { OvertureService_CreateDirectConnectGatewayAssociationProposal = 0 }
+	export enum CreateDirectConnectGatewayAssociationProposalX_Amz_Target { 'OvertureService.CreateDirectConnectGatewayAssociationProposal' = 0 }
 
-	export enum CreateInterconnectX_Amz_Target { OvertureService_CreateInterconnect = 0 }
+	export enum CreateInterconnectX_Amz_Target { 'OvertureService.CreateInterconnect' = 0 }
 
-	export enum CreateLagX_Amz_Target { OvertureService_CreateLag = 0 }
+	export enum CreateLagX_Amz_Target { 'OvertureService.CreateLag' = 0 }
 
-	export enum CreatePrivateVirtualInterfaceX_Amz_Target { OvertureService_CreatePrivateVirtualInterface = 0 }
+	export enum CreatePrivateVirtualInterfaceX_Amz_Target { 'OvertureService.CreatePrivateVirtualInterface' = 0 }
 
-	export enum CreatePublicVirtualInterfaceX_Amz_Target { OvertureService_CreatePublicVirtualInterface = 0 }
+	export enum CreatePublicVirtualInterfaceX_Amz_Target { 'OvertureService.CreatePublicVirtualInterface' = 0 }
 
-	export enum CreateTransitVirtualInterfaceX_Amz_Target { OvertureService_CreateTransitVirtualInterface = 0 }
+	export enum CreateTransitVirtualInterfaceX_Amz_Target { 'OvertureService.CreateTransitVirtualInterface' = 0 }
 
-	export enum DeleteBGPPeerX_Amz_Target { OvertureService_DeleteBGPPeer = 0 }
+	export enum DeleteBGPPeerX_Amz_Target { 'OvertureService.DeleteBGPPeer' = 0 }
 
-	export enum DeleteConnectionX_Amz_Target { OvertureService_DeleteConnection = 0 }
+	export enum DeleteConnectionX_Amz_Target { 'OvertureService.DeleteConnection' = 0 }
 
-	export enum DeleteDirectConnectGatewayX_Amz_Target { OvertureService_DeleteDirectConnectGateway = 0 }
+	export enum DeleteDirectConnectGatewayX_Amz_Target { 'OvertureService.DeleteDirectConnectGateway' = 0 }
 
-	export enum DeleteDirectConnectGatewayAssociationX_Amz_Target { OvertureService_DeleteDirectConnectGatewayAssociation = 0 }
+	export enum DeleteDirectConnectGatewayAssociationX_Amz_Target { 'OvertureService.DeleteDirectConnectGatewayAssociation' = 0 }
 
-	export enum DeleteDirectConnectGatewayAssociationProposalX_Amz_Target { OvertureService_DeleteDirectConnectGatewayAssociationProposal = 0 }
+	export enum DeleteDirectConnectGatewayAssociationProposalX_Amz_Target { 'OvertureService.DeleteDirectConnectGatewayAssociationProposal' = 0 }
 
-	export enum DeleteInterconnectX_Amz_Target { OvertureService_DeleteInterconnect = 0 }
+	export enum DeleteInterconnectX_Amz_Target { 'OvertureService.DeleteInterconnect' = 0 }
 
-	export enum DeleteLagX_Amz_Target { OvertureService_DeleteLag = 0 }
+	export enum DeleteLagX_Amz_Target { 'OvertureService.DeleteLag' = 0 }
 
-	export enum DeleteVirtualInterfaceX_Amz_Target { OvertureService_DeleteVirtualInterface = 0 }
+	export enum DeleteVirtualInterfaceX_Amz_Target { 'OvertureService.DeleteVirtualInterface' = 0 }
 
-	export enum DescribeConnectionLoaX_Amz_Target { OvertureService_DescribeConnectionLoa = 0 }
+	export enum DescribeConnectionLoaX_Amz_Target { 'OvertureService.DescribeConnectionLoa' = 0 }
 
-	export enum DescribeConnectionsX_Amz_Target { OvertureService_DescribeConnections = 0 }
+	export enum DescribeConnectionsX_Amz_Target { 'OvertureService.DescribeConnections' = 0 }
 
-	export enum DescribeConnectionsOnInterconnectX_Amz_Target { OvertureService_DescribeConnectionsOnInterconnect = 0 }
+	export enum DescribeConnectionsOnInterconnectX_Amz_Target { 'OvertureService.DescribeConnectionsOnInterconnect' = 0 }
 
-	export enum DescribeDirectConnectGatewayAssociationProposalsX_Amz_Target { OvertureService_DescribeDirectConnectGatewayAssociationProposals = 0 }
+	export enum DescribeDirectConnectGatewayAssociationProposalsX_Amz_Target { 'OvertureService.DescribeDirectConnectGatewayAssociationProposals' = 0 }
 
-	export enum DescribeDirectConnectGatewayAssociationsX_Amz_Target { OvertureService_DescribeDirectConnectGatewayAssociations = 0 }
+	export enum DescribeDirectConnectGatewayAssociationsX_Amz_Target { 'OvertureService.DescribeDirectConnectGatewayAssociations' = 0 }
 
-	export enum DescribeDirectConnectGatewayAttachmentsX_Amz_Target { OvertureService_DescribeDirectConnectGatewayAttachments = 0 }
+	export enum DescribeDirectConnectGatewayAttachmentsX_Amz_Target { 'OvertureService.DescribeDirectConnectGatewayAttachments' = 0 }
 
-	export enum DescribeDirectConnectGatewaysX_Amz_Target { OvertureService_DescribeDirectConnectGateways = 0 }
+	export enum DescribeDirectConnectGatewaysX_Amz_Target { 'OvertureService.DescribeDirectConnectGateways' = 0 }
 
-	export enum DescribeHostedConnectionsX_Amz_Target { OvertureService_DescribeHostedConnections = 0 }
+	export enum DescribeHostedConnectionsX_Amz_Target { 'OvertureService.DescribeHostedConnections' = 0 }
 
-	export enum DescribeInterconnectLoaX_Amz_Target { OvertureService_DescribeInterconnectLoa = 0 }
+	export enum DescribeInterconnectLoaX_Amz_Target { 'OvertureService.DescribeInterconnectLoa' = 0 }
 
-	export enum DescribeInterconnectsX_Amz_Target { OvertureService_DescribeInterconnects = 0 }
+	export enum DescribeInterconnectsX_Amz_Target { 'OvertureService.DescribeInterconnects' = 0 }
 
-	export enum DescribeLagsX_Amz_Target { OvertureService_DescribeLags = 0 }
+	export enum DescribeLagsX_Amz_Target { 'OvertureService.DescribeLags' = 0 }
 
-	export enum DescribeLoaX_Amz_Target { OvertureService_DescribeLoa = 0 }
+	export enum DescribeLoaX_Amz_Target { 'OvertureService.DescribeLoa' = 0 }
 
-	export enum DescribeLocationsX_Amz_Target { OvertureService_DescribeLocations = 0 }
+	export enum DescribeLocationsX_Amz_Target { 'OvertureService.DescribeLocations' = 0 }
 
-	export enum DescribeTagsX_Amz_Target { OvertureService_DescribeTags = 0 }
+	export enum DescribeTagsX_Amz_Target { 'OvertureService.DescribeTags' = 0 }
 
-	export enum DescribeVirtualGatewaysX_Amz_Target { OvertureService_DescribeVirtualGateways = 0 }
+	export enum DescribeVirtualGatewaysX_Amz_Target { 'OvertureService.DescribeVirtualGateways' = 0 }
 
-	export enum DescribeVirtualInterfacesX_Amz_Target { OvertureService_DescribeVirtualInterfaces = 0 }
+	export enum DescribeVirtualInterfacesX_Amz_Target { 'OvertureService.DescribeVirtualInterfaces' = 0 }
 
-	export enum DisassociateConnectionFromLagX_Amz_Target { OvertureService_DisassociateConnectionFromLag = 0 }
+	export enum DisassociateConnectionFromLagX_Amz_Target { 'OvertureService.DisassociateConnectionFromLag' = 0 }
 
-	export enum ListVirtualInterfaceTestHistoryX_Amz_Target { OvertureService_ListVirtualInterfaceTestHistory = 0 }
+	export enum ListVirtualInterfaceTestHistoryX_Amz_Target { 'OvertureService.ListVirtualInterfaceTestHistory' = 0 }
 
-	export enum StartBgpFailoverTestX_Amz_Target { OvertureService_StartBgpFailoverTest = 0 }
+	export enum StartBgpFailoverTestX_Amz_Target { 'OvertureService.StartBgpFailoverTest' = 0 }
 
-	export enum StopBgpFailoverTestX_Amz_Target { OvertureService_StopBgpFailoverTest = 0 }
+	export enum StopBgpFailoverTestX_Amz_Target { 'OvertureService.StopBgpFailoverTest' = 0 }
 
-	export enum TagResourceX_Amz_Target { OvertureService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'OvertureService.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { OvertureService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'OvertureService.UntagResource' = 0 }
 
-	export enum UpdateDirectConnectGatewayAssociationX_Amz_Target { OvertureService_UpdateDirectConnectGatewayAssociation = 0 }
+	export enum UpdateDirectConnectGatewayAssociationX_Amz_Target { 'OvertureService.UpdateDirectConnectGatewayAssociation' = 0 }
 
-	export enum UpdateLagX_Amz_Target { OvertureService_UpdateLag = 0 }
+	export enum UpdateLagX_Amz_Target { 'OvertureService.UpdateLag' = 0 }
 
-	export enum UpdateVirtualInterfaceAttributesX_Amz_Target { OvertureService_UpdateVirtualInterfaceAttributes = 0 }
+	export enum UpdateVirtualInterfaceAttributesX_Amz_Target { 'OvertureService.UpdateVirtualInterfaceAttributes' = 0 }
 
 }
 

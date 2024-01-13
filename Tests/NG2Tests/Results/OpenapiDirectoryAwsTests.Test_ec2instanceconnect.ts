@@ -81,10 +81,10 @@ export namespace MyNS {
 	}
 	export function CreateSendSSHPublicKeyRequestFormGroup() {
 		return new FormGroup<SendSSHPublicKeyRequestFormProperties>({
-			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(10), Validators.pattern('^i-[a-f0-9]+$')]),
-			InstanceOSUser: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[A-Za-z_][A-Za-z0-9\@\._-]{0,30}[A-Za-z0-9\$_-]?$')]),
-			SSHPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(256)]),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(6), Validators.pattern('^(\w+-){2,3}\d+\w+$')]),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(10), Validators.maxLength(32), Validators.pattern('^i-[a-f0-9]+$')]),
+			InstanceOSUser: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[A-Za-z_][A-Za-z0-9\@\._-]{0,30}[A-Za-z0-9\$_-]?$')]),
+			SSHPublicKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(256), Validators.maxLength(4096)]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(6), Validators.maxLength(32), Validators.pattern('^(\w+-){2,3}\d+\w+$')]),
 		});
 
 	}
@@ -154,7 +154,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum SendSSHPublicKeyX_Amz_Target { AWSEC2InstanceConnectService_SendSSHPublicKey = 0 }
+	export enum SendSSHPublicKeyX_Amz_Target { 'AWSEC2InstanceConnectService.SendSSHPublicKey' = 0 }
 
 }
 

@@ -23,7 +23,7 @@ export namespace MyNS {
 	}
 	export function CreateClaimDevicesByClaimCodeResponseFormGroup() {
 		return new FormGroup<ClaimDevicesByClaimCodeResponseFormProperties>({
-			ClaimCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(12)]),
+			ClaimCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(40)]),
 			Total: new FormControl<number | null | undefined>(undefined),
 		});
 

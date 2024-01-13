@@ -139,11 +139,11 @@ export namespace MyNS {
 	}
 	export function CreateJobFormGroup() {
 		return new FormGroup<JobFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			PipelineId: new FormControl<string | null | undefined>(undefined),
-			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Status: new FormControl<string | null | undefined>(undefined),
+			PipelineId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
+			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)')]),
 		});
 
 	}
@@ -192,12 +192,12 @@ export namespace MyNS {
 	}
 	export function CreateJobInputFormGroup() {
 		return new FormGroup<JobInputFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			FrameRate: new FormControl<string | null | undefined>(undefined),
-			Resolution: new FormControl<string | null | undefined>(undefined),
-			AspectRatio: new FormControl<string | null | undefined>(undefined),
-			Interlaced: new FormControl<string | null | undefined>(undefined),
-			Container: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			FrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)')]),
+			Resolution: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{1,5}x\d{1,5}$)')]),
+			AspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			Interlaced: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^true$)|(^false$)')]),
+			Container: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)')]),
 		});
 
 	}
@@ -230,10 +230,10 @@ export namespace MyNS {
 	}
 	export function CreateEncryptionFormGroup() {
 		return new FormGroup<EncryptionFormProperties>({
-			Mode: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
-			KeyMd5: new FormControl<string | null | undefined>(undefined),
-			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Mode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^s3$)|(^s3-aws-kms$)|(^aes-cbc-pkcs7$)|(^aes-ctr$)|(^aes-gcm$)')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)')]),
+			KeyMd5: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)')]),
+			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 		});
 
 	}
@@ -252,8 +252,8 @@ export namespace MyNS {
 	}
 	export function CreateTimeSpanFormGroup() {
 		return new FormGroup<TimeSpanFormProperties>({
-			StartTime: new FormControl<string | null | undefined>(undefined),
-			Duration: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)')]),
+			Duration: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)')]),
 		});
 
 	}
@@ -273,7 +273,7 @@ export namespace MyNS {
 	}
 	export function CreateInputCaptionsFormGroup() {
 		return new FormGroup<InputCaptionsFormProperties>({
-			MergePolicy: new FormControl<string | null | undefined>(undefined),
+			MergePolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^MergeOverride$)|(^MergeRetain$)|(^Override$)')]),
 		});
 
 	}
@@ -329,10 +329,10 @@ export namespace MyNS {
 	}
 	export function CreateCaptionSourceFormGroup() {
 		return new FormGroup<CaptionSourceFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			Language: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			TimeOffset: new FormControl<string | null | undefined>(undefined),
-			Label: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			Language: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			TimeOffset: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^[+-]?\d{1,5}(\.\d{0,3})?$)|(^[+-]?([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)')]),
+			Label: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
 		});
 
 	}
@@ -359,7 +359,7 @@ export namespace MyNS {
 		return new FormGroup<DetectedPropertiesFormProperties>({
 			Width: new FormControl<number | null | undefined>(undefined),
 			Height: new FormControl<number | null | undefined>(undefined),
-			FrameRate: new FormControl<string | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}(\.\d{0,5})?$')]),
 			FileSize: new FormControl<number | null | undefined>(undefined),
 			DurationMillis: new FormControl<number | null | undefined>(undefined),
 		});
@@ -441,17 +441,17 @@ export namespace MyNS {
 	export function CreateJobOutputFormGroup() {
 		return new FormGroup<JobOutputFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ThumbnailPattern: new FormControl<string | null | undefined>(undefined),
-			Rotate: new FormControl<string | null | undefined>(undefined),
-			PresetId: new FormControl<string | null | undefined>(undefined),
-			SegmentDuration: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			StatusDetail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ThumbnailPattern: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^.*\{count\}.*$)')]),
+			Rotate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^0$)|(^90$)|(^180$)|(^270$)')]),
+			PresetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
+			SegmentDuration: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}(\.\d{0,5})?$')]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)')]),
+			StatusDetail: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			Duration: new FormControl<number | null | undefined>(undefined),
 			Width: new FormControl<number | null | undefined>(undefined),
 			Height: new FormControl<number | null | undefined>(undefined),
-			FrameRate: new FormControl<string | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}(\.\d{0,5})?$')]),
 			FileSize: new FormControl<number | null | undefined>(undefined),
 			DurationMillis: new FormControl<number | null | undefined>(undefined),
 			AppliedColorSpaceConversion: new FormControl<string | null | undefined>(undefined),
@@ -496,8 +496,8 @@ export namespace MyNS {
 	}
 	export function CreateJobWatermarkFormGroup() {
 		return new FormGroup<JobWatermarkFormProperties>({
-			PresetWatermarkId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
-			InputKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(^.{1,1020}.jpg$)|(^.{1,1019}.jpeg$)|(^.{1,1020}.png$)')]),
+			PresetWatermarkId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
+			InputKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('(^.{1,1020}.jpg$)|(^.{1,1019}.jpeg$)|(^.{1,1020}.png$)')]),
 		});
 
 	}
@@ -515,7 +515,7 @@ export namespace MyNS {
 	}
 	export function CreateJobAlbumArtFormGroup() {
 		return new FormGroup<JobAlbumArtFormProperties>({
-			MergePolicy: new FormControl<string | null | undefined>(undefined),
+			MergePolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Replace$)|(^Prepend$)|(^Append$)|(^Fallback$)')]),
 		});
 
 	}
@@ -555,12 +555,12 @@ export namespace MyNS {
 	}
 	export function CreateArtworkFormGroup() {
 		return new FormGroup<ArtworkFormProperties>({
-			InputKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(^.{1,1020}.jpg$)|(^.{1,1019}.jpeg$)|(^.{1,1020}.png$)')]),
-			MaxWidth: new FormControl<string | null | undefined>(undefined),
-			MaxHeight: new FormControl<string | null | undefined>(undefined),
-			SizingPolicy: new FormControl<string | null | undefined>(undefined),
-			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
-			AlbumArtFormat: new FormControl<string | null | undefined>(undefined),
+			InputKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('(^.{1,1020}.jpg$)|(^.{1,1019}.jpeg$)|(^.{1,1020}.png$)')]),
+			MaxWidth: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			MaxHeight: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Fit$)|(^Fill$)|(^Stretch$)|(^Keep$)|(^ShrinkToFit$)|(^ShrinkToFill$)')]),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Pad$)|(^NoPad$)')]),
+			AlbumArtFormat: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^jpg$)|(^png$)')]),
 		});
 
 	}
@@ -600,7 +600,7 @@ export namespace MyNS {
 	}
 	export function CreateCaptionsFormGroup() {
 		return new FormGroup<CaptionsFormProperties>({
-			MergePolicy: new FormControl<string | null | undefined>(undefined),
+			MergePolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^MergeOverride$)|(^MergeRetain$)|(^Override$)')]),
 		});
 
 	}
@@ -622,8 +622,8 @@ export namespace MyNS {
 	}
 	export function CreateCaptionFormatFormGroup() {
 		return new FormGroup<CaptionFormatFormProperties>({
-			Format: new FormControl<string | null | undefined>(undefined),
-			Pattern: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^mov-text$)|(^srt$)|(^scc$)|(^webvtt$)|(^dfxp$)|(^cea-708$)')]),
+			Pattern: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^.*\{language\}.*$)')]),
 		});
 
 	}
@@ -675,10 +675,10 @@ export namespace MyNS {
 	}
 	export function CreatePlaylistFormGroup() {
 		return new FormGroup<PlaylistFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Format: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			StatusDetail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Format: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^HLSv3$)|(^HLSv4$)|(^Smooth$)|(^MPEG-DASH$)')]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)')]),
+			StatusDetail: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 		});
 
 	}
@@ -725,12 +725,12 @@ export namespace MyNS {
 	}
 	export function CreateHlsContentProtectionFormGroup() {
 		return new FormGroup<HlsContentProtectionFormProperties>({
-			Method: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
-			KeyMd5: new FormControl<string | null | undefined>(undefined),
-			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
-			LicenseAcquisitionUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(0)]),
-			KeyStoragePolicy: new FormControl<string | null | undefined>(undefined),
+			Method: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^aes-128$)')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)')]),
+			KeyMd5: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^$|(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)')]),
+			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
+			LicenseAcquisitionUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(512)]),
+			KeyStoragePolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^NoStore$)|(^WithVariantPlaylists$)')]),
 		});
 
 	}
@@ -777,12 +777,12 @@ export namespace MyNS {
 	}
 	export function CreatePlayReadyDrmFormGroup() {
 		return new FormGroup<PlayReadyDrmFormProperties>({
-			Format: new FormControl<string | null | undefined>(undefined),
-			Key: new FormControl<string | null | undefined>(undefined),
-			KeyMd5: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
-			LicenseAcquisitionUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Format: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^microsoft$)|(^discretix-3.0$)')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)')]),
+			KeyMd5: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^(?:[A-Za-z0-9\+/]{4})*(?:[A-Za-z0-9\+/]{2}==|[A-Za-z0-9\+/]{3}=)?$)')]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$)|(^[0-9A-Fa-f]{32}$)')]),
+			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
+			LicenseAcquisitionUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
 		});
 
 	}
@@ -864,11 +864,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobOutputFormGroup() {
 		return new FormGroup<CreateJobOutputFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ThumbnailPattern: new FormControl<string | null | undefined>(undefined),
-			Rotate: new FormControl<string | null | undefined>(undefined),
-			PresetId: new FormControl<string | null | undefined>(undefined),
-			SegmentDuration: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ThumbnailPattern: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^.*\{count\}.*$)')]),
+			Rotate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^0$)|(^90$)|(^180$)|(^270$)')]),
+			PresetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
+			SegmentDuration: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}(\.\d{0,5})?$')]),
 		});
 
 	}
@@ -906,8 +906,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobPlaylistFormGroup() {
 		return new FormGroup<CreateJobPlaylistFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Format: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Format: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^HLSv3$)|(^HLSv4$)|(^Smooth$)|(^MPEG-DASH$)')]),
 		});
 
 	}
@@ -995,14 +995,14 @@ export namespace MyNS {
 	}
 	export function CreatePipelineFormGroup() {
 		return new FormGroup<PipelineFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
-			Status: new FormControl<string | null | undefined>(undefined),
-			InputBucket: new FormControl<string | null | undefined>(undefined),
-			OutputBucket: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Active$)|(^Paused$)')]),
+			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			OutputBucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:iam::\w{12}:role/.+$')]),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1025,10 +1025,10 @@ export namespace MyNS {
 	}
 	export function CreateNotificationsFormGroup() {
 		return new FormGroup<NotificationsFormProperties>({
-			Progressing: new FormControl<string | null | undefined>(undefined),
-			Completed: new FormControl<string | null | undefined>(undefined),
-			Warning: new FormControl<string | null | undefined>(undefined),
-			Error: new FormControl<string | null | undefined>(undefined),
+			Progressing: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Completed: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Warning: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Error: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
 		});
 
 	}
@@ -1050,8 +1050,8 @@ export namespace MyNS {
 	}
 	export function CreatePipelineOutputConfigFormGroup() {
 		return new FormGroup<PipelineOutputConfigFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			StorageClass: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			StorageClass: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^ReducedRedundancy$)|(^Standard$)')]),
 		});
 
 	}
@@ -1083,8 +1083,8 @@ export namespace MyNS {
 	}
 	export function CreatePermissionFormGroup() {
 		return new FormGroup<PermissionFormProperties>({
-			GranteeType: new FormControl<string | null | undefined>(undefined),
-			Grantee: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			GranteeType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Canonical$)|(^Email$)|(^Group$)')]),
+			Grantee: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1180,12 +1180,12 @@ export namespace MyNS {
 	}
 	export function CreatePresetFormGroup() {
 		return new FormGroup<PresetFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
 			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
-			Container: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
+			Container: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)|(^mp2$)')]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^System$)|(^Custom$)')]),
 		});
 
 	}
@@ -1213,11 +1213,11 @@ export namespace MyNS {
 	}
 	export function CreateAudioParametersFormGroup() {
 		return new FormGroup<AudioParametersFormProperties>({
-			Codec: new FormControl<string | null | undefined>(undefined),
-			SampleRate: new FormControl<string | null | undefined>(undefined),
-			BitRate: new FormControl<string | null | undefined>(undefined),
-			Channels: new FormControl<string | null | undefined>(undefined),
-			AudioPackingMode: new FormControl<string | null | undefined>(undefined),
+			Codec: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^AAC$)|(^vorbis$)|(^mp3$)|(^mp2$)|(^pcm$)|(^flac$)')]),
+			SampleRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^22050$)|(^32000$)|(^44100$)|(^48000$)|(^96000$)|(^192000$)')]),
+			BitRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,3}$')]),
+			Channels: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^0$)|(^1$)|(^2$)')]),
+			AudioPackingMode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^SingleTrack$)|(^OneChannelPerTrack$)|(^OneChannelPerTrackWithMosTo8Tracks$)')]),
 		});
 
 	}
@@ -1240,10 +1240,10 @@ export namespace MyNS {
 	}
 	export function CreateAudioCodecOptionsFormGroup() {
 		return new FormGroup<AudioCodecOptionsFormProperties>({
-			Profile: new FormControl<string | null | undefined>(undefined),
-			BitDepth: new FormControl<string | null | undefined>(undefined),
-			BitOrder: new FormControl<string | null | undefined>(undefined),
-			Signed: new FormControl<string | null | undefined>(undefined),
+			Profile: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^AAC-LC$)|(^HE-AAC$)|(^HE-AACv2$)')]),
+			BitDepth: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^8$)|(^16$)|(^24$)|(^32$)')]),
+			BitOrder: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^LittleEndian$)')]),
+			Signed: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Unsigned$)|(^Signed$)')]),
 		});
 
 	}
@@ -1286,19 +1286,19 @@ export namespace MyNS {
 	}
 	export function CreateVideoParametersFormGroup() {
 		return new FormGroup<VideoParametersFormProperties>({
-			Codec: new FormControl<string | null | undefined>(undefined),
-			KeyframesMaxDist: new FormControl<string | null | undefined>(undefined),
-			FixedGOP: new FormControl<string | null | undefined>(undefined),
-			BitRate: new FormControl<string | null | undefined>(undefined),
-			FrameRate: new FormControl<string | null | undefined>(undefined),
-			MaxFrameRate: new FormControl<string | null | undefined>(undefined),
-			Resolution: new FormControl<string | null | undefined>(undefined),
-			AspectRatio: new FormControl<string | null | undefined>(undefined),
-			MaxWidth: new FormControl<string | null | undefined>(undefined),
-			MaxHeight: new FormControl<string | null | undefined>(undefined),
-			DisplayAspectRatio: new FormControl<string | null | undefined>(undefined),
-			SizingPolicy: new FormControl<string | null | undefined>(undefined),
-			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+			Codec: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^H\.264$)|(^vp8$)|(^vp9$)|(^mpeg2$)|(^gif$)')]),
+			KeyframesMaxDist: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,6}$')]),
+			FixedGOP: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^true$)|(^false$)')]),
+			BitRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{2,5}$)|(^auto$)')]),
+			FrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)')]),
+			MaxFrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)')]),
+			Resolution: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{1,5}x\d{1,5}$)')]),
+			AspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			MaxWidth: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			MaxHeight: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			DisplayAspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Fit$)|(^Fill$)|(^Stretch$)|(^Keep$)|(^ShrinkToFit$)|(^ShrinkToFill$)')]),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Pad$)|(^NoPad$)')]),
 		});
 
 	}
@@ -1353,16 +1353,16 @@ export namespace MyNS {
 	}
 	export function CreatePresetWatermarkFormGroup() {
 		return new FormGroup<PresetWatermarkFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
-			MaxWidth: new FormControl<string | null | undefined>(undefined),
-			MaxHeight: new FormControl<string | null | undefined>(undefined),
-			SizingPolicy: new FormControl<string | null | undefined>(undefined),
-			HorizontalAlign: new FormControl<string | null | undefined>(undefined),
-			HorizontalOffset: new FormControl<string | null | undefined>(undefined),
-			VerticalAlign: new FormControl<string | null | undefined>(undefined),
-			VerticalOffset: new FormControl<string | null | undefined>(undefined),
-			Opacity: new FormControl<string | null | undefined>(undefined),
-			Target: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
+			MaxWidth: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{1,3}(\.\d{0,5})?%$)|(^\d{1,4}?px$)')]),
+			MaxHeight: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{1,3}(\.\d{0,5})?%$)|(^\d{1,4}?px$)')]),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Fit$)|(^Stretch$)|(^ShrinkToFit$)')]),
+			HorizontalAlign: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Left$)|(^Right$)|(^Center$)')]),
+			HorizontalOffset: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{1,3}(\.\d{0,5})?%$)|(^\d{1,4}?px$)')]),
+			VerticalAlign: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Top$)|(^Bottom$)|(^Center$)')]),
+			VerticalOffset: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{1,3}(\.\d{0,5})?%$)|(^\d{1,4}?px$)')]),
+			Opacity: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,3}(\.\d{0,20})?$')]),
+			Target: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Content$)|(^Frame$)')]),
 		});
 
 	}
@@ -1393,14 +1393,14 @@ export namespace MyNS {
 	}
 	export function CreateThumbnailsFormGroup() {
 		return new FormGroup<ThumbnailsFormProperties>({
-			Format: new FormControl<string | null | undefined>(undefined),
-			Interval: new FormControl<string | null | undefined>(undefined),
-			Resolution: new FormControl<string | null | undefined>(undefined),
-			AspectRatio: new FormControl<string | null | undefined>(undefined),
-			MaxWidth: new FormControl<string | null | undefined>(undefined),
-			MaxHeight: new FormControl<string | null | undefined>(undefined),
-			SizingPolicy: new FormControl<string | null | undefined>(undefined),
-			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^jpg$)|(^png$)')]),
+			Interval: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}$')]),
+			Resolution: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}x\d{1,5}$')]),
+			AspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			MaxWidth: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			MaxHeight: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Fit$)|(^Fill$)|(^Stretch$)|(^Keep$)|(^ShrinkToFit$)|(^ShrinkToFill$)')]),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Pad$)|(^NoPad$)')]),
 		});
 
 	}
@@ -1446,7 +1446,7 @@ export namespace MyNS {
 	}
 	export function CreateListJobsByPipelineResponseFormGroup() {
 		return new FormGroup<ListJobsByPipelineResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
 		});
 
 	}
@@ -1464,7 +1464,7 @@ export namespace MyNS {
 	}
 	export function CreateListJobsByStatusResponseFormGroup() {
 		return new FormGroup<ListJobsByStatusResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
 		});
 
 	}
@@ -1482,7 +1482,7 @@ export namespace MyNS {
 	}
 	export function CreateListPipelinesResponseFormGroup() {
 		return new FormGroup<ListPipelinesResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
 		});
 
 	}
@@ -1500,7 +1500,7 @@ export namespace MyNS {
 	}
 	export function CreateListPresetsResponseFormGroup() {
 		return new FormGroup<ListPresetsResponseFormProperties>({
-			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
 		});
 
 	}
@@ -1570,7 +1570,7 @@ export namespace MyNS {
 	}
 	export function CreateTestRoleResponseFormGroup() {
 		return new FormGroup<TestRoleResponseFormProperties>({
-			Success: new FormControl<string | null | undefined>(undefined),
+			Success: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^true$)|(^false$)')]),
 		});
 
 	}
@@ -1685,8 +1685,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobRequestFormGroup() {
 		return new FormGroup<CreateJobRequestFormProperties>({
-			PipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			PipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{13}-\w{6}$')]),
+			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1750,11 +1750,11 @@ export namespace MyNS {
 	}
 	export function CreateCreatePipelineRequestFormGroup() {
 		return new FormGroup<CreatePipelineRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
-			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputBucket: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
+			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\w|\.|-){1,255}$')]),
+			OutputBucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws:iam::\w{12}:role/.+$')]),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1810,9 +1810,9 @@ export namespace MyNS {
 	}
 	export function CreateCreatePresetRequestFormGroup() {
 		return new FormGroup<CreatePresetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
-			Container: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
+			Container: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)|(^mp2$)')]),
 		});
 
 	}
@@ -1977,9 +1977,9 @@ export namespace MyNS {
 	}
 	export function CreateTestRoleRequestFormGroup() {
 		return new FormGroup<TestRoleRequestFormProperties>({
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws:iam::\w{12}:role/.+$')]),
+			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\w|\.|-){1,255}$')]),
+			OutputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\w|\.|-){1,255}$')]),
 		});
 
 	}
@@ -2051,10 +2051,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelineRequestFormGroup() {
 		return new FormGroup<UpdatePipelineRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
-			InputBucket: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
+			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:iam::\w{12}:role/.+$')]),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 		});
 
 	}
@@ -2075,7 +2075,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelineStatusRequestFormGroup() {
 		return new FormGroup<UpdatePipelineStatusRequestFormProperties>({
-			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(^Active$)|(^Paused$)')]),
 		});
 
 	}
@@ -2320,8 +2320,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobPostBodyFormGroup() {
 		return new FormGroup<CreateJobPostBodyFormProperties>({
-			PipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			PipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{13}-\w{6}$')]),
+			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			UserMetadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -2367,12 +2367,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobPostBodyInputFormGroup() {
 		return new FormGroup<CreateJobPostBodyInputFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			FrameRate: new FormControl<string | null | undefined>(undefined),
-			Resolution: new FormControl<string | null | undefined>(undefined),
-			AspectRatio: new FormControl<string | null | undefined>(undefined),
-			Interlaced: new FormControl<string | null | undefined>(undefined),
-			Container: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			FrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)')]),
+			Resolution: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{1,5}x\d{1,5}$)')]),
+			AspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			Interlaced: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^true$)|(^false$)')]),
+			Container: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)')]),
 		});
 
 	}
@@ -2417,11 +2417,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobPostBodyOutputFormGroup() {
 		return new FormGroup<CreateJobPostBodyOutputFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ThumbnailPattern: new FormControl<string | null | undefined>(undefined),
-			Rotate: new FormControl<string | null | undefined>(undefined),
-			PresetId: new FormControl<string | null | undefined>(undefined),
-			SegmentDuration: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ThumbnailPattern: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^.*\{count\}.*$)')]),
+			Rotate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^0$)|(^90$)|(^180$)|(^270$)')]),
+			PresetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{13}-\w{6}$')]),
+			SegmentDuration: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}(\.\d{0,5})?$')]),
 		});
 
 	}
@@ -2501,11 +2501,11 @@ export namespace MyNS {
 	}
 	export function CreateCreatePipelinePostBodyFormGroup() {
 		return new FormGroup<CreatePipelinePostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
-			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputBucket: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
+			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\w|\.|-){1,255}$')]),
+			OutputBucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws:iam::\w{12}:role/.+$')]),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 		});
 
 	}
@@ -2524,10 +2524,10 @@ export namespace MyNS {
 	}
 	export function CreateCreatePipelinePostBodyNotificationsFormGroup() {
 		return new FormGroup<CreatePipelinePostBodyNotificationsFormProperties>({
-			Progressing: new FormControl<string | null | undefined>(undefined),
-			Completed: new FormControl<string | null | undefined>(undefined),
-			Warning: new FormControl<string | null | undefined>(undefined),
-			Error: new FormControl<string | null | undefined>(undefined),
+			Progressing: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Completed: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Warning: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Error: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
 		});
 
 	}
@@ -2545,8 +2545,8 @@ export namespace MyNS {
 	}
 	export function CreateCreatePipelinePostBodyContentConfigFormGroup() {
 		return new FormGroup<CreatePipelinePostBodyContentConfigFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			StorageClass: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			StorageClass: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^ReducedRedundancy$)|(^Standard$)')]),
 		});
 
 	}
@@ -2564,8 +2564,8 @@ export namespace MyNS {
 	}
 	export function CreateCreatePipelinePostBodyThumbnailConfigFormGroup() {
 		return new FormGroup<CreatePipelinePostBodyThumbnailConfigFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			StorageClass: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			StorageClass: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^ReducedRedundancy$)|(^Standard$)')]),
 		});
 
 	}
@@ -2627,9 +2627,9 @@ export namespace MyNS {
 	}
 	export function CreateCreatePresetPostBodyFormGroup() {
 		return new FormGroup<CreatePresetPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
-			Container: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(40)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
+			Container: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)|(^mp2$)')]),
 		});
 
 	}
@@ -2668,19 +2668,19 @@ export namespace MyNS {
 	}
 	export function CreateCreatePresetPostBodyVideoFormGroup() {
 		return new FormGroup<CreatePresetPostBodyVideoFormProperties>({
-			Codec: new FormControl<string | null | undefined>(undefined),
-			KeyframesMaxDist: new FormControl<string | null | undefined>(undefined),
-			FixedGOP: new FormControl<string | null | undefined>(undefined),
-			BitRate: new FormControl<string | null | undefined>(undefined),
-			FrameRate: new FormControl<string | null | undefined>(undefined),
-			MaxFrameRate: new FormControl<string | null | undefined>(undefined),
-			Resolution: new FormControl<string | null | undefined>(undefined),
-			AspectRatio: new FormControl<string | null | undefined>(undefined),
-			MaxWidth: new FormControl<string | null | undefined>(undefined),
-			MaxHeight: new FormControl<string | null | undefined>(undefined),
-			DisplayAspectRatio: new FormControl<string | null | undefined>(undefined),
-			SizingPolicy: new FormControl<string | null | undefined>(undefined),
-			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+			Codec: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^H\.264$)|(^vp8$)|(^vp9$)|(^mpeg2$)|(^gif$)')]),
+			KeyframesMaxDist: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,6}$')]),
+			FixedGOP: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^true$)|(^false$)')]),
+			BitRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^\d{2,5}$)|(^auto$)')]),
+			FrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)')]),
+			MaxFrameRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)')]),
+			Resolution: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{1,5}x\d{1,5}$)')]),
+			AspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			MaxWidth: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			MaxHeight: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			DisplayAspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Fit$)|(^Fill$)|(^Stretch$)|(^Keep$)|(^ShrinkToFit$)|(^ShrinkToFill$)')]),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Pad$)|(^NoPad$)')]),
 		});
 
 	}
@@ -2704,11 +2704,11 @@ export namespace MyNS {
 	}
 	export function CreateCreatePresetPostBodyAudioFormGroup() {
 		return new FormGroup<CreatePresetPostBodyAudioFormProperties>({
-			Codec: new FormControl<string | null | undefined>(undefined),
-			SampleRate: new FormControl<string | null | undefined>(undefined),
-			BitRate: new FormControl<string | null | undefined>(undefined),
-			Channels: new FormControl<string | null | undefined>(undefined),
-			AudioPackingMode: new FormControl<string | null | undefined>(undefined),
+			Codec: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^AAC$)|(^vorbis$)|(^mp3$)|(^mp2$)|(^pcm$)|(^flac$)')]),
+			SampleRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^22050$)|(^32000$)|(^44100$)|(^48000$)|(^96000$)|(^192000$)')]),
+			BitRate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,3}$')]),
+			Channels: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^0$)|(^1$)|(^2$)')]),
+			AudioPackingMode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^SingleTrack$)|(^OneChannelPerTrack$)|(^OneChannelPerTrackWithMosTo8Tracks$)')]),
 		});
 
 	}
@@ -2735,14 +2735,14 @@ export namespace MyNS {
 	}
 	export function CreateCreatePresetPostBodyThumbnailsFormGroup() {
 		return new FormGroup<CreatePresetPostBodyThumbnailsFormProperties>({
-			Format: new FormControl<string | null | undefined>(undefined),
-			Interval: new FormControl<string | null | undefined>(undefined),
-			Resolution: new FormControl<string | null | undefined>(undefined),
-			AspectRatio: new FormControl<string | null | undefined>(undefined),
-			MaxWidth: new FormControl<string | null | undefined>(undefined),
-			MaxHeight: new FormControl<string | null | undefined>(undefined),
-			SizingPolicy: new FormControl<string | null | undefined>(undefined),
-			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^jpg$)|(^png$)')]),
+			Interval: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}$')]),
+			Resolution: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{1,5}x\d{1,5}$')]),
+			AspectRatio: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^1:1$)|(^4:3$)|(^3:2$)|(^16:9$)')]),
+			MaxWidth: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			MaxHeight: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^auto$)|(^\d{2,4}$)')]),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Fit$)|(^Fill$)|(^Stretch$)|(^Keep$)|(^ShrinkToFit$)|(^ShrinkToFill$)')]),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^Pad$)|(^NoPad$)')]),
 		});
 
 	}
@@ -2802,10 +2802,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelinePutBodyFormGroup() {
 		return new FormGroup<UpdatePipelinePutBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
-			InputBucket: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(40)]),
+			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:iam::\w{12}:role/.+$')]),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 		});
 
 	}
@@ -2824,10 +2824,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelinePutBodyNotificationsFormGroup() {
 		return new FormGroup<UpdatePipelinePutBodyNotificationsFormProperties>({
-			Progressing: new FormControl<string | null | undefined>(undefined),
-			Completed: new FormControl<string | null | undefined>(undefined),
-			Warning: new FormControl<string | null | undefined>(undefined),
-			Error: new FormControl<string | null | undefined>(undefined),
+			Progressing: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Completed: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Warning: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Error: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
 		});
 
 	}
@@ -2845,8 +2845,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelinePutBodyContentConfigFormGroup() {
 		return new FormGroup<UpdatePipelinePutBodyContentConfigFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			StorageClass: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			StorageClass: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^ReducedRedundancy$)|(^Standard$)')]),
 		});
 
 	}
@@ -2864,8 +2864,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelinePutBodyThumbnailConfigFormGroup() {
 		return new FormGroup<UpdatePipelinePutBodyThumbnailConfigFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
-			StorageClass: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\w|\.|-){1,255}$')]),
+			StorageClass: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^ReducedRedundancy$)|(^Standard$)')]),
 		});
 
 	}
@@ -2919,9 +2919,9 @@ export namespace MyNS {
 	}
 	export function CreateTestRolePostBodyFormGroup() {
 		return new FormGroup<TestRolePostBodyFormProperties>({
-			Role: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws:iam::\w{12}:role/.+$')]),
+			InputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\w|\.|-){1,255}$')]),
+			OutputBucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\w|\.|-){1,255}$')]),
 		});
 
 	}
@@ -2956,10 +2956,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelineNotificationsPostBodyNotificationsFormGroup() {
 		return new FormGroup<UpdatePipelineNotificationsPostBodyNotificationsFormProperties>({
-			Progressing: new FormControl<string | null | undefined>(undefined),
-			Completed: new FormControl<string | null | undefined>(undefined),
-			Warning: new FormControl<string | null | undefined>(undefined),
-			Error: new FormControl<string | null | undefined>(undefined),
+			Progressing: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Completed: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Warning: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
+			Error: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^$)|(^arn:aws:sns:.*:\w{12}:.+$)')]),
 		});
 
 	}
@@ -2982,7 +2982,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePipelineStatusPostBodyFormGroup() {
 		return new FormGroup<UpdatePipelineStatusPostBodyFormProperties>({
-			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(^Active$)|(^Paused$)')]),
 		});
 
 	}

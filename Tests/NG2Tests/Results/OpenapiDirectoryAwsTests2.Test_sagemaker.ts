@@ -57,8 +57,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -151,8 +151,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateTrialComponentRequestFormGroup() {
 		return new FormGroup<AssociateTrialComponentRequestFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -197,7 +197,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAlgorithmOutputFormGroup() {
 		return new FormGroup<CreateAlgorithmOutputFormProperties>({
-			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:algorithm/.*')]),
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:algorithm/.*')]),
 		});
 
 	}
@@ -242,7 +242,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAlgorithmInputFormGroup() {
 		return new FormGroup<CreateAlgorithmInputFormProperties>({
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			AlgorithmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*')]),
 			CertifyForMarketplace: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -492,7 +492,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TrainingInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_g4dn_xlarge = 5, ml_g4dn_2xlarge = 6, ml_g4dn_4xlarge = 7, ml_g4dn_8xlarge = 8, ml_g4dn_12xlarge = 9, ml_g4dn_16xlarge = 10, ml_m5_large = 11, ml_m5_xlarge = 12, ml_m5_2xlarge = 13, ml_m5_4xlarge = 14, ml_m5_12xlarge = 15, ml_m5_24xlarge = 16, ml_c4_xlarge = 17, ml_c4_2xlarge = 18, ml_c4_4xlarge = 19, ml_c4_8xlarge = 20, ml_p2_xlarge = 21, ml_p2_8xlarge = 22, ml_p2_16xlarge = 23, ml_p3_2xlarge = 24, ml_p3_8xlarge = 25, ml_p3_16xlarge = 26, ml_p3dn_24xlarge = 27, ml_c5_xlarge = 28, ml_c5_2xlarge = 29, ml_c5_4xlarge = 30, ml_c5_9xlarge = 31, ml_c5_18xlarge = 32, ml_c5n_xlarge = 33, ml_c5n_2xlarge = 34, ml_c5n_4xlarge = 35, ml_c5n_9xlarge = 36, ml_c5n_18xlarge = 37 }
+	export enum TrainingInstanceType { 'ml.m4.xlarge' = 0, 'ml.m4.2xlarge' = 1, 'ml.m4.4xlarge' = 2, 'ml.m4.10xlarge' = 3, 'ml.m4.16xlarge' = 4, 'ml.g4dn.xlarge' = 5, 'ml.g4dn.2xlarge' = 6, 'ml.g4dn.4xlarge' = 7, 'ml.g4dn.8xlarge' = 8, 'ml.g4dn.12xlarge' = 9, 'ml.g4dn.16xlarge' = 10, 'ml.m5.large' = 11, 'ml.m5.xlarge' = 12, 'ml.m5.2xlarge' = 13, 'ml.m5.4xlarge' = 14, 'ml.m5.12xlarge' = 15, 'ml.m5.24xlarge' = 16, 'ml.c4.xlarge' = 17, 'ml.c4.2xlarge' = 18, 'ml.c4.4xlarge' = 19, 'ml.c4.8xlarge' = 20, 'ml.p2.xlarge' = 21, 'ml.p2.8xlarge' = 22, 'ml.p2.16xlarge' = 23, 'ml.p3.2xlarge' = 24, 'ml.p3.8xlarge' = 25, 'ml.p3.16xlarge' = 26, 'ml.p3dn.24xlarge' = 27, 'ml.c5.xlarge' = 28, 'ml.c5.2xlarge' = 29, 'ml.c5.4xlarge' = 30, 'ml.c5.9xlarge' = 31, 'ml.c5.18xlarge' = 32, 'ml.c5n.xlarge' = 33, 'ml.c5n.2xlarge' = 34, 'ml.c5n.4xlarge' = 35, 'ml.c5n.9xlarge' = 36, 'ml.c5n.18xlarge' = 37 }
 
 
 	/** Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code> . Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job. */
@@ -532,8 +532,8 @@ export namespace MyNS {
 	}
 	export function CreateMetricDefinitionFormGroup() {
 		return new FormGroup<MetricDefinitionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
-			Regex: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(1), Validators.pattern('.+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
+			Regex: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(500), Validators.pattern('.+')]),
 		});
 
 	}
@@ -580,7 +580,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelSpecificationFormGroup() {
 		return new FormGroup<ChannelSpecificationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\.\-_]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Za-z0-9\.\-_]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*')]),
 			IsRequired: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -622,7 +622,7 @@ export namespace MyNS {
 	export function CreateHyperParameterTuningJobObjectiveFormGroup() {
 		return new FormGroup<HyperParameterTuningJobObjectiveFormProperties>({
 			Type: new FormControl<HyperParameterTuningJobObjectiveType | null | undefined>(undefined, [Validators.required]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 		});
 
 	}
@@ -720,9 +720,9 @@ export namespace MyNS {
 
 	}
 
-	export enum TransformInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_c4_xlarge = 5, ml_c4_2xlarge = 6, ml_c4_4xlarge = 7, ml_c4_8xlarge = 8, ml_p2_xlarge = 9, ml_p2_8xlarge = 10, ml_p2_16xlarge = 11, ml_p3_2xlarge = 12, ml_p3_8xlarge = 13, ml_p3_16xlarge = 14, ml_c5_xlarge = 15, ml_c5_2xlarge = 16, ml_c5_4xlarge = 17, ml_c5_9xlarge = 18, ml_c5_18xlarge = 19, ml_m5_large = 20, ml_m5_xlarge = 21, ml_m5_2xlarge = 22, ml_m5_4xlarge = 23, ml_m5_12xlarge = 24, ml_m5_24xlarge = 25 }
+	export enum TransformInstanceType { 'ml.m4.xlarge' = 0, 'ml.m4.2xlarge' = 1, 'ml.m4.4xlarge' = 2, 'ml.m4.10xlarge' = 3, 'ml.m4.16xlarge' = 4, 'ml.c4.xlarge' = 5, 'ml.c4.2xlarge' = 6, 'ml.c4.4xlarge' = 7, 'ml.c4.8xlarge' = 8, 'ml.p2.xlarge' = 9, 'ml.p2.8xlarge' = 10, 'ml.p2.16xlarge' = 11, 'ml.p3.2xlarge' = 12, 'ml.p3.8xlarge' = 13, 'ml.p3.16xlarge' = 14, 'ml.c5.xlarge' = 15, 'ml.c5.2xlarge' = 16, 'ml.c5.4xlarge' = 17, 'ml.c5.9xlarge' = 18, 'ml.c5.18xlarge' = 19, 'ml.m5.large' = 20, 'ml.m5.xlarge' = 21, 'ml.m5.2xlarge' = 22, 'ml.m5.4xlarge' = 23, 'ml.m5.12xlarge' = 24, 'ml.m5.24xlarge' = 25 }
 
-	export enum ProductionVariantInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_m5_large = 9, ml_m5_xlarge = 10, ml_m5_2xlarge = 11, ml_m5_4xlarge = 12, ml_m5_12xlarge = 13, ml_m5_24xlarge = 14, ml_m5d_large = 15, ml_m5d_xlarge = 16, ml_m5d_2xlarge = 17, ml_m5d_4xlarge = 18, ml_m5d_12xlarge = 19, ml_m5d_24xlarge = 20, ml_c4_large = 21, ml_c4_xlarge = 22, ml_c4_2xlarge = 23, ml_c4_4xlarge = 24, ml_c4_8xlarge = 25, ml_p2_xlarge = 26, ml_p2_8xlarge = 27, ml_p2_16xlarge = 28, ml_p3_2xlarge = 29, ml_p3_8xlarge = 30, ml_p3_16xlarge = 31, ml_c5_large = 32, ml_c5_xlarge = 33, ml_c5_2xlarge = 34, ml_c5_4xlarge = 35, ml_c5_9xlarge = 36, ml_c5_18xlarge = 37, ml_c5d_large = 38, ml_c5d_xlarge = 39, ml_c5d_2xlarge = 40, ml_c5d_4xlarge = 41, ml_c5d_9xlarge = 42, ml_c5d_18xlarge = 43, ml_g4dn_xlarge = 44, ml_g4dn_2xlarge = 45, ml_g4dn_4xlarge = 46, ml_g4dn_8xlarge = 47, ml_g4dn_12xlarge = 48, ml_g4dn_16xlarge = 49, ml_r5_large = 50, ml_r5_xlarge = 51, ml_r5_2xlarge = 52, ml_r5_4xlarge = 53, ml_r5_12xlarge = 54, ml_r5_24xlarge = 55, ml_r5d_large = 56, ml_r5d_xlarge = 57, ml_r5d_2xlarge = 58, ml_r5d_4xlarge = 59, ml_r5d_12xlarge = 60, ml_r5d_24xlarge = 61, ml_inf1_xlarge = 62, ml_inf1_2xlarge = 63, ml_inf1_6xlarge = 64, ml_inf1_24xlarge = 65 }
+	export enum ProductionVariantInstanceType { 'ml.t2.medium' = 0, 'ml.t2.large' = 1, 'ml.t2.xlarge' = 2, 'ml.t2.2xlarge' = 3, 'ml.m4.xlarge' = 4, 'ml.m4.2xlarge' = 5, 'ml.m4.4xlarge' = 6, 'ml.m4.10xlarge' = 7, 'ml.m4.16xlarge' = 8, 'ml.m5.large' = 9, 'ml.m5.xlarge' = 10, 'ml.m5.2xlarge' = 11, 'ml.m5.4xlarge' = 12, 'ml.m5.12xlarge' = 13, 'ml.m5.24xlarge' = 14, 'ml.m5d.large' = 15, 'ml.m5d.xlarge' = 16, 'ml.m5d.2xlarge' = 17, 'ml.m5d.4xlarge' = 18, 'ml.m5d.12xlarge' = 19, 'ml.m5d.24xlarge' = 20, 'ml.c4.large' = 21, 'ml.c4.xlarge' = 22, 'ml.c4.2xlarge' = 23, 'ml.c4.4xlarge' = 24, 'ml.c4.8xlarge' = 25, 'ml.p2.xlarge' = 26, 'ml.p2.8xlarge' = 27, 'ml.p2.16xlarge' = 28, 'ml.p3.2xlarge' = 29, 'ml.p3.8xlarge' = 30, 'ml.p3.16xlarge' = 31, 'ml.c5.large' = 32, 'ml.c5.xlarge' = 33, 'ml.c5.2xlarge' = 34, 'ml.c5.4xlarge' = 35, 'ml.c5.9xlarge' = 36, 'ml.c5.18xlarge' = 37, 'ml.c5d.large' = 38, 'ml.c5d.xlarge' = 39, 'ml.c5d.2xlarge' = 40, 'ml.c5d.4xlarge' = 41, 'ml.c5d.9xlarge' = 42, 'ml.c5d.18xlarge' = 43, 'ml.g4dn.xlarge' = 44, 'ml.g4dn.2xlarge' = 45, 'ml.g4dn.4xlarge' = 46, 'ml.g4dn.8xlarge' = 47, 'ml.g4dn.12xlarge' = 48, 'ml.g4dn.16xlarge' = 49, 'ml.r5.large' = 50, 'ml.r5.xlarge' = 51, 'ml.r5.2xlarge' = 52, 'ml.r5.4xlarge' = 53, 'ml.r5.12xlarge' = 54, 'ml.r5.24xlarge' = 55, 'ml.r5d.large' = 56, 'ml.r5d.xlarge' = 57, 'ml.r5d.2xlarge' = 58, 'ml.r5d.4xlarge' = 59, 'ml.r5d.12xlarge' = 60, 'ml.r5d.24xlarge' = 61, 'ml.inf1.xlarge' = 62, 'ml.inf1.2xlarge' = 63, 'ml.inf1.6xlarge' = 64, 'ml.inf1.24xlarge' = 65 }
 
 
 	/** Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm. */
@@ -755,7 +755,7 @@ export namespace MyNS {
 	}
 	export function CreateAlgorithmValidationSpecificationFormGroup() {
 		return new FormGroup<AlgorithmValidationSpecificationFormProperties>({
-			ValidationRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ValidationRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -793,7 +793,7 @@ export namespace MyNS {
 	}
 	export function CreateAlgorithmValidationProfileFormGroup() {
 		return new FormGroup<AlgorithmValidationProfileFormProperties>({
-			ProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			ProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -900,7 +900,7 @@ export namespace MyNS {
 	}
 	export function CreateChannelFormGroup() {
 		return new FormGroup<ChannelFormProperties>({
-			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[A-Za-z0-9\.\-_]+')]),
+			ChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[A-Za-z0-9\.\-_]+')]),
 			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('.*')]),
 			CompressionType: new FormControl<CompressionType | null | undefined>(undefined),
 			RecordWrapperType: new FormControl<ChannelRecordWrapperType | null | undefined>(undefined),
@@ -1093,7 +1093,7 @@ export namespace MyNS {
 	export interface ResourceConfig {
 
 		/** Required */
-		InstanceType: ResourceConfigInstanceType;
+		InstanceType: TrainingInstanceType;
 
 		/**
 		 * Required
@@ -1115,7 +1115,7 @@ export namespace MyNS {
 	export interface ResourceConfigFormProperties {
 
 		/** Required */
-		InstanceType: FormControl<ResourceConfigInstanceType | null | undefined>,
+		InstanceType: FormControl<TrainingInstanceType | null | undefined>,
 
 		/**
 		 * Required
@@ -1134,15 +1134,13 @@ export namespace MyNS {
 	}
 	export function CreateResourceConfigFormGroup() {
 		return new FormGroup<ResourceConfigFormProperties>({
-			InstanceType: new FormControl<ResourceConfigInstanceType | null | undefined>(undefined, [Validators.required]),
+			InstanceType: new FormControl<TrainingInstanceType | null | undefined>(undefined, [Validators.required]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('.*')]),
 		});
 
 	}
-
-	export enum ResourceConfigInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_g4dn_xlarge = 5, ml_g4dn_2xlarge = 6, ml_g4dn_4xlarge = 7, ml_g4dn_8xlarge = 8, ml_g4dn_12xlarge = 9, ml_g4dn_16xlarge = 10, ml_m5_large = 11, ml_m5_xlarge = 12, ml_m5_2xlarge = 13, ml_m5_4xlarge = 14, ml_m5_12xlarge = 15, ml_m5_24xlarge = 16, ml_c4_xlarge = 17, ml_c4_2xlarge = 18, ml_c4_4xlarge = 19, ml_c4_8xlarge = 20, ml_p2_xlarge = 21, ml_p2_8xlarge = 22, ml_p2_16xlarge = 23, ml_p3_2xlarge = 24, ml_p3_8xlarge = 25, ml_p3_16xlarge = 26, ml_p3dn_24xlarge = 27, ml_c5_xlarge = 28, ml_c5_2xlarge = 29, ml_c5_4xlarge = 30, ml_c5_9xlarge = 31, ml_c5_18xlarge = 32, ml_c5n_xlarge = 33, ml_c5n_2xlarge = 34, ml_c5n_4xlarge = 35, ml_c5n_9xlarge = 36, ml_c5n_18xlarge = 37 }
 
 
 	/** <p>Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p> <p>The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.</p> </note> */
@@ -1374,7 +1372,7 @@ export namespace MyNS {
 	export interface TransformResources {
 
 		/** Required */
-		InstanceType: TransformResourcesInstanceType;
+		InstanceType: TransformInstanceType;
 
 		/**
 		 * Required
@@ -1390,7 +1388,7 @@ export namespace MyNS {
 	export interface TransformResourcesFormProperties {
 
 		/** Required */
-		InstanceType: FormControl<TransformResourcesInstanceType | null | undefined>,
+		InstanceType: FormControl<TransformInstanceType | null | undefined>,
 
 		/**
 		 * Required
@@ -1403,14 +1401,12 @@ export namespace MyNS {
 	}
 	export function CreateTransformResourcesFormGroup() {
 		return new FormGroup<TransformResourcesFormProperties>({
-			InstanceType: new FormControl<TransformResourcesInstanceType | null | undefined>(undefined, [Validators.required]),
+			InstanceType: new FormControl<TransformInstanceType | null | undefined>(undefined, [Validators.required]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('.*')]),
 		});
 
 	}
-
-	export enum TransformResourcesInstanceType { ml_m4_xlarge = 0, ml_m4_2xlarge = 1, ml_m4_4xlarge = 2, ml_m4_10xlarge = 3, ml_m4_16xlarge = 4, ml_c4_xlarge = 5, ml_c4_2xlarge = 6, ml_c4_4xlarge = 7, ml_c4_8xlarge = 8, ml_p2_xlarge = 9, ml_p2_8xlarge = 10, ml_p2_16xlarge = 11, ml_p3_2xlarge = 12, ml_p3_8xlarge = 13, ml_p3_16xlarge = 14, ml_c5_xlarge = 15, ml_c5_2xlarge = 16, ml_c5_4xlarge = 17, ml_c5_9xlarge = 18, ml_c5_18xlarge = 19, ml_m5_large = 20, ml_m5_xlarge = 21, ml_m5_2xlarge = 22, ml_m5_4xlarge = 23, ml_m5_12xlarge = 24, ml_m5_24xlarge = 25 }
 
 	export interface CreateAppResponse {
 
@@ -1520,7 +1516,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceSpecInstanceType { system = 0, ml_t3_micro = 1, ml_t3_small = 2, ml_t3_medium = 3, ml_t3_large = 4, ml_t3_xlarge = 5, ml_t3_2xlarge = 6, ml_m5_large = 7, ml_m5_xlarge = 8, ml_m5_2xlarge = 9, ml_m5_4xlarge = 10, ml_m5_8xlarge = 11, ml_m5_12xlarge = 12, ml_m5_16xlarge = 13, ml_m5_24xlarge = 14, ml_c5_large = 15, ml_c5_xlarge = 16, ml_c5_2xlarge = 17, ml_c5_4xlarge = 18, ml_c5_9xlarge = 19, ml_c5_12xlarge = 20, ml_c5_18xlarge = 21, ml_c5_24xlarge = 22, ml_p3_2xlarge = 23, ml_p3_8xlarge = 24, ml_p3_16xlarge = 25, ml_g4dn_xlarge = 26, ml_g4dn_2xlarge = 27, ml_g4dn_4xlarge = 28, ml_g4dn_8xlarge = 29, ml_g4dn_12xlarge = 30, ml_g4dn_16xlarge = 31 }
+	export enum ResourceSpecInstanceType { system = 0, 'ml.t3.micro' = 1, 'ml.t3.small' = 2, 'ml.t3.medium' = 3, 'ml.t3.large' = 4, 'ml.t3.xlarge' = 5, 'ml.t3.2xlarge' = 6, 'ml.m5.large' = 7, 'ml.m5.xlarge' = 8, 'ml.m5.2xlarge' = 9, 'ml.m5.4xlarge' = 10, 'ml.m5.8xlarge' = 11, 'ml.m5.12xlarge' = 12, 'ml.m5.16xlarge' = 13, 'ml.m5.24xlarge' = 14, 'ml.c5.large' = 15, 'ml.c5.xlarge' = 16, 'ml.c5.2xlarge' = 17, 'ml.c5.4xlarge' = 18, 'ml.c5.9xlarge' = 19, 'ml.c5.12xlarge' = 20, 'ml.c5.18xlarge' = 21, 'ml.c5.24xlarge' = 22, 'ml.p3.2xlarge' = 23, 'ml.p3.8xlarge' = 24, 'ml.p3.16xlarge' = 25, 'ml.g4dn.xlarge' = 26, 'ml.g4dn.2xlarge' = 27, 'ml.g4dn.4xlarge' = 28, 'ml.g4dn.8xlarge' = 29, 'ml.g4dn.12xlarge' = 30, 'ml.g4dn.16xlarge' = 31 }
 
 	export interface ResourceInUse {
 	}
@@ -1552,7 +1548,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAutoMLJobResponseFormGroup() {
 		return new FormGroup<CreateAutoMLJobResponseFormProperties>({
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
 		});
 
 	}
@@ -1620,9 +1616,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAutoMLJobRequestFormGroup() {
 		return new FormGroup<CreateAutoMLJobRequestFormProperties>({
-			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			ProblemType: new FormControl<CreateAutoMLJobRequestProblemType | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			GenerateCandidateDefinitionsOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1909,7 +1905,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCodeRepositoryOutputFormGroup() {
 		return new FormGroup<CreateCodeRepositoryOutputFormProperties>({
-			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
 		});
 
 	}
@@ -1940,7 +1936,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCodeRepositoryInputFormGroup() {
 		return new FormGroup<CreateCodeRepositoryInputFormProperties>({
-			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -1985,9 +1981,9 @@ export namespace MyNS {
 	}
 	export function CreateGitConfigFormGroup() {
 		return new FormGroup<GitConfigFormProperties>({
-			RepositoryUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Branch: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[^ ~^:?*\[]+')]),
-			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:secretsmanager:[a-z0-9\-]*:[0-9]{12}:secret:.*')]),
+			RepositoryUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^https://([^/]+)/?(.*)$')]),
+			Branch: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[^ ~^:?*\[]+')]),
+			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:secretsmanager:[a-z0-9\-]*:[0-9]{12}:secret:.*')]),
 		});
 
 	}
@@ -2067,8 +2063,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateCompilationJobRequestFormGroup() {
 		return new FormGroup<CreateCompilationJobRequestFormProperties>({
-			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -2116,7 +2112,7 @@ export namespace MyNS {
 	export function CreateInputConfigFormGroup() {
 		return new FormGroup<InputConfigFormProperties>({
 			S3Uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('^(https|s3)://([^/]+)/?(.*)$')]),
-			DataInputConfig: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\S\s]+')]),
+			DataInputConfig: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\S\s]+')]),
 			Framework: new FormControl<InputConfigFramework | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2292,7 +2288,7 @@ export namespace MyNS {
 	}
 	export function CreateUserSettingsFormGroup() {
 		return new FormGroup<UserSettingsFormProperties>({
-			ExecutionRole: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ExecutionRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -2401,7 +2397,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateEndpointOutputFormGroup() {
 		return new FormGroup<CreateEndpointOutputFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
 		});
 
 	}
@@ -2468,7 +2464,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateEndpointConfigOutputFormGroup() {
 		return new FormGroup<CreateEndpointConfigOutputFormProperties>({
-			EndpointConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*')]),
+			EndpointConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*')]),
 		});
 
 	}
@@ -2589,7 +2585,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProductionVariantAcceleratorType { ml_eia1_medium = 0, ml_eia1_large = 1, ml_eia1_xlarge = 2, ml_eia2_medium = 3, ml_eia2_large = 4, ml_eia2_xlarge = 5 }
+	export enum ProductionVariantAcceleratorType { 'ml.eia1.medium' = 0, 'ml.eia1.large' = 1, 'ml.eia1.xlarge' = 2, 'ml.eia2.medium' = 3, 'ml.eia2.large' = 4, 'ml.eia2.xlarge' = 5 }
 
 
 	/** <p/> */
@@ -2763,8 +2759,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateExperimentRequestFormGroup() {
 		return new FormGroup<CreateExperimentRequestFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3072), Validators.pattern('.*')]),
 		});
 
@@ -2851,8 +2847,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateFlowDefinitionRequestFormGroup() {
 		return new FormGroup<CreateFlowDefinitionRequestFormProperties>({
-			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -2878,7 +2874,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HumanLoopRequestSourceAwsManagedHumanLoopRequestSource { AWS_Rekognition_DetectModerationLabels_Image_V3 = 0, AWS_Textract_AnalyzeDocument_Forms_V1 = 1 }
+	export enum HumanLoopRequestSourceAwsManagedHumanLoopRequestSource { 'AWS/Rekognition/DetectModerationLabels/Image/V3' = 0, 'AWS/Textract/AnalyzeDocument/Forms/V1' = 1 }
 
 
 	/** Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans. */
@@ -3038,8 +3034,8 @@ export namespace MyNS {
 		return new FormGroup<HumanLoopConfigFormProperties>({
 			WorkteamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:workteam/.*')]),
 			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-task-ui/.*')]),
-			TaskTitle: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[\t\n\r -\uD7FF\uE000-\uFFFD]*$')]),
-			TaskDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			TaskTitle: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[\t\n\r -\uD7FF\uE000-\uFFFD]*$')]),
+			TaskDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			TaskCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(3)]),
 			TaskAvailabilityLifetimeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(864000)]),
 			TaskTimeLimitInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(30), Validators.max(28800)]),
@@ -3206,7 +3202,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateHumanTaskUiRequestFormGroup() {
 		return new FormGroup<CreateHumanTaskUiRequestFormProperties>({
-			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 		});
 
 	}
@@ -3235,7 +3231,7 @@ export namespace MyNS {
 	}
 	export function CreateUiTemplateFormGroup() {
 		return new FormGroup<UiTemplateFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128000), Validators.minLength(1), Validators.pattern('[\S\s]+')]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128000), Validators.pattern('[\S\s]+')]),
 		});
 
 	}
@@ -3307,7 +3303,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateHyperParameterTuningJobRequestFormGroup() {
 		return new FormGroup<CreateHyperParameterTuningJobRequestFormProperties>({
-			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -3687,8 +3683,8 @@ export namespace MyNS {
 	}
 	export function CreateHyperParameterTrainingJobDefinitionFormGroup() {
 		return new FormGroup<HyperParameterTrainingJobDefinitionFormProperties>({
-			DefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			DefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
 			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
 			EnableManagedSpotTraining: new FormControl<boolean | null | undefined>(undefined),
@@ -3738,7 +3734,7 @@ export namespace MyNS {
 		return new FormGroup<HyperParameterAlgorithmSpecificationFormProperties>({
 			TrainingImage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('.*')]),
 			TrainingInputMode: new FormControl<TrainingInputMode | null | undefined>(undefined, [Validators.required]),
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(170), Validators.minLength(1), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(170), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
 		});
 
 	}
@@ -3827,7 +3823,7 @@ export namespace MyNS {
 	}
 	export function CreateParentHyperParameterTuningJobFormGroup() {
 		return new FormGroup<ParentHyperParameterTuningJobFormProperties>({
-			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -3941,9 +3937,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateLabelingJobRequestFormGroup() {
 		return new FormGroup<CreateLabelingJobRequestFormProperties>({
-			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			LabelAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(127), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			LabelAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(127), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			LabelCategoryConfigS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^(https|s3)://([^/]+)/?(.*)$')]),
 		});
 
@@ -4144,7 +4140,7 @@ export namespace MyNS {
 	export function CreateLabelingJobAlgorithmsConfigFormGroup() {
 		return new FormGroup<LabelingJobAlgorithmsConfigFormProperties>({
 			LabelingJobAlgorithmSpecificationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('arn:.*')]),
-			InitialActiveLearningModelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
+			InitialActiveLearningModelArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
 		});
 
 	}
@@ -4307,8 +4303,8 @@ export namespace MyNS {
 		return new FormGroup<HumanTaskConfigFormProperties>({
 			WorkteamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:workteam/.*')]),
 			PreHumanTaskLambdaArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
-			TaskTitle: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[\t\n\r -\uD7FF\uE000-\uFFFD]*$')]),
-			TaskDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			TaskTitle: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[\t\n\r -\uD7FF\uE000-\uFFFD]*$')]),
+			TaskDescription: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			NumberOfHumanWorkersPerDataObject: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(9)]),
 			TaskTimeLimitInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(30), Validators.max(604800)]),
 			TaskAvailabilityLifetimeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(60), Validators.max(864000)]),
@@ -4392,7 +4388,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateModelOutputFormGroup() {
 		return new FormGroup<CreateModelOutputFormProperties>({
-			ModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
+			ModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
 		});
 
 	}
@@ -4447,7 +4443,7 @@ export namespace MyNS {
 	export function CreateCreateModelInputFormGroup() {
 		return new FormGroup<CreateModelInputFormProperties>({
 			ModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4500,7 +4496,7 @@ export namespace MyNS {
 			Image: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('[\S]+')]),
 			Mode: new FormControl<ContainerDefinitionMode | null | undefined>(undefined),
 			ModelDataUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^(https|s3)://([^/]+)/?(.*)$')]),
-			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(170), Validators.minLength(1), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
+			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(170), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
 		});
 
 	}
@@ -4537,7 +4533,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateModelPackageOutputFormGroup() {
 		return new FormGroup<CreateModelPackageOutputFormProperties>({
-			ModelPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model-package/.*')]),
+			ModelPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model-package/.*')]),
 		});
 
 	}
@@ -4579,7 +4575,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateModelPackageInputFormGroup() {
 		return new FormGroup<CreateModelPackageInputFormProperties>({
-			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			ModelPackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*')]),
 			CertifyForMarketplace: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -4617,7 +4613,7 @@ export namespace MyNS {
 	}
 	export function CreateModelPackageValidationSpecificationFormGroup() {
 		return new FormGroup<ModelPackageValidationSpecificationFormProperties>({
-			ValidationRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ValidationRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -4652,7 +4648,7 @@ export namespace MyNS {
 	}
 	export function CreateModelPackageValidationProfileFormGroup() {
 		return new FormGroup<ModelPackageValidationProfileFormProperties>({
-			ProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			ProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -4709,7 +4705,7 @@ export namespace MyNS {
 	export function CreateSourceAlgorithmFormGroup() {
 		return new FormGroup<SourceAlgorithmFormProperties>({
 			ModelDataUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^(https|s3)://([^/]+)/?(.*)$')]),
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(170), Validators.minLength(1), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(170), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
 		});
 
 	}
@@ -4769,7 +4765,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMonitoringScheduleRequestFormGroup() {
 		return new FormGroup<CreateMonitoringScheduleRequestFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -4821,7 +4817,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleConfigFormGroup() {
 		return new FormGroup<ScheduleConfigFormProperties>({
-			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -4885,7 +4881,7 @@ export namespace MyNS {
 	}
 	export function CreateMonitoringJobDefinitionFormGroup() {
 		return new FormGroup<MonitoringJobDefinitionFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -5189,7 +5185,7 @@ export namespace MyNS {
 
 	}
 
-	export enum MonitoringClusterConfigInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
+	export enum MonitoringClusterConfigInstanceType { 'ml.t3.medium' = 0, 'ml.t3.large' = 1, 'ml.t3.xlarge' = 2, 'ml.t3.2xlarge' = 3, 'ml.m4.xlarge' = 4, 'ml.m4.2xlarge' = 5, 'ml.m4.4xlarge' = 6, 'ml.m4.10xlarge' = 7, 'ml.m4.16xlarge' = 8, 'ml.c4.xlarge' = 9, 'ml.c4.2xlarge' = 10, 'ml.c4.4xlarge' = 11, 'ml.c4.8xlarge' = 12, 'ml.p2.xlarge' = 13, 'ml.p2.8xlarge' = 14, 'ml.p2.16xlarge' = 15, 'ml.p3.2xlarge' = 16, 'ml.p3.8xlarge' = 17, 'ml.p3.16xlarge' = 18, 'ml.c5.xlarge' = 19, 'ml.c5.2xlarge' = 20, 'ml.c5.4xlarge' = 21, 'ml.c5.9xlarge' = 22, 'ml.c5.18xlarge' = 23, 'ml.m5.large' = 24, 'ml.m5.xlarge' = 25, 'ml.m5.2xlarge' = 26, 'ml.m5.4xlarge' = 27, 'ml.m5.12xlarge' = 28, 'ml.m5.24xlarge' = 29, 'ml.r5.large' = 30, 'ml.r5.xlarge' = 31, 'ml.r5.2xlarge' = 32, 'ml.r5.4xlarge' = 33, 'ml.r5.8xlarge' = 34, 'ml.r5.12xlarge' = 35, 'ml.r5.16xlarge' = 36, 'ml.r5.24xlarge' = 37 }
 
 
 	/** Container image configuration object for the monitoring job. */
@@ -5423,22 +5419,22 @@ export namespace MyNS {
 			NotebookInstanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			InstanceType: new FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>(undefined, [Validators.required]),
 			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.pattern('[-0-9a-zA-Z]+')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('.*')]),
 			LifecycleConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			DirectInternetAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
 			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(16384)]),
-			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			RootAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum CreateNotebookInstanceInputInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
+	export enum CreateNotebookInstanceInputInstanceType { 'ml.t2.medium' = 0, 'ml.t2.large' = 1, 'ml.t2.xlarge' = 2, 'ml.t2.2xlarge' = 3, 'ml.t3.medium' = 4, 'ml.t3.large' = 5, 'ml.t3.xlarge' = 6, 'ml.t3.2xlarge' = 7, 'ml.m4.xlarge' = 8, 'ml.m4.2xlarge' = 9, 'ml.m4.4xlarge' = 10, 'ml.m4.10xlarge' = 11, 'ml.m4.16xlarge' = 12, 'ml.m5.xlarge' = 13, 'ml.m5.2xlarge' = 14, 'ml.m5.4xlarge' = 15, 'ml.m5.12xlarge' = 16, 'ml.m5.24xlarge' = 17, 'ml.c4.xlarge' = 18, 'ml.c4.2xlarge' = 19, 'ml.c4.4xlarge' = 20, 'ml.c4.8xlarge' = 21, 'ml.c5.xlarge' = 22, 'ml.c5.2xlarge' = 23, 'ml.c5.4xlarge' = 24, 'ml.c5.9xlarge' = 25, 'ml.c5.18xlarge' = 26, 'ml.c5d.xlarge' = 27, 'ml.c5d.2xlarge' = 28, 'ml.c5d.4xlarge' = 29, 'ml.c5d.9xlarge' = 30, 'ml.c5d.18xlarge' = 31, 'ml.p2.xlarge' = 32, 'ml.p2.8xlarge' = 33, 'ml.p2.16xlarge' = 34, 'ml.p3.2xlarge' = 35, 'ml.p3.8xlarge' = 36, 'ml.p3.16xlarge' = 37 }
 
 	export enum CreateNotebookInstanceInputDirectInternetAccess { Enabled = 0, Disabled = 1 }
 
-	export enum NotebookInstanceAcceleratorType { ml_eia1_medium = 0, ml_eia1_large = 1, ml_eia1_xlarge = 2, ml_eia2_medium = 3, ml_eia2_large = 4, ml_eia2_xlarge = 5 }
+	export enum NotebookInstanceAcceleratorType { 'ml.eia1.medium' = 0, 'ml.eia1.large' = 1, 'ml.eia1.xlarge' = 2, 'ml.eia2.medium' = 3, 'ml.eia2.large' = 4, 'ml.eia2.xlarge' = 5 }
 
 	export interface CreateNotebookInstanceLifecycleConfigOutput {
 
@@ -5508,7 +5504,7 @@ export namespace MyNS {
 	}
 	export function CreateNotebookInstanceLifecycleHookFormGroup() {
 		return new FormGroup<NotebookInstanceLifecycleHookFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16384), Validators.minLength(1), Validators.pattern('[\S\s]+')]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(16384), Validators.pattern('[\S\s]+')]),
 		});
 
 	}
@@ -5718,8 +5714,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProcessingJobRequestFormGroup() {
 		return new FormGroup<CreateProcessingJobRequestFormProperties>({
-			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -5945,7 +5941,7 @@ export namespace MyNS {
 		InstanceCount: number;
 
 		/** Required */
-		InstanceType: ProcessingClusterConfigInstanceType;
+		InstanceType: MonitoringClusterConfigInstanceType;
 
 		/**
 		 * Required
@@ -5969,7 +5965,7 @@ export namespace MyNS {
 		InstanceCount: FormControl<number | null | undefined>,
 
 		/** Required */
-		InstanceType: FormControl<ProcessingClusterConfigInstanceType | null | undefined>,
+		InstanceType: FormControl<MonitoringClusterConfigInstanceType | null | undefined>,
 
 		/**
 		 * Required
@@ -5984,14 +5980,12 @@ export namespace MyNS {
 	export function CreateProcessingClusterConfigFormGroup() {
 		return new FormGroup<ProcessingClusterConfigFormProperties>({
 			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(100)]),
-			InstanceType: new FormControl<ProcessingClusterConfigInstanceType | null | undefined>(undefined, [Validators.required]),
+			InstanceType: new FormControl<MonitoringClusterConfigInstanceType | null | undefined>(undefined, [Validators.required]),
 			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(16384)]),
 			VolumeKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('.*')]),
 		});
 
 	}
-
-	export enum ProcessingClusterConfigInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
 
 
 	/** Specifies a time limit for how long the processing job is allowed to run. */
@@ -6117,9 +6111,9 @@ export namespace MyNS {
 	}
 	export function CreateExperimentConfigFormGroup() {
 		return new FormGroup<ExperimentConfigFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			TrialComponentDisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentDisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -6245,8 +6239,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateTrainingJobRequestFormGroup() {
 		return new FormGroup<CreateTrainingJobRequestFormProperties>({
-			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
 			EnableInterContainerTrafficEncryption: new FormControl<boolean | null | undefined>(undefined),
 			EnableManagedSpotTraining: new FormControl<boolean | null | undefined>(undefined),
@@ -6297,7 +6291,7 @@ export namespace MyNS {
 	export function CreateAlgorithmSpecificationFormGroup() {
 		return new FormGroup<AlgorithmSpecificationFormProperties>({
 			TrainingImage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('.*')]),
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(170), Validators.minLength(1), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(170), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
 			TrainingInputMode: new FormControl<TrainingInputMode | null | undefined>(undefined, [Validators.required]),
 			EnableSageMakerMetricsTimeSeries: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -6378,7 +6372,7 @@ export namespace MyNS {
 	}
 	export function CreateCollectionConfigurationFormGroup() {
 		return new FormGroup<CollectionConfigurationFormProperties>({
-			CollectionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('.*')]),
+			CollectionName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('.*')]),
 		});
 
 	}
@@ -6415,7 +6409,7 @@ export namespace MyNS {
 		 * Max length: 255
 		 */
 		RuleEvaluatorImage: string;
-		InstanceType?: DebugRuleConfigurationInstanceType | null;
+		InstanceType?: MonitoringClusterConfigInstanceType | null;
 
 		/** Minimum: 0 */
 		VolumeSizeInGB?: number | null;
@@ -6443,24 +6437,22 @@ export namespace MyNS {
 		 * Max length: 255
 		 */
 		RuleEvaluatorImage: FormControl<string | null | undefined>,
-		InstanceType: FormControl<DebugRuleConfigurationInstanceType | null | undefined>,
+		InstanceType: FormControl<MonitoringClusterConfigInstanceType | null | undefined>,
 
 		/** Minimum: 0 */
 		VolumeSizeInGB: FormControl<number | null | undefined>,
 	}
 	export function CreateDebugRuleConfigurationFormGroup() {
 		return new FormGroup<DebugRuleConfigurationFormProperties>({
-			RuleConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('.*')]),
+			RuleConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('.*')]),
 			LocalPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.pattern('.*')]),
 			S3OutputPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^(https|s3)://([^/]+)/?(.*)$')]),
 			RuleEvaluatorImage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.pattern('.*')]),
-			InstanceType: new FormControl<DebugRuleConfigurationInstanceType | null | undefined>(undefined),
+			InstanceType: new FormControl<MonitoringClusterConfigInstanceType | null | undefined>(undefined),
 			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
-
-	export enum DebugRuleConfigurationInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
 
 	export interface RuleParameters {
 	}
@@ -6606,7 +6598,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateTransformJobRequestFormGroup() {
 		return new FormGroup<CreateTransformJobRequestFormProperties>({
-			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			ModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			MaxConcurrentTransforms: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			MaxPayloadInMB: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
@@ -6651,8 +6643,8 @@ export namespace MyNS {
 	}
 	export function CreateDataProcessingFormGroup() {
 		return new FormGroup<DataProcessingFormProperties>({
-			InputFilter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(0)]),
-			OutputFilter: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(0)]),
+			InputFilter: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(63)]),
+			OutputFilter: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(63)]),
 			JoinSource: new FormControl<DataProcessingJoinSource | null | undefined>(undefined),
 		});
 
@@ -6729,9 +6721,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateTrialRequestFormGroup() {
 		return new FormGroup<CreateTrialRequestFormProperties>({
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -6801,8 +6793,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateTrialComponentRequestFormGroup() {
 		return new FormGroup<CreateTrialComponentRequestFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -6921,7 +6913,7 @@ export namespace MyNS {
 		return new FormGroup<CreateUserProfileRequestFormProperties>({
 			DomainId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63)]),
 			UserProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			SingleSignOnUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			SingleSignOnUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.pattern('UserName')]),
 			SingleSignOnUserValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -6994,8 +6986,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateWorkteamRequestFormGroup() {
 		return new FormGroup<CreateWorkteamRequestFormProperties>({
-			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('.+')]),
+			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('.+')]),
 		});
 
 	}
@@ -7069,9 +7061,9 @@ export namespace MyNS {
 	}
 	export function CreateCognitoMemberDefinitionFormGroup() {
 		return new FormGroup<CognitoMemberDefinitionFormProperties>({
-			UserPool: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
-			UserGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{L}\p{M}\p{S}\p{N}\p{P}]+')]),
-			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+]+')]),
+			UserPool: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
+			UserGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{L}\p{M}\p{S}\p{N}\p{P}]+')]),
+			ClientId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+]+')]),
 		});
 
 	}
@@ -7088,7 +7080,7 @@ export namespace MyNS {
 	}
 	export function CreateNotificationConfigurationFormGroup() {
 		return new FormGroup<NotificationConfigurationFormProperties>({
-			NotificationTopicArn: new FormControl<string | null | undefined>(undefined),
+			NotificationTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:aws[a-z\-]*:sns:[a-z0-9\-]*:[0-9]{12}:[a-zA-Z0-9_.-]*')]),
 		});
 
 	}
@@ -7113,7 +7105,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAlgorithmInputFormGroup() {
 		return new FormGroup<DeleteAlgorithmInputFormProperties>({
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -7194,7 +7186,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteCodeRepositoryInputFormGroup() {
 		return new FormGroup<DeleteCodeRepositoryInputFormProperties>({
-			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -7327,7 +7319,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteExperimentRequestFormGroup() {
 		return new FormGroup<DeleteExperimentRequestFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -7362,7 +7354,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteFlowDefinitionRequestFormGroup() {
 		return new FormGroup<DeleteFlowDefinitionRequestFormProperties>({
-			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 		});
 
 	}
@@ -7410,7 +7402,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteModelPackageInputFormGroup() {
 		return new FormGroup<DeleteModelPackageInputFormProperties>({
-			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -7435,7 +7427,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteMonitoringScheduleRequestFormGroup() {
 		return new FormGroup<DeleteMonitoringScheduleRequestFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -7563,7 +7555,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTrialRequestFormGroup() {
 		return new FormGroup<DeleteTrialRequestFormProperties>({
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -7605,7 +7597,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTrialComponentRequestFormGroup() {
 		return new FormGroup<DeleteTrialComponentRequestFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -7683,7 +7675,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteWorkteamRequestFormGroup() {
 		return new FormGroup<DeleteWorkteamRequestFormProperties>({
-			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -7766,8 +7758,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAlgorithmOutputFormGroup() {
 		return new FormGroup<DescribeAlgorithmOutputFormProperties>({
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
-			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:algorithm/.*')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:algorithm/.*')]),
 			AlgorithmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			AlgorithmStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined, [Validators.required]),
@@ -7827,7 +7819,7 @@ export namespace MyNS {
 	}
 	export function CreateAlgorithmStatusItemFormGroup() {
 		return new FormGroup<AlgorithmStatusItemFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			Status: new FormControl<AlgorithmStatusItemStatus | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7856,7 +7848,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAlgorithmInputFormGroup() {
 		return new FormGroup<DescribeAlgorithmInputFormProperties>({
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(170), Validators.minLength(1), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(170), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
 		});
 
 	}
@@ -8094,9 +8086,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAutoMLJobResponseFormGroup() {
 		return new FormGroup<DescribeAutoMLJobResponseFormProperties>({
-			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			ProblemType: new FormControl<CreateAutoMLJobRequestProblemType | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
@@ -8174,7 +8166,7 @@ export namespace MyNS {
 	}
 	export function CreateAutoMLCandidateFormGroup() {
 		return new FormGroup<AutoMLCandidateFormProperties>({
-			CandidateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CandidateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			ObjectiveStatus: new FormControl<AutoMLCandidateObjectiveStatus | null | undefined>(undefined, [Validators.required]),
 			CandidateStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -8263,13 +8255,13 @@ export namespace MyNS {
 	export function CreateAutoMLCandidateStepFormGroup() {
 		return new FormGroup<AutoMLCandidateStepFormProperties>({
 			CandidateStepType: new FormControl<AutoMLCandidateStepCandidateStepType | null | undefined>(undefined, [Validators.required]),
-			CandidateStepArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:.*/.*')]),
-			CandidateStepName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CandidateStepArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:.*/.*')]),
+			CandidateStepName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
 
-	export enum AutoMLCandidateStepCandidateStepType { AWSSageMakerTrainingJob = 0, AWSSageMakerTransformJob = 1, AWSSageMakerProcessingJob = 2 }
+	export enum AutoMLCandidateStepCandidateStepType { 'AWS::SageMaker::TrainingJob' = 0, 'AWS::SageMaker::TransformJob' = 1, 'AWS::SageMaker::ProcessingJob' = 2 }
 
 	export enum AutoMLCandidateCandidateStatus { Completed = 0, InProgress = 1, Failed = 2, Stopped = 3, Stopping = 4 }
 
@@ -8387,7 +8379,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAutoMLJobRequestFormGroup() {
 		return new FormGroup<DescribeAutoMLJobRequestFormProperties>({
-			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -8441,8 +8433,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCodeRepositoryOutputFormGroup() {
 		return new FormGroup<DescribeCodeRepositoryOutputFormProperties>({
-			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
-			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -8469,7 +8461,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCodeRepositoryInputFormGroup() {
 		return new FormGroup<DescribeCodeRepositoryInputFormProperties>({
-			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -8578,7 +8570,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCompilationJobResponseFormGroup() {
 		return new FormGroup<DescribeCompilationJobResponseFormProperties>({
-			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			CompilationJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:compilation-job/.*')]),
 			CompilationJobStatus: new FormControl<DescribeCompilationJobResponseCompilationJobStatus | null | undefined>(undefined, [Validators.required]),
 			CompilationStartTime: new FormControl<Date | null | undefined>(undefined),
@@ -8586,7 +8578,7 @@ export namespace MyNS {
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 		});
 
 	}
@@ -8640,7 +8632,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCompilationJobRequestFormGroup() {
 		return new FormGroup<DescribeCompilationJobRequestFormProperties>({
-			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -8839,7 +8831,7 @@ export namespace MyNS {
 	export function CreateDescribeEndpointOutputFormGroup() {
 		return new FormGroup<DescribeEndpointOutputFormProperties>({
 			EndpointName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
 			EndpointConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			EndpointStatus: new FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
@@ -9087,7 +9079,7 @@ export namespace MyNS {
 	export function CreateDescribeEndpointConfigOutputFormGroup() {
 		return new FormGroup<DescribeEndpointConfigOutputFormProperties>({
 			EndpointConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			EndpointConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*')]),
+			EndpointConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*')]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -9172,9 +9164,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeExperimentResponseFormGroup() {
 		return new FormGroup<DescribeExperimentResponseFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			ExperimentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment/.*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3072), Validators.pattern('.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -9259,7 +9251,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeExperimentRequestFormGroup() {
 		return new FormGroup<DescribeExperimentRequestFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -9347,10 +9339,10 @@ export namespace MyNS {
 	export function CreateDescribeFlowDefinitionResponseFormGroup() {
 		return new FormGroup<DescribeFlowDefinitionResponseFormProperties>({
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
-			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 			FlowDefinitionStatus: new FormControl<DescribeFlowDefinitionResponseFlowDefinitionStatus | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
@@ -9378,7 +9370,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeFlowDefinitionRequestFormGroup() {
 		return new FormGroup<DescribeFlowDefinitionRequestFormProperties>({
-			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 		});
 
 	}
@@ -9428,7 +9420,7 @@ export namespace MyNS {
 	export function CreateDescribeHumanTaskUiResponseFormGroup() {
 		return new FormGroup<DescribeHumanTaskUiResponseFormProperties>({
 			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-task-ui/.*')]),
-			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -9468,8 +9460,8 @@ export namespace MyNS {
 	}
 	export function CreateUiTemplateInfoFormGroup() {
 		return new FormGroup<UiTemplateInfoFormProperties>({
-			Url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			ContentSha256: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128000), Validators.minLength(1)]),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			ContentSha256: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128000)]),
 		});
 
 	}
@@ -9494,7 +9486,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeHumanTaskUiRequestFormGroup() {
 		return new FormGroup<DescribeHumanTaskUiRequestFormProperties>({
-			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 		});
 
 	}
@@ -9589,7 +9581,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeHyperParameterTuningJobResponseFormGroup() {
 		return new FormGroup<DescribeHyperParameterTuningJobResponseFormProperties>({
-			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			HyperParameterTuningJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*')]),
 			HyperParameterTuningJobStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -9774,10 +9766,10 @@ export namespace MyNS {
 	}
 	export function CreateHyperParameterTrainingJobSummaryFormGroup() {
 		return new FormGroup<HyperParameterTrainingJobSummaryFormProperties>({
-			TrainingJobDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrainingJobDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrainingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*')]),
-			TuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
 			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
@@ -9821,7 +9813,7 @@ export namespace MyNS {
 	export function CreateFinalHyperParameterTuningJobObjectiveMetricFormGroup() {
 		return new FormGroup<FinalHyperParameterTuningJobObjectiveMetricFormProperties>({
 			Type: new FormControl<HyperParameterTuningJobObjectiveType | null | undefined>(undefined),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			Value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -9847,7 +9839,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeHyperParameterTuningJobRequestFormGroup() {
 		return new FormGroup<DescribeHyperParameterTuningJobRequestFormProperties>({
-			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -9996,10 +9988,10 @@ export namespace MyNS {
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			JobReferenceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.pattern('.+')]),
-			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			LabelingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:labeling-job/.*')]),
-			LabelAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			LabelAttributeName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(127), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			LabelCategoryConfigS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('^(https|s3)://([^/]+)/?(.*)$')]),
 		});
 
@@ -10089,7 +10081,7 @@ export namespace MyNS {
 	export function CreateLabelingJobOutputFormGroup() {
 		return new FormGroup<LabelingJobOutputFormProperties>({
 			OutputDatasetS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('^(https|s3)://([^/]+)/?(.*)$')]),
-			FinalActiveLearningModelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
+			FinalActiveLearningModelArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
 		});
 
 	}
@@ -10114,7 +10106,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeLabelingJobRequestFormGroup() {
 		return new FormGroup<DescribeLabelingJobRequestFormProperties>({
-			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -10183,9 +10175,9 @@ export namespace MyNS {
 	export function CreateDescribeModelOutputFormGroup() {
 		return new FormGroup<DescribeModelOutputFormProperties>({
 			ModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			ModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
+			ModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
 			EnableNetworkIsolation: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -10283,8 +10275,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeModelPackageOutputFormGroup() {
 		return new FormGroup<DescribeModelPackageOutputFormProperties>({
-			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
-			ModelPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model-package/.*')]),
+			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			ModelPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model-package/.*')]),
 			ModelPackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			ModelPackageStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined, [Validators.required]),
@@ -10343,7 +10335,7 @@ export namespace MyNS {
 	}
 	export function CreateModelPackageStatusItemFormGroup() {
 		return new FormGroup<ModelPackageStatusItemFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			Status: new FormControl<AlgorithmStatusItemStatus | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 		});
@@ -10370,7 +10362,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeModelPackageInputFormGroup() {
 		return new FormGroup<DescribeModelPackageInputFormProperties>({
-			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(170), Validators.minLength(1), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
+			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(170), Validators.pattern('(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)$')]),
 		});
 
 	}
@@ -10447,7 +10439,7 @@ export namespace MyNS {
 	export function CreateDescribeMonitoringScheduleResponseFormGroup() {
 		return new FormGroup<DescribeMonitoringScheduleResponseFormProperties>({
 			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('.*')]),
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			MonitoringScheduleStatus: new FormControl<DescribeMonitoringScheduleResponseMonitoringScheduleStatus | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -10525,7 +10517,7 @@ export namespace MyNS {
 	}
 	export function CreateMonitoringExecutionSummaryFormGroup() {
 		return new FormGroup<MonitoringExecutionSummaryFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			ScheduledTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -10559,7 +10551,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeMonitoringScheduleRequestFormGroup() {
 		return new FormGroup<DescribeMonitoringScheduleRequestFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -10576,7 +10568,7 @@ export namespace MyNS {
 		/** Max length: 1024 */
 		FailureReason?: string | null;
 		Url?: string | null;
-		InstanceType?: DescribeNotebookInstanceOutputInstanceType | null;
+		InstanceType?: CreateNotebookInstanceInputInstanceType | null;
 
 		/** Max length: 32 */
 		SubnetId?: string | null;
@@ -10629,7 +10621,7 @@ export namespace MyNS {
 		/** Max length: 1024 */
 		FailureReason: FormControl<string | null | undefined>,
 		Url: FormControl<string | null | undefined>,
-		InstanceType: FormControl<DescribeNotebookInstanceOutputInstanceType | null | undefined>,
+		InstanceType: FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>,
 
 		/** Max length: 32 */
 		SubnetId: FormControl<string | null | undefined>,
@@ -10670,9 +10662,9 @@ export namespace MyNS {
 			NotebookInstanceStatus: new FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			Url: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<DescribeNotebookInstanceOutputInstanceType | null | undefined>(undefined),
+			InstanceType: new FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>(undefined),
 			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.pattern('[-0-9a-zA-Z]+')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('.*')]),
 			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -10680,15 +10672,13 @@ export namespace MyNS {
 			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			DirectInternetAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
 			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(16384)]),
-			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			RootAccess: new FormControl<CreateNotebookInstanceInputDirectInternetAccess | null | undefined>(undefined),
 		});
 
 	}
 
 	export enum DescribeNotebookInstanceOutputNotebookInstanceStatus { Pending = 0, InService = 1, Stopping = 2, Stopped = 3, Failed = 4, Deleting = 5, Updating = 6 }
-
-	export enum DescribeNotebookInstanceOutputInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
 
 	export interface DescribeNotebookInstanceInput {
 
@@ -10901,8 +10891,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeProcessingJobResponseFormGroup() {
 		return new FormGroup<DescribeProcessingJobResponseFormProperties>({
-			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			ProcessingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:processing-job/.*')]),
 			ProcessingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined, [Validators.required]),
 			ExitMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\S\s]*')]),
@@ -10912,7 +10902,7 @@ export namespace MyNS {
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('.*')]),
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
 			TrainingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*')]),
 		});
 
@@ -10938,7 +10928,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeProcessingJobRequestFormGroup() {
 		return new FormGroup<DescribeProcessingJobRequestFormProperties>({
-			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -11010,9 +11000,9 @@ export namespace MyNS {
 	export function CreateSubscribedWorkteamFormGroup() {
 		return new FormGroup<SubscribedWorkteamFormProperties>({
 			WorkteamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:workteam/.*')]),
-			MarketplaceTitle: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('.+')]),
+			MarketplaceTitle: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('.+')]),
 			SellerName: new FormControl<string | null | undefined>(undefined),
-			MarketplaceDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('.+')]),
+			MarketplaceDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('.+')]),
 			ListingId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -11225,15 +11215,15 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTrainingJobResponseFormGroup() {
 		return new FormGroup<DescribeTrainingJobResponseFormProperties>({
-			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrainingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*')]),
 			TuningJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*')]),
 			LabelingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:labeling-job/.*')]),
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
 			TrainingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined, [Validators.required]),
 			SecondaryStatus: new FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
 			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
@@ -11309,7 +11299,7 @@ export namespace MyNS {
 	}
 	export function CreateMetricDataFormGroup() {
 		return new FormGroup<MetricDataFormProperties>({
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			Value: new FormControl<number | null | undefined>(undefined),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -11354,7 +11344,7 @@ export namespace MyNS {
 	}
 	export function CreateDebugRuleEvaluationStatusFormGroup() {
 		return new FormGroup<DebugRuleEvaluationStatusFormProperties>({
-			RuleConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('.*')]),
+			RuleConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('.*')]),
 			RuleEvaluationJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:processing-job/.*')]),
 			RuleEvaluationStatus: new FormControl<DebugRuleEvaluationStatusRuleEvaluationStatus | null | undefined>(undefined),
 			StatusDetails: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('.*')]),
@@ -11385,7 +11375,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTrainingJobRequestFormGroup() {
 		return new FormGroup<DescribeTrainingJobRequestFormProperties>({
-			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -11510,7 +11500,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTransformJobResponseFormGroup() {
 		return new FormGroup<DescribeTransformJobResponseFormProperties>({
-			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TransformJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:transform-job/.*')]),
 			TransformJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined, [Validators.required]),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
@@ -11522,7 +11512,7 @@ export namespace MyNS {
 			TransformStartTime: new FormControl<Date | null | undefined>(undefined),
 			TransformEndTime: new FormControl<Date | null | undefined>(undefined),
 			LabelingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:labeling-job/.*')]),
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
 		});
 
 	}
@@ -11547,7 +11537,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTransformJobRequestFormGroup() {
 		return new FormGroup<DescribeTransformJobRequestFormProperties>({
-			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -11613,10 +11603,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTrialResponseFormGroup() {
 		return new FormGroup<DescribeTrialResponseFormProperties>({
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrialArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial/.*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -11677,7 +11667,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTrialRequestFormGroup() {
 		return new FormGroup<DescribeTrialRequestFormProperties>({
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -11742,9 +11732,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTrialComponentResponseFormGroup() {
 		return new FormGroup<DescribeTrialComponentResponseFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrialComponentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial-component/.*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -11829,7 +11819,7 @@ export namespace MyNS {
 	}
 	export function CreateTrialComponentMetricSummaryFormGroup() {
 		return new FormGroup<TrialComponentMetricSummaryFormProperties>({
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			SourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:.*')]),
 			TimeStamp: new FormControl<Date | null | undefined>(undefined),
 			Max: new FormControl<number | null | undefined>(undefined),
@@ -11862,7 +11852,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTrialComponentRequestFormGroup() {
 		return new FormGroup<DescribeTrialComponentRequestFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -11928,7 +11918,7 @@ export namespace MyNS {
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			SingleSignOnUserIdentifier: new FormControl<string | null | undefined>(undefined),
+			SingleSignOnUserIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.pattern('UserName')]),
 			SingleSignOnUserValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -12027,7 +12017,7 @@ export namespace MyNS {
 	}
 	export function CreateWorkforceFormGroup() {
 		return new FormGroup<WorkforceFormProperties>({
-			WorkforceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]([a-zA-Z0-9\-])*$')]),
+			WorkforceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9]([a-zA-Z0-9\-])*$')]),
 			WorkforceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:workforce/.*')]),
 			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -12071,7 +12061,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWorkforceRequestFormGroup() {
 		return new FormGroup<DescribeWorkforceRequestFormProperties>({
-			WorkforceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]([a-zA-Z0-9\-])*$')]),
+			WorkforceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9]([a-zA-Z0-9\-])*$')]),
 		});
 
 	}
@@ -12159,9 +12149,9 @@ export namespace MyNS {
 	}
 	export function CreateWorkteamFormGroup() {
 		return new FormGroup<WorkteamFormProperties>({
-			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			WorkteamArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:workteam/.*')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(200), Validators.minLength(1), Validators.pattern('.+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(200), Validators.pattern('.+')]),
 			SubDomain: new FormControl<string | null | undefined>(undefined),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
@@ -12189,7 +12179,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeWorkteamRequestFormGroup() {
 		return new FormGroup<DescribeWorkteamRequestFormProperties>({
-			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -12252,8 +12242,8 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateTrialComponentRequestFormGroup() {
 		return new FormGroup<DisassociateTrialComponentRequestFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -12291,7 +12281,7 @@ export namespace MyNS {
 	}
 	export function CreatePropertyNameSuggestionFormGroup() {
 		return new FormGroup<PropertyNameSuggestionFormProperties>({
-			PropertyName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			PropertyName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 		});
 
 	}
@@ -12359,7 +12349,7 @@ export namespace MyNS {
 	}
 	export function CreatePropertyNameQueryFormGroup() {
 		return new FormGroup<PropertyNameQueryFormProperties>({
-			PropertyNameHint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(0), Validators.pattern('.*')]),
+			PropertyNameHint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(100), Validators.pattern('.*')]),
 		});
 
 	}
@@ -12440,8 +12430,8 @@ export namespace MyNS {
 	}
 	export function CreateAlgorithmSummaryFormGroup() {
 		return new FormGroup<AlgorithmSummaryFormProperties>({
-			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
-			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:algorithm/.*')]),
+			AlgorithmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			AlgorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:algorithm/.*')]),
 			AlgorithmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			AlgorithmStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined, [Validators.required]),
@@ -12706,8 +12696,8 @@ export namespace MyNS {
 	}
 	export function CreateAutoMLJobSummaryFormGroup() {
 		return new FormGroup<AutoMLJobSummaryFormProperties>({
-			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
 			AutoMLJobStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined, [Validators.required]),
 			AutoMLJobSecondaryStatus: new FormControl<DescribeAutoMLJobResponseAutoMLJobSecondaryStatus | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -12854,9 +12844,9 @@ export namespace MyNS {
 	}
 	export function CreateListCandidatesForAutoMLJobRequestFormGroup() {
 		return new FormGroup<ListCandidatesForAutoMLJobRequestFormProperties>({
-			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			StatusEquals: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined),
-			CandidateNameEquals: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CandidateNameEquals: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
 			SortBy: new FormControl<ListCandidatesForAutoMLJobRequestSortBy | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -12940,8 +12930,8 @@ export namespace MyNS {
 	}
 	export function CreateCodeRepositorySummaryFormGroup() {
 		return new FormGroup<CodeRepositorySummaryFormProperties>({
-			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
-			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -13085,7 +13075,7 @@ export namespace MyNS {
 	}
 	export function CreateCompilationJobSummaryFormGroup() {
 		return new FormGroup<CompilationJobSummaryFormProperties>({
-			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			CompilationJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:compilation-job/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			CompilationStartTime: new FormControl<Date | null | undefined>(undefined),
@@ -13317,7 +13307,7 @@ export namespace MyNS {
 	export function CreateEndpointConfigSummaryFormGroup() {
 		return new FormGroup<EndpointConfigSummaryFormProperties>({
 			EndpointConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			EndpointConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*')]),
+			EndpointConfigArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint-config/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -13447,7 +13437,7 @@ export namespace MyNS {
 	export function CreateEndpointSummaryFormGroup() {
 		return new FormGroup<EndpointSummaryFormProperties>({
 			EndpointName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndpointStatus: new FormControl<DescribeEndpointOutputEndpointStatus | null | undefined>(undefined, [Validators.required]),
@@ -13579,8 +13569,8 @@ export namespace MyNS {
 	export function CreateExperimentSummaryFormGroup() {
 		return new FormGroup<ExperimentSummaryFormProperties>({
 			ExperimentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment/.*')]),
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -13703,7 +13693,7 @@ export namespace MyNS {
 	}
 	export function CreateFlowDefinitionSummaryFormGroup() {
 		return new FormGroup<FlowDefinitionSummaryFormProperties>({
-			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			FlowDefinitionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 			FlowDefinitionStatus: new FormControl<DescribeFlowDefinitionResponseFlowDefinitionStatus | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -13813,7 +13803,7 @@ export namespace MyNS {
 	}
 	export function CreateHumanTaskUiSummaryFormGroup() {
 		return new FormGroup<HumanTaskUiSummaryFormProperties>({
-			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			HumanTaskUiName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-task-ui/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -13958,7 +13948,7 @@ export namespace MyNS {
 	}
 	export function CreateHyperParameterTuningJobSummaryFormGroup() {
 		return new FormGroup<HyperParameterTuningJobSummaryFormProperties>({
-			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			HyperParameterTuningJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*')]),
 			HyperParameterTuningJobStatus: new FormControl<AutoMLCandidateCandidateStatus | null | undefined>(undefined, [Validators.required]),
 			Strategy: new FormControl<HyperParameterTuningJobConfigStrategy | null | undefined>(undefined, [Validators.required]),
@@ -14149,7 +14139,7 @@ export namespace MyNS {
 	}
 	export function CreateLabelingJobSummaryFormGroup() {
 		return new FormGroup<LabelingJobSummaryFormProperties>({
-			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			LabelingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:labeling-job/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -14301,9 +14291,9 @@ export namespace MyNS {
 	}
 	export function CreateLabelingJobForWorkteamSummaryFormGroup() {
 		return new FormGroup<LabelingJobForWorkteamSummaryFormProperties>({
-			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			JobReferenceCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.pattern('.+')]),
-			WorkRequesterAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			WorkRequesterAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			NumberOfHumanWorkersPerDataObject: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(9)]),
 		});
@@ -14406,7 +14396,7 @@ export namespace MyNS {
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.*')]),
 			CreationTimeAfter: new FormControl<Date | null | undefined>(undefined),
 			CreationTimeBefore: new FormControl<Date | null | undefined>(undefined),
-			JobReferenceCodeContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			JobReferenceCodeContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			SortBy: new FormControl<ListAppsRequestSortBy | null | undefined>(undefined),
 			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
 		});
@@ -14489,8 +14479,8 @@ export namespace MyNS {
 	}
 	export function CreateModelPackageSummaryFormGroup() {
 		return new FormGroup<ModelPackageSummaryFormProperties>({
-			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
-			ModelPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model-package/.*')]),
+			ModelPackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			ModelPackageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model-package/.*')]),
 			ModelPackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			ModelPackageStatus: new FormControl<DescribeAlgorithmOutputAlgorithmStatus | null | undefined>(undefined, [Validators.required]),
@@ -14610,7 +14600,7 @@ export namespace MyNS {
 	export function CreateModelSummaryFormGroup() {
 		return new FormGroup<ModelSummaryFormProperties>({
 			ModelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			ModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
+			ModelArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:model/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -14745,7 +14735,7 @@ export namespace MyNS {
 	}
 	export function CreateListMonitoringExecutionsRequestFormGroup() {
 		return new FormGroup<ListMonitoringExecutionsRequestFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			EndpointName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			SortBy: new FormControl<ListMonitoringExecutionsRequestSortBy | null | undefined>(undefined),
 			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
@@ -14844,7 +14834,7 @@ export namespace MyNS {
 	}
 	export function CreateMonitoringScheduleSummaryFormGroup() {
 		return new FormGroup<MonitoringScheduleSummaryFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -15073,7 +15063,7 @@ export namespace MyNS {
 		NotebookInstanceArn: string;
 		NotebookInstanceStatus?: DescribeNotebookInstanceOutputNotebookInstanceStatus | null;
 		Url?: string | null;
-		InstanceType?: NotebookInstanceSummaryInstanceType | null;
+		InstanceType?: CreateNotebookInstanceInputInstanceType | null;
 		CreationTime?: Date | null;
 		LastModifiedTime?: Date | null;
 
@@ -15106,7 +15096,7 @@ export namespace MyNS {
 		NotebookInstanceArn: FormControl<string | null | undefined>,
 		NotebookInstanceStatus: FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>,
 		Url: FormControl<string | null | undefined>,
-		InstanceType: FormControl<NotebookInstanceSummaryInstanceType | null | undefined>,
+		InstanceType: FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>,
 		CreationTime: FormControl<Date | null | undefined>,
 		LastModifiedTime: FormControl<Date | null | undefined>,
 
@@ -15125,16 +15115,14 @@ export namespace MyNS {
 			NotebookInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 			NotebookInstanceStatus: new FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>(undefined),
 			Url: new FormControl<string | null | undefined>(undefined),
-			InstanceType: new FormControl<NotebookInstanceSummaryInstanceType | null | undefined>(undefined),
+			InstanceType: new FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			NotebookInstanceLifecycleConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
-
-	export enum NotebookInstanceSummaryInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
 
 	export interface ListNotebookInstancesInput {
 
@@ -15216,7 +15204,7 @@ export namespace MyNS {
 			StatusEquals: new FormControl<DescribeNotebookInstanceOutputNotebookInstanceStatus | null | undefined>(undefined),
 			NotebookInstanceLifecycleConfigNameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			DefaultCodeRepositoryContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[a-zA-Z0-9-]+')]),
-			AdditionalCodeRepositoryEquals: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			AdditionalCodeRepositoryEquals: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -15305,7 +15293,7 @@ export namespace MyNS {
 	}
 	export function CreateProcessingJobSummaryFormGroup() {
 		return new FormGroup<ProcessingJobSummaryFormProperties>({
-			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			ProcessingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:processing-job/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			ProcessingEndTime: new FormControl<Date | null | undefined>(undefined),
@@ -15427,7 +15415,7 @@ export namespace MyNS {
 	}
 	export function CreateListSubscribedWorkteamsRequestFormGroup() {
 		return new FormGroup<ListSubscribedWorkteamsRequestFormProperties>({
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -15566,7 +15554,7 @@ export namespace MyNS {
 	}
 	export function CreateTrainingJobSummaryFormGroup() {
 		return new FormGroup<TrainingJobSummaryFormProperties>({
-			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrainingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
@@ -15698,7 +15686,7 @@ export namespace MyNS {
 	}
 	export function CreateListTrainingJobsForHyperParameterTuningJobRequestFormGroup() {
 		return new FormGroup<ListTrainingJobsForHyperParameterTuningJobRequestFormProperties>({
-			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			StatusEquals: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
@@ -15788,7 +15776,7 @@ export namespace MyNS {
 	}
 	export function CreateTransformJobSummaryFormGroup() {
 		return new FormGroup<TransformJobSummaryFormProperties>({
-			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TransformJobArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:transform-job/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			TransformEndTime: new FormControl<Date | null | undefined>(undefined),
@@ -15935,9 +15923,9 @@ export namespace MyNS {
 	}
 	export function CreateTrialComponentSummaryFormGroup() {
 		return new FormGroup<TrialComponentSummaryFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrialComponentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial-component/.*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
@@ -16008,8 +15996,8 @@ export namespace MyNS {
 	}
 	export function CreateListTrialComponentsRequestFormGroup() {
 		return new FormGroup<ListTrialComponentsRequestFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			SourceArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			CreatedAfter: new FormControl<Date | null | undefined>(undefined),
 			CreatedBefore: new FormControl<Date | null | undefined>(undefined),
@@ -16087,8 +16075,8 @@ export namespace MyNS {
 	export function CreateTrialSummaryFormGroup() {
 		return new FormGroup<TrialSummaryFormProperties>({
 			TrialArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial/.*')]),
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -16151,8 +16139,8 @@ export namespace MyNS {
 	}
 	export function CreateListTrialsRequestFormGroup() {
 		return new FormGroup<ListTrialsRequestFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			CreatedAfter: new FormControl<Date | null | undefined>(undefined),
 			CreatedBefore: new FormControl<Date | null | undefined>(undefined),
 			SortBy: new FormControl<ListAlgorithmsInputSortBy | null | undefined>(undefined),
@@ -16332,7 +16320,7 @@ export namespace MyNS {
 		return new FormGroup<ListWorkteamsRequestFormProperties>({
 			SortBy: new FormControl<ListWorkteamsRequestSortBy | null | undefined>(undefined),
 			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
-			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			NameContains: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
@@ -16424,7 +16412,7 @@ export namespace MyNS {
 	}
 	export function CreateRenderUiTemplateRequestFormGroup() {
 		return new FormGroup<RenderUiTemplateRequestFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			HumanTaskUiArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-task-ui/.*')]),
 		});
 
@@ -16454,7 +16442,7 @@ export namespace MyNS {
 	}
 	export function CreateRenderableTaskFormGroup() {
 		return new FormGroup<RenderableTaskFormProperties>({
-			Input: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128000), Validators.minLength(2), Validators.pattern('[\S\s]+')]),
+			Input: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(128000), Validators.pattern('[\S\s]+')]),
 		});
 
 	}
@@ -16665,15 +16653,15 @@ export namespace MyNS {
 	}
 	export function CreateTrainingJobFormGroup() {
 		return new FormGroup<TrainingJobFormProperties>({
-			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrainingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*')]),
 			TuningJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*')]),
 			LabelingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:labeling-job/.*')]),
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
 			TrainingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
 			SecondaryStatus: new FormControl<DescribeTrainingJobResponseSecondaryStatus | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			TrainingStartTime: new FormControl<Date | null | undefined>(undefined),
 			TrainingEndTime: new FormControl<Date | null | undefined>(undefined),
@@ -16752,9 +16740,9 @@ export namespace MyNS {
 	}
 	export function CreateExperimentFormGroup() {
 		return new FormGroup<ExperimentFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			ExperimentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment/.*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3072), Validators.pattern('.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
@@ -16834,10 +16822,10 @@ export namespace MyNS {
 	}
 	export function CreateTrialFormGroup() {
 		return new FormGroup<TrialFormProperties>({
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrialArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial/.*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -16880,7 +16868,7 @@ export namespace MyNS {
 	}
 	export function CreateTrialComponentSimpleSummaryFormGroup() {
 		return new FormGroup<TrialComponentSimpleSummaryFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrialComponentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial-component/.*')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -16961,8 +16949,8 @@ export namespace MyNS {
 	}
 	export function CreateTrialComponentFormGroup() {
 		return new FormGroup<TrialComponentFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			TrialComponentArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial-component/.*')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
@@ -17116,8 +17104,8 @@ export namespace MyNS {
 	}
 	export function CreateProcessingJobFormGroup() {
 		return new FormGroup<ProcessingJobFormProperties>({
-			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			ProcessingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:processing-job/.*')]),
 			ProcessingJobStatus: new FormControl<TrialComponentStatusPrimaryStatus | null | undefined>(undefined),
 			ExitMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.pattern('[\S\s]*')]),
@@ -17127,7 +17115,7 @@ export namespace MyNS {
 			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			MonitoringScheduleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('.*')]),
-			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
+			AutoMLJobArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:automl-job/.*')]),
 			TrainingJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*')]),
 		});
 
@@ -17167,8 +17155,8 @@ export namespace MyNS {
 	}
 	export function CreateParentFormGroup() {
 		return new FormGroup<ParentFormProperties>({
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -17221,7 +17209,7 @@ export namespace MyNS {
 	export function CreateSearchRequestFormGroup() {
 		return new FormGroup<SearchRequestFormProperties>({
 			Resource: new FormControl<GetSearchSuggestionsRequestResource | null | undefined>(undefined, [Validators.required]),
-			SortBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			SortBy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			SortOrder: new FormControl<ListAlgorithmsInputSortOrder | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.pattern('.*')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
@@ -17302,9 +17290,9 @@ export namespace MyNS {
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 			Operator: new FormControl<FilterOperator | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.+')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('.+')]),
 		});
 
 	}
@@ -17342,7 +17330,7 @@ export namespace MyNS {
 	}
 	export function CreateNestedFiltersFormGroup() {
 		return new FormGroup<NestedFiltersFormProperties>({
-			NestedPropertyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.+')]),
+			NestedPropertyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.+')]),
 		});
 
 	}
@@ -17369,7 +17357,7 @@ export namespace MyNS {
 	}
 	export function CreateStartMonitoringScheduleRequestFormGroup() {
 		return new FormGroup<StartMonitoringScheduleRequestFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -17417,7 +17405,7 @@ export namespace MyNS {
 	}
 	export function CreateStopAutoMLJobRequestFormGroup() {
 		return new FormGroup<StopAutoMLJobRequestFormProperties>({
-			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			AutoMLJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -17442,7 +17430,7 @@ export namespace MyNS {
 	}
 	export function CreateStopCompilationJobRequestFormGroup() {
 		return new FormGroup<StopCompilationJobRequestFormProperties>({
-			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CompilationJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -17467,7 +17455,7 @@ export namespace MyNS {
 	}
 	export function CreateStopHyperParameterTuningJobRequestFormGroup() {
 		return new FormGroup<StopHyperParameterTuningJobRequestFormProperties>({
-			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			HyperParameterTuningJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -17492,7 +17480,7 @@ export namespace MyNS {
 	}
 	export function CreateStopLabelingJobRequestFormGroup() {
 		return new FormGroup<StopLabelingJobRequestFormProperties>({
-			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			LabelingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -17517,7 +17505,7 @@ export namespace MyNS {
 	}
 	export function CreateStopMonitoringScheduleRequestFormGroup() {
 		return new FormGroup<StopMonitoringScheduleRequestFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -17565,7 +17553,7 @@ export namespace MyNS {
 	}
 	export function CreateStopProcessingJobRequestFormGroup() {
 		return new FormGroup<StopProcessingJobRequestFormProperties>({
-			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ProcessingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -17590,7 +17578,7 @@ export namespace MyNS {
 	}
 	export function CreateStopTrainingJobRequestFormGroup() {
 		return new FormGroup<StopTrainingJobRequestFormProperties>({
-			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrainingJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -17615,7 +17603,7 @@ export namespace MyNS {
 	}
 	export function CreateStopTransformJobRequestFormGroup() {
 		return new FormGroup<StopTransformJobRequestFormProperties>({
-			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TransformJobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -17640,7 +17628,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCodeRepositoryOutputFormGroup() {
 		return new FormGroup<UpdateCodeRepositoryOutputFormProperties>({
-			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
+			CodeRepositoryArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:code-repository/.*')]),
 		});
 
 	}
@@ -17668,7 +17656,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCodeRepositoryInputFormGroup() {
 		return new FormGroup<UpdateCodeRepositoryInputFormProperties>({
-			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			CodeRepositoryName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -17695,7 +17683,7 @@ export namespace MyNS {
 	}
 	export function CreateGitConfigForUpdateFormGroup() {
 		return new FormGroup<GitConfigForUpdateFormProperties>({
-			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:aws[a-z\-]*:secretsmanager:[a-z0-9\-]*:[0-9]{12}:secret:.*')]),
+			SecretArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:secretsmanager:[a-z0-9\-]*:[0-9]{12}:secret:.*')]),
 		});
 
 	}
@@ -17763,7 +17751,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEndpointOutputFormGroup() {
 		return new FormGroup<UpdateEndpointOutputFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
 		});
 
 	}
@@ -17856,7 +17844,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEndpointWeightsAndCapacitiesOutputFormGroup() {
 		return new FormGroup<UpdateEndpointWeightsAndCapacitiesOutputFormProperties>({
-			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
+			EndpointArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:endpoint/.*')]),
 		});
 
 	}
@@ -17986,8 +17974,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateExperimentRequestFormGroup() {
 		return new FormGroup<UpdateExperimentRequestFormProperties>({
-			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			ExperimentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3072), Validators.pattern('.*')]),
 		});
 
@@ -18052,7 +18040,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateMonitoringScheduleRequestFormGroup() {
 		return new FormGroup<UpdateMonitoringScheduleRequestFormProperties>({
-			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
+			MonitoringScheduleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*$')]),
 		});
 
 	}
@@ -18074,7 +18062,7 @@ export namespace MyNS {
 		 * Max length: 63
 		 */
 		NotebookInstanceName: string;
-		InstanceType?: UpdateNotebookInstanceInputInstanceType | null;
+		InstanceType?: CreateNotebookInstanceInputInstanceType | null;
 
 		/**
 		 * Max length: 2048
@@ -18113,7 +18101,7 @@ export namespace MyNS {
 		 * Max length: 63
 		 */
 		NotebookInstanceName: FormControl<string | null | undefined>,
-		InstanceType: FormControl<UpdateNotebookInstanceInputInstanceType | null | undefined>,
+		InstanceType: FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>,
 
 		/**
 		 * Max length: 2048
@@ -18144,12 +18132,12 @@ export namespace MyNS {
 	export function CreateUpdateNotebookInstanceInputFormGroup() {
 		return new FormGroup<UpdateNotebookInstanceInputFormProperties>({
 			NotebookInstanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			InstanceType: new FormControl<UpdateNotebookInstanceInputInstanceType | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
+			InstanceType: new FormControl<CreateNotebookInstanceInputInstanceType | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$')]),
 			LifecycleConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			DisassociateLifecycleConfig: new FormControl<boolean | null | undefined>(undefined),
 			VolumeSizeInGB: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(16384)]),
-			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DefaultCodeRepository: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^https://([^/]+)/?(.*)$|^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			DisassociateAcceleratorTypes: new FormControl<boolean | null | undefined>(undefined),
 			DisassociateDefaultCodeRepository: new FormControl<boolean | null | undefined>(undefined),
 			DisassociateAdditionalCodeRepositories: new FormControl<boolean | null | undefined>(undefined),
@@ -18157,8 +18145,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum UpdateNotebookInstanceInputInstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
 
 	export interface UpdateNotebookInstanceLifecycleConfigOutput {
 	}
@@ -18248,8 +18234,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTrialRequestFormGroup() {
 		return new FormGroup<UpdateTrialRequestFormProperties>({
-			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 		});
 
 	}
@@ -18316,8 +18302,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTrialComponentRequestFormGroup() {
 		return new FormGroup<UpdateTrialComponentRequestFormProperties>({
-			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(82), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			TrialComponentName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(82), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -18419,7 +18405,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWorkforceRequestFormGroup() {
 		return new FormGroup<UpdateWorkforceRequestFormProperties>({
-			WorkforceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9]([a-zA-Z0-9\-])*$')]),
+			WorkforceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9]([a-zA-Z0-9\-])*$')]),
 		});
 
 	}
@@ -18481,8 +18467,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWorkteamRequestFormGroup() {
 		return new FormGroup<UpdateWorkteamRequestFormProperties>({
-			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200), Validators.minLength(1), Validators.pattern('.+')]),
+			WorkteamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9](-*[a-zA-Z0-9])*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(200), Validators.pattern('.+')]),
 		});
 
 	}
@@ -18497,7 +18483,7 @@ export namespace MyNS {
 
 	export enum AppStatus { Deleted = 0, Deleting = 1, Failed = 2, InService = 3, Pending = 4 }
 
-	export enum AppInstanceType { system = 0, ml_t3_micro = 1, ml_t3_small = 2, ml_t3_medium = 3, ml_t3_large = 4, ml_t3_xlarge = 5, ml_t3_2xlarge = 6, ml_m5_large = 7, ml_m5_xlarge = 8, ml_m5_2xlarge = 9, ml_m5_4xlarge = 10, ml_m5_8xlarge = 11, ml_m5_12xlarge = 12, ml_m5_16xlarge = 13, ml_m5_24xlarge = 14, ml_c5_large = 15, ml_c5_xlarge = 16, ml_c5_2xlarge = 17, ml_c5_4xlarge = 18, ml_c5_9xlarge = 19, ml_c5_12xlarge = 20, ml_c5_18xlarge = 21, ml_c5_24xlarge = 22, ml_p3_2xlarge = 23, ml_p3_8xlarge = 24, ml_p3_16xlarge = 25, ml_g4dn_xlarge = 26, ml_g4dn_2xlarge = 27, ml_g4dn_4xlarge = 28, ml_g4dn_8xlarge = 29, ml_g4dn_12xlarge = 30, ml_g4dn_16xlarge = 31 }
+	export enum AppInstanceType { system = 0, 'ml.t3.micro' = 1, 'ml.t3.small' = 2, 'ml.t3.medium' = 3, 'ml.t3.large' = 4, 'ml.t3.xlarge' = 5, 'ml.t3.2xlarge' = 6, 'ml.m5.large' = 7, 'ml.m5.xlarge' = 8, 'ml.m5.2xlarge' = 9, 'ml.m5.4xlarge' = 10, 'ml.m5.8xlarge' = 11, 'ml.m5.12xlarge' = 12, 'ml.m5.16xlarge' = 13, 'ml.m5.24xlarge' = 14, 'ml.c5.large' = 15, 'ml.c5.xlarge' = 16, 'ml.c5.2xlarge' = 17, 'ml.c5.4xlarge' = 18, 'ml.c5.9xlarge' = 19, 'ml.c5.12xlarge' = 20, 'ml.c5.18xlarge' = 21, 'ml.c5.24xlarge' = 22, 'ml.p3.2xlarge' = 23, 'ml.p3.8xlarge' = 24, 'ml.p3.16xlarge' = 25, 'ml.g4dn.xlarge' = 26, 'ml.g4dn.2xlarge' = 27, 'ml.g4dn.4xlarge' = 28, 'ml.g4dn.8xlarge' = 29, 'ml.g4dn.12xlarge' = 30, 'ml.g4dn.16xlarge' = 31 }
 
 	export enum AppSortKey { CreationTime = 0 }
 
@@ -18509,7 +18495,7 @@ export namespace MyNS {
 
 	export enum CandidateStatus { Completed = 0, InProgress = 1, Failed = 2, Stopped = 3, Stopping = 4 }
 
-	export enum CandidateStepType { AWSSageMakerTrainingJob = 0, AWSSageMakerTransformJob = 1, AWSSageMakerProcessingJob = 2 }
+	export enum CandidateStepType { 'AWS::SageMaker::TrainingJob' = 0, 'AWS::SageMaker::TransformJob' = 1, 'AWS::SageMaker::ProcessingJob' = 2 }
 
 	export enum AutoMLMetricEnum { Accuracy = 0, MSE = 1, F1 = 2, F1macro = 3 }
 
@@ -18525,7 +18511,7 @@ export namespace MyNS {
 
 	export enum AutoMLSortOrder { Ascending = 0, Descending = 1 }
 
-	export enum AwsManagedHumanLoopRequestSource { AWS_Rekognition_DetectModerationLabels_Image_V3 = 0, AWS_Textract_AnalyzeDocument_Forms_V1 = 1 }
+	export enum AwsManagedHumanLoopRequestSource { 'AWS/Rekognition/DetectModerationLabels/Image/V3' = 0, 'AWS/Textract/AnalyzeDocument/Forms/V1' = 1 }
 
 	export enum BatchStrategy { MultiRecord = 0, SingleRecord = 1 }
 
@@ -18553,7 +18539,7 @@ export namespace MyNS {
 
 	export enum ProblemType { BinaryClassification = 0, MulticlassClassification = 1, Regression = 2 }
 
-	export enum InstanceType { ml_t2_medium = 0, ml_t2_large = 1, ml_t2_xlarge = 2, ml_t2_2xlarge = 3, ml_t3_medium = 4, ml_t3_large = 5, ml_t3_xlarge = 6, ml_t3_2xlarge = 7, ml_m4_xlarge = 8, ml_m4_2xlarge = 9, ml_m4_4xlarge = 10, ml_m4_10xlarge = 11, ml_m4_16xlarge = 12, ml_m5_xlarge = 13, ml_m5_2xlarge = 14, ml_m5_4xlarge = 15, ml_m5_12xlarge = 16, ml_m5_24xlarge = 17, ml_c4_xlarge = 18, ml_c4_2xlarge = 19, ml_c4_4xlarge = 20, ml_c4_8xlarge = 21, ml_c5_xlarge = 22, ml_c5_2xlarge = 23, ml_c5_4xlarge = 24, ml_c5_9xlarge = 25, ml_c5_18xlarge = 26, ml_c5d_xlarge = 27, ml_c5d_2xlarge = 28, ml_c5d_4xlarge = 29, ml_c5d_9xlarge = 30, ml_c5d_18xlarge = 31, ml_p2_xlarge = 32, ml_p2_8xlarge = 33, ml_p2_16xlarge = 34, ml_p3_2xlarge = 35, ml_p3_8xlarge = 36, ml_p3_16xlarge = 37 }
+	export enum InstanceType { 'ml.t2.medium' = 0, 'ml.t2.large' = 1, 'ml.t2.xlarge' = 2, 'ml.t2.2xlarge' = 3, 'ml.t3.medium' = 4, 'ml.t3.large' = 5, 'ml.t3.xlarge' = 6, 'ml.t3.2xlarge' = 7, 'ml.m4.xlarge' = 8, 'ml.m4.2xlarge' = 9, 'ml.m4.4xlarge' = 10, 'ml.m4.10xlarge' = 11, 'ml.m4.16xlarge' = 12, 'ml.m5.xlarge' = 13, 'ml.m5.2xlarge' = 14, 'ml.m5.4xlarge' = 15, 'ml.m5.12xlarge' = 16, 'ml.m5.24xlarge' = 17, 'ml.c4.xlarge' = 18, 'ml.c4.2xlarge' = 19, 'ml.c4.4xlarge' = 20, 'ml.c4.8xlarge' = 21, 'ml.c5.xlarge' = 22, 'ml.c5.2xlarge' = 23, 'ml.c5.4xlarge' = 24, 'ml.c5.9xlarge' = 25, 'ml.c5.18xlarge' = 26, 'ml.c5d.xlarge' = 27, 'ml.c5d.2xlarge' = 28, 'ml.c5d.4xlarge' = 29, 'ml.c5d.9xlarge' = 30, 'ml.c5d.18xlarge' = 31, 'ml.p2.xlarge' = 32, 'ml.p2.8xlarge' = 33, 'ml.p2.16xlarge' = 34, 'ml.p3.2xlarge' = 35, 'ml.p3.8xlarge' = 36, 'ml.p3.16xlarge' = 37 }
 
 	export enum DirectInternetAccess { Enabled = 0, Disabled = 1 }
 
@@ -18561,7 +18547,7 @@ export namespace MyNS {
 
 	export enum JoinSource { Input = 0, None = 1 }
 
-	export enum ProcessingInstanceType { ml_t3_medium = 0, ml_t3_large = 1, ml_t3_xlarge = 2, ml_t3_2xlarge = 3, ml_m4_xlarge = 4, ml_m4_2xlarge = 5, ml_m4_4xlarge = 6, ml_m4_10xlarge = 7, ml_m4_16xlarge = 8, ml_c4_xlarge = 9, ml_c4_2xlarge = 10, ml_c4_4xlarge = 11, ml_c4_8xlarge = 12, ml_p2_xlarge = 13, ml_p2_8xlarge = 14, ml_p2_16xlarge = 15, ml_p3_2xlarge = 16, ml_p3_8xlarge = 17, ml_p3_16xlarge = 18, ml_c5_xlarge = 19, ml_c5_2xlarge = 20, ml_c5_4xlarge = 21, ml_c5_9xlarge = 22, ml_c5_18xlarge = 23, ml_m5_large = 24, ml_m5_xlarge = 25, ml_m5_2xlarge = 26, ml_m5_4xlarge = 27, ml_m5_12xlarge = 28, ml_m5_24xlarge = 29, ml_r5_large = 30, ml_r5_xlarge = 31, ml_r5_2xlarge = 32, ml_r5_4xlarge = 33, ml_r5_8xlarge = 34, ml_r5_12xlarge = 35, ml_r5_16xlarge = 36, ml_r5_24xlarge = 37 }
+	export enum ProcessingInstanceType { 'ml.t3.medium' = 0, 'ml.t3.large' = 1, 'ml.t3.xlarge' = 2, 'ml.t3.2xlarge' = 3, 'ml.m4.xlarge' = 4, 'ml.m4.2xlarge' = 5, 'ml.m4.4xlarge' = 6, 'ml.m4.10xlarge' = 7, 'ml.m4.16xlarge' = 8, 'ml.c4.xlarge' = 9, 'ml.c4.2xlarge' = 10, 'ml.c4.4xlarge' = 11, 'ml.c4.8xlarge' = 12, 'ml.p2.xlarge' = 13, 'ml.p2.8xlarge' = 14, 'ml.p2.16xlarge' = 15, 'ml.p3.2xlarge' = 16, 'ml.p3.8xlarge' = 17, 'ml.p3.16xlarge' = 18, 'ml.c5.xlarge' = 19, 'ml.c5.2xlarge' = 20, 'ml.c5.4xlarge' = 21, 'ml.c5.9xlarge' = 22, 'ml.c5.18xlarge' = 23, 'ml.m5.large' = 24, 'ml.m5.xlarge' = 25, 'ml.m5.2xlarge' = 26, 'ml.m5.4xlarge' = 27, 'ml.m5.12xlarge' = 28, 'ml.m5.24xlarge' = 29, 'ml.r5.large' = 30, 'ml.r5.xlarge' = 31, 'ml.r5.2xlarge' = 32, 'ml.r5.4xlarge' = 33, 'ml.r5.8xlarge' = 34, 'ml.r5.12xlarge' = 35, 'ml.r5.16xlarge' = 36, 'ml.r5.24xlarge' = 37 }
 
 	export enum RuleEvaluationStatus { InProgress = 0, NoIssuesFound = 1, IssuesFound = 2, Error = 3, Stopping = 4, Stopped = 5 }
 
@@ -20010,271 +19996,271 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsX_Amz_Target { SageMaker_AddTags = 0 }
+	export enum AddTagsX_Amz_Target { 'SageMaker.AddTags' = 0 }
 
-	export enum AssociateTrialComponentX_Amz_Target { SageMaker_AssociateTrialComponent = 0 }
+	export enum AssociateTrialComponentX_Amz_Target { 'SageMaker.AssociateTrialComponent' = 0 }
 
-	export enum CreateAlgorithmX_Amz_Target { SageMaker_CreateAlgorithm = 0 }
+	export enum CreateAlgorithmX_Amz_Target { 'SageMaker.CreateAlgorithm' = 0 }
 
-	export enum CreateAppX_Amz_Target { SageMaker_CreateApp = 0 }
+	export enum CreateAppX_Amz_Target { 'SageMaker.CreateApp' = 0 }
 
-	export enum CreateAutoMLJobX_Amz_Target { SageMaker_CreateAutoMLJob = 0 }
+	export enum CreateAutoMLJobX_Amz_Target { 'SageMaker.CreateAutoMLJob' = 0 }
 
-	export enum CreateCodeRepositoryX_Amz_Target { SageMaker_CreateCodeRepository = 0 }
+	export enum CreateCodeRepositoryX_Amz_Target { 'SageMaker.CreateCodeRepository' = 0 }
 
-	export enum CreateCompilationJobX_Amz_Target { SageMaker_CreateCompilationJob = 0 }
+	export enum CreateCompilationJobX_Amz_Target { 'SageMaker.CreateCompilationJob' = 0 }
 
-	export enum CreateDomainX_Amz_Target { SageMaker_CreateDomain = 0 }
+	export enum CreateDomainX_Amz_Target { 'SageMaker.CreateDomain' = 0 }
 
-	export enum CreateEndpointX_Amz_Target { SageMaker_CreateEndpoint = 0 }
+	export enum CreateEndpointX_Amz_Target { 'SageMaker.CreateEndpoint' = 0 }
 
-	export enum CreateEndpointConfigX_Amz_Target { SageMaker_CreateEndpointConfig = 0 }
+	export enum CreateEndpointConfigX_Amz_Target { 'SageMaker.CreateEndpointConfig' = 0 }
 
-	export enum CreateExperimentX_Amz_Target { SageMaker_CreateExperiment = 0 }
+	export enum CreateExperimentX_Amz_Target { 'SageMaker.CreateExperiment' = 0 }
 
-	export enum CreateFlowDefinitionX_Amz_Target { SageMaker_CreateFlowDefinition = 0 }
+	export enum CreateFlowDefinitionX_Amz_Target { 'SageMaker.CreateFlowDefinition' = 0 }
 
-	export enum CreateHumanTaskUiX_Amz_Target { SageMaker_CreateHumanTaskUi = 0 }
+	export enum CreateHumanTaskUiX_Amz_Target { 'SageMaker.CreateHumanTaskUi' = 0 }
 
-	export enum CreateHyperParameterTuningJobX_Amz_Target { SageMaker_CreateHyperParameterTuningJob = 0 }
+	export enum CreateHyperParameterTuningJobX_Amz_Target { 'SageMaker.CreateHyperParameterTuningJob' = 0 }
 
-	export enum CreateLabelingJobX_Amz_Target { SageMaker_CreateLabelingJob = 0 }
+	export enum CreateLabelingJobX_Amz_Target { 'SageMaker.CreateLabelingJob' = 0 }
 
-	export enum CreateModelX_Amz_Target { SageMaker_CreateModel = 0 }
+	export enum CreateModelX_Amz_Target { 'SageMaker.CreateModel' = 0 }
 
-	export enum CreateModelPackageX_Amz_Target { SageMaker_CreateModelPackage = 0 }
+	export enum CreateModelPackageX_Amz_Target { 'SageMaker.CreateModelPackage' = 0 }
 
-	export enum CreateMonitoringScheduleX_Amz_Target { SageMaker_CreateMonitoringSchedule = 0 }
+	export enum CreateMonitoringScheduleX_Amz_Target { 'SageMaker.CreateMonitoringSchedule' = 0 }
 
-	export enum CreateNotebookInstanceX_Amz_Target { SageMaker_CreateNotebookInstance = 0 }
+	export enum CreateNotebookInstanceX_Amz_Target { 'SageMaker.CreateNotebookInstance' = 0 }
 
-	export enum CreateNotebookInstanceLifecycleConfigX_Amz_Target { SageMaker_CreateNotebookInstanceLifecycleConfig = 0 }
+	export enum CreateNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.CreateNotebookInstanceLifecycleConfig' = 0 }
 
-	export enum CreatePresignedDomainUrlX_Amz_Target { SageMaker_CreatePresignedDomainUrl = 0 }
+	export enum CreatePresignedDomainUrlX_Amz_Target { 'SageMaker.CreatePresignedDomainUrl' = 0 }
 
-	export enum CreatePresignedNotebookInstanceUrlX_Amz_Target { SageMaker_CreatePresignedNotebookInstanceUrl = 0 }
+	export enum CreatePresignedNotebookInstanceUrlX_Amz_Target { 'SageMaker.CreatePresignedNotebookInstanceUrl' = 0 }
 
-	export enum CreateProcessingJobX_Amz_Target { SageMaker_CreateProcessingJob = 0 }
+	export enum CreateProcessingJobX_Amz_Target { 'SageMaker.CreateProcessingJob' = 0 }
 
-	export enum CreateTrainingJobX_Amz_Target { SageMaker_CreateTrainingJob = 0 }
+	export enum CreateTrainingJobX_Amz_Target { 'SageMaker.CreateTrainingJob' = 0 }
 
-	export enum CreateTransformJobX_Amz_Target { SageMaker_CreateTransformJob = 0 }
+	export enum CreateTransformJobX_Amz_Target { 'SageMaker.CreateTransformJob' = 0 }
 
-	export enum CreateTrialX_Amz_Target { SageMaker_CreateTrial = 0 }
+	export enum CreateTrialX_Amz_Target { 'SageMaker.CreateTrial' = 0 }
 
-	export enum CreateTrialComponentX_Amz_Target { SageMaker_CreateTrialComponent = 0 }
+	export enum CreateTrialComponentX_Amz_Target { 'SageMaker.CreateTrialComponent' = 0 }
 
-	export enum CreateUserProfileX_Amz_Target { SageMaker_CreateUserProfile = 0 }
+	export enum CreateUserProfileX_Amz_Target { 'SageMaker.CreateUserProfile' = 0 }
 
-	export enum CreateWorkteamX_Amz_Target { SageMaker_CreateWorkteam = 0 }
+	export enum CreateWorkteamX_Amz_Target { 'SageMaker.CreateWorkteam' = 0 }
 
-	export enum DeleteAlgorithmX_Amz_Target { SageMaker_DeleteAlgorithm = 0 }
+	export enum DeleteAlgorithmX_Amz_Target { 'SageMaker.DeleteAlgorithm' = 0 }
 
-	export enum DeleteAppX_Amz_Target { SageMaker_DeleteApp = 0 }
+	export enum DeleteAppX_Amz_Target { 'SageMaker.DeleteApp' = 0 }
 
-	export enum DeleteCodeRepositoryX_Amz_Target { SageMaker_DeleteCodeRepository = 0 }
+	export enum DeleteCodeRepositoryX_Amz_Target { 'SageMaker.DeleteCodeRepository' = 0 }
 
-	export enum DeleteDomainX_Amz_Target { SageMaker_DeleteDomain = 0 }
+	export enum DeleteDomainX_Amz_Target { 'SageMaker.DeleteDomain' = 0 }
 
-	export enum DeleteEndpointX_Amz_Target { SageMaker_DeleteEndpoint = 0 }
+	export enum DeleteEndpointX_Amz_Target { 'SageMaker.DeleteEndpoint' = 0 }
 
-	export enum DeleteEndpointConfigX_Amz_Target { SageMaker_DeleteEndpointConfig = 0 }
+	export enum DeleteEndpointConfigX_Amz_Target { 'SageMaker.DeleteEndpointConfig' = 0 }
 
-	export enum DeleteExperimentX_Amz_Target { SageMaker_DeleteExperiment = 0 }
+	export enum DeleteExperimentX_Amz_Target { 'SageMaker.DeleteExperiment' = 0 }
 
-	export enum DeleteFlowDefinitionX_Amz_Target { SageMaker_DeleteFlowDefinition = 0 }
+	export enum DeleteFlowDefinitionX_Amz_Target { 'SageMaker.DeleteFlowDefinition' = 0 }
 
-	export enum DeleteModelX_Amz_Target { SageMaker_DeleteModel = 0 }
+	export enum DeleteModelX_Amz_Target { 'SageMaker.DeleteModel' = 0 }
 
-	export enum DeleteModelPackageX_Amz_Target { SageMaker_DeleteModelPackage = 0 }
+	export enum DeleteModelPackageX_Amz_Target { 'SageMaker.DeleteModelPackage' = 0 }
 
-	export enum DeleteMonitoringScheduleX_Amz_Target { SageMaker_DeleteMonitoringSchedule = 0 }
+	export enum DeleteMonitoringScheduleX_Amz_Target { 'SageMaker.DeleteMonitoringSchedule' = 0 }
 
-	export enum DeleteNotebookInstanceX_Amz_Target { SageMaker_DeleteNotebookInstance = 0 }
+	export enum DeleteNotebookInstanceX_Amz_Target { 'SageMaker.DeleteNotebookInstance' = 0 }
 
-	export enum DeleteNotebookInstanceLifecycleConfigX_Amz_Target { SageMaker_DeleteNotebookInstanceLifecycleConfig = 0 }
+	export enum DeleteNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.DeleteNotebookInstanceLifecycleConfig' = 0 }
 
-	export enum DeleteTagsX_Amz_Target { SageMaker_DeleteTags = 0 }
+	export enum DeleteTagsX_Amz_Target { 'SageMaker.DeleteTags' = 0 }
 
-	export enum DeleteTrialX_Amz_Target { SageMaker_DeleteTrial = 0 }
+	export enum DeleteTrialX_Amz_Target { 'SageMaker.DeleteTrial' = 0 }
 
-	export enum DeleteTrialComponentX_Amz_Target { SageMaker_DeleteTrialComponent = 0 }
+	export enum DeleteTrialComponentX_Amz_Target { 'SageMaker.DeleteTrialComponent' = 0 }
 
-	export enum DeleteUserProfileX_Amz_Target { SageMaker_DeleteUserProfile = 0 }
+	export enum DeleteUserProfileX_Amz_Target { 'SageMaker.DeleteUserProfile' = 0 }
 
-	export enum DeleteWorkteamX_Amz_Target { SageMaker_DeleteWorkteam = 0 }
+	export enum DeleteWorkteamX_Amz_Target { 'SageMaker.DeleteWorkteam' = 0 }
 
-	export enum DescribeAlgorithmX_Amz_Target { SageMaker_DescribeAlgorithm = 0 }
+	export enum DescribeAlgorithmX_Amz_Target { 'SageMaker.DescribeAlgorithm' = 0 }
 
-	export enum DescribeAppX_Amz_Target { SageMaker_DescribeApp = 0 }
+	export enum DescribeAppX_Amz_Target { 'SageMaker.DescribeApp' = 0 }
 
-	export enum DescribeAutoMLJobX_Amz_Target { SageMaker_DescribeAutoMLJob = 0 }
+	export enum DescribeAutoMLJobX_Amz_Target { 'SageMaker.DescribeAutoMLJob' = 0 }
 
-	export enum DescribeCodeRepositoryX_Amz_Target { SageMaker_DescribeCodeRepository = 0 }
+	export enum DescribeCodeRepositoryX_Amz_Target { 'SageMaker.DescribeCodeRepository' = 0 }
 
-	export enum DescribeCompilationJobX_Amz_Target { SageMaker_DescribeCompilationJob = 0 }
+	export enum DescribeCompilationJobX_Amz_Target { 'SageMaker.DescribeCompilationJob' = 0 }
 
-	export enum DescribeDomainX_Amz_Target { SageMaker_DescribeDomain = 0 }
+	export enum DescribeDomainX_Amz_Target { 'SageMaker.DescribeDomain' = 0 }
 
-	export enum DescribeEndpointX_Amz_Target { SageMaker_DescribeEndpoint = 0 }
+	export enum DescribeEndpointX_Amz_Target { 'SageMaker.DescribeEndpoint' = 0 }
 
-	export enum DescribeEndpointConfigX_Amz_Target { SageMaker_DescribeEndpointConfig = 0 }
+	export enum DescribeEndpointConfigX_Amz_Target { 'SageMaker.DescribeEndpointConfig' = 0 }
 
-	export enum DescribeExperimentX_Amz_Target { SageMaker_DescribeExperiment = 0 }
+	export enum DescribeExperimentX_Amz_Target { 'SageMaker.DescribeExperiment' = 0 }
 
-	export enum DescribeFlowDefinitionX_Amz_Target { SageMaker_DescribeFlowDefinition = 0 }
+	export enum DescribeFlowDefinitionX_Amz_Target { 'SageMaker.DescribeFlowDefinition' = 0 }
 
-	export enum DescribeHumanTaskUiX_Amz_Target { SageMaker_DescribeHumanTaskUi = 0 }
+	export enum DescribeHumanTaskUiX_Amz_Target { 'SageMaker.DescribeHumanTaskUi' = 0 }
 
-	export enum DescribeHyperParameterTuningJobX_Amz_Target { SageMaker_DescribeHyperParameterTuningJob = 0 }
+	export enum DescribeHyperParameterTuningJobX_Amz_Target { 'SageMaker.DescribeHyperParameterTuningJob' = 0 }
 
-	export enum DescribeLabelingJobX_Amz_Target { SageMaker_DescribeLabelingJob = 0 }
+	export enum DescribeLabelingJobX_Amz_Target { 'SageMaker.DescribeLabelingJob' = 0 }
 
-	export enum DescribeModelX_Amz_Target { SageMaker_DescribeModel = 0 }
+	export enum DescribeModelX_Amz_Target { 'SageMaker.DescribeModel' = 0 }
 
-	export enum DescribeModelPackageX_Amz_Target { SageMaker_DescribeModelPackage = 0 }
+	export enum DescribeModelPackageX_Amz_Target { 'SageMaker.DescribeModelPackage' = 0 }
 
-	export enum DescribeMonitoringScheduleX_Amz_Target { SageMaker_DescribeMonitoringSchedule = 0 }
+	export enum DescribeMonitoringScheduleX_Amz_Target { 'SageMaker.DescribeMonitoringSchedule' = 0 }
 
-	export enum DescribeNotebookInstanceX_Amz_Target { SageMaker_DescribeNotebookInstance = 0 }
+	export enum DescribeNotebookInstanceX_Amz_Target { 'SageMaker.DescribeNotebookInstance' = 0 }
 
-	export enum DescribeNotebookInstanceLifecycleConfigX_Amz_Target { SageMaker_DescribeNotebookInstanceLifecycleConfig = 0 }
+	export enum DescribeNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.DescribeNotebookInstanceLifecycleConfig' = 0 }
 
-	export enum DescribeProcessingJobX_Amz_Target { SageMaker_DescribeProcessingJob = 0 }
+	export enum DescribeProcessingJobX_Amz_Target { 'SageMaker.DescribeProcessingJob' = 0 }
 
-	export enum DescribeSubscribedWorkteamX_Amz_Target { SageMaker_DescribeSubscribedWorkteam = 0 }
+	export enum DescribeSubscribedWorkteamX_Amz_Target { 'SageMaker.DescribeSubscribedWorkteam' = 0 }
 
-	export enum DescribeTrainingJobX_Amz_Target { SageMaker_DescribeTrainingJob = 0 }
+	export enum DescribeTrainingJobX_Amz_Target { 'SageMaker.DescribeTrainingJob' = 0 }
 
-	export enum DescribeTransformJobX_Amz_Target { SageMaker_DescribeTransformJob = 0 }
+	export enum DescribeTransformJobX_Amz_Target { 'SageMaker.DescribeTransformJob' = 0 }
 
-	export enum DescribeTrialX_Amz_Target { SageMaker_DescribeTrial = 0 }
+	export enum DescribeTrialX_Amz_Target { 'SageMaker.DescribeTrial' = 0 }
 
-	export enum DescribeTrialComponentX_Amz_Target { SageMaker_DescribeTrialComponent = 0 }
+	export enum DescribeTrialComponentX_Amz_Target { 'SageMaker.DescribeTrialComponent' = 0 }
 
-	export enum DescribeUserProfileX_Amz_Target { SageMaker_DescribeUserProfile = 0 }
+	export enum DescribeUserProfileX_Amz_Target { 'SageMaker.DescribeUserProfile' = 0 }
 
-	export enum DescribeWorkforceX_Amz_Target { SageMaker_DescribeWorkforce = 0 }
+	export enum DescribeWorkforceX_Amz_Target { 'SageMaker.DescribeWorkforce' = 0 }
 
-	export enum DescribeWorkteamX_Amz_Target { SageMaker_DescribeWorkteam = 0 }
+	export enum DescribeWorkteamX_Amz_Target { 'SageMaker.DescribeWorkteam' = 0 }
 
-	export enum DisassociateTrialComponentX_Amz_Target { SageMaker_DisassociateTrialComponent = 0 }
+	export enum DisassociateTrialComponentX_Amz_Target { 'SageMaker.DisassociateTrialComponent' = 0 }
 
-	export enum GetSearchSuggestionsX_Amz_Target { SageMaker_GetSearchSuggestions = 0 }
+	export enum GetSearchSuggestionsX_Amz_Target { 'SageMaker.GetSearchSuggestions' = 0 }
 
-	export enum ListAlgorithmsX_Amz_Target { SageMaker_ListAlgorithms = 0 }
+	export enum ListAlgorithmsX_Amz_Target { 'SageMaker.ListAlgorithms' = 0 }
 
-	export enum ListAppsX_Amz_Target { SageMaker_ListApps = 0 }
+	export enum ListAppsX_Amz_Target { 'SageMaker.ListApps' = 0 }
 
-	export enum ListAutoMLJobsX_Amz_Target { SageMaker_ListAutoMLJobs = 0 }
+	export enum ListAutoMLJobsX_Amz_Target { 'SageMaker.ListAutoMLJobs' = 0 }
 
-	export enum ListCandidatesForAutoMLJobX_Amz_Target { SageMaker_ListCandidatesForAutoMLJob = 0 }
+	export enum ListCandidatesForAutoMLJobX_Amz_Target { 'SageMaker.ListCandidatesForAutoMLJob' = 0 }
 
-	export enum ListCodeRepositoriesX_Amz_Target { SageMaker_ListCodeRepositories = 0 }
+	export enum ListCodeRepositoriesX_Amz_Target { 'SageMaker.ListCodeRepositories' = 0 }
 
-	export enum ListCompilationJobsX_Amz_Target { SageMaker_ListCompilationJobs = 0 }
+	export enum ListCompilationJobsX_Amz_Target { 'SageMaker.ListCompilationJobs' = 0 }
 
-	export enum ListDomainsX_Amz_Target { SageMaker_ListDomains = 0 }
+	export enum ListDomainsX_Amz_Target { 'SageMaker.ListDomains' = 0 }
 
-	export enum ListEndpointConfigsX_Amz_Target { SageMaker_ListEndpointConfigs = 0 }
+	export enum ListEndpointConfigsX_Amz_Target { 'SageMaker.ListEndpointConfigs' = 0 }
 
-	export enum ListEndpointsX_Amz_Target { SageMaker_ListEndpoints = 0 }
+	export enum ListEndpointsX_Amz_Target { 'SageMaker.ListEndpoints' = 0 }
 
-	export enum ListExperimentsX_Amz_Target { SageMaker_ListExperiments = 0 }
+	export enum ListExperimentsX_Amz_Target { 'SageMaker.ListExperiments' = 0 }
 
-	export enum ListFlowDefinitionsX_Amz_Target { SageMaker_ListFlowDefinitions = 0 }
+	export enum ListFlowDefinitionsX_Amz_Target { 'SageMaker.ListFlowDefinitions' = 0 }
 
-	export enum ListHumanTaskUisX_Amz_Target { SageMaker_ListHumanTaskUis = 0 }
+	export enum ListHumanTaskUisX_Amz_Target { 'SageMaker.ListHumanTaskUis' = 0 }
 
-	export enum ListHyperParameterTuningJobsX_Amz_Target { SageMaker_ListHyperParameterTuningJobs = 0 }
+	export enum ListHyperParameterTuningJobsX_Amz_Target { 'SageMaker.ListHyperParameterTuningJobs' = 0 }
 
-	export enum ListLabelingJobsX_Amz_Target { SageMaker_ListLabelingJobs = 0 }
+	export enum ListLabelingJobsX_Amz_Target { 'SageMaker.ListLabelingJobs' = 0 }
 
-	export enum ListLabelingJobsForWorkteamX_Amz_Target { SageMaker_ListLabelingJobsForWorkteam = 0 }
+	export enum ListLabelingJobsForWorkteamX_Amz_Target { 'SageMaker.ListLabelingJobsForWorkteam' = 0 }
 
-	export enum ListModelPackagesX_Amz_Target { SageMaker_ListModelPackages = 0 }
+	export enum ListModelPackagesX_Amz_Target { 'SageMaker.ListModelPackages' = 0 }
 
-	export enum ListModelsX_Amz_Target { SageMaker_ListModels = 0 }
+	export enum ListModelsX_Amz_Target { 'SageMaker.ListModels' = 0 }
 
-	export enum ListMonitoringExecutionsX_Amz_Target { SageMaker_ListMonitoringExecutions = 0 }
+	export enum ListMonitoringExecutionsX_Amz_Target { 'SageMaker.ListMonitoringExecutions' = 0 }
 
-	export enum ListMonitoringSchedulesX_Amz_Target { SageMaker_ListMonitoringSchedules = 0 }
+	export enum ListMonitoringSchedulesX_Amz_Target { 'SageMaker.ListMonitoringSchedules' = 0 }
 
-	export enum ListNotebookInstanceLifecycleConfigsX_Amz_Target { SageMaker_ListNotebookInstanceLifecycleConfigs = 0 }
+	export enum ListNotebookInstanceLifecycleConfigsX_Amz_Target { 'SageMaker.ListNotebookInstanceLifecycleConfigs' = 0 }
 
-	export enum ListNotebookInstancesX_Amz_Target { SageMaker_ListNotebookInstances = 0 }
+	export enum ListNotebookInstancesX_Amz_Target { 'SageMaker.ListNotebookInstances' = 0 }
 
-	export enum ListProcessingJobsX_Amz_Target { SageMaker_ListProcessingJobs = 0 }
+	export enum ListProcessingJobsX_Amz_Target { 'SageMaker.ListProcessingJobs' = 0 }
 
-	export enum ListSubscribedWorkteamsX_Amz_Target { SageMaker_ListSubscribedWorkteams = 0 }
+	export enum ListSubscribedWorkteamsX_Amz_Target { 'SageMaker.ListSubscribedWorkteams' = 0 }
 
-	export enum ListTagsX_Amz_Target { SageMaker_ListTags = 0 }
+	export enum ListTagsX_Amz_Target { 'SageMaker.ListTags' = 0 }
 
-	export enum ListTrainingJobsX_Amz_Target { SageMaker_ListTrainingJobs = 0 }
+	export enum ListTrainingJobsX_Amz_Target { 'SageMaker.ListTrainingJobs' = 0 }
 
-	export enum ListTrainingJobsForHyperParameterTuningJobX_Amz_Target { SageMaker_ListTrainingJobsForHyperParameterTuningJob = 0 }
+	export enum ListTrainingJobsForHyperParameterTuningJobX_Amz_Target { 'SageMaker.ListTrainingJobsForHyperParameterTuningJob' = 0 }
 
-	export enum ListTransformJobsX_Amz_Target { SageMaker_ListTransformJobs = 0 }
+	export enum ListTransformJobsX_Amz_Target { 'SageMaker.ListTransformJobs' = 0 }
 
-	export enum ListTrialComponentsX_Amz_Target { SageMaker_ListTrialComponents = 0 }
+	export enum ListTrialComponentsX_Amz_Target { 'SageMaker.ListTrialComponents' = 0 }
 
-	export enum ListTrialsX_Amz_Target { SageMaker_ListTrials = 0 }
+	export enum ListTrialsX_Amz_Target { 'SageMaker.ListTrials' = 0 }
 
-	export enum ListUserProfilesX_Amz_Target { SageMaker_ListUserProfiles = 0 }
+	export enum ListUserProfilesX_Amz_Target { 'SageMaker.ListUserProfiles' = 0 }
 
-	export enum ListWorkteamsX_Amz_Target { SageMaker_ListWorkteams = 0 }
+	export enum ListWorkteamsX_Amz_Target { 'SageMaker.ListWorkteams' = 0 }
 
-	export enum RenderUiTemplateX_Amz_Target { SageMaker_RenderUiTemplate = 0 }
+	export enum RenderUiTemplateX_Amz_Target { 'SageMaker.RenderUiTemplate' = 0 }
 
-	export enum SearchX_Amz_Target { SageMaker_Search = 0 }
+	export enum SearchX_Amz_Target { 'SageMaker.Search' = 0 }
 
-	export enum StartMonitoringScheduleX_Amz_Target { SageMaker_StartMonitoringSchedule = 0 }
+	export enum StartMonitoringScheduleX_Amz_Target { 'SageMaker.StartMonitoringSchedule' = 0 }
 
-	export enum StartNotebookInstanceX_Amz_Target { SageMaker_StartNotebookInstance = 0 }
+	export enum StartNotebookInstanceX_Amz_Target { 'SageMaker.StartNotebookInstance' = 0 }
 
-	export enum StopAutoMLJobX_Amz_Target { SageMaker_StopAutoMLJob = 0 }
+	export enum StopAutoMLJobX_Amz_Target { 'SageMaker.StopAutoMLJob' = 0 }
 
-	export enum StopCompilationJobX_Amz_Target { SageMaker_StopCompilationJob = 0 }
+	export enum StopCompilationJobX_Amz_Target { 'SageMaker.StopCompilationJob' = 0 }
 
-	export enum StopHyperParameterTuningJobX_Amz_Target { SageMaker_StopHyperParameterTuningJob = 0 }
+	export enum StopHyperParameterTuningJobX_Amz_Target { 'SageMaker.StopHyperParameterTuningJob' = 0 }
 
-	export enum StopLabelingJobX_Amz_Target { SageMaker_StopLabelingJob = 0 }
+	export enum StopLabelingJobX_Amz_Target { 'SageMaker.StopLabelingJob' = 0 }
 
-	export enum StopMonitoringScheduleX_Amz_Target { SageMaker_StopMonitoringSchedule = 0 }
+	export enum StopMonitoringScheduleX_Amz_Target { 'SageMaker.StopMonitoringSchedule' = 0 }
 
-	export enum StopNotebookInstanceX_Amz_Target { SageMaker_StopNotebookInstance = 0 }
+	export enum StopNotebookInstanceX_Amz_Target { 'SageMaker.StopNotebookInstance' = 0 }
 
-	export enum StopProcessingJobX_Amz_Target { SageMaker_StopProcessingJob = 0 }
+	export enum StopProcessingJobX_Amz_Target { 'SageMaker.StopProcessingJob' = 0 }
 
-	export enum StopTrainingJobX_Amz_Target { SageMaker_StopTrainingJob = 0 }
+	export enum StopTrainingJobX_Amz_Target { 'SageMaker.StopTrainingJob' = 0 }
 
-	export enum StopTransformJobX_Amz_Target { SageMaker_StopTransformJob = 0 }
+	export enum StopTransformJobX_Amz_Target { 'SageMaker.StopTransformJob' = 0 }
 
-	export enum UpdateCodeRepositoryX_Amz_Target { SageMaker_UpdateCodeRepository = 0 }
+	export enum UpdateCodeRepositoryX_Amz_Target { 'SageMaker.UpdateCodeRepository' = 0 }
 
-	export enum UpdateDomainX_Amz_Target { SageMaker_UpdateDomain = 0 }
+	export enum UpdateDomainX_Amz_Target { 'SageMaker.UpdateDomain' = 0 }
 
-	export enum UpdateEndpointX_Amz_Target { SageMaker_UpdateEndpoint = 0 }
+	export enum UpdateEndpointX_Amz_Target { 'SageMaker.UpdateEndpoint' = 0 }
 
-	export enum UpdateEndpointWeightsAndCapacitiesX_Amz_Target { SageMaker_UpdateEndpointWeightsAndCapacities = 0 }
+	export enum UpdateEndpointWeightsAndCapacitiesX_Amz_Target { 'SageMaker.UpdateEndpointWeightsAndCapacities' = 0 }
 
-	export enum UpdateExperimentX_Amz_Target { SageMaker_UpdateExperiment = 0 }
+	export enum UpdateExperimentX_Amz_Target { 'SageMaker.UpdateExperiment' = 0 }
 
-	export enum UpdateMonitoringScheduleX_Amz_Target { SageMaker_UpdateMonitoringSchedule = 0 }
+	export enum UpdateMonitoringScheduleX_Amz_Target { 'SageMaker.UpdateMonitoringSchedule' = 0 }
 
-	export enum UpdateNotebookInstanceX_Amz_Target { SageMaker_UpdateNotebookInstance = 0 }
+	export enum UpdateNotebookInstanceX_Amz_Target { 'SageMaker.UpdateNotebookInstance' = 0 }
 
-	export enum UpdateNotebookInstanceLifecycleConfigX_Amz_Target { SageMaker_UpdateNotebookInstanceLifecycleConfig = 0 }
+	export enum UpdateNotebookInstanceLifecycleConfigX_Amz_Target { 'SageMaker.UpdateNotebookInstanceLifecycleConfig' = 0 }
 
-	export enum UpdateTrialX_Amz_Target { SageMaker_UpdateTrial = 0 }
+	export enum UpdateTrialX_Amz_Target { 'SageMaker.UpdateTrial' = 0 }
 
-	export enum UpdateTrialComponentX_Amz_Target { SageMaker_UpdateTrialComponent = 0 }
+	export enum UpdateTrialComponentX_Amz_Target { 'SageMaker.UpdateTrialComponent' = 0 }
 
-	export enum UpdateUserProfileX_Amz_Target { SageMaker_UpdateUserProfile = 0 }
+	export enum UpdateUserProfileX_Amz_Target { 'SageMaker.UpdateUserProfile' = 0 }
 
-	export enum UpdateWorkforceX_Amz_Target { SageMaker_UpdateWorkforce = 0 }
+	export enum UpdateWorkforceX_Amz_Target { 'SageMaker.UpdateWorkforce' = 0 }
 
-	export enum UpdateWorkteamX_Amz_Target { SageMaker_UpdateWorkteam = 0 }
+	export enum UpdateWorkteamX_Amz_Target { 'SageMaker.UpdateWorkteam' = 0 }
 
 }
 

@@ -147,7 +147,7 @@ export namespace MyNS {
 		return new FormGroup<ProfilingGroupDescriptionFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\w-]+$')]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -296,7 +296,7 @@ export namespace MyNS {
 	export function CreateGetPolicyResponseFormGroup() {
 		return new FormGroup<GetPolicyResponseFormProperties>({
 			policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')]),
 		});
 
 	}
@@ -347,7 +347,7 @@ export namespace MyNS {
 	}
 	export function CreateListProfileTimesResponseFormGroup() {
 		return new FormGroup<ListProfileTimesResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -395,7 +395,7 @@ export namespace MyNS {
 	}
 	export function CreateListProfilingGroupsResponseFormGroup() {
 		return new FormGroup<ListProfilingGroupsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -437,7 +437,7 @@ export namespace MyNS {
 	export function CreatePutPermissionResponseFormGroup() {
 		return new FormGroup<PutPermissionResponseFormProperties>({
 			policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')]),
 		});
 
 	}
@@ -465,7 +465,7 @@ export namespace MyNS {
 	export function CreateRemovePermissionResponseFormGroup() {
 		return new FormGroup<RemovePermissionResponseFormProperties>({
 			policy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')]),
 		});
 
 	}
@@ -516,7 +516,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigureAgentRequestFormGroup() {
 		return new FormGroup<ConfigureAgentRequestFormProperties>({
-			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-.:/]+$')]),
+			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\w-.:/]+$')]),
 		});
 
 	}
@@ -548,7 +548,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProfilingGroupRequestFormGroup() {
 		return new FormGroup<CreateProfilingGroupRequestFormProperties>({
-			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
+			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -679,7 +679,7 @@ export namespace MyNS {
 	}
 	export function CreatePutPermissionRequestFormGroup() {
 		return new FormGroup<PutPermissionRequestFormProperties>({
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')]),
 		});
 
 	}
@@ -880,7 +880,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigureAgentPostBodyFormGroup() {
 		return new FormGroup<ConfigureAgentPostBodyFormProperties>({
-			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-.:/]+$')]),
+			fleetInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\w-.:/]+$')]),
 		});
 
 	}
@@ -910,7 +910,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateProfilingGroupPostBodyFormGroup() {
 		return new FormGroup<CreateProfilingGroupPostBodyFormProperties>({
-			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\w-]+$')]),
+			profilingGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\w-]+$')]),
 		});
 
 	}
@@ -1000,7 +1000,7 @@ export namespace MyNS {
 	}
 	export function CreatePutPermissionPutBodyFormGroup() {
 		return new FormGroup<PutPermissionPutBodyFormProperties>({
-			revisionId: new FormControl<string | null | undefined>(undefined),
+			revisionId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')]),
 		});
 
 	}

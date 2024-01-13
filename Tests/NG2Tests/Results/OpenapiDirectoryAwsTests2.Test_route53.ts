@@ -73,7 +73,7 @@ export namespace MyNS {
 
 	export enum ChangeInfoStatus { PENDING = 0, INSYNC = 1 }
 
-	export enum VPCRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ap_east_1 = 8, me_south_1 = 9, us_gov_west_1 = 10, us_gov_east_1 = 11, us_iso_east_1 = 12, us_isob_east_1 = 13, ap_southeast_1 = 14, ap_southeast_2 = 15, ap_south_1 = 16, ap_northeast_1 = 17, ap_northeast_2 = 18, ap_northeast_3 = 19, eu_north_1 = 20, sa_east_1 = 21, ca_central_1 = 22, cn_north_1 = 23, af_south_1 = 24, eu_south_1 = 25 }
+	export enum VPCRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'eu-west-1' = 4, 'eu-west-2' = 5, 'eu-west-3' = 6, 'eu-central-1' = 7, 'ap-east-1' = 8, 'me-south-1' = 9, 'us-gov-west-1' = 10, 'us-gov-east-1' = 11, 'us-iso-east-1' = 12, 'us-isob-east-1' = 13, 'ap-southeast-1' = 14, 'ap-southeast-2' = 15, 'ap-south-1' = 16, 'ap-northeast-1' = 17, 'ap-northeast-2' = 18, 'ap-northeast-3' = 19, 'eu-north-1' = 20, 'sa-east-1' = 21, 'ca-central-1' = 22, 'cn-north-1' = 23, 'af-south-1' = 24, 'eu-south-1' = 25 }
 
 	export interface NoSuchHostedZone {
 	}
@@ -303,21 +303,21 @@ export namespace MyNS {
 		return new FormGroup<ResourceRecordSetFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
-			SetIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			SetIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			Weight: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
-			Region: new FormControl<ResourceRecordSetRegion | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Region: new FormControl<ResourceRecordSetRegion | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			Failover: new FormControl<ResourceRecordSetFailover | null | undefined>(undefined),
 			MultiValueAnswer: new FormControl<boolean | null | undefined>(undefined),
 			TTL: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			HealthCheckId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
-			TrafficPolicyInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
 
 	export enum ResourceRecordSetType { SOA = 0, A = 1, TXT = 2, NS = 3, CNAME = 4, MX = 5, NAPTR = 6, PTR = 7, SRV = 8, SPF = 9, AAAA = 10, CAA = 11 }
 
-	export enum ResourceRecordSetRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, ca_central_1 = 4, eu_west_1 = 5, eu_west_2 = 6, eu_west_3 = 7, eu_central_1 = 8, ap_southeast_1 = 9, ap_southeast_2 = 10, ap_northeast_1 = 11, ap_northeast_2 = 12, ap_northeast_3 = 13, eu_north_1 = 14, sa_east_1 = 15, cn_north_1 = 16, cn_northwest_1 = 17, ap_east_1 = 18, me_south_1 = 19, ap_south_1 = 20, af_south_1 = 21, eu_south_1 = 22 }
+	export enum ResourceRecordSetRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'ca-central-1' = 4, 'eu-west-1' = 5, 'eu-west-2' = 6, 'eu-west-3' = 7, 'eu-central-1' = 8, 'ap-southeast-1' = 9, 'ap-southeast-2' = 10, 'ap-northeast-1' = 11, 'ap-northeast-2' = 12, 'ap-northeast-3' = 13, 'eu-north-1' = 14, 'sa-east-1' = 15, 'cn-north-1' = 16, 'cn-northwest-1' = 17, 'ap-east-1' = 18, 'me-south-1' = 19, 'ap-south-1' = 20, 'af-south-1' = 21, 'eu-south-1' = 22 }
 
 
 	/** A complex type that contains information about a geographic location. */
@@ -365,9 +365,9 @@ export namespace MyNS {
 	}
 	export function CreateGeoLocationFormGroup() {
 		return new FormGroup<GeoLocationFormProperties>({
-			ContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
-			CountryCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
-			SubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			ContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(2)]),
+			CountryCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2)]),
+			SubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3)]),
 		});
 
 	}
@@ -611,7 +611,7 @@ export namespace MyNS {
 	export function CreateHealthCheckFormGroup() {
 		return new FormGroup<HealthCheckFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64)]),
-			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			HealthCheckVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
@@ -775,7 +775,7 @@ export namespace MyNS {
 
 	export enum HealthCheckConfigType { HTTP = 0, HTTPS = 1, HTTP_STR_MATCH = 2, HTTPS_STR_MATCH = 3, TCP = 4, CALCULATED = 5, CLOUDWATCH_METRIC = 6 }
 
-	export enum HealthCheckRegion { us_east_1 = 0, us_west_1 = 1, us_west_2 = 2, eu_west_1 = 3, ap_southeast_1 = 4, ap_southeast_2 = 5, ap_northeast_1 = 6, sa_east_1 = 7 }
+	export enum HealthCheckRegion { 'us-east-1' = 0, 'us-west-1' = 1, 'us-west-2' = 2, 'eu-west-1' = 3, 'ap-southeast-1' = 4, 'ap-southeast-2' = 5, 'ap-northeast-1' = 6, 'sa-east-1' = 7 }
 
 
 	/** A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy. */
@@ -815,13 +815,13 @@ export namespace MyNS {
 	}
 	export function CreateAlarmIdentifierFormGroup() {
 		return new FormGroup<AlarmIdentifierFormProperties>({
-			Region: new FormControl<AlarmIdentifierRegion | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Region: new FormControl<AlarmIdentifierRegion | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
 
-	export enum AlarmIdentifierRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, ca_central_1 = 4, eu_central_1 = 5, eu_west_1 = 6, eu_west_2 = 7, eu_west_3 = 8, ap_east_1 = 9, me_south_1 = 10, ap_south_1 = 11, ap_southeast_1 = 12, ap_southeast_2 = 13, ap_northeast_1 = 14, ap_northeast_2 = 15, ap_northeast_3 = 16, eu_north_1 = 17, sa_east_1 = 18, cn_northwest_1 = 19, cn_north_1 = 20, af_south_1 = 21, eu_south_1 = 22, us_gov_west_1 = 23, us_gov_east_1 = 24, us_iso_east_1 = 25, us_isob_east_1 = 26 }
+	export enum AlarmIdentifierRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'ca-central-1' = 4, 'eu-central-1' = 5, 'eu-west-1' = 6, 'eu-west-2' = 7, 'eu-west-3' = 8, 'ap-east-1' = 9, 'me-south-1' = 10, 'ap-south-1' = 11, 'ap-southeast-1' = 12, 'ap-southeast-2' = 13, 'ap-northeast-1' = 14, 'ap-northeast-2' = 15, 'ap-northeast-3' = 16, 'eu-north-1' = 17, 'sa-east-1' = 18, 'cn-northwest-1' = 19, 'cn-north-1' = 20, 'af-south-1' = 21, 'eu-south-1' = 22, 'us-gov-west-1' = 23, 'us-gov-east-1' = 24, 'us-iso-east-1' = 25, 'us-isob-east-1' = 26 }
 
 	export enum HealthCheckConfigInsufficientDataHealthStatus { Healthy = 0, Unhealthy = 1, LastKnownStatus = 2 }
 
@@ -912,8 +912,8 @@ export namespace MyNS {
 			Threshold: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			ComparisonOperator: new FormControl<CloudWatchAlarmConfigurationComparisonOperator | null | undefined>(undefined, [Validators.required]),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(60)]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			Statistic: new FormControl<CloudWatchAlarmConfigurationStatistic | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -961,8 +961,8 @@ export namespace MyNS {
 	}
 	export function CreateDimensionFormGroup() {
 		return new FormGroup<DimensionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1084,7 +1084,7 @@ export namespace MyNS {
 		return new FormGroup<HostedZoneFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
-			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			ResourceRecordSetCount: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1149,7 +1149,7 @@ export namespace MyNS {
 	export function CreateDelegationSetFormGroup() {
 		return new FormGroup<DelegationSetFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
-			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -1162,7 +1162,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		VPCRegion?: VPCVPCRegion | null;
+		VPCRegion?: VPCRegion | null;
 
 		/**
 		 * (Private hosted zones only) The ID of an Amazon VPC.
@@ -1178,7 +1178,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		VPCRegion: FormControl<VPCVPCRegion | null | undefined>,
+		VPCRegion: FormControl<VPCRegion | null | undefined>,
 
 		/**
 		 * (Private hosted zones only) The ID of an Amazon VPC.
@@ -1188,13 +1188,11 @@ export namespace MyNS {
 	}
 	export function CreateVPCFormGroup() {
 		return new FormGroup<VPCFormProperties>({
-			VPCRegion: new FormControl<VPCVPCRegion | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			VPCRegion: new FormControl<VPCRegion | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
-
-	export enum VPCVPCRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ap_east_1 = 8, me_south_1 = 9, us_gov_west_1 = 10, us_gov_east_1 = 11, us_iso_east_1 = 12, us_isob_east_1 = 13, ap_southeast_1 = 14, ap_southeast_2 = 15, ap_south_1 = 16, ap_northeast_1 = 17, ap_northeast_2 = 18, ap_northeast_3 = 19, eu_north_1 = 20, sa_east_1 = 21, ca_central_1 = 22, cn_north_1 = 23, af_south_1 = 24, eu_south_1 = 25 }
 
 	export interface InvalidDomainName {
 	}
@@ -1314,7 +1312,7 @@ export namespace MyNS {
 	}
 	export function CreateQueryLoggingConfigFormGroup() {
 		return new FormGroup<QueryLoggingConfigFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
 			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1511,7 +1509,7 @@ export namespace MyNS {
 	}
 	export function CreateTrafficPolicyFormGroup() {
 		return new FormGroup<TrafficPolicyFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			Version: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512)]),
 			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
@@ -1685,13 +1683,13 @@ export namespace MyNS {
 	}
 	export function CreateTrafficPolicyInstanceFormGroup() {
 		return new FormGroup<TrafficPolicyInstanceFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 			TTL: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
 			State: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
-			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 			TrafficPolicyType: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2229,12 +2227,12 @@ export namespace MyNS {
 	}
 	export function CreateGeoLocationDetailsFormGroup() {
 		return new FormGroup<GeoLocationDetailsFormProperties>({
-			ContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
-			ContinentName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1)]),
-			CountryCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
-			CountryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			SubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
-			SubdivisionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(2)]),
+			ContinentName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32)]),
+			CountryCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2)]),
+			CountryName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			SubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3)]),
+			SubdivisionName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -2325,7 +2323,7 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		Region?: HealthCheckObservationRegion | null;
+		Region?: HealthCheckRegion | null;
 
 		/** Max length: 45 */
 		IPAddress?: string | null;
@@ -2341,20 +2339,18 @@ export namespace MyNS {
 		 * Max length: 64
 		 * Min length: 1
 		 */
-		Region: FormControl<HealthCheckObservationRegion | null | undefined>,
+		Region: FormControl<HealthCheckRegion | null | undefined>,
 
 		/** Max length: 45 */
 		IPAddress: FormControl<string | null | undefined>,
 	}
 	export function CreateHealthCheckObservationFormGroup() {
 		return new FormGroup<HealthCheckObservationFormProperties>({
-			Region: new FormControl<HealthCheckObservationRegion | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Region: new FormControl<HealthCheckRegion | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			IPAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(45), Validators.pattern('(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)')]),
 		});
 
 	}
-
-	export enum HealthCheckObservationRegion { us_east_1 = 0, us_west_1 = 1, us_west_2 = 2, eu_west_1 = 3, ap_southeast_1 = 4, ap_southeast_2 = 5, ap_northeast_1 = 6, sa_east_1 = 7 }
 
 
 	/** A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check. */
@@ -2750,9 +2746,9 @@ export namespace MyNS {
 	export function CreateListGeoLocationsResponseFormGroup() {
 		return new FormGroup<ListGeoLocationsResponseFormProperties>({
 			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			NextContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
-			NextCountryCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
-			NextSubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			NextContinentCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(2)]),
+			NextCountryCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2)]),
+			NextSubdivisionCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(3)]),
 			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2993,7 +2989,7 @@ export namespace MyNS {
 			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			NextRecordName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			NextRecordType: new FormControl<ResourceRecordSetType | null | undefined>(undefined),
-			NextRecordIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			NextRecordIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3159,7 +3155,7 @@ export namespace MyNS {
 	export function CreateListTrafficPoliciesResponseFormGroup() {
 		return new FormGroup<ListTrafficPoliciesResponseFormProperties>({
 			IsTruncated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			TrafficPolicyIdMarker: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyIdMarker: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			MaxItems: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3235,7 +3231,7 @@ export namespace MyNS {
 	}
 	export function CreateTrafficPolicySummaryFormGroup() {
 		return new FormGroup<TrafficPolicySummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512)]),
 			Type: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
 			LatestVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
@@ -3523,7 +3519,7 @@ export namespace MyNS {
 	}
 	export function CreateTestDNSAnswerResponseFormGroup() {
 		return new FormGroup<TestDNSAnswerResponseFormProperties>({
-			Nameserver: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(0)]),
+			Nameserver: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(255)]),
 			RecordName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 			RecordType: new FormControl<ResourceRecordSetType | null | undefined>(undefined, [Validators.required]),
 			ResponseCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -3552,7 +3548,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CloudWatchRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, ca_central_1 = 4, eu_central_1 = 5, eu_west_1 = 6, eu_west_2 = 7, eu_west_3 = 8, ap_east_1 = 9, me_south_1 = 10, ap_south_1 = 11, ap_southeast_1 = 12, ap_southeast_2 = 13, ap_northeast_1 = 14, ap_northeast_2 = 15, ap_northeast_3 = 16, eu_north_1 = 17, sa_east_1 = 18, cn_northwest_1 = 19, cn_north_1 = 20, af_south_1 = 21, eu_south_1 = 22, us_gov_west_1 = 23, us_gov_east_1 = 24, us_iso_east_1 = 25, us_isob_east_1 = 26 }
+	export enum CloudWatchRegion { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'ca-central-1' = 4, 'eu-central-1' = 5, 'eu-west-1' = 6, 'eu-west-2' = 7, 'eu-west-3' = 8, 'ap-east-1' = 9, 'me-south-1' = 10, 'ap-south-1' = 11, 'ap-southeast-1' = 12, 'ap-southeast-2' = 13, 'ap-northeast-1' = 14, 'ap-northeast-2' = 15, 'ap-northeast-3' = 16, 'eu-north-1' = 17, 'sa-east-1' = 18, 'cn-northwest-1' = 19, 'cn-north-1' = 20, 'af-south-1' = 21, 'eu-south-1' = 22, 'us-gov-west-1' = 23, 'us-gov-east-1' = 24, 'us-iso-east-1' = 25, 'us-isob-east-1' = 26 }
 
 	export enum ResettableElementName { FullyQualifiedDomainName = 0, Regions = 1, ResourcePath = 2, ChildHealthChecks = 3 }
 
@@ -3770,7 +3766,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateHealthCheckRequestFormGroup() {
 		return new FormGroup<CreateHealthCheckRequestFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -3824,7 +3820,7 @@ export namespace MyNS {
 	export function CreateCreateHostedZoneRequestFormGroup() {
 		return new FormGroup<CreateHostedZoneRequestFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
-			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			DelegationSetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
 		});
 
@@ -3886,7 +3882,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateReusableDelegationSetRequestFormGroup() {
 		return new FormGroup<CreateReusableDelegationSetRequestFormProperties>({
-			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			CallerReference: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32)]),
 		});
 
@@ -3971,7 +3967,7 @@ export namespace MyNS {
 			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32)]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
 			TTL: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
-			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 		});
 
@@ -4880,7 +4876,7 @@ export namespace MyNS {
 	export function CreateUpdateTrafficPolicyInstanceRequestFormGroup() {
 		return new FormGroup<UpdateTrafficPolicyInstanceRequestFormProperties>({
 			TTL: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
-			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			TrafficPolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 			TrafficPolicyVersion: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(1000)]),
 		});
 

@@ -35,9 +35,9 @@ export namespace MyNS {
 	}
 	export function CreateCancelImageCreationResponseFormGroup() {
 		return new FormGroup<CancelImageCreationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -154,9 +154,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateComponentResponseFormGroup() {
 		return new FormGroup<CreateComponentResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			componentBuildVersionArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			componentBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -213,9 +213,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDistributionConfigurationResponseFormGroup() {
 		return new FormGroup<CreateDistributionConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -248,7 +248,7 @@ export namespace MyNS {
 	}
 	export function CreateDistributionFormGroup() {
 		return new FormGroup<DistributionFormProperties>({
-			region: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			region: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -291,8 +291,8 @@ export namespace MyNS {
 	}
 	export function CreateAmiDistributionConfigurationFormGroup() {
 		return new FormGroup<AmiDistributionConfigurationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1), Validators.pattern('^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}]+[-_A-Za-z0-9}]$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(127), Validators.pattern('^[-_A-Za-z0-9{][-_A-Za-z0-9\s:{}]+[-_A-Za-z0-9}]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -365,9 +365,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateImageResponseFormGroup() {
 		return new FormGroup<CreateImageResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -404,9 +404,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateImagePipelineResponseFormGroup() {
 		return new FormGroup<CreateImagePipelineResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -445,9 +445,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateImageRecipeResponseFormGroup() {
 		return new FormGroup<CreateImageRecipeResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
 		});
 
 	}
@@ -468,7 +468,7 @@ export namespace MyNS {
 	}
 	export function CreateComponentConfigurationFormGroup() {
 		return new FormGroup<ComponentConfigurationFormProperties>({
-			componentArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			componentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/(?:(?:(\d+|x)\.(\d+|x)\.(\d+|x))|(?:\d+\.\d+\.\d+/\d+))$')]),
 		});
 
 	}
@@ -522,9 +522,9 @@ export namespace MyNS {
 	}
 	export function CreateInstanceBlockDeviceMappingFormGroup() {
 		return new FormGroup<InstanceBlockDeviceMappingFormProperties>({
-			deviceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			virtualName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			noDevice: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(0), Validators.minLength(0)]),
+			deviceName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			virtualName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			noDevice: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(0)]),
 		});
 
 	}
@@ -596,8 +596,8 @@ export namespace MyNS {
 			encrypted: new FormControl<boolean | null | undefined>(undefined),
 			deleteOnTermination: new FormControl<boolean | null | undefined>(undefined),
 			iops: new FormControl<number | null | undefined>(undefined, [Validators.min(100), Validators.max(10000)]),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			snapshotId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			snapshotId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			volumeSize: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(16000)]),
 			volumeType: new FormControl<EbsInstanceBlockDeviceSpecificationVolumeType | null | undefined>(undefined),
 		});
@@ -638,9 +638,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateInfrastructureConfigurationResponseFormGroup() {
 		return new FormGroup<CreateInfrastructureConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -679,8 +679,8 @@ export namespace MyNS {
 	}
 	export function CreateS3LogsFormGroup() {
 		return new FormGroup<S3LogsFormProperties>({
-			s3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			s3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			s3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			s3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -705,8 +705,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteComponentResponseFormGroup() {
 		return new FormGroup<DeleteComponentResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			componentBuildVersionArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			componentBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -741,8 +741,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDistributionConfigurationResponseFormGroup() {
 		return new FormGroup<DeleteDistributionConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -767,8 +767,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteImageResponseFormGroup() {
 		return new FormGroup<DeleteImageResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -793,8 +793,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteImagePipelineResponseFormGroup() {
 		return new FormGroup<DeleteImagePipelineResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -819,8 +819,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteImageRecipeResponseFormGroup() {
 		return new FormGroup<DeleteImageRecipeResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
 		});
 
 	}
@@ -845,8 +845,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteInfrastructureConfigurationResponseFormGroup() {
 		return new FormGroup<DeleteInfrastructureConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -872,7 +872,7 @@ export namespace MyNS {
 	}
 	export function CreateGetComponentResponseFormGroup() {
 		return new FormGroup<GetComponentResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -958,16 +958,16 @@ export namespace MyNS {
 	}
 	export function CreateComponentFormGroup() {
 		return new FormGroup<ComponentFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			type: new FormControl<ComponentType | null | undefined>(undefined),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
-			owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			data: new FormControl<string | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			encrypted: new FormControl<boolean | null | undefined>(undefined),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1008,8 +1008,8 @@ export namespace MyNS {
 	}
 	export function CreateGetComponentPolicyResponseFormGroup() {
 		return new FormGroup<GetComponentPolicyResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30000), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -1045,7 +1045,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDistributionConfigurationResponseFormGroup() {
 		return new FormGroup<GetDistributionConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1096,9 +1096,9 @@ export namespace MyNS {
 	}
 	export function CreateDistributionConfigurationFormGroup() {
 		return new FormGroup<DistributionConfigurationFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			timeoutMinutes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(30), Validators.max(720)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 			dateUpdated: new FormControl<string | null | undefined>(undefined),
@@ -1127,7 +1127,7 @@ export namespace MyNS {
 	}
 	export function CreateGetImageResponseFormGroup() {
 		return new FormGroup<GetImageResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1183,13 +1183,13 @@ export namespace MyNS {
 	}
 	export function CreateImageFormGroup() {
 		return new FormGroup<ImageFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
 			osVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			sourcePipelineName: new FormControl<string | null | undefined>(undefined),
+			sourcePipelineName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
 			sourcePipelineArn: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1221,7 +1221,7 @@ export namespace MyNS {
 	export function CreateImageStateFormGroup() {
 		return new FormGroup<ImageStateFormProperties>({
 			status: new FormControl<ImageStateStatus | null | undefined>(undefined),
-			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			reason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1289,13 +1289,13 @@ export namespace MyNS {
 	}
 	export function CreateImageRecipeFormGroup() {
 		return new FormGroup<ImageRecipeFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
-			owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined),
-			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1387,14 +1387,14 @@ export namespace MyNS {
 	}
 	export function CreateInfrastructureConfigurationFormGroup() {
 		return new FormGroup<InfrastructureConfigurationFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			terminateInstanceOnFailure: new FormControl<boolean | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 			dateUpdated: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1524,10 +1524,10 @@ export namespace MyNS {
 	}
 	export function CreateAmiFormGroup() {
 		return new FormGroup<AmiFormProperties>({
-			region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			image: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			region: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			image: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1553,7 +1553,7 @@ export namespace MyNS {
 	}
 	export function CreateGetImagePipelineResponseFormGroup() {
 		return new FormGroup<GetImagePipelineResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1611,9 +1611,9 @@ export namespace MyNS {
 	}
 	export function CreateImagePipelineFormGroup() {
 		return new FormGroup<ImagePipelineFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
 			imageRecipeArn: new FormControl<string | null | undefined>(undefined),
@@ -1652,7 +1652,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleFormGroup() {
 		return new FormGroup<ScheduleFormProperties>({
-			scheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			scheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			pipelineExecutionStartCondition: new FormControl<PipelineExecutionStartCondition | null | undefined>(undefined),
 		});
 
@@ -1690,8 +1690,8 @@ export namespace MyNS {
 	}
 	export function CreateGetImagePolicyResponseFormGroup() {
 		return new FormGroup<GetImagePolicyResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30000), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -1717,7 +1717,7 @@ export namespace MyNS {
 	}
 	export function CreateGetImageRecipeResponseFormGroup() {
 		return new FormGroup<GetImageRecipeResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1752,8 +1752,8 @@ export namespace MyNS {
 	}
 	export function CreateGetImageRecipePolicyResponseFormGroup() {
 		return new FormGroup<GetImageRecipePolicyResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30000), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -1783,7 +1783,7 @@ export namespace MyNS {
 	}
 	export function CreateGetInfrastructureConfigurationResponseFormGroup() {
 		return new FormGroup<GetInfrastructureConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1820,9 +1820,9 @@ export namespace MyNS {
 	}
 	export function CreateImportComponentResponseFormGroup() {
 		return new FormGroup<ImportComponentResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			componentBuildVersionArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			componentBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -1858,8 +1858,8 @@ export namespace MyNS {
 	}
 	export function CreateListComponentBuildVersionsResponseFormGroup() {
 		return new FormGroup<ListComponentBuildVersionsResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1929,14 +1929,14 @@ export namespace MyNS {
 	}
 	export function CreateComponentSummaryFormGroup() {
 		return new FormGroup<ComponentSummaryFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
 			type: new FormControl<ComponentType | null | undefined>(undefined),
-			owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1983,8 +1983,8 @@ export namespace MyNS {
 	}
 	export function CreateListComponentsResponseFormGroup() {
 		return new FormGroup<ListComponentsResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2041,13 +2041,13 @@ export namespace MyNS {
 	}
 	export function CreateComponentVersionFormGroup() {
 		return new FormGroup<ComponentVersionFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
 			type: new FormControl<ComponentType | null | undefined>(undefined),
-			owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2071,7 +2071,7 @@ export namespace MyNS {
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z]{1,1024}$')]),
 		});
 
 	}
@@ -2107,8 +2107,8 @@ export namespace MyNS {
 	}
 	export function CreateListDistributionConfigurationsResponseFormGroup() {
 		return new FormGroup<ListDistributionConfigurationsResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2144,9 +2144,9 @@ export namespace MyNS {
 	}
 	export function CreateDistributionConfigurationSummaryFormGroup() {
 		return new FormGroup<DistributionConfigurationSummaryFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 			dateUpdated: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2184,8 +2184,8 @@ export namespace MyNS {
 	}
 	export function CreateListImageBuildVersionsResponseFormGroup() {
 		return new FormGroup<ListImageBuildVersionsResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2235,12 +2235,12 @@ export namespace MyNS {
 	}
 	export function CreateImageSummaryFormGroup() {
 		return new FormGroup<ImageSummaryFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
 			osVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2277,8 +2277,8 @@ export namespace MyNS {
 	}
 	export function CreateListImagePipelineImagesResponseFormGroup() {
 		return new FormGroup<ListImagePipelineImagesResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2314,8 +2314,8 @@ export namespace MyNS {
 	}
 	export function CreateListImagePipelinesResponseFormGroup() {
 		return new FormGroup<ListImagePipelinesResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2351,8 +2351,8 @@ export namespace MyNS {
 	}
 	export function CreateListImageRecipesResponseFormGroup() {
 		return new FormGroup<ListImageRecipesResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2400,11 +2400,11 @@ export namespace MyNS {
 	}
 	export function CreateImageRecipeSummaryFormGroup() {
 		return new FormGroup<ImageRecipeSummaryFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
-			owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2441,8 +2441,8 @@ export namespace MyNS {
 	}
 	export function CreateListImagesResponseFormGroup() {
 		return new FormGroup<ListImagesResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2485,12 +2485,12 @@ export namespace MyNS {
 	}
 	export function CreateImageVersionFormGroup() {
 		return new FormGroup<ImageVersionFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined),
 			osVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			owner: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2527,8 +2527,8 @@ export namespace MyNS {
 	}
 	export function CreateListInfrastructureConfigurationsResponseFormGroup() {
 		return new FormGroup<ListInfrastructureConfigurationsResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2564,9 +2564,9 @@ export namespace MyNS {
 	}
 	export function CreateInfrastructureConfigurationSummaryFormGroup() {
 		return new FormGroup<InfrastructureConfigurationSummaryFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			dateCreated: new FormControl<string | null | undefined>(undefined),
 			dateUpdated: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2614,8 +2614,8 @@ export namespace MyNS {
 	}
 	export function CreatePutComponentPolicyResponseFormGroup() {
 		return new FormGroup<PutComponentPolicyResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			componentArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			componentArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -2650,8 +2650,8 @@ export namespace MyNS {
 	}
 	export function CreatePutImagePolicyResponseFormGroup() {
 		return new FormGroup<PutImagePolicyResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -2676,8 +2676,8 @@ export namespace MyNS {
 	}
 	export function CreatePutImageRecipePolicyResponseFormGroup() {
 		return new FormGroup<PutImageRecipePolicyResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
 		});
 
 	}
@@ -2714,9 +2714,9 @@ export namespace MyNS {
 	}
 	export function CreateStartImagePipelineExecutionResponseFormGroup() {
 		return new FormGroup<StartImagePipelineExecutionResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
 		});
 
 	}
@@ -2773,9 +2773,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDistributionConfigurationResponseFormGroup() {
 		return new FormGroup<UpdateDistributionConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -2812,9 +2812,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateImagePipelineResponseFormGroup() {
 		return new FormGroup<UpdateImagePipelineResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -2851,9 +2851,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateInfrastructureConfigurationResponseFormGroup() {
 		return new FormGroup<UpdateInfrastructureConfigurationResponseFormProperties>({
-			requestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(1)]),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			requestId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(36)]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
 		});
 
 	}
@@ -2884,8 +2884,8 @@ export namespace MyNS {
 	}
 	export function CreateCancelImageCreationRequestFormGroup() {
 		return new FormGroup<CancelImageCreationRequestFormProperties>({
-			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -2989,15 +2989,15 @@ export namespace MyNS {
 	}
 	export function CreateCreateComponentRequestFormGroup() {
 		return new FormGroup<CreateComponentRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined, [Validators.required]),
-			data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16000), Validators.minLength(1)]),
+			data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(16000)]),
 			uri: new FormControl<string | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -3044,9 +3044,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDistributionConfigurationRequestFormGroup() {
 		return new FormGroup<CreateDistributionConfigurationRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -3116,14 +3116,14 @@ export namespace MyNS {
 	}
 	export function CreateCreateImagePipelineRequestFormGroup() {
 		return new FormGroup<CreateImagePipelineRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
 			status: new FormControl<ImagePipelineStatus | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -3194,11 +3194,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateImageRecipeRequestFormGroup() {
 		return new FormGroup<CreateImageRecipeRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -3243,11 +3243,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateImageRequestFormGroup() {
 		return new FormGroup<CreateImageRequestFormProperties>({
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -3338,14 +3338,14 @@ export namespace MyNS {
 	}
 	export function CreateCreateInfrastructureConfigurationRequestFormGroup() {
 		return new FormGroup<CreateInfrastructureConfigurationRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			terminateInstanceOnFailure: new FormControl<boolean | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -3609,17 +3609,17 @@ export namespace MyNS {
 	}
 	export function CreateImportComponentRequestFormGroup() {
 		return new FormGroup<ImportComponentRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			type: new FormControl<ComponentType | null | undefined>(undefined, [Validators.required]),
 			format: new FormControl<ComponentFormat | null | undefined>(undefined, [Validators.required]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined, [Validators.required]),
-			data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			uri: new FormControl<string | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -3660,9 +3660,9 @@ export namespace MyNS {
 	}
 	export function CreateListComponentBuildVersionsRequestFormGroup() {
 		return new FormGroup<ListComponentBuildVersionsRequestFormProperties>({
-			componentVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			componentVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3709,7 +3709,7 @@ export namespace MyNS {
 		return new FormGroup<ListComponentsRequestFormProperties>({
 			owner: new FormControl<Ownership | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3751,7 +3751,7 @@ export namespace MyNS {
 	export function CreateListDistributionConfigurationsRequestFormGroup() {
 		return new FormGroup<ListDistributionConfigurationsRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3798,9 +3798,9 @@ export namespace MyNS {
 	}
 	export function CreateListImageBuildVersionsRequestFormGroup() {
 		return new FormGroup<ListImageBuildVersionsRequestFormProperties>({
-			imageVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			imageVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3847,9 +3847,9 @@ export namespace MyNS {
 	}
 	export function CreateListImagePipelineImagesRequestFormGroup() {
 		return new FormGroup<ListImagePipelineImagesRequestFormProperties>({
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3891,7 +3891,7 @@ export namespace MyNS {
 	export function CreateListImagePipelinesRequestFormGroup() {
 		return new FormGroup<ListImagePipelinesRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3936,7 +3936,7 @@ export namespace MyNS {
 		return new FormGroup<ListImageRecipesRequestFormProperties>({
 			owner: new FormControl<Ownership | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3981,7 +3981,7 @@ export namespace MyNS {
 		return new FormGroup<ListImagesRequestFormProperties>({
 			owner: new FormControl<Ownership | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -4023,7 +4023,7 @@ export namespace MyNS {
 	export function CreateListInfrastructureConfigurationsRequestFormGroup() {
 		return new FormGroup<ListInfrastructureConfigurationsRequestFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -4064,8 +4064,8 @@ export namespace MyNS {
 	}
 	export function CreatePutComponentPolicyRequestFormGroup() {
 		return new FormGroup<PutComponentPolicyRequestFormProperties>({
-			componentArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30000), Validators.minLength(1)]),
+			componentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -4096,8 +4096,8 @@ export namespace MyNS {
 	}
 	export function CreatePutImagePolicyRequestFormGroup() {
 		return new FormGroup<PutImagePolicyRequestFormProperties>({
-			imageArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30000), Validators.minLength(1)]),
+			imageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -4128,8 +4128,8 @@ export namespace MyNS {
 	}
 	export function CreatePutImageRecipePolicyRequestFormGroup() {
 		return new FormGroup<PutImageRecipePolicyRequestFormProperties>({
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30000), Validators.minLength(1)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -4160,8 +4160,8 @@ export namespace MyNS {
 	}
 	export function CreateStartImagePipelineExecutionRequestFormGroup() {
 		return new FormGroup<StartImagePipelineExecutionRequestFormProperties>({
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -4230,9 +4230,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDistributionConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateDistributionConfigurationRequestFormProperties>({
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -4299,14 +4299,14 @@ export namespace MyNS {
 	}
 	export function CreateUpdateImagePipelineRequestFormGroup() {
 		return new FormGroup<UpdateImagePipelineRequestFormProperties>({
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
 			status: new FormControl<ImagePipelineStatus | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -4396,14 +4396,14 @@ export namespace MyNS {
 	}
 	export function CreateUpdateInfrastructureConfigurationRequestFormGroup() {
 		return new FormGroup<UpdateInfrastructureConfigurationRequestFormProperties>({
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			terminateInstanceOnFailure: new FormControl<boolean | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -4863,8 +4863,8 @@ export namespace MyNS {
 	}
 	export function CreateCancelImageCreationPutBodyFormGroup() {
 		return new FormGroup<CancelImageCreationPutBodyFormProperties>({
-			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			imageBuildVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5002,16 +5002,16 @@ export namespace MyNS {
 	}
 	export function CreateCreateComponentPutBodyFormGroup() {
 		return new FormGroup<CreateComponentPutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined, [Validators.required]),
-			data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(16000), Validators.minLength(1)]),
+			data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(16000)]),
 			uri: new FormControl<string | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5076,10 +5076,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateDistributionConfigurationPutBodyFormGroup() {
 		return new FormGroup<CreateDistributionConfigurationPutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5151,12 +5151,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateImagePutBodyFormGroup() {
 		return new FormGroup<CreateImagePutBodyFormProperties>({
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5289,15 +5289,15 @@ export namespace MyNS {
 	}
 	export function CreateCreateImagePipelinePutBodyFormGroup() {
 		return new FormGroup<CreateImagePipelinePutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
 			status: new FormControl<ImagePipelineStatus | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5348,7 +5348,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateImagePipelinePutBodyScheduleFormGroup() {
 		return new FormGroup<CreateImagePipelinePutBodyScheduleFormProperties>({
-			scheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			scheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			pipelineExecutionStartCondition: new FormControl<PipelineExecutionStartCondition | null | undefined>(undefined),
 		});
 
@@ -5446,12 +5446,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateImageRecipePutBodyFormGroup() {
 		return new FormGroup<CreateImageRecipePutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			parentImage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5575,15 +5575,15 @@ export namespace MyNS {
 	}
 	export function CreateCreateInfrastructureConfigurationPutBodyFormGroup() {
 		return new FormGroup<CreateInfrastructureConfigurationPutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			terminateInstanceOnFailure: new FormControl<boolean | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5751,18 +5751,18 @@ export namespace MyNS {
 	}
 	export function CreateImportComponentPutBodyFormGroup() {
 		return new FormGroup<ImportComponentPutBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$')]),
+			semanticVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+\.[0-9]+\.[0-9]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			changeDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			type: new FormControl<ComponentType | null | undefined>(undefined, [Validators.required]),
 			format: new FormControl<ComponentFormat | null | undefined>(undefined, [Validators.required]),
 			platform: new FormControl<ComponentPlatform | null | undefined>(undefined, [Validators.required]),
-			data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			uri: new FormControl<string | null | undefined>(undefined),
-			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -5813,9 +5813,9 @@ export namespace MyNS {
 	}
 	export function CreateListComponentBuildVersionsPostBodyFormGroup() {
 		return new FormGroup<ListComponentBuildVersionsPostBodyFormProperties>({
-			componentVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			componentVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -5869,7 +5869,7 @@ export namespace MyNS {
 		return new FormGroup<ListComponentsPostBodyFormProperties>({
 			owner: new FormControl<Ownership | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -5916,7 +5916,7 @@ export namespace MyNS {
 	export function CreateListDistributionConfigurationsPostBodyFormGroup() {
 		return new FormGroup<ListDistributionConfigurationsPostBodyFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -5974,9 +5974,9 @@ export namespace MyNS {
 	}
 	export function CreateListImageBuildVersionsPostBodyFormGroup() {
 		return new FormGroup<ListImageBuildVersionsPostBodyFormProperties>({
-			imageVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			imageVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -6034,9 +6034,9 @@ export namespace MyNS {
 	}
 	export function CreateListImagePipelineImagesPostBodyFormGroup() {
 		return new FormGroup<ListImagePipelineImagesPostBodyFormProperties>({
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -6083,7 +6083,7 @@ export namespace MyNS {
 	export function CreateListImagePipelinesPostBodyFormGroup() {
 		return new FormGroup<ListImagePipelinesPostBodyFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -6137,7 +6137,7 @@ export namespace MyNS {
 		return new FormGroup<ListImageRecipesPostBodyFormProperties>({
 			owner: new FormControl<Ownership | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -6191,7 +6191,7 @@ export namespace MyNS {
 		return new FormGroup<ListImagesPostBodyFormProperties>({
 			owner: new FormControl<Ownership | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -6238,7 +6238,7 @@ export namespace MyNS {
 	export function CreateListInfrastructureConfigurationsPostBodyFormGroup() {
 		return new FormGroup<ListInfrastructureConfigurationsPostBodyFormProperties>({
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -6300,8 +6300,8 @@ export namespace MyNS {
 	}
 	export function CreatePutComponentPolicyPutBodyFormGroup() {
 		return new FormGroup<PutComponentPolicyPutBodyFormProperties>({
-			componentArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30000), Validators.minLength(1)]),
+			componentArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):component/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -6340,8 +6340,8 @@ export namespace MyNS {
 	}
 	export function CreatePutImagePolicyPutBodyFormGroup() {
 		return new FormGroup<PutImagePolicyPutBodyFormProperties>({
-			imageArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30000), Validators.minLength(1)]),
+			imageArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image/[a-z0-9-_]+/\d+\.\d+\.\d+/\d+$')]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -6380,8 +6380,8 @@ export namespace MyNS {
 	}
 	export function CreatePutImageRecipePolicyPutBodyFormGroup() {
 		return new FormGroup<PutImageRecipePolicyPutBodyFormProperties>({
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30000), Validators.minLength(1)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(30000)]),
 		});
 
 	}
@@ -6420,8 +6420,8 @@ export namespace MyNS {
 	}
 	export function CreateStartImagePipelineExecutionPutBodyFormGroup() {
 		return new FormGroup<StartImagePipelineExecutionPutBodyFormProperties>({
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -6480,9 +6480,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDistributionConfigurationPutBodyFormGroup() {
 		return new FormGroup<UpdateDistributionConfigurationPutBodyFormProperties>({
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -6583,14 +6583,14 @@ export namespace MyNS {
 	}
 	export function CreateUpdateImagePipelinePutBodyFormGroup() {
 		return new FormGroup<UpdateImagePipelinePutBodyFormProperties>({
-			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			imagePipelineArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-pipeline/[a-z0-9-_]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			imageRecipeArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):image-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$')]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
+			distributionConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$')]),
 			enhancedImageMetadataEnabled: new FormControl<boolean | null | undefined>(undefined),
 			status: new FormControl<ImagePipelineStatus | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}
@@ -6641,7 +6641,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateImagePipelinePutBodyScheduleFormGroup() {
 		return new FormGroup<UpdateImagePipelinePutBodyScheduleFormProperties>({
-			scheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			scheduleExpression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			pipelineExecutionStartCondition: new FormControl<PipelineExecutionStartCondition | null | undefined>(undefined),
 		});
 
@@ -6760,14 +6760,14 @@ export namespace MyNS {
 	}
 	export function CreateUpdateInfrastructureConfigurationPutBodyFormGroup() {
 		return new FormGroup<UpdateInfrastructureConfigurationPutBodyFormProperties>({
-			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			infrastructureConfigurationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):infrastructure-configuration/[a-z0-9-_]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			instanceProfileName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			keyPair: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			terminateInstanceOnFailure: new FormControl<boolean | null | undefined>(undefined),
-			snsTopicArn: new FormControl<string | null | undefined>(undefined),
-			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(1)]),
+			snsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws[^:]*:sns:[^:]+:\d{12}:[a-zA-Z0-9-_]{1,256}$')]),
+			clientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(36)]),
 		});
 
 	}

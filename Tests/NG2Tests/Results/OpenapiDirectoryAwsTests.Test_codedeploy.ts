@@ -138,7 +138,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchGetApplicationRevisionsOutputFormGroup() {
 		return new FormGroup<BatchGetApplicationRevisionsOutputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -340,7 +340,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchGetApplicationRevisionsInputFormGroup() {
 		return new FormGroup<BatchGetApplicationRevisionsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -453,7 +453,7 @@ export namespace MyNS {
 	export function CreateApplicationInfoFormGroup() {
 		return new FormGroup<ApplicationInfoFormProperties>({
 			applicationId: new FormControl<string | null | undefined>(undefined),
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			createTime: new FormControl<Date | null | undefined>(undefined),
 			linkedToGitHub: new FormControl<boolean | null | undefined>(undefined),
 			gitHubAccountName: new FormControl<string | null | undefined>(undefined),
@@ -586,10 +586,10 @@ export namespace MyNS {
 	}
 	export function CreateDeploymentGroupInfoFormGroup() {
 		return new FormGroup<DeploymentGroupInfoFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			deploymentGroupId: new FormControl<string | null | undefined>(undefined),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
@@ -1047,7 +1047,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchGetDeploymentGroupsInputFormGroup() {
 		return new FormGroup<BatchGetDeploymentGroupsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -1708,9 +1708,9 @@ export namespace MyNS {
 	}
 	export function CreateDeploymentInfoFormGroup() {
 		return new FormGroup<DeploymentInfoFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			deploymentId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<LastDeploymentInfoStatus | null | undefined>(undefined),
 			createTime: new FormControl<Date | null | undefined>(undefined),
@@ -2023,7 +2023,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateApplicationInputFormGroup() {
 		return new FormGroup<CreateApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
 
@@ -2141,9 +2141,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDeploymentInputFormGroup() {
 		return new FormGroup<CreateDeploymentInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			description: new FormControl<string | null | undefined>(undefined),
 			ignoreApplicationStopFailures: new FormControl<boolean | null | undefined>(undefined),
 			updateOutdatedInstancesOnly: new FormControl<boolean | null | undefined>(undefined),
@@ -2361,7 +2361,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDeploymentConfigInputFormGroup() {
 		return new FormGroup<CreateDeploymentConfigInputFormProperties>({
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
 
@@ -2594,9 +2594,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDeploymentGroupInputFormGroup() {
 		return new FormGroup<CreateDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2806,7 +2806,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteApplicationInputFormGroup() {
 		return new FormGroup<DeleteApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -2835,7 +2835,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDeploymentConfigInputFormGroup() {
 		return new FormGroup<DeleteDeploymentConfigInputFormProperties>({
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -2913,8 +2913,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDeploymentGroupInputFormGroup() {
 		return new FormGroup<DeleteDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -3088,7 +3088,7 @@ export namespace MyNS {
 	}
 	export function CreateGetApplicationInputFormGroup() {
 		return new FormGroup<GetApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -3121,7 +3121,7 @@ export namespace MyNS {
 	}
 	export function CreateGetApplicationRevisionOutputFormGroup() {
 		return new FormGroup<GetApplicationRevisionOutputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -3156,7 +3156,7 @@ export namespace MyNS {
 	}
 	export function CreateGetApplicationRevisionInputFormGroup() {
 		return new FormGroup<GetApplicationRevisionInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -3251,7 +3251,7 @@ export namespace MyNS {
 	export function CreateDeploymentConfigInfoFormGroup() {
 		return new FormGroup<DeploymentConfigInfoFormProperties>({
 			deploymentConfigId: new FormControl<string | null | undefined>(undefined),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			createTime: new FormControl<Date | null | undefined>(undefined),
 			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
 		});
@@ -3282,7 +3282,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDeploymentConfigInputFormGroup() {
 		return new FormGroup<GetDeploymentConfigInputFormProperties>({
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -3342,8 +3342,8 @@ export namespace MyNS {
 	}
 	export function CreateGetDeploymentGroupInputFormGroup() {
 		return new FormGroup<GetDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -3514,7 +3514,7 @@ export namespace MyNS {
 	}
 	export function CreateListApplicationRevisionsInputFormGroup() {
 		return new FormGroup<ListApplicationRevisionsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 			sortBy: new FormControl<ListApplicationRevisionsInputSortBy | null | undefined>(undefined),
 			sortOrder: new FormControl<ListApplicationRevisionsInputSortOrder | null | undefined>(undefined),
 			s3Bucket: new FormControl<string | null | undefined>(undefined),
@@ -3696,7 +3696,7 @@ export namespace MyNS {
 	}
 	export function CreateListDeploymentGroupsOutputFormGroup() {
 		return new FormGroup<ListDeploymentGroupsOutputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3728,7 +3728,7 @@ export namespace MyNS {
 	}
 	export function CreateListDeploymentGroupsInputFormGroup() {
 		return new FormGroup<ListDeploymentGroupsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3925,8 +3925,8 @@ export namespace MyNS {
 	}
 	export function CreateListDeploymentsInputFormGroup() {
 		return new FormGroup<ListDeploymentsInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			externalId: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4107,7 +4107,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4237,7 +4237,7 @@ export namespace MyNS {
 	}
 	export function CreateRegisterApplicationRevisionInputFormGroup() {
 		return new FormGroup<RegisterApplicationRevisionInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 			description: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4462,7 +4462,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -4500,7 +4500,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -4539,8 +4539,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateApplicationInputFormGroup() {
 		return new FormGroup<UpdateApplicationInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			newApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			newApplicationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -4650,10 +4650,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDeploymentGroupInputFormGroup() {
 		return new FormGroup<UpdateDeploymentGroupInputFormProperties>({
-			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			currentDeploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			newDeploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			applicationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			currentDeploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			newDeploymentGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5142,99 +5142,99 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToOnPremisesInstancesX_Amz_Target { CodeDeploy_20141006_AddTagsToOnPremisesInstances = 0 }
+	export enum AddTagsToOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.AddTagsToOnPremisesInstances' = 0 }
 
-	export enum BatchGetApplicationRevisionsX_Amz_Target { CodeDeploy_20141006_BatchGetApplicationRevisions = 0 }
+	export enum BatchGetApplicationRevisionsX_Amz_Target { 'CodeDeploy_20141006.BatchGetApplicationRevisions' = 0 }
 
-	export enum BatchGetApplicationsX_Amz_Target { CodeDeploy_20141006_BatchGetApplications = 0 }
+	export enum BatchGetApplicationsX_Amz_Target { 'CodeDeploy_20141006.BatchGetApplications' = 0 }
 
-	export enum BatchGetDeploymentGroupsX_Amz_Target { CodeDeploy_20141006_BatchGetDeploymentGroups = 0 }
+	export enum BatchGetDeploymentGroupsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentGroups' = 0 }
 
-	export enum BatchGetDeploymentInstancesX_Amz_Target { CodeDeploy_20141006_BatchGetDeploymentInstances = 0 }
+	export enum BatchGetDeploymentInstancesX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentInstances' = 0 }
 
-	export enum BatchGetDeploymentTargetsX_Amz_Target { CodeDeploy_20141006_BatchGetDeploymentTargets = 0 }
+	export enum BatchGetDeploymentTargetsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeploymentTargets' = 0 }
 
-	export enum BatchGetDeploymentsX_Amz_Target { CodeDeploy_20141006_BatchGetDeployments = 0 }
+	export enum BatchGetDeploymentsX_Amz_Target { 'CodeDeploy_20141006.BatchGetDeployments' = 0 }
 
-	export enum BatchGetOnPremisesInstancesX_Amz_Target { CodeDeploy_20141006_BatchGetOnPremisesInstances = 0 }
+	export enum BatchGetOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.BatchGetOnPremisesInstances' = 0 }
 
-	export enum ContinueDeploymentX_Amz_Target { CodeDeploy_20141006_ContinueDeployment = 0 }
+	export enum ContinueDeploymentX_Amz_Target { 'CodeDeploy_20141006.ContinueDeployment' = 0 }
 
-	export enum CreateApplicationX_Amz_Target { CodeDeploy_20141006_CreateApplication = 0 }
+	export enum CreateApplicationX_Amz_Target { 'CodeDeploy_20141006.CreateApplication' = 0 }
 
-	export enum CreateDeploymentX_Amz_Target { CodeDeploy_20141006_CreateDeployment = 0 }
+	export enum CreateDeploymentX_Amz_Target { 'CodeDeploy_20141006.CreateDeployment' = 0 }
 
-	export enum CreateDeploymentConfigX_Amz_Target { CodeDeploy_20141006_CreateDeploymentConfig = 0 }
+	export enum CreateDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.CreateDeploymentConfig' = 0 }
 
-	export enum CreateDeploymentGroupX_Amz_Target { CodeDeploy_20141006_CreateDeploymentGroup = 0 }
+	export enum CreateDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.CreateDeploymentGroup' = 0 }
 
-	export enum DeleteApplicationX_Amz_Target { CodeDeploy_20141006_DeleteApplication = 0 }
+	export enum DeleteApplicationX_Amz_Target { 'CodeDeploy_20141006.DeleteApplication' = 0 }
 
-	export enum DeleteDeploymentConfigX_Amz_Target { CodeDeploy_20141006_DeleteDeploymentConfig = 0 }
+	export enum DeleteDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.DeleteDeploymentConfig' = 0 }
 
-	export enum DeleteDeploymentGroupX_Amz_Target { CodeDeploy_20141006_DeleteDeploymentGroup = 0 }
+	export enum DeleteDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.DeleteDeploymentGroup' = 0 }
 
-	export enum DeleteGitHubAccountTokenX_Amz_Target { CodeDeploy_20141006_DeleteGitHubAccountToken = 0 }
+	export enum DeleteGitHubAccountTokenX_Amz_Target { 'CodeDeploy_20141006.DeleteGitHubAccountToken' = 0 }
 
-	export enum DeleteResourcesByExternalIdX_Amz_Target { CodeDeploy_20141006_DeleteResourcesByExternalId = 0 }
+	export enum DeleteResourcesByExternalIdX_Amz_Target { 'CodeDeploy_20141006.DeleteResourcesByExternalId' = 0 }
 
-	export enum DeregisterOnPremisesInstanceX_Amz_Target { CodeDeploy_20141006_DeregisterOnPremisesInstance = 0 }
+	export enum DeregisterOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.DeregisterOnPremisesInstance' = 0 }
 
-	export enum GetApplicationX_Amz_Target { CodeDeploy_20141006_GetApplication = 0 }
+	export enum GetApplicationX_Amz_Target { 'CodeDeploy_20141006.GetApplication' = 0 }
 
-	export enum GetApplicationRevisionX_Amz_Target { CodeDeploy_20141006_GetApplicationRevision = 0 }
+	export enum GetApplicationRevisionX_Amz_Target { 'CodeDeploy_20141006.GetApplicationRevision' = 0 }
 
-	export enum GetDeploymentX_Amz_Target { CodeDeploy_20141006_GetDeployment = 0 }
+	export enum GetDeploymentX_Amz_Target { 'CodeDeploy_20141006.GetDeployment' = 0 }
 
-	export enum GetDeploymentConfigX_Amz_Target { CodeDeploy_20141006_GetDeploymentConfig = 0 }
+	export enum GetDeploymentConfigX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentConfig' = 0 }
 
-	export enum GetDeploymentGroupX_Amz_Target { CodeDeploy_20141006_GetDeploymentGroup = 0 }
+	export enum GetDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentGroup' = 0 }
 
-	export enum GetDeploymentInstanceX_Amz_Target { CodeDeploy_20141006_GetDeploymentInstance = 0 }
+	export enum GetDeploymentInstanceX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentInstance' = 0 }
 
-	export enum GetDeploymentTargetX_Amz_Target { CodeDeploy_20141006_GetDeploymentTarget = 0 }
+	export enum GetDeploymentTargetX_Amz_Target { 'CodeDeploy_20141006.GetDeploymentTarget' = 0 }
 
-	export enum GetOnPremisesInstanceX_Amz_Target { CodeDeploy_20141006_GetOnPremisesInstance = 0 }
+	export enum GetOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.GetOnPremisesInstance' = 0 }
 
-	export enum ListApplicationRevisionsX_Amz_Target { CodeDeploy_20141006_ListApplicationRevisions = 0 }
+	export enum ListApplicationRevisionsX_Amz_Target { 'CodeDeploy_20141006.ListApplicationRevisions' = 0 }
 
-	export enum ListApplicationsX_Amz_Target { CodeDeploy_20141006_ListApplications = 0 }
+	export enum ListApplicationsX_Amz_Target { 'CodeDeploy_20141006.ListApplications' = 0 }
 
-	export enum ListDeploymentConfigsX_Amz_Target { CodeDeploy_20141006_ListDeploymentConfigs = 0 }
+	export enum ListDeploymentConfigsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentConfigs' = 0 }
 
-	export enum ListDeploymentGroupsX_Amz_Target { CodeDeploy_20141006_ListDeploymentGroups = 0 }
+	export enum ListDeploymentGroupsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentGroups' = 0 }
 
-	export enum ListDeploymentInstancesX_Amz_Target { CodeDeploy_20141006_ListDeploymentInstances = 0 }
+	export enum ListDeploymentInstancesX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentInstances' = 0 }
 
-	export enum ListDeploymentTargetsX_Amz_Target { CodeDeploy_20141006_ListDeploymentTargets = 0 }
+	export enum ListDeploymentTargetsX_Amz_Target { 'CodeDeploy_20141006.ListDeploymentTargets' = 0 }
 
-	export enum ListDeploymentsX_Amz_Target { CodeDeploy_20141006_ListDeployments = 0 }
+	export enum ListDeploymentsX_Amz_Target { 'CodeDeploy_20141006.ListDeployments' = 0 }
 
-	export enum ListGitHubAccountTokenNamesX_Amz_Target { CodeDeploy_20141006_ListGitHubAccountTokenNames = 0 }
+	export enum ListGitHubAccountTokenNamesX_Amz_Target { 'CodeDeploy_20141006.ListGitHubAccountTokenNames' = 0 }
 
-	export enum ListOnPremisesInstancesX_Amz_Target { CodeDeploy_20141006_ListOnPremisesInstances = 0 }
+	export enum ListOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.ListOnPremisesInstances' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { CodeDeploy_20141006_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'CodeDeploy_20141006.ListTagsForResource' = 0 }
 
-	export enum PutLifecycleEventHookExecutionStatusX_Amz_Target { CodeDeploy_20141006_PutLifecycleEventHookExecutionStatus = 0 }
+	export enum PutLifecycleEventHookExecutionStatusX_Amz_Target { 'CodeDeploy_20141006.PutLifecycleEventHookExecutionStatus' = 0 }
 
-	export enum RegisterApplicationRevisionX_Amz_Target { CodeDeploy_20141006_RegisterApplicationRevision = 0 }
+	export enum RegisterApplicationRevisionX_Amz_Target { 'CodeDeploy_20141006.RegisterApplicationRevision' = 0 }
 
-	export enum RegisterOnPremisesInstanceX_Amz_Target { CodeDeploy_20141006_RegisterOnPremisesInstance = 0 }
+	export enum RegisterOnPremisesInstanceX_Amz_Target { 'CodeDeploy_20141006.RegisterOnPremisesInstance' = 0 }
 
-	export enum RemoveTagsFromOnPremisesInstancesX_Amz_Target { CodeDeploy_20141006_RemoveTagsFromOnPremisesInstances = 0 }
+	export enum RemoveTagsFromOnPremisesInstancesX_Amz_Target { 'CodeDeploy_20141006.RemoveTagsFromOnPremisesInstances' = 0 }
 
-	export enum SkipWaitTimeForInstanceTerminationX_Amz_Target { CodeDeploy_20141006_SkipWaitTimeForInstanceTermination = 0 }
+	export enum SkipWaitTimeForInstanceTerminationX_Amz_Target { 'CodeDeploy_20141006.SkipWaitTimeForInstanceTermination' = 0 }
 
-	export enum StopDeploymentX_Amz_Target { CodeDeploy_20141006_StopDeployment = 0 }
+	export enum StopDeploymentX_Amz_Target { 'CodeDeploy_20141006.StopDeployment' = 0 }
 
-	export enum TagResourceX_Amz_Target { CodeDeploy_20141006_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'CodeDeploy_20141006.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { CodeDeploy_20141006_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'CodeDeploy_20141006.UntagResource' = 0 }
 
-	export enum UpdateApplicationX_Amz_Target { CodeDeploy_20141006_UpdateApplication = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'CodeDeploy_20141006.UpdateApplication' = 0 }
 
-	export enum UpdateDeploymentGroupX_Amz_Target { CodeDeploy_20141006_UpdateDeploymentGroup = 0 }
+	export enum UpdateDeploymentGroupX_Amz_Target { 'CodeDeploy_20141006.UpdateDeploymentGroup' = 0 }
 
 }
 

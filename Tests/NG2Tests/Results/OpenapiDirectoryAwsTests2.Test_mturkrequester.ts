@@ -107,7 +107,7 @@ export namespace MyNS {
 	}
 	export function CreateApproveAssignmentRequestFormGroup() {
 		return new FormGroup<ApproveAssignmentRequestFormProperties>({
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			RequesterFeedback: new FormControl<string | null | undefined>(undefined),
 			OverrideRejection: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -162,8 +162,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateQualificationWithWorkerRequestFormGroup() {
 		return new FormGroup<AssociateQualificationWithWorkerRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 			IntegerValue: new FormControl<number | null | undefined>(undefined),
 			SendNotification: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -218,9 +218,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAdditionalAssignmentsForHITRequestFormGroup() {
 		return new FormGroup<CreateAdditionalAssignmentsForHITRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			NumberOfAdditionalAssignments: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -333,10 +333,10 @@ export namespace MyNS {
 	}
 	export function CreateHITFormGroup() {
 		return new FormGroup<HITFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			HITGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			HITLayoutId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			HITGroupId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			HITLayoutId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			Title: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
@@ -344,7 +344,7 @@ export namespace MyNS {
 			Keywords: new FormControl<string | null | undefined>(undefined),
 			HITStatus: new FormControl<HITHITStatus | null | undefined>(undefined),
 			MaxAssignments: new FormControl<number | null | undefined>(undefined),
-			Reward: new FormControl<string | null | undefined>(undefined),
+			Reward: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+(\.)?[0-9]{0,2}$')]),
 			AutoApprovalDelayInSeconds: new FormControl<number | null | undefined>(undefined),
 			Expiration: new FormControl<Date | null | undefined>(undefined),
 			AssignmentDurationInSeconds: new FormControl<number | null | undefined>(undefined),
@@ -433,8 +433,8 @@ export namespace MyNS {
 	}
 	export function CreateLocaleFormGroup() {
 		return new FormGroup<LocaleFormProperties>({
-			Country: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2), Validators.minLength(2)]),
-			Subdivision: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			Country: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(2)]),
+			Subdivision: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(2)]),
 		});
 
 	}
@@ -531,14 +531,14 @@ export namespace MyNS {
 			AutoApprovalDelayInSeconds: new FormControl<number | null | undefined>(undefined),
 			LifetimeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			AssignmentDurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			Reward: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Reward: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+(\.)?[0-9]{0,2}$')]),
 			Title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Keywords: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Question: new FormControl<string | null | undefined>(undefined),
 			RequesterAnnotation: new FormControl<string | null | undefined>(undefined),
-			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			HITLayoutId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			HITLayoutId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -648,7 +648,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateHITTypeResponseFormGroup() {
 		return new FormGroup<CreateHITTypeResponseFormProperties>({
-			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -696,7 +696,7 @@ export namespace MyNS {
 		return new FormGroup<CreateHITTypeRequestFormProperties>({
 			AutoApprovalDelayInSeconds: new FormControl<number | null | undefined>(undefined),
 			AssignmentDurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			Reward: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Reward: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+(\.)?[0-9]{0,2}$')]),
 			Title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Keywords: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -780,13 +780,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateHITWithHITTypeRequestFormGroup() {
 		return new FormGroup<CreateHITWithHITTypeRequestFormProperties>({
-			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			MaxAssignments: new FormControl<number | null | undefined>(undefined),
 			LifetimeInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Question: new FormControl<string | null | undefined>(undefined),
 			RequesterAnnotation: new FormControl<string | null | undefined>(undefined),
-			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			HITLayoutId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			HITLayoutId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -850,7 +850,7 @@ export namespace MyNS {
 	}
 	export function CreateQualificationTypeFormGroup() {
 		return new FormGroup<QualificationTypeFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined),
@@ -957,7 +957,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateWorkerBlockRequestFormGroup() {
 		return new FormGroup<CreateWorkerBlockRequestFormProperties>({
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 			Reason: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -993,7 +993,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteHITRequestFormGroup() {
 		return new FormGroup<DeleteHITRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -1028,7 +1028,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteQualificationTypeRequestFormGroup() {
 		return new FormGroup<DeleteQualificationTypeRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -1065,7 +1065,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteWorkerBlockRequestFormGroup() {
 		return new FormGroup<DeleteWorkerBlockRequestFormProperties>({
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 			Reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1117,8 +1117,8 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateQualificationFromWorkerRequestFormGroup() {
 		return new FormGroup<DisassociateQualificationFromWorkerRequestFormProperties>({
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1142,8 +1142,8 @@ export namespace MyNS {
 	}
 	export function CreateGetAccountBalanceResponseFormGroup() {
 		return new FormGroup<GetAccountBalanceResponseFormProperties>({
-			AvailableBalance: new FormControl<string | null | undefined>(undefined),
-			OnHoldBalance: new FormControl<string | null | undefined>(undefined),
+			AvailableBalance: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+(\.)?[0-9]{0,2}$')]),
+			OnHoldBalance: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+(\.)?[0-9]{0,2}$')]),
 		});
 
 	}
@@ -1238,9 +1238,9 @@ export namespace MyNS {
 	}
 	export function CreateAssignmentFormGroup() {
 		return new FormGroup<AssignmentFormProperties>({
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			AssignmentStatus: new FormControl<AssignmentAssignmentStatus | null | undefined>(undefined),
 			AutoApprovalTime: new FormControl<Date | null | undefined>(undefined),
 			AcceptTime: new FormControl<Date | null | undefined>(undefined),
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAssignmentRequestFormGroup() {
 		return new FormGroup<GetAssignmentRequestFormProperties>({
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 	}
 	export function CreateGetFileUploadURLRequestFormGroup() {
 		return new FormGroup<GetFileUploadURLRequestFormProperties>({
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			QuestionIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1359,7 +1359,7 @@ export namespace MyNS {
 	}
 	export function CreateGetHITRequestFormGroup() {
 		return new FormGroup<GetHITRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -1420,8 +1420,8 @@ export namespace MyNS {
 	}
 	export function CreateQualificationFormGroup() {
 		return new FormGroup<QualificationFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 			GrantTime: new FormControl<Date | null | undefined>(undefined),
 			IntegerValue: new FormControl<number | null | undefined>(undefined),
 			Status: new FormControl<QualificationStatus | null | undefined>(undefined),
@@ -1465,8 +1465,8 @@ export namespace MyNS {
 	}
 	export function CreateGetQualificationScoreRequestFormGroup() {
 		return new FormGroup<GetQualificationScoreRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 		});
 
 	}
@@ -1504,7 +1504,7 @@ export namespace MyNS {
 	}
 	export function CreateGetQualificationTypeRequestFormGroup() {
 		return new FormGroup<GetQualificationTypeRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -1532,7 +1532,7 @@ export namespace MyNS {
 	}
 	export function CreateListAssignmentsForHITResponseFormGroup() {
 		return new FormGroup<ListAssignmentsForHITResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			NumResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1585,8 +1585,8 @@ export namespace MyNS {
 	}
 	export function CreateListAssignmentsForHITRequestFormGroup() {
 		return new FormGroup<ListAssignmentsForHITRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1618,7 +1618,7 @@ export namespace MyNS {
 	export function CreateListBonusPaymentsResponseFormGroup() {
 		return new FormGroup<ListBonusPaymentsResponseFormProperties>({
 			NumResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1667,9 +1667,9 @@ export namespace MyNS {
 	}
 	export function CreateBonusPaymentFormGroup() {
 		return new FormGroup<BonusPaymentFormProperties>({
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
-			BonusAmount: new FormControl<string | null | undefined>(undefined),
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
+			BonusAmount: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]+(\.)?[0-9]{0,2}$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Reason: new FormControl<string | null | undefined>(undefined),
 			GrantTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1732,9 +1732,9 @@ export namespace MyNS {
 	}
 	export function CreateListBonusPaymentsRequestFormGroup() {
 		return new FormGroup<ListBonusPaymentsRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1763,7 +1763,7 @@ export namespace MyNS {
 	}
 	export function CreateListHITsResponseFormGroup() {
 		return new FormGroup<ListHITsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			NumResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1801,7 +1801,7 @@ export namespace MyNS {
 	}
 	export function CreateListHITsRequestFormGroup() {
 		return new FormGroup<ListHITsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1830,7 +1830,7 @@ export namespace MyNS {
 	}
 	export function CreateListHITsForQualificationTypeResponseFormGroup() {
 		return new FormGroup<ListHITsForQualificationTypeResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			NumResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1882,8 +1882,8 @@ export namespace MyNS {
 	}
 	export function CreateListHITsForQualificationTypeRequestFormGroup() {
 		return new FormGroup<ListHITsForQualificationTypeRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1913,7 +1913,7 @@ export namespace MyNS {
 	export function CreateListQualificationRequestsResponseFormGroup() {
 		return new FormGroup<ListQualificationRequestsResponseFormProperties>({
 			NumResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1961,8 +1961,8 @@ export namespace MyNS {
 	export function CreateQualificationRequestFormGroup() {
 		return new FormGroup<QualificationRequestFormProperties>({
 			QualificationRequestId: new FormControl<string | null | undefined>(undefined),
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 			Test: new FormControl<string | null | undefined>(undefined),
 			Answer: new FormControl<string | null | undefined>(undefined),
 			SubmitTime: new FormControl<Date | null | undefined>(undefined),
@@ -2014,8 +2014,8 @@ export namespace MyNS {
 	}
 	export function CreateListQualificationRequestsRequestFormGroup() {
 		return new FormGroup<ListQualificationRequestsRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2045,7 +2045,7 @@ export namespace MyNS {
 	export function CreateListQualificationTypesResponseFormGroup() {
 		return new FormGroup<ListQualificationTypesResponseFormProperties>({
 			NumResults: new FormControl<number | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -2095,7 +2095,7 @@ export namespace MyNS {
 			Query: new FormControl<string | null | undefined>(undefined),
 			MustBeRequestable: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			MustBeOwnedByCaller: new FormControl<boolean | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2145,8 +2145,8 @@ export namespace MyNS {
 	}
 	export function CreateListReviewPolicyResultsForHITResponseFormGroup() {
 		return new FormGroup<ListReviewPolicyResultsForHITResponseFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -2219,10 +2219,10 @@ export namespace MyNS {
 	}
 	export function CreateReviewResultDetailFormGroup() {
 		return new FormGroup<ReviewResultDetailFormProperties>({
-			ActionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			SubjectId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			ActionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			SubjectId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			SubjectType: new FormControl<string | null | undefined>(undefined),
-			QuestionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			QuestionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Key: new FormControl<string | null | undefined>(undefined),
 			Value: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2275,9 +2275,9 @@ export namespace MyNS {
 	}
 	export function CreateReviewActionDetailFormGroup() {
 		return new FormGroup<ReviewActionDetailFormProperties>({
-			ActionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			ActionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			ActionName: new FormControl<string | null | undefined>(undefined),
-			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			TargetType: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<ReviewActionDetailStatus | null | undefined>(undefined),
 			CompleteTime: new FormControl<Date | null | undefined>(undefined),
@@ -2340,10 +2340,10 @@ export namespace MyNS {
 	}
 	export function CreateListReviewPolicyResultsForHITRequestFormGroup() {
 		return new FormGroup<ListReviewPolicyResultsForHITRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			RetrieveActions: new FormControl<boolean | null | undefined>(undefined),
 			RetrieveResults: new FormControl<boolean | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2374,7 +2374,7 @@ export namespace MyNS {
 	}
 	export function CreateListReviewableHITsResponseFormGroup() {
 		return new FormGroup<ListReviewableHITsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			NumResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2426,9 +2426,9 @@ export namespace MyNS {
 	}
 	export function CreateListReviewableHITsRequestFormGroup() {
 		return new FormGroup<ListReviewableHITsRequestFormProperties>({
-			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Status: new FormControl<ListReviewableHITsRequestStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2459,7 +2459,7 @@ export namespace MyNS {
 	}
 	export function CreateListWorkerBlocksResponseFormGroup() {
 		return new FormGroup<ListWorkerBlocksResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			NumResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2489,7 +2489,7 @@ export namespace MyNS {
 	}
 	export function CreateWorkerBlockFormGroup() {
 		return new FormGroup<WorkerBlockFormProperties>({
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 			Reason: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2527,7 +2527,7 @@ export namespace MyNS {
 	}
 	export function CreateListWorkerBlocksRequestFormGroup() {
 		return new FormGroup<ListWorkerBlocksRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2556,7 +2556,7 @@ export namespace MyNS {
 	}
 	export function CreateListWorkersWithQualificationTypeResponseFormGroup() {
 		return new FormGroup<ListWorkersWithQualificationTypeResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			NumResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -2610,9 +2610,9 @@ export namespace MyNS {
 	}
 	export function CreateListWorkersWithQualificationTypeRequestFormGroup() {
 		return new FormGroup<ListWorkersWithQualificationTypeRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Status: new FormControl<QualificationStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2657,7 +2657,7 @@ export namespace MyNS {
 		return new FormGroup<NotifyWorkersFailureStatusFormProperties>({
 			NotifyWorkersFailureCode: new FormControl<NotifyWorkersFailureStatusNotifyWorkersFailureCode | null | undefined>(undefined),
 			NotifyWorkersFailureMessage: new FormControl<string | null | undefined>(undefined),
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
 		});
 
 	}
@@ -2727,7 +2727,7 @@ export namespace MyNS {
 	}
 	export function CreateRejectAssignmentRequestFormGroup() {
 		return new FormGroup<RejectAssignmentRequestFormProperties>({
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			RequesterFeedback: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2837,11 +2837,11 @@ export namespace MyNS {
 	}
 	export function CreateSendBonusRequestFormGroup() {
 		return new FormGroup<SendBonusRequestFormProperties>({
-			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^A[A-Z0-9]+$')]),
-			BonusAmount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			WorkerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^A[A-Z0-9]+$')]),
+			BonusAmount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]+(\.)?[0-9]{0,2}$')]),
+			AssignmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Reason: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			UniqueRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -2957,7 +2957,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateExpirationForHITRequestFormGroup() {
 		return new FormGroup<UpdateExpirationForHITRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			ExpireAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2995,7 +2995,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateHITReviewStatusRequestFormGroup() {
 		return new FormGroup<UpdateHITReviewStatusRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Revert: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3045,8 +3045,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateHITTypeOfHITRequestFormGroup() {
 		return new FormGroup<UpdateHITTypeOfHITRequestFormProperties>({
-			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
-			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
+			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 		});
 
 	}
@@ -3086,7 +3086,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateNotificationSettingsRequestFormGroup() {
 		return new FormGroup<UpdateNotificationSettingsRequestFormProperties>({
-			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			HITTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Active: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3141,7 +3141,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateQualificationTypeRequestFormGroup() {
 		return new FormGroup<UpdateQualificationTypeRequestFormProperties>({
-			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[A-Z0-9]+$')]),
+			QualificationTypeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[A-Z0-9]+$')]),
 			Description: new FormControl<string | null | undefined>(undefined),
 			QualificationTypeStatus: new FormControl<QualificationTypeQualificationTypeStatus | null | undefined>(undefined),
 			Test: new FormControl<string | null | undefined>(undefined),
@@ -3549,83 +3549,83 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptQualificationRequestX_Amz_Target { MTurkRequesterServiceV20170117_AcceptQualificationRequest = 0 }
+	export enum AcceptQualificationRequestX_Amz_Target { 'MTurkRequesterServiceV20170117.AcceptQualificationRequest' = 0 }
 
-	export enum ApproveAssignmentX_Amz_Target { MTurkRequesterServiceV20170117_ApproveAssignment = 0 }
+	export enum ApproveAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.ApproveAssignment' = 0 }
 
-	export enum AssociateQualificationWithWorkerX_Amz_Target { MTurkRequesterServiceV20170117_AssociateQualificationWithWorker = 0 }
+	export enum AssociateQualificationWithWorkerX_Amz_Target { 'MTurkRequesterServiceV20170117.AssociateQualificationWithWorker' = 0 }
 
-	export enum CreateAdditionalAssignmentsForHITX_Amz_Target { MTurkRequesterServiceV20170117_CreateAdditionalAssignmentsForHIT = 0 }
+	export enum CreateAdditionalAssignmentsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateAdditionalAssignmentsForHIT' = 0 }
 
-	export enum CreateHITX_Amz_Target { MTurkRequesterServiceV20170117_CreateHIT = 0 }
+	export enum CreateHITX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHIT' = 0 }
 
-	export enum CreateHITTypeX_Amz_Target { MTurkRequesterServiceV20170117_CreateHITType = 0 }
+	export enum CreateHITTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHITType' = 0 }
 
-	export enum CreateHITWithHITTypeX_Amz_Target { MTurkRequesterServiceV20170117_CreateHITWithHITType = 0 }
+	export enum CreateHITWithHITTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateHITWithHITType' = 0 }
 
-	export enum CreateQualificationTypeX_Amz_Target { MTurkRequesterServiceV20170117_CreateQualificationType = 0 }
+	export enum CreateQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateQualificationType' = 0 }
 
-	export enum CreateWorkerBlockX_Amz_Target { MTurkRequesterServiceV20170117_CreateWorkerBlock = 0 }
+	export enum CreateWorkerBlockX_Amz_Target { 'MTurkRequesterServiceV20170117.CreateWorkerBlock' = 0 }
 
-	export enum DeleteHITX_Amz_Target { MTurkRequesterServiceV20170117_DeleteHIT = 0 }
+	export enum DeleteHITX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteHIT' = 0 }
 
-	export enum DeleteQualificationTypeX_Amz_Target { MTurkRequesterServiceV20170117_DeleteQualificationType = 0 }
+	export enum DeleteQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteQualificationType' = 0 }
 
-	export enum DeleteWorkerBlockX_Amz_Target { MTurkRequesterServiceV20170117_DeleteWorkerBlock = 0 }
+	export enum DeleteWorkerBlockX_Amz_Target { 'MTurkRequesterServiceV20170117.DeleteWorkerBlock' = 0 }
 
-	export enum DisassociateQualificationFromWorkerX_Amz_Target { MTurkRequesterServiceV20170117_DisassociateQualificationFromWorker = 0 }
+	export enum DisassociateQualificationFromWorkerX_Amz_Target { 'MTurkRequesterServiceV20170117.DisassociateQualificationFromWorker' = 0 }
 
-	export enum GetAccountBalanceX_Amz_Target { MTurkRequesterServiceV20170117_GetAccountBalance = 0 }
+	export enum GetAccountBalanceX_Amz_Target { 'MTurkRequesterServiceV20170117.GetAccountBalance' = 0 }
 
-	export enum GetAssignmentX_Amz_Target { MTurkRequesterServiceV20170117_GetAssignment = 0 }
+	export enum GetAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.GetAssignment' = 0 }
 
-	export enum GetFileUploadURLX_Amz_Target { MTurkRequesterServiceV20170117_GetFileUploadURL = 0 }
+	export enum GetFileUploadURLX_Amz_Target { 'MTurkRequesterServiceV20170117.GetFileUploadURL' = 0 }
 
-	export enum GetHITX_Amz_Target { MTurkRequesterServiceV20170117_GetHIT = 0 }
+	export enum GetHITX_Amz_Target { 'MTurkRequesterServiceV20170117.GetHIT' = 0 }
 
-	export enum GetQualificationScoreX_Amz_Target { MTurkRequesterServiceV20170117_GetQualificationScore = 0 }
+	export enum GetQualificationScoreX_Amz_Target { 'MTurkRequesterServiceV20170117.GetQualificationScore' = 0 }
 
-	export enum GetQualificationTypeX_Amz_Target { MTurkRequesterServiceV20170117_GetQualificationType = 0 }
+	export enum GetQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.GetQualificationType' = 0 }
 
-	export enum ListAssignmentsForHITX_Amz_Target { MTurkRequesterServiceV20170117_ListAssignmentsForHIT = 0 }
+	export enum ListAssignmentsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.ListAssignmentsForHIT' = 0 }
 
-	export enum ListBonusPaymentsX_Amz_Target { MTurkRequesterServiceV20170117_ListBonusPayments = 0 }
+	export enum ListBonusPaymentsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListBonusPayments' = 0 }
 
-	export enum ListHITsX_Amz_Target { MTurkRequesterServiceV20170117_ListHITs = 0 }
+	export enum ListHITsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListHITs' = 0 }
 
-	export enum ListHITsForQualificationTypeX_Amz_Target { MTurkRequesterServiceV20170117_ListHITsForQualificationType = 0 }
+	export enum ListHITsForQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.ListHITsForQualificationType' = 0 }
 
-	export enum ListQualificationRequestsX_Amz_Target { MTurkRequesterServiceV20170117_ListQualificationRequests = 0 }
+	export enum ListQualificationRequestsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListQualificationRequests' = 0 }
 
-	export enum ListQualificationTypesX_Amz_Target { MTurkRequesterServiceV20170117_ListQualificationTypes = 0 }
+	export enum ListQualificationTypesX_Amz_Target { 'MTurkRequesterServiceV20170117.ListQualificationTypes' = 0 }
 
-	export enum ListReviewPolicyResultsForHITX_Amz_Target { MTurkRequesterServiceV20170117_ListReviewPolicyResultsForHIT = 0 }
+	export enum ListReviewPolicyResultsForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.ListReviewPolicyResultsForHIT' = 0 }
 
-	export enum ListReviewableHITsX_Amz_Target { MTurkRequesterServiceV20170117_ListReviewableHITs = 0 }
+	export enum ListReviewableHITsX_Amz_Target { 'MTurkRequesterServiceV20170117.ListReviewableHITs' = 0 }
 
-	export enum ListWorkerBlocksX_Amz_Target { MTurkRequesterServiceV20170117_ListWorkerBlocks = 0 }
+	export enum ListWorkerBlocksX_Amz_Target { 'MTurkRequesterServiceV20170117.ListWorkerBlocks' = 0 }
 
-	export enum ListWorkersWithQualificationTypeX_Amz_Target { MTurkRequesterServiceV20170117_ListWorkersWithQualificationType = 0 }
+	export enum ListWorkersWithQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.ListWorkersWithQualificationType' = 0 }
 
-	export enum NotifyWorkersX_Amz_Target { MTurkRequesterServiceV20170117_NotifyWorkers = 0 }
+	export enum NotifyWorkersX_Amz_Target { 'MTurkRequesterServiceV20170117.NotifyWorkers' = 0 }
 
-	export enum RejectAssignmentX_Amz_Target { MTurkRequesterServiceV20170117_RejectAssignment = 0 }
+	export enum RejectAssignmentX_Amz_Target { 'MTurkRequesterServiceV20170117.RejectAssignment' = 0 }
 
-	export enum RejectQualificationRequestX_Amz_Target { MTurkRequesterServiceV20170117_RejectQualificationRequest = 0 }
+	export enum RejectQualificationRequestX_Amz_Target { 'MTurkRequesterServiceV20170117.RejectQualificationRequest' = 0 }
 
-	export enum SendBonusX_Amz_Target { MTurkRequesterServiceV20170117_SendBonus = 0 }
+	export enum SendBonusX_Amz_Target { 'MTurkRequesterServiceV20170117.SendBonus' = 0 }
 
-	export enum SendTestEventNotificationX_Amz_Target { MTurkRequesterServiceV20170117_SendTestEventNotification = 0 }
+	export enum SendTestEventNotificationX_Amz_Target { 'MTurkRequesterServiceV20170117.SendTestEventNotification' = 0 }
 
-	export enum UpdateExpirationForHITX_Amz_Target { MTurkRequesterServiceV20170117_UpdateExpirationForHIT = 0 }
+	export enum UpdateExpirationForHITX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateExpirationForHIT' = 0 }
 
-	export enum UpdateHITReviewStatusX_Amz_Target { MTurkRequesterServiceV20170117_UpdateHITReviewStatus = 0 }
+	export enum UpdateHITReviewStatusX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateHITReviewStatus' = 0 }
 
-	export enum UpdateHITTypeOfHITX_Amz_Target { MTurkRequesterServiceV20170117_UpdateHITTypeOfHIT = 0 }
+	export enum UpdateHITTypeOfHITX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateHITTypeOfHIT' = 0 }
 
-	export enum UpdateNotificationSettingsX_Amz_Target { MTurkRequesterServiceV20170117_UpdateNotificationSettings = 0 }
+	export enum UpdateNotificationSettingsX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateNotificationSettings' = 0 }
 
-	export enum UpdateQualificationTypeX_Amz_Target { MTurkRequesterServiceV20170117_UpdateQualificationType = 0 }
+	export enum UpdateQualificationTypeX_Amz_Target { 'MTurkRequesterServiceV20170117.UpdateQualificationType' = 0 }
 
 }
 

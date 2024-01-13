@@ -49,8 +49,8 @@ export namespace MyNS {
 	}
 	export function CreateOperationFormGroup() {
 		return new FormGroup<OperationFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			resourceName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			isTerminal: new FormControl<boolean | null | undefined>(undefined),
@@ -86,7 +86,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceLocationRegionName { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ca_central_1 = 8, ap_south_1 = 9, ap_southeast_1 = 10, ap_southeast_2 = 11, ap_northeast_1 = 12, ap_northeast_2 = 13 }
+	export enum ResourceLocationRegionName { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'eu-west-1' = 4, 'eu-west-2' = 5, 'eu-west-3' = 6, 'eu-central-1' = 7, 'ca-central-1' = 8, 'ap-south-1' = 9, 'ap-southeast-1' = 10, 'ap-southeast-2' = 11, 'ap-northeast-1' = 12, 'ap-northeast-2' = 13 }
 
 	export enum OperationOperationType { DeleteKnownHostKeys = 0, DeleteInstance = 1, CreateInstance = 2, StopInstance = 3, StartInstance = 4, RebootInstance = 5, OpenInstancePublicPorts = 6, PutInstancePublicPorts = 7, CloseInstancePublicPorts = 8, AllocateStaticIp = 9, ReleaseStaticIp = 10, AttachStaticIp = 11, DetachStaticIp = 12, UpdateDomainEntry = 13, DeleteDomainEntry = 14, CreateDomain = 15, DeleteDomain = 16, CreateInstanceSnapshot = 17, DeleteInstanceSnapshot = 18, CreateInstancesFromSnapshot = 19, CreateLoadBalancer = 20, DeleteLoadBalancer = 21, AttachInstancesToLoadBalancer = 22, DetachInstancesFromLoadBalancer = 23, UpdateLoadBalancerAttribute = 24, CreateLoadBalancerTlsCertificate = 25, DeleteLoadBalancerTlsCertificate = 26, AttachLoadBalancerTlsCertificate = 27, CreateDisk = 28, DeleteDisk = 29, AttachDisk = 30, DetachDisk = 31, CreateDiskSnapshot = 32, DeleteDiskSnapshot = 33, CreateDiskFromSnapshot = 34, CreateRelationalDatabase = 35, UpdateRelationalDatabase = 36, DeleteRelationalDatabase = 37, CreateRelationalDatabaseFromSnapshot = 38, CreateRelationalDatabaseSnapshot = 39, DeleteRelationalDatabaseSnapshot = 40, UpdateRelationalDatabaseParameters = 41, StartRelationalDatabase = 42, RebootRelationalDatabase = 43, StopRelationalDatabase = 44, EnableAddOn = 45, DisableAddOn = 46, PutAlarm = 47, GetAlarms = 48, DeleteAlarm = 49, TestAlarm = 50, CreateContactMethod = 51, GetContactMethods = 52, SendContactMethodVerification = 53, DeleteContactMethod = 54 }
 
@@ -104,7 +104,7 @@ export namespace MyNS {
 	}
 	export function CreateAllocateStaticIpRequestFormGroup() {
 		return new FormGroup<AllocateStaticIpRequestFormProperties>({
-			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -214,9 +214,9 @@ export namespace MyNS {
 	}
 	export function CreateAttachDiskRequestFormGroup() {
 		return new FormGroup<AttachDiskRequestFormProperties>({
-			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			diskPath: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			diskPath: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -247,7 +247,7 @@ export namespace MyNS {
 	}
 	export function CreateAttachInstancesToLoadBalancerRequestFormGroup() {
 		return new FormGroup<AttachInstancesToLoadBalancerRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -281,8 +281,8 @@ export namespace MyNS {
 	}
 	export function CreateAttachLoadBalancerTlsCertificateRequestFormGroup() {
 		return new FormGroup<AttachLoadBalancerTlsCertificateRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			certificateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			certificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -316,8 +316,8 @@ export namespace MyNS {
 	}
 	export function CreateAttachStaticIpRequestFormGroup() {
 		return new FormGroup<AttachStaticIpRequestFormProperties>({
-			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -353,7 +353,7 @@ export namespace MyNS {
 	}
 	export function CreateCloseInstancePublicPortsRequestFormGroup() {
 		return new FormGroup<CloseInstancePublicPortsRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -426,7 +426,7 @@ export namespace MyNS {
 		targetSnapshotName: string;
 
 		/** Required */
-		sourceRegion: CopySnapshotRequestSourceRegion;
+		sourceRegion: ResourceLocationRegionName;
 	}
 	export interface CopySnapshotRequestFormProperties {
 		sourceSnapshotName: FormControl<string | null | undefined>,
@@ -438,21 +438,19 @@ export namespace MyNS {
 		targetSnapshotName: FormControl<string | null | undefined>,
 
 		/** Required */
-		sourceRegion: FormControl<CopySnapshotRequestSourceRegion | null | undefined>,
+		sourceRegion: FormControl<ResourceLocationRegionName | null | undefined>,
 	}
 	export function CreateCopySnapshotRequestFormGroup() {
 		return new FormGroup<CopySnapshotRequestFormProperties>({
-			sourceSnapshotName: new FormControl<string | null | undefined>(undefined),
+			sourceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			sourceResourceName: new FormControl<string | null | undefined>(undefined),
 			restoreDate: new FormControl<string | null | undefined>(undefined),
 			useLatestRestorableAutoSnapshot: new FormControl<boolean | null | undefined>(undefined),
-			targetSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			sourceRegion: new FormControl<CopySnapshotRequestSourceRegion | null | undefined>(undefined, [Validators.required]),
+			targetSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			sourceRegion: new FormControl<ResourceLocationRegionName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum CopySnapshotRequestSourceRegion { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ca_central_1 = 8, ap_south_1 = 9, ap_southeast_1 = 10, ap_southeast_2 = 11, ap_northeast_1 = 12, ap_northeast_2 = 13 }
 
 	export interface CreateCloudFormationStackResult {
 		operations?: Array<Operation>;
@@ -514,8 +512,8 @@ export namespace MyNS {
 	}
 	export function CreateInstanceEntryFormGroup() {
 		return new FormGroup<InstanceEntryFormProperties>({
-			sourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			instanceType: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			instanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			portInfoSource: new FormControl<InstanceEntryPortInfoSource | null | undefined>(undefined, [Validators.required]),
 			userData: new FormControl<string | null | undefined>(undefined),
 			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -563,7 +561,7 @@ export namespace MyNS {
 	export function CreateCreateContactMethodRequestFormGroup() {
 		return new FormGroup<CreateContactMethodRequestFormProperties>({
 			protocol: new FormControl<CreateContactMethodRequestProtocol | null | undefined>(undefined, [Validators.required]),
-			contactEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			contactEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -607,8 +605,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateDiskRequestFormGroup() {
 		return new FormGroup<CreateDiskRequestFormProperties>({
-			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			sizeInGb: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -672,7 +670,7 @@ export namespace MyNS {
 	}
 	export function CreateAutoSnapshotAddOnRequestFormGroup() {
 		return new FormGroup<AutoSnapshotAddOnRequestFormProperties>({
-			snapshotTimeOfDay: new FormControl<string | null | undefined>(undefined),
+			snapshotTimeOfDay: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$')]),
 		});
 
 	}
@@ -722,9 +720,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDiskFromSnapshotRequestFormGroup() {
 		return new FormGroup<CreateDiskFromSnapshotRequestFormProperties>({
-			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			diskSnapshotName: new FormControl<string | null | undefined>(undefined),
-			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			diskSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			sizeInGb: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			sourceDiskName: new FormControl<string | null | undefined>(undefined),
 			restoreDate: new FormControl<string | null | undefined>(undefined),
@@ -761,9 +759,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateDiskSnapshotRequestFormGroup() {
 		return new FormGroup<CreateDiskSnapshotRequestFormProperties>({
-			diskName: new FormControl<string | null | undefined>(undefined),
-			diskSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			instanceName: new FormControl<string | null | undefined>(undefined),
+			diskName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			diskSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -856,7 +854,7 @@ export namespace MyNS {
 	}
 	export function CreateDomainEntryFormGroup() {
 		return new FormGroup<DomainEntryFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			name: new FormControl<string | null | undefined>(undefined),
 			target: new FormControl<string | null | undefined>(undefined),
 			isAlias: new FormControl<boolean | null | undefined>(undefined),
@@ -905,8 +903,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateInstanceSnapshotRequestFormGroup() {
 		return new FormGroup<CreateInstanceSnapshotRequestFormProperties>({
-			instanceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -958,11 +956,11 @@ export namespace MyNS {
 	export function CreateCreateInstancesRequestFormGroup() {
 		return new FormGroup<CreateInstancesRequestFormProperties>({
 			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			customImageName: new FormControl<string | null | undefined>(undefined),
-			blueprintId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			bundleId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			customImageName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			blueprintId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			bundleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			userData: new FormControl<string | null | undefined>(undefined),
-			keyPairName: new FormControl<string | null | undefined>(undefined),
+			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1015,10 +1013,10 @@ export namespace MyNS {
 	export function CreateCreateInstancesFromSnapshotRequestFormGroup() {
 		return new FormGroup<CreateInstancesFromSnapshotRequestFormProperties>({
 			availabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			instanceSnapshotName: new FormControl<string | null | undefined>(undefined),
-			bundleId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			bundleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			userData: new FormControl<string | null | undefined>(undefined),
-			keyPairName: new FormControl<string | null | undefined>(undefined),
+			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			sourceInstanceName: new FormControl<string | null | undefined>(undefined),
 			restoreDate: new FormControl<string | null | undefined>(undefined),
 			useLatestRestorableAutoSnapshot: new FormControl<boolean | null | undefined>(undefined),
@@ -1084,8 +1082,8 @@ export namespace MyNS {
 	}
 	export function CreateKeyPairFormGroup() {
 		return new FormGroup<KeyPairFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
@@ -1107,7 +1105,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateKeyPairRequestFormGroup() {
 		return new FormGroup<CreateKeyPairRequestFormProperties>({
-			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1157,10 +1155,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateLoadBalancerRequestFormGroup() {
 		return new FormGroup<CreateLoadBalancerRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			instancePort: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(-1), Validators.max(65535)]),
 			healthCheckPath: new FormControl<string | null | undefined>(undefined),
-			certificateName: new FormControl<string | null | undefined>(undefined),
+			certificateName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			certificateDomainName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1203,8 +1201,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateLoadBalancerTlsCertificateRequestFormGroup() {
 		return new FormGroup<CreateLoadBalancerTlsCertificateRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			certificateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			certificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			certificateDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1268,7 +1266,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRelationalDatabaseRequestFormGroup() {
 		return new FormGroup<CreateRelationalDatabaseRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			availabilityZone: new FormControl<string | null | undefined>(undefined),
 			relationalDatabaseBlueprintId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			relationalDatabaseBundleId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1320,12 +1318,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateRelationalDatabaseFromSnapshotRequestFormGroup() {
 		return new FormGroup<CreateRelationalDatabaseFromSnapshotRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			availabilityZone: new FormControl<string | null | undefined>(undefined),
 			publiclyAccessible: new FormControl<boolean | null | undefined>(undefined),
-			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined),
+			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			relationalDatabaseBundleId: new FormControl<string | null | undefined>(undefined),
-			sourceRelationalDatabaseName: new FormControl<string | null | undefined>(undefined),
+			sourceRelationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			restoreTime: new FormControl<Date | null | undefined>(undefined),
 			useLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1362,8 +1360,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateRelationalDatabaseSnapshotRequestFormGroup() {
 		return new FormGroup<CreateRelationalDatabaseSnapshotRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1391,7 +1389,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAlarmRequestFormGroup() {
 		return new FormGroup<DeleteAlarmRequestFormProperties>({
-			alarmName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			alarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1425,8 +1423,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAutoSnapshotRequestFormGroup() {
 		return new FormGroup<DeleteAutoSnapshotRequestFormProperties>({
-			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			date: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')]),
 		});
 
 	}
@@ -1484,7 +1482,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDiskRequestFormGroup() {
 		return new FormGroup<DeleteDiskRequestFormProperties>({
-			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			forceDeleteAddOns: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1513,7 +1511,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDiskSnapshotRequestFormGroup() {
 		return new FormGroup<DeleteDiskSnapshotRequestFormProperties>({
-			diskSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1609,7 +1607,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteInstanceRequestFormGroup() {
 		return new FormGroup<DeleteInstanceRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			forceDeleteAddOns: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1638,7 +1636,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteInstanceSnapshotRequestFormGroup() {
 		return new FormGroup<DeleteInstanceSnapshotRequestFormProperties>({
-			instanceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1668,7 +1666,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteKeyPairRequestFormGroup() {
 		return new FormGroup<DeleteKeyPairRequestFormProperties>({
-			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1696,7 +1694,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteKnownHostKeysRequestFormGroup() {
 		return new FormGroup<DeleteKnownHostKeysRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1724,7 +1722,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLoadBalancerRequestFormGroup() {
 		return new FormGroup<DeleteLoadBalancerRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1760,8 +1758,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLoadBalancerTlsCertificateRequestFormGroup() {
 		return new FormGroup<DeleteLoadBalancerTlsCertificateRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			certificateName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			certificateName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1794,9 +1792,9 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRelationalDatabaseRequestFormGroup() {
 		return new FormGroup<DeleteRelationalDatabaseRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			skipFinalSnapshot: new FormControl<boolean | null | undefined>(undefined),
-			finalRelationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined),
+			finalRelationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1824,7 +1822,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRelationalDatabaseSnapshotRequestFormGroup() {
 		return new FormGroup<DeleteRelationalDatabaseSnapshotRequestFormProperties>({
-			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1852,7 +1850,7 @@ export namespace MyNS {
 	}
 	export function CreateDetachDiskRequestFormGroup() {
 		return new FormGroup<DetachDiskRequestFormProperties>({
-			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1883,7 +1881,7 @@ export namespace MyNS {
 	}
 	export function CreateDetachInstancesFromLoadBalancerRequestFormGroup() {
 		return new FormGroup<DetachInstancesFromLoadBalancerRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1911,7 +1909,7 @@ export namespace MyNS {
 	}
 	export function CreateDetachStaticIpRequestFormGroup() {
 		return new FormGroup<DetachStaticIpRequestFormProperties>({
-			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -1946,7 +1944,7 @@ export namespace MyNS {
 	export function CreateDisableAddOnRequestFormGroup() {
 		return new FormGroup<DisableAddOnRequestFormProperties>({
 			addOnType: new FormControl<AddOnRequestAddOnType | null | undefined>(undefined, [Validators.required]),
-			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -2006,7 +2004,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableAddOnRequestFormGroup() {
 		return new FormGroup<EnableAddOnRequestFormProperties>({
-			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -2034,7 +2032,7 @@ export namespace MyNS {
 	}
 	export function CreateExportSnapshotRequestFormGroup() {
 		return new FormGroup<ExportSnapshotRequestFormProperties>({
-			sourceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sourceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -2140,8 +2138,8 @@ export namespace MyNS {
 	}
 	export function CreateAlarmFormGroup() {
 		return new FormGroup<AlarmFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 			supportCode: new FormControl<string | null | undefined>(undefined),
@@ -2176,8 +2174,8 @@ export namespace MyNS {
 	}
 	export function CreateMonitoredResourceInfoFormGroup() {
 		return new FormGroup<MonitoredResourceInfoFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 		});
 
@@ -2193,7 +2191,7 @@ export namespace MyNS {
 
 	export enum AlarmState { OK = 0, ALARM = 1, INSUFFICIENT_DATA = 2 }
 
-	export enum AlarmUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
+	export enum AlarmUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
 
 	export enum ContactProtocol { Email = 0, SMS = 1 }
 
@@ -2209,9 +2207,9 @@ export namespace MyNS {
 	}
 	export function CreateGetAlarmsRequestFormGroup() {
 		return new FormGroup<GetAlarmsRequestFormProperties>({
-			alarmName: new FormControl<string | null | undefined>(undefined),
+			alarmName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			pageToken: new FormControl<string | null | undefined>(undefined),
-			monitoredResourceName: new FormControl<string | null | undefined>(undefined),
+			monitoredResourceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -2227,7 +2225,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAutoSnapshotsResultFormGroup() {
 		return new FormGroup<GetAutoSnapshotsResultFormProperties>({
-			resourceName: new FormControl<string | null | undefined>(undefined),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 		});
 
@@ -2291,7 +2289,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAutoSnapshotsRequestFormGroup() {
 		return new FormGroup<GetAutoSnapshotsRequestFormProperties>({
-			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -2344,9 +2342,9 @@ export namespace MyNS {
 	}
 	export function CreateBlueprintFormGroup() {
 		return new FormGroup<BlueprintFormProperties>({
-			blueprintId: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			group: new FormControl<string | null | undefined>(undefined),
+			blueprintId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			group: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			type: new FormControl<BlueprintType | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			isActive: new FormControl<boolean | null | undefined>(undefined),
@@ -2428,7 +2426,7 @@ export namespace MyNS {
 			price: new FormControl<number | null | undefined>(undefined),
 			cpuCount: new FormControl<number | null | undefined>(undefined),
 			diskSizeInGb: new FormControl<number | null | undefined>(undefined),
-			bundleId: new FormControl<string | null | undefined>(undefined),
+			bundleId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			instanceType: new FormControl<string | null | undefined>(undefined),
 			isActive: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -2498,8 +2496,8 @@ export namespace MyNS {
 	}
 	export function CreateCloudFormationStackRecordFormGroup() {
 		return new FormGroup<CloudFormationStackRecordFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 			state: new FormControl<CloudFormationStackRecordState | null | undefined>(undefined),
@@ -2526,8 +2524,8 @@ export namespace MyNS {
 	export function CreateCloudFormationStackRecordSourceInfoFormGroup() {
 		return new FormGroup<CloudFormationStackRecordSourceInfoFormProperties>({
 			resourceType: new FormControl<CloudFormationStackRecordSourceInfoResourceType | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2548,8 +2546,8 @@ export namespace MyNS {
 	}
 	export function CreateDestinationInfoFormGroup() {
 		return new FormGroup<DestinationInfoFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			service: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			service: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2607,11 +2605,11 @@ export namespace MyNS {
 	}
 	export function CreateContactMethodFormGroup() {
 		return new FormGroup<ContactMethodFormProperties>({
-			contactEndpoint: new FormControl<string | null | undefined>(undefined),
+			contactEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			status: new FormControl<ContactMethodStatus | null | undefined>(undefined),
 			protocol: new FormControl<CreateContactMethodRequestProtocol | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 			supportCode: new FormControl<string | null | undefined>(undefined),
@@ -2688,8 +2686,8 @@ export namespace MyNS {
 	}
 	export function CreateDiskFormGroup() {
 		return new FormGroup<DiskFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
@@ -2698,7 +2696,7 @@ export namespace MyNS {
 			iops: new FormControl<number | null | undefined>(undefined),
 			path: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<DiskState | null | undefined>(undefined),
-			attachedTo: new FormControl<string | null | undefined>(undefined),
+			attachedTo: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			isAttached: new FormControl<boolean | null | undefined>(undefined),
 			attachmentState: new FormControl<string | null | undefined>(undefined),
 			gbInUse: new FormControl<number | null | undefined>(undefined),
@@ -2726,13 +2724,13 @@ export namespace MyNS {
 		return new FormGroup<AddOnFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
-			snapshotTimeOfDay: new FormControl<string | null | undefined>(undefined),
-			nextSnapshotTimeOfDay: new FormControl<string | null | undefined>(undefined),
+			snapshotTimeOfDay: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$')]),
+			nextSnapshotTimeOfDay: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$')]),
 		});
 
 	}
 
-	export enum DiskState { pending = 0, error = 1, available = 2, in_use = 3, unknown = 4 }
+	export enum DiskState { pending = 0, error = 1, available = 2, 'in-use' = 3, unknown = 4 }
 
 	export interface GetDiskRequest {
 
@@ -2746,7 +2744,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDiskRequestFormGroup() {
 		return new FormGroup<GetDiskRequestFormProperties>({
-			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -2804,18 +2802,18 @@ export namespace MyNS {
 	}
 	export function CreateDiskSnapshotFormGroup() {
 		return new FormGroup<DiskSnapshotFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 			sizeInGb: new FormControl<number | null | undefined>(undefined),
 			state: new FormControl<DiskSnapshotState | null | undefined>(undefined),
 			progress: new FormControl<string | null | undefined>(undefined),
-			fromDiskName: new FormControl<string | null | undefined>(undefined),
-			fromDiskArn: new FormControl<string | null | undefined>(undefined),
-			fromInstanceName: new FormControl<string | null | undefined>(undefined),
-			fromInstanceArn: new FormControl<string | null | undefined>(undefined),
+			fromDiskName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			fromDiskArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			fromInstanceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			fromInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			isFromAutoSnapshot: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2835,7 +2833,7 @@ export namespace MyNS {
 	}
 	export function CreateGetDiskSnapshotRequestFormGroup() {
 		return new FormGroup<GetDiskSnapshotRequestFormProperties>({
-			diskSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			diskSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -2932,8 +2930,8 @@ export namespace MyNS {
 	}
 	export function CreateDomainFormGroup() {
 		return new FormGroup<DomainFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
@@ -3028,8 +3026,8 @@ export namespace MyNS {
 	}
 	export function CreateExportSnapshotRecordFormGroup() {
 		return new FormGroup<ExportSnapshotRecordFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 			state: new FormControl<CloudFormationStackRecordState | null | undefined>(undefined),
@@ -3067,10 +3065,10 @@ export namespace MyNS {
 		return new FormGroup<ExportSnapshotRecordSourceInfoFormProperties>({
 			resourceType: new FormControl<ExportSnapshotRecordSourceInfoResourceType | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
-			fromResourceName: new FormControl<string | null | undefined>(undefined),
-			fromResourceArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			fromResourceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			fromResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3092,8 +3090,8 @@ export namespace MyNS {
 	}
 	export function CreateInstanceSnapshotInfoFormGroup() {
 		return new FormGroup<InstanceSnapshotInfoFormProperties>({
-			fromBundleId: new FormControl<string | null | undefined>(undefined),
-			fromBlueprintId: new FormControl<string | null | undefined>(undefined),
+			fromBundleId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			fromBlueprintId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3117,7 +3115,7 @@ export namespace MyNS {
 	export function CreateDiskInfoFormGroup() {
 		return new FormGroup<DiskInfoFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
-			path: new FormControl<string | null | undefined>(undefined),
+			path: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			sizeInGb: new FormControl<number | null | undefined>(undefined),
 			isSystemDisk: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3219,20 +3217,20 @@ export namespace MyNS {
 	}
 	export function CreateInstanceFormGroup() {
 		return new FormGroup<InstanceFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
-			blueprintId: new FormControl<string | null | undefined>(undefined),
-			blueprintName: new FormControl<string | null | undefined>(undefined),
-			bundleId: new FormControl<string | null | undefined>(undefined),
+			blueprintId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			blueprintName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			bundleId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			isStaticIp: new FormControl<boolean | null | undefined>(undefined),
-			privateIpAddress: new FormControl<string | null | undefined>(undefined),
-			publicIpAddress: new FormControl<string | null | undefined>(undefined),
-			ipv6Address: new FormControl<string | null | undefined>(undefined),
-			username: new FormControl<string | null | undefined>(undefined),
-			sshKeyName: new FormControl<string | null | undefined>(undefined),
+			privateIpAddress: new FormControl<string | null | undefined>(undefined, [Validators.pattern('([0-9]{1,3}\.){3}[0-9]{1,3}')]),
+			publicIpAddress: new FormControl<string | null | undefined>(undefined, [Validators.pattern('([0-9]{1,3}\.){3}[0-9]{1,3}')]),
+			ipv6Address: new FormControl<string | null | undefined>(undefined, [Validators.pattern('([A-F0-9]{1,4}:){7}[A-F0-9]{1,4}')]),
+			username: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			sshKeyName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -3386,7 +3384,7 @@ export namespace MyNS {
 	}
 	export function CreateGetInstanceRequestFormGroup() {
 		return new FormGroup<GetInstanceRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -3436,11 +3434,11 @@ export namespace MyNS {
 		return new FormGroup<InstanceAccessDetailsFormProperties>({
 			certKey: new FormControl<string | null | undefined>(undefined),
 			expiresAt: new FormControl<Date | null | undefined>(undefined),
-			ipAddress: new FormControl<string | null | undefined>(undefined),
+			ipAddress: new FormControl<string | null | undefined>(undefined, [Validators.pattern('([0-9]{1,3}\.){3}[0-9]{1,3}')]),
 			password: new FormControl<string | null | undefined>(undefined),
 			privateKey: new FormControl<string | null | undefined>(undefined),
 			protocol: new FormControl<InstanceAccessDetailsProtocol | null | undefined>(undefined),
-			instanceName: new FormControl<string | null | undefined>(undefined),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			username: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3461,7 +3459,7 @@ export namespace MyNS {
 	export function CreatePasswordDataFormGroup() {
 		return new FormGroup<PasswordDataFormProperties>({
 			ciphertext: new FormControl<string | null | undefined>(undefined),
-			keyPairName: new FormControl<string | null | undefined>(undefined),
+			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -3517,7 +3515,7 @@ export namespace MyNS {
 	}
 	export function CreateGetInstanceAccessDetailsRequestFormGroup() {
 		return new FormGroup<GetInstanceAccessDetailsRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			protocol: new FormControl<InstanceAccessDetailsProtocol | null | undefined>(undefined),
 		});
 
@@ -3548,7 +3546,7 @@ export namespace MyNS {
 		sampleCount?: number | null;
 		sum?: number | null;
 		timestamp?: Date | null;
-		unit?: MetricDatapointUnit | null;
+		unit?: AlarmUnit | null;
 	}
 
 	/** Describes the metric data point. */
@@ -3559,7 +3557,7 @@ export namespace MyNS {
 		sampleCount: FormControl<number | null | undefined>,
 		sum: FormControl<number | null | undefined>,
 		timestamp: FormControl<Date | null | undefined>,
-		unit: FormControl<MetricDatapointUnit | null | undefined>,
+		unit: FormControl<AlarmUnit | null | undefined>,
 	}
 	export function CreateMetricDatapointFormGroup() {
 		return new FormGroup<MetricDatapointFormProperties>({
@@ -3569,12 +3567,10 @@ export namespace MyNS {
 			sampleCount: new FormControl<number | null | undefined>(undefined),
 			sum: new FormControl<number | null | undefined>(undefined),
 			timestamp: new FormControl<Date | null | undefined>(undefined),
-			unit: new FormControl<MetricDatapointUnit | null | undefined>(undefined),
+			unit: new FormControl<AlarmUnit | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum MetricDatapointUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetInstanceMetricDataRequest {
 
@@ -3598,7 +3594,7 @@ export namespace MyNS {
 		endTime: Date;
 
 		/** Required */
-		unit: GetInstanceMetricDataRequestUnit;
+		unit: AlarmUnit;
 
 		/** Required */
 		statistics: Array<MetricStatistic>;
@@ -3625,21 +3621,19 @@ export namespace MyNS {
 		endTime: FormControl<Date | null | undefined>,
 
 		/** Required */
-		unit: FormControl<GetInstanceMetricDataRequestUnit | null | undefined>,
+		unit: FormControl<AlarmUnit | null | undefined>,
 	}
 	export function CreateGetInstanceMetricDataRequestFormGroup() {
 		return new FormGroup<GetInstanceMetricDataRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			metricName: new FormControl<GetInstanceMetricDataResultMetricName | null | undefined>(undefined, [Validators.required]),
 			period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(60), Validators.max(86400)]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			unit: new FormControl<GetInstanceMetricDataRequestUnit | null | undefined>(undefined, [Validators.required]),
+			unit: new FormControl<AlarmUnit | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum GetInstanceMetricDataRequestUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export enum MetricStatistic { Minimum = 0, Maximum = 1, Sum = 2, Average = 3, SampleCount = 4 }
 
@@ -3716,7 +3710,7 @@ export namespace MyNS {
 	}
 	export function CreateGetInstancePortStatesRequestFormGroup() {
 		return new FormGroup<GetInstancePortStatesRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -3775,15 +3769,15 @@ export namespace MyNS {
 	}
 	export function CreateInstanceSnapshotFormGroup() {
 		return new FormGroup<InstanceSnapshotFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
 			state: new FormControl<InstanceSnapshotState | null | undefined>(undefined),
 			progress: new FormControl<string | null | undefined>(undefined),
-			fromInstanceName: new FormControl<string | null | undefined>(undefined),
-			fromInstanceArn: new FormControl<string | null | undefined>(undefined),
+			fromInstanceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			fromInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			fromBlueprintId: new FormControl<string | null | undefined>(undefined),
 			fromBundleId: new FormControl<string | null | undefined>(undefined),
 			isFromAutoSnapshot: new FormControl<boolean | null | undefined>(undefined),
@@ -3806,7 +3800,7 @@ export namespace MyNS {
 	}
 	export function CreateGetInstanceSnapshotRequestFormGroup() {
 		return new FormGroup<GetInstanceSnapshotRequestFormProperties>({
-			instanceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -3863,7 +3857,7 @@ export namespace MyNS {
 	}
 	export function CreateGetInstanceStateRequestFormGroup() {
 		return new FormGroup<GetInstanceStateRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -3920,7 +3914,7 @@ export namespace MyNS {
 	}
 	export function CreateGetKeyPairRequestFormGroup() {
 		return new FormGroup<GetKeyPairRequestFormProperties>({
-			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -4003,15 +3997,15 @@ export namespace MyNS {
 	}
 	export function CreateLoadBalancerFormGroup() {
 		return new FormGroup<LoadBalancerFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
-			dnsName: new FormControl<string | null | undefined>(undefined),
+			dnsName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			state: new FormControl<LoadBalancerState | null | undefined>(undefined),
 			protocol: new FormControl<LoadBalancerProtocol | null | undefined>(undefined),
-			healthCheckPath: new FormControl<string | null | undefined>(undefined),
+			healthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			instancePort: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -4037,7 +4031,7 @@ export namespace MyNS {
 	}
 	export function CreateInstanceHealthSummaryFormGroup() {
 		return new FormGroup<InstanceHealthSummaryFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			instanceHealth: new FormControl<InstanceHealthSummaryInstanceHealth | null | undefined>(undefined),
 			instanceHealthReason: new FormControl<InstanceHealthSummaryInstanceHealthReason | null | undefined>(undefined),
 		});
@@ -4046,7 +4040,7 @@ export namespace MyNS {
 
 	export enum InstanceHealthSummaryInstanceHealth { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
 
-	export enum InstanceHealthSummaryInstanceHealthReason { Lb_RegistrationInProgress = 0, Lb_InitialHealthChecking = 1, Lb_InternalError = 2, Instance_ResponseCodeMismatch = 3, Instance_Timeout = 4, Instance_FailedHealthChecks = 5, Instance_NotRegistered = 6, Instance_NotInUse = 7, Instance_DeregistrationInProgress = 8, Instance_InvalidState = 9, Instance_IpUnusable = 10 }
+	export enum InstanceHealthSummaryInstanceHealthReason { 'Lb.RegistrationInProgress' = 0, 'Lb.InitialHealthChecking' = 1, 'Lb.InternalError' = 2, 'Instance.ResponseCodeMismatch' = 3, 'Instance.Timeout' = 4, 'Instance.FailedHealthChecks' = 5, 'Instance.NotRegistered' = 6, 'Instance.NotInUse' = 7, 'Instance.DeregistrationInProgress' = 8, 'Instance.InvalidState' = 9, 'Instance.IpUnusable' = 10 }
 
 
 	/** Provides a summary of SSL/TLS certificate metadata. */
@@ -4062,7 +4056,7 @@ export namespace MyNS {
 	}
 	export function CreateLoadBalancerTlsCertificateSummaryFormGroup() {
 		return new FormGroup<LoadBalancerTlsCertificateSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			isAttached: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -4090,7 +4084,7 @@ export namespace MyNS {
 	}
 	export function CreateGetLoadBalancerRequestFormGroup() {
 		return new FormGroup<GetLoadBalancerRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -4133,7 +4127,7 @@ export namespace MyNS {
 		endTime: Date;
 
 		/** Required */
-		unit: GetLoadBalancerMetricDataRequestUnit;
+		unit: AlarmUnit;
 
 		/** Required */
 		statistics: Array<MetricStatistic>;
@@ -4160,21 +4154,19 @@ export namespace MyNS {
 		endTime: FormControl<Date | null | undefined>,
 
 		/** Required */
-		unit: FormControl<GetLoadBalancerMetricDataRequestUnit | null | undefined>,
+		unit: FormControl<AlarmUnit | null | undefined>,
 	}
 	export function CreateGetLoadBalancerMetricDataRequestFormGroup() {
 		return new FormGroup<GetLoadBalancerMetricDataRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			metricName: new FormControl<GetLoadBalancerMetricDataResultMetricName | null | undefined>(undefined, [Validators.required]),
 			period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(60), Validators.max(86400)]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			unit: new FormControl<GetLoadBalancerMetricDataRequestUnit | null | undefined>(undefined, [Validators.required]),
+			unit: new FormControl<AlarmUnit | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum GetLoadBalancerMetricDataRequestUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetLoadBalancerTlsCertificatesResult {
 		tlsCertificates?: Array<LoadBalancerTlsCertificate>;
@@ -4246,26 +4238,26 @@ export namespace MyNS {
 	}
 	export function CreateLoadBalancerTlsCertificateFormGroup() {
 		return new FormGroup<LoadBalancerTlsCertificateFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
-			loadBalancerName: new FormControl<string | null | undefined>(undefined),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			isAttached: new FormControl<boolean | null | undefined>(undefined),
 			status: new FormControl<LoadBalancerTlsCertificateStatus | null | undefined>(undefined),
 			domainName: new FormControl<string | null | undefined>(undefined),
 			failureReason: new FormControl<LoadBalancerTlsCertificateFailureReason | null | undefined>(undefined),
 			issuedAt: new FormControl<Date | null | undefined>(undefined),
-			issuer: new FormControl<string | null | undefined>(undefined),
-			keyAlgorithm: new FormControl<string | null | undefined>(undefined),
+			issuer: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			keyAlgorithm: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			notAfter: new FormControl<Date | null | undefined>(undefined),
 			notBefore: new FormControl<Date | null | undefined>(undefined),
 			revocationReason: new FormControl<LoadBalancerTlsCertificateRevocationReason | null | undefined>(undefined),
 			revokedAt: new FormControl<Date | null | undefined>(undefined),
-			serial: new FormControl<string | null | undefined>(undefined),
-			signatureAlgorithm: new FormControl<string | null | undefined>(undefined),
-			subject: new FormControl<string | null | undefined>(undefined),
+			serial: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			signatureAlgorithm: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			subject: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4292,9 +4284,9 @@ export namespace MyNS {
 	}
 	export function CreateLoadBalancerTlsCertificateDomainValidationRecordFormGroup() {
 		return new FormGroup<LoadBalancerTlsCertificateDomainValidationRecordFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			type: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			validationStatus: new FormControl<LoadBalancerTlsCertificateDomainValidationRecordValidationStatus | null | undefined>(undefined),
 			domainName: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4359,7 +4351,7 @@ export namespace MyNS {
 	}
 	export function CreateGetLoadBalancerTlsCertificatesRequestFormGroup() {
 		return new FormGroup<GetLoadBalancerTlsCertificatesRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -4416,7 +4408,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOperationRequestFormGroup() {
 		return new FormGroup<GetOperationRequestFormProperties>({
-			operationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			operationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4479,7 +4471,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOperationsForResourceRequestFormGroup() {
 		return new FormGroup<GetOperationsForResourceRequestFormProperties>({
-			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			pageToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4502,7 +4494,7 @@ export namespace MyNS {
 		continentCode?: string | null;
 		description?: string | null;
 		displayName?: string | null;
-		name?: RegionName | null;
+		name?: ResourceLocationRegionName | null;
 		availabilityZones?: Array<AvailabilityZone>;
 		relationalDatabaseAvailabilityZones?: Array<AvailabilityZone>;
 	}
@@ -4512,19 +4504,17 @@ export namespace MyNS {
 		continentCode: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		displayName: FormControl<string | null | undefined>,
-		name: FormControl<RegionName | null | undefined>,
+		name: FormControl<ResourceLocationRegionName | null | undefined>,
 	}
 	export function CreateRegionFormGroup() {
 		return new FormGroup<RegionFormProperties>({
 			continentCode: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			displayName: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<RegionName | null | undefined>(undefined),
+			name: new FormControl<ResourceLocationRegionName | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum RegionName { us_east_1 = 0, us_east_2 = 1, us_west_1 = 2, us_west_2 = 3, eu_west_1 = 4, eu_west_2 = 5, eu_west_3 = 6, eu_central_1 = 7, ca_central_1 = 8, ap_south_1 = 9, ap_southeast_1 = 10, ap_southeast_2 = 11, ap_northeast_1 = 12, ap_northeast_2 = 13 }
 
 
 	/** Describes an Availability Zone. */
@@ -4540,8 +4530,8 @@ export namespace MyNS {
 	}
 	export function CreateAvailabilityZoneFormGroup() {
 		return new FormGroup<AvailabilityZoneFormProperties>({
-			zoneName: new FormControl<string | null | undefined>(undefined),
-			state: new FormControl<string | null | undefined>(undefined),
+			zoneName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			state: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4639,24 +4629,24 @@ export namespace MyNS {
 	}
 	export function CreateRelationalDatabaseFormGroup() {
 		return new FormGroup<RelationalDatabaseFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
-			relationalDatabaseBlueprintId: new FormControl<string | null | undefined>(undefined),
-			relationalDatabaseBundleId: new FormControl<string | null | undefined>(undefined),
+			relationalDatabaseBlueprintId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			relationalDatabaseBundleId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			masterDatabaseName: new FormControl<string | null | undefined>(undefined),
-			state: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			secondaryAvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			backupRetentionEnabled: new FormControl<boolean | null | undefined>(undefined),
-			engine: new FormControl<string | null | undefined>(undefined),
-			engineVersion: new FormControl<string | null | undefined>(undefined),
+			engine: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			engineVersion: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			latestRestorableTime: new FormControl<Date | null | undefined>(undefined),
-			masterUsername: new FormControl<string | null | undefined>(undefined),
-			parameterApplyStatus: new FormControl<string | null | undefined>(undefined),
-			preferredBackupWindow: new FormControl<string | null | undefined>(undefined),
-			preferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			masterUsername: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			parameterApplyStatus: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			preferredBackupWindow: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			preferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			publiclyAccessible: new FormControl<boolean | null | undefined>(undefined),
 			caCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4724,7 +4714,7 @@ export namespace MyNS {
 	export function CreateRelationalDatabaseEndpointFormGroup() {
 		return new FormGroup<RelationalDatabaseEndpointFormProperties>({
 			port: new FormControl<number | null | undefined>(undefined),
-			address: new FormControl<string | null | undefined>(undefined),
+			address: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4745,8 +4735,8 @@ export namespace MyNS {
 	}
 	export function CreatePendingMaintenanceActionFormGroup() {
 		return new FormGroup<PendingMaintenanceActionFormProperties>({
-			action: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			action: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			currentApplyDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -4764,7 +4754,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRelationalDatabaseRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -4929,7 +4919,7 @@ export namespace MyNS {
 	}
 	export function CreateRelationalDatabaseEventFormGroup() {
 		return new FormGroup<RelationalDatabaseEventFormProperties>({
-			resource: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4952,7 +4942,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRelationalDatabaseEventsRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseEventsRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			durationInMinutes: new FormControl<number | null | undefined>(undefined),
 			pageToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5022,7 +5012,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRelationalDatabaseLogEventsRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseLogEventsRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
@@ -5055,7 +5045,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRelationalDatabaseLogStreamsRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseLogStreamsRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5090,7 +5080,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRelationalDatabaseMasterUserPasswordRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseMasterUserPasswordRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			passwordVersion: new FormControl<GetRelationalDatabaseMasterUserPasswordRequestPasswordVersion | null | undefined>(undefined),
 		});
 
@@ -5136,7 +5126,7 @@ export namespace MyNS {
 		endTime: Date;
 
 		/** Required */
-		unit: GetRelationalDatabaseMetricDataRequestUnit;
+		unit: AlarmUnit;
 
 		/** Required */
 		statistics: Array<MetricStatistic>;
@@ -5163,21 +5153,19 @@ export namespace MyNS {
 		endTime: FormControl<Date | null | undefined>,
 
 		/** Required */
-		unit: FormControl<GetRelationalDatabaseMetricDataRequestUnit | null | undefined>,
+		unit: FormControl<AlarmUnit | null | undefined>,
 	}
 	export function CreateGetRelationalDatabaseMetricDataRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseMetricDataRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			metricName: new FormControl<GetRelationalDatabaseMetricDataResultMetricName | null | undefined>(undefined, [Validators.required]),
 			period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(60), Validators.max(86400)]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			unit: new FormControl<GetRelationalDatabaseMetricDataRequestUnit | null | undefined>(undefined, [Validators.required]),
+			unit: new FormControl<AlarmUnit | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum GetRelationalDatabaseMetricDataRequestUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetRelationalDatabaseParametersResult {
 		parameters?: Array<RelationalDatabaseParameter>;
@@ -5245,7 +5233,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRelationalDatabaseParametersRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseParametersRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			pageToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5304,17 +5292,17 @@ export namespace MyNS {
 	}
 	export function CreateRelationalDatabaseSnapshotFormGroup() {
 		return new FormGroup<RelationalDatabaseSnapshotFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
-			engine: new FormControl<string | null | undefined>(undefined),
-			engineVersion: new FormControl<string | null | undefined>(undefined),
+			engine: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			engineVersion: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			sizeInGb: new FormControl<number | null | undefined>(undefined),
-			state: new FormControl<string | null | undefined>(undefined),
-			fromRelationalDatabaseName: new FormControl<string | null | undefined>(undefined),
-			fromRelationalDatabaseArn: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			fromRelationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			fromRelationalDatabaseArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			fromRelationalDatabaseBundleId: new FormControl<string | null | undefined>(undefined),
 			fromRelationalDatabaseBlueprintId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5333,7 +5321,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRelationalDatabaseSnapshotRequestFormGroup() {
 		return new FormGroup<GetRelationalDatabaseSnapshotRequestFormProperties>({
-			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5434,13 +5422,13 @@ export namespace MyNS {
 	}
 	export function CreateStaticIpFormGroup() {
 		return new FormGroup<StaticIpFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			supportCode: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			resourceType: new FormControl<OperationResourceType | null | undefined>(undefined),
-			ipAddress: new FormControl<string | null | undefined>(undefined),
-			attachedTo: new FormControl<string | null | undefined>(undefined),
+			ipAddress: new FormControl<string | null | undefined>(undefined, [Validators.pattern('([0-9]{1,3}\.){3}[0-9]{1,3}')]),
+			attachedTo: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 			isAttached: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -5458,7 +5446,7 @@ export namespace MyNS {
 	}
 	export function CreateGetStaticIpRequestFormGroup() {
 		return new FormGroup<GetStaticIpRequestFormProperties>({
-			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5521,7 +5509,7 @@ export namespace MyNS {
 	}
 	export function CreateImportKeyPairRequestFormGroup() {
 		return new FormGroup<ImportKeyPairRequestFormProperties>({
-			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			keyPairName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			publicKeyBase64: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5581,7 +5569,7 @@ export namespace MyNS {
 	}
 	export function CreateOpenInstancePublicPortsRequestFormGroup() {
 		return new FormGroup<OpenInstancePublicPortsRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5670,9 +5658,9 @@ export namespace MyNS {
 	}
 	export function CreatePutAlarmRequestFormGroup() {
 		return new FormGroup<PutAlarmRequestFormProperties>({
-			alarmName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			alarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			metricName: new FormControl<AlarmMetricName | null | undefined>(undefined, [Validators.required]),
-			monitoredResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			monitoredResourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			comparisonOperator: new FormControl<AlarmComparisonOperator | null | undefined>(undefined, [Validators.required]),
 			threshold: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			evaluationPeriods: new FormControl<number | null | undefined>(undefined, [Validators.required]),
@@ -5711,7 +5699,7 @@ export namespace MyNS {
 	}
 	export function CreatePutInstancePublicPortsRequestFormGroup() {
 		return new FormGroup<PutInstancePublicPortsRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5739,7 +5727,7 @@ export namespace MyNS {
 	}
 	export function CreateRebootInstanceRequestFormGroup() {
 		return new FormGroup<RebootInstanceRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5767,7 +5755,7 @@ export namespace MyNS {
 	}
 	export function CreateRebootRelationalDatabaseRequestFormGroup() {
 		return new FormGroup<RebootRelationalDatabaseRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5795,7 +5783,7 @@ export namespace MyNS {
 	}
 	export function CreateReleaseStaticIpRequestFormGroup() {
 		return new FormGroup<ReleaseStaticIpRequestFormProperties>({
-			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			staticIpName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5853,7 +5841,7 @@ export namespace MyNS {
 	}
 	export function CreateStartInstanceRequestFormGroup() {
 		return new FormGroup<StartInstanceRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5881,7 +5869,7 @@ export namespace MyNS {
 	}
 	export function CreateStartRelationalDatabaseRequestFormGroup() {
 		return new FormGroup<StartRelationalDatabaseRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5911,7 +5899,7 @@ export namespace MyNS {
 	}
 	export function CreateStopInstanceRequestFormGroup() {
 		return new FormGroup<StopInstanceRequestFormProperties>({
-			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instanceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			force: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -5942,8 +5930,8 @@ export namespace MyNS {
 	}
 	export function CreateStopRelationalDatabaseRequestFormGroup() {
 		return new FormGroup<StopRelationalDatabaseRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			relationalDatabaseSnapshotName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -5976,8 +5964,8 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$')]),
 		});
 
 	}
@@ -6011,7 +5999,7 @@ export namespace MyNS {
 	}
 	export function CreateTestAlarmRequestFormGroup() {
 		return new FormGroup<TestAlarmRequestFormProperties>({
-			alarmName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			alarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			state: new FormControl<AlarmState | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -6068,8 +6056,8 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:(aws[^:]*):([a-zA-Z0-9-]+):([a-z0-9-]+):([0-9]+):([a-zA-Z]+)/([a-zA-Z0-9-]+)$')]),
 		});
 
 	}
@@ -6151,9 +6139,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateLoadBalancerAttributeRequestFormGroup() {
 		return new FormGroup<UpdateLoadBalancerAttributeRequestFormProperties>({
-			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			loadBalancerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			attributeName: new FormControl<UpdateLoadBalancerAttributeRequestAttributeName | null | undefined>(undefined, [Validators.required]),
-			attributeValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			attributeValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6201,7 +6189,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRelationalDatabaseRequestFormGroup() {
 		return new FormGroup<UpdateRelationalDatabaseRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 			masterUserPassword: new FormControl<string | null | undefined>(undefined),
 			rotateMasterUserPassword: new FormControl<boolean | null | undefined>(undefined),
 			preferredBackupWindow: new FormControl<string | null | undefined>(undefined),
@@ -6241,7 +6229,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRelationalDatabaseParametersRequestFormGroup() {
 		return new FormGroup<UpdateRelationalDatabaseParametersRequestFormProperties>({
-			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			relationalDatabaseName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -6258,7 +6246,7 @@ export namespace MyNS {
 
 	export enum MetricName { CPUUtilization = 0, NetworkIn = 1, NetworkOut = 2, StatusCheckFailed = 3, StatusCheckFailed_Instance = 4, StatusCheckFailed_System = 5, ClientTLSNegotiationErrorCount = 6, HealthyHostCount = 7, UnhealthyHostCount = 8, HTTPCode_LB_4XX_Count = 9, HTTPCode_LB_5XX_Count = 10, HTTPCode_Instance_2XX_Count = 11, HTTPCode_Instance_3XX_Count = 12, HTTPCode_Instance_4XX_Count = 13, HTTPCode_Instance_5XX_Count = 14, InstanceResponseTime = 15, RejectedConnectionCount = 16, RequestCount = 17, DatabaseConnections = 18, DiskQueueDepth = 19, FreeStorageSpace = 20, NetworkReceiveThroughput = 21, NetworkTransmitThroughput = 22, BurstCapacityTime = 23, BurstCapacityPercentage = 24 }
 
-	export enum MetricUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
+	export enum MetricUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
 
 
 	/** Describes a block storage disk mapping. */
@@ -6274,8 +6262,8 @@ export namespace MyNS {
 	}
 	export function CreateDiskMapFormGroup() {
 		return new FormGroup<DiskMapFormProperties>({
-			originalDiskPath: new FormControl<string | null | undefined>(undefined),
-			newDiskName: new FormControl<string | null | undefined>(undefined),
+			originalDiskPath: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			newDiskName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\w[\w\-]*\w')]),
 		});
 
 	}
@@ -6287,6 +6275,8 @@ export namespace MyNS {
 	export enum CloudFormationStackRecordSourceType { ExportSnapshotRecord = 0 }
 
 	export enum ContactMethodVerificationProtocol { Email = 0 }
+
+	export enum RegionName { 'us-east-1' = 0, 'us-east-2' = 1, 'us-west-1' = 2, 'us-west-2' = 3, 'eu-west-1' = 4, 'eu-west-2' = 5, 'eu-west-3' = 6, 'eu-central-1' = 7, 'ca-central-1' = 8, 'ap-south-1' = 9, 'ap-southeast-1' = 10, 'ap-southeast-2' = 11, 'ap-northeast-1' = 12, 'ap-northeast-2' = 13 }
 
 	export enum ExportSnapshotRecordSourceType { InstanceSnapshot = 0, DiskSnapshot = 1 }
 
@@ -6302,7 +6292,7 @@ export namespace MyNS {
 
 	export enum PortInfoSourceType { DEFAULT = 0, INSTANCE = 1, NONE = 2, CLOSED = 3 }
 
-	export enum InstanceHealthReason { Lb_RegistrationInProgress = 0, Lb_InitialHealthChecking = 1, Lb_InternalError = 2, Instance_ResponseCodeMismatch = 3, Instance_Timeout = 4, Instance_FailedHealthChecks = 5, Instance_NotRegistered = 6, Instance_NotInUse = 7, Instance_DeregistrationInProgress = 8, Instance_InvalidState = 9, Instance_IpUnusable = 10 }
+	export enum InstanceHealthReason { 'Lb.RegistrationInProgress' = 0, 'Lb.InitialHealthChecking' = 1, 'Lb.InternalError' = 2, 'Instance.ResponseCodeMismatch' = 3, 'Instance.Timeout' = 4, 'Instance.FailedHealthChecks' = 5, 'Instance.NotRegistered' = 6, 'Instance.NotInUse' = 7, 'Instance.DeregistrationInProgress' = 8, 'Instance.InvalidState' = 9, 'Instance.IpUnusable' = 10 }
 
 	export enum InstanceHealthState { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
 
@@ -7345,231 +7335,231 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AllocateStaticIpX_Amz_Target { Lightsail_20161128_AllocateStaticIp = 0 }
+	export enum AllocateStaticIpX_Amz_Target { 'Lightsail_20161128.AllocateStaticIp' = 0 }
 
-	export enum AttachDiskX_Amz_Target { Lightsail_20161128_AttachDisk = 0 }
+	export enum AttachDiskX_Amz_Target { 'Lightsail_20161128.AttachDisk' = 0 }
 
-	export enum AttachInstancesToLoadBalancerX_Amz_Target { Lightsail_20161128_AttachInstancesToLoadBalancer = 0 }
+	export enum AttachInstancesToLoadBalancerX_Amz_Target { 'Lightsail_20161128.AttachInstancesToLoadBalancer' = 0 }
 
-	export enum AttachLoadBalancerTlsCertificateX_Amz_Target { Lightsail_20161128_AttachLoadBalancerTlsCertificate = 0 }
+	export enum AttachLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.AttachLoadBalancerTlsCertificate' = 0 }
 
-	export enum AttachStaticIpX_Amz_Target { Lightsail_20161128_AttachStaticIp = 0 }
+	export enum AttachStaticIpX_Amz_Target { 'Lightsail_20161128.AttachStaticIp' = 0 }
 
-	export enum CloseInstancePublicPortsX_Amz_Target { Lightsail_20161128_CloseInstancePublicPorts = 0 }
+	export enum CloseInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.CloseInstancePublicPorts' = 0 }
 
-	export enum CopySnapshotX_Amz_Target { Lightsail_20161128_CopySnapshot = 0 }
+	export enum CopySnapshotX_Amz_Target { 'Lightsail_20161128.CopySnapshot' = 0 }
 
-	export enum CreateCloudFormationStackX_Amz_Target { Lightsail_20161128_CreateCloudFormationStack = 0 }
+	export enum CreateCloudFormationStackX_Amz_Target { 'Lightsail_20161128.CreateCloudFormationStack' = 0 }
 
-	export enum CreateContactMethodX_Amz_Target { Lightsail_20161128_CreateContactMethod = 0 }
+	export enum CreateContactMethodX_Amz_Target { 'Lightsail_20161128.CreateContactMethod' = 0 }
 
-	export enum CreateDiskX_Amz_Target { Lightsail_20161128_CreateDisk = 0 }
+	export enum CreateDiskX_Amz_Target { 'Lightsail_20161128.CreateDisk' = 0 }
 
-	export enum CreateDiskFromSnapshotX_Amz_Target { Lightsail_20161128_CreateDiskFromSnapshot = 0 }
+	export enum CreateDiskFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateDiskFromSnapshot' = 0 }
 
-	export enum CreateDiskSnapshotX_Amz_Target { Lightsail_20161128_CreateDiskSnapshot = 0 }
+	export enum CreateDiskSnapshotX_Amz_Target { 'Lightsail_20161128.CreateDiskSnapshot' = 0 }
 
-	export enum CreateDomainX_Amz_Target { Lightsail_20161128_CreateDomain = 0 }
+	export enum CreateDomainX_Amz_Target { 'Lightsail_20161128.CreateDomain' = 0 }
 
-	export enum CreateDomainEntryX_Amz_Target { Lightsail_20161128_CreateDomainEntry = 0 }
+	export enum CreateDomainEntryX_Amz_Target { 'Lightsail_20161128.CreateDomainEntry' = 0 }
 
-	export enum CreateInstanceSnapshotX_Amz_Target { Lightsail_20161128_CreateInstanceSnapshot = 0 }
+	export enum CreateInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.CreateInstanceSnapshot' = 0 }
 
-	export enum CreateInstancesX_Amz_Target { Lightsail_20161128_CreateInstances = 0 }
+	export enum CreateInstancesX_Amz_Target { 'Lightsail_20161128.CreateInstances' = 0 }
 
-	export enum CreateInstancesFromSnapshotX_Amz_Target { Lightsail_20161128_CreateInstancesFromSnapshot = 0 }
+	export enum CreateInstancesFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateInstancesFromSnapshot' = 0 }
 
-	export enum CreateKeyPairX_Amz_Target { Lightsail_20161128_CreateKeyPair = 0 }
+	export enum CreateKeyPairX_Amz_Target { 'Lightsail_20161128.CreateKeyPair' = 0 }
 
-	export enum CreateLoadBalancerX_Amz_Target { Lightsail_20161128_CreateLoadBalancer = 0 }
+	export enum CreateLoadBalancerX_Amz_Target { 'Lightsail_20161128.CreateLoadBalancer' = 0 }
 
-	export enum CreateLoadBalancerTlsCertificateX_Amz_Target { Lightsail_20161128_CreateLoadBalancerTlsCertificate = 0 }
+	export enum CreateLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.CreateLoadBalancerTlsCertificate' = 0 }
 
-	export enum CreateRelationalDatabaseX_Amz_Target { Lightsail_20161128_CreateRelationalDatabase = 0 }
+	export enum CreateRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabase' = 0 }
 
-	export enum CreateRelationalDatabaseFromSnapshotX_Amz_Target { Lightsail_20161128_CreateRelationalDatabaseFromSnapshot = 0 }
+	export enum CreateRelationalDatabaseFromSnapshotX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabaseFromSnapshot' = 0 }
 
-	export enum CreateRelationalDatabaseSnapshotX_Amz_Target { Lightsail_20161128_CreateRelationalDatabaseSnapshot = 0 }
+	export enum CreateRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.CreateRelationalDatabaseSnapshot' = 0 }
 
-	export enum DeleteAlarmX_Amz_Target { Lightsail_20161128_DeleteAlarm = 0 }
+	export enum DeleteAlarmX_Amz_Target { 'Lightsail_20161128.DeleteAlarm' = 0 }
 
-	export enum DeleteAutoSnapshotX_Amz_Target { Lightsail_20161128_DeleteAutoSnapshot = 0 }
+	export enum DeleteAutoSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteAutoSnapshot' = 0 }
 
-	export enum DeleteContactMethodX_Amz_Target { Lightsail_20161128_DeleteContactMethod = 0 }
+	export enum DeleteContactMethodX_Amz_Target { 'Lightsail_20161128.DeleteContactMethod' = 0 }
 
-	export enum DeleteDiskX_Amz_Target { Lightsail_20161128_DeleteDisk = 0 }
+	export enum DeleteDiskX_Amz_Target { 'Lightsail_20161128.DeleteDisk' = 0 }
 
-	export enum DeleteDiskSnapshotX_Amz_Target { Lightsail_20161128_DeleteDiskSnapshot = 0 }
+	export enum DeleteDiskSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteDiskSnapshot' = 0 }
 
-	export enum DeleteDomainX_Amz_Target { Lightsail_20161128_DeleteDomain = 0 }
+	export enum DeleteDomainX_Amz_Target { 'Lightsail_20161128.DeleteDomain' = 0 }
 
-	export enum DeleteDomainEntryX_Amz_Target { Lightsail_20161128_DeleteDomainEntry = 0 }
+	export enum DeleteDomainEntryX_Amz_Target { 'Lightsail_20161128.DeleteDomainEntry' = 0 }
 
-	export enum DeleteInstanceX_Amz_Target { Lightsail_20161128_DeleteInstance = 0 }
+	export enum DeleteInstanceX_Amz_Target { 'Lightsail_20161128.DeleteInstance' = 0 }
 
-	export enum DeleteInstanceSnapshotX_Amz_Target { Lightsail_20161128_DeleteInstanceSnapshot = 0 }
+	export enum DeleteInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteInstanceSnapshot' = 0 }
 
-	export enum DeleteKeyPairX_Amz_Target { Lightsail_20161128_DeleteKeyPair = 0 }
+	export enum DeleteKeyPairX_Amz_Target { 'Lightsail_20161128.DeleteKeyPair' = 0 }
 
-	export enum DeleteKnownHostKeysX_Amz_Target { Lightsail_20161128_DeleteKnownHostKeys = 0 }
+	export enum DeleteKnownHostKeysX_Amz_Target { 'Lightsail_20161128.DeleteKnownHostKeys' = 0 }
 
-	export enum DeleteLoadBalancerX_Amz_Target { Lightsail_20161128_DeleteLoadBalancer = 0 }
+	export enum DeleteLoadBalancerX_Amz_Target { 'Lightsail_20161128.DeleteLoadBalancer' = 0 }
 
-	export enum DeleteLoadBalancerTlsCertificateX_Amz_Target { Lightsail_20161128_DeleteLoadBalancerTlsCertificate = 0 }
+	export enum DeleteLoadBalancerTlsCertificateX_Amz_Target { 'Lightsail_20161128.DeleteLoadBalancerTlsCertificate' = 0 }
 
-	export enum DeleteRelationalDatabaseX_Amz_Target { Lightsail_20161128_DeleteRelationalDatabase = 0 }
+	export enum DeleteRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.DeleteRelationalDatabase' = 0 }
 
-	export enum DeleteRelationalDatabaseSnapshotX_Amz_Target { Lightsail_20161128_DeleteRelationalDatabaseSnapshot = 0 }
+	export enum DeleteRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.DeleteRelationalDatabaseSnapshot' = 0 }
 
-	export enum DetachDiskX_Amz_Target { Lightsail_20161128_DetachDisk = 0 }
+	export enum DetachDiskX_Amz_Target { 'Lightsail_20161128.DetachDisk' = 0 }
 
-	export enum DetachInstancesFromLoadBalancerX_Amz_Target { Lightsail_20161128_DetachInstancesFromLoadBalancer = 0 }
+	export enum DetachInstancesFromLoadBalancerX_Amz_Target { 'Lightsail_20161128.DetachInstancesFromLoadBalancer' = 0 }
 
-	export enum DetachStaticIpX_Amz_Target { Lightsail_20161128_DetachStaticIp = 0 }
+	export enum DetachStaticIpX_Amz_Target { 'Lightsail_20161128.DetachStaticIp' = 0 }
 
-	export enum DisableAddOnX_Amz_Target { Lightsail_20161128_DisableAddOn = 0 }
+	export enum DisableAddOnX_Amz_Target { 'Lightsail_20161128.DisableAddOn' = 0 }
 
-	export enum DownloadDefaultKeyPairX_Amz_Target { Lightsail_20161128_DownloadDefaultKeyPair = 0 }
+	export enum DownloadDefaultKeyPairX_Amz_Target { 'Lightsail_20161128.DownloadDefaultKeyPair' = 0 }
 
-	export enum EnableAddOnX_Amz_Target { Lightsail_20161128_EnableAddOn = 0 }
+	export enum EnableAddOnX_Amz_Target { 'Lightsail_20161128.EnableAddOn' = 0 }
 
-	export enum ExportSnapshotX_Amz_Target { Lightsail_20161128_ExportSnapshot = 0 }
+	export enum ExportSnapshotX_Amz_Target { 'Lightsail_20161128.ExportSnapshot' = 0 }
 
-	export enum GetActiveNamesX_Amz_Target { Lightsail_20161128_GetActiveNames = 0 }
+	export enum GetActiveNamesX_Amz_Target { 'Lightsail_20161128.GetActiveNames' = 0 }
 
-	export enum GetAlarmsX_Amz_Target { Lightsail_20161128_GetAlarms = 0 }
+	export enum GetAlarmsX_Amz_Target { 'Lightsail_20161128.GetAlarms' = 0 }
 
-	export enum GetAutoSnapshotsX_Amz_Target { Lightsail_20161128_GetAutoSnapshots = 0 }
+	export enum GetAutoSnapshotsX_Amz_Target { 'Lightsail_20161128.GetAutoSnapshots' = 0 }
 
-	export enum GetBlueprintsX_Amz_Target { Lightsail_20161128_GetBlueprints = 0 }
+	export enum GetBlueprintsX_Amz_Target { 'Lightsail_20161128.GetBlueprints' = 0 }
 
-	export enum GetBundlesX_Amz_Target { Lightsail_20161128_GetBundles = 0 }
+	export enum GetBundlesX_Amz_Target { 'Lightsail_20161128.GetBundles' = 0 }
 
-	export enum GetCloudFormationStackRecordsX_Amz_Target { Lightsail_20161128_GetCloudFormationStackRecords = 0 }
+	export enum GetCloudFormationStackRecordsX_Amz_Target { 'Lightsail_20161128.GetCloudFormationStackRecords' = 0 }
 
-	export enum GetContactMethodsX_Amz_Target { Lightsail_20161128_GetContactMethods = 0 }
+	export enum GetContactMethodsX_Amz_Target { 'Lightsail_20161128.GetContactMethods' = 0 }
 
-	export enum GetDiskX_Amz_Target { Lightsail_20161128_GetDisk = 0 }
+	export enum GetDiskX_Amz_Target { 'Lightsail_20161128.GetDisk' = 0 }
 
-	export enum GetDiskSnapshotX_Amz_Target { Lightsail_20161128_GetDiskSnapshot = 0 }
+	export enum GetDiskSnapshotX_Amz_Target { 'Lightsail_20161128.GetDiskSnapshot' = 0 }
 
-	export enum GetDiskSnapshotsX_Amz_Target { Lightsail_20161128_GetDiskSnapshots = 0 }
+	export enum GetDiskSnapshotsX_Amz_Target { 'Lightsail_20161128.GetDiskSnapshots' = 0 }
 
-	export enum GetDisksX_Amz_Target { Lightsail_20161128_GetDisks = 0 }
+	export enum GetDisksX_Amz_Target { 'Lightsail_20161128.GetDisks' = 0 }
 
-	export enum GetDomainX_Amz_Target { Lightsail_20161128_GetDomain = 0 }
+	export enum GetDomainX_Amz_Target { 'Lightsail_20161128.GetDomain' = 0 }
 
-	export enum GetDomainsX_Amz_Target { Lightsail_20161128_GetDomains = 0 }
+	export enum GetDomainsX_Amz_Target { 'Lightsail_20161128.GetDomains' = 0 }
 
-	export enum GetExportSnapshotRecordsX_Amz_Target { Lightsail_20161128_GetExportSnapshotRecords = 0 }
+	export enum GetExportSnapshotRecordsX_Amz_Target { 'Lightsail_20161128.GetExportSnapshotRecords' = 0 }
 
-	export enum GetInstanceX_Amz_Target { Lightsail_20161128_GetInstance = 0 }
+	export enum GetInstanceX_Amz_Target { 'Lightsail_20161128.GetInstance' = 0 }
 
-	export enum GetInstanceAccessDetailsX_Amz_Target { Lightsail_20161128_GetInstanceAccessDetails = 0 }
+	export enum GetInstanceAccessDetailsX_Amz_Target { 'Lightsail_20161128.GetInstanceAccessDetails' = 0 }
 
-	export enum GetInstanceMetricDataX_Amz_Target { Lightsail_20161128_GetInstanceMetricData = 0 }
+	export enum GetInstanceMetricDataX_Amz_Target { 'Lightsail_20161128.GetInstanceMetricData' = 0 }
 
-	export enum GetInstancePortStatesX_Amz_Target { Lightsail_20161128_GetInstancePortStates = 0 }
+	export enum GetInstancePortStatesX_Amz_Target { 'Lightsail_20161128.GetInstancePortStates' = 0 }
 
-	export enum GetInstanceSnapshotX_Amz_Target { Lightsail_20161128_GetInstanceSnapshot = 0 }
+	export enum GetInstanceSnapshotX_Amz_Target { 'Lightsail_20161128.GetInstanceSnapshot' = 0 }
 
-	export enum GetInstanceSnapshotsX_Amz_Target { Lightsail_20161128_GetInstanceSnapshots = 0 }
+	export enum GetInstanceSnapshotsX_Amz_Target { 'Lightsail_20161128.GetInstanceSnapshots' = 0 }
 
-	export enum GetInstanceStateX_Amz_Target { Lightsail_20161128_GetInstanceState = 0 }
+	export enum GetInstanceStateX_Amz_Target { 'Lightsail_20161128.GetInstanceState' = 0 }
 
-	export enum GetInstancesX_Amz_Target { Lightsail_20161128_GetInstances = 0 }
+	export enum GetInstancesX_Amz_Target { 'Lightsail_20161128.GetInstances' = 0 }
 
-	export enum GetKeyPairX_Amz_Target { Lightsail_20161128_GetKeyPair = 0 }
+	export enum GetKeyPairX_Amz_Target { 'Lightsail_20161128.GetKeyPair' = 0 }
 
-	export enum GetKeyPairsX_Amz_Target { Lightsail_20161128_GetKeyPairs = 0 }
+	export enum GetKeyPairsX_Amz_Target { 'Lightsail_20161128.GetKeyPairs' = 0 }
 
-	export enum GetLoadBalancerX_Amz_Target { Lightsail_20161128_GetLoadBalancer = 0 }
+	export enum GetLoadBalancerX_Amz_Target { 'Lightsail_20161128.GetLoadBalancer' = 0 }
 
-	export enum GetLoadBalancerMetricDataX_Amz_Target { Lightsail_20161128_GetLoadBalancerMetricData = 0 }
+	export enum GetLoadBalancerMetricDataX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerMetricData' = 0 }
 
-	export enum GetLoadBalancerTlsCertificatesX_Amz_Target { Lightsail_20161128_GetLoadBalancerTlsCertificates = 0 }
+	export enum GetLoadBalancerTlsCertificatesX_Amz_Target { 'Lightsail_20161128.GetLoadBalancerTlsCertificates' = 0 }
 
-	export enum GetLoadBalancersX_Amz_Target { Lightsail_20161128_GetLoadBalancers = 0 }
+	export enum GetLoadBalancersX_Amz_Target { 'Lightsail_20161128.GetLoadBalancers' = 0 }
 
-	export enum GetOperationX_Amz_Target { Lightsail_20161128_GetOperation = 0 }
+	export enum GetOperationX_Amz_Target { 'Lightsail_20161128.GetOperation' = 0 }
 
-	export enum GetOperationsX_Amz_Target { Lightsail_20161128_GetOperations = 0 }
+	export enum GetOperationsX_Amz_Target { 'Lightsail_20161128.GetOperations' = 0 }
 
-	export enum GetOperationsForResourceX_Amz_Target { Lightsail_20161128_GetOperationsForResource = 0 }
+	export enum GetOperationsForResourceX_Amz_Target { 'Lightsail_20161128.GetOperationsForResource' = 0 }
 
-	export enum GetRegionsX_Amz_Target { Lightsail_20161128_GetRegions = 0 }
+	export enum GetRegionsX_Amz_Target { 'Lightsail_20161128.GetRegions' = 0 }
 
-	export enum GetRelationalDatabaseX_Amz_Target { Lightsail_20161128_GetRelationalDatabase = 0 }
+	export enum GetRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabase' = 0 }
 
-	export enum GetRelationalDatabaseBlueprintsX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseBlueprints = 0 }
+	export enum GetRelationalDatabaseBlueprintsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseBlueprints' = 0 }
 
-	export enum GetRelationalDatabaseBundlesX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseBundles = 0 }
+	export enum GetRelationalDatabaseBundlesX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseBundles' = 0 }
 
-	export enum GetRelationalDatabaseEventsX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseEvents = 0 }
+	export enum GetRelationalDatabaseEventsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseEvents' = 0 }
 
-	export enum GetRelationalDatabaseLogEventsX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseLogEvents = 0 }
+	export enum GetRelationalDatabaseLogEventsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseLogEvents' = 0 }
 
-	export enum GetRelationalDatabaseLogStreamsX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseLogStreams = 0 }
+	export enum GetRelationalDatabaseLogStreamsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseLogStreams' = 0 }
 
-	export enum GetRelationalDatabaseMasterUserPasswordX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseMasterUserPassword = 0 }
+	export enum GetRelationalDatabaseMasterUserPasswordX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseMasterUserPassword' = 0 }
 
-	export enum GetRelationalDatabaseMetricDataX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseMetricData = 0 }
+	export enum GetRelationalDatabaseMetricDataX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseMetricData' = 0 }
 
-	export enum GetRelationalDatabaseParametersX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseParameters = 0 }
+	export enum GetRelationalDatabaseParametersX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseParameters' = 0 }
 
-	export enum GetRelationalDatabaseSnapshotX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseSnapshot = 0 }
+	export enum GetRelationalDatabaseSnapshotX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseSnapshot' = 0 }
 
-	export enum GetRelationalDatabaseSnapshotsX_Amz_Target { Lightsail_20161128_GetRelationalDatabaseSnapshots = 0 }
+	export enum GetRelationalDatabaseSnapshotsX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabaseSnapshots' = 0 }
 
-	export enum GetRelationalDatabasesX_Amz_Target { Lightsail_20161128_GetRelationalDatabases = 0 }
+	export enum GetRelationalDatabasesX_Amz_Target { 'Lightsail_20161128.GetRelationalDatabases' = 0 }
 
-	export enum GetStaticIpX_Amz_Target { Lightsail_20161128_GetStaticIp = 0 }
+	export enum GetStaticIpX_Amz_Target { 'Lightsail_20161128.GetStaticIp' = 0 }
 
-	export enum GetStaticIpsX_Amz_Target { Lightsail_20161128_GetStaticIps = 0 }
+	export enum GetStaticIpsX_Amz_Target { 'Lightsail_20161128.GetStaticIps' = 0 }
 
-	export enum ImportKeyPairX_Amz_Target { Lightsail_20161128_ImportKeyPair = 0 }
+	export enum ImportKeyPairX_Amz_Target { 'Lightsail_20161128.ImportKeyPair' = 0 }
 
-	export enum IsVpcPeeredX_Amz_Target { Lightsail_20161128_IsVpcPeered = 0 }
+	export enum IsVpcPeeredX_Amz_Target { 'Lightsail_20161128.IsVpcPeered' = 0 }
 
-	export enum OpenInstancePublicPortsX_Amz_Target { Lightsail_20161128_OpenInstancePublicPorts = 0 }
+	export enum OpenInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.OpenInstancePublicPorts' = 0 }
 
-	export enum PeerVpcX_Amz_Target { Lightsail_20161128_PeerVpc = 0 }
+	export enum PeerVpcX_Amz_Target { 'Lightsail_20161128.PeerVpc' = 0 }
 
-	export enum PutAlarmX_Amz_Target { Lightsail_20161128_PutAlarm = 0 }
+	export enum PutAlarmX_Amz_Target { 'Lightsail_20161128.PutAlarm' = 0 }
 
-	export enum PutInstancePublicPortsX_Amz_Target { Lightsail_20161128_PutInstancePublicPorts = 0 }
+	export enum PutInstancePublicPortsX_Amz_Target { 'Lightsail_20161128.PutInstancePublicPorts' = 0 }
 
-	export enum RebootInstanceX_Amz_Target { Lightsail_20161128_RebootInstance = 0 }
+	export enum RebootInstanceX_Amz_Target { 'Lightsail_20161128.RebootInstance' = 0 }
 
-	export enum RebootRelationalDatabaseX_Amz_Target { Lightsail_20161128_RebootRelationalDatabase = 0 }
+	export enum RebootRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.RebootRelationalDatabase' = 0 }
 
-	export enum ReleaseStaticIpX_Amz_Target { Lightsail_20161128_ReleaseStaticIp = 0 }
+	export enum ReleaseStaticIpX_Amz_Target { 'Lightsail_20161128.ReleaseStaticIp' = 0 }
 
-	export enum SendContactMethodVerificationX_Amz_Target { Lightsail_20161128_SendContactMethodVerification = 0 }
+	export enum SendContactMethodVerificationX_Amz_Target { 'Lightsail_20161128.SendContactMethodVerification' = 0 }
 
-	export enum StartInstanceX_Amz_Target { Lightsail_20161128_StartInstance = 0 }
+	export enum StartInstanceX_Amz_Target { 'Lightsail_20161128.StartInstance' = 0 }
 
-	export enum StartRelationalDatabaseX_Amz_Target { Lightsail_20161128_StartRelationalDatabase = 0 }
+	export enum StartRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.StartRelationalDatabase' = 0 }
 
-	export enum StopInstanceX_Amz_Target { Lightsail_20161128_StopInstance = 0 }
+	export enum StopInstanceX_Amz_Target { 'Lightsail_20161128.StopInstance' = 0 }
 
-	export enum StopRelationalDatabaseX_Amz_Target { Lightsail_20161128_StopRelationalDatabase = 0 }
+	export enum StopRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.StopRelationalDatabase' = 0 }
 
-	export enum TagResourceX_Amz_Target { Lightsail_20161128_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'Lightsail_20161128.TagResource' = 0 }
 
-	export enum TestAlarmX_Amz_Target { Lightsail_20161128_TestAlarm = 0 }
+	export enum TestAlarmX_Amz_Target { 'Lightsail_20161128.TestAlarm' = 0 }
 
-	export enum UnpeerVpcX_Amz_Target { Lightsail_20161128_UnpeerVpc = 0 }
+	export enum UnpeerVpcX_Amz_Target { 'Lightsail_20161128.UnpeerVpc' = 0 }
 
-	export enum UntagResourceX_Amz_Target { Lightsail_20161128_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'Lightsail_20161128.UntagResource' = 0 }
 
-	export enum UpdateDomainEntryX_Amz_Target { Lightsail_20161128_UpdateDomainEntry = 0 }
+	export enum UpdateDomainEntryX_Amz_Target { 'Lightsail_20161128.UpdateDomainEntry' = 0 }
 
-	export enum UpdateLoadBalancerAttributeX_Amz_Target { Lightsail_20161128_UpdateLoadBalancerAttribute = 0 }
+	export enum UpdateLoadBalancerAttributeX_Amz_Target { 'Lightsail_20161128.UpdateLoadBalancerAttribute' = 0 }
 
-	export enum UpdateRelationalDatabaseX_Amz_Target { Lightsail_20161128_UpdateRelationalDatabase = 0 }
+	export enum UpdateRelationalDatabaseX_Amz_Target { 'Lightsail_20161128.UpdateRelationalDatabase' = 0 }
 
-	export enum UpdateRelationalDatabaseParametersX_Amz_Target { Lightsail_20161128_UpdateRelationalDatabaseParameters = 0 }
+	export enum UpdateRelationalDatabaseParametersX_Amz_Target { 'Lightsail_20161128.UpdateRelationalDatabaseParameters' = 0 }
 
 }
 

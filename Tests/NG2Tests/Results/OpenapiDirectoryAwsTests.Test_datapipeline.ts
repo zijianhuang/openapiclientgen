@@ -44,7 +44,7 @@ export namespace MyNS {
 	}
 	export function CreateActivatePipelineInputFormGroup() {
 		return new FormGroup<ActivatePipelineInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			startTimestamp: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -88,8 +88,8 @@ export namespace MyNS {
 	}
 	export function CreateParameterValueFormGroup() {
 		return new FormGroup<ParameterValueFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(0)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(10240)]),
 		});
 
 	}
@@ -207,7 +207,7 @@ export namespace MyNS {
 	}
 	export function CreateAddTagsInputFormGroup() {
 		return new FormGroup<AddTagsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -250,8 +250,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -280,7 +280,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePipelineOutputFormGroup() {
 		return new FormGroup<CreatePipelineOutputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -341,9 +341,9 @@ export namespace MyNS {
 	}
 	export function CreateCreatePipelineInputFormGroup() {
 		return new FormGroup<CreatePipelineInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			uniqueId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			uniqueId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -388,7 +388,7 @@ export namespace MyNS {
 	}
 	export function CreateDeactivatePipelineInputFormGroup() {
 		return new FormGroup<DeactivatePipelineInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			cancelActive: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -418,7 +418,7 @@ export namespace MyNS {
 	}
 	export function CreateDeletePipelineInputFormGroup() {
 		return new FormGroup<DeletePipelineInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -450,7 +450,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeObjectsOutputFormGroup() {
 		return new FormGroup<DescribeObjectsOutputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -497,8 +497,8 @@ export namespace MyNS {
 	}
 	export function CreatePipelineObjectFormGroup() {
 		return new FormGroup<PipelineObjectFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -551,9 +551,9 @@ export namespace MyNS {
 	}
 	export function CreateFieldFormGroup() {
 		return new FormGroup<FieldFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240), Validators.minLength(0)]),
-			refValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(10240)]),
+			refValue: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -599,9 +599,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribeObjectsInputFormGroup() {
 		return new FormGroup<DescribeObjectsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			evaluateExpressions: new FormControl<boolean | null | undefined>(undefined),
-			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -682,9 +682,9 @@ export namespace MyNS {
 	}
 	export function CreatePipelineDescriptionFormGroup() {
 		return new FormGroup<PipelineDescriptionFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -730,7 +730,7 @@ export namespace MyNS {
 	}
 	export function CreateEvaluateExpressionOutputFormGroup() {
 		return new FormGroup<EvaluateExpressionOutputFormProperties>({
-			evaluatedExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20971520), Validators.minLength(0)]),
+			evaluatedExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(20971520)]),
 		});
 
 	}
@@ -787,9 +787,9 @@ export namespace MyNS {
 	}
 	export function CreateEvaluateExpressionInputFormGroup() {
 		return new FormGroup<EvaluateExpressionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			objectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20971520), Validators.minLength(0)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			objectId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(20971520)]),
 		});
 
 	}
@@ -855,7 +855,7 @@ export namespace MyNS {
 	}
 	export function CreateParameterObjectFormGroup() {
 		return new FormGroup<ParameterObjectFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -898,8 +898,8 @@ export namespace MyNS {
 	}
 	export function CreateParameterAttributeFormGroup() {
 		return new FormGroup<ParameterAttributeFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(0)]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			stringValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(10240)]),
 		});
 
 	}
@@ -940,8 +940,8 @@ export namespace MyNS {
 	}
 	export function CreateGetPipelineDefinitionInputFormGroup() {
 		return new FormGroup<GetPipelineDefinitionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -973,7 +973,7 @@ export namespace MyNS {
 	}
 	export function CreateListPipelinesOutputFormGroup() {
 		return new FormGroup<ListPipelinesOutputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1013,8 +1013,8 @@ export namespace MyNS {
 	}
 	export function CreatePipelineIdNameFormGroup() {
 		return new FormGroup<PipelineIdNameFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1041,7 +1041,7 @@ export namespace MyNS {
 	}
 	export function CreateListPipelinesInputFormGroup() {
 		return new FormGroup<ListPipelinesInputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1110,9 +1110,9 @@ export namespace MyNS {
 	}
 	export function CreateTaskObjectFormGroup() {
 		return new FormGroup<TaskObjectFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			attemptId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			attemptId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1166,8 +1166,8 @@ export namespace MyNS {
 	}
 	export function CreatePollForTaskInputFormGroup() {
 		return new FormGroup<PollForTaskInputFormProperties>({
-			workerGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
-			hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			workerGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(1024)]),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1206,8 +1206,8 @@ export namespace MyNS {
 	}
 	export function CreateInstanceIdentityFormGroup() {
 		return new FormGroup<InstanceIdentityFormProperties>({
-			document: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			signature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			document: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
+			signature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1258,7 +1258,7 @@ export namespace MyNS {
 	}
 	export function CreateValidationErrorFormGroup() {
 		return new FormGroup<ValidationErrorFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1286,7 +1286,7 @@ export namespace MyNS {
 	}
 	export function CreateValidationWarningFormGroup() {
 		return new FormGroup<ValidationWarningFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1320,7 +1320,7 @@ export namespace MyNS {
 	}
 	export function CreatePutPipelineDefinitionInputFormGroup() {
 		return new FormGroup<PutPipelineDefinitionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1350,7 +1350,7 @@ export namespace MyNS {
 	}
 	export function CreateQueryObjectsOutputFormGroup() {
 		return new FormGroup<QueryObjectsOutputFormProperties>({
-			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1411,9 +1411,9 @@ export namespace MyNS {
 	}
 	export function CreateQueryObjectsInputFormGroup() {
 		return new FormGroup<QueryObjectsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			sphere: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
-			marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			sphere: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(1024)]),
+			marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			limit: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1461,7 +1461,7 @@ export namespace MyNS {
 	}
 	export function CreateSelectorFormGroup() {
 		return new FormGroup<SelectorFormProperties>({
-			fieldName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			fieldName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1527,7 +1527,7 @@ export namespace MyNS {
 	}
 	export function CreateRemoveTagsInputFormGroup() {
 		return new FormGroup<RemoveTagsInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1578,7 +1578,7 @@ export namespace MyNS {
 	}
 	export function CreateReportTaskProgressInputFormGroup() {
 		return new FormGroup<ReportTaskProgressInputFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1652,9 +1652,9 @@ export namespace MyNS {
 	}
 	export function CreateReportTaskRunnerHeartbeatInputFormGroup() {
 		return new FormGroup<ReportTaskRunnerHeartbeatInputFormProperties>({
-			taskrunnerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			workerGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			hostname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			taskrunnerId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			workerGroup: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
+			hostname: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1700,8 +1700,8 @@ export namespace MyNS {
 	}
 	export function CreateSetStatusInputFormGroup() {
 		return new FormGroup<SetStatusInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			status: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1776,11 +1776,11 @@ export namespace MyNS {
 	}
 	export function CreateSetTaskStatusInputFormGroup() {
 		return new FormGroup<SetTaskStatusInputFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			taskStatus: new FormControl<SetTaskStatusInputTaskStatus | null | undefined>(undefined, [Validators.required]),
-			errorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			errorId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
-			errorStackTrace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			errorStackTrace: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1839,7 +1839,7 @@ export namespace MyNS {
 	}
 	export function CreateValidatePipelineDefinitionInputFormGroup() {
 		return new FormGroup<ValidatePipelineDefinitionInputFormProperties>({
-			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			pipelineId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2027,43 +2027,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum ActivatePipelineX_Amz_Target { DataPipeline_ActivatePipeline = 0 }
+	export enum ActivatePipelineX_Amz_Target { 'DataPipeline.ActivatePipeline' = 0 }
 
-	export enum AddTagsX_Amz_Target { DataPipeline_AddTags = 0 }
+	export enum AddTagsX_Amz_Target { 'DataPipeline.AddTags' = 0 }
 
-	export enum CreatePipelineX_Amz_Target { DataPipeline_CreatePipeline = 0 }
+	export enum CreatePipelineX_Amz_Target { 'DataPipeline.CreatePipeline' = 0 }
 
-	export enum DeactivatePipelineX_Amz_Target { DataPipeline_DeactivatePipeline = 0 }
+	export enum DeactivatePipelineX_Amz_Target { 'DataPipeline.DeactivatePipeline' = 0 }
 
-	export enum DeletePipelineX_Amz_Target { DataPipeline_DeletePipeline = 0 }
+	export enum DeletePipelineX_Amz_Target { 'DataPipeline.DeletePipeline' = 0 }
 
-	export enum DescribeObjectsX_Amz_Target { DataPipeline_DescribeObjects = 0 }
+	export enum DescribeObjectsX_Amz_Target { 'DataPipeline.DescribeObjects' = 0 }
 
-	export enum DescribePipelinesX_Amz_Target { DataPipeline_DescribePipelines = 0 }
+	export enum DescribePipelinesX_Amz_Target { 'DataPipeline.DescribePipelines' = 0 }
 
-	export enum EvaluateExpressionX_Amz_Target { DataPipeline_EvaluateExpression = 0 }
+	export enum EvaluateExpressionX_Amz_Target { 'DataPipeline.EvaluateExpression' = 0 }
 
-	export enum GetPipelineDefinitionX_Amz_Target { DataPipeline_GetPipelineDefinition = 0 }
+	export enum GetPipelineDefinitionX_Amz_Target { 'DataPipeline.GetPipelineDefinition' = 0 }
 
-	export enum ListPipelinesX_Amz_Target { DataPipeline_ListPipelines = 0 }
+	export enum ListPipelinesX_Amz_Target { 'DataPipeline.ListPipelines' = 0 }
 
-	export enum PollForTaskX_Amz_Target { DataPipeline_PollForTask = 0 }
+	export enum PollForTaskX_Amz_Target { 'DataPipeline.PollForTask' = 0 }
 
-	export enum PutPipelineDefinitionX_Amz_Target { DataPipeline_PutPipelineDefinition = 0 }
+	export enum PutPipelineDefinitionX_Amz_Target { 'DataPipeline.PutPipelineDefinition' = 0 }
 
-	export enum QueryObjectsX_Amz_Target { DataPipeline_QueryObjects = 0 }
+	export enum QueryObjectsX_Amz_Target { 'DataPipeline.QueryObjects' = 0 }
 
-	export enum RemoveTagsX_Amz_Target { DataPipeline_RemoveTags = 0 }
+	export enum RemoveTagsX_Amz_Target { 'DataPipeline.RemoveTags' = 0 }
 
-	export enum ReportTaskProgressX_Amz_Target { DataPipeline_ReportTaskProgress = 0 }
+	export enum ReportTaskProgressX_Amz_Target { 'DataPipeline.ReportTaskProgress' = 0 }
 
-	export enum ReportTaskRunnerHeartbeatX_Amz_Target { DataPipeline_ReportTaskRunnerHeartbeat = 0 }
+	export enum ReportTaskRunnerHeartbeatX_Amz_Target { 'DataPipeline.ReportTaskRunnerHeartbeat' = 0 }
 
-	export enum SetStatusX_Amz_Target { DataPipeline_SetStatus = 0 }
+	export enum SetStatusX_Amz_Target { 'DataPipeline.SetStatus' = 0 }
 
-	export enum SetTaskStatusX_Amz_Target { DataPipeline_SetTaskStatus = 0 }
+	export enum SetTaskStatusX_Amz_Target { 'DataPipeline.SetTaskStatus' = 0 }
 
-	export enum ValidatePipelineDefinitionX_Amz_Target { DataPipeline_ValidatePipelineDefinition = 0 }
+	export enum ValidatePipelineDefinitionX_Amz_Target { 'DataPipeline.ValidatePipelineDefinition' = 0 }
 
 }
 

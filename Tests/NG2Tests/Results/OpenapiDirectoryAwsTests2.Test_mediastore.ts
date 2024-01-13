@@ -81,11 +81,11 @@ export namespace MyNS {
 	}
 	export function CreateContainerFormGroup() {
 		return new FormGroup<ContainerFormProperties>({
-			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
+			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
-			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
-			Status: new FormControl<ContainerStatus | null | undefined>(undefined, [Validators.maxLength(16), Validators.minLength(1)]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
+			Status: new FormControl<ContainerStatus | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(16)]),
 			AccessLoggingEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -119,7 +119,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateContainerInputFormGroup() {
 		return new FormGroup<CreateContainerInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -160,8 +160,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{L}\p{Z}\p{N}_.:/=+\-@]*')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[\p{L}\p{Z}\p{N}_.:/=+\-@]*')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{L}\p{Z}\p{N}_.:/=+\-@]*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('[\p{L}\p{Z}\p{N}_.:/=+\-@]*')]),
 		});
 
 	}
@@ -226,7 +226,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteContainerInputFormGroup() {
 		return new FormGroup<DeleteContainerInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -271,7 +271,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteContainerPolicyInputFormGroup() {
 		return new FormGroup<DeleteContainerPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -316,7 +316,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteCorsPolicyInputFormGroup() {
 		return new FormGroup<DeleteCorsPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -361,7 +361,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLifecyclePolicyInputFormGroup() {
 		return new FormGroup<DeleteLifecyclePolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -396,7 +396,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteMetricPolicyInputFormGroup() {
 		return new FormGroup<DeleteMetricPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -432,7 +432,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeContainerInputFormGroup() {
 		return new FormGroup<DescribeContainerInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -457,7 +457,7 @@ export namespace MyNS {
 	}
 	export function CreateGetContainerPolicyOutputFormGroup() {
 		return new FormGroup<GetContainerPolicyOutputFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('[\x00-\x7F]+')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8192), Validators.pattern('[\x00-\x7F]+')]),
 		});
 
 	}
@@ -482,7 +482,7 @@ export namespace MyNS {
 	}
 	export function CreateGetContainerPolicyInputFormGroup() {
 		return new FormGroup<GetContainerPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -580,7 +580,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCorsPolicyInputFormGroup() {
 		return new FormGroup<GetCorsPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -605,7 +605,7 @@ export namespace MyNS {
 	}
 	export function CreateGetLifecyclePolicyOutputFormGroup() {
 		return new FormGroup<GetLifecyclePolicyOutputFormProperties>({
-			LifecyclePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
+			LifecyclePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(8192), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 		});
 
 	}
@@ -630,7 +630,7 @@ export namespace MyNS {
 	}
 	export function CreateGetLifecyclePolicyInputFormGroup() {
 		return new FormGroup<GetLifecyclePolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -718,8 +718,8 @@ export namespace MyNS {
 	}
 	export function CreateMetricPolicyRuleFormGroup() {
 		return new FormGroup<MetricPolicyRuleFormProperties>({
-			ObjectGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(900), Validators.minLength(1), Validators.pattern('/?(?:[A-Za-z0-9_=:\.\-\~\*]+/){0,10}(?:[A-Za-z0-9_=:\.\-\~\*]+)?/?')]),
-			ObjectGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_]+')]),
+			ObjectGroup: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(900), Validators.pattern('/?(?:[A-Za-z0-9_=:\.\-\~\*]+/){0,10}(?:[A-Za-z0-9_=:\.\-\~\*]+)?/?')]),
+			ObjectGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9_]+')]),
 		});
 
 	}
@@ -744,7 +744,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMetricPolicyInputFormGroup() {
 		return new FormGroup<GetMetricPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -770,7 +770,7 @@ export namespace MyNS {
 	}
 	export function CreateListContainersOutputFormGroup() {
 		return new FormGroup<ListContainersOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[0-9A-Za-z=/+]+')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[0-9A-Za-z=/+]+')]),
 		});
 
 	}
@@ -805,7 +805,7 @@ export namespace MyNS {
 	}
 	export function CreateListContainersInputFormGroup() {
 		return new FormGroup<ListContainersInputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[0-9A-Za-z=/+]+')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[0-9A-Za-z=/+]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -847,7 +847,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
 		});
 
 	}
@@ -896,8 +896,8 @@ export namespace MyNS {
 	}
 	export function CreatePutContainerPolicyInputFormGroup() {
 		return new FormGroup<PutContainerPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('[\x00-\x7F]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8192), Validators.pattern('[\x00-\x7F]+')]),
 		});
 
 	}
@@ -940,7 +940,7 @@ export namespace MyNS {
 	}
 	export function CreatePutCorsPolicyInputFormGroup() {
 		return new FormGroup<PutCorsPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -989,8 +989,8 @@ export namespace MyNS {
 	}
 	export function CreatePutLifecyclePolicyInputFormGroup() {
 		return new FormGroup<PutLifecyclePolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
-			LifecyclePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
+			LifecyclePolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(8192), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 		});
 
 	}
@@ -1031,7 +1031,7 @@ export namespace MyNS {
 	}
 	export function CreatePutMetricPolicyInputFormGroup() {
 		return new FormGroup<PutMetricPolicyInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -1066,7 +1066,7 @@ export namespace MyNS {
 	}
 	export function CreateStartAccessLoggingInputFormGroup() {
 		return new FormGroup<StartAccessLoggingInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -1101,7 +1101,7 @@ export namespace MyNS {
 	}
 	export function CreateStopAccessLoggingInputFormGroup() {
 		return new FormGroup<StopAccessLoggingInputFormProperties>({
-			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\w-]+')]),
+			ContainerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\w-]+')]),
 		});
 
 	}
@@ -1143,7 +1143,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
 		});
 
 	}
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
+			Resource: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:mediastore:[a-z]+-[a-z]+-\d:\d{12}:container/[\w-]{1,255}')]),
 		});
 
 	}
@@ -1385,47 +1385,47 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateContainerX_Amz_Target { MediaStore_20170901_CreateContainer = 0 }
+	export enum CreateContainerX_Amz_Target { 'MediaStore_20170901.CreateContainer' = 0 }
 
-	export enum DeleteContainerX_Amz_Target { MediaStore_20170901_DeleteContainer = 0 }
+	export enum DeleteContainerX_Amz_Target { 'MediaStore_20170901.DeleteContainer' = 0 }
 
-	export enum DeleteContainerPolicyX_Amz_Target { MediaStore_20170901_DeleteContainerPolicy = 0 }
+	export enum DeleteContainerPolicyX_Amz_Target { 'MediaStore_20170901.DeleteContainerPolicy' = 0 }
 
-	export enum DeleteCorsPolicyX_Amz_Target { MediaStore_20170901_DeleteCorsPolicy = 0 }
+	export enum DeleteCorsPolicyX_Amz_Target { 'MediaStore_20170901.DeleteCorsPolicy' = 0 }
 
-	export enum DeleteLifecyclePolicyX_Amz_Target { MediaStore_20170901_DeleteLifecyclePolicy = 0 }
+	export enum DeleteLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.DeleteLifecyclePolicy' = 0 }
 
-	export enum DeleteMetricPolicyX_Amz_Target { MediaStore_20170901_DeleteMetricPolicy = 0 }
+	export enum DeleteMetricPolicyX_Amz_Target { 'MediaStore_20170901.DeleteMetricPolicy' = 0 }
 
-	export enum DescribeContainerX_Amz_Target { MediaStore_20170901_DescribeContainer = 0 }
+	export enum DescribeContainerX_Amz_Target { 'MediaStore_20170901.DescribeContainer' = 0 }
 
-	export enum GetContainerPolicyX_Amz_Target { MediaStore_20170901_GetContainerPolicy = 0 }
+	export enum GetContainerPolicyX_Amz_Target { 'MediaStore_20170901.GetContainerPolicy' = 0 }
 
-	export enum GetCorsPolicyX_Amz_Target { MediaStore_20170901_GetCorsPolicy = 0 }
+	export enum GetCorsPolicyX_Amz_Target { 'MediaStore_20170901.GetCorsPolicy' = 0 }
 
-	export enum GetLifecyclePolicyX_Amz_Target { MediaStore_20170901_GetLifecyclePolicy = 0 }
+	export enum GetLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.GetLifecyclePolicy' = 0 }
 
-	export enum GetMetricPolicyX_Amz_Target { MediaStore_20170901_GetMetricPolicy = 0 }
+	export enum GetMetricPolicyX_Amz_Target { 'MediaStore_20170901.GetMetricPolicy' = 0 }
 
-	export enum ListContainersX_Amz_Target { MediaStore_20170901_ListContainers = 0 }
+	export enum ListContainersX_Amz_Target { 'MediaStore_20170901.ListContainers' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { MediaStore_20170901_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'MediaStore_20170901.ListTagsForResource' = 0 }
 
-	export enum PutContainerPolicyX_Amz_Target { MediaStore_20170901_PutContainerPolicy = 0 }
+	export enum PutContainerPolicyX_Amz_Target { 'MediaStore_20170901.PutContainerPolicy' = 0 }
 
-	export enum PutCorsPolicyX_Amz_Target { MediaStore_20170901_PutCorsPolicy = 0 }
+	export enum PutCorsPolicyX_Amz_Target { 'MediaStore_20170901.PutCorsPolicy' = 0 }
 
-	export enum PutLifecyclePolicyX_Amz_Target { MediaStore_20170901_PutLifecyclePolicy = 0 }
+	export enum PutLifecyclePolicyX_Amz_Target { 'MediaStore_20170901.PutLifecyclePolicy' = 0 }
 
-	export enum PutMetricPolicyX_Amz_Target { MediaStore_20170901_PutMetricPolicy = 0 }
+	export enum PutMetricPolicyX_Amz_Target { 'MediaStore_20170901.PutMetricPolicy' = 0 }
 
-	export enum StartAccessLoggingX_Amz_Target { MediaStore_20170901_StartAccessLogging = 0 }
+	export enum StartAccessLoggingX_Amz_Target { 'MediaStore_20170901.StartAccessLogging' = 0 }
 
-	export enum StopAccessLoggingX_Amz_Target { MediaStore_20170901_StopAccessLogging = 0 }
+	export enum StopAccessLoggingX_Amz_Target { 'MediaStore_20170901.StopAccessLogging' = 0 }
 
-	export enum TagResourceX_Amz_Target { MediaStore_20170901_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'MediaStore_20170901.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { MediaStore_20170901_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'MediaStore_20170901.UntagResource' = 0 }
 
 }
 

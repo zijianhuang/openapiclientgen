@@ -24,7 +24,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateByteMatchSetResponseFormGroup() {
 		return new FormGroup<CreateByteMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -68,8 +68,8 @@ export namespace MyNS {
 	}
 	export function CreateByteMatchSetFormGroup() {
 		return new FormGroup<ByteMatchSetFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -144,7 +144,7 @@ export namespace MyNS {
 	export function CreateFieldToMatchFormGroup() {
 		return new FormGroup<FieldToMatchFormProperties>({
 			Type: new FormControl<FieldToMatchType | null | undefined>(undefined, [Validators.required]),
-			Data: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -189,8 +189,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateByteMatchSetRequestFormGroup() {
 		return new FormGroup<CreateByteMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -276,7 +276,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGeoMatchSetResponseFormGroup() {
 		return new FormGroup<CreateGeoMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -320,8 +320,8 @@ export namespace MyNS {
 	}
 	export function CreateGeoMatchSetFormGroup() {
 		return new FormGroup<GeoMatchSetFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -392,8 +392,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateGeoMatchSetRequestFormGroup() {
 		return new FormGroup<CreateGeoMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -419,7 +419,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateIPSetResponseFormGroup() {
 		return new FormGroup<CreateIPSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -463,8 +463,8 @@ export namespace MyNS {
 	}
 	export function CreateIPSetFormGroup() {
 		return new FormGroup<IPSetFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -500,7 +500,7 @@ export namespace MyNS {
 	export function CreateIPSetDescriptorFormGroup() {
 		return new FormGroup<IPSetDescriptorFormProperties>({
 			Type: new FormControl<IPSetDescriptorType | null | undefined>(undefined, [Validators.required]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(50), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -541,8 +541,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateIPSetRequestFormGroup() {
 		return new FormGroup<CreateIPSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -568,7 +568,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRateBasedRuleResponseFormGroup() {
 		return new FormGroup<CreateRateBasedRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -644,9 +644,9 @@ export namespace MyNS {
 	}
 	export function CreateRateBasedRuleFormGroup() {
 		return new FormGroup<RateBasedRuleFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			RateKey: new FormControl<RateBasedRuleRateKey | null | undefined>(undefined, [Validators.required]),
 			RateLimit: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(100), Validators.max(2000000000)]),
 		});
@@ -691,7 +691,7 @@ export namespace MyNS {
 		return new FormGroup<PredicateFormProperties>({
 			Negated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			Type: new FormControl<PredicateType | null | undefined>(undefined, [Validators.required]),
-			DataId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			DataId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -771,11 +771,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateRateBasedRuleRequestFormGroup() {
 		return new FormGroup<CreateRateBasedRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			RateKey: new FormControl<RateBasedRuleRateKey | null | undefined>(undefined, [Validators.required]),
 			RateLimit: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(100), Validators.max(2000000000)]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -818,8 +818,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('.*')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('.*')]),
 		});
 
 	}
@@ -875,7 +875,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRegexMatchSetResponseFormGroup() {
 		return new FormGroup<CreateRegexMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -915,8 +915,8 @@ export namespace MyNS {
 	}
 	export function CreateRegexMatchSetFormGroup() {
 		return new FormGroup<RegexMatchSetFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -958,7 +958,7 @@ export namespace MyNS {
 	export function CreateRegexMatchTupleFormGroup() {
 		return new FormGroup<RegexMatchTupleFormProperties>({
 			TextTransformation: new FormControl<ByteMatchTupleTextTransformation | null | undefined>(undefined, [Validators.required]),
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -997,8 +997,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateRegexMatchSetRequestFormGroup() {
 		return new FormGroup<CreateRegexMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1024,7 +1024,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRegexPatternSetResponseFormGroup() {
 		return new FormGroup<CreateRegexPatternSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1071,8 +1071,8 @@ export namespace MyNS {
 	}
 	export function CreateRegexPatternSetFormGroup() {
 		return new FormGroup<RegexPatternSetFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1111,8 +1111,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateRegexPatternSetRequestFormGroup() {
 		return new FormGroup<CreateRegexPatternSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1138,7 +1138,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRuleResponseFormGroup() {
 		return new FormGroup<CreateRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1194,9 +1194,9 @@ export namespace MyNS {
 	}
 	export function CreateRuleFormGroup() {
 		return new FormGroup<RuleFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1252,9 +1252,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateRuleRequestFormGroup() {
 		return new FormGroup<CreateRuleRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1280,7 +1280,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateRuleGroupResponseFormGroup() {
 		return new FormGroup<CreateRuleGroupResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1333,9 +1333,9 @@ export namespace MyNS {
 	}
 	export function CreateRuleGroupFormGroup() {
 		return new FormGroup<RuleGroupFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1391,9 +1391,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateRuleGroupRequestFormGroup() {
 		return new FormGroup<CreateRuleGroupRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1419,7 +1419,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSizeConstraintSetResponseFormGroup() {
 		return new FormGroup<CreateSizeConstraintSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1463,8 +1463,8 @@ export namespace MyNS {
 	}
 	export function CreateSizeConstraintSetFormGroup() {
 		return new FormGroup<SizeConstraintSetFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1554,8 +1554,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<CreateSizeConstraintSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1585,7 +1585,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSqlInjectionMatchSetResponseFormGroup() {
 		return new FormGroup<CreateSqlInjectionMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1629,8 +1629,8 @@ export namespace MyNS {
 	}
 	export function CreateSqlInjectionMatchSetFormGroup() {
 		return new FormGroup<SqlInjectionMatchSetFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1700,8 +1700,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<CreateSqlInjectionMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1727,7 +1727,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebACLResponseFormGroup() {
 		return new FormGroup<CreateWebACLResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1801,10 +1801,10 @@ export namespace MyNS {
 	}
 	export function CreateWebACLFormGroup() {
 		return new FormGroup<WebACLFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			WebACLArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			WebACLArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1872,7 +1872,7 @@ export namespace MyNS {
 	export function CreateActivatedRuleFormGroup() {
 		return new FormGroup<ActivatedRuleFormProperties>({
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			Type: new FormControl<ActivatedRuleType | null | undefined>(undefined),
 		});
 
@@ -1927,7 +1927,7 @@ export namespace MyNS {
 	}
 	export function CreateExcludedRuleFormGroup() {
 		return new FormGroup<ExcludedRuleFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1989,9 +1989,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebACLRequestFormGroup() {
 		return new FormGroup<CreateWebACLRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2059,8 +2059,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebACLMigrationStackRequestFormGroup() {
 		return new FormGroup<CreateWebACLMigrationStackRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('^aws-waf-migration-[0-9A-Za-z\.\-_]*')]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63), Validators.pattern('^aws-waf-migration-[0-9A-Za-z\.\-_]*')]),
 			IgnoreUnsupportedType: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2121,7 +2121,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateXssMatchSetResponseFormGroup() {
 		return new FormGroup<CreateXssMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2165,8 +2165,8 @@ export namespace MyNS {
 	}
 	export function CreateXssMatchSetFormGroup() {
 		return new FormGroup<XssMatchSetFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2236,8 +2236,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateXssMatchSetRequestFormGroup() {
 		return new FormGroup<CreateXssMatchSetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2260,7 +2260,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteByteMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteByteMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2299,8 +2299,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteByteMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteByteMatchSetRequestFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2343,7 +2343,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteGeoMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteGeoMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2382,8 +2382,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteGeoMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteGeoMatchSetRequestFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2406,7 +2406,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteIPSetResponseFormGroup() {
 		return new FormGroup<DeleteIPSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2445,8 +2445,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteIPSetRequestFormGroup() {
 		return new FormGroup<DeleteIPSetRequestFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2481,7 +2481,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLoggingConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteLoggingConfigurationRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2516,7 +2516,7 @@ export namespace MyNS {
 	}
 	export function CreateDeletePermissionPolicyRequestFormGroup() {
 		return new FormGroup<DeletePermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2539,7 +2539,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRateBasedRuleResponseFormGroup() {
 		return new FormGroup<DeleteRateBasedRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2578,8 +2578,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRateBasedRuleRequestFormGroup() {
 		return new FormGroup<DeleteRateBasedRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2602,7 +2602,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRegexMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteRegexMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2641,8 +2641,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRegexMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteRegexMatchSetRequestFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2665,7 +2665,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRegexPatternSetResponseFormGroup() {
 		return new FormGroup<DeleteRegexPatternSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2704,8 +2704,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRegexPatternSetRequestFormGroup() {
 		return new FormGroup<DeleteRegexPatternSetRequestFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2728,7 +2728,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRuleResponseFormGroup() {
 		return new FormGroup<DeleteRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2767,8 +2767,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRuleRequestFormGroup() {
 		return new FormGroup<DeleteRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2791,7 +2791,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRuleGroupResponseFormGroup() {
 		return new FormGroup<DeleteRuleGroupResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2830,8 +2830,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRuleGroupRequestFormGroup() {
 		return new FormGroup<DeleteRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2854,7 +2854,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSizeConstraintSetResponseFormGroup() {
 		return new FormGroup<DeleteSizeConstraintSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2893,8 +2893,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<DeleteSizeConstraintSetRequestFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2921,7 +2921,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSqlInjectionMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteSqlInjectionMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2964,8 +2964,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteSqlInjectionMatchSetRequestFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2988,7 +2988,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteWebACLResponseFormGroup() {
 		return new FormGroup<DeleteWebACLResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3027,8 +3027,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteWebACLRequestFormGroup() {
 		return new FormGroup<DeleteWebACLRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3055,7 +3055,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteXssMatchSetResponseFormGroup() {
 		return new FormGroup<DeleteXssMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3098,8 +3098,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteXssMatchSetRequestFormGroup() {
 		return new FormGroup<DeleteXssMatchSetRequestFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3137,7 +3137,7 @@ export namespace MyNS {
 	}
 	export function CreateGetByteMatchSetRequestFormGroup() {
 		return new FormGroup<GetByteMatchSetRequestFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3160,7 +3160,7 @@ export namespace MyNS {
 	}
 	export function CreateGetChangeTokenResponseFormGroup() {
 		return new FormGroup<GetChangeTokenResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3210,7 +3210,7 @@ export namespace MyNS {
 	}
 	export function CreateGetChangeTokenStatusRequestFormGroup() {
 		return new FormGroup<GetChangeTokenStatusRequestFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3248,7 +3248,7 @@ export namespace MyNS {
 	}
 	export function CreateGetGeoMatchSetRequestFormGroup() {
 		return new FormGroup<GetGeoMatchSetRequestFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3286,7 +3286,7 @@ export namespace MyNS {
 	}
 	export function CreateGetIPSetRequestFormGroup() {
 		return new FormGroup<GetIPSetRequestFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3336,7 +3336,7 @@ export namespace MyNS {
 	}
 	export function CreateLoggingConfigurationFormGroup() {
 		return new FormGroup<LoggingConfigurationFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3361,7 +3361,7 @@ export namespace MyNS {
 	}
 	export function CreateGetLoggingConfigurationRequestFormGroup() {
 		return new FormGroup<GetLoggingConfigurationRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3384,7 +3384,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPermissionPolicyResponseFormGroup() {
 		return new FormGroup<GetPermissionPolicyResponseFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(395000), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(395000), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3409,7 +3409,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPermissionPolicyRequestFormGroup() {
 		return new FormGroup<GetPermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3447,7 +3447,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRateBasedRuleRequestFormGroup() {
 		return new FormGroup<GetRateBasedRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3471,7 +3471,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRateBasedRuleManagedKeysResponseFormGroup() {
 		return new FormGroup<GetRateBasedRuleManagedKeysResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3508,8 +3508,8 @@ export namespace MyNS {
 	}
 	export function CreateGetRateBasedRuleManagedKeysRequestFormGroup() {
 		return new FormGroup<GetRateBasedRuleManagedKeysRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3547,7 +3547,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRegexMatchSetRequestFormGroup() {
 		return new FormGroup<GetRegexMatchSetRequestFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3585,7 +3585,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRegexPatternSetRequestFormGroup() {
 		return new FormGroup<GetRegexPatternSetRequestFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3623,7 +3623,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRuleRequestFormGroup() {
 		return new FormGroup<GetRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3661,7 +3661,7 @@ export namespace MyNS {
 	}
 	export function CreateGetRuleGroupRequestFormGroup() {
 		return new FormGroup<GetRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3730,7 +3730,7 @@ export namespace MyNS {
 			Weight: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
 			Action: new FormControl<string | null | undefined>(undefined),
-			RuleWithinRuleGroup: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleWithinRuleGroup: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3867,8 +3867,8 @@ export namespace MyNS {
 	}
 	export function CreateGetSampledRequestsRequestFormGroup() {
 		return new FormGroup<GetSampledRequestsRequestFormProperties>({
-			WebAclId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			WebAclId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(500)]),
 		});
 
@@ -3907,7 +3907,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<GetSizeConstraintSetRequestFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3953,7 +3953,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<GetSqlInjectionMatchSetRequestFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3991,7 +3991,7 @@ export namespace MyNS {
 	}
 	export function CreateGetWebACLRequestFormGroup() {
 		return new FormGroup<GetWebACLRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4037,7 +4037,7 @@ export namespace MyNS {
 	}
 	export function CreateGetXssMatchSetRequestFormGroup() {
 		return new FormGroup<GetXssMatchSetRequestFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4061,7 +4061,7 @@ export namespace MyNS {
 	}
 	export function CreateListActivatedRulesInRuleGroupResponseFormGroup() {
 		return new FormGroup<ListActivatedRulesInRuleGroupResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4108,8 +4108,8 @@ export namespace MyNS {
 	}
 	export function CreateListActivatedRulesInRuleGroupRequestFormGroup() {
 		return new FormGroup<ListActivatedRulesInRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4134,7 +4134,7 @@ export namespace MyNS {
 	}
 	export function CreateListByteMatchSetsResponseFormGroup() {
 		return new FormGroup<ListByteMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4177,8 +4177,8 @@ export namespace MyNS {
 	}
 	export function CreateByteMatchSetSummaryFormGroup() {
 		return new FormGroup<ByteMatchSetSummaryFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4213,7 +4213,7 @@ export namespace MyNS {
 	}
 	export function CreateListByteMatchSetsRequestFormGroup() {
 		return new FormGroup<ListByteMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4238,7 +4238,7 @@ export namespace MyNS {
 	}
 	export function CreateListGeoMatchSetsResponseFormGroup() {
 		return new FormGroup<ListGeoMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4281,8 +4281,8 @@ export namespace MyNS {
 	}
 	export function CreateGeoMatchSetSummaryFormGroup() {
 		return new FormGroup<GeoMatchSetSummaryFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4317,7 +4317,7 @@ export namespace MyNS {
 	}
 	export function CreateListGeoMatchSetsRequestFormGroup() {
 		return new FormGroup<ListGeoMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4342,7 +4342,7 @@ export namespace MyNS {
 	}
 	export function CreateListIPSetsResponseFormGroup() {
 		return new FormGroup<ListIPSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4385,8 +4385,8 @@ export namespace MyNS {
 	}
 	export function CreateIPSetSummaryFormGroup() {
 		return new FormGroup<IPSetSummaryFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4421,7 +4421,7 @@ export namespace MyNS {
 	}
 	export function CreateListIPSetsRequestFormGroup() {
 		return new FormGroup<ListIPSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4446,7 +4446,7 @@ export namespace MyNS {
 	}
 	export function CreateListLoggingConfigurationsResponseFormGroup() {
 		return new FormGroup<ListLoggingConfigurationsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4481,7 +4481,7 @@ export namespace MyNS {
 	}
 	export function CreateListLoggingConfigurationsRequestFormGroup() {
 		return new FormGroup<ListLoggingConfigurationsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4506,7 +4506,7 @@ export namespace MyNS {
 	}
 	export function CreateListRateBasedRulesResponseFormGroup() {
 		return new FormGroup<ListRateBasedRulesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4549,8 +4549,8 @@ export namespace MyNS {
 	}
 	export function CreateRuleSummaryFormGroup() {
 		return new FormGroup<RuleSummaryFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4585,7 +4585,7 @@ export namespace MyNS {
 	}
 	export function CreateListRateBasedRulesRequestFormGroup() {
 		return new FormGroup<ListRateBasedRulesRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4610,7 +4610,7 @@ export namespace MyNS {
 	}
 	export function CreateListRegexMatchSetsResponseFormGroup() {
 		return new FormGroup<ListRegexMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4653,8 +4653,8 @@ export namespace MyNS {
 	}
 	export function CreateRegexMatchSetSummaryFormGroup() {
 		return new FormGroup<RegexMatchSetSummaryFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4689,7 +4689,7 @@ export namespace MyNS {
 	}
 	export function CreateListRegexMatchSetsRequestFormGroup() {
 		return new FormGroup<ListRegexMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4714,7 +4714,7 @@ export namespace MyNS {
 	}
 	export function CreateListRegexPatternSetsResponseFormGroup() {
 		return new FormGroup<ListRegexPatternSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4757,8 +4757,8 @@ export namespace MyNS {
 	}
 	export function CreateRegexPatternSetSummaryFormGroup() {
 		return new FormGroup<RegexPatternSetSummaryFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4793,7 +4793,7 @@ export namespace MyNS {
 	}
 	export function CreateListRegexPatternSetsRequestFormGroup() {
 		return new FormGroup<ListRegexPatternSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4818,7 +4818,7 @@ export namespace MyNS {
 	}
 	export function CreateListRuleGroupsResponseFormGroup() {
 		return new FormGroup<ListRuleGroupsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4861,8 +4861,8 @@ export namespace MyNS {
 	}
 	export function CreateRuleGroupSummaryFormGroup() {
 		return new FormGroup<RuleGroupSummaryFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4897,7 +4897,7 @@ export namespace MyNS {
 	}
 	export function CreateListRuleGroupsRequestFormGroup() {
 		return new FormGroup<ListRuleGroupsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4922,7 +4922,7 @@ export namespace MyNS {
 	}
 	export function CreateListRulesResponseFormGroup() {
 		return new FormGroup<ListRulesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4957,7 +4957,7 @@ export namespace MyNS {
 	}
 	export function CreateListRulesRequestFormGroup() {
 		return new FormGroup<ListRulesRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -4982,7 +4982,7 @@ export namespace MyNS {
 	}
 	export function CreateListSizeConstraintSetsResponseFormGroup() {
 		return new FormGroup<ListSizeConstraintSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5025,8 +5025,8 @@ export namespace MyNS {
 	}
 	export function CreateSizeConstraintSetSummaryFormGroup() {
 		return new FormGroup<SizeConstraintSetSummaryFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5061,7 +5061,7 @@ export namespace MyNS {
 	}
 	export function CreateListSizeConstraintSetsRequestFormGroup() {
 		return new FormGroup<ListSizeConstraintSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5090,7 +5090,7 @@ export namespace MyNS {
 	}
 	export function CreateListSqlInjectionMatchSetsResponseFormGroup() {
 		return new FormGroup<ListSqlInjectionMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5133,8 +5133,8 @@ export namespace MyNS {
 	}
 	export function CreateSqlInjectionMatchSetSummaryFormGroup() {
 		return new FormGroup<SqlInjectionMatchSetSummaryFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5173,7 +5173,7 @@ export namespace MyNS {
 	}
 	export function CreateListSqlInjectionMatchSetsRequestFormGroup() {
 		return new FormGroup<ListSqlInjectionMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5198,7 +5198,7 @@ export namespace MyNS {
 	}
 	export function CreateListSubscribedRuleGroupsResponseFormGroup() {
 		return new FormGroup<ListSubscribedRuleGroupsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5255,9 +5255,9 @@ export namespace MyNS {
 	}
 	export function CreateSubscribedRuleGroupSummaryFormGroup() {
 		return new FormGroup<SubscribedRuleGroupSummaryFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5292,7 +5292,7 @@ export namespace MyNS {
 	}
 	export function CreateListSubscribedRuleGroupsRequestFormGroup() {
 		return new FormGroup<ListSubscribedRuleGroupsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5319,7 +5319,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceResponseFormGroup() {
 		return new FormGroup<ListTagsForResourceResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5349,7 +5349,7 @@ export namespace MyNS {
 	}
 	export function CreateTagInfoForResourceFormGroup() {
 		return new FormGroup<TagInfoForResourceFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5398,9 +5398,9 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5424,7 +5424,7 @@ export namespace MyNS {
 	}
 	export function CreateListWebACLsResponseFormGroup() {
 		return new FormGroup<ListWebACLsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5467,8 +5467,8 @@ export namespace MyNS {
 	}
 	export function CreateWebACLSummaryFormGroup() {
 		return new FormGroup<WebACLSummaryFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5503,7 +5503,7 @@ export namespace MyNS {
 	}
 	export function CreateListWebACLsRequestFormGroup() {
 		return new FormGroup<ListWebACLsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5532,7 +5532,7 @@ export namespace MyNS {
 	}
 	export function CreateListXssMatchSetsResponseFormGroup() {
 		return new FormGroup<ListXssMatchSetsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5575,8 +5575,8 @@ export namespace MyNS {
 	}
 	export function CreateXssMatchSetSummaryFormGroup() {
 		return new FormGroup<XssMatchSetSummaryFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5615,7 +5615,7 @@ export namespace MyNS {
 	}
 	export function CreateListXssMatchSetsRequestFormGroup() {
 		return new FormGroup<ListXssMatchSetsRequestFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -5704,8 +5704,8 @@ export namespace MyNS {
 	}
 	export function CreatePutPermissionPolicyRequestFormGroup() {
 		return new FormGroup<PutPermissionPolicyRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(395000), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(395000), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5756,7 +5756,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5797,7 +5797,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5820,7 +5820,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateByteMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateByteMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5865,8 +5865,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateByteMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateByteMatchSetRequestFormProperties>({
-			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ByteMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5928,7 +5928,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGeoMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateGeoMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5973,8 +5973,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGeoMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateGeoMatchSetRequestFormProperties>({
-			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			GeoMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6024,7 +6024,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateIPSetResponseFormGroup() {
 		return new FormGroup<UpdateIPSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6069,8 +6069,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateIPSetRequestFormGroup() {
 		return new FormGroup<UpdateIPSetRequestFormProperties>({
-			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			IPSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6120,7 +6120,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRateBasedRuleResponseFormGroup() {
 		return new FormGroup<UpdateRateBasedRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6176,8 +6176,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRateBasedRuleRequestFormGroup() {
 		return new FormGroup<UpdateRateBasedRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			RateLimit: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(100), Validators.max(2000000000)]),
 		});
 
@@ -6228,7 +6228,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRegexMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateRegexMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6273,8 +6273,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRegexMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateRegexMatchSetRequestFormProperties>({
-			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6324,7 +6324,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRegexPatternSetResponseFormGroup() {
 		return new FormGroup<UpdateRegexPatternSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6369,8 +6369,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRegexPatternSetRequestFormGroup() {
 		return new FormGroup<UpdateRegexPatternSetRequestFormProperties>({
-			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RegexPatternSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6406,7 +6406,7 @@ export namespace MyNS {
 	export function CreateRegexPatternSetUpdateFormGroup() {
 		return new FormGroup<RegexPatternSetUpdateFormProperties>({
 			Action: new FormControl<ByteMatchSetUpdateAction | null | undefined>(undefined, [Validators.required]),
-			RegexPatternString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('.*')]),
+			RegexPatternString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('.*')]),
 		});
 
 	}
@@ -6439,7 +6439,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRuleResponseFormGroup() {
 		return new FormGroup<UpdateRuleResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6481,8 +6481,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRuleRequestFormGroup() {
 		return new FormGroup<UpdateRuleRequestFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6505,7 +6505,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRuleGroupResponseFormGroup() {
 		return new FormGroup<UpdateRuleGroupResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6550,8 +6550,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRuleGroupRequestFormGroup() {
 		return new FormGroup<UpdateRuleGroupRequestFormProperties>({
-			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			RuleGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6601,7 +6601,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSizeConstraintSetResponseFormGroup() {
 		return new FormGroup<UpdateSizeConstraintSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6646,8 +6646,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSizeConstraintSetRequestFormGroup() {
 		return new FormGroup<UpdateSizeConstraintSetRequestFormProperties>({
-			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SizeConstraintSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6701,7 +6701,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSqlInjectionMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateSqlInjectionMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6750,8 +6750,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateSqlInjectionMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateSqlInjectionMatchSetRequestFormProperties>({
-			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			SqlInjectionMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6801,7 +6801,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWebACLResponseFormGroup() {
 		return new FormGroup<UpdateWebACLResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6844,8 +6844,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWebACLRequestFormGroup() {
 		return new FormGroup<UpdateWebACLRequestFormProperties>({
-			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			WebACLId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6909,7 +6909,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateXssMatchSetResponseFormGroup() {
 		return new FormGroup<UpdateXssMatchSetResponseFormProperties>({
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6958,8 +6958,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateXssMatchSetRequestFormGroup() {
 		return new FormGroup<UpdateXssMatchSetRequestFormProperties>({
-			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			XssMatchSetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ChangeToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7706,159 +7706,159 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateByteMatchSetX_Amz_Target { AWSWAF_20150824_CreateByteMatchSet = 0 }
+	export enum CreateByteMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateByteMatchSet' = 0 }
 
-	export enum CreateGeoMatchSetX_Amz_Target { AWSWAF_20150824_CreateGeoMatchSet = 0 }
+	export enum CreateGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateGeoMatchSet' = 0 }
 
-	export enum CreateIPSetX_Amz_Target { AWSWAF_20150824_CreateIPSet = 0 }
+	export enum CreateIPSetX_Amz_Target { 'AWSWAF_20150824.CreateIPSet' = 0 }
 
-	export enum CreateRateBasedRuleX_Amz_Target { AWSWAF_20150824_CreateRateBasedRule = 0 }
+	export enum CreateRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.CreateRateBasedRule' = 0 }
 
-	export enum CreateRegexMatchSetX_Amz_Target { AWSWAF_20150824_CreateRegexMatchSet = 0 }
+	export enum CreateRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateRegexMatchSet' = 0 }
 
-	export enum CreateRegexPatternSetX_Amz_Target { AWSWAF_20150824_CreateRegexPatternSet = 0 }
+	export enum CreateRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.CreateRegexPatternSet' = 0 }
 
-	export enum CreateRuleX_Amz_Target { AWSWAF_20150824_CreateRule = 0 }
+	export enum CreateRuleX_Amz_Target { 'AWSWAF_20150824.CreateRule' = 0 }
 
-	export enum CreateRuleGroupX_Amz_Target { AWSWAF_20150824_CreateRuleGroup = 0 }
+	export enum CreateRuleGroupX_Amz_Target { 'AWSWAF_20150824.CreateRuleGroup' = 0 }
 
-	export enum CreateSizeConstraintSetX_Amz_Target { AWSWAF_20150824_CreateSizeConstraintSet = 0 }
+	export enum CreateSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.CreateSizeConstraintSet' = 0 }
 
-	export enum CreateSqlInjectionMatchSetX_Amz_Target { AWSWAF_20150824_CreateSqlInjectionMatchSet = 0 }
+	export enum CreateSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateSqlInjectionMatchSet' = 0 }
 
-	export enum CreateWebACLX_Amz_Target { AWSWAF_20150824_CreateWebACL = 0 }
+	export enum CreateWebACLX_Amz_Target { 'AWSWAF_20150824.CreateWebACL' = 0 }
 
-	export enum CreateWebACLMigrationStackX_Amz_Target { AWSWAF_20150824_CreateWebACLMigrationStack = 0 }
+	export enum CreateWebACLMigrationStackX_Amz_Target { 'AWSWAF_20150824.CreateWebACLMigrationStack' = 0 }
 
-	export enum CreateXssMatchSetX_Amz_Target { AWSWAF_20150824_CreateXssMatchSet = 0 }
+	export enum CreateXssMatchSetX_Amz_Target { 'AWSWAF_20150824.CreateXssMatchSet' = 0 }
 
-	export enum DeleteByteMatchSetX_Amz_Target { AWSWAF_20150824_DeleteByteMatchSet = 0 }
+	export enum DeleteByteMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteByteMatchSet' = 0 }
 
-	export enum DeleteGeoMatchSetX_Amz_Target { AWSWAF_20150824_DeleteGeoMatchSet = 0 }
+	export enum DeleteGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteGeoMatchSet' = 0 }
 
-	export enum DeleteIPSetX_Amz_Target { AWSWAF_20150824_DeleteIPSet = 0 }
+	export enum DeleteIPSetX_Amz_Target { 'AWSWAF_20150824.DeleteIPSet' = 0 }
 
-	export enum DeleteLoggingConfigurationX_Amz_Target { AWSWAF_20150824_DeleteLoggingConfiguration = 0 }
+	export enum DeleteLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.DeleteLoggingConfiguration' = 0 }
 
-	export enum DeletePermissionPolicyX_Amz_Target { AWSWAF_20150824_DeletePermissionPolicy = 0 }
+	export enum DeletePermissionPolicyX_Amz_Target { 'AWSWAF_20150824.DeletePermissionPolicy' = 0 }
 
-	export enum DeleteRateBasedRuleX_Amz_Target { AWSWAF_20150824_DeleteRateBasedRule = 0 }
+	export enum DeleteRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.DeleteRateBasedRule' = 0 }
 
-	export enum DeleteRegexMatchSetX_Amz_Target { AWSWAF_20150824_DeleteRegexMatchSet = 0 }
+	export enum DeleteRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteRegexMatchSet' = 0 }
 
-	export enum DeleteRegexPatternSetX_Amz_Target { AWSWAF_20150824_DeleteRegexPatternSet = 0 }
+	export enum DeleteRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.DeleteRegexPatternSet' = 0 }
 
-	export enum DeleteRuleX_Amz_Target { AWSWAF_20150824_DeleteRule = 0 }
+	export enum DeleteRuleX_Amz_Target { 'AWSWAF_20150824.DeleteRule' = 0 }
 
-	export enum DeleteRuleGroupX_Amz_Target { AWSWAF_20150824_DeleteRuleGroup = 0 }
+	export enum DeleteRuleGroupX_Amz_Target { 'AWSWAF_20150824.DeleteRuleGroup' = 0 }
 
-	export enum DeleteSizeConstraintSetX_Amz_Target { AWSWAF_20150824_DeleteSizeConstraintSet = 0 }
+	export enum DeleteSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.DeleteSizeConstraintSet' = 0 }
 
-	export enum DeleteSqlInjectionMatchSetX_Amz_Target { AWSWAF_20150824_DeleteSqlInjectionMatchSet = 0 }
+	export enum DeleteSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteSqlInjectionMatchSet' = 0 }
 
-	export enum DeleteWebACLX_Amz_Target { AWSWAF_20150824_DeleteWebACL = 0 }
+	export enum DeleteWebACLX_Amz_Target { 'AWSWAF_20150824.DeleteWebACL' = 0 }
 
-	export enum DeleteXssMatchSetX_Amz_Target { AWSWAF_20150824_DeleteXssMatchSet = 0 }
+	export enum DeleteXssMatchSetX_Amz_Target { 'AWSWAF_20150824.DeleteXssMatchSet' = 0 }
 
-	export enum GetByteMatchSetX_Amz_Target { AWSWAF_20150824_GetByteMatchSet = 0 }
+	export enum GetByteMatchSetX_Amz_Target { 'AWSWAF_20150824.GetByteMatchSet' = 0 }
 
-	export enum GetChangeTokenX_Amz_Target { AWSWAF_20150824_GetChangeToken = 0 }
+	export enum GetChangeTokenX_Amz_Target { 'AWSWAF_20150824.GetChangeToken' = 0 }
 
-	export enum GetChangeTokenStatusX_Amz_Target { AWSWAF_20150824_GetChangeTokenStatus = 0 }
+	export enum GetChangeTokenStatusX_Amz_Target { 'AWSWAF_20150824.GetChangeTokenStatus' = 0 }
 
-	export enum GetGeoMatchSetX_Amz_Target { AWSWAF_20150824_GetGeoMatchSet = 0 }
+	export enum GetGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.GetGeoMatchSet' = 0 }
 
-	export enum GetIPSetX_Amz_Target { AWSWAF_20150824_GetIPSet = 0 }
+	export enum GetIPSetX_Amz_Target { 'AWSWAF_20150824.GetIPSet' = 0 }
 
-	export enum GetLoggingConfigurationX_Amz_Target { AWSWAF_20150824_GetLoggingConfiguration = 0 }
+	export enum GetLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.GetLoggingConfiguration' = 0 }
 
-	export enum GetPermissionPolicyX_Amz_Target { AWSWAF_20150824_GetPermissionPolicy = 0 }
+	export enum GetPermissionPolicyX_Amz_Target { 'AWSWAF_20150824.GetPermissionPolicy' = 0 }
 
-	export enum GetRateBasedRuleX_Amz_Target { AWSWAF_20150824_GetRateBasedRule = 0 }
+	export enum GetRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.GetRateBasedRule' = 0 }
 
-	export enum GetRateBasedRuleManagedKeysX_Amz_Target { AWSWAF_20150824_GetRateBasedRuleManagedKeys = 0 }
+	export enum GetRateBasedRuleManagedKeysX_Amz_Target { 'AWSWAF_20150824.GetRateBasedRuleManagedKeys' = 0 }
 
-	export enum GetRegexMatchSetX_Amz_Target { AWSWAF_20150824_GetRegexMatchSet = 0 }
+	export enum GetRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.GetRegexMatchSet' = 0 }
 
-	export enum GetRegexPatternSetX_Amz_Target { AWSWAF_20150824_GetRegexPatternSet = 0 }
+	export enum GetRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.GetRegexPatternSet' = 0 }
 
-	export enum GetRuleX_Amz_Target { AWSWAF_20150824_GetRule = 0 }
+	export enum GetRuleX_Amz_Target { 'AWSWAF_20150824.GetRule' = 0 }
 
-	export enum GetRuleGroupX_Amz_Target { AWSWAF_20150824_GetRuleGroup = 0 }
+	export enum GetRuleGroupX_Amz_Target { 'AWSWAF_20150824.GetRuleGroup' = 0 }
 
-	export enum GetSampledRequestsX_Amz_Target { AWSWAF_20150824_GetSampledRequests = 0 }
+	export enum GetSampledRequestsX_Amz_Target { 'AWSWAF_20150824.GetSampledRequests' = 0 }
 
-	export enum GetSizeConstraintSetX_Amz_Target { AWSWAF_20150824_GetSizeConstraintSet = 0 }
+	export enum GetSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.GetSizeConstraintSet' = 0 }
 
-	export enum GetSqlInjectionMatchSetX_Amz_Target { AWSWAF_20150824_GetSqlInjectionMatchSet = 0 }
+	export enum GetSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.GetSqlInjectionMatchSet' = 0 }
 
-	export enum GetWebACLX_Amz_Target { AWSWAF_20150824_GetWebACL = 0 }
+	export enum GetWebACLX_Amz_Target { 'AWSWAF_20150824.GetWebACL' = 0 }
 
-	export enum GetXssMatchSetX_Amz_Target { AWSWAF_20150824_GetXssMatchSet = 0 }
+	export enum GetXssMatchSetX_Amz_Target { 'AWSWAF_20150824.GetXssMatchSet' = 0 }
 
-	export enum ListActivatedRulesInRuleGroupX_Amz_Target { AWSWAF_20150824_ListActivatedRulesInRuleGroup = 0 }
+	export enum ListActivatedRulesInRuleGroupX_Amz_Target { 'AWSWAF_20150824.ListActivatedRulesInRuleGroup' = 0 }
 
-	export enum ListByteMatchSetsX_Amz_Target { AWSWAF_20150824_ListByteMatchSets = 0 }
+	export enum ListByteMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListByteMatchSets' = 0 }
 
-	export enum ListGeoMatchSetsX_Amz_Target { AWSWAF_20150824_ListGeoMatchSets = 0 }
+	export enum ListGeoMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListGeoMatchSets' = 0 }
 
-	export enum ListIPSetsX_Amz_Target { AWSWAF_20150824_ListIPSets = 0 }
+	export enum ListIPSetsX_Amz_Target { 'AWSWAF_20150824.ListIPSets' = 0 }
 
-	export enum ListLoggingConfigurationsX_Amz_Target { AWSWAF_20150824_ListLoggingConfigurations = 0 }
+	export enum ListLoggingConfigurationsX_Amz_Target { 'AWSWAF_20150824.ListLoggingConfigurations' = 0 }
 
-	export enum ListRateBasedRulesX_Amz_Target { AWSWAF_20150824_ListRateBasedRules = 0 }
+	export enum ListRateBasedRulesX_Amz_Target { 'AWSWAF_20150824.ListRateBasedRules' = 0 }
 
-	export enum ListRegexMatchSetsX_Amz_Target { AWSWAF_20150824_ListRegexMatchSets = 0 }
+	export enum ListRegexMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListRegexMatchSets' = 0 }
 
-	export enum ListRegexPatternSetsX_Amz_Target { AWSWAF_20150824_ListRegexPatternSets = 0 }
+	export enum ListRegexPatternSetsX_Amz_Target { 'AWSWAF_20150824.ListRegexPatternSets' = 0 }
 
-	export enum ListRuleGroupsX_Amz_Target { AWSWAF_20150824_ListRuleGroups = 0 }
+	export enum ListRuleGroupsX_Amz_Target { 'AWSWAF_20150824.ListRuleGroups' = 0 }
 
-	export enum ListRulesX_Amz_Target { AWSWAF_20150824_ListRules = 0 }
+	export enum ListRulesX_Amz_Target { 'AWSWAF_20150824.ListRules' = 0 }
 
-	export enum ListSizeConstraintSetsX_Amz_Target { AWSWAF_20150824_ListSizeConstraintSets = 0 }
+	export enum ListSizeConstraintSetsX_Amz_Target { 'AWSWAF_20150824.ListSizeConstraintSets' = 0 }
 
-	export enum ListSqlInjectionMatchSetsX_Amz_Target { AWSWAF_20150824_ListSqlInjectionMatchSets = 0 }
+	export enum ListSqlInjectionMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListSqlInjectionMatchSets' = 0 }
 
-	export enum ListSubscribedRuleGroupsX_Amz_Target { AWSWAF_20150824_ListSubscribedRuleGroups = 0 }
+	export enum ListSubscribedRuleGroupsX_Amz_Target { 'AWSWAF_20150824.ListSubscribedRuleGroups' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AWSWAF_20150824_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSWAF_20150824.ListTagsForResource' = 0 }
 
-	export enum ListWebACLsX_Amz_Target { AWSWAF_20150824_ListWebACLs = 0 }
+	export enum ListWebACLsX_Amz_Target { 'AWSWAF_20150824.ListWebACLs' = 0 }
 
-	export enum ListXssMatchSetsX_Amz_Target { AWSWAF_20150824_ListXssMatchSets = 0 }
+	export enum ListXssMatchSetsX_Amz_Target { 'AWSWAF_20150824.ListXssMatchSets' = 0 }
 
-	export enum PutLoggingConfigurationX_Amz_Target { AWSWAF_20150824_PutLoggingConfiguration = 0 }
+	export enum PutLoggingConfigurationX_Amz_Target { 'AWSWAF_20150824.PutLoggingConfiguration' = 0 }
 
-	export enum PutPermissionPolicyX_Amz_Target { AWSWAF_20150824_PutPermissionPolicy = 0 }
+	export enum PutPermissionPolicyX_Amz_Target { 'AWSWAF_20150824.PutPermissionPolicy' = 0 }
 
-	export enum TagResourceX_Amz_Target { AWSWAF_20150824_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSWAF_20150824.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { AWSWAF_20150824_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSWAF_20150824.UntagResource' = 0 }
 
-	export enum UpdateByteMatchSetX_Amz_Target { AWSWAF_20150824_UpdateByteMatchSet = 0 }
+	export enum UpdateByteMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateByteMatchSet' = 0 }
 
-	export enum UpdateGeoMatchSetX_Amz_Target { AWSWAF_20150824_UpdateGeoMatchSet = 0 }
+	export enum UpdateGeoMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateGeoMatchSet' = 0 }
 
-	export enum UpdateIPSetX_Amz_Target { AWSWAF_20150824_UpdateIPSet = 0 }
+	export enum UpdateIPSetX_Amz_Target { 'AWSWAF_20150824.UpdateIPSet' = 0 }
 
-	export enum UpdateRateBasedRuleX_Amz_Target { AWSWAF_20150824_UpdateRateBasedRule = 0 }
+	export enum UpdateRateBasedRuleX_Amz_Target { 'AWSWAF_20150824.UpdateRateBasedRule' = 0 }
 
-	export enum UpdateRegexMatchSetX_Amz_Target { AWSWAF_20150824_UpdateRegexMatchSet = 0 }
+	export enum UpdateRegexMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateRegexMatchSet' = 0 }
 
-	export enum UpdateRegexPatternSetX_Amz_Target { AWSWAF_20150824_UpdateRegexPatternSet = 0 }
+	export enum UpdateRegexPatternSetX_Amz_Target { 'AWSWAF_20150824.UpdateRegexPatternSet' = 0 }
 
-	export enum UpdateRuleX_Amz_Target { AWSWAF_20150824_UpdateRule = 0 }
+	export enum UpdateRuleX_Amz_Target { 'AWSWAF_20150824.UpdateRule' = 0 }
 
-	export enum UpdateRuleGroupX_Amz_Target { AWSWAF_20150824_UpdateRuleGroup = 0 }
+	export enum UpdateRuleGroupX_Amz_Target { 'AWSWAF_20150824.UpdateRuleGroup' = 0 }
 
-	export enum UpdateSizeConstraintSetX_Amz_Target { AWSWAF_20150824_UpdateSizeConstraintSet = 0 }
+	export enum UpdateSizeConstraintSetX_Amz_Target { 'AWSWAF_20150824.UpdateSizeConstraintSet' = 0 }
 
-	export enum UpdateSqlInjectionMatchSetX_Amz_Target { AWSWAF_20150824_UpdateSqlInjectionMatchSet = 0 }
+	export enum UpdateSqlInjectionMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateSqlInjectionMatchSet' = 0 }
 
-	export enum UpdateWebACLX_Amz_Target { AWSWAF_20150824_UpdateWebACL = 0 }
+	export enum UpdateWebACLX_Amz_Target { 'AWSWAF_20150824.UpdateWebACL' = 0 }
 
-	export enum UpdateXssMatchSetX_Amz_Target { AWSWAF_20150824_UpdateXssMatchSet = 0 }
+	export enum UpdateXssMatchSetX_Amz_Target { 'AWSWAF_20150824.UpdateXssMatchSet' = 0 }
 
 }
 

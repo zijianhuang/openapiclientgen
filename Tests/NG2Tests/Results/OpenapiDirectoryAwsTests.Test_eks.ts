@@ -1014,7 +1014,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z][A-Za-z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[0-9A-Za-z][A-Za-z0-9\-_]*')]),
 			version: new FormControl<string | null | undefined>(undefined),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),
@@ -1645,7 +1645,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterPostBodyFormGroup() {
 		return new FormGroup<CreateClusterPostBodyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z][A-Za-z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[0-9A-Za-z][A-Za-z0-9\-_]*')]),
 			version: new FormControl<string | null | undefined>(undefined),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined),

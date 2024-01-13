@@ -207,19 +207,19 @@ export namespace MyNS {
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
-			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
-			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Surname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			RootFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			RecycleBinFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			Surname: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			RootFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			RecycleBinFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			Status: new FormControl<UserStatus | null | undefined>(undefined),
 			Type: new FormControl<UserType | null | undefined>(undefined),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			Locale: new FormControl<UserLocale | null | undefined>(undefined),
 		});
 
@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	export enum UserType { USER = 0, ADMIN = 1, POWERUSER = 2, MINIMALUSER = 3, WORKSPACESUSER = 4 }
 
-	export enum UserLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
+	export enum UserLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, default = 10 }
 
 
 	/** Describes the storage for a user. */
@@ -350,12 +350,12 @@ export namespace MyNS {
 	}
 	export function CreateShareResultFormGroup() {
 		return new FormGroup<ShareResultFormProperties>({
-			PrincipalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			InviteePrincipalId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			PrincipalId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			InviteePrincipalId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 			Role: new FormControl<ShareResultRole | null | undefined>(undefined),
 			Status: new FormControl<ShareResultStatus | null | undefined>(undefined),
-			ShareId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			ShareId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -400,7 +400,7 @@ export namespace MyNS {
 	}
 	export function CreateSharePrincipalFormGroup() {
 		return new FormGroup<SharePrincipalFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 			Type: new FormControl<SharePrincipalType | null | undefined>(undefined, [Validators.required]),
 			Role: new FormControl<ShareResultRole | null | undefined>(undefined, [Validators.required]),
 		});
@@ -503,14 +503,14 @@ export namespace MyNS {
 	}
 	export function CreateCommentFormGroup() {
 		return new FormGroup<CommentFormProperties>({
-			CommentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			ThreadId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CommentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			ThreadId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<CommentStatus | null | undefined>(undefined),
 			Visibility: new FormControl<CommentVisibility | null | undefined>(undefined),
-			RecipientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			RecipientId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 		});
 
 	}
@@ -655,14 +655,14 @@ export namespace MyNS {
 	}
 	export function CreateFolderMetadataFormGroup() {
 		return new FormGroup<FolderMetadataFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			CreatorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			CreatorId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
-			Signature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('[&\w+-.@]+')]),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('[&\w+-.@]+')]),
 			Size: new FormControl<number | null | undefined>(undefined),
 			LatestVersionSize: new FormControl<number | null | undefined>(undefined),
 		});
@@ -770,8 +770,8 @@ export namespace MyNS {
 	}
 	export function CreateSubscriptionFormGroup() {
 		return new FormGroup<SubscriptionFormProperties>({
-			SubscriptionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			EndPoint: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			SubscriptionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			EndPoint: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			Protocol: new FormControl<SubscriptionProtocol | null | undefined>(undefined),
 		});
 
@@ -853,7 +853,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeActivitiesResponseFormGroup() {
 		return new FormGroup<DescribeActivitiesResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[\u0000-\u00FF]+')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[\u0000-\u00FF]+')]),
 		});
 
 	}
@@ -904,7 +904,7 @@ export namespace MyNS {
 			Type: new FormControl<ActivityType | null | undefined>(undefined),
 			TimeStamp: new FormControl<Date | null | undefined>(undefined),
 			IsIndirectActivity: new FormControl<boolean | null | undefined>(undefined),
-			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 		});
 
 	}
@@ -981,11 +981,11 @@ export namespace MyNS {
 	}
 	export function CreateUserMetadataFormGroup() {
 		return new FormGroup<UserMetadataFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			Username: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
-			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Surname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
+			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			Surname: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
 		});
 
 	}
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 	}
 	export function CreateGroupMetadataFormGroup() {
 		return new FormGroup<GroupMetadataFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 			Name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1112,11 +1112,11 @@ export namespace MyNS {
 	export function CreateResourceMetadataFormGroup() {
 		return new FormGroup<ResourceMetadataFormProperties>({
 			Type: new FormControl<ResourceMetadataType | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			OriginalName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			OriginalName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 		});
 
 	}
@@ -1164,10 +1164,10 @@ export namespace MyNS {
 	}
 	export function CreateCommentMetadataFormGroup() {
 		return new FormGroup<CommentMetadataFormProperties>({
-			CommentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			CommentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			CommentStatus: new FormControl<CommentStatus | null | undefined>(undefined),
-			RecipientId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			RecipientId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 		});
 
 	}
@@ -1201,7 +1201,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCommentsResponseFormGroup() {
 		return new FormGroup<DescribeCommentsResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[\u0000-\u00FF]+')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[\u0000-\u00FF]+')]),
 		});
 
 	}
@@ -1225,7 +1225,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDocumentVersionsResponseFormGroup() {
 		return new FormGroup<DescribeDocumentVersionsResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1314,17 +1314,17 @@ export namespace MyNS {
 	}
 	export function CreateDocumentVersionMetadataFormGroup() {
 		return new FormGroup<DocumentVersionMetadataFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			Size: new FormControl<number | null | undefined>(undefined),
-			Signature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('[&\w+-.@]+')]),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('[&\w+-.@]+')]),
 			Status: new FormControl<DocumentVersionMetadataStatus | null | undefined>(undefined),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ContentCreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ContentModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			CreatorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			CreatorId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 		});
 
 	}
@@ -1371,7 +1371,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeFolderContentsResponseFormGroup() {
 		return new FormGroup<DescribeFolderContentsResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1434,9 +1434,9 @@ export namespace MyNS {
 	}
 	export function CreateDocumentMetadataFormGroup() {
 		return new FormGroup<DocumentMetadataFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			CreatorId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			CreatorId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
@@ -1463,7 +1463,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeGroupsResponseFormGroup() {
 		return new FormGroup<DescribeGroupsResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('[\u0000-\u00FF]+')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('[\u0000-\u00FF]+')]),
 		});
 
 	}
@@ -1489,7 +1489,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNotificationSubscriptionsResponseFormGroup() {
 		return new FormGroup<DescribeNotificationSubscriptionsResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1513,7 +1513,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeResourcePermissionsResponseFormGroup() {
 		return new FormGroup<DescribeResourcePermissionsResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1543,7 +1543,7 @@ export namespace MyNS {
 	}
 	export function CreatePrincipalFormGroup() {
 		return new FormGroup<PrincipalFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
 			Type: new FormControl<SharePrincipalType | null | undefined>(undefined),
 		});
 
@@ -1590,7 +1590,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeRootFoldersResponseFormGroup() {
 		return new FormGroup<DescribeRootFoldersResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1617,7 +1617,7 @@ export namespace MyNS {
 	export function CreateDescribeUsersResponseFormGroup() {
 		return new FormGroup<DescribeUsersResponseFormProperties>({
 			TotalNumberOfUsers: new FormControl<number | null | undefined>(undefined),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1741,8 +1741,8 @@ export namespace MyNS {
 	}
 	export function CreateResourcePathComponentFormGroup() {
 		return new FormGroup<ResourcePathComponentFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
 		});
 
 	}
@@ -1808,7 +1808,7 @@ export namespace MyNS {
 	}
 	export function CreateGetResourcesResponseFormGroup() {
 		return new FormGroup<GetResourcesResponseFormProperties>({
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1852,7 +1852,7 @@ export namespace MyNS {
 	}
 	export function CreateUploadMetadataFormGroup() {
 		return new FormGroup<UploadMetadataFormProperties>({
-			UploadUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			UploadUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1995,7 +1995,7 @@ export namespace MyNS {
 	export function CreateNotificationOptionsFormGroup() {
 		return new FormGroup<NotificationOptionsFormProperties>({
 			SendEmail: new FormControl<boolean | null | undefined>(undefined),
-			EmailMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			EmailMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2070,9 +2070,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateCommentRequestFormGroup() {
 		return new FormGroup<CreateCommentRequestFormProperties>({
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			ThreadId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			ThreadId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			Visibility: new FormControl<CommentVisibility | null | undefined>(undefined),
 			NotifyCollaborators: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2124,8 +2124,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateFolderRequestFormGroup() {
 		return new FormGroup<CreateFolderRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 		});
 
 	}
@@ -2182,7 +2182,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateNotificationSubscriptionRequestFormGroup() {
 		return new FormGroup<CreateNotificationSubscriptionRequestFormProperties>({
-			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			Protocol: new FormControl<SubscriptionProtocol | null | undefined>(undefined, [Validators.required]),
 			SubscriptionType: new FormControl<SubscriptionType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2290,13 +2290,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateUserRequestFormGroup() {
 		return new FormGroup<CreateUserRequestFormProperties>({
-			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
-			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
-			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Surname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(4), Validators.pattern('[\u0020-\u00FF]+')]),
-			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			Surname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(4), Validators.maxLength(32), Validators.pattern('[\u0020-\u00FF]+')]),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -2635,18 +2635,18 @@ export namespace MyNS {
 	}
 	export function CreateInitiateDocumentVersionUploadRequestFormGroup() {
 		return new FormGroup<InitiateDocumentVersionUploadRequestFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
 			ContentCreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ContentModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			DocumentSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 		});
 
 	}
 
-	export enum LocaleType { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
+	export enum LocaleType { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, default = 10 }
 
 	export enum RoleType { VIEWER = 0, CONTRIBUTOR = 1, OWNER = 2, COOWNER = 3 }
 
@@ -2710,8 +2710,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDocumentRequestFormGroup() {
 		return new FormGroup<UpdateDocumentRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
 		});
 
@@ -2762,8 +2762,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFolderRequestFormGroup() {
 		return new FormGroup<UpdateFolderRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
 		});
 
@@ -2792,7 +2792,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		TimeZoneId?: string | null;
-		Locale?: UpdateUserRequestLocale | null;
+		Locale?: UserLocale | null;
 		GrantPoweruserPrivileges?: BooleanEnumType | null;
 	}
 	export interface UpdateUserRequestFormProperties {
@@ -2815,22 +2815,20 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		TimeZoneId: FormControl<string | null | undefined>,
-		Locale: FormControl<UpdateUserRequestLocale | null | undefined>,
+		Locale: FormControl<UserLocale | null | undefined>,
 		GrantPoweruserPrivileges: FormControl<BooleanEnumType | null | undefined>,
 	}
 	export function CreateUpdateUserRequestFormGroup() {
 		return new FormGroup<UpdateUserRequestFormProperties>({
-			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Surname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			Surname: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			Type: new FormControl<UserType | null | undefined>(undefined),
-			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			Locale: new FormControl<UpdateUserRequestLocale | null | undefined>(undefined),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			Locale: new FormControl<UserLocale | null | undefined>(undefined),
 			GrantPoweruserPrivileges: new FormControl<BooleanEnumType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateUserRequestLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
 
 	export enum UserStatusType { ACTIVE = 0, INACTIVE = 1, PENDING = 2 }
 
@@ -3375,7 +3373,7 @@ export namespace MyNS {
 	export function CreateAddResourcePermissionsPostBodyNotificationOptionsFormGroup() {
 		return new FormGroup<AddResourcePermissionsPostBodyNotificationOptionsFormProperties>({
 			SendEmail: new FormControl<boolean | null | undefined>(undefined),
-			EmailMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0)]),
+			EmailMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -3442,9 +3440,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateCommentPostBodyFormGroup() {
 		return new FormGroup<CreateCommentPostBodyFormProperties>({
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			ThreadId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			ThreadId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			Visibility: new FormControl<CommentVisibility | null | undefined>(undefined),
 			NotifyCollaborators: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3510,8 +3508,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateFolderPostBodyFormGroup() {
 		return new FormGroup<CreateFolderPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 		});
 
 	}
@@ -3579,7 +3577,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateNotificationSubscriptionPostBodyFormGroup() {
 		return new FormGroup<CreateNotificationSubscriptionPostBodyFormProperties>({
-			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			Protocol: new FormControl<SubscriptionProtocol | null | undefined>(undefined, [Validators.required]),
 			SubscriptionType: new FormControl<SubscriptionType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3701,13 +3699,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateUserPostBodyFormGroup() {
 		return new FormGroup<CreateUserPostBodyFormProperties>({
-			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
-			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
-			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Surname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(4), Validators.pattern('[\u0020-\u00FF]+')]),
-			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			OrganizationId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			Username: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?')]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
+			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			Surname: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(4), Validators.maxLength(32), Validators.pattern('[\u0020-\u00FF]+')]),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -3772,8 +3770,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateDocumentPatchBodyFormGroup() {
 		return new FormGroup<UpdateDocumentPatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
 		});
 
@@ -3819,8 +3817,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFolderPatchBodyFormGroup() {
 		return new FormGroup<UpdateFolderPatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 			ResourceState: new FormControl<FolderMetadataResourceState | null | undefined>(undefined),
 		});
 
@@ -3856,7 +3854,7 @@ export namespace MyNS {
 		TimeZoneId?: string | null;
 
 		/** The locale of the user. */
-		Locale?: UpdateUserPatchBodyLocale | null;
+		Locale?: UserLocale | null;
 
 		/** Boolean value to determine whether the user is granted Poweruser privileges. */
 		GrantPoweruserPrivileges?: BooleanEnumType | null;
@@ -3888,18 +3886,18 @@ export namespace MyNS {
 		TimeZoneId: FormControl<string | null | undefined>,
 
 		/** The locale of the user. */
-		Locale: FormControl<UpdateUserPatchBodyLocale | null | undefined>,
+		Locale: FormControl<UserLocale | null | undefined>,
 
 		/** Boolean value to determine whether the user is granted Poweruser privileges. */
 		GrantPoweruserPrivileges: FormControl<BooleanEnumType | null | undefined>,
 	}
 	export function CreateUpdateUserPatchBodyFormGroup() {
 		return new FormGroup<UpdateUserPatchBodyFormProperties>({
-			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Surname: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			GivenName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			Surname: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			Type: new FormControl<UserType | null | undefined>(undefined),
-			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			Locale: new FormControl<UpdateUserPatchBodyLocale | null | undefined>(undefined),
+			TimeZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			Locale: new FormControl<UserLocale | null | undefined>(undefined),
 			GrantPoweruserPrivileges: new FormControl<BooleanEnumType | null | undefined>(undefined),
 		});
 
@@ -3924,8 +3922,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum UpdateUserPatchBodyLocale { en = 0, fr = 1, ko = 2, de = 3, es = 4, ja = 5, ru = 6, zh_CN = 7, zh_TW = 8, pt_BR = 9, _default = 10 }
 
 	export interface InitiateDocumentVersionUploadPostBody {
 
@@ -4009,13 +4005,13 @@ export namespace MyNS {
 	}
 	export function CreateInitiateDocumentVersionUploadPostBodyFormGroup() {
 		return new FormGroup<InitiateDocumentVersionUploadPostBodyFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[\u0020-\u202D\u202F-\uFFFF]+')]),
 			ContentCreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ContentModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			DocumentSizeInBytes: new FormControl<number | null | undefined>(undefined),
-			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+-.@]+')]),
+			ParentFolderId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+-.@]+')]),
 		});
 
 	}

@@ -35,7 +35,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateKmsKeyRequestFormGroup() {
 		return new FormGroup<AssociateKmsKeyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
@@ -101,7 +101,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelExportTaskRequestFormGroup() {
 		return new FormGroup<CancelExportTaskRequestFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512)]),
 		});
 
 	}
@@ -134,7 +134,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateExportTaskResponseFormGroup() {
 		return new FormGroup<CreateExportTaskResponseFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
 		});
 
 	}
@@ -223,12 +223,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateExportTaskRequestFormGroup() {
 		return new FormGroup<CreateExportTaskRequestFormProperties>({
-			taskName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			taskName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			from: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			to: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
-			destination: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1)]),
+			destination: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512)]),
 			destinationPrefix: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -281,7 +281,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateLogGroupRequestFormGroup() {
 		return new FormGroup<CreateLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			kmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -331,8 +331,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateLogStreamRequestFormGroup() {
 		return new FormGroup<CreateLogStreamRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 		});
 
 	}
@@ -357,7 +357,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDestinationRequestFormGroup() {
 		return new FormGroup<DeleteDestinationRequestFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 		});
 
 	}
@@ -382,7 +382,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLogGroupRequestFormGroup() {
 		return new FormGroup<DeleteLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -421,8 +421,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLogStreamRequestFormGroup() {
 		return new FormGroup<DeleteLogStreamRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 		});
 
 	}
@@ -461,8 +461,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteMetricFilterRequestFormGroup() {
 		return new FormGroup<DeleteMetricFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 		});
 
 	}
@@ -500,7 +500,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteQueryDefinitionRequestFormGroup() {
 		return new FormGroup<DeleteQueryDefinitionRequestFormProperties>({
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -538,7 +538,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRetentionPolicyRequestFormGroup() {
 		return new FormGroup<DeleteRetentionPolicyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -577,8 +577,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSubscriptionFilterRequestFormGroup() {
 		return new FormGroup<DeleteSubscriptionFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 		});
 
 	}
@@ -655,7 +655,7 @@ export namespace MyNS {
 	}
 	export function CreateDestinationFormGroup() {
 		return new FormGroup<DestinationFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			targetArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			accessPolicy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -707,7 +707,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDestinationsRequestFormGroup() {
 		return new FormGroup<DescribeDestinationsRequestFormProperties>({
-			DestinationNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			DestinationNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
@@ -816,12 +816,12 @@ export namespace MyNS {
 	}
 	export function CreateExportTaskFormGroup() {
 		return new FormGroup<ExportTaskFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
-			taskName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
+			taskName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			from: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			to: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			destination: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			destination: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
 			destinationPrefix: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -921,7 +921,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeExportTasksRequestFormGroup() {
 		return new FormGroup<DescribeExportTasksRequestFormProperties>({
-			taskId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			taskId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
 			statusCode: new FormControl<ExportTaskStatusCode | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
@@ -1003,7 +1003,7 @@ export namespace MyNS {
 	}
 	export function CreateLogGroupFormGroup() {
 		return new FormGroup<LogGroupFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			retentionInDays: new FormControl<number | null | undefined>(undefined),
 			metricFilterCount: new FormControl<number | null | undefined>(undefined),
@@ -1056,7 +1056,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeLogGroupsRequestFormGroup() {
 		return new FormGroup<DescribeLogGroupsRequestFormProperties>({
-			logGroupNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
@@ -1147,7 +1147,7 @@ export namespace MyNS {
 	}
 	export function CreateLogStreamFormGroup() {
 		return new FormGroup<LogStreamFormProperties>({
-			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			firstEventTimestamp: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			lastEventTimestamp: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
@@ -1219,8 +1219,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeLogStreamsRequestFormGroup() {
 		return new FormGroup<DescribeLogStreamsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			orderBy: new FormControl<DescribeLogStreamsRequestOrderBy | null | undefined>(undefined),
 			descending: new FormControl<boolean | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -1315,10 +1315,10 @@ export namespace MyNS {
 	}
 	export function CreateMetricFilterFormGroup() {
 		return new FormGroup<MetricFilterFormProperties>({
-			filterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
-			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			creationTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -1455,8 +1455,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeMetricFiltersRequestFormGroup() {
 		return new FormGroup<DescribeMetricFiltersRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			filterNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			filterNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 			metricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('[^:*$]*')]),
@@ -1543,11 +1543,11 @@ export namespace MyNS {
 	}
 	export function CreateQueryInfoFormGroup() {
 		return new FormGroup<QueryInfoFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
-			queryString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(0)]),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(10000)]),
 			status: new FormControl<QueryInfoStatus | null | undefined>(undefined),
 			createTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -1598,7 +1598,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeQueriesRequestFormGroup() {
 		return new FormGroup<DescribeQueriesRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			status: new FormControl<QueryInfoStatus | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -1679,9 +1679,9 @@ export namespace MyNS {
 	}
 	export function CreateQueryDefinitionFormGroup() {
 		return new FormGroup<QueryDefinitionFormProperties>({
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^([^:*\/]+\/?)*[^:*\/]+$')]),
-			queryString: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(1)]),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^([^:*\/]+\/?)*[^:*\/]+$')]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000)]),
 			lastModified: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -1729,7 +1729,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeQueryDefinitionsRequestFormGroup() {
 		return new FormGroup<DescribeQueryDefinitionsRequestFormProperties>({
-			queryDefinitionNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^([^:*\/]+\/?)*[^:*\/]+$')]),
+			queryDefinitionNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^([^:*\/]+\/?)*[^:*\/]+$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
@@ -1791,7 +1791,7 @@ export namespace MyNS {
 	export function CreateResourcePolicyFormGroup() {
 		return new FormGroup<ResourcePolicyFormProperties>({
 			policyName: new FormControl<string | null | undefined>(undefined),
-			policyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5120), Validators.minLength(1)]),
+			policyDocument: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(5120)]),
 			lastUpdatedTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -1929,9 +1929,9 @@ export namespace MyNS {
 	}
 	export function CreateSubscriptionFilterFormGroup() {
 		return new FormGroup<SubscriptionFilterFormProperties>({
-			filterName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			destinationArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			distribution: new FormControl<SubscriptionFilterDistribution | null | undefined>(undefined),
@@ -1998,8 +1998,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSubscriptionFiltersRequestFormGroup() {
 		return new FormGroup<DescribeSubscriptionFiltersRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			filterNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			filterNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
@@ -2026,7 +2026,7 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateKmsKeyRequestFormGroup() {
 		return new FormGroup<DisassociateKmsKeyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -2098,7 +2098,7 @@ export namespace MyNS {
 	}
 	export function CreateFilteredLogEventFormGroup() {
 		return new FormGroup<FilteredLogEventFormProperties>({
-			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			timestamp: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			ingestionTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
@@ -2131,7 +2131,7 @@ export namespace MyNS {
 	}
 	export function CreateSearchedLogStreamFormGroup() {
 		return new FormGroup<SearchedLogStreamFormProperties>({
-			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			searchedCompletely: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2227,11 +2227,11 @@ export namespace MyNS {
 	}
 	export function CreateFilterLogEventsRequestFormGroup() {
 		return new FormGroup<FilterLogEventsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logStreamNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			startTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			endTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 			interleaved: new FormControl<boolean | null | undefined>(undefined),
@@ -2383,8 +2383,8 @@ export namespace MyNS {
 	}
 	export function CreateGetLogEventsRequestFormGroup() {
 		return new FormGroup<GetLogEventsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			startTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			endTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -2461,7 +2461,7 @@ export namespace MyNS {
 	}
 	export function CreateGetLogGroupFieldsRequestFormGroup() {
 		return new FormGroup<GetLogGroupFieldsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			time: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
@@ -2585,7 +2585,7 @@ export namespace MyNS {
 	}
 	export function CreateGetQueryResultsRequestFormGroup() {
 		return new FormGroup<GetQueryResultsRequestFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -2621,7 +2621,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsLogGroupRequestFormGroup() {
 		return new FormGroup<ListTagsLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -2683,7 +2683,7 @@ export namespace MyNS {
 	}
 	export function CreatePutDestinationRequestFormGroup() {
 		return new FormGroup<PutDestinationRequestFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			targetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
@@ -2722,7 +2722,7 @@ export namespace MyNS {
 	}
 	export function CreatePutDestinationPolicyRequestFormGroup() {
 		return new FormGroup<PutDestinationPolicyRequestFormProperties>({
-			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			destinationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			accessPolicy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 		});
 
@@ -2818,8 +2818,8 @@ export namespace MyNS {
 	}
 	export function CreatePutLogEventsRequestFormGroup() {
 		return new FormGroup<PutLogEventsRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logStreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
 			sequenceToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -2952,9 +2952,9 @@ export namespace MyNS {
 	}
 	export function CreatePutMetricFilterRequestFormGroup() {
 		return new FormGroup<PutMetricFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
-			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2977,7 +2977,7 @@ export namespace MyNS {
 	}
 	export function CreatePutQueryDefinitionResponseFormGroup() {
 		return new FormGroup<PutQueryDefinitionResponseFormProperties>({
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -3029,9 +3029,9 @@ export namespace MyNS {
 	}
 	export function CreatePutQueryDefinitionRequestFormGroup() {
 		return new FormGroup<PutQueryDefinitionRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^([^:*\/]+\/?)*[^:*\/]+$')]),
-			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
-			queryString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^([^:*\/]+\/?)*[^:*\/]+$')]),
+			queryDefinitionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(10000)]),
 		});
 
 	}
@@ -3070,7 +3070,7 @@ export namespace MyNS {
 	export function CreatePutResourcePolicyRequestFormGroup() {
 		return new FormGroup<PutResourcePolicyRequestFormProperties>({
 			policyName: new FormControl<string | null | undefined>(undefined),
-			policyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5120), Validators.minLength(1)]),
+			policyDocument: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(5120)]),
 		});
 
 	}
@@ -3107,7 +3107,7 @@ export namespace MyNS {
 	}
 	export function CreatePutRetentionPolicyRequestFormGroup() {
 		return new FormGroup<PutRetentionPolicyRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			retentionInDays: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3187,9 +3187,9 @@ export namespace MyNS {
 	}
 	export function CreatePutSubscriptionFilterRequestFormGroup() {
 		return new FormGroup<PutSubscriptionFilterRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
-			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[^:*]*')]),
-			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			filterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[^:*]*')]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(1024)]),
 			destinationArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			distribution: new FormControl<SubscriptionFilterDistribution | null | undefined>(undefined),
@@ -3215,7 +3215,7 @@ export namespace MyNS {
 	}
 	export function CreateStartQueryResponseFormGroup() {
 		return new FormGroup<StartQueryResponseFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -3289,10 +3289,10 @@ export namespace MyNS {
 	}
 	export function CreateStartQueryRequestFormGroup() {
 		return new FormGroup<StartQueryRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 			startTime: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			endTime: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
-			queryString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000), Validators.minLength(0)]),
+			queryString: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(10000)]),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(10000)]),
 		});
 
@@ -3341,7 +3341,7 @@ export namespace MyNS {
 	}
 	export function CreateStopQueryRequestFormGroup() {
 		return new FormGroup<StopQueryRequestFormProperties>({
-			queryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			queryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -3369,7 +3369,7 @@ export namespace MyNS {
 	}
 	export function CreateTagLogGroupRequestFormGroup() {
 		return new FormGroup<TagLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -3449,7 +3449,7 @@ export namespace MyNS {
 	}
 	export function CreateTestMetricFilterRequestFormGroup() {
 		return new FormGroup<TestMetricFilterRequestFormProperties>({
-			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(0)]),
+			filterPattern: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3480,7 +3480,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagLogGroupRequestFormGroup() {
 		return new FormGroup<UntagLogGroupRequestFormProperties>({
-			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
+			logGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[\.\-_/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -3888,89 +3888,89 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateKmsKeyX_Amz_Target { Logs_20140328_AssociateKmsKey = 0 }
+	export enum AssociateKmsKeyX_Amz_Target { 'Logs_20140328.AssociateKmsKey' = 0 }
 
-	export enum CancelExportTaskX_Amz_Target { Logs_20140328_CancelExportTask = 0 }
+	export enum CancelExportTaskX_Amz_Target { 'Logs_20140328.CancelExportTask' = 0 }
 
-	export enum CreateExportTaskX_Amz_Target { Logs_20140328_CreateExportTask = 0 }
+	export enum CreateExportTaskX_Amz_Target { 'Logs_20140328.CreateExportTask' = 0 }
 
-	export enum CreateLogGroupX_Amz_Target { Logs_20140328_CreateLogGroup = 0 }
+	export enum CreateLogGroupX_Amz_Target { 'Logs_20140328.CreateLogGroup' = 0 }
 
-	export enum CreateLogStreamX_Amz_Target { Logs_20140328_CreateLogStream = 0 }
+	export enum CreateLogStreamX_Amz_Target { 'Logs_20140328.CreateLogStream' = 0 }
 
-	export enum DeleteDestinationX_Amz_Target { Logs_20140328_DeleteDestination = 0 }
+	export enum DeleteDestinationX_Amz_Target { 'Logs_20140328.DeleteDestination' = 0 }
 
-	export enum DeleteLogGroupX_Amz_Target { Logs_20140328_DeleteLogGroup = 0 }
+	export enum DeleteLogGroupX_Amz_Target { 'Logs_20140328.DeleteLogGroup' = 0 }
 
-	export enum DeleteLogStreamX_Amz_Target { Logs_20140328_DeleteLogStream = 0 }
+	export enum DeleteLogStreamX_Amz_Target { 'Logs_20140328.DeleteLogStream' = 0 }
 
-	export enum DeleteMetricFilterX_Amz_Target { Logs_20140328_DeleteMetricFilter = 0 }
+	export enum DeleteMetricFilterX_Amz_Target { 'Logs_20140328.DeleteMetricFilter' = 0 }
 
-	export enum DeleteQueryDefinitionX_Amz_Target { Logs_20140328_DeleteQueryDefinition = 0 }
+	export enum DeleteQueryDefinitionX_Amz_Target { 'Logs_20140328.DeleteQueryDefinition' = 0 }
 
-	export enum DeleteResourcePolicyX_Amz_Target { Logs_20140328_DeleteResourcePolicy = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'Logs_20140328.DeleteResourcePolicy' = 0 }
 
-	export enum DeleteRetentionPolicyX_Amz_Target { Logs_20140328_DeleteRetentionPolicy = 0 }
+	export enum DeleteRetentionPolicyX_Amz_Target { 'Logs_20140328.DeleteRetentionPolicy' = 0 }
 
-	export enum DeleteSubscriptionFilterX_Amz_Target { Logs_20140328_DeleteSubscriptionFilter = 0 }
+	export enum DeleteSubscriptionFilterX_Amz_Target { 'Logs_20140328.DeleteSubscriptionFilter' = 0 }
 
-	export enum DescribeDestinationsX_Amz_Target { Logs_20140328_DescribeDestinations = 0 }
+	export enum DescribeDestinationsX_Amz_Target { 'Logs_20140328.DescribeDestinations' = 0 }
 
-	export enum DescribeExportTasksX_Amz_Target { Logs_20140328_DescribeExportTasks = 0 }
+	export enum DescribeExportTasksX_Amz_Target { 'Logs_20140328.DescribeExportTasks' = 0 }
 
-	export enum DescribeLogGroupsX_Amz_Target { Logs_20140328_DescribeLogGroups = 0 }
+	export enum DescribeLogGroupsX_Amz_Target { 'Logs_20140328.DescribeLogGroups' = 0 }
 
-	export enum DescribeLogStreamsX_Amz_Target { Logs_20140328_DescribeLogStreams = 0 }
+	export enum DescribeLogStreamsX_Amz_Target { 'Logs_20140328.DescribeLogStreams' = 0 }
 
-	export enum DescribeMetricFiltersX_Amz_Target { Logs_20140328_DescribeMetricFilters = 0 }
+	export enum DescribeMetricFiltersX_Amz_Target { 'Logs_20140328.DescribeMetricFilters' = 0 }
 
-	export enum DescribeQueriesX_Amz_Target { Logs_20140328_DescribeQueries = 0 }
+	export enum DescribeQueriesX_Amz_Target { 'Logs_20140328.DescribeQueries' = 0 }
 
-	export enum DescribeQueryDefinitionsX_Amz_Target { Logs_20140328_DescribeQueryDefinitions = 0 }
+	export enum DescribeQueryDefinitionsX_Amz_Target { 'Logs_20140328.DescribeQueryDefinitions' = 0 }
 
-	export enum DescribeResourcePoliciesX_Amz_Target { Logs_20140328_DescribeResourcePolicies = 0 }
+	export enum DescribeResourcePoliciesX_Amz_Target { 'Logs_20140328.DescribeResourcePolicies' = 0 }
 
-	export enum DescribeSubscriptionFiltersX_Amz_Target { Logs_20140328_DescribeSubscriptionFilters = 0 }
+	export enum DescribeSubscriptionFiltersX_Amz_Target { 'Logs_20140328.DescribeSubscriptionFilters' = 0 }
 
-	export enum DisassociateKmsKeyX_Amz_Target { Logs_20140328_DisassociateKmsKey = 0 }
+	export enum DisassociateKmsKeyX_Amz_Target { 'Logs_20140328.DisassociateKmsKey' = 0 }
 
-	export enum FilterLogEventsX_Amz_Target { Logs_20140328_FilterLogEvents = 0 }
+	export enum FilterLogEventsX_Amz_Target { 'Logs_20140328.FilterLogEvents' = 0 }
 
-	export enum GetLogEventsX_Amz_Target { Logs_20140328_GetLogEvents = 0 }
+	export enum GetLogEventsX_Amz_Target { 'Logs_20140328.GetLogEvents' = 0 }
 
-	export enum GetLogGroupFieldsX_Amz_Target { Logs_20140328_GetLogGroupFields = 0 }
+	export enum GetLogGroupFieldsX_Amz_Target { 'Logs_20140328.GetLogGroupFields' = 0 }
 
-	export enum GetLogRecordX_Amz_Target { Logs_20140328_GetLogRecord = 0 }
+	export enum GetLogRecordX_Amz_Target { 'Logs_20140328.GetLogRecord' = 0 }
 
-	export enum GetQueryResultsX_Amz_Target { Logs_20140328_GetQueryResults = 0 }
+	export enum GetQueryResultsX_Amz_Target { 'Logs_20140328.GetQueryResults' = 0 }
 
-	export enum ListTagsLogGroupX_Amz_Target { Logs_20140328_ListTagsLogGroup = 0 }
+	export enum ListTagsLogGroupX_Amz_Target { 'Logs_20140328.ListTagsLogGroup' = 0 }
 
-	export enum PutDestinationX_Amz_Target { Logs_20140328_PutDestination = 0 }
+	export enum PutDestinationX_Amz_Target { 'Logs_20140328.PutDestination' = 0 }
 
-	export enum PutDestinationPolicyX_Amz_Target { Logs_20140328_PutDestinationPolicy = 0 }
+	export enum PutDestinationPolicyX_Amz_Target { 'Logs_20140328.PutDestinationPolicy' = 0 }
 
-	export enum PutLogEventsX_Amz_Target { Logs_20140328_PutLogEvents = 0 }
+	export enum PutLogEventsX_Amz_Target { 'Logs_20140328.PutLogEvents' = 0 }
 
-	export enum PutMetricFilterX_Amz_Target { Logs_20140328_PutMetricFilter = 0 }
+	export enum PutMetricFilterX_Amz_Target { 'Logs_20140328.PutMetricFilter' = 0 }
 
-	export enum PutQueryDefinitionX_Amz_Target { Logs_20140328_PutQueryDefinition = 0 }
+	export enum PutQueryDefinitionX_Amz_Target { 'Logs_20140328.PutQueryDefinition' = 0 }
 
-	export enum PutResourcePolicyX_Amz_Target { Logs_20140328_PutResourcePolicy = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'Logs_20140328.PutResourcePolicy' = 0 }
 
-	export enum PutRetentionPolicyX_Amz_Target { Logs_20140328_PutRetentionPolicy = 0 }
+	export enum PutRetentionPolicyX_Amz_Target { 'Logs_20140328.PutRetentionPolicy' = 0 }
 
-	export enum PutSubscriptionFilterX_Amz_Target { Logs_20140328_PutSubscriptionFilter = 0 }
+	export enum PutSubscriptionFilterX_Amz_Target { 'Logs_20140328.PutSubscriptionFilter' = 0 }
 
-	export enum StartQueryX_Amz_Target { Logs_20140328_StartQuery = 0 }
+	export enum StartQueryX_Amz_Target { 'Logs_20140328.StartQuery' = 0 }
 
-	export enum StopQueryX_Amz_Target { Logs_20140328_StopQuery = 0 }
+	export enum StopQueryX_Amz_Target { 'Logs_20140328.StopQuery' = 0 }
 
-	export enum TagLogGroupX_Amz_Target { Logs_20140328_TagLogGroup = 0 }
+	export enum TagLogGroupX_Amz_Target { 'Logs_20140328.TagLogGroup' = 0 }
 
-	export enum TestMetricFilterX_Amz_Target { Logs_20140328_TestMetricFilter = 0 }
+	export enum TestMetricFilterX_Amz_Target { 'Logs_20140328.TestMetricFilter' = 0 }
 
-	export enum UntagLogGroupX_Amz_Target { Logs_20140328_UntagLogGroup = 0 }
+	export enum UntagLogGroupX_Amz_Target { 'Logs_20140328.UntagLogGroup' = 0 }
 
 }
 

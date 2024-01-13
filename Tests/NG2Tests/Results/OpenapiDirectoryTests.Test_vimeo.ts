@@ -317,7 +317,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PictureType { caution = 0, custom = 1, _default = 2 }
+	export enum PictureType { caution = 0, custom = 1, default = 2 }
 
 	export interface CategoryMetadata {
 
@@ -2841,7 +2841,7 @@ export namespace MyNS {
 
 	export enum UserPreferencesVideosPrivacyComments { anybody = 0, contacts = 1, nobody = 2 }
 
-	export enum UserPreferencesVideosPrivacyEmbed { _private = 0, _public = 1, whitelist = 2 }
+	export enum UserPreferencesVideosPrivacyEmbed { private = 0, public = 1, whitelist = 2 }
 
 	export enum UserPreferencesVideosPrivacyView { anybody = 0, contacts = 1, disable = 2, nobody = 3, password = 4, unlisted = 5, users = 6 }
 
@@ -3479,7 +3479,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoContextAction { Added_to = 0, Appearance_by = 1, Liked_by = 2, Uploaded_by = 3 }
+	export enum VideoContextAction { 'Added to' = 0, 'Appearance by' = 1, 'Liked by' = 2, 'Uploaded by' = 3 }
 
 	export interface Embed_settings {
 
@@ -3816,7 +3816,7 @@ export namespace MyNS {
 
 	export enum Embed_settingsTitleName { hide = 0, show = 1, user = 2 }
 
-	export enum VideoLicense { by = 0, by_nc = 1, by_nc_nd = 2, by_nc_sa = 3, by_nd = 4, by_sa = 5, cc0 = 6 }
+	export enum VideoLicense { by = 0, 'by-nc' = 1, 'by-nc-nd' = 2, 'by-nc-sa' = 3, 'by-nd' = 4, 'by-sa' = 5, cc0 = 6 }
 
 	export interface VideoMetadata {
 
@@ -5283,7 +5283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoPrivacyEmbed { _private = 0, _public = 1 }
+	export enum VideoPrivacyEmbed { private = 0, public = 1 }
 
 	export interface VideoSpatial {
 
@@ -5400,7 +5400,7 @@ export namespace MyNS {
 
 	export enum VideoSpatialProjection { cubical = 0, cylindrical = 1, dome = 2, equirectangular = 3, pyramid = 4 }
 
-	export enum VideoSpatialStereo_format { left_right = 0, mono = 1, top_bottom = 2 }
+	export enum VideoSpatialStereo_format { 'left-right' = 0, mono = 1, 'top-bottom' = 2 }
 
 	export interface VideoStats {
 
@@ -7074,7 +7074,7 @@ export namespace MyNS {
 		 * * `cc0` - Public Domain Dedication
 		 * Required
 		 */
-		code: Creative_commonsCode;
+		code: VideoLicense;
 
 		/**
 		 * The description of this Creative Commons license.
@@ -7102,7 +7102,7 @@ export namespace MyNS {
 		 * * `cc0` - Public Domain Dedication
 		 * Required
 		 */
-		code: FormControl<Creative_commonsCode | null | undefined>,
+		code: FormControl<VideoLicense | null | undefined>,
 
 		/**
 		 * The description of this Creative Commons license.
@@ -7118,14 +7118,12 @@ export namespace MyNS {
 	}
 	export function CreateCreative_commonsFormGroup() {
 		return new FormGroup<Creative_commonsFormProperties>({
-			code: new FormControl<Creative_commonsCode | null | undefined>(undefined, [Validators.required]),
+			code: new FormControl<VideoLicense | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum Creative_commonsCode { by = 0, by_nc = 1, by_nc_nd = 2, by_nc_sa = 3, by_nd = 4, by_sa = 5, cc0 = 6 }
 
 	export interface Credit {
 
@@ -8813,7 +8811,7 @@ export namespace MyNS {
 
 	}
 
-	export enum On_demand_promotionAccess_type { _default = 0, vip = 1 }
+	export enum On_demand_promotionAccess_type { default = 0, vip = 1 }
 
 	export enum On_demand_promotionDiscount_type { dollars = 0, free = 1, percent = 2 }
 
@@ -9854,7 +9852,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PlayProgressiveType { source = 0, video_mp4 = 1, video_webm = 2, vp6_x_video = 3 }
+	export enum PlayProgressiveType { source = 0, 'video/mp4' = 1, 'video/webm' = 2, 'vp6/x-video' = 3 }
 
 	export enum PlayStatus { playable = 0, purchase_required = 1, restricted = 2, unavailable = 3 }
 
@@ -10406,7 +10404,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PresetsSettingsOutroType { link = 0, no_idea = 1, text = 2, uploaded_clips = 3, uploaded_videos = 4 }
+	export enum PresetsSettingsOutroType { link = 0, 'no idea' = 1, text = 2, uploaded_clips = 3, uploaded_videos = 4 }
 
 	export interface Text_track {
 
@@ -13039,11 +13037,11 @@ export namespace MyNS {
 		 * @param {string} password The password of the album.
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @param {string} query The search query to use to filter the results.
-		 * @param {Get_album_videosSort} sort The way to sort the results.
+		 * @param {Get_album_videos_alt1Sort} sort The way to sort the results.
 		 * @param {boolean} weak_search Whether to include private videos in the search. Please note that a separate search service provides this functionality. The service performs a partial text search on the video's name.
 		 * @return {void} The videos were returned.
 		 */
-		Get_album_videos(album_id: number, user_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, password: string | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_album_videosSort | null | undefined, weak_search: boolean | null | undefined): Observable<HttpResponse<string>> {
+		Get_album_videos(album_id: number, user_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, password: string | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_album_videos_alt1Sort | null | undefined, weak_search: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/albums/' + album_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&password=' + (password == null ? '' : encodeURIComponent(password)) + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort + '&weak_search=' + weak_search, { observe: 'response', responseType: 'text' });
 		}
 
@@ -13554,12 +13552,12 @@ export namespace MyNS {
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
-		 * @param {Get_portfolio_videosSort} sort The way to sort the results.
+		 * @param {Get_portfolio_videos_alt1Sort} sort The way to sort the results.
 		 * Option descriptions:
 		 *  * `default` - This will sort to the default sort set on the portfolio.
 		 * @return {void} The videos were returned.
 		 */
-		Get_portfolio_videos(portfolio_id: number, user_id: number, containing_uri: string | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_portfolio_videosSort | null | undefined): Observable<HttpResponse<string>> {
+		Get_portfolio_videos(portfolio_id: number, user_id: number, containing_uri: string | null | undefined, filter: Get_channel_videosFilter | null | undefined, filter_embeddable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_portfolio_videos_alt1Sort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/portfolios/' + portfolio_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -13643,10 +13641,10 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
-		 * @param {Get_projectsSort} sort The way to sort the results.
+		 * @param {Get_projects_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Project>} The projects were returned.
 		 */
-		Get_projects(user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_projectsSort | null | undefined): Observable<Array<Project>> {
+		Get_projects(user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_projects_alt1Sort | null | undefined): Observable<Array<Project>> {
 			return this.http.get<Array<Project>>(this.baseUri + 'users/' + user_id + '/projects?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, {});
 		}
 
@@ -13721,10 +13719,10 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
-		 * @param {Get_project_videosSort} sort The way to sort the results.
+		 * @param {Get_project_videos_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Video>} The videos were returned.
 		 */
-		Get_project_videos(project_id: number, user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_project_videosSort | null | undefined): Observable<Array<Video>> {
+		Get_project_videos(project_id: number, user_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined, sort: Get_project_videos_alt1Sort | null | undefined): Observable<Array<Video>> {
 			return this.http.get<Array<Video>>(this.baseUri + 'users/' + user_id + '/projects/' + project_id + '/videos?direction=' + direction + '&page=' + page + '&per_page=' + per_page + '&sort=' + sort, {});
 		}
 
@@ -13803,10 +13801,10 @@ export namespace MyNS {
 		 * @param {number} page The page number of the results to show.
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
 		 * @param {string} query The search query to use to filter the results.
-		 * @param {Get_videosSort} sort The way to sort the results.
+		 * @param {Get_videos_alt1Sort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
-		Get_videos(user_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_videos_alt1Filter | null | undefined, filter_embeddable: boolean | null | undefined, filter_playable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_videosSort | null | undefined): Observable<HttpResponse<string>> {
+		Get_videos(user_id: number, containing_uri: string | null | undefined, direction: Get_categoriesDirection | null | undefined, filter: Get_videos_alt1Filter | null | undefined, filter_embeddable: boolean | null | undefined, filter_playable: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined, query: string | null | undefined, sort: Get_videos_alt1Sort | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'users/' + user_id + '/videos?containing_uri=' + (containing_uri == null ? '' : encodeURIComponent(containing_uri)) + '&direction=' + direction + '&filter=' + filter + '&filter_embeddable=' + filter_embeddable + '&filter_playable=' + filter_playable + '&page=' + page + '&per_page=' + per_page + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&sort=' + sort, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14370,7 +14368,7 @@ export namespace MyNS {
 
 	export enum Get_channel_videosFilter { embeddable = 0 }
 
-	export enum Get_channel_videosSort { added = 0, alphabetical = 1, comments = 2, date = 3, _default = 4, duration = 5, likes = 6, manual = 7, modified_time = 8, plays = 9 }
+	export enum Get_channel_videosSort { added = 0, alphabetical = 1, comments = 2, date = 3, default = 4, duration = 5, likes = 6, manual = 7, modified_time = 8, plays = 9 }
 
 	export interface Add_videos_to_channelPutBody {
 
@@ -14401,7 +14399,7 @@ export namespace MyNS {
 
 	export enum Get_albums_alt1Sort { alphabetical = 0, date = 1, duration = 2, videos = 3 }
 
-	export enum Get_album_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, _default = 3, duration = 4, likes = 5, manual = 6, modified_time = 7, plays = 8 }
+	export enum Get_album_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, default = 3, duration = 4, likes = 5, manual = 6, modified_time = 7, plays = 8 }
 
 	export interface Replace_videos_in_album_alt1PutBody {
 
@@ -14467,7 +14465,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_user_vods_alt1Sort { added = 0, alphabetical = 1, date = 2, modified_time = 3, name = 4, publish_time = 5, rating = 6 }
+	export enum Get_user_vods_alt1Sort { added = 0, alphabetical = 1, date = 2, modified_time = 3, name = 4, 'publish.time' = 5, rating = 6 }
 
 	export interface Create_vod_alt1PostBody {
 
@@ -14811,7 +14809,7 @@ export namespace MyNS {
 		active?: boolean | null;
 
 		/** The period in which this can be rented for. */
-		period?: Create_vod_alt1PostBodyRentPeriod | null;
+		period?: Create_vod_alt1PostBodyEpisodesRentPeriod | null;
 		price?: Create_vod_alt1PostBodyRentPrice;
 	}
 	export interface Create_vod_alt1PostBodyRentFormProperties {
@@ -14820,17 +14818,15 @@ export namespace MyNS {
 		active: FormControl<boolean | null | undefined>,
 
 		/** The period in which this can be rented for. */
-		period: FormControl<Create_vod_alt1PostBodyRentPeriod | null | undefined>,
+		period: FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>,
 	}
 	export function CreateCreate_vod_alt1PostBodyRentFormGroup() {
 		return new FormGroup<Create_vod_alt1PostBodyRentFormProperties>({
 			active: new FormControl<boolean | null | undefined>(undefined),
-			period: new FormControl<Create_vod_alt1PostBodyRentPeriod | null | undefined>(undefined),
+			period: new FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum Create_vod_alt1PostBodyRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
 
 	export interface Create_vod_alt1PostBodyRentPrice {
 
@@ -14976,9 +14972,9 @@ export namespace MyNS {
 
 	export enum Get_vod_purchasesSort { added = 0, alphabetical = 1, date = 2, name = 3, purchase_time = 4, rating = 5, release_date = 6 }
 
-	export enum Get_portfolio_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, _default = 3, likes = 4, manual = 5, plays = 6 }
+	export enum Get_portfolio_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, default = 3, likes = 4, manual = 5, plays = 6 }
 
-	export enum Get_projects_alt1Sort { date = 0, _default = 1, modified_time = 2, name = 3 }
+	export enum Get_projects_alt1Sort { date = 0, default = 1, modified_time = 2, name = 3 }
 
 	export interface Create_project_alt1PostBody {
 
@@ -15026,31 +15022,29 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_project_videos_alt1Sort { alphabetical = 0, date = 1, _default = 2, duration = 3, last_user_action_event_date = 4 }
+	export enum Get_project_videos_alt1Sort { alphabetical = 0, date = 1, default = 2, duration = 3, last_user_action_event_date = 4 }
 
 	export enum Get_videos_alt1Filter { app_only = 0, embeddable = 1, featured = 2, playable = 3 }
 
-	export enum Get_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, _default = 3, duration = 4, last_user_action_event_date = 5, likes = 6, modified_time = 7, plays = 8 }
+	export enum Get_videos_alt1Sort { alphabetical = 0, comments = 1, date = 2, default = 3, duration = 4, last_user_action_event_date = 5, likes = 6, modified_time = 7, plays = 8 }
 
 	export enum Get_genre_vodsFilter { country = 0, my_region = 1 }
 
-	export enum Get_genre_vodsSort { alphabetical = 0, date = 1, name = 2, publish_time = 3, videos = 4 }
+	export enum Get_genre_vodsSort { alphabetical = 0, date = 1, name = 2, 'publish.time' = 3, videos = 4 }
 
-	export enum Get_vod_promotionsFilter { batch = 0, _default = 1, single = 2, vip = 3 }
+	export enum Get_vod_promotionsFilter { batch = 0, default = 1, single = 2, vip = 3 }
 
 	export enum Get_vod_seasonsFilter { viewable = 0 }
 
 	export enum Get_vod_seasonsSort { date = 0, manual = 1 }
 
-	export enum Get_vod_season_videosSort { date = 0, _default = 1, manual = 2, name = 3, purchase_time = 4, release_date = 5 }
+	export enum Get_vod_season_videosSort { date = 0, default = 1, manual = 2, name = 3, purchase_time = 4, release_date = 5 }
 
-	export enum Get_vod_videosFilter { all = 0, buy = 1, expiring_soon = 2, extra = 3, main = 4, main_viewable = 5, rent = 6, trailer = 7, unwatched = 8, viewable = 9, watched = 10 }
+	export enum Get_vod_videosFilter { all = 0, buy = 1, expiring_soon = 2, extra = 3, main = 4, 'main.viewable' = 5, rent = 6, trailer = 7, unwatched = 8, viewable = 9, watched = 10 }
 
-	export enum Get_vod_videosSort { date = 0, _default = 1, episode = 2, manual = 3, name = 4, purchase_time = 5, release_date = 6 }
+	export enum Get_vod_videosSort { date = 0, default = 1, episode = 2, manual = 3, name = 4, purchase_time = 5, release_date = 6 }
 
 	export enum Get_videos_with_tagSort { created_time = 0, duration = 1, name = 2 }
-
-	export enum Get_album_videosSort { alphabetical = 0, comments = 1, date = 2, _default = 3, duration = 4, likes = 5, manual = 6, modified_time = 7, plays = 8 }
 
 	export interface Replace_videos_in_albumPutBody {
 
@@ -15108,7 +15102,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_user_vodsSort { added = 0, alphabetical = 1, date = 2, modified_time = 3, name = 4, publish_time = 5, rating = 6 }
+	export enum Get_user_vodsSort { added = 0, alphabetical = 1, date = 2, modified_time = 3, name = 4, 'publish.time' = 5, rating = 6 }
 
 	export interface Create_vodPostBody {
 
@@ -15406,7 +15400,7 @@ export namespace MyNS {
 		active?: boolean | null;
 
 		/** The period in which this episode can be rented for. */
-		period?: Create_vodPostBodyEpisodesRentPeriod | null;
+		period?: Create_vod_alt1PostBodyEpisodesRentPeriod | null;
 		price?: Create_vodPostBodyEpisodesRentPrice;
 	}
 	export interface Create_vodPostBodyEpisodesRentFormProperties {
@@ -15415,17 +15409,15 @@ export namespace MyNS {
 		active: FormControl<boolean | null | undefined>,
 
 		/** The period in which this episode can be rented for. */
-		period: FormControl<Create_vodPostBodyEpisodesRentPeriod | null | undefined>,
+		period: FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>,
 	}
 	export function CreateCreate_vodPostBodyEpisodesRentFormGroup() {
 		return new FormGroup<Create_vodPostBodyEpisodesRentFormProperties>({
 			active: new FormControl<boolean | null | undefined>(undefined),
-			period: new FormControl<Create_vodPostBodyEpisodesRentPeriod | null | undefined>(undefined),
+			period: new FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum Create_vodPostBodyEpisodesRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
 
 	export interface Create_vodPostBodyEpisodesRentPrice {
 
@@ -15450,7 +15442,7 @@ export namespace MyNS {
 		active?: boolean | null;
 
 		/** The period in which this can be rented for. */
-		period?: Create_vodPostBodyRentPeriod | null;
+		period?: Create_vod_alt1PostBodyEpisodesRentPeriod | null;
 		price?: Create_vodPostBodyRentPrice;
 	}
 	export interface Create_vodPostBodyRentFormProperties {
@@ -15459,17 +15451,15 @@ export namespace MyNS {
 		active: FormControl<boolean | null | undefined>,
 
 		/** The period in which this can be rented for. */
-		period: FormControl<Create_vodPostBodyRentPeriod | null | undefined>,
+		period: FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>,
 	}
 	export function CreateCreate_vodPostBodyRentFormGroup() {
 		return new FormGroup<Create_vodPostBodyRentFormProperties>({
 			active: new FormControl<boolean | null | undefined>(undefined),
-			period: new FormControl<Create_vodPostBodyRentPeriod | null | undefined>(undefined),
+			period: new FormControl<Create_vod_alt1PostBodyEpisodesRentPeriod | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum Create_vodPostBodyRentPeriod { _1_week = 0, _1_year = 1, _24_hour = 2, _3_month = 3, _30_day = 4, _48_hour = 5, _6_month = 6, _72_hour = 7 }
 
 	export interface Create_vodPostBodyRentPrice {
 
@@ -15611,10 +15601,6 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_portfolio_videosSort { alphabetical = 0, comments = 1, date = 2, _default = 3, likes = 4, manual = 5, plays = 6 }
-
-	export enum Get_projectsSort { date = 0, _default = 1, modified_time = 2, name = 3 }
-
 	export interface Create_projectPostBody {
 
 		/**
@@ -15661,11 +15647,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Get_project_videosSort { alphabetical = 0, date = 1, _default = 2, duration = 3, last_user_action_event_date = 4 }
-
-	export enum Get_videosSort { alphabetical = 0, comments = 1, date = 2, _default = 3, duration = 4, last_user_action_event_date = 5, likes = 6, modified_time = 7, plays = 8 }
-
-	export enum Search_videosFilter { CC = 0, CC_BY = 1, CC_BY_NC = 2, CC_BY_NC_ND = 3, CC_BY_NC_SA = 4, CC_BY_ND = 5, CC_BY_SA = 6, CC0 = 7, categories = 8, duration = 9, in_progress = 10, minimum_likes = 11, trending = 12, upload_date = 13 }
+	export enum Search_videosFilter { CC = 0, 'CC-BY' = 1, 'CC-BY-NC' = 2, 'CC-BY-NC-ND' = 3, 'CC-BY-NC-SA' = 4, 'CC-BY-ND' = 5, 'CC-BY-SA' = 6, CC0 = 7, categories = 8, duration = 9, 'in-progress' = 10, minimum_likes = 11, trending = 12, upload_date = 13 }
 
 	export enum Search_videosSort { alphabetical = 0, comments = 1, date = 2, duration = 3, likes = 4, plays = 5, relevant = 6 }
 

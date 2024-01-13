@@ -169,8 +169,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AttributeTargetType { container_instance = 0 }
+	export enum AttributeTargetType { 'container-instance' = 0 }
 
 	export interface DeleteAttributesRequest {
 		cluster?: string | null;
@@ -2095,7 +2095,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LogConfigurationLogDriver { json_file = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6, awsfirelens = 7 }
+	export enum LogConfigurationLogDriver { 'json-file' = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6, awsfirelens = 7 }
 
 	export interface LogConfigurationOptionsMap {
 	}
@@ -3102,7 +3102,7 @@ export namespace MyNS {
 		cluster?: string | null;
 
 		/** Required */
-		targetType: ListAttributesRequestTargetType;
+		targetType: AttributeTargetType;
 		attributeName?: string | null;
 		attributeValue?: string | null;
 		nextToken?: string | null;
@@ -3112,7 +3112,7 @@ export namespace MyNS {
 		cluster: FormControl<string | null | undefined>,
 
 		/** Required */
-		targetType: FormControl<ListAttributesRequestTargetType | null | undefined>,
+		targetType: FormControl<AttributeTargetType | null | undefined>,
 		attributeName: FormControl<string | null | undefined>,
 		attributeValue: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -3121,7 +3121,7 @@ export namespace MyNS {
 	export function CreateListAttributesRequestFormGroup() {
 		return new FormGroup<ListAttributesRequestFormProperties>({
 			cluster: new FormControl<string | null | undefined>(undefined),
-			targetType: new FormControl<ListAttributesRequestTargetType | null | undefined>(undefined, [Validators.required]),
+			targetType: new FormControl<AttributeTargetType | null | undefined>(undefined, [Validators.required]),
 			attributeName: new FormControl<string | null | undefined>(undefined),
 			attributeValue: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -3129,8 +3129,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ListAttributesRequestTargetType { container_instance = 0 }
 
 	export interface ListClustersResponse {
 		clusterArns?: Array<string>;
@@ -4427,7 +4425,7 @@ export namespace MyNS {
 
 	export enum AssignPublicIp { ENABLED = 0, DISABLED = 1 }
 
-	export enum TargetType { container_instance = 0 }
+	export enum TargetType { 'container-instance' = 0 }
 
 	export enum ManagedTerminationProtection { ENABLED = 0, DISABLED = 1 }
 
@@ -4459,7 +4457,7 @@ export namespace MyNS {
 
 	export enum SortOrder { ASC = 0, DESC = 1 }
 
-	export enum LogDriver { json_file = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6, awsfirelens = 7 }
+	export enum LogDriver { 'json-file' = 0, syslog = 1, journald = 2, gelf = 3, fluentd = 4, awslogs = 5, splunk = 6, awsfirelens = 7 }
 
 	export enum TransportProtocol { tcp = 0, udp = 1 }
 
@@ -4927,101 +4925,101 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateCapacityProviderX_Amz_Target { AmazonEC2ContainerServiceV20141113_CreateCapacityProvider = 0 }
+	export enum CreateCapacityProviderX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateCapacityProvider' = 0 }
 
-	export enum CreateClusterX_Amz_Target { AmazonEC2ContainerServiceV20141113_CreateCluster = 0 }
+	export enum CreateClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateCluster' = 0 }
 
-	export enum CreateServiceX_Amz_Target { AmazonEC2ContainerServiceV20141113_CreateService = 0 }
+	export enum CreateServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateService' = 0 }
 
-	export enum CreateTaskSetX_Amz_Target { AmazonEC2ContainerServiceV20141113_CreateTaskSet = 0 }
+	export enum CreateTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.CreateTaskSet' = 0 }
 
-	export enum DeleteAccountSettingX_Amz_Target { AmazonEC2ContainerServiceV20141113_DeleteAccountSetting = 0 }
+	export enum DeleteAccountSettingX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteAccountSetting' = 0 }
 
-	export enum DeleteAttributesX_Amz_Target { AmazonEC2ContainerServiceV20141113_DeleteAttributes = 0 }
+	export enum DeleteAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteAttributes' = 0 }
 
-	export enum DeleteClusterX_Amz_Target { AmazonEC2ContainerServiceV20141113_DeleteCluster = 0 }
+	export enum DeleteClusterX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteCluster' = 0 }
 
-	export enum DeleteServiceX_Amz_Target { AmazonEC2ContainerServiceV20141113_DeleteService = 0 }
+	export enum DeleteServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteService' = 0 }
 
-	export enum DeleteTaskSetX_Amz_Target { AmazonEC2ContainerServiceV20141113_DeleteTaskSet = 0 }
+	export enum DeleteTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeleteTaskSet' = 0 }
 
-	export enum DeregisterContainerInstanceX_Amz_Target { AmazonEC2ContainerServiceV20141113_DeregisterContainerInstance = 0 }
+	export enum DeregisterContainerInstanceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance' = 0 }
 
-	export enum DeregisterTaskDefinitionX_Amz_Target { AmazonEC2ContainerServiceV20141113_DeregisterTaskDefinition = 0 }
+	export enum DeregisterTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DeregisterTaskDefinition' = 0 }
 
-	export enum DescribeCapacityProvidersX_Amz_Target { AmazonEC2ContainerServiceV20141113_DescribeCapacityProviders = 0 }
+	export enum DescribeCapacityProvidersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders' = 0 }
 
-	export enum DescribeClustersX_Amz_Target { AmazonEC2ContainerServiceV20141113_DescribeClusters = 0 }
+	export enum DescribeClustersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeClusters' = 0 }
 
-	export enum DescribeContainerInstancesX_Amz_Target { AmazonEC2ContainerServiceV20141113_DescribeContainerInstances = 0 }
+	export enum DescribeContainerInstancesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeContainerInstances' = 0 }
 
-	export enum DescribeServicesX_Amz_Target { AmazonEC2ContainerServiceV20141113_DescribeServices = 0 }
+	export enum DescribeServicesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeServices' = 0 }
 
-	export enum DescribeTaskDefinitionX_Amz_Target { AmazonEC2ContainerServiceV20141113_DescribeTaskDefinition = 0 }
+	export enum DescribeTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTaskDefinition' = 0 }
 
-	export enum DescribeTaskSetsX_Amz_Target { AmazonEC2ContainerServiceV20141113_DescribeTaskSets = 0 }
+	export enum DescribeTaskSetsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTaskSets' = 0 }
 
-	export enum DescribeTasksX_Amz_Target { AmazonEC2ContainerServiceV20141113_DescribeTasks = 0 }
+	export enum DescribeTasksX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DescribeTasks' = 0 }
 
-	export enum DiscoverPollEndpointX_Amz_Target { AmazonEC2ContainerServiceV20141113_DiscoverPollEndpoint = 0 }
+	export enum DiscoverPollEndpointX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint' = 0 }
 
-	export enum ListAccountSettingsX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListAccountSettings = 0 }
+	export enum ListAccountSettingsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListAccountSettings' = 0 }
 
-	export enum ListAttributesX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListAttributes = 0 }
+	export enum ListAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListAttributes' = 0 }
 
-	export enum ListClustersX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListClusters = 0 }
+	export enum ListClustersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListClusters' = 0 }
 
-	export enum ListContainerInstancesX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListContainerInstances = 0 }
+	export enum ListContainerInstancesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListContainerInstances' = 0 }
 
-	export enum ListServicesX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListServices = 0 }
+	export enum ListServicesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListServices' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTagsForResource' = 0 }
 
-	export enum ListTaskDefinitionFamiliesX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListTaskDefinitionFamilies = 0 }
+	export enum ListTaskDefinitionFamiliesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies' = 0 }
 
-	export enum ListTaskDefinitionsX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListTaskDefinitions = 0 }
+	export enum ListTaskDefinitionsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTaskDefinitions' = 0 }
 
-	export enum ListTasksX_Amz_Target { AmazonEC2ContainerServiceV20141113_ListTasks = 0 }
+	export enum ListTasksX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.ListTasks' = 0 }
 
-	export enum PutAccountSettingX_Amz_Target { AmazonEC2ContainerServiceV20141113_PutAccountSetting = 0 }
+	export enum PutAccountSettingX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAccountSetting' = 0 }
 
-	export enum PutAccountSettingDefaultX_Amz_Target { AmazonEC2ContainerServiceV20141113_PutAccountSettingDefault = 0 }
+	export enum PutAccountSettingDefaultX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAccountSettingDefault' = 0 }
 
-	export enum PutAttributesX_Amz_Target { AmazonEC2ContainerServiceV20141113_PutAttributes = 0 }
+	export enum PutAttributesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutAttributes' = 0 }
 
-	export enum PutClusterCapacityProvidersX_Amz_Target { AmazonEC2ContainerServiceV20141113_PutClusterCapacityProviders = 0 }
+	export enum PutClusterCapacityProvidersX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.PutClusterCapacityProviders' = 0 }
 
-	export enum RegisterContainerInstanceX_Amz_Target { AmazonEC2ContainerServiceV20141113_RegisterContainerInstance = 0 }
+	export enum RegisterContainerInstanceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RegisterContainerInstance' = 0 }
 
-	export enum RegisterTaskDefinitionX_Amz_Target { AmazonEC2ContainerServiceV20141113_RegisterTaskDefinition = 0 }
+	export enum RegisterTaskDefinitionX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition' = 0 }
 
-	export enum RunTaskX_Amz_Target { AmazonEC2ContainerServiceV20141113_RunTask = 0 }
+	export enum RunTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.RunTask' = 0 }
 
-	export enum StartTaskX_Amz_Target { AmazonEC2ContainerServiceV20141113_StartTask = 0 }
+	export enum StartTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.StartTask' = 0 }
 
-	export enum StopTaskX_Amz_Target { AmazonEC2ContainerServiceV20141113_StopTask = 0 }
+	export enum StopTaskX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.StopTask' = 0 }
 
-	export enum SubmitAttachmentStateChangesX_Amz_Target { AmazonEC2ContainerServiceV20141113_SubmitAttachmentStateChanges = 0 }
+	export enum SubmitAttachmentStateChangesX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitAttachmentStateChanges' = 0 }
 
-	export enum SubmitContainerStateChangeX_Amz_Target { AmazonEC2ContainerServiceV20141113_SubmitContainerStateChange = 0 }
+	export enum SubmitContainerStateChangeX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange' = 0 }
 
-	export enum SubmitTaskStateChangeX_Amz_Target { AmazonEC2ContainerServiceV20141113_SubmitTaskStateChange = 0 }
+	export enum SubmitTaskStateChangeX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange' = 0 }
 
-	export enum TagResourceX_Amz_Target { AmazonEC2ContainerServiceV20141113_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { AmazonEC2ContainerServiceV20141113_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UntagResource' = 0 }
 
-	export enum UpdateClusterSettingsX_Amz_Target { AmazonEC2ContainerServiceV20141113_UpdateClusterSettings = 0 }
+	export enum UpdateClusterSettingsX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateClusterSettings' = 0 }
 
-	export enum UpdateContainerAgentX_Amz_Target { AmazonEC2ContainerServiceV20141113_UpdateContainerAgent = 0 }
+	export enum UpdateContainerAgentX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateContainerAgent' = 0 }
 
-	export enum UpdateContainerInstancesStateX_Amz_Target { AmazonEC2ContainerServiceV20141113_UpdateContainerInstancesState = 0 }
+	export enum UpdateContainerInstancesStateX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState' = 0 }
 
-	export enum UpdateServiceX_Amz_Target { AmazonEC2ContainerServiceV20141113_UpdateService = 0 }
+	export enum UpdateServiceX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateService' = 0 }
 
-	export enum UpdateServicePrimaryTaskSetX_Amz_Target { AmazonEC2ContainerServiceV20141113_UpdateServicePrimaryTaskSet = 0 }
+	export enum UpdateServicePrimaryTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateServicePrimaryTaskSet' = 0 }
 
-	export enum UpdateTaskSetX_Amz_Target { AmazonEC2ContainerServiceV20141113_UpdateTaskSet = 0 }
+	export enum UpdateTaskSetX_Amz_Target { 'AmazonEC2ContainerServiceV20141113.UpdateTaskSet' = 0 }
 
 }
 

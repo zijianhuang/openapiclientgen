@@ -453,9 +453,9 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeDimensionKeysX_Amz_Target { PerformanceInsightsv20180227_DescribeDimensionKeys = 0 }
+	export enum DescribeDimensionKeysX_Amz_Target { 'PerformanceInsightsv20180227.DescribeDimensionKeys' = 0 }
 
-	export enum GetResourceMetricsX_Amz_Target { PerformanceInsightsv20180227_GetResourceMetrics = 0 }
+	export enum GetResourceMetricsX_Amz_Target { 'PerformanceInsightsv20180227.GetResourceMetrics' = 0 }
 
 }
 

@@ -143,7 +143,7 @@ export namespace MyNS {
 	export interface JsonSchema {
 
 		/** A reference to another schema. The value of this property is the "id" of another schema. */
-		ref?: string | null;
+		'$ref'?: string | null;
 		additionalProperties?: JsonSchema;
 
 		/** Additional information about this property. */
@@ -201,7 +201,7 @@ export namespace MyNS {
 	export interface JsonSchemaFormProperties {
 
 		/** A reference to another schema. The value of this property is the "id" of another schema. */
-		ref: FormControl<string | null | undefined>,
+		'$ref': FormControl<string | null | undefined>,
 
 		/** The default value of this property (if one exists). */
 		default: FormControl<string | null | undefined>,
@@ -244,7 +244,7 @@ export namespace MyNS {
 	}
 	export function CreateJsonSchemaFormGroup() {
 		return new FormGroup<JsonSchemaFormProperties>({
-			ref: new FormControl<string | null | undefined>(undefined),
+			'$ref': new FormControl<string | null | undefined>(undefined),
 			default: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			format: new FormControl<string | null | undefined>(undefined),
@@ -296,16 +296,16 @@ export namespace MyNS {
 	}
 
 	export interface JsonSchemaVariantMap {
-		ref?: string | null;
+		'$ref'?: string | null;
 		type_value?: string | null;
 	}
 	export interface JsonSchemaVariantMapFormProperties {
-		ref: FormControl<string | null | undefined>,
+		'$ref': FormControl<string | null | undefined>,
 		type_value: FormControl<string | null | undefined>,
 	}
 	export function CreateJsonSchemaVariantMapFormGroup() {
 		return new FormGroup<JsonSchemaVariantMapFormProperties>({
-			ref: new FormControl<string | null | undefined>(undefined),
+			'$ref': new FormControl<string | null | undefined>(undefined),
 			type_value: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -767,7 +767,7 @@ export namespace MyNS {
 	export interface RestMethodRequest {
 
 		/** Schema ID for the request schema. */
-		ref?: string | null;
+		'$ref'?: string | null;
 
 		/** parameter name. */
 		parameterName?: string | null;
@@ -775,14 +775,14 @@ export namespace MyNS {
 	export interface RestMethodRequestFormProperties {
 
 		/** Schema ID for the request schema. */
-		ref: FormControl<string | null | undefined>,
+		'$ref': FormControl<string | null | undefined>,
 
 		/** parameter name. */
 		parameterName: FormControl<string | null | undefined>,
 	}
 	export function CreateRestMethodRequestFormGroup() {
 		return new FormGroup<RestMethodRequestFormProperties>({
-			ref: new FormControl<string | null | undefined>(undefined),
+			'$ref': new FormControl<string | null | undefined>(undefined),
 			parameterName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -791,16 +791,16 @@ export namespace MyNS {
 	export interface RestMethodResponse {
 
 		/** Schema ID for the response schema. */
-		ref?: string | null;
+		'$ref'?: string | null;
 	}
 	export interface RestMethodResponseFormProperties {
 
 		/** Schema ID for the response schema. */
-		ref: FormControl<string | null | undefined>,
+		'$ref': FormControl<string | null | undefined>,
 	}
 	export function CreateRestMethodResponseFormGroup() {
 		return new FormGroup<RestMethodResponseFormProperties>({
-			ref: new FormControl<string | null | undefined>(undefined),
+			'$ref': new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

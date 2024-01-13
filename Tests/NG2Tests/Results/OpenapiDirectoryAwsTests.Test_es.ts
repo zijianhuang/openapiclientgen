@@ -78,8 +78,8 @@ export namespace MyNS {
 	}
 	export function CreateDomainInformationFormGroup() {
 		return new FormGroup<DomainInformationFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -179,8 +179,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -280,17 +280,17 @@ export namespace MyNS {
 	export function CreateDomainPackageDetailsFormGroup() {
 		return new FormGroup<DomainPackageDetailsFormProperties>({
 			PackageID: new FormControl<string | null | undefined>(undefined),
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			PackageType: new FormControl<DomainPackageDetailsPackageType | null | undefined>(undefined),
 			LastUpdated: new FormControl<Date | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			DomainPackageStatus: new FormControl<DomainPackageDetailsDomainPackageStatus | null | undefined>(undefined),
 			ReferencePath: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum DomainPackageDetailsPackageType { TXT_DICTIONARY = 0 }
+	export enum DomainPackageDetailsPackageType { 'TXT-DICTIONARY' = 0 }
 
 	export enum DomainPackageDetailsDomainPackageStatus { ASSOCIATING = 0, ASSOCIATION_FAILED = 1, ACTIVE = 2, DISSOCIATING = 3, DISSOCIATION_FAILED = 4 }
 
@@ -518,8 +518,8 @@ export namespace MyNS {
 	}
 	export function CreateElasticsearchDomainStatusFormGroup() {
 		return new FormGroup<ElasticsearchDomainStatusFormProperties>({
-			DomainId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			ARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Created: new FormControl<boolean | null | undefined>(undefined),
 			Deleted: new FormControl<boolean | null | undefined>(undefined),
@@ -552,7 +552,7 @@ export namespace MyNS {
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
 		ZoneAwarenessConfig?: ZoneAwarenessConfig;
-		DedicatedMasterType?: ElasticsearchClusterConfigDedicatedMasterType | null;
+		DedicatedMasterType?: ElasticsearchClusterConfigInstanceType | null;
 		DedicatedMasterCount?: number | null;
 		WarmEnabled?: boolean | null;
 		WarmType?: ElasticsearchClusterConfigWarmType | null;
@@ -565,7 +565,7 @@ export namespace MyNS {
 		InstanceCount: FormControl<number | null | undefined>,
 		DedicatedMasterEnabled: FormControl<boolean | null | undefined>,
 		ZoneAwarenessEnabled: FormControl<boolean | null | undefined>,
-		DedicatedMasterType: FormControl<ElasticsearchClusterConfigDedicatedMasterType | null | undefined>,
+		DedicatedMasterType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
 		DedicatedMasterCount: FormControl<number | null | undefined>,
 		WarmEnabled: FormControl<boolean | null | undefined>,
 		WarmType: FormControl<ElasticsearchClusterConfigWarmType | null | undefined>,
@@ -577,7 +577,7 @@ export namespace MyNS {
 			InstanceCount: new FormControl<number | null | undefined>(undefined),
 			DedicatedMasterEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ZoneAwarenessEnabled: new FormControl<boolean | null | undefined>(undefined),
-			DedicatedMasterType: new FormControl<ElasticsearchClusterConfigDedicatedMasterType | null | undefined>(undefined),
+			DedicatedMasterType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
 			DedicatedMasterCount: new FormControl<number | null | undefined>(undefined),
 			WarmEnabled: new FormControl<boolean | null | undefined>(undefined),
 			WarmType: new FormControl<ElasticsearchClusterConfigWarmType | null | undefined>(undefined),
@@ -586,7 +586,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
+	export enum ElasticsearchClusterConfigInstanceType { 'm3.medium.elasticsearch' = 0, 'm3.large.elasticsearch' = 1, 'm3.xlarge.elasticsearch' = 2, 'm3.2xlarge.elasticsearch' = 3, 'm4.large.elasticsearch' = 4, 'm4.xlarge.elasticsearch' = 5, 'm4.2xlarge.elasticsearch' = 6, 'm4.4xlarge.elasticsearch' = 7, 'm4.10xlarge.elasticsearch' = 8, 'm5.large.elasticsearch' = 9, 'm5.xlarge.elasticsearch' = 10, 'm5.2xlarge.elasticsearch' = 11, 'm5.4xlarge.elasticsearch' = 12, 'm5.12xlarge.elasticsearch' = 13, 'r5.large.elasticsearch' = 14, 'r5.xlarge.elasticsearch' = 15, 'r5.2xlarge.elasticsearch' = 16, 'r5.4xlarge.elasticsearch' = 17, 'r5.12xlarge.elasticsearch' = 18, 'c5.large.elasticsearch' = 19, 'c5.xlarge.elasticsearch' = 20, 'c5.2xlarge.elasticsearch' = 21, 'c5.4xlarge.elasticsearch' = 22, 'c5.9xlarge.elasticsearch' = 23, 'c5.18xlarge.elasticsearch' = 24, 'ultrawarm1.medium.elasticsearch' = 25, 'ultrawarm1.large.elasticsearch' = 26, 't2.micro.elasticsearch' = 27, 't2.small.elasticsearch' = 28, 't2.medium.elasticsearch' = 29, 'r3.large.elasticsearch' = 30, 'r3.xlarge.elasticsearch' = 31, 'r3.2xlarge.elasticsearch' = 32, 'r3.4xlarge.elasticsearch' = 33, 'r3.8xlarge.elasticsearch' = 34, 'i2.xlarge.elasticsearch' = 35, 'i2.2xlarge.elasticsearch' = 36, 'd2.xlarge.elasticsearch' = 37, 'd2.2xlarge.elasticsearch' = 38, 'd2.4xlarge.elasticsearch' = 39, 'd2.8xlarge.elasticsearch' = 40, 'c4.large.elasticsearch' = 41, 'c4.xlarge.elasticsearch' = 42, 'c4.2xlarge.elasticsearch' = 43, 'c4.4xlarge.elasticsearch' = 44, 'c4.8xlarge.elasticsearch' = 45, 'r4.large.elasticsearch' = 46, 'r4.xlarge.elasticsearch' = 47, 'r4.2xlarge.elasticsearch' = 48, 'r4.4xlarge.elasticsearch' = 49, 'r4.8xlarge.elasticsearch' = 50, 'r4.16xlarge.elasticsearch' = 51, 'i3.large.elasticsearch' = 52, 'i3.xlarge.elasticsearch' = 53, 'i3.2xlarge.elasticsearch' = 54, 'i3.4xlarge.elasticsearch' = 55, 'i3.8xlarge.elasticsearch' = 56, 'i3.16xlarge.elasticsearch' = 57 }
 
 
 	/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
@@ -605,9 +605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ElasticsearchClusterConfigDedicatedMasterType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
-
-	export enum ElasticsearchClusterConfigWarmType { ultrawarm1_medium_elasticsearch = 0, ultrawarm1_large_elasticsearch = 1 }
+	export enum ElasticsearchClusterConfigWarmType { 'ultrawarm1.medium.elasticsearch' = 0, 'ultrawarm1.large.elasticsearch' = 1 }
 
 
 	/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
@@ -727,9 +725,9 @@ export namespace MyNS {
 	export function CreateCognitoOptionsFormGroup() {
 		return new FormGroup<CognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -759,7 +757,7 @@ export namespace MyNS {
 	export function CreateEncryptionAtRestOptionsFormGroup() {
 		return new FormGroup<EncryptionAtRestOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(500)]),
 		});
 
 	}
@@ -825,7 +823,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
+	export enum DomainEndpointOptionsTLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 0, 'Policy-Min-TLS-1-2-2019-07' = 1 }
 
 
 	/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. */
@@ -847,9 +845,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ESPartitionInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
+	export enum ESPartitionInstanceType { 'm3.medium.elasticsearch' = 0, 'm3.large.elasticsearch' = 1, 'm3.xlarge.elasticsearch' = 2, 'm3.2xlarge.elasticsearch' = 3, 'm4.large.elasticsearch' = 4, 'm4.xlarge.elasticsearch' = 5, 'm4.2xlarge.elasticsearch' = 6, 'm4.4xlarge.elasticsearch' = 7, 'm4.10xlarge.elasticsearch' = 8, 'm5.large.elasticsearch' = 9, 'm5.xlarge.elasticsearch' = 10, 'm5.2xlarge.elasticsearch' = 11, 'm5.4xlarge.elasticsearch' = 12, 'm5.12xlarge.elasticsearch' = 13, 'r5.large.elasticsearch' = 14, 'r5.xlarge.elasticsearch' = 15, 'r5.2xlarge.elasticsearch' = 16, 'r5.4xlarge.elasticsearch' = 17, 'r5.12xlarge.elasticsearch' = 18, 'c5.large.elasticsearch' = 19, 'c5.xlarge.elasticsearch' = 20, 'c5.2xlarge.elasticsearch' = 21, 'c5.4xlarge.elasticsearch' = 22, 'c5.9xlarge.elasticsearch' = 23, 'c5.18xlarge.elasticsearch' = 24, 'ultrawarm1.medium.elasticsearch' = 25, 'ultrawarm1.large.elasticsearch' = 26, 't2.micro.elasticsearch' = 27, 't2.small.elasticsearch' = 28, 't2.medium.elasticsearch' = 29, 'r3.large.elasticsearch' = 30, 'r3.xlarge.elasticsearch' = 31, 'r3.2xlarge.elasticsearch' = 32, 'r3.4xlarge.elasticsearch' = 33, 'r3.8xlarge.elasticsearch' = 34, 'i2.xlarge.elasticsearch' = 35, 'i2.2xlarge.elasticsearch' = 36, 'd2.xlarge.elasticsearch' = 37, 'd2.2xlarge.elasticsearch' = 38, 'd2.4xlarge.elasticsearch' = 39, 'd2.8xlarge.elasticsearch' = 40, 'c4.large.elasticsearch' = 41, 'c4.xlarge.elasticsearch' = 42, 'c4.2xlarge.elasticsearch' = 43, 'c4.4xlarge.elasticsearch' = 44, 'c4.8xlarge.elasticsearch' = 45, 'r4.large.elasticsearch' = 46, 'r4.xlarge.elasticsearch' = 47, 'r4.2xlarge.elasticsearch' = 48, 'r4.4xlarge.elasticsearch' = 49, 'r4.8xlarge.elasticsearch' = 50, 'r4.16xlarge.elasticsearch' = 51, 'i3.large.elasticsearch' = 52, 'i3.xlarge.elasticsearch' = 53, 'i3.2xlarge.elasticsearch' = 54, 'i3.4xlarge.elasticsearch' = 55, 'i3.8xlarge.elasticsearch' = 56, 'i3.16xlarge.elasticsearch' = 57 }
 
-	export enum ESWarmPartitionInstanceType { ultrawarm1_medium_elasticsearch = 0, ultrawarm1_large_elasticsearch = 1 }
+	export enum ESWarmPartitionInstanceType { 'ultrawarm1.medium.elasticsearch' = 0, 'ultrawarm1.large.elasticsearch' = 1 }
 
 
 	/**  The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
@@ -879,7 +877,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
+	export enum TLSSecurityPolicy { 'Policy-Min-TLS-1-0-2019-07' = 0, 'Policy-Min-TLS-1-2-2019-07' = 1 }
 
 
 	/** Credentials for the master user: username and password, ARN, or both. */
@@ -1014,7 +1012,7 @@ export namespace MyNS {
 		 * Min length: 3
 		 */
 		PackageName?: string | null;
-		PackageType?: PackageDetailsPackageType | null;
+		PackageType?: DomainPackageDetailsPackageType | null;
 
 		/** Max length: 1024 */
 		PackageDescription?: string | null;
@@ -1032,7 +1030,7 @@ export namespace MyNS {
 		 * Min length: 3
 		 */
 		PackageName: FormControl<string | null | undefined>,
-		PackageType: FormControl<PackageDetailsPackageType | null | undefined>,
+		PackageType: FormControl<DomainPackageDetailsPackageType | null | undefined>,
 
 		/** Max length: 1024 */
 		PackageDescription: FormControl<string | null | undefined>,
@@ -1042,16 +1040,14 @@ export namespace MyNS {
 	export function CreatePackageDetailsFormGroup() {
 		return new FormGroup<PackageDetailsFormProperties>({
 			PackageID: new FormControl<string | null | undefined>(undefined),
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
-			PackageType: new FormControl<PackageDetailsPackageType | null | undefined>(undefined),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			PackageType: new FormControl<DomainPackageDetailsPackageType | null | undefined>(undefined),
 			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			PackageStatus: new FormControl<PackageDetailsPackageStatus | null | undefined>(undefined),
 			CreatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum PackageDetailsPackageType { TXT_DICTIONARY = 0 }
 
 	export enum PackageDetailsPackageStatus { COPYING = 0, COPY_FAILED = 1, VALIDATING = 2, VALIDATION_FAILED = 3, AVAILABLE = 4, DELETING = 5, DELETED = 6, DELETE_FAILED = 7 }
 
@@ -1829,7 +1825,7 @@ export namespace MyNS {
 	/** Details of a reserved Elasticsearch instance offering. */
 	export interface ReservedElasticsearchInstanceOffering {
 		ReservedElasticsearchInstanceOfferingId?: string | null;
-		ElasticsearchInstanceType?: ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null;
+		ElasticsearchInstanceType?: ElasticsearchClusterConfigInstanceType | null;
 		Duration?: number | null;
 		FixedPrice?: number | null;
 		UsagePrice?: number | null;
@@ -1841,7 +1837,7 @@ export namespace MyNS {
 	/** Details of a reserved Elasticsearch instance offering. */
 	export interface ReservedElasticsearchInstanceOfferingFormProperties {
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
-		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null | undefined>,
+		ElasticsearchInstanceType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
 		FixedPrice: FormControl<number | null | undefined>,
 		UsagePrice: FormControl<number | null | undefined>,
@@ -1850,8 +1846,8 @@ export namespace MyNS {
 	}
 	export function CreateReservedElasticsearchInstanceOfferingFormGroup() {
 		return new FormGroup<ReservedElasticsearchInstanceOfferingFormProperties>({
-			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
-			ElasticsearchInstanceType: new FormControl<ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null | undefined>(undefined),
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}')]),
+			ElasticsearchInstanceType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
 			Duration: new FormControl<number | null | undefined>(undefined),
 			FixedPrice: new FormControl<number | null | undefined>(undefined),
 			UsagePrice: new FormControl<number | null | undefined>(undefined),
@@ -1860,8 +1856,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ReservedElasticsearchInstanceOfferingElasticsearchInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
 
 	export enum ReservedElasticsearchInstanceOfferingPaymentOption { ALL_UPFRONT = 0, PARTIAL_UPFRONT = 1, NO_UPFRONT = 2 }
 
@@ -1914,7 +1908,7 @@ export namespace MyNS {
 		ReservationName?: string | null;
 		ReservedElasticsearchInstanceId?: string | null;
 		ReservedElasticsearchInstanceOfferingId?: string | null;
-		ElasticsearchInstanceType?: ReservedElasticsearchInstanceElasticsearchInstanceType | null;
+		ElasticsearchInstanceType?: ElasticsearchClusterConfigInstanceType | null;
 		StartTime?: Date | null;
 		Duration?: number | null;
 		FixedPrice?: number | null;
@@ -1936,7 +1930,7 @@ export namespace MyNS {
 		ReservationName: FormControl<string | null | undefined>,
 		ReservedElasticsearchInstanceId: FormControl<string | null | undefined>,
 		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
-		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceElasticsearchInstanceType | null | undefined>,
+		ElasticsearchInstanceType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
 		FixedPrice: FormControl<number | null | undefined>,
@@ -1948,10 +1942,10 @@ export namespace MyNS {
 	}
 	export function CreateReservedElasticsearchInstanceFormGroup() {
 		return new FormGroup<ReservedElasticsearchInstanceFormProperties>({
-			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(5)]),
-			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(64)]),
+			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}')]),
 			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
-			ElasticsearchInstanceType: new FormControl<ReservedElasticsearchInstanceElasticsearchInstanceType | null | undefined>(undefined),
+			ElasticsearchInstanceType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			Duration: new FormControl<number | null | undefined>(undefined),
 			FixedPrice: new FormControl<number | null | undefined>(undefined),
@@ -1963,8 +1957,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ReservedElasticsearchInstanceElasticsearchInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
 
 
 	/**  Container for response returned by <code> <a>DissociatePackage</a> </code> operation.  */
@@ -2148,7 +2140,7 @@ export namespace MyNS {
 	}
 	export function CreateDomainInfoFormGroup() {
 		return new FormGroup<DomainInfoFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2278,8 +2270,8 @@ export namespace MyNS {
 	}
 	export function CreatePurchaseReservedElasticsearchInstanceOfferingResponseFormGroup() {
 		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingResponseFormProperties>({
-			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined),
-			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(5)]),
+			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}')]),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(64)]),
 		});
 
 	}
@@ -2366,7 +2358,7 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainResponseFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainResponseFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -2501,7 +2493,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelElasticsearchServiceSoftwareUpdateRequestFormGroup() {
 		return new FormGroup<CancelElasticsearchServiceSoftwareUpdateRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -2583,7 +2575,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateElasticsearchDomainRequestFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
 			AccessPolicies: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2623,7 +2615,7 @@ export namespace MyNS {
 
 	}
 
-	export enum PackageType { TXT_DICTIONARY = 0 }
+	export enum PackageType { 'TXT-DICTIONARY' = 0 }
 
 
 	/** The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> */
@@ -2649,7 +2641,7 @@ export namespace MyNS {
 	}
 	export function CreatePackageSourceFormGroup() {
 		return new FormGroup<PackageSourceFormProperties>({
-			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(63)]),
 			S3Key: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2667,7 +2659,7 @@ export namespace MyNS {
 		PackageName: string;
 
 		/** Required */
-		PackageType: CreatePackageRequestPackageType;
+		PackageType: DomainPackageDetailsPackageType;
 
 		/** Max length: 1024 */
 		PackageDescription?: string | null;
@@ -2690,21 +2682,19 @@ export namespace MyNS {
 		PackageName: FormControl<string | null | undefined>,
 
 		/** Required */
-		PackageType: FormControl<CreatePackageRequestPackageType | null | undefined>,
+		PackageType: FormControl<DomainPackageDetailsPackageType | null | undefined>,
 
 		/** Max length: 1024 */
 		PackageDescription: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatePackageRequestFormGroup() {
 		return new FormGroup<CreatePackageRequestFormProperties>({
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
-			PackageType: new FormControl<CreatePackageRequestPackageType | null | undefined>(undefined, [Validators.required]),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			PackageType: new FormControl<DomainPackageDetailsPackageType | null | undefined>(undefined, [Validators.required]),
 			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
-
-	export enum CreatePackageRequestPackageType { TXT_DICTIONARY = 0 }
 
 
 	/** Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete. */
@@ -3260,8 +3250,8 @@ export namespace MyNS {
 	}
 	export function CreatePurchaseReservedElasticsearchInstanceOfferingRequestFormGroup() {
 		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingRequestFormProperties>({
-			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(5)]),
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}')]),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(5), Validators.maxLength(64)]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -3339,7 +3329,7 @@ export namespace MyNS {
 	}
 	export function CreateStartElasticsearchServiceSoftwareUpdateRequestFormGroup() {
 		return new FormGroup<StartElasticsearchServiceSoftwareUpdateRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -3424,7 +3414,7 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainRequestFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3875,7 +3865,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
 		return new FormGroup<CancelElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -3953,7 +3943,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateElasticsearchDomainPostBodyFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
 			AccessPolicies: new FormControl<string | null | undefined>(undefined),
 			AdvancedOptions: new FormControl<{[id: string]: string } | null | undefined>(undefined),
@@ -3963,50 +3953,44 @@ export namespace MyNS {
 	}
 
 	export interface CreateElasticsearchDomainPostBodyElasticsearchClusterConfig {
-		InstanceType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType | null;
+		InstanceType?: ElasticsearchClusterConfigInstanceType | null;
 		InstanceCount?: number | null;
 		DedicatedMasterEnabled?: boolean | null;
 		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
 		ZoneAwarenessConfig?: ZoneAwarenessConfig;
-		DedicatedMasterType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType | null;
+		DedicatedMasterType?: ElasticsearchClusterConfigInstanceType | null;
 		DedicatedMasterCount?: number | null;
 		WarmEnabled?: boolean | null;
-		WarmType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType | null;
+		WarmType?: ElasticsearchClusterConfigWarmType | null;
 		WarmCount?: number | null;
 	}
 	export interface CreateElasticsearchDomainPostBodyElasticsearchClusterConfigFormProperties {
-		InstanceType: FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType | null | undefined>,
+		InstanceType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
 		InstanceCount: FormControl<number | null | undefined>,
 		DedicatedMasterEnabled: FormControl<boolean | null | undefined>,
 		ZoneAwarenessEnabled: FormControl<boolean | null | undefined>,
-		DedicatedMasterType: FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>,
+		DedicatedMasterType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
 		DedicatedMasterCount: FormControl<number | null | undefined>,
 		WarmEnabled: FormControl<boolean | null | undefined>,
-		WarmType: FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType | null | undefined>,
+		WarmType: FormControl<ElasticsearchClusterConfigWarmType | null | undefined>,
 		WarmCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateElasticsearchDomainPostBodyElasticsearchClusterConfigFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigFormProperties>({
-			InstanceType: new FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
+			InstanceType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
 			InstanceCount: new FormControl<number | null | undefined>(undefined),
 			DedicatedMasterEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ZoneAwarenessEnabled: new FormControl<boolean | null | undefined>(undefined),
-			DedicatedMasterType: new FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>(undefined),
+			DedicatedMasterType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
 			DedicatedMasterCount: new FormControl<number | null | undefined>(undefined),
 			WarmEnabled: new FormControl<boolean | null | undefined>(undefined),
-			WarmType: new FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType | null | undefined>(undefined),
+			WarmType: new FormControl<ElasticsearchClusterConfigWarmType | null | undefined>(undefined),
 			WarmCount: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
-
-	export enum CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
-
-	export enum CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType { ultrawarm1_medium_elasticsearch = 0, ultrawarm1_large_elasticsearch = 1 }
 
 	export interface CreateElasticsearchDomainPostBodyEBSOptions {
 		EBSEnabled?: boolean | null;
@@ -4104,9 +4088,9 @@ export namespace MyNS {
 	export function CreateCreateElasticsearchDomainPostBodyCognitoOptionsFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyCognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -4132,7 +4116,7 @@ export namespace MyNS {
 	export function CreateCreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(500)]),
 		});
 
 	}
@@ -4152,21 +4136,19 @@ export namespace MyNS {
 
 	export interface CreateElasticsearchDomainPostBodyDomainEndpointOptions {
 		EnforceHTTPS?: boolean | null;
-		TLSSecurityPolicy?: CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy | null;
+		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 	export interface CreateElasticsearchDomainPostBodyDomainEndpointOptionsFormProperties {
 		EnforceHTTPS: FormControl<boolean | null | undefined>,
-		TLSSecurityPolicy: FormControl<CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
+		TLSSecurityPolicy: FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
 	}
 	export function CreateCreateElasticsearchDomainPostBodyDomainEndpointOptionsFormGroup() {
 		return new FormGroup<CreateElasticsearchDomainPostBodyDomainEndpointOptionsFormProperties>({
 			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
-			TLSSecurityPolicy: new FormControl<CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
 
 	export interface CreateElasticsearchDomainPostBodyAdvancedSecurityOptions {
 		Enabled?: boolean | null;
@@ -4258,8 +4240,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4299,8 +4281,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormGroup() {
 		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12)]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			Region: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4320,7 +4302,7 @@ export namespace MyNS {
 		 * Type of package. Currently supports only TXT-DICTIONARY.
 		 * Required
 		 */
-		PackageType: CreatePackagePostBodyPackageType;
+		PackageType: DomainPackageDetailsPackageType;
 
 		/**
 		 * Description of the package.
@@ -4348,7 +4330,7 @@ export namespace MyNS {
 		 * Type of package. Currently supports only TXT-DICTIONARY.
 		 * Required
 		 */
-		PackageType: FormControl<CreatePackagePostBodyPackageType | null | undefined>,
+		PackageType: FormControl<DomainPackageDetailsPackageType | null | undefined>,
 
 		/**
 		 * Description of the package.
@@ -4358,14 +4340,12 @@ export namespace MyNS {
 	}
 	export function CreateCreatePackagePostBodyFormGroup() {
 		return new FormGroup<CreatePackagePostBodyFormProperties>({
-			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
-			PackageType: new FormControl<CreatePackagePostBodyPackageType | null | undefined>(undefined, [Validators.required]),
+			PackageName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			PackageType: new FormControl<DomainPackageDetailsPackageType | null | undefined>(undefined, [Validators.required]),
 			PackageDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 		});
 
 	}
-
-	export enum CreatePackagePostBodyPackageType { TXT_DICTIONARY = 0 }
 
 	export interface CreatePackagePostBodyPackageSource {
 
@@ -4387,7 +4367,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePackagePostBodyPackageSourceFormGroup() {
 		return new FormGroup<CreatePackagePostBodyPackageSourceFormProperties>({
-			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(3)]),
+			S3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(63)]),
 			S3Key: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4446,50 +4426,44 @@ export namespace MyNS {
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfig {
-		InstanceType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType | null;
+		InstanceType?: ElasticsearchClusterConfigInstanceType | null;
 		InstanceCount?: number | null;
 		DedicatedMasterEnabled?: boolean | null;
 		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
 		ZoneAwarenessConfig?: ZoneAwarenessConfig;
-		DedicatedMasterType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType | null;
+		DedicatedMasterType?: ElasticsearchClusterConfigInstanceType | null;
 		DedicatedMasterCount?: number | null;
 		WarmEnabled?: boolean | null;
-		WarmType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType | null;
+		WarmType?: ElasticsearchClusterConfigWarmType | null;
 		WarmCount?: number | null;
 	}
 	export interface UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigFormProperties {
-		InstanceType: FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType | null | undefined>,
+		InstanceType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
 		InstanceCount: FormControl<number | null | undefined>,
 		DedicatedMasterEnabled: FormControl<boolean | null | undefined>,
 		ZoneAwarenessEnabled: FormControl<boolean | null | undefined>,
-		DedicatedMasterType: FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>,
+		DedicatedMasterType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
 		DedicatedMasterCount: FormControl<number | null | undefined>,
 		WarmEnabled: FormControl<boolean | null | undefined>,
-		WarmType: FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType | null | undefined>,
+		WarmType: FormControl<ElasticsearchClusterConfigWarmType | null | undefined>,
 		WarmCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigFormGroup() {
 		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigFormProperties>({
-			InstanceType: new FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
+			InstanceType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
 			InstanceCount: new FormControl<number | null | undefined>(undefined),
 			DedicatedMasterEnabled: new FormControl<boolean | null | undefined>(undefined),
 			ZoneAwarenessEnabled: new FormControl<boolean | null | undefined>(undefined),
-			DedicatedMasterType: new FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>(undefined),
+			DedicatedMasterType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
 			DedicatedMasterCount: new FormControl<number | null | undefined>(undefined),
 			WarmEnabled: new FormControl<boolean | null | undefined>(undefined),
-			WarmType: new FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType | null | undefined>(undefined),
+			WarmType: new FormControl<ElasticsearchClusterConfigWarmType | null | undefined>(undefined),
 			WarmCount: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
-
-	export enum UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
-
-	export enum UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType { ultrawarm1_medium_elasticsearch = 0, ultrawarm1_large_elasticsearch = 1 }
 
 	export interface UpdateElasticsearchDomainConfigPostBodyEBSOptions {
 		EBSEnabled?: boolean | null;
@@ -4587,30 +4561,28 @@ export namespace MyNS {
 	export function CreateUpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormGroup() {
 		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			UserPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+_[0-9a-zA-Z]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptions {
 		EnforceHTTPS?: boolean | null;
-		TLSSecurityPolicy?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy | null;
+		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 	export interface UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsFormProperties {
 		EnforceHTTPS: FormControl<boolean | null | undefined>,
-		TLSSecurityPolicy: FormControl<UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
+		TLSSecurityPolicy: FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
 	}
 	export function CreateUpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsFormGroup() {
 		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsFormProperties>({
 			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
-			TLSSecurityPolicy: new FormControl<UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
 
 	export interface UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptions {
 		Enabled?: boolean | null;
@@ -4647,7 +4619,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DescribeElasticsearchInstanceTypeLimitsInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
+	export enum DescribeElasticsearchInstanceTypeLimitsInstanceType { 'm3.medium.elasticsearch' = 0, 'm3.large.elasticsearch' = 1, 'm3.xlarge.elasticsearch' = 2, 'm3.2xlarge.elasticsearch' = 3, 'm4.large.elasticsearch' = 4, 'm4.xlarge.elasticsearch' = 5, 'm4.2xlarge.elasticsearch' = 6, 'm4.4xlarge.elasticsearch' = 7, 'm4.10xlarge.elasticsearch' = 8, 'm5.large.elasticsearch' = 9, 'm5.xlarge.elasticsearch' = 10, 'm5.2xlarge.elasticsearch' = 11, 'm5.4xlarge.elasticsearch' = 12, 'm5.12xlarge.elasticsearch' = 13, 'r5.large.elasticsearch' = 14, 'r5.xlarge.elasticsearch' = 15, 'r5.2xlarge.elasticsearch' = 16, 'r5.4xlarge.elasticsearch' = 17, 'r5.12xlarge.elasticsearch' = 18, 'c5.large.elasticsearch' = 19, 'c5.xlarge.elasticsearch' = 20, 'c5.2xlarge.elasticsearch' = 21, 'c5.4xlarge.elasticsearch' = 22, 'c5.9xlarge.elasticsearch' = 23, 'c5.18xlarge.elasticsearch' = 24, 'ultrawarm1.medium.elasticsearch' = 25, 'ultrawarm1.large.elasticsearch' = 26, 't2.micro.elasticsearch' = 27, 't2.small.elasticsearch' = 28, 't2.medium.elasticsearch' = 29, 'r3.large.elasticsearch' = 30, 'r3.xlarge.elasticsearch' = 31, 'r3.2xlarge.elasticsearch' = 32, 'r3.4xlarge.elasticsearch' = 33, 'r3.8xlarge.elasticsearch' = 34, 'i2.xlarge.elasticsearch' = 35, 'i2.2xlarge.elasticsearch' = 36, 'd2.xlarge.elasticsearch' = 37, 'd2.2xlarge.elasticsearch' = 38, 'd2.4xlarge.elasticsearch' = 39, 'd2.8xlarge.elasticsearch' = 40, 'c4.large.elasticsearch' = 41, 'c4.xlarge.elasticsearch' = 42, 'c4.2xlarge.elasticsearch' = 43, 'c4.4xlarge.elasticsearch' = 44, 'c4.8xlarge.elasticsearch' = 45, 'r4.large.elasticsearch' = 46, 'r4.xlarge.elasticsearch' = 47, 'r4.2xlarge.elasticsearch' = 48, 'r4.4xlarge.elasticsearch' = 49, 'r4.8xlarge.elasticsearch' = 50, 'r4.16xlarge.elasticsearch' = 51, 'i3.large.elasticsearch' = 52, 'i3.xlarge.elasticsearch' = 53, 'i3.2xlarge.elasticsearch' = 54, 'i3.4xlarge.elasticsearch' = 55, 'i3.8xlarge.elasticsearch' = 56, 'i3.16xlarge.elasticsearch' = 57 }
 
 	export interface DescribeInboundCrossClusterSearchConnectionsPostBody {
 
@@ -4794,8 +4766,8 @@ export namespace MyNS {
 	}
 	export function CreatePurchaseReservedElasticsearchInstanceOfferingPostBodyFormGroup() {
 		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingPostBodyFormProperties>({
-			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(5)]),
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}')]),
+			ReservationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(5), Validators.maxLength(64)]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -4852,7 +4824,7 @@ export namespace MyNS {
 	}
 	export function CreateStartElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
 		return new FormGroup<StartElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 		});
 
 	}
@@ -4897,7 +4869,7 @@ export namespace MyNS {
 	}
 	export function CreateUpgradeElasticsearchDomainPostBodyFormGroup() {
 		return new FormGroup<UpgradeElasticsearchDomainPostBodyFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(28), Validators.minLength(3), Validators.pattern('[a-z][a-z0-9\-]+')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(28), Validators.pattern('[a-z][a-z0-9\-]+')]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
 		});

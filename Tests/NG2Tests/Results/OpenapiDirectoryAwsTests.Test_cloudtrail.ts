@@ -1752,41 +1752,41 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_AddTags = 0 }
+	export enum AddTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.AddTags' = 0 }
 
-	export enum CreateTrailX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_CreateTrail = 0 }
+	export enum CreateTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.CreateTrail' = 0 }
 
-	export enum DeleteTrailX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_DeleteTrail = 0 }
+	export enum DeleteTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DeleteTrail' = 0 }
 
-	export enum DescribeTrailsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_DescribeTrails = 0 }
+	export enum DescribeTrailsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.DescribeTrails' = 0 }
 
-	export enum GetEventSelectorsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_GetEventSelectors = 0 }
+	export enum GetEventSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetEventSelectors' = 0 }
 
-	export enum GetInsightSelectorsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_GetInsightSelectors = 0 }
+	export enum GetInsightSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetInsightSelectors' = 0 }
 
-	export enum GetTrailX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_GetTrail = 0 }
+	export enum GetTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrail' = 0 }
 
-	export enum GetTrailStatusX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_GetTrailStatus = 0 }
+	export enum GetTrailStatusX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.GetTrailStatus' = 0 }
 
-	export enum ListPublicKeysX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_ListPublicKeys = 0 }
+	export enum ListPublicKeysX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListPublicKeys' = 0 }
 
-	export enum ListTagsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_ListTags = 0 }
+	export enum ListTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTags' = 0 }
 
-	export enum ListTrailsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_ListTrails = 0 }
+	export enum ListTrailsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListTrails' = 0 }
 
-	export enum LookupEventsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_LookupEvents = 0 }
+	export enum LookupEventsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.LookupEvents' = 0 }
 
-	export enum PutEventSelectorsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_PutEventSelectors = 0 }
+	export enum PutEventSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutEventSelectors' = 0 }
 
-	export enum PutInsightSelectorsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_PutInsightSelectors = 0 }
+	export enum PutInsightSelectorsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.PutInsightSelectors' = 0 }
 
-	export enum RemoveTagsX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_RemoveTags = 0 }
+	export enum RemoveTagsX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.RemoveTags' = 0 }
 
-	export enum StartLoggingX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_StartLogging = 0 }
+	export enum StartLoggingX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartLogging' = 0 }
 
-	export enum StopLoggingX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_StopLogging = 0 }
+	export enum StopLoggingX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopLogging' = 0 }
 
-	export enum UpdateTrailX_Amz_Target { com_amazonaws_cloudtrail_v20131101_CloudTrail_20131101_UpdateTrail = 0 }
+	export enum UpdateTrailX_Amz_Target { 'com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateTrail' = 0 }
 
 }
 

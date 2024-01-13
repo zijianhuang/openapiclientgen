@@ -493,7 +493,7 @@ export namespace MyNS {
 	}
 	export function CreateEsamManifestConfirmConditionNotificationFormGroup() {
 		return new FormGroup<EsamManifestConfirmConditionNotificationFormProperties>({
-			MccXml: new FormControl<string | null | undefined>(undefined),
+			MccXml: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\s*<(.|\n)*ManifestConfirmConditionNotification(.|\n)*>\s*$')]),
 		});
 
 	}
@@ -510,7 +510,7 @@ export namespace MyNS {
 	}
 	export function CreateEsamSignalProcessingNotificationFormGroup() {
 		return new FormGroup<EsamSignalProcessingNotificationFormProperties>({
-			SccXml: new FormControl<string | null | undefined>(undefined),
+			SccXml: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\s*<(.|\n)*SignalProcessingNotification(.|\n)*>\s*$')]),
 		});
 
 	}
@@ -615,13 +615,13 @@ export namespace MyNS {
 		return new FormGroup<InputFormProperties>({
 			DeblockFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
 			DenoiseFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
-			FileInput: new FormControl<string | null | undefined>(undefined),
+			FileInput: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL])))(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
 			FilterEnable: new FormControl<InputFilterEnable | null | undefined>(undefined),
 			FilterStrength: new FormControl<number | null | undefined>(undefined, [Validators.min(-5), Validators.max(5)]),
 			ProgramNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			PsiControl: new FormControl<InputPsiControl | null | undefined>(undefined),
 			TimecodeSource: new FormControl<InputTimecodeSource | null | undefined>(undefined),
-			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
+			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
 		});
 
 	}
@@ -777,9 +777,9 @@ export namespace MyNS {
 	export function CreateInputDecryptionSettingsFormGroup() {
 		return new FormGroup<InputDecryptionSettingsFormProperties>({
 			DecryptionMode: new FormControl<InputDecryptionSettingsDecryptionMode | null | undefined>(undefined),
-			EncryptedDecryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(24), Validators.pattern('^[A-Za-z0-9+\/]+={0,2}$')]),
-			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(16), Validators.pattern('^[A-Za-z0-9+\/]{22}==$|^[A-Za-z0-9+\/]{16}$')]),
-			KmsKeyRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(9), Validators.pattern('^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$')]),
+			EncryptedDecryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(24), Validators.maxLength(512), Validators.pattern('^[A-Za-z0-9+\/]+={0,2}$')]),
+			InitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(16), Validators.maxLength(24), Validators.pattern('^[A-Za-z0-9+\/]{22}==$|^[A-Za-z0-9+\/]{16}$')]),
+			KmsKeyRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(9), Validators.maxLength(19), Validators.pattern('^[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}$')]),
 		});
 
 	}
@@ -938,7 +938,7 @@ export namespace MyNS {
 			ImageY: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			Layer: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(99)]),
 			Opacity: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			StartTime: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
 			Width: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 		});
 
@@ -958,8 +958,8 @@ export namespace MyNS {
 	}
 	export function CreateInputClippingFormGroup() {
 		return new FormGroup<InputClippingFormProperties>({
-			EndTimecode: new FormControl<string | null | undefined>(undefined),
-			StartTimecode: new FormControl<string | null | undefined>(undefined),
+			EndTimecode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$')]),
+			StartTimecode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$')]),
 		});
 
 	}
@@ -1269,10 +1269,10 @@ export namespace MyNS {
 	}
 	export function CreateMotionImageInserterFormGroup() {
 		return new FormGroup<MotionImageInserterFormProperties>({
-			Input: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1285), Validators.minLength(14), Validators.pattern('^((s3://(.*)(\.mov|[0-9]+\.png))|(https?://(.*)(\.mov|[0-9]+\.png)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
+			Input: new FormControl<string | null | undefined>(undefined, [Validators.minLength(14), Validators.maxLength(1285), Validators.pattern('^((s3://(.*)(\.mov|[0-9]+\.png))|(https?://(.*)(\.mov|[0-9]+\.png)(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
 			InsertionMode: new FormControl<MotionImageInserterInsertionMode | null | undefined>(undefined),
 			Playback: new FormControl<MotionImageInserterPlayback | null | undefined>(undefined),
-			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
+			StartTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
 		});
 
 	}
@@ -1573,7 +1573,7 @@ export namespace MyNS {
 			BaseUrl: new FormControl<string | null | undefined>(undefined),
 			ClientCache: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
 			CodecSpecification: new FormControl<CmafGroupSettingsCodecSpecification | null | undefined>(undefined),
-			Destination: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s3:\/\/')]),
 			FragmentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			ManifestCompression: new FormControl<CmafGroupSettingsManifestCompression | null | undefined>(undefined),
 			ManifestDurationFormat: new FormControl<CmafGroupSettingsManifestDurationFormat | null | undefined>(undefined),
@@ -1695,7 +1695,7 @@ export namespace MyNS {
 	export function CreateS3EncryptionSettingsFormGroup() {
 		return new FormGroup<S3EncryptionSettingsFormProperties>({
 			EncryptionType: new FormControl<S3EncryptionSettingsEncryptionType | null | undefined>(undefined),
-			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$')]),
 		});
 
 	}
@@ -1748,7 +1748,7 @@ export namespace MyNS {
 	}
 	export function CreateCmafEncryptionSettingsFormGroup() {
 		return new FormGroup<CmafEncryptionSettingsFormProperties>({
-			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32), Validators.pattern('^[0-9a-fA-F]{32}$')]),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(32), Validators.maxLength(32), Validators.pattern('^[0-9a-fA-F]{32}$')]),
 			EncryptionMethod: new FormControl<CmafEncryptionSettingsEncryptionMethod | null | undefined>(undefined),
 			InitializationVectorInManifest: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
 			Type: new FormControl<CmafEncryptionSettingsType | null | undefined>(undefined),
@@ -1778,9 +1778,9 @@ export namespace MyNS {
 	}
 	export function CreateSpekeKeyProviderCmafFormGroup() {
 		return new FormGroup<SpekeKeyProviderCmafFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined),
-			Url: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws(-us-gov)?:acm:')]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w-]+$')]),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^https:\/\/')]),
 		});
 
 	}
@@ -1803,9 +1803,9 @@ export namespace MyNS {
 	}
 	export function CreateStaticKeyProviderFormGroup() {
 		return new FormGroup<StaticKeyProviderFormProperties>({
-			KeyFormat: new FormControl<string | null | undefined>(undefined),
-			KeyFormatVersions: new FormControl<string | null | undefined>(undefined),
-			StaticKeyValue: new FormControl<string | null | undefined>(undefined),
+			KeyFormat: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(identity|[A-Za-z]{2,6}(\.[A-Za-z0-9-]{1,63})+)$')]),
+			KeyFormatVersions: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\d+(\/\d+)*)$')]),
+			StaticKeyValue: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z0-9]{32}$')]),
 			Url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1903,7 +1903,7 @@ export namespace MyNS {
 	export function CreateDashIsoGroupSettingsFormGroup() {
 		return new FormGroup<DashIsoGroupSettingsFormProperties>({
 			BaseUrl: new FormControl<string | null | undefined>(undefined),
-			Destination: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s3:\/\/')]),
 			FragmentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			HbbtvCompliance: new FormControl<DashIsoGroupSettingsHbbtvCompliance | null | undefined>(undefined),
 			MinBufferTime: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
@@ -1980,9 +1980,9 @@ export namespace MyNS {
 	}
 	export function CreateSpekeKeyProviderFormGroup() {
 		return new FormGroup<SpekeKeyProviderFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws(-us-gov)?:acm:')]),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
-			Url: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^https:\/\/')]),
 		});
 
 	}
@@ -2004,7 +2004,7 @@ export namespace MyNS {
 	}
 	export function CreateFileGroupSettingsFormGroup() {
 		return new FormGroup<FileGroupSettingsFormProperties>({
-			Destination: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s3:\/\/')]),
 		});
 
 	}
@@ -2176,7 +2176,7 @@ export namespace MyNS {
 			CaptionLanguageSetting: new FormControl<HlsGroupSettingsCaptionLanguageSetting | null | undefined>(undefined),
 			ClientCache: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
 			CodecSpecification: new FormControl<CmafGroupSettingsCodecSpecification | null | undefined>(undefined),
-			Destination: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s3:\/\/')]),
 			DirectoryStructure: new FormControl<HlsGroupSettingsDirectoryStructure | null | undefined>(undefined),
 			ManifestCompression: new FormControl<CmafGroupSettingsManifestCompression | null | undefined>(undefined),
 			ManifestDurationFormat: new FormControl<CmafGroupSettingsManifestDurationFormat | null | undefined>(undefined),
@@ -2263,7 +2263,7 @@ export namespace MyNS {
 	export function CreateHlsCaptionLanguageMappingFormGroup() {
 		return new FormGroup<HlsCaptionLanguageMappingFormProperties>({
 			CaptionChannel: new FormControl<number | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 			LanguageDescription: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2328,7 +2328,7 @@ export namespace MyNS {
 	}
 	export function CreateHlsEncryptionSettingsFormGroup() {
 		return new FormGroup<HlsEncryptionSettingsFormProperties>({
-			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(32), Validators.pattern('^[0-9a-fA-F]{32}$')]),
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined, [Validators.minLength(32), Validators.maxLength(32), Validators.pattern('^[0-9a-fA-F]{32}$')]),
 			EncryptionMethod: new FormControl<HlsEncryptionSettingsEncryptionMethod | null | undefined>(undefined),
 			InitializationVectorInManifest: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
 			OfflineEncrypted: new FormControl<InputDeblockFilter | null | undefined>(undefined),
@@ -2387,7 +2387,7 @@ export namespace MyNS {
 	export function CreateMsSmoothGroupSettingsFormGroup() {
 		return new FormGroup<MsSmoothGroupSettingsFormProperties>({
 			AudioDeduplication: new FormControl<MsSmoothGroupSettingsAudioDeduplication | null | undefined>(undefined),
-			Destination: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s3:\/\/')]),
 			FragmentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			ManifestEncoding: new FormControl<MsSmoothGroupSettingsManifestEncoding | null | undefined>(undefined),
 		});
@@ -2539,10 +2539,10 @@ export namespace MyNS {
 			AudioSourceName: new FormControl<string | null | undefined>(undefined),
 			AudioType: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(255)]),
 			AudioTypeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]{2,3}(-[A-Za-z-]+)?$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 			LanguageCodeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
-			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[\w\s]*$')]),
 		});
 
 	}
@@ -3625,7 +3625,7 @@ export namespace MyNS {
 	export function CreateCaptionDescriptionFormGroup() {
 		return new FormGroup<CaptionDescriptionFormProperties>({
 			CaptionSelectorName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]{2,3}(-[A-Za-z-]+)?$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 			LanguageDescription: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4214,7 +4214,7 @@ export namespace MyNS {
 	}
 	export function CreateTeletextDestinationSettingsFormGroup() {
 		return new FormGroup<TeletextDestinationSettingsFormProperties>({
-			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[1-8][0-9a-fA-F][0-9a-eA-E]$')]),
+			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[1-8][0-9a-fA-F][0-9a-eA-E]$')]),
 		});
 
 	}
@@ -4713,7 +4713,7 @@ export namespace MyNS {
 	export function CreateDvbNitSettingsFormGroup() {
 		return new FormGroup<DvbNitSettingsFormProperties>({
 			NetworkId: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(65535)]),
-			NetworkName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			NetworkName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			NitInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(25), Validators.max(10000)]),
 		});
 
@@ -4773,8 +4773,8 @@ export namespace MyNS {
 		return new FormGroup<DvbSdtSettingsFormProperties>({
 			OutputSdt: new FormControl<DvbSdtSettingsOutputSdt | null | undefined>(undefined),
 			SdtInterval: new FormControl<number | null | undefined>(undefined, [Validators.min(25), Validators.max(2000)]),
-			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ServiceProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ServiceProviderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -7688,7 +7688,7 @@ export namespace MyNS {
 		return new FormGroup<TimecodeBurninFormProperties>({
 			FontSize: new FormControl<number | null | undefined>(undefined, [Validators.min(10), Validators.max(48)]),
 			Position: new FormControl<TimecodeBurninPosition | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[ -~]+$')]),
 		});
 
 	}
@@ -7717,10 +7717,10 @@ export namespace MyNS {
 	}
 	export function CreateTimecodeConfigFormGroup() {
 		return new FormGroup<TimecodeConfigFormProperties>({
-			Anchor: new FormControl<string | null | undefined>(undefined),
+			Anchor: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$')]),
 			Source: new FormControl<InputTimecodeSource | null | undefined>(undefined),
-			Start: new FormControl<string | null | undefined>(undefined),
-			TimestampOffset: new FormControl<string | null | undefined>(undefined),
+			Start: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$')]),
+			TimestampOffset: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$')]),
 		});
 
 	}
@@ -7754,8 +7754,8 @@ export namespace MyNS {
 	}
 	export function CreateId3InsertionFormGroup() {
 		return new FormGroup<Id3InsertionFormProperties>({
-			Id3: new FormControl<string | null | undefined>(undefined),
-			Timecode: new FormControl<string | null | undefined>(undefined),
+			Id3: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z0-9+\/]+={0,2}$')]),
+			Timecode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$')]),
 		});
 
 	}
@@ -8032,7 +8032,7 @@ export namespace MyNS {
 			ProgramNumber: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			PsiControl: new FormControl<InputPsiControl | null | undefined>(undefined),
 			TimecodeSource: new FormControl<InputTimecodeSource | null | undefined>(undefined),
-			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(11), Validators.minLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
+			TimecodeStart: new FormControl<string | null | undefined>(undefined, [Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^((([0-1]\d)|(2[0-3]))(:[0-5]\d){2}([:;][0-5]\d))$')]),
 		});
 
 	}
@@ -8142,7 +8142,7 @@ export namespace MyNS {
 	}
 	export function CreateCaptionDescriptionPresetFormGroup() {
 		return new FormGroup<CaptionDescriptionPresetFormProperties>({
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]{2,3}(-[A-Za-z-]+)?$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 			LanguageDescription: new FormControl<string | null | undefined>(undefined),
 		});
@@ -8793,9 +8793,9 @@ export namespace MyNS {
 	}
 	export function CreateAudioSelectorFormGroup() {
 		return new FormGroup<AudioSelectorFormProperties>({
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
 			DefaultSelection: new FormControl<AudioDefaultSelection | null | undefined>(undefined),
-			ExternalAudioFileInput: new FormControl<string | null | undefined>(undefined),
+			ExternalAudioFileInput: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([wW][eE][bB][mM]|[mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[aA][aA][cC]|[aA][iI][fF][fF]|[mM][pP]2|[aA][cC]3|[eE][cC]3|[dD][tT][sS][eE]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[aA][aA][cC]|[aA][iI][fF][fF]|[mM][pP]2|[aA][cC]3|[eE][cC]3|[dD][tT][sS][eE])))(\?([^&=]+=[^&]+&)*[^&=]+=[^&]+)?))$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 			Offset: new FormControl<number | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
 			ProgramSelection: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(8)]),
@@ -9119,7 +9119,7 @@ export namespace MyNS {
 	}
 	export function CreateTeletextSourceSettingsFormGroup() {
 		return new FormGroup<TeletextSourceSettingsFormProperties>({
-			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[1-8][0-9a-fA-F][0-9a-eA-E]$')]),
+			PageNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[1-8][0-9a-fA-F][0-9a-eA-E]$')]),
 		});
 
 	}
@@ -9182,7 +9182,7 @@ export namespace MyNS {
 	}
 	export function CreateCaptionSelectorFormGroup() {
 		return new FormGroup<CaptionSelectorFormProperties>({
-			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(3), Validators.pattern('^[A-Za-z]{3}$')]),
 			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
 		});
 

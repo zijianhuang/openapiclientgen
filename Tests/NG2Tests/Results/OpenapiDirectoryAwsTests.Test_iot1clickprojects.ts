@@ -192,8 +192,8 @@ export namespace MyNS {
 	}
 	export function CreatePlacementDescriptionFormGroup() {
 		return new FormGroup<PlacementDescriptionFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -280,9 +280,9 @@ export namespace MyNS {
 	}
 	export function CreateProjectDescriptionFormGroup() {
 		return new FormGroup<ProjectDescriptionFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500)]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -369,7 +369,7 @@ export namespace MyNS {
 	}
 	export function CreateListPlacementsResponseFormGroup() {
 		return new FormGroup<ListPlacementsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -424,8 +424,8 @@ export namespace MyNS {
 	}
 	export function CreatePlacementSummaryFormGroup() {
 		return new FormGroup<PlacementSummaryFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -453,7 +453,7 @@ export namespace MyNS {
 	}
 	export function CreateListProjectsResponseFormGroup() {
 		return new FormGroup<ListProjectsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -497,8 +497,8 @@ export namespace MyNS {
 	}
 	export function CreateProjectSummaryFormGroup() {
 		return new FormGroup<ProjectSummaryFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:iot1click:[A-Za-z0-9_/.-]{0,63}:\d+:projects/[0-9A-Za-z_-]{1,128}$')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9A-Za-z_-]+$')]),
 			createdDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -576,7 +576,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateDeviceWithPlacementRequestFormGroup() {
 		return new FormGroup<AssociateDeviceWithPlacementRequestFormProperties>({
-			deviceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			deviceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32)]),
 		});
 
 	}
@@ -602,7 +602,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePlacementRequestFormGroup() {
 		return new FormGroup<CreatePlacementRequestFormProperties>({
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 		});
 
 	}
@@ -643,8 +643,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectRequestFormGroup() {
 		return new FormGroup<CreateProjectRequestFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500)]),
 		});
 
 	}
@@ -826,7 +826,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateProjectRequestFormGroup() {
 		return new FormGroup<UpdateProjectRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500)]),
 		});
 
 	}
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 	}
 	export function CreateAssociateDeviceWithPlacementPutBodyFormGroup() {
 		return new FormGroup<AssociateDeviceWithPlacementPutBodyFormProperties>({
-			deviceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1)]),
+			deviceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32)]),
 		});
 
 	}
@@ -1063,7 +1063,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePlacementPostBodyFormGroup() {
 		return new FormGroup<CreatePlacementPostBodyFormProperties>({
-			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
+			placementName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[a-zA-Z0-9_-]+$')]),
 			attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1114,8 +1114,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectPostBodyFormGroup() {
 		return new FormGroup<CreateProjectPostBodyFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9A-Za-z_-]+$')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9A-Za-z_-]+$')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateProjectPutBodyFormGroup() {
 		return new FormGroup<UpdateProjectPutBodyFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500)]),
 		});
 
 	}

@@ -28,7 +28,7 @@ export namespace MyNS {
 
 	export enum GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyFormat { json = 0, xml = 1 }
 
-	export enum GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyLang { ar = 0, cs = 1, da = 2, de = 3, en = 4, es = 5, et = 6, fi = 7, fr = 8, ga = 9, it = 10, ja = 11, ko = 12, ms = 13, nl = 14, pt = 15, ru = 16, sv = 17, tr = 18, vi = 19, zh_cn = 20, zh_tw = 21 }
+	export enum GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyLang { ar = 0, cs = 1, da = 2, de = 3, en = 4, es = 5, et = 6, fi = 7, fr = 8, ga = 9, it = 10, ja = 11, ko = 12, ms = 13, nl = 14, pt = 15, ru = 16, sv = 17, tr = 18, vi = 19, 'zh-cn' = 20, 'zh-tw' = 21 }
 
 }
 

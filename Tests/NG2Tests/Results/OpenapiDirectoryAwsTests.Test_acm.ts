@@ -30,7 +30,7 @@ export namespace MyNS {
 	}
 	export function CreateAddTagsToCertificateRequestFormGroup() {
 		return new FormGroup<AddTagsToCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -71,8 +71,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\p{L}\p{Z}\p{N}_.:\/=+\-@]*')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[\p{L}\p{Z}\p{N}_.:\/=+\-@]*')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\p{L}\p{Z}\p{N}_.:\/=+\-@]*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('[\p{L}\p{Z}\p{N}_.:\/=+\-@]*')]),
 		});
 
 	}
@@ -157,7 +157,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteCertificateRequestFormGroup() {
 		return new FormGroup<DeleteCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -284,8 +284,8 @@ export namespace MyNS {
 	}
 	export function CreateCertificateDetailFormGroup() {
 		return new FormGroup<CertificateDetailFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
 			Serial: new FormControl<string | null | undefined>(undefined),
 			Subject: new FormControl<string | null | undefined>(undefined),
 			Issuer: new FormControl<string | null | undefined>(undefined),
@@ -301,7 +301,7 @@ export namespace MyNS {
 			SignatureAlgorithm: new FormControl<string | null | undefined>(undefined),
 			FailureReason: new FormControl<CertificateDetailFailureReason | null | undefined>(undefined),
 			Type: new FormControl<CertificateDetailType | null | undefined>(undefined),
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 			RenewalEligibility: new FormControl<CertificateDetailRenewalEligibility | null | undefined>(undefined),
 		});
 
@@ -351,8 +351,8 @@ export namespace MyNS {
 	}
 	export function CreateDomainValidationFormGroup() {
 		return new FormGroup<DomainValidationFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
-			ValidationDomain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			ValidationDomain: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
 			ValidationStatus: new FormControl<DomainValidationValidationStatus | null | undefined>(undefined),
 			ValidationMethod: new FormControl<DomainValidationValidationMethod | null | undefined>(undefined),
 		});
@@ -532,7 +532,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCertificateRequestFormGroup() {
 		return new FormGroup<DescribeCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -579,9 +579,9 @@ export namespace MyNS {
 	}
 	export function CreateExportCertificateResponseFormGroup() {
 		return new FormGroup<ExportCertificateResponseFormProperties>({
-			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(1), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
-			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152), Validators.minLength(1), Validators.pattern('(-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
-			PrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(524288), Validators.minLength(1), Validators.pattern('-{5}BEGIN PRIVATE KEY-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END PRIVATE KEY-{5}(\u000D?\u000A)?')]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32768), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
+			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2097152), Validators.pattern('(-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
+			PrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(524288), Validators.pattern('-{5}BEGIN PRIVATE KEY-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END PRIVATE KEY-{5}(\u000D?\u000A)?')]),
 		});
 
 	}
@@ -620,8 +620,8 @@ export namespace MyNS {
 	}
 	export function CreateExportCertificateRequestFormGroup() {
 		return new FormGroup<ExportCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
-			Passphrase: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(4)]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			Passphrase: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(4), Validators.maxLength(128)]),
 		});
 
 	}
@@ -666,8 +666,8 @@ export namespace MyNS {
 	}
 	export function CreateGetCertificateResponseFormGroup() {
 		return new FormGroup<GetCertificateResponseFormProperties>({
-			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32768), Validators.minLength(1), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
-			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152), Validators.minLength(1), Validators.pattern('(-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32768), Validators.pattern('-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
+			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2097152), Validators.pattern('(-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?')]),
 		});
 
 	}
@@ -692,7 +692,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCertificateRequestFormGroup() {
 		return new FormGroup<GetCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -715,7 +715,7 @@ export namespace MyNS {
 	}
 	export function CreateImportCertificateResponseFormGroup() {
 		return new FormGroup<ImportCertificateResponseFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -784,10 +784,10 @@ export namespace MyNS {
 	}
 	export function CreateImportCertificateRequestFormGroup() {
 		return new FormGroup<ImportCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
-			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32768), Validators.minLength(1)]),
-			PrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5120), Validators.minLength(1)]),
-			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2097152), Validators.minLength(1)]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32768)]),
+			PrivateKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(5120)]),
+			CertificateChain: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2097152)]),
 		});
 
 	}
@@ -821,7 +821,7 @@ export namespace MyNS {
 	}
 	export function CreateListCertificatesResponseFormGroup() {
 		return new FormGroup<ListCertificatesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -860,8 +860,8 @@ export namespace MyNS {
 	}
 	export function CreateCertificateSummaryFormGroup() {
 		return new FormGroup<CertificateSummaryFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
 		});
 
 	}
@@ -900,7 +900,7 @@ export namespace MyNS {
 	}
 	export function CreateListCertificatesRequestFormGroup() {
 		return new FormGroup<ListCertificatesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]*')]),
 			MaxItems: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 		});
 
@@ -973,7 +973,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForCertificateRequestFormGroup() {
 		return new FormGroup<ListTagsForCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -1005,7 +1005,7 @@ export namespace MyNS {
 	}
 	export function CreateRemoveTagsFromCertificateRequestFormGroup() {
 		return new FormGroup<RemoveTagsFromCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 	}
 	export function CreateRenewCertificateRequestFormGroup() {
 		return new FormGroup<RenewCertificateRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -1053,7 +1053,7 @@ export namespace MyNS {
 	}
 	export function CreateRequestCertificateResponseFormGroup() {
 		return new FormGroup<RequestCertificateResponseFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -1125,10 +1125,10 @@ export namespace MyNS {
 	}
 	export function CreateRequestCertificateRequestFormGroup() {
 		return new FormGroup<RequestCertificateRequestFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
 			ValidationMethod: new FormControl<DomainValidationValidationMethod | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('\w+')]),
-			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('\w+')]),
+			CertificateAuthorityArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -1171,8 +1171,8 @@ export namespace MyNS {
 	}
 	export function CreateDomainValidationOptionFormGroup() {
 		return new FormGroup<DomainValidationOptionFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
-			ValidationDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			ValidationDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
 		});
 
 	}
@@ -1235,9 +1235,9 @@ export namespace MyNS {
 	}
 	export function CreateResendValidationEmailRequestFormGroup() {
 		return new FormGroup<ResendValidationEmailRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
-			Domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
-			ValidationDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(253), Validators.minLength(1), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			Domain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
+			ValidationDomain: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(253), Validators.pattern('^(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$')]),
 		});
 
 	}
@@ -1278,7 +1278,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCertificateOptionsRequestFormGroup() {
 		return new FormGroup<UpdateCertificateOptionsRequestFormProperties>({
-			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
+			CertificateArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*')]),
 		});
 
 	}
@@ -1426,31 +1426,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddTagsToCertificateX_Amz_Target { CertificateManager_AddTagsToCertificate = 0 }
+	export enum AddTagsToCertificateX_Amz_Target { 'CertificateManager.AddTagsToCertificate' = 0 }
 
-	export enum DeleteCertificateX_Amz_Target { CertificateManager_DeleteCertificate = 0 }
+	export enum DeleteCertificateX_Amz_Target { 'CertificateManager.DeleteCertificate' = 0 }
 
-	export enum DescribeCertificateX_Amz_Target { CertificateManager_DescribeCertificate = 0 }
+	export enum DescribeCertificateX_Amz_Target { 'CertificateManager.DescribeCertificate' = 0 }
 
-	export enum ExportCertificateX_Amz_Target { CertificateManager_ExportCertificate = 0 }
+	export enum ExportCertificateX_Amz_Target { 'CertificateManager.ExportCertificate' = 0 }
 
-	export enum GetCertificateX_Amz_Target { CertificateManager_GetCertificate = 0 }
+	export enum GetCertificateX_Amz_Target { 'CertificateManager.GetCertificate' = 0 }
 
-	export enum ImportCertificateX_Amz_Target { CertificateManager_ImportCertificate = 0 }
+	export enum ImportCertificateX_Amz_Target { 'CertificateManager.ImportCertificate' = 0 }
 
-	export enum ListCertificatesX_Amz_Target { CertificateManager_ListCertificates = 0 }
+	export enum ListCertificatesX_Amz_Target { 'CertificateManager.ListCertificates' = 0 }
 
-	export enum ListTagsForCertificateX_Amz_Target { CertificateManager_ListTagsForCertificate = 0 }
+	export enum ListTagsForCertificateX_Amz_Target { 'CertificateManager.ListTagsForCertificate' = 0 }
 
-	export enum RemoveTagsFromCertificateX_Amz_Target { CertificateManager_RemoveTagsFromCertificate = 0 }
+	export enum RemoveTagsFromCertificateX_Amz_Target { 'CertificateManager.RemoveTagsFromCertificate' = 0 }
 
-	export enum RenewCertificateX_Amz_Target { CertificateManager_RenewCertificate = 0 }
+	export enum RenewCertificateX_Amz_Target { 'CertificateManager.RenewCertificate' = 0 }
 
-	export enum RequestCertificateX_Amz_Target { CertificateManager_RequestCertificate = 0 }
+	export enum RequestCertificateX_Amz_Target { 'CertificateManager.RequestCertificate' = 0 }
 
-	export enum ResendValidationEmailX_Amz_Target { CertificateManager_ResendValidationEmail = 0 }
+	export enum ResendValidationEmailX_Amz_Target { 'CertificateManager.ResendValidationEmail' = 0 }
 
-	export enum UpdateCertificateOptionsX_Amz_Target { CertificateManager_UpdateCertificateOptions = 0 }
+	export enum UpdateCertificateOptionsX_Amz_Target { 'CertificateManager.UpdateCertificateOptions' = 0 }
 
 }
 

@@ -5683,7 +5683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UniversalAdIdRegistry { AD_ID_ORG = 0, CLEARCAST = 1, DCM = 2, OTHER = 3 }
+	export enum UniversalAdIdRegistry { 'AD_ID.ORG' = 0, CLEARCAST = 1, DCM = 2, OTHER = 3 }
 
 
 	/** CreativeAssets contains properties of a creative asset file which will be uploaded or has already been uploaded. Refer to the creative sample code for how to upload assets and insert a creative. */

@@ -111,14 +111,14 @@ export namespace MyNS {
 	}
 	export function CreateCanaryFormGroup() {
 		return new FormGroup<CanaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(21), Validators.pattern('^[0-9a-z_\-]+$')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$')]),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			EngineArn: new FormControl<string | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			EngineArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$')]),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -157,8 +157,8 @@ export namespace MyNS {
 	}
 	export function CreateCanaryCodeOutputFormGroup() {
 		return new FormGroup<CanaryCodeOutputFormProperties>({
-			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SourceLocationArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -197,7 +197,7 @@ export namespace MyNS {
 	}
 	export function CreateCanaryScheduleOutputFormGroup() {
 		return new FormGroup<CanaryScheduleOutputFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
@@ -270,7 +270,7 @@ export namespace MyNS {
 	export function CreateCanaryStatusFormGroup() {
 		return new FormGroup<CanaryStatusFormProperties>({
 			State: new FormControl<CanaryStatusState | null | undefined>(undefined),
-			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			StateReasonCode: new FormControl<CanaryStatusStateReasonCode | null | undefined>(undefined),
 		});
 
@@ -404,7 +404,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCanariesResponseFormGroup() {
 		return new FormGroup<DescribeCanariesResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 		});
 
 	}
@@ -418,7 +418,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCanariesLastRunResponseFormGroup() {
 		return new FormGroup<DescribeCanariesLastRunResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 		});
 
 	}
@@ -448,7 +448,7 @@ export namespace MyNS {
 	}
 	export function CreateCanaryLastRunFormGroup() {
 		return new FormGroup<CanaryLastRunFormProperties>({
-			CanaryName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
+			CanaryName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(21), Validators.pattern('^[0-9a-z_\-]+$')]),
 		});
 
 	}
@@ -493,8 +493,8 @@ export namespace MyNS {
 	}
 	export function CreateCanaryRunFormGroup() {
 		return new FormGroup<CanaryRunFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(21), Validators.pattern('^[0-9a-z_\-]+$')]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -526,7 +526,7 @@ export namespace MyNS {
 	export function CreateCanaryRunStatusFormGroup() {
 		return new FormGroup<CanaryRunStatusFormProperties>({
 			State: new FormControl<CanaryRunStatusState | null | undefined>(undefined),
-			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			StateReasonCode: new FormControl<CanaryRunStatusStateReasonCode | null | undefined>(undefined),
 		});
 
@@ -565,7 +565,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeRuntimeVersionsResponseFormGroup() {
 		return new FormGroup<DescribeRuntimeVersionsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 		});
 
 	}
@@ -608,8 +608,8 @@ export namespace MyNS {
 	}
 	export function CreateRuntimeVersionFormGroup() {
 		return new FormGroup<RuntimeVersionFormProperties>({
-			VersionName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			VersionName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			ReleaseDate: new FormControl<Date | null | undefined>(undefined),
 			DeprecationDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -638,7 +638,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCanaryRunsResponseFormGroup() {
 		return new FormGroup<GetCanaryRunsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 		});
 
 	}
@@ -776,11 +776,11 @@ export namespace MyNS {
 	}
 	export function CreateCanaryCodeInputFormGroup() {
 		return new FormGroup<CanaryCodeInputFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000000), Validators.minLength(1)]),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000000)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -867,7 +867,7 @@ export namespace MyNS {
 	}
 	export function CreateCanaryScheduleInputFormGroup() {
 		return new FormGroup<CanaryScheduleInputFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
@@ -1000,12 +1000,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateCanaryRequestFormGroup() {
 		return new FormGroup<CreateCanaryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(21), Validators.pattern('^[0-9a-z_\-]+$')]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$')]),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1040,7 +1040,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCanariesLastRunRequestFormGroup() {
 		return new FormGroup<DescribeCanariesLastRunRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1066,7 +1066,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCanariesRequestFormGroup() {
 		return new FormGroup<DescribeCanariesRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
 
@@ -1092,7 +1092,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeRuntimeVersionsRequestFormGroup() {
 		return new FormGroup<DescribeRuntimeVersionsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1128,7 +1128,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCanaryRunsRequestFormGroup() {
 		return new FormGroup<GetCanaryRunsRequestFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -1243,8 +1243,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCanaryRequestFormGroup() {
 		return new FormGroup<UpdateCanaryRequestFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$')]),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 		});
@@ -1510,12 +1510,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateCanaryPostBodyFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(1), Validators.pattern('^[0-9a-z_\-]+$')]),
-			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(21), Validators.pattern('^[0-9a-z_\-]+$')]),
+			ArtifactS3Location: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$')]),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -1587,11 +1587,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateCanaryPostBodyCodeFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyCodeFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000000), Validators.minLength(1)]),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000000)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1626,7 +1626,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCanaryPostBodyScheduleFormGroup() {
 		return new FormGroup<CreateCanaryPostBodyScheduleFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
@@ -1756,8 +1756,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCanaryPatchBodyFormGroup() {
 		return new FormGroup<UpdateCanaryPatchBodyFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
-			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$')]),
+			RuntimeVersion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			SuccessRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			FailureRetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 		});
@@ -1830,11 +1830,11 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCanaryPatchBodyCodeFormGroup() {
 		return new FormGroup<UpdateCanaryPatchBodyCodeFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000000), Validators.minLength(1)]),
-			Handler: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			S3Version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10000000)]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1869,7 +1869,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCanaryPatchBodyScheduleFormGroup() {
 		return new FormGroup<UpdateCanaryPatchBodyScheduleFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			DurationInSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(31622400)]),
 		});
 
@@ -1959,7 +1959,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCanariesPostBodyFormGroup() {
 		return new FormGroup<DescribeCanariesPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
 
@@ -1991,7 +1991,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCanariesLastRunPostBodyFormGroup() {
 		return new FormGroup<DescribeCanariesLastRunPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2023,7 +2023,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeRuntimeVersionsPostBodyFormGroup() {
 		return new FormGroup<DescribeRuntimeVersionsPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 
@@ -2055,7 +2055,7 @@ export namespace MyNS {
 	}
 	export function CreateGetCanaryRunsPostBodyFormGroup() {
 		return new FormGroup<GetCanaryRunsPostBodyFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9=/+_.-]{4,252}$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 		});
 

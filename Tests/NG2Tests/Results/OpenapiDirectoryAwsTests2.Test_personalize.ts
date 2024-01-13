@@ -84,7 +84,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateBatchInferenceJobRequestFormGroup() {
 		return new FormGroup<CreateBatchInferenceJobRequestFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			numResults: new FormControl<number | null | undefined>(undefined),
@@ -274,7 +274,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCampaignRequestFormGroup() {
 		return new FormGroup<CreateCampaignRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			minProvisionedTPS: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
@@ -354,7 +354,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDatasetRequestFormGroup() {
 		return new FormGroup<CreateDatasetRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			datasetType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
@@ -407,7 +407,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDatasetGroupRequestFormGroup() {
 		return new FormGroup<CreateDatasetGroupRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
 		});
@@ -481,7 +481,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDatasetImportJobRequestFormGroup() {
 		return new FormGroup<CreateDatasetImportJobRequestFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
@@ -565,7 +565,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateEventTrackerRequestFormGroup() {
 		return new FormGroup<CreateEventTrackerRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 		});
 
@@ -634,9 +634,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateFilterRequestFormGroup() {
 		return new FormGroup<CreateFilterRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
-			filterExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2500), Validators.minLength(1)]),
+			filterExpression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2500)]),
 		});
 
 	}
@@ -690,7 +690,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSchemaRequestFormGroup() {
 		return new FormGroup<CreateSchemaRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			schema: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10000)]),
 		});
 
@@ -764,7 +764,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSolutionRequestFormGroup() {
 		return new FormGroup<CreateSolutionRequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			performHPO: new FormControl<boolean | null | undefined>(undefined),
 			performAutoML: new FormControl<boolean | null | undefined>(undefined),
 			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
@@ -1321,7 +1321,7 @@ export namespace MyNS {
 	}
 	export function CreateAlgorithmFormGroup() {
 		return new FormGroup<AlgorithmFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			algorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			trainingInputMode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
@@ -1365,7 +1365,7 @@ export namespace MyNS {
 	}
 	export function CreateAlgorithmImageFormGroup() {
 		return new FormGroup<AlgorithmImageFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			dockerURI: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
@@ -1609,7 +1609,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchInferenceJobFormGroup() {
 		return new FormGroup<BatchInferenceJobFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
@@ -1714,7 +1714,7 @@ export namespace MyNS {
 	}
 	export function CreateCampaignFormGroup() {
 		return new FormGroup<CampaignFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			solutionVersionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			minProvisionedTPS: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -1862,7 +1862,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetFormGroup() {
 		return new FormGroup<DatasetFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			datasetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
@@ -1958,7 +1958,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetGroupFormGroup() {
 		return new FormGroup<DatasetGroupFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
@@ -2061,7 +2061,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetImportJobFormGroup() {
 		return new FormGroup<DatasetImportJobFormProperties>({
-			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			roleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
@@ -2165,7 +2165,7 @@ export namespace MyNS {
 	}
 	export function CreateEventTrackerFormGroup() {
 		return new FormGroup<EventTrackerFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			eventTrackerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			accountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			trackingId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
@@ -2252,7 +2252,7 @@ export namespace MyNS {
 	}
 	export function CreateFeatureTransformationFormGroup() {
 		return new FormGroup<FeatureTransformationFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			featureTransformationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2365,13 +2365,13 @@ export namespace MyNS {
 	}
 	export function CreateFilterFormGroup() {
 		return new FormGroup<FilterFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			failureReason: new FormControl<string | null | undefined>(undefined),
-			filterExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2500), Validators.minLength(1)]),
+			filterExpression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2500)]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -2471,7 +2471,7 @@ export namespace MyNS {
 	}
 	export function CreateRecipeFormGroup() {
 		return new FormGroup<RecipeFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			algorithmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			featureTransformationArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
@@ -2558,7 +2558,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetSchemaFormGroup() {
 		return new FormGroup<DatasetSchemaFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10000)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2672,7 +2672,7 @@ export namespace MyNS {
 	}
 	export function CreateSolutionFormGroup() {
 		return new FormGroup<SolutionFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			performHPO: new FormControl<boolean | null | undefined>(undefined),
 			performAutoML: new FormControl<boolean | null | undefined>(undefined),
@@ -3023,7 +3023,7 @@ export namespace MyNS {
 	export function CreateBatchInferenceJobSummaryFormGroup() {
 		return new FormGroup<BatchInferenceJobSummaryFormProperties>({
 			batchInferenceJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
-			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3140,7 +3140,7 @@ export namespace MyNS {
 	}
 	export function CreateCampaignSummaryFormGroup() {
 		return new FormGroup<CampaignSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			campaignArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3247,7 +3247,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetGroupSummaryFormGroup() {
 		return new FormGroup<DatasetGroupSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3348,7 +3348,7 @@ export namespace MyNS {
 	export function CreateDatasetImportJobSummaryFormGroup() {
 		return new FormGroup<DatasetImportJobSummaryFormProperties>({
 			datasetImportJobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
-			jobName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			jobName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3458,7 +3458,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetSummaryFormGroup() {
 		return new FormGroup<DatasetSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			datasetArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			datasetType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
@@ -3563,7 +3563,7 @@ export namespace MyNS {
 	}
 	export function CreateEventTrackerSummaryFormGroup() {
 		return new FormGroup<EventTrackerSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			eventTrackerArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3675,7 +3675,7 @@ export namespace MyNS {
 	}
 	export function CreateFilterSummaryFormGroup() {
 		return new FormGroup<FilterSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			filterArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3781,7 +3781,7 @@ export namespace MyNS {
 	}
 	export function CreateRecipeSummaryFormGroup() {
 		return new FormGroup<RecipeSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			recipeArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3877,7 +3877,7 @@ export namespace MyNS {
 	}
 	export function CreateDatasetSchemaSummaryFormGroup() {
 		return new FormGroup<DatasetSchemaSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			schemaArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -4030,7 +4030,7 @@ export namespace MyNS {
 	}
 	export function CreateSolutionSummaryFormGroup() {
 		return new FormGroup<SolutionSummaryFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-zA-Z0-9][a-zA-Z0-9\-_]*')]),
 			solutionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('arn:([a-z\d-]+):personalize:.*:.*:.+')]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			creationDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -4547,91 +4547,91 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateBatchInferenceJobX_Amz_Target { AmazonPersonalize_CreateBatchInferenceJob = 0 }
+	export enum CreateBatchInferenceJobX_Amz_Target { 'AmazonPersonalize.CreateBatchInferenceJob' = 0 }
 
-	export enum CreateCampaignX_Amz_Target { AmazonPersonalize_CreateCampaign = 0 }
+	export enum CreateCampaignX_Amz_Target { 'AmazonPersonalize.CreateCampaign' = 0 }
 
-	export enum CreateDatasetX_Amz_Target { AmazonPersonalize_CreateDataset = 0 }
+	export enum CreateDatasetX_Amz_Target { 'AmazonPersonalize.CreateDataset' = 0 }
 
-	export enum CreateDatasetGroupX_Amz_Target { AmazonPersonalize_CreateDatasetGroup = 0 }
+	export enum CreateDatasetGroupX_Amz_Target { 'AmazonPersonalize.CreateDatasetGroup' = 0 }
 
-	export enum CreateDatasetImportJobX_Amz_Target { AmazonPersonalize_CreateDatasetImportJob = 0 }
+	export enum CreateDatasetImportJobX_Amz_Target { 'AmazonPersonalize.CreateDatasetImportJob' = 0 }
 
-	export enum CreateEventTrackerX_Amz_Target { AmazonPersonalize_CreateEventTracker = 0 }
+	export enum CreateEventTrackerX_Amz_Target { 'AmazonPersonalize.CreateEventTracker' = 0 }
 
-	export enum CreateFilterX_Amz_Target { AmazonPersonalize_CreateFilter = 0 }
+	export enum CreateFilterX_Amz_Target { 'AmazonPersonalize.CreateFilter' = 0 }
 
-	export enum CreateSchemaX_Amz_Target { AmazonPersonalize_CreateSchema = 0 }
+	export enum CreateSchemaX_Amz_Target { 'AmazonPersonalize.CreateSchema' = 0 }
 
-	export enum CreateSolutionX_Amz_Target { AmazonPersonalize_CreateSolution = 0 }
+	export enum CreateSolutionX_Amz_Target { 'AmazonPersonalize.CreateSolution' = 0 }
 
-	export enum CreateSolutionVersionX_Amz_Target { AmazonPersonalize_CreateSolutionVersion = 0 }
+	export enum CreateSolutionVersionX_Amz_Target { 'AmazonPersonalize.CreateSolutionVersion' = 0 }
 
-	export enum DeleteCampaignX_Amz_Target { AmazonPersonalize_DeleteCampaign = 0 }
+	export enum DeleteCampaignX_Amz_Target { 'AmazonPersonalize.DeleteCampaign' = 0 }
 
-	export enum DeleteDatasetX_Amz_Target { AmazonPersonalize_DeleteDataset = 0 }
+	export enum DeleteDatasetX_Amz_Target { 'AmazonPersonalize.DeleteDataset' = 0 }
 
-	export enum DeleteDatasetGroupX_Amz_Target { AmazonPersonalize_DeleteDatasetGroup = 0 }
+	export enum DeleteDatasetGroupX_Amz_Target { 'AmazonPersonalize.DeleteDatasetGroup' = 0 }
 
-	export enum DeleteEventTrackerX_Amz_Target { AmazonPersonalize_DeleteEventTracker = 0 }
+	export enum DeleteEventTrackerX_Amz_Target { 'AmazonPersonalize.DeleteEventTracker' = 0 }
 
-	export enum DeleteFilterX_Amz_Target { AmazonPersonalize_DeleteFilter = 0 }
+	export enum DeleteFilterX_Amz_Target { 'AmazonPersonalize.DeleteFilter' = 0 }
 
-	export enum DeleteSchemaX_Amz_Target { AmazonPersonalize_DeleteSchema = 0 }
+	export enum DeleteSchemaX_Amz_Target { 'AmazonPersonalize.DeleteSchema' = 0 }
 
-	export enum DeleteSolutionX_Amz_Target { AmazonPersonalize_DeleteSolution = 0 }
+	export enum DeleteSolutionX_Amz_Target { 'AmazonPersonalize.DeleteSolution' = 0 }
 
-	export enum DescribeAlgorithmX_Amz_Target { AmazonPersonalize_DescribeAlgorithm = 0 }
+	export enum DescribeAlgorithmX_Amz_Target { 'AmazonPersonalize.DescribeAlgorithm' = 0 }
 
-	export enum DescribeBatchInferenceJobX_Amz_Target { AmazonPersonalize_DescribeBatchInferenceJob = 0 }
+	export enum DescribeBatchInferenceJobX_Amz_Target { 'AmazonPersonalize.DescribeBatchInferenceJob' = 0 }
 
-	export enum DescribeCampaignX_Amz_Target { AmazonPersonalize_DescribeCampaign = 0 }
+	export enum DescribeCampaignX_Amz_Target { 'AmazonPersonalize.DescribeCampaign' = 0 }
 
-	export enum DescribeDatasetX_Amz_Target { AmazonPersonalize_DescribeDataset = 0 }
+	export enum DescribeDatasetX_Amz_Target { 'AmazonPersonalize.DescribeDataset' = 0 }
 
-	export enum DescribeDatasetGroupX_Amz_Target { AmazonPersonalize_DescribeDatasetGroup = 0 }
+	export enum DescribeDatasetGroupX_Amz_Target { 'AmazonPersonalize.DescribeDatasetGroup' = 0 }
 
-	export enum DescribeDatasetImportJobX_Amz_Target { AmazonPersonalize_DescribeDatasetImportJob = 0 }
+	export enum DescribeDatasetImportJobX_Amz_Target { 'AmazonPersonalize.DescribeDatasetImportJob' = 0 }
 
-	export enum DescribeEventTrackerX_Amz_Target { AmazonPersonalize_DescribeEventTracker = 0 }
+	export enum DescribeEventTrackerX_Amz_Target { 'AmazonPersonalize.DescribeEventTracker' = 0 }
 
-	export enum DescribeFeatureTransformationX_Amz_Target { AmazonPersonalize_DescribeFeatureTransformation = 0 }
+	export enum DescribeFeatureTransformationX_Amz_Target { 'AmazonPersonalize.DescribeFeatureTransformation' = 0 }
 
-	export enum DescribeFilterX_Amz_Target { AmazonPersonalize_DescribeFilter = 0 }
+	export enum DescribeFilterX_Amz_Target { 'AmazonPersonalize.DescribeFilter' = 0 }
 
-	export enum DescribeRecipeX_Amz_Target { AmazonPersonalize_DescribeRecipe = 0 }
+	export enum DescribeRecipeX_Amz_Target { 'AmazonPersonalize.DescribeRecipe' = 0 }
 
-	export enum DescribeSchemaX_Amz_Target { AmazonPersonalize_DescribeSchema = 0 }
+	export enum DescribeSchemaX_Amz_Target { 'AmazonPersonalize.DescribeSchema' = 0 }
 
-	export enum DescribeSolutionX_Amz_Target { AmazonPersonalize_DescribeSolution = 0 }
+	export enum DescribeSolutionX_Amz_Target { 'AmazonPersonalize.DescribeSolution' = 0 }
 
-	export enum DescribeSolutionVersionX_Amz_Target { AmazonPersonalize_DescribeSolutionVersion = 0 }
+	export enum DescribeSolutionVersionX_Amz_Target { 'AmazonPersonalize.DescribeSolutionVersion' = 0 }
 
-	export enum GetSolutionMetricsX_Amz_Target { AmazonPersonalize_GetSolutionMetrics = 0 }
+	export enum GetSolutionMetricsX_Amz_Target { 'AmazonPersonalize.GetSolutionMetrics' = 0 }
 
-	export enum ListBatchInferenceJobsX_Amz_Target { AmazonPersonalize_ListBatchInferenceJobs = 0 }
+	export enum ListBatchInferenceJobsX_Amz_Target { 'AmazonPersonalize.ListBatchInferenceJobs' = 0 }
 
-	export enum ListCampaignsX_Amz_Target { AmazonPersonalize_ListCampaigns = 0 }
+	export enum ListCampaignsX_Amz_Target { 'AmazonPersonalize.ListCampaigns' = 0 }
 
-	export enum ListDatasetGroupsX_Amz_Target { AmazonPersonalize_ListDatasetGroups = 0 }
+	export enum ListDatasetGroupsX_Amz_Target { 'AmazonPersonalize.ListDatasetGroups' = 0 }
 
-	export enum ListDatasetImportJobsX_Amz_Target { AmazonPersonalize_ListDatasetImportJobs = 0 }
+	export enum ListDatasetImportJobsX_Amz_Target { 'AmazonPersonalize.ListDatasetImportJobs' = 0 }
 
-	export enum ListDatasetsX_Amz_Target { AmazonPersonalize_ListDatasets = 0 }
+	export enum ListDatasetsX_Amz_Target { 'AmazonPersonalize.ListDatasets' = 0 }
 
-	export enum ListEventTrackersX_Amz_Target { AmazonPersonalize_ListEventTrackers = 0 }
+	export enum ListEventTrackersX_Amz_Target { 'AmazonPersonalize.ListEventTrackers' = 0 }
 
-	export enum ListFiltersX_Amz_Target { AmazonPersonalize_ListFilters = 0 }
+	export enum ListFiltersX_Amz_Target { 'AmazonPersonalize.ListFilters' = 0 }
 
-	export enum ListRecipesX_Amz_Target { AmazonPersonalize_ListRecipes = 0 }
+	export enum ListRecipesX_Amz_Target { 'AmazonPersonalize.ListRecipes' = 0 }
 
-	export enum ListSchemasX_Amz_Target { AmazonPersonalize_ListSchemas = 0 }
+	export enum ListSchemasX_Amz_Target { 'AmazonPersonalize.ListSchemas' = 0 }
 
-	export enum ListSolutionVersionsX_Amz_Target { AmazonPersonalize_ListSolutionVersions = 0 }
+	export enum ListSolutionVersionsX_Amz_Target { 'AmazonPersonalize.ListSolutionVersions' = 0 }
 
-	export enum ListSolutionsX_Amz_Target { AmazonPersonalize_ListSolutions = 0 }
+	export enum ListSolutionsX_Amz_Target { 'AmazonPersonalize.ListSolutions' = 0 }
 
-	export enum UpdateCampaignX_Amz_Target { AmazonPersonalize_UpdateCampaign = 0 }
+	export enum UpdateCampaignX_Amz_Target { 'AmazonPersonalize.UpdateCampaign' = 0 }
 
 }
 

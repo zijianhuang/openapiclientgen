@@ -158,7 +158,7 @@ export namespace MyNS {
 		return new FormGroup<AccountInfoFormProperties>({
 			accountId: new FormControl<string | null | undefined>(undefined),
 			accountName: new FormControl<string | null | undefined>(undefined),
-			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254), Validators.minLength(1)]),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(254)]),
 		});
 
 	}

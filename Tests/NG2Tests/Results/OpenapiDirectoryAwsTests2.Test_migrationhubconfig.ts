@@ -55,8 +55,8 @@ export namespace MyNS {
 	}
 	export function CreateHomeRegionControlFormGroup() {
 		return new FormGroup<HomeRegionControlFormProperties>({
-			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^hrc-[a-z0-9]{12}$')]),
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
+			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('^hrc-[a-z0-9]{12}$')]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 			RequestedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -91,7 +91,7 @@ export namespace MyNS {
 	export function CreateTargetFormGroup() {
 		return new FormGroup<TargetFormProperties>({
 			Type: new FormControl<TargetType | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('^\d{12}$')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12), Validators.pattern('^\d{12}$')]),
 		});
 
 	}
@@ -126,7 +126,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateHomeRegionControlRequestFormGroup() {
 		return new FormGroup<CreateHomeRegionControlRequestFormProperties>({
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(50), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 			DryRun: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -213,7 +213,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeHomeRegionControlsResultFormGroup() {
 		return new FormGroup<DescribeHomeRegionControlsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9\/\+\=]{0,2048}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('^[a-zA-Z0-9\/\+\=]{0,2048}$')]),
 		});
 
 	}
@@ -275,10 +275,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeHomeRegionControlsRequestFormGroup() {
 		return new FormGroup<DescribeHomeRegionControlsRequestFormProperties>({
-			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^hrc-[a-z0-9]{12}$')]),
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
+			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('^hrc-[a-z0-9]{12}$')]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9\/\+\=]{0,2048}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('^[a-zA-Z0-9\/\+\=]{0,2048}$')]),
 		});
 
 	}
@@ -301,7 +301,7 @@ export namespace MyNS {
 	}
 	export function CreateGetHomeRegionResultFormGroup() {
 		return new FormGroup<GetHomeRegionResultFormProperties>({
-			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
+			HomeRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('^([a-z]+)-([a-z]+)-([0-9]+)$')]),
 		});
 
 	}
@@ -351,11 +351,11 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateHomeRegionControlX_Amz_Target { AWSMigrationHubMultiAccountService_CreateHomeRegionControl = 0 }
+	export enum CreateHomeRegionControlX_Amz_Target { 'AWSMigrationHubMultiAccountService.CreateHomeRegionControl' = 0 }
 
-	export enum DescribeHomeRegionControlsX_Amz_Target { AWSMigrationHubMultiAccountService_DescribeHomeRegionControls = 0 }
+	export enum DescribeHomeRegionControlsX_Amz_Target { 'AWSMigrationHubMultiAccountService.DescribeHomeRegionControls' = 0 }
 
-	export enum GetHomeRegionX_Amz_Target { AWSMigrationHubMultiAccountService_GetHomeRegion = 0 }
+	export enum GetHomeRegionX_Amz_Target { 'AWSMigrationHubMultiAccountService.GetHomeRegion' = 0 }
 
 }
 

@@ -21,7 +21,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelKeyDeletionResponseFormGroup() {
 		return new FormGroup<CancelKeyDeletionResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -46,7 +46,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelKeyDeletionRequestFormGroup() {
 		return new FormGroup<CancelKeyDeletionRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -131,7 +131,7 @@ export namespace MyNS {
 	}
 	export function CreateConnectCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<ConnectCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -210,8 +210,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAliasRequestFormGroup() {
 		return new FormGroup<CreateAliasRequestFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
-			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -264,7 +264,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateCustomKeyStoreResponseFormGroup() {
 		return new FormGroup<CreateCustomKeyStoreResponseFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -331,10 +331,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<CreateCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(24), Validators.minLength(19)]),
-			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(5000), Validators.minLength(1)]),
-			KeyStorePassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(7)]),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(19), Validators.maxLength(24)]),
+			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(5000)]),
+			KeyStorePassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(7), Validators.maxLength(32)]),
 		});
 
 	}
@@ -409,8 +409,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateGrantResponseFormGroup() {
 		return new FormGroup<CreateGrantResponseFormProperties>({
-			GrantToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
-			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			GrantToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8192)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -485,10 +485,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateGrantRequestFormGroup() {
 		return new FormGroup<CreateGrantRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			GranteePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w+=,.@:/-]+$')]),
-			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w+=,.@:/-]+$')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			GranteePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w+=,.@:/-]+$')]),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w+=,.@:/-]+$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
 		});
 
 	}
@@ -651,18 +651,18 @@ export namespace MyNS {
 	export function CreateKeyMetadataFormGroup() {
 		return new FormGroup<KeyMetadataFormProperties>({
 			AWSAccountId: new FormControl<string | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(8192)]),
 			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
 			KeyState: new FormControl<KeyMetadataKeyState | null | undefined>(undefined),
 			DeletionDate: new FormControl<Date | null | undefined>(undefined),
 			ValidTo: new FormControl<Date | null | undefined>(undefined),
 			Origin: new FormControl<KeyMetadataOrigin | null | undefined>(undefined),
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(19)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(19), Validators.maxLength(24)]),
 			ExpirationModel: new FormControl<KeyMetadataExpirationModel | null | undefined>(undefined),
 			KeyManager: new FormControl<KeyMetadataKeyManager | null | undefined>(undefined),
 			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
@@ -737,12 +737,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateKeyRequestFormGroup() {
 		return new FormGroup<CreateKeyRequestFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0)]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(131072), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(8192)]),
 			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
 			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
 			Origin: new FormControl<KeyMetadataOrigin | null | undefined>(undefined),
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -786,8 +786,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			TagKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			TagValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			TagKey: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			TagValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -854,8 +854,8 @@ export namespace MyNS {
 	}
 	export function CreateDecryptResponseFormGroup() {
 		return new FormGroup<DecryptResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
@@ -902,8 +902,8 @@ export namespace MyNS {
 	}
 	export function CreateDecryptRequestFormGroup() {
 		return new FormGroup<DecryptRequestFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(6144)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
@@ -969,7 +969,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAliasRequestFormGroup() {
 		return new FormGroup<DeleteAliasRequestFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
 		});
 
 	}
@@ -1004,7 +1004,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<DeleteCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -1039,7 +1039,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteImportedKeyMaterialRequestFormGroup() {
 		return new FormGroup<DeleteImportedKeyMaterialRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1065,7 +1065,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCustomKeyStoresResponseFormGroup() {
 		return new FormGroup<DescribeCustomKeyStoresResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1135,10 +1135,10 @@ export namespace MyNS {
 	}
 	export function CreateCustomKeyStoresListEntryFormGroup() {
 		return new FormGroup<CustomKeyStoresListEntryFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(19)]),
-			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5000), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(19), Validators.maxLength(24)]),
+			TrustAnchorCertificate: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(5000)]),
 			ConnectionState: new FormControl<CustomKeyStoresListEntryConnectionState | null | undefined>(undefined),
 			ConnectionErrorCode: new FormControl<CustomKeyStoresListEntryConnectionErrorCode | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
@@ -1204,10 +1204,10 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCustomKeyStoresRequestFormGroup() {
 		return new FormGroup<DescribeCustomKeyStoresRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			CustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -1251,7 +1251,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeKeyRequestFormGroup() {
 		return new FormGroup<DescribeKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1276,7 +1276,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableKeyRequestFormGroup() {
 		return new FormGroup<DisableKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1301,7 +1301,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableKeyRotationRequestFormGroup() {
 		return new FormGroup<DisableKeyRotationRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1336,7 +1336,7 @@ export namespace MyNS {
 	}
 	export function CreateDisconnectCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<DisconnectCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -1361,7 +1361,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableKeyRequestFormGroup() {
 		return new FormGroup<EnableKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1386,7 +1386,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableKeyRotationRequestFormGroup() {
 		return new FormGroup<EnableKeyRotationRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1423,8 +1423,8 @@ export namespace MyNS {
 	}
 	export function CreateEncryptResponseFormGroup() {
 		return new FormGroup<EncryptResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
@@ -1473,8 +1473,8 @@ export namespace MyNS {
 	}
 	export function CreateEncryptRequestFormGroup() {
 		return new FormGroup<EncryptRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4096)]),
 			EncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
 
@@ -1522,9 +1522,9 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1570,7 +1570,7 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			NumberOfBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 			KeySpec: new FormControl<GenerateDataKeyRequestKeySpec | null | undefined>(undefined),
 		});
@@ -1635,10 +1635,10 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyPairResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyPairResponseFormProperties>({
-			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			PrivateKeyPlaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
-			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
+			PrivateKeyPlaintext: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8192)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
 		});
 
@@ -1679,7 +1679,7 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyPairRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyPairRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1729,9 +1729,9 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyPairWithoutPlaintextResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyPairWithoutPlaintextResponseFormProperties>({
-			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			PrivateKeyCiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8192)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined),
 		});
 
@@ -1770,7 +1770,7 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyPairWithoutPlaintextRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyPairWithoutPlaintextRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			KeyPairSpec: new FormControl<GenerateDataKeyPairResponseKeyPairSpec | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1806,8 +1806,8 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyWithoutPlaintextResponseFormGroup() {
 		return new FormGroup<GenerateDataKeyWithoutPlaintextResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -1853,7 +1853,7 @@ export namespace MyNS {
 	}
 	export function CreateGenerateDataKeyWithoutPlaintextRequestFormGroup() {
 		return new FormGroup<GenerateDataKeyWithoutPlaintextRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			KeySpec: new FormControl<GenerateDataKeyRequestKeySpec | null | undefined>(undefined),
 			NumberOfBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
 		});
@@ -1878,7 +1878,7 @@ export namespace MyNS {
 	}
 	export function CreateGenerateRandomResponseFormGroup() {
 		return new FormGroup<GenerateRandomResponseFormProperties>({
-			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			Plaintext: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096)]),
 		});
 
 	}
@@ -1914,7 +1914,7 @@ export namespace MyNS {
 	export function CreateGenerateRandomRequestFormGroup() {
 		return new FormGroup<GenerateRandomRequestFormProperties>({
 			NumberOfBytes: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1024)]),
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -1937,7 +1937,7 @@ export namespace MyNS {
 	}
 	export function CreateGetKeyPolicyResponseFormGroup() {
 		return new FormGroup<GetKeyPolicyResponseFormProperties>({
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(131072), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 		});
 
 	}
@@ -1976,8 +1976,8 @@ export namespace MyNS {
 	}
 	export function CreateGetKeyPolicyRequestFormGroup() {
 		return new FormGroup<GetKeyPolicyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w]+')]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w]+')]),
 		});
 
 	}
@@ -2015,7 +2015,7 @@ export namespace MyNS {
 	}
 	export function CreateGetKeyRotationStatusRequestFormGroup() {
 		return new FormGroup<GetKeyRotationStatusRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2064,9 +2064,9 @@ export namespace MyNS {
 	}
 	export function CreateGetParametersForImportResponseFormGroup() {
 		return new FormGroup<GetParametersForImportResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			ImportToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			ImportToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096)]),
 			ParametersValidTo: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2104,7 +2104,7 @@ export namespace MyNS {
 	}
 	export function CreateGetParametersForImportRequestFormGroup() {
 		return new FormGroup<GetParametersForImportRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			WrappingAlgorithm: new FormControl<GetParametersForImportRequestWrappingAlgorithm | null | undefined>(undefined, [Validators.required]),
 			WrappingKeySpec: new FormControl<GetParametersForImportRequestWrappingKeySpec | null | undefined>(undefined, [Validators.required]),
 		});
@@ -2151,8 +2151,8 @@ export namespace MyNS {
 	}
 	export function CreateGetPublicKeyResponseFormGroup() {
 		return new FormGroup<GetPublicKeyResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			PublicKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8192)]),
 			CustomerMasterKeySpec: new FormControl<KeyMetadataCustomerMasterKeySpec | null | undefined>(undefined),
 			KeyUsage: new FormControl<KeyMetadataKeyUsage | null | undefined>(undefined),
 		});
@@ -2185,7 +2185,7 @@ export namespace MyNS {
 	}
 	export function CreateGetPublicKeyRequestFormGroup() {
 		return new FormGroup<GetPublicKeyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2252,9 +2252,9 @@ export namespace MyNS {
 	}
 	export function CreateImportKeyMaterialRequestFormGroup() {
 		return new FormGroup<ImportKeyMaterialRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			ImportToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
-			EncryptedKeyMaterial: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			ImportToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(6144)]),
+			EncryptedKeyMaterial: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(6144)]),
 			ValidTo: new FormControl<Date | null | undefined>(undefined),
 			ExpirationModel: new FormControl<KeyMetadataExpirationModel | null | undefined>(undefined),
 		});
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 	}
 	export function CreateListAliasesResponseFormGroup() {
 		return new FormGroup<ListAliasesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2364,9 +2364,9 @@ export namespace MyNS {
 	}
 	export function CreateAliasListEntryFormGroup() {
 		return new FormGroup<AliasListEntryFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
-			AliasArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
-			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
+			AliasArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2413,9 +2413,9 @@ export namespace MyNS {
 	}
 	export function CreateListAliasesRequestFormGroup() {
 		return new FormGroup<ListAliasesRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -2451,7 +2451,7 @@ export namespace MyNS {
 	}
 	export function CreateListGrantsResponseFormGroup() {
 		return new FormGroup<ListGrantsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2545,13 +2545,13 @@ export namespace MyNS {
 	}
 	export function CreateGrantListEntryFormGroup() {
 		return new FormGroup<GrantListEntryFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			GranteePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w+=,.@:/-]+$')]),
-			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w+=,.@:/-]+$')]),
-			IssuingAccount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w+=,.@:/-]+$')]),
+			GranteePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w+=,.@:/-]+$')]),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w+=,.@:/-]+$')]),
+			IssuingAccount: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w+=,.@:/-]+$')]),
 		});
 
 	}
@@ -2601,8 +2601,8 @@ export namespace MyNS {
 	export function CreateListGrantsRequestFormGroup() {
 		return new FormGroup<ListGrantsRequestFormProperties>({
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2628,7 +2628,7 @@ export namespace MyNS {
 	}
 	export function CreateListKeyPoliciesResponseFormGroup() {
 		return new FormGroup<ListKeyPoliciesResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2678,9 +2678,9 @@ export namespace MyNS {
 	}
 	export function CreateListKeyPoliciesRequestFormGroup() {
 		return new FormGroup<ListKeyPoliciesRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -2706,7 +2706,7 @@ export namespace MyNS {
 	}
 	export function CreateListKeysResponseFormGroup() {
 		return new FormGroup<ListKeysResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2746,8 +2746,8 @@ export namespace MyNS {
 	}
 	export function CreateKeyListEntryFormGroup() {
 		return new FormGroup<KeyListEntryFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			KeyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			KeyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -2783,7 +2783,7 @@ export namespace MyNS {
 	export function CreateListKeysRequestFormGroup() {
 		return new FormGroup<ListKeysRequestFormProperties>({
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -2809,7 +2809,7 @@ export namespace MyNS {
 	}
 	export function CreateListResourceTagsResponseFormGroup() {
 		return new FormGroup<ListResourceTagsResponseFormProperties>({
-			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			NextMarker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 			Truncated: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2859,9 +2859,9 @@ export namespace MyNS {
 	}
 	export function CreateListResourceTagsRequestFormGroup() {
 		return new FormGroup<ListResourceTagsRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
 		});
 
 	}
@@ -2911,8 +2911,8 @@ export namespace MyNS {
 	export function CreateListRetirableGrantsRequestFormGroup() {
 		return new FormGroup<ListRetirableGrantsRequestFormProperties>({
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			Marker: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('[\u0020-\u00FF]*')]),
-			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[\w+=,.@:/-]+$')]),
+			Marker: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('[\u0020-\u00FF]*')]),
+			RetiringPrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[\w+=,.@:/-]+$')]),
 		});
 
 	}
@@ -2967,9 +2967,9 @@ export namespace MyNS {
 	}
 	export function CreatePutKeyPolicyRequestFormGroup() {
 		return new FormGroup<PutKeyPolicyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w]+')]),
-			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(131072), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w]+')]),
+			Policy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(131072), Validators.pattern('[\u0009\u000A\u000D\u0020-\u00FF]+')]),
 			BypassPolicyLockoutSafetyCheck: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -3021,9 +3021,9 @@ export namespace MyNS {
 	}
 	export function CreateReEncryptResponseFormGroup() {
 		return new FormGroup<ReEncryptResponseFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
-			SourceKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
+			SourceKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			SourceEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 			DestinationEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
@@ -3088,9 +3088,9 @@ export namespace MyNS {
 	}
 	export function CreateReEncryptRequestFormGroup() {
 		return new FormGroup<ReEncryptRequestFormProperties>({
-			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
-			SourceKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			DestinationKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			CiphertextBlob: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(6144)]),
+			SourceKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			DestinationKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			SourceEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 			DestinationEncryptionAlgorithm: new FormControl<EncryptionAlgorithmSpec | null | undefined>(undefined),
 		});
@@ -3139,9 +3139,9 @@ export namespace MyNS {
 	}
 	export function CreateRetireGrantRequestFormGroup() {
 		return new FormGroup<RetireGrantRequestFormProperties>({
-			GrantToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(1)]),
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			GrantToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8192)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -3190,8 +3190,8 @@ export namespace MyNS {
 	}
 	export function CreateRevokeGrantRequestFormGroup() {
 		return new FormGroup<RevokeGrantRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			GrantId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -3216,7 +3216,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleKeyDeletionResponseFormGroup() {
 		return new FormGroup<ScheduleKeyDeletionResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			DeletionDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -3254,7 +3254,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleKeyDeletionRequestFormGroup() {
 		return new FormGroup<ScheduleKeyDeletionRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			PendingWindowInDays: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(365)]),
 		});
 
@@ -3292,8 +3292,8 @@ export namespace MyNS {
 	}
 	export function CreateSignResponseFormGroup() {
 		return new FormGroup<SignResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
-			Signature: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6144), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(6144)]),
 			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
 		});
 
@@ -3347,8 +3347,8 @@ export namespace MyNS {
 	}
 	export function CreateSignRequestFormGroup() {
 		return new FormGroup<SignRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4096)]),
 			MessageType: new FormControl<SignRequestMessageType | null | undefined>(undefined),
 			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3380,7 +3380,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -3408,7 +3408,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -3447,8 +3447,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateAliasRequestFormGroup() {
 		return new FormGroup<UpdateAliasRequestFormProperties>({
-			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
-			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			AliasName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9:/_-]+$')]),
+			TargetKeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -3519,10 +3519,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdateCustomKeyStoreRequestFormGroup() {
 		return new FormGroup<UpdateCustomKeyStoreRequestFormProperties>({
-			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			NewCustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			KeyStorePassword: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(7)]),
-			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(24), Validators.minLength(19)]),
+			CustomKeyStoreId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			NewCustomKeyStoreName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			KeyStorePassword: new FormControl<string | null | undefined>(undefined, [Validators.minLength(7), Validators.maxLength(32)]),
+			CloudHsmClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(19), Validators.maxLength(24)]),
 		});
 
 	}
@@ -3571,8 +3571,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateKeyDescriptionRequestFormGroup() {
 		return new FormGroup<UpdateKeyDescriptionRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(0)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(8192)]),
 		});
 
 	}
@@ -3599,7 +3599,7 @@ export namespace MyNS {
 	}
 	export function CreateVerifyResponseFormGroup() {
 		return new FormGroup<VerifyResponseFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			SignatureValid: new FormControl<boolean | null | undefined>(undefined),
 			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined),
 		});
@@ -3668,10 +3668,10 @@ export namespace MyNS {
 	}
 	export function CreateVerifyRequestFormGroup() {
 		return new FormGroup<VerifyRequestFormProperties>({
-			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4096)]),
 			MessageType: new FormControl<SignRequestMessageType | null | undefined>(undefined),
-			Signature: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(6144), Validators.minLength(1)]),
+			Signature: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(6144)]),
 			SigningAlgorithm: new FormControl<SigningAlgorithmSpec | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4141,97 +4141,97 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelKeyDeletionX_Amz_Target { TrentService_CancelKeyDeletion = 0 }
+	export enum CancelKeyDeletionX_Amz_Target { 'TrentService.CancelKeyDeletion' = 0 }
 
-	export enum ConnectCustomKeyStoreX_Amz_Target { TrentService_ConnectCustomKeyStore = 0 }
+	export enum ConnectCustomKeyStoreX_Amz_Target { 'TrentService.ConnectCustomKeyStore' = 0 }
 
-	export enum CreateAliasX_Amz_Target { TrentService_CreateAlias = 0 }
+	export enum CreateAliasX_Amz_Target { 'TrentService.CreateAlias' = 0 }
 
-	export enum CreateCustomKeyStoreX_Amz_Target { TrentService_CreateCustomKeyStore = 0 }
+	export enum CreateCustomKeyStoreX_Amz_Target { 'TrentService.CreateCustomKeyStore' = 0 }
 
-	export enum CreateGrantX_Amz_Target { TrentService_CreateGrant = 0 }
+	export enum CreateGrantX_Amz_Target { 'TrentService.CreateGrant' = 0 }
 
-	export enum CreateKeyX_Amz_Target { TrentService_CreateKey = 0 }
+	export enum CreateKeyX_Amz_Target { 'TrentService.CreateKey' = 0 }
 
-	export enum DecryptX_Amz_Target { TrentService_Decrypt = 0 }
+	export enum DecryptX_Amz_Target { 'TrentService.Decrypt' = 0 }
 
-	export enum DeleteAliasX_Amz_Target { TrentService_DeleteAlias = 0 }
+	export enum DeleteAliasX_Amz_Target { 'TrentService.DeleteAlias' = 0 }
 
-	export enum DeleteCustomKeyStoreX_Amz_Target { TrentService_DeleteCustomKeyStore = 0 }
+	export enum DeleteCustomKeyStoreX_Amz_Target { 'TrentService.DeleteCustomKeyStore' = 0 }
 
-	export enum DeleteImportedKeyMaterialX_Amz_Target { TrentService_DeleteImportedKeyMaterial = 0 }
+	export enum DeleteImportedKeyMaterialX_Amz_Target { 'TrentService.DeleteImportedKeyMaterial' = 0 }
 
-	export enum DescribeCustomKeyStoresX_Amz_Target { TrentService_DescribeCustomKeyStores = 0 }
+	export enum DescribeCustomKeyStoresX_Amz_Target { 'TrentService.DescribeCustomKeyStores' = 0 }
 
-	export enum DescribeKeyX_Amz_Target { TrentService_DescribeKey = 0 }
+	export enum DescribeKeyX_Amz_Target { 'TrentService.DescribeKey' = 0 }
 
-	export enum DisableKeyX_Amz_Target { TrentService_DisableKey = 0 }
+	export enum DisableKeyX_Amz_Target { 'TrentService.DisableKey' = 0 }
 
-	export enum DisableKeyRotationX_Amz_Target { TrentService_DisableKeyRotation = 0 }
+	export enum DisableKeyRotationX_Amz_Target { 'TrentService.DisableKeyRotation' = 0 }
 
-	export enum DisconnectCustomKeyStoreX_Amz_Target { TrentService_DisconnectCustomKeyStore = 0 }
+	export enum DisconnectCustomKeyStoreX_Amz_Target { 'TrentService.DisconnectCustomKeyStore' = 0 }
 
-	export enum EnableKeyX_Amz_Target { TrentService_EnableKey = 0 }
+	export enum EnableKeyX_Amz_Target { 'TrentService.EnableKey' = 0 }
 
-	export enum EnableKeyRotationX_Amz_Target { TrentService_EnableKeyRotation = 0 }
+	export enum EnableKeyRotationX_Amz_Target { 'TrentService.EnableKeyRotation' = 0 }
 
-	export enum EncryptX_Amz_Target { TrentService_Encrypt = 0 }
+	export enum EncryptX_Amz_Target { 'TrentService.Encrypt' = 0 }
 
-	export enum GenerateDataKeyX_Amz_Target { TrentService_GenerateDataKey = 0 }
+	export enum GenerateDataKeyX_Amz_Target { 'TrentService.GenerateDataKey' = 0 }
 
-	export enum GenerateDataKeyPairX_Amz_Target { TrentService_GenerateDataKeyPair = 0 }
+	export enum GenerateDataKeyPairX_Amz_Target { 'TrentService.GenerateDataKeyPair' = 0 }
 
-	export enum GenerateDataKeyPairWithoutPlaintextX_Amz_Target { TrentService_GenerateDataKeyPairWithoutPlaintext = 0 }
+	export enum GenerateDataKeyPairWithoutPlaintextX_Amz_Target { 'TrentService.GenerateDataKeyPairWithoutPlaintext' = 0 }
 
-	export enum GenerateDataKeyWithoutPlaintextX_Amz_Target { TrentService_GenerateDataKeyWithoutPlaintext = 0 }
+	export enum GenerateDataKeyWithoutPlaintextX_Amz_Target { 'TrentService.GenerateDataKeyWithoutPlaintext' = 0 }
 
-	export enum GenerateRandomX_Amz_Target { TrentService_GenerateRandom = 0 }
+	export enum GenerateRandomX_Amz_Target { 'TrentService.GenerateRandom' = 0 }
 
-	export enum GetKeyPolicyX_Amz_Target { TrentService_GetKeyPolicy = 0 }
+	export enum GetKeyPolicyX_Amz_Target { 'TrentService.GetKeyPolicy' = 0 }
 
-	export enum GetKeyRotationStatusX_Amz_Target { TrentService_GetKeyRotationStatus = 0 }
+	export enum GetKeyRotationStatusX_Amz_Target { 'TrentService.GetKeyRotationStatus' = 0 }
 
-	export enum GetParametersForImportX_Amz_Target { TrentService_GetParametersForImport = 0 }
+	export enum GetParametersForImportX_Amz_Target { 'TrentService.GetParametersForImport' = 0 }
 
-	export enum GetPublicKeyX_Amz_Target { TrentService_GetPublicKey = 0 }
+	export enum GetPublicKeyX_Amz_Target { 'TrentService.GetPublicKey' = 0 }
 
-	export enum ImportKeyMaterialX_Amz_Target { TrentService_ImportKeyMaterial = 0 }
+	export enum ImportKeyMaterialX_Amz_Target { 'TrentService.ImportKeyMaterial' = 0 }
 
-	export enum ListAliasesX_Amz_Target { TrentService_ListAliases = 0 }
+	export enum ListAliasesX_Amz_Target { 'TrentService.ListAliases' = 0 }
 
-	export enum ListGrantsX_Amz_Target { TrentService_ListGrants = 0 }
+	export enum ListGrantsX_Amz_Target { 'TrentService.ListGrants' = 0 }
 
-	export enum ListKeyPoliciesX_Amz_Target { TrentService_ListKeyPolicies = 0 }
+	export enum ListKeyPoliciesX_Amz_Target { 'TrentService.ListKeyPolicies' = 0 }
 
-	export enum ListKeysX_Amz_Target { TrentService_ListKeys = 0 }
+	export enum ListKeysX_Amz_Target { 'TrentService.ListKeys' = 0 }
 
-	export enum ListResourceTagsX_Amz_Target { TrentService_ListResourceTags = 0 }
+	export enum ListResourceTagsX_Amz_Target { 'TrentService.ListResourceTags' = 0 }
 
-	export enum ListRetirableGrantsX_Amz_Target { TrentService_ListRetirableGrants = 0 }
+	export enum ListRetirableGrantsX_Amz_Target { 'TrentService.ListRetirableGrants' = 0 }
 
-	export enum PutKeyPolicyX_Amz_Target { TrentService_PutKeyPolicy = 0 }
+	export enum PutKeyPolicyX_Amz_Target { 'TrentService.PutKeyPolicy' = 0 }
 
-	export enum ReEncryptX_Amz_Target { TrentService_ReEncrypt = 0 }
+	export enum ReEncryptX_Amz_Target { 'TrentService.ReEncrypt' = 0 }
 
-	export enum RetireGrantX_Amz_Target { TrentService_RetireGrant = 0 }
+	export enum RetireGrantX_Amz_Target { 'TrentService.RetireGrant' = 0 }
 
-	export enum RevokeGrantX_Amz_Target { TrentService_RevokeGrant = 0 }
+	export enum RevokeGrantX_Amz_Target { 'TrentService.RevokeGrant' = 0 }
 
-	export enum ScheduleKeyDeletionX_Amz_Target { TrentService_ScheduleKeyDeletion = 0 }
+	export enum ScheduleKeyDeletionX_Amz_Target { 'TrentService.ScheduleKeyDeletion' = 0 }
 
-	export enum SignX_Amz_Target { TrentService_Sign = 0 }
+	export enum SignX_Amz_Target { 'TrentService.Sign' = 0 }
 
-	export enum TagResourceX_Amz_Target { TrentService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'TrentService.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { TrentService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'TrentService.UntagResource' = 0 }
 
-	export enum UpdateAliasX_Amz_Target { TrentService_UpdateAlias = 0 }
+	export enum UpdateAliasX_Amz_Target { 'TrentService.UpdateAlias' = 0 }
 
-	export enum UpdateCustomKeyStoreX_Amz_Target { TrentService_UpdateCustomKeyStore = 0 }
+	export enum UpdateCustomKeyStoreX_Amz_Target { 'TrentService.UpdateCustomKeyStore' = 0 }
 
-	export enum UpdateKeyDescriptionX_Amz_Target { TrentService_UpdateKeyDescription = 0 }
+	export enum UpdateKeyDescriptionX_Amz_Target { 'TrentService.UpdateKeyDescription' = 0 }
 
-	export enum VerifyX_Amz_Target { TrentService_Verify = 0 }
+	export enum VerifyX_Amz_Target { 'TrentService.Verify' = 0 }
 
 }
 

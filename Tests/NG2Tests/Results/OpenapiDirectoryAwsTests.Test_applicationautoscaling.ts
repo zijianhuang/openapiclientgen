@@ -59,17 +59,17 @@ export namespace MyNS {
 	}
 	export function CreateDeleteScalingPolicyRequestFormGroup() {
 		return new FormGroup<DeleteScalingPolicyRequestFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
-	export enum DeleteScalingPolicyRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
+	export enum DeleteScalingPolicyRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, 'custom-resource' = 7, comprehend = 8, lambda = 9, cassandra = 10 }
 
-	export enum DeleteScalingPolicyRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
+	export enum DeleteScalingPolicyRequestScalableDimension { 'ecs:service:DesiredCount' = 0, 'ec2:spot-fleet-request:TargetCapacity' = 1, 'elasticmapreduce:instancegroup:InstanceCount' = 2, 'appstream:fleet:DesiredCapacity' = 3, 'dynamodb:table:ReadCapacityUnits' = 4, 'dynamodb:table:WriteCapacityUnits' = 5, 'dynamodb:index:ReadCapacityUnits' = 6, 'dynamodb:index:WriteCapacityUnits' = 7, 'rds:cluster:ReadReplicaCount' = 8, 'sagemaker:variant:DesiredInstanceCount' = 9, 'custom-resource:ResourceType:Property' = 10, 'comprehend:document-classifier-endpoint:DesiredInferenceUnits' = 11, 'lambda:function:ProvisionedConcurrency' = 12, 'cassandra:table:ReadCapacityUnits' = 13, 'cassandra:table:WriteCapacityUnits' = 14 }
 
 	export interface ValidationException {
 	}
@@ -124,7 +124,7 @@ export namespace MyNS {
 	export interface DeleteScheduledActionRequest {
 
 		/** Required */
-		ServiceNamespace: DeleteScheduledActionRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -141,12 +141,12 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: DeleteScheduledActionRequestScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 	}
 	export interface DeleteScheduledActionRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<DeleteScheduledActionRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -163,21 +163,17 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<DeleteScheduledActionRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 	}
 	export function CreateDeleteScheduledActionRequestFormGroup() {
 		return new FormGroup<DeleteScheduledActionRequestFormProperties>({
-			ServiceNamespace: new FormControl<DeleteScheduledActionRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<DeleteScheduledActionRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum DeleteScheduledActionRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum DeleteScheduledActionRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface DeregisterScalableTargetResponse {
 	}
@@ -192,7 +188,7 @@ export namespace MyNS {
 	export interface DeregisterScalableTargetRequest {
 
 		/** Required */
-		ServiceNamespace: DeregisterScalableTargetRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -202,12 +198,12 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: DeregisterScalableTargetRequestScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 	}
 	export interface DeregisterScalableTargetRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<DeregisterScalableTargetRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -217,20 +213,16 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<DeregisterScalableTargetRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 	}
 	export function CreateDeregisterScalableTargetRequestFormGroup() {
 		return new FormGroup<DeregisterScalableTargetRequestFormProperties>({
-			ServiceNamespace: new FormControl<DeregisterScalableTargetRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<DeregisterScalableTargetRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum DeregisterScalableTargetRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum DeregisterScalableTargetRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface DescribeScalableTargetsResponse {
 		ScalableTargets?: Array<ScalableTarget>;
@@ -251,7 +243,7 @@ export namespace MyNS {
 	export interface ScalableTarget {
 
 		/** Required */
-		ServiceNamespace: ScalableTargetServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -261,7 +253,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: ScalableTargetScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 
 		/** Required */
 		MinCapacity: number;
@@ -287,7 +279,7 @@ export namespace MyNS {
 	export interface ScalableTargetFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<ScalableTargetServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -297,7 +289,7 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<ScalableTargetScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 
 		/** Required */
 		MinCapacity: FormControl<number | null | undefined>,
@@ -317,20 +309,16 @@ export namespace MyNS {
 	}
 	export function CreateScalableTargetFormGroup() {
 		return new FormGroup<ScalableTargetFormProperties>({
-			ServiceNamespace: new FormControl<ScalableTargetServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<ScalableTargetScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			MinCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum ScalableTargetServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum ScalableTargetScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 
 	/** Specifies whether the scaling activities for a scalable target are in a suspended state.  */
@@ -358,33 +346,29 @@ export namespace MyNS {
 	export interface DescribeScalableTargetsRequest {
 
 		/** Required */
-		ServiceNamespace: DescribeScalableTargetsRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 		ResourceIds?: Array<string>;
-		ScalableDimension?: DescribeScalableTargetsRequestScalableDimension | null;
+		ScalableDimension?: DeleteScalingPolicyRequestScalableDimension | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScalableTargetsRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<DescribeScalableTargetsRequestServiceNamespace | null | undefined>,
-		ScalableDimension: FormControl<DescribeScalableTargetsRequestScalableDimension | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeScalableTargetsRequestFormGroup() {
 		return new FormGroup<DescribeScalableTargetsRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScalableTargetsRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ScalableDimension: new FormControl<DescribeScalableTargetsRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeScalableTargetsRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum DescribeScalableTargetsRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface InvalidNextTokenException {
 	}
@@ -418,7 +402,7 @@ export namespace MyNS {
 		ActivityId: string;
 
 		/** Required */
-		ServiceNamespace: ScalingActivityServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -428,7 +412,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: ScalingActivityScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 
 		/** Required */
 		Description: string;
@@ -453,7 +437,7 @@ export namespace MyNS {
 		ActivityId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ServiceNamespace: FormControl<ScalingActivityServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -463,7 +447,7 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<ScalingActivityScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 
 		/** Required */
 		Description: FormControl<string | null | undefined>,
@@ -483,9 +467,9 @@ export namespace MyNS {
 	export function CreateScalingActivityFormGroup() {
 		return new FormGroup<ScalingActivityFormProperties>({
 			ActivityId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ServiceNamespace: new FormControl<ScalingActivityServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<ScalingActivityScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Cause: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
@@ -497,54 +481,46 @@ export namespace MyNS {
 
 	}
 
-	export enum ScalingActivityServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum ScalingActivityScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
-
 	export enum ScalingActivityStatusCode { Pending = 0, InProgress = 1, Successful = 2, Overridden = 3, Unfulfilled = 4, Failed = 5 }
 
 	export interface DescribeScalingActivitiesRequest {
 
 		/** Required */
-		ServiceNamespace: DescribeScalingActivitiesRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
 		 */
 		ResourceId?: string | null;
-		ScalableDimension?: DescribeScalingActivitiesRequestScalableDimension | null;
+		ScalableDimension?: DeleteScalingPolicyRequestScalableDimension | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScalingActivitiesRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<DescribeScalingActivitiesRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
 		 */
 		ResourceId: FormControl<string | null | undefined>,
-		ScalableDimension: FormControl<DescribeScalingActivitiesRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeScalingActivitiesRequestFormGroup() {
 		return new FormGroup<DescribeScalingActivitiesRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScalingActivitiesRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<DescribeScalingActivitiesRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeScalingActivitiesRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum DescribeScalingActivitiesRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface DescribeScalingPoliciesResponse {
 		ScalingPolicies?: Array<ScalingPolicy>;
@@ -579,7 +555,7 @@ export namespace MyNS {
 		PolicyName: string;
 
 		/** Required */
-		ServiceNamespace: ScalingPolicyServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -589,7 +565,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: ScalingPolicyScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 
 		/** Required */
 		PolicyType: ScalingPolicyPolicyType;
@@ -623,7 +599,7 @@ export namespace MyNS {
 		PolicyName: FormControl<string | null | undefined>,
 
 		/** Required */
-		ServiceNamespace: FormControl<ScalingPolicyServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -633,7 +609,7 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<ScalingPolicyScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 
 		/** Required */
 		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
@@ -643,20 +619,16 @@ export namespace MyNS {
 	}
 	export function CreateScalingPolicyFormGroup() {
 		return new FormGroup<ScalingPolicyFormProperties>({
-			PolicyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
-			ServiceNamespace: new FormControl<ScalingPolicyServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<ScalingPolicyScalableDimension | null | undefined>(undefined, [Validators.required]),
+			PolicyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('\p{Print}+')]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum ScalingPolicyServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum ScalingPolicyScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export enum ScalingPolicyPolicyType { StepScaling = 0, TargetTrackingScaling = 1 }
 
@@ -783,7 +755,7 @@ export namespace MyNS {
 	export function CreatePredefinedMetricSpecificationFormGroup() {
 		return new FormGroup<PredefinedMetricSpecificationFormProperties>({
 			PredefinedMetricType: new FormControl<PredefinedMetricSpecificationPredefinedMetricType | null | undefined>(undefined, [Validators.required]),
-			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(1)]),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1023)]),
 		});
 
 	}
@@ -891,45 +863,41 @@ export namespace MyNS {
 		PolicyNames?: Array<string>;
 
 		/** Required */
-		ServiceNamespace: DescribeScalingPoliciesRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
 		 */
 		ResourceId?: string | null;
-		ScalableDimension?: DescribeScalingPoliciesRequestScalableDimension | null;
+		ScalableDimension?: DeleteScalingPolicyRequestScalableDimension | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScalingPoliciesRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<DescribeScalingPoliciesRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
 		 */
 		ResourceId: FormControl<string | null | undefined>,
-		ScalableDimension: FormControl<DescribeScalingPoliciesRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeScalingPoliciesRequestFormGroup() {
 		return new FormGroup<DescribeScalingPoliciesRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScalingPoliciesRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<DescribeScalingPoliciesRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeScalingPoliciesRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum DescribeScalingPoliciesRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface FailedResourceAccessException {
 	}
@@ -974,7 +942,7 @@ export namespace MyNS {
 		ScheduledActionARN: string;
 
 		/** Required */
-		ServiceNamespace: ScheduledActionServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -989,7 +957,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ResourceId: string;
-		ScalableDimension?: ScheduledActionScalableDimension | null;
+		ScalableDimension?: DeleteScalingPolicyRequestScalableDimension | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 
@@ -1018,7 +986,7 @@ export namespace MyNS {
 		ScheduledActionARN: FormControl<string | null | undefined>,
 
 		/** Required */
-		ServiceNamespace: FormControl<ScheduledActionServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -1033,7 +1001,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		ResourceId: FormControl<string | null | undefined>,
-		ScalableDimension: FormControl<ScheduledActionScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 
@@ -1042,22 +1010,18 @@ export namespace MyNS {
 	}
 	export function CreateScheduledActionFormGroup() {
 		return new FormGroup<ScheduledActionFormProperties>({
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+')]),
-			ScheduledActionARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ServiceNamespace: new FormControl<ScheduledActionServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<ScheduledActionScalableDimension | null | undefined>(undefined),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+')]),
+			ScheduledActionARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum ScheduledActionServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum ScheduledActionScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 
 	/** Represents the minimum and maximum capacity for a scheduled action. */
@@ -1083,45 +1047,41 @@ export namespace MyNS {
 		ScheduledActionNames?: Array<string>;
 
 		/** Required */
-		ServiceNamespace: DescribeScheduledActionsRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
 		 */
 		ResourceId?: string | null;
-		ScalableDimension?: DescribeScheduledActionsRequestScalableDimension | null;
+		ScalableDimension?: DeleteScalingPolicyRequestScalableDimension | null;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
 	export interface DescribeScheduledActionsRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<DescribeScheduledActionsRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Max length: 1600
 		 * Min length: 1
 		 */
 		ResourceId: FormControl<string | null | undefined>,
-		ScalableDimension: FormControl<DescribeScheduledActionsRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
 		NextToken: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeScheduledActionsRequestFormGroup() {
 		return new FormGroup<DescribeScheduledActionsRequestFormProperties>({
-			ServiceNamespace: new FormControl<DescribeScheduledActionsRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<DescribeScheduledActionsRequestScalableDimension | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeScheduledActionsRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum DescribeScheduledActionsRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface PutScalingPolicyResponse {
 
@@ -1144,7 +1104,7 @@ export namespace MyNS {
 	}
 	export function CreatePutScalingPolicyResponseFormGroup() {
 		return new FormGroup<PutScalingPolicyResponseFormProperties>({
-			PolicyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
+			PolicyARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
@@ -1159,7 +1119,7 @@ export namespace MyNS {
 		PolicyName: string;
 
 		/** Required */
-		ServiceNamespace: PutScalingPolicyRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -1169,7 +1129,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: PutScalingPolicyRequestScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 		PolicyType?: ScalingPolicyPolicyType | null;
 
 		/** Represents a step scaling policy configuration to use with Application Auto Scaling. */
@@ -1188,7 +1148,7 @@ export namespace MyNS {
 		PolicyName: FormControl<string | null | undefined>,
 
 		/** Required */
-		ServiceNamespace: FormControl<PutScalingPolicyRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -1198,23 +1158,19 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<PutScalingPolicyRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
 	}
 	export function CreatePutScalingPolicyRequestFormGroup() {
 		return new FormGroup<PutScalingPolicyRequestFormProperties>({
-			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('\p{Print}+')]),
-			ServiceNamespace: new FormControl<PutScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<PutScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
+			PolicyName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('\p{Print}+')]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum PutScalingPolicyRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum PutScalingPolicyRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface LimitExceededException {
 	}
@@ -1239,7 +1195,7 @@ export namespace MyNS {
 	export interface PutScheduledActionRequest {
 
 		/** Required */
-		ServiceNamespace: PutScheduledActionRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Max length: 1600
@@ -1262,7 +1218,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: PutScheduledActionRequestScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 
@@ -1272,7 +1228,7 @@ export namespace MyNS {
 	export interface PutScheduledActionRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<PutScheduledActionRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Max length: 1600
@@ -1295,26 +1251,22 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<PutScheduledActionRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 	}
 	export function CreatePutScheduledActionRequestFormGroup() {
 		return new FormGroup<PutScheduledActionRequestFormProperties>({
-			ServiceNamespace: new FormControl<PutScheduledActionRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+')]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<PutScheduledActionRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			Schedule: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+')]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum PutScheduledActionRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum PutScheduledActionRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export interface RegisterScalableTargetResponse {
 	}
@@ -1329,7 +1281,7 @@ export namespace MyNS {
 	export interface RegisterScalableTargetRequest {
 
 		/** Required */
-		ServiceNamespace: RegisterScalableTargetRequestServiceNamespace;
+		ServiceNamespace: DeleteScalingPolicyRequestServiceNamespace;
 
 		/**
 		 * Required
@@ -1339,7 +1291,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ScalableDimension: RegisterScalableTargetRequestScalableDimension;
+		ScalableDimension: DeleteScalingPolicyRequestScalableDimension;
 		MinCapacity?: number | null;
 		MaxCapacity?: number | null;
 
@@ -1355,7 +1307,7 @@ export namespace MyNS {
 	export interface RegisterScalableTargetRequestFormProperties {
 
 		/** Required */
-		ServiceNamespace: FormControl<RegisterScalableTargetRequestServiceNamespace | null | undefined>,
+		ServiceNamespace: FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>,
 
 		/**
 		 * Required
@@ -1365,7 +1317,7 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ScalableDimension: FormControl<RegisterScalableTargetRequestScalableDimension | null | undefined>,
+		ScalableDimension: FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>,
 		MinCapacity: FormControl<number | null | undefined>,
 		MaxCapacity: FormControl<number | null | undefined>,
 
@@ -1377,27 +1329,23 @@ export namespace MyNS {
 	}
 	export function CreateRegisterScalableTargetRequestFormGroup() {
 		return new FormGroup<RegisterScalableTargetRequestFormProperties>({
-			ServiceNamespace: new FormControl<RegisterScalableTargetRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(1)]),
-			ScalableDimension: new FormControl<RegisterScalableTargetRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
+			ServiceNamespace: new FormControl<DeleteScalingPolicyRequestServiceNamespace | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1600)]),
+			ScalableDimension: new FormControl<DeleteScalingPolicyRequestScalableDimension | null | undefined>(undefined, [Validators.required]),
 			MinCapacity: new FormControl<number | null | undefined>(undefined),
 			MaxCapacity: new FormControl<number | null | undefined>(undefined),
-			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 		});
 
 	}
-
-	export enum RegisterScalableTargetRequestServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
-
-	export enum RegisterScalableTargetRequestScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
 
 	export enum AdjustmentType { ChangeInCapacity = 0, PercentChangeInCapacity = 1, ExactCapacity = 2 }
 
 	export enum MetricStatistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }
 
-	export enum ServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, custom_resource = 7, comprehend = 8, lambda = 9, cassandra = 10 }
+	export enum ServiceNamespace { ecs = 0, elasticmapreduce = 1, ec2 = 2, appstream = 3, dynamodb = 4, rds = 5, sagemaker = 6, 'custom-resource' = 7, comprehend = 8, lambda = 9, cassandra = 10 }
 
-	export enum ScalableDimension { ecsserviceDesiredCount = 0, ec2spot_fleet_requestTargetCapacity = 1, elasticmapreduceinstancegroupInstanceCount = 2, appstreamfleetDesiredCapacity = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7, rdsclusterReadReplicaCount = 8, sagemakervariantDesiredInstanceCount = 9, custom_resourceResourceTypeProperty = 10, comprehenddocument_classifier_endpointDesiredInferenceUnits = 11, lambdafunctionProvisionedConcurrency = 12, cassandratableReadCapacityUnits = 13, cassandratableWriteCapacityUnits = 14 }
+	export enum ScalableDimension { 'ecs:service:DesiredCount' = 0, 'ec2:spot-fleet-request:TargetCapacity' = 1, 'elasticmapreduce:instancegroup:InstanceCount' = 2, 'appstream:fleet:DesiredCapacity' = 3, 'dynamodb:table:ReadCapacityUnits' = 4, 'dynamodb:table:WriteCapacityUnits' = 5, 'dynamodb:index:ReadCapacityUnits' = 6, 'dynamodb:index:WriteCapacityUnits' = 7, 'rds:cluster:ReadReplicaCount' = 8, 'sagemaker:variant:DesiredInstanceCount' = 9, 'custom-resource:ResourceType:Property' = 10, 'comprehend:document-classifier-endpoint:DesiredInferenceUnits' = 11, 'lambda:function:ProvisionedConcurrency' = 12, 'cassandra:table:ReadCapacityUnits' = 13, 'cassandra:table:WriteCapacityUnits' = 14 }
 
 	export enum MetricAggregationType { Average = 0, Minimum = 1, Maximum = 2 }
 
@@ -1509,25 +1457,25 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DeleteScalingPolicyX_Amz_Target { AnyScaleFrontendService_DeleteScalingPolicy = 0 }
+	export enum DeleteScalingPolicyX_Amz_Target { 'AnyScaleFrontendService.DeleteScalingPolicy' = 0 }
 
-	export enum DeleteScheduledActionX_Amz_Target { AnyScaleFrontendService_DeleteScheduledAction = 0 }
+	export enum DeleteScheduledActionX_Amz_Target { 'AnyScaleFrontendService.DeleteScheduledAction' = 0 }
 
-	export enum DeregisterScalableTargetX_Amz_Target { AnyScaleFrontendService_DeregisterScalableTarget = 0 }
+	export enum DeregisterScalableTargetX_Amz_Target { 'AnyScaleFrontendService.DeregisterScalableTarget' = 0 }
 
-	export enum DescribeScalableTargetsX_Amz_Target { AnyScaleFrontendService_DescribeScalableTargets = 0 }
+	export enum DescribeScalableTargetsX_Amz_Target { 'AnyScaleFrontendService.DescribeScalableTargets' = 0 }
 
-	export enum DescribeScalingActivitiesX_Amz_Target { AnyScaleFrontendService_DescribeScalingActivities = 0 }
+	export enum DescribeScalingActivitiesX_Amz_Target { 'AnyScaleFrontendService.DescribeScalingActivities' = 0 }
 
-	export enum DescribeScalingPoliciesX_Amz_Target { AnyScaleFrontendService_DescribeScalingPolicies = 0 }
+	export enum DescribeScalingPoliciesX_Amz_Target { 'AnyScaleFrontendService.DescribeScalingPolicies' = 0 }
 
-	export enum DescribeScheduledActionsX_Amz_Target { AnyScaleFrontendService_DescribeScheduledActions = 0 }
+	export enum DescribeScheduledActionsX_Amz_Target { 'AnyScaleFrontendService.DescribeScheduledActions' = 0 }
 
-	export enum PutScalingPolicyX_Amz_Target { AnyScaleFrontendService_PutScalingPolicy = 0 }
+	export enum PutScalingPolicyX_Amz_Target { 'AnyScaleFrontendService.PutScalingPolicy' = 0 }
 
-	export enum PutScheduledActionX_Amz_Target { AnyScaleFrontendService_PutScheduledAction = 0 }
+	export enum PutScheduledActionX_Amz_Target { 'AnyScaleFrontendService.PutScheduledAction' = 0 }
 
-	export enum RegisterScalableTargetX_Amz_Target { AnyScaleFrontendService_RegisterScalableTarget = 0 }
+	export enum RegisterScalableTargetX_Amz_Target { 'AnyScaleFrontendService.RegisterScalableTarget' = 0 }
 
 }
 

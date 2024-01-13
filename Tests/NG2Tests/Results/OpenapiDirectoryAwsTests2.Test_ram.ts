@@ -1177,14 +1177,14 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
+	export enum ResourceOwner { SELF = 0, 'OTHER-ACCOUNTS' = 1 }
 
 	export interface GetResourceSharesRequest {
 		resourceShareArns?: Array<string>;
 		resourceShareStatus?: ResourceShareStatus | null;
 
 		/** Required */
-		resourceOwner: GetResourceSharesRequestResourceOwner;
+		resourceOwner: ResourceOwner;
 		name?: string | null;
 		tagFilters?: Array<TagFilter>;
 		nextToken?: string | null;
@@ -1199,7 +1199,7 @@ export namespace MyNS {
 		resourceShareStatus: FormControl<ResourceShareStatus | null | undefined>,
 
 		/** Required */
-		resourceOwner: FormControl<GetResourceSharesRequestResourceOwner | null | undefined>,
+		resourceOwner: FormControl<ResourceOwner | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
 
@@ -1212,15 +1212,13 @@ export namespace MyNS {
 	export function CreateGetResourceSharesRequestFormGroup() {
 		return new FormGroup<GetResourceSharesRequestFormProperties>({
 			resourceShareStatus: new FormControl<ResourceShareStatus | null | undefined>(undefined),
-			resourceOwner: new FormControl<GetResourceSharesRequestResourceOwner | null | undefined>(undefined, [Validators.required]),
+			resourceOwner: new FormControl<ResourceOwner | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
-
-	export enum GetResourceSharesRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListPendingInvitationResourcesRequest {
 
@@ -1287,7 +1285,7 @@ export namespace MyNS {
 	export interface ListPrincipalsRequest {
 
 		/** Required */
-		resourceOwner: ListPrincipalsRequestResourceOwner;
+		resourceOwner: ResourceOwner;
 		resourceArn?: string | null;
 		principals?: Array<string>;
 		resourceType?: string | null;
@@ -1303,7 +1301,7 @@ export namespace MyNS {
 	export interface ListPrincipalsRequestFormProperties {
 
 		/** Required */
-		resourceOwner: FormControl<ListPrincipalsRequestResourceOwner | null | undefined>,
+		resourceOwner: FormControl<ResourceOwner | null | undefined>,
 		resourceArn: FormControl<string | null | undefined>,
 		resourceType: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1316,7 +1314,7 @@ export namespace MyNS {
 	}
 	export function CreateListPrincipalsRequestFormGroup() {
 		return new FormGroup<ListPrincipalsRequestFormProperties>({
-			resourceOwner: new FormControl<ListPrincipalsRequestResourceOwner | null | undefined>(undefined, [Validators.required]),
+			resourceOwner: new FormControl<ResourceOwner | null | undefined>(undefined, [Validators.required]),
 			resourceArn: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -1324,8 +1322,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ListPrincipalsRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListResourceSharePermissionsRequest {
 
@@ -1389,7 +1385,7 @@ export namespace MyNS {
 	export interface ListResourcesRequest {
 
 		/** Required */
-		resourceOwner: ListResourcesRequestResourceOwner;
+		resourceOwner: ResourceOwner;
 		principal?: string | null;
 		resourceType?: string | null;
 		resourceArns?: Array<string>;
@@ -1405,7 +1401,7 @@ export namespace MyNS {
 	export interface ListResourcesRequestFormProperties {
 
 		/** Required */
-		resourceOwner: FormControl<ListResourcesRequestResourceOwner | null | undefined>,
+		resourceOwner: FormControl<ResourceOwner | null | undefined>,
 		principal: FormControl<string | null | undefined>,
 		resourceType: FormControl<string | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
@@ -1418,7 +1414,7 @@ export namespace MyNS {
 	}
 	export function CreateListResourcesRequestFormGroup() {
 		return new FormGroup<ListResourcesRequestFormProperties>({
-			resourceOwner: new FormControl<ListResourcesRequestResourceOwner | null | undefined>(undefined, [Validators.required]),
+			resourceOwner: new FormControl<ResourceOwner | null | undefined>(undefined, [Validators.required]),
 			principal: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -1426,8 +1422,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ListResourcesRequestResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface PromoteResourceShareCreatedFromPolicyRequest {
 	}
@@ -2202,7 +2196,7 @@ export namespace MyNS {
 		 * The type of owner.
 		 * Required
 		 */
-		resourceOwner: GetResourceSharesPostBodyResourceOwner;
+		resourceOwner: ResourceOwner;
 
 		/** The name of the resource share. */
 		name?: string | null;
@@ -2229,7 +2223,7 @@ export namespace MyNS {
 		 * The type of owner.
 		 * Required
 		 */
-		resourceOwner: FormControl<GetResourceSharesPostBodyResourceOwner | null | undefined>,
+		resourceOwner: FormControl<ResourceOwner | null | undefined>,
 
 		/** The name of the resource share. */
 		name: FormControl<string | null | undefined>,
@@ -2247,15 +2241,13 @@ export namespace MyNS {
 	export function CreateGetResourceSharesPostBodyFormGroup() {
 		return new FormGroup<GetResourceSharesPostBodyFormProperties>({
 			resourceShareStatus: new FormControl<ResourceShareStatus | null | undefined>(undefined),
-			resourceOwner: new FormControl<GetResourceSharesPostBodyResourceOwner | null | undefined>(undefined, [Validators.required]),
+			resourceOwner: new FormControl<ResourceOwner | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(500)]),
 		});
 
 	}
-
-	export enum GetResourceSharesPostBodyResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListPendingInvitationResourcesPostBody {
 
@@ -2347,7 +2339,7 @@ export namespace MyNS {
 		 * The type of owner.
 		 * Required
 		 */
-		resourceOwner: ListPrincipalsPostBodyResourceOwner;
+		resourceOwner: ResourceOwner;
 
 		/** The Amazon Resource Name (ARN) of the resource. */
 		resourceArn?: string | null;
@@ -2377,7 +2369,7 @@ export namespace MyNS {
 		 * The type of owner.
 		 * Required
 		 */
-		resourceOwner: FormControl<ListPrincipalsPostBodyResourceOwner | null | undefined>,
+		resourceOwner: FormControl<ResourceOwner | null | undefined>,
 
 		/** The Amazon Resource Name (ARN) of the resource. */
 		resourceArn: FormControl<string | null | undefined>,
@@ -2397,7 +2389,7 @@ export namespace MyNS {
 	}
 	export function CreateListPrincipalsPostBodyFormGroup() {
 		return new FormGroup<ListPrincipalsPostBodyFormProperties>({
-			resourceOwner: new FormControl<ListPrincipalsPostBodyResourceOwner | null | undefined>(undefined, [Validators.required]),
+			resourceOwner: new FormControl<ResourceOwner | null | undefined>(undefined, [Validators.required]),
 			resourceArn: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -2405,8 +2397,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ListPrincipalsPostBodyResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface ListResourceSharePermissionsPostBody {
 
@@ -2491,7 +2481,7 @@ export namespace MyNS {
 		 * The type of owner.
 		 * Required
 		 */
-		resourceOwner: ListResourcesPostBodyResourceOwner;
+		resourceOwner: ResourceOwner;
 
 		/** The principal. */
 		principal?: string | null;
@@ -2521,7 +2511,7 @@ export namespace MyNS {
 		 * The type of owner.
 		 * Required
 		 */
-		resourceOwner: FormControl<ListResourcesPostBodyResourceOwner | null | undefined>,
+		resourceOwner: FormControl<ResourceOwner | null | undefined>,
 
 		/** The principal. */
 		principal: FormControl<string | null | undefined>,
@@ -2541,7 +2531,7 @@ export namespace MyNS {
 	}
 	export function CreateListResourcesPostBodyFormGroup() {
 		return new FormGroup<ListResourcesPostBodyFormProperties>({
-			resourceOwner: new FormControl<ListResourcesPostBodyResourceOwner | null | undefined>(undefined, [Validators.required]),
+			resourceOwner: new FormControl<ResourceOwner | null | undefined>(undefined, [Validators.required]),
 			principal: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<string | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -2549,8 +2539,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ListResourcesPostBodyResourceOwner { SELF = 0, OTHER_ACCOUNTS = 1 }
 
 	export interface RejectResourceShareInvitationPostBody {
 

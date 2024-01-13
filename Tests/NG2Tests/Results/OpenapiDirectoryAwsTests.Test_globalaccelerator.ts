@@ -322,8 +322,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1409,7 +1409,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -1529,7 +1529,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -1571,7 +1571,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -2107,55 +2107,55 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AdvertiseByoipCidrX_Amz_Target { GlobalAccelerator_V20180706_AdvertiseByoipCidr = 0 }
+	export enum AdvertiseByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.AdvertiseByoipCidr' = 0 }
 
-	export enum CreateAcceleratorX_Amz_Target { GlobalAccelerator_V20180706_CreateAccelerator = 0 }
+	export enum CreateAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.CreateAccelerator' = 0 }
 
-	export enum CreateEndpointGroupX_Amz_Target { GlobalAccelerator_V20180706_CreateEndpointGroup = 0 }
+	export enum CreateEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.CreateEndpointGroup' = 0 }
 
-	export enum CreateListenerX_Amz_Target { GlobalAccelerator_V20180706_CreateListener = 0 }
+	export enum CreateListenerX_Amz_Target { 'GlobalAccelerator_V20180706.CreateListener' = 0 }
 
-	export enum DeleteAcceleratorX_Amz_Target { GlobalAccelerator_V20180706_DeleteAccelerator = 0 }
+	export enum DeleteAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteAccelerator' = 0 }
 
-	export enum DeleteEndpointGroupX_Amz_Target { GlobalAccelerator_V20180706_DeleteEndpointGroup = 0 }
+	export enum DeleteEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteEndpointGroup' = 0 }
 
-	export enum DeleteListenerX_Amz_Target { GlobalAccelerator_V20180706_DeleteListener = 0 }
+	export enum DeleteListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DeleteListener' = 0 }
 
-	export enum DeprovisionByoipCidrX_Amz_Target { GlobalAccelerator_V20180706_DeprovisionByoipCidr = 0 }
+	export enum DeprovisionByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.DeprovisionByoipCidr' = 0 }
 
-	export enum DescribeAcceleratorX_Amz_Target { GlobalAccelerator_V20180706_DescribeAccelerator = 0 }
+	export enum DescribeAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeAccelerator' = 0 }
 
-	export enum DescribeAcceleratorAttributesX_Amz_Target { GlobalAccelerator_V20180706_DescribeAcceleratorAttributes = 0 }
+	export enum DescribeAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeAcceleratorAttributes' = 0 }
 
-	export enum DescribeEndpointGroupX_Amz_Target { GlobalAccelerator_V20180706_DescribeEndpointGroup = 0 }
+	export enum DescribeEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeEndpointGroup' = 0 }
 
-	export enum DescribeListenerX_Amz_Target { GlobalAccelerator_V20180706_DescribeListener = 0 }
+	export enum DescribeListenerX_Amz_Target { 'GlobalAccelerator_V20180706.DescribeListener' = 0 }
 
-	export enum ListAcceleratorsX_Amz_Target { GlobalAccelerator_V20180706_ListAccelerators = 0 }
+	export enum ListAcceleratorsX_Amz_Target { 'GlobalAccelerator_V20180706.ListAccelerators' = 0 }
 
-	export enum ListByoipCidrsX_Amz_Target { GlobalAccelerator_V20180706_ListByoipCidrs = 0 }
+	export enum ListByoipCidrsX_Amz_Target { 'GlobalAccelerator_V20180706.ListByoipCidrs' = 0 }
 
-	export enum ListEndpointGroupsX_Amz_Target { GlobalAccelerator_V20180706_ListEndpointGroups = 0 }
+	export enum ListEndpointGroupsX_Amz_Target { 'GlobalAccelerator_V20180706.ListEndpointGroups' = 0 }
 
-	export enum ListListenersX_Amz_Target { GlobalAccelerator_V20180706_ListListeners = 0 }
+	export enum ListListenersX_Amz_Target { 'GlobalAccelerator_V20180706.ListListeners' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { GlobalAccelerator_V20180706_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'GlobalAccelerator_V20180706.ListTagsForResource' = 0 }
 
-	export enum ProvisionByoipCidrX_Amz_Target { GlobalAccelerator_V20180706_ProvisionByoipCidr = 0 }
+	export enum ProvisionByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.ProvisionByoipCidr' = 0 }
 
-	export enum TagResourceX_Amz_Target { GlobalAccelerator_V20180706_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'GlobalAccelerator_V20180706.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { GlobalAccelerator_V20180706_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'GlobalAccelerator_V20180706.UntagResource' = 0 }
 
-	export enum UpdateAcceleratorX_Amz_Target { GlobalAccelerator_V20180706_UpdateAccelerator = 0 }
+	export enum UpdateAcceleratorX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateAccelerator' = 0 }
 
-	export enum UpdateAcceleratorAttributesX_Amz_Target { GlobalAccelerator_V20180706_UpdateAcceleratorAttributes = 0 }
+	export enum UpdateAcceleratorAttributesX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateAcceleratorAttributes' = 0 }
 
-	export enum UpdateEndpointGroupX_Amz_Target { GlobalAccelerator_V20180706_UpdateEndpointGroup = 0 }
+	export enum UpdateEndpointGroupX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateEndpointGroup' = 0 }
 
-	export enum UpdateListenerX_Amz_Target { GlobalAccelerator_V20180706_UpdateListener = 0 }
+	export enum UpdateListenerX_Amz_Target { 'GlobalAccelerator_V20180706.UpdateListener' = 0 }
 
-	export enum WithdrawByoipCidrX_Amz_Target { GlobalAccelerator_V20180706_WithdrawByoipCidr = 0 }
+	export enum WithdrawByoipCidrX_Amz_Target { 'GlobalAccelerator_V20180706.WithdrawByoipCidr' = 0 }
 
 }
 

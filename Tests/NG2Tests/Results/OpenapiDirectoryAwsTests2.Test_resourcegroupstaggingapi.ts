@@ -91,7 +91,7 @@ export namespace MyNS {
 	}
 	export function CreateGetComplianceSummaryOutputFormGroup() {
 		return new FormGroup<GetComplianceSummaryOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -149,10 +149,10 @@ export namespace MyNS {
 	export function CreateSummaryFormGroup() {
 		return new FormGroup<SummaryFormProperties>({
 			LastUpdated: new FormControl<string | null | undefined>(undefined),
-			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(68), Validators.minLength(6), Validators.pattern('[\s\S]*')]),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(6), Validators.maxLength(68), Validators.pattern('[\s\S]*')]),
 			TargetIdType: new FormControl<SummaryTargetIdType | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\s\S]*')]),
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\s\S]*')]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('[\s\S]*')]),
 			NonCompliantResources: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -211,7 +211,7 @@ export namespace MyNS {
 	export function CreateGetComplianceSummaryInputFormGroup() {
 		return new FormGroup<GetComplianceSummaryInputFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -237,7 +237,7 @@ export namespace MyNS {
 	}
 	export function CreateGetResourcesOutputFormGroup() {
 		return new FormGroup<GetResourcesOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -268,7 +268,7 @@ export namespace MyNS {
 	}
 	export function CreateResourceTagMappingFormGroup() {
 		return new FormGroup<ResourceTagMappingFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1011), Validators.minLength(1), Validators.pattern('[\s\S]*')]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1011), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -311,8 +311,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\s\S]*')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\s\S]*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -369,7 +369,7 @@ export namespace MyNS {
 	}
 	export function CreateGetResourcesInputFormGroup() {
 		return new FormGroup<GetResourcesInputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
 			ResourcesPerPage: new FormControl<number | null | undefined>(undefined),
 			TagsPerPage: new FormControl<number | null | undefined>(undefined),
 			IncludeComplianceDetails: new FormControl<boolean | null | undefined>(undefined),
@@ -406,7 +406,7 @@ export namespace MyNS {
 	}
 	export function CreateTagFilterFormGroup() {
 		return new FormGroup<TagFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\s\S]*')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -440,7 +440,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTagKeysOutputFormGroup() {
 		return new FormGroup<GetTagKeysOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -463,7 +463,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTagKeysInputFormGroup() {
 		return new FormGroup<GetTagKeysInputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -487,7 +487,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTagValuesOutputFormGroup() {
 		return new FormGroup<GetTagValuesOutputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -524,8 +524,8 @@ export namespace MyNS {
 	}
 	export function CreateGetTagValuesInputFormGroup() {
 		return new FormGroup<GetTagValuesInputFormProperties>({
-			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('[\s\S]*')]),
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\s\S]*')]),
+			PaginationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('[\s\S]*')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -560,7 +560,7 @@ export namespace MyNS {
 	}
 	export function CreateStartReportCreationInputFormGroup() {
 		return new FormGroup<StartReportCreationInputFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3), Validators.pattern('[\s\S]*')]),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63), Validators.pattern('[\s\S]*')]),
 		});
 
 	}
@@ -772,21 +772,21 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DescribeReportCreationX_Amz_Target { ResourceGroupsTaggingAPI_20170126_DescribeReportCreation = 0 }
+	export enum DescribeReportCreationX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.DescribeReportCreation' = 0 }
 
-	export enum GetComplianceSummaryX_Amz_Target { ResourceGroupsTaggingAPI_20170126_GetComplianceSummary = 0 }
+	export enum GetComplianceSummaryX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetComplianceSummary' = 0 }
 
-	export enum GetResourcesX_Amz_Target { ResourceGroupsTaggingAPI_20170126_GetResources = 0 }
+	export enum GetResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetResources' = 0 }
 
-	export enum GetTagKeysX_Amz_Target { ResourceGroupsTaggingAPI_20170126_GetTagKeys = 0 }
+	export enum GetTagKeysX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetTagKeys' = 0 }
 
-	export enum GetTagValuesX_Amz_Target { ResourceGroupsTaggingAPI_20170126_GetTagValues = 0 }
+	export enum GetTagValuesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.GetTagValues' = 0 }
 
-	export enum StartReportCreationX_Amz_Target { ResourceGroupsTaggingAPI_20170126_StartReportCreation = 0 }
+	export enum StartReportCreationX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.StartReportCreation' = 0 }
 
-	export enum TagResourcesX_Amz_Target { ResourceGroupsTaggingAPI_20170126_TagResources = 0 }
+	export enum TagResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.TagResources' = 0 }
 
-	export enum UntagResourcesX_Amz_Target { ResourceGroupsTaggingAPI_20170126_UntagResources = 0 }
+	export enum UntagResourcesX_Amz_Target { 'ResourceGroupsTaggingAPI_20170126.UntagResources' = 0 }
 
 }
 

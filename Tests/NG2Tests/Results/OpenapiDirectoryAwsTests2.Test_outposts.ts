@@ -144,15 +144,15 @@ export namespace MyNS {
 	}
 	export function CreateOutpostFormGroup() {
 		return new FormGroup<OutpostFormProperties>({
-			OutpostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(180), Validators.minLength(1), Validators.pattern('^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$')]),
-			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12), Validators.pattern('\d{12}')]),
-			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$')]),
-			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('os-[a-f0-9]{17}')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
+			OutpostId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(180), Validators.pattern('^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$')]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12), Validators.pattern('\d{12}')]),
+			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$')]),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('os-[a-f0-9]{17}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\S ]+$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('^[\S ]+$')]),
 			LifeCycleStatus: new FormControl<string | null | undefined>(undefined),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('[a-z\d-]+')]),
-			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-z]+[0-9]+-az[0-9]+')]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('[a-z\d-]+')]),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-z]+[0-9]+-az[0-9]+')]),
 		});
 
 	}
@@ -291,9 +291,9 @@ export namespace MyNS {
 	}
 	export function CreateGetOutpostInstanceTypesOutputFormGroup() {
 		return new FormGroup<GetOutpostInstanceTypesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1005), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			OutpostId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(180), Validators.minLength(1), Validators.pattern('^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$')]),
-			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1005), Validators.pattern('.*\S.*')]),
+			OutpostId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(180), Validators.pattern('^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$')]),
+			OutpostArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$')]),
 		});
 
 	}
@@ -342,7 +342,7 @@ export namespace MyNS {
 	}
 	export function CreateListOutpostsOutputFormGroup() {
 		return new FormGroup<ListOutpostsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1005), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1005), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -370,7 +370,7 @@ export namespace MyNS {
 	}
 	export function CreateListSitesOutputFormGroup() {
 		return new FormGroup<ListSitesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1005), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1005), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -441,10 +441,10 @@ export namespace MyNS {
 	}
 	export function CreateSiteFormGroup() {
 		return new FormGroup<SiteFormProperties>({
-			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('os-[a-f0-9]{17}')]),
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12), Validators.minLength(12)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('os-[a-f0-9]{17}')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(12)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('^[\S ]+$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('^[\S ]+$')]),
 		});
 
 	}
@@ -527,11 +527,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutpostInputFormGroup() {
 		return new FormGroup<CreateOutpostInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
-			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('os-[a-f0-9]{17}')]),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('[a-z\d-]+')]),
-			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-z]+[0-9]+-az[0-9]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\S ]+$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('^[\S ]+$')]),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('os-[a-f0-9]{17}')]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('[a-z\d-]+')]),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-z]+[0-9]+-az[0-9]+')]),
 		});
 
 	}
@@ -743,11 +743,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateOutpostPostBodyFormGroup() {
 		return new FormGroup<CreateOutpostPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('^[\S ]+$')]),
-			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('os-[a-f0-9]{17}')]),
-			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1), Validators.pattern('[a-z\d-]+')]),
-			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[a-z]+[0-9]+-az[0-9]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[\S ]+$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('^[\S ]+$')]),
+			SiteId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('os-[a-f0-9]{17}')]),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000), Validators.pattern('[a-z\d-]+')]),
+			AvailabilityZoneId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[a-z]+[0-9]+-az[0-9]+')]),
 		});
 
 	}

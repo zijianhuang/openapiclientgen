@@ -11,7 +11,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateEnvironmentEC2ResultFormGroup() {
 		return new FormGroup<CreateEnvironmentEC2ResultFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
 		});
 
 	}
@@ -84,13 +84,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateEnvironmentEC2RequestFormGroup() {
 		return new FormGroup<CreateEnvironmentEC2RequestFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(60), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(60)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined),
-			instanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(20), Validators.minLength(5), Validators.pattern('^[a-z][1-9][.][a-z0-9]+$')]),
-			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(5)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[\x20-\x7E]{10,128}')]),
+			instanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(5), Validators.maxLength(20), Validators.pattern('^[a-z][1-9][.][a-z0-9]+$')]),
+			subnetId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(30)]),
 			automaticStopTimeMinutes: new FormControl<number | null | undefined>(undefined, [Validators.max(20160)]),
-			ownerArn: new FormControl<string | null | undefined>(undefined),
+			ownerArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$')]),
 		});
 
 	}
@@ -133,8 +133,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -244,14 +244,14 @@ export namespace MyNS {
 		return new FormGroup<EnvironmentMemberFormProperties>({
 			permissions: new FormControl<EnvironmentMemberPermissions | null | undefined>(undefined),
 			userId: new FormControl<string | null | undefined>(undefined),
-			userArn: new FormControl<string | null | undefined>(undefined),
-			environmentId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$')]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
 			lastAccess: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum EnvironmentMemberPermissions { owner = 0, read_write = 1, read_only = 2 }
+	export enum EnvironmentMemberPermissions { owner = 0, 'read-write' = 1, 'read-only' = 2 }
 
 	export interface CreateEnvironmentMembershipRequest {
 
@@ -277,14 +277,14 @@ export namespace MyNS {
 	}
 	export function CreateCreateEnvironmentMembershipRequestFormGroup() {
 		return new FormGroup<CreateEnvironmentMembershipRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$')]),
 			permissions: new FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
-	export enum CreateEnvironmentMembershipRequestPermissions { read_write = 0, read_only = 1 }
+	export enum CreateEnvironmentMembershipRequestPermissions { 'read-write' = 0, 'read-only' = 1 }
 
 	export interface DeleteEnvironmentResult {
 	}
@@ -308,7 +308,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteEnvironmentRequestFormGroup() {
 		return new FormGroup<DeleteEnvironmentRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
 		});
 
 	}
@@ -341,8 +341,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteEnvironmentMembershipRequestFormGroup() {
 		return new FormGroup<DeleteEnvironmentMembershipRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$')]),
 		});
 
 	}
@@ -386,15 +386,15 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEnvironmentMembershipsRequestFormGroup() {
 		return new FormGroup<DescribeEnvironmentMembershipsRequestFormProperties>({
-			userArn: new FormControl<string | null | undefined>(undefined),
-			environmentId: new FormControl<string | null | undefined>(undefined),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$')]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(25)]),
 		});
 
 	}
 
-	export enum Permissions { owner = 0, read_write = 1, read_only = 2 }
+	export enum Permissions { owner = 0, 'read-write' = 1, 'read-only' = 2 }
 
 	export interface DescribeEnvironmentStatusResult {
 		status?: DescribeEnvironmentStatusResultStatus | null;
@@ -426,7 +426,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEnvironmentStatusRequestFormGroup() {
 		return new FormGroup<DescribeEnvironmentStatusRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
 		});
 
 	}
@@ -481,8 +481,8 @@ export namespace MyNS {
 	}
 	export function CreateEnvironmentFormGroup() {
 		return new FormGroup<EnvironmentFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(60), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(60)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 			type: new FormControl<EnvironmentType | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
@@ -603,7 +603,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}')]),
 		});
 
 	}
@@ -637,7 +637,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}')]),
 		});
 
 	}
@@ -671,7 +671,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:cloud9:([a-z]{2}-[a-z]+-\d{1}):[0-9]{12}:environment:[a-zA-Z0-9]{8,32}')]),
 		});
 
 	}
@@ -716,8 +716,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateEnvironmentRequestFormGroup() {
 		return new FormGroup<UpdateEnvironmentRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(60), Validators.minLength(1)]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(60)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(200)]),
 		});
 
@@ -745,7 +745,7 @@ export namespace MyNS {
 		userArn: string;
 
 		/** Required */
-		permissions: UpdateEnvironmentMembershipRequestPermissions;
+		permissions: CreateEnvironmentMembershipRequestPermissions;
 	}
 	export interface UpdateEnvironmentMembershipRequestFormProperties {
 
@@ -756,20 +756,18 @@ export namespace MyNS {
 		userArn: FormControl<string | null | undefined>,
 
 		/** Required */
-		permissions: FormControl<UpdateEnvironmentMembershipRequestPermissions | null | undefined>,
+		permissions: FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>,
 	}
 	export function CreateUpdateEnvironmentMembershipRequestFormGroup() {
 		return new FormGroup<UpdateEnvironmentMembershipRequestFormProperties>({
-			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			permissions: new FormControl<UpdateEnvironmentMembershipRequestPermissions | null | undefined>(undefined, [Validators.required]),
+			environmentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-zA-Z0-9]{8,32}$')]),
+			userArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^arn:aws:(iam|sts)::\d+:(root|(user\/[\w+=/:,.@-]{1,64}|federated-user\/[\w+=/:,.@-]{2,32}|assumed-role\/[\w+=:,.@-]{1,64}\/[\w+=,.@-]{1,64}))$')]),
+			permissions: new FormControl<CreateEnvironmentMembershipRequestPermissions | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
-	export enum UpdateEnvironmentMembershipRequestPermissions { read_write = 0, read_only = 1 }
-
-	export enum MemberPermissions { read_write = 0, read_only = 1 }
+	export enum MemberPermissions { 'read-write' = 0, 'read-only' = 1 }
 
 	export enum EnvironmentStatus { error = 0, creating = 1, connecting = 2, ready = 3, stopping = 4, stopped = 5, deleting = 6 }
 
@@ -900,31 +898,31 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateEnvironmentEC2X_Amz_Target { AWSCloud9WorkspaceManagementService_CreateEnvironmentEC2 = 0 }
+	export enum CreateEnvironmentEC2X_Amz_Target { 'AWSCloud9WorkspaceManagementService.CreateEnvironmentEC2' = 0 }
 
-	export enum CreateEnvironmentMembershipX_Amz_Target { AWSCloud9WorkspaceManagementService_CreateEnvironmentMembership = 0 }
+	export enum CreateEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.CreateEnvironmentMembership' = 0 }
 
-	export enum DeleteEnvironmentX_Amz_Target { AWSCloud9WorkspaceManagementService_DeleteEnvironment = 0 }
+	export enum DeleteEnvironmentX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DeleteEnvironment' = 0 }
 
-	export enum DeleteEnvironmentMembershipX_Amz_Target { AWSCloud9WorkspaceManagementService_DeleteEnvironmentMembership = 0 }
+	export enum DeleteEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DeleteEnvironmentMembership' = 0 }
 
-	export enum DescribeEnvironmentMembershipsX_Amz_Target { AWSCloud9WorkspaceManagementService_DescribeEnvironmentMemberships = 0 }
+	export enum DescribeEnvironmentMembershipsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentMemberships' = 0 }
 
-	export enum DescribeEnvironmentStatusX_Amz_Target { AWSCloud9WorkspaceManagementService_DescribeEnvironmentStatus = 0 }
+	export enum DescribeEnvironmentStatusX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironmentStatus' = 0 }
 
-	export enum DescribeEnvironmentsX_Amz_Target { AWSCloud9WorkspaceManagementService_DescribeEnvironments = 0 }
+	export enum DescribeEnvironmentsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.DescribeEnvironments' = 0 }
 
-	export enum ListEnvironmentsX_Amz_Target { AWSCloud9WorkspaceManagementService_ListEnvironments = 0 }
+	export enum ListEnvironmentsX_Amz_Target { 'AWSCloud9WorkspaceManagementService.ListEnvironments' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AWSCloud9WorkspaceManagementService_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.ListTagsForResource' = 0 }
 
-	export enum TagResourceX_Amz_Target { AWSCloud9WorkspaceManagementService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { AWSCloud9WorkspaceManagementService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UntagResource' = 0 }
 
-	export enum UpdateEnvironmentX_Amz_Target { AWSCloud9WorkspaceManagementService_UpdateEnvironment = 0 }
+	export enum UpdateEnvironmentX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UpdateEnvironment' = 0 }
 
-	export enum UpdateEnvironmentMembershipX_Amz_Target { AWSCloud9WorkspaceManagementService_UpdateEnvironmentMembership = 0 }
+	export enum UpdateEnvironmentMembershipX_Amz_Target { 'AWSCloud9WorkspaceManagementService.UpdateEnvironmentMembership' = 0 }
 
 }
 

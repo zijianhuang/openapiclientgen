@@ -46,7 +46,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteReportDefinitionRequestFormGroup() {
 		return new FormGroup<DeleteReportDefinitionRequestFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()]+')]),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\\\'()]+')]),
 		});
 
 	}
@@ -208,12 +208,12 @@ export namespace MyNS {
 	}
 	export function CreateReportDefinitionFormGroup() {
 		return new FormGroup<ReportDefinitionFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()]+')]),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\\\'()]+')]),
 			TimeUnit: new FormControl<ReportDefinitionTimeUnit | null | undefined>(undefined, [Validators.required]),
 			Format: new FormControl<ReportDefinitionFormat | null | undefined>(undefined, [Validators.required]),
 			Compression: new FormControl<ReportDefinitionCompression | null | undefined>(undefined, [Validators.required]),
 			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
-			S3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()/]*')]),
+			S3Prefix: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\\\'()/]*')]),
 			S3Region: new FormControl<ReportDefinitionS3Region | null | undefined>(undefined, [Validators.required]),
 			RefreshClosedReports: new FormControl<boolean | null | undefined>(undefined),
 			ReportVersioning: new FormControl<ReportDefinitionReportVersioning | null | undefined>(undefined),
@@ -231,7 +231,7 @@ export namespace MyNS {
 	/** Whether or not AWS includes resource IDs in the report.  */
 	export enum SchemaElement { RESOURCES = 0 }
 
-	export enum ReportDefinitionS3Region { us_east_1 = 0, us_west_1 = 1, us_west_2 = 2, eu_central_1 = 3, eu_west_1 = 4, ap_southeast_1 = 5, ap_southeast_2 = 6, ap_northeast_1 = 7, eu_north_1 = 8, ap_northeast_3 = 9, ap_east_1 = 10 }
+	export enum ReportDefinitionS3Region { 'us-east-1' = 0, 'us-west-1' = 1, 'us-west-2' = 2, 'eu-central-1' = 3, 'eu-west-1' = 4, 'ap-southeast-1' = 5, 'ap-southeast-2' = 6, 'ap-northeast-1' = 7, 'eu-north-1' = 8, 'ap-northeast-3' = 9, 'ap-east-1' = 10 }
 
 
 	/** The types of manifest that you want AWS to create for this report. */
@@ -311,7 +311,7 @@ export namespace MyNS {
 	}
 	export function CreateModifyReportDefinitionRequestFormGroup() {
 		return new FormGroup<ModifyReportDefinitionRequestFormProperties>({
-			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\'()]+')]),
+			ReportName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.pattern('[0-9A-Za-z!\-_.*\\\'()]+')]),
 		});
 
 	}
@@ -372,7 +372,7 @@ export namespace MyNS {
 
 
 	/** The region of the S3 bucket that AWS delivers the report into. */
-	export enum AWSRegion { us_east_1 = 0, us_west_1 = 1, us_west_2 = 2, eu_central_1 = 3, eu_west_1 = 4, ap_southeast_1 = 5, ap_southeast_2 = 6, ap_northeast_1 = 7, eu_north_1 = 8, ap_northeast_3 = 9, ap_east_1 = 10 }
+	export enum AWSRegion { 'us-east-1' = 0, 'us-west-1' = 1, 'us-west-2' = 2, 'eu-central-1' = 3, 'eu-west-1' = 4, 'ap-southeast-1' = 5, 'ap-southeast-2' = 6, 'ap-northeast-1' = 7, 'eu-north-1' = 8, 'ap-northeast-3' = 9, 'ap-east-1' = 10 }
 
 
 	/** The compression format that AWS uses for the report. */
@@ -432,13 +432,13 @@ export namespace MyNS {
 		}
 	}
 
-	export enum DeleteReportDefinitionX_Amz_Target { AWSOrigamiServiceGatewayService_DeleteReportDefinition = 0 }
+	export enum DeleteReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.DeleteReportDefinition' = 0 }
 
-	export enum DescribeReportDefinitionsX_Amz_Target { AWSOrigamiServiceGatewayService_DescribeReportDefinitions = 0 }
+	export enum DescribeReportDefinitionsX_Amz_Target { 'AWSOrigamiServiceGatewayService.DescribeReportDefinitions' = 0 }
 
-	export enum ModifyReportDefinitionX_Amz_Target { AWSOrigamiServiceGatewayService_ModifyReportDefinition = 0 }
+	export enum ModifyReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.ModifyReportDefinition' = 0 }
 
-	export enum PutReportDefinitionX_Amz_Target { AWSOrigamiServiceGatewayService_PutReportDefinition = 0 }
+	export enum PutReportDefinitionX_Amz_Target { 'AWSOrigamiServiceGatewayService.PutReportDefinition' = 0 }
 
 }
 

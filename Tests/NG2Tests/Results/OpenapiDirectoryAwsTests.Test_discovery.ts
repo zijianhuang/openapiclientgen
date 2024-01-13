@@ -492,7 +492,7 @@ export namespace MyNS {
 		return new FormGroup<ContinuousExportDescriptionFormProperties>({
 			exportId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<ContinuousExportDescriptionStatus | null | undefined>(undefined),
-			statusDetail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			statusDetail: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			s3Bucket: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			stopTime: new FormControl<Date | null | undefined>(undefined),
@@ -783,9 +783,9 @@ export namespace MyNS {
 	export function CreateImportTaskFormGroup() {
 		return new FormGroup<ImportTaskFormProperties>({
 			importTaskId: new FormControl<string | null | undefined>(undefined),
-			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			importUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000), Validators.minLength(1)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			importUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4000)]),
 			status: new FormControl<ImportTaskStatus | null | undefined>(undefined),
 			importRequestTime: new FormControl<Date | null | undefined>(undefined),
 			importCompletionTime: new FormControl<Date | null | undefined>(undefined),
@@ -1500,9 +1500,9 @@ export namespace MyNS {
 	}
 	export function CreateStartImportTaskRequestFormGroup() {
 		return new FormGroup<StartImportTaskRequestFormProperties>({
-			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			importUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4000), Validators.minLength(1)]),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			importUrl: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4000)]),
 		});
 
 	}
@@ -1848,55 +1848,55 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AssociateConfigurationItemsToApplicationX_Amz_Target { AWSPoseidonService_V2015_11_01_AssociateConfigurationItemsToApplication = 0 }
+	export enum AssociateConfigurationItemsToApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication' = 0 }
 
-	export enum BatchDeleteImportDataX_Amz_Target { AWSPoseidonService_V2015_11_01_BatchDeleteImportData = 0 }
+	export enum BatchDeleteImportDataX_Amz_Target { 'AWSPoseidonService_V2015_11_01.BatchDeleteImportData' = 0 }
 
-	export enum CreateApplicationX_Amz_Target { AWSPoseidonService_V2015_11_01_CreateApplication = 0 }
+	export enum CreateApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.CreateApplication' = 0 }
 
-	export enum CreateTagsX_Amz_Target { AWSPoseidonService_V2015_11_01_CreateTags = 0 }
+	export enum CreateTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.CreateTags' = 0 }
 
-	export enum DeleteApplicationsX_Amz_Target { AWSPoseidonService_V2015_11_01_DeleteApplications = 0 }
+	export enum DeleteApplicationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DeleteApplications' = 0 }
 
-	export enum DeleteTagsX_Amz_Target { AWSPoseidonService_V2015_11_01_DeleteTags = 0 }
+	export enum DeleteTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DeleteTags' = 0 }
 
-	export enum DescribeAgentsX_Amz_Target { AWSPoseidonService_V2015_11_01_DescribeAgents = 0 }
+	export enum DescribeAgentsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeAgents' = 0 }
 
-	export enum DescribeConfigurationsX_Amz_Target { AWSPoseidonService_V2015_11_01_DescribeConfigurations = 0 }
+	export enum DescribeConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeConfigurations' = 0 }
 
-	export enum DescribeContinuousExportsX_Amz_Target { AWSPoseidonService_V2015_11_01_DescribeContinuousExports = 0 }
+	export enum DescribeContinuousExportsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeContinuousExports' = 0 }
 
-	export enum DescribeExportConfigurationsX_Amz_Target { AWSPoseidonService_V2015_11_01_DescribeExportConfigurations = 0 }
+	export enum DescribeExportConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeExportConfigurations' = 0 }
 
-	export enum DescribeExportTasksX_Amz_Target { AWSPoseidonService_V2015_11_01_DescribeExportTasks = 0 }
+	export enum DescribeExportTasksX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeExportTasks' = 0 }
 
-	export enum DescribeImportTasksX_Amz_Target { AWSPoseidonService_V2015_11_01_DescribeImportTasks = 0 }
+	export enum DescribeImportTasksX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeImportTasks' = 0 }
 
-	export enum DescribeTagsX_Amz_Target { AWSPoseidonService_V2015_11_01_DescribeTags = 0 }
+	export enum DescribeTagsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DescribeTags' = 0 }
 
-	export enum DisassociateConfigurationItemsFromApplicationX_Amz_Target { AWSPoseidonService_V2015_11_01_DisassociateConfigurationItemsFromApplication = 0 }
+	export enum DisassociateConfigurationItemsFromApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.DisassociateConfigurationItemsFromApplication' = 0 }
 
-	export enum ExportConfigurationsX_Amz_Target { AWSPoseidonService_V2015_11_01_ExportConfigurations = 0 }
+	export enum ExportConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ExportConfigurations' = 0 }
 
-	export enum GetDiscoverySummaryX_Amz_Target { AWSPoseidonService_V2015_11_01_GetDiscoverySummary = 0 }
+	export enum GetDiscoverySummaryX_Amz_Target { 'AWSPoseidonService_V2015_11_01.GetDiscoverySummary' = 0 }
 
-	export enum ListConfigurationsX_Amz_Target { AWSPoseidonService_V2015_11_01_ListConfigurations = 0 }
+	export enum ListConfigurationsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ListConfigurations' = 0 }
 
-	export enum ListServerNeighborsX_Amz_Target { AWSPoseidonService_V2015_11_01_ListServerNeighbors = 0 }
+	export enum ListServerNeighborsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.ListServerNeighbors' = 0 }
 
-	export enum StartContinuousExportX_Amz_Target { AWSPoseidonService_V2015_11_01_StartContinuousExport = 0 }
+	export enum StartContinuousExportX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartContinuousExport' = 0 }
 
-	export enum StartDataCollectionByAgentIdsX_Amz_Target { AWSPoseidonService_V2015_11_01_StartDataCollectionByAgentIds = 0 }
+	export enum StartDataCollectionByAgentIdsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartDataCollectionByAgentIds' = 0 }
 
-	export enum StartExportTaskX_Amz_Target { AWSPoseidonService_V2015_11_01_StartExportTask = 0 }
+	export enum StartExportTaskX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartExportTask' = 0 }
 
-	export enum StartImportTaskX_Amz_Target { AWSPoseidonService_V2015_11_01_StartImportTask = 0 }
+	export enum StartImportTaskX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StartImportTask' = 0 }
 
-	export enum StopContinuousExportX_Amz_Target { AWSPoseidonService_V2015_11_01_StopContinuousExport = 0 }
+	export enum StopContinuousExportX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StopContinuousExport' = 0 }
 
-	export enum StopDataCollectionByAgentIdsX_Amz_Target { AWSPoseidonService_V2015_11_01_StopDataCollectionByAgentIds = 0 }
+	export enum StopDataCollectionByAgentIdsX_Amz_Target { 'AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds' = 0 }
 
-	export enum UpdateApplicationX_Amz_Target { AWSPoseidonService_V2015_11_01_UpdateApplication = 0 }
+	export enum UpdateApplicationX_Amz_Target { 'AWSPoseidonService_V2015_11_01.UpdateApplication' = 0 }
 
 }
 

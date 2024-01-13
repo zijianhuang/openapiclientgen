@@ -120,7 +120,7 @@ export namespace MyNS {
 			FailureReason: new FormControl<string | null | undefined>(undefined),
 			FailureCode: new FormControl<string | null | undefined>(undefined),
 			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined, [Validators.required]),
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 			HumanLoopArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*')]),
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 		});
@@ -208,7 +208,7 @@ export namespace MyNS {
 	}
 	export function CreateHumanLoopSummaryFormGroup() {
 		return new FormGroup<HumanLoopSummaryFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 			HumanLoopStatus: new FormControl<DescribeHumanLoopResponseHumanLoopStatus | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
@@ -388,7 +388,7 @@ export namespace MyNS {
 	}
 	export function CreateStartHumanLoopRequestFormGroup() {
 		return new FormGroup<StartHumanLoopRequestFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 		});
 
@@ -414,7 +414,7 @@ export namespace MyNS {
 	}
 	export function CreateStopHumanLoopRequestFormGroup() {
 		return new FormGroup<StopHumanLoopRequestFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 		});
 
 	}
@@ -523,7 +523,7 @@ export namespace MyNS {
 	}
 	export function CreateStartHumanLoopPostBodyFormGroup() {
 		return new FormGroup<StartHumanLoopPostBodyFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*')]),
 		});
 
@@ -581,7 +581,7 @@ export namespace MyNS {
 	}
 	export function CreateStopHumanLoopPostBodyFormGroup() {
 		return new FormGroup<StopHumanLoopPostBodyFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*$')]),
 		});
 
 	}

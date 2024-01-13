@@ -1,0 +1,1413 @@
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+export namespace MyNS {
+
+	/** Managed Disk. */
+	export interface DiskListInputElement {
+
+		/** Managed disk properties. */
+		properties?: DiskListInputElementProperties;
+	}
+
+	/** Managed Disk. */
+	export interface DiskListInputElementFormProperties {
+	}
+	export function CreateDiskListInputElementFormGroup() {
+		return new FormGroup<DiskListInputElementFormProperties>({
+		});
+
+	}
+
+	export interface DiskListInputElementProperties {
+
+		/** The actual size of disk in GB. */
+		actualSizeGB?: number | null;
+
+		/** The disk id. */
+		diskId?: string | null;
+
+		/** Disk Sku. */
+		diskSku?: DiskListInputElementPropertiesDiskSku | null;
+
+		/** Disk resource type. */
+		diskType?: DiskListInputElementPropertiesDiskType | null;
+
+		/** Compute resource Uri which owns this disk. */
+		managedBy?: string | null;
+
+		/** The provision size of disk in GB. */
+		provisionSizeGB?: number | null;
+
+		/** The disk share path. */
+		sharePath?: string | null;
+
+		/** Disk State. */
+		status?: DiskListInputElementPropertiesStatus | null;
+
+		/** The disk resource Uri from user view. */
+		userResourceId?: string | null;
+	}
+	export interface DiskListInputElementPropertiesFormProperties {
+
+		/** The actual size of disk in GB. */
+		actualSizeGB: FormControl<number | null | undefined>,
+
+		/** The disk id. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** Disk Sku. */
+		diskSku: FormControl<DiskListInputElementPropertiesDiskSku | null | undefined>,
+
+		/** Disk resource type. */
+		diskType: FormControl<DiskListInputElementPropertiesDiskType | null | undefined>,
+
+		/** Compute resource Uri which owns this disk. */
+		managedBy: FormControl<string | null | undefined>,
+
+		/** The provision size of disk in GB. */
+		provisionSizeGB: FormControl<number | null | undefined>,
+
+		/** The disk share path. */
+		sharePath: FormControl<string | null | undefined>,
+
+		/** Disk State. */
+		status: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The disk resource Uri from user view. */
+		userResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskListInputElementPropertiesFormGroup() {
+		return new FormGroup<DiskListInputElementPropertiesFormProperties>({
+			actualSizeGB: new FormControl<number | null | undefined>(undefined),
+			diskId: new FormControl<string | null | undefined>(undefined),
+			diskSku: new FormControl<DiskListInputElementPropertiesDiskSku | null | undefined>(undefined),
+			diskType: new FormControl<DiskListInputElementPropertiesDiskType | null | undefined>(undefined),
+			managedBy: new FormControl<string | null | undefined>(undefined),
+			provisionSizeGB: new FormControl<number | null | undefined>(undefined),
+			sharePath: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			userResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export enum DiskListInputElementPropertiesDiskSku { Standard_LRS = 0, Standard_ZRS = 1, Standard_GRS = 2, Standard_RAGRS = 3, Premium_LRS = 4, StandardSSD_LRS = 5, UltraSSD_LRS = 6 }
+
+	export enum DiskListInputElementPropertiesDiskType { Undefined = 0, Disk = 1, Snapshot = 2, RestorePoint = 3, ManagedBlob = 4 }
+
+	export enum DiskListInputElementPropertiesStatus { Undefined = 0, Unattached = 1, Attached = 2, Reserved = 3, ActiveSAS = 4, Unknown = 5, All = 6, Recommended = 7, OfflineMigration = 8, OnlineMigration = 9 }
+
+
+	/** Disk migration job. */
+	export interface DiskMigrationJob {
+
+		/** Disk migration job properties. */
+		properties?: DiskMigrationJobProperties;
+	}
+
+	/** Disk migration job. */
+	export interface DiskMigrationJobFormProperties {
+	}
+	export function CreateDiskMigrationJobFormGroup() {
+		return new FormGroup<DiskMigrationJobFormProperties>({
+		});
+
+	}
+
+	export interface DiskMigrationJobProperties {
+
+		/** The job creation time. */
+		creationTime?: Date | null;
+
+		/** The job end time. */
+		endTime?: Date | null;
+
+		/** The disk migration id. */
+		migrationId?: string | null;
+
+		/** The job start time. */
+		startTime?: Date | null;
+
+		/** Migration job status. */
+		status?: DiskMigrationJobPropertiesStatus | null;
+
+		/** List of disk migration tasks. */
+		DiskMigrationJobPropertiesSubtasks?: Array<DiskMigrationJobPropertiesSubtasks>;
+
+		/** The target share of migration job. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobPropertiesFormProperties {
+
+		/** The job creation time. */
+		creationTime: FormControl<Date | null | undefined>,
+
+		/** The job end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** The disk migration id. */
+		migrationId: FormControl<string | null | undefined>,
+
+		/** The job start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Migration job status. */
+		status: FormControl<DiskMigrationJobPropertiesStatus | null | undefined>,
+
+		/** The target share of migration job. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobPropertiesFormProperties>({
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DiskMigrationJobPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export enum DiskMigrationJobPropertiesStatus { Undefined = 0, Running = 1, Succeeded = 2, Failed = 3, Canceled = 4, Pending = 5 }
+
+	export interface DiskMigrationJobPropertiesSubtasks {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: DiskMigrationJobPropertiesProperties;
+	}
+	export interface DiskMigrationJobPropertiesSubtasksFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobPropertiesSubtasksFormGroup() {
+		return new FormGroup<DiskMigrationJobPropertiesSubtasksFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobPropertiesProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobPropertiesPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobPropertiesPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobPropertiesPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export enum DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus { Undefined = 0, Running = 1, Succeeded = 2, Failed = 3, Canceled = 4, Pending = 5, Skipped = 6 }
+
+
+	/** List of disk migration jobs. */
+	export interface DiskMigrationJobList {
+
+		/** URI to the next page. */
+		nextLink?: string | null;
+
+		/** List of disk migration jobs. */
+		DiskMigrationJobListValue?: Array<DiskMigrationJobListValue>;
+	}
+
+	/** List of disk migration jobs. */
+	export interface DiskMigrationJobListFormProperties {
+
+		/** URI to the next page. */
+		nextLink: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobListFormGroup() {
+		return new FormGroup<DiskMigrationJobListFormProperties>({
+			nextLink: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobListValue {
+
+		/** Disk migration job properties. */
+		properties?: DiskMigrationJobListProperties;
+	}
+	export interface DiskMigrationJobListValueFormProperties {
+	}
+	export function CreateDiskMigrationJobListValueFormGroup() {
+		return new FormGroup<DiskMigrationJobListValueFormProperties>({
+		});
+
+	}
+
+	export interface DiskMigrationJobListProperties {
+
+		/** The job creation time. */
+		creationTime?: Date | null;
+
+		/** The job end time. */
+		endTime?: Date | null;
+
+		/** The disk migration id. */
+		migrationId?: string | null;
+
+		/** The job start time. */
+		startTime?: Date | null;
+
+		/** Migration job status. */
+		status?: DiskMigrationJobPropertiesStatus | null;
+
+		/** List of disk migration tasks. */
+		DiskMigrationJobListPropertiesSubtasks?: Array<DiskMigrationJobListPropertiesSubtasks>;
+
+		/** The target share of migration job. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobListPropertiesFormProperties {
+
+		/** The job creation time. */
+		creationTime: FormControl<Date | null | undefined>,
+
+		/** The job end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** The disk migration id. */
+		migrationId: FormControl<string | null | undefined>,
+
+		/** The job start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Migration job status. */
+		status: FormControl<DiskMigrationJobPropertiesStatus | null | undefined>,
+
+		/** The target share of migration job. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobListPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobListPropertiesFormProperties>({
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DiskMigrationJobPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobListPropertiesSubtasks {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: DiskMigrationJobListPropertiesProperties;
+	}
+	export interface DiskMigrationJobListPropertiesSubtasksFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobListPropertiesSubtasksFormGroup() {
+		return new FormGroup<DiskMigrationJobListPropertiesSubtasksFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobListPropertiesProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobListPropertiesPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobListPropertiesPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobListPropertiesPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+
+	/** Migration job status. */
+	export enum MigrationJobStatus { Undefined = 0, Running = 1, Succeeded = 2, Failed = 3, Canceled = 4, Pending = 5 }
+
+
+	/** Disk migration child task. */
+	export interface MigrationSubTask {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: MigrationSubTaskProperties;
+	}
+
+	/** Disk migration child task. */
+	export interface MigrationSubTaskFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateMigrationSubTaskFormGroup() {
+		return new FormGroup<MigrationSubTaskFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface MigrationSubTaskProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface MigrationSubTaskPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateMigrationSubTaskPropertiesFormGroup() {
+		return new FormGroup<MigrationSubTaskPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+
+	/** Disk migration child task. */
+	export interface MigrationSubTaskListElement {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: MigrationSubTaskListElementProperties;
+	}
+
+	/** Disk migration child task. */
+	export interface MigrationSubTaskListElementFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateMigrationSubTaskListElementFormGroup() {
+		return new FormGroup<MigrationSubTaskListElementFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface MigrationSubTaskListElementProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface MigrationSubTaskListElementPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateMigrationSubTaskListElementPropertiesFormGroup() {
+		return new FormGroup<MigrationSubTaskListElementPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+
+	/** Migration child task status. */
+	export enum MigrationSubTaskStatus { Undefined = 0, Running = 1, Succeeded = 2, Failed = 3, Canceled = 4, Pending = 5, Skipped = 6 }
+
+	@Injectable()
+	export class MyClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
+
+		/**
+		 * Returns a list of disk migration jobs.
+		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs
+		 * @param {string} subscriptionId Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+		 * @param {string} location Location of the resource.
+		 * @param {string} status The parameters of disk migration job status.
+		 * @param {string} api_version Client API Version.
+		 * @return {DiskMigrationJobs_ListReturn} OK -- The list of disk migration jobs has been returned.
+		 */
+		DiskMigrationJobs_List(subscriptionId: string, location: string, status: string | null | undefined, api_version: string): Observable<DiskMigrationJobs_ListReturn> {
+			return this.http.get<DiskMigrationJobs_ListReturn>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.Compute.Admin/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/diskmigrationjobs&status=' + (status == null ? '' : encodeURIComponent(status)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
+		}
+
+		/**
+		 * Returns the requested disk migration job.
+		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs/{migrationId}
+		 * @param {string} subscriptionId Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+		 * @param {string} location Location of the resource.
+		 * @param {string} migrationId The migration job guid name.
+		 * @param {string} api_version Client API Version.
+		 * @return {DiskMigrationJobs_GetReturn} OK -- The disk migration job has been returned.
+		 */
+		DiskMigrationJobs_Get(subscriptionId: string, location: string, migrationId: string, api_version: string): Observable<DiskMigrationJobs_GetReturn> {
+			return this.http.get<DiskMigrationJobs_GetReturn>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.Compute.Admin/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/diskmigrationjobs/' + (migrationId == null ? '' : encodeURIComponent(migrationId)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
+		}
+
+		/**
+		 * Create a disk migration job.
+		 * Put subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs/{migrationId}
+		 * @param {string} subscriptionId Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+		 * @param {string} location Location of the resource.
+		 * @param {string} migrationId The migration job guid name.
+		 * @param {string} targetShare The target share name.
+		 * @param {string} api_version Client API Version.
+		 * @param {Array<DiskMigrationJobs_CreatePutBody>} requestBody The parameters of disk list.
+		 * @return {DiskMigrationJobs_CreateReturn} OK --  Disk migration job is created successfully.
+		 */
+		DiskMigrationJobs_Create(subscriptionId: string, location: string, migrationId: string, targetShare: string, api_version: string, requestBody: Array<DiskMigrationJobs_CreatePutBody>): Observable<DiskMigrationJobs_CreateReturn> {
+			return this.http.put<DiskMigrationJobs_CreateReturn>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.Compute.Admin/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/diskmigrationjobs/' + (migrationId == null ? '' : encodeURIComponent(migrationId)) + '&targetShare=' + (targetShare == null ? '' : encodeURIComponent(targetShare)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		}
+
+		/**
+		 * Cancel a disk migration job.
+		 * Post subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs/{migrationId}/Cancel
+		 * @param {string} subscriptionId Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+		 * @param {string} location Location of the resource.
+		 * @param {string} migrationId The migration job guid name.
+		 * @param {string} api_version Client API Version.
+		 * @return {DiskMigrationJobs_CancelReturn} OK --  Disk migration job cancellation is called.
+		 */
+		DiskMigrationJobs_Cancel(subscriptionId: string, location: string, migrationId: string, api_version: string): Observable<DiskMigrationJobs_CancelReturn> {
+			return this.http.post<DiskMigrationJobs_CancelReturn>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/providers/Microsoft.Compute.Admin/locations/' + (location == null ? '' : encodeURIComponent(location)) + '/diskmigrationjobs/' + (migrationId == null ? '' : encodeURIComponent(migrationId)) + '/Cancel&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), null, {});
+		}
+	}
+
+	export interface DiskMigrationJobs_ListReturn {
+
+		/** URI to the next page. */
+		nextLink?: string | null;
+
+		/** List of disk migration jobs. */
+		DiskMigrationJobs_ListReturnValue?: Array<DiskMigrationJobs_ListReturnValue>;
+	}
+	export interface DiskMigrationJobs_ListReturnFormProperties {
+
+		/** URI to the next page. */
+		nextLink: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_ListReturnFormGroup() {
+		return new FormGroup<DiskMigrationJobs_ListReturnFormProperties>({
+			nextLink: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_ListReturnValue {
+
+		/** Disk migration job properties. */
+		properties?: DiskMigrationJobs_ListReturnProperties;
+	}
+	export interface DiskMigrationJobs_ListReturnValueFormProperties {
+	}
+	export function CreateDiskMigrationJobs_ListReturnValueFormGroup() {
+		return new FormGroup<DiskMigrationJobs_ListReturnValueFormProperties>({
+		});
+
+	}
+
+	export interface DiskMigrationJobs_ListReturnProperties {
+
+		/** The job creation time. */
+		creationTime?: Date | null;
+
+		/** The job end time. */
+		endTime?: Date | null;
+
+		/** The disk migration id. */
+		migrationId?: string | null;
+
+		/** The job start time. */
+		startTime?: Date | null;
+
+		/** Migration job status. */
+		status?: DiskMigrationJobPropertiesStatus | null;
+
+		/** List of disk migration tasks. */
+		DiskMigrationJobs_ListReturnPropertiesSubtasks?: Array<DiskMigrationJobs_ListReturnPropertiesSubtasks>;
+
+		/** The target share of migration job. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_ListReturnPropertiesFormProperties {
+
+		/** The job creation time. */
+		creationTime: FormControl<Date | null | undefined>,
+
+		/** The job end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** The disk migration id. */
+		migrationId: FormControl<string | null | undefined>,
+
+		/** The job start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Migration job status. */
+		status: FormControl<DiskMigrationJobPropertiesStatus | null | undefined>,
+
+		/** The target share of migration job. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_ListReturnPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_ListReturnPropertiesFormProperties>({
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DiskMigrationJobPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_ListReturnPropertiesSubtasks {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: DiskMigrationJobs_ListReturnPropertiesProperties;
+	}
+	export interface DiskMigrationJobs_ListReturnPropertiesSubtasksFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_ListReturnPropertiesSubtasksFormGroup() {
+		return new FormGroup<DiskMigrationJobs_ListReturnPropertiesSubtasksFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_ListReturnPropertiesProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_ListReturnPropertiesPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_ListReturnPropertiesPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_ListReturnPropertiesPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_GetReturn {
+
+		/** Disk migration job properties. */
+		properties?: DiskMigrationJobs_GetReturnProperties;
+	}
+	export interface DiskMigrationJobs_GetReturnFormProperties {
+	}
+	export function CreateDiskMigrationJobs_GetReturnFormGroup() {
+		return new FormGroup<DiskMigrationJobs_GetReturnFormProperties>({
+		});
+
+	}
+
+	export interface DiskMigrationJobs_GetReturnProperties {
+
+		/** The job creation time. */
+		creationTime?: Date | null;
+
+		/** The job end time. */
+		endTime?: Date | null;
+
+		/** The disk migration id. */
+		migrationId?: string | null;
+
+		/** The job start time. */
+		startTime?: Date | null;
+
+		/** Migration job status. */
+		status?: DiskMigrationJobPropertiesStatus | null;
+
+		/** List of disk migration tasks. */
+		DiskMigrationJobs_GetReturnPropertiesSubtasks?: Array<DiskMigrationJobs_GetReturnPropertiesSubtasks>;
+
+		/** The target share of migration job. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_GetReturnPropertiesFormProperties {
+
+		/** The job creation time. */
+		creationTime: FormControl<Date | null | undefined>,
+
+		/** The job end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** The disk migration id. */
+		migrationId: FormControl<string | null | undefined>,
+
+		/** The job start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Migration job status. */
+		status: FormControl<DiskMigrationJobPropertiesStatus | null | undefined>,
+
+		/** The target share of migration job. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_GetReturnPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_GetReturnPropertiesFormProperties>({
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DiskMigrationJobPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_GetReturnPropertiesSubtasks {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: DiskMigrationJobs_GetReturnPropertiesProperties;
+	}
+	export interface DiskMigrationJobs_GetReturnPropertiesSubtasksFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_GetReturnPropertiesSubtasksFormGroup() {
+		return new FormGroup<DiskMigrationJobs_GetReturnPropertiesSubtasksFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_GetReturnPropertiesProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_GetReturnPropertiesPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_GetReturnPropertiesPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_GetReturnPropertiesPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CreatePutBody {
+
+		/** Managed disk properties. */
+		properties?: Properties;
+	}
+	export interface DiskMigrationJobs_CreatePutBodyFormProperties {
+	}
+	export function CreateDiskMigrationJobs_CreatePutBodyFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CreatePutBodyFormProperties>({
+		});
+
+	}
+
+	export interface Properties {
+
+		/** The actual size of disk in GB. */
+		actualSizeGB?: number | null;
+
+		/** The disk id. */
+		diskId?: string | null;
+
+		/** Disk Sku. */
+		diskSku?: DiskListInputElementPropertiesDiskSku | null;
+
+		/** Disk resource type. */
+		diskType?: DiskListInputElementPropertiesDiskType | null;
+
+		/** Compute resource Uri which owns this disk. */
+		managedBy?: string | null;
+
+		/** The provision size of disk in GB. */
+		provisionSizeGB?: number | null;
+
+		/** The disk share path. */
+		sharePath?: string | null;
+
+		/** Disk State. */
+		status?: DiskListInputElementPropertiesStatus | null;
+
+		/** The disk resource Uri from user view. */
+		userResourceId?: string | null;
+	}
+	export interface PropertiesFormProperties {
+
+		/** The actual size of disk in GB. */
+		actualSizeGB: FormControl<number | null | undefined>,
+
+		/** The disk id. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** Disk Sku. */
+		diskSku: FormControl<DiskListInputElementPropertiesDiskSku | null | undefined>,
+
+		/** Disk resource type. */
+		diskType: FormControl<DiskListInputElementPropertiesDiskType | null | undefined>,
+
+		/** Compute resource Uri which owns this disk. */
+		managedBy: FormControl<string | null | undefined>,
+
+		/** The provision size of disk in GB. */
+		provisionSizeGB: FormControl<number | null | undefined>,
+
+		/** The disk share path. */
+		sharePath: FormControl<string | null | undefined>,
+
+		/** Disk State. */
+		status: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The disk resource Uri from user view. */
+		userResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreatePropertiesFormGroup() {
+		return new FormGroup<PropertiesFormProperties>({
+			actualSizeGB: new FormControl<number | null | undefined>(undefined),
+			diskId: new FormControl<string | null | undefined>(undefined),
+			diskSku: new FormControl<DiskListInputElementPropertiesDiskSku | null | undefined>(undefined),
+			diskType: new FormControl<DiskListInputElementPropertiesDiskType | null | undefined>(undefined),
+			managedBy: new FormControl<string | null | undefined>(undefined),
+			provisionSizeGB: new FormControl<number | null | undefined>(undefined),
+			sharePath: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			userResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CreateReturn {
+
+		/** Disk migration job properties. */
+		properties?: DiskMigrationJobs_CreateReturnProperties;
+	}
+	export interface DiskMigrationJobs_CreateReturnFormProperties {
+	}
+	export function CreateDiskMigrationJobs_CreateReturnFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CreateReturnFormProperties>({
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CreateReturnProperties {
+
+		/** The job creation time. */
+		creationTime?: Date | null;
+
+		/** The job end time. */
+		endTime?: Date | null;
+
+		/** The disk migration id. */
+		migrationId?: string | null;
+
+		/** The job start time. */
+		startTime?: Date | null;
+
+		/** Migration job status. */
+		status?: DiskMigrationJobPropertiesStatus | null;
+
+		/** List of disk migration tasks. */
+		DiskMigrationJobs_CreateReturnPropertiesSubtasks?: Array<DiskMigrationJobs_CreateReturnPropertiesSubtasks>;
+
+		/** The target share of migration job. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_CreateReturnPropertiesFormProperties {
+
+		/** The job creation time. */
+		creationTime: FormControl<Date | null | undefined>,
+
+		/** The job end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** The disk migration id. */
+		migrationId: FormControl<string | null | undefined>,
+
+		/** The job start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Migration job status. */
+		status: FormControl<DiskMigrationJobPropertiesStatus | null | undefined>,
+
+		/** The target share of migration job. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_CreateReturnPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CreateReturnPropertiesFormProperties>({
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DiskMigrationJobPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CreateReturnPropertiesSubtasks {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: DiskMigrationJobs_CreateReturnPropertiesProperties;
+	}
+	export interface DiskMigrationJobs_CreateReturnPropertiesSubtasksFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_CreateReturnPropertiesSubtasksFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CreateReturnPropertiesSubtasksFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CreateReturnPropertiesProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_CreateReturnPropertiesPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_CreateReturnPropertiesPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CreateReturnPropertiesPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CancelReturn {
+
+		/** Disk migration job properties. */
+		properties?: DiskMigrationJobs_CancelReturnProperties;
+	}
+	export interface DiskMigrationJobs_CancelReturnFormProperties {
+	}
+	export function CreateDiskMigrationJobs_CancelReturnFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CancelReturnFormProperties>({
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CancelReturnProperties {
+
+		/** The job creation time. */
+		creationTime?: Date | null;
+
+		/** The job end time. */
+		endTime?: Date | null;
+
+		/** The disk migration id. */
+		migrationId?: string | null;
+
+		/** The job start time. */
+		startTime?: Date | null;
+
+		/** Migration job status. */
+		status?: DiskMigrationJobPropertiesStatus | null;
+
+		/** List of disk migration tasks. */
+		DiskMigrationJobs_CancelReturnPropertiesSubtasks?: Array<DiskMigrationJobs_CancelReturnPropertiesSubtasks>;
+
+		/** The target share of migration job. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_CancelReturnPropertiesFormProperties {
+
+		/** The job creation time. */
+		creationTime: FormControl<Date | null | undefined>,
+
+		/** The job end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** The disk migration id. */
+		migrationId: FormControl<string | null | undefined>,
+
+		/** The job start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Migration job status. */
+		status: FormControl<DiskMigrationJobPropertiesStatus | null | undefined>,
+
+		/** The target share of migration job. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_CancelReturnPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CancelReturnPropertiesFormProperties>({
+			creationTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<DiskMigrationJobPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CancelReturnPropertiesSubtasks {
+
+		/** The id of migration child task. */
+		migrationSubTaskId?: string | null;
+
+		/** Disk migration child task properties. */
+		properties?: DiskMigrationJobs_CancelReturnPropertiesProperties;
+	}
+	export interface DiskMigrationJobs_CancelReturnPropertiesSubtasksFormProperties {
+
+		/** The id of migration child task. */
+		migrationSubTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_CancelReturnPropertiesSubtasksFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CancelReturnPropertiesSubtasksFormProperties>({
+			migrationSubTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DiskMigrationJobs_CancelReturnPropertiesProperties {
+
+		/** The id of disk. */
+		diskId?: string | null;
+
+		/** The task end time. */
+		endTime?: Date | null;
+
+		/** Migration child task status. */
+		migrationSubtaskStatus?: DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null;
+
+		/** The reason of task failure. */
+		reason?: string | null;
+
+		/** The source share of migration task. */
+		sourceShare?: string | null;
+
+		/** The task start time. */
+		startTime?: Date | null;
+
+		/** Disk State. */
+		targetDiskStateForMigration?: DiskListInputElementPropertiesStatus | null;
+
+		/** The target share of migration task. */
+		targetShare?: string | null;
+	}
+	export interface DiskMigrationJobs_CancelReturnPropertiesPropertiesFormProperties {
+
+		/** The id of disk. */
+		diskId: FormControl<string | null | undefined>,
+
+		/** The task end time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Migration child task status. */
+		migrationSubtaskStatus: FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>,
+
+		/** The reason of task failure. */
+		reason: FormControl<string | null | undefined>,
+
+		/** The source share of migration task. */
+		sourceShare: FormControl<string | null | undefined>,
+
+		/** The task start time. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Disk State. */
+		targetDiskStateForMigration: FormControl<DiskListInputElementPropertiesStatus | null | undefined>,
+
+		/** The target share of migration task. */
+		targetShare: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskMigrationJobs_CancelReturnPropertiesPropertiesFormGroup() {
+		return new FormGroup<DiskMigrationJobs_CancelReturnPropertiesPropertiesFormProperties>({
+			diskId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			migrationSubtaskStatus: new FormControl<DiskMigrationJobPropertiesPropertiesMigrationSubtaskStatus | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+			sourceShare: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			targetDiskStateForMigration: new FormControl<DiskListInputElementPropertiesStatus | null | undefined>(undefined),
+			targetShare: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+}
+

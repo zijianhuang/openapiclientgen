@@ -27,7 +27,7 @@ export namespace MyNS {
 	}
 	export function CreateCloseTunnelRequestFormGroup() {
 		return new FormGroup<CloseTunnelRequestFormProperties>({
-			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('[a-zA-Z0-9_\-+=:]{1,128}')]),
 			delete: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -106,10 +106,10 @@ export namespace MyNS {
 	}
 	export function CreateTunnelFormGroup() {
 		return new FormGroup<TunnelFormProperties>({
-			tunnelId: new FormControl<string | null | undefined>(undefined),
-			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-zA-Z0-9_\-+=:]{1,128}')]),
+			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 			status: new FormControl<TunnelStatus | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[^\p{C}]{1,2048}')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -171,7 +171,7 @@ export namespace MyNS {
 	}
 	export function CreateDestinationConfigFormGroup() {
 		return new FormGroup<DestinationConfigFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 		});
 
 	}
@@ -241,8 +241,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -259,7 +259,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTunnelRequestFormGroup() {
 		return new FormGroup<DescribeTunnelRequestFormProperties>({
-			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('[a-zA-Z0-9_\-+=:]{1,128}')]),
 		});
 
 	}
@@ -300,7 +300,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -314,7 +314,7 @@ export namespace MyNS {
 	}
 	export function CreateListTunnelsResponseFormGroup() {
 		return new FormGroup<ListTunnelsResponseFormProperties>({
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-zA-Z0-9_=-]{1,4096}')]),
 		});
 
 	}
@@ -351,10 +351,10 @@ export namespace MyNS {
 	}
 	export function CreateTunnelSummaryFormGroup() {
 		return new FormGroup<TunnelSummaryFormProperties>({
-			tunnelId: new FormControl<string | null | undefined>(undefined),
-			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-zA-Z0-9_\-+=:]{1,128}')]),
+			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 			status: new FormControl<TunnelStatus | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[^\p{C}]{1,2048}')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -393,9 +393,9 @@ export namespace MyNS {
 	}
 	export function CreateListTunnelsRequestFormGroup() {
 		return new FormGroup<ListTunnelsRequestFormProperties>({
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 			maxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
-			nextToken: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-zA-Z0-9_=-]{1,4096}')]),
 		});
 
 	}
@@ -424,8 +424,8 @@ export namespace MyNS {
 	}
 	export function CreateOpenTunnelResponseFormGroup() {
 		return new FormGroup<OpenTunnelResponseFormProperties>({
-			tunnelId: new FormControl<string | null | undefined>(undefined),
-			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			tunnelId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-zA-Z0-9_\-+=:]{1,128}')]),
+			tunnelArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 			sourceAccessToken: new FormControl<string | null | undefined>(undefined),
 			destinationAccessToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -452,7 +452,7 @@ export namespace MyNS {
 	}
 	export function CreateOpenTunnelRequestFormGroup() {
 		return new FormGroup<OpenTunnelRequestFormProperties>({
-			description: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[^\p{C}]{1,2048}')]),
 		});
 
 	}
@@ -504,7 +504,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -546,7 +546,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -624,19 +624,19 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CloseTunnelX_Amz_Target { IoTSecuredTunneling_CloseTunnel = 0 }
+	export enum CloseTunnelX_Amz_Target { 'IoTSecuredTunneling.CloseTunnel' = 0 }
 
-	export enum DescribeTunnelX_Amz_Target { IoTSecuredTunneling_DescribeTunnel = 0 }
+	export enum DescribeTunnelX_Amz_Target { 'IoTSecuredTunneling.DescribeTunnel' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { IoTSecuredTunneling_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'IoTSecuredTunneling.ListTagsForResource' = 0 }
 
-	export enum ListTunnelsX_Amz_Target { IoTSecuredTunneling_ListTunnels = 0 }
+	export enum ListTunnelsX_Amz_Target { 'IoTSecuredTunneling.ListTunnels' = 0 }
 
-	export enum OpenTunnelX_Amz_Target { IoTSecuredTunneling_OpenTunnel = 0 }
+	export enum OpenTunnelX_Amz_Target { 'IoTSecuredTunneling.OpenTunnel' = 0 }
 
-	export enum TagResourceX_Amz_Target { IoTSecuredTunneling_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'IoTSecuredTunneling.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { IoTSecuredTunneling_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'IoTSecuredTunneling.UntagResource' = 0 }
 
 }
 

@@ -665,7 +665,7 @@ export namespace MyNS {
 	export function CreateBrokerNodeGroupInfoFormGroup() {
 		return new FormGroup<BrokerNodeGroupInfoFormProperties>({
 			BrokerAZDistribution: new FormControl<BrokerAZDistribution | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(5)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(5), Validators.maxLength(32)]),
 		});
 
 	}
@@ -1781,9 +1781,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterRequestFormGroup() {
 		return new FormGroup<CreateClusterRequestFormProperties>({
-			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ClusterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			EnhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
-			KafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			KafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			NumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(15)]),
 		});
 
@@ -2579,9 +2579,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterPostBodyFormGroup() {
 		return new FormGroup<CreateClusterPostBodyFormProperties>({
-			clusterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			clusterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			enhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
-			kafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			kafkaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			numberOfBrokerNodes: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(15)]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -2626,7 +2626,7 @@ export namespace MyNS {
 	export function CreateCreateClusterPostBodyBrokerNodeGroupInfoFormGroup() {
 		return new FormGroup<CreateClusterPostBodyBrokerNodeGroupInfoFormProperties>({
 			BrokerAZDistribution: new FormControl<BrokerAZDistribution | null | undefined>(undefined),
-			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(5)]),
+			InstanceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(32)]),
 		});
 
 	}

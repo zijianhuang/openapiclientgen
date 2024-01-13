@@ -101,8 +101,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -360,7 +360,7 @@ export namespace MyNS {
 		return new FormGroup<ServiceFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)')]),
 			NamespaceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined),
@@ -552,7 +552,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateServiceRequestFormGroup() {
 		return new FormGroup<CreateServiceRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)')]),
 			NamespaceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			CreatorRequestId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
@@ -776,7 +776,7 @@ export namespace MyNS {
 		return new FormGroup<HttpInstanceSummaryFormProperties>({
 			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			NamespaceName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
-			ServiceName: new FormControl<string | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)')]),
 			HealthStatus: new FormControl<HttpInstanceSummaryHealthStatus | null | undefined>(undefined),
 		});
 
@@ -834,7 +834,7 @@ export namespace MyNS {
 	export function CreateDiscoverInstancesRequestFormGroup() {
 		return new FormGroup<DiscoverInstancesRequestFormProperties>({
 			NamespaceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024)]),
-			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ServiceName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
 			HealthStatus: new FormControl<DiscoverInstancesRequestHealthStatus | null | undefined>(undefined),
 		});
@@ -1690,7 +1690,7 @@ export namespace MyNS {
 		return new FormGroup<ServiceSummaryFormProperties>({
 			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
 			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(\.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^\.$)')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			InstanceCount: new FormControl<number | null | undefined>(undefined),
 			CreateDate: new FormControl<Date | null | undefined>(undefined),
@@ -1794,7 +1794,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -1909,7 +1909,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -1951,7 +1951,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1011), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1011)]),
 		});
 
 	}
@@ -2340,51 +2340,51 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateHttpNamespaceX_Amz_Target { Route53AutoNaming_v20170314_CreateHttpNamespace = 0 }
+	export enum CreateHttpNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreateHttpNamespace' = 0 }
 
-	export enum CreatePrivateDnsNamespaceX_Amz_Target { Route53AutoNaming_v20170314_CreatePrivateDnsNamespace = 0 }
+	export enum CreatePrivateDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreatePrivateDnsNamespace' = 0 }
 
-	export enum CreatePublicDnsNamespaceX_Amz_Target { Route53AutoNaming_v20170314_CreatePublicDnsNamespace = 0 }
+	export enum CreatePublicDnsNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.CreatePublicDnsNamespace' = 0 }
 
-	export enum CreateServiceX_Amz_Target { Route53AutoNaming_v20170314_CreateService = 0 }
+	export enum CreateServiceX_Amz_Target { 'Route53AutoNaming_v20170314.CreateService' = 0 }
 
-	export enum DeleteNamespaceX_Amz_Target { Route53AutoNaming_v20170314_DeleteNamespace = 0 }
+	export enum DeleteNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.DeleteNamespace' = 0 }
 
-	export enum DeleteServiceX_Amz_Target { Route53AutoNaming_v20170314_DeleteService = 0 }
+	export enum DeleteServiceX_Amz_Target { 'Route53AutoNaming_v20170314.DeleteService' = 0 }
 
-	export enum DeregisterInstanceX_Amz_Target { Route53AutoNaming_v20170314_DeregisterInstance = 0 }
+	export enum DeregisterInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.DeregisterInstance' = 0 }
 
-	export enum DiscoverInstancesX_Amz_Target { Route53AutoNaming_v20170314_DiscoverInstances = 0 }
+	export enum DiscoverInstancesX_Amz_Target { 'Route53AutoNaming_v20170314.DiscoverInstances' = 0 }
 
-	export enum GetInstanceX_Amz_Target { Route53AutoNaming_v20170314_GetInstance = 0 }
+	export enum GetInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.GetInstance' = 0 }
 
-	export enum GetInstancesHealthStatusX_Amz_Target { Route53AutoNaming_v20170314_GetInstancesHealthStatus = 0 }
+	export enum GetInstancesHealthStatusX_Amz_Target { 'Route53AutoNaming_v20170314.GetInstancesHealthStatus' = 0 }
 
-	export enum GetNamespaceX_Amz_Target { Route53AutoNaming_v20170314_GetNamespace = 0 }
+	export enum GetNamespaceX_Amz_Target { 'Route53AutoNaming_v20170314.GetNamespace' = 0 }
 
-	export enum GetOperationX_Amz_Target { Route53AutoNaming_v20170314_GetOperation = 0 }
+	export enum GetOperationX_Amz_Target { 'Route53AutoNaming_v20170314.GetOperation' = 0 }
 
-	export enum GetServiceX_Amz_Target { Route53AutoNaming_v20170314_GetService = 0 }
+	export enum GetServiceX_Amz_Target { 'Route53AutoNaming_v20170314.GetService' = 0 }
 
-	export enum ListInstancesX_Amz_Target { Route53AutoNaming_v20170314_ListInstances = 0 }
+	export enum ListInstancesX_Amz_Target { 'Route53AutoNaming_v20170314.ListInstances' = 0 }
 
-	export enum ListNamespacesX_Amz_Target { Route53AutoNaming_v20170314_ListNamespaces = 0 }
+	export enum ListNamespacesX_Amz_Target { 'Route53AutoNaming_v20170314.ListNamespaces' = 0 }
 
-	export enum ListOperationsX_Amz_Target { Route53AutoNaming_v20170314_ListOperations = 0 }
+	export enum ListOperationsX_Amz_Target { 'Route53AutoNaming_v20170314.ListOperations' = 0 }
 
-	export enum ListServicesX_Amz_Target { Route53AutoNaming_v20170314_ListServices = 0 }
+	export enum ListServicesX_Amz_Target { 'Route53AutoNaming_v20170314.ListServices' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { Route53AutoNaming_v20170314_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'Route53AutoNaming_v20170314.ListTagsForResource' = 0 }
 
-	export enum RegisterInstanceX_Amz_Target { Route53AutoNaming_v20170314_RegisterInstance = 0 }
+	export enum RegisterInstanceX_Amz_Target { 'Route53AutoNaming_v20170314.RegisterInstance' = 0 }
 
-	export enum TagResourceX_Amz_Target { Route53AutoNaming_v20170314_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'Route53AutoNaming_v20170314.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { Route53AutoNaming_v20170314_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'Route53AutoNaming_v20170314.UntagResource' = 0 }
 
-	export enum UpdateInstanceCustomHealthStatusX_Amz_Target { Route53AutoNaming_v20170314_UpdateInstanceCustomHealthStatus = 0 }
+	export enum UpdateInstanceCustomHealthStatusX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateInstanceCustomHealthStatus' = 0 }
 
-	export enum UpdateServiceX_Amz_Target { Route53AutoNaming_v20170314_UpdateService = 0 }
+	export enum UpdateServiceX_Amz_Target { 'Route53AutoNaming_v20170314.UpdateService' = 0 }
 
 }
 

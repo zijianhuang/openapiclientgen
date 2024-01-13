@@ -508,19 +508,19 @@ export namespace MyNS {
 		action_specific_property2?: string | null;
 
 		/** The media type of the data associated with osdb:body_data_raw or osdb:body_data_src_url. In the case of osdb:body_data_raw, this is the media type before base64 encoding. */
-		osdb_body_data_encoding?: string | null;
+		'osdb:body_data_encoding'?: string | null;
 
 		/** Input data for the action (e.g. CSV data). The data must be base64 encoded by the client. Alternatively, clients can use osdb:body_data_src_url to supply the input data via a web-accessible document. */
-		osdb_body_data_raw?: string | null;
+		'osdb:body_data_raw'?: string | null;
 
 		/** URL of a resource containing input data for the action (e.g. CSV data). Clients can instead use osdb:body_data_raw to supply the input data directly. */
-		osdb_body_data_src_url?: string | null;
+		'osdb:body_data_src_url'?: string | null;
 
 		/** An OSDB-specific parameter controlling the action output type. If omitted, the native action output is returned. */
-		osdb_output_type?: ExecBodyOsdb_output_type | null;
+		'osdb:output_type'?: ExecBodyOsdb_output_type | null;
 
 		/** Preferred response MIME type. This must be an output MIME type supported natively by the action or, if 'osdb:output_type' is set to 'generate_rdf', a Virtuoso Sponger output format. i.e. 'application/ld+json', 'text/turtle' or 'application/rdf+xml'. */
-		osdb_response_format?: string | null;
+		'osdb:response_format'?: string | null;
 	}
 	export interface ExecBodyFormProperties {
 
@@ -531,29 +531,29 @@ export namespace MyNS {
 		action_specific_property2: FormControl<string | null | undefined>,
 
 		/** The media type of the data associated with osdb:body_data_raw or osdb:body_data_src_url. In the case of osdb:body_data_raw, this is the media type before base64 encoding. */
-		osdb_body_data_encoding: FormControl<string | null | undefined>,
+		'osdb:body_data_encoding': FormControl<string | null | undefined>,
 
 		/** Input data for the action (e.g. CSV data). The data must be base64 encoded by the client. Alternatively, clients can use osdb:body_data_src_url to supply the input data via a web-accessible document. */
-		osdb_body_data_raw: FormControl<string | null | undefined>,
+		'osdb:body_data_raw': FormControl<string | null | undefined>,
 
 		/** URL of a resource containing input data for the action (e.g. CSV data). Clients can instead use osdb:body_data_raw to supply the input data directly. */
-		osdb_body_data_src_url: FormControl<string | null | undefined>,
+		'osdb:body_data_src_url': FormControl<string | null | undefined>,
 
 		/** An OSDB-specific parameter controlling the action output type. If omitted, the native action output is returned. */
-		osdb_output_type: FormControl<ExecBodyOsdb_output_type | null | undefined>,
+		'osdb:output_type': FormControl<ExecBodyOsdb_output_type | null | undefined>,
 
 		/** Preferred response MIME type. This must be an output MIME type supported natively by the action or, if 'osdb:output_type' is set to 'generate_rdf', a Virtuoso Sponger output format. i.e. 'application/ld+json', 'text/turtle' or 'application/rdf+xml'. */
-		osdb_response_format: FormControl<string | null | undefined>,
+		'osdb:response_format': FormControl<string | null | undefined>,
 	}
 	export function CreateExecBodyFormGroup() {
 		return new FormGroup<ExecBodyFormProperties>({
 			action_specific_property1: new FormControl<string | null | undefined>(undefined),
 			action_specific_property2: new FormControl<string | null | undefined>(undefined),
-			osdb_body_data_encoding: new FormControl<string | null | undefined>(undefined),
-			osdb_body_data_raw: new FormControl<string | null | undefined>(undefined),
-			osdb_body_data_src_url: new FormControl<string | null | undefined>(undefined),
-			osdb_output_type: new FormControl<ExecBodyOsdb_output_type | null | undefined>(undefined),
-			osdb_response_format: new FormControl<string | null | undefined>(undefined),
+			'osdb:body_data_encoding': new FormControl<string | null | undefined>(undefined),
+			'osdb:body_data_raw': new FormControl<string | null | undefined>(undefined),
+			'osdb:body_data_src_url': new FormControl<string | null | undefined>(undefined),
+			'osdb:output_type': new FormControl<ExecBodyOsdb_output_type | null | undefined>(undefined),
+			'osdb:response_format': new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

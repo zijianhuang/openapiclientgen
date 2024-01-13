@@ -40,8 +40,8 @@ export namespace MyNS {
 	}
 	export function CreateHandshakeFormGroup() {
 		return new FormGroup<HandshakeFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^h-[0-9a-z]{8,32}$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::\d{12}:handshake\/o-[a-z0-9]{10,32}\/[a-z_]{1,32}\/h-[0-9a-z]{8,32}')]),
 			State: new FormControl<HandshakeState | null | undefined>(undefined),
 			RequestedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ExpirationTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -80,7 +80,7 @@ export namespace MyNS {
 	}
 	export function CreateHandshakePartyFormGroup() {
 		return new FormGroup<HandshakePartyFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			Type: new FormControl<HandshakePartyType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -127,7 +127,7 @@ export namespace MyNS {
 	}
 	export function CreateAcceptHandshakeRequestFormGroup() {
 		return new FormGroup<AcceptHandshakeRequestFormProperties>({
-			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^h-[0-9a-z]{8,32}$')]),
 		});
 
 	}
@@ -260,8 +260,8 @@ export namespace MyNS {
 	}
 	export function CreateAttachPolicyRequestFormGroup() {
 		return new FormGroup<AttachPolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^p-[0-9a-zA-Z_]{8,128}$')]),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 		});
 
 	}
@@ -361,7 +361,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelHandshakeRequestFormGroup() {
 		return new FormGroup<CancelHandshakeRequestFormProperties>({
-			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^h-[0-9a-z]{8,32}$')]),
 		});
 
 	}
@@ -415,13 +415,13 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccountStatusFormGroup() {
 		return new FormGroup<CreateAccountStatusFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			AccountName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('[\u0020-\u007E]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^car-[a-z0-9]{8,32}$')]),
+			AccountName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('[\u0020-\u007E]+')]),
 			State: new FormControl<CreateAccountStatusState | null | undefined>(undefined),
 			RequestedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			CompletedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			GovCloudAccountId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{12}$')]),
+			GovCloudAccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{12}$')]),
 			FailureReason: new FormControl<CreateAccountStatusFailureReason | null | undefined>(undefined),
 		});
 
@@ -469,9 +469,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccountRequestFormGroup() {
 		return new FormGroup<CreateAccountRequestFormProperties>({
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(6), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
-			AccountName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1), Validators.pattern('[\u0020-\u007E]+')]),
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(6), Validators.maxLength(64), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
+			AccountName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(50), Validators.pattern('[\u0020-\u007E]+')]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[\w+=,.@-]{1,64}')]),
 			IamUserAccessToBilling: new FormControl<CreateAccountRequestIamUserAccessToBilling | null | undefined>(undefined),
 		});
 
@@ -540,9 +540,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateGovCloudAccountRequestFormGroup() {
 		return new FormGroup<CreateGovCloudAccountRequestFormProperties>({
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(6), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
-			AccountName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1), Validators.pattern('[\u0020-\u007E]+')]),
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(6), Validators.maxLength(64), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
+			AccountName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(50), Validators.pattern('[\u0020-\u007E]+')]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[\w+=,.@-]{1,64}')]),
 			IamUserAccessToBilling: new FormControl<CreateAccountRequestIamUserAccessToBilling | null | undefined>(undefined),
 		});
 
@@ -594,12 +594,12 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationFormGroup() {
 		return new FormGroup<OrganizationFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^o-[a-z0-9]{10,32}$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::\d{12}:organization\/o-[a-z0-9]{10,32}')]),
 			FeatureSet: new FormControl<OrganizationFeatureSet | null | undefined>(undefined),
-			MasterAccountArn: new FormControl<string | null | undefined>(undefined),
-			MasterAccountId: new FormControl<string | null | undefined>(undefined),
-			MasterAccountEmail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(6), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
+			MasterAccountArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}')]),
+			MasterAccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{12}$')]),
+			MasterAccountEmail: new FormControl<string | null | undefined>(undefined, [Validators.minLength(6), Validators.maxLength(64), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
 		});
 
 	}
@@ -692,9 +692,9 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationalUnitFormGroup() {
 		return new FormGroup<OrganizationalUnitFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::\d{12}:ou\/o-[a-z0-9]{10,32}\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -725,8 +725,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateOrganizationalUnitRequestFormGroup() {
 		return new FormGroup<CreateOrganizationalUnitRequestFormProperties>({
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -789,7 +789,7 @@ export namespace MyNS {
 	}
 	export function CreatePolicyFormGroup() {
 		return new FormGroup<PolicyFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000000), Validators.minLength(1)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000000)]),
 		});
 
 	}
@@ -830,9 +830,9 @@ export namespace MyNS {
 	}
 	export function CreatePolicySummaryFormGroup() {
 		return new FormGroup<PolicySummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^p-[0-9a-zA-Z_]{8,128}$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(arn:aws:organizations::\d{12}:policy\/o-[a-z0-9]{10,32}\/[0-9a-z_]+\/p-[0-9a-z]{10,32})|(arn:aws:organizations::aws:policy\/[0-9a-z_]+\/p-[0-9a-zA-Z_]{10,128})')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
 			Type: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined),
 			AwsManaged: new FormControl<boolean | null | undefined>(undefined),
@@ -892,9 +892,9 @@ export namespace MyNS {
 	}
 	export function CreateCreatePolicyRequestFormGroup() {
 		return new FormGroup<CreatePolicyRequestFormProperties>({
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000000), Validators.minLength(1)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000000)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512)]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			Type: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -955,7 +955,7 @@ export namespace MyNS {
 	}
 	export function CreateDeclineHandshakeRequestFormGroup() {
 		return new FormGroup<DeclineHandshakeRequestFormProperties>({
-			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^h-[0-9a-z]{8,32}$')]),
 		});
 
 	}
@@ -982,7 +982,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteOrganizationalUnitRequestFormGroup() {
 		return new FormGroup<DeleteOrganizationalUnitRequestFormProperties>({
-			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$')]),
 		});
 
 	}
@@ -1019,7 +1019,7 @@ export namespace MyNS {
 	}
 	export function CreateDeletePolicyRequestFormGroup() {
 		return new FormGroup<DeletePolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^p-[0-9a-zA-Z_]{8,128}$')]),
 		});
 
 	}
@@ -1060,8 +1060,8 @@ export namespace MyNS {
 	}
 	export function CreateDeregisterDelegatedAdministratorRequestFormGroup() {
 		return new FormGroup<DeregisterDelegatedAdministratorRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+=,.@-]*')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+=,.@-]*')]),
 		});
 
 	}
@@ -1143,10 +1143,10 @@ export namespace MyNS {
 	}
 	export function CreateAccountFormGroup() {
 		return new FormGroup<AccountFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(6), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('[\u0020-\u007E]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{12}$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}')]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.minLength(6), Validators.maxLength(64), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('[\u0020-\u007E]+')]),
 			Status: new FormControl<AccountStatus | null | undefined>(undefined),
 			JoinedMethod: new FormControl<AccountJoinedMethod | null | undefined>(undefined),
 			JoinedTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -1170,7 +1170,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAccountRequestFormGroup() {
 		return new FormGroup<DescribeAccountRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
 		});
 
 	}
@@ -1200,7 +1200,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCreateAccountStatusRequestFormGroup() {
 		return new FormGroup<DescribeCreateAccountStatusRequestFormProperties>({
-			CreateAccountRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CreateAccountRequestId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^car-[a-z0-9]{8,32}$')]),
 		});
 
 	}
@@ -1256,9 +1256,9 @@ export namespace MyNS {
 	}
 	export function CreateEffectivePolicyFormGroup() {
 		return new FormGroup<EffectivePolicyFormProperties>({
-			PolicyContent: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000000), Validators.minLength(1)]),
+			PolicyContent: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000000)]),
 			LastUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			TargetId: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			PolicyType: new FormControl<EffectivePolicyPolicyType | null | undefined>(undefined),
 		});
 
@@ -1281,7 +1281,7 @@ export namespace MyNS {
 	export function CreateDescribeEffectivePolicyRequestFormGroup() {
 		return new FormGroup<DescribeEffectivePolicyRequestFormProperties>({
 			PolicyType: new FormControl<EffectivePolicyPolicyType | null | undefined>(undefined, [Validators.required]),
-			TargetId: new FormControl<string | null | undefined>(undefined),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 		});
 
 	}
@@ -1321,7 +1321,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeHandshakeRequestFormGroup() {
 		return new FormGroup<DescribeHandshakeRequestFormProperties>({
-			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			HandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^h-[0-9a-z]{8,32}$')]),
 		});
 
 	}
@@ -1364,7 +1364,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeOrganizationalUnitRequestFormGroup() {
 		return new FormGroup<DescribeOrganizationalUnitRequestFormProperties>({
-			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$')]),
 		});
 
 	}
@@ -1394,7 +1394,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribePolicyRequestFormGroup() {
 		return new FormGroup<DescribePolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^p-[0-9a-zA-Z_]{8,128}$')]),
 		});
 
 	}
@@ -1417,8 +1417,8 @@ export namespace MyNS {
 	}
 	export function CreateDetachPolicyRequestFormGroup() {
 		return new FormGroup<DetachPolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^p-[0-9a-zA-Z_]{8,128}$')]),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 		});
 
 	}
@@ -1453,7 +1453,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableAWSServiceAccessRequestFormGroup() {
 		return new FormGroup<DisableAWSServiceAccessRequestFormProperties>({
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+=,.@-]*')]),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+=,.@-]*')]),
 		});
 
 	}
@@ -1498,9 +1498,9 @@ export namespace MyNS {
 	}
 	export function CreateRootFormGroup() {
 		return new FormGroup<RootFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^r-[0-9a-z]{4,32}$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::\d{12}:root\/o-[a-z0-9]{10,32}\/r-[0-9a-z]{4,32}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -1523,7 +1523,7 @@ export namespace MyNS {
 	}
 	export function CreateDisablePolicyTypeRequestFormGroup() {
 		return new FormGroup<DisablePolicyTypeRequestFormProperties>({
-			RootId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RootId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^r-[0-9a-z]{4,32}$')]),
 			PolicyType: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1559,7 +1559,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableAWSServiceAccessRequestFormGroup() {
 		return new FormGroup<EnableAWSServiceAccessRequestFormProperties>({
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+=,.@-]*')]),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+=,.@-]*')]),
 		});
 
 	}
@@ -1618,7 +1618,7 @@ export namespace MyNS {
 	}
 	export function CreateEnablePolicyTypeRequestFormGroup() {
 		return new FormGroup<EnablePolicyTypeRequestFormProperties>({
-			RootId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			RootId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^r-[0-9a-z]{4,32}$')]),
 			PolicyType: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1738,7 +1738,7 @@ export namespace MyNS {
 	}
 	export function CreateEnabledServicePrincipalFormGroup() {
 		return new FormGroup<EnabledServicePrincipalFormProperties>({
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+=,.@-]*')]),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+=,.@-]*')]),
 			DateEnabled: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1850,7 +1850,7 @@ export namespace MyNS {
 	}
 	export function CreateListAccountsForParentRequestFormGroup() {
 		return new FormGroup<ListAccountsForParentRequestFormProperties>({
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
@@ -1885,7 +1885,7 @@ export namespace MyNS {
 	}
 	export function CreateChildFormGroup() {
 		return new FormGroup<ChildFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			Type: new FormControl<ChildType | null | undefined>(undefined),
 		});
 
@@ -1925,7 +1925,7 @@ export namespace MyNS {
 	}
 	export function CreateListChildrenRequestFormGroup() {
 		return new FormGroup<ListChildrenRequestFormProperties>({
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			ChildType: new FormControl<ChildType | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
@@ -2036,10 +2036,10 @@ export namespace MyNS {
 	}
 	export function CreateDelegatedAdministratorFormGroup() {
 		return new FormGroup<DelegatedAdministratorFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(6), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1), Validators.pattern('[\u0020-\u007E]+')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^\d{12}$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}')]),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.minLength(6), Validators.maxLength(64), Validators.pattern('[^\s@]+@[^\s@]+\.[^\s@]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50), Validators.pattern('[\u0020-\u007E]+')]),
 			Status: new FormControl<AccountStatus | null | undefined>(undefined),
 			JoinedMethod: new FormControl<AccountJoinedMethod | null | undefined>(undefined),
 			JoinedTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -2080,7 +2080,7 @@ export namespace MyNS {
 	}
 	export function CreateListDelegatedAdministratorsRequestFormGroup() {
 		return new FormGroup<ListDelegatedAdministratorsRequestFormProperties>({
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+=,.@-]*')]),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+=,.@-]*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
@@ -2125,7 +2125,7 @@ export namespace MyNS {
 	}
 	export function CreateDelegatedServiceFormGroup() {
 		return new FormGroup<DelegatedServiceFormProperties>({
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+=,.@-]*')]),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+=,.@-]*')]),
 			DelegationEnabledDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2157,7 +2157,7 @@ export namespace MyNS {
 	}
 	export function CreateListDelegatedServicesForAccountRequestFormGroup() {
 		return new FormGroup<ListDelegatedServicesForAccountRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
@@ -2222,7 +2222,7 @@ export namespace MyNS {
 	export function CreateHandshakeFilterFormGroup() {
 		return new FormGroup<HandshakeFilterFormProperties>({
 			ActionType: new FormControl<HandshakeAction | null | undefined>(undefined),
-			ParentHandshakeId: new FormControl<string | null | undefined>(undefined),
+			ParentHandshakeId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^h-[0-9a-z]{8,32}$')]),
 		});
 
 	}
@@ -2310,7 +2310,7 @@ export namespace MyNS {
 	}
 	export function CreateListOrganizationalUnitsForParentRequestFormGroup() {
 		return new FormGroup<ListOrganizationalUnitsForParentRequestFormProperties>({
-			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ParentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
@@ -2345,7 +2345,7 @@ export namespace MyNS {
 	}
 	export function CreateParentFormGroup() {
 		return new FormGroup<ParentFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			Type: new FormControl<ParentType | null | undefined>(undefined),
 		});
 
@@ -2379,7 +2379,7 @@ export namespace MyNS {
 	}
 	export function CreateListParentsRequestFormGroup() {
 		return new FormGroup<ListParentsRequestFormProperties>({
-			ChildId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ChildId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
@@ -2489,7 +2489,7 @@ export namespace MyNS {
 	}
 	export function CreateListPoliciesForTargetRequestFormGroup() {
 		return new FormGroup<ListPoliciesForTargetRequestFormProperties>({
-			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 			Filter: new FormControl<PolicyTypeSummaryType | null | undefined>(undefined, [Validators.required]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
@@ -2589,8 +2589,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -2609,7 +2609,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2657,9 +2657,9 @@ export namespace MyNS {
 	}
 	export function CreatePolicyTargetSummaryFormGroup() {
 		return new FormGroup<PolicyTargetSummaryFormProperties>({
-			TargetId: new FormControl<string | null | undefined>(undefined),
-			Arn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(r-[0-9a-z]{4,32})|(\d{12})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws:organizations::.+:.+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			Type: new FormControl<PolicyTargetSummaryType | null | undefined>(undefined),
 		});
 
@@ -2693,7 +2693,7 @@ export namespace MyNS {
 	}
 	export function CreateListTargetsForPolicyRequestFormGroup() {
 		return new FormGroup<ListTargetsForPolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^p-[0-9a-zA-Z_]{8,128}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 		});
@@ -2724,9 +2724,9 @@ export namespace MyNS {
 	}
 	export function CreateMoveAccountRequestFormGroup() {
 		return new FormGroup<MoveAccountRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			SourceParentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			DestinationParentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
+			SourceParentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
+			DestinationParentId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(r-[0-9a-z]{4,32})|(ou-[0-9a-z]{4,32}-[a-z0-9]{8,32})$')]),
 		});
 
 	}
@@ -2787,8 +2787,8 @@ export namespace MyNS {
 	}
 	export function CreateRegisterDelegatedAdministratorRequestFormGroup() {
 		return new FormGroup<RegisterDelegatedAdministratorRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\w+=,.@-]*')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
+			ServicePrincipal: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\w+=,.@-]*')]),
 		});
 
 	}
@@ -2815,7 +2815,7 @@ export namespace MyNS {
 	}
 	export function CreateRemoveAccountFromOrganizationRequestFormGroup() {
 		return new FormGroup<RemoveAccountFromOrganizationRequestFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
 		});
 
 	}
@@ -2835,7 +2835,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
 		});
 
 	}
@@ -2855,7 +2855,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^\d{12}$')]),
 		});
 
 	}
@@ -2897,8 +2897,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateOrganizationalUnitRequestFormGroup() {
 		return new FormGroup<UpdateOrganizationalUnitRequestFormProperties>({
-			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			OrganizationalUnitId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -2958,10 +2958,10 @@ export namespace MyNS {
 	}
 	export function CreateUpdatePolicyRequestFormGroup() {
 		return new FormGroup<UpdatePolicyRequestFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^p-[0-9a-zA-Z_]{8,128}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512)]),
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000000), Validators.minLength(1)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000000)]),
 		});
 
 	}
@@ -3476,107 +3476,107 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptHandshakeX_Amz_Target { AWSOrganizationsV20161128_AcceptHandshake = 0 }
+	export enum AcceptHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.AcceptHandshake' = 0 }
 
-	export enum AttachPolicyX_Amz_Target { AWSOrganizationsV20161128_AttachPolicy = 0 }
+	export enum AttachPolicyX_Amz_Target { 'AWSOrganizationsV20161128.AttachPolicy' = 0 }
 
-	export enum CancelHandshakeX_Amz_Target { AWSOrganizationsV20161128_CancelHandshake = 0 }
+	export enum CancelHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.CancelHandshake' = 0 }
 
-	export enum CreateAccountX_Amz_Target { AWSOrganizationsV20161128_CreateAccount = 0 }
+	export enum CreateAccountX_Amz_Target { 'AWSOrganizationsV20161128.CreateAccount' = 0 }
 
-	export enum CreateGovCloudAccountX_Amz_Target { AWSOrganizationsV20161128_CreateGovCloudAccount = 0 }
+	export enum CreateGovCloudAccountX_Amz_Target { 'AWSOrganizationsV20161128.CreateGovCloudAccount' = 0 }
 
-	export enum CreateOrganizationX_Amz_Target { AWSOrganizationsV20161128_CreateOrganization = 0 }
+	export enum CreateOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.CreateOrganization' = 0 }
 
-	export enum CreateOrganizationalUnitX_Amz_Target { AWSOrganizationsV20161128_CreateOrganizationalUnit = 0 }
+	export enum CreateOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.CreateOrganizationalUnit' = 0 }
 
-	export enum CreatePolicyX_Amz_Target { AWSOrganizationsV20161128_CreatePolicy = 0 }
+	export enum CreatePolicyX_Amz_Target { 'AWSOrganizationsV20161128.CreatePolicy' = 0 }
 
-	export enum DeclineHandshakeX_Amz_Target { AWSOrganizationsV20161128_DeclineHandshake = 0 }
+	export enum DeclineHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.DeclineHandshake' = 0 }
 
-	export enum DeleteOrganizationX_Amz_Target { AWSOrganizationsV20161128_DeleteOrganization = 0 }
+	export enum DeleteOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.DeleteOrganization' = 0 }
 
-	export enum DeleteOrganizationalUnitX_Amz_Target { AWSOrganizationsV20161128_DeleteOrganizationalUnit = 0 }
+	export enum DeleteOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.DeleteOrganizationalUnit' = 0 }
 
-	export enum DeletePolicyX_Amz_Target { AWSOrganizationsV20161128_DeletePolicy = 0 }
+	export enum DeletePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DeletePolicy' = 0 }
 
-	export enum DeregisterDelegatedAdministratorX_Amz_Target { AWSOrganizationsV20161128_DeregisterDelegatedAdministrator = 0 }
+	export enum DeregisterDelegatedAdministratorX_Amz_Target { 'AWSOrganizationsV20161128.DeregisterDelegatedAdministrator' = 0 }
 
-	export enum DescribeAccountX_Amz_Target { AWSOrganizationsV20161128_DescribeAccount = 0 }
+	export enum DescribeAccountX_Amz_Target { 'AWSOrganizationsV20161128.DescribeAccount' = 0 }
 
-	export enum DescribeCreateAccountStatusX_Amz_Target { AWSOrganizationsV20161128_DescribeCreateAccountStatus = 0 }
+	export enum DescribeCreateAccountStatusX_Amz_Target { 'AWSOrganizationsV20161128.DescribeCreateAccountStatus' = 0 }
 
-	export enum DescribeEffectivePolicyX_Amz_Target { AWSOrganizationsV20161128_DescribeEffectivePolicy = 0 }
+	export enum DescribeEffectivePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribeEffectivePolicy' = 0 }
 
-	export enum DescribeHandshakeX_Amz_Target { AWSOrganizationsV20161128_DescribeHandshake = 0 }
+	export enum DescribeHandshakeX_Amz_Target { 'AWSOrganizationsV20161128.DescribeHandshake' = 0 }
 
-	export enum DescribeOrganizationX_Amz_Target { AWSOrganizationsV20161128_DescribeOrganization = 0 }
+	export enum DescribeOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.DescribeOrganization' = 0 }
 
-	export enum DescribeOrganizationalUnitX_Amz_Target { AWSOrganizationsV20161128_DescribeOrganizationalUnit = 0 }
+	export enum DescribeOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.DescribeOrganizationalUnit' = 0 }
 
-	export enum DescribePolicyX_Amz_Target { AWSOrganizationsV20161128_DescribePolicy = 0 }
+	export enum DescribePolicyX_Amz_Target { 'AWSOrganizationsV20161128.DescribePolicy' = 0 }
 
-	export enum DetachPolicyX_Amz_Target { AWSOrganizationsV20161128_DetachPolicy = 0 }
+	export enum DetachPolicyX_Amz_Target { 'AWSOrganizationsV20161128.DetachPolicy' = 0 }
 
-	export enum DisableAWSServiceAccessX_Amz_Target { AWSOrganizationsV20161128_DisableAWSServiceAccess = 0 }
+	export enum DisableAWSServiceAccessX_Amz_Target { 'AWSOrganizationsV20161128.DisableAWSServiceAccess' = 0 }
 
-	export enum DisablePolicyTypeX_Amz_Target { AWSOrganizationsV20161128_DisablePolicyType = 0 }
+	export enum DisablePolicyTypeX_Amz_Target { 'AWSOrganizationsV20161128.DisablePolicyType' = 0 }
 
-	export enum EnableAWSServiceAccessX_Amz_Target { AWSOrganizationsV20161128_EnableAWSServiceAccess = 0 }
+	export enum EnableAWSServiceAccessX_Amz_Target { 'AWSOrganizationsV20161128.EnableAWSServiceAccess' = 0 }
 
-	export enum EnableAllFeaturesX_Amz_Target { AWSOrganizationsV20161128_EnableAllFeatures = 0 }
+	export enum EnableAllFeaturesX_Amz_Target { 'AWSOrganizationsV20161128.EnableAllFeatures' = 0 }
 
-	export enum EnablePolicyTypeX_Amz_Target { AWSOrganizationsV20161128_EnablePolicyType = 0 }
+	export enum EnablePolicyTypeX_Amz_Target { 'AWSOrganizationsV20161128.EnablePolicyType' = 0 }
 
-	export enum InviteAccountToOrganizationX_Amz_Target { AWSOrganizationsV20161128_InviteAccountToOrganization = 0 }
+	export enum InviteAccountToOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.InviteAccountToOrganization' = 0 }
 
-	export enum LeaveOrganizationX_Amz_Target { AWSOrganizationsV20161128_LeaveOrganization = 0 }
+	export enum LeaveOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.LeaveOrganization' = 0 }
 
-	export enum ListAWSServiceAccessForOrganizationX_Amz_Target { AWSOrganizationsV20161128_ListAWSServiceAccessForOrganization = 0 }
+	export enum ListAWSServiceAccessForOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.ListAWSServiceAccessForOrganization' = 0 }
 
-	export enum ListAccountsX_Amz_Target { AWSOrganizationsV20161128_ListAccounts = 0 }
+	export enum ListAccountsX_Amz_Target { 'AWSOrganizationsV20161128.ListAccounts' = 0 }
 
-	export enum ListAccountsForParentX_Amz_Target { AWSOrganizationsV20161128_ListAccountsForParent = 0 }
+	export enum ListAccountsForParentX_Amz_Target { 'AWSOrganizationsV20161128.ListAccountsForParent' = 0 }
 
-	export enum ListChildrenX_Amz_Target { AWSOrganizationsV20161128_ListChildren = 0 }
+	export enum ListChildrenX_Amz_Target { 'AWSOrganizationsV20161128.ListChildren' = 0 }
 
-	export enum ListCreateAccountStatusX_Amz_Target { AWSOrganizationsV20161128_ListCreateAccountStatus = 0 }
+	export enum ListCreateAccountStatusX_Amz_Target { 'AWSOrganizationsV20161128.ListCreateAccountStatus' = 0 }
 
-	export enum ListDelegatedAdministratorsX_Amz_Target { AWSOrganizationsV20161128_ListDelegatedAdministrators = 0 }
+	export enum ListDelegatedAdministratorsX_Amz_Target { 'AWSOrganizationsV20161128.ListDelegatedAdministrators' = 0 }
 
-	export enum ListDelegatedServicesForAccountX_Amz_Target { AWSOrganizationsV20161128_ListDelegatedServicesForAccount = 0 }
+	export enum ListDelegatedServicesForAccountX_Amz_Target { 'AWSOrganizationsV20161128.ListDelegatedServicesForAccount' = 0 }
 
-	export enum ListHandshakesForAccountX_Amz_Target { AWSOrganizationsV20161128_ListHandshakesForAccount = 0 }
+	export enum ListHandshakesForAccountX_Amz_Target { 'AWSOrganizationsV20161128.ListHandshakesForAccount' = 0 }
 
-	export enum ListHandshakesForOrganizationX_Amz_Target { AWSOrganizationsV20161128_ListHandshakesForOrganization = 0 }
+	export enum ListHandshakesForOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.ListHandshakesForOrganization' = 0 }
 
-	export enum ListOrganizationalUnitsForParentX_Amz_Target { AWSOrganizationsV20161128_ListOrganizationalUnitsForParent = 0 }
+	export enum ListOrganizationalUnitsForParentX_Amz_Target { 'AWSOrganizationsV20161128.ListOrganizationalUnitsForParent' = 0 }
 
-	export enum ListParentsX_Amz_Target { AWSOrganizationsV20161128_ListParents = 0 }
+	export enum ListParentsX_Amz_Target { 'AWSOrganizationsV20161128.ListParents' = 0 }
 
-	export enum ListPoliciesX_Amz_Target { AWSOrganizationsV20161128_ListPolicies = 0 }
+	export enum ListPoliciesX_Amz_Target { 'AWSOrganizationsV20161128.ListPolicies' = 0 }
 
-	export enum ListPoliciesForTargetX_Amz_Target { AWSOrganizationsV20161128_ListPoliciesForTarget = 0 }
+	export enum ListPoliciesForTargetX_Amz_Target { 'AWSOrganizationsV20161128.ListPoliciesForTarget' = 0 }
 
-	export enum ListRootsX_Amz_Target { AWSOrganizationsV20161128_ListRoots = 0 }
+	export enum ListRootsX_Amz_Target { 'AWSOrganizationsV20161128.ListRoots' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AWSOrganizationsV20161128_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSOrganizationsV20161128.ListTagsForResource' = 0 }
 
-	export enum ListTargetsForPolicyX_Amz_Target { AWSOrganizationsV20161128_ListTargetsForPolicy = 0 }
+	export enum ListTargetsForPolicyX_Amz_Target { 'AWSOrganizationsV20161128.ListTargetsForPolicy' = 0 }
 
-	export enum MoveAccountX_Amz_Target { AWSOrganizationsV20161128_MoveAccount = 0 }
+	export enum MoveAccountX_Amz_Target { 'AWSOrganizationsV20161128.MoveAccount' = 0 }
 
-	export enum RegisterDelegatedAdministratorX_Amz_Target { AWSOrganizationsV20161128_RegisterDelegatedAdministrator = 0 }
+	export enum RegisterDelegatedAdministratorX_Amz_Target { 'AWSOrganizationsV20161128.RegisterDelegatedAdministrator' = 0 }
 
-	export enum RemoveAccountFromOrganizationX_Amz_Target { AWSOrganizationsV20161128_RemoveAccountFromOrganization = 0 }
+	export enum RemoveAccountFromOrganizationX_Amz_Target { 'AWSOrganizationsV20161128.RemoveAccountFromOrganization' = 0 }
 
-	export enum TagResourceX_Amz_Target { AWSOrganizationsV20161128_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSOrganizationsV20161128.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { AWSOrganizationsV20161128_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSOrganizationsV20161128.UntagResource' = 0 }
 
-	export enum UpdateOrganizationalUnitX_Amz_Target { AWSOrganizationsV20161128_UpdateOrganizationalUnit = 0 }
+	export enum UpdateOrganizationalUnitX_Amz_Target { 'AWSOrganizationsV20161128.UpdateOrganizationalUnit' = 0 }
 
-	export enum UpdatePolicyX_Amz_Target { AWSOrganizationsV20161128_UpdatePolicy = 0 }
+	export enum UpdatePolicyX_Amz_Target { 'AWSOrganizationsV20161128.UpdatePolicy' = 0 }
 
 }
 

@@ -3418,7 +3418,7 @@ export namespace MyNS {
 		dimensions?: string | null;
 
 		/** End date. */
-		end_date?: string | null;
+		'end-date'?: string | null;
 
 		/** Comma-separated list of dimension or metric filters. */
 		filters?: string | null;
@@ -3427,7 +3427,7 @@ export namespace MyNS {
 		ids?: string | null;
 
 		/** Maximum results per page. */
-		max_results?: number | null;
+		'max-results'?: number | null;
 
 		/** List of analytics metrics. */
 		metrics?: Array<string>;
@@ -3442,10 +3442,10 @@ export namespace MyNS {
 		sort?: Array<string>;
 
 		/** Start date. */
-		start_date?: string | null;
+		'start-date'?: string | null;
 
 		/** Start index. */
-		start_index?: number | null;
+		'start-index'?: number | null;
 	}
 	export interface GaDataQueryFormProperties {
 
@@ -3453,7 +3453,7 @@ export namespace MyNS {
 		dimensions: FormControl<string | null | undefined>,
 
 		/** End date. */
-		end_date: FormControl<string | null | undefined>,
+		'end-date': FormControl<string | null | undefined>,
 
 		/** Comma-separated list of dimension or metric filters. */
 		filters: FormControl<string | null | undefined>,
@@ -3462,7 +3462,7 @@ export namespace MyNS {
 		ids: FormControl<string | null | undefined>,
 
 		/** Maximum results per page. */
-		max_results: FormControl<number | null | undefined>,
+		'max-results': FormControl<number | null | undefined>,
 
 		/** Desired sampling level */
 		samplingLevel: FormControl<string | null | undefined>,
@@ -3471,22 +3471,22 @@ export namespace MyNS {
 		segment: FormControl<string | null | undefined>,
 
 		/** Start date. */
-		start_date: FormControl<string | null | undefined>,
+		'start-date': FormControl<string | null | undefined>,
 
 		/** Start index. */
-		start_index: FormControl<number | null | undefined>,
+		'start-index': FormControl<number | null | undefined>,
 	}
 	export function CreateGaDataQueryFormGroup() {
 		return new FormGroup<GaDataQueryFormProperties>({
 			dimensions: new FormControl<string | null | undefined>(undefined),
-			end_date: new FormControl<string | null | undefined>(undefined),
+			'end-date': new FormControl<string | null | undefined>(undefined),
 			filters: new FormControl<string | null | undefined>(undefined),
 			ids: new FormControl<string | null | undefined>(undefined),
-			max_results: new FormControl<number | null | undefined>(undefined),
+			'max-results': new FormControl<number | null | undefined>(undefined),
 			samplingLevel: new FormControl<string | null | undefined>(undefined),
 			segment: new FormControl<string | null | undefined>(undefined),
-			start_date: new FormControl<string | null | undefined>(undefined),
-			start_index: new FormControl<number | null | undefined>(undefined),
+			'start-date': new FormControl<string | null | undefined>(undefined),
+			'start-index': new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
@@ -4260,7 +4260,7 @@ export namespace MyNS {
 		dimensions?: string | null;
 
 		/** End date. */
-		end_date?: string | null;
+		'end-date'?: string | null;
 
 		/** Comma-separated list of dimension or metric filters. */
 		filters?: string | null;
@@ -4269,7 +4269,7 @@ export namespace MyNS {
 		ids?: string | null;
 
 		/** Maximum results per page. */
-		max_results?: number | null;
+		'max-results'?: number | null;
 
 		/** List of analytics metrics. */
 		metrics?: Array<string>;
@@ -4284,10 +4284,10 @@ export namespace MyNS {
 		sort?: Array<string>;
 
 		/** Start date. */
-		start_date?: string | null;
+		'start-date'?: string | null;
 
 		/** Start index. */
-		start_index?: number | null;
+		'start-index'?: number | null;
 	}
 	export interface McfDataQueryFormProperties {
 
@@ -4295,7 +4295,7 @@ export namespace MyNS {
 		dimensions: FormControl<string | null | undefined>,
 
 		/** End date. */
-		end_date: FormControl<string | null | undefined>,
+		'end-date': FormControl<string | null | undefined>,
 
 		/** Comma-separated list of dimension or metric filters. */
 		filters: FormControl<string | null | undefined>,
@@ -4304,7 +4304,7 @@ export namespace MyNS {
 		ids: FormControl<string | null | undefined>,
 
 		/** Maximum results per page. */
-		max_results: FormControl<number | null | undefined>,
+		'max-results': FormControl<number | null | undefined>,
 
 		/** Desired sampling level */
 		samplingLevel: FormControl<string | null | undefined>,
@@ -4313,22 +4313,22 @@ export namespace MyNS {
 		segment: FormControl<string | null | undefined>,
 
 		/** Start date. */
-		start_date: FormControl<string | null | undefined>,
+		'start-date': FormControl<string | null | undefined>,
 
 		/** Start index. */
-		start_index: FormControl<number | null | undefined>,
+		'start-index': FormControl<number | null | undefined>,
 	}
 	export function CreateMcfDataQueryFormGroup() {
 		return new FormGroup<McfDataQueryFormProperties>({
 			dimensions: new FormControl<string | null | undefined>(undefined),
-			end_date: new FormControl<string | null | undefined>(undefined),
+			'end-date': new FormControl<string | null | undefined>(undefined),
 			filters: new FormControl<string | null | undefined>(undefined),
 			ids: new FormControl<string | null | undefined>(undefined),
-			max_results: new FormControl<number | null | undefined>(undefined),
+			'max-results': new FormControl<number | null | undefined>(undefined),
 			samplingLevel: new FormControl<string | null | undefined>(undefined),
 			segment: new FormControl<string | null | undefined>(undefined),
-			start_date: new FormControl<string | null | undefined>(undefined),
-			start_index: new FormControl<number | null | undefined>(undefined),
+			'start-date': new FormControl<string | null | undefined>(undefined),
+			'start-index': new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
@@ -4677,7 +4677,7 @@ export namespace MyNS {
 		ids?: string | null;
 
 		/** Maximum results per page. */
-		max_results?: number | null;
+		'max-results'?: number | null;
 
 		/** List of real time metrics. */
 		metrics?: Array<string>;
@@ -4697,14 +4697,14 @@ export namespace MyNS {
 		ids: FormControl<string | null | undefined>,
 
 		/** Maximum results per page. */
-		max_results: FormControl<number | null | undefined>,
+		'max-results': FormControl<number | null | undefined>,
 	}
 	export function CreateRealtimeDataQueryFormGroup() {
 		return new FormGroup<RealtimeDataQueryFormProperties>({
 			dimensions: new FormControl<string | null | undefined>(undefined),
 			filters: new FormControl<string | null | undefined>(undefined),
 			ids: new FormControl<string | null | undefined>(undefined),
-			max_results: new FormControl<number | null | undefined>(undefined),
+			'max-results': new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
@@ -5090,7 +5090,7 @@ export namespace MyNS {
 		driveDownloadDetails?: UnsampledReportDriveDownloadDetails;
 
 		/** The end date for the unsampled report. */
-		end_date?: string | null;
+		'end-date'?: string | null;
 
 		/** The filters for the unsampled report. */
 		filters?: string | null;
@@ -5114,7 +5114,7 @@ export namespace MyNS {
 		selfLink?: string | null;
 
 		/** The start date for the unsampled report. */
-		start_date?: string | null;
+		'start-date'?: string | null;
 
 		/** Status of this unsampled report. Possible values are PENDING, COMPLETED, or FAILED. */
 		status?: string | null;
@@ -5145,7 +5145,7 @@ export namespace MyNS {
 		downloadType: FormControl<string | null | undefined>,
 
 		/** The end date for the unsampled report. */
-		end_date: FormControl<string | null | undefined>,
+		'end-date': FormControl<string | null | undefined>,
 
 		/** The filters for the unsampled report. */
 		filters: FormControl<string | null | undefined>,
@@ -5169,7 +5169,7 @@ export namespace MyNS {
 		selfLink: FormControl<string | null | undefined>,
 
 		/** The start date for the unsampled report. */
-		start_date: FormControl<string | null | undefined>,
+		'start-date': FormControl<string | null | undefined>,
 
 		/** Status of this unsampled report. Possible values are PENDING, COMPLETED, or FAILED. */
 		status: FormControl<string | null | undefined>,
@@ -5189,7 +5189,7 @@ export namespace MyNS {
 			created: new FormControl<Date | null | undefined>(undefined),
 			dimensions: new FormControl<string | null | undefined>(undefined),
 			downloadType: new FormControl<string | null | undefined>(undefined),
-			end_date: new FormControl<string | null | undefined>(undefined),
+			'end-date': new FormControl<string | null | undefined>(undefined),
 			filters: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			kind: new FormControl<string | null | undefined>(undefined),
@@ -5197,7 +5197,7 @@ export namespace MyNS {
 			profileId: new FormControl<string | null | undefined>(undefined),
 			segment: new FormControl<string | null | undefined>(undefined),
 			selfLink: new FormControl<string | null | undefined>(undefined),
-			start_date: new FormControl<string | null | undefined>(undefined),
+			'start-date': new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 			updated: new FormControl<Date | null | undefined>(undefined),

@@ -15,7 +15,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAnalyzerResponseFormGroup() {
 		return new FormGroup<CreateAnalyzerResponseFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 		});
 
 	}
@@ -47,7 +47,7 @@ export namespace MyNS {
 	}
 	export function CreateInlineArchiveRuleFormGroup() {
 		return new FormGroup<InlineArchiveRuleFormProperties>({
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 		});
 
 	}
@@ -246,7 +246,7 @@ export namespace MyNS {
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			error: new FormControl<string | null | undefined>(undefined),
 			isPublic: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$')]),
 			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			resourceType: new FormControl<AnalyzedResourceResourceType | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<AnalyzedResourceStatus | null | undefined>(undefined),
@@ -255,7 +255,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AnalyzedResourceResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
+	export enum AnalyzedResourceResourceType { 'AWS::IAM::Role' = 0, 'AWS::KMS::Key' = 1, 'AWS::Lambda::Function' = 2, 'AWS::Lambda::LayerVersion' = 3, 'AWS::S3::Bucket' = 4, 'AWS::SQS::Queue' = 5 }
 
 	export enum AnalyzedResourceStatus { ACTIVE = 0, ARCHIVED = 1, RESOLVED = 2 }
 
@@ -335,11 +335,11 @@ export namespace MyNS {
 	}
 	export function CreateAnalyzerSummaryFormGroup() {
 		return new FormGroup<AnalyzerSummaryFormProperties>({
-			arn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			arn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			lastResourceAnalyzed: new FormControl<string | null | undefined>(undefined),
 			lastResourceAnalyzedAt: new FormControl<Date | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			status: new FormControl<AnalyzerSummaryStatus | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -443,7 +443,7 @@ export namespace MyNS {
 	export function CreateArchiveRuleSummaryFormGroup() {
 		return new FormGroup<ArchiveRuleSummaryFormProperties>({
 			createdAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -491,7 +491,7 @@ export namespace MyNS {
 		resourceOwnerAccount: string;
 
 		/** Required */
-		resourceType: FindingResourceType;
+		resourceType: AnalyzedResourceResourceType;
 		sources?: Array<FindingSource>;
 
 		/** Required */
@@ -520,7 +520,7 @@ export namespace MyNS {
 		resourceOwnerAccount: FormControl<string | null | undefined>,
 
 		/** Required */
-		resourceType: FormControl<FindingResourceType | null | undefined>,
+		resourceType: FormControl<AnalyzedResourceResourceType | null | undefined>,
 
 		/** Required */
 		status: FormControl<AnalyzedResourceStatus | null | undefined>,
@@ -537,7 +537,7 @@ export namespace MyNS {
 			isPublic: new FormControl<boolean | null | undefined>(undefined),
 			resource: new FormControl<string | null | undefined>(undefined),
 			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resourceType: new FormControl<FindingResourceType | null | undefined>(undefined, [Validators.required]),
+			resourceType: new FormControl<AnalyzedResourceResourceType | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<AnalyzedResourceStatus | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
@@ -563,8 +563,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum FindingResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
 
 
 	/** The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings. */
@@ -640,7 +638,7 @@ export namespace MyNS {
 		resourceOwnerAccount: string;
 
 		/** Required */
-		resourceType: AnalyzedResourceSummaryResourceType;
+		resourceType: AnalyzedResourceResourceType;
 	}
 
 	/** Contains the ARN of the analyzed resource. */
@@ -653,18 +651,16 @@ export namespace MyNS {
 		resourceOwnerAccount: FormControl<string | null | undefined>,
 
 		/** Required */
-		resourceType: FormControl<AnalyzedResourceSummaryResourceType | null | undefined>,
+		resourceType: FormControl<AnalyzedResourceResourceType | null | undefined>,
 	}
 	export function CreateAnalyzedResourceSummaryFormGroup() {
 		return new FormGroup<AnalyzedResourceSummaryFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$')]),
 			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resourceType: new FormControl<AnalyzedResourceSummaryResourceType | null | undefined>(undefined, [Validators.required]),
+			resourceType: new FormControl<AnalyzedResourceResourceType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum AnalyzedResourceSummaryResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
 
 
 	/** The response to the request. */
@@ -751,7 +747,7 @@ export namespace MyNS {
 		resourceOwnerAccount: string;
 
 		/** Required */
-		resourceType: FindingSummaryResourceType;
+		resourceType: AnalyzedResourceResourceType;
 		sources?: Array<FindingSource>;
 
 		/** Required */
@@ -780,7 +776,7 @@ export namespace MyNS {
 		resourceOwnerAccount: FormControl<string | null | undefined>,
 
 		/** Required */
-		resourceType: FormControl<FindingSummaryResourceType | null | undefined>,
+		resourceType: FormControl<AnalyzedResourceResourceType | null | undefined>,
 
 		/** Required */
 		status: FormControl<AnalyzedResourceStatus | null | undefined>,
@@ -797,14 +793,12 @@ export namespace MyNS {
 			isPublic: new FormControl<boolean | null | undefined>(undefined),
 			resource: new FormControl<string | null | undefined>(undefined),
 			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resourceType: new FormControl<FindingSummaryResourceType | null | undefined>(undefined, [Validators.required]),
+			resourceType: new FormControl<AnalyzedResourceResourceType | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<AnalyzedResourceStatus | null | undefined>(undefined, [Validators.required]),
 			updatedAt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum FindingSummaryResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
 
 	export enum OrderBy { ASC = 0, DESC = 1 }
 
@@ -851,7 +845,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
+	export enum ResourceType { 'AWS::IAM::Role' = 0, 'AWS::KMS::Key' = 1, 'AWS::Lambda::Function' = 2, 'AWS::Lambda::LayerVersion' = 3, 'AWS::S3::Bucket' = 4, 'AWS::SQS::Queue' = 5 }
 
 	export enum FindingStatus { ACTIVE = 0, ARCHIVED = 1, RESOLVED = 2 }
 
@@ -893,7 +887,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAnalyzerRequestFormGroup() {
 		return new FormGroup<CreateAnalyzerRequestFormProperties>({
-			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
+			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -930,7 +924,7 @@ export namespace MyNS {
 	export function CreateCreateArchiveRuleRequestFormGroup() {
 		return new FormGroup<CreateArchiveRuleRequestFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 		});
 
 	}
@@ -1029,7 +1023,7 @@ export namespace MyNS {
 		analyzerArn: string;
 		maxResults?: number | null;
 		nextToken?: string | null;
-		resourceType?: ListAnalyzedResourcesRequestResourceType | null;
+		resourceType?: AnalyzedResourceResourceType | null;
 	}
 
 	/** Retrieves a list of resources that have been analyzed. */
@@ -1039,19 +1033,17 @@ export namespace MyNS {
 		analyzerArn: FormControl<string | null | undefined>,
 		maxResults: FormControl<number | null | undefined>,
 		nextToken: FormControl<string | null | undefined>,
-		resourceType: FormControl<ListAnalyzedResourcesRequestResourceType | null | undefined>,
+		resourceType: FormControl<AnalyzedResourceResourceType | null | undefined>,
 	}
 	export function CreateListAnalyzedResourcesRequestFormGroup() {
 		return new FormGroup<ListAnalyzedResourcesRequestFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			resourceType: new FormControl<ListAnalyzedResourcesRequestResourceType | null | undefined>(undefined),
+			resourceType: new FormControl<AnalyzedResourceResourceType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ListAnalyzedResourcesRequestResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
 
 
 	/** Retrieves a list of analyzers. */
@@ -1125,7 +1117,7 @@ export namespace MyNS {
 	}
 	export function CreateListFindingsRequestFormGroup() {
 		return new FormGroup<ListFindingsRequestFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1170,8 +1162,8 @@ export namespace MyNS {
 	}
 	export function CreateStartResourceScanRequestFormGroup() {
 		return new FormGroup<StartResourceScanRequestFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$')]),
 		});
 
 	}
@@ -1254,9 +1246,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFindingsRequestFormGroup() {
 		return new FormGroup<UpdateFindingsRequestFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$')]),
 			status: new FormControl<FindingStatusUpdate | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1508,7 +1500,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAnalyzerPutBodyFormGroup() {
 		return new FormGroup<CreateAnalyzerPutBodyFormProperties>({
-			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
+			analyzerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined, [Validators.required]),
@@ -1558,7 +1550,7 @@ export namespace MyNS {
 		return new FormGroup<CreateArchiveRulePutBodyFormProperties>({
 			clientToken: new FormControl<string | null | undefined>(undefined),
 			filter: new FormControl<{[id: string]: Criterion } | null | undefined>(undefined, [Validators.required]),
-			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
+			ruleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('^[A-Za-z][A-Za-z0-9_.-]*$')]),
 		});
 
 	}
@@ -1608,7 +1600,7 @@ export namespace MyNS {
 		nextToken?: string | null;
 
 		/** The type of resource. */
-		resourceType?: ListAnalyzedResourcesPostBodyResourceType | null;
+		resourceType?: AnalyzedResourceResourceType | null;
 	}
 	export interface ListAnalyzedResourcesPostBodyFormProperties {
 
@@ -1625,19 +1617,17 @@ export namespace MyNS {
 		nextToken: FormControl<string | null | undefined>,
 
 		/** The type of resource. */
-		resourceType: FormControl<ListAnalyzedResourcesPostBodyResourceType | null | undefined>,
+		resourceType: FormControl<AnalyzedResourceResourceType | null | undefined>,
 	}
 	export function CreateListAnalyzedResourcesPostBodyFormGroup() {
 		return new FormGroup<ListAnalyzedResourcesPostBodyFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
-			resourceType: new FormControl<ListAnalyzedResourcesPostBodyResourceType | null | undefined>(undefined),
+			resourceType: new FormControl<AnalyzedResourceResourceType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ListAnalyzedResourcesPostBodyResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
 
 	export interface ListFindingsPostBody {
 
@@ -1678,7 +1668,7 @@ export namespace MyNS {
 	}
 	export function CreateListFindingsPostBodyFormGroup() {
 		return new FormGroup<ListFindingsPostBodyFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 			filter: new FormControl<{[id: string]: Criterion } | null | undefined>(undefined),
 			maxResults: new FormControl<number | null | undefined>(undefined),
 			nextToken: new FormControl<string | null | undefined>(undefined),
@@ -1747,9 +1737,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFindingsPutBodyFormGroup() {
 		return new FormGroup<UpdateFindingsPutBodyFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
 			clientToken: new FormControl<string | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$')]),
 			status: new FormControl<FindingStatusUpdate | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1808,8 +1798,8 @@ export namespace MyNS {
 	}
 	export function CreateStartResourceScanPostBodyFormGroup() {
 		return new FormGroup<StartResourceScanPostBodyFormProperties>({
-			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			analyzerArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$')]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$')]),
 		});
 
 	}

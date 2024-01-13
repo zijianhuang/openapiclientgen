@@ -719,17 +719,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetAutoScalingGroupRecommendationsX_Amz_Target { ComputeOptimizerService_GetAutoScalingGroupRecommendations = 0 }
+	export enum GetAutoScalingGroupRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetAutoScalingGroupRecommendations' = 0 }
 
-	export enum GetEC2InstanceRecommendationsX_Amz_Target { ComputeOptimizerService_GetEC2InstanceRecommendations = 0 }
+	export enum GetEC2InstanceRecommendationsX_Amz_Target { 'ComputeOptimizerService.GetEC2InstanceRecommendations' = 0 }
 
-	export enum GetEC2RecommendationProjectedMetricsX_Amz_Target { ComputeOptimizerService_GetEC2RecommendationProjectedMetrics = 0 }
+	export enum GetEC2RecommendationProjectedMetricsX_Amz_Target { 'ComputeOptimizerService.GetEC2RecommendationProjectedMetrics' = 0 }
 
-	export enum GetEnrollmentStatusX_Amz_Target { ComputeOptimizerService_GetEnrollmentStatus = 0 }
+	export enum GetEnrollmentStatusX_Amz_Target { 'ComputeOptimizerService.GetEnrollmentStatus' = 0 }
 
-	export enum GetRecommendationSummariesX_Amz_Target { ComputeOptimizerService_GetRecommendationSummaries = 0 }
+	export enum GetRecommendationSummariesX_Amz_Target { 'ComputeOptimizerService.GetRecommendationSummaries' = 0 }
 
-	export enum UpdateEnrollmentStatusX_Amz_Target { ComputeOptimizerService_UpdateEnrollmentStatus = 0 }
+	export enum UpdateEnrollmentStatusX_Amz_Target { 'ComputeOptimizerService.UpdateEnrollmentStatus' = 0 }
 
 }
 

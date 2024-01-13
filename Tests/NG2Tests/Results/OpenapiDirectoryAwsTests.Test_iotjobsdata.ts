@@ -71,8 +71,8 @@ export namespace MyNS {
 	}
 	export function CreateJobExecutionFormGroup() {
 		return new FormGroup<JobExecutionFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
-			thingName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9:_-]+')]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			thingName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9:_-]+')]),
 			status: new FormControl<JobExecutionStatus | null | undefined>(undefined),
 			queuedAt: new FormControl<number | null | undefined>(undefined),
 			startedAt: new FormControl<number | null | undefined>(undefined),
@@ -201,7 +201,7 @@ export namespace MyNS {
 	}
 	export function CreateJobExecutionSummaryFormGroup() {
 		return new FormGroup<JobExecutionSummaryFormProperties>({
-			jobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			jobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z0-9_-]+')]),
 			queuedAt: new FormControl<number | null | undefined>(undefined),
 			startedAt: new FormControl<number | null | undefined>(undefined),
 			lastUpdatedAt: new FormControl<number | null | undefined>(undefined),

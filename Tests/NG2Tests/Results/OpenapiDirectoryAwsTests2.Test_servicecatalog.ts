@@ -42,7 +42,7 @@ export namespace MyNS {
 	export function CreateAcceptPortfolioShareInputFormGroup() {
 		return new FormGroup<AcceptPortfolioShareInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PortfolioShareType: new FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>(undefined),
 		});
 
@@ -124,8 +124,8 @@ export namespace MyNS {
 	}
 	export function CreateAssociateBudgetWithResourceInputFormGroup() {
 		return new FormGroup<AssociateBudgetWithResourceInputFormProperties>({
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -197,8 +197,8 @@ export namespace MyNS {
 	export function CreateAssociatePrincipalWithPortfolioInputFormGroup() {
 		return new FormGroup<AssociatePrincipalWithPortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PrincipalARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PrincipalARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 			PrincipalType: new FormControl<AssociatePrincipalWithPortfolioInputPrincipalType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -269,9 +269,9 @@ export namespace MyNS {
 	export function CreateAssociateProductWithPortfolioInputFormGroup() {
 		return new FormGroup<AssociateProductWithPortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			SourcePortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			SourcePortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -340,9 +340,9 @@ export namespace MyNS {
 	}
 	export function CreateAssociateServiceActionWithProvisioningArtifactInputFormGroup() {
 		return new FormGroup<AssociateServiceActionWithProvisioningArtifactInputFormProperties>({
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -385,7 +385,7 @@ export namespace MyNS {
 	export function CreateAssociateTagOptionWithResourceInputFormGroup() {
 		return new FormGroup<AssociateTagOptionWithResourceInputFormProperties>({
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TagOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TagOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -483,11 +483,11 @@ export namespace MyNS {
 	}
 	export function CreateFailedServiceActionAssociationFormGroup() {
 		return new FormGroup<FailedServiceActionAssociationFormProperties>({
-			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			ErrorCode: new FormControl<FailedServiceActionAssociationErrorCode | null | undefined>(undefined),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -570,9 +570,9 @@ export namespace MyNS {
 	}
 	export function CreateServiceActionAssociationFormGroup() {
 		return new FormGroup<ServiceActionAssociationFormProperties>({
-			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -632,7 +632,7 @@ export namespace MyNS {
 	}
 	export function CreateCopyProductOutputFormGroup() {
 		return new FormGroup<CopyProductOutputFormProperties>({
-			CopyProductToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			CopyProductToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -698,10 +698,10 @@ export namespace MyNS {
 	export function CreateCopyProductInputFormGroup() {
 		return new FormGroup<CopyProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			SourceProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
-			TargetProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			SourceProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
+			TargetProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			TargetProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -803,12 +803,12 @@ export namespace MyNS {
 	}
 	export function CreateConstraintDetailFormGroup() {
 		return new FormGroup<ConstraintDetailFormProperties>({
-			ConstraintId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			Type: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ConstraintId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			Owner: new FormControl<string | null | undefined>(undefined),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]{12}$')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -896,12 +896,12 @@ export namespace MyNS {
 	export function CreateCreateConstraintInputFormGroup() {
 		return new FormGroup<CreateConstraintInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Parameters: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Type: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -988,12 +988,12 @@ export namespace MyNS {
 	}
 	export function CreatePortfolioDetailFormGroup() {
 		return new FormGroup<PortfolioDetailFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(150), Validators.minLength(1)]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(150)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50)]),
 		});
 
 	}
@@ -1036,8 +1036,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -1106,10 +1106,10 @@ export namespace MyNS {
 	export function CreateCreatePortfolioInputFormGroup() {
 		return new FormGroup<CreatePortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(50)]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -1132,7 +1132,7 @@ export namespace MyNS {
 	}
 	export function CreateCreatePortfolioShareOutputFormGroup() {
 		return new FormGroup<CreatePortfolioShareOutputFormProperties>({
-			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -1169,8 +1169,8 @@ export namespace MyNS {
 	export function CreateCreatePortfolioShareInputFormGroup() {
 		return new FormGroup<CreatePortfolioShareInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]{12}$')]),
 		});
 
 	}
@@ -1190,7 +1190,7 @@ export namespace MyNS {
 	export function CreateOrganizationNodeFormGroup() {
 		return new FormGroup<OrganizationNodeFormProperties>({
 			Type: new FormControl<OrganizationNodeType | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^[0-9]{12}$)|(^arn:aws:organizations::\d{12}:organization\/o-[a-z0-9]{10,32})|(^o-[a-z0-9]{10,32}$)|(^arn:aws:organizations::\d{12}:ou\/o-[a-z0-9]{10,32}\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}$)|(^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$)')]),
 		});
 
 	}
@@ -1256,7 +1256,7 @@ export namespace MyNS {
 	export function CreateProductViewDetailFormGroup() {
 		return new FormGroup<ProductViewDetailFormProperties>({
 			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
-			ProductARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(150), Validators.minLength(1)]),
+			ProductARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(150)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1342,8 +1342,8 @@ export namespace MyNS {
 	}
 	export function CreateProductViewSummaryFormGroup() {
 		return new FormGroup<ProductViewSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
 			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
 			ShortDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
@@ -1401,7 +1401,7 @@ export namespace MyNS {
 	}
 	export function CreateProvisioningArtifactDetailFormGroup() {
 		return new FormGroup<ProvisioningArtifactDetailFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			Type: new FormControl<ProvisioningArtifactDetailType | null | undefined>(undefined),
@@ -1526,7 +1526,7 @@ export namespace MyNS {
 			SupportEmail: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(254)]),
 			SupportUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2083)]),
 			ProductType: new FormControl<ProductViewSummaryType | null | undefined>(undefined, [Validators.required, Validators.maxLength(8191)]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -1635,10 +1635,10 @@ export namespace MyNS {
 	export function CreateCreateProvisionedProductPlanOutputFormGroup() {
 		return new FormGroup<CreateProvisionedProductPlanOutputFormProperties>({
 			PlanName: new FormControl<string | null | undefined>(undefined),
-			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -1745,11 +1745,11 @@ export namespace MyNS {
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			PlanName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PlanType: new FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>(undefined, [Validators.required]),
-			PathId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			PathId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -1786,7 +1786,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateProvisioningParameterFormGroup() {
 		return new FormGroup<UpdateProvisioningParameterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 			UsePreviousValue: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -1857,8 +1857,8 @@ export namespace MyNS {
 	export function CreateCreateProvisioningArtifactInputFormGroup() {
 		return new FormGroup<CreateProvisioningArtifactInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -1936,8 +1936,8 @@ export namespace MyNS {
 	}
 	export function CreateServiceActionSummaryFormGroup() {
 		return new FormGroup<ServiceActionSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-.]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9_\-.]*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			DefinitionType: new FormControl<ServiceActionSummaryDefinitionType | null | undefined>(undefined),
 		});
@@ -2011,11 +2011,11 @@ export namespace MyNS {
 	}
 	export function CreateCreateServiceActionInputFormGroup() {
 		return new FormGroup<CreateServiceActionInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-.]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9_\-.]*')]),
 			DefinitionType: new FormControl<ServiceActionSummaryDefinitionType | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -2081,10 +2081,10 @@ export namespace MyNS {
 	}
 	export function CreateTagOptionDetailFormGroup() {
 		return new FormGroup<TagOptionDetailFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 			Active: new FormControl<boolean | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -2123,8 +2123,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateTagOptionInputFormGroup() {
 		return new FormGroup<CreateTagOptionInputFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -2166,7 +2166,7 @@ export namespace MyNS {
 	export function CreateDeleteConstraintInputFormGroup() {
 		return new FormGroup<DeleteConstraintInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2208,7 +2208,7 @@ export namespace MyNS {
 	export function CreateDeletePortfolioInputFormGroup() {
 		return new FormGroup<DeletePortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2241,7 +2241,7 @@ export namespace MyNS {
 	}
 	export function CreateDeletePortfolioShareOutputFormGroup() {
 		return new FormGroup<DeletePortfolioShareOutputFormProperties>({
-			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2278,8 +2278,8 @@ export namespace MyNS {
 	export function CreateDeletePortfolioShareInputFormGroup() {
 		return new FormGroup<DeletePortfolioShareInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]{12}$')]),
 		});
 
 	}
@@ -2321,7 +2321,7 @@ export namespace MyNS {
 	export function CreateDeleteProductInputFormGroup() {
 		return new FormGroup<DeleteProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2365,7 +2365,7 @@ export namespace MyNS {
 	export function CreateDeleteProvisionedProductPlanInputFormGroup() {
 		return new FormGroup<DeleteProvisionedProductPlanInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			IgnoreErrors: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2422,8 +2422,8 @@ export namespace MyNS {
 	export function CreateDeleteProvisioningArtifactInputFormGroup() {
 		return new FormGroup<DeleteProvisioningArtifactInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2464,7 +2464,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteServiceActionInputFormGroup() {
 		return new FormGroup<DeleteServiceActionInputFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -2500,7 +2500,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTagOptionInputFormGroup() {
 		return new FormGroup<DeleteTagOptionInputFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -2551,7 +2551,7 @@ export namespace MyNS {
 	export function CreateDescribeConstraintInputFormGroup() {
 		return new FormGroup<DescribeConstraintInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2579,7 +2579,7 @@ export namespace MyNS {
 	export function CreateDescribeCopyProductStatusOutputFormGroup() {
 		return new FormGroup<DescribeCopyProductStatusOutputFormProperties>({
 			CopyProductStatus: new FormControl<DescribeCopyProductStatusOutputCopyProductStatus | null | undefined>(undefined),
-			TargetProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			TargetProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			StatusDetail: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2614,7 +2614,7 @@ export namespace MyNS {
 	export function CreateDescribeCopyProductStatusInputFormGroup() {
 		return new FormGroup<DescribeCopyProductStatusInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			CopyProductToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			CopyProductToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2659,7 +2659,7 @@ export namespace MyNS {
 	}
 	export function CreateBudgetDetailFormGroup() {
 		return new FormGroup<BudgetDetailFormProperties>({
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -2691,7 +2691,7 @@ export namespace MyNS {
 	export function CreateDescribePortfolioInputFormGroup() {
 		return new FormGroup<DescribePortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2733,9 +2733,9 @@ export namespace MyNS {
 	}
 	export function CreateDescribePortfolioShareStatusOutputFormGroup() {
 		return new FormGroup<DescribePortfolioShareStatusOutputFormProperties>({
-			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			OrganizationNodeValue: new FormControl<string | null | undefined>(undefined),
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			OrganizationNodeValue: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(^[0-9]{12}$)|(^arn:aws:organizations::\d{12}:organization\/o-[a-z0-9]{10,32})|(^o-[a-z0-9]{10,32}$)|(^arn:aws:organizations::\d{12}:ou\/o-[a-z0-9]{10,32}\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}$)|(^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$)')]),
 			Status: new FormControl<DescribePortfolioShareStatusOutputStatus | null | undefined>(undefined),
 		});
 
@@ -2800,7 +2800,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribePortfolioShareStatusInputFormGroup() {
 		return new FormGroup<DescribePortfolioShareStatusInputFormProperties>({
-			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -2859,7 +2859,7 @@ export namespace MyNS {
 	}
 	export function CreateProvisioningArtifactFormGroup() {
 		return new FormGroup<ProvisioningArtifactFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
@@ -2892,7 +2892,7 @@ export namespace MyNS {
 	}
 	export function CreateLaunchPathFormGroup() {
 		return new FormGroup<LaunchPathFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2929,7 +2929,7 @@ export namespace MyNS {
 	export function CreateDescribeProductInputFormGroup() {
 		return new FormGroup<DescribeProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
 		});
 
@@ -2991,7 +2991,7 @@ export namespace MyNS {
 	}
 	export function CreateProvisioningArtifactSummaryFormGroup() {
 		return new FormGroup<ProvisioningArtifactSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
@@ -3030,7 +3030,7 @@ export namespace MyNS {
 	export function CreateDescribeProductAsAdminInputFormGroup() {
 		return new FormGroup<DescribeProductAsAdminInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
 		});
 
@@ -3077,7 +3077,7 @@ export namespace MyNS {
 	export function CreateDescribeProductViewInputFormGroup() {
 		return new FormGroup<DescribeProductViewInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -3178,17 +3178,17 @@ export namespace MyNS {
 	}
 	export function CreateProvisionedProductDetailFormGroup() {
 		return new FormGroup<ProvisionedProductDetailFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
 			Type: new FormControl<string | null | undefined>(undefined),
 			Id: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<ProvisionedProductDetailStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 			LastRecordId: new FormControl<string | null | undefined>(undefined),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -3239,7 +3239,7 @@ export namespace MyNS {
 	export function CreateDescribeProvisionedProductInputFormGroup() {
 		return new FormGroup<DescribeProvisionedProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -3367,17 +3367,17 @@ export namespace MyNS {
 	export function CreateProvisionedProductPlanDetailsFormGroup() {
 		return new FormGroup<ProvisionedProductPlanDetailsFormProperties>({
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			PathId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PathId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PlanName: new FormControl<string | null | undefined>(undefined),
-			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
+			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionProductName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
 			PlanType: new FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>(undefined),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Status: new FormControl<ProvisionedProductPlanDetailsStatus | null | undefined>(undefined),
 			UpdatedTime: new FormControl<Date | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 		});
 
 	}
@@ -3419,7 +3419,7 @@ export namespace MyNS {
 			Action: new FormControl<ResourceChangeAction | null | undefined>(undefined),
 			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
 			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			Replacement: new FormControl<ResourceChangeReplacement | null | undefined>(undefined),
 		});
 
@@ -3526,7 +3526,7 @@ export namespace MyNS {
 	export function CreateDescribeProvisionedProductPlanInputFormGroup() {
 		return new FormGroup<DescribeProvisionedProductPlanInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 		});
@@ -3601,8 +3601,8 @@ export namespace MyNS {
 	export function CreateDescribeProvisioningArtifactInputFormGroup() {
 		return new FormGroup<DescribeProvisioningArtifactInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			ProvisioningArtifactName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			ProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
 			Verbose: new FormControl<boolean | null | undefined>(undefined),
@@ -3660,7 +3660,7 @@ export namespace MyNS {
 	}
 	export function CreateProvisioningArtifactParameterFormGroup() {
 		return new FormGroup<ProvisioningArtifactParameterFormProperties>({
-			ParameterKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			ParameterKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			DefaultValue: new FormControl<string | null | undefined>(undefined),
 			ParameterType: new FormControl<string | null | undefined>(undefined),
 			IsNoEcho: new FormControl<boolean | null | undefined>(undefined),
@@ -3712,7 +3712,7 @@ export namespace MyNS {
 	}
 	export function CreateConstraintSummaryFormGroup() {
 		return new FormGroup<ConstraintSummaryFormProperties>({
-			Type: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 		});
 
@@ -3761,7 +3761,7 @@ export namespace MyNS {
 	}
 	export function CreateTagOptionSummaryFormGroup() {
 		return new FormGroup<TagOptionSummaryFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -3835,9 +3835,9 @@ export namespace MyNS {
 	export function CreateDescribeProvisioningParametersInputFormGroup() {
 		return new FormGroup<DescribeProvisioningParametersInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PathId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PathId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -3959,17 +3959,17 @@ export namespace MyNS {
 	}
 	export function CreateRecordDetailFormGroup() {
 		return new FormGroup<RecordDetailFormProperties>({
-			RecordId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
+			RecordId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
 			Status: new FormControl<RecordDetailStatus | null | undefined>(undefined),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
 			UpdatedTime: new FormControl<Date | null | undefined>(undefined),
 			ProvisionedProductType: new FormControl<string | null | undefined>(undefined),
 			RecordType: new FormControl<string | null | undefined>(undefined),
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PathId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PathId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -4030,8 +4030,8 @@ export namespace MyNS {
 	}
 	export function CreateRecordTagFormGroup() {
 		return new FormGroup<RecordTagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$')]),
 		});
 
 	}
@@ -4104,7 +4104,7 @@ export namespace MyNS {
 	export function CreateDescribeRecordInputFormGroup() {
 		return new FormGroup<DescribeRecordInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 		});
@@ -4150,7 +4150,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeServiceActionInputFormGroup() {
 		return new FormGroup<DescribeServiceActionInputFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -4207,8 +4207,8 @@ export namespace MyNS {
 	}
 	export function CreateExecutionParameterFormGroup() {
 		return new FormGroup<ExecutionParameterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
-			Type: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50)]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -4253,8 +4253,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeServiceActionExecutionParametersInputFormGroup() {
 		return new FormGroup<DescribeServiceActionExecutionParametersInputFormProperties>({
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -4293,7 +4293,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTagOptionInputFormGroup() {
 		return new FormGroup<DescribeTagOptionInputFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -4362,8 +4362,8 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateBudgetFromResourceInputFormGroup() {
 		return new FormGroup<DisassociateBudgetFromResourceInputFormProperties>({
-			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			BudgetName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -4419,8 +4419,8 @@ export namespace MyNS {
 	export function CreateDisassociatePrincipalFromPortfolioInputFormGroup() {
 		return new FormGroup<DisassociatePrincipalFromPortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PrincipalARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PrincipalARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -4476,8 +4476,8 @@ export namespace MyNS {
 	export function CreateDisassociateProductFromPortfolioInputFormGroup() {
 		return new FormGroup<DisassociateProductFromPortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -4546,9 +4546,9 @@ export namespace MyNS {
 	}
 	export function CreateDisassociateServiceActionFromProvisioningArtifactInputFormGroup() {
 		return new FormGroup<DisassociateServiceActionFromProvisioningArtifactInputFormProperties>({
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -4591,7 +4591,7 @@ export namespace MyNS {
 	export function CreateDisassociateTagOptionFromResourceInputFormGroup() {
 		return new FormGroup<DisassociateTagOptionFromResourceInputFormProperties>({
 			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TagOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TagOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -4670,8 +4670,8 @@ export namespace MyNS {
 	export function CreateExecuteProvisionedProductPlanInputFormGroup() {
 		return new FormGroup<ExecuteProvisionedProductPlanInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -4744,9 +4744,9 @@ export namespace MyNS {
 	}
 	export function CreateExecuteProvisionedProductServiceActionInputFormGroup() {
 		return new FormGroup<ExecuteProvisionedProductServiceActionInputFormProperties>({
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ExecuteToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ExecuteToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
 
@@ -4908,7 +4908,7 @@ export namespace MyNS {
 	export function CreateListBudgetsForResourceInputFormGroup() {
 		return new FormGroup<ListBudgetsForResourceInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 		});
@@ -4990,8 +4990,8 @@ export namespace MyNS {
 	export function CreateListConstraintsForPortfolioInputFormGroup() {
 		return new FormGroup<ListConstraintsForPortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 		});
@@ -5044,7 +5044,7 @@ export namespace MyNS {
 	}
 	export function CreateLaunchPathSummaryFormGroup() {
 		return new FormGroup<LaunchPathSummaryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5095,7 +5095,7 @@ export namespace MyNS {
 	export function CreateListLaunchPathsInputFormGroup() {
 		return new FormGroup<ListLaunchPathsInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 		});
@@ -5171,7 +5171,7 @@ export namespace MyNS {
 	export function CreateListOrganizationPortfolioAccessInputFormGroup() {
 		return new FormGroup<ListOrganizationPortfolioAccessInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			OrganizationNodeType: new FormControl<OrganizationNodeType | null | undefined>(undefined, [Validators.required]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
@@ -5254,8 +5254,8 @@ export namespace MyNS {
 	export function CreateListPortfolioAccessInputFormGroup() {
 		return new FormGroup<ListPortfolioAccessInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			OrganizationParentId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			OrganizationParentId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 		});
@@ -5380,7 +5380,7 @@ export namespace MyNS {
 	export function CreateListPortfoliosForProductInputFormGroup() {
 		return new FormGroup<ListPortfoliosForProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 		});
@@ -5429,7 +5429,7 @@ export namespace MyNS {
 	}
 	export function CreatePrincipalFormGroup() {
 		return new FormGroup<PrincipalFormProperties>({
-			PrincipalARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			PrincipalARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			PrincipalType: new FormControl<AssociatePrincipalWithPortfolioInputPrincipalType | null | undefined>(undefined),
 		});
 
@@ -5480,7 +5480,7 @@ export namespace MyNS {
 	export function CreateListPrincipalsForPortfolioInputFormGroup() {
 		return new FormGroup<ListPrincipalsForPortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 		});
@@ -5568,11 +5568,11 @@ export namespace MyNS {
 	export function CreateProvisionedProductPlanSummaryFormGroup() {
 		return new FormGroup<ProvisionedProductPlanSummaryFormProperties>({
 			PlanName: new FormControl<string | null | undefined>(undefined),
-			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
+			PlanId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionProductName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
 			PlanType: new FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>(undefined),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -5623,7 +5623,7 @@ export namespace MyNS {
 	export function CreateListProvisionedProductPlansInputFormGroup() {
 		return new FormGroup<ListProvisionedProductPlansInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 		});
@@ -5697,7 +5697,7 @@ export namespace MyNS {
 	export function CreateListProvisioningArtifactsInputFormGroup() {
 		return new FormGroup<ListProvisioningArtifactsInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 		});
 
 	}
@@ -5784,7 +5784,7 @@ export namespace MyNS {
 	}
 	export function CreateListProvisioningArtifactsForServiceActionInputFormGroup() {
 		return new FormGroup<ListProvisioningArtifactsForServiceActionInputFormProperties>({
-			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
@@ -5960,7 +5960,7 @@ export namespace MyNS {
 	}
 	export function CreateListResourcesForTagOptionInputFormGroup() {
 		return new FormGroup<ListResourcesForTagOptionInputFormProperties>({
-			TagOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
+			TagOptionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
 			ResourceType: new FormControl<string | null | undefined>(undefined),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
@@ -6099,8 +6099,8 @@ export namespace MyNS {
 	}
 	export function CreateListServiceActionsForProvisioningArtifactInputFormGroup() {
 		return new FormGroup<ListServiceActionsForProvisioningArtifactInputFormProperties>({
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
@@ -6142,7 +6142,7 @@ export namespace MyNS {
 	}
 	export function CreateStackInstanceFormGroup() {
 		return new FormGroup<StackInstanceFormProperties>({
-			Account: new FormControl<string | null | undefined>(undefined),
+			Account: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9]{12}$')]),
 			Region: new FormControl<string | null | undefined>(undefined),
 			StackInstanceStatus: new FormControl<StackInstanceStackInstanceStatus | null | undefined>(undefined),
 		});
@@ -6196,7 +6196,7 @@ export namespace MyNS {
 	export function CreateListStackInstancesForProvisionedProductInputFormGroup() {
 		return new FormGroup<ListStackInstancesForProvisionedProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
 			PageSize: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(20)]),
 		});
@@ -6290,8 +6290,8 @@ export namespace MyNS {
 	}
 	export function CreateListTagOptionsFiltersFormGroup() {
 		return new FormGroup<ListTagOptionsFiltersFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 			Active: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -6401,11 +6401,11 @@ export namespace MyNS {
 	export function CreateProvisionProductInputFormGroup() {
 		return new FormGroup<ProvisionProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PathId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
-			ProvisionToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PathId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]*')]),
+			ProvisionToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -6438,7 +6438,7 @@ export namespace MyNS {
 	}
 	export function CreateProvisioningParameterFormGroup() {
 		return new FormGroup<ProvisioningParameterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096)]),
 		});
 
@@ -6539,7 +6539,7 @@ export namespace MyNS {
 	export function CreateRejectPortfolioShareInputFormGroup() {
 		return new FormGroup<RejectPortfolioShareInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PortfolioShareType: new FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>(undefined),
 		});
 
@@ -6758,7 +6758,7 @@ export namespace MyNS {
 	export function CreateSearchProductsAsAdminInputFormGroup() {
 		return new FormGroup<SearchProductsAsAdminInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PortfolioId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			SortBy: new FormControl<SearchProductsInputSortBy | null | undefined>(undefined),
 			SortOrder: new FormControl<SearchProductsInputSortOrder | null | undefined>(undefined),
 			PageToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2024), Validators.pattern('[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*')]),
@@ -6902,18 +6902,18 @@ export namespace MyNS {
 	}
 	export function CreateProvisionedProductAttributeFormGroup() {
 		return new FormGroup<ProvisionedProductAttributeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
 			Type: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Status: new FormControl<ProvisionedProductDetailStatus | null | undefined>(undefined),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			CreatedTime: new FormControl<Date | null | undefined>(undefined),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
-			LastRecordId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			LastRecordId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			PhysicalId: new FormControl<string | null | undefined>(undefined),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			UserArn: new FormControl<string | null | undefined>(undefined),
 			UserArnSession: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7042,9 +7042,9 @@ export namespace MyNS {
 	}
 	export function CreateTerminateProvisionedProductInputFormGroup() {
 		return new FormGroup<TerminateProvisionedProductInputFormProperties>({
-			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			TerminateToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			TerminateToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 			IgnoreErrors: new FormControl<boolean | null | undefined>(undefined),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
@@ -7105,7 +7105,7 @@ export namespace MyNS {
 	export function CreateUpdateConstraintInputFormGroup() {
 		return new FormGroup<UpdateConstraintInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
 			Parameters: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7189,10 +7189,10 @@ export namespace MyNS {
 	export function CreateUpdatePortfolioInputFormGroup() {
 		return new FormGroup<UpdatePortfolioInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000)]),
-			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			ProviderName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50)]),
 		});
 
 	}
@@ -7286,7 +7286,7 @@ export namespace MyNS {
 	export function CreateUpdateProductInputFormGroup() {
 		return new FormGroup<UpdateProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
 			Owner: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8191)]),
@@ -7405,12 +7405,12 @@ export namespace MyNS {
 	export function CreateUpdateProvisionedProductInputFormGroup() {
 		return new FormGroup<UpdateProvisionedProductInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1224), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			PathId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			UpdateToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1224), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			PathId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			UpdateToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -7509,8 +7509,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateProvisionedProductPropertiesOutputFormGroup() {
 		return new FormGroup<UpdateProvisionedProductPropertiesOutputFormProperties>({
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			RecordId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			RecordId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Status: new FormControl<RecordDetailStatus | null | undefined>(undefined),
 		});
 
@@ -7570,8 +7570,8 @@ export namespace MyNS {
 	export function CreateUpdateProvisionedProductPropertiesInputFormGroup() {
 		return new FormGroup<UpdateProvisionedProductPropertiesInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9][a-zA-Z0-9_-]*')]),
 		});
 
 	}
@@ -7650,8 +7650,8 @@ export namespace MyNS {
 	export function CreateUpdateProvisioningArtifactInputFormGroup() {
 		return new FormGroup<UpdateProvisioningArtifactInputFormProperties>({
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
-			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProductId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			Active: new FormControl<boolean | null | undefined>(undefined),
@@ -7718,8 +7718,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateServiceActionInputFormGroup() {
 		return new FormGroup<UpdateServiceActionInputFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\-.]*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100), Validators.pattern('^[a-zA-Z0-9_\-]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^[a-zA-Z0-9_\-.]*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			AcceptLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 		});
@@ -7773,8 +7773,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTagOptionInputFormGroup() {
 		return new FormGroup<UpdateTagOptionInputFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 			Active: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -8645,171 +8645,171 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptPortfolioShareX_Amz_Target { AWS242ServiceCatalogService_AcceptPortfolioShare = 0 }
+	export enum AcceptPortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.AcceptPortfolioShare' = 0 }
 
-	export enum AssociateBudgetWithResourceX_Amz_Target { AWS242ServiceCatalogService_AssociateBudgetWithResource = 0 }
+	export enum AssociateBudgetWithResourceX_Amz_Target { 'AWS242ServiceCatalogService.AssociateBudgetWithResource' = 0 }
 
-	export enum AssociatePrincipalWithPortfolioX_Amz_Target { AWS242ServiceCatalogService_AssociatePrincipalWithPortfolio = 0 }
+	export enum AssociatePrincipalWithPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.AssociatePrincipalWithPortfolio' = 0 }
 
-	export enum AssociateProductWithPortfolioX_Amz_Target { AWS242ServiceCatalogService_AssociateProductWithPortfolio = 0 }
+	export enum AssociateProductWithPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.AssociateProductWithPortfolio' = 0 }
 
-	export enum AssociateServiceActionWithProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_AssociateServiceActionWithProvisioningArtifact = 0 }
+	export enum AssociateServiceActionWithProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.AssociateServiceActionWithProvisioningArtifact' = 0 }
 
-	export enum AssociateTagOptionWithResourceX_Amz_Target { AWS242ServiceCatalogService_AssociateTagOptionWithResource = 0 }
+	export enum AssociateTagOptionWithResourceX_Amz_Target { 'AWS242ServiceCatalogService.AssociateTagOptionWithResource' = 0 }
 
-	export enum BatchAssociateServiceActionWithProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_BatchAssociateServiceActionWithProvisioningArtifact = 0 }
+	export enum BatchAssociateServiceActionWithProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.BatchAssociateServiceActionWithProvisioningArtifact' = 0 }
 
-	export enum BatchDisassociateServiceActionFromProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_BatchDisassociateServiceActionFromProvisioningArtifact = 0 }
+	export enum BatchDisassociateServiceActionFromProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.BatchDisassociateServiceActionFromProvisioningArtifact' = 0 }
 
-	export enum CopyProductX_Amz_Target { AWS242ServiceCatalogService_CopyProduct = 0 }
+	export enum CopyProductX_Amz_Target { 'AWS242ServiceCatalogService.CopyProduct' = 0 }
 
-	export enum CreateConstraintX_Amz_Target { AWS242ServiceCatalogService_CreateConstraint = 0 }
+	export enum CreateConstraintX_Amz_Target { 'AWS242ServiceCatalogService.CreateConstraint' = 0 }
 
-	export enum CreatePortfolioX_Amz_Target { AWS242ServiceCatalogService_CreatePortfolio = 0 }
+	export enum CreatePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.CreatePortfolio' = 0 }
 
-	export enum CreatePortfolioShareX_Amz_Target { AWS242ServiceCatalogService_CreatePortfolioShare = 0 }
+	export enum CreatePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.CreatePortfolioShare' = 0 }
 
-	export enum CreateProductX_Amz_Target { AWS242ServiceCatalogService_CreateProduct = 0 }
+	export enum CreateProductX_Amz_Target { 'AWS242ServiceCatalogService.CreateProduct' = 0 }
 
-	export enum CreateProvisionedProductPlanX_Amz_Target { AWS242ServiceCatalogService_CreateProvisionedProductPlan = 0 }
+	export enum CreateProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.CreateProvisionedProductPlan' = 0 }
 
-	export enum CreateProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_CreateProvisioningArtifact = 0 }
+	export enum CreateProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.CreateProvisioningArtifact' = 0 }
 
-	export enum CreateServiceActionX_Amz_Target { AWS242ServiceCatalogService_CreateServiceAction = 0 }
+	export enum CreateServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.CreateServiceAction' = 0 }
 
-	export enum CreateTagOptionX_Amz_Target { AWS242ServiceCatalogService_CreateTagOption = 0 }
+	export enum CreateTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.CreateTagOption' = 0 }
 
-	export enum DeleteConstraintX_Amz_Target { AWS242ServiceCatalogService_DeleteConstraint = 0 }
+	export enum DeleteConstraintX_Amz_Target { 'AWS242ServiceCatalogService.DeleteConstraint' = 0 }
 
-	export enum DeletePortfolioX_Amz_Target { AWS242ServiceCatalogService_DeletePortfolio = 0 }
+	export enum DeletePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DeletePortfolio' = 0 }
 
-	export enum DeletePortfolioShareX_Amz_Target { AWS242ServiceCatalogService_DeletePortfolioShare = 0 }
+	export enum DeletePortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.DeletePortfolioShare' = 0 }
 
-	export enum DeleteProductX_Amz_Target { AWS242ServiceCatalogService_DeleteProduct = 0 }
+	export enum DeleteProductX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProduct' = 0 }
 
-	export enum DeleteProvisionedProductPlanX_Amz_Target { AWS242ServiceCatalogService_DeleteProvisionedProductPlan = 0 }
+	export enum DeleteProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProvisionedProductPlan' = 0 }
 
-	export enum DeleteProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_DeleteProvisioningArtifact = 0 }
+	export enum DeleteProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DeleteProvisioningArtifact' = 0 }
 
-	export enum DeleteServiceActionX_Amz_Target { AWS242ServiceCatalogService_DeleteServiceAction = 0 }
+	export enum DeleteServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.DeleteServiceAction' = 0 }
 
-	export enum DeleteTagOptionX_Amz_Target { AWS242ServiceCatalogService_DeleteTagOption = 0 }
+	export enum DeleteTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.DeleteTagOption' = 0 }
 
-	export enum DescribeConstraintX_Amz_Target { AWS242ServiceCatalogService_DescribeConstraint = 0 }
+	export enum DescribeConstraintX_Amz_Target { 'AWS242ServiceCatalogService.DescribeConstraint' = 0 }
 
-	export enum DescribeCopyProductStatusX_Amz_Target { AWS242ServiceCatalogService_DescribeCopyProductStatus = 0 }
+	export enum DescribeCopyProductStatusX_Amz_Target { 'AWS242ServiceCatalogService.DescribeCopyProductStatus' = 0 }
 
-	export enum DescribePortfolioX_Amz_Target { AWS242ServiceCatalogService_DescribePortfolio = 0 }
+	export enum DescribePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolio' = 0 }
 
-	export enum DescribePortfolioShareStatusX_Amz_Target { AWS242ServiceCatalogService_DescribePortfolioShareStatus = 0 }
+	export enum DescribePortfolioShareStatusX_Amz_Target { 'AWS242ServiceCatalogService.DescribePortfolioShareStatus' = 0 }
 
-	export enum DescribeProductX_Amz_Target { AWS242ServiceCatalogService_DescribeProduct = 0 }
+	export enum DescribeProductX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProduct' = 0 }
 
-	export enum DescribeProductAsAdminX_Amz_Target { AWS242ServiceCatalogService_DescribeProductAsAdmin = 0 }
+	export enum DescribeProductAsAdminX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProductAsAdmin' = 0 }
 
-	export enum DescribeProductViewX_Amz_Target { AWS242ServiceCatalogService_DescribeProductView = 0 }
+	export enum DescribeProductViewX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProductView' = 0 }
 
-	export enum DescribeProvisionedProductX_Amz_Target { AWS242ServiceCatalogService_DescribeProvisionedProduct = 0 }
+	export enum DescribeProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisionedProduct' = 0 }
 
-	export enum DescribeProvisionedProductPlanX_Amz_Target { AWS242ServiceCatalogService_DescribeProvisionedProductPlan = 0 }
+	export enum DescribeProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisionedProductPlan' = 0 }
 
-	export enum DescribeProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_DescribeProvisioningArtifact = 0 }
+	export enum DescribeProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisioningArtifact' = 0 }
 
-	export enum DescribeProvisioningParametersX_Amz_Target { AWS242ServiceCatalogService_DescribeProvisioningParameters = 0 }
+	export enum DescribeProvisioningParametersX_Amz_Target { 'AWS242ServiceCatalogService.DescribeProvisioningParameters' = 0 }
 
-	export enum DescribeRecordX_Amz_Target { AWS242ServiceCatalogService_DescribeRecord = 0 }
+	export enum DescribeRecordX_Amz_Target { 'AWS242ServiceCatalogService.DescribeRecord' = 0 }
 
-	export enum DescribeServiceActionX_Amz_Target { AWS242ServiceCatalogService_DescribeServiceAction = 0 }
+	export enum DescribeServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.DescribeServiceAction' = 0 }
 
-	export enum DescribeServiceActionExecutionParametersX_Amz_Target { AWS242ServiceCatalogService_DescribeServiceActionExecutionParameters = 0 }
+	export enum DescribeServiceActionExecutionParametersX_Amz_Target { 'AWS242ServiceCatalogService.DescribeServiceActionExecutionParameters' = 0 }
 
-	export enum DescribeTagOptionX_Amz_Target { AWS242ServiceCatalogService_DescribeTagOption = 0 }
+	export enum DescribeTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.DescribeTagOption' = 0 }
 
-	export enum DisableAWSOrganizationsAccessX_Amz_Target { AWS242ServiceCatalogService_DisableAWSOrganizationsAccess = 0 }
+	export enum DisableAWSOrganizationsAccessX_Amz_Target { 'AWS242ServiceCatalogService.DisableAWSOrganizationsAccess' = 0 }
 
-	export enum DisassociateBudgetFromResourceX_Amz_Target { AWS242ServiceCatalogService_DisassociateBudgetFromResource = 0 }
+	export enum DisassociateBudgetFromResourceX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateBudgetFromResource' = 0 }
 
-	export enum DisassociatePrincipalFromPortfolioX_Amz_Target { AWS242ServiceCatalogService_DisassociatePrincipalFromPortfolio = 0 }
+	export enum DisassociatePrincipalFromPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DisassociatePrincipalFromPortfolio' = 0 }
 
-	export enum DisassociateProductFromPortfolioX_Amz_Target { AWS242ServiceCatalogService_DisassociateProductFromPortfolio = 0 }
+	export enum DisassociateProductFromPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateProductFromPortfolio' = 0 }
 
-	export enum DisassociateServiceActionFromProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_DisassociateServiceActionFromProvisioningArtifact = 0 }
+	export enum DisassociateServiceActionFromProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateServiceActionFromProvisioningArtifact' = 0 }
 
-	export enum DisassociateTagOptionFromResourceX_Amz_Target { AWS242ServiceCatalogService_DisassociateTagOptionFromResource = 0 }
+	export enum DisassociateTagOptionFromResourceX_Amz_Target { 'AWS242ServiceCatalogService.DisassociateTagOptionFromResource' = 0 }
 
-	export enum EnableAWSOrganizationsAccessX_Amz_Target { AWS242ServiceCatalogService_EnableAWSOrganizationsAccess = 0 }
+	export enum EnableAWSOrganizationsAccessX_Amz_Target { 'AWS242ServiceCatalogService.EnableAWSOrganizationsAccess' = 0 }
 
-	export enum ExecuteProvisionedProductPlanX_Amz_Target { AWS242ServiceCatalogService_ExecuteProvisionedProductPlan = 0 }
+	export enum ExecuteProvisionedProductPlanX_Amz_Target { 'AWS242ServiceCatalogService.ExecuteProvisionedProductPlan' = 0 }
 
-	export enum ExecuteProvisionedProductServiceActionX_Amz_Target { AWS242ServiceCatalogService_ExecuteProvisionedProductServiceAction = 0 }
+	export enum ExecuteProvisionedProductServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.ExecuteProvisionedProductServiceAction' = 0 }
 
-	export enum GetAWSOrganizationsAccessStatusX_Amz_Target { AWS242ServiceCatalogService_GetAWSOrganizationsAccessStatus = 0 }
+	export enum GetAWSOrganizationsAccessStatusX_Amz_Target { 'AWS242ServiceCatalogService.GetAWSOrganizationsAccessStatus' = 0 }
 
-	export enum ListAcceptedPortfolioSharesX_Amz_Target { AWS242ServiceCatalogService_ListAcceptedPortfolioShares = 0 }
+	export enum ListAcceptedPortfolioSharesX_Amz_Target { 'AWS242ServiceCatalogService.ListAcceptedPortfolioShares' = 0 }
 
-	export enum ListBudgetsForResourceX_Amz_Target { AWS242ServiceCatalogService_ListBudgetsForResource = 0 }
+	export enum ListBudgetsForResourceX_Amz_Target { 'AWS242ServiceCatalogService.ListBudgetsForResource' = 0 }
 
-	export enum ListConstraintsForPortfolioX_Amz_Target { AWS242ServiceCatalogService_ListConstraintsForPortfolio = 0 }
+	export enum ListConstraintsForPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.ListConstraintsForPortfolio' = 0 }
 
-	export enum ListLaunchPathsX_Amz_Target { AWS242ServiceCatalogService_ListLaunchPaths = 0 }
+	export enum ListLaunchPathsX_Amz_Target { 'AWS242ServiceCatalogService.ListLaunchPaths' = 0 }
 
-	export enum ListOrganizationPortfolioAccessX_Amz_Target { AWS242ServiceCatalogService_ListOrganizationPortfolioAccess = 0 }
+	export enum ListOrganizationPortfolioAccessX_Amz_Target { 'AWS242ServiceCatalogService.ListOrganizationPortfolioAccess' = 0 }
 
-	export enum ListPortfolioAccessX_Amz_Target { AWS242ServiceCatalogService_ListPortfolioAccess = 0 }
+	export enum ListPortfolioAccessX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfolioAccess' = 0 }
 
-	export enum ListPortfoliosX_Amz_Target { AWS242ServiceCatalogService_ListPortfolios = 0 }
+	export enum ListPortfoliosX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfolios' = 0 }
 
-	export enum ListPortfoliosForProductX_Amz_Target { AWS242ServiceCatalogService_ListPortfoliosForProduct = 0 }
+	export enum ListPortfoliosForProductX_Amz_Target { 'AWS242ServiceCatalogService.ListPortfoliosForProduct' = 0 }
 
-	export enum ListPrincipalsForPortfolioX_Amz_Target { AWS242ServiceCatalogService_ListPrincipalsForPortfolio = 0 }
+	export enum ListPrincipalsForPortfolioX_Amz_Target { 'AWS242ServiceCatalogService.ListPrincipalsForPortfolio' = 0 }
 
-	export enum ListProvisionedProductPlansX_Amz_Target { AWS242ServiceCatalogService_ListProvisionedProductPlans = 0 }
+	export enum ListProvisionedProductPlansX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisionedProductPlans' = 0 }
 
-	export enum ListProvisioningArtifactsX_Amz_Target { AWS242ServiceCatalogService_ListProvisioningArtifacts = 0 }
+	export enum ListProvisioningArtifactsX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisioningArtifacts' = 0 }
 
-	export enum ListProvisioningArtifactsForServiceActionX_Amz_Target { AWS242ServiceCatalogService_ListProvisioningArtifactsForServiceAction = 0 }
+	export enum ListProvisioningArtifactsForServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.ListProvisioningArtifactsForServiceAction' = 0 }
 
-	export enum ListRecordHistoryX_Amz_Target { AWS242ServiceCatalogService_ListRecordHistory = 0 }
+	export enum ListRecordHistoryX_Amz_Target { 'AWS242ServiceCatalogService.ListRecordHistory' = 0 }
 
-	export enum ListResourcesForTagOptionX_Amz_Target { AWS242ServiceCatalogService_ListResourcesForTagOption = 0 }
+	export enum ListResourcesForTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.ListResourcesForTagOption' = 0 }
 
-	export enum ListServiceActionsX_Amz_Target { AWS242ServiceCatalogService_ListServiceActions = 0 }
+	export enum ListServiceActionsX_Amz_Target { 'AWS242ServiceCatalogService.ListServiceActions' = 0 }
 
-	export enum ListServiceActionsForProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_ListServiceActionsForProvisioningArtifact = 0 }
+	export enum ListServiceActionsForProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.ListServiceActionsForProvisioningArtifact' = 0 }
 
-	export enum ListStackInstancesForProvisionedProductX_Amz_Target { AWS242ServiceCatalogService_ListStackInstancesForProvisionedProduct = 0 }
+	export enum ListStackInstancesForProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.ListStackInstancesForProvisionedProduct' = 0 }
 
-	export enum ListTagOptionsX_Amz_Target { AWS242ServiceCatalogService_ListTagOptions = 0 }
+	export enum ListTagOptionsX_Amz_Target { 'AWS242ServiceCatalogService.ListTagOptions' = 0 }
 
-	export enum ProvisionProductX_Amz_Target { AWS242ServiceCatalogService_ProvisionProduct = 0 }
+	export enum ProvisionProductX_Amz_Target { 'AWS242ServiceCatalogService.ProvisionProduct' = 0 }
 
-	export enum RejectPortfolioShareX_Amz_Target { AWS242ServiceCatalogService_RejectPortfolioShare = 0 }
+	export enum RejectPortfolioShareX_Amz_Target { 'AWS242ServiceCatalogService.RejectPortfolioShare' = 0 }
 
-	export enum ScanProvisionedProductsX_Amz_Target { AWS242ServiceCatalogService_ScanProvisionedProducts = 0 }
+	export enum ScanProvisionedProductsX_Amz_Target { 'AWS242ServiceCatalogService.ScanProvisionedProducts' = 0 }
 
-	export enum SearchProductsX_Amz_Target { AWS242ServiceCatalogService_SearchProducts = 0 }
+	export enum SearchProductsX_Amz_Target { 'AWS242ServiceCatalogService.SearchProducts' = 0 }
 
-	export enum SearchProductsAsAdminX_Amz_Target { AWS242ServiceCatalogService_SearchProductsAsAdmin = 0 }
+	export enum SearchProductsAsAdminX_Amz_Target { 'AWS242ServiceCatalogService.SearchProductsAsAdmin' = 0 }
 
-	export enum SearchProvisionedProductsX_Amz_Target { AWS242ServiceCatalogService_SearchProvisionedProducts = 0 }
+	export enum SearchProvisionedProductsX_Amz_Target { 'AWS242ServiceCatalogService.SearchProvisionedProducts' = 0 }
 
-	export enum TerminateProvisionedProductX_Amz_Target { AWS242ServiceCatalogService_TerminateProvisionedProduct = 0 }
+	export enum TerminateProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.TerminateProvisionedProduct' = 0 }
 
-	export enum UpdateConstraintX_Amz_Target { AWS242ServiceCatalogService_UpdateConstraint = 0 }
+	export enum UpdateConstraintX_Amz_Target { 'AWS242ServiceCatalogService.UpdateConstraint' = 0 }
 
-	export enum UpdatePortfolioX_Amz_Target { AWS242ServiceCatalogService_UpdatePortfolio = 0 }
+	export enum UpdatePortfolioX_Amz_Target { 'AWS242ServiceCatalogService.UpdatePortfolio' = 0 }
 
-	export enum UpdateProductX_Amz_Target { AWS242ServiceCatalogService_UpdateProduct = 0 }
+	export enum UpdateProductX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProduct' = 0 }
 
-	export enum UpdateProvisionedProductX_Amz_Target { AWS242ServiceCatalogService_UpdateProvisionedProduct = 0 }
+	export enum UpdateProvisionedProductX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisionedProduct' = 0 }
 
-	export enum UpdateProvisionedProductPropertiesX_Amz_Target { AWS242ServiceCatalogService_UpdateProvisionedProductProperties = 0 }
+	export enum UpdateProvisionedProductPropertiesX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisionedProductProperties' = 0 }
 
-	export enum UpdateProvisioningArtifactX_Amz_Target { AWS242ServiceCatalogService_UpdateProvisioningArtifact = 0 }
+	export enum UpdateProvisioningArtifactX_Amz_Target { 'AWS242ServiceCatalogService.UpdateProvisioningArtifact' = 0 }
 
-	export enum UpdateServiceActionX_Amz_Target { AWS242ServiceCatalogService_UpdateServiceAction = 0 }
+	export enum UpdateServiceActionX_Amz_Target { 'AWS242ServiceCatalogService.UpdateServiceAction' = 0 }
 
-	export enum UpdateTagOptionX_Amz_Target { AWS242ServiceCatalogService_UpdateTagOption = 0 }
+	export enum UpdateTagOptionX_Amz_Target { 'AWS242ServiceCatalogService.UpdateTagOption' = 0 }
 
 }
 

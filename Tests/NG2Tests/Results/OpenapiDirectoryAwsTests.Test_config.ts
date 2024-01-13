@@ -73,15 +73,15 @@ export namespace MyNS {
 	export function CreateBaseConfigurationItemFormGroup() {
 		return new FormGroup<BaseConfigurationItemFormProperties>({
 			version: new FormControl<string | null | undefined>(undefined),
-			accountId: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
 			configurationItemCaptureTime: new FormControl<Date | null | undefined>(undefined),
 			configurationItemStatus: new FormControl<BaseConfigurationItemConfigurationItemStatus | null | undefined>(undefined),
 			configurationStateId: new FormControl<string | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
 			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined),
-			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 			resourceName: new FormControl<string | null | undefined>(undefined),
-			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			availabilityZone: new FormControl<string | null | undefined>(undefined),
 			resourceCreationTime: new FormControl<Date | null | undefined>(undefined),
 			configuration: new FormControl<string | null | undefined>(undefined),
@@ -91,7 +91,7 @@ export namespace MyNS {
 
 	export enum BaseConfigurationItemConfigurationItemStatus { OK = 0, ResourceDiscovered = 1, ResourceNotRecorded = 2, ResourceDeleted = 3, ResourceDeletedNotRecorded = 4 }
 
-	export enum BaseConfigurationItemResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
+	export enum BaseConfigurationItemResourceType { 'AWS::EC2::CustomerGateway' = 0, 'AWS::EC2::EIP' = 1, 'AWS::EC2::Host' = 2, 'AWS::EC2::Instance' = 3, 'AWS::EC2::InternetGateway' = 4, 'AWS::EC2::NetworkAcl' = 5, 'AWS::EC2::NetworkInterface' = 6, 'AWS::EC2::RouteTable' = 7, 'AWS::EC2::SecurityGroup' = 8, 'AWS::EC2::Subnet' = 9, 'AWS::CloudTrail::Trail' = 10, 'AWS::EC2::Volume' = 11, 'AWS::EC2::VPC' = 12, 'AWS::EC2::VPNConnection' = 13, 'AWS::EC2::VPNGateway' = 14, 'AWS::EC2::RegisteredHAInstance' = 15, 'AWS::EC2::NatGateway' = 16, 'AWS::EC2::EgressOnlyInternetGateway' = 17, 'AWS::EC2::VPCEndpoint' = 18, 'AWS::EC2::VPCEndpointService' = 19, 'AWS::EC2::FlowLog' = 20, 'AWS::EC2::VPCPeeringConnection' = 21, 'AWS::Elasticsearch::Domain' = 22, 'AWS::IAM::Group' = 23, 'AWS::IAM::Policy' = 24, 'AWS::IAM::Role' = 25, 'AWS::IAM::User' = 26, 'AWS::ElasticLoadBalancingV2::LoadBalancer' = 27, 'AWS::ACM::Certificate' = 28, 'AWS::RDS::DBInstance' = 29, 'AWS::RDS::DBSubnetGroup' = 30, 'AWS::RDS::DBSecurityGroup' = 31, 'AWS::RDS::DBSnapshot' = 32, 'AWS::RDS::DBCluster' = 33, 'AWS::RDS::DBClusterSnapshot' = 34, 'AWS::RDS::EventSubscription' = 35, 'AWS::S3::Bucket' = 36, 'AWS::S3::AccountPublicAccessBlock' = 37, 'AWS::Redshift::Cluster' = 38, 'AWS::Redshift::ClusterSnapshot' = 39, 'AWS::Redshift::ClusterParameterGroup' = 40, 'AWS::Redshift::ClusterSecurityGroup' = 41, 'AWS::Redshift::ClusterSubnetGroup' = 42, 'AWS::Redshift::EventSubscription' = 43, 'AWS::SSM::ManagedInstanceInventory' = 44, 'AWS::CloudWatch::Alarm' = 45, 'AWS::CloudFormation::Stack' = 46, 'AWS::ElasticLoadBalancing::LoadBalancer' = 47, 'AWS::AutoScaling::AutoScalingGroup' = 48, 'AWS::AutoScaling::LaunchConfiguration' = 49, 'AWS::AutoScaling::ScalingPolicy' = 50, 'AWS::AutoScaling::ScheduledAction' = 51, 'AWS::DynamoDB::Table' = 52, 'AWS::CodeBuild::Project' = 53, 'AWS::WAF::RateBasedRule' = 54, 'AWS::WAF::Rule' = 55, 'AWS::WAF::RuleGroup' = 56, 'AWS::WAF::WebACL' = 57, 'AWS::WAFRegional::RateBasedRule' = 58, 'AWS::WAFRegional::Rule' = 59, 'AWS::WAFRegional::RuleGroup' = 60, 'AWS::WAFRegional::WebACL' = 61, 'AWS::CloudFront::Distribution' = 62, 'AWS::CloudFront::StreamingDistribution' = 63, 'AWS::Lambda::Function' = 64, 'AWS::ElasticBeanstalk::Application' = 65, 'AWS::ElasticBeanstalk::ApplicationVersion' = 66, 'AWS::ElasticBeanstalk::Environment' = 67, 'AWS::WAFv2::WebACL' = 68, 'AWS::WAFv2::RuleGroup' = 69, 'AWS::WAFv2::IPSet' = 70, 'AWS::WAFv2::RegexPatternSet' = 71, 'AWS::WAFv2::ManagedRuleSet' = 72, 'AWS::XRay::EncryptionConfig' = 73, 'AWS::SSM::AssociationCompliance' = 74, 'AWS::SSM::PatchCompliance' = 75, 'AWS::Shield::Protection' = 76, 'AWS::ShieldRegional::Protection' = 77, 'AWS::Config::ResourceCompliance' = 78, 'AWS::ApiGateway::Stage' = 79, 'AWS::ApiGateway::RestApi' = 80, 'AWS::ApiGatewayV2::Stage' = 81, 'AWS::ApiGatewayV2::Api' = 82, 'AWS::CodePipeline::Pipeline' = 83, 'AWS::ServiceCatalog::CloudFormationProvisionedProduct' = 84, 'AWS::ServiceCatalog::CloudFormationProduct' = 85, 'AWS::ServiceCatalog::Portfolio' = 86, 'AWS::SQS::Queue' = 87, 'AWS::KMS::Key' = 88, 'AWS::QLDB::Ledger' = 89 }
 
 	export interface SupplementaryConfiguration {
 	}
@@ -125,7 +125,7 @@ export namespace MyNS {
 		ResourceId: string;
 
 		/** Required */
-		ResourceType: AggregateResourceIdentifierResourceType;
+		ResourceType: BaseConfigurationItemResourceType;
 		ResourceName?: string | null;
 	}
 
@@ -150,21 +150,19 @@ export namespace MyNS {
 		ResourceId: FormControl<string | null | undefined>,
 
 		/** Required */
-		ResourceType: FormControl<AggregateResourceIdentifierResourceType | null | undefined>,
+		ResourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 		ResourceName: FormControl<string | null | undefined>,
 	}
 	export function CreateAggregateResourceIdentifierFormGroup() {
 		return new FormGroup<AggregateResourceIdentifierFormProperties>({
-			SourceAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			SourceRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(768), Validators.minLength(1)]),
-			ResourceType: new FormControl<AggregateResourceIdentifierResourceType | null | undefined>(undefined, [Validators.required]),
+			SourceAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\d{12}')]),
+			SourceRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(768)]),
+			ResourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined, [Validators.required]),
 			ResourceName: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum AggregateResourceIdentifierResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface BatchGetAggregateResourceConfigRequest {
 
@@ -193,7 +191,7 @@ export namespace MyNS {
 	}
 	export function CreateBatchGetAggregateResourceConfigRequestFormGroup() {
 		return new FormGroup<BatchGetAggregateResourceConfigRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -240,7 +238,7 @@ export namespace MyNS {
 	export interface ResourceKey {
 
 		/** Required */
-		resourceType: ResourceKeyResourceType;
+		resourceType: BaseConfigurationItemResourceType;
 
 		/**
 		 * Required
@@ -254,7 +252,7 @@ export namespace MyNS {
 	export interface ResourceKeyFormProperties {
 
 		/** Required */
-		resourceType: FormControl<ResourceKeyResourceType | null | undefined>,
+		resourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 
 		/**
 		 * Required
@@ -265,13 +263,11 @@ export namespace MyNS {
 	}
 	export function CreateResourceKeyFormGroup() {
 		return new FormGroup<ResourceKeyFormProperties>({
-			resourceType: new FormControl<ResourceKeyResourceType | null | undefined>(undefined, [Validators.required]),
-			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(768), Validators.minLength(1)]),
+			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined, [Validators.required]),
+			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(768)]),
 		});
 
 	}
-
-	export enum ResourceKeyResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface BatchGetResourceConfigRequest {
 
@@ -326,8 +322,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAggregationAuthorizationRequestFormGroup() {
 		return new FormGroup<DeleteAggregationAuthorizationRequestFormProperties>({
-			AuthorizedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AuthorizedAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AuthorizedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\d{12}')]),
+			AuthorizedAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -366,7 +362,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteConfigRuleRequestFormGroup() {
 		return new FormGroup<DeleteConfigRuleRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -411,7 +407,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteConfigurationAggregatorRequestFormGroup() {
 		return new FormGroup<DeleteConfigurationAggregatorRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -440,7 +436,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteConfigurationRecorderRequestFormGroup() {
 		return new FormGroup<DeleteConfigurationRecorderRequestFormProperties>({
-			ConfigurationRecorderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ConfigurationRecorderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -475,7 +471,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteConformancePackRequestFormGroup() {
 		return new FormGroup<DeleteConformancePackRequestFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 		});
 
 	}
@@ -514,7 +510,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDeliveryChannelRequestFormGroup() {
 		return new FormGroup<DeleteDeliveryChannelRequestFormProperties>({
-			DeliveryChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			DeliveryChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -577,7 +573,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteEvaluationResultsRequestFormGroup() {
 		return new FormGroup<DeleteEvaluationResultsRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -602,7 +598,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteOrganizationConfigRuleRequestFormGroup() {
 		return new FormGroup<DeleteOrganizationConfigRuleRequestFormProperties>({
-			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -647,7 +643,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteOrganizationConformancePackRequestFormGroup() {
 		return new FormGroup<DeleteOrganizationConformancePackRequestFormProperties>({
-			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 		});
 
 	}
@@ -688,8 +684,8 @@ export namespace MyNS {
 	}
 	export function CreateDeletePendingAggregationRequestRequestFormGroup() {
 		return new FormGroup<DeletePendingAggregationRequestRequestFormProperties>({
-			RequesterAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			RequesterAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			RequesterAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\d{12}')]),
+			RequesterAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -726,7 +722,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRemediationConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteRemediationConfigurationRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			ResourceType: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -830,8 +826,8 @@ export namespace MyNS {
 	}
 	export function CreateRemediationExceptionResourceKeyFormGroup() {
 		return new FormGroup<RemediationExceptionResourceKeyFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -863,7 +859,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRemediationExceptionsRequestFormGroup() {
 		return new FormGroup<DeleteRemediationExceptionsRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -912,8 +908,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteResourceConfigRequestFormGroup() {
 		return new FormGroup<DeleteResourceConfigRequestFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(196), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(768), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(196)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(768)]),
 		});
 
 	}
@@ -948,7 +944,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteRetentionConfigurationRequestFormGroup() {
 		return new FormGroup<DeleteRetentionConfigurationRequestFormProperties>({
-			RetentionConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			RetentionConfigurationName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -1004,7 +1000,7 @@ export namespace MyNS {
 	}
 	export function CreateDeliverConfigSnapshotRequestFormGroup() {
 		return new FormGroup<DeliverConfigSnapshotRequestFormProperties>({
-			deliveryChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			deliveryChannelName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1062,9 +1058,9 @@ export namespace MyNS {
 	}
 	export function CreateAggregateComplianceByConfigRuleFormGroup() {
 		return new FormGroup<AggregateComplianceByConfigRuleFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -1148,7 +1144,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAggregateComplianceByConfigRulesRequestFormGroup() {
 		return new FormGroup<DescribeAggregateComplianceByConfigRulesRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1193,10 +1189,10 @@ export namespace MyNS {
 	}
 	export function CreateConfigRuleComplianceFiltersFormGroup() {
 		return new FormGroup<ConfigRuleComplianceFiltersFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			ComplianceType: new FormControl<ComplianceComplianceType | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -1264,8 +1260,8 @@ export namespace MyNS {
 	export function CreateAggregationAuthorizationFormGroup() {
 		return new FormGroup<AggregationAuthorizationFormProperties>({
 			AggregationAuthorizationArn: new FormControl<string | null | undefined>(undefined),
-			AuthorizedAccountId: new FormControl<string | null | undefined>(undefined),
-			AuthorizedAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			AuthorizedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			AuthorizedAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1340,7 +1336,7 @@ export namespace MyNS {
 	}
 	export function CreateComplianceByConfigRuleFormGroup() {
 		return new FormGroup<ComplianceByConfigRuleFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -1431,8 +1427,8 @@ export namespace MyNS {
 	}
 	export function CreateComplianceByResourceFormGroup() {
 		return new FormGroup<ComplianceByResourceFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 		});
 
 	}
@@ -1491,8 +1487,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeComplianceByResourceRequestFormGroup() {
 		return new FormGroup<DescribeComplianceByResourceRequestFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1561,7 +1557,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigRuleEvaluationStatusFormGroup() {
 		return new FormGroup<ConfigRuleEvaluationStatusFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			ConfigRuleArn: new FormControl<string | null | undefined>(undefined),
 			ConfigRuleId: new FormControl<string | null | undefined>(undefined),
 			LastSuccessfulInvocationTime: new FormControl<Date | null | undefined>(undefined),
@@ -1726,14 +1722,14 @@ export namespace MyNS {
 	}
 	export function CreateConfigRuleFormGroup() {
 		return new FormGroup<ConfigRuleFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ConfigRuleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ConfigRuleId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
-			InputParameters: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ConfigRuleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ConfigRuleId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
+			InputParameters: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			MaximumExecutionFrequency: new FormControl<SourceDetailMaximumExecutionFrequency | null | undefined>(undefined),
 			ConfigRuleState: new FormControl<ConfigRuleConfigRuleState | null | undefined>(undefined),
-			CreatedBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			CreatedBy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1790,9 +1786,9 @@ export namespace MyNS {
 	}
 	export function CreateScopeFormGroup() {
 		return new FormGroup<ScopeFormProperties>({
-			TagKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			TagValue: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ComplianceResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			TagKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			TagValue: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ComplianceResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 		});
 
 	}
@@ -1834,7 +1830,7 @@ export namespace MyNS {
 	export function CreateSourceFormGroup() {
 		return new FormGroup<SourceFormProperties>({
 			Owner: new FormControl<SourceOwner | null | undefined>(undefined, [Validators.required]),
-			SourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1864,7 +1860,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceDetailEventSource { aws_config = 0 }
+	export enum SourceDetailEventSource { 'aws.config' = 0 }
 
 	export enum SourceDetailMessageType { ConfigurationItemChangeNotification = 0, ConfigurationSnapshotDeliveryCompleted = 1, ScheduledNotification = 2, OversizedConfigurationItemChangeNotification = 3 }
 
@@ -1945,7 +1941,7 @@ export namespace MyNS {
 		return new FormGroup<AggregatedSourceStatusFormProperties>({
 			SourceId: new FormControl<string | null | undefined>(undefined),
 			SourceType: new FormControl<AggregatedSourceStatusSourceType | null | undefined>(undefined),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			LastUpdateStatus: new FormControl<AggregatedSourceStatusLastUpdateStatus | null | undefined>(undefined),
 			LastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 			LastErrorCode: new FormControl<string | null | undefined>(undefined),
@@ -1995,7 +1991,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeConfigurationAggregatorSourcesStatusRequestFormGroup() {
 		return new FormGroup<DescribeConfigurationAggregatorSourcesStatusRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
@@ -2055,8 +2051,8 @@ export namespace MyNS {
 	}
 	export function CreateConfigurationAggregatorFormGroup() {
 		return new FormGroup<ConfigurationAggregatorFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
-			ConfigurationAggregatorArn: new FormControl<string | null | undefined>(undefined),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:aws[a-z\-]*:config:[a-z\-\d]+:\d+:config-aggregator/config-aggregator-[a-z\d]+')]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2260,7 +2256,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigurationRecorderFormGroup() {
 		return new FormGroup<ConfigurationRecorderFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			roleARN: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2287,7 +2283,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
+	export enum ResourceType { 'AWS::EC2::CustomerGateway' = 0, 'AWS::EC2::EIP' = 1, 'AWS::EC2::Host' = 2, 'AWS::EC2::Instance' = 3, 'AWS::EC2::InternetGateway' = 4, 'AWS::EC2::NetworkAcl' = 5, 'AWS::EC2::NetworkInterface' = 6, 'AWS::EC2::RouteTable' = 7, 'AWS::EC2::SecurityGroup' = 8, 'AWS::EC2::Subnet' = 9, 'AWS::CloudTrail::Trail' = 10, 'AWS::EC2::Volume' = 11, 'AWS::EC2::VPC' = 12, 'AWS::EC2::VPNConnection' = 13, 'AWS::EC2::VPNGateway' = 14, 'AWS::EC2::RegisteredHAInstance' = 15, 'AWS::EC2::NatGateway' = 16, 'AWS::EC2::EgressOnlyInternetGateway' = 17, 'AWS::EC2::VPCEndpoint' = 18, 'AWS::EC2::VPCEndpointService' = 19, 'AWS::EC2::FlowLog' = 20, 'AWS::EC2::VPCPeeringConnection' = 21, 'AWS::Elasticsearch::Domain' = 22, 'AWS::IAM::Group' = 23, 'AWS::IAM::Policy' = 24, 'AWS::IAM::Role' = 25, 'AWS::IAM::User' = 26, 'AWS::ElasticLoadBalancingV2::LoadBalancer' = 27, 'AWS::ACM::Certificate' = 28, 'AWS::RDS::DBInstance' = 29, 'AWS::RDS::DBSubnetGroup' = 30, 'AWS::RDS::DBSecurityGroup' = 31, 'AWS::RDS::DBSnapshot' = 32, 'AWS::RDS::DBCluster' = 33, 'AWS::RDS::DBClusterSnapshot' = 34, 'AWS::RDS::EventSubscription' = 35, 'AWS::S3::Bucket' = 36, 'AWS::S3::AccountPublicAccessBlock' = 37, 'AWS::Redshift::Cluster' = 38, 'AWS::Redshift::ClusterSnapshot' = 39, 'AWS::Redshift::ClusterParameterGroup' = 40, 'AWS::Redshift::ClusterSecurityGroup' = 41, 'AWS::Redshift::ClusterSubnetGroup' = 42, 'AWS::Redshift::EventSubscription' = 43, 'AWS::SSM::ManagedInstanceInventory' = 44, 'AWS::CloudWatch::Alarm' = 45, 'AWS::CloudFormation::Stack' = 46, 'AWS::ElasticLoadBalancing::LoadBalancer' = 47, 'AWS::AutoScaling::AutoScalingGroup' = 48, 'AWS::AutoScaling::LaunchConfiguration' = 49, 'AWS::AutoScaling::ScalingPolicy' = 50, 'AWS::AutoScaling::ScheduledAction' = 51, 'AWS::DynamoDB::Table' = 52, 'AWS::CodeBuild::Project' = 53, 'AWS::WAF::RateBasedRule' = 54, 'AWS::WAF::Rule' = 55, 'AWS::WAF::RuleGroup' = 56, 'AWS::WAF::WebACL' = 57, 'AWS::WAFRegional::RateBasedRule' = 58, 'AWS::WAFRegional::Rule' = 59, 'AWS::WAFRegional::RuleGroup' = 60, 'AWS::WAFRegional::WebACL' = 61, 'AWS::CloudFront::Distribution' = 62, 'AWS::CloudFront::StreamingDistribution' = 63, 'AWS::Lambda::Function' = 64, 'AWS::ElasticBeanstalk::Application' = 65, 'AWS::ElasticBeanstalk::ApplicationVersion' = 66, 'AWS::ElasticBeanstalk::Environment' = 67, 'AWS::WAFv2::WebACL' = 68, 'AWS::WAFv2::RuleGroup' = 69, 'AWS::WAFv2::IPSet' = 70, 'AWS::WAFv2::RegexPatternSet' = 71, 'AWS::WAFv2::ManagedRuleSet' = 72, 'AWS::XRay::EncryptionConfig' = 73, 'AWS::SSM::AssociationCompliance' = 74, 'AWS::SSM::PatchCompliance' = 75, 'AWS::Shield::Protection' = 76, 'AWS::ShieldRegional::Protection' = 77, 'AWS::Config::ResourceCompliance' = 78, 'AWS::ApiGateway::Stage' = 79, 'AWS::ApiGateway::RestApi' = 80, 'AWS::ApiGatewayV2::Stage' = 81, 'AWS::ApiGatewayV2::Api' = 82, 'AWS::CodePipeline::Pipeline' = 83, 'AWS::ServiceCatalog::CloudFormationProvisionedProduct' = 84, 'AWS::ServiceCatalog::CloudFormationProduct' = 85, 'AWS::ServiceCatalog::Portfolio' = 86, 'AWS::SQS::Queue' = 87, 'AWS::KMS::Key' = 88, 'AWS::QLDB::Ledger' = 89 }
 
 
 	/** The input for the <a>DescribeConfigurationRecorders</a> action. */
@@ -2333,7 +2329,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeConformancePackComplianceResponseFormGroup() {
 		return new FormGroup<DescribeConformancePackComplianceResponseFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2363,7 +2359,7 @@ export namespace MyNS {
 	}
 	export function CreateConformancePackRuleComplianceFormGroup() {
 		return new FormGroup<ConformancePackRuleComplianceFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			ComplianceType: new FormControl<ConformancePackRuleComplianceComplianceType | null | undefined>(undefined),
 		});
 
@@ -2408,7 +2404,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeConformancePackComplianceRequestFormGroup() {
 		return new FormGroup<DescribeConformancePackComplianceRequestFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -2559,12 +2555,12 @@ export namespace MyNS {
 	}
 	export function CreateConformancePackStatusDetailFormGroup() {
 		return new FormGroup<ConformancePackStatusDetailFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
-			ConformancePackId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			ConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			ConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
 			ConformancePackState: new FormControl<ConformancePackStatusDetailConformancePackState | null | undefined>(undefined, [Validators.required]),
-			StackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			ConformancePackStatusReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(0)]),
+			StackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			ConformancePackStatusReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2000)]),
 			LastUpdateRequestedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LastUpdateCompletedTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2722,13 +2718,13 @@ export namespace MyNS {
 	}
 	export function CreateConformancePackDetailFormGroup() {
 		return new FormGroup<ConformancePackDetailFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
-			ConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1)]),
-			ConformancePackId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
-			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048)]),
+			ConformancePackId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63)]),
+			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			LastUpdateRequestedTime: new FormControl<Date | null | undefined>(undefined),
-			CreatedBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			CreatedBy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -2771,8 +2767,8 @@ export namespace MyNS {
 	}
 	export function CreateConformancePackInputParameterFormGroup() {
 		return new FormGroup<ConformancePackInputParameterFormProperties>({
-			ParameterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(0)]),
-			ParameterValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(0)]),
+			ParameterName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(255)]),
+			ParameterValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(4096)]),
 		});
 
 	}
@@ -2971,7 +2967,7 @@ export namespace MyNS {
 	}
 	export function CreateDeliveryChannelFormGroup() {
 		return new FormGroup<DeliveryChannelFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			s3BucketName: new FormControl<string | null | undefined>(undefined),
 			s3KeyPrefix: new FormControl<string | null | undefined>(undefined),
 			snsTopicARN: new FormControl<string | null | undefined>(undefined),
@@ -3061,7 +3057,7 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationConfigRuleStatusFormGroup() {
 		return new FormGroup<OrganizationConfigRuleStatusFormProperties>({
-			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('.*\S.*')]),
 			OrganizationRuleStatus: new FormControl<OrganizationConfigRuleStatusOrganizationRuleStatus | null | undefined>(undefined, [Validators.required]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
@@ -3170,8 +3166,8 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationConfigRuleFormGroup() {
 		return new FormGroup<OrganizationConfigRuleFormProperties>({
-			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			OrganizationConfigRuleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('.*\S.*')]),
+			OrganizationConfigRuleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			LastUpdateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -3269,13 +3265,13 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationManagedRuleMetadataFormGroup() {
 		return new FormGroup<OrganizationManagedRuleMetadataFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
-			RuleIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			InputParameters: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
+			RuleIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			InputParameters: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			MaximumExecutionFrequency: new FormControl<SourceDetailMaximumExecutionFrequency | null | undefined>(undefined),
-			ResourceIdScope: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
-			TagKeyScope: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			TagValueScope: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ResourceIdScope: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
+			TagKeyScope: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			TagValueScope: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -3375,13 +3371,13 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationCustomRuleMetadataFormGroup() {
 		return new FormGroup<OrganizationCustomRuleMetadataFormProperties>({
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
-			LambdaFunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			InputParameters: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
+			LambdaFunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			InputParameters: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			MaximumExecutionFrequency: new FormControl<SourceDetailMaximumExecutionFrequency | null | undefined>(undefined),
-			ResourceIdScope: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
-			TagKeyScope: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			TagValueScope: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ResourceIdScope: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
+			TagKeyScope: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			TagValueScope: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -3470,7 +3466,7 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationConformancePackStatusFormGroup() {
 		return new FormGroup<OrganizationConformancePackStatusFormProperties>({
-			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 			Status: new FormControl<OrganizationConfigRuleStatusOrganizationRuleStatus | null | undefined>(undefined, [Validators.required]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
@@ -3607,10 +3603,10 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationConformancePackFormGroup() {
 		return new FormGroup<OrganizationConformancePackFormProperties>({
-			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
-			OrganizationConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
-			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			OrganizationConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63)]),
+			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			LastUpdateTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3686,8 +3682,8 @@ export namespace MyNS {
 	}
 	export function CreatePendingAggregationRequestFormGroup() {
 		return new FormGroup<PendingAggregationRequestFormProperties>({
-			RequesterAccountId: new FormControl<string | null | undefined>(undefined),
-			RequesterAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			RequesterAccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			RequesterAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -3836,16 +3832,16 @@ export namespace MyNS {
 	}
 	export function CreateRemediationConfigurationFormGroup() {
 		return new FormGroup<RemediationConfigurationFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			TargetType: new FormControl<RemediationConfigurationTargetType | null | undefined>(undefined, [Validators.required]),
-			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			TargetId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			TargetVersion: new FormControl<string | null | undefined>(undefined),
 			ResourceType: new FormControl<string | null | undefined>(undefined),
 			Automatic: new FormControl<boolean | null | undefined>(undefined),
 			MaximumAutomaticAttempts: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(25)]),
 			RetryAttemptSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2678000)]),
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			CreatedByService: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			CreatedByService: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -4021,10 +4017,10 @@ export namespace MyNS {
 	}
 	export function CreateRemediationExceptionFormGroup() {
 		return new FormGroup<RemediationExceptionFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -4070,7 +4066,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeRemediationExceptionsRequestFormGroup() {
 		return new FormGroup<DescribeRemediationExceptionsRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4191,7 +4187,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeRemediationExecutionStatusRequestFormGroup() {
 		return new FormGroup<DescribeRemediationExecutionStatusRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4250,7 +4246,7 @@ export namespace MyNS {
 	}
 	export function CreateRetentionConfigurationFormGroup() {
 		return new FormGroup<RetentionConfigurationFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 			RetentionPeriodInDays: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(30), Validators.max(2557)]),
 		});
 
@@ -4337,9 +4333,9 @@ export namespace MyNS {
 			ComplianceType: new FormControl<ComplianceComplianceType | null | undefined>(undefined),
 			ResultRecordedTime: new FormControl<Date | null | undefined>(undefined),
 			ConfigRuleInvokedTime: new FormControl<Date | null | undefined>(undefined),
-			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -4410,9 +4406,9 @@ export namespace MyNS {
 	}
 	export function CreateEvaluationResultQualifierFormGroup() {
 		return new FormGroup<EvaluationResultQualifierFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 		});
 
 	}
@@ -4487,10 +4483,10 @@ export namespace MyNS {
 	}
 	export function CreateGetAggregateComplianceDetailsByConfigRuleRequestFormGroup() {
 		return new FormGroup<GetAggregateComplianceDetailsByConfigRuleRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\d{12}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			ComplianceType: new FormControl<ComplianceComplianceType | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -4519,7 +4515,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAggregateConfigRuleComplianceSummaryResponseFormGroup() {
 		return new FormGroup<GetAggregateConfigRuleComplianceSummaryResponseFormProperties>({
-			GroupByKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GroupByKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4550,7 +4546,7 @@ export namespace MyNS {
 	}
 	export function CreateAggregateComplianceCountFormGroup() {
 		return new FormGroup<AggregateComplianceCountFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -4617,7 +4613,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAggregateConfigRuleComplianceSummaryRequestFormGroup() {
 		return new FormGroup<GetAggregateConfigRuleComplianceSummaryRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 			GroupByKey: new FormControl<GetAggregateConfigRuleComplianceSummaryRequestGroupByKey | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -4649,8 +4645,8 @@ export namespace MyNS {
 	}
 	export function CreateConfigRuleComplianceSummaryFiltersFormGroup() {
 		return new FormGroup<ConfigRuleComplianceSummaryFiltersFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			AwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -4685,7 +4681,7 @@ export namespace MyNS {
 	export function CreateGetAggregateDiscoveredResourceCountsResponseFormGroup() {
 		return new FormGroup<GetAggregateDiscoveredResourceCountsResponseFormProperties>({
 			TotalDiscoveredResources: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			GroupByKey: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			GroupByKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -4721,7 +4717,7 @@ export namespace MyNS {
 	}
 	export function CreateGroupedResourceCountFormGroup() {
 		return new FormGroup<GroupedResourceCountFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			ResourceCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -4766,7 +4762,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAggregateDiscoveredResourceCountsRequestFormGroup() {
 		return new FormGroup<GetAggregateDiscoveredResourceCountsRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 			GroupByKey: new FormControl<GetAggregateDiscoveredResourceCountsRequestGroupByKey | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -4777,7 +4773,7 @@ export namespace MyNS {
 
 	/** Filters the resource count based on account ID, region, and resource type. */
 	export interface ResourceCountFilters {
-		ResourceType?: ResourceCountFiltersResourceType | null;
+		ResourceType?: BaseConfigurationItemResourceType | null;
 		AccountId?: string | null;
 
 		/**
@@ -4789,7 +4785,7 @@ export namespace MyNS {
 
 	/** Filters the resource count based on account ID, region, and resource type. */
 	export interface ResourceCountFiltersFormProperties {
-		ResourceType: FormControl<ResourceCountFiltersResourceType | null | undefined>,
+		ResourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
@@ -4800,14 +4796,12 @@ export namespace MyNS {
 	}
 	export function CreateResourceCountFiltersFormGroup() {
 		return new FormGroup<ResourceCountFiltersFormProperties>({
-			ResourceType: new FormControl<ResourceCountFiltersResourceType | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ResourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
-
-	export enum ResourceCountFiltersResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export enum GetAggregateDiscoveredResourceCountsRequestGroupByKey { RESOURCE_TYPE = 0, ACCOUNT_ID = 1, AWS_REGION = 2 }
 
@@ -4834,7 +4828,7 @@ export namespace MyNS {
 		configurationStateId?: string | null;
 		configurationItemMD5Hash?: string | null;
 		arn?: string | null;
-		resourceType?: ConfigurationItemResourceType | null;
+		resourceType?: BaseConfigurationItemResourceType | null;
 
 		/**
 		 * Max length: 768
@@ -4866,7 +4860,7 @@ export namespace MyNS {
 		configurationStateId: FormControl<string | null | undefined>,
 		configurationItemMD5Hash: FormControl<string | null | undefined>,
 		arn: FormControl<string | null | undefined>,
-		resourceType: FormControl<ConfigurationItemResourceType | null | undefined>,
+		resourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 
 		/**
 		 * Max length: 768
@@ -4887,24 +4881,22 @@ export namespace MyNS {
 	export function CreateConfigurationItemFormGroup() {
 		return new FormGroup<ConfigurationItemFormProperties>({
 			version: new FormControl<string | null | undefined>(undefined),
-			accountId: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
 			configurationItemCaptureTime: new FormControl<Date | null | undefined>(undefined),
 			configurationItemStatus: new FormControl<BaseConfigurationItemConfigurationItemStatus | null | undefined>(undefined),
 			configurationStateId: new FormControl<string | null | undefined>(undefined),
 			configurationItemMD5Hash: new FormControl<string | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
-			resourceType: new FormControl<ConfigurationItemResourceType | null | undefined>(undefined),
-			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 			resourceName: new FormControl<string | null | undefined>(undefined),
-			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			awsRegion: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			availabilityZone: new FormControl<string | null | undefined>(undefined),
 			resourceCreationTime: new FormControl<Date | null | undefined>(undefined),
 			configuration: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ConfigurationItemResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface Tags {
 	}
@@ -4919,7 +4911,7 @@ export namespace MyNS {
 
 	/** The relationship of the related resource to the main resource. */
 	export interface Relationship {
-		resourceType?: RelationshipResourceType | null;
+		resourceType?: BaseConfigurationItemResourceType | null;
 
 		/**
 		 * Max length: 768
@@ -4932,7 +4924,7 @@ export namespace MyNS {
 
 	/** The relationship of the related resource to the main resource. */
 	export interface RelationshipFormProperties {
-		resourceType: FormControl<RelationshipResourceType | null | undefined>,
+		resourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 
 		/**
 		 * Max length: 768
@@ -4944,15 +4936,13 @@ export namespace MyNS {
 	}
 	export function CreateRelationshipFormGroup() {
 		return new FormGroup<RelationshipFormProperties>({
-			resourceType: new FormControl<RelationshipResourceType | null | undefined>(undefined),
-			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 			resourceName: new FormControl<string | null | undefined>(undefined),
 			relationshipName: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum RelationshipResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface GetAggregateResourceConfigRequest {
 
@@ -4980,7 +4970,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAggregateResourceConfigRequestFormGroup() {
 		return new FormGroup<GetAggregateResourceConfigRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -5059,7 +5049,7 @@ export namespace MyNS {
 			ComplianceType: new FormControl<ComplianceComplianceType | null | undefined>(undefined),
 			ResultRecordedTime: new FormControl<Date | null | undefined>(undefined),
 			ConfigRuleInvokedTime: new FormControl<Date | null | undefined>(undefined),
-			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			ResultToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5109,7 +5099,7 @@ export namespace MyNS {
 	}
 	export function CreateGetComplianceDetailsByConfigRuleRequestFormGroup() {
 		return new FormGroup<GetComplianceDetailsByConfigRuleRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5180,8 +5170,8 @@ export namespace MyNS {
 	}
 	export function CreateGetComplianceDetailsByResourceRequestFormGroup() {
 		return new FormGroup<GetComplianceDetailsByResourceRequestFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(768), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(768)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5244,7 +5234,7 @@ export namespace MyNS {
 	}
 	export function CreateComplianceSummaryByResourceTypeFormGroup() {
 		return new FormGroup<ComplianceSummaryByResourceTypeFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -5297,7 +5287,7 @@ export namespace MyNS {
 	}
 	export function CreateGetConformancePackComplianceDetailsResponseFormGroup() {
 		return new FormGroup<GetConformancePackComplianceDetailsResponseFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5352,7 +5342,7 @@ export namespace MyNS {
 			ComplianceType: new FormControl<ConformancePackRuleComplianceComplianceType | null | undefined>(undefined, [Validators.required]),
 			ConfigRuleInvokedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			ResultRecordedTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -5394,7 +5384,7 @@ export namespace MyNS {
 	}
 	export function CreateGetConformancePackComplianceDetailsRequestFormGroup() {
 		return new FormGroup<GetConformancePackComplianceDetailsRequestFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5438,7 +5428,7 @@ export namespace MyNS {
 	export function CreateConformancePackEvaluationFiltersFormGroup() {
 		return new FormGroup<ConformancePackEvaluationFiltersFormProperties>({
 			ComplianceType: new FormControl<ConformancePackRuleComplianceComplianceType | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -5492,7 +5482,7 @@ export namespace MyNS {
 	}
 	export function CreateConformancePackComplianceSummaryFormGroup() {
 		return new FormGroup<ConformancePackComplianceSummaryFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 			ConformancePackComplianceStatus: new FormControl<ConformancePackRuleComplianceComplianceType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -5551,24 +5541,22 @@ export namespace MyNS {
 
 	/** An object that contains the resource type and the number of resources. */
 	export interface ResourceCount {
-		resourceType?: ResourceCountResourceType | null;
+		resourceType?: BaseConfigurationItemResourceType | null;
 		count?: number | null;
 	}
 
 	/** An object that contains the resource type and the number of resources. */
 	export interface ResourceCountFormProperties {
-		resourceType: FormControl<ResourceCountResourceType | null | undefined>,
+		resourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateResourceCountFormGroup() {
 		return new FormGroup<ResourceCountFormProperties>({
-			resourceType: new FormControl<ResourceCountResourceType | null | undefined>(undefined),
+			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined),
 			count: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ResourceCountResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface GetDiscoveredResourceCountsRequest {
 
@@ -5658,8 +5646,8 @@ export namespace MyNS {
 	}
 	export function CreateMemberAccountStatusFormGroup() {
 		return new FormGroup<MemberAccountStatusFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\d{12}')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			MemberAccountRuleStatus: new FormControl<OrganizationConfigRuleStatusOrganizationRuleStatus | null | undefined>(undefined, [Validators.required]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
@@ -5705,7 +5693,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOrganizationConfigRuleDetailedStatusRequestFormGroup() {
 		return new FormGroup<GetOrganizationConfigRuleDetailedStatusRequestFormProperties>({
-			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('.*\S.*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5726,7 +5714,7 @@ export namespace MyNS {
 	}
 	export function CreateStatusDetailFiltersFormGroup() {
 		return new FormGroup<StatusDetailFiltersFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
 			MemberAccountRuleStatus: new FormControl<OrganizationConfigRuleStatusOrganizationRuleStatus | null | undefined>(undefined),
 		});
 
@@ -5788,8 +5776,8 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationConformancePackDetailedStatusFormGroup() {
 		return new FormGroup<OrganizationConformancePackDetailedStatusFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\d{12}')]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 			Status: new FormControl<OrganizationConfigRuleStatusOrganizationRuleStatus | null | undefined>(undefined, [Validators.required]),
 			ErrorCode: new FormControl<string | null | undefined>(undefined),
 			ErrorMessage: new FormControl<string | null | undefined>(undefined),
@@ -5835,7 +5823,7 @@ export namespace MyNS {
 	}
 	export function CreateGetOrganizationConformancePackDetailedStatusRequestFormGroup() {
 		return new FormGroup<GetOrganizationConformancePackDetailedStatusRequestFormProperties>({
-			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5856,7 +5844,7 @@ export namespace MyNS {
 	}
 	export function CreateOrganizationResourceDetailedStatusFiltersFormGroup() {
 		return new FormGroup<OrganizationResourceDetailedStatusFiltersFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
 			Status: new FormControl<OrganizationConfigRuleStatusOrganizationRuleStatus | null | undefined>(undefined),
 		});
 
@@ -5885,7 +5873,7 @@ export namespace MyNS {
 	export interface GetResourceConfigHistoryRequest {
 
 		/** Required */
-		resourceType: GetResourceConfigHistoryRequestResourceType;
+		resourceType: BaseConfigurationItemResourceType;
 
 		/**
 		 * Required
@@ -5909,7 +5897,7 @@ export namespace MyNS {
 	export interface GetResourceConfigHistoryRequestFormProperties {
 
 		/** Required */
-		resourceType: FormControl<GetResourceConfigHistoryRequestResourceType | null | undefined>,
+		resourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 
 		/**
 		 * Required
@@ -5930,8 +5918,8 @@ export namespace MyNS {
 	}
 	export function CreateGetResourceConfigHistoryRequestFormGroup() {
 		return new FormGroup<GetResourceConfigHistoryRequestFormProperties>({
-			resourceType: new FormControl<GetResourceConfigHistoryRequestResourceType | null | undefined>(undefined, [Validators.required]),
-			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(768), Validators.minLength(1)]),
+			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined, [Validators.required]),
+			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(768)]),
 			laterTime: new FormControl<Date | null | undefined>(undefined),
 			earlierTime: new FormControl<Date | null | undefined>(undefined),
 			chronologicalOrder: new FormControl<GetResourceConfigHistoryRequestChronologicalOrder | null | undefined>(undefined),
@@ -5940,8 +5928,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum GetResourceConfigHistoryRequestResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export enum GetResourceConfigHistoryRequestChronologicalOrder { Reverse = 0, Forward = 1 }
 
@@ -5979,7 +5965,7 @@ export namespace MyNS {
 		ConfigurationAggregatorName: string;
 
 		/** Required */
-		ResourceType: ListAggregateDiscoveredResourcesRequestResourceType;
+		ResourceType: BaseConfigurationItemResourceType;
 
 		/** Filters the results by resource account ID, region, resource ID, and resource name. */
 		Filters?: ResourceFilters;
@@ -6001,7 +5987,7 @@ export namespace MyNS {
 		ConfigurationAggregatorName: FormControl<string | null | undefined>,
 
 		/** Required */
-		ResourceType: FormControl<ListAggregateDiscoveredResourcesRequestResourceType | null | undefined>,
+		ResourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 
 		/**
 		 * Minimum: 0
@@ -6012,15 +5998,13 @@ export namespace MyNS {
 	}
 	export function CreateListAggregateDiscoveredResourcesRequestFormGroup() {
 		return new FormGroup<ListAggregateDiscoveredResourcesRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
-			ResourceType: new FormControl<ListAggregateDiscoveredResourcesRequestResourceType | null | undefined>(undefined, [Validators.required]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
+			ResourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined, [Validators.required]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum ListAggregateDiscoveredResourcesRequestResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 
 	/** Filters the results by resource account ID, region, resource ID, and resource name. */
@@ -6060,10 +6044,10 @@ export namespace MyNS {
 	}
 	export function CreateResourceFiltersFormGroup() {
 		return new FormGroup<ResourceFiltersFormProperties>({
-			AccountId: new FormControl<string | null | undefined>(undefined),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{12}')]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 			ResourceName: new FormControl<string | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -6089,7 +6073,7 @@ export namespace MyNS {
 
 	/** The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name. */
 	export interface ResourceIdentifier {
-		resourceType?: ResourceIdentifierResourceType | null;
+		resourceType?: BaseConfigurationItemResourceType | null;
 
 		/**
 		 * Max length: 768
@@ -6102,7 +6086,7 @@ export namespace MyNS {
 
 	/** The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name. */
 	export interface ResourceIdentifierFormProperties {
-		resourceType: FormControl<ResourceIdentifierResourceType | null | undefined>,
+		resourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 
 		/**
 		 * Max length: 768
@@ -6114,22 +6098,20 @@ export namespace MyNS {
 	}
 	export function CreateResourceIdentifierFormGroup() {
 		return new FormGroup<ResourceIdentifierFormProperties>({
-			resourceType: new FormControl<ResourceIdentifierResourceType | null | undefined>(undefined),
-			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(768), Validators.minLength(1)]),
+			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(768)]),
 			resourceName: new FormControl<string | null | undefined>(undefined),
 			resourceDeletionTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum ResourceIdentifierResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
-
 
 	/** <p/> */
 	export interface ListDiscoveredResourcesRequest {
 
 		/** Required */
-		resourceType: ListDiscoveredResourcesRequestResourceType;
+		resourceType: BaseConfigurationItemResourceType;
 		resourceIds?: Array<string>;
 		resourceName?: string | null;
 
@@ -6146,7 +6128,7 @@ export namespace MyNS {
 	export interface ListDiscoveredResourcesRequestFormProperties {
 
 		/** Required */
-		resourceType: FormControl<ListDiscoveredResourcesRequestResourceType | null | undefined>,
+		resourceType: FormControl<BaseConfigurationItemResourceType | null | undefined>,
 		resourceName: FormControl<string | null | undefined>,
 
 		/**
@@ -6159,7 +6141,7 @@ export namespace MyNS {
 	}
 	export function CreateListDiscoveredResourcesRequestFormGroup() {
 		return new FormGroup<ListDiscoveredResourcesRequestFormProperties>({
-			resourceType: new FormControl<ListDiscoveredResourcesRequestResourceType | null | undefined>(undefined, [Validators.required]),
+			resourceType: new FormControl<BaseConfigurationItemResourceType | null | undefined>(undefined, [Validators.required]),
 			resourceName: new FormControl<string | null | undefined>(undefined),
 			limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			includeDeletedResources: new FormControl<boolean | null | undefined>(undefined),
@@ -6167,8 +6149,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ListDiscoveredResourcesRequestResourceType { AWSEC2CustomerGateway = 0, AWSEC2EIP = 1, AWSEC2Host = 2, AWSEC2Instance = 3, AWSEC2InternetGateway = 4, AWSEC2NetworkAcl = 5, AWSEC2NetworkInterface = 6, AWSEC2RouteTable = 7, AWSEC2SecurityGroup = 8, AWSEC2Subnet = 9, AWSCloudTrailTrail = 10, AWSEC2Volume = 11, AWSEC2VPC = 12, AWSEC2VPNConnection = 13, AWSEC2VPNGateway = 14, AWSEC2RegisteredHAInstance = 15, AWSEC2NatGateway = 16, AWSEC2EgressOnlyInternetGateway = 17, AWSEC2VPCEndpoint = 18, AWSEC2VPCEndpointService = 19, AWSEC2FlowLog = 20, AWSEC2VPCPeeringConnection = 21, AWSElasticsearchDomain = 22, AWSIAMGroup = 23, AWSIAMPolicy = 24, AWSIAMRole = 25, AWSIAMUser = 26, AWSElasticLoadBalancingV2LoadBalancer = 27, AWSACMCertificate = 28, AWSRDSDBInstance = 29, AWSRDSDBSubnetGroup = 30, AWSRDSDBSecurityGroup = 31, AWSRDSDBSnapshot = 32, AWSRDSDBCluster = 33, AWSRDSDBClusterSnapshot = 34, AWSRDSEventSubscription = 35, AWSS3Bucket = 36, AWSS3AccountPublicAccessBlock = 37, AWSRedshiftCluster = 38, AWSRedshiftClusterSnapshot = 39, AWSRedshiftClusterParameterGroup = 40, AWSRedshiftClusterSecurityGroup = 41, AWSRedshiftClusterSubnetGroup = 42, AWSRedshiftEventSubscription = 43, AWSSSMManagedInstanceInventory = 44, AWSCloudWatchAlarm = 45, AWSCloudFormationStack = 46, AWSElasticLoadBalancingLoadBalancer = 47, AWSAutoScalingAutoScalingGroup = 48, AWSAutoScalingLaunchConfiguration = 49, AWSAutoScalingScalingPolicy = 50, AWSAutoScalingScheduledAction = 51, AWSDynamoDBTable = 52, AWSCodeBuildProject = 53, AWSWAFRateBasedRule = 54, AWSWAFRule = 55, AWSWAFRuleGroup = 56, AWSWAFWebACL = 57, AWSWAFRegionalRateBasedRule = 58, AWSWAFRegionalRule = 59, AWSWAFRegionalRuleGroup = 60, AWSWAFRegionalWebACL = 61, AWSCloudFrontDistribution = 62, AWSCloudFrontStreamingDistribution = 63, AWSLambdaFunction = 64, AWSElasticBeanstalkApplication = 65, AWSElasticBeanstalkApplicationVersion = 66, AWSElasticBeanstalkEnvironment = 67, AWSWAFv2WebACL = 68, AWSWAFv2RuleGroup = 69, AWSWAFv2IPSet = 70, AWSWAFv2RegexPatternSet = 71, AWSWAFv2ManagedRuleSet = 72, AWSXRayEncryptionConfig = 73, AWSSSMAssociationCompliance = 74, AWSSSMPatchCompliance = 75, AWSShieldProtection = 76, AWSShieldRegionalProtection = 77, AWSConfigResourceCompliance = 78, AWSApiGatewayStage = 79, AWSApiGatewayRestApi = 80, AWSApiGatewayV2Stage = 81, AWSApiGatewayV2Api = 82, AWSCodePipelinePipeline = 83, AWSServiceCatalogCloudFormationProvisionedProduct = 84, AWSServiceCatalogCloudFormationProduct = 85, AWSServiceCatalogPortfolio = 86, AWSSQSQueue = 87, AWSKMSKey = 88, AWSQLDBLedger = 89 }
 
 	export interface ListTagsForResourceResponse {
 
@@ -6223,8 +6203,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6263,7 +6243,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -6325,8 +6305,8 @@ export namespace MyNS {
 	}
 	export function CreatePutAggregationAuthorizationRequestFormGroup() {
 		return new FormGroup<PutAggregationAuthorizationRequestFormProperties>({
-			AuthorizedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AuthorizedAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			AuthorizedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('\d{12}')]),
+			AuthorizedAwsRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 		});
 
 	}
@@ -6411,7 +6391,7 @@ export namespace MyNS {
 	}
 	export function CreatePutConfigurationAggregatorRequestFormGroup() {
 		return new FormGroup<PutConfigurationAggregatorRequestFormProperties>({
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 		});
 
 	}
@@ -6524,7 +6504,7 @@ export namespace MyNS {
 	}
 	export function CreatePutConformancePackResponseFormGroup() {
 		return new FormGroup<PutConformancePackResponseFormProperties>({
-			ConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			ConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 		});
 
 	}
@@ -6605,11 +6585,11 @@ export namespace MyNS {
 	}
 	export function CreatePutConformancePackRequestFormGroup() {
 		return new FormGroup<PutConformancePackRequestFormProperties>({
-			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
-			TemplateS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('s3://.*')]),
-			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(51200), Validators.minLength(1)]),
-			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
-			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			TemplateS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('s3://.*')]),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(51200)]),
+			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63)]),
+			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -6796,10 +6776,10 @@ export namespace MyNS {
 	}
 	export function CreateEvaluationFormGroup() {
 		return new FormGroup<EvaluationFormProperties>({
-			ComplianceResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
-			ComplianceResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(768), Validators.minLength(1)]),
+			ComplianceResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
+			ComplianceResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(768)]),
 			ComplianceType: new FormControl<ComplianceComplianceType | null | undefined>(undefined, [Validators.required]),
-			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			Annotation: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			OrderingTimestamp: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -6863,7 +6843,7 @@ export namespace MyNS {
 	}
 	export function CreatePutOrganizationConfigRuleResponseFormGroup() {
 		return new FormGroup<PutOrganizationConfigRuleResponseFormProperties>({
-			OrganizationConfigRuleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			OrganizationConfigRuleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -6900,7 +6880,7 @@ export namespace MyNS {
 	}
 	export function CreatePutOrganizationConfigRuleRequestFormGroup() {
 		return new FormGroup<PutOrganizationConfigRuleRequestFormProperties>({
-			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			OrganizationConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -6933,7 +6913,7 @@ export namespace MyNS {
 	}
 	export function CreatePutOrganizationConformancePackResponseFormGroup() {
 		return new FormGroup<PutOrganizationConformancePackResponseFormProperties>({
-			OrganizationConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			OrganizationConformancePackArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -7020,11 +7000,11 @@ export namespace MyNS {
 	}
 	export function CreatePutOrganizationConformancePackRequestFormGroup() {
 		return new FormGroup<PutOrganizationConformancePackRequestFormProperties>({
-			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
-			TemplateS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('s3://.*')]),
-			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(51200), Validators.minLength(1)]),
-			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(3)]),
-			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			OrganizationConformancePackName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z][-a-zA-Z0-9]*')]),
+			TemplateS3Uri: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('s3://.*')]),
+			TemplateBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(51200)]),
+			DeliveryS3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(63)]),
+			DeliveryS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -7175,8 +7155,8 @@ export namespace MyNS {
 	}
 	export function CreatePutRemediationExceptionsRequestFormGroup() {
 		return new FormGroup<PutRemediationExceptionsRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Message: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			ExpirationTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -7239,9 +7219,9 @@ export namespace MyNS {
 	}
 	export function CreatePutResourceConfigRequestFormGroup() {
 		return new FormGroup<PutResourceConfigRequestFormProperties>({
-			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(196), Validators.minLength(1)]),
-			SchemaVersionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[A-Za-z0-9-]+')]),
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(768), Validators.minLength(1)]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(196)]),
+			SchemaVersionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[A-Za-z0-9-]+')]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(768)]),
 			ResourceName: new FormControl<string | null | undefined>(undefined),
 			Configuration: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -7415,8 +7395,8 @@ export namespace MyNS {
 	}
 	export function CreateSelectAggregateResourceConfigRequestFormGroup() {
 		return new FormGroup<SelectAggregateResourceConfigRequestFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
-			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[\w\-]+')]),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4096)]),
+			ConfigurationAggregatorName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[\w\-]+')]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
@@ -7485,7 +7465,7 @@ export namespace MyNS {
 	}
 	export function CreateSelectResourceConfigRequestFormGroup() {
 		return new FormGroup<SelectResourceConfigRequestFormProperties>({
-			Expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.minLength(1)]),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4096)]),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7550,7 +7530,7 @@ export namespace MyNS {
 	}
 	export function CreateStartConfigurationRecorderRequestFormGroup() {
 		return new FormGroup<StartConfigurationRecorderRequestFormProperties>({
-			ConfigurationRecorderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ConfigurationRecorderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -7611,7 +7591,7 @@ export namespace MyNS {
 	}
 	export function CreateStartRemediationExecutionRequestFormGroup() {
 		return new FormGroup<StartRemediationExecutionRequestFormProperties>({
-			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			ConfigRuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -7640,7 +7620,7 @@ export namespace MyNS {
 	}
 	export function CreateStopConfigurationRecorderRequestFormGroup() {
 		return new FormGroup<StopConfigurationRecorderRequestFormProperties>({
-			ConfigurationRecorderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1)]),
+			ConfigurationRecorderName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -7672,7 +7652,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -7714,7 +7694,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1000), Validators.minLength(1)]),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -7739,7 +7719,7 @@ export namespace MyNS {
 
 	export enum ConformancePackState { CREATE_IN_PROGRESS = 0, CREATE_COMPLETE = 1, CREATE_FAILED = 2, DELETE_IN_PROGRESS = 3, DELETE_FAILED = 4 }
 
-	export enum EventSource { aws_config = 0 }
+	export enum EventSource { 'aws.config' = 0 }
 
 	export enum ResourceCountGroupKey { RESOURCE_TYPE = 0, ACCOUNT_ID = 1, AWS_REGION = 2 }
 
@@ -8550,163 +8530,163 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchGetAggregateResourceConfigX_Amz_Target { StarlingDoveService_BatchGetAggregateResourceConfig = 0 }
+	export enum BatchGetAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.BatchGetAggregateResourceConfig' = 0 }
 
-	export enum BatchGetResourceConfigX_Amz_Target { StarlingDoveService_BatchGetResourceConfig = 0 }
+	export enum BatchGetResourceConfigX_Amz_Target { 'StarlingDoveService.BatchGetResourceConfig' = 0 }
 
-	export enum DeleteAggregationAuthorizationX_Amz_Target { StarlingDoveService_DeleteAggregationAuthorization = 0 }
+	export enum DeleteAggregationAuthorizationX_Amz_Target { 'StarlingDoveService.DeleteAggregationAuthorization' = 0 }
 
-	export enum DeleteConfigRuleX_Amz_Target { StarlingDoveService_DeleteConfigRule = 0 }
+	export enum DeleteConfigRuleX_Amz_Target { 'StarlingDoveService.DeleteConfigRule' = 0 }
 
-	export enum DeleteConfigurationAggregatorX_Amz_Target { StarlingDoveService_DeleteConfigurationAggregator = 0 }
+	export enum DeleteConfigurationAggregatorX_Amz_Target { 'StarlingDoveService.DeleteConfigurationAggregator' = 0 }
 
-	export enum DeleteConfigurationRecorderX_Amz_Target { StarlingDoveService_DeleteConfigurationRecorder = 0 }
+	export enum DeleteConfigurationRecorderX_Amz_Target { 'StarlingDoveService.DeleteConfigurationRecorder' = 0 }
 
-	export enum DeleteConformancePackX_Amz_Target { StarlingDoveService_DeleteConformancePack = 0 }
+	export enum DeleteConformancePackX_Amz_Target { 'StarlingDoveService.DeleteConformancePack' = 0 }
 
-	export enum DeleteDeliveryChannelX_Amz_Target { StarlingDoveService_DeleteDeliveryChannel = 0 }
+	export enum DeleteDeliveryChannelX_Amz_Target { 'StarlingDoveService.DeleteDeliveryChannel' = 0 }
 
-	export enum DeleteEvaluationResultsX_Amz_Target { StarlingDoveService_DeleteEvaluationResults = 0 }
+	export enum DeleteEvaluationResultsX_Amz_Target { 'StarlingDoveService.DeleteEvaluationResults' = 0 }
 
-	export enum DeleteOrganizationConfigRuleX_Amz_Target { StarlingDoveService_DeleteOrganizationConfigRule = 0 }
+	export enum DeleteOrganizationConfigRuleX_Amz_Target { 'StarlingDoveService.DeleteOrganizationConfigRule' = 0 }
 
-	export enum DeleteOrganizationConformancePackX_Amz_Target { StarlingDoveService_DeleteOrganizationConformancePack = 0 }
+	export enum DeleteOrganizationConformancePackX_Amz_Target { 'StarlingDoveService.DeleteOrganizationConformancePack' = 0 }
 
-	export enum DeletePendingAggregationRequestX_Amz_Target { StarlingDoveService_DeletePendingAggregationRequest = 0 }
+	export enum DeletePendingAggregationRequestX_Amz_Target { 'StarlingDoveService.DeletePendingAggregationRequest' = 0 }
 
-	export enum DeleteRemediationConfigurationX_Amz_Target { StarlingDoveService_DeleteRemediationConfiguration = 0 }
+	export enum DeleteRemediationConfigurationX_Amz_Target { 'StarlingDoveService.DeleteRemediationConfiguration' = 0 }
 
-	export enum DeleteRemediationExceptionsX_Amz_Target { StarlingDoveService_DeleteRemediationExceptions = 0 }
+	export enum DeleteRemediationExceptionsX_Amz_Target { 'StarlingDoveService.DeleteRemediationExceptions' = 0 }
 
-	export enum DeleteResourceConfigX_Amz_Target { StarlingDoveService_DeleteResourceConfig = 0 }
+	export enum DeleteResourceConfigX_Amz_Target { 'StarlingDoveService.DeleteResourceConfig' = 0 }
 
-	export enum DeleteRetentionConfigurationX_Amz_Target { StarlingDoveService_DeleteRetentionConfiguration = 0 }
+	export enum DeleteRetentionConfigurationX_Amz_Target { 'StarlingDoveService.DeleteRetentionConfiguration' = 0 }
 
-	export enum DeliverConfigSnapshotX_Amz_Target { StarlingDoveService_DeliverConfigSnapshot = 0 }
+	export enum DeliverConfigSnapshotX_Amz_Target { 'StarlingDoveService.DeliverConfigSnapshot' = 0 }
 
-	export enum DescribeAggregateComplianceByConfigRulesX_Amz_Target { StarlingDoveService_DescribeAggregateComplianceByConfigRules = 0 }
+	export enum DescribeAggregateComplianceByConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeAggregateComplianceByConfigRules' = 0 }
 
-	export enum DescribeAggregationAuthorizationsX_Amz_Target { StarlingDoveService_DescribeAggregationAuthorizations = 0 }
+	export enum DescribeAggregationAuthorizationsX_Amz_Target { 'StarlingDoveService.DescribeAggregationAuthorizations' = 0 }
 
-	export enum DescribeComplianceByConfigRuleX_Amz_Target { StarlingDoveService_DescribeComplianceByConfigRule = 0 }
+	export enum DescribeComplianceByConfigRuleX_Amz_Target { 'StarlingDoveService.DescribeComplianceByConfigRule' = 0 }
 
-	export enum DescribeComplianceByResourceX_Amz_Target { StarlingDoveService_DescribeComplianceByResource = 0 }
+	export enum DescribeComplianceByResourceX_Amz_Target { 'StarlingDoveService.DescribeComplianceByResource' = 0 }
 
-	export enum DescribeConfigRuleEvaluationStatusX_Amz_Target { StarlingDoveService_DescribeConfigRuleEvaluationStatus = 0 }
+	export enum DescribeConfigRuleEvaluationStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigRuleEvaluationStatus' = 0 }
 
-	export enum DescribeConfigRulesX_Amz_Target { StarlingDoveService_DescribeConfigRules = 0 }
+	export enum DescribeConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeConfigRules' = 0 }
 
-	export enum DescribeConfigurationAggregatorSourcesStatusX_Amz_Target { StarlingDoveService_DescribeConfigurationAggregatorSourcesStatus = 0 }
+	export enum DescribeConfigurationAggregatorSourcesStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigurationAggregatorSourcesStatus' = 0 }
 
-	export enum DescribeConfigurationAggregatorsX_Amz_Target { StarlingDoveService_DescribeConfigurationAggregators = 0 }
+	export enum DescribeConfigurationAggregatorsX_Amz_Target { 'StarlingDoveService.DescribeConfigurationAggregators' = 0 }
 
-	export enum DescribeConfigurationRecorderStatusX_Amz_Target { StarlingDoveService_DescribeConfigurationRecorderStatus = 0 }
+	export enum DescribeConfigurationRecorderStatusX_Amz_Target { 'StarlingDoveService.DescribeConfigurationRecorderStatus' = 0 }
 
-	export enum DescribeConfigurationRecordersX_Amz_Target { StarlingDoveService_DescribeConfigurationRecorders = 0 }
+	export enum DescribeConfigurationRecordersX_Amz_Target { 'StarlingDoveService.DescribeConfigurationRecorders' = 0 }
 
-	export enum DescribeConformancePackComplianceX_Amz_Target { StarlingDoveService_DescribeConformancePackCompliance = 0 }
+	export enum DescribeConformancePackComplianceX_Amz_Target { 'StarlingDoveService.DescribeConformancePackCompliance' = 0 }
 
-	export enum DescribeConformancePackStatusX_Amz_Target { StarlingDoveService_DescribeConformancePackStatus = 0 }
+	export enum DescribeConformancePackStatusX_Amz_Target { 'StarlingDoveService.DescribeConformancePackStatus' = 0 }
 
-	export enum DescribeConformancePacksX_Amz_Target { StarlingDoveService_DescribeConformancePacks = 0 }
+	export enum DescribeConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeConformancePacks' = 0 }
 
-	export enum DescribeDeliveryChannelStatusX_Amz_Target { StarlingDoveService_DescribeDeliveryChannelStatus = 0 }
+	export enum DescribeDeliveryChannelStatusX_Amz_Target { 'StarlingDoveService.DescribeDeliveryChannelStatus' = 0 }
 
-	export enum DescribeDeliveryChannelsX_Amz_Target { StarlingDoveService_DescribeDeliveryChannels = 0 }
+	export enum DescribeDeliveryChannelsX_Amz_Target { 'StarlingDoveService.DescribeDeliveryChannels' = 0 }
 
-	export enum DescribeOrganizationConfigRuleStatusesX_Amz_Target { StarlingDoveService_DescribeOrganizationConfigRuleStatuses = 0 }
+	export enum DescribeOrganizationConfigRuleStatusesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConfigRuleStatuses' = 0 }
 
-	export enum DescribeOrganizationConfigRulesX_Amz_Target { StarlingDoveService_DescribeOrganizationConfigRules = 0 }
+	export enum DescribeOrganizationConfigRulesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConfigRules' = 0 }
 
-	export enum DescribeOrganizationConformancePackStatusesX_Amz_Target { StarlingDoveService_DescribeOrganizationConformancePackStatuses = 0 }
+	export enum DescribeOrganizationConformancePackStatusesX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConformancePackStatuses' = 0 }
 
-	export enum DescribeOrganizationConformancePacksX_Amz_Target { StarlingDoveService_DescribeOrganizationConformancePacks = 0 }
+	export enum DescribeOrganizationConformancePacksX_Amz_Target { 'StarlingDoveService.DescribeOrganizationConformancePacks' = 0 }
 
-	export enum DescribePendingAggregationRequestsX_Amz_Target { StarlingDoveService_DescribePendingAggregationRequests = 0 }
+	export enum DescribePendingAggregationRequestsX_Amz_Target { 'StarlingDoveService.DescribePendingAggregationRequests' = 0 }
 
-	export enum DescribeRemediationConfigurationsX_Amz_Target { StarlingDoveService_DescribeRemediationConfigurations = 0 }
+	export enum DescribeRemediationConfigurationsX_Amz_Target { 'StarlingDoveService.DescribeRemediationConfigurations' = 0 }
 
-	export enum DescribeRemediationExceptionsX_Amz_Target { StarlingDoveService_DescribeRemediationExceptions = 0 }
+	export enum DescribeRemediationExceptionsX_Amz_Target { 'StarlingDoveService.DescribeRemediationExceptions' = 0 }
 
-	export enum DescribeRemediationExecutionStatusX_Amz_Target { StarlingDoveService_DescribeRemediationExecutionStatus = 0 }
+	export enum DescribeRemediationExecutionStatusX_Amz_Target { 'StarlingDoveService.DescribeRemediationExecutionStatus' = 0 }
 
-	export enum DescribeRetentionConfigurationsX_Amz_Target { StarlingDoveService_DescribeRetentionConfigurations = 0 }
+	export enum DescribeRetentionConfigurationsX_Amz_Target { 'StarlingDoveService.DescribeRetentionConfigurations' = 0 }
 
-	export enum GetAggregateComplianceDetailsByConfigRuleX_Amz_Target { StarlingDoveService_GetAggregateComplianceDetailsByConfigRule = 0 }
+	export enum GetAggregateComplianceDetailsByConfigRuleX_Amz_Target { 'StarlingDoveService.GetAggregateComplianceDetailsByConfigRule' = 0 }
 
-	export enum GetAggregateConfigRuleComplianceSummaryX_Amz_Target { StarlingDoveService_GetAggregateConfigRuleComplianceSummary = 0 }
+	export enum GetAggregateConfigRuleComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetAggregateConfigRuleComplianceSummary' = 0 }
 
-	export enum GetAggregateDiscoveredResourceCountsX_Amz_Target { StarlingDoveService_GetAggregateDiscoveredResourceCounts = 0 }
+	export enum GetAggregateDiscoveredResourceCountsX_Amz_Target { 'StarlingDoveService.GetAggregateDiscoveredResourceCounts' = 0 }
 
-	export enum GetAggregateResourceConfigX_Amz_Target { StarlingDoveService_GetAggregateResourceConfig = 0 }
+	export enum GetAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.GetAggregateResourceConfig' = 0 }
 
-	export enum GetComplianceDetailsByConfigRuleX_Amz_Target { StarlingDoveService_GetComplianceDetailsByConfigRule = 0 }
+	export enum GetComplianceDetailsByConfigRuleX_Amz_Target { 'StarlingDoveService.GetComplianceDetailsByConfigRule' = 0 }
 
-	export enum GetComplianceDetailsByResourceX_Amz_Target { StarlingDoveService_GetComplianceDetailsByResource = 0 }
+	export enum GetComplianceDetailsByResourceX_Amz_Target { 'StarlingDoveService.GetComplianceDetailsByResource' = 0 }
 
-	export enum GetComplianceSummaryByConfigRuleX_Amz_Target { StarlingDoveService_GetComplianceSummaryByConfigRule = 0 }
+	export enum GetComplianceSummaryByConfigRuleX_Amz_Target { 'StarlingDoveService.GetComplianceSummaryByConfigRule' = 0 }
 
-	export enum GetComplianceSummaryByResourceTypeX_Amz_Target { StarlingDoveService_GetComplianceSummaryByResourceType = 0 }
+	export enum GetComplianceSummaryByResourceTypeX_Amz_Target { 'StarlingDoveService.GetComplianceSummaryByResourceType' = 0 }
 
-	export enum GetConformancePackComplianceDetailsX_Amz_Target { StarlingDoveService_GetConformancePackComplianceDetails = 0 }
+	export enum GetConformancePackComplianceDetailsX_Amz_Target { 'StarlingDoveService.GetConformancePackComplianceDetails' = 0 }
 
-	export enum GetConformancePackComplianceSummaryX_Amz_Target { StarlingDoveService_GetConformancePackComplianceSummary = 0 }
+	export enum GetConformancePackComplianceSummaryX_Amz_Target { 'StarlingDoveService.GetConformancePackComplianceSummary' = 0 }
 
-	export enum GetDiscoveredResourceCountsX_Amz_Target { StarlingDoveService_GetDiscoveredResourceCounts = 0 }
+	export enum GetDiscoveredResourceCountsX_Amz_Target { 'StarlingDoveService.GetDiscoveredResourceCounts' = 0 }
 
-	export enum GetOrganizationConfigRuleDetailedStatusX_Amz_Target { StarlingDoveService_GetOrganizationConfigRuleDetailedStatus = 0 }
+	export enum GetOrganizationConfigRuleDetailedStatusX_Amz_Target { 'StarlingDoveService.GetOrganizationConfigRuleDetailedStatus' = 0 }
 
-	export enum GetOrganizationConformancePackDetailedStatusX_Amz_Target { StarlingDoveService_GetOrganizationConformancePackDetailedStatus = 0 }
+	export enum GetOrganizationConformancePackDetailedStatusX_Amz_Target { 'StarlingDoveService.GetOrganizationConformancePackDetailedStatus' = 0 }
 
-	export enum GetResourceConfigHistoryX_Amz_Target { StarlingDoveService_GetResourceConfigHistory = 0 }
+	export enum GetResourceConfigHistoryX_Amz_Target { 'StarlingDoveService.GetResourceConfigHistory' = 0 }
 
-	export enum ListAggregateDiscoveredResourcesX_Amz_Target { StarlingDoveService_ListAggregateDiscoveredResources = 0 }
+	export enum ListAggregateDiscoveredResourcesX_Amz_Target { 'StarlingDoveService.ListAggregateDiscoveredResources' = 0 }
 
-	export enum ListDiscoveredResourcesX_Amz_Target { StarlingDoveService_ListDiscoveredResources = 0 }
+	export enum ListDiscoveredResourcesX_Amz_Target { 'StarlingDoveService.ListDiscoveredResources' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { StarlingDoveService_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'StarlingDoveService.ListTagsForResource' = 0 }
 
-	export enum PutAggregationAuthorizationX_Amz_Target { StarlingDoveService_PutAggregationAuthorization = 0 }
+	export enum PutAggregationAuthorizationX_Amz_Target { 'StarlingDoveService.PutAggregationAuthorization' = 0 }
 
-	export enum PutConfigRuleX_Amz_Target { StarlingDoveService_PutConfigRule = 0 }
+	export enum PutConfigRuleX_Amz_Target { 'StarlingDoveService.PutConfigRule' = 0 }
 
-	export enum PutConfigurationAggregatorX_Amz_Target { StarlingDoveService_PutConfigurationAggregator = 0 }
+	export enum PutConfigurationAggregatorX_Amz_Target { 'StarlingDoveService.PutConfigurationAggregator' = 0 }
 
-	export enum PutConfigurationRecorderX_Amz_Target { StarlingDoveService_PutConfigurationRecorder = 0 }
+	export enum PutConfigurationRecorderX_Amz_Target { 'StarlingDoveService.PutConfigurationRecorder' = 0 }
 
-	export enum PutConformancePackX_Amz_Target { StarlingDoveService_PutConformancePack = 0 }
+	export enum PutConformancePackX_Amz_Target { 'StarlingDoveService.PutConformancePack' = 0 }
 
-	export enum PutDeliveryChannelX_Amz_Target { StarlingDoveService_PutDeliveryChannel = 0 }
+	export enum PutDeliveryChannelX_Amz_Target { 'StarlingDoveService.PutDeliveryChannel' = 0 }
 
-	export enum PutEvaluationsX_Amz_Target { StarlingDoveService_PutEvaluations = 0 }
+	export enum PutEvaluationsX_Amz_Target { 'StarlingDoveService.PutEvaluations' = 0 }
 
-	export enum PutOrganizationConfigRuleX_Amz_Target { StarlingDoveService_PutOrganizationConfigRule = 0 }
+	export enum PutOrganizationConfigRuleX_Amz_Target { 'StarlingDoveService.PutOrganizationConfigRule' = 0 }
 
-	export enum PutOrganizationConformancePackX_Amz_Target { StarlingDoveService_PutOrganizationConformancePack = 0 }
+	export enum PutOrganizationConformancePackX_Amz_Target { 'StarlingDoveService.PutOrganizationConformancePack' = 0 }
 
-	export enum PutRemediationConfigurationsX_Amz_Target { StarlingDoveService_PutRemediationConfigurations = 0 }
+	export enum PutRemediationConfigurationsX_Amz_Target { 'StarlingDoveService.PutRemediationConfigurations' = 0 }
 
-	export enum PutRemediationExceptionsX_Amz_Target { StarlingDoveService_PutRemediationExceptions = 0 }
+	export enum PutRemediationExceptionsX_Amz_Target { 'StarlingDoveService.PutRemediationExceptions' = 0 }
 
-	export enum PutResourceConfigX_Amz_Target { StarlingDoveService_PutResourceConfig = 0 }
+	export enum PutResourceConfigX_Amz_Target { 'StarlingDoveService.PutResourceConfig' = 0 }
 
-	export enum PutRetentionConfigurationX_Amz_Target { StarlingDoveService_PutRetentionConfiguration = 0 }
+	export enum PutRetentionConfigurationX_Amz_Target { 'StarlingDoveService.PutRetentionConfiguration' = 0 }
 
-	export enum SelectAggregateResourceConfigX_Amz_Target { StarlingDoveService_SelectAggregateResourceConfig = 0 }
+	export enum SelectAggregateResourceConfigX_Amz_Target { 'StarlingDoveService.SelectAggregateResourceConfig' = 0 }
 
-	export enum SelectResourceConfigX_Amz_Target { StarlingDoveService_SelectResourceConfig = 0 }
+	export enum SelectResourceConfigX_Amz_Target { 'StarlingDoveService.SelectResourceConfig' = 0 }
 
-	export enum StartConfigRulesEvaluationX_Amz_Target { StarlingDoveService_StartConfigRulesEvaluation = 0 }
+	export enum StartConfigRulesEvaluationX_Amz_Target { 'StarlingDoveService.StartConfigRulesEvaluation' = 0 }
 
-	export enum StartConfigurationRecorderX_Amz_Target { StarlingDoveService_StartConfigurationRecorder = 0 }
+	export enum StartConfigurationRecorderX_Amz_Target { 'StarlingDoveService.StartConfigurationRecorder' = 0 }
 
-	export enum StartRemediationExecutionX_Amz_Target { StarlingDoveService_StartRemediationExecution = 0 }
+	export enum StartRemediationExecutionX_Amz_Target { 'StarlingDoveService.StartRemediationExecution' = 0 }
 
-	export enum StopConfigurationRecorderX_Amz_Target { StarlingDoveService_StopConfigurationRecorder = 0 }
+	export enum StopConfigurationRecorderX_Amz_Target { 'StarlingDoveService.StopConfigurationRecorder' = 0 }
 
-	export enum TagResourceX_Amz_Target { StarlingDoveService_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'StarlingDoveService.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { StarlingDoveService_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'StarlingDoveService.UntagResource' = 0 }
 
 }
 

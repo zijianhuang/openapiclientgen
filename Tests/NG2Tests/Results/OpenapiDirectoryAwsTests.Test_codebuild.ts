@@ -962,9 +962,9 @@ export namespace MyNS {
 	}
 	export function CreateProjectFormGroup() {
 		return new FormGroup<ProjectFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(255), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 			arn: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
 			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			timeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
@@ -1061,8 +1061,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(127), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$')]),
-			value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$')]),
+			key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(127), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=@+\-]*)$')]),
 		});
 
 	}
@@ -1265,7 +1265,7 @@ export namespace MyNS {
 	export function CreateReportGroupFormGroup() {
 		return new FormGroup<ReportGroupFormProperties>({
 			arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(128)]),
 			type: new FormControl<ReportGroupType | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			lastModified: new FormControl<Date | null | undefined>(undefined),
@@ -1633,8 +1633,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateProjectInputFormGroup() {
 		return new FormGroup<CreateProjectInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(255), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
 			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			timeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
@@ -1716,7 +1716,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateReportGroupInputFormGroup() {
 		return new FormGroup<CreateReportGroupInputFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(2)]),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(128)]),
 			type: new FormControl<ReportGroupType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1758,7 +1758,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateWebhookInputFormGroup() {
 		return new FormGroup<CreateWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(255), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 			branchFilter: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1986,7 +1986,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteWebhookInputFormGroup() {
 		return new FormGroup<DeleteWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(255), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 		});
 
 	}
@@ -3161,7 +3161,7 @@ export namespace MyNS {
 	export function CreateUpdateProjectInputFormGroup() {
 		return new FormGroup<UpdateProjectInputFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
-			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(0)]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			sourceVersion: new FormControl<string | null | undefined>(undefined),
 			serviceRole: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			timeoutInMinutes: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(480)]),
@@ -3255,7 +3255,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateWebhookInputFormGroup() {
 		return new FormGroup<UpdateWebhookInputFormProperties>({
-			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(2), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
+			projectName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(255), Validators.pattern('[A-Za-z0-9][A-Za-z0-9\-_]{1,254}')]),
 			branchFilter: new FormControl<string | null | undefined>(undefined),
 			rotateSecret: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -3639,73 +3639,73 @@ export namespace MyNS {
 		}
 	}
 
-	export enum BatchDeleteBuildsX_Amz_Target { CodeBuild_20161006_BatchDeleteBuilds = 0 }
+	export enum BatchDeleteBuildsX_Amz_Target { 'CodeBuild_20161006.BatchDeleteBuilds' = 0 }
 
-	export enum BatchGetBuildsX_Amz_Target { CodeBuild_20161006_BatchGetBuilds = 0 }
+	export enum BatchGetBuildsX_Amz_Target { 'CodeBuild_20161006.BatchGetBuilds' = 0 }
 
-	export enum BatchGetProjectsX_Amz_Target { CodeBuild_20161006_BatchGetProjects = 0 }
+	export enum BatchGetProjectsX_Amz_Target { 'CodeBuild_20161006.BatchGetProjects' = 0 }
 
-	export enum BatchGetReportGroupsX_Amz_Target { CodeBuild_20161006_BatchGetReportGroups = 0 }
+	export enum BatchGetReportGroupsX_Amz_Target { 'CodeBuild_20161006.BatchGetReportGroups' = 0 }
 
-	export enum BatchGetReportsX_Amz_Target { CodeBuild_20161006_BatchGetReports = 0 }
+	export enum BatchGetReportsX_Amz_Target { 'CodeBuild_20161006.BatchGetReports' = 0 }
 
-	export enum CreateProjectX_Amz_Target { CodeBuild_20161006_CreateProject = 0 }
+	export enum CreateProjectX_Amz_Target { 'CodeBuild_20161006.CreateProject' = 0 }
 
-	export enum CreateReportGroupX_Amz_Target { CodeBuild_20161006_CreateReportGroup = 0 }
+	export enum CreateReportGroupX_Amz_Target { 'CodeBuild_20161006.CreateReportGroup' = 0 }
 
-	export enum CreateWebhookX_Amz_Target { CodeBuild_20161006_CreateWebhook = 0 }
+	export enum CreateWebhookX_Amz_Target { 'CodeBuild_20161006.CreateWebhook' = 0 }
 
-	export enum DeleteProjectX_Amz_Target { CodeBuild_20161006_DeleteProject = 0 }
+	export enum DeleteProjectX_Amz_Target { 'CodeBuild_20161006.DeleteProject' = 0 }
 
-	export enum DeleteReportX_Amz_Target { CodeBuild_20161006_DeleteReport = 0 }
+	export enum DeleteReportX_Amz_Target { 'CodeBuild_20161006.DeleteReport' = 0 }
 
-	export enum DeleteReportGroupX_Amz_Target { CodeBuild_20161006_DeleteReportGroup = 0 }
+	export enum DeleteReportGroupX_Amz_Target { 'CodeBuild_20161006.DeleteReportGroup' = 0 }
 
-	export enum DeleteResourcePolicyX_Amz_Target { CodeBuild_20161006_DeleteResourcePolicy = 0 }
+	export enum DeleteResourcePolicyX_Amz_Target { 'CodeBuild_20161006.DeleteResourcePolicy' = 0 }
 
-	export enum DeleteSourceCredentialsX_Amz_Target { CodeBuild_20161006_DeleteSourceCredentials = 0 }
+	export enum DeleteSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.DeleteSourceCredentials' = 0 }
 
-	export enum DeleteWebhookX_Amz_Target { CodeBuild_20161006_DeleteWebhook = 0 }
+	export enum DeleteWebhookX_Amz_Target { 'CodeBuild_20161006.DeleteWebhook' = 0 }
 
-	export enum DescribeTestCasesX_Amz_Target { CodeBuild_20161006_DescribeTestCases = 0 }
+	export enum DescribeTestCasesX_Amz_Target { 'CodeBuild_20161006.DescribeTestCases' = 0 }
 
-	export enum GetResourcePolicyX_Amz_Target { CodeBuild_20161006_GetResourcePolicy = 0 }
+	export enum GetResourcePolicyX_Amz_Target { 'CodeBuild_20161006.GetResourcePolicy' = 0 }
 
-	export enum ImportSourceCredentialsX_Amz_Target { CodeBuild_20161006_ImportSourceCredentials = 0 }
+	export enum ImportSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.ImportSourceCredentials' = 0 }
 
-	export enum InvalidateProjectCacheX_Amz_Target { CodeBuild_20161006_InvalidateProjectCache = 0 }
+	export enum InvalidateProjectCacheX_Amz_Target { 'CodeBuild_20161006.InvalidateProjectCache' = 0 }
 
-	export enum ListBuildsX_Amz_Target { CodeBuild_20161006_ListBuilds = 0 }
+	export enum ListBuildsX_Amz_Target { 'CodeBuild_20161006.ListBuilds' = 0 }
 
-	export enum ListBuildsForProjectX_Amz_Target { CodeBuild_20161006_ListBuildsForProject = 0 }
+	export enum ListBuildsForProjectX_Amz_Target { 'CodeBuild_20161006.ListBuildsForProject' = 0 }
 
-	export enum ListCuratedEnvironmentImagesX_Amz_Target { CodeBuild_20161006_ListCuratedEnvironmentImages = 0 }
+	export enum ListCuratedEnvironmentImagesX_Amz_Target { 'CodeBuild_20161006.ListCuratedEnvironmentImages' = 0 }
 
-	export enum ListProjectsX_Amz_Target { CodeBuild_20161006_ListProjects = 0 }
+	export enum ListProjectsX_Amz_Target { 'CodeBuild_20161006.ListProjects' = 0 }
 
-	export enum ListReportGroupsX_Amz_Target { CodeBuild_20161006_ListReportGroups = 0 }
+	export enum ListReportGroupsX_Amz_Target { 'CodeBuild_20161006.ListReportGroups' = 0 }
 
-	export enum ListReportsX_Amz_Target { CodeBuild_20161006_ListReports = 0 }
+	export enum ListReportsX_Amz_Target { 'CodeBuild_20161006.ListReports' = 0 }
 
-	export enum ListReportsForReportGroupX_Amz_Target { CodeBuild_20161006_ListReportsForReportGroup = 0 }
+	export enum ListReportsForReportGroupX_Amz_Target { 'CodeBuild_20161006.ListReportsForReportGroup' = 0 }
 
-	export enum ListSharedProjectsX_Amz_Target { CodeBuild_20161006_ListSharedProjects = 0 }
+	export enum ListSharedProjectsX_Amz_Target { 'CodeBuild_20161006.ListSharedProjects' = 0 }
 
-	export enum ListSharedReportGroupsX_Amz_Target { CodeBuild_20161006_ListSharedReportGroups = 0 }
+	export enum ListSharedReportGroupsX_Amz_Target { 'CodeBuild_20161006.ListSharedReportGroups' = 0 }
 
-	export enum ListSourceCredentialsX_Amz_Target { CodeBuild_20161006_ListSourceCredentials = 0 }
+	export enum ListSourceCredentialsX_Amz_Target { 'CodeBuild_20161006.ListSourceCredentials' = 0 }
 
-	export enum PutResourcePolicyX_Amz_Target { CodeBuild_20161006_PutResourcePolicy = 0 }
+	export enum PutResourcePolicyX_Amz_Target { 'CodeBuild_20161006.PutResourcePolicy' = 0 }
 
-	export enum StartBuildX_Amz_Target { CodeBuild_20161006_StartBuild = 0 }
+	export enum StartBuildX_Amz_Target { 'CodeBuild_20161006.StartBuild' = 0 }
 
-	export enum StopBuildX_Amz_Target { CodeBuild_20161006_StopBuild = 0 }
+	export enum StopBuildX_Amz_Target { 'CodeBuild_20161006.StopBuild' = 0 }
 
-	export enum UpdateProjectX_Amz_Target { CodeBuild_20161006_UpdateProject = 0 }
+	export enum UpdateProjectX_Amz_Target { 'CodeBuild_20161006.UpdateProject' = 0 }
 
-	export enum UpdateReportGroupX_Amz_Target { CodeBuild_20161006_UpdateReportGroup = 0 }
+	export enum UpdateReportGroupX_Amz_Target { 'CodeBuild_20161006.UpdateReportGroup' = 0 }
 
-	export enum UpdateWebhookX_Amz_Target { CodeBuild_20161006_UpdateWebhook = 0 }
+	export enum UpdateWebhookX_Amz_Target { 'CodeBuild_20161006.UpdateWebhook' = 0 }
 
 }
 

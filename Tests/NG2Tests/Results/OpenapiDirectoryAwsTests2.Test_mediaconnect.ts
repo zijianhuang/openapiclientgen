@@ -123,7 +123,7 @@ export namespace MyNS {
 
 	export enum EncryptionAlgorithm { aes128 = 0, aes192 = 1, aes256 = 2 }
 
-	export enum EncryptionKeyType { speke = 0, static_key = 1 }
+	export enum EncryptionKeyType { speke = 0, 'static-key' = 1 }
 
 
 	/** Attributes related to the transport stream that are used in a source or output. */
@@ -162,7 +162,7 @@ export namespace MyNS {
 
 	}
 
-	export enum TransportProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
+	export enum TransportProtocol { 'zixi-push' = 0, 'rtp-fec' = 1, rtp = 2, 'zixi-pull' = 3, rist = 4 }
 
 
 	/** The settings for attaching a VPC interface to an output. */
@@ -195,7 +195,7 @@ export namespace MyNS {
 		Port?: number | null;
 
 		/** Required */
-		Protocol: AddOutputRequestProtocol;
+		Protocol: TransportProtocol;
 		RemoteId?: string | null;
 		SmoothingLatency?: number | null;
 		StreamId?: string | null;
@@ -213,7 +213,7 @@ export namespace MyNS {
 		Port: FormControl<number | null | undefined>,
 
 		/** Required */
-		Protocol: FormControl<AddOutputRequestProtocol | null | undefined>,
+		Protocol: FormControl<TransportProtocol | null | undefined>,
 		RemoteId: FormControl<string | null | undefined>,
 		SmoothingLatency: FormControl<number | null | undefined>,
 		StreamId: FormControl<string | null | undefined>,
@@ -225,15 +225,13 @@ export namespace MyNS {
 			MaxLatency: new FormControl<number | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
-			Protocol: new FormControl<AddOutputRequestProtocol | null | undefined>(undefined, [Validators.required]),
+			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined, [Validators.required]),
 			RemoteId: new FormControl<string | null | undefined>(undefined),
 			SmoothingLatency: new FormControl<number | null | undefined>(undefined),
 			StreamId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum AddOutputRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface AddFlowOutputs420Exception {
 	}
@@ -386,7 +384,7 @@ export namespace MyNS {
 		MaxBitrate?: number | null;
 		MaxLatency?: number | null;
 		Name?: string | null;
-		Protocol?: SetSourceRequestProtocol | null;
+		Protocol?: TransportProtocol | null;
 		StreamId?: string | null;
 		VpcInterfaceName?: string | null;
 		WhitelistCidr?: string | null;
@@ -400,7 +398,7 @@ export namespace MyNS {
 		MaxBitrate: FormControl<number | null | undefined>,
 		MaxLatency: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
-		Protocol: FormControl<SetSourceRequestProtocol | null | undefined>,
+		Protocol: FormControl<TransportProtocol | null | undefined>,
 		StreamId: FormControl<string | null | undefined>,
 		VpcInterfaceName: FormControl<string | null | undefined>,
 		WhitelistCidr: FormControl<string | null | undefined>,
@@ -413,15 +411,13 @@ export namespace MyNS {
 			MaxBitrate: new FormControl<number | null | undefined>(undefined),
 			MaxLatency: new FormControl<number | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			Protocol: new FormControl<SetSourceRequestProtocol | null | undefined>(undefined),
+			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
 			StreamId: new FormControl<string | null | undefined>(undefined),
 			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
 			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum SetSourceRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface AddFlowVpcInterfacesResponse {
 		FlowArn?: string | null;
@@ -687,7 +683,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Protocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
+	export enum Protocol { 'zixi-push' = 0, 'rtp-fec' = 1, rtp = 2, 'zixi-pull' = 3, rist = 4 }
 
 	export enum State { ENABLED = 0, DISABLED = 1 }
 
@@ -1040,7 +1036,7 @@ export namespace MyNS {
 
 	export enum Algorithm { aes128 = 0, aes192 = 1, aes256 = 2 }
 
-	export enum KeyType { speke = 0, static_key = 1 }
+	export enum KeyType { speke = 0, 'static-key' = 1 }
 
 	export interface UpdateFlowOutputResponse {
 		FlowArn?: string | null;
@@ -1323,7 +1319,7 @@ export namespace MyNS {
 		Algorithm?: EncryptionAlgorithm | null;
 		ConstantInitializationVector?: string | null;
 		DeviceId?: string | null;
-		KeyType?: UpdateEncryptionKeyType | null;
+		KeyType?: EncryptionKeyType | null;
 		Region?: string | null;
 		ResourceId?: string | null;
 		RoleArn?: string | null;
@@ -1336,7 +1332,7 @@ export namespace MyNS {
 		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
 		ConstantInitializationVector: FormControl<string | null | undefined>,
 		DeviceId: FormControl<string | null | undefined>,
-		KeyType: FormControl<UpdateEncryptionKeyType | null | undefined>,
+		KeyType: FormControl<EncryptionKeyType | null | undefined>,
 		Region: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
 		RoleArn: FormControl<string | null | undefined>,
@@ -1348,7 +1344,7 @@ export namespace MyNS {
 			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
 			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
 			DeviceId: new FormControl<string | null | undefined>(undefined),
-			KeyType: new FormControl<UpdateEncryptionKeyType | null | undefined>(undefined),
+			KeyType: new FormControl<EncryptionKeyType | null | undefined>(undefined),
 			Region: new FormControl<string | null | undefined>(undefined),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
 			RoleArn: new FormControl<string | null | undefined>(undefined),
@@ -1357,8 +1353,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum UpdateEncryptionKeyType { speke = 0, static_key = 1 }
 
 
 	/** The settings for source failover */
@@ -1412,7 +1406,7 @@ export namespace MyNS {
 		Encryption?: UpdateEncryption;
 		MaxLatency?: number | null;
 		Port?: number | null;
-		Protocol?: UpdateFlowOutputRequestProtocol | null;
+		Protocol?: TransportProtocol | null;
 		RemoteId?: string | null;
 		SmoothingLatency?: number | null;
 		StreamId?: string | null;
@@ -1427,7 +1421,7 @@ export namespace MyNS {
 		Destination: FormControl<string | null | undefined>,
 		MaxLatency: FormControl<number | null | undefined>,
 		Port: FormControl<number | null | undefined>,
-		Protocol: FormControl<UpdateFlowOutputRequestProtocol | null | undefined>,
+		Protocol: FormControl<TransportProtocol | null | undefined>,
 		RemoteId: FormControl<string | null | undefined>,
 		SmoothingLatency: FormControl<number | null | undefined>,
 		StreamId: FormControl<string | null | undefined>,
@@ -1438,15 +1432,13 @@ export namespace MyNS {
 			Destination: new FormControl<string | null | undefined>(undefined),
 			MaxLatency: new FormControl<number | null | undefined>(undefined),
 			Port: new FormControl<number | null | undefined>(undefined),
-			Protocol: new FormControl<UpdateFlowOutputRequestProtocol | null | undefined>(undefined),
+			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
 			RemoteId: new FormControl<string | null | undefined>(undefined),
 			SmoothingLatency: new FormControl<number | null | undefined>(undefined),
 			StreamId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateFlowOutputRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 
 	/** A request to update flow. */
@@ -1476,7 +1468,7 @@ export namespace MyNS {
 		IngestPort?: number | null;
 		MaxBitrate?: number | null;
 		MaxLatency?: number | null;
-		Protocol?: UpdateFlowSourceRequestProtocol | null;
+		Protocol?: TransportProtocol | null;
 		StreamId?: string | null;
 		VpcInterfaceName?: string | null;
 		WhitelistCidr?: string | null;
@@ -1489,7 +1481,7 @@ export namespace MyNS {
 		IngestPort: FormControl<number | null | undefined>,
 		MaxBitrate: FormControl<number | null | undefined>,
 		MaxLatency: FormControl<number | null | undefined>,
-		Protocol: FormControl<UpdateFlowSourceRequestProtocol | null | undefined>,
+		Protocol: FormControl<TransportProtocol | null | undefined>,
 		StreamId: FormControl<string | null | undefined>,
 		VpcInterfaceName: FormControl<string | null | undefined>,
 		WhitelistCidr: FormControl<string | null | undefined>,
@@ -1501,15 +1493,13 @@ export namespace MyNS {
 			IngestPort: new FormControl<number | null | undefined>(undefined),
 			MaxBitrate: new FormControl<number | null | undefined>(undefined),
 			MaxLatency: new FormControl<number | null | undefined>(undefined),
-			Protocol: new FormControl<UpdateFlowSourceRequestProtocol | null | undefined>(undefined),
+			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
 			StreamId: new FormControl<string | null | undefined>(undefined),
 			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
 			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum UpdateFlowSourceRequestProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	@Injectable()
 	export class MyClient {
@@ -1854,7 +1844,7 @@ export namespace MyNS {
 		MaxBitrate?: number | null;
 		MaxLatency?: number | null;
 		Name?: string | null;
-		Protocol?: CreateFlowPostBodySourceProtocol | null;
+		Protocol?: TransportProtocol | null;
 		StreamId?: string | null;
 		VpcInterfaceName?: string | null;
 		WhitelistCidr?: string | null;
@@ -1866,7 +1856,7 @@ export namespace MyNS {
 		MaxBitrate: FormControl<number | null | undefined>,
 		MaxLatency: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
-		Protocol: FormControl<CreateFlowPostBodySourceProtocol | null | undefined>,
+		Protocol: FormControl<TransportProtocol | null | undefined>,
 		StreamId: FormControl<string | null | undefined>,
 		VpcInterfaceName: FormControl<string | null | undefined>,
 		WhitelistCidr: FormControl<string | null | undefined>,
@@ -1879,15 +1869,13 @@ export namespace MyNS {
 			MaxBitrate: new FormControl<number | null | undefined>(undefined),
 			MaxLatency: new FormControl<number | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			Protocol: new FormControl<CreateFlowPostBodySourceProtocol | null | undefined>(undefined),
+			Protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
 			StreamId: new FormControl<string | null | undefined>(undefined),
 			VpcInterfaceName: new FormControl<string | null | undefined>(undefined),
 			WhitelistCidr: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateFlowPostBodySourceProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface CreateFlowPostBodySourceFailoverConfig {
 		RecoveryWindow?: number | null;
@@ -1994,7 +1982,7 @@ export namespace MyNS {
 		port?: number | null;
 
 		/** The protocol to use for the output. */
-		protocol?: UpdateFlowOutputPutBodyProtocol | null;
+		protocol?: TransportProtocol | null;
 
 		/** The remote ID for the Zixi-pull stream. */
 		remoteId?: string | null;
@@ -2023,7 +2011,7 @@ export namespace MyNS {
 		port: FormControl<number | null | undefined>,
 
 		/** The protocol to use for the output. */
-		protocol: FormControl<UpdateFlowOutputPutBodyProtocol | null | undefined>,
+		protocol: FormControl<TransportProtocol | null | undefined>,
 
 		/** The remote ID for the Zixi-pull stream. */
 		remoteId: FormControl<string | null | undefined>,
@@ -2040,7 +2028,7 @@ export namespace MyNS {
 			destination: new FormControl<string | null | undefined>(undefined),
 			maxLatency: new FormControl<number | null | undefined>(undefined),
 			port: new FormControl<number | null | undefined>(undefined),
-			protocol: new FormControl<UpdateFlowOutputPutBodyProtocol | null | undefined>(undefined),
+			protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
 			remoteId: new FormControl<string | null | undefined>(undefined),
 			smoothingLatency: new FormControl<number | null | undefined>(undefined),
 			streamId: new FormControl<string | null | undefined>(undefined),
@@ -2052,7 +2040,7 @@ export namespace MyNS {
 		Algorithm?: EncryptionAlgorithm | null;
 		ConstantInitializationVector?: string | null;
 		DeviceId?: string | null;
-		KeyType?: UpdateFlowOutputPutBodyEncryptionKeyType | null;
+		KeyType?: EncryptionKeyType | null;
 		Region?: string | null;
 		ResourceId?: string | null;
 		RoleArn?: string | null;
@@ -2063,7 +2051,7 @@ export namespace MyNS {
 		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
 		ConstantInitializationVector: FormControl<string | null | undefined>,
 		DeviceId: FormControl<string | null | undefined>,
-		KeyType: FormControl<UpdateFlowOutputPutBodyEncryptionKeyType | null | undefined>,
+		KeyType: FormControl<EncryptionKeyType | null | undefined>,
 		Region: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
 		RoleArn: FormControl<string | null | undefined>,
@@ -2075,7 +2063,7 @@ export namespace MyNS {
 			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
 			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
 			DeviceId: new FormControl<string | null | undefined>(undefined),
-			KeyType: new FormControl<UpdateFlowOutputPutBodyEncryptionKeyType | null | undefined>(undefined),
+			KeyType: new FormControl<EncryptionKeyType | null | undefined>(undefined),
 			Region: new FormControl<string | null | undefined>(undefined),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
 			RoleArn: new FormControl<string | null | undefined>(undefined),
@@ -2084,10 +2072,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum UpdateFlowOutputPutBodyEncryptionKeyType { speke = 0, static_key = 1 }
-
-	export enum UpdateFlowOutputPutBodyProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface UpdateFlowOutputPutBodyVpcInterfaceAttachment {
 		VpcInterfaceName?: string | null;
@@ -2123,7 +2107,7 @@ export namespace MyNS {
 		maxLatency?: number | null;
 
 		/** The protocol that is used by the source. */
-		protocol?: UpdateFlowSourcePutBodyProtocol | null;
+		protocol?: TransportProtocol | null;
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
 		streamId?: string | null;
@@ -2152,7 +2136,7 @@ export namespace MyNS {
 		maxLatency: FormControl<number | null | undefined>,
 
 		/** The protocol that is used by the source. */
-		protocol: FormControl<UpdateFlowSourcePutBodyProtocol | null | undefined>,
+		protocol: FormControl<TransportProtocol | null | undefined>,
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
 		streamId: FormControl<string | null | undefined>,
@@ -2170,7 +2154,7 @@ export namespace MyNS {
 			ingestPort: new FormControl<number | null | undefined>(undefined),
 			maxBitrate: new FormControl<number | null | undefined>(undefined),
 			maxLatency: new FormControl<number | null | undefined>(undefined),
-			protocol: new FormControl<UpdateFlowSourcePutBodyProtocol | null | undefined>(undefined),
+			protocol: new FormControl<TransportProtocol | null | undefined>(undefined),
 			streamId: new FormControl<string | null | undefined>(undefined),
 			vpcInterfaceName: new FormControl<string | null | undefined>(undefined),
 			whitelistCidr: new FormControl<string | null | undefined>(undefined),
@@ -2182,7 +2166,7 @@ export namespace MyNS {
 		Algorithm?: EncryptionAlgorithm | null;
 		ConstantInitializationVector?: string | null;
 		DeviceId?: string | null;
-		KeyType?: UpdateFlowSourcePutBodyDecryptionKeyType | null;
+		KeyType?: EncryptionKeyType | null;
 		Region?: string | null;
 		ResourceId?: string | null;
 		RoleArn?: string | null;
@@ -2193,7 +2177,7 @@ export namespace MyNS {
 		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
 		ConstantInitializationVector: FormControl<string | null | undefined>,
 		DeviceId: FormControl<string | null | undefined>,
-		KeyType: FormControl<UpdateFlowSourcePutBodyDecryptionKeyType | null | undefined>,
+		KeyType: FormControl<EncryptionKeyType | null | undefined>,
 		Region: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
 		RoleArn: FormControl<string | null | undefined>,
@@ -2205,7 +2189,7 @@ export namespace MyNS {
 			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
 			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
 			DeviceId: new FormControl<string | null | undefined>(undefined),
-			KeyType: new FormControl<UpdateFlowSourcePutBodyDecryptionKeyType | null | undefined>(undefined),
+			KeyType: new FormControl<EncryptionKeyType | null | undefined>(undefined),
 			Region: new FormControl<string | null | undefined>(undefined),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
 			RoleArn: new FormControl<string | null | undefined>(undefined),
@@ -2214,10 +2198,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum UpdateFlowSourcePutBodyDecryptionKeyType { speke = 0, static_key = 1 }
-
-	export enum UpdateFlowSourcePutBodyProtocol { zixi_push = 0, rtp_fec = 1, rtp = 2, zixi_pull = 3, rist = 4 }
 
 	export interface UpdateFlowEntitlementPutBody {
 
@@ -2246,7 +2226,7 @@ export namespace MyNS {
 		Algorithm?: EncryptionAlgorithm | null;
 		ConstantInitializationVector?: string | null;
 		DeviceId?: string | null;
-		KeyType?: UpdateFlowEntitlementPutBodyEncryptionKeyType | null;
+		KeyType?: EncryptionKeyType | null;
 		Region?: string | null;
 		ResourceId?: string | null;
 		RoleArn?: string | null;
@@ -2257,7 +2237,7 @@ export namespace MyNS {
 		Algorithm: FormControl<EncryptionAlgorithm | null | undefined>,
 		ConstantInitializationVector: FormControl<string | null | undefined>,
 		DeviceId: FormControl<string | null | undefined>,
-		KeyType: FormControl<UpdateFlowEntitlementPutBodyEncryptionKeyType | null | undefined>,
+		KeyType: FormControl<EncryptionKeyType | null | undefined>,
 		Region: FormControl<string | null | undefined>,
 		ResourceId: FormControl<string | null | undefined>,
 		RoleArn: FormControl<string | null | undefined>,
@@ -2269,7 +2249,7 @@ export namespace MyNS {
 			Algorithm: new FormControl<EncryptionAlgorithm | null | undefined>(undefined),
 			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
 			DeviceId: new FormControl<string | null | undefined>(undefined),
-			KeyType: new FormControl<UpdateFlowEntitlementPutBodyEncryptionKeyType | null | undefined>(undefined),
+			KeyType: new FormControl<EncryptionKeyType | null | undefined>(undefined),
 			Region: new FormControl<string | null | undefined>(undefined),
 			ResourceId: new FormControl<string | null | undefined>(undefined),
 			RoleArn: new FormControl<string | null | undefined>(undefined),
@@ -2278,8 +2258,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum UpdateFlowEntitlementPutBodyEncryptionKeyType { speke = 0, static_key = 1 }
 
 }
 

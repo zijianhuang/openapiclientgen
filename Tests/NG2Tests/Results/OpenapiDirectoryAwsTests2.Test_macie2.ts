@@ -471,7 +471,7 @@ export namespace MyNS {
 
 
 	/** The type of finding. Valid values are: */
-	export enum FindingType { SensitiveDataS3Object_Multiple = 0, SensitiveDataS3Object_Financial = 1, SensitiveDataS3Object_Personal = 2, SensitiveDataS3Object_Credentials = 3, SensitiveDataS3Object_CustomIdentifier = 4, PolicyIAMUser_S3BucketPublic = 5, PolicyIAMUser_S3BucketSharedExternally = 6, PolicyIAMUser_S3BucketReplicatedExternally = 7, PolicyIAMUser_S3BucketEncryptionDisabled = 8, PolicyIAMUser_S3BlockPublicAccessDisabled = 9 }
+	export enum FindingType { 'SensitiveData:S3Object/Multiple' = 0, 'SensitiveData:S3Object/Financial' = 1, 'SensitiveData:S3Object/Personal' = 2, 'SensitiveData:S3Object/Credentials' = 3, 'SensitiveData:S3Object/CustomIdentifier' = 4, 'Policy:IAMUser/S3BucketPublic' = 5, 'Policy:IAMUser/S3BucketSharedExternally' = 6, 'Policy:IAMUser/S3BucketReplicatedExternally' = 7, 'Policy:IAMUser/S3BucketEncryptionDisabled' = 8, 'Policy:IAMUser/S3BlockPublicAccessDisabled' = 9 }
 
 	export interface DeclineInvitationsResponse {
 		unprocessedAccounts?: Array<UnprocessedAccount>;
@@ -2114,7 +2114,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ServerSideEncryptionEncryptionType { NONE = 0, AES256 = 1, awskms = 2 }
+	export enum ServerSideEncryptionEncryptionType { NONE = 0, AES256 = 1, 'aws:kms' = 2 }
 
 
 	/** Provides information about the user who owns an S3 bucket. */
@@ -3540,7 +3540,7 @@ export namespace MyNS {
 
 
 	/** The server-side encryption algorithm that's used when storing the S3 bucket or object. Valid values are: */
-	export enum EncryptionType { NONE = 0, AES256 = 1, awskms = 2 }
+	export enum EncryptionType { NONE = 0, AES256 = 1, 'aws:kms' = 2 }
 
 
 	/** The source of an error, issue, or delay. Possible values are: */
@@ -3605,7 +3605,7 @@ export namespace MyNS {
 
 	}
 
-	export enum GroupBy { resourcesAffected_s3Bucket_name = 0, type = 1, classificationDetails_jobId = 2, severity_description = 3 }
+	export enum GroupBy { 'resourcesAffected.s3Bucket.name' = 0, type = 1, 'classificationDetails.jobId' = 2, 'severity.description' = 3 }
 
 	export interface GetFindingStatisticsRequest {
 
@@ -3613,7 +3613,7 @@ export namespace MyNS {
 		findingCriteria?: FindingCriteria;
 
 		/** Required */
-		groupBy: GetFindingStatisticsRequestGroupBy;
+		groupBy: GroupBy;
 		size?: number | null;
 
 		/** Specifies criteria for sorting the results of a query for information about findings. */
@@ -3622,18 +3622,16 @@ export namespace MyNS {
 	export interface GetFindingStatisticsRequestFormProperties {
 
 		/** Required */
-		groupBy: FormControl<GetFindingStatisticsRequestGroupBy | null | undefined>,
+		groupBy: FormControl<GroupBy | null | undefined>,
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFindingStatisticsRequestFormGroup() {
 		return new FormGroup<GetFindingStatisticsRequestFormProperties>({
-			groupBy: new FormControl<GetFindingStatisticsRequestGroupBy | null | undefined>(undefined, [Validators.required]),
+			groupBy: new FormControl<GroupBy | null | undefined>(undefined, [Validators.required]),
 			size: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum GetFindingStatisticsRequestGroupBy { resourcesAffected_s3Bucket_name = 0, type = 1, classificationDetails_jobId = 2, severity_description = 3 }
 
 	export interface GetFindingsFilterRequest {
 	}
@@ -5395,7 +5393,7 @@ export namespace MyNS {
 		 * <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
 		 * Required
 		 */
-		groupBy: GetFindingStatisticsPostBodyGroupBy;
+		groupBy: GroupBy;
 
 		/** The maximum number of items to include in each page of the response. */
 		size?: number | null;
@@ -5409,14 +5407,14 @@ export namespace MyNS {
 		 * <p>The finding property to use to group the query results. Valid values are:</p> <ul><li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> <li><p>severity.description - The severity of the finding, such as High or Medium.</p></li> <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li></ul>
 		 * Required
 		 */
-		groupBy: FormControl<GetFindingStatisticsPostBodyGroupBy | null | undefined>,
+		groupBy: FormControl<GroupBy | null | undefined>,
 
 		/** The maximum number of items to include in each page of the response. */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetFindingStatisticsPostBodyFormGroup() {
 		return new FormGroup<GetFindingStatisticsPostBodyFormProperties>({
-			groupBy: new FormControl<GetFindingStatisticsPostBodyGroupBy | null | undefined>(undefined, [Validators.required]),
+			groupBy: new FormControl<GroupBy | null | undefined>(undefined, [Validators.required]),
 			size: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -5434,8 +5432,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum GetFindingStatisticsPostBodyGroupBy { resourcesAffected_s3Bucket_name = 0, type = 1, classificationDetails_jobId = 2, severity_description = 3 }
 
 	export interface GetFindingStatisticsPostBodySortCriteria {
 

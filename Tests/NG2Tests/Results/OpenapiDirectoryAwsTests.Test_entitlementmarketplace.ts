@@ -18,7 +18,7 @@ export namespace MyNS {
 	}
 	export function CreateGetEntitlementsResultFormGroup() {
 		return new FormGroup<GetEntitlementsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\S+')]),
 		});
 
 	}
@@ -54,9 +54,9 @@ export namespace MyNS {
 	}
 	export function CreateEntitlementFormGroup() {
 		return new FormGroup<EntitlementFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Dimension: new FormControl<string | null | undefined>(undefined),
-			CustomerIdentifier: new FormControl<string | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Dimension: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\S+')]),
+			CustomerIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\S+')]),
 			ExpirationDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -117,8 +117,8 @@ export namespace MyNS {
 	}
 	export function CreateGetEntitlementsRequestFormGroup() {
 		return new FormGroup<GetEntitlementsRequestFormProperties>({
-			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\S+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -202,7 +202,7 @@ export namespace MyNS {
 		}
 	}
 
-	export enum GetEntitlementsX_Amz_Target { AWSMPEntitlementService_GetEntitlements = 0 }
+	export enum GetEntitlementsX_Amz_Target { 'AWSMPEntitlementService.GetEntitlements' = 0 }
 
 }
 

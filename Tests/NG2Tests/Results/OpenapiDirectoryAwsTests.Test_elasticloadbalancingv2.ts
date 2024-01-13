@@ -110,8 +110,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -263,7 +263,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { forward = 0, authenticate_oidc = 1, authenticate_cognito = 2, redirect = 3, fixed_response = 4 }
+	export enum ActionType { forward = 0, 'authenticate-oidc' = 1, 'authenticate-cognito' = 2, redirect = 3, 'fixed-response' = 4 }
 
 
 	/** Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users. */
@@ -459,11 +459,11 @@ export namespace MyNS {
 	}
 	export function CreateRedirectActionConfigFormGroup() {
 		return new FormGroup<RedirectActionConfigFormProperties>({
-			Protocol: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(HTTPS?|#\{protocol\})$')]),
 			Port: new FormControl<string | null | undefined>(undefined),
-			Host: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Query: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			Host: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			Query: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128)]),
 			StatusCode: new FormControl<RedirectActionConfigStatusCode | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -511,9 +511,9 @@ export namespace MyNS {
 	}
 	export function CreateFixedResponseActionConfigFormGroup() {
 		return new FormGroup<FixedResponseActionConfigFormProperties>({
-			MessageBody: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			StatusCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(0)]),
+			MessageBody: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
+			StatusCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(2|4|5)\d\d$')]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(32)]),
 		});
 
 	}
@@ -763,7 +763,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerScheme { internet_facing = 0, _internal = 1 }
+	export enum LoadBalancerScheme { 'internet-facing' = 0, internal = 1 }
 
 
 	/** Information about the state of the load balancer. */
@@ -1302,7 +1302,7 @@ export namespace MyNS {
 			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(120)]),
 			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
 			UnhealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			TargetType: new FormControl<TargetGroupTargetType | null | undefined>(undefined),
 		});
 
@@ -1771,7 +1771,7 @@ export namespace MyNS {
 
 	export enum TargetHealthState { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
 
-	export enum TargetHealthReason { Elb_RegistrationInProgress = 0, Elb_InitialHealthChecking = 1, Target_ResponseCodeMismatch = 2, Target_Timeout = 3, Target_FailedHealthChecks = 4, Target_NotRegistered = 5, Target_NotInUse = 6, Target_DeregistrationInProgress = 7, Target_InvalidState = 8, Target_IpUnusable = 9, Target_HealthCheckDisabled = 10, Elb_InternalError = 11 }
+	export enum TargetHealthReason { 'Elb.RegistrationInProgress' = 0, 'Elb.InitialHealthChecking' = 1, 'Target.ResponseCodeMismatch' = 2, 'Target.Timeout' = 3, 'Target.FailedHealthChecks' = 4, 'Target.NotRegistered' = 5, 'Target.NotInUse' = 6, 'Target.DeregistrationInProgress' = 7, 'Target.InvalidState' = 8, 'Target.IpUnusable' = 9, 'Target.HealthCheckDisabled' = 10, 'Elb.InternalError' = 11 }
 
 	export interface HealthUnavailableException {
 	}
@@ -1946,7 +1946,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionTypeEnum { forward = 0, authenticate_oidc = 1, authenticate_cognito = 2, redirect = 3, fixed_response = 4 }
+	export enum ActionTypeEnum { forward = 0, 'authenticate-oidc' = 1, 'authenticate-cognito' = 2, redirect = 3, 'fixed-response' = 4 }
 
 	export interface AddListenerCertificatesInput {
 
@@ -2040,7 +2040,7 @@ export namespace MyNS {
 
 	}
 
-	export enum LoadBalancerSchemeEnum { internet_facing = 0, _internal = 1 }
+	export enum LoadBalancerSchemeEnum { 'internet-facing' = 0, internal = 1 }
 
 	export enum LoadBalancerTypeEnum { application = 0, network = 1 }
 
@@ -2053,7 +2053,7 @@ export namespace MyNS {
 		Subnets?: Array<string>;
 		SubnetMappings?: Array<SubnetMapping>;
 		SecurityGroups?: Array<string>;
-		Scheme?: CreateLoadBalancerInputScheme | null;
+		Scheme?: LoadBalancerScheme | null;
 
 		/** Minimum items: 1 */
 		Tags?: Array<Tag>;
@@ -2064,21 +2064,19 @@ export namespace MyNS {
 
 		/** Required */
 		Name: FormControl<string | null | undefined>,
-		Scheme: FormControl<CreateLoadBalancerInputScheme | null | undefined>,
+		Scheme: FormControl<LoadBalancerScheme | null | undefined>,
 		Type: FormControl<LoadBalancerType | null | undefined>,
 		IpAddressType: FormControl<LoadBalancerIpAddressType | null | undefined>,
 	}
 	export function CreateCreateLoadBalancerInputFormGroup() {
 		return new FormGroup<CreateLoadBalancerInputFormProperties>({
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Scheme: new FormControl<CreateLoadBalancerInputScheme | null | undefined>(undefined),
+			Scheme: new FormControl<LoadBalancerScheme | null | undefined>(undefined),
 			Type: new FormControl<LoadBalancerType | null | undefined>(undefined),
 			IpAddressType: new FormControl<LoadBalancerIpAddressType | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateLoadBalancerInputScheme { internet_facing = 0, _internal = 1 }
 
 	export interface CreateRuleInput {
 
@@ -2226,7 +2224,7 @@ export namespace MyNS {
 			HealthCheckProtocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			HealthCheckPort: new FormControl<string | null | undefined>(undefined),
 			HealthCheckEnabled: new FormControl<boolean | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(300)]),
 			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(120)]),
 			HealthyThresholdCount: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(10)]),
@@ -2781,7 +2779,7 @@ export namespace MyNS {
 			TargetGroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			HealthCheckProtocol: new FormControl<ListenerProtocol | null | undefined>(undefined),
 			HealthCheckPort: new FormControl<string | null | undefined>(undefined),
-			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			HealthCheckPath: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			HealthCheckEnabled: new FormControl<boolean | null | undefined>(undefined),
 			HealthCheckIntervalSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(5), Validators.max(300)]),
 			HealthCheckTimeoutSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(2), Validators.max(120)]),
@@ -2927,7 +2925,7 @@ export namespace MyNS {
 
 	export enum TargetHealthStateEnum { initial = 0, healthy = 1, unhealthy = 2, unused = 3, draining = 4, unavailable = 5 }
 
-	export enum TargetHealthReasonEnum { Elb_RegistrationInProgress = 0, Elb_InitialHealthChecking = 1, Target_ResponseCodeMismatch = 2, Target_Timeout = 3, Target_FailedHealthChecks = 4, Target_NotRegistered = 5, Target_NotInUse = 6, Target_DeregistrationInProgress = 7, Target_InvalidState = 8, Target_IpUnusable = 9, Target_HealthCheckDisabled = 10, Elb_InternalError = 11 }
+	export enum TargetHealthReasonEnum { 'Elb.RegistrationInProgress' = 0, 'Elb.InitialHealthChecking' = 1, 'Target.ResponseCodeMismatch' = 2, 'Target.Timeout' = 3, 'Target.FailedHealthChecks' = 4, 'Target.NotRegistered' = 5, 'Target.NotInUse' = 6, 'Target.DeregistrationInProgress' = 7, 'Target.InvalidState' = 8, 'Target.IpUnusable' = 9, 'Target.HealthCheckDisabled' = 10, 'Elb.InternalError' = 11 }
 
 	@Injectable()
 	export class MyClient {
@@ -3370,7 +3368,7 @@ export namespace MyNS {
 
 	export enum POST_CreateListenerVersion { _2015_12_01 = 0 }
 
-	export enum GET_CreateLoadBalancerScheme { internet_facing = 0, _internal = 1 }
+	export enum GET_CreateLoadBalancerScheme { 'internet-facing' = 0, internal = 1 }
 
 	export enum GET_CreateLoadBalancerAction { CreateLoadBalancer = 0 }
 

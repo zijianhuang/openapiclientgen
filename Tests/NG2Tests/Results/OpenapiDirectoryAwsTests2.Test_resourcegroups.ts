@@ -64,8 +64,8 @@ export namespace MyNS {
 	}
 	export function CreateGroupFormGroup() {
 		return new FormGroup<GroupFormProperties>({
-			GroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1600), Validators.minLength(12), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
+			GroupArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.pattern('[\sa-zA-Z0-9_\.-]*')]),
 		});
 
@@ -107,7 +107,7 @@ export namespace MyNS {
 	}
 	export function CreateResourceQueryFormGroup() {
 		return new FormGroup<ResourceQueryFormProperties>({
-			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^\w+$')]),
+			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^\w+$')]),
 			Query: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4096), Validators.pattern('[\s\S]*')]),
 		});
 
@@ -256,7 +256,7 @@ export namespace MyNS {
 	}
 	export function CreateGroupQueryFormGroup() {
 		return new FormGroup<GroupQueryFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
 		});
 
 	}
@@ -280,7 +280,7 @@ export namespace MyNS {
 	}
 	export function CreateGetTagsOutputFormGroup() {
 		return new FormGroup<GetTagsOutputFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(12), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
 		});
 
 	}
@@ -305,7 +305,7 @@ export namespace MyNS {
 	}
 	export function CreateListGroupResourcesOutputFormGroup() {
 		return new FormGroup<ListGroupResourcesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(8192), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
 		});
 
 	}
@@ -324,8 +324,8 @@ export namespace MyNS {
 	}
 	export function CreateResourceIdentifierFormGroup() {
 		return new FormGroup<ResourceIdentifierFormProperties>({
-			ResourceArn: new FormControl<string | null | undefined>(undefined),
-			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:aws(-[a-z]+)*:[a-z0-9\-]*:([a-z]{2}-[a-z]+-\d{1})?:([0-9]{12})?:.+')]),
+			ResourceType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('AWS::[a-zA-Z0-9]+::\w+')]),
 		});
 
 	}
@@ -380,7 +380,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ResourceFilterName { resource_type = 0 }
+	export enum ResourceFilterName { 'resource-type' = 0 }
 
 	export interface UnauthorizedException {
 	}
@@ -412,7 +412,7 @@ export namespace MyNS {
 	}
 	export function CreateListGroupsOutputFormGroup() {
 		return new FormGroup<ListGroupsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(8192), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
 		});
 
 	}
@@ -451,8 +451,8 @@ export namespace MyNS {
 	}
 	export function CreateGroupIdentifierFormGroup() {
 		return new FormGroup<GroupIdentifierFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
-			GroupArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(12), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
+			GroupArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
 		});
 
 	}
@@ -462,7 +462,7 @@ export namespace MyNS {
 	export interface GroupFilter {
 
 		/** Required */
-		Name: GroupFilterName;
+		Name: ResourceFilterName;
 
 		/**
 		 * Required
@@ -476,16 +476,14 @@ export namespace MyNS {
 	export interface GroupFilterFormProperties {
 
 		/** Required */
-		Name: FormControl<GroupFilterName | null | undefined>,
+		Name: FormControl<ResourceFilterName | null | undefined>,
 	}
 	export function CreateGroupFilterFormGroup() {
 		return new FormGroup<GroupFilterFormProperties>({
-			Name: new FormControl<GroupFilterName | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<ResourceFilterName | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
-
-	export enum GroupFilterName { resource_type = 0 }
 
 	export interface SearchResourcesOutput {
 		ResourceIdentifiers?: Array<ResourceIdentifier>;
@@ -507,7 +505,7 @@ export namespace MyNS {
 	}
 	export function CreateSearchResourcesOutputFormGroup() {
 		return new FormGroup<SearchResourcesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(8192), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
 		});
 
 	}
@@ -531,7 +529,7 @@ export namespace MyNS {
 	}
 	export function CreateTagOutputFormGroup() {
 		return new FormGroup<TagOutputFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(12), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
 		});
 
 	}
@@ -555,7 +553,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagOutputFormGroup() {
 		return new FormGroup<UntagOutputFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(12), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(12), Validators.maxLength(1600), Validators.pattern('arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}')]),
 		});
 
 	}
@@ -619,7 +617,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGroupInputFormGroup() {
 		return new FormGroup<CreateGroupInputFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.pattern('[\sa-zA-Z0-9_\.-]*')]),
 		});
 
@@ -664,6 +662,8 @@ export namespace MyNS {
 		});
 
 	}
+
+	export enum GroupFilterName { 'resource-type' = 0 }
 
 	export interface ListGroupResourcesInput {
 		Filters?: Array<ResourceFilter>;
@@ -726,7 +726,7 @@ export namespace MyNS {
 	export function CreateSearchResourcesInputFormGroup() {
 		return new FormGroup<SearchResourcesInputFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(8192), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
 		});
 
 	}
@@ -969,7 +969,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGroupPostBodyFormGroup() {
 		return new FormGroup<CreateGroupPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_\.-]+')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.pattern('[\sa-zA-Z0-9_\.-]*')]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -1000,7 +1000,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateGroupPostBodyResourceQueryFormGroup() {
 		return new FormGroup<CreateGroupPostBodyResourceQueryFormProperties>({
-			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^\w+$')]),
+			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^\w+$')]),
 			Query: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.pattern('[\s\S]*')]),
 		});
 
@@ -1069,7 +1069,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateGroupQueryPutBodyResourceQueryFormGroup() {
 		return new FormGroup<UpdateGroupQueryPutBodyResourceQueryFormProperties>({
-			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^\w+$')]),
+			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^\w+$')]),
 			Query: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.pattern('[\s\S]*')]),
 		});
 
@@ -1181,7 +1181,7 @@ export namespace MyNS {
 	export function CreateSearchResourcesPostBodyFormGroup() {
 		return new FormGroup<SearchResourcesPostBodyFormProperties>({
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192), Validators.minLength(0), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(8192), Validators.pattern('^[a-zA-Z0-9+/]*={0,2}$')]),
 		});
 
 	}
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 	}
 	export function CreateSearchResourcesPostBodyResourceQueryFormGroup() {
 		return new FormGroup<SearchResourcesPostBodyResourceQueryFormProperties>({
-			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^\w+$')]),
+			Type: new FormControl<ResourceQueryType | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^\w+$')]),
 			Query: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.pattern('[\s\S]*')]),
 		});
 

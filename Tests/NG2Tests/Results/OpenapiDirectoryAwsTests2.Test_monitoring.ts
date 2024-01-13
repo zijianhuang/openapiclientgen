@@ -61,8 +61,8 @@ export namespace MyNS {
 	}
 	export function CreateDimensionFormGroup() {
 		return new FormGroup<DimensionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -230,12 +230,12 @@ export namespace MyNS {
 	}
 	export function CreateAlarmHistoryItemFormGroup() {
 		return new FormGroup<AlarmHistoryItemFormProperties>({
-			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			AlarmType: new FormControl<AlarmHistoryItemAlarmType | null | undefined>(undefined),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
 			HistoryItemType: new FormControl<AlarmHistoryItemHistoryItemType | null | undefined>(undefined),
-			HistorySummary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			HistoryData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4095), Validators.minLength(1)]),
+			HistorySummary: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			HistoryData: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4095)]),
 		});
 
 	}
@@ -371,13 +371,13 @@ export namespace MyNS {
 	export function CreateCompositeAlarmFormGroup() {
 		return new FormGroup<CompositeAlarmFormProperties>({
 			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			AlarmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
+			AlarmArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
 			AlarmConfigurationUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			AlarmRule: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10240), Validators.minLength(1)]),
-			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(0)]),
-			StateReasonData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000), Validators.minLength(0)]),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			AlarmRule: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10240)]),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1023)]),
+			StateReasonData: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(4000)]),
 			StateUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined),
 		});
@@ -565,35 +565,35 @@ export namespace MyNS {
 	}
 	export function CreateMetricAlarmFormGroup() {
 		return new FormGroup<MetricAlarmFormProperties>({
-			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			AlarmArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1600), Validators.minLength(1)]),
-			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			AlarmArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1600)]),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			AlarmConfigurationUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
 			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined),
-			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1023), Validators.minLength(0)]),
-			StateReasonData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000), Validators.minLength(0)]),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1023)]),
+			StateReasonData: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(4000)]),
 			StateUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
 			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
-			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
+			ExtendedStatistic: new FormControl<string | null | undefined>(undefined, [Validators.pattern('p(\d{1,2}(\.\d{0,2})?|100)')]),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
 			EvaluationPeriods: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			DatapointsToAlarm: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Threshold: new FormControl<number | null | undefined>(undefined),
 			ComparisonOperator: new FormControl<MetricAlarmComparisonOperator | null | undefined>(undefined),
-			TreatMissingData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			EvaluateLowSampleCountPercentile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ThresholdMetricId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			TreatMissingData: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			EvaluateLowSampleCountPercentile: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ThresholdMetricId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
 
 	export enum MetricAlarmStatistic { SampleCount = 0, Average = 1, Sum = 2, Minimum = 3, Maximum = 4 }
 
-	export enum MetricAlarmUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
+	export enum MetricAlarmUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
 
 	export enum MetricAlarmComparisonOperator { GreaterThanOrEqualToThreshold = 0, GreaterThanThreshold = 1, LessThanThreshold = 2, LessThanOrEqualToThreshold = 3, LessThanLowerOrGreaterThanUpperThreshold = 4, LessThanLowerThreshold = 5, GreaterThanUpperThreshold = 6 }
 
@@ -646,8 +646,8 @@ export namespace MyNS {
 	}
 	export function CreateMetricDataQueryFormGroup() {
 		return new FormGroup<MetricDataQueryFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Expression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Expression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			Label: new FormControl<string | null | undefined>(undefined),
 			ReturnData: new FormControl<boolean | null | undefined>(undefined),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
@@ -673,7 +673,7 @@ export namespace MyNS {
 
 		/** Required */
 		Stat: string;
-		Unit?: MetricStatUnit | null;
+		Unit?: MetricAlarmUnit | null;
 	}
 
 	/** This structure defines the metric to be returned, along with the statistics, period, and units. */
@@ -687,13 +687,13 @@ export namespace MyNS {
 
 		/** Required */
 		Stat: FormControl<string | null | undefined>,
-		Unit: FormControl<MetricStatUnit | null | undefined>,
+		Unit: FormControl<MetricAlarmUnit | null | undefined>,
 	}
 	export function CreateMetricStatFormGroup() {
 		return new FormGroup<MetricStatFormProperties>({
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			Stat: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Unit: new FormControl<MetricStatUnit | null | undefined>(undefined),
+			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
 		});
 
 	}
@@ -735,13 +735,11 @@ export namespace MyNS {
 	}
 	export function CreateMetricFormGroup() {
 		return new FormGroup<MetricFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
-
-	export enum MetricStatUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsForMetricOutput {
 		MetricAlarms?: Array<MetricAlarm>;
@@ -812,9 +810,9 @@ export namespace MyNS {
 	}
 	export function CreateAnomalyDetectorFormGroup() {
 		return new FormGroup<AnomalyDetectorFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Stat: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Stat: new FormControl<string | null | undefined>(undefined, [Validators.pattern('(SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?')]),
 			StateValue: new FormControl<AnomalyDetectorStateValue | null | undefined>(undefined),
 		});
 
@@ -944,10 +942,10 @@ export namespace MyNS {
 	}
 	export function CreateInsightRuleFormGroup() {
 		return new FormGroup<InsightRuleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
-			State: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(32), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\x20-\x7E]+')]),
+			State: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('[\x20-\x7E]+')]),
 			Schema: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Definition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('[\x00-\x7F]+')]),
+			Definition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8192), Validators.pattern('[\x00-\x7F]+')]),
 		});
 
 	}
@@ -1166,7 +1164,7 @@ export namespace MyNS {
 	}
 	export function CreateMetricDataResultFormGroup() {
 		return new FormGroup<MetricDataResultFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			Label: new FormControl<string | null | undefined>(undefined),
 			StatusCode: new FormControl<MetricDataResultStatusCode | null | undefined>(undefined),
 		});
@@ -1218,7 +1216,7 @@ export namespace MyNS {
 		Sum?: number | null;
 		Minimum?: number | null;
 		Maximum?: number | null;
-		Unit?: DatapointUnit | null;
+		Unit?: MetricAlarmUnit | null;
 		ExtendedStatistics?: DatapointValueMap;
 	}
 
@@ -1230,7 +1228,7 @@ export namespace MyNS {
 		Sum: FormControl<number | null | undefined>,
 		Minimum: FormControl<number | null | undefined>,
 		Maximum: FormControl<number | null | undefined>,
-		Unit: FormControl<DatapointUnit | null | undefined>,
+		Unit: FormControl<MetricAlarmUnit | null | undefined>,
 	}
 	export function CreateDatapointFormGroup() {
 		return new FormGroup<DatapointFormProperties>({
@@ -1240,12 +1238,10 @@ export namespace MyNS {
 			Sum: new FormControl<number | null | undefined>(undefined),
 			Minimum: new FormControl<number | null | undefined>(undefined),
 			Maximum: new FormControl<number | null | undefined>(undefined),
-			Unit: new FormControl<DatapointUnit | null | undefined>(undefined),
+			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DatapointUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DatapointValueMap {
 	}
@@ -1372,8 +1368,8 @@ export namespace MyNS {
 	}
 	export function CreateDimensionFilterFormGroup() {
 		return new FormGroup<DimensionFilterFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1427,8 +1423,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1524,7 +1520,7 @@ export namespace MyNS {
 		StatisticValues?: StatisticSet;
 		Values?: Array<number>;
 		Counts?: Array<number>;
-		Unit?: MetricDatumUnit | null;
+		Unit?: MetricAlarmUnit | null;
 
 		/** Minimum: 1 */
 		StorageResolution?: number | null;
@@ -1541,17 +1537,17 @@ export namespace MyNS {
 		MetricName: FormControl<string | null | undefined>,
 		Timestamp: FormControl<Date | null | undefined>,
 		Value: FormControl<number | null | undefined>,
-		Unit: FormControl<MetricDatumUnit | null | undefined>,
+		Unit: FormControl<MetricAlarmUnit | null | undefined>,
 
 		/** Minimum: 1 */
 		StorageResolution: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricDatumFormGroup() {
 		return new FormGroup<MetricDatumFormProperties>({
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			Timestamp: new FormControl<Date | null | undefined>(undefined),
 			Value: new FormControl<number | null | undefined>(undefined),
-			Unit: new FormControl<MetricDatumUnit | null | undefined>(undefined),
+			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
 			StorageResolution: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
 
@@ -1599,8 +1595,6 @@ export namespace MyNS {
 
 	}
 
-	export enum MetricDatumUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
-
 	export interface InvalidFormatFault {
 	}
 	export interface InvalidFormatFaultFormProperties {
@@ -1647,7 +1641,7 @@ export namespace MyNS {
 
 	export enum StateValue { OK = 0, ALARM = 1, INSUFFICIENT_DATA = 2 }
 
-	export enum StandardUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
+	export enum StandardUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
 
 	export interface DeleteAlarmsInput {
 
@@ -1708,9 +1702,9 @@ export namespace MyNS {
 	}
 	export function CreateDeleteAnomalyDetectorInputFormGroup() {
 		return new FormGroup<DeleteAnomalyDetectorInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Stat: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Stat: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?')]),
 		});
 
 	}
@@ -1784,7 +1778,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAlarmHistoryInputFormGroup() {
 		return new FormGroup<DescribeAlarmHistoryInputFormProperties>({
-			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			HistoryItemType: new FormControl<AlarmHistoryItemHistoryItemType | null | undefined>(undefined),
 			StartDate: new FormControl<Date | null | undefined>(undefined),
 			EndDate: new FormControl<Date | null | undefined>(undefined),
@@ -1818,7 +1812,7 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		Period?: number | null;
-		Unit?: DescribeAlarmsForMetricInputUnit | null;
+		Unit?: MetricAlarmUnit | null;
 	}
 	export interface DescribeAlarmsForMetricInputFormProperties {
 
@@ -1840,21 +1834,19 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		Period: FormControl<number | null | undefined>,
-		Unit: FormControl<DescribeAlarmsForMetricInputUnit | null | undefined>,
+		Unit: FormControl<MetricAlarmUnit | null | undefined>,
 	}
 	export function CreateDescribeAlarmsForMetricInputFormGroup() {
 		return new FormGroup<DescribeAlarmsForMetricInputFormProperties>({
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
 			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
-			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
+			ExtendedStatistic: new FormControl<string | null | undefined>(undefined, [Validators.pattern('p(\d{1,2}(\.\d{0,2})?|100)')]),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			Unit: new FormControl<DescribeAlarmsForMetricInputUnit | null | undefined>(undefined),
+			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeAlarmsForMetricInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsInput {
 
@@ -1930,11 +1922,11 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAlarmsInputFormGroup() {
 		return new FormGroup<DescribeAlarmsInputFormProperties>({
-			AlarmNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ChildrenOfAlarmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ParentsOfAlarmName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			AlarmNamePrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ChildrenOfAlarmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ParentsOfAlarmName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined),
-			ActionPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ActionPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			MaxRecords: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1984,8 +1976,8 @@ export namespace MyNS {
 		return new FormGroup<DescribeAnomalyDetectorsInputFormProperties>({
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
@@ -2150,12 +2142,12 @@ export namespace MyNS {
 	}
 	export function CreateGetInsightRuleReportInputFormGroup() {
 		return new FormGroup<GetInsightRuleReportInputFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\x20-\x7E]+')]),
 			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			MaxContributorCount: new FormControl<number | null | undefined>(undefined),
-			OrderBy: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
+			OrderBy: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('[\x20-\x7E]+')]),
 		});
 
 	}
@@ -2238,7 +2230,7 @@ export namespace MyNS {
 		 * Maximum items: 10
 		 */
 		ExtendedStatistics?: Array<string>;
-		Unit?: GetMetricStatisticsInputUnit | null;
+		Unit?: MetricAlarmUnit | null;
 	}
 	export interface GetMetricStatisticsInputFormProperties {
 
@@ -2267,21 +2259,19 @@ export namespace MyNS {
 		 * Minimum: 1
 		 */
 		Period: FormControl<number | null | undefined>,
-		Unit: FormControl<GetMetricStatisticsInputUnit | null | undefined>,
+		Unit: FormControl<MetricAlarmUnit | null | undefined>,
 	}
 	export function CreateGetMetricStatisticsInputFormGroup() {
 		return new FormGroup<GetMetricStatisticsInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			StartTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			EndTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
-			Unit: new FormControl<GetMetricStatisticsInputUnit | null | undefined>(undefined),
+			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum GetMetricStatisticsInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface GetMetricWidgetImageInput {
 
@@ -2354,8 +2344,8 @@ export namespace MyNS {
 	}
 	export function CreateListMetricsInputFormGroup() {
 		return new FormGroup<ListMetricsInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2381,7 +2371,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceInputFormGroup() {
 		return new FormGroup<ListTagsForResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2434,9 +2424,9 @@ export namespace MyNS {
 	}
 	export function CreatePutAnomalyDetectorInputFormGroup() {
 		return new FormGroup<PutAnomalyDetectorInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			Stat: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			Stat: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(SampleCount|Average|Sum|Minimum|Maximum|p(\d{1,2}|100)(\.\d{0,2})?|[ou]\d+(\.\d*)?)(_E|_L|_H)?')]),
 		});
 
 	}
@@ -2500,9 +2490,9 @@ export namespace MyNS {
 	export function CreatePutCompositeAlarmInputFormGroup() {
 		return new FormGroup<PutCompositeAlarmInputFormProperties>({
 			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
-			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			AlarmRule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(10240), Validators.minLength(1)]),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			AlarmRule: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(10240)]),
 		});
 
 	}
@@ -2578,9 +2568,9 @@ export namespace MyNS {
 	}
 	export function CreatePutInsightRuleInputFormGroup() {
 		return new FormGroup<PutInsightRuleInputFormProperties>({
-			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
-			RuleState: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(32), Validators.minLength(1), Validators.pattern('[\x20-\x7E]+')]),
-			RuleDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1), Validators.pattern('[\x00-\x7F]+')]),
+			RuleName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[\x20-\x7E]+')]),
+			RuleState: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(32), Validators.pattern('[\x20-\x7E]+')]),
+			RuleDefinition: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8192), Validators.pattern('[\x00-\x7F]+')]),
 		});
 
 	}
@@ -2629,7 +2619,7 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		Period?: number | null;
-		Unit?: PutMetricAlarmInputUnit | null;
+		Unit?: MetricAlarmUnit | null;
 
 		/**
 		 * Required
@@ -2696,7 +2686,7 @@ export namespace MyNS {
 
 		/** Minimum: 1 */
 		Period: FormControl<number | null | undefined>,
-		Unit: FormControl<PutMetricAlarmInputUnit | null | undefined>,
+		Unit: FormControl<MetricAlarmUnit | null | undefined>,
 
 		/**
 		 * Required
@@ -2731,27 +2721,25 @@ export namespace MyNS {
 	}
 	export function CreatePutMetricAlarmInputFormGroup() {
 		return new FormGroup<PutMetricAlarmInputFormProperties>({
-			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
-			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(0)]),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
+			MetricName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
 			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
-			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
+			ExtendedStatistic: new FormControl<string | null | undefined>(undefined, [Validators.pattern('p(\d{1,2}(\.\d{0,2})?|100)')]),
 			Period: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			Unit: new FormControl<PutMetricAlarmInputUnit | null | undefined>(undefined),
+			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
 			EvaluationPeriods: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			DatapointsToAlarm: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			Threshold: new FormControl<number | null | undefined>(undefined),
 			ComparisonOperator: new FormControl<MetricAlarmComparisonOperator | null | undefined>(undefined, [Validators.required]),
-			TreatMissingData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			EvaluateLowSampleCountPercentile: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
-			ThresholdMetricId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1)]),
+			TreatMissingData: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			EvaluateLowSampleCountPercentile: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
+			ThresholdMetricId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 		});
 
 	}
-
-	export enum PutMetricAlarmInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface PutMetricDataInput {
 
@@ -2776,7 +2764,7 @@ export namespace MyNS {
 	}
 	export function CreatePutMetricDataInputFormGroup() {
 		return new FormGroup<PutMetricDataInputFormProperties>({
-			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1), Validators.pattern('[^:].*')]),
+			Namespace: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255), Validators.pattern('[^:].*')]),
 		});
 
 	}
@@ -2833,10 +2821,10 @@ export namespace MyNS {
 	}
 	export function CreateSetAlarmStateInputFormGroup() {
 		return new FormGroup<SetAlarmStateInputFormProperties>({
-			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(1)]),
+			AlarmName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined, [Validators.required]),
-			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1023), Validators.minLength(0)]),
-			StateReasonData: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000), Validators.minLength(0)]),
+			StateReason: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(1023)]),
+			StateReasonData: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(4000)]),
 		});
 
 	}
@@ -2864,7 +2852,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceInputFormGroup() {
 		return new FormGroup<TagResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -2892,7 +2880,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceInputFormGroup() {
 		return new FormGroup<UntagResourceInputFormProperties>({
-			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ResourceARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -3334,7 +3322,7 @@ export namespace MyNS {
 
 	export enum POST_DescribeAlarmsVersion { _2010_08_01 = 0 }
 
-	export enum GET_DescribeAlarmsForMetricUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
+	export enum GET_DescribeAlarmsForMetricUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
 
 	export enum GET_DescribeAlarmsForMetricAction { DescribeAlarmsForMetric = 0 }
 
@@ -3396,7 +3384,7 @@ export namespace MyNS {
 
 	export enum POST_GetMetricDataVersion { _2010_08_01 = 0 }
 
-	export enum GET_GetMetricStatisticsUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
+	export enum GET_GetMetricStatisticsUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
 
 	export enum GET_GetMetricStatisticsAction { GetMetricStatistics = 0 }
 
@@ -3470,7 +3458,7 @@ export namespace MyNS {
 
 	export enum POST_PutInsightRuleVersion { _2010_08_01 = 0 }
 
-	export enum GET_PutMetricAlarmUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
+	export enum GET_PutMetricAlarmUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, 'Bytes/Second' = 15, 'Kilobytes/Second' = 16, 'Megabytes/Second' = 17, 'Gigabytes/Second' = 18, 'Terabytes/Second' = 19, 'Bits/Second' = 20, 'Kilobits/Second' = 21, 'Megabits/Second' = 22, 'Gigabits/Second' = 23, 'Terabits/Second' = 24, 'Count/Second' = 25, None = 26 }
 
 	export enum GET_PutMetricAlarmAction { PutMetricAlarm = 0 }
 

@@ -25,7 +25,7 @@ export namespace MyNS {
 	}
 	export function CreateBulkPublishResponseFormGroup() {
 		return new FormGroup<BulkPublishResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -217,8 +217,8 @@ export namespace MyNS {
 	}
 	export function CreateDatasetFormGroup() {
 		return new FormGroup<DatasetFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.:-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			DatasetName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('[a-zA-Z0-9_.:-]+')]),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
@@ -332,7 +332,7 @@ export namespace MyNS {
 	}
 	export function CreateIdentityPoolUsageFormGroup() {
 		return new FormGroup<IdentityPoolUsageFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			SyncSessionsCount: new FormControl<number | null | undefined>(undefined),
 			DataStorage: new FormControl<number | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
@@ -397,8 +397,8 @@ export namespace MyNS {
 	}
 	export function CreateIdentityUsageFormGroup() {
 		return new FormGroup<IdentityUsageFormProperties>({
-			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			DatasetCount: new FormControl<number | null | undefined>(undefined),
 			DataStorage: new FormControl<number | null | undefined>(undefined),
@@ -436,7 +436,7 @@ export namespace MyNS {
 	}
 	export function CreateGetBulkPublishDetailsResponseFormGroup() {
 		return new FormGroup<GetBulkPublishDetailsResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 			BulkPublishStartTime: new FormControl<Date | null | undefined>(undefined),
 			BulkPublishCompleteTime: new FormControl<Date | null | undefined>(undefined),
 			BulkPublishStatus: new FormControl<GetBulkPublishDetailsResponseBulkPublishStatus | null | undefined>(undefined),
@@ -500,7 +500,7 @@ export namespace MyNS {
 	}
 	export function CreateGetIdentityPoolConfigurationResponseFormGroup() {
 		return new FormGroup<GetIdentityPoolConfigurationResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -528,7 +528,7 @@ export namespace MyNS {
 	}
 	export function CreatePushSyncFormGroup() {
 		return new FormGroup<PushSyncFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 		});
 
 	}
@@ -569,8 +569,8 @@ export namespace MyNS {
 	}
 	export function CreateCognitoStreamsFormGroup() {
 		return new FormGroup<CognitoStreamsFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
 		});
 
@@ -696,7 +696,7 @@ export namespace MyNS {
 	}
 	export function CreateRecordFormGroup() {
 		return new FormGroup<RecordFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048575)]),
 			SyncCount: new FormControl<number | null | undefined>(undefined),
 			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
@@ -728,7 +728,7 @@ export namespace MyNS {
 	}
 	export function CreateRegisterDeviceResponseFormGroup() {
 		return new FormGroup<RegisterDeviceResponseFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -778,7 +778,7 @@ export namespace MyNS {
 	}
 	export function CreateSetIdentityPoolConfigurationResponseFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationResponseFormProperties>({
-			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(55), Validators.minLength(1), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(55), Validators.pattern('[\w-]+:[0-9a-f-]+')]),
 		});
 
 	}
@@ -894,7 +894,7 @@ export namespace MyNS {
 	export function CreateRecordPatchFormGroup() {
 		return new FormGroup<RecordPatchFormProperties>({
 			Op: new FormControl<RecordPatchOp | null | undefined>(undefined, [Validators.required]),
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1048575)]),
 			SyncCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			DeviceLastModifiedDate: new FormControl<Date | null | undefined>(undefined),
@@ -1249,7 +1249,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRecordsRequestFormGroup() {
 		return new FormGroup<UpdateRecordsRequestFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			SyncSessionToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1490,7 +1490,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRecordsPostBodyFormGroup() {
 		return new FormGroup<UpdateRecordsPostBodyFormProperties>({
-			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			DeviceId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			SyncSessionToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1554,7 +1554,7 @@ export namespace MyNS {
 	}
 	export function CreateSetIdentityPoolConfigurationPostBodyPushSyncFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationPostBodyPushSyncFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 		});
 
 	}
@@ -1591,8 +1591,8 @@ export namespace MyNS {
 	}
 	export function CreateSetIdentityPoolConfigurationPostBodyCognitoStreamsFormGroup() {
 		return new FormGroup<SetIdentityPoolConfigurationPostBodyCognitoStreamsFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:aws:iam::\d+:role/.*')]),
 			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
 		});
 

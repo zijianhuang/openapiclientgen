@@ -48,11 +48,11 @@ export namespace MyNS {
 	}
 	export function CreateSharedDirectoryFormGroup() {
 		return new FormGroup<SharedDirectoryFormProperties>({
-			OwnerAccountId: new FormControl<string | null | undefined>(undefined),
-			OwnerDirectoryId: new FormControl<string | null | undefined>(undefined),
+			OwnerAccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\d{12})$')]),
+			OwnerDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 			ShareMethod: new FormControl<SharedDirectoryShareMethod | null | undefined>(undefined),
-			SharedAccountId: new FormControl<string | null | undefined>(undefined),
-			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+			SharedAccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\d{12})$')]),
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 			ShareStatus: new FormControl<SharedDirectoryShareStatus | null | undefined>(undefined),
 			ShareNotes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			CreatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -77,7 +77,7 @@ export namespace MyNS {
 	}
 	export function CreateAcceptSharedDirectoryRequestFormGroup() {
 		return new FormGroup<AcceptSharedDirectoryRequestFormProperties>({
-			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -159,7 +159,7 @@ export namespace MyNS {
 	}
 	export function CreateAddIpRoutesRequestFormGroup() {
 		return new FormGroup<AddIpRoutesRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			UpdateSecurityGroupForDirectoryControllers: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -189,8 +189,8 @@ export namespace MyNS {
 	}
 	export function CreateIpRouteFormGroup() {
 		return new FormGroup<IpRouteFormProperties>({
-			CidrIp: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			CidrIp: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([1-9]|[1-2][0-9]|3[0-2]))$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
@@ -250,7 +250,7 @@ export namespace MyNS {
 	}
 	export function CreateAddTagsToResourceRequestFormGroup() {
 		return new FormGroup<AddTagsToResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[d]-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -293,8 +293,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(0), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(256), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$')]),
 		});
 
 	}
@@ -337,8 +337,8 @@ export namespace MyNS {
 	}
 	export function CreateCancelSchemaExtensionRequestFormGroup() {
 		return new FormGroup<CancelSchemaExtensionRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			SchemaExtensionId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			SchemaExtensionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^e-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -355,7 +355,7 @@ export namespace MyNS {
 	}
 	export function CreateConnectDirectoryResultFormGroup() {
 		return new FormGroup<ConnectDirectoryResultFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -417,10 +417,10 @@ export namespace MyNS {
 	}
 	export function CreateConnectDirectoryRequestFormGroup() {
 		return new FormGroup<ConnectDirectoryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ShortName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$')]),
+			ShortName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -462,7 +462,7 @@ export namespace MyNS {
 	}
 	export function CreateDirectoryConnectSettingsFormGroup() {
 		return new FormGroup<DirectoryConnectSettingsFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$')]),
 			CustomerUserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
 		});
 
@@ -502,8 +502,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAliasResultFormGroup() {
 		return new FormGroup<CreateAliasResultFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(62), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
 		});
 
 	}
@@ -538,8 +538,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateAliasRequestFormGroup() {
 		return new FormGroup<CreateAliasRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(62), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
 		});
 
 	}
@@ -596,8 +596,8 @@ export namespace MyNS {
 	}
 	export function CreateComputerFormGroup() {
 		return new FormGroup<ComputerFormProperties>({
-			ComputerId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[&\w+-.@]+')]),
-			ComputerName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(15), Validators.minLength(1)]),
+			ComputerId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[&\w+-.@]+')]),
+			ComputerName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(15)]),
 		});
 
 	}
@@ -683,10 +683,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateComputerRequestFormGroup() {
 		return new FormGroup<CreateComputerRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ComputerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(15), Validators.minLength(1)]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(8), Validators.pattern('[\u0020-\u00FF]+')]),
-			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			ComputerName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(15)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(8), Validators.maxLength(64), Validators.pattern('[\u0020-\u00FF]+')]),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000)]),
 		});
 
 	}
@@ -750,8 +750,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateConditionalForwarderRequestFormGroup() {
 		return new FormGroup<CreateConditionalForwarderRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$')]),
 		});
 
 	}
@@ -768,7 +768,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateDirectoryResultFormGroup() {
 		return new FormGroup<CreateDirectoryResultFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -819,10 +819,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateDirectoryRequestFormGroup() {
 		return new FormGroup<CreateDirectoryRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ShortName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$')]),
+			ShortName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -847,7 +847,7 @@ export namespace MyNS {
 	}
 	export function CreateDirectoryVpcSettingsFormGroup() {
 		return new FormGroup<DirectoryVpcSettingsFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$')]),
 		});
 
 	}
@@ -888,8 +888,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateLogSubscriptionRequestFormGroup() {
 		return new FormGroup<CreateLogSubscriptionRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[-._/#A-Za-z0-9]+')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[-._/#A-Za-z0-9]+')]),
 		});
 
 	}
@@ -916,7 +916,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateMicrosoftADResultFormGroup() {
 		return new FormGroup<CreateMicrosoftADResultFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -966,10 +966,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateMicrosoftADRequestFormGroup() {
 		return new FormGroup<CreateMicrosoftADRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ShortName: new FormControl<string | null | undefined>(undefined),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$')]),
+			ShortName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$')]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('(?=^.{8,64}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s]))^.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Edition: new FormControl<CreateMicrosoftADRequestEdition | null | undefined>(undefined),
 		});
 
@@ -989,7 +989,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateSnapshotResultFormGroup() {
 		return new FormGroup<CreateSnapshotResultFormProperties>({
-			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1022,8 +1022,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateSnapshotRequestFormGroup() {
 		return new FormGroup<CreateSnapshotRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
@@ -1050,7 +1050,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateTrustResultFormGroup() {
 		return new FormGroup<CreateTrustResultFormProperties>({
-			TrustId: new FormControl<string | null | undefined>(undefined),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^t-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1102,9 +1102,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateTrustRequestFormGroup() {
 		return new FormGroup<CreateTrustRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TrustPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1), Validators.pattern('(.|\s)*\S(.|\s)*')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$')]),
+			TrustPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128), Validators.pattern('(.|\s)*\S(.|\s)*')]),
 			TrustDirection: new FormControl<CreateTrustRequestTrustDirection | null | undefined>(undefined, [Validators.required]),
 			TrustType: new FormControl<CreateTrustRequestTrustType | null | undefined>(undefined),
 			SelectiveAuth: new FormControl<CreateTrustRequestSelectiveAuth | null | undefined>(undefined),
@@ -1112,7 +1112,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CreateTrustRequestTrustDirection { One_Way_Outgoing = 0, One_Way_Incoming = 1, Two_Way = 2 }
+	export enum CreateTrustRequestTrustDirection { 'One-Way: Outgoing' = 0, 'One-Way: Incoming' = 1, 'Two-Way' = 2 }
 
 	export enum CreateTrustRequestTrustType { Forest = 0, External = 1 }
 
@@ -1154,8 +1154,8 @@ export namespace MyNS {
 	}
 	export function CreateDeleteConditionalForwarderRequestFormGroup() {
 		return new FormGroup<DeleteConditionalForwarderRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$')]),
 		});
 
 	}
@@ -1172,7 +1172,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDirectoryResultFormGroup() {
 		return new FormGroup<DeleteDirectoryResultFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1193,7 +1193,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteDirectoryRequestFormGroup() {
 		return new FormGroup<DeleteDirectoryRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1220,7 +1220,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteLogSubscriptionRequestFormGroup() {
 		return new FormGroup<DeleteLogSubscriptionRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1237,7 +1237,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSnapshotResultFormGroup() {
 		return new FormGroup<DeleteSnapshotResultFormProperties>({
-			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1258,7 +1258,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteSnapshotRequestFormGroup() {
 		return new FormGroup<DeleteSnapshotRequestFormProperties>({
-			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^s-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1275,7 +1275,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTrustResultFormGroup() {
 		return new FormGroup<DeleteTrustResultFormProperties>({
-			TrustId: new FormControl<string | null | undefined>(undefined),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^t-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1298,7 +1298,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteTrustRequestFormGroup() {
 		return new FormGroup<DeleteTrustRequestFormProperties>({
-			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^t-[0-9a-f]{10}$')]),
 			DeleteAssociatedConditionalForwarder: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1332,8 +1332,8 @@ export namespace MyNS {
 	}
 	export function CreateDeregisterCertificateRequestFormGroup() {
 		return new FormGroup<DeregisterCertificateRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^c-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1412,8 +1412,8 @@ export namespace MyNS {
 	}
 	export function CreateDeregisterEventTopicRequestFormGroup() {
 		return new FormGroup<DeregisterEventTopicRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_-]+')]),
 		});
 
 	}
@@ -1453,7 +1453,7 @@ export namespace MyNS {
 	}
 	export function CreateCertificateFormGroup() {
 		return new FormGroup<CertificateFormProperties>({
-			CertificateId: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^c-[0-9a-f]{10}$')]),
 			State: new FormControl<CertificateState | null | undefined>(undefined),
 			StateReason: new FormControl<string | null | undefined>(undefined),
 			CommonName: new FormControl<string | null | undefined>(undefined),
@@ -1483,8 +1483,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeCertificateRequestFormGroup() {
 		return new FormGroup<DescribeCertificateRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^c-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1519,7 +1519,7 @@ export namespace MyNS {
 	}
 	export function CreateConditionalForwarderFormGroup() {
 		return new FormGroup<ConditionalForwarderFormProperties>({
-			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$')]),
 			ReplicationScope: new FormControl<ConditionalForwarderReplicationScope | null | undefined>(undefined),
 		});
 
@@ -1544,7 +1544,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeConditionalForwardersRequestFormGroup() {
 		return new FormGroup<DescribeConditionalForwardersRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -1668,14 +1668,14 @@ export namespace MyNS {
 	}
 	export function CreateDirectoryDescriptionFormGroup() {
 		return new FormGroup<DirectoryDescriptionFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ShortName: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$')]),
+			ShortName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[^\\/:*?\"\<\>|.]+[^\\/:*?\"<>|]*$')]),
 			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined),
 			Edition: new FormControl<CreateMicrosoftADRequestEdition | null | undefined>(undefined),
-			Alias: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(62), Validators.minLength(1), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
-			AccessUrl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			Alias: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(62), Validators.pattern('^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*')]),
+			AccessUrl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Stage: new FormControl<DirectoryDescriptionStage | null | undefined>(undefined),
 			ShareStatus: new FormControl<SharedDirectoryShareStatus | null | undefined>(undefined),
 			ShareMethod: new FormControl<SharedDirectoryShareMethod | null | undefined>(undefined),
@@ -1711,8 +1711,8 @@ export namespace MyNS {
 	}
 	export function CreateDirectoryVpcSettingsDescriptionFormGroup() {
 		return new FormGroup<DirectoryVpcSettingsDescriptionFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined),
-			SecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$')]),
+			SecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1740,9 +1740,9 @@ export namespace MyNS {
 	}
 	export function CreateDirectoryConnectSettingsDescriptionFormGroup() {
 		return new FormGroup<DirectoryConnectSettingsDescriptionFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$')]),
 			CustomerUserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
-			SecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			SecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$')]),
 		});
 
 	}
@@ -1825,15 +1825,15 @@ export namespace MyNS {
 			RadiusPort: new FormControl<number | null | undefined>(undefined, [Validators.min(1025), Validators.max(65535)]),
 			RadiusTimeout: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20)]),
 			RadiusRetries: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10)]),
-			SharedSecret: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(8)]),
+			SharedSecret: new FormControl<string | null | undefined>(undefined, [Validators.minLength(8), Validators.maxLength(512)]),
 			AuthenticationProtocol: new FormControl<RadiusSettingsAuthenticationProtocol | null | undefined>(undefined),
-			DisplayLabel: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			DisplayLabel: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			UseSameUsername: new FormControl<boolean | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum RadiusSettingsAuthenticationProtocol { PAP = 0, CHAP = 1, MS_CHAPv1 = 2, MS_CHAPv2 = 3 }
+	export enum RadiusSettingsAuthenticationProtocol { PAP = 0, CHAP = 1, 'MS-CHAPv1' = 2, 'MS-CHAPv2' = 3 }
 
 	export enum DirectoryDescriptionRadiusStatus { Creating = 0, Completed = 1, Failed = 2 }
 
@@ -1860,8 +1860,8 @@ export namespace MyNS {
 	}
 	export function CreateOwnerDirectoryDescriptionFormGroup() {
 		return new FormGroup<OwnerDirectoryDescriptionFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			AccountId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(\d{12})$')]),
 			RadiusStatus: new FormControl<DirectoryDescriptionRadiusStatus | null | undefined>(undefined),
 		});
 
@@ -1948,11 +1948,11 @@ export namespace MyNS {
 	}
 	export function CreateDomainControllerFormGroup() {
 		return new FormGroup<DomainControllerFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			DomainControllerId: new FormControl<string | null | undefined>(undefined),
-			DnsIpAddr: new FormControl<string | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			DomainControllerId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^dc-[0-9a-f]{10}$')]),
+			DnsIpAddr: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$')]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$')]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(subnet-[0-9a-f]{8}|subnet-[0-9a-f]{17})$')]),
 			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<DomainControllerStatus | null | undefined>(undefined),
 			StatusReason: new FormControl<string | null | undefined>(undefined),
@@ -1985,7 +1985,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeDomainControllersRequestFormGroup() {
 		return new FormGroup<DescribeDomainControllersRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -2037,8 +2037,8 @@ export namespace MyNS {
 	}
 	export function CreateEventTopicFormGroup() {
 		return new FormGroup<EventTopicFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_-]+')]),
 			TopicArn: new FormControl<string | null | undefined>(undefined),
 			CreatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			Status: new FormControl<EventTopicStatus | null | undefined>(undefined),
@@ -2046,7 +2046,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventTopicStatus { Registered = 0, Topic_not_found = 1, Failed = 2, Deleted = 3 }
+	export enum EventTopicStatus { Registered = 0, 'Topic not found' = 1, Failed = 2, Deleted = 3 }
 
 
 	/** Describes event topics. */
@@ -2061,7 +2061,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeEventTopicsRequestFormGroup() {
 		return new FormGroup<DescribeEventTopicsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -2133,7 +2133,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeLDAPSSettingsRequestFormGroup() {
 		return new FormGroup<DescribeLDAPSSettingsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			Type: new FormControl<DescribeLDAPSSettingsRequestType | null | undefined>(undefined),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
@@ -2180,7 +2180,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSharedDirectoriesRequestFormGroup() {
 		return new FormGroup<DescribeSharedDirectoriesRequestFormProperties>({
-			OwnerDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			OwnerDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -2239,10 +2239,10 @@ export namespace MyNS {
 	}
 	export function CreateSnapshotFormGroup() {
 		return new FormGroup<SnapshotFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^s-[0-9a-f]{10}$')]),
 			Type: new FormControl<SnapshotType | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			Status: new FormControl<DirectoryDescriptionRadiusStatus | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -2274,7 +2274,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeSnapshotsRequestFormGroup() {
 		return new FormGroup<DescribeSnapshotsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -2306,7 +2306,7 @@ export namespace MyNS {
 		TrustId?: string | null;
 		RemoteDomainName?: string | null;
 		TrustType?: CreateTrustRequestTrustType | null;
-		TrustDirection?: TrustTrustDirection | null;
+		TrustDirection?: CreateTrustRequestTrustDirection | null;
 		TrustState?: TrustTrustState | null;
 		CreatedDateTime?: Date | null;
 		LastUpdatedDateTime?: Date | null;
@@ -2321,7 +2321,7 @@ export namespace MyNS {
 		TrustId: FormControl<string | null | undefined>,
 		RemoteDomainName: FormControl<string | null | undefined>,
 		TrustType: FormControl<CreateTrustRequestTrustType | null | undefined>,
-		TrustDirection: FormControl<TrustTrustDirection | null | undefined>,
+		TrustDirection: FormControl<CreateTrustRequestTrustDirection | null | undefined>,
 		TrustState: FormControl<TrustTrustState | null | undefined>,
 		CreatedDateTime: FormControl<Date | null | undefined>,
 		LastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -2331,11 +2331,11 @@ export namespace MyNS {
 	}
 	export function CreateTrustFormGroup() {
 		return new FormGroup<TrustFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			TrustId: new FormControl<string | null | undefined>(undefined),
-			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^t-[0-9a-f]{10}$')]),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$')]),
 			TrustType: new FormControl<CreateTrustRequestTrustType | null | undefined>(undefined),
-			TrustDirection: new FormControl<TrustTrustDirection | null | undefined>(undefined),
+			TrustDirection: new FormControl<CreateTrustRequestTrustDirection | null | undefined>(undefined),
 			TrustState: new FormControl<TrustTrustState | null | undefined>(undefined),
 			CreatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			LastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2345,8 +2345,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum TrustTrustDirection { One_Way_Outgoing = 0, One_Way_Incoming = 1, Two_Way = 2 }
 
 	export enum TrustTrustState { Creating = 0, Created = 1, Verifying = 2, VerifyFailed = 3, Verified = 4, Updating = 5, UpdateFailed = 6, Updated = 7, Deleting = 8, Deleted = 9, Failed = 10 }
 
@@ -2371,7 +2369,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeTrustsRequestFormGroup() {
 		return new FormGroup<DescribeTrustsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -2406,7 +2404,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableLDAPSRequestFormGroup() {
 		return new FormGroup<DisableLDAPSRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			Type: new FormControl<DescribeLDAPSSettingsRequestType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2452,7 +2450,7 @@ export namespace MyNS {
 	}
 	export function CreateDisableRadiusRequestFormGroup() {
 		return new FormGroup<DisableRadiusRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -2505,9 +2503,9 @@ export namespace MyNS {
 	}
 	export function CreateDisableSsoRequestFormGroup() {
 		return new FormGroup<DisableSsoRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -2540,7 +2538,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableLDAPSRequestFormGroup() {
 		return new FormGroup<EnableLDAPSRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			Type: new FormControl<DescribeLDAPSSettingsRequestType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2592,7 +2590,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableRadiusRequestFormGroup() {
 		return new FormGroup<EnableRadiusRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -2645,9 +2643,9 @@ export namespace MyNS {
 	}
 	export function CreateEnableSsoRequestFormGroup() {
 		return new FormGroup<EnableSsoRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			UserName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.pattern('[a-zA-Z0-9._-]+')]),
-			Password: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1)]),
+			Password: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128)]),
 		});
 
 	}
@@ -2812,7 +2810,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSnapshotLimitsRequestFormGroup() {
 		return new FormGroup<GetSnapshotLimitsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -2849,7 +2847,7 @@ export namespace MyNS {
 	}
 	export function CreateCertificateInfoFormGroup() {
 		return new FormGroup<CertificateInfoFormProperties>({
-			CertificateId: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^c-[0-9a-f]{10}$')]),
 			CommonName: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<CertificateState | null | undefined>(undefined),
 			ExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -2883,7 +2881,7 @@ export namespace MyNS {
 	}
 	export function CreateListCertificatesRequestFormGroup() {
 		return new FormGroup<ListCertificatesRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(50)]),
 		});
@@ -2936,12 +2934,12 @@ export namespace MyNS {
 	}
 	export function CreateIpRouteInfoFormGroup() {
 		return new FormGroup<IpRouteInfoFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			CidrIp: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			CidrIp: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([1-9]|[1-2][0-9]|3[0-2]))$')]),
 			IpRouteStatusMsg: new FormControl<IpRouteInfoIpRouteStatusMsg | null | undefined>(undefined),
 			AddedDateTime: new FormControl<Date | null | undefined>(undefined),
 			IpRouteStatusReason: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
@@ -2968,7 +2966,7 @@ export namespace MyNS {
 	}
 	export function CreateListIpRoutesRequestFormGroup() {
 		return new FormGroup<ListIpRoutesRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -3015,8 +3013,8 @@ export namespace MyNS {
 	}
 	export function CreateLogSubscriptionFormGroup() {
 		return new FormGroup<LogSubscriptionFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1), Validators.pattern('[-._/#A-Za-z0-9]+')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			LogGroupName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512), Validators.pattern('[-._/#A-Za-z0-9]+')]),
 			SubscriptionCreatedDateTime: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -3038,7 +3036,7 @@ export namespace MyNS {
 	}
 	export function CreateListLogSubscriptionsRequestFormGroup() {
 		return new FormGroup<ListLogSubscriptionsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -3093,9 +3091,9 @@ export namespace MyNS {
 	}
 	export function CreateSchemaExtensionInfoFormGroup() {
 		return new FormGroup<SchemaExtensionInfoFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined),
-			SchemaExtensionId: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
+			SchemaExtensionId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^e-[0-9a-f]{10}$')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 			SchemaExtensionStatus: new FormControl<SchemaExtensionInfoSchemaExtensionStatus | null | undefined>(undefined),
 			SchemaExtensionStatusReason: new FormControl<string | null | undefined>(undefined),
 			StartDateTime: new FormControl<Date | null | undefined>(undefined),
@@ -3126,7 +3124,7 @@ export namespace MyNS {
 	}
 	export function CreateListSchemaExtensionsRequestFormGroup() {
 		return new FormGroup<ListSchemaExtensionsRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -3167,7 +3165,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[d]-[0-9a-f]{10}$')]),
 			NextToken: new FormControl<string | null | undefined>(undefined),
 			Limit: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -3182,7 +3180,7 @@ export namespace MyNS {
 	}
 	export function CreateRegisterCertificateResultFormGroup() {
 		return new FormGroup<RegisterCertificateResultFormProperties>({
-			CertificateId: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^c-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3213,8 +3211,8 @@ export namespace MyNS {
 	}
 	export function CreateRegisterCertificateRequestFormGroup() {
 		return new FormGroup<RegisterCertificateRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			CertificateData: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8192), Validators.minLength(1)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			CertificateData: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8192)]),
 		});
 
 	}
@@ -3293,8 +3291,8 @@ export namespace MyNS {
 	}
 	export function CreateRegisterEventTopicRequestFormGroup() {
 		return new FormGroup<RegisterEventTopicRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_-]+')]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_-]+')]),
 		});
 
 	}
@@ -3307,7 +3305,7 @@ export namespace MyNS {
 	}
 	export function CreateRejectSharedDirectoryResultFormGroup() {
 		return new FormGroup<RejectSharedDirectoryResultFormProperties>({
-			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3324,7 +3322,7 @@ export namespace MyNS {
 	}
 	export function CreateRejectSharedDirectoryRequestFormGroup() {
 		return new FormGroup<RejectSharedDirectoryRequestFormProperties>({
-			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3354,7 +3352,7 @@ export namespace MyNS {
 	}
 	export function CreateRemoveIpRoutesRequestFormGroup() {
 		return new FormGroup<RemoveIpRoutesRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3384,7 +3382,7 @@ export namespace MyNS {
 	}
 	export function CreateRemoveTagsFromResourceRequestFormGroup() {
 		return new FormGroup<RemoveTagsFromResourceRequestFormProperties>({
-			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ResourceId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[d]-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3439,9 +3437,9 @@ export namespace MyNS {
 	}
 	export function CreateResetUserPasswordRequestFormGroup() {
 		return new FormGroup<ResetUserPasswordRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^(?!.*\\|.*"|.*\/|.*\[|.*\]|.*:|.*;|.*\||.*=|.*,|.*\+|.*\*|.*\?|.*<|.*>|.*@).*$')]),
-			NewPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(127), Validators.minLength(1)]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^(?!.*\\|.*"|.*\/|.*\[|.*\]|.*:|.*;|.*\||.*=|.*,|.*\+|.*\*|.*\?|.*<|.*>|.*@).*$')]),
+			NewPassword: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(127)]),
 		});
 
 	}
@@ -3496,7 +3494,7 @@ export namespace MyNS {
 	}
 	export function CreateRestoreFromSnapshotRequestFormGroup() {
 		return new FormGroup<RestoreFromSnapshotRequestFormProperties>({
-			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SnapshotId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^s-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3509,7 +3507,7 @@ export namespace MyNS {
 	}
 	export function CreateShareDirectoryResultFormGroup() {
 		return new FormGroup<ShareDirectoryResultFormProperties>({
-			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3544,7 +3542,7 @@ export namespace MyNS {
 	}
 	export function CreateShareDirectoryRequestFormGroup() {
 		return new FormGroup<ShareDirectoryRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			ShareNotes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024)]),
 			ShareMethod: new FormControl<SharedDirectoryShareMethod | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3581,7 +3579,7 @@ export namespace MyNS {
 	}
 	export function CreateShareTargetFormGroup() {
 		return new FormGroup<ShareTargetFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			Type: new FormControl<ShareTargetType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3637,7 +3635,7 @@ export namespace MyNS {
 	}
 	export function CreateStartSchemaExtensionResultFormGroup() {
 		return new FormGroup<StartSchemaExtensionResultFormProperties>({
-			SchemaExtensionId: new FormControl<string | null | undefined>(undefined),
+			SchemaExtensionId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^e-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3688,10 +3686,10 @@ export namespace MyNS {
 	}
 	export function CreateStartSchemaExtensionRequestFormGroup() {
 		return new FormGroup<StartSchemaExtensionRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			CreateSnapshotBeforeSchemaExtension: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			LdifContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500000), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(0), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
+			LdifContent: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(500000)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(128), Validators.pattern('^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$')]),
 		});
 
 	}
@@ -3704,7 +3702,7 @@ export namespace MyNS {
 	}
 	export function CreateUnshareDirectoryResultFormGroup() {
 		return new FormGroup<UnshareDirectoryResultFormProperties>({
-			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3727,7 +3725,7 @@ export namespace MyNS {
 	}
 	export function CreateUnshareDirectoryRequestFormGroup() {
 		return new FormGroup<UnshareDirectoryRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3762,7 +3760,7 @@ export namespace MyNS {
 	}
 	export function CreateUnshareTargetFormGroup() {
 		return new FormGroup<UnshareTargetFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			Type: new FormControl<ShareTargetType | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3817,8 +3815,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateConditionalForwarderRequestFormGroup() {
 		return new FormGroup<UpdateConditionalForwarderRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$')]),
 		});
 
 	}
@@ -3857,7 +3855,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateNumberOfDomainControllersRequestFormGroup() {
 		return new FormGroup<UpdateNumberOfDomainControllersRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 			DesiredNumber: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(2)]),
 		});
 
@@ -3909,7 +3907,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateRadiusRequestFormGroup() {
 		return new FormGroup<UpdateRadiusRequestFormProperties>({
-			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DirectoryId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^d-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3928,8 +3926,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTrustResultFormGroup() {
 		return new FormGroup<UpdateTrustResultFormProperties>({
-			RequestId: new FormControl<string | null | undefined>(undefined),
-			TrustId: new FormControl<string | null | undefined>(undefined),
+			RequestId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$')]),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^t-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3948,7 +3946,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTrustRequestFormGroup() {
 		return new FormGroup<UpdateTrustRequestFormProperties>({
-			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^t-[0-9a-f]{10}$')]),
 			SelectiveAuth: new FormControl<CreateTrustRequestSelectiveAuth | null | undefined>(undefined),
 		});
 
@@ -3966,7 +3964,7 @@ export namespace MyNS {
 	}
 	export function CreateVerifyTrustResultFormGroup() {
 		return new FormGroup<VerifyTrustResultFormProperties>({
-			TrustId: new FormControl<string | null | undefined>(undefined),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^t-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3987,7 +3985,7 @@ export namespace MyNS {
 	}
 	export function CreateVerifyTrustRequestFormGroup() {
 		return new FormGroup<VerifyTrustRequestFormProperties>({
-			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			TrustId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^t-[0-9a-f]{10}$')]),
 		});
 
 	}
@@ -3998,7 +3996,7 @@ export namespace MyNS {
 
 	export enum DirectoryEdition { Enterprise = 0, Standard = 1 }
 
-	export enum TrustDirection { One_Way_Outgoing = 0, One_Way_Incoming = 1, Two_Way = 2 }
+	export enum TrustDirection { 'One-Way: Outgoing' = 0, 'One-Way: Incoming' = 1, 'Two-Way' = 2 }
 
 	export enum TrustType { Forest = 0, External = 1 }
 
@@ -4016,13 +4014,13 @@ export namespace MyNS {
 
 	export enum RadiusStatus { Creating = 0, Completed = 1, Failed = 2 }
 
-	export enum TopicStatus { Registered = 0, Topic_not_found = 1, Failed = 2, Deleted = 3 }
+	export enum TopicStatus { Registered = 0, 'Topic not found' = 1, Failed = 2, Deleted = 3 }
 
 	export enum IpRouteStatusMsg { Adding = 0, Added = 1, Removing = 2, Removed = 3, AddFailed = 4, RemoveFailed = 5 }
 
 	export enum LDAPSStatus { Enabling = 0, Enabled = 1, EnableFailed = 2, Disabled = 3 }
 
-	export enum RadiusAuthenticationProtocol { PAP = 0, CHAP = 1, MS_CHAPv1 = 2, MS_CHAPv2 = 3 }
+	export enum RadiusAuthenticationProtocol { PAP = 0, CHAP = 1, 'MS-CHAPv1' = 2, 'MS-CHAPv2' = 3 }
 
 	export enum SchemaExtensionStatus { Initializing = 0, CreatingSnapshot = 1, UpdatingSchema = 2, Replicating = 3, CancelInProgress = 4, RollbackInProgress = 5, Cancelled = 6, Failed = 7, Completed = 8 }
 
@@ -4553,119 +4551,119 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptSharedDirectoryX_Amz_Target { DirectoryService_20150416_AcceptSharedDirectory = 0 }
+	export enum AcceptSharedDirectoryX_Amz_Target { 'DirectoryService_20150416.AcceptSharedDirectory' = 0 }
 
-	export enum AddIpRoutesX_Amz_Target { DirectoryService_20150416_AddIpRoutes = 0 }
+	export enum AddIpRoutesX_Amz_Target { 'DirectoryService_20150416.AddIpRoutes' = 0 }
 
-	export enum AddTagsToResourceX_Amz_Target { DirectoryService_20150416_AddTagsToResource = 0 }
+	export enum AddTagsToResourceX_Amz_Target { 'DirectoryService_20150416.AddTagsToResource' = 0 }
 
-	export enum CancelSchemaExtensionX_Amz_Target { DirectoryService_20150416_CancelSchemaExtension = 0 }
+	export enum CancelSchemaExtensionX_Amz_Target { 'DirectoryService_20150416.CancelSchemaExtension' = 0 }
 
-	export enum ConnectDirectoryX_Amz_Target { DirectoryService_20150416_ConnectDirectory = 0 }
+	export enum ConnectDirectoryX_Amz_Target { 'DirectoryService_20150416.ConnectDirectory' = 0 }
 
-	export enum CreateAliasX_Amz_Target { DirectoryService_20150416_CreateAlias = 0 }
+	export enum CreateAliasX_Amz_Target { 'DirectoryService_20150416.CreateAlias' = 0 }
 
-	export enum CreateComputerX_Amz_Target { DirectoryService_20150416_CreateComputer = 0 }
+	export enum CreateComputerX_Amz_Target { 'DirectoryService_20150416.CreateComputer' = 0 }
 
-	export enum CreateConditionalForwarderX_Amz_Target { DirectoryService_20150416_CreateConditionalForwarder = 0 }
+	export enum CreateConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.CreateConditionalForwarder' = 0 }
 
-	export enum CreateDirectoryX_Amz_Target { DirectoryService_20150416_CreateDirectory = 0 }
+	export enum CreateDirectoryX_Amz_Target { 'DirectoryService_20150416.CreateDirectory' = 0 }
 
-	export enum CreateLogSubscriptionX_Amz_Target { DirectoryService_20150416_CreateLogSubscription = 0 }
+	export enum CreateLogSubscriptionX_Amz_Target { 'DirectoryService_20150416.CreateLogSubscription' = 0 }
 
-	export enum CreateMicrosoftADX_Amz_Target { DirectoryService_20150416_CreateMicrosoftAD = 0 }
+	export enum CreateMicrosoftADX_Amz_Target { 'DirectoryService_20150416.CreateMicrosoftAD' = 0 }
 
-	export enum CreateSnapshotX_Amz_Target { DirectoryService_20150416_CreateSnapshot = 0 }
+	export enum CreateSnapshotX_Amz_Target { 'DirectoryService_20150416.CreateSnapshot' = 0 }
 
-	export enum CreateTrustX_Amz_Target { DirectoryService_20150416_CreateTrust = 0 }
+	export enum CreateTrustX_Amz_Target { 'DirectoryService_20150416.CreateTrust' = 0 }
 
-	export enum DeleteConditionalForwarderX_Amz_Target { DirectoryService_20150416_DeleteConditionalForwarder = 0 }
+	export enum DeleteConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.DeleteConditionalForwarder' = 0 }
 
-	export enum DeleteDirectoryX_Amz_Target { DirectoryService_20150416_DeleteDirectory = 0 }
+	export enum DeleteDirectoryX_Amz_Target { 'DirectoryService_20150416.DeleteDirectory' = 0 }
 
-	export enum DeleteLogSubscriptionX_Amz_Target { DirectoryService_20150416_DeleteLogSubscription = 0 }
+	export enum DeleteLogSubscriptionX_Amz_Target { 'DirectoryService_20150416.DeleteLogSubscription' = 0 }
 
-	export enum DeleteSnapshotX_Amz_Target { DirectoryService_20150416_DeleteSnapshot = 0 }
+	export enum DeleteSnapshotX_Amz_Target { 'DirectoryService_20150416.DeleteSnapshot' = 0 }
 
-	export enum DeleteTrustX_Amz_Target { DirectoryService_20150416_DeleteTrust = 0 }
+	export enum DeleteTrustX_Amz_Target { 'DirectoryService_20150416.DeleteTrust' = 0 }
 
-	export enum DeregisterCertificateX_Amz_Target { DirectoryService_20150416_DeregisterCertificate = 0 }
+	export enum DeregisterCertificateX_Amz_Target { 'DirectoryService_20150416.DeregisterCertificate' = 0 }
 
-	export enum DeregisterEventTopicX_Amz_Target { DirectoryService_20150416_DeregisterEventTopic = 0 }
+	export enum DeregisterEventTopicX_Amz_Target { 'DirectoryService_20150416.DeregisterEventTopic' = 0 }
 
-	export enum DescribeCertificateX_Amz_Target { DirectoryService_20150416_DescribeCertificate = 0 }
+	export enum DescribeCertificateX_Amz_Target { 'DirectoryService_20150416.DescribeCertificate' = 0 }
 
-	export enum DescribeConditionalForwardersX_Amz_Target { DirectoryService_20150416_DescribeConditionalForwarders = 0 }
+	export enum DescribeConditionalForwardersX_Amz_Target { 'DirectoryService_20150416.DescribeConditionalForwarders' = 0 }
 
-	export enum DescribeDirectoriesX_Amz_Target { DirectoryService_20150416_DescribeDirectories = 0 }
+	export enum DescribeDirectoriesX_Amz_Target { 'DirectoryService_20150416.DescribeDirectories' = 0 }
 
-	export enum DescribeDomainControllersX_Amz_Target { DirectoryService_20150416_DescribeDomainControllers = 0 }
+	export enum DescribeDomainControllersX_Amz_Target { 'DirectoryService_20150416.DescribeDomainControllers' = 0 }
 
-	export enum DescribeEventTopicsX_Amz_Target { DirectoryService_20150416_DescribeEventTopics = 0 }
+	export enum DescribeEventTopicsX_Amz_Target { 'DirectoryService_20150416.DescribeEventTopics' = 0 }
 
-	export enum DescribeLDAPSSettingsX_Amz_Target { DirectoryService_20150416_DescribeLDAPSSettings = 0 }
+	export enum DescribeLDAPSSettingsX_Amz_Target { 'DirectoryService_20150416.DescribeLDAPSSettings' = 0 }
 
-	export enum DescribeSharedDirectoriesX_Amz_Target { DirectoryService_20150416_DescribeSharedDirectories = 0 }
+	export enum DescribeSharedDirectoriesX_Amz_Target { 'DirectoryService_20150416.DescribeSharedDirectories' = 0 }
 
-	export enum DescribeSnapshotsX_Amz_Target { DirectoryService_20150416_DescribeSnapshots = 0 }
+	export enum DescribeSnapshotsX_Amz_Target { 'DirectoryService_20150416.DescribeSnapshots' = 0 }
 
-	export enum DescribeTrustsX_Amz_Target { DirectoryService_20150416_DescribeTrusts = 0 }
+	export enum DescribeTrustsX_Amz_Target { 'DirectoryService_20150416.DescribeTrusts' = 0 }
 
-	export enum DisableLDAPSX_Amz_Target { DirectoryService_20150416_DisableLDAPS = 0 }
+	export enum DisableLDAPSX_Amz_Target { 'DirectoryService_20150416.DisableLDAPS' = 0 }
 
-	export enum DisableRadiusX_Amz_Target { DirectoryService_20150416_DisableRadius = 0 }
+	export enum DisableRadiusX_Amz_Target { 'DirectoryService_20150416.DisableRadius' = 0 }
 
-	export enum DisableSsoX_Amz_Target { DirectoryService_20150416_DisableSso = 0 }
+	export enum DisableSsoX_Amz_Target { 'DirectoryService_20150416.DisableSso' = 0 }
 
-	export enum EnableLDAPSX_Amz_Target { DirectoryService_20150416_EnableLDAPS = 0 }
+	export enum EnableLDAPSX_Amz_Target { 'DirectoryService_20150416.EnableLDAPS' = 0 }
 
-	export enum EnableRadiusX_Amz_Target { DirectoryService_20150416_EnableRadius = 0 }
+	export enum EnableRadiusX_Amz_Target { 'DirectoryService_20150416.EnableRadius' = 0 }
 
-	export enum EnableSsoX_Amz_Target { DirectoryService_20150416_EnableSso = 0 }
+	export enum EnableSsoX_Amz_Target { 'DirectoryService_20150416.EnableSso' = 0 }
 
-	export enum GetDirectoryLimitsX_Amz_Target { DirectoryService_20150416_GetDirectoryLimits = 0 }
+	export enum GetDirectoryLimitsX_Amz_Target { 'DirectoryService_20150416.GetDirectoryLimits' = 0 }
 
-	export enum GetSnapshotLimitsX_Amz_Target { DirectoryService_20150416_GetSnapshotLimits = 0 }
+	export enum GetSnapshotLimitsX_Amz_Target { 'DirectoryService_20150416.GetSnapshotLimits' = 0 }
 
-	export enum ListCertificatesX_Amz_Target { DirectoryService_20150416_ListCertificates = 0 }
+	export enum ListCertificatesX_Amz_Target { 'DirectoryService_20150416.ListCertificates' = 0 }
 
-	export enum ListIpRoutesX_Amz_Target { DirectoryService_20150416_ListIpRoutes = 0 }
+	export enum ListIpRoutesX_Amz_Target { 'DirectoryService_20150416.ListIpRoutes' = 0 }
 
-	export enum ListLogSubscriptionsX_Amz_Target { DirectoryService_20150416_ListLogSubscriptions = 0 }
+	export enum ListLogSubscriptionsX_Amz_Target { 'DirectoryService_20150416.ListLogSubscriptions' = 0 }
 
-	export enum ListSchemaExtensionsX_Amz_Target { DirectoryService_20150416_ListSchemaExtensions = 0 }
+	export enum ListSchemaExtensionsX_Amz_Target { 'DirectoryService_20150416.ListSchemaExtensions' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { DirectoryService_20150416_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'DirectoryService_20150416.ListTagsForResource' = 0 }
 
-	export enum RegisterCertificateX_Amz_Target { DirectoryService_20150416_RegisterCertificate = 0 }
+	export enum RegisterCertificateX_Amz_Target { 'DirectoryService_20150416.RegisterCertificate' = 0 }
 
-	export enum RegisterEventTopicX_Amz_Target { DirectoryService_20150416_RegisterEventTopic = 0 }
+	export enum RegisterEventTopicX_Amz_Target { 'DirectoryService_20150416.RegisterEventTopic' = 0 }
 
-	export enum RejectSharedDirectoryX_Amz_Target { DirectoryService_20150416_RejectSharedDirectory = 0 }
+	export enum RejectSharedDirectoryX_Amz_Target { 'DirectoryService_20150416.RejectSharedDirectory' = 0 }
 
-	export enum RemoveIpRoutesX_Amz_Target { DirectoryService_20150416_RemoveIpRoutes = 0 }
+	export enum RemoveIpRoutesX_Amz_Target { 'DirectoryService_20150416.RemoveIpRoutes' = 0 }
 
-	export enum RemoveTagsFromResourceX_Amz_Target { DirectoryService_20150416_RemoveTagsFromResource = 0 }
+	export enum RemoveTagsFromResourceX_Amz_Target { 'DirectoryService_20150416.RemoveTagsFromResource' = 0 }
 
-	export enum ResetUserPasswordX_Amz_Target { DirectoryService_20150416_ResetUserPassword = 0 }
+	export enum ResetUserPasswordX_Amz_Target { 'DirectoryService_20150416.ResetUserPassword' = 0 }
 
-	export enum RestoreFromSnapshotX_Amz_Target { DirectoryService_20150416_RestoreFromSnapshot = 0 }
+	export enum RestoreFromSnapshotX_Amz_Target { 'DirectoryService_20150416.RestoreFromSnapshot' = 0 }
 
-	export enum ShareDirectoryX_Amz_Target { DirectoryService_20150416_ShareDirectory = 0 }
+	export enum ShareDirectoryX_Amz_Target { 'DirectoryService_20150416.ShareDirectory' = 0 }
 
-	export enum StartSchemaExtensionX_Amz_Target { DirectoryService_20150416_StartSchemaExtension = 0 }
+	export enum StartSchemaExtensionX_Amz_Target { 'DirectoryService_20150416.StartSchemaExtension' = 0 }
 
-	export enum UnshareDirectoryX_Amz_Target { DirectoryService_20150416_UnshareDirectory = 0 }
+	export enum UnshareDirectoryX_Amz_Target { 'DirectoryService_20150416.UnshareDirectory' = 0 }
 
-	export enum UpdateConditionalForwarderX_Amz_Target { DirectoryService_20150416_UpdateConditionalForwarder = 0 }
+	export enum UpdateConditionalForwarderX_Amz_Target { 'DirectoryService_20150416.UpdateConditionalForwarder' = 0 }
 
-	export enum UpdateNumberOfDomainControllersX_Amz_Target { DirectoryService_20150416_UpdateNumberOfDomainControllers = 0 }
+	export enum UpdateNumberOfDomainControllersX_Amz_Target { 'DirectoryService_20150416.UpdateNumberOfDomainControllers' = 0 }
 
-	export enum UpdateRadiusX_Amz_Target { DirectoryService_20150416_UpdateRadius = 0 }
+	export enum UpdateRadiusX_Amz_Target { 'DirectoryService_20150416.UpdateRadius' = 0 }
 
-	export enum UpdateTrustX_Amz_Target { DirectoryService_20150416_UpdateTrust = 0 }
+	export enum UpdateTrustX_Amz_Target { 'DirectoryService_20150416.UpdateTrust' = 0 }
 
-	export enum VerifyTrustX_Amz_Target { DirectoryService_20150416_VerifyTrust = 0 }
+	export enum VerifyTrustX_Amz_Target { 'DirectoryService_20150416.VerifyTrust' = 0 }
 
 }
 

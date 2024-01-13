@@ -50,9 +50,9 @@ export namespace MyNS {
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
-			eventType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(1)]),
+			eventType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(50)]),
 			timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(1)]),
+			version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10)]),
 		});
 
 	}
@@ -85,7 +85,7 @@ export namespace MyNS {
 	}
 	export function CreateSessionFormGroup() {
 		return new FormGroup<SessionFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(50)]),
 			duration: new FormControl<number | null | undefined>(undefined),
 			startTimestamp: new FormControl<string | null | undefined>(undefined),
 			stopTimestamp: new FormControl<string | null | undefined>(undefined),

@@ -2242,13 +2242,13 @@ export namespace MyNS {
 
 	}
 
-	export enum UsageLimitFeatureType { spectrum = 0, concurrency_scaling = 1 }
+	export enum UsageLimitFeatureType { spectrum = 0, 'concurrency-scaling' = 1 }
 
-	export enum UsageLimitLimitType { time = 0, data_scanned = 1 }
+	export enum UsageLimitLimitType { time = 0, 'data-scanned' = 1 }
 
 	export enum UsageLimitPeriod { daily = 0, weekly = 1, monthly = 2 }
 
-	export enum UsageLimitBreachAction { log = 0, emit_metric = 1, disable = 2 }
+	export enum UsageLimitBreachAction { log = 0, 'emit-metric' = 1, disable = 2 }
 
 	export interface UsageLimitAlreadyExistsFault {
 	}
@@ -2590,7 +2590,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterApplyType { _static = 0, dynamic = 1 }
+	export enum ParameterApplyType { static = 0, dynamic = 1 }
 
 
 	/** <p/> */
@@ -2966,7 +2966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
+	export enum EventSourceType { cluster = 0, 'cluster-parameter-group' = 1, 'cluster-security-group' = 2, 'cluster-snapshot' = 3, 'scheduled-action' = 4 }
 
 
 	/** <p/> */
@@ -3076,7 +3076,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeConfigurationOptionMode { standard = 0, high_performance = 1 }
+	export enum NodeConfigurationOptionMode { standard = 0, 'high-performance' = 1 }
 
 
 	/** A set of elements to filter the returned node configurations. */
@@ -3101,7 +3101,7 @@ export namespace MyNS {
 
 	export enum NodeConfigurationOptionsFilterName { NodeType = 0, NumberOfNodes = 1, EstimatedDiskUtilizationPercent = 2, Mode = 3 }
 
-	export enum NodeConfigurationOptionsFilterOperator { eq = 0, lt = 1, gt = 2, le = 3, ge = 4, _in = 5, between = 6 }
+	export enum NodeConfigurationOptionsFilterOperator { eq = 0, lt = 1, gt = 2, le = 3, ge = 4, in = 5, between = 6 }
 
 	export interface AccessToSnapshotDeniedFault {
 	}
@@ -3268,7 +3268,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ScheduledActionFilterName { cluster_identifier = 0, iam_role = 1 }
+	export enum ScheduledActionFilterName { 'cluster-identifier' = 0, 'iam-role' = 1 }
 
 
 	/** <p/> */
@@ -4000,7 +4000,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ActionType { restore_cluster = 0, recommend_node_config = 1, resize_cluster = 2 }
+	export enum ActionType { 'restore-cluster' = 0, 'recommend-node-config' = 1, 'resize-cluster' = 2 }
 
 
 	/** <p/> */
@@ -4636,15 +4636,15 @@ export namespace MyNS {
 		ClusterIdentifier: string;
 
 		/** Required */
-		FeatureType: CreateUsageLimitMessageFeatureType;
+		FeatureType: UsageLimitFeatureType;
 
 		/** Required */
-		LimitType: CreateUsageLimitMessageLimitType;
+		LimitType: UsageLimitLimitType;
 
 		/** Required */
 		Amount: number;
 		Period?: UsageLimitPeriod | null;
-		BreachAction?: CreateUsageLimitMessageBreachAction | null;
+		BreachAction?: UsageLimitBreachAction | null;
 		Tags?: Array<Tag>;
 	}
 	export interface CreateUsageLimitMessageFormProperties {
@@ -4653,33 +4653,27 @@ export namespace MyNS {
 		ClusterIdentifier: FormControl<string | null | undefined>,
 
 		/** Required */
-		FeatureType: FormControl<CreateUsageLimitMessageFeatureType | null | undefined>,
+		FeatureType: FormControl<UsageLimitFeatureType | null | undefined>,
 
 		/** Required */
-		LimitType: FormControl<CreateUsageLimitMessageLimitType | null | undefined>,
+		LimitType: FormControl<UsageLimitLimitType | null | undefined>,
 
 		/** Required */
 		Amount: FormControl<number | null | undefined>,
 		Period: FormControl<UsageLimitPeriod | null | undefined>,
-		BreachAction: FormControl<CreateUsageLimitMessageBreachAction | null | undefined>,
+		BreachAction: FormControl<UsageLimitBreachAction | null | undefined>,
 	}
 	export function CreateCreateUsageLimitMessageFormGroup() {
 		return new FormGroup<CreateUsageLimitMessageFormProperties>({
 			ClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			FeatureType: new FormControl<CreateUsageLimitMessageFeatureType | null | undefined>(undefined, [Validators.required]),
-			LimitType: new FormControl<CreateUsageLimitMessageLimitType | null | undefined>(undefined, [Validators.required]),
+			FeatureType: new FormControl<UsageLimitFeatureType | null | undefined>(undefined, [Validators.required]),
+			LimitType: new FormControl<UsageLimitLimitType | null | undefined>(undefined, [Validators.required]),
 			Amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Period: new FormControl<UsageLimitPeriod | null | undefined>(undefined),
-			BreachAction: new FormControl<CreateUsageLimitMessageBreachAction | null | undefined>(undefined),
+			BreachAction: new FormControl<UsageLimitBreachAction | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum CreateUsageLimitMessageFeatureType { spectrum = 0, concurrency_scaling = 1 }
-
-	export enum CreateUsageLimitMessageLimitType { time = 0, data_scanned = 1 }
-
-	export enum CreateUsageLimitMessageBreachAction { log = 0, emit_metric = 1, disable = 2 }
 
 
 	/** <p/> */
@@ -5251,13 +5245,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
+	export enum SourceType { cluster = 0, 'cluster-parameter-group' = 1, 'cluster-security-group' = 2, 'cluster-snapshot' = 3, 'scheduled-action' = 4 }
 
 
 	/** <p/> */
 	export interface DescribeEventsMessage {
 		SourceIdentifier?: string | null;
-		SourceType?: DescribeEventsMessageSourceType | null;
+		SourceType?: EventSourceType | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Duration?: number | null;
@@ -5268,7 +5262,7 @@ export namespace MyNS {
 	/** <p/> */
 	export interface DescribeEventsMessageFormProperties {
 		SourceIdentifier: FormControl<string | null | undefined>,
-		SourceType: FormControl<DescribeEventsMessageSourceType | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
@@ -5278,7 +5272,7 @@ export namespace MyNS {
 	export function CreateDescribeEventsMessageFormGroup() {
 		return new FormGroup<DescribeEventsMessageFormProperties>({
 			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceType: new FormControl<DescribeEventsMessageSourceType | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			Duration: new FormControl<number | null | undefined>(undefined),
@@ -5287,8 +5281,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum DescribeEventsMessageSourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
 
 
 	/** <p/> */
@@ -5364,7 +5356,7 @@ export namespace MyNS {
 	export interface DescribeNodeConfigurationOptionsMessage {
 
 		/** Required */
-		ActionType: DescribeNodeConfigurationOptionsMessageActionType;
+		ActionType: ActionType;
 		ClusterIdentifier?: string | null;
 		SnapshotIdentifier?: string | null;
 		OwnerAccount?: string | null;
@@ -5375,7 +5367,7 @@ export namespace MyNS {
 	export interface DescribeNodeConfigurationOptionsMessageFormProperties {
 
 		/** Required */
-		ActionType: FormControl<DescribeNodeConfigurationOptionsMessageActionType | null | undefined>,
+		ActionType: FormControl<ActionType | null | undefined>,
 		ClusterIdentifier: FormControl<string | null | undefined>,
 		SnapshotIdentifier: FormControl<string | null | undefined>,
 		OwnerAccount: FormControl<string | null | undefined>,
@@ -5384,7 +5376,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeNodeConfigurationOptionsMessageFormGroup() {
 		return new FormGroup<DescribeNodeConfigurationOptionsMessageFormProperties>({
-			ActionType: new FormControl<DescribeNodeConfigurationOptionsMessageActionType | null | undefined>(undefined, [Validators.required]),
+			ActionType: new FormControl<ActionType | null | undefined>(undefined, [Validators.required]),
 			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
 			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
 			OwnerAccount: new FormControl<string | null | undefined>(undefined),
@@ -5393,8 +5385,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum DescribeNodeConfigurationOptionsMessageActionType { restore_cluster = 0, recommend_node_config = 1, resize_cluster = 2 }
 
 
 	/** <p/> */
@@ -5629,7 +5619,7 @@ export namespace MyNS {
 	export interface DescribeUsageLimitsMessage {
 		UsageLimitId?: string | null;
 		ClusterIdentifier?: string | null;
-		FeatureType?: DescribeUsageLimitsMessageFeatureType | null;
+		FeatureType?: UsageLimitFeatureType | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
 		TagKeys?: Array<string>;
@@ -5638,7 +5628,7 @@ export namespace MyNS {
 	export interface DescribeUsageLimitsMessageFormProperties {
 		UsageLimitId: FormControl<string | null | undefined>,
 		ClusterIdentifier: FormControl<string | null | undefined>,
-		FeatureType: FormControl<DescribeUsageLimitsMessageFeatureType | null | undefined>,
+		FeatureType: FormControl<UsageLimitFeatureType | null | undefined>,
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -5646,14 +5636,12 @@ export namespace MyNS {
 		return new FormGroup<DescribeUsageLimitsMessageFormProperties>({
 			UsageLimitId: new FormControl<string | null | undefined>(undefined),
 			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			FeatureType: new FormControl<DescribeUsageLimitsMessageFeatureType | null | undefined>(undefined),
+			FeatureType: new FormControl<UsageLimitFeatureType | null | undefined>(undefined),
 			MaxRecords: new FormControl<number | null | undefined>(undefined),
 			Marker: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum DescribeUsageLimitsMessageFeatureType { spectrum = 0, concurrency_scaling = 1 }
 
 
 	/** <p/> */
@@ -5830,7 +5818,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Mode { standard = 0, high_performance = 1 }
+	export enum Mode { standard = 0, 'high-performance' = 1 }
 
 	export interface ModifyClusterDbRevisionMessage {
 
@@ -6217,27 +6205,25 @@ export namespace MyNS {
 		/** Required */
 		UsageLimitId: string;
 		Amount?: number | null;
-		BreachAction?: ModifyUsageLimitMessageBreachAction | null;
+		BreachAction?: UsageLimitBreachAction | null;
 	}
 	export interface ModifyUsageLimitMessageFormProperties {
 
 		/** Required */
 		UsageLimitId: FormControl<string | null | undefined>,
 		Amount: FormControl<number | null | undefined>,
-		BreachAction: FormControl<ModifyUsageLimitMessageBreachAction | null | undefined>,
+		BreachAction: FormControl<UsageLimitBreachAction | null | undefined>,
 	}
 	export function CreateModifyUsageLimitMessageFormGroup() {
 		return new FormGroup<ModifyUsageLimitMessageFormProperties>({
 			UsageLimitId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Amount: new FormControl<number | null | undefined>(undefined),
-			BreachAction: new FormControl<ModifyUsageLimitMessageBreachAction | null | undefined>(undefined),
+			BreachAction: new FormControl<UsageLimitBreachAction | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum ModifyUsageLimitMessageBreachAction { log = 0, emit_metric = 1, disable = 2 }
-
-	export enum OperatorType { eq = 0, lt = 1, gt = 2, le = 3, ge = 4, _in = 5, between = 6 }
+	export enum OperatorType { eq = 0, lt = 1, gt = 2, le = 3, ge = 4, in = 5, between = 6 }
 
 
 	/** <p/> */
@@ -7914,11 +7900,11 @@ export namespace MyNS {
 
 	export enum POST_CreateTagsVersion { _2012_12_01 = 0 }
 
-	export enum GET_CreateUsageLimitFeatureType { spectrum = 0, concurrency_scaling = 1 }
+	export enum GET_CreateUsageLimitFeatureType { spectrum = 0, 'concurrency-scaling' = 1 }
 
-	export enum GET_CreateUsageLimitLimitType { time = 0, data_scanned = 1 }
+	export enum GET_CreateUsageLimitLimitType { time = 0, 'data-scanned' = 1 }
 
-	export enum GET_CreateUsageLimitBreachAction { log = 0, emit_metric = 1, disable = 2 }
+	export enum GET_CreateUsageLimitBreachAction { log = 0, 'emit-metric' = 1, disable = 2 }
 
 	export enum GET_CreateUsageLimitAction { CreateUsageLimit = 0 }
 
@@ -8082,7 +8068,7 @@ export namespace MyNS {
 
 	export enum POST_DescribeEventSubscriptionsVersion { _2012_12_01 = 0 }
 
-	export enum GET_DescribeEventsSourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
+	export enum GET_DescribeEventsSourceType { cluster = 0, 'cluster-parameter-group' = 1, 'cluster-security-group' = 2, 'cluster-snapshot' = 3, 'scheduled-action' = 4 }
 
 	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
 
@@ -8108,7 +8094,7 @@ export namespace MyNS {
 
 	export enum POST_DescribeLoggingStatusVersion { _2012_12_01 = 0 }
 
-	export enum GET_DescribeNodeConfigurationOptionsActionType { restore_cluster = 0, recommend_node_config = 1, resize_cluster = 2 }
+	export enum GET_DescribeNodeConfigurationOptionsActionType { 'restore-cluster' = 0, 'recommend-node-config' = 1, 'resize-cluster' = 2 }
 
 	export enum GET_DescribeNodeConfigurationOptionsAction { DescribeNodeConfigurationOptions = 0 }
 
@@ -8176,7 +8162,7 @@ export namespace MyNS {
 
 	export enum POST_DescribeTagsVersion { _2012_12_01 = 0 }
 
-	export enum GET_DescribeUsageLimitsFeatureType { spectrum = 0, concurrency_scaling = 1 }
+	export enum GET_DescribeUsageLimitsFeatureType { spectrum = 0, 'concurrency-scaling' = 1 }
 
 	export enum GET_DescribeUsageLimitsAction { DescribeUsageLimits = 0 }
 
@@ -8305,7 +8291,7 @@ export namespace MyNS {
 
 	export enum POST_ModifySnapshotScheduleVersion { _2012_12_01 = 0 }
 
-	export enum GET_ModifyUsageLimitBreachAction { log = 0, emit_metric = 1, disable = 2 }
+	export enum GET_ModifyUsageLimitBreachAction { log = 0, 'emit-metric' = 1, disable = 2 }
 
 	export enum GET_ModifyUsageLimitAction { ModifyUsageLimit = 0 }
 

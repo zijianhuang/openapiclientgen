@@ -229,7 +229,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ProcessedUpdateActionUpdateActionStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5, scheduling = 6, scheduled = 7, not_applicable = 8 }
+	export enum ProcessedUpdateActionUpdateActionStatus { 'not-applied' = 0, 'waiting-to-start' = 1, 'in-progress' = 2, stopping = 3, stopped = 4, complete = 5, scheduling = 6, scheduled = 7, 'not-applicable' = 8 }
 
 
 	/** Update action that has failed to be processed for the corresponding apply/stop request */
@@ -718,7 +718,7 @@ export namespace MyNS {
 	}
 	export function CreateNodeGroupConfigurationFormGroup() {
 		return new FormGroup<NodeGroupConfigurationFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4), Validators.pattern('\d+')]),
 			Slots: new FormControl<string | null | undefined>(undefined),
 			ReplicaCount: new FormControl<number | null | undefined>(undefined),
 			PrimaryAvailabilityZone: new FormControl<string | null | undefined>(undefined),
@@ -1577,7 +1577,7 @@ export namespace MyNS {
 	}
 	export function CreateConfigureShardFormGroup() {
 		return new FormGroup<ConfigureShardFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4), Validators.pattern('\d+')]),
 			NewReplicaCount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1798,7 +1798,7 @@ export namespace MyNS {
 
 	}
 
-	export enum ParameterChangeType { immediate = 0, requires_reboot = 1 }
+	export enum ParameterChangeType { immediate = 0, 'requires-reboot' = 1 }
 
 
 	/** A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type. */
@@ -1811,7 +1811,7 @@ export namespace MyNS {
 		IsModifiable?: boolean | null;
 		MinimumEngineVersion?: string | null;
 		CacheNodeTypeSpecificValues?: Array<CacheNodeTypeSpecificValue>;
-		ChangeType?: CacheNodeTypeSpecificParameterChangeType | null;
+		ChangeType?: ParameterChangeType | null;
 	}
 
 	/** A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type. */
@@ -1823,7 +1823,7 @@ export namespace MyNS {
 		AllowedValues: FormControl<string | null | undefined>,
 		IsModifiable: FormControl<boolean | null | undefined>,
 		MinimumEngineVersion: FormControl<string | null | undefined>,
-		ChangeType: FormControl<CacheNodeTypeSpecificParameterChangeType | null | undefined>,
+		ChangeType: FormControl<ParameterChangeType | null | undefined>,
 	}
 	export function CreateCacheNodeTypeSpecificParameterFormGroup() {
 		return new FormGroup<CacheNodeTypeSpecificParameterFormProperties>({
@@ -1834,7 +1834,7 @@ export namespace MyNS {
 			AllowedValues: new FormControl<string | null | undefined>(undefined),
 			IsModifiable: new FormControl<boolean | null | undefined>(undefined),
 			MinimumEngineVersion: new FormControl<string | null | undefined>(undefined),
-			ChangeType: new FormControl<CacheNodeTypeSpecificParameterChangeType | null | undefined>(undefined),
+			ChangeType: new FormControl<ParameterChangeType | null | undefined>(undefined),
 		});
 
 	}
@@ -1858,8 +1858,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum CacheNodeTypeSpecificParameterChangeType { immediate = 0, requires_reboot = 1 }
 
 
 	/** Represents the output of a <code>DescribeCacheSecurityGroups</code> operation. */
@@ -1976,7 +1974,7 @@ export namespace MyNS {
 
 	}
 
-	export enum EventSourceType { cache_cluster = 0, cache_parameter_group = 1, cache_security_group = 2, cache_subnet_group = 3, replication_group = 4 }
+	export enum EventSourceType { 'cache-cluster' = 0, 'cache-parameter-group' = 1, 'cache-security-group' = 2, 'cache-subnet-group' = 3, 'replication-group' = 4 }
 
 	export interface DescribeGlobalReplicationGroupsResult {
 		Marker?: string | null;
@@ -2241,7 +2239,7 @@ export namespace MyNS {
 
 	export enum ServiceUpdateServiceUpdateStatus { available = 0, cancelled = 1, expired = 2 }
 
-	export enum ServiceUpdateServiceUpdateType { security_update = 0 }
+	export enum ServiceUpdateServiceUpdateType { 'security-update' = 0 }
 
 	export enum ServiceUpdateStatus { available = 0, cancelled = 1, expired = 2 }
 
@@ -2287,9 +2285,9 @@ export namespace MyNS {
 		ServiceUpdateSeverity?: ServiceUpdateServiceUpdateSeverity | null;
 		ServiceUpdateStatus?: ServiceUpdateServiceUpdateStatus | null;
 		ServiceUpdateRecommendedApplyByDate?: Date | null;
-		ServiceUpdateType?: UpdateActionServiceUpdateType | null;
+		ServiceUpdateType?: ServiceUpdateServiceUpdateType | null;
 		UpdateActionAvailableDate?: Date | null;
-		UpdateActionStatus?: UpdateActionUpdateActionStatus | null;
+		UpdateActionStatus?: ProcessedUpdateActionUpdateActionStatus | null;
 		NodesUpdated?: string | null;
 		UpdateActionStatusModifiedDate?: Date | null;
 		SlaMet?: UpdateActionSlaMet | null;
@@ -2308,9 +2306,9 @@ export namespace MyNS {
 		ServiceUpdateSeverity: FormControl<ServiceUpdateServiceUpdateSeverity | null | undefined>,
 		ServiceUpdateStatus: FormControl<ServiceUpdateServiceUpdateStatus | null | undefined>,
 		ServiceUpdateRecommendedApplyByDate: FormControl<Date | null | undefined>,
-		ServiceUpdateType: FormControl<UpdateActionServiceUpdateType | null | undefined>,
+		ServiceUpdateType: FormControl<ServiceUpdateServiceUpdateType | null | undefined>,
 		UpdateActionAvailableDate: FormControl<Date | null | undefined>,
-		UpdateActionStatus: FormControl<UpdateActionUpdateActionStatus | null | undefined>,
+		UpdateActionStatus: FormControl<ProcessedUpdateActionUpdateActionStatus | null | undefined>,
 		NodesUpdated: FormControl<string | null | undefined>,
 		UpdateActionStatusModifiedDate: FormControl<Date | null | undefined>,
 		SlaMet: FormControl<UpdateActionSlaMet | null | undefined>,
@@ -2326,9 +2324,9 @@ export namespace MyNS {
 			ServiceUpdateSeverity: new FormControl<ServiceUpdateServiceUpdateSeverity | null | undefined>(undefined),
 			ServiceUpdateStatus: new FormControl<ServiceUpdateServiceUpdateStatus | null | undefined>(undefined),
 			ServiceUpdateRecommendedApplyByDate: new FormControl<Date | null | undefined>(undefined),
-			ServiceUpdateType: new FormControl<UpdateActionServiceUpdateType | null | undefined>(undefined),
+			ServiceUpdateType: new FormControl<ServiceUpdateServiceUpdateType | null | undefined>(undefined),
 			UpdateActionAvailableDate: new FormControl<Date | null | undefined>(undefined),
-			UpdateActionStatus: new FormControl<UpdateActionUpdateActionStatus | null | undefined>(undefined),
+			UpdateActionStatus: new FormControl<ProcessedUpdateActionUpdateActionStatus | null | undefined>(undefined),
 			NodesUpdated: new FormControl<string | null | undefined>(undefined),
 			UpdateActionStatusModifiedDate: new FormControl<Date | null | undefined>(undefined),
 			SlaMet: new FormControl<UpdateActionSlaMet | null | undefined>(undefined),
@@ -2338,11 +2336,7 @@ export namespace MyNS {
 
 	}
 
-	export enum UpdateActionServiceUpdateType { security_update = 0 }
-
-	export enum UpdateActionUpdateActionStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5, scheduling = 6, scheduled = 7, not_applicable = 8 }
-
-	export enum UpdateActionSlaMet { yes = 0, no = 1, n_a = 2 }
+	export enum UpdateActionSlaMet { yes = 0, no = 1, 'n/a' = 2 }
 
 
 	/** The status of the service update on the node group  */
@@ -2403,7 +2397,7 @@ export namespace MyNS {
 
 	}
 
-	export enum NodeGroupMemberUpdateStatusNodeUpdateStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5 }
+	export enum NodeGroupMemberUpdateStatusNodeUpdateStatus { 'not-applied' = 0, 'waiting-to-start' = 1, 'in-progress' = 2, stopping = 3, stopped = 4, complete = 5 }
 
 	export enum NodeGroupMemberUpdateStatusNodeUpdateInitiatedBy { system = 0, customer = 1 }
 
@@ -2411,7 +2405,7 @@ export namespace MyNS {
 	/** The status of the service update on the cache node */
 	export interface CacheNodeUpdateStatus {
 		CacheNodeId?: string | null;
-		NodeUpdateStatus?: CacheNodeUpdateStatusNodeUpdateStatus | null;
+		NodeUpdateStatus?: NodeGroupMemberUpdateStatusNodeUpdateStatus | null;
 		NodeDeletionDate?: Date | null;
 		NodeUpdateStartDate?: Date | null;
 		NodeUpdateEndDate?: Date | null;
@@ -2423,7 +2417,7 @@ export namespace MyNS {
 	/** The status of the service update on the cache node */
 	export interface CacheNodeUpdateStatusFormProperties {
 		CacheNodeId: FormControl<string | null | undefined>,
-		NodeUpdateStatus: FormControl<CacheNodeUpdateStatusNodeUpdateStatus | null | undefined>,
+		NodeUpdateStatus: FormControl<NodeGroupMemberUpdateStatusNodeUpdateStatus | null | undefined>,
 		NodeDeletionDate: FormControl<Date | null | undefined>,
 		NodeUpdateStartDate: FormControl<Date | null | undefined>,
 		NodeUpdateEndDate: FormControl<Date | null | undefined>,
@@ -2434,7 +2428,7 @@ export namespace MyNS {
 	export function CreateCacheNodeUpdateStatusFormGroup() {
 		return new FormGroup<CacheNodeUpdateStatusFormProperties>({
 			CacheNodeId: new FormControl<string | null | undefined>(undefined),
-			NodeUpdateStatus: new FormControl<CacheNodeUpdateStatusNodeUpdateStatus | null | undefined>(undefined),
+			NodeUpdateStatus: new FormControl<NodeGroupMemberUpdateStatusNodeUpdateStatus | null | undefined>(undefined),
 			NodeDeletionDate: new FormControl<Date | null | undefined>(undefined),
 			NodeUpdateStartDate: new FormControl<Date | null | undefined>(undefined),
 			NodeUpdateEndDate: new FormControl<Date | null | undefined>(undefined),
@@ -2445,9 +2439,7 @@ export namespace MyNS {
 
 	}
 
-	export enum CacheNodeUpdateStatusNodeUpdateStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5 }
-
-	export enum UpdateActionStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5, scheduling = 6, scheduled = 7, not_applicable = 8 }
+	export enum UpdateActionStatus { 'not-applied' = 0, 'waiting-to-start' = 1, 'in-progress' = 2, stopping = 3, stopped = 4, complete = 5, scheduling = 6, scheduled = 7, 'not-applicable' = 8 }
 
 	export interface DisassociateGlobalReplicationGroupResult {
 
@@ -2542,7 +2534,7 @@ export namespace MyNS {
 	}
 	export function CreateReshardingConfigurationFormGroup() {
 		return new FormGroup<ReshardingConfigurationFormProperties>({
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4), Validators.pattern('\d+')]),
 		});
 
 	}
@@ -2876,7 +2868,7 @@ export namespace MyNS {
 
 	}
 
-	export enum AZMode { single_az = 0, cross_az = 1 }
+	export enum AZMode { 'single-az' = 0, 'cross-az' = 1 }
 
 
 	/** Represents the input of an AddTagsToResource operation. */
@@ -2989,9 +2981,9 @@ export namespace MyNS {
 
 	}
 
-	export enum ChangeType { immediate = 0, requires_reboot = 1 }
+	export enum ChangeType { immediate = 0, 'requires-reboot' = 1 }
 
-	export enum NodeUpdateStatus { not_applied = 0, waiting_to_start = 1, in_progress = 2, stopping = 3, stopped = 4, complete = 5 }
+	export enum NodeUpdateStatus { 'not-applied' = 0, 'waiting-to-start' = 1, 'in-progress' = 2, stopping = 3, stopped = 4, complete = 5 }
 
 	export enum NodeUpdateInitiatedBy { system = 0, customer = 1 }
 
@@ -3056,7 +3048,7 @@ export namespace MyNS {
 		/** Required */
 		CacheClusterId: string;
 		ReplicationGroupId?: string | null;
-		AZMode?: CreateCacheClusterMessageAZMode | null;
+		AZMode?: AZMode | null;
 		PreferredAvailabilityZone?: string | null;
 		PreferredAvailabilityZones?: Array<string>;
 		NumCacheNodes?: number | null;
@@ -3085,7 +3077,7 @@ export namespace MyNS {
 		/** Required */
 		CacheClusterId: FormControl<string | null | undefined>,
 		ReplicationGroupId: FormControl<string | null | undefined>,
-		AZMode: FormControl<CreateCacheClusterMessageAZMode | null | undefined>,
+		AZMode: FormControl<AZMode | null | undefined>,
 		PreferredAvailabilityZone: FormControl<string | null | undefined>,
 		NumCacheNodes: FormControl<number | null | undefined>,
 		CacheNodeType: FormControl<string | null | undefined>,
@@ -3106,7 +3098,7 @@ export namespace MyNS {
 		return new FormGroup<CreateCacheClusterMessageFormProperties>({
 			CacheClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ReplicationGroupId: new FormControl<string | null | undefined>(undefined),
-			AZMode: new FormControl<CreateCacheClusterMessageAZMode | null | undefined>(undefined),
+			AZMode: new FormControl<AZMode | null | undefined>(undefined),
 			PreferredAvailabilityZone: new FormControl<string | null | undefined>(undefined),
 			NumCacheNodes: new FormControl<number | null | undefined>(undefined),
 			CacheNodeType: new FormControl<string | null | undefined>(undefined),
@@ -3125,8 +3117,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum CreateCacheClusterMessageAZMode { single_az = 0, cross_az = 1 }
 
 
 	/** Represents the input of a <code>CreateCacheParameterGroup</code> operation. */
@@ -3790,13 +3780,13 @@ export namespace MyNS {
 
 	}
 
-	export enum SourceType { cache_cluster = 0, cache_parameter_group = 1, cache_security_group = 2, cache_subnet_group = 3, replication_group = 4 }
+	export enum SourceType { 'cache-cluster' = 0, 'cache-parameter-group' = 1, 'cache-security-group' = 2, 'cache-subnet-group' = 3, 'replication-group' = 4 }
 
 
 	/** Represents the input of a <code>DescribeEvents</code> operation. */
 	export interface DescribeEventsMessage {
 		SourceIdentifier?: string | null;
-		SourceType?: DescribeEventsMessageSourceType | null;
+		SourceType?: EventSourceType | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Duration?: number | null;
@@ -3807,7 +3797,7 @@ export namespace MyNS {
 	/** Represents the input of a <code>DescribeEvents</code> operation. */
 	export interface DescribeEventsMessageFormProperties {
 		SourceIdentifier: FormControl<string | null | undefined>,
-		SourceType: FormControl<DescribeEventsMessageSourceType | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
 		Duration: FormControl<number | null | undefined>,
@@ -3817,7 +3807,7 @@ export namespace MyNS {
 	export function CreateDescribeEventsMessageFormGroup() {
 		return new FormGroup<DescribeEventsMessageFormProperties>({
 			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
-			SourceType: new FormControl<DescribeEventsMessageSourceType | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
 			StartTime: new FormControl<Date | null | undefined>(undefined),
 			EndTime: new FormControl<Date | null | undefined>(undefined),
 			Duration: new FormControl<number | null | undefined>(undefined),
@@ -3826,8 +3816,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum DescribeEventsMessageSourceType { cache_cluster = 0, cache_parameter_group = 1, cache_security_group = 2, cache_subnet_group = 3, replication_group = 4 }
 
 	export interface DescribeGlobalReplicationGroupsMessage {
 		GlobalReplicationGroupId?: string | null;
@@ -4235,7 +4223,7 @@ export namespace MyNS {
 		CacheClusterId: string;
 		NumCacheNodes?: number | null;
 		CacheNodeIdsToRemove?: Array<string>;
-		AZMode?: ModifyCacheClusterMessageAZMode | null;
+		AZMode?: AZMode | null;
 		NewAvailabilityZones?: Array<string>;
 		CacheSecurityGroupNames?: Array<string>;
 		SecurityGroupIds?: Array<string>;
@@ -4259,7 +4247,7 @@ export namespace MyNS {
 		/** Required */
 		CacheClusterId: FormControl<string | null | undefined>,
 		NumCacheNodes: FormControl<number | null | undefined>,
-		AZMode: FormControl<ModifyCacheClusterMessageAZMode | null | undefined>,
+		AZMode: FormControl<AZMode | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
 		NotificationTopicArn: FormControl<string | null | undefined>,
 		CacheParameterGroupName: FormControl<string | null | undefined>,
@@ -4277,7 +4265,7 @@ export namespace MyNS {
 		return new FormGroup<ModifyCacheClusterMessageFormProperties>({
 			CacheClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			NumCacheNodes: new FormControl<number | null | undefined>(undefined),
-			AZMode: new FormControl<ModifyCacheClusterMessageAZMode | null | undefined>(undefined),
+			AZMode: new FormControl<AZMode | null | undefined>(undefined),
 			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
 			NotificationTopicArn: new FormControl<string | null | undefined>(undefined),
 			CacheParameterGroupName: new FormControl<string | null | undefined>(undefined),
@@ -4293,8 +4281,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum ModifyCacheClusterMessageAZMode { single_az = 0, cross_az = 1 }
 
 
 	/** Represents the input of a <code>ModifyCacheParameterGroup</code> operation. */
@@ -4661,9 +4647,9 @@ export namespace MyNS {
 
 	export enum ServiceUpdateSeverity { critical = 0, important = 1, medium = 2, low = 3 }
 
-	export enum ServiceUpdateType { security_update = 0 }
+	export enum ServiceUpdateType { 'security-update' = 0 }
 
-	export enum SlaMet { yes = 0, no = 1, n_a = 2 }
+	export enum SlaMet { yes = 0, no = 1, 'n/a' = 2 }
 
 	export interface StartMigrationMessage {
 
@@ -4712,7 +4698,7 @@ export namespace MyNS {
 	export function CreateTestFailoverMessageFormGroup() {
 		return new FormGroup<TestFailoverMessageFormProperties>({
 			ReplicationGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(4), Validators.minLength(1), Validators.pattern('\d+')]),
+			NodeGroupId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(4), Validators.pattern('\d+')]),
 		});
 
 	}
@@ -5547,7 +5533,7 @@ export namespace MyNS {
 
 	export enum POST_CopySnapshotVersion { _2015_02_02 = 0 }
 
-	export enum GET_CreateCacheClusterAZMode { single_az = 0, cross_az = 1 }
+	export enum GET_CreateCacheClusterAZMode { 'single-az' = 0, 'cross-az' = 1 }
 
 	export enum GET_CreateCacheClusterAction { CreateCacheCluster = 0 }
 
@@ -5687,7 +5673,7 @@ export namespace MyNS {
 
 	export enum POST_DescribeEngineDefaultParametersVersion { _2015_02_02 = 0 }
 
-	export enum GET_DescribeEventsSourceType { cache_cluster = 0, cache_parameter_group = 1, cache_security_group = 2, cache_subnet_group = 3, replication_group = 4 }
+	export enum GET_DescribeEventsSourceType { 'cache-cluster' = 0, 'cache-parameter-group' = 1, 'cache-security-group' = 2, 'cache-subnet-group' = 3, 'replication-group' = 4 }
 
 	export enum GET_DescribeEventsAction { DescribeEvents = 0 }
 
@@ -5789,7 +5775,7 @@ export namespace MyNS {
 
 	export enum POST_ListTagsForResourceVersion { _2015_02_02 = 0 }
 
-	export enum GET_ModifyCacheClusterAZMode { single_az = 0, cross_az = 1 }
+	export enum GET_ModifyCacheClusterAZMode { 'single-az' = 0, 'cross-az' = 1 }
 
 	export enum GET_ModifyCacheClusterAction { ModifyCacheCluster = 0 }
 

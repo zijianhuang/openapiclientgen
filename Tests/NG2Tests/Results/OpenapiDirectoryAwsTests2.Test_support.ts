@@ -161,7 +161,7 @@ export namespace MyNS {
 	export function CreateAddCommunicationToCaseRequestFormGroup() {
 		return new FormGroup<AddCommunicationToCaseRequestFormProperties>({
 			caseId: new FormControl<string | null | undefined>(undefined),
-			communicationBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8000), Validators.minLength(1)]),
+			communicationBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8000)]),
 			attachmentSetId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -242,7 +242,7 @@ export namespace MyNS {
 			serviceCode: new FormControl<string | null | undefined>(undefined),
 			severityCode: new FormControl<string | null | undefined>(undefined),
 			categoryCode: new FormControl<string | null | undefined>(undefined),
-			communicationBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(8000), Validators.minLength(1)]),
+			communicationBody: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(8000)]),
 			language: new FormControl<string | null | undefined>(undefined),
 			issueType: new FormControl<string | null | undefined>(undefined),
 			attachmentSetId: new FormControl<string | null | undefined>(undefined),
@@ -433,7 +433,7 @@ export namespace MyNS {
 	export function CreateCommunicationFormGroup() {
 		return new FormGroup<CommunicationFormProperties>({
 			caseId: new FormControl<string | null | undefined>(undefined),
-			body: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8000), Validators.minLength(1)]),
+			body: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8000)]),
 			submittedBy: new FormControl<string | null | undefined>(undefined),
 			timeCreated: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1347,33 +1347,33 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AddAttachmentsToSetX_Amz_Target { AWSSupport_20130415_AddAttachmentsToSet = 0 }
+	export enum AddAttachmentsToSetX_Amz_Target { 'AWSSupport_20130415.AddAttachmentsToSet' = 0 }
 
-	export enum AddCommunicationToCaseX_Amz_Target { AWSSupport_20130415_AddCommunicationToCase = 0 }
+	export enum AddCommunicationToCaseX_Amz_Target { 'AWSSupport_20130415.AddCommunicationToCase' = 0 }
 
-	export enum CreateCaseX_Amz_Target { AWSSupport_20130415_CreateCase = 0 }
+	export enum CreateCaseX_Amz_Target { 'AWSSupport_20130415.CreateCase' = 0 }
 
-	export enum DescribeAttachmentX_Amz_Target { AWSSupport_20130415_DescribeAttachment = 0 }
+	export enum DescribeAttachmentX_Amz_Target { 'AWSSupport_20130415.DescribeAttachment' = 0 }
 
-	export enum DescribeCasesX_Amz_Target { AWSSupport_20130415_DescribeCases = 0 }
+	export enum DescribeCasesX_Amz_Target { 'AWSSupport_20130415.DescribeCases' = 0 }
 
-	export enum DescribeCommunicationsX_Amz_Target { AWSSupport_20130415_DescribeCommunications = 0 }
+	export enum DescribeCommunicationsX_Amz_Target { 'AWSSupport_20130415.DescribeCommunications' = 0 }
 
-	export enum DescribeServicesX_Amz_Target { AWSSupport_20130415_DescribeServices = 0 }
+	export enum DescribeServicesX_Amz_Target { 'AWSSupport_20130415.DescribeServices' = 0 }
 
-	export enum DescribeSeverityLevelsX_Amz_Target { AWSSupport_20130415_DescribeSeverityLevels = 0 }
+	export enum DescribeSeverityLevelsX_Amz_Target { 'AWSSupport_20130415.DescribeSeverityLevels' = 0 }
 
-	export enum DescribeTrustedAdvisorCheckRefreshStatusesX_Amz_Target { AWSSupport_20130415_DescribeTrustedAdvisorCheckRefreshStatuses = 0 }
+	export enum DescribeTrustedAdvisorCheckRefreshStatusesX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckRefreshStatuses' = 0 }
 
-	export enum DescribeTrustedAdvisorCheckResultX_Amz_Target { AWSSupport_20130415_DescribeTrustedAdvisorCheckResult = 0 }
+	export enum DescribeTrustedAdvisorCheckResultX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckResult' = 0 }
 
-	export enum DescribeTrustedAdvisorCheckSummariesX_Amz_Target { AWSSupport_20130415_DescribeTrustedAdvisorCheckSummaries = 0 }
+	export enum DescribeTrustedAdvisorCheckSummariesX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries' = 0 }
 
-	export enum DescribeTrustedAdvisorChecksX_Amz_Target { AWSSupport_20130415_DescribeTrustedAdvisorChecks = 0 }
+	export enum DescribeTrustedAdvisorChecksX_Amz_Target { 'AWSSupport_20130415.DescribeTrustedAdvisorChecks' = 0 }
 
-	export enum RefreshTrustedAdvisorCheckX_Amz_Target { AWSSupport_20130415_RefreshTrustedAdvisorCheck = 0 }
+	export enum RefreshTrustedAdvisorCheckX_Amz_Target { 'AWSSupport_20130415.RefreshTrustedAdvisorCheck' = 0 }
 
-	export enum ResolveCaseX_Amz_Target { AWSSupport_20130415_ResolveCase = 0 }
+	export enum ResolveCaseX_Amz_Target { 'AWSSupport_20130415.ResolveCase' = 0 }
 
 }
 

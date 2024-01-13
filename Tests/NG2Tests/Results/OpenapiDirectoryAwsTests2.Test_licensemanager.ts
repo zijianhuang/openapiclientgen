@@ -1268,37 +1268,37 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CreateLicenseConfigurationX_Amz_Target { AWSLicenseManager_CreateLicenseConfiguration = 0 }
+	export enum CreateLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.CreateLicenseConfiguration' = 0 }
 
-	export enum DeleteLicenseConfigurationX_Amz_Target { AWSLicenseManager_DeleteLicenseConfiguration = 0 }
+	export enum DeleteLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.DeleteLicenseConfiguration' = 0 }
 
-	export enum GetLicenseConfigurationX_Amz_Target { AWSLicenseManager_GetLicenseConfiguration = 0 }
+	export enum GetLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.GetLicenseConfiguration' = 0 }
 
-	export enum GetServiceSettingsX_Amz_Target { AWSLicenseManager_GetServiceSettings = 0 }
+	export enum GetServiceSettingsX_Amz_Target { 'AWSLicenseManager.GetServiceSettings' = 0 }
 
-	export enum ListAssociationsForLicenseConfigurationX_Amz_Target { AWSLicenseManager_ListAssociationsForLicenseConfiguration = 0 }
+	export enum ListAssociationsForLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.ListAssociationsForLicenseConfiguration' = 0 }
 
-	export enum ListFailuresForLicenseConfigurationOperationsX_Amz_Target { AWSLicenseManager_ListFailuresForLicenseConfigurationOperations = 0 }
+	export enum ListFailuresForLicenseConfigurationOperationsX_Amz_Target { 'AWSLicenseManager.ListFailuresForLicenseConfigurationOperations' = 0 }
 
-	export enum ListLicenseConfigurationsX_Amz_Target { AWSLicenseManager_ListLicenseConfigurations = 0 }
+	export enum ListLicenseConfigurationsX_Amz_Target { 'AWSLicenseManager.ListLicenseConfigurations' = 0 }
 
-	export enum ListLicenseSpecificationsForResourceX_Amz_Target { AWSLicenseManager_ListLicenseSpecificationsForResource = 0 }
+	export enum ListLicenseSpecificationsForResourceX_Amz_Target { 'AWSLicenseManager.ListLicenseSpecificationsForResource' = 0 }
 
-	export enum ListResourceInventoryX_Amz_Target { AWSLicenseManager_ListResourceInventory = 0 }
+	export enum ListResourceInventoryX_Amz_Target { 'AWSLicenseManager.ListResourceInventory' = 0 }
 
-	export enum ListTagsForResourceX_Amz_Target { AWSLicenseManager_ListTagsForResource = 0 }
+	export enum ListTagsForResourceX_Amz_Target { 'AWSLicenseManager.ListTagsForResource' = 0 }
 
-	export enum ListUsageForLicenseConfigurationX_Amz_Target { AWSLicenseManager_ListUsageForLicenseConfiguration = 0 }
+	export enum ListUsageForLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.ListUsageForLicenseConfiguration' = 0 }
 
-	export enum TagResourceX_Amz_Target { AWSLicenseManager_TagResource = 0 }
+	export enum TagResourceX_Amz_Target { 'AWSLicenseManager.TagResource' = 0 }
 
-	export enum UntagResourceX_Amz_Target { AWSLicenseManager_UntagResource = 0 }
+	export enum UntagResourceX_Amz_Target { 'AWSLicenseManager.UntagResource' = 0 }
 
-	export enum UpdateLicenseConfigurationX_Amz_Target { AWSLicenseManager_UpdateLicenseConfiguration = 0 }
+	export enum UpdateLicenseConfigurationX_Amz_Target { 'AWSLicenseManager.UpdateLicenseConfiguration' = 0 }
 
-	export enum UpdateLicenseSpecificationsForResourceX_Amz_Target { AWSLicenseManager_UpdateLicenseSpecificationsForResource = 0 }
+	export enum UpdateLicenseSpecificationsForResourceX_Amz_Target { 'AWSLicenseManager.UpdateLicenseSpecificationsForResource' = 0 }
 
-	export enum UpdateServiceSettingsX_Amz_Target { AWSLicenseManager_UpdateServiceSettings = 0 }
+	export enum UpdateServiceSettingsX_Amz_Target { 'AWSLicenseManager.UpdateServiceSettings' = 0 }
 
 }
 

@@ -121,9 +121,9 @@ export namespace MyNS {
 	export function CreateStartSelectorFormGroup() {
 		return new FormGroup<StartSelectorFormProperties>({
 			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined, [Validators.required]),
-			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9]+$')]),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9]+$')]),
 			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\.\-]+$')]),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[a-zA-Z0-9_\.\-]+$')]),
 		});
 
 	}
@@ -164,8 +164,8 @@ export namespace MyNS {
 	}
 	export function CreateGetMediaInputFormGroup() {
 		return new FormGroup<GetMediaInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -225,8 +225,8 @@ export namespace MyNS {
 	}
 	export function CreateGetMediaPostBodyFormGroup() {
 		return new FormGroup<GetMediaPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -266,9 +266,9 @@ export namespace MyNS {
 	export function CreateGetMediaPostBodyStartSelectorFormGroup() {
 		return new FormGroup<GetMediaPostBodyStartSelectorFormProperties>({
 			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined),
-			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9]+$')]),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9]+$')]),
 			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
-			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9_\.\-]+$')]),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[a-zA-Z0-9_\.\-]+$')]),
 		});
 
 	}

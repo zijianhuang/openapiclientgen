@@ -1172,7 +1172,7 @@ export namespace MyNS {
 			allowQuotedNewlines: new FormControl<boolean | null | undefined>(undefined),
 			encoding: new FormControl<string | null | undefined>(undefined),
 			fieldDelimiter: new FormControl<string | null | undefined>(undefined),
-			quote: new FormControl<string | null | undefined>(undefined),
+			quote: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.?')]),
 			skipLeadingRows: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2757,7 +2757,7 @@ export namespace MyNS {
 			ignoreUnknownValues: new FormControl<boolean | null | undefined>(undefined),
 			maxBadRecords: new FormControl<number | null | undefined>(undefined),
 			nullMarker: new FormControl<string | null | undefined>(undefined),
-			quote: new FormControl<string | null | undefined>(undefined),
+			quote: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.?')]),
 			schemaInline: new FormControl<string | null | undefined>(undefined),
 			schemaInlineFormat: new FormControl<string | null | undefined>(undefined),
 			skipLeadingRows: new FormControl<number | null | undefined>(undefined),

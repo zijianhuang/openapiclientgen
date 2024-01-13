@@ -43,7 +43,7 @@ export namespace MyNS {
 	}
 	export function CreateWebsocketFormGroup() {
 		return new FormGroup<WebsocketFormProperties>({
-			Url: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000)]),
 			ConnectionExpiry: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -73,7 +73,7 @@ export namespace MyNS {
 	}
 	export function CreateConnectionCredentialsFormGroup() {
 		return new FormGroup<ConnectionCredentialsFormProperties>({
-			ConnectionToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			ConnectionToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			Expiry: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -162,8 +162,8 @@ export namespace MyNS {
 	}
 	export function CreateGetTranscriptResponseFormGroup() {
 		return new FormGroup<GetTranscriptResponseFormProperties>({
-			InitialContactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			InitialContactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 		});
 
 	}
@@ -254,13 +254,13 @@ export namespace MyNS {
 	}
 	export function CreateItemFormGroup() {
 		return new FormGroup<ItemFormProperties>({
-			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			Type: new FormControl<ItemType | null | undefined>(undefined),
-			ParticipantId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ParticipantId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			ParticipantRole: new FormControl<ItemParticipantRole | null | undefined>(undefined),
 		});
 
@@ -300,8 +300,8 @@ export namespace MyNS {
 	}
 	export function CreateSendEventResponseFormGroup() {
 		return new FormGroup<SendEventResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -336,8 +336,8 @@ export namespace MyNS {
 	}
 	export function CreateSendMessageResponseFormGroup() {
 		return new FormGroup<SendMessageResponseFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -427,8 +427,8 @@ export namespace MyNS {
 	}
 	export function CreateStartPositionFormGroup() {
 		return new FormGroup<StartPositionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			MostRecent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -483,9 +483,9 @@ export namespace MyNS {
 	}
 	export function CreateGetTranscriptRequestFormGroup() {
 		return new FormGroup<GetTranscriptRequestFormProperties>({
-			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			ScanDirection: new FormControl<ScanDirection | null | undefined>(undefined),
 			SortOrder: new FormControl<SortKey | null | undefined>(undefined),
 		});
@@ -532,8 +532,8 @@ export namespace MyNS {
 	}
 	export function CreateSendEventRequestFormGroup() {
 		return new FormGroup<SendEventRequestFormProperties>({
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
@@ -579,8 +579,8 @@ export namespace MyNS {
 	}
 	export function CreateSendMessageRequestFormGroup() {
 		return new FormGroup<SendMessageRequestFormProperties>({
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
@@ -742,9 +742,9 @@ export namespace MyNS {
 	}
 	export function CreateGetTranscriptPostBodyFormGroup() {
 		return new FormGroup<GetTranscriptPostBodyFormProperties>({
-			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ContactId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1000), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1000)]),
 			ScanDirection: new FormControl<ScanDirection | null | undefined>(undefined),
 			SortOrder: new FormControl<SortKey | null | undefined>(undefined),
 		});
@@ -793,8 +793,8 @@ export namespace MyNS {
 	}
 	export function CreateGetTranscriptPostBodyStartPositionFormGroup() {
 		return new FormGroup<GetTranscriptPostBodyStartPositionFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 			MostRecent: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 		});
 
@@ -848,8 +848,8 @@ export namespace MyNS {
 	}
 	export function CreateSendEventPostBodyFormGroup() {
 		return new FormGroup<SendEventPostBodyFormProperties>({
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 
@@ -905,8 +905,8 @@ export namespace MyNS {
 	}
 	export function CreateSendMessagePostBodyFormGroup() {
 		return new FormGroup<SendMessagePostBodyFormProperties>({
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(1)]),
-			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+			Content: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
 		});
 

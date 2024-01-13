@@ -44,7 +44,7 @@ export namespace MyNS {
 	}
 	export function CreateAccessPointDescriptionFormGroup() {
 		return new FormGroup<AccessPointDescriptionFormProperties>({
-			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
 			Name: new FormControl<string | null | undefined>(undefined),
 			AccessPointId: new FormControl<string | null | undefined>(undefined),
 			AccessPointArn: new FormControl<string | null | undefined>(undefined),
@@ -91,7 +91,7 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(128), Validators.minLength(1)]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(128)]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
@@ -172,7 +172,7 @@ export namespace MyNS {
 	}
 	export function CreateRootDirectoryFormGroup() {
 		return new FormGroup<RootDirectoryFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -223,7 +223,7 @@ export namespace MyNS {
 		return new FormGroup<CreationInfoFormProperties>({
 			OwnerUid: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(4294967295)]),
 			OwnerGid: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(4294967295)]),
-			Permissions: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Permissions: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[0-7]{3,4}$')]),
 		});
 
 	}
@@ -384,7 +384,7 @@ export namespace MyNS {
 	export function CreateFileSystemDescriptionFormGroup() {
 		return new FormGroup<FileSystemDescriptionFormProperties>({
 			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			CreationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CreationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			LifeCycleState: new FormControl<AccessPointDescriptionLifeCycleState | null | undefined>(undefined, [Validators.required]),
@@ -392,7 +392,7 @@ export namespace MyNS {
 			NumberOfMountTargets: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			PerformanceMode: new FormControl<FileSystemDescriptionPerformanceMode | null | undefined>(undefined, [Validators.required]),
 			Encrypted: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
 			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -900,7 +900,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccessPointRequestFormGroup() {
 		return new FormGroup<CreateAccessPointRequestFormProperties>({
-			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -955,10 +955,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemRequestFormGroup() {
 		return new FormGroup<CreateFileSystemRequestFormProperties>({
-			CreationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CreationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			PerformanceMode: new FormControl<FileSystemDescriptionPerformanceMode | null | undefined>(undefined),
 			Encrypted: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
 			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});
@@ -1567,7 +1567,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccessPointPostBodyFormGroup() {
 		return new FormGroup<CreateAccessPointPostBodyFormProperties>({
-			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			ClientToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			FileSystemId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1636,7 +1636,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccessPointPostBodyRootDirectoryFormGroup() {
 		return new FormGroup<CreateAccessPointPostBodyRootDirectoryFormProperties>({
-			Path: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100), Validators.minLength(1)]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(100)]),
 		});
 
 	}
@@ -1710,10 +1710,10 @@ export namespace MyNS {
 	}
 	export function CreateCreateFileSystemPostBodyFormGroup() {
 		return new FormGroup<CreateFileSystemPostBodyFormProperties>({
-			CreationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
+			CreationToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
 			PerformanceMode: new FormControl<FileSystemDescriptionPerformanceMode | null | undefined>(undefined),
 			Encrypted: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			ThroughputMode: new FormControl<FileSystemDescriptionThroughputMode | null | undefined>(undefined),
 			ProvisionedThroughputInMibps: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 		});

@@ -52,7 +52,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeVoicesOutputFormGroup() {
 		return new FormGroup<DescribeVoicesOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(4096)]),
 		});
 
 	}
@@ -92,9 +92,9 @@ export namespace MyNS {
 
 	export enum VoiceId { Aditi = 0, Amy = 1, Astrid = 2, Bianca = 3, Brian = 4, Camila = 5, Carla = 6, Carmen = 7, Celine = 8, Chantal = 9, Conchita = 10, Cristiano = 11, Dora = 12, Emma = 13, Enrique = 14, Ewa = 15, Filiz = 16, Geraint = 17, Giorgio = 18, Gwyneth = 19, Hans = 20, Ines = 21, Ivy = 22, Jacek = 23, Jan = 24, Joanna = 25, Joey = 26, Justin = 27, Karl = 28, Kendra = 29, Kimberly = 30, Lea = 31, Liv = 32, Lotte = 33, Lucia = 34, Lupe = 35, Mads = 36, Maja = 37, Marlene = 38, Mathieu = 39, Matthew = 40, Maxim = 41, Mia = 42, Miguel = 43, Mizuki = 44, Naja = 45, Nicole = 46, Penelope = 47, Raveena = 48, Ricardo = 49, Ruben = 50, Russell = 51, Salli = 52, Seoyeon = 53, Takumi = 54, Tatyana = 55, Vicki = 56, Vitoria = 57, Zeina = 58, Zhiyu = 59 }
 
-	export enum VoiceLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
+	export enum VoiceLanguageCode { arb = 0, 'cmn-CN' = 1, 'cy-GB' = 2, 'da-DK' = 3, 'de-DE' = 4, 'en-AU' = 5, 'en-GB' = 6, 'en-GB-WLS' = 7, 'en-IN' = 8, 'en-US' = 9, 'es-ES' = 10, 'es-MX' = 11, 'es-US' = 12, 'fr-CA' = 13, 'fr-FR' = 14, 'is-IS' = 15, 'it-IT' = 16, 'ja-JP' = 17, 'hi-IN' = 18, 'ko-KR' = 19, 'nb-NO' = 20, 'nl-NL' = 21, 'pl-PL' = 22, 'pt-BR' = 23, 'pt-PT' = 24, 'ro-RO' = 25, 'ru-RU' = 26, 'sv-SE' = 27, 'tr-TR' = 28 }
 
-	export enum LanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
+	export enum LanguageCode { arb = 0, 'cmn-CN' = 1, 'cy-GB' = 2, 'da-DK' = 3, 'de-DE' = 4, 'en-AU' = 5, 'en-GB' = 6, 'en-GB-WLS' = 7, 'en-IN' = 8, 'en-US' = 9, 'es-ES' = 10, 'es-MX' = 11, 'es-US' = 12, 'fr-CA' = 13, 'fr-FR' = 14, 'is-IS' = 15, 'it-IT' = 16, 'ja-JP' = 17, 'hi-IN' = 18, 'ko-KR' = 19, 'nb-NO' = 20, 'nl-NL' = 21, 'pl-PL' = 22, 'pt-BR' = 23, 'pt-PT' = 24, 'ro-RO' = 25, 'ru-RU' = 26, 'sv-SE' = 27, 'tr-TR' = 28 }
 
 	export enum Engine { standard = 0, neural = 1 }
 
@@ -139,7 +139,7 @@ export namespace MyNS {
 	export function CreateLexiconFormGroup() {
 		return new FormGroup<LexiconFormProperties>({
 			Content: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[0-9A-Za-z]{1,20}')]),
 		});
 
 	}
@@ -148,7 +148,7 @@ export namespace MyNS {
 	/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
 	export interface LexiconAttributes {
 		Alphabet?: string | null;
-		LanguageCode?: LexiconAttributesLanguageCode | null;
+		LanguageCode?: VoiceLanguageCode | null;
 		LastModified?: Date | null;
 		LexiconArn?: string | null;
 		LexemesCount?: number | null;
@@ -158,7 +158,7 @@ export namespace MyNS {
 	/** Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>. */
 	export interface LexiconAttributesFormProperties {
 		Alphabet: FormControl<string | null | undefined>,
-		LanguageCode: FormControl<LexiconAttributesLanguageCode | null | undefined>,
+		LanguageCode: FormControl<VoiceLanguageCode | null | undefined>,
 		LastModified: FormControl<Date | null | undefined>,
 		LexiconArn: FormControl<string | null | undefined>,
 		LexemesCount: FormControl<number | null | undefined>,
@@ -167,7 +167,7 @@ export namespace MyNS {
 	export function CreateLexiconAttributesFormGroup() {
 		return new FormGroup<LexiconAttributesFormProperties>({
 			Alphabet: new FormControl<string | null | undefined>(undefined),
-			LanguageCode: new FormControl<LexiconAttributesLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<VoiceLanguageCode | null | undefined>(undefined),
 			LastModified: new FormControl<Date | null | undefined>(undefined),
 			LexiconArn: new FormControl<string | null | undefined>(undefined),
 			LexemesCount: new FormControl<number | null | undefined>(undefined),
@@ -175,8 +175,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum LexiconAttributesLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
 	export interface GetSpeechSynthesisTaskOutput {
 
@@ -212,7 +210,7 @@ export namespace MyNS {
 		SpeechMarkTypes?: Array<SpeechMarkType>;
 		TextType?: SynthesisTaskTextType | null;
 		VoiceId?: VoiceId | null;
-		LanguageCode?: SynthesisTaskLanguageCode | null;
+		LanguageCode?: VoiceLanguageCode | null;
 	}
 
 	/** SynthesisTask object that provides information about a speech synthesis task. */
@@ -229,23 +227,23 @@ export namespace MyNS {
 		SampleRate: FormControl<string | null | undefined>,
 		TextType: FormControl<SynthesisTaskTextType | null | undefined>,
 		VoiceId: FormControl<VoiceId | null | undefined>,
-		LanguageCode: FormControl<SynthesisTaskLanguageCode | null | undefined>,
+		LanguageCode: FormControl<VoiceLanguageCode | null | undefined>,
 	}
 	export function CreateSynthesisTaskFormGroup() {
 		return new FormGroup<SynthesisTaskFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
-			TaskId: new FormControl<string | null | undefined>(undefined),
+			TaskId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9_-]{1,100}$')]),
 			TaskStatus: new FormControl<SynthesisTaskTaskStatus | null | undefined>(undefined),
 			TaskStatusReason: new FormControl<string | null | undefined>(undefined),
 			OutputUri: new FormControl<string | null | undefined>(undefined),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			RequestCharacters: new FormControl<number | null | undefined>(undefined),
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$')]),
 			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
 			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
 			VoiceId: new FormControl<VoiceId | null | undefined>(undefined),
-			LanguageCode: new FormControl<SynthesisTaskLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<VoiceLanguageCode | null | undefined>(undefined),
 		});
 
 	}
@@ -257,8 +255,6 @@ export namespace MyNS {
 	export enum SpeechMarkType { sentence = 0, ssml = 1, viseme = 2, word = 3 }
 
 	export enum SynthesisTaskTextType { ssml = 0, text = 1 }
-
-	export enum SynthesisTaskLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
 	export interface InvalidTaskIdException {
 	}
@@ -299,7 +295,7 @@ export namespace MyNS {
 	}
 	export function CreateListLexiconsOutputFormGroup() {
 		return new FormGroup<ListLexiconsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(4096)]),
 		});
 
 	}
@@ -319,7 +315,7 @@ export namespace MyNS {
 	}
 	export function CreateLexiconDescriptionFormGroup() {
 		return new FormGroup<LexiconDescriptionFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[0-9A-Za-z]{1,20}')]),
 		});
 
 	}
@@ -343,7 +339,7 @@ export namespace MyNS {
 	}
 	export function CreateListSpeechSynthesisTasksOutputFormGroup() {
 		return new FormGroup<ListSpeechSynthesisTasksOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(0)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(4096)]),
 		});
 
 	}
@@ -631,7 +627,7 @@ export namespace MyNS {
 
 	export interface StartSpeechSynthesisTaskInput {
 		Engine?: Engine | null;
-		LanguageCode?: StartSpeechSynthesisTaskInputLanguageCode | null;
+		LanguageCode?: VoiceLanguageCode | null;
 
 		/** Maximum items: 5 */
 		LexiconNames?: Array<string>;
@@ -657,7 +653,7 @@ export namespace MyNS {
 	}
 	export interface StartSpeechSynthesisTaskInputFormProperties {
 		Engine: FormControl<Engine | null | undefined>,
-		LanguageCode: FormControl<StartSpeechSynthesisTaskInputLanguageCode | null | undefined>,
+		LanguageCode: FormControl<VoiceLanguageCode | null | undefined>,
 
 		/** Required */
 		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
@@ -678,12 +674,12 @@ export namespace MyNS {
 	export function CreateStartSpeechSynthesisTaskInputFormGroup() {
 		return new FormGroup<StartSpeechSynthesisTaskInputFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
-			LanguageCode: new FormControl<StartSpeechSynthesisTaskInputLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<VoiceLanguageCode | null | undefined>(undefined),
 			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$')]),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9a-zA-Z\/\!\-_\.\*\\\'\(\)]{0,800}$')]),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$')]),
 			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
 			VoiceId: new FormControl<VoiceId | null | undefined>(undefined, [Validators.required]),
@@ -691,11 +687,9 @@ export namespace MyNS {
 
 	}
 
-	export enum StartSpeechSynthesisTaskInputLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
-
 	export interface SynthesizeSpeechInput {
 		Engine?: Engine | null;
-		LanguageCode?: SynthesizeSpeechInputLanguageCode | null;
+		LanguageCode?: VoiceLanguageCode | null;
 
 		/** Maximum items: 5 */
 		LexiconNames?: Array<string>;
@@ -716,7 +710,7 @@ export namespace MyNS {
 	}
 	export interface SynthesizeSpeechInputFormProperties {
 		Engine: FormControl<Engine | null | undefined>,
-		LanguageCode: FormControl<SynthesizeSpeechInputLanguageCode | null | undefined>,
+		LanguageCode: FormControl<VoiceLanguageCode | null | undefined>,
 
 		/** Required */
 		OutputFormat: FormControl<SynthesisTaskOutputFormat | null | undefined>,
@@ -732,7 +726,7 @@ export namespace MyNS {
 	export function CreateSynthesizeSpeechInputFormGroup() {
 		return new FormGroup<SynthesizeSpeechInputFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
-			LanguageCode: new FormControl<SynthesizeSpeechInputLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<VoiceLanguageCode | null | undefined>(undefined),
 			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
 			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -741,8 +735,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum SynthesizeSpeechInputLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
 	@Injectable()
 	export class MyClient {
@@ -866,7 +858,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DescribeVoicesLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
+	export enum DescribeVoicesLanguageCode { arb = 0, 'cmn-CN' = 1, 'cy-GB' = 2, 'da-DK' = 3, 'de-DE' = 4, 'en-AU' = 5, 'en-GB' = 6, 'en-GB-WLS' = 7, 'en-IN' = 8, 'en-US' = 9, 'es-ES' = 10, 'es-MX' = 11, 'es-US' = 12, 'fr-CA' = 13, 'fr-FR' = 14, 'is-IS' = 15, 'it-IT' = 16, 'ja-JP' = 17, 'hi-IN' = 18, 'ko-KR' = 19, 'nb-NO' = 20, 'nl-NL' = 21, 'pl-PL' = 22, 'pt-BR' = 23, 'pt-PT' = 24, 'ro-RO' = 25, 'ru-RU' = 26, 'sv-SE' = 27, 'tr-TR' = 28 }
 
 	export interface StartSpeechSynthesisTaskPostBody {
 
@@ -874,7 +866,7 @@ export namespace MyNS {
 		Engine?: Engine | null;
 
 		/** <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
-		LanguageCode?: StartSpeechSynthesisTaskPostBodyLanguageCode | null;
+		LanguageCode?: VoiceLanguageCode | null;
 
 		/**
 		 * List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.
@@ -930,7 +922,7 @@ export namespace MyNS {
 		Engine: FormControl<Engine | null | undefined>,
 
 		/** <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
-		LanguageCode: FormControl<StartSpeechSynthesisTaskPostBodyLanguageCode | null | undefined>,
+		LanguageCode: FormControl<VoiceLanguageCode | null | undefined>,
 
 		/**
 		 * The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.
@@ -971,12 +963,12 @@ export namespace MyNS {
 	export function CreateStartSpeechSynthesisTaskPostBodyFormGroup() {
 		return new FormGroup<StartSpeechSynthesisTaskPostBodyFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
-			LanguageCode: new FormControl<StartSpeechSynthesisTaskPostBodyLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<VoiceLanguageCode | null | undefined>(undefined),
 			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
-			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			OutputS3BucketName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$')]),
+			OutputS3KeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[0-9a-zA-Z\/\!\-_\.\*\\\'\(\)]{0,800}$')]),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
-			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^arn:aws(-(cn|iso(-b)?|us-gov))?:sns:[a-z0-9_-]{1,50}:\d{12}:[a-zA-Z0-9_-]{1,256}$')]),
 			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			TextType: new FormControl<SynthesisTaskTextType | null | undefined>(undefined),
 			VoiceId: new FormControl<VoiceId | null | undefined>(undefined, [Validators.required]),
@@ -984,15 +976,13 @@ export namespace MyNS {
 
 	}
 
-	export enum StartSpeechSynthesisTaskPostBodyLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
-
 	export interface SynthesizeSpeechPostBody {
 
 		/** Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error. */
 		Engine?: Engine | null;
 
 		/** <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
-		LanguageCode?: SynthesizeSpeechPostBodyLanguageCode | null;
+		LanguageCode?: VoiceLanguageCode | null;
 
 		/**
 		 * List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.
@@ -1036,7 +1026,7 @@ export namespace MyNS {
 		Engine: FormControl<Engine | null | undefined>,
 
 		/** <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p> */
-		LanguageCode: FormControl<SynthesizeSpeechPostBodyLanguageCode | null | undefined>,
+		LanguageCode: FormControl<VoiceLanguageCode | null | undefined>,
 
 		/**
 		 * <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
@@ -1065,7 +1055,7 @@ export namespace MyNS {
 	export function CreateSynthesizeSpeechPostBodyFormGroup() {
 		return new FormGroup<SynthesizeSpeechPostBodyFormProperties>({
 			Engine: new FormControl<Engine | null | undefined>(undefined),
-			LanguageCode: new FormControl<SynthesizeSpeechPostBodyLanguageCode | null | undefined>(undefined),
+			LanguageCode: new FormControl<VoiceLanguageCode | null | undefined>(undefined),
 			OutputFormat: new FormControl<SynthesisTaskOutputFormat | null | undefined>(undefined, [Validators.required]),
 			SampleRate: new FormControl<string | null | undefined>(undefined),
 			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -1074,8 +1064,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum SynthesizeSpeechPostBodyLanguageCode { arb = 0, cmn_CN = 1, cy_GB = 2, da_DK = 3, de_DE = 4, en_AU = 5, en_GB = 6, en_GB_WLS = 7, en_IN = 8, en_US = 9, es_ES = 10, es_MX = 11, es_US = 12, fr_CA = 13, fr_FR = 14, is_IS = 15, it_IT = 16, ja_JP = 17, hi_IN = 18, ko_KR = 19, nb_NO = 20, nl_NL = 21, pl_PL = 22, pt_BR = 23, pt_PT = 24, ro_RO = 25, ru_RU = 26, sv_SE = 27, tr_TR = 28 }
 
 }
 

@@ -21,7 +21,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobResultFormGroup() {
 		return new FormGroup<CreateJobResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 		});
 
 	}
@@ -48,7 +48,7 @@ export namespace MyNS {
 	}
 	export function CreateLambdaInvokeOperationFormGroup() {
 		return new FormGroup<LambdaInvokeOperationFormProperties>({
-			FunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
+			FunctionArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?')]),
 		});
 
 	}
@@ -134,16 +134,16 @@ export namespace MyNS {
 	}
 	export function CreateS3CopyObjectOperationFormGroup() {
 		return new FormGroup<S3CopyObjectOperationFormProperties>({
-			TargetResource: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:.*')]),
+			TargetResource: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('arn:[^:]+:s3:.*')]),
 			CannedAccessControlList: new FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>(undefined),
 			MetadataDirective: new FormControl<S3CopyObjectOperationMetadataDirective | null | undefined>(undefined),
 			ModifiedSinceConstraint: new FormControl<Date | null | undefined>(undefined),
-			RedirectLocation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1)]),
+			RedirectLocation: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048)]),
 			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
 			StorageClass: new FormControl<S3CopyObjectOperationStorageClass | null | undefined>(undefined),
 			UnModifiedSinceConstraint: new FormControl<Date | null | undefined>(undefined),
-			SSEAwsKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
-			TargetKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SSEAwsKmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000)]),
+			TargetKeyPrefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			ObjectLockLegalHoldStatus: new FormControl<S3CopyObjectOperationObjectLockLegalHoldStatus | null | undefined>(undefined),
 			ObjectLockMode: new FormControl<S3CopyObjectOperationObjectLockMode | null | undefined>(undefined),
 			ObjectLockRetainUntilDate: new FormControl<Date | null | undefined>(undefined),
@@ -151,7 +151,7 @@ export namespace MyNS {
 
 	}
 
-	export enum S3CopyObjectOperationCannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
+	export enum S3CopyObjectOperationCannedAccessControlList { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'aws-exec-read' = 3, 'authenticated-read' = 4, 'bucket-owner-read' = 5, 'bucket-owner-full-control' = 6 }
 
 
 	/** <p/> */
@@ -210,8 +210,8 @@ export namespace MyNS {
 	export function CreateS3GranteeFormGroup() {
 		return new FormGroup<S3GranteeFormProperties>({
 			TypeIdentifier: new FormControl<S3GranteeTypeIdentifier | null | undefined>(undefined),
-			Identifier: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			Identifier: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -317,13 +317,13 @@ export namespace MyNS {
 	}
 	export function CreateS3ObjectMetadataFormGroup() {
 		return new FormGroup<S3ObjectMetadataFormProperties>({
-			CacheControl: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ContentDisposition: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ContentEncoding: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ContentLanguage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			CacheControl: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ContentDisposition: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ContentEncoding: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ContentLanguage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			ContentLength: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			ContentMD5: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ContentMD5: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 			HttpExpiresDate: new FormControl<Date | null | undefined>(undefined),
 			RequesterCharged: new FormControl<boolean | null | undefined>(undefined),
 			SSEAlgorithm: new FormControl<S3ObjectMetadataSSEAlgorithm | null | undefined>(undefined),
@@ -379,7 +379,7 @@ export namespace MyNS {
 	}
 	export function CreateS3TagFormGroup() {
 		return new FormGroup<S3TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$')]),
 			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.pattern('^([\p{L}\p{Z}\p{N}_.:=+\-@%]*)$')]),
 		});
 
@@ -414,16 +414,16 @@ export namespace MyNS {
 
 		/** <p/> */
 		AccessControlList?: S3AccessControlList;
-		CannedAccessControlList?: S3AccessControlPolicyCannedAccessControlList | null;
+		CannedAccessControlList?: S3CopyObjectOperationCannedAccessControlList | null;
 	}
 
 	/** <p/> */
 	export interface S3AccessControlPolicyFormProperties {
-		CannedAccessControlList: FormControl<S3AccessControlPolicyCannedAccessControlList | null | undefined>,
+		CannedAccessControlList: FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>,
 	}
 	export function CreateS3AccessControlPolicyFormGroup() {
 		return new FormGroup<S3AccessControlPolicyFormProperties>({
-			CannedAccessControlList: new FormControl<S3AccessControlPolicyCannedAccessControlList | null | undefined>(undefined),
+			CannedAccessControlList: new FormControl<S3CopyObjectOperationCannedAccessControlList | null | undefined>(undefined),
 		});
 
 	}
@@ -483,13 +483,11 @@ export namespace MyNS {
 	}
 	export function CreateS3ObjectOwnerFormGroup() {
 		return new FormGroup<S3ObjectOwnerFormProperties>({
-			ID: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
-			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			ID: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
+			DisplayName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
-
-	export enum S3AccessControlPolicyCannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
 
 
 	/** Contains the configuration parameters for a Set Object Tagging operation. Amazon S3 Batch Operations passes each value through to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>. */
@@ -696,9 +694,9 @@ export namespace MyNS {
 	}
 	export function CreateJobManifestLocationFormGroup() {
 		return new FormGroup<JobManifestLocationFormProperties>({
-			ObjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2000), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:.*')]),
-			ObjectVersionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2000), Validators.minLength(1)]),
-			ETag: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			ObjectArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2000), Validators.pattern('arn:[^:]+:s3:.*')]),
+			ObjectVersionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2000)]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -893,18 +891,18 @@ export namespace MyNS {
 	}
 	export function CreateJobDescriptorFormGroup() {
 		return new FormGroup<JobDescriptorFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 			ConfirmationRequired: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
-			JobArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
+			JobArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:[^:]+:s3:[a-zA-Z0-9\-]+:\d{12}:job\/.*')]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
-			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			CreationTime: new FormControl<Date | null | undefined>(undefined),
 			TerminationDate: new FormControl<Date | null | undefined>(undefined),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:[^:]+:iam::\d{12}:role/.*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:[^:]+:iam::\d{12}:role/.*')]),
 			SuspendedDate: new FormControl<Date | null | undefined>(undefined),
-			SuspendedCause: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			SuspendedCause: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1041,8 +1039,8 @@ export namespace MyNS {
 	}
 	export function CreateJobFailureFormGroup() {
 		return new FormGroup<JobFailureFormProperties>({
-			FailureCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1)]),
-			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			FailureCode: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64)]),
+			FailureReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1091,10 +1089,10 @@ export namespace MyNS {
 	}
 	export function CreateJobReportFormGroup() {
 		return new FormGroup<JobReportFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('arn:[^:]+:s3:.*')]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('arn:[^:]+:s3:.*')]),
 			Format: new FormControl<JobReportFormat | null | undefined>(undefined),
 			Enabled: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(512), Validators.minLength(1)]),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(512)]),
 			ReportScope: new FormControl<JobReportScope | null | undefined>(undefined),
 		});
 
@@ -1140,8 +1138,8 @@ export namespace MyNS {
 	}
 	export function CreateGetAccessPointResultFormGroup() {
 		return new FormGroup<GetAccessPointResultFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50), Validators.minLength(3)]),
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(50)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255)]),
 			NetworkOrigin: new FormControl<GetAccessPointResultNetworkOrigin | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -1174,7 +1172,7 @@ export namespace MyNS {
 	}
 	export function CreateVpcConfigurationFormGroup() {
 		return new FormGroup<VpcConfigurationFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(1)]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1301,7 +1299,7 @@ export namespace MyNS {
 	}
 	export function CreateListAccessPointsResultFormGroup() {
 		return new FormGroup<ListAccessPointsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1)]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024)]),
 		});
 
 	}
@@ -1353,9 +1351,9 @@ export namespace MyNS {
 	}
 	export function CreateAccessPointFormGroup() {
 		return new FormGroup<AccessPointFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(50), Validators.minLength(3)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
 			NetworkOrigin: new FormControl<GetAccessPointResultNetworkOrigin | null | undefined>(undefined, [Validators.required]),
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1379,7 +1377,7 @@ export namespace MyNS {
 	}
 	export function CreateListJobsResultFormGroup() {
 		return new FormGroup<ListJobsResultFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('^[A-Za-z0-9\+\:\/\=\?\#-_]+$')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('^[A-Za-z0-9\+\:\/\=\?\#-_]+$')]),
 		});
 
 	}
@@ -1441,8 +1439,8 @@ export namespace MyNS {
 	}
 	export function CreateJobListDescriptorFormGroup() {
 		return new FormGroup<JobListDescriptorFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			Operation: new FormControl<JobListDescriptorOperation | null | undefined>(undefined),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
@@ -1530,7 +1528,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobPriorityResultFormGroup() {
 		return new FormGroup<UpdateJobPriorityResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(5), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
 		});
 
@@ -1568,9 +1566,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobStatusResultFormGroup() {
 		return new FormGroup<UpdateJobStatusResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(36), Validators.minLength(5), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(36), Validators.pattern('[a-zA-Z0-9\-\_]+')]),
 			Status: new FormControl<JobDescriptorStatus | null | undefined>(undefined),
-			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			StatusUpdateReason: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 		});
 
 	}
@@ -1613,7 +1611,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateAccessPointRequestFormGroup() {
 		return new FormGroup<CreateAccessPointRequestFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.minLength(3)]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
 		});
 
 	}
@@ -1700,10 +1698,10 @@ export namespace MyNS {
 	export function CreateCreateJobRequestFormGroup() {
 		return new FormGroup<CreateJobRequestFormProperties>({
 			ConfirmationRequired: new FormControl<boolean | null | undefined>(undefined),
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1)]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1)]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64)]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256)]),
 			Priority: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(2147483647)]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(1), Validators.pattern('arn:[^:]+:iam::\d{12}:role/.*')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(2048), Validators.pattern('arn:[^:]+:iam::\d{12}:role/.*')]),
 		});
 
 	}
@@ -1880,7 +1878,7 @@ export namespace MyNS {
 
 	export enum RequestedJobStatus { Cancelled = 0, Ready = 1 }
 
-	export enum S3CannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6 }
+	export enum S3CannedAccessControlList { private = 0, 'public-read' = 1, 'public-read-write' = 2, 'aws-exec-read' = 3, 'authenticated-read' = 4, 'bucket-owner-read' = 5, 'bucket-owner-full-control' = 6 }
 
 	export enum S3MetadataDirective { COPY = 0, REPLACE = 1 }
 

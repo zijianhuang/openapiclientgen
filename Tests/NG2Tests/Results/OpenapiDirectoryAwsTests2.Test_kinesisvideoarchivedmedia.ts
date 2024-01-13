@@ -238,7 +238,7 @@ export namespace MyNS {
 	}
 	export function CreateListFragmentsOutputFormGroup() {
 		return new FormGroup<ListFragmentsOutputFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9+/]+={0,2}')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096), Validators.pattern('[a-zA-Z0-9+/]+={0,2}')]),
 		});
 
 	}
@@ -273,7 +273,7 @@ export namespace MyNS {
 	}
 	export function CreateFragmentFormGroup() {
 		return new FormGroup<FragmentFormProperties>({
-			FragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(1), Validators.pattern('^[0-9]+$')]),
+			FragmentNumber: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(128), Validators.pattern('^[0-9]+$')]),
 			FragmentSizeInBytes: new FormControl<number | null | undefined>(undefined),
 			ProducerTimestamp: new FormControl<Date | null | undefined>(undefined),
 			ServerTimestamp: new FormControl<Date | null | undefined>(undefined),
@@ -430,8 +430,8 @@ export namespace MyNS {
 	}
 	export function CreateGetClipInputFormGroup() {
 		return new FormGroup<GetClipInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -499,8 +499,8 @@ export namespace MyNS {
 	}
 	export function CreateGetDASHStreamingSessionURLInputFormGroup() {
 		return new FormGroup<GetDASHStreamingSessionURLInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
 			DisplayFragmentNumber: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
@@ -601,8 +601,8 @@ export namespace MyNS {
 	}
 	export function CreateGetHLSStreamingSessionURLInputFormGroup() {
 		return new FormGroup<GetHLSStreamingSessionURLInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			ContainerFormat: new FormControl<ContainerFormat | null | undefined>(undefined),
 			DiscontinuityMode: new FormControl<HLSDiscontinuityMode | null | undefined>(undefined),
@@ -640,7 +640,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMediaForFragmentListInputFormGroup() {
 		return new FormGroup<GetMediaForFragmentListInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -692,9 +692,9 @@ export namespace MyNS {
 	}
 	export function CreateListFragmentsInputFormGroup() {
 		return new FormGroup<ListFragmentsInputFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9+/]+={0,2}')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096), Validators.pattern('[a-zA-Z0-9+/]+={0,2}')]),
 		});
 
 	}
@@ -792,8 +792,8 @@ export namespace MyNS {
 	}
 	export function CreateGetClipPostBodyFormGroup() {
 		return new FormGroup<GetClipPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 		});
 
 	}
@@ -897,8 +897,8 @@ export namespace MyNS {
 	}
 	export function CreateGetDASHStreamingSessionURLPostBodyFormGroup() {
 		return new FormGroup<GetDASHStreamingSessionURLPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
 			DisplayFragmentNumber: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
@@ -1013,8 +1013,8 @@ export namespace MyNS {
 	}
 	export function CreateGetHLSStreamingSessionURLPostBodyFormGroup() {
 		return new FormGroup<GetHLSStreamingSessionURLPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
-			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamARN: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+')]),
 			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
 			ContainerFormat: new FormControl<ContainerFormat | null | undefined>(undefined),
 			DiscontinuityMode: new FormControl<HLSDiscontinuityMode | null | undefined>(undefined),
@@ -1071,7 +1071,7 @@ export namespace MyNS {
 	}
 	export function CreateGetMediaForFragmentListPostBodyFormGroup() {
 		return new FormGroup<GetMediaForFragmentListPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 		});
 
 	}
@@ -1129,9 +1129,9 @@ export namespace MyNS {
 	}
 	export function CreateListFragmentsPostBodyFormGroup() {
 		return new FormGroup<ListFragmentsPostBodyFormProperties>({
-			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.-]+')]),
+			StreamName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(256), Validators.pattern('[a-zA-Z0-9_.-]+')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1000)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4096), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9+/]+={0,2}')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(4096), Validators.pattern('[a-zA-Z0-9+/]+={0,2}')]),
 		});
 
 	}

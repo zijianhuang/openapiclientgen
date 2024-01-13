@@ -194,7 +194,7 @@ export namespace MyNS {
 	}
 	export function CreateBeginTransactionResponseFormGroup() {
 		return new FormGroup<BeginTransactionResponseFormProperties>({
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(192), Validators.minLength(0)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -221,7 +221,7 @@ export namespace MyNS {
 	}
 	export function CreateCommitTransactionResponseFormGroup() {
 		return new FormGroup<CommitTransactionResponseFormProperties>({
-			transactionStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			transactionStatus: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128)]),
 		});
 
 	}
@@ -479,7 +479,7 @@ export namespace MyNS {
 	}
 	export function CreateRollbackTransactionResponseFormGroup() {
 		return new FormGroup<RollbackTransactionResponseFormProperties>({
-			transactionStatus: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(0)]),
+			transactionStatus: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(128)]),
 		});
 
 	}
@@ -573,12 +573,12 @@ export namespace MyNS {
 	}
 	export function CreateBatchExecuteStatementRequestFormGroup() {
 		return new FormGroup<BatchExecuteStatementRequestFormProperties>({
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(0)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(192), Validators.minLength(0)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(65536)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -645,10 +645,10 @@ export namespace MyNS {
 	}
 	export function CreateBeginTransactionRequestFormGroup() {
 		return new FormGroup<BeginTransactionRequestFormProperties>({
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
 		});
 
 	}
@@ -705,9 +705,9 @@ export namespace MyNS {
 	}
 	export function CreateCommitTransactionRequestFormGroup() {
 		return new FormGroup<CommitTransactionRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(192), Validators.minLength(0)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -788,11 +788,11 @@ export namespace MyNS {
 	}
 	export function CreateExecuteSqlRequestFormGroup() {
 		return new FormGroup<ExecuteSqlRequestFormProperties>({
-			awsSecretStoreArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			dbClusterOrInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			sqlStatements: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(0)]),
+			awsSecretStoreArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			dbClusterOrInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			sqlStatements: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(65536)]),
 		});
 
 	}
@@ -911,13 +911,13 @@ export namespace MyNS {
 	export function CreateExecuteStatementRequestFormGroup() {
 		return new FormGroup<ExecuteStatementRequestFormProperties>({
 			continueAfterTimeout: new FormControl<boolean | null | undefined>(undefined),
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
 			includeResultMetadata: new FormControl<boolean | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(0)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(192), Validators.minLength(0)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(65536)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -974,9 +974,9 @@ export namespace MyNS {
 	}
 	export function CreateRollbackTransactionRequestFormGroup() {
 		return new FormGroup<RollbackTransactionRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(192), Validators.minLength(0)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -1142,12 +1142,12 @@ export namespace MyNS {
 	}
 	export function CreateBatchExecuteStatementPostBodyFormGroup() {
 		return new FormGroup<BatchExecuteStatementPostBodyFormProperties>({
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(0)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(192), Validators.minLength(0)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(65536)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -1218,10 +1218,10 @@ export namespace MyNS {
 	}
 	export function CreateBeginTransactionPostBodyFormGroup() {
 		return new FormGroup<BeginTransactionPostBodyFormProperties>({
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
 		});
 
 	}
@@ -1280,9 +1280,9 @@ export namespace MyNS {
 	}
 	export function CreateCommitTransactionPostBodyFormGroup() {
 		return new FormGroup<CommitTransactionPostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(192), Validators.minLength(0)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -1369,11 +1369,11 @@ export namespace MyNS {
 	}
 	export function CreateExecuteSqlPostBodyFormGroup() {
 		return new FormGroup<ExecuteSqlPostBodyFormProperties>({
-			awsSecretStoreArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			dbClusterOrInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			sqlStatements: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(0)]),
+			awsSecretStoreArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			dbClusterOrInstanceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			sqlStatements: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(65536)]),
 		});
 
 	}
@@ -1493,13 +1493,13 @@ export namespace MyNS {
 	export function CreateExecuteStatementPostBodyFormGroup() {
 		return new FormGroup<ExecuteStatementPostBodyFormProperties>({
 			continueAfterTimeout: new FormControl<boolean | null | undefined>(undefined),
-			database: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
+			database: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
 			includeResultMetadata: new FormControl<boolean | null | undefined>(undefined),
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			schema: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(65536), Validators.minLength(0)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(192), Validators.minLength(0)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			schema: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			sql: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(65536)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}
@@ -1571,9 +1571,9 @@ export namespace MyNS {
 	}
 	export function CreateRollbackTransactionPostBodyFormGroup() {
 		return new FormGroup<RollbackTransactionPostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(100), Validators.minLength(11)]),
-			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(192), Validators.minLength(0)]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			secretArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(11), Validators.maxLength(100)]),
+			transactionId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(192)]),
 		});
 
 	}

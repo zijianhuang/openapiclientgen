@@ -123,7 +123,7 @@ export namespace MyNS {
 
 	export enum SavingsPlanRateCurrency { CNY = 0, USD = 1 }
 
-	export enum SavingsPlanRateUnit { Hrs = 0, Lambda_GB_Second = 1, Request = 2 }
+	export enum SavingsPlanRateUnit { Hrs = 0, 'Lambda-GB-Second' = 1, Request = 2 }
 
 	export enum SavingsPlanRateProductType { EC2 = 0, Fargate = 1, Lambda = 2 }
 
@@ -144,7 +144,7 @@ export namespace MyNS {
 	export function CreateSavingsPlanRatePropertyFormGroup() {
 		return new FormGroup<SavingsPlanRatePropertyFormProperties>({
 			name: new FormControl<SavingsPlanRatePropertyName | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9_ \/.\:\-\(\)]+$')]),
 		});
 
 	}
@@ -235,7 +235,7 @@ export namespace MyNS {
 		return new FormGroup<SavingsPlanFormProperties>({
 			offeringId: new FormControl<string | null | undefined>(undefined),
 			savingsPlanId: new FormControl<string | null | undefined>(undefined),
-			savingsPlanArn: new FormControl<string | null | undefined>(undefined),
+			savingsPlanArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$')]),
 			description: new FormControl<string | null | undefined>(undefined),
 			start: new FormControl<string | null | undefined>(undefined),
 			end: new FormControl<string | null | undefined>(undefined),
@@ -253,11 +253,11 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanState { payment_pending = 0, payment_failed = 1, active = 2, retired = 3 }
+	export enum SavingsPlanState { 'payment-pending' = 0, 'payment-failed' = 1, active = 2, retired = 3 }
 
 	export enum SavingsPlanSavingsPlanType { Compute = 0, EC2Instance = 1 }
 
-	export enum SavingsPlanPaymentOption { All_Upfront = 0, Partial_Upfront = 1, No_Upfront = 2 }
+	export enum SavingsPlanPaymentOption { 'All Upfront' = 0, 'Partial Upfront' = 1, 'No Upfront' = 2 }
 
 	export enum SavingsPlanProductType { EC2 = 0, Fargate = 1, Lambda = 2 }
 
@@ -289,7 +289,7 @@ export namespace MyNS {
 
 	}
 
-	export enum SavingsPlanFilterName { region = 0, ec2_instance_family = 1, commitment = 2, upfront = 3, term = 4, savings_plan_type = 5, payment_option = 6, start = 7, end = 8 }
+	export enum SavingsPlanFilterName { region = 0, 'ec2-instance-family' = 1, commitment = 2, upfront = 3, term = 4, 'savings-plan-type' = 5, 'payment-option' = 6, start = 7, end = 8 }
 
 	export interface DescribeSavingsPlansOfferingRatesResponse {
 		searchResults?: Array<SavingsPlanOfferingRate>;
@@ -316,7 +316,7 @@ export namespace MyNS {
 		/** Information about a Savings Plan offering. */
 		savingsPlanOffering?: ParentSavingsPlanOffering;
 		rate?: string | null;
-		unit?: SavingsPlanOfferingRateUnit | null;
+		unit?: SavingsPlanRateUnit | null;
 		productType?: SavingsPlanRateProductType | null;
 		serviceCode?: SavingsPlanRateServiceCode | null;
 
@@ -331,7 +331,7 @@ export namespace MyNS {
 	/** Information about a Savings Plan offering rate. */
 	export interface SavingsPlanOfferingRateFormProperties {
 		rate: FormControl<string | null | undefined>,
-		unit: FormControl<SavingsPlanOfferingRateUnit | null | undefined>,
+		unit: FormControl<SavingsPlanRateUnit | null | undefined>,
 		productType: FormControl<SavingsPlanRateProductType | null | undefined>,
 		serviceCode: FormControl<SavingsPlanRateServiceCode | null | undefined>,
 
@@ -344,7 +344,7 @@ export namespace MyNS {
 	export function CreateSavingsPlanOfferingRateFormGroup() {
 		return new FormGroup<SavingsPlanOfferingRateFormProperties>({
 			rate: new FormControl<string | null | undefined>(undefined),
-			unit: new FormControl<SavingsPlanOfferingRateUnit | null | undefined>(undefined),
+			unit: new FormControl<SavingsPlanRateUnit | null | undefined>(undefined),
 			productType: new FormControl<SavingsPlanRateProductType | null | undefined>(undefined),
 			serviceCode: new FormControl<SavingsPlanRateServiceCode | null | undefined>(undefined),
 			usageType: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('^[a-zA-Z0-9_ \/.:-]+$')]),
@@ -357,7 +357,7 @@ export namespace MyNS {
 	/** Information about a Savings Plan offering. */
 	export interface ParentSavingsPlanOffering {
 		offeringId?: string | null;
-		paymentOption?: ParentSavingsPlanOfferingPaymentOption | null;
+		paymentOption?: SavingsPlanPaymentOption | null;
 		planType?: SavingsPlanSavingsPlanType | null;
 
 		/** Minimum: 0 */
@@ -369,7 +369,7 @@ export namespace MyNS {
 	/** Information about a Savings Plan offering. */
 	export interface ParentSavingsPlanOfferingFormProperties {
 		offeringId: FormControl<string | null | undefined>,
-		paymentOption: FormControl<ParentSavingsPlanOfferingPaymentOption | null | undefined>,
+		paymentOption: FormControl<SavingsPlanPaymentOption | null | undefined>,
 		planType: FormControl<SavingsPlanSavingsPlanType | null | undefined>,
 
 		/** Minimum: 0 */
@@ -379,19 +379,15 @@ export namespace MyNS {
 	}
 	export function CreateParentSavingsPlanOfferingFormGroup() {
 		return new FormGroup<ParentSavingsPlanOfferingFormProperties>({
-			offeringId: new FormControl<string | null | undefined>(undefined),
-			paymentOption: new FormControl<ParentSavingsPlanOfferingPaymentOption | null | undefined>(undefined),
+			offeringId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(([0-9a-f]+)(-?))+$')]),
+			paymentOption: new FormControl<SavingsPlanPaymentOption | null | undefined>(undefined),
 			planType: new FormControl<SavingsPlanSavingsPlanType | null | undefined>(undefined),
 			durationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			currency: new FormControl<SavingsPlanRateCurrency | null | undefined>(undefined),
-			planDescription: new FormControl<string | null | undefined>(undefined),
+			planDescription: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9_\- ]+$')]),
 		});
 
 	}
-
-	export enum ParentSavingsPlanOfferingPaymentOption { All_Upfront = 0, Partial_Upfront = 1, No_Upfront = 2 }
-
-	export enum SavingsPlanOfferingRateUnit { Hrs = 0, Lambda_GB_Second = 1, Request = 2 }
 
 
 	/** Information about a property. */
@@ -407,8 +403,8 @@ export namespace MyNS {
 	}
 	export function CreateSavingsPlanOfferingRatePropertyFormGroup() {
 		return new FormGroup<SavingsPlanOfferingRatePropertyFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9_ \/.\:\-\(\)]+$')]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9_ \/.\:\-\(\)]+$')]),
 		});
 
 	}
@@ -460,7 +456,7 @@ export namespace MyNS {
 		productTypes?: Array<SavingsPlanProductType>;
 		planType?: SavingsPlanSavingsPlanType | null;
 		description?: string | null;
-		paymentOption?: SavingsPlanOfferingPaymentOption | null;
+		paymentOption?: SavingsPlanPaymentOption | null;
 
 		/** Minimum: 0 */
 		durationSeconds?: number | null;
@@ -482,7 +478,7 @@ export namespace MyNS {
 		offeringId: FormControl<string | null | undefined>,
 		planType: FormControl<SavingsPlanSavingsPlanType | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		paymentOption: FormControl<SavingsPlanOfferingPaymentOption | null | undefined>,
+		paymentOption: FormControl<SavingsPlanPaymentOption | null | undefined>,
 
 		/** Minimum: 0 */
 		durationSeconds: FormControl<number | null | undefined>,
@@ -499,10 +495,10 @@ export namespace MyNS {
 	}
 	export function CreateSavingsPlanOfferingFormGroup() {
 		return new FormGroup<SavingsPlanOfferingFormProperties>({
-			offeringId: new FormControl<string | null | undefined>(undefined),
+			offeringId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^(([0-9a-f]+)(-?))+$')]),
 			planType: new FormControl<SavingsPlanSavingsPlanType | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			paymentOption: new FormControl<SavingsPlanOfferingPaymentOption | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9_\- ]+$')]),
+			paymentOption: new FormControl<SavingsPlanPaymentOption | null | undefined>(undefined),
 			durationSeconds: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			currency: new FormControl<SavingsPlanRateCurrency | null | undefined>(undefined),
 			serviceCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('^[a-zA-Z]+$')]),
@@ -511,8 +507,6 @@ export namespace MyNS {
 		});
 
 	}
-
-	export enum SavingsPlanOfferingPaymentOption { All_Upfront = 0, Partial_Upfront = 1, No_Upfront = 2 }
 
 
 	/** Information about a property. */
@@ -529,7 +523,7 @@ export namespace MyNS {
 	export function CreateSavingsPlanOfferingPropertyFormGroup() {
 		return new FormGroup<SavingsPlanOfferingPropertyFormProperties>({
 			name: new FormControl<SavingsPlanOfferingPropertyName | null | undefined>(undefined),
-			value: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[a-zA-Z0-9_ \/.\:\-\(\)]+$')]),
 		});
 
 	}
@@ -785,12 +779,12 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourceRequestFormGroup() {
 		return new FormGroup<ListTagsForResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$')]),
 		});
 
 	}
 
-	export enum SavingsPlansFilterName { region = 0, ec2_instance_family = 1, commitment = 2, upfront = 3, term = 4, savings_plan_type = 5, payment_option = 6, start = 7, end = 8 }
+	export enum SavingsPlansFilterName { region = 0, 'ec2-instance-family' = 1, commitment = 2, upfront = 3, term = 4, 'savings-plan-type' = 5, 'payment-option' = 6, start = 7, end = 8 }
 
 	export enum SavingsPlanOfferingFilterAttribute { region = 0, instanceFamily = 1 }
 
@@ -815,7 +809,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourceRequestFormGroup() {
 		return new FormGroup<TagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$')]),
 		});
 
 	}
@@ -835,7 +829,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourceRequestFormGroup() {
 		return new FormGroup<UntagResourceRequestFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$')]),
 		});
 
 	}
@@ -1237,7 +1231,7 @@ export namespace MyNS {
 	}
 	export function CreateListTagsForResourcePostBodyFormGroup() {
 		return new FormGroup<ListTagsForResourcePostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$')]),
 		});
 
 	}
@@ -1272,7 +1266,7 @@ export namespace MyNS {
 	}
 	export function CreateTagResourcePostBodyFormGroup() {
 		return new FormGroup<TagResourcePostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$')]),
 			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1302,7 +1296,7 @@ export namespace MyNS {
 	}
 	export function CreateUntagResourcePostBodyFormGroup() {
 		return new FormGroup<UntagResourcePostBodyFormProperties>({
-			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			resourceArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('arn:aws:[a-z]+:([a-z]{2}-[a-z]+-\d{1}|):(\d{12}):savingsplan\/([0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})$')]),
 		});
 
 	}

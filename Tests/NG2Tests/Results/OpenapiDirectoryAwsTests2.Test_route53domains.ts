@@ -1735,7 +1735,7 @@ export namespace MyNS {
 	export function CreateTransferDomainToAnotherAwsAccountRequestFormGroup() {
 		return new FormGroup<TransferDomainToAnotherAwsAccountRequestFormProperties>({
 			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255)]),
-			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			AccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^(\d{12})$')]),
 		});
 
 	}
@@ -2331,61 +2331,61 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AcceptDomainTransferFromAnotherAwsAccountX_Amz_Target { Route53Domains_v20140515_AcceptDomainTransferFromAnotherAwsAccount = 0 }
+	export enum AcceptDomainTransferFromAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.AcceptDomainTransferFromAnotherAwsAccount' = 0 }
 
-	export enum CancelDomainTransferToAnotherAwsAccountX_Amz_Target { Route53Domains_v20140515_CancelDomainTransferToAnotherAwsAccount = 0 }
+	export enum CancelDomainTransferToAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.CancelDomainTransferToAnotherAwsAccount' = 0 }
 
-	export enum CheckDomainAvailabilityX_Amz_Target { Route53Domains_v20140515_CheckDomainAvailability = 0 }
+	export enum CheckDomainAvailabilityX_Amz_Target { 'Route53Domains_v20140515.CheckDomainAvailability' = 0 }
 
-	export enum CheckDomainTransferabilityX_Amz_Target { Route53Domains_v20140515_CheckDomainTransferability = 0 }
+	export enum CheckDomainTransferabilityX_Amz_Target { 'Route53Domains_v20140515.CheckDomainTransferability' = 0 }
 
-	export enum DeleteTagsForDomainX_Amz_Target { Route53Domains_v20140515_DeleteTagsForDomain = 0 }
+	export enum DeleteTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.DeleteTagsForDomain' = 0 }
 
-	export enum DisableDomainAutoRenewX_Amz_Target { Route53Domains_v20140515_DisableDomainAutoRenew = 0 }
+	export enum DisableDomainAutoRenewX_Amz_Target { 'Route53Domains_v20140515.DisableDomainAutoRenew' = 0 }
 
-	export enum DisableDomainTransferLockX_Amz_Target { Route53Domains_v20140515_DisableDomainTransferLock = 0 }
+	export enum DisableDomainTransferLockX_Amz_Target { 'Route53Domains_v20140515.DisableDomainTransferLock' = 0 }
 
-	export enum EnableDomainAutoRenewX_Amz_Target { Route53Domains_v20140515_EnableDomainAutoRenew = 0 }
+	export enum EnableDomainAutoRenewX_Amz_Target { 'Route53Domains_v20140515.EnableDomainAutoRenew' = 0 }
 
-	export enum EnableDomainTransferLockX_Amz_Target { Route53Domains_v20140515_EnableDomainTransferLock = 0 }
+	export enum EnableDomainTransferLockX_Amz_Target { 'Route53Domains_v20140515.EnableDomainTransferLock' = 0 }
 
-	export enum GetContactReachabilityStatusX_Amz_Target { Route53Domains_v20140515_GetContactReachabilityStatus = 0 }
+	export enum GetContactReachabilityStatusX_Amz_Target { 'Route53Domains_v20140515.GetContactReachabilityStatus' = 0 }
 
-	export enum GetDomainDetailX_Amz_Target { Route53Domains_v20140515_GetDomainDetail = 0 }
+	export enum GetDomainDetailX_Amz_Target { 'Route53Domains_v20140515.GetDomainDetail' = 0 }
 
-	export enum GetDomainSuggestionsX_Amz_Target { Route53Domains_v20140515_GetDomainSuggestions = 0 }
+	export enum GetDomainSuggestionsX_Amz_Target { 'Route53Domains_v20140515.GetDomainSuggestions' = 0 }
 
-	export enum GetOperationDetailX_Amz_Target { Route53Domains_v20140515_GetOperationDetail = 0 }
+	export enum GetOperationDetailX_Amz_Target { 'Route53Domains_v20140515.GetOperationDetail' = 0 }
 
-	export enum ListDomainsX_Amz_Target { Route53Domains_v20140515_ListDomains = 0 }
+	export enum ListDomainsX_Amz_Target { 'Route53Domains_v20140515.ListDomains' = 0 }
 
-	export enum ListOperationsX_Amz_Target { Route53Domains_v20140515_ListOperations = 0 }
+	export enum ListOperationsX_Amz_Target { 'Route53Domains_v20140515.ListOperations' = 0 }
 
-	export enum ListTagsForDomainX_Amz_Target { Route53Domains_v20140515_ListTagsForDomain = 0 }
+	export enum ListTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.ListTagsForDomain' = 0 }
 
-	export enum RegisterDomainX_Amz_Target { Route53Domains_v20140515_RegisterDomain = 0 }
+	export enum RegisterDomainX_Amz_Target { 'Route53Domains_v20140515.RegisterDomain' = 0 }
 
-	export enum RejectDomainTransferFromAnotherAwsAccountX_Amz_Target { Route53Domains_v20140515_RejectDomainTransferFromAnotherAwsAccount = 0 }
+	export enum RejectDomainTransferFromAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.RejectDomainTransferFromAnotherAwsAccount' = 0 }
 
-	export enum RenewDomainX_Amz_Target { Route53Domains_v20140515_RenewDomain = 0 }
+	export enum RenewDomainX_Amz_Target { 'Route53Domains_v20140515.RenewDomain' = 0 }
 
-	export enum ResendContactReachabilityEmailX_Amz_Target { Route53Domains_v20140515_ResendContactReachabilityEmail = 0 }
+	export enum ResendContactReachabilityEmailX_Amz_Target { 'Route53Domains_v20140515.ResendContactReachabilityEmail' = 0 }
 
-	export enum RetrieveDomainAuthCodeX_Amz_Target { Route53Domains_v20140515_RetrieveDomainAuthCode = 0 }
+	export enum RetrieveDomainAuthCodeX_Amz_Target { 'Route53Domains_v20140515.RetrieveDomainAuthCode' = 0 }
 
-	export enum TransferDomainX_Amz_Target { Route53Domains_v20140515_TransferDomain = 0 }
+	export enum TransferDomainX_Amz_Target { 'Route53Domains_v20140515.TransferDomain' = 0 }
 
-	export enum TransferDomainToAnotherAwsAccountX_Amz_Target { Route53Domains_v20140515_TransferDomainToAnotherAwsAccount = 0 }
+	export enum TransferDomainToAnotherAwsAccountX_Amz_Target { 'Route53Domains_v20140515.TransferDomainToAnotherAwsAccount' = 0 }
 
-	export enum UpdateDomainContactX_Amz_Target { Route53Domains_v20140515_UpdateDomainContact = 0 }
+	export enum UpdateDomainContactX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainContact' = 0 }
 
-	export enum UpdateDomainContactPrivacyX_Amz_Target { Route53Domains_v20140515_UpdateDomainContactPrivacy = 0 }
+	export enum UpdateDomainContactPrivacyX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainContactPrivacy' = 0 }
 
-	export enum UpdateDomainNameserversX_Amz_Target { Route53Domains_v20140515_UpdateDomainNameservers = 0 }
+	export enum UpdateDomainNameserversX_Amz_Target { 'Route53Domains_v20140515.UpdateDomainNameservers' = 0 }
 
-	export enum UpdateTagsForDomainX_Amz_Target { Route53Domains_v20140515_UpdateTagsForDomain = 0 }
+	export enum UpdateTagsForDomainX_Amz_Target { 'Route53Domains_v20140515.UpdateTagsForDomain' = 0 }
 
-	export enum ViewBillingX_Amz_Target { Route53Domains_v20140515_ViewBilling = 0 }
+	export enum ViewBillingX_Amz_Target { 'Route53Domains_v20140515.ViewBilling' = 0 }
 
 }
 

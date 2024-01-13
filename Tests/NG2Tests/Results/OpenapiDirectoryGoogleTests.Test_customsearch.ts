@@ -473,7 +473,7 @@ export namespace MyNS {
 
 	export enum Search_cse_listImgType { clipart = 0, face = 1, lineart = 2, news = 3, photo = 4 }
 
-	export enum Search_cse_listLr { lang_ar = 0, lang_bg = 1, lang_ca = 2, lang_cs = 3, lang_da = 4, lang_de = 5, lang_el = 6, lang_en = 7, lang_es = 8, lang_et = 9, lang_fi = 10, lang_fr = 11, lang_hr = 12, lang_hu = 13, lang_id = 14, lang_is = 15, lang_it = 16, lang_iw = 17, lang_ja = 18, lang_ko = 19, lang_lt = 20, lang_lv = 21, lang_nl = 22, lang_no = 23, lang_pl = 24, lang_pt = 25, lang_ro = 26, lang_ru = 27, lang_sk = 28, lang_sl = 29, lang_sr = 30, lang_sv = 31, lang_tr = 32, lang_zh_CN = 33, lang_zh_TW = 34 }
+	export enum Search_cse_listLr { lang_ar = 0, lang_bg = 1, lang_ca = 2, lang_cs = 3, lang_da = 4, lang_de = 5, lang_el = 6, lang_en = 7, lang_es = 8, lang_et = 9, lang_fi = 10, lang_fr = 11, lang_hr = 12, lang_hu = 13, lang_id = 14, lang_is = 15, lang_it = 16, lang_iw = 17, lang_ja = 18, lang_ko = 19, lang_lt = 20, lang_lv = 21, lang_nl = 22, lang_no = 23, lang_pl = 24, lang_pt = 25, lang_ro = 26, lang_ru = 27, lang_sk = 28, lang_sl = 29, lang_sr = 30, lang_sv = 31, lang_tr = 32, 'lang_zh-CN' = 33, 'lang_zh-TW' = 34 }
 
 	export enum Search_cse_listSafe { active = 0, high = 1, medium = 2, off = 3 }
 
@@ -483,7 +483,7 @@ export namespace MyNS {
 
 	export enum Search_cse_siterestrict_listFilter { _0 = 0, _1 = 1 }
 
-	export enum Search_cse_siterestrict_listLr { lang_ar = 0, lang_bg = 1, lang_ca = 2, lang_cs = 3, lang_da = 4, lang_de = 5, lang_el = 6, lang_en = 7, lang_es = 8, lang_et = 9, lang_fi = 10, lang_fr = 11, lang_hr = 12, lang_hu = 13, lang_id = 14, lang_is = 15, lang_it = 16, lang_iw = 17, lang_ja = 18, lang_ko = 19, lang_lt = 20, lang_lv = 21, lang_nl = 22, lang_no = 23, lang_pl = 24, lang_pt = 25, lang_ro = 26, lang_ru = 27, lang_sk = 28, lang_sl = 29, lang_sr = 30, lang_sv = 31, lang_tr = 32, lang_zh_CN = 33, lang_zh_TW = 34 }
+	export enum Search_cse_siterestrict_listLr { lang_ar = 0, lang_bg = 1, lang_ca = 2, lang_cs = 3, lang_da = 4, lang_de = 5, lang_el = 6, lang_en = 7, lang_es = 8, lang_et = 9, lang_fi = 10, lang_fr = 11, lang_hr = 12, lang_hu = 13, lang_id = 14, lang_is = 15, lang_it = 16, lang_iw = 17, lang_ja = 18, lang_ko = 19, lang_lt = 20, lang_lv = 21, lang_nl = 22, lang_no = 23, lang_pl = 24, lang_pt = 25, lang_ro = 26, lang_ru = 27, lang_sk = 28, lang_sl = 29, lang_sr = 30, lang_sv = 31, lang_tr = 32, 'lang_zh-CN' = 33, 'lang_zh-TW' = 34 }
 
 	export enum Search_cse_siterestrict_listSafe { high = 0, medium = 1, off = 2 }
 

@@ -33,7 +33,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelClusterRequestFormGroup() {
 		return new FormGroup<CancelClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -98,7 +98,7 @@ export namespace MyNS {
 	}
 	export function CreateCancelJobRequestFormGroup() {
 		return new FormGroup<CancelJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -232,7 +232,7 @@ export namespace MyNS {
 	}
 	export function CreateAddressFormGroup() {
 		return new FormGroup<AddressFormProperties>({
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Company: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			Street1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
@@ -288,7 +288,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateClusterResultFormGroup() {
 		return new FormGroup<CreateClusterResultFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(39), Validators.maxLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -377,12 +377,12 @@ export namespace MyNS {
 		return new FormGroup<CreateClusterRequestFormProperties>({
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined, [Validators.required]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:kms:.*:[0-9]{12}:key/.*')]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined, [Validators.required]),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -531,7 +531,7 @@ export namespace MyNS {
 	}
 	export function CreateEc2AmiResourceFormGroup() {
 		return new FormGroup<Ec2AmiResourceFormProperties>({
-			AmiId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(21), Validators.minLength(12), Validators.pattern('(ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})')]),
+			AmiId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(12), Validators.maxLength(21), Validators.pattern('(ami-[0-9a-f]{8})|(ami-[0-9a-f]{17})')]),
 			SnowballAmiId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
@@ -597,7 +597,7 @@ export namespace MyNS {
 	}
 	export function CreateINDTaxDocumentsFormGroup() {
 		return new FormGroup<INDTaxDocumentsFormProperties>({
-			GSTIN: new FormControl<string | null | undefined>(undefined),
+			GSTIN: new FormControl<string | null | undefined>(undefined, [Validators.pattern('\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}')]),
 		});
 
 	}
@@ -640,7 +640,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateJobResultFormGroup() {
 		return new FormGroup<CreateJobResultFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(39), Validators.maxLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -724,14 +724,14 @@ export namespace MyNS {
 		return new FormGroup<CreateJobRequestFormProperties>({
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:kms:.*:[0-9]{12}:key/.*')]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(39), Validators.maxLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -781,7 +781,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeAddressRequestFormGroup() {
 		return new FormGroup<DescribeAddressRequestFormProperties>({
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -942,9 +942,9 @@ export namespace MyNS {
 			JobType: new FormControl<CreateClusterRequestJobType | null | undefined>(undefined),
 			SnowballType: new FormControl<CreateClusterRequestSnowballType | null | undefined>(undefined),
 			CreationDate: new FormControl<Date | null | undefined>(undefined),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -971,7 +971,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeClusterRequestFormGroup() {
 		return new FormGroup<DescribeClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1090,10 +1090,10 @@ export namespace MyNS {
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			KmsKeyARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:kms:.*:[0-9]{12}:key/.*')]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
 			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1230,7 +1230,7 @@ export namespace MyNS {
 	}
 	export function CreateDescribeJobRequestFormGroup() {
 		return new FormGroup<DescribeJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1272,7 +1272,7 @@ export namespace MyNS {
 	}
 	export function CreateGetJobManifestRequestFormGroup() {
 		return new FormGroup<GetJobManifestRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1314,7 +1314,7 @@ export namespace MyNS {
 	}
 	export function CreateGetJobUnlockCodeRequestFormGroup() {
 		return new FormGroup<GetJobUnlockCodeRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1382,7 +1382,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSoftwareUpdatesRequestFormGroup() {
 		return new FormGroup<GetSoftwareUpdatesRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1486,7 +1486,7 @@ export namespace MyNS {
 	}
 	export function CreateListClusterJobsRequestFormGroup() {
 		return new FormGroup<ListClusterJobsRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(100)]),
 			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
@@ -1773,12 +1773,12 @@ export namespace MyNS {
 	}
 	export function CreateUpdateClusterRequestFormGroup() {
 		return new FormGroup<UpdateClusterRequestFormProperties>({
-			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ClusterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('CID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -1859,13 +1859,13 @@ export namespace MyNS {
 	}
 	export function CreateUpdateJobRequestFormGroup() {
 		return new FormGroup<UpdateJobRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(39), Validators.minLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(39), Validators.maxLength(39), Validators.pattern('(M|J)ID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			RoleARN: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.pattern('arn:aws.*:iam::[0-9]{12}:role/.*')]),
-			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			AddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 			ShippingOption: new FormControl<CreateClusterRequestShippingOption | null | undefined>(undefined),
 			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 			SnowballCapacityPreference: new FormControl<CreateJobRequestSnowballCapacityPreference | null | undefined>(undefined),
-			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
+			ForwardingAddressId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(40), Validators.maxLength(40), Validators.pattern('ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')]),
 		});
 
 	}
@@ -2061,43 +2061,43 @@ export namespace MyNS {
 		}
 	}
 
-	export enum CancelClusterX_Amz_Target { AWSIESnowballJobManagementService_CancelCluster = 0 }
+	export enum CancelClusterX_Amz_Target { 'AWSIESnowballJobManagementService.CancelCluster' = 0 }
 
-	export enum CancelJobX_Amz_Target { AWSIESnowballJobManagementService_CancelJob = 0 }
+	export enum CancelJobX_Amz_Target { 'AWSIESnowballJobManagementService.CancelJob' = 0 }
 
-	export enum CreateAddressX_Amz_Target { AWSIESnowballJobManagementService_CreateAddress = 0 }
+	export enum CreateAddressX_Amz_Target { 'AWSIESnowballJobManagementService.CreateAddress' = 0 }
 
-	export enum CreateClusterX_Amz_Target { AWSIESnowballJobManagementService_CreateCluster = 0 }
+	export enum CreateClusterX_Amz_Target { 'AWSIESnowballJobManagementService.CreateCluster' = 0 }
 
-	export enum CreateJobX_Amz_Target { AWSIESnowballJobManagementService_CreateJob = 0 }
+	export enum CreateJobX_Amz_Target { 'AWSIESnowballJobManagementService.CreateJob' = 0 }
 
-	export enum DescribeAddressX_Amz_Target { AWSIESnowballJobManagementService_DescribeAddress = 0 }
+	export enum DescribeAddressX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeAddress' = 0 }
 
-	export enum DescribeAddressesX_Amz_Target { AWSIESnowballJobManagementService_DescribeAddresses = 0 }
+	export enum DescribeAddressesX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeAddresses' = 0 }
 
-	export enum DescribeClusterX_Amz_Target { AWSIESnowballJobManagementService_DescribeCluster = 0 }
+	export enum DescribeClusterX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeCluster' = 0 }
 
-	export enum DescribeJobX_Amz_Target { AWSIESnowballJobManagementService_DescribeJob = 0 }
+	export enum DescribeJobX_Amz_Target { 'AWSIESnowballJobManagementService.DescribeJob' = 0 }
 
-	export enum GetJobManifestX_Amz_Target { AWSIESnowballJobManagementService_GetJobManifest = 0 }
+	export enum GetJobManifestX_Amz_Target { 'AWSIESnowballJobManagementService.GetJobManifest' = 0 }
 
-	export enum GetJobUnlockCodeX_Amz_Target { AWSIESnowballJobManagementService_GetJobUnlockCode = 0 }
+	export enum GetJobUnlockCodeX_Amz_Target { 'AWSIESnowballJobManagementService.GetJobUnlockCode' = 0 }
 
-	export enum GetSnowballUsageX_Amz_Target { AWSIESnowballJobManagementService_GetSnowballUsage = 0 }
+	export enum GetSnowballUsageX_Amz_Target { 'AWSIESnowballJobManagementService.GetSnowballUsage' = 0 }
 
-	export enum GetSoftwareUpdatesX_Amz_Target { AWSIESnowballJobManagementService_GetSoftwareUpdates = 0 }
+	export enum GetSoftwareUpdatesX_Amz_Target { 'AWSIESnowballJobManagementService.GetSoftwareUpdates' = 0 }
 
-	export enum ListClusterJobsX_Amz_Target { AWSIESnowballJobManagementService_ListClusterJobs = 0 }
+	export enum ListClusterJobsX_Amz_Target { 'AWSIESnowballJobManagementService.ListClusterJobs' = 0 }
 
-	export enum ListClustersX_Amz_Target { AWSIESnowballJobManagementService_ListClusters = 0 }
+	export enum ListClustersX_Amz_Target { 'AWSIESnowballJobManagementService.ListClusters' = 0 }
 
-	export enum ListCompatibleImagesX_Amz_Target { AWSIESnowballJobManagementService_ListCompatibleImages = 0 }
+	export enum ListCompatibleImagesX_Amz_Target { 'AWSIESnowballJobManagementService.ListCompatibleImages' = 0 }
 
-	export enum ListJobsX_Amz_Target { AWSIESnowballJobManagementService_ListJobs = 0 }
+	export enum ListJobsX_Amz_Target { 'AWSIESnowballJobManagementService.ListJobs' = 0 }
 
-	export enum UpdateClusterX_Amz_Target { AWSIESnowballJobManagementService_UpdateCluster = 0 }
+	export enum UpdateClusterX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateCluster' = 0 }
 
-	export enum UpdateJobX_Amz_Target { AWSIESnowballJobManagementService_UpdateJob = 0 }
+	export enum UpdateJobX_Amz_Target { 'AWSIESnowballJobManagementService.UpdateJob' = 0 }
 
 }
 

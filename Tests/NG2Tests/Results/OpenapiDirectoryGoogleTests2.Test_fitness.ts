@@ -681,7 +681,7 @@ export namespace MyNS {
 
 	}
 
-	export enum DataTypeFieldFormat { blob = 0, floatList = 1, floatPoint = 2, integer = 3, integerList = 4, map = 5, _string = 6 }
+	export enum DataTypeFieldFormat { blob = 0, floatList = 1, floatPoint = 2, integer = 3, integerList = 4, map = 5, string = 6 }
 
 
 	/**

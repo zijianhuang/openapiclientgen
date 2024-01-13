@@ -1962,7 +1962,7 @@ export namespace MyNS {
 
 	export enum ChannelStatusLongUploadsStatus { allowed = 0, disallowed = 1, eligible = 2, longUploadsUnspecified = 3 }
 
-	export enum ChannelStatusPrivacyStatus { _private = 0, _public = 1, unlisted = 2 }
+	export enum ChannelStatusPrivacyStatus { private = 0, public = 1, unlisted = 2 }
 
 
 	/** Freebase topic information related to the channel. */
@@ -4104,7 +4104,7 @@ export namespace MyNS {
 		madeForKids?: boolean | null;
 
 		/** The broadcast's privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource. */
-		privacyStatus?: LiveBroadcastStatusPrivacyStatus | null;
+		privacyStatus?: ChannelStatusPrivacyStatus | null;
 
 		/** The broadcast's recording status. */
 		recordingStatus?: LiveBroadcastStatusRecordingStatus | null;
@@ -4120,7 +4120,7 @@ export namespace MyNS {
 		madeForKids: FormControl<boolean | null | undefined>,
 
 		/** The broadcast's privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource. */
-		privacyStatus: FormControl<LiveBroadcastStatusPrivacyStatus | null | undefined>,
+		privacyStatus: FormControl<ChannelStatusPrivacyStatus | null | undefined>,
 
 		/** The broadcast's recording status. */
 		recordingStatus: FormControl<LiveBroadcastStatusRecordingStatus | null | undefined>,
@@ -4131,7 +4131,7 @@ export namespace MyNS {
 			lifeCycleStatus: new FormControl<LiveBroadcastStatusLifeCycleStatus | null | undefined>(undefined),
 			liveBroadcastPriority: new FormControl<LiveBroadcastStatusLiveBroadcastPriority | null | undefined>(undefined),
 			madeForKids: new FormControl<boolean | null | undefined>(undefined),
-			privacyStatus: new FormControl<LiveBroadcastStatusPrivacyStatus | null | undefined>(undefined),
+			privacyStatus: new FormControl<ChannelStatusPrivacyStatus | null | undefined>(undefined),
 			recordingStatus: new FormControl<LiveBroadcastStatusRecordingStatus | null | undefined>(undefined),
 			selfDeclaredMadeForKids: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -4141,8 +4141,6 @@ export namespace MyNS {
 	export enum LiveBroadcastStatusLifeCycleStatus { complete = 0, created = 1, live = 2, liveStarting = 3, ready = 4, revoked = 5, testStarting = 6, testing = 7 }
 
 	export enum LiveBroadcastStatusLiveBroadcastPriority { high = 0, low = 1, normal = 2 }
-
-	export enum LiveBroadcastStatusPrivacyStatus { _private = 0, _public = 1, unlisted = 2 }
 
 	export enum LiveBroadcastStatusRecordingStatus { notRecording = 0, recorded = 1, recording = 2 }
 
@@ -5732,21 +5730,19 @@ export namespace MyNS {
 	export interface PlaylistStatus {
 
 		/** The playlist's privacy status. */
-		privacyStatus?: PlaylistStatusPrivacyStatus | null;
+		privacyStatus?: ChannelStatusPrivacyStatus | null;
 	}
 	export interface PlaylistStatusFormProperties {
 
 		/** The playlist's privacy status. */
-		privacyStatus: FormControl<PlaylistStatusPrivacyStatus | null | undefined>,
+		privacyStatus: FormControl<ChannelStatusPrivacyStatus | null | undefined>,
 	}
 	export function CreatePlaylistStatusFormGroup() {
 		return new FormGroup<PlaylistStatusFormProperties>({
-			privacyStatus: new FormControl<PlaylistStatusPrivacyStatus | null | undefined>(undefined),
+			privacyStatus: new FormControl<ChannelStatusPrivacyStatus | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum PlaylistStatusPrivacyStatus { _private = 0, _public = 1, unlisted = 2 }
 
 
 	/**
@@ -5927,23 +5923,21 @@ export namespace MyNS {
 	export interface PlaylistItemStatus {
 
 		/** This resource's privacy status. */
-		privacyStatus?: PlaylistItemStatusPrivacyStatus | null;
+		privacyStatus?: ChannelStatusPrivacyStatus | null;
 	}
 
 	/** Information about the playlist item's privacy status. */
 	export interface PlaylistItemStatusFormProperties {
 
 		/** This resource's privacy status. */
-		privacyStatus: FormControl<PlaylistItemStatusPrivacyStatus | null | undefined>,
+		privacyStatus: FormControl<ChannelStatusPrivacyStatus | null | undefined>,
 	}
 	export function CreatePlaylistItemStatusFormGroup() {
 		return new FormGroup<PlaylistItemStatusFormProperties>({
-			privacyStatus: new FormControl<PlaylistItemStatusPrivacyStatus | null | undefined>(undefined),
+			privacyStatus: new FormControl<ChannelStatusPrivacyStatus | null | undefined>(undefined),
 		});
 
 	}
-
-	export enum PlaylistItemStatusPrivacyStatus { _private = 0, _public = 1, unlisted = 2 }
 
 	export interface PlaylistItemListResponse {
 
@@ -6972,7 +6966,7 @@ export namespace MyNS {
 
 	}
 
-	export enum VideoContentDetailsCaption { _false = 0, _true = 1 }
+	export enum VideoContentDetailsCaption { false = 0, true = 1 }
 
 	export enum VideoContentDetailsDefinition { hd = 0, sd = 1 }
 
@@ -7636,7 +7630,7 @@ export namespace MyNS {
 		madeForKids?: boolean | null;
 
 		/** The video's privacy status. */
-		privacyStatus?: VideoStatusPrivacyStatus | null;
+		privacyStatus?: ChannelStatusPrivacyStatus | null;
 
 		/** This value indicates if the extended video statistics on the watch page can be viewed by everyone. Note that the view count, likes, etc will still be visible if this is disabled. */
 		publicStatsViewable?: boolean | null;
@@ -7666,7 +7660,7 @@ export namespace MyNS {
 		madeForKids: FormControl<boolean | null | undefined>,
 
 		/** The video's privacy status. */
-		privacyStatus: FormControl<VideoStatusPrivacyStatus | null | undefined>,
+		privacyStatus: FormControl<ChannelStatusPrivacyStatus | null | undefined>,
 
 		/** This value indicates if the extended video statistics on the watch page can be viewed by everyone. Note that the view count, likes, etc will still be visible if this is disabled. */
 		publicStatsViewable: FormControl<boolean | null | undefined>,
@@ -7687,7 +7681,7 @@ export namespace MyNS {
 			failureReason: new FormControl<VideoStatusFailureReason | null | undefined>(undefined),
 			license: new FormControl<VideoStatusLicense | null | undefined>(undefined),
 			madeForKids: new FormControl<boolean | null | undefined>(undefined),
-			privacyStatus: new FormControl<VideoStatusPrivacyStatus | null | undefined>(undefined),
+			privacyStatus: new FormControl<ChannelStatusPrivacyStatus | null | undefined>(undefined),
 			publicStatsViewable: new FormControl<boolean | null | undefined>(undefined),
 			publishAt: new FormControl<Date | null | undefined>(undefined),
 			rejectionReason: new FormControl<VideoStatusRejectionReason | null | undefined>(undefined),
@@ -7700,8 +7694,6 @@ export namespace MyNS {
 	export enum VideoStatusFailureReason { codec = 0, conversion = 1, emptyFile = 2, invalidFile = 3, tooSmall = 4, uploadAborted = 5 }
 
 	export enum VideoStatusLicense { creativeCommon = 0, youtube = 1 }
-
-	export enum VideoStatusPrivacyStatus { _private = 0, _public = 1, unlisted = 2 }
 
 	export enum VideoStatusRejectionReason { claim = 0, copyright = 1, duplicate = 2, inappropriate = 3, legal = 4, length = 5, termsOfUse = 6, trademark = 7, uploaderAccountClosed = 8, uploaderAccountSuspended = 9 }
 
@@ -9018,11 +9010,11 @@ export namespace MyNS {
 		 * @param {Youtube_search_listVideoDuration} videoDuration The videoDuration parameter filters video search results based on their duration. If you specify a value for this parameter, you must also set the type parameter's value to video.
 		 * @param {Youtube_search_listVideoEmbeddable} videoEmbeddable The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded into a webpage. If you specify a value for this parameter, you must also set the type parameter's value to video.
 		 * @param {Youtube_search_listVideoLicense} videoLicense The videoLicense parameter filters search results to only include videos with a particular license. YouTube lets video uploaders choose to attach either the Creative Commons license or the standard YouTube license to each of their videos. If you specify a value for this parameter, you must also set the type parameter's value to video.
-		 * @param {Youtube_search_listVideoSyndicated} videoSyndicated The videoSyndicated parameter lets you to restrict a search to only videos that can be played outside youtube.com. If you specify a value for this parameter, you must also set the type parameter's value to video.
+		 * @param {Youtube_search_listVideoEmbeddable} videoSyndicated The videoSyndicated parameter lets you to restrict a search to only videos that can be played outside youtube.com. If you specify a value for this parameter, you must also set the type parameter's value to video.
 		 * @param {Youtube_search_listVideoType} videoType The videoType parameter lets you restrict a search to a particular type of videos. If you specify a value for this parameter, you must also set the type parameter's value to video.
 		 * @return {void} Successful response
 		 */
-		Youtube_search_list(part: string, channelId: string | null | undefined, channelType: Youtube_search_listChannelType | null | undefined, eventType: Youtube_search_listEventType | null | undefined, forContentOwner: boolean | null | undefined, forDeveloper: boolean | null | undefined, forMine: boolean | null | undefined, location: string | null | undefined, locationRadius: string | null | undefined, maxResults: number | null | undefined, onBehalfOfContentOwner: string | null | undefined, order: Youtube_search_listOrder | null | undefined, pageToken: string | null | undefined, publishedAfter: string | null | undefined, publishedBefore: string | null | undefined, q: string | null | undefined, regionCode: string | null | undefined, relatedToVideoId: string | null | undefined, relevanceLanguage: string | null | undefined, safeSearch: Youtube_search_listSafeSearch | null | undefined, topicId: string | null | undefined, type: string | null | undefined, videoCaption: Youtube_search_listVideoCaption | null | undefined, videoCategoryId: string | null | undefined, videoDefinition: Youtube_search_listVideoDefinition | null | undefined, videoDimension: Youtube_search_listVideoDimension | null | undefined, videoDuration: Youtube_search_listVideoDuration | null | undefined, videoEmbeddable: Youtube_search_listVideoEmbeddable | null | undefined, videoLicense: Youtube_search_listVideoLicense | null | undefined, videoSyndicated: Youtube_search_listVideoSyndicated | null | undefined, videoType: Youtube_search_listVideoType | null | undefined): Observable<HttpResponse<string>> {
+		Youtube_search_list(part: string, channelId: string | null | undefined, channelType: Youtube_search_listChannelType | null | undefined, eventType: Youtube_search_listEventType | null | undefined, forContentOwner: boolean | null | undefined, forDeveloper: boolean | null | undefined, forMine: boolean | null | undefined, location: string | null | undefined, locationRadius: string | null | undefined, maxResults: number | null | undefined, onBehalfOfContentOwner: string | null | undefined, order: Youtube_search_listOrder | null | undefined, pageToken: string | null | undefined, publishedAfter: string | null | undefined, publishedBefore: string | null | undefined, q: string | null | undefined, regionCode: string | null | undefined, relatedToVideoId: string | null | undefined, relevanceLanguage: string | null | undefined, safeSearch: Youtube_search_listSafeSearch | null | undefined, topicId: string | null | undefined, type: string | null | undefined, videoCaption: Youtube_search_listVideoCaption | null | undefined, videoCategoryId: string | null | undefined, videoDefinition: Youtube_search_listVideoDefinition | null | undefined, videoDimension: Youtube_search_listVideoDimension | null | undefined, videoDuration: Youtube_search_listVideoDuration | null | undefined, videoEmbeddable: Youtube_search_listVideoEmbeddable | null | undefined, videoLicense: Youtube_search_listVideoLicense | null | undefined, videoSyndicated: Youtube_search_listVideoEmbeddable | null | undefined, videoType: Youtube_search_listVideoType | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'search?part=' + (part == null ? '' : encodeURIComponent(part)) + '&channelId=' + (channelId == null ? '' : encodeURIComponent(channelId)) + '&channelType=' + channelType + '&eventType=' + eventType + '&forContentOwner=' + forContentOwner + '&forDeveloper=' + forDeveloper + '&forMine=' + forMine + '&location=' + (location == null ? '' : encodeURIComponent(location)) + '&locationRadius=' + (locationRadius == null ? '' : encodeURIComponent(locationRadius)) + '&maxResults=' + maxResults + '&onBehalfOfContentOwner=' + (onBehalfOfContentOwner == null ? '' : encodeURIComponent(onBehalfOfContentOwner)) + '&order=' + order + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&publishedAfter=' + (publishedAfter == null ? '' : encodeURIComponent(publishedAfter)) + '&publishedBefore=' + (publishedBefore == null ? '' : encodeURIComponent(publishedBefore)) + '&q=' + (q == null ? '' : encodeURIComponent(q)) + '&regionCode=' + (regionCode == null ? '' : encodeURIComponent(regionCode)) + '&relatedToVideoId=' + (relatedToVideoId == null ? '' : encodeURIComponent(relatedToVideoId)) + '&relevanceLanguage=' + (relevanceLanguage == null ? '' : encodeURIComponent(relevanceLanguage)) + '&safeSearch=' + safeSearch + '&topicId=' + (topicId == null ? '' : encodeURIComponent(topicId)) + '&type=' + (type == null ? '' : encodeURIComponent(type)) + '&videoCaption=' + videoCaption + '&videoCategoryId=' + (videoCategoryId == null ? '' : encodeURIComponent(videoCategoryId)) + '&videoDefinition=' + videoDefinition + '&videoDimension=' + videoDimension + '&videoDuration=' + videoDuration + '&videoEmbeddable=' + videoEmbeddable + '&videoLicense=' + videoLicense + '&videoSyndicated=' + videoSyndicated + '&videoType=' + videoType, { observe: 'response', responseType: 'text' });
 		}
 
@@ -9246,7 +9238,7 @@ export namespace MyNS {
 
 	export enum Youtube_liveBroadcasts_listBroadcastStatus { active = 0, all = 1, completed = 2, upcoming = 3 }
 
-	export enum Youtube_liveBroadcasts_listBroadcastType { all = 0, _event = 1, persistent = 2 }
+	export enum Youtube_liveBroadcasts_listBroadcastType { all = 0, event = 1, persistent = 2 }
 
 	export enum Youtube_liveBroadcasts_transitionBroadcastStatus { complete = 0, live = 1, testing = 2 }
 
@@ -9266,13 +9258,11 @@ export namespace MyNS {
 
 	export enum Youtube_search_listVideoDimension { _2d = 0, _3d = 1, any = 2 }
 
-	export enum Youtube_search_listVideoDuration { any = 0, _long = 1, medium = 2, _short = 3 }
+	export enum Youtube_search_listVideoDuration { any = 0, long = 1, medium = 2, short = 3 }
 
-	export enum Youtube_search_listVideoEmbeddable { any = 0, _true = 1 }
+	export enum Youtube_search_listVideoEmbeddable { any = 0, true = 1 }
 
 	export enum Youtube_search_listVideoLicense { any = 0, creativeCommon = 1, youtube = 2 }
-
-	export enum Youtube_search_listVideoSyndicated { any = 0, _true = 1 }
 
 	export enum Youtube_search_listVideoType { any = 0, episode = 1, movie = 2 }
 

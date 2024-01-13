@@ -21,7 +21,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateLifecyclePolicyResponseFormGroup() {
 		return new FormGroup<CreateLifecyclePolicyResponseFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0), Validators.pattern('policy-[A-Za-z0-9]+')]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64), Validators.pattern('policy-[A-Za-z0-9]+')]),
 		});
 
 	}
@@ -68,8 +68,8 @@ export namespace MyNS {
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[\p{all}]*')]),
-			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[\p{all}]*')]),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[\p{all}]*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[\p{all}]*')]),
 		});
 
 	}
@@ -125,7 +125,7 @@ export namespace MyNS {
 	}
 	export function CreateScheduleFormGroup() {
 		return new FormGroup<ScheduleFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[\p{all}]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[\p{all}]*')]),
 			CopyTags: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -166,7 +166,7 @@ export namespace MyNS {
 		return new FormGroup<CreateRuleFormProperties>({
 			Interval: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			IntervalUnit: new FormControl<CreateRuleIntervalUnit | null | undefined>(undefined),
-			CronExpression: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(106), Validators.minLength(17), Validators.pattern('cron\([^\n]{11,100}\)')]),
+			CronExpression: new FormControl<string | null | undefined>(undefined, [Validators.minLength(17), Validators.maxLength(106), Validators.pattern('cron\([^\n]{11,100}\)')]),
 		});
 
 	}
@@ -303,9 +303,9 @@ export namespace MyNS {
 	}
 	export function CreateCrossRegionCopyRuleFormGroup() {
 		return new FormGroup<CrossRegionCopyRuleFormProperties>({
-			TargetRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(16), Validators.minLength(0), Validators.pattern('([a-z]+-){2,3}\d')]),
+			TargetRegion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(16), Validators.pattern('([a-z]+-){2,3}\d')]),
 			Encrypted: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			CmkArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:kms:([a-z]+-){2,3}\d:\d+:key/.*')]),
+			CmkArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:kms:([a-z]+-){2,3}\d:\d+:key/.*')]),
 			CopyTags: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -450,8 +450,8 @@ export namespace MyNS {
 	}
 	export function CreateLifecyclePolicySummaryFormGroup() {
 		return new FormGroup<LifecyclePolicySummaryFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0), Validators.pattern('policy-[A-Za-z0-9]+')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[0-9A-Za-z _-]+')]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64), Validators.pattern('policy-[A-Za-z0-9]+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[0-9A-Za-z _-]+')]),
 			State: new FormControl<LifecyclePolicySummaryState | null | undefined>(undefined),
 		});
 
@@ -562,14 +562,14 @@ export namespace MyNS {
 	}
 	export function CreateLifecyclePolicyFormGroup() {
 		return new FormGroup<LifecyclePolicyFormProperties>({
-			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(0), Validators.pattern('policy-[A-Za-z0-9]+')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[0-9A-Za-z _-]+')]),
+			PolicyId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(64), Validators.pattern('policy-[A-Za-z0-9]+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[0-9A-Za-z _-]+')]),
 			State: new FormControl<LifecyclePolicySummaryState | null | undefined>(undefined),
-			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[\p{all}]*')]),
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
+			StatusMessage: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[\p{all}]*')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateModified: new FormControl<Date | null | undefined>(undefined),
-			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$')]),
+			PolicyArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('^arn:aws(-[a-z]{1,3}){0,2}:dlm:[A-Za-z0-9_/.-]{0,63}:\d+:policy/[0-9A-Za-z_-]{1,128}$')]),
 		});
 
 	}
@@ -702,8 +702,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateLifecyclePolicyRequestFormGroup() {
 		return new FormGroup<CreateLifecyclePolicyRequestFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[0-9A-Za-z _-]+')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[0-9A-Za-z _-]+')]),
 			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -813,9 +813,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateLifecyclePolicyRequestFormGroup() {
 		return new FormGroup<UpdateLifecyclePolicyRequestFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
 			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[0-9A-Za-z _-]+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[0-9A-Za-z _-]+')]),
 		});
 
 	}
@@ -972,8 +972,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateLifecyclePolicyPostBodyFormGroup() {
 		return new FormGroup<CreateLifecyclePolicyPostBodyFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[0-9A-Za-z _-]+')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[0-9A-Za-z _-]+')]),
 			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined, [Validators.required]),
 			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
@@ -1080,9 +1080,9 @@ export namespace MyNS {
 	}
 	export function CreateUpdateLifecyclePolicyPatchBodyFormGroup() {
 		return new FormGroup<UpdateLifecyclePolicyPatchBodyFormProperties>({
-			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2048), Validators.minLength(0), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(2048), Validators.pattern('arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*')]),
 			State: new FormControl<SettablePolicyStateValues | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500), Validators.minLength(0), Validators.pattern('[0-9A-Za-z _-]+')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(500), Validators.pattern('[0-9A-Za-z _-]+')]),
 		});
 
 	}

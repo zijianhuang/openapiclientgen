@@ -2839,7 +2839,7 @@ export namespace MyNS {
 			kind: new FormControl<string | null | undefined>(undefined),
 			leaderboardId: new FormControl<string | null | undefined>(undefined),
 			score: new FormControl<string | null | undefined>(undefined),
-			scoreTag: new FormControl<string | null | undefined>(undefined),
+			scoreTag: new FormControl<string | null | undefined>(undefined, [Validators.pattern('[a-zA-Z0-9-._~]{0,64}')]),
 			signature: new FormControl<string | null | undefined>(undefined),
 		});
 

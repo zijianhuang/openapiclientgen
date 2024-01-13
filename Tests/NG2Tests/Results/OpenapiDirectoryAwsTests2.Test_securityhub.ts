@@ -105,8 +105,8 @@ export namespace MyNS {
 	}
 	export function CreateStandardsSubscriptionFormGroup() {
 		return new FormGroup<StandardsSubscriptionFormProperties>({
-			StandardsSubscriptionArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			StandardsArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StandardsSubscriptionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			StandardsArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			StandardsStatus: new FormControl<StandardsSubscriptionStandardsStatus | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -152,7 +152,7 @@ export namespace MyNS {
 	}
 	export function CreateStandardsSubscriptionRequestFormGroup() {
 		return new FormGroup<StandardsSubscriptionRequestFormProperties>({
-			StandardsArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StandardsArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -210,9 +210,9 @@ export namespace MyNS {
 	}
 	export function CreateImportFindingsErrorFormGroup() {
 		return new FormGroup<ImportFindingsErrorFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -336,20 +336,20 @@ export namespace MyNS {
 	}
 	export function CreateAwsSecurityFindingFormGroup() {
 		return new FormGroup<AwsSecurityFindingFormProperties>({
-			SchemaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			GeneratorId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			AwsAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			FirstObservedAt: new FormControl<string | null | undefined>(undefined),
-			LastObservedAt: new FormControl<string | null | undefined>(undefined),
-			CreatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UpdatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			SchemaVersion: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			GeneratorId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			AwsAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			FirstObservedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			LastObservedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			CreatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			Confidence: new FormControl<number | null | undefined>(undefined),
 			Criticality: new FormControl<number | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			SourceUrl: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			SourceUrl: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			VerificationState: new FormControl<AwsSecurityFindingVerificationState | null | undefined>(undefined),
 			WorkflowState: new FormControl<AwsSecurityFindingWorkflowState | null | undefined>(undefined),
 			RecordState: new FormControl<AwsSecurityFindingRecordState | null | undefined>(undefined),
@@ -378,7 +378,7 @@ export namespace MyNS {
 			Product: new FormControl<number | null | undefined>(undefined),
 			Label: new FormControl<SeverityLabel | null | undefined>(undefined),
 			Normalized: new FormControl<number | null | undefined>(undefined),
-			Original: new FormControl<string | null | undefined>(undefined),
+			Original: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -416,8 +416,8 @@ export namespace MyNS {
 	}
 	export function CreateRecommendationFormGroup() {
 		return new FormGroup<RecommendationFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined),
-			Url: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Url: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -454,9 +454,9 @@ export namespace MyNS {
 	}
 	export function CreateMalwareFormGroup() {
 		return new FormGroup<MalwareFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			Type: new FormControl<MalwareType | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			State: new FormControl<MalwareState | null | undefined>(undefined),
 		});
 
@@ -499,16 +499,16 @@ export namespace MyNS {
 	export function CreateNetworkFormGroup() {
 		return new FormGroup<NetworkFormProperties>({
 			Direction: new FormControl<NetworkDirection | null | undefined>(undefined),
-			Protocol: new FormControl<string | null | undefined>(undefined),
-			SourceIpV4: new FormControl<string | null | undefined>(undefined),
-			SourceIpV6: new FormControl<string | null | undefined>(undefined),
+			Protocol: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SourceIpV4: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SourceIpV6: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			SourcePort: new FormControl<number | null | undefined>(undefined),
-			SourceDomain: new FormControl<string | null | undefined>(undefined),
-			SourceMac: new FormControl<string | null | undefined>(undefined),
-			DestinationIpV4: new FormControl<string | null | undefined>(undefined),
-			DestinationIpV6: new FormControl<string | null | undefined>(undefined),
+			SourceDomain: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SourceMac: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DestinationIpV4: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DestinationIpV6: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			DestinationPort: new FormControl<number | null | undefined>(undefined),
-			DestinationDomain: new FormControl<string | null | undefined>(undefined),
+			DestinationDomain: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -537,12 +537,12 @@ export namespace MyNS {
 	}
 	export function CreateProcessDetailsFormGroup() {
 		return new FormGroup<ProcessDetailsFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Pid: new FormControl<number | null | undefined>(undefined),
 			ParentPid: new FormControl<number | null | undefined>(undefined),
-			LaunchedAt: new FormControl<string | null | undefined>(undefined),
-			TerminatedAt: new FormControl<string | null | undefined>(undefined),
+			LaunchedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			TerminatedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -570,11 +570,11 @@ export namespace MyNS {
 	export function CreateThreatIntelIndicatorFormGroup() {
 		return new FormGroup<ThreatIntelIndicatorFormProperties>({
 			Type: new FormControl<ThreatIntelIndicatorType | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Category: new FormControl<ThreatIntelIndicatorCategory | null | undefined>(undefined),
-			LastObservedAt: new FormControl<string | null | undefined>(undefined),
-			Source: new FormControl<string | null | undefined>(undefined),
-			SourceUrl: new FormControl<string | null | undefined>(undefined),
+			LastObservedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Source: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SourceUrl: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -613,15 +613,15 @@ export namespace MyNS {
 	}
 	export function CreateResourceFormGroup() {
 		return new FormGroup<ResourceFormProperties>({
-			Type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			Partition: new FormControl<ResourcePartition | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
 
-	export enum ResourcePartition { aws = 0, aws_cn = 1, aws_us_gov = 2 }
+	export enum ResourcePartition { aws = 0, 'aws-cn' = 1, 'aws-us-gov' = 2 }
 
 
 	/** <p>Additional details about a resource related to a finding.</p> <p>To provide the details, use the object that corresponds to the resource type. For example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.</p> <p>If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.</p> <p>You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.</p> */
@@ -720,9 +720,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsCodeBuildProjectDetailsFormGroup() {
 		return new FormGroup<AwsCodeBuildProjectDetailsFormProperties>({
-			EncryptionKey: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			ServiceRole: new FormControl<string | null | undefined>(undefined),
+			EncryptionKey: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ServiceRole: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -746,9 +746,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsCodeBuildProjectEnvironmentFormGroup() {
 		return new FormGroup<AwsCodeBuildProjectEnvironmentFormProperties>({
-			Certificate: new FormControl<string | null | undefined>(undefined),
-			ImagePullCredentialsType: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
+			Certificate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ImagePullCredentialsType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -767,8 +767,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsCodeBuildProjectEnvironmentRegistryCredentialFormGroup() {
 		return new FormGroup<AwsCodeBuildProjectEnvironmentRegistryCredentialFormProperties>({
-			Credential: new FormControl<string | null | undefined>(undefined),
-			CredentialProvider: new FormControl<string | null | undefined>(undefined),
+			Credential: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			CredentialProvider: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -791,8 +791,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsCodeBuildProjectSourceFormGroup() {
 		return new FormGroup<AwsCodeBuildProjectSourceFormProperties>({
-			Type: new FormControl<string | null | undefined>(undefined),
-			Location: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Location: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			GitCloneDepth: new FormControl<number | null | undefined>(undefined),
 			InsecureSsl: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -813,7 +813,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsCodeBuildProjectVpcConfigFormGroup() {
 		return new FormGroup<AwsCodeBuildProjectVpcConfigFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -844,11 +844,11 @@ export namespace MyNS {
 	}
 	export function CreateAwsCloudFrontDistributionDetailsFormGroup() {
 		return new FormGroup<AwsCloudFrontDistributionDetailsFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			ETag: new FormControl<string | null | undefined>(undefined),
-			LastModifiedTime: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
-			WebAclId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			LastModifiedTime: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			WebAclId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -871,10 +871,10 @@ export namespace MyNS {
 	}
 	export function CreateAwsCloudFrontDistributionLoggingFormGroup() {
 		return new FormGroup<AwsCloudFrontDistributionLoggingFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
 			IncludeCookies: new FormControl<boolean | null | undefined>(undefined),
-			Prefix: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -910,9 +910,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsCloudFrontDistributionOriginItemFormGroup() {
 		return new FormGroup<AwsCloudFrontDistributionOriginItemFormProperties>({
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<string | null | undefined>(undefined),
-			OriginPath: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			OriginPath: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -943,13 +943,13 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2InstanceDetailsFormGroup() {
 		return new FormGroup<AwsEc2InstanceDetailsFormProperties>({
-			Type: new FormControl<string | null | undefined>(undefined),
-			ImageId: new FormControl<string | null | undefined>(undefined),
-			KeyName: new FormControl<string | null | undefined>(undefined),
-			IamInstanceProfileArn: new FormControl<string | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
-			LaunchedAt: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ImageId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			KeyName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			IamInstanceProfileArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			LaunchedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -972,7 +972,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2NetworkInterfaceDetailsFormGroup() {
 		return new FormGroup<AwsEc2NetworkInterfaceDetailsFormProperties>({
-			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			SourceDestCheck: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -1002,13 +1002,13 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2NetworkInterfaceAttachmentFormGroup() {
 		return new FormGroup<AwsEc2NetworkInterfaceAttachmentFormProperties>({
-			AttachTime: new FormControl<string | null | undefined>(undefined),
-			AttachmentId: new FormControl<string | null | undefined>(undefined),
+			AttachTime: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			AttachmentId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			DeleteOnTermination: new FormControl<boolean | null | undefined>(undefined),
 			DeviceIndex: new FormControl<number | null | undefined>(undefined),
-			InstanceId: new FormControl<string | null | undefined>(undefined),
-			InstanceOwnerId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
+			InstanceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			InstanceOwnerId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1027,8 +1027,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2NetworkInterfaceSecurityGroupFormGroup() {
 		return new FormGroup<AwsEc2NetworkInterfaceSecurityGroupFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupId: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			GroupId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1053,10 +1053,10 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2SecurityGroupDetailsFormGroup() {
 		return new FormGroup<AwsEc2SecurityGroupDetailsFormProperties>({
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			GroupId: new FormControl<string | null | undefined>(undefined),
-			OwnerId: new FormControl<string | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			GroupId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1081,7 +1081,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2SecurityGroupIpPermissionFormGroup() {
 		return new FormGroup<AwsEc2SecurityGroupIpPermissionFormProperties>({
-			IpProtocol: new FormControl<string | null | undefined>(undefined),
+			IpProtocol: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			FromPort: new FormControl<number | null | undefined>(undefined),
 			ToPort: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1110,12 +1110,12 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2SecurityGroupUserIdGroupPairFormGroup() {
 		return new FormGroup<AwsEc2SecurityGroupUserIdGroupPairFormProperties>({
-			GroupId: new FormControl<string | null | undefined>(undefined),
-			GroupName: new FormControl<string | null | undefined>(undefined),
-			PeeringStatus: new FormControl<string | null | undefined>(undefined),
-			UserId: new FormControl<string | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined),
-			VpcPeeringConnectionId: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			GroupName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			PeeringStatus: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			UserId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			VpcPeeringConnectionId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1132,7 +1132,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2SecurityGroupIpRangeFormGroup() {
 		return new FormGroup<AwsEc2SecurityGroupIpRangeFormProperties>({
-			CidrIp: new FormControl<string | null | undefined>(undefined),
+			CidrIp: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1149,7 +1149,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2SecurityGroupIpv6RangeFormGroup() {
 		return new FormGroup<AwsEc2SecurityGroupIpv6RangeFormProperties>({
-			CidrIpv6: new FormControl<string | null | undefined>(undefined),
+			CidrIpv6: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1166,7 +1166,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsEc2SecurityGroupPrefixListIdFormGroup() {
 		return new FormGroup<AwsEc2SecurityGroupPrefixListIdFormProperties>({
-			PrefixListId: new FormControl<string | null | undefined>(undefined),
+			PrefixListId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1200,13 +1200,13 @@ export namespace MyNS {
 	}
 	export function CreateAwsElbv2LoadBalancerDetailsFormGroup() {
 		return new FormGroup<AwsElbv2LoadBalancerDetailsFormProperties>({
-			CanonicalHostedZoneId: new FormControl<string | null | undefined>(undefined),
-			CreatedTime: new FormControl<string | null | undefined>(undefined),
-			DNSName: new FormControl<string | null | undefined>(undefined),
-			IpAddressType: new FormControl<string | null | undefined>(undefined),
-			Scheme: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
-			VpcId: new FormControl<string | null | undefined>(undefined),
+			CanonicalHostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			CreatedTime: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DNSName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			IpAddressType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Scheme: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1225,8 +1225,8 @@ export namespace MyNS {
 	}
 	export function CreateAvailabilityZoneFormGroup() {
 		return new FormGroup<AvailabilityZoneFormProperties>({
-			ZoneName: new FormControl<string | null | undefined>(undefined),
-			SubnetId: new FormControl<string | null | undefined>(undefined),
+			ZoneName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SubnetId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1245,8 +1245,8 @@ export namespace MyNS {
 	}
 	export function CreateLoadBalancerStateFormGroup() {
 		return new FormGroup<LoadBalancerStateFormProperties>({
-			Code: new FormControl<string | null | undefined>(undefined),
-			Reason: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Reason: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1284,11 +1284,11 @@ export namespace MyNS {
 	}
 	export function CreateAwsElasticsearchDomainDetailsFormGroup() {
 		return new FormGroup<AwsElasticsearchDomainDetailsFormProperties>({
-			AccessPolicies: new FormControl<string | null | undefined>(undefined),
-			DomainId: new FormControl<string | null | undefined>(undefined),
-			DomainName: new FormControl<string | null | undefined>(undefined),
-			Endpoint: new FormControl<string | null | undefined>(undefined),
-			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
+			AccessPolicies: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DomainId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DomainName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1308,7 +1308,7 @@ export namespace MyNS {
 	export function CreateAwsElasticsearchDomainDomainEndpointOptionsFormGroup() {
 		return new FormGroup<AwsElasticsearchDomainDomainEndpointOptionsFormProperties>({
 			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
-			TLSSecurityPolicy: new FormControl<string | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1328,7 +1328,7 @@ export namespace MyNS {
 	export function CreateAwsElasticsearchDomainEncryptionAtRestOptionsFormGroup() {
 		return new FormGroup<AwsElasticsearchDomainEncryptionAtRestOptionsFormProperties>({
 			Enabled: new FormControl<boolean | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1365,7 +1365,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsElasticsearchDomainVPCOptionsFormGroup() {
 		return new FormGroup<AwsElasticsearchDomainVPCOptionsFormProperties>({
-			VPCId: new FormControl<string | null | undefined>(undefined),
+			VPCId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1389,9 +1389,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsS3BucketDetailsFormGroup() {
 		return new FormGroup<AwsS3BucketDetailsFormProperties>({
-			OwnerId: new FormControl<string | null | undefined>(undefined),
-			OwnerName: new FormControl<string | null | undefined>(undefined),
-			CreatedAt: new FormControl<string | null | undefined>(undefined),
+			OwnerId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			OwnerName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			CreatedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1442,8 +1442,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsS3BucketServerSideEncryptionByDefaultFormGroup() {
 		return new FormGroup<AwsS3BucketServerSideEncryptionByDefaultFormProperties>({
-			SSEAlgorithm: new FormControl<string | null | undefined>(undefined),
-			KMSMasterKeyID: new FormControl<string | null | undefined>(undefined),
+			SSEAlgorithm: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			KMSMasterKeyID: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1470,12 +1470,12 @@ export namespace MyNS {
 	}
 	export function CreateAwsS3ObjectDetailsFormGroup() {
 		return new FormGroup<AwsS3ObjectDetailsFormProperties>({
-			LastModified: new FormControl<string | null | undefined>(undefined),
-			ETag: new FormControl<string | null | undefined>(undefined),
-			VersionId: new FormControl<string | null | undefined>(undefined),
-			ContentType: new FormControl<string | null | undefined>(undefined),
-			ServerSideEncryption: new FormControl<string | null | undefined>(undefined),
-			SSEKMSKeyId: new FormControl<string | null | undefined>(undefined),
+			LastModified: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ETag: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			VersionId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ContentType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ServerSideEncryption: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SSEKMSKeyId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1502,12 +1502,12 @@ export namespace MyNS {
 	}
 	export function CreateAwsIamAccessKeyDetailsFormGroup() {
 		return new FormGroup<AwsIamAccessKeyDetailsFormProperties>({
-			UserName: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Status: new FormControl<AwsIamAccessKeyDetailsStatus | null | undefined>(undefined),
-			CreatedAt: new FormControl<string | null | undefined>(undefined),
-			PrincipalId: new FormControl<string | null | undefined>(undefined),
-			PrincipalType: new FormControl<string | null | undefined>(undefined),
-			PrincipalName: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			PrincipalId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			PrincipalType: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			PrincipalName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1546,12 +1546,12 @@ export namespace MyNS {
 	}
 	export function CreateAwsIamRoleDetailsFormGroup() {
 		return new FormGroup<AwsIamRoleDetailsFormProperties>({
-			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(131072), Validators.minLength(1), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+')]),
-			CreateDate: new FormControl<string | null | undefined>(undefined),
-			RoleId: new FormControl<string | null | undefined>(undefined),
-			RoleName: new FormControl<string | null | undefined>(undefined),
+			AssumeRolePolicyDocument: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(131072), Validators.pattern('[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+')]),
+			CreateDate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			RoleId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			RoleName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			MaxSessionDuration: new FormControl<number | null | undefined>(undefined),
-			Path: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1578,12 +1578,12 @@ export namespace MyNS {
 	}
 	export function CreateAwsKmsKeyDetailsFormGroup() {
 		return new FormGroup<AwsKmsKeyDetailsFormProperties>({
-			AWSAccountId: new FormControl<string | null | undefined>(undefined),
+			AWSAccountId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			CreationDate: new FormControl<number | null | undefined>(undefined),
-			KeyId: new FormControl<string | null | undefined>(undefined),
-			KeyManager: new FormControl<string | null | undefined>(undefined),
-			KeyState: new FormControl<string | null | undefined>(undefined),
-			Origin: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			KeyManager: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			KeyState: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Origin: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1638,18 +1638,18 @@ export namespace MyNS {
 	}
 	export function CreateAwsLambdaFunctionDetailsFormGroup() {
 		return new FormGroup<AwsLambdaFunctionDetailsFormProperties>({
-			CodeSha256: new FormControl<string | null | undefined>(undefined),
-			FunctionName: new FormControl<string | null | undefined>(undefined),
-			Handler: new FormControl<string | null | undefined>(undefined),
-			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
-			LastModified: new FormControl<string | null | undefined>(undefined),
-			MasterArn: new FormControl<string | null | undefined>(undefined),
+			CodeSha256: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			FunctionName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Handler: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			LastModified: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			MasterArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			MemorySize: new FormControl<number | null | undefined>(undefined),
-			RevisionId: new FormControl<string | null | undefined>(undefined),
-			Role: new FormControl<string | null | undefined>(undefined),
-			Runtime: new FormControl<string | null | undefined>(undefined),
+			RevisionId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Role: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Runtime: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Timeout: new FormControl<number | null | undefined>(undefined),
-			Version: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1672,10 +1672,10 @@ export namespace MyNS {
 	}
 	export function CreateAwsLambdaFunctionCodeFormGroup() {
 		return new FormGroup<AwsLambdaFunctionCodeFormProperties>({
-			S3Bucket: new FormControl<string | null | undefined>(undefined),
-			S3Key: new FormControl<string | null | undefined>(undefined),
-			S3ObjectVersion: new FormControl<string | null | undefined>(undefined),
-			ZipFile: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			S3Key: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			S3ObjectVersion: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ZipFile: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1692,7 +1692,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsLambdaFunctionDeadLetterConfigFormGroup() {
 		return new FormGroup<AwsLambdaFunctionDeadLetterConfigFormProperties>({
-			TargetArn: new FormControl<string | null | undefined>(undefined),
+			TargetArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1729,8 +1729,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsLambdaFunctionEnvironmentErrorFormGroup() {
 		return new FormGroup<AwsLambdaFunctionEnvironmentErrorFormProperties>({
-			ErrorCode: new FormControl<string | null | undefined>(undefined),
-			Message: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Message: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1749,7 +1749,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsLambdaFunctionLayerFormGroup() {
 		return new FormGroup<AwsLambdaFunctionLayerFormProperties>({
-			Arn: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			CodeSize: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -1767,7 +1767,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsLambdaFunctionTracingConfigFormGroup() {
 		return new FormGroup<AwsLambdaFunctionTracingConfigFormProperties>({
-			Mode: new FormControl<string | null | undefined>(undefined),
+			Mode: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1786,7 +1786,7 @@ export namespace MyNS {
 	}
 	export function CreateAwsLambdaFunctionVpcConfigFormGroup() {
 		return new FormGroup<AwsLambdaFunctionVpcConfigFormProperties>({
-			VpcId: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1807,7 +1807,7 @@ export namespace MyNS {
 	export function CreateAwsLambdaLayerVersionDetailsFormGroup() {
 		return new FormGroup<AwsLambdaLayerVersionDetailsFormProperties>({
 			Version: new FormControl<number | null | undefined>(undefined),
-			CreatedDate: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1859,22 +1859,22 @@ export namespace MyNS {
 	}
 	export function CreateAwsRdsDbInstanceDetailsFormGroup() {
 		return new FormGroup<AwsRdsDbInstanceDetailsFormProperties>({
-			CACertificateIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
-			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
+			CACertificateIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			DbInstancePort: new FormControl<number | null | undefined>(undefined),
-			DbiResourceId: new FormControl<string | null | undefined>(undefined),
-			DBName: new FormControl<string | null | undefined>(undefined),
+			DbiResourceId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DBName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
-			Engine: new FormControl<string | null | undefined>(undefined),
-			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			EngineVersion: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			IAMDatabaseAuthenticationEnabled: new FormControl<boolean | null | undefined>(undefined),
-			InstanceCreateTime: new FormControl<string | null | undefined>(undefined),
-			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			InstanceCreateTime: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
 			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
-			TdeCredentialArn: new FormControl<string | null | undefined>(undefined),
+			TdeCredentialArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1895,9 +1895,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsRdsDbInstanceAssociatedRoleFormGroup() {
 		return new FormGroup<AwsRdsDbInstanceAssociatedRoleFormProperties>({
-			RoleArn: new FormControl<string | null | undefined>(undefined),
-			FeatureName: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			FeatureName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1918,9 +1918,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsRdsDbInstanceEndpointFormGroup() {
 		return new FormGroup<AwsRdsDbInstanceEndpointFormProperties>({
-			Address: new FormControl<string | null | undefined>(undefined),
+			Address: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Port: new FormControl<number | null | undefined>(undefined),
-			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1939,8 +1939,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsRdsDbInstanceVpcSecurityGroupFormGroup() {
 		return new FormGroup<AwsRdsDbInstanceVpcSecurityGroupFormProperties>({
-			VpcSecurityGroupId: new FormControl<string | null | undefined>(undefined),
-			Status: new FormControl<string | null | undefined>(undefined),
+			VpcSecurityGroupId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1962,9 +1962,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsSnsTopicDetailsFormGroup() {
 		return new FormGroup<AwsSnsTopicDetailsFormProperties>({
-			KmsMasterKeyId: new FormControl<string | null | undefined>(undefined),
-			TopicName: new FormControl<string | null | undefined>(undefined),
-			Owner: new FormControl<string | null | undefined>(undefined),
+			KmsMasterKeyId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			TopicName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Owner: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -1983,8 +1983,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsSnsTopicSubscriptionFormGroup() {
 		return new FormGroup<AwsSnsTopicSubscriptionFormProperties>({
-			Endpoint: new FormControl<string | null | undefined>(undefined),
-			Protocol: new FormControl<string | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Protocol: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2008,9 +2008,9 @@ export namespace MyNS {
 	export function CreateAwsSqsQueueDetailsFormGroup() {
 		return new FormGroup<AwsSqsQueueDetailsFormProperties>({
 			KmsDataKeyReusePeriodSeconds: new FormControl<number | null | undefined>(undefined),
-			KmsMasterKeyId: new FormControl<string | null | undefined>(undefined),
-			QueueName: new FormControl<string | null | undefined>(undefined),
-			DeadLetterTargetArn: new FormControl<string | null | undefined>(undefined),
+			KmsMasterKeyId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			QueueName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DeadLetterTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2032,9 +2032,9 @@ export namespace MyNS {
 	}
 	export function CreateAwsWafWebAclDetailsFormGroup() {
 		return new FormGroup<AwsWafWebAclDetailsFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			DefaultAction: new FormControl<string | null | undefined>(undefined),
-			WebAclId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			DefaultAction: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			WebAclId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2063,8 +2063,8 @@ export namespace MyNS {
 	export function CreateAwsWafWebAclRuleFormGroup() {
 		return new FormGroup<AwsWafWebAclRuleFormProperties>({
 			Priority: new FormControl<number | null | undefined>(undefined),
-			RuleId: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<string | null | undefined>(undefined),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2081,7 +2081,7 @@ export namespace MyNS {
 	}
 	export function CreateWafActionFormGroup() {
 		return new FormGroup<WafActionFormProperties>({
-			Type: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2098,7 +2098,7 @@ export namespace MyNS {
 	}
 	export function CreateWafExcludedRuleFormGroup() {
 		return new FormGroup<WafExcludedRuleFormProperties>({
-			RuleId: new FormControl<string | null | undefined>(undefined),
+			RuleId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2115,7 +2115,7 @@ export namespace MyNS {
 	}
 	export function CreateWafOverrideActionFormGroup() {
 		return new FormGroup<WafOverrideActionFormProperties>({
-			Type: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2138,10 +2138,10 @@ export namespace MyNS {
 	}
 	export function CreateContainerDetailsFormGroup() {
 		return new FormGroup<ContainerDetailsFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			ImageId: new FormControl<string | null | undefined>(undefined),
-			ImageName: new FormControl<string | null | undefined>(undefined),
-			LaunchedAt: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ImageId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ImageName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			LaunchedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2185,8 +2185,8 @@ export namespace MyNS {
 	}
 	export function CreateStatusReasonFormGroup() {
 		return new FormGroup<StatusReasonFormProperties>({
-			ReasonCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined),
+			ReasonCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2238,8 +2238,8 @@ export namespace MyNS {
 	}
 	export function CreateRelatedFindingFormGroup() {
 		return new FormGroup<RelatedFindingFormProperties>({
-			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2272,9 +2272,9 @@ export namespace MyNS {
 	}
 	export function CreateNoteFormGroup() {
 		return new FormGroup<NoteFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UpdatedBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UpdatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			UpdatedBy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2317,8 +2317,8 @@ export namespace MyNS {
 	}
 	export function CreateAwsSecurityFindingIdentifierFormGroup() {
 		return new FormGroup<AwsSecurityFindingIdentifierFormProperties>({
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2351,8 +2351,8 @@ export namespace MyNS {
 	}
 	export function CreateBatchUpdateFindingsUnprocessedFindingFormGroup() {
 		return new FormGroup<BatchUpdateFindingsUnprocessedFindingFormProperties>({
-			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ErrorCode: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2369,7 +2369,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateActionTargetResponseFormGroup() {
 		return new FormGroup<CreateActionTargetResponseFormProperties>({
-			ActionTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ActionTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2396,7 +2396,7 @@ export namespace MyNS {
 	}
 	export function CreateCreateInsightResponseFormGroup() {
 		return new FormGroup<CreateInsightResponseFormProperties>({
-			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2415,7 +2415,7 @@ export namespace MyNS {
 	}
 	export function CreateStringFilterFormGroup() {
 		return new FormGroup<StringFilterFormProperties>({
-			Value: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Comparison: new FormControl<StringFilterComparison | null | undefined>(undefined),
 		});
 
@@ -2440,8 +2440,8 @@ export namespace MyNS {
 	}
 	export function CreateDateFilterFormGroup() {
 		return new FormGroup<DateFilterFormProperties>({
-			Start: new FormControl<string | null | undefined>(undefined),
-			End: new FormControl<string | null | undefined>(undefined),
+			Start: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			End: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2507,8 +2507,8 @@ export namespace MyNS {
 	}
 	export function CreateMapFilterFormGroup() {
 		return new FormGroup<MapFilterFormProperties>({
-			Key: new FormControl<string | null | undefined>(undefined),
-			Value: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			Comparison: new FormControl<MapFilterComparison | null | undefined>(undefined),
 		});
 
@@ -2528,7 +2528,7 @@ export namespace MyNS {
 	}
 	export function CreateIpFilterFormGroup() {
 		return new FormGroup<IpFilterFormProperties>({
-			Cidr: new FormControl<string | null | undefined>(undefined),
+			Cidr: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2545,7 +2545,7 @@ export namespace MyNS {
 	}
 	export function CreateKeywordFilterFormGroup() {
 		return new FormGroup<KeywordFilterFormProperties>({
-			Value: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2576,7 +2576,7 @@ export namespace MyNS {
 	export function CreateResultFormGroup() {
 		return new FormGroup<ResultFormProperties>({
 			AccountId: new FormControl<string | null | undefined>(undefined),
-			ProcessingResult: new FormControl<string | null | undefined>(undefined),
+			ProcessingResult: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2596,7 +2596,7 @@ export namespace MyNS {
 	export function CreateAccountDetailsFormGroup() {
 		return new FormGroup<AccountDetailsFormProperties>({
 			AccountId: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2624,7 +2624,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteActionTargetResponseFormGroup() {
 		return new FormGroup<DeleteActionTargetResponseFormProperties>({
-			ActionTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ActionTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2641,7 +2641,7 @@ export namespace MyNS {
 	}
 	export function CreateDeleteInsightResponseFormGroup() {
 		return new FormGroup<DeleteInsightResponseFormProperties>({
-			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2712,9 +2712,9 @@ export namespace MyNS {
 	}
 	export function CreateActionTargetFormGroup() {
 		return new FormGroup<ActionTargetFormProperties>({
-			ActionTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ActionTargetArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2729,8 +2729,8 @@ export namespace MyNS {
 	}
 	export function CreateDescribeHubResponseFormGroup() {
 		return new FormGroup<DescribeHubResponseFormProperties>({
-			HubArn: new FormControl<string | null | undefined>(undefined),
-			SubscribedAt: new FormControl<string | null | undefined>(undefined),
+			HubArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			SubscribedAt: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2781,13 +2781,13 @@ export namespace MyNS {
 	}
 	export function CreateProductFormGroup() {
 		return new FormGroup<ProductFormProperties>({
-			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ProductName: new FormControl<string | null | undefined>(undefined),
-			CompanyName: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			MarketplaceUrl: new FormControl<string | null | undefined>(undefined),
-			ActivationUrl: new FormControl<string | null | undefined>(undefined),
-			ProductSubscriptionResourcePolicy: new FormControl<string | null | undefined>(undefined),
+			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			ProductName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			CompanyName: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			MarketplaceUrl: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ActivationUrl: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			ProductSubscriptionResourcePolicy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -2826,9 +2826,9 @@ export namespace MyNS {
 	}
 	export function CreateStandardFormGroup() {
 		return new FormGroup<StandardFormProperties>({
-			StandardsArn: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			StandardsArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			EnabledByDefault: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2877,14 +2877,14 @@ export namespace MyNS {
 	}
 	export function CreateStandardsControlFormGroup() {
 		return new FormGroup<StandardsControlFormProperties>({
-			StandardsControlArn: new FormControl<string | null | undefined>(undefined),
+			StandardsControlArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			ControlStatus: new FormControl<StandardsControlControlStatus | null | undefined>(undefined),
-			DisabledReason: new FormControl<string | null | undefined>(undefined),
+			DisabledReason: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			ControlStatusUpdatedAt: new FormControl<Date | null | undefined>(undefined),
-			ControlId: new FormControl<string | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			RemediationUrl: new FormControl<string | null | undefined>(undefined),
+			ControlId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			RemediationUrl: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			SeverityRating: new FormControl<StandardsControlSeverityRating | null | undefined>(undefined),
 		});
 
@@ -2942,7 +2942,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableImportFindingsForProductResponseFormGroup() {
 		return new FormGroup<EnableImportFindingsForProductResponseFormProperties>({
-			ProductSubscriptionArn: new FormControl<string | null | undefined>(undefined),
+			ProductSubscriptionArn: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3011,7 +3011,7 @@ export namespace MyNS {
 	}
 	export function CreateSortCriterionFormGroup() {
 		return new FormGroup<SortCriterionFormProperties>({
-			Field: new FormControl<string | null | undefined>(undefined),
+			Field: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			SortOrder: new FormControl<SortCriterionSortOrder | null | undefined>(undefined),
 		});
 
@@ -3060,8 +3060,8 @@ export namespace MyNS {
 	}
 	export function CreateInsightResultsFormGroup() {
 		return new FormGroup<InsightResultsFormProperties>({
-			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3088,7 +3088,7 @@ export namespace MyNS {
 	}
 	export function CreateInsightResultValueFormGroup() {
 		return new FormGroup<InsightResultValueFormProperties>({
-			GroupByAttributeValue: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			GroupByAttributeValue: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 			Count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3144,9 +3144,9 @@ export namespace MyNS {
 	}
 	export function CreateInsightFormGroup() {
 		return new FormGroup<InsightFormProperties>({
-			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			InsightArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3294,9 +3294,9 @@ export namespace MyNS {
 	export function CreateInvitationFormGroup() {
 		return new FormGroup<InvitationFormProperties>({
 			AccountId: new FormControl<string | null | undefined>(undefined),
-			InvitationId: new FormControl<string | null | undefined>(undefined),
+			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			InvitedAt: new FormControl<Date | null | undefined>(undefined),
-			MemberStatus: new FormControl<string | null | undefined>(undefined),
+			MemberStatus: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3336,9 +3336,9 @@ export namespace MyNS {
 	export function CreateMemberFormGroup() {
 		return new FormGroup<MemberFormProperties>({
 			AccountId: new FormControl<string | null | undefined>(undefined),
-			Email: new FormControl<string | null | undefined>(undefined),
-			MasterId: new FormControl<string | null | undefined>(undefined),
-			MemberStatus: new FormControl<string | null | undefined>(undefined),
+			Email: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			MemberStatus: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			InvitedAt: new FormControl<Date | null | undefined>(undefined),
 			UpdatedAt: new FormControl<Date | null | undefined>(undefined),
 		});
@@ -3379,7 +3379,7 @@ export namespace MyNS {
 	}
 	export function CreateListInvitationsResponseFormGroup() {
 		return new FormGroup<ListInvitationsResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3393,7 +3393,7 @@ export namespace MyNS {
 	}
 	export function CreateListMembersResponseFormGroup() {
 		return new FormGroup<ListMembersResponseFormProperties>({
-			NextToken: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3497,8 +3497,8 @@ export namespace MyNS {
 	}
 	export function CreateAcceptInvitationRequestFormGroup() {
 		return new FormGroup<AcceptInvitationRequestFormProperties>({
-			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3582,8 +3582,8 @@ export namespace MyNS {
 	}
 	export function CreateNoteUpdateFormGroup() {
 		return new FormGroup<NoteUpdateFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			UpdatedBy: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			UpdatedBy: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3718,9 +3718,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateActionTargetRequestFormGroup() {
 		return new FormGroup<CreateActionTargetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3749,8 +3749,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateInsightRequestFormGroup() {
 		return new FormGroup<CreateInsightRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -3943,7 +3943,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableImportFindingsForProductRequestFormGroup() {
 		return new FormGroup<EnableImportFindingsForProductRequestFormProperties>({
-			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4145,7 +4145,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Partition { aws = 0, aws_cn = 1, aws_us_gov = 2 }
+	export enum Partition { aws = 0, 'aws-cn' = 1, 'aws-us-gov' = 2 }
 
 	export enum SeverityRating { LOW = 0, MEDIUM = 1, HIGH = 2, CRITICAL = 3 }
 
@@ -4186,8 +4186,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateActionTargetRequestFormGroup() {
 		return new FormGroup<UpdateActionTargetRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4227,8 +4227,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateInsightRequestFormGroup() {
 		return new FormGroup<UpdateInsightRequestFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			GroupByAttribute: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4244,7 +4244,7 @@ export namespace MyNS {
 	export function CreateUpdateStandardsControlRequestFormGroup() {
 		return new FormGroup<UpdateStandardsControlRequestFormProperties>({
 			ControlStatus: new FormControl<StandardsControlControlStatus | null | undefined>(undefined),
-			DisabledReason: new FormControl<string | null | undefined>(undefined),
+			DisabledReason: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4697,8 +4697,8 @@ export namespace MyNS {
 	}
 	export function CreateAcceptInvitationPostBodyFormGroup() {
 		return new FormGroup<AcceptInvitationPostBodyFormProperties>({
-			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			MasterId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			InvitationId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4840,8 +4840,8 @@ export namespace MyNS {
 	}
 	export function CreateBatchUpdateFindingsPatchBodyNoteFormGroup() {
 		return new FormGroup<BatchUpdateFindingsPatchBodyNoteFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined),
-			UpdatedBy: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			UpdatedBy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4930,9 +4930,9 @@ export namespace MyNS {
 	}
 	export function CreateCreateActionTargetPostBodyFormGroup() {
 		return new FormGroup<CreateActionTargetPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -4973,8 +4973,8 @@ export namespace MyNS {
 	}
 	export function CreateCreateInsightPostBodyFormGroup() {
 		return new FormGroup<CreateInsightPostBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
+			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5120,8 +5120,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateActionTargetPatchBodyFormGroup() {
 		return new FormGroup<UpdateActionTargetPatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5147,8 +5147,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateInsightPatchBodyFormGroup() {
 		return new FormGroup<UpdateInsightPatchBodyFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
-			GroupByAttribute: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			GroupByAttribute: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5366,7 +5366,7 @@ export namespace MyNS {
 	}
 	export function CreateEnableImportFindingsForProductPostBodyFormGroup() {
 		return new FormGroup<EnableImportFindingsForProductPostBodyFormProperties>({
-			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			ProductArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5672,8 +5672,8 @@ export namespace MyNS {
 	}
 	export function CreateUpdateFindingsPatchBodyNoteFormGroup() {
 		return new FormGroup<UpdateFindingsPatchBodyNoteFormProperties>({
-			Text: new FormControl<string | null | undefined>(undefined),
-			UpdatedBy: new FormControl<string | null | undefined>(undefined),
+			Text: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
+			UpdatedBy: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -5784,7 +5784,7 @@ export namespace MyNS {
 	export function CreateUpdateStandardsControlPatchBodyFormGroup() {
 		return new FormGroup<UpdateStandardsControlPatchBodyFormProperties>({
 			ControlStatus: new FormControl<StandardsControlControlStatus | null | undefined>(undefined),
-			DisabledReason: new FormControl<string | null | undefined>(undefined),
+			DisabledReason: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 		});
 
 	}

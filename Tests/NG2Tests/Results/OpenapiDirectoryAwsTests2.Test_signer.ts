@@ -90,7 +90,7 @@ export namespace MyNS {
 		return new FormGroup<DescribeSigningJobResponseFormProperties>({
 			jobId: new FormControl<string | null | undefined>(undefined),
 			platformId: new FormControl<string | null | undefined>(undefined),
-			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			completedAt: new FormControl<Date | null | undefined>(undefined),
 			requestedBy: new FormControl<string | null | undefined>(undefined),
@@ -440,7 +440,7 @@ export namespace MyNS {
 	}
 	export function CreateGetSigningProfileResponseFormGroup() {
 		return new FormGroup<GetSigningProfileResponseFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
 			platformId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetSigningProfileResponseStatus | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
@@ -615,7 +615,7 @@ export namespace MyNS {
 	}
 	export function CreateSigningProfileFormGroup() {
 		return new FormGroup<SigningProfileFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
 			platformId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetSigningProfileResponseStatus | null | undefined>(undefined),
 			arn: new FormControl<string | null | undefined>(undefined),
@@ -887,7 +887,7 @@ export namespace MyNS {
 	}
 	export function CreateStartSigningJobRequestFormGroup() {
 		return new FormGroup<StartSigningJobRequestFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1171,7 +1171,7 @@ export namespace MyNS {
 	}
 	export function CreateStartSigningJobPostBodyFormGroup() {
 		return new FormGroup<StartSigningJobPostBodyFormProperties>({
-			profileName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(2), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
+			profileName: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9_]{2,}')]),
 			clientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 

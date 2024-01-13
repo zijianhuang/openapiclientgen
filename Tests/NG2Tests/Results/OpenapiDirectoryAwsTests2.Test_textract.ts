@@ -116,7 +116,7 @@ export namespace MyNS {
 			ColumnIndex: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			RowSpan: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 			ColumnSpan: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			Id: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined, [Validators.pattern('.*\S.*')]),
 			SelectionStatus: new FormControl<BlockSelectionStatus | null | undefined>(undefined),
 			Page: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
 		});
@@ -291,7 +291,7 @@ export namespace MyNS {
 	}
 	export function CreateDocumentFormGroup() {
 		return new FormGroup<DocumentFormProperties>({
-			Bytes: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10485760), Validators.minLength(1)]),
+			Bytes: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(10485760)]),
 		});
 
 	}
@@ -342,9 +342,9 @@ export namespace MyNS {
 	}
 	export function CreateS3ObjectFormGroup() {
 		return new FormGroup<S3ObjectFormProperties>({
-			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(3), Validators.pattern('[0-9A-Za-z\.\-_]*')]),
-			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
-			Version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1024), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			Bucket: new FormControl<string | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(255), Validators.pattern('[0-9A-Za-z\.\-_]*')]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('.*\S.*')]),
+			Version: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(1024), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -390,7 +390,7 @@ export namespace MyNS {
 	}
 	export function CreateHumanLoopConfigFormGroup() {
 		return new FormGroup<HumanLoopConfigFormProperties>({
-			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(63), Validators.minLength(1), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
+			HumanLoopName: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(63), Validators.pattern('^[a-z0-9](-*[a-z0-9])*')]),
 			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(256)]),
 		});
 
@@ -578,7 +578,7 @@ export namespace MyNS {
 	export function CreateGetDocumentAnalysisResponseFormGroup() {
 		return new FormGroup<GetDocumentAnalysisResponseFormProperties>({
 			JobStatus: new FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.*\S.*')]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			AnalyzeDocumentModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -643,9 +643,9 @@ export namespace MyNS {
 	}
 	export function CreateGetDocumentAnalysisRequestFormGroup() {
 		return new FormGroup<GetDocumentAnalysisRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -690,7 +690,7 @@ export namespace MyNS {
 	export function CreateGetDocumentTextDetectionResponseFormGroup() {
 		return new FormGroup<GetDocumentTextDetectionResponseFormProperties>({
 			JobStatus: new FormControl<GetDocumentAnalysisResponseJobStatus | null | undefined>(undefined),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.*\S.*')]),
 			StatusMessage: new FormControl<string | null | undefined>(undefined),
 			DetectDocumentTextModelVersion: new FormControl<string | null | undefined>(undefined),
 		});
@@ -735,9 +735,9 @@ export namespace MyNS {
 	}
 	export function CreateGetDocumentTextDetectionRequestFormGroup() {
 		return new FormGroup<GetDocumentTextDetectionRequestFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 			MaxResults: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
-			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255), Validators.minLength(1), Validators.pattern('.*\S.*')]),
+			NextToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255), Validators.pattern('.*\S.*')]),
 		});
 
 	}
@@ -760,7 +760,7 @@ export namespace MyNS {
 	}
 	export function CreateStartDocumentAnalysisResponseFormGroup() {
 		return new FormGroup<StartDocumentAnalysisResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -807,8 +807,8 @@ export namespace MyNS {
 	}
 	export function CreateStartDocumentAnalysisRequestFormGroup() {
 		return new FormGroup<StartDocumentAnalysisRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -868,8 +868,8 @@ export namespace MyNS {
 	}
 	export function CreateNotificationChannelFormGroup() {
 		return new FormGroup<NotificationChannelFormProperties>({
-			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(1024), Validators.minLength(20), Validators.pattern('(^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)')]),
-			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(2048), Validators.minLength(20), Validators.pattern('arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(1024), Validators.pattern('(^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)')]),
+			RoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(20), Validators.maxLength(2048), Validators.pattern('arn:([a-z\d-]+):iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+')]),
 		});
 
 	}
@@ -912,7 +912,7 @@ export namespace MyNS {
 	}
 	export function CreateStartDocumentTextDetectionResponseFormGroup() {
 		return new FormGroup<StartDocumentTextDetectionResponseFormProperties>({
-			JobId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobId: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
 		});
 
 	}
@@ -956,8 +956,8 @@ export namespace MyNS {
 	}
 	export function CreateStartDocumentTextDetectionRequestFormGroup() {
 		return new FormGroup<StartDocumentTextDetectionRequestFormProperties>({
-			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
-			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64), Validators.minLength(1), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('^[a-zA-Z0-9-_]+$')]),
+			JobTag: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(64), Validators.pattern('[a-zA-Z0-9_.\-:]+')]),
 		});
 
 	}
@@ -1028,17 +1028,17 @@ export namespace MyNS {
 		}
 	}
 
-	export enum AnalyzeDocumentX_Amz_Target { Textract_AnalyzeDocument = 0 }
+	export enum AnalyzeDocumentX_Amz_Target { 'Textract.AnalyzeDocument' = 0 }
 
-	export enum DetectDocumentTextX_Amz_Target { Textract_DetectDocumentText = 0 }
+	export enum DetectDocumentTextX_Amz_Target { 'Textract.DetectDocumentText' = 0 }
 
-	export enum GetDocumentAnalysisX_Amz_Target { Textract_GetDocumentAnalysis = 0 }
+	export enum GetDocumentAnalysisX_Amz_Target { 'Textract.GetDocumentAnalysis' = 0 }
 
-	export enum GetDocumentTextDetectionX_Amz_Target { Textract_GetDocumentTextDetection = 0 }
+	export enum GetDocumentTextDetectionX_Amz_Target { 'Textract.GetDocumentTextDetection' = 0 }
 
-	export enum StartDocumentAnalysisX_Amz_Target { Textract_StartDocumentAnalysis = 0 }
+	export enum StartDocumentAnalysisX_Amz_Target { 'Textract.StartDocumentAnalysis' = 0 }
 
-	export enum StartDocumentTextDetectionX_Amz_Target { Textract_StartDocumentTextDetection = 0 }
+	export enum StartDocumentTextDetectionX_Amz_Target { 'Textract.StartDocumentTextDetection' = 0 }
 
 }
 
