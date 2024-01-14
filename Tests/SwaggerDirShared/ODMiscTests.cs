@@ -555,22 +555,23 @@ namespace SwagTests
 		//	helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\turbinelabs.io\1.0");
 		//}
 
-		[Fact(Skip = "OK, but container class not used, thus no build")]
+		[Fact()]
 		public void Test_tvmaze_com_1_0()//to be resolved
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\tvmaze.com\1.0", new Settings()
-			{
-				ClientNamespace = "MyNS",
-				ContainerClassName = "MyClient", //not used because of ContainerNameStrategy.Path
-				ContainerNameStrategy = ContainerNameStrategy.Path,
-				ActionNameStrategy = ActionNameStrategy.MethodQueryParameters,
-				GenerateBothAsyncAndSync = false,
-				DecorateDataModelWithSerializable = true,
-				UseEnsureSuccessStatusCodeEx = true,
-				DataAnnotationsEnabled = true,
-				DataAnnotationsToComments = true,
-				HandleHttpRequestHeaders = true,
-			});
+			//helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\tvmaze.com\1.0", new Settings()
+			//{
+			//	ClientNamespace = "MyNS",
+			//	ContainerClassName = "MyClient", //not used because of ContainerNameStrategy.Path
+			//	ContainerNameStrategy = ContainerNameStrategy.Path,
+			//	ActionNameStrategy = ActionNameStrategy.MethodQueryParameters,
+			//	GenerateBothAsyncAndSync = false,
+			//	DecorateDataModelWithSerializable = true,
+			//	UseEnsureSuccessStatusCodeEx = true,
+			//	DataAnnotationsEnabled = true,
+			//	DataAnnotationsToComments = true,
+			//	HandleHttpRequestHeaders = true,
+			//});
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\tvmaze.com\1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -921,10 +922,10 @@ namespace SwagTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zalando.com\v1.0", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip = "need bug fixing for duplicated function names")]
+		[Fact()]
 		public void Test_zappiti_com_4_15_174()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zappiti.com\4.15.174");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\zappiti.com\4.15.174", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact(Skip = "need bug fixing")]

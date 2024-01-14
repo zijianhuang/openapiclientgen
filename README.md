@@ -384,3 +384,11 @@ OpenApiClientGen had been tested upon over 1000 Open API definitions in v3 forma
 
 * [Quick Comparison](https://github.com/zijianhuang/openapiclientgen/wiki/Comparison-with-NSwag)
 * [Detailed Comparison](https://github.com/zijianhuang/OpenApiExamples/wiki)
+
+## Articles
+
+In addition to Wiki, please refer to these articles:
+
+
+* [OpenApiClientGen to Generate Strongly Typed Client API Codes Based on Open API Definitions](https://www.codeproject.com/Articles/5262184/OpenApiClientGen-to-Generate-Strongly-Typed-Client)
+* [Generate Typed Forms of Angular Reactive Forms from Swagger / OpenAPI definitions](https://www.codeproject.com/Articles/5375552/Generate-Typed-Forms-of-Angular-Reactive-Forms-fro)
