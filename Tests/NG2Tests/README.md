@@ -1,5 +1,7 @@
 Walk through OpenApi definition files, some with swagger.yaml v2.0 and the others with openapi.yaml v3.0, generate NG TS codes and run `ng build`.
 
+In `appsettings.json', only "Build" is used, while "UpdateGenerated" is always true.
+
 **Remarks:**
 
 Each ng guild upon generated codes of a definition file may take around 15 seconds to 20 seconds on an Intel i7 NUC box, or around 5.5 seconds on "13th Gen Intel Core i7-13700KF 3.40 GHz". The total time estimated should be multiplication by the total number of cases.
