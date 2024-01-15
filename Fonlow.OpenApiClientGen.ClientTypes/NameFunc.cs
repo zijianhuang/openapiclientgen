@@ -159,6 +159,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
 				.Replace("(", "").Replace(")", "")
+				.Replace("{", "").Replace("}", "")
 				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace("'", "_")
 				.Replace(' ', '_'));
 		}

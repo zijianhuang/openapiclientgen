@@ -56,17 +56,17 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			var compilation = CSharpCompilation.Create(assemblyFileName, null, null, new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, true))
 				.AddReferences(
-					CreateFromName("System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e"),
-					CreateFromName("System.Runtime, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					CreateFromName("netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51"),
-					CreateFromName("System.Net.Http, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					CreateFromName("System.Private.Uri, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					CreateFromName("System.Runtime.Extensions, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					CreateFromName("System.Runtime.Serialization.Primitives, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					CreateFromName("System.Net.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					CreateFromName("System.ComponentModel.Annotations, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					CreateFromName("System.Linq, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),
-					useSystemTextJson ? CreateFromName("System.Text.Json, Version=5.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51") : MetadataReference.CreateFromFile("Newtonsoft.Json.dll")
+					CreateFromName("System.Private.CoreLib"),
+					CreateFromName("System.Runtime"),
+					CreateFromName("netstandard"),
+					CreateFromName("System.Net.Http"),
+					CreateFromName("System.Private.Uri"),
+					CreateFromName("System.Runtime.Extensions"),
+					CreateFromName("System.Runtime.Serialization.Primitives"),
+					CreateFromName("System.Net.Primitives"),
+					CreateFromName("System.ComponentModel.Annotations"),
+					CreateFromName("System.Linq"),
+					useSystemTextJson ? CreateFromName("System.Text.Json") : MetadataReference.CreateFromFile("Newtonsoft.Json.dll")
 				)
 				.AddSyntaxTrees(tree);
 
