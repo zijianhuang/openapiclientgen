@@ -493,7 +493,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(propertySchema.Type) || propertySchema.Type == "string")
-							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							? (propertySchema.Format=="password" ? propertySchema.Enum.Cast<OpenApiPassword>().Select(m => m.Value).ToArray() : propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray())
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 					}

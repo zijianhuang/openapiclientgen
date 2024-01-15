@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace My.Pet.Client
+namespace MyNS
 {
 	using System;
 	using System.Linq;
@@ -16,352 +16,16 @@ namespace My.Pet.Client
 	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
-	
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class ApiResponse
+
+
+	public partial class Misc
 	{
-		
-		[System.Runtime.Serialization.DataMember(Name="code")]
-		public System.Nullable<System.Int32> Code { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="type")]
-		public string Type { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="message")]
-		public string Message { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Cat : Pet
-	{
-		
-		/// <summary>
-		/// The measured skill for hunting
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
-		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum CatHuntingSkill
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		clueless = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		lazy = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		adventurous = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		aggressive = 3,
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Category
-	{
-		
-		/// <summary>
-		/// Category ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Category name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// Test Sub Category
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="sub")]
-		public CategorySub Sub { get; set; }
-	}
-	
-	public class CategorySub
-	{
-		
-		/// <summary>
-		/// Dumb Property
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="prop1")]
-		public string Prop1 { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Dog : Pet
-	{
-		
-		/// <summary>
-		/// The size of the pack the dog is from
-		/// Required
-		/// Minimum: 1
-		/// </summary>
-		[System.ComponentModel.DefaultValue(1)]
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="packSize")]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public int PackSize { get; set; } = 1;
-	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class HoneyBee : Pet
-	{
-		
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
-		public float HoneyPerDay { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Order
-	{
-		
-		/// <summary>
-		/// Order ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Pet ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="petId")]
-		public System.Nullable<System.Int64> PetId { get; set; }
-		
-		/// <summary>
-		/// Minimum: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="quantity")]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public System.Nullable<System.Int32> Quantity { get; set; }
-		
-		/// <summary>
-		/// Estimated ship date
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="shipDate")]
-		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
-		
-		/// <summary>
-		/// Order Status
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="status")]
-		public System.Nullable<OrderStatus> Status { get; set; }
-		
-		/// <summary>
-		/// Indicates whenever order was completed or not
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="complete")]
-		public System.Nullable<System.Boolean> Complete { get; set; }
-		
-		/// <summary>
-		/// Unique Request Id
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="requestId")]
-		public string RequestId { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum OrderStatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		placed = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		approved = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		delivered = 2,
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Pet
-	{
-		
-		/// <summary>
-		/// Pet ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Categories this pet belongs to
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="category")]
-		public Category Category { get; set; }
-		
-		/// <summary>
-		/// The name given to a pet
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// The list of URL to a cute photos featuring pet
-		/// Required
-		/// Maximum items: 20
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="photoUrls")]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
-		public string[] PhotoUrls { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="friend")]
-		public Pet Friend { get; set; }
-		
-		/// <summary>
-		/// Tags attached to the pet
-		/// Minimum items: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public Tag[] Tags { get; set; }
-		
-		/// <summary>
-		/// Pet status in the store
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="status")]
-		public System.Nullable<PetStatus> Status { get; set; }
-		
-		/// <summary>
-		/// Type of a pet
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="petType")]
-		public string PetType { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Tag
-	{
-		
-		/// <summary>
-		/// Tag ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Tag name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string Name { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum PetStatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		available = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		pending = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		sold = 2,
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class User
-	{
-		
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="pet")]
-		public Pet Pet { get; set; }
-		
-		/// <summary>
-		/// User supplied username
-		/// Min length: 4
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="username")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		public string Username { get; set; }
-		
-		/// <summary>
-		/// User first name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="firstName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string FirstName { get; set; }
-		
-		/// <summary>
-		/// User last name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="lastName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string LastName { get; set; }
-		
-		/// <summary>
-		/// User email address
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="email")]
-		public string Email { get; set; }
-		
-		/// <summary>
-		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
-		/// Min length: 8
-		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="password")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/")]
-		public string Password { get; set; }
-		
-		/// <summary>
-		/// User phone number in international format
-		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="phone")]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/^\+(?:[0-9]-?){6,14}[0-9]$/")]
-		public string Phone { get; set; }
-		
-		/// <summary>
-		/// User status
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="userStatus")]
-		public System.Nullable<System.Int32> UserStatus { get; set; }
-	}
-	
-	public partial class PetClient
-	{
-		
+
 		private System.Net.Http.HttpClient client;
-		
+
 		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public PetClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings = null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -372,606 +36,821 @@ namespace My.Pet.Client
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
-		
-		/// <summary>
-		/// Add a new pet to the store
-		/// Add new pet to the store inventory.
-		/// AddPet pet
-		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task AddPetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Update an existing pet
-		/// UpdatePet pet
+		/// The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.
+		/// 
+		/// The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields.
+		/// Use this endpoint if you are comparing model predictions to measurements.
+		/// 
+		/// App_api_cari7_endpoints_CARI7_ambient_dose cari7/ambient_dose
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
+		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
+		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
+		/// <param name="year">Year in YYYY.</param>
+		/// <param name="month">Month in MM.</param>
+		/// <param name="day">Day in DD.</param>
+		/// <param name="utc">Hour in 24 hour time.</param>
+		/// <param name="particle">The particle type as a string. Specifying 'total' returns the dose for all particle types.
+		///</param>
+		/// <returns>Successful dose calculation</returns>
+		public async Task<App_api_cari7_endpoints_CARI7_ambient_doseReturn> App_api_cari7_endpoints_CARI7_ambient_doseAsync(float altitude, float latitude, float longitude, int year, int month, int day, int utc, App_api_cari7_endpoints_CARI7_ambient_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "pet";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Find pet by ID
-		/// Returns a single pet
-		/// GetPetById pet/{petId}
-		/// </summary>
-		/// <param name="petId">ID of pet to return</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet> GetPetByIdAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/"+petId;
+			var requestUri = "cari7/ambient_dose?altitude=" + altitude + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&utc=" + utc + "&particle=" + particle;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				if (handleHeaders != null)
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet>(jsonReader);
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<App_api_cari7_endpoints_CARI7_ambient_doseReturn>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Deletes a pet
-		/// DeletePet pet/{petId}
-		/// </summary>
-		/// <param name="petId">Pet id to delete</param>
-		public async Task DeletePetAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/"+petId;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Finds Pets by status
-		/// Multiple status values can be provided with comma separated strings
-		/// FindPetsByStatus pet/findByStatus
+		/// The effective dose rate calculated for a single particle type, or accumulated over all particle types.
+		/// 
+		/// Effective Dose is a radiation protection quantity defined by the International Commission on
+		/// Radiological Protection (ICRP) and represents the stochastic health
+		/// risk to the human body at low levels of radiation.
+		/// It accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation.
+		/// Use this endpoint if you need to estimate radiation exposures of personnel.
+		/// 
+		/// App_api_cari7_endpoints_CARI7_effective_dose cari7/effective_dose
 		/// </summary>
-		/// <param name="status">Status values that need to be considered for filter</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
+		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
+		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
+		/// <param name="year">Year in YYYY.</param>
+		/// <param name="month">Month in MM.</param>
+		/// <param name="day">Day in DD.</param>
+		/// <param name="utc">Hour in 24 hour time.</param>
+		/// <param name="particle">The particle type as a string. Specifying 'total' returns the dose for all particle types.
+		///</param>
+		/// <returns>Successful dose calculation</returns>
+		public async Task<App_api_cari7_endpoints_CARI7_effective_doseReturn> App_api_cari7_endpoints_CARI7_effective_doseAsync(float altitude, float latitude, float longitude, int year, int month, int day, int utc, App_api_cari7_endpoints_CARI7_effective_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
+			var requestUri = "cari7/effective_dose?altitude=" + altitude + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&utc=" + utc + "&particle=" + particle;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				if (handleHeaders != null)
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet[]>(jsonReader);
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<App_api_cari7_endpoints_CARI7_effective_doseReturn>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
+
 		/// <summary>
-		/// Finds Pets by tags
-		/// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
-		/// FindPetsByTags pet/findByTags
+		/// The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.
+		/// 
+		/// The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields.
+		/// Use this endpoint if you are comparing model predictions to measurements.
+		/// 
+		/// App_api_parma_endpoints_PARMA_ambient_dose parma/ambient_dose
 		/// </summary>
-		/// <param name="tags">Tags to filter by</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
+		/// <param name="atmospheric_depth">Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
+		///</param>
+		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
+		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
+		/// <param name="year">Year in YYYY.</param>
+		/// <param name="month">Month in MM.</param>
+		/// <param name="day">Day in DD.</param>
+		/// <param name="particle">The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
+		///</param>
+		/// <returns>Successful dose read operation</returns>
+		public async Task<App_api_parma_endpoints_PARMA_ambient_doseReturn> App_api_parma_endpoints_PARMA_ambient_doseAsync(float altitude, float atmospheric_depth, float latitude, float longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_ambient_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "pet/findByTags?"+String.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "parma/ambient_dose?altitude=" + altitude + "&atmospheric_depth=" + atmospheric_depth + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&particle=" + particle;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				if (handleHeaders != null)
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet[]>(jsonReader);
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<App_api_parma_endpoints_PARMA_ambient_doseReturn>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
+
 		/// <summary>
-		/// Returns pet inventories by status
-		/// Returns a map of status codes to quantities
-		/// GetInventory store/inventory
+		/// The energy differential intensity of a particle at a given zenith angle.
+		/// The differential intensity of a particle is a directional quantity that describes the number of particles per unit area, per unit solid angle, per unit energy, and per unit time. The API leverages the functionality of PARMA to calculate differential intensity distributions with energies in units of MeV and Intensity in units of /cm2/sr/MeV/s.
+		/// 
+		/// App_api_parma_endpoints_PARMA_differential_intensity parma/differential_intensity
 		/// </summary>
-		/// <returns>successful operation</returns>
-		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
+		/// <param name="atmospheric_depth">Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
+		///</param>
+		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
+		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
+		/// <param name="year">Year in YYYY.</param>
+		/// <param name="month">Month in MM.</param>
+		/// <param name="day">Day in DD.</param>
+		/// <param name="particle">The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
+		///</param>
+		/// <param name="angle">Direction cosine. 1.0 is in the downward direction.</param>
+		/// <returns>Successful read of intensity operation</returns>
+		public async Task<App_api_parma_endpoints_PARMA_differential_intensityReturn> App_api_parma_endpoints_PARMA_differential_intensityAsync(float altitude, float atmospheric_depth, float latitude, float longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_differential_intensityParticle particle, float angle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "store/inventory";
+			var requestUri = "parma/differential_intensity?altitude=" + altitude + "&atmospheric_depth=" + atmospheric_depth + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&particle=" + particle + "&angle=" + angle;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				if (handleHeaders != null)
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<App_api_parma_endpoints_PARMA_differential_intensityReturn>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Place an order for a pet
-		/// PlaceOrder store/order
-		/// </summary>
-		/// <param name="requestBody">order placed for purchasing the pet</param>
-		/// <returns>successful operation</returns>
-		public async Task<Order> PlaceOrderAsync(Order requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Order>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Find purchase order by ID
-		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
-		/// GetOrderById store/order/{orderId}
+		/// The effective dose rate calculated for a single particle type, or accumulated over all particle types.
+		/// 
+		/// Effective dose is a radiation protection quantity defined by the International Commission on Radiological Protection (ICRP) and represents the stochastic health risk to the human body at low levels of radiation. It accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation.
+		/// Use this endpoint if you need to estimate radiation exposures of personnel.
+		/// 
+		/// App_api_parma_endpoints_PARMA_effective_dose parma/effective_dose
 		/// </summary>
-		/// <param name="orderId">ID of pet that needs to be fetched</param>
-		/// <returns>successful operation</returns>
-		public async Task<Order> GetOrderByIdAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
+		/// <param name="atmospheric_depth">Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
+		///</param>
+		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
+		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
+		/// <param name="year">Year in YYYY.</param>
+		/// <param name="month">Month in MM.</param>
+		/// <param name="day">Day in DD.</param>
+		/// <param name="particle">The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
+		///</param>
+		/// <returns>Successful dose read operation</returns>
+		public async Task<App_api_parma_endpoints_PARMA_effective_doseReturn> App_api_parma_endpoints_PARMA_effective_doseAsync(float altitude, float atmospheric_depth, float latitude, float longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_effective_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "store/order/"+orderId;
+			var requestUri = "parma/effective_dose?altitude=" + altitude + "&atmospheric_depth=" + atmospheric_depth + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&particle=" + particle;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				if (handleHeaders != null)
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Order>(jsonReader);
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<App_api_parma_endpoints_PARMA_effective_doseReturn>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Delete purchase order by ID
-		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-		/// DeleteOrder store/order/{orderId}
-		/// </summary>
-		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public async Task DeleteOrderAsync(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Create user
-		/// This can only be done by the logged in user.
-		/// CreateUser user
+		/// Calculate the ambient equivalent dose along a great circle flight route.
+		/// 
+		/// The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields.  <br> <br> Use this endpoint if you are comparing model predictions to measurements. <br> <br> This API can run in two modes: <br> <br> Either specify <br> <b>altitude</b>, <b>duration</b><br> for constant altitude calculations; <br> <br> Or specify <br> <b>initial_altitude</b>, <b>cruising_altitudes</b>, <b>climb_times</b>, <b>cruising_times</b>, <b>descent_time</b>, <b>final_altitude</b><br> to calculate dose accounting for a step climb. <br> <br> Note: the airport codes or coordinates (depending on which was specified), and the date in DD/MM/YYYY format, are echoed in the json response as strings.
+		/// 
+		/// App_api_icaro_endpoints_ICARO_ambient_dose route/ambient_dose
 		/// </summary>
-		/// <param name="requestBody">Created user object</param>
-		public async Task CreateUserAsync(User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="origin">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.</param>
+		/// <param name="destination">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.</param>
+		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
+		/// <param name="duration">The flight duration in hours. The minimum is 0, the maximum is 20 hrs.</param>
+		/// <param name="initial_altitude">Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
+		/// <param name="cruising_altitudes">Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.</param>
+		/// <param name="climb_times">Climb times for each cruising altitude (hours).</param>
+		/// <param name="cruising_times">Cruising times at each cruising altitude (hours).</param>
+		/// <param name="descent_time">Descent time from last cruising altitude to final altitude (hours).</param>
+		/// <param name="final_altitude">Final altitude (in km).</param>
+		/// <param name="year">Year in YYYY.</param>
+		/// <param name="month">Month in MM.</param>
+		/// <param name="day">Day in DD.</param>
+		/// <returns>Successful dose calculation</returns>
+		public async Task<App_api_icaro_endpoints_ICARO_ambient_doseReturn> App_api_icaro_endpoints_ICARO_ambient_doseAsync(string origin, string destination, float altitude, float duration, float initial_altitude, float[] cruising_altitudes, float[] climb_times, float[] cruising_times, float descent_time, float final_altitude, int year, int month, int day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get user by user name
-		/// GetUserByName user/{username}
-		/// </summary>
-		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
-		/// <returns>successful operation</returns>
-		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
+			var requestUri = "route/ambient_dose?origin=" + (origin == null ? "" : Uri.EscapeDataString(origin)) + "&destination=" + (destination == null ? "" : Uri.EscapeDataString(destination)) + "&altitude=" + altitude + "&duration=" + duration + "&initial_altitude=" + initial_altitude + "&" + String.Join("&", cruising_altitudes.Select(z => $"cruising_altitudes={z}")) + "&" + String.Join("&", climb_times.Select(z => $"climb_times={z}")) + "&" + String.Join("&", cruising_times.Select(z => $"cruising_times={z}")) + "&descent_time=" + descent_time + "&final_altitude=" + final_altitude + "&year=" + year + "&month=" + month + "&day=" + day;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				if (handleHeaders != null)
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<User>(jsonReader);
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<App_api_icaro_endpoints_ICARO_ambient_doseReturn>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Updated user
-		/// This can only be done by the logged in user.
-		/// UpdateUser user/{username}
-		/// </summary>
-		/// <param name="username">name that need to be deleted</param>
-		/// <param name="requestBody">Updated user object</param>
-		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Delete user
-		/// This can only be done by the logged in user.
-		/// DeleteUser user/{username}
+		/// Calculate the total effective dose along a great circle flight route.
+		/// 
+		/// Effective Dose is a radiation protection quantity defined by the International Commission on
+		/// Radiological Protection (ICRP) and represents the stochastic health
+		/// risk to the human body at low levels of radiation.
+		/// It accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation. <br> <br> Use this endpoint if you need to estimate radiation exposures of personnel. <br> <br> This API can run in two modes: <br> <br> Either specify <br> <b>altitude</b>, <b>duration</b><br> for constant altitude calculations; <br> <br> Or specify <br> <b>initial_altitude</b>, <b>cruising_altitudes</b>, <b>climb_times</b>, <b>cruising_times</b>, <b>descent_time</b>, <b>final_altitude</b><br> to calculate dose accounting for a step climb. <br> <br> Note: the airport codes or coordinates (depending on which was specified), and the date in DD/MM/YYYY format, are echoed in the json response as strings.
+		/// 
+		/// App_api_icaro_endpoints_ICARO_effective_dose route/effective_dose
 		/// </summary>
-		/// <param name="username">The name that needs to be deleted</param>
-		public async Task DeleteUserAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="origin">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.</param>
+		/// <param name="destination">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.</param>
+		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
+		/// <param name="duration">The flight duration in hours. The minimum is 0, the maximum is 20 hrs.</param>
+		/// <param name="initial_altitude">Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
+		/// <param name="cruising_altitudes">Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.</param>
+		/// <param name="climb_times">Climb times for each cruising altitude (hours).</param>
+		/// <param name="cruising_times">Cruising times at each cruising altitude (hours).</param>
+		/// <param name="descent_time">Descent time from last cruising altitude to final altitude (hours).</param>
+		/// <param name="final_altitude">Final altitude (in km).</param>
+		/// <param name="year">Year in YYYY.</param>
+		/// <param name="month">Month in MM.</param>
+		/// <param name="day">Day in DD.</param>
+		/// <returns>Successful dose calculation</returns>
+		public async Task<App_api_icaro_endpoints_ICARO_effective_doseReturn> App_api_icaro_endpoints_ICARO_effective_doseAsync(string origin, string destination, float altitude, float duration, float initial_altitude, float[] cruising_altitudes, float[] climb_times, float[] cruising_times, float descent_time, float final_altitude, int year, int month, int day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithArrayInput user/createWithArray
-		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithArrayInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/createWithArray";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithListInput user/createWithList
-		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithListInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/createWithList";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Logs user into the system
-		/// LoginUser user/login
-		/// </summary>
-		/// <param name="username">The user name for login</param>
-		/// <param name="password">The password for login in clear text</param>
-		/// <returns>successful operation</returns>
-		public async Task<string> LoginUserAsync(string username, string password, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
+			var requestUri = "route/effective_dose?origin=" + (origin == null ? "" : Uri.EscapeDataString(origin)) + "&destination=" + (destination == null ? "" : Uri.EscapeDataString(destination)) + "&altitude=" + altitude + "&duration=" + duration + "&initial_altitude=" + initial_altitude + "&" + String.Join("&", cruising_altitudes.Select(z => $"cruising_altitudes={z}")) + "&" + String.Join("&", climb_times.Select(z => $"climb_times={z}")) + "&" + String.Join("&", cruising_times.Select(z => $"cruising_times={z}")) + "&descent_time=" + descent_time + "&final_altitude=" + final_altitude + "&year=" + year + "&month=" + month + "&day=" + day;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				if (handleHeaders != null)
 				{
-				return jsonReader.ReadAsString();
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<App_api_icaro_endpoints_ICARO_effective_doseReturn>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Logs out current logged in user session
-		/// LogoutUser user/logout
-		/// </summary>
-		public async Task LogoutUserAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/logout";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
+	}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
+	public enum App_api_cari7_endpoints_CARI7_ambient_doseParticle
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		total = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		neutron = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		photon = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
+		e_ = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
+		e_ = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
+		mu_ = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
+		mu_ = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		proton = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi-")]
+		pi_ = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi+")]
+		pi_ = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		deuteron = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		triton = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		helion = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		alpha = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Li = 14,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Be = 15,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		B = 16,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		C = 17,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		N = 18,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		O = 19,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		F = 20,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ne = 21,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Na = 22,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mg = 23,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Al = 24,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Si = 25,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		P = 26,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		S = 27,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Cl = 28,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ar = 29,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		K = 30,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ca = 31,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Sc = 32,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ti = 33,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		V = 34,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Cr = 35,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mn = 36,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Fe = 37,
+	}
+
+	public class App_api_cari7_endpoints_CARI7_ambient_doseReturn
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
+		public App_api_cari7_endpoints_CARI7_ambient_doseReturnDose_rate Dose_rate { get; set; }
+	}
+
+	public class App_api_cari7_endpoints_CARI7_ambient_doseReturnDose_rate
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public System.Nullable<System.Single> Value { get; set; }
+	}
+
+	public enum App_api_cari7_endpoints_CARI7_effective_doseParticle
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		total = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		neutron = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		photon = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
+		e_ = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
+		e_ = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
+		mu_ = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
+		mu_ = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		proton = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi-")]
+		pi_ = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi+")]
+		pi_ = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		deuteron = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		triton = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		helion = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		alpha = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Li = 14,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Be = 15,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		B = 16,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		C = 17,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		N = 18,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		O = 19,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		F = 20,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ne = 21,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Na = 22,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mg = 23,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Al = 24,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Si = 25,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		P = 26,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		S = 27,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Cl = 28,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ar = 29,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		K = 30,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ca = 31,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Sc = 32,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Ti = 33,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		V = 34,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Cr = 35,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Mn = 36,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Fe = 37,
+	}
+
+	public class App_api_cari7_endpoints_CARI7_effective_doseReturn
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
+		public App_api_cari7_endpoints_CARI7_effective_doseReturnDose_rate Dose_rate { get; set; }
+	}
+
+	public class App_api_cari7_endpoints_CARI7_effective_doseReturnDose_rate
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public System.Nullable<System.Single> Value { get; set; }
+	}
+
+	public enum App_api_parma_endpoints_PARMA_ambient_doseParticle
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		total = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
+		e_ = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
+		e_ = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
+		mu_ = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
+		mu_ = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		gamma = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		neutron = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		proton = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		alpha = 8,
+	}
+
+	public class App_api_parma_endpoints_PARMA_ambient_doseReturn
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
+		public App_api_parma_endpoints_PARMA_ambient_doseReturnDose_rate Dose_rate { get; set; }
+	}
+
+	public class App_api_parma_endpoints_PARMA_ambient_doseReturnDose_rate
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public System.Nullable<System.Single> Value { get; set; }
+	}
+
+	public enum App_api_parma_endpoints_PARMA_differential_intensityParticle
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		total = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
+		e_ = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
+		e_ = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
+		mu_ = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
+		mu_ = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		gamma = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		neutron = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		proton = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		alpha = 8,
+	}
+
+	public class App_api_parma_endpoints_PARMA_differential_intensityReturn
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "energies")]
+		public App_api_parma_endpoints_PARMA_differential_intensityReturnEnergies Energies { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "intensities")]
+		public App_api_parma_endpoints_PARMA_differential_intensityReturnIntensities Intensities { get; set; }
+	}
+
+	public class App_api_parma_endpoints_PARMA_differential_intensityReturnEnergies
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "data")]
+		public float[] Data { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+	}
+
+	public class App_api_parma_endpoints_PARMA_differential_intensityReturnIntensities
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "data")]
+		public float[] Data { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+	}
+
+	public enum App_api_parma_endpoints_PARMA_effective_doseParticle
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		total = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
+		e_ = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
+		e_ = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
+		mu_ = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
+		mu_ = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		gamma = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		neutron = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		proton = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		alpha = 8,
+	}
+
+	public class App_api_parma_endpoints_PARMA_effective_doseReturn
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
+		public App_api_parma_endpoints_PARMA_effective_doseReturnDose_rate Dose_rate { get; set; }
+	}
+
+	public class App_api_parma_endpoints_PARMA_effective_doseReturnDose_rate
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public System.Nullable<System.Single> Value { get; set; }
+	}
+
+	public class App_api_icaro_endpoints_ICARO_ambient_doseReturn
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "dose")]
+		public App_api_icaro_endpoints_ICARO_ambient_doseReturnDose Dose { get; set; }
+	}
+
+	public class App_api_icaro_endpoints_ICARO_ambient_doseReturnDose
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "date")]
+		public string Date { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "destination")]
+		public string Destination { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "origin")]
+		public string Origin { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public System.Nullable<System.Single> Value { get; set; }
+	}
+
+	public class App_api_icaro_endpoints_ICARO_effective_doseReturn
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "dose")]
+		public App_api_icaro_endpoints_ICARO_effective_doseReturnDose Dose { get; set; }
+	}
+
+	public class App_api_icaro_endpoints_ICARO_effective_doseReturnDose
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "date")]
+		public string Date { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "destination")]
+		public string Destination { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "origin")]
+		public string Origin { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "units")]
+		public string Units { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public System.Nullable<System.Single> Value { get; set; }
 	}
 }
 

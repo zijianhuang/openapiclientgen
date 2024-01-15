@@ -19,29 +19,53 @@ namespace GenerateCases
 				return;
 			}
 
-			var filePath = args[0];
+			var filePath = args[0]; // generate through C:\VsProjects\Study\openapi-directory20240114\APIs>dir openapi.yaml /b /s >> c:\temp\files.txt
 			var outputPath = args[1];
 			var fileNames = File.ReadAllLines(filePath);
 			//baseName is used to path manipulation from the arg1 file contents
-			var baseName = @"openapi-directory\APIs\";
+			//var baseName = @"openapi-directory\APIs\";
+			var baseName = @"openapi-directory20240114\APIs\";
+
+			// convert each C:\VsProjects\Study\openapi-directory20240114\APIs\1password.com\events\1.2.0\openapi.yaml to 
 			var testFileNames = fileNames.Select(fileName => fileName[(fileName.IndexOf(baseName, StringComparison.InvariantCultureIgnoreCase) + baseName.Length)..]).ToList();
 
 			File.WriteAllLines(outputPath, testFileNames.Select(d =>
 			{
-				var funcNameSuffix = d.Replace('.', '_').Replace('\\', '_').Replace('-', '_');
-				return $@"
+				var funcNameSuffix = RefinePropertyName(d);
+				var forNewtonSoftAndSystemTextJson = $@"
 		[Fact]
 		public void Test_{funcNameSuffix}()
 		{{
-			helper.GenerateFromOpenApiAndBuild(@""..\..\..\..\openapi-directory\APIs\{d}"");
+			helper.GenerateFromOpenApiAndBuild(@""..\..\..\..\{baseName}{d}"");
 		}}
 
 		[Fact]
 		public void Test_{funcNameSuffix}_SystemTextJson()
 		{{
-			helper.GenerateFromOpenApiAndBuild(@""..\..\..\..\openapi-directory\APIs\{d}"", new Settings(){{UseSystemTextJson = true}});
+			helper.GenerateFromOpenApiAndBuild(@""..\..\..\..\{baseName}{d}"", new Settings(){{UseSystemTextJson = true}});
 		}}";
+
+				var forNewtonSoft = $@"
+		[Fact]
+		public void Test_{funcNameSuffix}()
+		{{
+			helper.GenerateFromOpenApiAndBuild(@""..\..\..\..\{baseName}{d}"");
+		}}";
+				return forNewtonSoft;
 			}));
 		}
+
+		static string RefinePropertyName(string s)
+		{
+			if (String.IsNullOrEmpty(s))
+			{
+				return s;
+			}
+
+			return s.Replace("\\", "_").Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
+				.Replace('[', '_').Replace(']', '_').Replace('(', '_').Replace(')', '_').Replace('/', '_').Replace('#', '_')
+				.Replace(' ', '_').Replace('+', '_').Replace('~', '_');
+		}
 	}
+
 }

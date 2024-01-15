@@ -67,11 +67,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				b = "_" + b;
 			}
 
-			b = b.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
+			b = b.Replace('.', '_').Replace("-", "Minus").Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", "")//atlassian api has this.
 						.Replace("*", "_")//aws s3 has this
-						.Replace('+', '_')
+						.Replace("+", "Plus")
 						.Replace('$', '_')
 						.Replace('#', '_')
 						.Replace(" ", "") //azure.com\appconfiguration seems to define a flags enum as a CSV. But Swagger does not seem to support flags enum.
@@ -148,7 +148,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
-				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_')
+				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_')
 				.Replace(' ', '_'));
 		}
 
