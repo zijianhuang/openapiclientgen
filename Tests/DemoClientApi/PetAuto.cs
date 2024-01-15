@@ -18,6 +18,419 @@ namespace MyNS
 	using Fonlow.Net.Http;
 
 
+	/// <summary>
+	/// Deployment dependency information.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class BasicDependency
+	{
+
+		/// <summary>
+		/// Gets or sets the ID of the dependency.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
+		public string Id { get; set; }
+
+		/// <summary>
+		/// Gets or sets the dependency resource name.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "resourceName")]
+		public string ResourceName { get; set; }
+
+		/// <summary>
+		/// Gets or sets the dependency resource type.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "resourceType")]
+		public string ResourceType { get; set; }
+	}
+
+	/// <summary>
+	/// Deployment dependency information.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class Dependency
+	{
+
+		/// <summary>
+		/// Gets the list of dependencies.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "dependsOn")]
+		public BasicDependency[] DependsOn { get; set; }
+
+		/// <summary>
+		/// Gets or sets the ID of the dependency.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
+		public string Id { get; set; }
+
+		/// <summary>
+		/// Gets or sets the dependency resource name.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "resourceName")]
+		public string ResourceName { get; set; }
+
+		/// <summary>
+		/// Gets or sets the dependency resource type.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "resourceType")]
+		public string ResourceType { get; set; }
+	}
+
+	/// <summary>
+	/// Deployment operation parameters.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class Deployment
+	{
+
+		/// <summary>
+		/// Deployment properties.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "properties")]
+		public DeploymentProperties Properties { get; set; }
+	}
+
+	/// <summary>
+	/// Deployment information.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class DeploymentExtended
+	{
+
+		/// <summary>
+		/// Gets or sets the ID of the deployment.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
+		public string Id { get; set; }
+
+		/// <summary>
+		/// Gets or sets the name of the deployment.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		/// <summary>
+		/// Deployment properties with additional details.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "properties")]
+		public DeploymentPropertiesExtended Properties { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class DeploymentParameters
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "adminPassword")]
+		public DeploymentParametersAdminPassword AdminPassword { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "adminUsername")]
+		public DeploymentParametersAdminUsername AdminUsername { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "dnsLabelPrefix")]
+		public DeploymentParametersDnsLabelPrefix DnsLabelPrefix { get; set; }
+
+		/// <summary>
+		/// Deployment operation parameters.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "osVersion")]
+		public DeploymentParametersOsVersion OsVersion { get; set; }
+	}
+
+	public class DeploymentParametersAdminPassword
+	{
+
+		/// <summary>
+		/// Password for the Virtual Machine.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public string Value { get; set; }
+	}
+
+	public class DeploymentParametersAdminUsername
+	{
+
+		/// <summary>
+		/// Username for the Virtual Machine.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public string Value { get; set; }
+	}
+
+	public class DeploymentParametersDnsLabelPrefix
+	{
+
+		/// <summary>
+		/// Unique DNS Name for the Public IP used to access the Virtual Machine.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public string Value { get; set; }
+	}
+
+	public class DeploymentParametersOsVersion
+	{
+
+		/// <summary>
+		/// The OS version for the VM. This will pick a fully patched image of this given OS version.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DefaultValue(DeploymentParametersOsVersionValue._14_04_2_LTS)]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public DeploymentParametersOsVersionValue Value { get; set; } = DeploymentParametersOsVersionValue._14_04_2_LTS;
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public enum DeploymentParametersOsVersionValue
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "12.04.5-LTS")]
+		_12_04_5MinusLTS = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "14.04.2-LTS")]
+		_14_04_2MinusLTS = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "15.10")]
+		_15_10 = 2,
+	}
+
+	/// <summary>
+	/// Deployment properties.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class DeploymentProperties
+	{
+
+		/// <summary>
+		/// Gets or sets the deployment mode.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mode")]
+		public DeploymentPropertiesMode Mode { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "parameters")]
+		public DeploymentParameters Parameters { get; set; }
+
+		/// <summary>
+		/// Entity representing the reference to the template.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "templateLink")]
+		public TemplateLink TemplateLink { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public enum DeploymentPropertiesMode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Incremental = 0,
+	}
+
+	/// <summary>
+	/// Deployment properties with additional details.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class DeploymentPropertiesExtended
+	{
+
+		/// <summary>
+		/// Gets or sets the correlation ID of the deployment.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "correlationId")]
+		public string CorrelationId { get; set; }
+
+		/// <summary>
+		/// Gets the list of deployment dependencies.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "dependencies")]
+		public Dependency[] Dependencies { get; set; }
+
+		/// <summary>
+		/// Gets or sets the deployment mode.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "mode")]
+		public System.Nullable<DeploymentPropertiesExtendedMode> Mode { get; set; }
+
+		/// <summary>
+		/// Gets or sets key/value pairs that represent deployment output.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "outputs")]
+		public string Outputs { get; set; }
+
+		/// <summary>
+		/// Deployment parameters. Use only one of Parameters or ParametersLink.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "parameters")]
+		public string Parameters { get; set; }
+
+		/// <summary>
+		/// Entity representing the reference to the deployment parameters.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "parametersLink")]
+		public ParametersLink ParametersLink { get; set; }
+
+		/// <summary>
+		/// Gets the list of resource providers needed for the deployment.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "providers")]
+		public Provider[] Providers { get; set; }
+
+		/// <summary>
+		/// Gets or sets the state of the provisioning.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "provisioningState")]
+		public string ProvisioningState { get; set; }
+
+		/// <summary>
+		/// Gets or sets the template content. Use only one of Template or TemplateLink.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "template")]
+		public string Template { get; set; }
+
+		/// <summary>
+		/// Entity representing the reference to the template.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "templateLink")]
+		public TemplateLink TemplateLink { get; set; }
+
+		/// <summary>
+		/// Gets or sets the timestamp of the template deployment.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "timestamp")]
+		public System.Nullable<System.DateTimeOffset> Timestamp { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public enum DeploymentPropertiesExtendedMode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Incremental = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Complete = 1,
+	}
+
+	/// <summary>
+	/// Resource provider information.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class Provider
+	{
+
+		/// <summary>
+		/// Gets or sets the provider id.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "id")]
+		public string Id { get; set; }
+
+		/// <summary>
+		/// Gets or sets the namespace of the provider.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "namespace")]
+		public string Namespace { get; set; }
+
+		/// <summary>
+		/// Gets or sets the registration state of the provider.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "registrationState")]
+		public string RegistrationState { get; set; }
+
+		/// <summary>
+		/// Gets or sets the collection of provider resource types.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "resourceTypes")]
+		public ProviderResourceType[] ResourceTypes { get; set; }
+	}
+
+	/// <summary>
+	/// Resource type managed by the resource provider.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class ProviderResourceType
+	{
+
+		/// <summary>
+		/// Gets or sets the api version.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "apiVersions")]
+		public string[] ApiVersions { get; set; }
+
+		/// <summary>
+		/// Gets or sets the collection of locations where this resource type can be created in.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "locations")]
+		public string[] Locations { get; set; }
+
+		/// <summary>
+		/// Gets or sets the properties.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "properties")]
+		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
+
+		/// <summary>
+		/// Gets or sets the resource type.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "resourceType")]
+		public string ResourceType { get; set; }
+	}
+
+	/// <summary>
+	/// Entity representing the reference to the deployment parameters.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class ParametersLink
+	{
+
+		/// <summary>
+		/// If included it must match the ContentVersion in the template.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "contentVersion")]
+		public string ContentVersion { get; set; }
+
+		/// <summary>
+		/// URI referencing the template.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "uri")]
+		public string Uri { get; set; }
+	}
+
+	/// <summary>
+	/// Entity representing the reference to the template.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public class TemplateLink
+	{
+
+		/// <summary>
+		/// URI referencing the template.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "uri")]
+		public TemplateLinkUri Uri { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
+	public enum TemplateLinkUri
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "https://raw.githubusercontent.com/stankovski/azure-rest-api-specs/master/arm-compute/quickstart-templates/vm-simple-linux.json")]
+		https__raw_githubusercontent_com_stankovski_azureMinusrestMinusapiMinusspecs_master_armMinuscompute_quickstartMinustemplates_vmMinussimpleMinuslinux_json = 0,
+	}
+
 	public partial class Misc
 	{
 
@@ -38,819 +451,43 @@ namespace MyNS
 		}
 
 		/// <summary>
-		/// The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.
-		/// 
-		/// The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields.
-		/// Use this endpoint if you are comparing model predictions to measurements.
-		/// 
-		/// App_api_cari7_endpoints_CARI7_ambient_dose cari7/ambient_dose
+		/// Create a named template deployment using a template.
+		/// VirtualMachines_QuickCreate subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
-		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
-		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
-		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
-		/// <param name="year">Year in YYYY.</param>
-		/// <param name="month">Month in MM.</param>
-		/// <param name="day">Day in DD.</param>
-		/// <param name="utc">Hour in 24 hour time.</param>
-		/// <param name="particle">The particle type as a string. Specifying 'total' returns the dose for all particle types.
-		///</param>
-		/// <returns>Successful dose calculation</returns>
-		public async Task<App_api_cari7_endpoints_CARI7_ambient_doseReturn> App_api_cari7_endpoints_CARI7_ambient_doseAsync(float altitude, float latitude, float longitude, int year, int month, int day, int utc, App_api_cari7_endpoints_CARI7_ambient_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="deploymentName">The name of the deployment.</param>
+		/// <param name="api_version">Client Api Version.</param>
+		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
+		/// <param name="requestBody">Additional parameters supplied to the operation.</param>
+		public async Task<DeploymentExtended> VirtualMachines_QuickCreateAsync(string resourceGroupName, string deploymentName, string api_version, string subscriptionId, Deployment requestBody)
 		{
-			var requestUri = "cari7/ambient_dose?altitude=" + altitude + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&utc=" + utc + "&particle=" + particle;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourcegroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.Resources/deployments/" + (deploymentName == null ? "" : Uri.EscapeDataString(deploymentName)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
-				if (handleHeaders != null)
+				using (var requestWriter = new System.IO.StringWriter())
 				{
-					handleHeaders(httpRequestMessage.Headers);
-				}
-
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
 					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<App_api_cari7_endpoints_CARI7_ambient_doseReturn>(jsonReader);
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DeploymentExtended>(jsonReader);
+						}
 					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
+					finally
+					{
+						responseMessage.Dispose();
+					}
 				}
 			}
 		}
-
-		/// <summary>
-		/// The effective dose rate calculated for a single particle type, or accumulated over all particle types.
-		/// 
-		/// Effective Dose is a radiation protection quantity defined by the International Commission on
-		/// Radiological Protection (ICRP) and represents the stochastic health
-		/// risk to the human body at low levels of radiation.
-		/// It accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation.
-		/// Use this endpoint if you need to estimate radiation exposures of personnel.
-		/// 
-		/// App_api_cari7_endpoints_CARI7_effective_dose cari7/effective_dose
-		/// </summary>
-		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
-		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
-		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
-		/// <param name="year">Year in YYYY.</param>
-		/// <param name="month">Month in MM.</param>
-		/// <param name="day">Day in DD.</param>
-		/// <param name="utc">Hour in 24 hour time.</param>
-		/// <param name="particle">The particle type as a string. Specifying 'total' returns the dose for all particle types.
-		///</param>
-		/// <returns>Successful dose calculation</returns>
-		public async Task<App_api_cari7_endpoints_CARI7_effective_doseReturn> App_api_cari7_endpoints_CARI7_effective_doseAsync(float altitude, float latitude, float longitude, int year, int month, int day, int utc, App_api_cari7_endpoints_CARI7_effective_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "cari7/effective_dose?altitude=" + altitude + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&utc=" + utc + "&particle=" + particle;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				if (handleHeaders != null)
-				{
-					handleHeaders(httpRequestMessage.Headers);
-				}
-
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<App_api_cari7_endpoints_CARI7_effective_doseReturn>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.
-		/// 
-		/// The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields.
-		/// Use this endpoint if you are comparing model predictions to measurements.
-		/// 
-		/// App_api_parma_endpoints_PARMA_ambient_dose parma/ambient_dose
-		/// </summary>
-		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
-		/// <param name="atmospheric_depth">Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
-		///</param>
-		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
-		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
-		/// <param name="year">Year in YYYY.</param>
-		/// <param name="month">Month in MM.</param>
-		/// <param name="day">Day in DD.</param>
-		/// <param name="particle">The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
-		///</param>
-		/// <returns>Successful dose read operation</returns>
-		public async Task<App_api_parma_endpoints_PARMA_ambient_doseReturn> App_api_parma_endpoints_PARMA_ambient_doseAsync(float altitude, float atmospheric_depth, float latitude, float longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_ambient_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "parma/ambient_dose?altitude=" + altitude + "&atmospheric_depth=" + atmospheric_depth + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&particle=" + particle;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				if (handleHeaders != null)
-				{
-					handleHeaders(httpRequestMessage.Headers);
-				}
-
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<App_api_parma_endpoints_PARMA_ambient_doseReturn>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// The energy differential intensity of a particle at a given zenith angle.
-		/// The differential intensity of a particle is a directional quantity that describes the number of particles per unit area, per unit solid angle, per unit energy, and per unit time. The API leverages the functionality of PARMA to calculate differential intensity distributions with energies in units of MeV and Intensity in units of /cm2/sr/MeV/s.
-		/// 
-		/// App_api_parma_endpoints_PARMA_differential_intensity parma/differential_intensity
-		/// </summary>
-		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
-		/// <param name="atmospheric_depth">Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
-		///</param>
-		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
-		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
-		/// <param name="year">Year in YYYY.</param>
-		/// <param name="month">Month in MM.</param>
-		/// <param name="day">Day in DD.</param>
-		/// <param name="particle">The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
-		///</param>
-		/// <param name="angle">Direction cosine. 1.0 is in the downward direction.</param>
-		/// <returns>Successful read of intensity operation</returns>
-		public async Task<App_api_parma_endpoints_PARMA_differential_intensityReturn> App_api_parma_endpoints_PARMA_differential_intensityAsync(float altitude, float atmospheric_depth, float latitude, float longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_differential_intensityParticle particle, float angle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "parma/differential_intensity?altitude=" + altitude + "&atmospheric_depth=" + atmospheric_depth + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&particle=" + particle + "&angle=" + angle;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				if (handleHeaders != null)
-				{
-					handleHeaders(httpRequestMessage.Headers);
-				}
-
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<App_api_parma_endpoints_PARMA_differential_intensityReturn>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// The effective dose rate calculated for a single particle type, or accumulated over all particle types.
-		/// 
-		/// Effective dose is a radiation protection quantity defined by the International Commission on Radiological Protection (ICRP) and represents the stochastic health risk to the human body at low levels of radiation. It accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation.
-		/// Use this endpoint if you need to estimate radiation exposures of personnel.
-		/// 
-		/// App_api_parma_endpoints_PARMA_effective_dose parma/effective_dose
-		/// </summary>
-		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).</param>
-		/// <param name="atmospheric_depth">Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
-		///</param>
-		/// <param name="latitude">Latitude. -90 (S) to 90 (N).</param>
-		/// <param name="longitude">Longitude. -180 (W) to 180 (E).</param>
-		/// <param name="year">Year in YYYY.</param>
-		/// <param name="month">Month in MM.</param>
-		/// <param name="day">Day in DD.</param>
-		/// <param name="particle">The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
-		///</param>
-		/// <returns>Successful dose read operation</returns>
-		public async Task<App_api_parma_endpoints_PARMA_effective_doseReturn> App_api_parma_endpoints_PARMA_effective_doseAsync(float altitude, float atmospheric_depth, float latitude, float longitude, int year, int month, int day, App_api_parma_endpoints_PARMA_effective_doseParticle particle, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "parma/effective_dose?altitude=" + altitude + "&atmospheric_depth=" + atmospheric_depth + "&latitude=" + latitude + "&longitude=" + longitude + "&year=" + year + "&month=" + month + "&day=" + day + "&particle=" + particle;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				if (handleHeaders != null)
-				{
-					handleHeaders(httpRequestMessage.Headers);
-				}
-
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<App_api_parma_endpoints_PARMA_effective_doseReturn>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Calculate the ambient equivalent dose along a great circle flight route.
-		/// 
-		/// The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields.  <br> <br> Use this endpoint if you are comparing model predictions to measurements. <br> <br> This API can run in two modes: <br> <br> Either specify <br> <b>altitude</b>, <b>duration</b><br> for constant altitude calculations; <br> <br> Or specify <br> <b>initial_altitude</b>, <b>cruising_altitudes</b>, <b>climb_times</b>, <b>cruising_times</b>, <b>descent_time</b>, <b>final_altitude</b><br> to calculate dose accounting for a step climb. <br> <br> Note: the airport codes or coordinates (depending on which was specified), and the date in DD/MM/YYYY format, are echoed in the json response as strings.
-		/// 
-		/// App_api_icaro_endpoints_ICARO_ambient_dose route/ambient_dose
-		/// </summary>
-		/// <param name="origin">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.</param>
-		/// <param name="destination">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.</param>
-		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
-		/// <param name="duration">The flight duration in hours. The minimum is 0, the maximum is 20 hrs.</param>
-		/// <param name="initial_altitude">Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
-		/// <param name="cruising_altitudes">Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.</param>
-		/// <param name="climb_times">Climb times for each cruising altitude (hours).</param>
-		/// <param name="cruising_times">Cruising times at each cruising altitude (hours).</param>
-		/// <param name="descent_time">Descent time from last cruising altitude to final altitude (hours).</param>
-		/// <param name="final_altitude">Final altitude (in km).</param>
-		/// <param name="year">Year in YYYY.</param>
-		/// <param name="month">Month in MM.</param>
-		/// <param name="day">Day in DD.</param>
-		/// <returns>Successful dose calculation</returns>
-		public async Task<App_api_icaro_endpoints_ICARO_ambient_doseReturn> App_api_icaro_endpoints_ICARO_ambient_doseAsync(string origin, string destination, float altitude, float duration, float initial_altitude, float[] cruising_altitudes, float[] climb_times, float[] cruising_times, float descent_time, float final_altitude, int year, int month, int day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "route/ambient_dose?origin=" + (origin == null ? "" : Uri.EscapeDataString(origin)) + "&destination=" + (destination == null ? "" : Uri.EscapeDataString(destination)) + "&altitude=" + altitude + "&duration=" + duration + "&initial_altitude=" + initial_altitude + "&" + String.Join("&", cruising_altitudes.Select(z => $"cruising_altitudes={z}")) + "&" + String.Join("&", climb_times.Select(z => $"climb_times={z}")) + "&" + String.Join("&", cruising_times.Select(z => $"cruising_times={z}")) + "&descent_time=" + descent_time + "&final_altitude=" + final_altitude + "&year=" + year + "&month=" + month + "&day=" + day;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				if (handleHeaders != null)
-				{
-					handleHeaders(httpRequestMessage.Headers);
-				}
-
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<App_api_icaro_endpoints_ICARO_ambient_doseReturn>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Calculate the total effective dose along a great circle flight route.
-		/// 
-		/// Effective Dose is a radiation protection quantity defined by the International Commission on
-		/// Radiological Protection (ICRP) and represents the stochastic health
-		/// risk to the human body at low levels of radiation.
-		/// It accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation. <br> <br> Use this endpoint if you need to estimate radiation exposures of personnel. <br> <br> This API can run in two modes: <br> <br> Either specify <br> <b>altitude</b>, <b>duration</b><br> for constant altitude calculations; <br> <br> Or specify <br> <b>initial_altitude</b>, <b>cruising_altitudes</b>, <b>climb_times</b>, <b>cruising_times</b>, <b>descent_time</b>, <b>final_altitude</b><br> to calculate dose accounting for a step climb. <br> <br> Note: the airport codes or coordinates (depending on which was specified), and the date in DD/MM/YYYY format, are echoed in the json response as strings.
-		/// 
-		/// App_api_icaro_endpoints_ICARO_effective_dose route/effective_dose
-		/// </summary>
-		/// <param name="origin">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.</param>
-		/// <param name="destination">The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.</param>
-		/// <param name="altitude">Altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
-		/// <param name="duration">The flight duration in hours. The minimum is 0, the maximum is 20 hrs.</param>
-		/// <param name="initial_altitude">Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.</param>
-		/// <param name="cruising_altitudes">Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.</param>
-		/// <param name="climb_times">Climb times for each cruising altitude (hours).</param>
-		/// <param name="cruising_times">Cruising times at each cruising altitude (hours).</param>
-		/// <param name="descent_time">Descent time from last cruising altitude to final altitude (hours).</param>
-		/// <param name="final_altitude">Final altitude (in km).</param>
-		/// <param name="year">Year in YYYY.</param>
-		/// <param name="month">Month in MM.</param>
-		/// <param name="day">Day in DD.</param>
-		/// <returns>Successful dose calculation</returns>
-		public async Task<App_api_icaro_endpoints_ICARO_effective_doseReturn> App_api_icaro_endpoints_ICARO_effective_doseAsync(string origin, string destination, float altitude, float duration, float initial_altitude, float[] cruising_altitudes, float[] climb_times, float[] cruising_times, float descent_time, float final_altitude, int year, int month, int day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "route/effective_dose?origin=" + (origin == null ? "" : Uri.EscapeDataString(origin)) + "&destination=" + (destination == null ? "" : Uri.EscapeDataString(destination)) + "&altitude=" + altitude + "&duration=" + duration + "&initial_altitude=" + initial_altitude + "&" + String.Join("&", cruising_altitudes.Select(z => $"cruising_altitudes={z}")) + "&" + String.Join("&", climb_times.Select(z => $"climb_times={z}")) + "&" + String.Join("&", cruising_times.Select(z => $"cruising_times={z}")) + "&descent_time=" + descent_time + "&final_altitude=" + final_altitude + "&year=" + year + "&month=" + month + "&day=" + day;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-				if (handleHeaders != null)
-				{
-					handleHeaders(httpRequestMessage.Headers);
-				}
-
-				var responseMessage = await client.SendAsync(httpRequestMessage);
-				try
-				{
-					responseMessage.EnsureSuccessStatusCodeEx();
-					var stream = await responseMessage.Content.ReadAsStreamAsync();
-					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-					{
-						var serializer = JsonSerializer.Create(jsonSerializerSettings);
-						return serializer.Deserialize<App_api_icaro_endpoints_ICARO_effective_doseReturn>(jsonReader);
-					}
-				}
-				finally
-				{
-					responseMessage.Dispose();
-				}
-			}
-		}
-	}
-
-	public enum App_api_cari7_endpoints_CARI7_ambient_doseParticle
-	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		total = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		neutron = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		photon = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
-		e_ = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
-		e_ = 4,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
-		mu_ = 5,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
-		mu_ = 6,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		proton = 7,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi-")]
-		pi_ = 8,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi+")]
-		pi_ = 9,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		deuteron = 10,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		triton = 11,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		helion = 12,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		alpha = 13,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Li = 14,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Be = 15,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		B = 16,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		C = 17,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		N = 18,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		O = 19,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		F = 20,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ne = 21,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Na = 22,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Mg = 23,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Al = 24,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Si = 25,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		P = 26,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		S = 27,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Cl = 28,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ar = 29,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		K = 30,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ca = 31,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Sc = 32,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ti = 33,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		V = 34,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Cr = 35,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Mn = 36,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Fe = 37,
-	}
-
-	public class App_api_cari7_endpoints_CARI7_ambient_doseReturn
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
-		public App_api_cari7_endpoints_CARI7_ambient_doseReturnDose_rate Dose_rate { get; set; }
-	}
-
-	public class App_api_cari7_endpoints_CARI7_ambient_doseReturnDose_rate
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public System.Nullable<System.Single> Value { get; set; }
-	}
-
-	public enum App_api_cari7_endpoints_CARI7_effective_doseParticle
-	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		total = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		neutron = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		photon = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
-		e_ = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
-		e_ = 4,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
-		mu_ = 5,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
-		mu_ = 6,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		proton = 7,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi-")]
-		pi_ = 8,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pi+")]
-		pi_ = 9,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		deuteron = 10,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		triton = 11,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		helion = 12,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		alpha = 13,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Li = 14,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Be = 15,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		B = 16,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		C = 17,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		N = 18,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		O = 19,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		F = 20,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ne = 21,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Na = 22,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Mg = 23,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Al = 24,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Si = 25,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		P = 26,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		S = 27,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Cl = 28,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ar = 29,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		K = 30,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ca = 31,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Sc = 32,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Ti = 33,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		V = 34,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Cr = 35,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Mn = 36,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Fe = 37,
-	}
-
-	public class App_api_cari7_endpoints_CARI7_effective_doseReturn
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
-		public App_api_cari7_endpoints_CARI7_effective_doseReturnDose_rate Dose_rate { get; set; }
-	}
-
-	public class App_api_cari7_endpoints_CARI7_effective_doseReturnDose_rate
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public System.Nullable<System.Single> Value { get; set; }
-	}
-
-	public enum App_api_parma_endpoints_PARMA_ambient_doseParticle
-	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		total = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
-		e_ = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
-		e_ = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
-		mu_ = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
-		mu_ = 4,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		gamma = 5,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		neutron = 6,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		proton = 7,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		alpha = 8,
-	}
-
-	public class App_api_parma_endpoints_PARMA_ambient_doseReturn
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
-		public App_api_parma_endpoints_PARMA_ambient_doseReturnDose_rate Dose_rate { get; set; }
-	}
-
-	public class App_api_parma_endpoints_PARMA_ambient_doseReturnDose_rate
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public System.Nullable<System.Single> Value { get; set; }
-	}
-
-	public enum App_api_parma_endpoints_PARMA_differential_intensityParticle
-	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		total = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
-		e_ = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
-		e_ = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
-		mu_ = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
-		mu_ = 4,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		gamma = 5,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		neutron = 6,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		proton = 7,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		alpha = 8,
-	}
-
-	public class App_api_parma_endpoints_PARMA_differential_intensityReturn
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "energies")]
-		public App_api_parma_endpoints_PARMA_differential_intensityReturnEnergies Energies { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "intensities")]
-		public App_api_parma_endpoints_PARMA_differential_intensityReturnIntensities Intensities { get; set; }
-	}
-
-	public class App_api_parma_endpoints_PARMA_differential_intensityReturnEnergies
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "data")]
-		public float[] Data { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-	}
-
-	public class App_api_parma_endpoints_PARMA_differential_intensityReturnIntensities
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "data")]
-		public float[] Data { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-	}
-
-	public enum App_api_parma_endpoints_PARMA_effective_doseParticle
-	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		total = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e-")]
-		e_ = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "e+")]
-		e_ = 2,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu+")]
-		mu_ = 3,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "mu-")]
-		mu_ = 4,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		gamma = 5,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		neutron = 6,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		proton = 7,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		alpha = 8,
-	}
-
-	public class App_api_parma_endpoints_PARMA_effective_doseReturn
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "dose rate")]
-		public App_api_parma_endpoints_PARMA_effective_doseReturnDose_rate Dose_rate { get; set; }
-	}
-
-	public class App_api_parma_endpoints_PARMA_effective_doseReturnDose_rate
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public System.Nullable<System.Single> Value { get; set; }
-	}
-
-	public class App_api_icaro_endpoints_ICARO_ambient_doseReturn
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "dose")]
-		public App_api_icaro_endpoints_ICARO_ambient_doseReturnDose Dose { get; set; }
-	}
-
-	public class App_api_icaro_endpoints_ICARO_ambient_doseReturnDose
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "date")]
-		public string Date { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "destination")]
-		public string Destination { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "origin")]
-		public string Origin { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public System.Nullable<System.Single> Value { get; set; }
-	}
-
-	public class App_api_icaro_endpoints_ICARO_effective_doseReturn
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "dose")]
-		public App_api_icaro_endpoints_ICARO_effective_doseReturnDose Dose { get; set; }
-	}
-
-	public class App_api_icaro_endpoints_ICARO_effective_doseReturnDose
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "date")]
-		public string Date { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "destination")]
-		public string Destination { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "origin")]
-		public string Origin { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "units")]
-		public string Units { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public System.Nullable<System.Single> Value { get; set; }
 	}
 }
 

@@ -87,40 +87,41 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static string RefineEnumValue(string s)
 		{
-			if (String.IsNullOrEmpty(s))
-			{
-				return s;
-			}
+			return RefineEnumMemberName(s);
+			//if (String.IsNullOrEmpty(s))
+			//{
+			//	return s;
+			//}
 
-			if (IsKeyword(s))
-			{
-				return "_" + s;
-			}
+			//if (IsKeyword(s))
+			//{
+			//	return "_" + s;
+			//}
 
-			if (String.IsNullOrEmpty(s)) //Xero may have enum member empty. NSwag translate it to 'Empty' but I prefer underscore.
-			{
-				return "_";
-			}
+			//if (String.IsNullOrEmpty(s)) //Xero may have enum member empty. NSwag translate it to 'Empty' but I prefer underscore.
+			//{
+			//	return "_";
+			//}
 
-			var b = s;
+			//var b = s;
 
-			if (int.TryParse(b, out _))
-			{
-				System.Diagnostics.Debug.Assert(b != "-1");
-				b = "_" + b;
-			}
+			//if (int.TryParse(b, out _))
+			//{
+			//	System.Diagnostics.Debug.Assert(b != "-1");
+			//	b = "_" + b;
+			//}
 
-			b = b.Replace('.', '_').Replace('-', '_').Replace(' ', '_').Replace('/', '_')
-						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
-						.Replace(":", "")//atlassian api has this.
-						.Replace('+', '_');
+			//b = b.Replace('.', '_').Replace("-", "Minus").Replace(' ', '_').Replace('/', '_')
+			//			.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
+			//			.Replace(":", "")//atlassian api has this.
+			//			.Replace("+", "Plus");
 
-			if (!Char.IsLetter(b[0]) && b[0] != '_' && Char.IsDigit(b[0]))
-			{
-				b = "_" + b;
-			}
+			//if (!Char.IsLetter(b[0]) && b[0] != '_' && Char.IsDigit(b[0]))
+			//{
+			//	b = "_" + b;
+			//}
 
-			return b;
+			//return b;
 		}
 
 		public static string RefineParameterName(string s)
