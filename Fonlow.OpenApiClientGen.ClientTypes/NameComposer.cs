@@ -58,7 +58,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				default: throw new InvalidDataException("Impossible");
 			};
 
-			return actionName.Replace('-', '_').Replace('.', '_').Replace(' ', '_');
+			return NameFunc.RefinePropertyName(actionName);
 		}
 
 		public string NormalizeOperationId(string s)

@@ -45,7 +45,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
-			return ToTitleCase(rs).Replace('-', '_').Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
+			return ToTitleCase(rs).Replace('-', '_')
+				.Replace("(", "").Replace(")", "")
+				.Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
 		}
 
 		public static string RefineEnumMemberName(string s, Settings settings = null)
@@ -74,6 +76,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						.Replace("+", "Plus")
 						.Replace('$', '_')
 						.Replace('#', '_')
+						.Replace('|', '_')
+						.Replace("'", "_")
+						.Replace("&", "And")
+						.Replace('[', '_').Replace("]", "")
 						.Replace(" ", "") //azure.com\appconfiguration seems to define a flags enum as a CSV. But Swagger does not seem to support flags enum.
 						.Replace(",", "");
 
@@ -136,7 +142,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return "_" + s;
 			}
 
-			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_').Replace('[', '_').Replace("]", "");
+			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_')
+				.Replace("(", "").Replace(")", "")
+				.Replace('[', '_').Replace("]", "");
 			
 			return rs;
 		}
@@ -149,7 +157,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
-				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_')
+				.Replace("(", "").Replace(")", "")
+				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace("'", "_")
 				.Replace(' ', '_'));
 		}
 
