@@ -79,6 +79,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						.Replace('|', '_')
 						.Replace("'", "_")
 						.Replace("&", "And")
+						.Replace("%", "Percent")
 						.Replace('[', '_').Replace("]", "")
 						.Replace(" ", "") //azure.com\appconfiguration seems to define a flags enum as a CSV. But Swagger does not seem to support flags enum.
 						.Replace(",", "");

@@ -309,7 +309,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
-							? propertySchema.Enum.Cast<OpenApiString>().Select(m =>
+							? propertySchema.Enum.Cast<OpenApiPrimitive<string>>().Select(m =>
 							{
 								var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(m.Value);
 								return isValidEnumName ? m.Value

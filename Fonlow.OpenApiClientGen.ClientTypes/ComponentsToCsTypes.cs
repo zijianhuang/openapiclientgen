@@ -518,7 +518,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
-							? propertySchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							? propertySchema.Enum.Cast<OpenApiPrimitive<string>>().Select(m => m.Value).ToArray()
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 						// It's also needed here to provide enums in correct case for the FindEnumDeclaration function
@@ -641,7 +641,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			return isNullable ? CreateNullableProperty(r.Item1, propertyName) : CreateProperty(r.Item1, propertyName, defaultValue == null ? null : (r.Item2.Name + "." + defaultValue));
+			return isNullable ? CreateNullableProperty(r.Item1, propertyName) 
+				: CreateProperty(r.Item1, propertyName, 
+				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + defaultValue));
 		}
 
 		string GetDefaultValue(OpenApiSchema s)
