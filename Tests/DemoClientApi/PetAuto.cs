@@ -18,417 +18,3054 @@ namespace MyNS
 	using Fonlow.Net.Http;
 
 
-	/// <summary>
-	/// Deployment dependency information.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class BasicDependency
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntent
 	{
 
 		/// <summary>
-		/// Gets or sets the ID of the dependency.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "id")]
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Gets or sets the dependency resource name.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "resourceName")]
-		public string ResourceName { get; set; }
-
-		/// <summary>
-		/// Gets or sets the dependency resource type.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "resourceType")]
-		public string ResourceType { get; set; }
-	}
-
-	/// <summary>
-	/// Deployment dependency information.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class Dependency
-	{
-
-		/// <summary>
-		/// Gets the list of dependencies.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dependsOn")]
-		public BasicDependency[] DependsOn { get; set; }
-
-		/// <summary>
-		/// Gets or sets the ID of the dependency.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "id")]
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Gets or sets the dependency resource name.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "resourceName")]
-		public string ResourceName { get; set; }
-
-		/// <summary>
-		/// Gets or sets the dependency resource type.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "resourceType")]
-		public string ResourceType { get; set; }
-	}
-
-	/// <summary>
-	/// Deployment operation parameters.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class Deployment
-	{
-
-		/// <summary>
-		/// Deployment properties.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
-		public DeploymentProperties Properties { get; set; }
-	}
-
-	/// <summary>
-	/// Deployment information.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class DeploymentExtended
-	{
-
-		/// <summary>
-		/// Gets or sets the ID of the deployment.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "id")]
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Gets or sets the name of the deployment.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public AddMediaIntentClass Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaDestination")]
+		public MediaDestination MediaDestination { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaItems")]
+		public MediaItem[] MediaItems { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaSearch")]
+		public MediaSearch MediaSearch { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AddMediaIntent = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class MediaDestination
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaDestinationType")]
+		public MediaDestinationMediaDestinationType MediaDestinationType { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaDestinationMediaDestinationType
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		library = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		playlist = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class MediaItem
+	{
+
+		/// <summary>
+		/// Max length: 1000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "artist")]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string Artist { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Max length: 250
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "identifier")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		public string Identifier { get; set; }
+
+		/// <summary>
+		/// Max length: 1000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "title")]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string Title { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "type")]
+		public MediaItemType Type { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaItemType
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		song = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		album = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		artist = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		genre = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		playlist = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		podcastShow = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		podcastEpisode = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		podcastPlaylist = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		musicStation = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		audioBook = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		movie = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		tvShow = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		tvShowEpisode = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		musicVideo = 14,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		podcastStation = 15,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		radioStation = 16,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		station = 17,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		music = 18,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		algorithmicRadioStation = 19,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		news = 20,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class MediaSearch
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "albumName")]
+		public string AlbumName { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "artistName")]
+		public string ArtistName { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "genreNames")]
+		public string[] GenreNames { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaIdentifier")]
+		public string MediaIdentifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaName")]
+		public string MediaName { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaType")]
+		public MediaItemType MediaType { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "moodNames")]
+		public string[] MoodNames { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "reference")]
+		public System.Nullable<MediaSearchReference> Reference { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "releaseDate")]
+		public DateComponentsRange ReleaseDate { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "sortOrder")]
+		public System.Nullable<MediaSearchSortOrder> SortOrder { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaSearchReference
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		currentlyPlaying = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		my = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DateComponentsRange
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "endDateComponents")]
+		public DateComponents EndDateComponents { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "startDateComponents")]
+		public DateComponents StartDateComponents { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaSearchSortOrder
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		newest = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		oldest = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		best = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		worst = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		popular = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unpopular = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		trending = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		recommended = 8,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntentHandlingConfirmInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public AddMediaIntentHandlingConfirmInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public AddMediaIntentHandlingConfirmInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentHandlingConfirmInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.confirm")]
+		AddMediaIntentHandling_confirm = 0,
+	}
+
+	public class AddMediaIntentHandlingConfirmInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "response")]
+		public AddMediaIntentResponse Response { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntentResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public AddMediaIntentResponseClass Class { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "code")]
+		public AddMediaIntentResponseCode Code { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentResponseClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AddMediaIntentResponse = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentResponseCode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unspecified = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ready = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		inProgress = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		success = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failure = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failureRequiringAppLaunch = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntentHandlingHandleInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public AddMediaIntentHandlingHandleInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public AddMediaIntentHandlingHandleInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentHandlingHandleInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.handle")]
+		AddMediaIntentHandling_handle = 0,
+	}
+
+	public class AddMediaIntentHandlingHandleInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "response")]
+		public AddMediaIntentResponse Response { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntentHandlingInvocation
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public AddMediaIntentHandlingInvocationMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "params")]
+		public AddMediaIntentHandlingInvocationParams Params { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentHandlingInvocationMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.resolveMediaItems")]
+		AddMediaIntentHandling_resolveMediaItems = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.resolveMediaDestination")]
+		AddMediaIntentHandling_resolveMediaDestination = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.confirm")]
+		AddMediaIntentHandling_confirm = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.handle")]
+		AddMediaIntentHandling_handle = 3,
+	}
+
+	public class AddMediaIntentHandlingInvocationParams
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "intent")]
+		public AddMediaIntent Intent { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntentHandlingInvocationResponse
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntentHandlingResolveMediaDestinationInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public AddMediaIntentHandlingResolveMediaDestinationInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public AddMediaIntentHandlingResolveMediaDestinationInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentHandlingResolveMediaDestinationInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.resolveMediaDestination")]
+		AddMediaIntentHandling_resolveMediaDestination = 0,
+	}
+
+	public class AddMediaIntentHandlingResolveMediaDestinationInvocationResponseResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public AddMediaMediaDestinationResolutionResult ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaMediaDestinationResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<AddMediaMediaDestinationResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public AddMediaMediaDestinationResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "disambiguation")]
+		public AddMediaMediaDestinationResolutionResultDisambiguation Disambiguation { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public AddMediaMediaDestinationResolutionResultSuccess Success { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "unsupported")]
+		public AddMediaMediaDestinationResolutionResultUnsupported Unsupported { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaMediaDestinationResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AddMediaMediaDestinationResolutionResult = 0,
+	}
+
+	public class AddMediaMediaDestinationResolutionResultConfirmationRequired
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaDestinationToConfirm")]
+		public MediaDestination MediaDestinationToConfirm { get; set; }
+	}
+
+	public class AddMediaMediaDestinationResolutionResultDisambiguation
+	{
+
+		/// <summary>
+		/// Required
+		/// Minimum items: 2
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaDestinationsToDisambiguate")]
+		[System.ComponentModel.DataAnnotations.MinLength(2)]
+		public MediaDestination[] MediaDestinationsToDisambiguate { get; set; }
+	}
+
+	public class AddMediaMediaDestinationResolutionResultSuccess
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedMediaDestination")]
+		public MediaDestination ResolvedMediaDestination { get; set; }
+	}
+
+	public class AddMediaMediaDestinationResolutionResultUnsupported
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "reason")]
+		public System.Nullable<AddMediaMediaDestinationResolutionResultUnsupportedReason> Reason { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaMediaDestinationResolutionResultUnsupportedReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		playlistNameNotFound = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		playlistNotEditable = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaIntentHandlingResolveMediaItemsInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public AddMediaIntentHandlingResolveMediaItemsInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public AddMediaIntentHandlingResolveMediaItemsInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaIntentHandlingResolveMediaItemsInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AddMediaIntentHandling.resolveMediaItems")]
+		AddMediaIntentHandling_resolveMediaItems = 0,
+	}
+
+	public class AddMediaIntentHandlingResolveMediaItemsInvocationResponseResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public AddMediaMediaItemResolutionResult[] ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AddMediaMediaItemResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<AddMediaMediaItemResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public AddMediaMediaItemResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "disambiguation")]
+		public AddMediaMediaItemResolutionResultDisambiguation Disambiguation { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public AddMediaMediaItemResolutionResultSuccess Success { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "unsupported")]
+		public AddMediaMediaItemResolutionResultUnsupported Unsupported { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaMediaItemResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AddMediaMediaItemResolutionResult = 0,
+	}
+
+	public class AddMediaMediaItemResolutionResultConfirmationRequired
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaItemToConfirm")]
+		public MediaItem MediaItemToConfirm { get; set; }
+	}
+
+	public class AddMediaMediaItemResolutionResultDisambiguation
+	{
+
+		/// <summary>
+		/// Required
+		/// Minimum items: 2
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaItemsToDisambiguate")]
+		[System.ComponentModel.DataAnnotations.MinLength(2)]
+		public MediaItem[] MediaItemsToDisambiguate { get; set; }
+	}
+
+	public class AddMediaMediaItemResolutionResultSuccess
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedMediaItem")]
+		public MediaItem ResolvedMediaItem { get; set; }
+	}
+
+	public class AddMediaMediaItemResolutionResultUnsupported
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "reason")]
+		public System.Nullable<AddMediaMediaItemResolutionResultUnsupportedReason> Reason { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaMediaItemResolutionResultUnsupportedReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		loginRequired = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		subscriptionRequired = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unsupportedMediaType = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		explicitContentSettings = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		restrictedContent = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		regionRestriction = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaMediaDestinationUnsupportedReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		playlistNameNotFound = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		playlistNotEditable = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AddMediaMediaItemUnsupportedReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		loginRequired = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		subscriptionRequired = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unsupportedMediaType = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		explicitContentSettings = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		restrictedContent = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		regionRestriction = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class BooleanResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<BooleanResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public BooleanResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public BooleanResolutionResultSuccess Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum BooleanResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BooleanResolutionResult = 0,
+	}
+
+	public class BooleanResolutionResultConfirmationRequired
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "valueToConfirm")]
+		public bool ValueToConfirm { get; set; }
+	}
+
+	public class BooleanResolutionResultSuccess
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedValue")]
+		public bool ResolvedValue { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Constraints
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "allowExplicitContent")]
+		public System.Nullable<System.Boolean> AllowExplicitContent { get; set; }
+
+		/// <summary>
+		/// Minimum: 50
+		/// Maximum: 1000
+		/// </summary>
+		[System.ComponentModel.DefaultValue(1000)]
+		[System.Runtime.Serialization.DataMember(Name = "maximumQueueSegmentItemCount")]
+		[System.ComponentModel.DataAnnotations.Range(50, 1000)]
+		public string MaximumQueueSegmentItemCount { get; set; } = 1000;
+
+		[System.Runtime.Serialization.DataMember(Name = "updateUserTasteProfile")]
+		public System.Nullable<System.Boolean> UpdateUserTasteProfile { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Content
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "attributes")]
+		public ContentAttributes Attributes { get; set; }
+
+		[System.ComponentModel.DefaultValue("default")]
+		[System.Runtime.Serialization.DataMember(Name = "control")]
+		public string Control { get; set; } = "default";
+
+		/// <summary>
+		/// Required
+		/// Max length: 1000
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "identifier")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string Identifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "isLive")]
+		public System.Nullable<System.Boolean> IsLive { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playIndex")]
+		public string PlayIndex { get; set; }
+
+		/// <summary>
+		/// Max length: 2000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		public string Url { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ContentAttributes
+	{
+
+		/// <summary>
+		/// Max length: 250
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "albumName")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		public string AlbumName { get; set; }
+
+		/// <summary>
+		/// Max length: 1000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "artistName")]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string ArtistName { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "artwork")]
+		public ContentAttributesArtwork Artwork { get; set; }
+
+		/// <summary>
+		/// Max length: 250
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "composerName")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		public string ComposerName { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "durationInMillis")]
+		public string DurationInMillis { get; set; }
+
+		/// <summary>
+		/// Maximum items: 30
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "genreNames")]
+		[System.ComponentModel.DataAnnotations.MaxLength(30)]
+		public string[] GenreNames { get; set; }
+
+		/// <summary>
+		/// Max length: 250
+		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name = "name")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
 		public string Name { get; set; }
 
-		/// <summary>
-		/// Deployment properties with additional details.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
-		public DeploymentPropertiesExtended Properties { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "trackNumber")]
+		public string TrackNumber { get; set; }
 	}
 
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class DeploymentParameters
-	{
-
-		[System.Runtime.Serialization.DataMember(Name = "adminPassword")]
-		public DeploymentParametersAdminPassword AdminPassword { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "adminUsername")]
-		public DeploymentParametersAdminUsername AdminUsername { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "dnsLabelPrefix")]
-		public DeploymentParametersDnsLabelPrefix DnsLabelPrefix { get; set; }
-
-		/// <summary>
-		/// Deployment operation parameters.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "osVersion")]
-		public DeploymentParametersOsVersion OsVersion { get; set; }
-	}
-
-	public class DeploymentParametersAdminPassword
+	public class ContentAttributesArtwork
 	{
 
 		/// <summary>
-		/// Password for the Virtual Machine.
+		/// Max length: 2000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		public string Url { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DateComponents
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExecutionMetrics
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "completed")]
+		public System.Nullable<System.DateTimeOffset> Completed { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "duration")]
+		public System.Nullable<System.Single> Duration { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "received")]
+		public System.Nullable<System.DateTimeOffset> Received { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExplicitDateComponents
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "calendarIdentifier")]
+		public string CalendarIdentifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "day")]
+		public System.Nullable<System.Int32> Day { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "era")]
+		public System.Nullable<System.Int32> Era { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "hour")]
+		public System.Nullable<System.Int32> Hour { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "minute")]
+		public System.Nullable<System.Int32> Minute { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "month")]
+		public System.Nullable<System.Int32> Month { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nanosecond")]
+		public System.Nullable<System.Int32> Nanosecond { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "second")]
+		public System.Nullable<System.Int32> Second { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "timeZone")]
+		public string TimeZone { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "year")]
+		public System.Nullable<System.Int32> Year { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExtensionConfig
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "hdr")]
+		public string Hdr { get; set; }
+
+		/// <summary>
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public string Value { get; set; }
-	}
-
-	public class DeploymentParametersAdminUsername
-	{
+		[System.Runtime.Serialization.DataMember(Name = "intent")]
+		public ExtensionConfigIntent Intent { get; set; }
 
 		/// <summary>
-		/// Username for the Virtual Machine.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public string Value { get; set; }
-	}
-
-	public class DeploymentParametersDnsLabelPrefix
-	{
+		[System.Runtime.Serialization.DataMember(Name = "media")]
+		public ExtensionConfigMedia Media { get; set; }
 
 		/// <summary>
-		/// Unique DNS Name for the Public IP used to access the Virtual Machine.
+		/// Max length: 2000
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		public string Url { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Pattern: ([0-9]+[.]){2}[0-9]+
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "version")]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"([0-9]+[.]){2}[0-9]+")]
+		public string Version { get; set; }
+	}
+
+	public class ExtensionConfigIntent
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "addMedia")]
+		public ExtensionConfigIntentAddMedia AddMedia { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "hdr")]
+		public string Hdr { get; set; }
+
+		/// <summary>
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public string Value { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "playMedia")]
+		public ExtensionConfigIntentPlayMedia PlayMedia { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "updateMediaAffinity")]
+		public ExtensionConfigIntentUpdateMediaAffinity UpdateMediaAffinity { get; set; }
 	}
 
-	public class DeploymentParametersOsVersion
+	public class ExtensionConfigIntentAddMedia
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "opt")]
+		public string[] Opt { get; set; }
+	}
+
+	public class ExtensionConfigIntentPlayMedia
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "opt")]
+		public string[] Opt { get; set; }
+	}
+
+	public class ExtensionConfigIntentUpdateMediaAffinity
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "opt")]
+		public string[] Opt { get; set; }
+	}
+
+	public class ExtensionConfigMedia
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "queues")]
+		public ExtensionConfigMediaQueues Queues { get; set; }
+	}
+
+	public class ExtensionConfigMediaQueues
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "hdr")]
+		public string Hdr { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playMedia")]
+		public ExtensionConfigMediaQueuesPlayMedia PlayMedia { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "updateActivity")]
+		public ExtensionConfigMediaQueuesUpdateActivity UpdateActivity { get; set; }
+	}
+
+	public class ExtensionConfigMediaQueuesPlayMedia
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "hdr")]
+		public string Hdr { get; set; }
+
+		/// <summary>
+		/// Max length: 4000
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DefaultValue("/queues/playMedia")]
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
+		public string Url { get; set; } = "/queues/playMedia";
+	}
+
+	public class ExtensionConfigMediaQueuesUpdateActivity
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "hdr")]
+		public string Hdr { get; set; }
+
+		/// <summary>
+		/// Max length: 4000
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DefaultValue("/queues/updateActivity")]
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(4000)]
+		public string Url { get; set; } = "/queues/updateActivity";
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExtensionEndpointConfig
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "hdr")]
+		public string Hdr { get; set; }
+
+		/// <summary>
+		/// Max length: 2000
+		/// Min length: 0
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		[System.ComponentModel.DataAnnotations.MinLength(0)]
+		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		public string Url { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Intent
 	{
 
 		/// <summary>
-		/// The OS version for the VM. This will pick a fully patched image of this given OS version.
 		/// Required
 		/// </summary>
-		[System.ComponentModel.DefaultValue(DeploymentParametersOsVersionValue._14_04_2_LTS)]
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "value")]
-		public DeploymentParametersOsVersionValue Value { get; set; } = DeploymentParametersOsVersionValue._14_04_2_LTS;
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public string Class { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "identifier")]
+		public string Identifier { get; set; }
 	}
 
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public enum DeploymentParametersOsVersionValue
-	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "12.04.5-LTS")]
-		_12_04_5MinusLTS = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "14.04.2-LTS")]
-		_14_04_2MinusLTS = 1,
-
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "15.10")]
-		_15_10 = 2,
-	}
-
-	/// <summary>
-	/// Deployment properties.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class DeploymentProperties
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class IntentResolutionResult
 	{
 
 		/// <summary>
-		/// Gets or sets the deployment mode.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "mode")]
-		public DeploymentPropertiesMode Mode { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public string Class { get; set; }
 
-		[System.Runtime.Serialization.DataMember(Name = "parameters")]
-		public DeploymentParameters Parameters { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "needsValue")]
+		public string NeedsValue { get; set; }
 
-		/// <summary>
-		/// Entity representing the reference to the template.
-		/// Required
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "templateLink")]
-		public TemplateLink TemplateLink { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "notRequired")]
+		public string NotRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "unsupported")]
+		public string Unsupported { get; set; }
 	}
 
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public enum DeploymentPropertiesMode
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class IntentResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public string Class { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "userActivity")]
+		public UserActivity UserActivity { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UserActivity
+	{
+
+		/// <summary>
+		/// Required
+		/// Max length: 250
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "activityType")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		public string ActivityType { get; set; }
+
+		/// <summary>
+		/// Max length: 250
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "persistentIdentifier")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		public string PersistentIdentifier { get; set; }
+
+		/// <summary>
+		/// Max length: 250
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "title")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		public string Title { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "userInfo")]
+		public string UserInfo { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Max length: 25
+		/// Pattern: [0-9]+\.[0-9]+\.[0-9]+
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "version")]
+		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]+\.[0-9]+\.[0-9]+")]
+		public string Version { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Invocation
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public string Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "params")]
+		public string Params { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "session")]
+		public Session Session { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Session
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "constraints")]
+		public Constraints Constraints { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "deadline")]
+		public System.DateTimeOffset Deadline { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Max length: 128
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "identifier")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(128)]
+		public string Identifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playerContext")]
+		public PlayerContext PlayerContext { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "requested")]
+		public System.DateTimeOffset Requested { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Pattern: [0-9]+\.[0-9]+\.[0-9]+
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "version")]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]+\.[0-9]+\.[0-9]+")]
+		public string Version { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayerContext
+	{
+
+		/// <summary>
+		/// Max length: 250
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "activityIdentifier")]
+		[System.ComponentModel.DataAnnotations.MaxLength(250)]
+		public string ActivityIdentifier { get; set; }
+
+		/// <summary>
+		/// Max length: 1000
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "contentIdentifier")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string ContentIdentifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "offsetInMillis")]
+		public System.Nullable<System.Int64> OffsetInMillis { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playbackSpeed")]
+		public System.Nullable<System.Double> PlaybackSpeed { get; set; }
+
+		/// <summary>
+		/// Max length: 1024
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "queueIdentifier")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		public string QueueIdentifier { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class InvocationResponse
+	{
+
+		/// <summary>
+		/// Max length: 2000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "debug")]
+		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		public string Debug { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public string Method { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "metrics")]
+		public ExecutionMetrics Metrics { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public string Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaAffinityType
 	{
 
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Incremental = 0,
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		like = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		dislike = 2,
 	}
 
-	/// <summary>
-	/// Deployment properties with additional details.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class DeploymentPropertiesExtended
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class MediaAffinityTypeResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<MediaAffinityTypeResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public MediaAffinityTypeResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public MediaAffinityTypeResolutionResultSuccess Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaAffinityTypeResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		MediaAffinityTypeResolutionResult = 0,
+	}
+
+	public class MediaAffinityTypeResolutionResultConfirmationRequired
 	{
 
 		/// <summary>
-		/// Gets or sets the correlation ID of the deployment.
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "correlationId")]
-		public string CorrelationId { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaAffinityTypeToConfirm")]
+		public MediaAffinityType MediaAffinityTypeToConfirm { get; set; }
+	}
+
+	public class MediaAffinityTypeResolutionResultSuccess
+	{
 
 		/// <summary>
-		/// Gets the list of deployment dependencies.
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "dependencies")]
-		public Dependency[] Dependencies { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedMediaAffinityType")]
+		public MediaAffinityType ResolvedMediaAffinityType { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class MediaDestinationLibrary
+	{
 
 		/// <summary>
-		/// Gets or sets the deployment mode.
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "mode")]
-		public System.Nullable<DeploymentPropertiesExtendedMode> Mode { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaDestinationType")]
+		public MediaDestinationLibraryMediaDestinationType MediaDestinationType { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaDestinationLibraryMediaDestinationType
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		library = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class MediaDestinationPlaylist
+	{
 
 		/// <summary>
-		/// Gets or sets key/value pairs that represent deployment output.
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "outputs")]
-		public string Outputs { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaDestinationType")]
+		public MediaDestinationPlaylistMediaDestinationType MediaDestinationType { get; set; }
 
 		/// <summary>
-		/// Deployment parameters. Use only one of Parameters or ParametersLink.
+		/// Required
+		/// Max length: 1000
+		/// Min length: 1
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "parameters")]
-		public string Parameters { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "playlistName")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string PlaylistName { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaDestinationPlaylistMediaDestinationType
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		playlist = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaReference
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		currentlyPlaying = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		my = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum MediaSortOrder
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		newest = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		oldest = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		best = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		worst = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		popular = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unpopular = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		trending = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		recommended = 8,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaControl
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "activity")]
+		public PlayMediaControlActivity Activity { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "commands")]
+		public PlayMediaControlCommandSet Commands { get; set; }
 
 		/// <summary>
-		/// Entity representing the reference to the deployment parameters.
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "parametersLink")]
-		public ParametersLink ParametersLink { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "scheme")]
+		public PlayMediaControlScheme Scheme { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaControlActivity
+	{
 
 		/// <summary>
-		/// Gets the list of resource providers needed for the deployment.
+		/// Minimum: 5
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "providers")]
-		public Provider[] Providers { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "playElapsed")]
+		[System.ComponentModel.DataAnnotations.Range(5, System.String.MaxValue)]
+		public string PlayElapsed { get; set; }
 
 		/// <summary>
-		/// Gets or sets the state of the provisioning.
+		/// Minimum: 5
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "provisioningState")]
-		public string ProvisioningState { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "playElapsedInterval")]
+		[System.ComponentModel.DataAnnotations.Range(5, System.String.MaxValue)]
+		public string PlayElapsedInterval { get; set; }
 
 		/// <summary>
-		/// Gets or sets the template content. Use only one of Template or TemplateLink.
+		/// Minimum: 5
+		/// Maximum: 60
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "template")]
-		public string Template { get; set; }
+		[System.ComponentModel.DefaultValue(5)]
+		[System.Runtime.Serialization.DataMember(Name = "playPaused")]
+		[System.ComponentModel.DataAnnotations.Range(5, 60)]
+		public string PlayPaused { get; set; } = 5;
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaControlCommandSet
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "bookmarkTrack")]
+		public System.Nullable<System.Boolean> BookmarkTrack { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "dislikeTrack")]
+		public System.Nullable<System.Boolean> DislikeTrack { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "likeTrack")]
+		public System.Nullable<System.Boolean> LikeTrack { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextTrack")]
+		public System.Nullable<System.Boolean> NextTrack { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "preferSkipBackward")]
+		public System.Nullable<System.Boolean> PreferSkipBackward { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "preferSkipForward")]
+		public System.Nullable<System.Boolean> PreferSkipForward { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "previousTrack")]
+		public System.Nullable<System.Boolean> PreviousTrack { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "seekToPlaybackPosition")]
+		public System.Nullable<System.Boolean> SeekToPlaybackPosition { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "skipBackward")]
+		public System.Nullable<System.Boolean> SkipBackward { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "skipForward")]
+		public System.Nullable<System.Boolean> SkipForward { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaControlScheme
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		custom = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		onDemand = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		internetRadio = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		liveStreaming = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		audioBook = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		podcast = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		advertisement = 6,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntent
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<PlayMediaIntentClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaItems")]
+		public MediaItem[] MediaItems { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaSearch")]
+		public MediaSearch MediaSearch { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playShuffled")]
+		public System.Nullable<System.Boolean> PlayShuffled { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playbackQueueLocation")]
+		public System.Nullable<PlayMediaIntentPlaybackQueueLocation> PlaybackQueueLocation { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playbackRepeatMode")]
+		public System.Nullable<PlayMediaIntentPlaybackRepeatMode> PlaybackRepeatMode { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playbackSpeed")]
+		public System.Nullable<System.Double> PlaybackSpeed { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "resumePlayback")]
+		public System.Nullable<System.Boolean> ResumePlayback { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlayMediaIntent = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentPlaybackQueueLocation
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		now = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		next = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		later = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentPlaybackRepeatMode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		none = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		all = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		one = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingHandleInvocationResponse
+	{
 
 		/// <summary>
-		/// Entity representing the reference to the template.
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "templateLink")]
-		public TemplateLink TemplateLink { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public PlayMediaIntentHandlingHandleInvocationResponseMethod Method { get; set; }
 
 		/// <summary>
-		/// Gets or sets the timestamp of the template deployment.
+		/// Required
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public PlayMediaIntentHandlingHandleInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentHandlingHandleInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.handle")]
+		PlayMediaIntentHandling_handle = 0,
+	}
+
+	public class PlayMediaIntentHandlingHandleInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "response")]
+		public PlayMediaIntentResponse Response { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public PlayMediaIntentResponseClass Class { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "code")]
+		public PlayMediaIntentResponseCode Code { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentResponseClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlayMediaIntentResponse = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentResponseCode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unspecified = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		success = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failure = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failureRequiringAppLaunch = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failureUnknownMediaType = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failureNoUnplayedContent = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failureRestrictedContent = 6,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingInvocation
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public PlayMediaIntentHandlingInvocationMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "params")]
+		public PlayMediaIntentHandlingInvocationParams Params { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentHandlingInvocationMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolveMediaItems")]
+		PlayMediaIntentHandling_resolveMediaItems = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolvePlayShuffled")]
+		PlayMediaIntentHandling_resolvePlayShuffled = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolvePlaybackQueueLocation")]
+		PlayMediaIntentHandling_resolvePlaybackQueueLocation = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolvePlaybackRepeatMode")]
+		PlayMediaIntentHandling_resolvePlaybackRepeatMode = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolveResumePlayback")]
+		PlayMediaIntentHandling_resolveResumePlayback = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.handle")]
+		PlayMediaIntentHandling_handle = 5,
+	}
+
+	public class PlayMediaIntentHandlingInvocationParams
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "intent")]
+		public PlayMediaIntent Intent { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingInvocationResponse
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingResolveMediaItemsInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public PlayMediaIntentHandlingResolveMediaItemsInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public PlayMediaIntentHandlingResolveMediaItemsInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentHandlingResolveMediaItemsInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolveMediaItems")]
+		PlayMediaIntentHandling_resolveMediaItems = 0,
+	}
+
+	public class PlayMediaIntentHandlingResolveMediaItemsInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public PlayMediaMediaItemResolutionResult[] ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaMediaItemResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<PlayMediaMediaItemResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public PlayMediaMediaItemResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "disambiguation")]
+		public PlayMediaMediaItemResolutionResultDisambiguation Disambiguation { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public PlayMediaMediaItemResolutionResultSuccess Success { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "unsupported")]
+		public PlayMediaMediaItemResolutionResultUnsupported Unsupported { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaMediaItemResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlayMediaMediaItemResolutionResult = 0,
+	}
+
+	public class PlayMediaMediaItemResolutionResultConfirmationRequired
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaItemToConfirm")]
+		public MediaItem MediaItemToConfirm { get; set; }
+	}
+
+	public class PlayMediaMediaItemResolutionResultDisambiguation
+	{
+
+		/// <summary>
+		/// Required
+		/// Minimum items: 2
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaItemsToDisambiguate")]
+		[System.ComponentModel.DataAnnotations.MinLength(2)]
+		public MediaItem[] MediaItemsToDisambiguate { get; set; }
+	}
+
+	public class PlayMediaMediaItemResolutionResultSuccess
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedMediaItem")]
+		public MediaItem ResolvedMediaItem { get; set; }
+	}
+
+	public class PlayMediaMediaItemResolutionResultUnsupported
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "reason")]
+		public AddMediaMediaItemResolutionResultUnsupportedReason Reason { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingResolvePlayShuffledInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolvePlayShuffled")]
+		PlayMediaIntentHandling_resolvePlayShuffled = 0,
+	}
+
+	public class PlayMediaIntentHandlingResolvePlayShuffledInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public BooleanResolutionResult ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolvePlaybackQueueLocation")]
+		PlayMediaIntentHandling_resolvePlaybackQueueLocation = 0,
+	}
+
+	public class PlayMediaIntentHandlingResolvePlaybackQueueLocationInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public PlaybackQueueLocationResolutionResult ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlaybackQueueLocationResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<PlaybackQueueLocationResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public PlaybackQueueLocationResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public PlaybackQueueLocationResolutionResultSuccess Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlaybackQueueLocationResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlaybackQueueLocationResolutionResult = 0,
+	}
+
+	public class PlaybackQueueLocationResolutionResultConfirmationRequired
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "playbackQueueLocationToConfirm")]
+		public PlayMediaIntentPlaybackQueueLocation PlaybackQueueLocationToConfirm { get; set; }
+	}
+
+	public class PlaybackQueueLocationResolutionResultSuccess
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedPlaybackQueueLocation")]
+		public PlayMediaIntentPlaybackQueueLocation ResolvedPlaybackQueueLocation { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolvePlaybackRepeatMode")]
+		PlayMediaIntentHandling_resolvePlaybackRepeatMode = 0,
+	}
+
+	public class PlayMediaIntentHandlingResolvePlaybackRepeatModeInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public PlaybackRepeatModeResolutionResult ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlaybackRepeatModeResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<PlaybackRepeatModeResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public PlaybackRepeatModeResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public PlaybackRepeatModeResolutionResultSuccess Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlaybackRepeatModeResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PlaybackRepeatModeResolutionResult = 0,
+	}
+
+	public class PlaybackRepeatModeResolutionResultConfirmationRequired
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "playbackRepeatModeToConfirm")]
+		public PlayMediaIntentPlaybackRepeatMode PlaybackRepeatModeToConfirm { get; set; }
+	}
+
+	public class PlaybackRepeatModeResolutionResultSuccess
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedPlaybackRepeatMode")]
+		public PlayMediaIntentPlaybackRepeatMode ResolvedPlaybackRepeatMode { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaIntentHandlingResolveResumePlaybackInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayMediaIntentHandling.resolveResumePlayback")]
+		PlayMediaIntentHandling_resolveResumePlayback = 0,
+	}
+
+	public class PlayMediaIntentHandlingResolveResumePlaybackInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public BooleanResolutionResult ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayMediaMediaItemUnsupportedReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		loginRequired = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		subscriptionRequired = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unsupportedMediaType = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		explicitContentSettings = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		restrictedContent = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		regionRestriction = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayMediaRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "constraints")]
+		public Constraints Constraints { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "userActivity")]
+		public UserActivity UserActivity { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Pattern: [0-9]+\.[0-9]+\.[0-9]+
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "version")]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]+\.[0-9]+\.[0-9]+")]
+		public string Version { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlaybackQueueLocation
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		now = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		next = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		later = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlaybackRepeatMode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		none = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		all = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		one = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ProtocolException
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "code")]
+		public System.Nullable<System.Int64> Code { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "methodIndex")]
+		public string MethodIndex { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "methodName")]
+		public string MethodName { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "reason")]
+		public ProtocolExceptionReason Reason { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "retryWithDelay")]
+		public System.Nullable<System.Single> RetryWithDelay { get; set; }
+
+		/// <summary>
+		/// Maximum items: 64
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "trace")]
+		[System.ComponentModel.DataAnnotations.MaxLength(64)]
+		public string[] Trace { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ProtocolExceptionReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unsupported = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unauthorized = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unexpected = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		invalid = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unparseable = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		deprecated = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "internal")]
+		_internal = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		complex = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		busy = 8,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ProtocolExceptionInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "exception")]
+		public ProtocolException Exception { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public ProtocolExceptionInvocationResponseMethod Method { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ProtocolExceptionInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ProtocolException = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Queue
+	{
+
+		/// <summary>
+		/// Required
+		/// Maximum items: 1000
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "content")]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public Content[] Content { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "contentItemsCount")]
+		public string ContentItemsCount { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "controls")]
+		public QueueControlMapping Controls { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Max length: 1024
+		/// Min length: 1
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "identifier")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(1024)]
+		public string Identifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "insertPointer")]
+		public QueueInsertPointer InsertPointer { get; set; }
+
+		/// <summary>
+		/// Max length: 2000
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "nextContentUrl")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		public string NextContentUrl { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "playPointer")]
+		public QueuePlayPointer PlayPointer { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "prerollSeconds")]
+		public System.Nullable<System.Double> PrerollSeconds { get; set; }
+
+		/// <summary>
+		/// Max length: 2000
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "previousContentUrl")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(2000)]
+		public string PreviousContentUrl { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "skipsRemaining")]
+		public string SkipsRemaining { get; set; }
+
+		/// <summary>
+		/// Required
+		/// Max length: 25
+		/// Pattern: [0-9]+\.[0-9]+\.[0-9]+
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "version")]
+		[System.ComponentModel.DataAnnotations.MaxLength(25)]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]+\.[0-9]+\.[0-9]+")]
+		public string Version { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class QueueControlMapping
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "default")]
+		public PlayMediaControl Default { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class QueuePlayPointer
+	{
+
+		/// <summary>
+		/// Max length: 1000
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "contentIdentifier")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string ContentIdentifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "offsetInMillis")]
+		public System.Nullable<System.Int64> OffsetInMillis { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum QueueActivityReportEvent
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.elapsed")]
+		local_playing_elapsed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.paused")]
+		local_playing_paused = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.continued")]
+		local_playing_continued = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.scrub")]
+		local_playing_scrub = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.fastForward")]
+		local_playing_fastForward = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.fastRewind")]
+		local_playing_fastRewind = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.naturally")]
+		local_playing_transitioned_naturally = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.skip_next")]
+		local_playing_transitioned_skip_next = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.skip_previous")]
+		local_playing_transitioned_skip_previous = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.queue_replaced")]
+		local_playing_transitioned_queue_replaced = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.stopped.naturally")]
+		local_stopped_naturally = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.stopped.skip_past_end")]
+		local_stopped_skip_past_end = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.command.like")]
+		local_command_like = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.command.dislike")]
+		local_command_dislike = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.command.bookmark")]
+		local_command_bookmark = 14,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class QueueInsertPointer
+	{
+
+		/// <summary>
+		/// Max length: 1000
+		/// Min length: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "afterIdentifier")]
+		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.MaxLength(1000)]
+		public string AfterIdentifier { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "replace")]
+		public System.Nullable<System.Boolean> Replace { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateActivityRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "constraints")]
+		public Constraints Constraints { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nowPlaying")]
+		public PlayerContext NowPlaying { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "previouslyPlaying")]
+		public PlayerContext PreviouslyPlaying { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "report")]
+		public UpdateActivityRequestReport Report { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name = "timestamp")]
-		public System.Nullable<System.DateTimeOffset> Timestamp { get; set; }
-	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public enum DeploymentPropertiesExtendedMode
-	{
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Incremental = 0,
-
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Complete = 1,
-	}
-
-	/// <summary>
-	/// Resource provider information.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class Provider
-	{
+		public System.DateTimeOffset Timestamp { get; set; }
 
 		/// <summary>
-		/// Gets or sets the provider id.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "id")]
-		public string Id { get; set; }
-
-		/// <summary>
-		/// Gets or sets the namespace of the provider.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "namespace")]
-		public string Namespace { get; set; }
-
-		/// <summary>
-		/// Gets or sets the registration state of the provider.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "registrationState")]
-		public string RegistrationState { get; set; }
-
-		/// <summary>
-		/// Gets or sets the collection of provider resource types.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "resourceTypes")]
-		public ProviderResourceType[] ResourceTypes { get; set; }
-	}
-
-	/// <summary>
-	/// Resource type managed by the resource provider.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class ProviderResourceType
-	{
-
-		/// <summary>
-		/// Gets or sets the api version.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "apiVersions")]
-		public string[] ApiVersions { get; set; }
-
-		/// <summary>
-		/// Gets or sets the collection of locations where this resource type can be created in.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "locations")]
-		public string[] Locations { get; set; }
-
-		/// <summary>
-		/// Gets or sets the properties.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "properties")]
-		public System.Collections.Generic.Dictionary<string, string> Properties { get; set; }
-
-		/// <summary>
-		/// Gets or sets the resource type.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "resourceType")]
-		public string ResourceType { get; set; }
-	}
-
-	/// <summary>
-	/// Entity representing the reference to the deployment parameters.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class ParametersLink
-	{
-
-		/// <summary>
-		/// If included it must match the ContentVersion in the template.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "contentVersion")]
-		public string ContentVersion { get; set; }
-
-		/// <summary>
-		/// URI referencing the template.
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "uri")]
-		public string Uri { get; set; }
-	}
-
-	/// <summary>
-	/// Entity representing the reference to the template.
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public class TemplateLink
-	{
+		[System.Runtime.Serialization.DataMember(Name = "userActivity")]
+		public UserActivity UserActivity { get; set; }
 
 		/// <summary>
-		/// URI referencing the template.
+		/// Required
+		/// Pattern: [0-9]+\.[0-9]+\.[0-9]+
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "version")]
+		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"[0-9]+\.[0-9]+\.[0-9]+")]
+		public string Version { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateActivityRequestReport
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.elapsed")]
+		local_playing_elapsed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.paused")]
+		local_playing_paused = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.continued")]
+		local_playing_continued = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.scrub")]
+		local_playing_scrub = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.fastForward")]
+		local_playing_fastForward = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.fastRewind")]
+		local_playing_fastRewind = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.naturally")]
+		local_playing_transitioned_naturally = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.skip_next")]
+		local_playing_transitioned_skip_next = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.skip_previous")]
+		local_playing_transitioned_skip_previous = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.playing.transitioned.queue_replaced")]
+		local_playing_transitioned_queue_replaced = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.stopped.naturally")]
+		local_stopped_naturally = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.stopped.skip_past_end")]
+		local_stopped_skip_past_end = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.command.like")]
+		local_command_like = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.command.dislike")]
+		local_command_dislike = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "local.command.bookmark")]
+		local_command_bookmark = 14,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateActivityResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "queue")]
+		public Queue Queue { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "userActivity")]
+		public UserActivity UserActivity { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityIntent
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "affinityType")]
+		public MediaAffinityType AffinityType { get; set; }
+
+		/// <summary>
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name = "uri")]
-		public TemplateLinkUri Uri { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public UpdateMediaAffinityIntentClass Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaItems")]
+		public MediaItem[] MediaItems { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "mediaSearch")]
+		public MediaSearch MediaSearch { get; set; }
 	}
 
-	[System.Runtime.Serialization.DataContract(Namespace = "http://fonlow.com/TestOpenApi/2024/01")]
-	public enum TemplateLinkUri
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityIntentClass
 	{
 
-		[System.Runtime.Serialization.EnumMemberAttribute(Value = "https://raw.githubusercontent.com/stankovski/azure-rest-api-specs/master/arm-compute/quickstart-templates/vm-simple-linux.json")]
-		https__raw_githubusercontent_com_stankovski_azureMinusrestMinusapiMinusspecs_master_armMinuscompute_quickstartMinustemplates_vmMinussimpleMinuslinux_json = 0,
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UpdateMediaAffinityIntent = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityIntentHandlingHandleInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public UpdateMediaAffinityIntentHandlingHandleInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public UpdateMediaAffinityIntentHandlingHandleInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityIntentHandlingHandleInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "UpdateMediaAffinityIntentHandling.handle")]
+		UpdateMediaAffinityIntentHandling_handle = 0,
+	}
+
+	public class UpdateMediaAffinityIntentHandlingHandleInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "response")]
+		public UpdateMediaAffinityIntentResponse Response { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityIntentResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public UpdateMediaAffinityIntentResponseClass Class { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "code")]
+		public UpdateMediaAffinityIntentResponseCode Code { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityIntentResponseClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UpdateMediaAffinityIntentResponse = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityIntentResponseCode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unspecified = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		inProgress = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		success = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failure = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		failureRequiringAppLaunch = 4,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityIntentHandlingInvocation
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public UpdateMediaAffinityIntentHandlingInvocationMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "params")]
+		public UpdateMediaAffinityIntentHandlingInvocationParams Params { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityIntentHandlingInvocationMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "UpdateMediaAffinityIntentHandling.resolveMediaItems")]
+		UpdateMediaAffinityIntentHandling_resolveMediaItems = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "UpdateMediaAffinityIntentHandling.resolveAffinityType")]
+		UpdateMediaAffinityIntentHandling_resolveAffinityType = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "UpdateMediaAffinityIntentHandling.handle")]
+		UpdateMediaAffinityIntentHandling_handle = 2,
+	}
+
+	public class UpdateMediaAffinityIntentHandlingInvocationParams
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "intent")]
+		public UpdateMediaAffinityIntent Intent { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityIntentHandlingInvocationResponse
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "UpdateMediaAffinityIntentHandling.resolveAffinityType")]
+		UpdateMediaAffinityIntentHandling_resolveAffinityType = 0,
+	}
+
+	public class UpdateMediaAffinityIntentHandlingResolveAffinityTypeInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public MediaAffinityTypeResolutionResult ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "method")]
+		public UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseMethod Method { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "result")]
+		public UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseResult Result { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "UpdateMediaAffinityIntentHandling.resolveMediaItems")]
+		UpdateMediaAffinityIntentHandling_resolveMediaItems = 0,
+	}
+
+	public class UpdateMediaAffinityIntentHandlingResolveMediaItemsInvocationResponseResult
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolutionResult")]
+		public UpdateMediaAffinityMediaItemResolutionResult[] ResolutionResult { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateMediaAffinityMediaItemResolutionResult
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "class")]
+		public System.Nullable<UpdateMediaAffinityMediaItemResolutionResultClass> Class { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "confirmationRequired")]
+		public UpdateMediaAffinityMediaItemResolutionResultConfirmationRequired ConfirmationRequired { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "disambiguation")]
+		public UpdateMediaAffinityMediaItemResolutionResultDisambiguation Disambiguation { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "success")]
+		public UpdateMediaAffinityMediaItemResolutionResultSuccess Success { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "unsupported")]
+		public UpdateMediaAffinityMediaItemResolutionResultUnsupported Unsupported { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityMediaItemResolutionResultClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UpdateMediaAffinityMediaItemResolutionResult = 0,
+	}
+
+	public class UpdateMediaAffinityMediaItemResolutionResultConfirmationRequired
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaItemToConfirm")]
+		public MediaItem MediaItemToConfirm { get; set; }
+	}
+
+	public class UpdateMediaAffinityMediaItemResolutionResultDisambiguation
+	{
+
+		/// <summary>
+		/// Required
+		/// Minimum items: 2
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "mediaItemsToDisambiguate")]
+		[System.ComponentModel.DataAnnotations.MinLength(2)]
+		public MediaItem[] MediaItemsToDisambiguate { get; set; }
+	}
+
+	public class UpdateMediaAffinityMediaItemResolutionResultSuccess
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "resolvedMediaItem")]
+		public MediaItem ResolvedMediaItem { get; set; }
+	}
+
+	public class UpdateMediaAffinityMediaItemResolutionResultUnsupported
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "reason")]
+		public System.Nullable<UpdateMediaAffinityMediaItemResolutionResultUnsupportedReason> Reason { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityMediaItemResolutionResultUnsupportedReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		loginRequired = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		subscriptionRequired = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unsupportedMediaType = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		explicitContentSettings = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum UpdateMediaAffinityMediaItemUnsupportedReason
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		loginRequired = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		subscriptionRequired = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unsupportedMediaType = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		explicitContentSettings = 3,
 	}
 
 	public partial class Misc
@@ -451,18 +3088,39 @@ namespace MyNS
 		}
 
 		/// <summary>
-		/// Create a named template deployment using a template.
-		/// VirtualMachines_QuickCreate subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
+		/// Configuration Resource
+		/// ExtensionConfiguration configuration
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="deploymentName">The name of the deployment.</param>
-		/// <param name="api_version">Client Api Version.</param>
-		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="requestBody">Additional parameters supplied to the operation.</param>
-		public async Task<DeploymentExtended> VirtualMachines_QuickCreateAsync(string resourceGroupName, string deploymentName, string api_version, string subscriptionId, Deployment requestBody)
+		public async Task ExtensionConfigurationAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "subscriptions/" + (subscriptionId == null ? "" : Uri.EscapeDataString(subscriptionId)) + "/resourcegroups/" + (resourceGroupName == null ? "" : Uri.EscapeDataString(resourceGroupName)) + "/providers/Microsoft.Resources/deployments/" + (deploymentName == null ? "" : Uri.EscapeDataString(deploymentName)) + "&api-version=" + (api_version == null ? "" : Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			var requestUri = "configuration";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// addMedia
+		/// AddMediaIntentHandling intent/addMedia
+		/// </summary>
+		public async Task<AddMediaIntentHandlingInvocationResponse[]> AddMediaIntentHandlingAsync(AddMediaIntentHandlingInvocation[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "intent/addMedia";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 				using (var requestWriter = new System.IO.StringWriter())
 				{
@@ -470,6 +3128,11 @@ namespace MyNS
 					requestSerializer.Serialize(requestWriter, requestBody);
 					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
 					var responseMessage = await client.SendAsync(httpRequestMessage);
 					try
 					{
@@ -478,7 +3141,163 @@ namespace MyNS
 						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
 						{
 							var serializer = JsonSerializer.Create(jsonSerializerSettings);
-							return serializer.Deserialize<DeploymentExtended>(jsonReader);
+							return serializer.Deserialize<AddMediaIntentHandlingInvocationResponse[]>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// playMedia
+		/// PlayMediaIntentHandling intent/playMedia
+		/// </summary>
+		public async Task<PlayMediaIntentHandlingInvocationResponse[]> PlayMediaIntentHandlingAsync(PlayMediaIntentHandlingInvocation[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "intent/playMedia";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<PlayMediaIntentHandlingInvocationResponse[]>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// updateMediaAffinity
+		/// UpdateMediaAffinityIntentHandling intent/updateMediaAffinity
+		/// </summary>
+		public async Task<UpdateMediaAffinityIntentHandlingInvocationResponse[]> UpdateMediaAffinityIntentHandlingAsync(UpdateMediaAffinityIntentHandlingInvocation[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "intent/updateMediaAffinity";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<UpdateMediaAffinityIntentHandlingInvocationResponse[]>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// playMedia
+		/// PlayMediaOnQueue queues/playMedia
+		/// </summary>
+		public async Task<Queue> PlayMediaOnQueueAsync(PlayMediaRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "queues/playMedia";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<Queue>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// updateActivity
+		/// UpdateActivityOnQueue queues/updateActivity
+		/// </summary>
+		public async Task<UpdateActivityResponse> UpdateActivityOnQueueAsync(UpdateActivityRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "queues/updateActivity";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<UpdateActivityResponse>(jsonReader);
 						}
 					}
 					finally
