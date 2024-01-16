@@ -91,12 +91,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				foreach (var groupedTypes in groupedComponentsSchemas)
 				{
 					var classNamespaceText = groupedTypes.Key;
+					if (string.IsNullOrEmpty(classNamespaceText))
+					{
+						classNamespaceText = settings.ClientNamespace;
+					}
+
 					var classNamespace = new CodeNamespace(classNamespaceText);
 					codeCompileUnit.Namespaces.Add(classNamespace);
 					ClassNamespaces.Add(classNamespace);
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
-						var existingType = ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
+						var existingType = ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
 						if (existingType == null)
 						{
 							AddTypeToCodeDom(kv.Key, kv.Value);

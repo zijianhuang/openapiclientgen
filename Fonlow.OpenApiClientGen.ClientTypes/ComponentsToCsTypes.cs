@@ -70,6 +70,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		/// <summary>
 		/// The Id will be translated to proper C# type name and namespace if the YAML does support namespace in components.
+		/// The namespace is extracted from refId if refId contains dots.
 		/// </summary>
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
