@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -75,6 +74,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
+			if (refId == "Margin")
+			{
+				Console.WriteLine("Margin");
+			}
 			string ns = NameFunc.GetNamespaceOfClassName(refId);
 			string currentTypeName = NameFunc.RefineTypeName(refId, ns);
 			if (settings.UsePascalCase)
@@ -867,6 +870,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
+		/// <summary>
+		/// Add Type as class.
+		/// </summary>
+		/// <param name="typeName"></param>
+		/// <param name="ns"></param>
+		/// <returns></returns>
 		public override CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
 		{
 			if (String.IsNullOrEmpty(ns))
@@ -878,9 +887,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				CodeNamespace foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
 				if (foundNamespace == null)
 				{
-					foundNamespace = new CodeNamespace(ns);
-					codeCompileUnit.Namespaces.Add(foundNamespace);
-					ClassNamespaces.Add(foundNamespace);
+					AddNamespaceDeclarationIfNotExist(ns);
 				}
 
 				return PodGenHelper.CreatePodClientClass(foundNamespace, typeName);

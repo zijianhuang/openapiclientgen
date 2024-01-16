@@ -612,6 +612,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		/// <summary>
+		/// Add type as interface for TS.
+		/// </summary>
+		/// <param name="typeName"></param>
+		/// <param name="ns"></param>
+		/// <returns></returns>
 		public override CodeTypeDeclaration AddTypeToClassNamespace(string typeName, string ns)
 		{
 			if (String.IsNullOrEmpty(ns))
@@ -623,9 +629,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
 				if (foundNamespace == null)
 				{
-					foundNamespace = new CodeNamespace(ns);
-					codeCompileUnit.Namespaces.Add(foundNamespace);
-					ClassNamespaces.Add(foundNamespace);
+					AddNamespaceDeclarationIfNotExist(ns);
 				}
 
 				return PodGenHelper.CreatePodClientInterface(foundNamespace, typeName);

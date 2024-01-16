@@ -96,12 +96,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						classNamespaceText = settings.ClientNamespace;
 					}
 
-					var classNamespace = new CodeNamespace(classNamespaceText);
-					codeCompileUnit.Namespaces.Add(classNamespace);
-					ClassNamespaces.Add(classNamespace);
+					AddNamespaceDeclarationIfNotExist(classNamespaceText);
+
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
-						var existingType = ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
+						CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, kv.Key, classNamespaceText);  // ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
 						if (existingType == null)
 						{
 							AddTypeToCodeDom(kv.Key, kv.Value);
@@ -609,7 +608,24 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="classNamespaceText"></param>
+		/// <returns>True: added; False: existing</returns>
+		protected bool AddNamespaceDeclarationIfNotExist(string classNamespaceText)
+		{
+			var existingNamespaceDeclaration = ComponentsHelper.FindNamespace(codeCompileUnit.Namespaces, classNamespaceText);
+			if (existingNamespaceDeclaration == null)
+			{
+				var classNamespace = new CodeNamespace(classNamespaceText);
+				codeCompileUnit.Namespaces.Add(classNamespace);
+				ClassNamespaces.Add(classNamespace);
+				return true;
+			}
 
+			return false;
+		}
 	}
 
 }

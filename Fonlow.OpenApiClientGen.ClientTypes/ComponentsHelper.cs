@@ -3,6 +3,7 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -90,6 +91,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							return t;
 						}
 					}
+				}
+			}
+
+			return null;
+		}
+
+		public static CodeNamespace FindNamespace(CodeNamespaceCollection namespaces, string namespaceText)
+		{
+			foreach (CodeNamespace ns in namespaces)
+			{
+				if (ns.Name == namespaceText)
+				{
+					return ns;
 				}
 			}
 
