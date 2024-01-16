@@ -364,9 +364,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		protected override void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
+		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
-			string propertyName = NameFunc.RefinePropertyName(p.Key);
+			string propertyName = NameFunc.RefinePropertyName(refId);
 
 			if (settings.UsePascalCase)
 			{
@@ -384,12 +384,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				propertyName = "_" + propertyName;
 			}
 
-			bool propertyNameAdjusted = propertyName != p.Key;
+			bool propertyNameAdjusted = propertyName != refId;
 
-			OpenApiSchema propertySchema = p.Value;
 			string primitivePropertyType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
-			bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
+			bool isRequired = schema.Required.Contains(refId); //compare with the original key
 			string defaultValue = GetDefaultValue(propertySchema);
 			CodeMemberField clientProperty;
 
@@ -420,7 +419,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
+						Tuple<CodeTypeReference, bool> r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, refId);
 						bool isClass = r.Item2;
 						if ((!settings.DisableSystemNullableByDefault && !isRequired || propertySchema.Nullable) && !isClass) //C#. 
 																															  //if (!settings.DisableSystemNullableByDefault && !isClass && !isRequired || propertySchema.Nullable) //C#
@@ -600,7 +599,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertyNameAdjusted)
 				{
-					string originalPropertyName = p.Key;
+					string originalPropertyName = refId;
 					clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataMember", new CodeAttributeArgument("Name", new CodeSnippetExpression($"\"{originalPropertyName}\""))));
 				}
 				else
@@ -616,7 +615,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (settings.DecorateDataModelWithPropertyName) //C#
 			{
-				string originalPropertyName = p.Key;
+				string originalPropertyName = refId;
 				if (settings.UseSystemTextJson)
 				{
 					//[System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -629,7 +628,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			CreateMemberDocComment(p.Key, p.Value, clientProperty, schema);
+			CreateMemberDocComment(refId, propertySchema, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);
 		}
 

@@ -203,21 +203,20 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			RemoveRegisteredSchemaRefId(refId);
 		}
 
-		protected override void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
+		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
-			var isKeyNameValidTsPropertyName = NameFunc.IsKeyNameValidTsPropertyName(p.Key);
-			string tsInterfacePropertyName = isKeyNameValidTsPropertyName ? p.Key : $"'{p.Key}'";
-			string refinedPropertyName = isKeyNameValidTsPropertyName ? p.Key : NameFunc.RefinePropertyName(p.Key);
+			var isKeyNameValidTsPropertyName = NameFunc.IsKeyNameValidTsPropertyName(refId);
+			string tsInterfacePropertyName = isKeyNameValidTsPropertyName ? refId : $"'{refId}'";
+			string refinedPropertyName = isKeyNameValidTsPropertyName ? refId : NameFunc.RefinePropertyName(refId);
 			if (tsInterfacePropertyName == currentTypeName)
 			{
 				Trace.TraceWarning($"Property {tsInterfacePropertyName} found with the same name of type {currentTypeName}, and it is renamed to {tsInterfacePropertyName}1.");
 				tsInterfacePropertyName += "1";
 			}
 
-			OpenApiSchema propertySchema = p.Value;
 			string primitivePropertyType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(primitivePropertyType);
-			bool isRequired = schema.Required.Contains(p.Key); //compare with the original key
+			bool isRequired = schema.Required.Contains(refId); //compare with the original key
 			CodeMemberField clientProperty;
 
 			if (String.IsNullOrEmpty(primitivePropertyType))
@@ -235,12 +234,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, tsInterfacePropertyName, p.Key, ns, isRequired);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, tsInterfacePropertyName, refId, ns, isRequired);
 						SetClientPropertyTypeInfo(clientProperty, false, false);
 					}
 					else
 					{
-						var r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, p.Key);
+						var r = CreateCodeTypeReferenceSchemaOf(propertySchema, currentTypeName, refId);
 						clientProperty = CreateProperty(r.Item1, tsInterfacePropertyName, isRequired);
 						SetClientPropertyTypeInfo(clientProperty, r.Item2, false);
 					}
@@ -331,7 +330,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, tsInterfacePropertyName, p.Key, ns, isRequired);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, tsInterfacePropertyName, refId, ns, isRequired);
 					}
 
 					SetClientPropertyTypeInfo(clientProperty, false, false);
@@ -350,7 +349,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else // for casual enum
 				{
-					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, tsInterfacePropertyName, p.Key, ns, isRequired);
+					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, tsInterfacePropertyName, refId, ns, isRequired);
 					SetClientPropertyTypeInfo(clientProperty, true, false);
 				}
 			}
@@ -361,7 +360,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			AddValidationAttributes(propertySchema, clientProperty);
-			CreateMemberDocComment(p.Key, p.Value, clientProperty, schema);
+			CreateMemberDocComment(refId, propertySchema, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);
 		}
 

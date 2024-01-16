@@ -147,11 +147,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			foreach (KeyValuePair<string, OpenApiSchema> p in schema.Properties)
 			{
-				AddProperty(p, typeDeclaration, schema, currentTypeName, ns);
+				AddProperty(p.Key, p.Value, typeDeclaration, schema, currentTypeName, ns);
 			}
 		}
 
-		protected abstract void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns);
+		protected abstract void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns);
 
 		public Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns)
 		{
