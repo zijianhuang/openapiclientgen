@@ -87,7 +87,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var groupedComponentsSchemas = ComponentsSchemas
 					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
 					.OrderBy(k => k.Key);
-				var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
+				//var namespacesOfTypes = groupedComponentsSchemas.Select(d => d.Key).ToArray();
 				foreach (var groupedTypes in groupedComponentsSchemas)
 				{
 					var classNamespaceText = groupedTypes.Key;
@@ -100,7 +100,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
-						CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, kv.Key, classNamespaceText);  // ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
+						CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, kv.Key, classNamespaceText);
 						if (existingType == null)
 						{
 							AddTypeToCodeDom(kv.Key, kv.Value);
@@ -119,7 +119,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 				}
 			}
+		}
 
+		void AddTypeForRefIdIfNotExist(string refId)
+		{
+			var schema = ComponentsSchemas[refId];
+			if (schema != null)
+			{
+				string classNamespaceText = NameFunc.GetNamespaceOfClassName(refId);
+				if (string.IsNullOrEmpty(classNamespaceText))
+				{
+					classNamespaceText=settings.ClientNamespace;
+				}
+
+				CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, refId, classNamespaceText);  // ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
+				if (existingType == null)
+				{
+					AddTypeToCodeDom(refId, schema);
+				}
+			}
 		}
 
 		/// <summary>
@@ -330,7 +348,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 			{
-				AddTypeToCodeDom(complexType, propertySchema);
+				//AddTypeToCodeDom(complexType, propertySchema);
+				AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
 			}
 
 			var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
@@ -515,8 +534,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, null);
-						return r.Item1;
+						if (propertySchema.Reference != null)
+						{
+							AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
+							CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(NameFunc.RefineTypeName(propertySchema.Reference.Id, ""));
+							return codeTypeReference;
+						}
+						else
+						{
+							var r = GenerateCasualEnum(propertySchema, actionName, propertyName, null);
+							return r.Item1;
+						}
 					}
 				}
 				else if (schemaType != "string" && TypeAliasDic.TryGet(schemaType, out string aliasTypeName)) //check TypeAliasDic
@@ -530,8 +558,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else // for casual enum
 				{
-					var r = GenerateCasualEnum(propertySchema, actionName, propertyName, null);
-					return r.Item1;
+					if (propertySchema.Reference != null)
+					{
+						AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
+						CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(NameFunc.RefineTypeName(propertySchema.Reference.Id, ""));
+						return codeTypeReference;
+					}
+					else
+					{
+						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, null);
+						return r.Item1;
+					}
 				}
 			}
 		}

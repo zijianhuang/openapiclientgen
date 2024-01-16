@@ -74,9 +74,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId == "Margin")
+			if (refId== "DateFieldFont")
 			{
-				Console.WriteLine("Margin");
+				Console.WriteLine(refId);
 			}
 			string ns = NameFunc.GetNamespaceOfClassName(refId);
 			string currentTypeName = NameFunc.RefineTypeName(refId, ns);
@@ -254,6 +254,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
+			if (typeDeclaration.Name== "ResourceType")
+			{
+				Console.WriteLine("here");
+			}
 			int k = 0;
 			foreach (IOpenApiAny enumMember in enumTypeList)
 			{
@@ -371,7 +375,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = NameFunc.RefinePropertyName(refId);
-
+			if (refId== "sortOrder")
+			{
+				Console.WriteLine("OK");
+			}
 			if (settings.UsePascalCase)
 			{
 				propertyName = propertyName.ToPascalCase();

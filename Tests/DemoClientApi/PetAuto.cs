@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace My.Pet.Client
+namespace MyNS
 {
 	using System;
 	using System.Linq;
@@ -16,352 +16,1726 @@ namespace My.Pet.Client
 	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
-	
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class ApiResponse
+
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AssociateConfigurationItemsToApplicationResponse
 	{
-		
-		[System.Runtime.Serialization.DataMember(Name="code")]
-		public System.Nullable<System.Int32> Code { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="type")]
-		public string Type { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="message")]
-		public string Message { get; set; }
 	}
-	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Cat : Pet
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AssociateConfigurationItemsToApplicationRequest
 	{
-		
+
 		/// <summary>
-		/// The measured skill for hunting
 		/// Required
 		/// </summary>
-		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
-		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum CatHuntingSkill
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		clueless = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		lazy = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		adventurous = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		aggressive = 3,
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Category
-	{
-		
+		[System.Runtime.Serialization.DataMember(Name = "applicationConfigurationId")]
+		public string ApplicationConfigurationId { get; set; }
+
 		/// <summary>
-		/// Category ID
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationIds")]
+		public string[] ConfigurationIds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AuthorizationErrorException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class InvalidParameterException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class InvalidParameterValueException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ServerInternalErrorException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class HomeRegionNotSetException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class BatchDeleteImportDataResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "errors")]
+		public BatchDeleteImportDataError[] Errors { get; set; }
+	}
+
+	/// <summary>
+	/// Error messages returned for each import task that you deleted as a response for this command.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class BatchDeleteImportDataError
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "importTaskId")]
+		public string ImportTaskId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "errorCode")]
+		public BatchDeleteImportDataErrorCode ErrorCode { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "errorDescription")]
+		public string ErrorDescription { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum BatchDeleteImportDataErrorCode
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NOT_FOUND = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		INTERNAL_SERVER_ERROR = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		OVER_LIMIT = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class BatchDeleteImportDataRequest
+	{
+
 		/// <summary>
-		/// Category name
-		/// Min length: 1
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "importTaskIds")]
+		public string[] ImportTaskIds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CreateApplicationResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "configurationId")]
+		public string ConfigurationId { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CreateApplicationRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
-		
-		/// <summary>
-		/// Test Sub Category
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="sub")]
-		public CategorySub Sub { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "description")]
+		public string Description { get; set; }
 	}
-	
-	public class CategorySub
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CreateTagsResponse
 	{
-		
-		/// <summary>
-		/// Dumb Property
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="prop1")]
-		public string Prop1 { get; set; }
 	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Dog : Pet
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CreateTagsRequest
 	{
-		
+
 		/// <summary>
-		/// The size of the pack the dog is from
-		/// Required
-		/// Minimum: 1
-		/// </summary>
-		[System.ComponentModel.DefaultValue(1)]
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="packSize")]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public int PackSize { get; set; } = 1;
-	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class HoneyBee : Pet
-	{
-		
-		/// <summary>
-		/// Average amount of honey produced per day in ounces
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
-		public float HoneyPerDay { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Order
-	{
-		
+		[System.Runtime.Serialization.DataMember(Name = "configurationIds")]
+		public string[] ConfigurationIds { get; set; }
+
 		/// <summary>
-		/// Order ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Pet ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="petId")]
-		public System.Nullable<System.Int64> PetId { get; set; }
-		
-		/// <summary>
-		/// Minimum: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="quantity")]
-		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public System.Nullable<System.Int32> Quantity { get; set; }
-		
-		/// <summary>
-		/// Estimated ship date
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="shipDate")]
-		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
-		
-		/// <summary>
-		/// Order Status
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="status")]
-		public System.Nullable<OrderStatus> Status { get; set; }
-		
-		/// <summary>
-		/// Indicates whenever order was completed or not
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="complete")]
-		public System.Nullable<System.Boolean> Complete { get; set; }
-		
-		/// <summary>
-		/// Unique Request Id
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="requestId")]
-		public string RequestId { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum OrderStatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		placed = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		approved = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		delivered = 2,
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Pet
-	{
-		
-		/// <summary>
-		/// Pet ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Categories this pet belongs to
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="category")]
-		public Category Category { get; set; }
-		
-		/// <summary>
-		/// The name given to a pet
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		public string Name { get; set; }
-		
-		/// <summary>
-		/// The list of URL to a cute photos featuring pet
-		/// Required
-		/// Maximum items: 20
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="photoUrls")]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
-		public string[] PhotoUrls { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="friend")]
-		public Pet Friend { get; set; }
-		
-		/// <summary>
-		/// Tags attached to the pet
-		/// Minimum items: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.Runtime.Serialization.DataMember(Name = "tags")]
 		public Tag[] Tags { get; set; }
-		
-		/// <summary>
-		/// Pet status in the store
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="status")]
-		public System.Nullable<PetStatus> Status { get; set; }
-		
-		/// <summary>
-		/// Type of a pet
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="petType")]
-		public string PetType { get; set; }
 	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
+
+	/// <summary>
+	/// <p>Metadata that help you categorize IT assets.</p> <important> <p>Do not store sensitive information (like personal data) in tags.</p> </important>
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
 	public class Tag
 	{
-		
+
 		/// <summary>
-		/// Tag ID
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "key")]
+		public string Key { get; set; }
+
 		/// <summary>
-		/// Tag name
-		/// Min length: 1
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public string Value { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ResourceNotFoundException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DeleteApplicationsResponse
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DeleteApplicationsRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationIds")]
+		public string[] ConfigurationIds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DeleteTagsResponse
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DeleteTagsRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationIds")]
+		public string[] ConfigurationIds { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "tags")]
+		public Tag[] Tags { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeAgentsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "agentsInfo")]
+		public AgentInfo[] AgentsInfo { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// Information about agents associated with the user’s Amazon Web Services account. Information includes agent IDs, IP addresses, media access control (MAC) addresses, agent or collector status, hostname where the agent resides, and agent version for each agent.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AgentInfo
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "agentId")]
+		public string AgentId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "hostName")]
+		public string HostName { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "agentNetworkInfoList")]
+		public AgentNetworkInfo[] AgentNetworkInfoList { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "connectorId")]
+		public string ConnectorId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "version")]
+		public string Version { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "health")]
+		public AgentStatus Health { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "lastHealthPingTime")]
+		public string LastHealthPingTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "collectionStatus")]
+		public string CollectionStatus { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "agentType")]
+		public string AgentType { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "registeredTime")]
+		public string RegisteredTime { get; set; }
+	}
+
+	/// <summary>
+	/// Network details about the host where the agent/collector resides.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AgentNetworkInfo
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "ipAddress")]
+		public string IpAddress { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "macAddress")]
+		public string MacAddress { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum AgentStatus
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		HEALTHY = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UNHEALTHY = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		RUNNING = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		UNKNOWN = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		BLACKLISTED = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SHUTDOWN = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeAgentsRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "agentIds")]
+		public string[] AgentIds { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "filters")]
+		public Filter[] Filters { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// <p>A filter that can use conditional operators.</p> <p>For more information about filters, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying Discovered Configuration Items</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>. </p>
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Filter
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "values")]
+		public string[] Values { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "condition")]
+		public string Condition { get; set; }
 	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum PetStatus
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeConfigurationsResponse
 	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		available = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		pending = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		sold = 2,
+
+		[System.Runtime.Serialization.DataMember(Name = "configurations")]
+		public DescribeConfigurationsAttribute[] Configurations { get; set; }
 	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class User
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeConfigurationsAttribute
 	{
-		
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="pet")]
-		public Pet Pet { get; set; }
-		
-		/// <summary>
-		/// User supplied username
-		/// Min length: 4
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="username")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		public string Username { get; set; }
-		
-		/// <summary>
-		/// User first name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="firstName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string FirstName { get; set; }
-		
-		/// <summary>
-		/// User last name
-		/// Min length: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="lastName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string LastName { get; set; }
-		
-		/// <summary>
-		/// User email address
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="email")]
-		public string Email { get; set; }
-		
-		/// <summary>
-		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
-		/// Min length: 8
-		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="password")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/")]
-		public string Password { get; set; }
-		
-		/// <summary>
-		/// User phone number in international format
-		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="phone")]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/^\+(?:[0-9]-?){6,14}[0-9]$/")]
-		public string Phone { get; set; }
-		
-		/// <summary>
-		/// User status
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="userStatus")]
-		public System.Nullable<System.Int32> UserStatus { get; set; }
 	}
-	
-	public partial class PetClient
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeConfigurationsRequest
 	{
-		
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationIds")]
+		public string[] ConfigurationIds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeContinuousExportsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "descriptions")]
+		public ContinuousExportDescription[] Descriptions { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// A list of continuous export descriptions.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ContinuousExportDescription
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportId")]
+		public string ExportId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "status")]
+		public ContinuousExportStatus Status { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "statusDetail")]
+		public string StatusDetail { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "s3Bucket")]
+		public string S3Bucket { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "startTime")]
+		public System.DateTimeOffset StartTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "stopTime")]
+		public System.DateTimeOffset StopTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "dataSource")]
+		public DataSource DataSource { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "schemaStorageConfig")]
+		public SchemaStorageConfig SchemaStorageConfig { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ContinuousExportStatus
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		START_IN_PROGRESS = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		START_FAILED = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ACTIVE = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ERROR = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		STOP_IN_PROGRESS = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		STOP_FAILED = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		INACTIVE = 6,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum DataSource
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		AGENT = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SchemaStorageConfig
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeContinuousExportsRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportIds")]
+		public string[] ExportIds { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class OperationNotPermittedException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeExportConfigurationsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportsInfo")]
+		public ExportInfo[] ExportsInfo { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// Information regarding the export status of discovered data. The value is an array of objects.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExportInfo
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "exportId")]
+		public string ExportId { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "exportStatus")]
+		public ExportStatus ExportStatus { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "statusMessage")]
+		public string StatusMessage { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "configurationsDownloadUrl")]
+		public string ConfigurationsDownloadUrl { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "exportRequestTime")]
+		public System.DateTimeOffset ExportRequestTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "isTruncated")]
+		public System.Nullable<System.Boolean> IsTruncated { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "requestedStartTime")]
+		public System.DateTimeOffset RequestedStartTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "requestedEndTime")]
+		public System.DateTimeOffset RequestedEndTime { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ExportStatus
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		FAILED = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SUCCEEDED = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IN_PROGRESS = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeExportConfigurationsRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportIds")]
+		public string[] ExportIds { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeExportTasksResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportsInfo")]
+		public ExportInfo[] ExportsInfo { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeExportTasksRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportIds")]
+		public string[] ExportIds { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "filters")]
+		public ExportFilter[] Filters { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// Used to select which agent's data is to be exported. A single agent ID may be selected for export using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExportFilter
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "values")]
+		public string[] Values { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "condition")]
+		public string Condition { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeImportTasksResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "tasks")]
+		public ImportTask[] Tasks { get; set; }
+	}
+
+	/// <summary>
+	/// An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ImportTask
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "importTaskId")]
+		public string ImportTaskId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "clientRequestToken")]
+		public string ClientRequestToken { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "importUrl")]
+		public string ImportUrl { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "status")]
+		public ImportStatus Status { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "importRequestTime")]
+		public System.DateTimeOffset ImportRequestTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "importCompletionTime")]
+		public System.DateTimeOffset ImportCompletionTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "importDeletedTime")]
+		public System.DateTimeOffset ImportDeletedTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "serverImportSuccess")]
+		public System.Nullable<System.Int32> ServerImportSuccess { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "serverImportFailure")]
+		public System.Nullable<System.Int32> ServerImportFailure { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "applicationImportSuccess")]
+		public System.Nullable<System.Int32> ApplicationImportSuccess { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "applicationImportFailure")]
+		public System.Nullable<System.Int32> ApplicationImportFailure { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "errorsAndFailedEntriesZip")]
+		public string ErrorsAndFailedEntriesZip { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ImportStatus
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IMPORT_IN_PROGRESS = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IMPORT_COMPLETE = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IMPORT_COMPLETE_WITH_ERRORS = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IMPORT_FAILED = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DELETE_IN_PROGRESS = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DELETE_COMPLETE = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DELETE_FAILED = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DELETE_FAILED_LIMIT_EXCEEDED = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		INTERNAL_ERROR = 10,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeImportTasksRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "filters")]
+		public ImportTaskFilter[] Filters { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// <p>A name-values pair of elements you can use to filter the results when querying your import tasks. Currently, wildcards are not supported for filters.</p> <note> <p>When filtering by import status, all other filter values are ignored.</p> </note>
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ImportTaskFilter
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public ImportTaskFilterName Name { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "values")]
+		public string[] Values { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ImportTaskFilterName
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		IMPORT_TASK_ID = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		STATUS = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NAME = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeTagsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "tags")]
+		public ConfigurationTag[] Tags { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// Tags for a configuration item. Tags are metadata that help you categorize IT assets.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConfigurationTag
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "configurationType")]
+		public ConfigurationItemType ConfigurationType { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "configurationId")]
+		public string ConfigurationId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "key")]
+		public string Key { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "value")]
+		public string Value { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "timeOfCreation")]
+		public System.DateTimeOffset TimeOfCreation { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConfigurationItemType
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SERVER = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PROCESS = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CONNECTION = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		APPLICATION = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DescribeTagsRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "filters")]
+		public TagFilter[] Filters { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	/// <summary>
+	/// The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class TagFilter
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "values")]
+		public string[] Values { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DisassociateConfigurationItemsFromApplicationResponse
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class DisassociateConfigurationItemsFromApplicationRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "applicationConfigurationId")]
+		public string ApplicationConfigurationId { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationIds")]
+		public string[] ConfigurationIds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExportConfigurationsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportId")]
+		public string ExportId { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class GetDiscoverySummaryResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "servers")]
+		public System.Nullable<System.Int32> Servers { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "applications")]
+		public System.Nullable<System.Int32> Applications { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "serversMappedToApplications")]
+		public System.Nullable<System.Int32> ServersMappedToApplications { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "serversMappedtoTags")]
+		public System.Nullable<System.Int32> ServersMappedtoTags { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "agentSummary")]
+		public CustomerAgentInfo AgentSummary { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "connectorSummary")]
+		public CustomerConnectorInfo ConnectorSummary { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "meCollectorSummary")]
+		public CustomerMeCollectorInfo MeCollectorSummary { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "agentlessCollectorSummary")]
+		public CustomerAgentlessCollectorInfo AgentlessCollectorSummary { get; set; }
+	}
+
+	/// <summary>
+	/// Inventory data for installed discovery agents.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CustomerAgentInfo
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "activeAgents")]
+		public int ActiveAgents { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "healthyAgents")]
+		public int HealthyAgents { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "blackListedAgents")]
+		public int BlackListedAgents { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "shutdownAgents")]
+		public int ShutdownAgents { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unhealthyAgents")]
+		public int UnhealthyAgents { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "totalAgents")]
+		public int TotalAgents { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unknownAgents")]
+		public int UnknownAgents { get; set; }
+	}
+
+	/// <summary>
+	/// Inventory data for installed discovery connectors.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CustomerConnectorInfo
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "activeConnectors")]
+		public int ActiveConnectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "healthyConnectors")]
+		public int HealthyConnectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "blackListedConnectors")]
+		public int BlackListedConnectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "shutdownConnectors")]
+		public int ShutdownConnectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unhealthyConnectors")]
+		public int UnhealthyConnectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "totalConnectors")]
+		public int TotalConnectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unknownConnectors")]
+		public int UnknownConnectors { get; set; }
+	}
+
+	/// <summary>
+	///  The inventory data for installed Migration Evaluator collectors. 
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CustomerMeCollectorInfo
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "activeMeCollectors")]
+		public int ActiveMeCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "healthyMeCollectors")]
+		public int HealthyMeCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "denyListedMeCollectors")]
+		public int DenyListedMeCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "shutdownMeCollectors")]
+		public int ShutdownMeCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unhealthyMeCollectors")]
+		public int UnhealthyMeCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "totalMeCollectors")]
+		public int TotalMeCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unknownMeCollectors")]
+		public int UnknownMeCollectors { get; set; }
+	}
+
+	/// <summary>
+	/// The inventory data for installed Agentless Collector collectors. 
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CustomerAgentlessCollectorInfo
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "activeAgentlessCollectors")]
+		public int ActiveAgentlessCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "healthyAgentlessCollectors")]
+		public int HealthyAgentlessCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "denyListedAgentlessCollectors")]
+		public int DenyListedAgentlessCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "shutdownAgentlessCollectors")]
+		public int ShutdownAgentlessCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unhealthyAgentlessCollectors")]
+		public int UnhealthyAgentlessCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "totalAgentlessCollectors")]
+		public int TotalAgentlessCollectors { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "unknownAgentlessCollectors")]
+		public int UnknownAgentlessCollectors { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class GetDiscoverySummaryRequest
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ListConfigurationsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "configurations")]
+		public Configuration[] Configurations { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Configuration
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ListConfigurationsRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationType")]
+		public ConfigurationItemType ConfigurationType { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "filters")]
+		public Filter[] Filters { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "orderBy")]
+		public OrderByElement[] OrderBy { get; set; }
+	}
+
+	/// <summary>
+	/// A field and direction for ordered output.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class OrderByElement
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "fieldName")]
+		public string FieldName { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "sortOrder")]
+		public orderString SortOrder { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum OrderString
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ASC = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DESC = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ListServerNeighborsResponse
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "neighbors")]
+		public NeighborConnectionDetail[] Neighbors { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "knownDependencyCount")]
+		public System.Nullable<System.Int32> KnownDependencyCount { get; set; }
+	}
+
+	/// <summary>
+	/// Details about neighboring servers.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class NeighborConnectionDetail
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "sourceServerId")]
+		public string SourceServerId { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "destinationServerId")]
+		public string DestinationServerId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "destinationPort")]
+		public System.Nullable<System.Int32> DestinationPort { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "transportProtocol")]
+		public string TransportProtocol { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "connectionsCount")]
+		public int ConnectionsCount { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ListServerNeighborsRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationId")]
+		public string ConfigurationId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "portInformationNeeded")]
+		public System.Nullable<System.Boolean> PortInformationNeeded { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "neighborConfigurationIds")]
+		public string[] NeighborConfigurationIds { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "maxResults")]
+		public System.Nullable<System.Int32> MaxResults { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "nextToken")]
+		public string NextToken { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartContinuousExportResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportId")]
+		public string ExportId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "s3Bucket")]
+		public string S3Bucket { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "startTime")]
+		public System.DateTimeOffset StartTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "dataSource")]
+		public DataSource DataSource { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "schemaStorageConfig")]
+		public SchemaStorageConfig SchemaStorageConfig { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartContinuousExportRequest
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConflictErrorException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ResourceInUseException
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartDataCollectionByAgentIdsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "agentsConfigurationStatus")]
+		public AgentConfigurationStatus[] AgentsConfigurationStatus { get; set; }
+	}
+
+	/// <summary>
+	/// Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation, and whether the agent configuration was updated.
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class AgentConfigurationStatus
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "agentId")]
+		public string AgentId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "operationSucceeded")]
+		public System.Nullable<System.Boolean> OperationSucceeded { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "description")]
+		public string Description { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartDataCollectionByAgentIdsRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "agentIds")]
+		public string[] AgentIds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartExportTaskResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportId")]
+		public string ExportId { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartExportTaskRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "exportDataFormat")]
+		public ExportDataFormat[] ExportDataFormat { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "filters")]
+		public ExportFilter[] Filters { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "startTime")]
+		public System.DateTimeOffset StartTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "endTime")]
+		public System.DateTimeOffset EndTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "preferences")]
+		public ExportPreferences Preferences { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ExportDataFormat
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CSV = 0,
+	}
+
+	/// <summary>
+	///  Indicates the type of data that is being exported. Only one <code>ExportPreferences</code> can be enabled for a <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action. 
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ExportPreferences
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "ec2RecommendationsPreferences")]
+		public Ec2RecommendationsExportPreferences Ec2RecommendationsPreferences { get; set; }
+	}
+
+	/// <summary>
+	///  Indicates that the exported data must include EC2 instance type matches for on-premises servers that are discovered through Amazon Web Services Application Discovery Service. 
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Ec2RecommendationsExportPreferences
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "enabled")]
+		public System.Nullable<System.Boolean> Enabled { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "cpuPerformanceMetricBasis")]
+		public UsageMetricBasis CpuPerformanceMetricBasis { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "ramPerformanceMetricBasis")]
+		public UsageMetricBasis RamPerformanceMetricBasis { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "tenancy")]
+		public Tenancy Tenancy { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "excludedInstanceTypes")]
+		public string[] ExcludedInstanceTypes { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "preferredRegion")]
+		public string PreferredRegion { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "reservedInstanceOptions")]
+		public ReservedInstanceOptions ReservedInstanceOptions { get; set; }
+	}
+
+	/// <summary>
+	///  Specifies the performance metrics to use for the server that is used for recommendations. 
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UsageMetricBasis
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "percentageAdjust")]
+		public System.Nullable<System.Double> PercentageAdjust { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum Tenancy
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DEDICATED = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		SHARED = 1,
+	}
+
+	/// <summary>
+	///  Used to provide Reserved Instance preferences for the recommendation. 
+	/// </summary>
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ReservedInstanceOptions
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "purchasingOption")]
+		public PurchasingOption PurchasingOption { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "offeringClass")]
+		public OfferingClass OfferingClass { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "termLength")]
+		public TermLength TermLength { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PurchasingOption
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ALL_UPFRONT = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		PARTIAL_UPFRONT = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		NO_UPFRONT = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum OfferingClass
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		STANDARD = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		CONVERTIBLE = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum TermLength
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ONE_YEAR = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		THREE_YEAR = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartImportTaskResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "task")]
+		public ImportTask Task { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StartImportTaskRequest
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "clientRequestToken")]
+		public string ClientRequestToken { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "importUrl")]
+		public string ImportUrl { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StopContinuousExportResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "startTime")]
+		public System.DateTimeOffset StartTime { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "stopTime")]
+		public System.DateTimeOffset StopTime { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StopContinuousExportRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "exportId")]
+		public string ExportId { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StopDataCollectionByAgentIdsResponse
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "agentsConfigurationStatus")]
+		public AgentConfigurationStatus[] AgentsConfigurationStatus { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class StopDataCollectionByAgentIdsRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "agentIds")]
+		public string[] AgentIds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateApplicationResponse
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class UpdateApplicationRequest
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "configurationId")]
+		public string ConfigurationId { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "description")]
+		public string Description { get; set; }
+	}
+
+	public partial class Misc
+	{
+
 		private System.Net.Http.HttpClient client;
-		
+
 		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public PetClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings = null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -372,606 +1746,1173 @@ namespace My.Pet.Client
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
-		
+
 		/// <summary>
-		/// Add a new pet to the store
-		/// Add new pet to the store inventory.
-		/// AddPet pet
+		/// Associates one or more configuration items with an application.
+		/// AssociateConfigurationItemsToApplication #X-Amz-Target=AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task AddPetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>Success</returns>
+		public async Task<AssociateConfigurationItemsToApplicationResponse> AssociateConfigurationItemsToApplicationAsync(AssociateConfigurationItemsToApplicationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "pet";
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Update an existing pet
-		/// UpdatePet pet
-		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Find pet by ID
-		/// Returns a single pet
-		/// GetPetById pet/{petId}
-		/// </summary>
-		/// <param name="petId">ID of pet to return</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet> GetPetByIdAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/"+petId;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				using (var requestWriter = new System.IO.StringWriter())
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet>(jsonReader);
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<AssociateConfigurationItemsToApplicationResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Deletes a pet
-		/// DeletePet pet/{petId}
-		/// </summary>
-		/// <param name="petId">Pet id to delete</param>
-		public async Task DeletePetAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/"+petId;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Finds Pets by status
-		/// Multiple status values can be provided with comma separated strings
-		/// FindPetsByStatus pet/findByStatus
+		/// <p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p> <p>Amazon Web Services Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>
+		/// BatchDeleteImportData #X-Amz-Target=AWSPoseidonService_V2015_11_01.BatchDeleteImportData
 		/// </summary>
-		/// <param name="status">Status values that need to be considered for filter</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>Success</returns>
+		public async Task<BatchDeleteImportDataResponse> BatchDeleteImportDataAsync(BatchDeleteImportDataRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Finds Pets by tags
-		/// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
-		/// FindPetsByTags pet/findByTags
-		/// </summary>
-		/// <param name="tags">Tags to filter by</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns pet inventories by status
-		/// Returns a map of status codes to quantities
-		/// GetInventory store/inventory
-		/// </summary>
-		/// <returns>successful operation</returns>
-		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/inventory";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Place an order for a pet
-		/// PlaceOrder store/order
-		/// </summary>
-		/// <param name="requestBody">order placed for purchasing the pet</param>
-		/// <returns>successful operation</returns>
-		public async Task<Order> PlaceOrderAsync(Order requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order";
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.BatchDeleteImportData";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				using (var requestWriter = new System.IO.StringWriter())
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Order>(jsonReader);
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<BatchDeleteImportDataResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Find purchase order by ID
-		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
-		/// GetOrderById store/order/{orderId}
-		/// </summary>
-		/// <param name="orderId">ID of pet that needs to be fetched</param>
-		/// <returns>successful operation</returns>
-		public async Task<Order> GetOrderByIdAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order/"+orderId;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Order>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Delete purchase order by ID
-		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-		/// DeleteOrder store/order/{orderId}
+		/// Creates an application with the given name and description.
+		/// CreateApplication #X-Amz-Target=AWSPoseidonService_V2015_11_01.CreateApplication
 		/// </summary>
-		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public async Task DeleteOrderAsync(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>Success</returns>
+		public async Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Create user
-		/// This can only be done by the logged in user.
-		/// CreateUser user
-		/// </summary>
-		/// <param name="requestBody">Created user object</param>
-		public async Task CreateUserAsync(User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user";
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.CreateApplication";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get user by user name
-		/// GetUserByName user/{username}
-		/// </summary>
-		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
-		/// <returns>successful operation</returns>
-		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				using (var requestWriter = new System.IO.StringWriter())
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<User>(jsonReader);
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<CreateApplicationResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Updated user
-		/// This can only be done by the logged in user.
-		/// UpdateUser user/{username}
-		/// </summary>
-		/// <param name="username">name that need to be deleted</param>
-		/// <param name="requestBody">Updated user object</param>
-		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
 		/// <summary>
-		/// Delete user
-		/// This can only be done by the logged in user.
-		/// DeleteUser user/{username}
+		/// <p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p> <important> <p>Do not store sensitive information (like personal data) in tags.</p> </important>
+		/// CreateTags #X-Amz-Target=AWSPoseidonService_V2015_11_01.CreateTags
 		/// </summary>
-		/// <param name="username">The name that needs to be deleted</param>
-		public async Task DeleteUserAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>Success</returns>
+		public async Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithArrayInput user/createWithArray
-		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithArrayInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/createWithArray";
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.CreateTags";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithListInput user/createWithList
-		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithListInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/createWithList";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Logs user into the system
-		/// LoginUser user/login
-		/// </summary>
-		/// <param name="username">The user name for login</param>
-		/// <param name="password">The password for login in clear text</param>
-		/// <returns>successful operation</returns>
-		public async Task<string> LoginUserAsync(string username, string password, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				using (var requestWriter = new System.IO.StringWriter())
 				{
-				return jsonReader.ReadAsString();
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<CreateTagsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
 				}
 			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
 		}
-		
-		/// <summary>
-		/// Logs out current logged in user session
-		/// LogoutUser user/logout
-		/// </summary>
-		public async Task LogoutUserAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/logout";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
 
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
+		/// <summary>
+		/// Deletes a list of applications and their associations with configuration items.
+		/// DeleteApplications #X-Amz-Target=AWSPoseidonService_V2015_11_01.DeleteApplications
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DeleteApplicationsResponse> DeleteApplicationsAsync(DeleteApplicationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DeleteApplications";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DeleteApplicationsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
 			}
 		}
+
+		/// <summary>
+		/// Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.
+		/// DeleteTags #X-Amz-Target=AWSPoseidonService_V2015_11_01.DeleteTags
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DeleteTags";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DeleteTagsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Lists agents or collectors as specified by ID or other filters. All agents/collectors associated with your user can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.
+		/// DescribeAgents #X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeAgents
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DescribeAgentsResponse> DescribeAgentsAsync(DescribeAgentsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeAgents";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DescribeAgentsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All of the supplied IDs must be for the same asset type from one of the following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li> <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are specific to the asset type specified. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, number of network cards, etc.</p> <p>For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p> </note>
+		/// DescribeConfigurations #X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeConfigurations
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DescribeConfigurationsResponse> DescribeConfigurationsAsync(DescribeConfigurationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeConfigurations";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DescribeConfigurationsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Lists exports as specified by ID. All continuous exports associated with your user can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.
+		/// DescribeContinuousExports #X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeContinuousExports
+		/// </summary>
+		/// <param name="maxResults">Pagination limit</param>
+		/// <param name="nextToken">Pagination token</param>
+		/// <returns>Success</returns>
+		public async Task<DescribeContinuousExportsResponse> DescribeContinuousExportsAsync(string maxResults, string nextToken, DescribeContinuousExportsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeContinuousExports?maxResults=" + (maxResults == null ? "" : Uri.EscapeDataString(maxResults)) + "&nextToken=" + (nextToken == null ? "" : Uri.EscapeDataString(nextToken));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DescribeContinuousExportsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>, instead.
+		/// DescribeExportConfigurations #X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeExportConfigurations
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DescribeExportConfigurationsResponse> DescribeExportConfigurationsAsync(DescribeExportConfigurationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeExportConfigurations";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DescribeExportConfigurationsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.
+		/// DescribeExportTasks #X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeExportTasks
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeExportTasks";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DescribeExportTasksResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.
+		/// DescribeImportTasks #X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeImportTasks
+		/// </summary>
+		/// <param name="maxResults">Pagination limit</param>
+		/// <param name="nextToken">Pagination token</param>
+		/// <returns>Success</returns>
+		public async Task<DescribeImportTasksResponse> DescribeImportTasksAsync(string maxResults, string nextToken, DescribeImportTasksRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeImportTasks?maxResults=" + (maxResults == null ? "" : Uri.EscapeDataString(maxResults)) + "&nextToken=" + (nextToken == null ? "" : Uri.EscapeDataString(nextToken));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DescribeImportTasksResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// <p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul> <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p> </li> </ul> <p>Also, all configuration items associated with your user that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
+		/// DescribeTags #X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeTags
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DescribeTags";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DescribeTagsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Disassociates one or more configuration items from an application.
+		/// DisassociateConfigurationItemsFromApplication #X-Amz-Target=AWSPoseidonService_V2015_11_01.DisassociateConfigurationItemsFromApplication
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<DisassociateConfigurationItemsFromApplicationResponse> DisassociateConfigurationItemsFromApplicationAsync(DisassociateConfigurationItemsFromApplicationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.DisassociateConfigurationItemsFromApplication";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<DisassociateConfigurationItemsFromApplicationResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// <p>Deprecated. Use <code>StartExportTask</code> instead.</p> <p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>
+		/// ExportConfigurations #X-Amz-Target=AWSPoseidonService_V2015_11_01.ExportConfigurations
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<ExportConfigurationsResponse> ExportConfigurationsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.ExportConfigurations";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<ExportConfigurationsResponse>(jsonReader);
+					}
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// <p>Retrieves a short summary of discovered assets.</p> <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>
+		/// GetDiscoverySummary #X-Amz-Target=AWSPoseidonService_V2015_11_01.GetDiscoverySummary
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<GetDiscoverySummaryResponse> GetDiscoverySummaryAsync(GetDiscoverySummaryRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.GetDiscoverySummary";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<GetDiscoverySummaryResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Retrieves a list of configuration items as specified by the value passed to the required parameter <code>configurationType</code>. Optional filtering may be applied to refine search results.
+		/// ListConfigurations #X-Amz-Target=AWSPoseidonService_V2015_11_01.ListConfigurations
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.ListConfigurations";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<ListConfigurationsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Retrieves a list of servers that are one network hop away from a specified server.
+		/// ListServerNeighbors #X-Amz-Target=AWSPoseidonService_V2015_11_01.ListServerNeighbors
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<ListServerNeighborsResponse> ListServerNeighborsAsync(ListServerNeighborsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.ListServerNeighbors";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<ListServerNeighborsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Start the continuous flow of agent's discovered data into Amazon Athena.
+		/// StartContinuousExport #X-Amz-Target=AWSPoseidonService_V2015_11_01.StartContinuousExport
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<StartContinuousExportResponse> StartContinuousExportAsync(StartContinuousExportRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.StartContinuousExport";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<StartContinuousExportResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Instructs the specified agents to start collecting data.
+		/// StartDataCollectionByAgentIds #X-Amz-Target=AWSPoseidonService_V2015_11_01.StartDataCollectionByAgentIds
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<StartDataCollectionByAgentIdsResponse> StartDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.StartDataCollectionByAgentIds";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<StartDataCollectionByAgentIdsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// <p>Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.</p> <note> <p>Exports might provide an estimate of fees and savings based on certain information that you provide. Fee estimates do not include any taxes that might apply. Your actual fees and savings depend on a variety of factors, including your actual usage of Amazon Web Services services, which might vary from the estimates provided in this report.</p> </note> <p>If you do not specify <code>preferences</code> or <code>agentIds</code> in the filter, a summary of all servers, applications, tags, and performance is generated. This data is an aggregation of all server data collected through on-premises tooling, file import, application grouping and applying tags.</p> <p>If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by the identified Application Discovery Agent, including network, process, and performance details. A time range for exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent data is limited to five concurrently running exports. Export of detailed agent data is limited to two exports per day.</p> <p>If you enable <code>ec2RecommendationsPreferences</code> in <code>preferences</code> , an Amazon EC2 instance matching the characteristics of each server in Application Discovery Service is generated. Changing the attributes of the <code>ec2RecommendationsPreferences</code> changes the criteria of the recommendation.</p>
+		/// StartExportTask #X-Amz-Target=AWSPoseidonService_V2015_11_01.StartExportTask
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.StartExportTask";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<StartExportTaskResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// <p>Starts an import task, which allows you to import details of your on-premises environment directly into Amazon Web Services Migration Hub without having to use the Amazon Web Services Application Discovery Service (Application Discovery Service) tools such as the Amazon Web Services Application Discovery Service Agentless Collector or Application Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p> <p>To start an import request, do this:</p> <ol> <li> <p>Download the specially formatted comma separated value (CSV) import template, which you can find here: <a href="https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3.us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p> </li> <li> <p>Fill out the template with your server and application data.</p> </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in the CSV format.</p> </li> <li> <p>Use the console or the <code>StartImportTask</code> command with the Amazon Web Services CLI or one of the Amazon Web Services SDKs to import the records from your file.</p> </li> </ol> <p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub Import</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p> <note> <p>There are limits to the number of import tasks you can create (and delete) in an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">Amazon Web Services Application Discovery Service Limits</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p> </note>
+		/// StartImportTask #X-Amz-Target=AWSPoseidonService_V2015_11_01.StartImportTask
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<StartImportTaskResponse> StartImportTaskAsync(StartImportTaskRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.StartImportTask";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<StartImportTaskResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Stop the continuous flow of agent's discovered data into Amazon Athena.
+		/// StopContinuousExport #X-Amz-Target=AWSPoseidonService_V2015_11_01.StopContinuousExport
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<StopContinuousExportResponse> StopContinuousExportAsync(StopContinuousExportRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.StopContinuousExport";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<StopContinuousExportResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Instructs the specified agents to stop collecting data.
+		/// StopDataCollectionByAgentIds #X-Amz-Target=AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<StopDataCollectionByAgentIdsResponse> StopDataCollectionByAgentIdsAsync(StopDataCollectionByAgentIdsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<StopDataCollectionByAgentIdsResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Updates metadata about an application.
+		/// UpdateApplication #X-Amz-Target=AWSPoseidonService_V2015_11_01.UpdateApplication
+		/// </summary>
+		/// <returns>Success</returns>
+		public async Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "#X-Amz-Target=AWSPoseidonService_V2015_11_01.UpdateApplication";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await client.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+						var stream = await responseMessage.Content.ReadAsStreamAsync();
+						using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+						{
+							var serializer = JsonSerializer.Create(jsonSerializerSettings);
+							return serializer.Deserialize<UpdateApplicationResponse>(jsonReader);
+						}
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+	}
+
+	public enum AssociateConfigurationItemsToApplicationX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.AssociateConfigurationItemsToApplication")]
+		AWSPoseidonService_V2015_11_01_AssociateConfigurationItemsToApplication = 0,
+	}
+
+	public enum BatchDeleteImportDataX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.BatchDeleteImportData")]
+		AWSPoseidonService_V2015_11_01_BatchDeleteImportData = 0,
+	}
+
+	public enum CreateApplicationX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.CreateApplication")]
+		AWSPoseidonService_V2015_11_01_CreateApplication = 0,
+	}
+
+	public enum CreateTagsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.CreateTags")]
+		AWSPoseidonService_V2015_11_01_CreateTags = 0,
+	}
+
+	public enum DeleteApplicationsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DeleteApplications")]
+		AWSPoseidonService_V2015_11_01_DeleteApplications = 0,
+	}
+
+	public enum DeleteTagsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DeleteTags")]
+		AWSPoseidonService_V2015_11_01_DeleteTags = 0,
+	}
+
+	public enum DescribeAgentsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DescribeAgents")]
+		AWSPoseidonService_V2015_11_01_DescribeAgents = 0,
+	}
+
+	public enum DescribeConfigurationsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DescribeConfigurations")]
+		AWSPoseidonService_V2015_11_01_DescribeConfigurations = 0,
+	}
+
+	public enum DescribeContinuousExportsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DescribeContinuousExports")]
+		AWSPoseidonService_V2015_11_01_DescribeContinuousExports = 0,
+	}
+
+	public enum DescribeExportConfigurationsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DescribeExportConfigurations")]
+		AWSPoseidonService_V2015_11_01_DescribeExportConfigurations = 0,
+	}
+
+	public enum DescribeExportTasksX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DescribeExportTasks")]
+		AWSPoseidonService_V2015_11_01_DescribeExportTasks = 0,
+	}
+
+	public enum DescribeImportTasksX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DescribeImportTasks")]
+		AWSPoseidonService_V2015_11_01_DescribeImportTasks = 0,
+	}
+
+	public enum DescribeTagsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DescribeTags")]
+		AWSPoseidonService_V2015_11_01_DescribeTags = 0,
+	}
+
+	public enum DisassociateConfigurationItemsFromApplicationX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.DisassociateConfigurationItemsFromApplication")]
+		AWSPoseidonService_V2015_11_01_DisassociateConfigurationItemsFromApplication = 0,
+	}
+
+	public enum ExportConfigurationsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.ExportConfigurations")]
+		AWSPoseidonService_V2015_11_01_ExportConfigurations = 0,
+	}
+
+	public enum GetDiscoverySummaryX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.GetDiscoverySummary")]
+		AWSPoseidonService_V2015_11_01_GetDiscoverySummary = 0,
+	}
+
+	public enum ListConfigurationsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.ListConfigurations")]
+		AWSPoseidonService_V2015_11_01_ListConfigurations = 0,
+	}
+
+	public enum ListServerNeighborsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.ListServerNeighbors")]
+		AWSPoseidonService_V2015_11_01_ListServerNeighbors = 0,
+	}
+
+	public enum StartContinuousExportX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.StartContinuousExport")]
+		AWSPoseidonService_V2015_11_01_StartContinuousExport = 0,
+	}
+
+	public enum StartDataCollectionByAgentIdsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.StartDataCollectionByAgentIds")]
+		AWSPoseidonService_V2015_11_01_StartDataCollectionByAgentIds = 0,
+	}
+
+	public enum StartExportTaskX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.StartExportTask")]
+		AWSPoseidonService_V2015_11_01_StartExportTask = 0,
+	}
+
+	public enum StartImportTaskX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.StartImportTask")]
+		AWSPoseidonService_V2015_11_01_StartImportTask = 0,
+	}
+
+	public enum StopContinuousExportX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.StopContinuousExport")]
+		AWSPoseidonService_V2015_11_01_StopContinuousExport = 0,
+	}
+
+	public enum StopDataCollectionByAgentIdsX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.StopDataCollectionByAgentIds")]
+		AWSPoseidonService_V2015_11_01_StopDataCollectionByAgentIds = 0,
+	}
+
+	public enum UpdateApplicationX_Amz_Target
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AWSPoseidonService_V2015_11_01.UpdateApplication")]
+		AWSPoseidonService_V2015_11_01_UpdateApplication = 0,
 	}
 }
 
