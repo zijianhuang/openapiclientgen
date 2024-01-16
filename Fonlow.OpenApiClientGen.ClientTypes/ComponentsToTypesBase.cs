@@ -99,7 +99,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						var existingType = ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, classNamespaceText), classNamespace);
 						if (existingType == null)
 						{
-							AddTypeToCodeDom(kv);
+							AddTypeToCodeDom(kv.Key, kv.Value);
 						}
 					}
 				}
@@ -111,7 +111,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var existingType = FindCodeTypeDeclarationInNamespaces(NameFunc.RefineTypeName(item.Key, null), null);
 					if (existingType == null)
 					{
-						AddTypeToCodeDom(item);
+						AddTypeToCodeDom(item.Key, item.Value);
 					}
 				}
 			}
@@ -139,7 +139,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// The Id will be translated to proper C# type name and namespace if the YAML does support namespace in components.
 		/// </summary>
 		/// <param name="item">Reference Id and its schema</param>
-		public abstract void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item);
+		public abstract void AddTypeToCodeDom(string refId, OpenApiSchema schema);
 
 		public abstract void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList);
 
@@ -241,7 +241,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var existingSchema = FindSchema(arrayTypeSchemaRefId);
 					if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
 					{
-						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(arrayTypeSchemaRefId, existingSchema));
+						AddTypeToCodeDom(arrayTypeSchemaRefId, existingSchema);
 					}
 				}
 
@@ -326,7 +326,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 			{
-				AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
+				AddTypeToCodeDom(complexType, propertySchema);
 			}
 
 			var typeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, complexType);
@@ -343,9 +343,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return s.Replace("\"", "\\\"");
 		}
 
-		protected abstract void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember typeDeclaration);
+		protected abstract void CreateTypeDocComment(string refId, OpenApiSchema typeSchema, CodeTypeMember typeDeclaration);
 
-		protected abstract void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField propertyField, OpenApiSchema modelSchema);
+		protected abstract void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField propertyField, OpenApiSchema modelSchema);
 
 		/// <summary>
 		/// Find in ClientNamespace if ns is not defined, or in ClassNamespaces and ClientNamespace.

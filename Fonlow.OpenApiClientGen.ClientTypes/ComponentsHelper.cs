@@ -77,6 +77,26 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ns.FindTypeDeclaration(typeName);
 		}
 
+		public static CodeTypeDeclaration FindTypeDeclarationInNamespaces(CodeNamespaceCollection namespaces, string typeName, string nsName)
+		{
+			foreach (CodeNamespace ns in namespaces)
+			{
+				if (ns.Name == nsName)
+				{
+					foreach (CodeTypeDeclaration t in ns.Types)
+					{
+						if (t.Name == typeName)
+						{
+							return t;
+						}
+					}
+				}
+			}
+
+			return null;
+		}
+
+
 		/// <summary>
 		/// According to settings.ArrayAs
 		/// </summary>

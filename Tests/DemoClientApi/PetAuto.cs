@@ -28,7 +28,7 @@ namespace MyNS
 		/// Tags attached to the pet
 		/// Minimum items: 1
 		/// </summary>
-		public Pet Tags { get; set; }//;
+		public Tag[] Tags { get; set; }//;
 	}
 
 	public class Tag
@@ -37,7 +37,7 @@ namespace MyNS
 		/// <summary>
 		/// Tag ID
 		/// </summary>
-		public System.Nullable<System.Int64> Id { get; set; }//;
+		public Id Id { get; set; }//;
 
 		/// <summary>
 		/// Tag name

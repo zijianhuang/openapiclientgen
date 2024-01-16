@@ -69,13 +69,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return new CodeObjectHelper(asModule);
 		}
 
-		public override void AddTypeToCodeDom(KeyValuePair<string, OpenApiSchema> item)
+		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			var ns = NameFunc.GetNamespaceOfClassName(item.Key);
-			var currentTypeName = NameFunc.RefineTypeName(item.Key, ns);
+			var ns = NameFunc.GetNamespaceOfClassName(refId);
+			var currentTypeName = NameFunc.RefineTypeName(refId, ns);
 
-			RegisterSchemaRefIdToBeAdded(item.Key);
-			OpenApiSchema schema = item.Value;
+			RegisterSchemaRefIdToBeAdded(refId);
 
 			string type = schema.Type;
 			IList<OpenApiSchema> allOfBaseTypeSchemaList = schema.AllOf; //maybe empty
@@ -97,8 +96,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						OpenApiSchema allOfRef = allOfBaseTypeSchemaList[0];
 						if (allOfRef.Reference == null)
 						{
-							Trace.TraceWarning($"Not yet support Type {item.Key} having allOf[0] without Reference. Skipped.");
-							RemoveRegisteredSchemaRefId(item.Key);
+							Trace.TraceWarning($"Not yet support Type {refId} having allOf[0] without Reference. Skipped.");
+							RemoveRegisteredSchemaRefId(refId);
 							return;
 						}
 
@@ -112,7 +111,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 					}
 
-					CreateTypeDocComment(item, typeDeclaration);
+					CreateTypeDocComment(refId, schema, typeDeclaration);
 
 					AddProperties(typeDeclaration, schema, currentTypeName, ns);
 				}
@@ -126,15 +125,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							var newTypeName = currentTypeName + "Element";
 							if (FindCodeTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
-								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
-								TypeAliasDic.Add(item.Key, $"{newTypeName}[]");
-								Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {newTypeName}[]) -- generated: {newTypeName}");
+								AddTypeToCodeDom(newTypeName, schema.Items);//so add casual type recursively
+								TypeAliasDic.Add(refId, $"{newTypeName}[]");
+								Trace.TraceInformation($"TypeAliasDic.Add({refId}, {newTypeName}[]) -- generated: {newTypeName}");
 							}
 						}
 						else
 						{
-							RemoveRegisteredSchemaRefId(item.Key);
-							Trace.TraceWarning($"Not yet support array type with casual items type without reference and without casual properties: {item.Key}. Skipped.");
+							RemoveRegisteredSchemaRefId(refId);
+							Trace.TraceWarning($"Not yet support array type with casual items type without reference and without casual properties: {refId}. Skipped.");
 						}
 
 						return;
@@ -145,27 +144,27 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					var existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
-						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id))); // add type recursively
+						AddTypeToCodeDom(itemsRef.Id, FindSchema(itemsRef.Id)); // add type recursively
 						RemoveRegisteredSchemaRefId(itemsRef.Id);
 					}
 
 					//Array type with ref to the other type
 					if (TypeAliasDic.TryGet(itemsRef.Id, out string arrayTypeAlias))
 					{
-						TypeAliasDic.Add(item.Key, $"{arrayTypeAlias}[]");
-						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
+						TypeAliasDic.Add(refId, $"{arrayTypeAlias}[]");
+						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {arrayTypeAlias}[]) with existing ({itemsRef.Id}, {arrayTypeAlias})");
 					}
 					else
 					{
-						TypeAliasDic.Add(item.Key, $"{itemsRef.Id}[]");
-						Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {itemsRef.Id}[])");
+						TypeAliasDic.Add(refId, $"{itemsRef.Id}[]");
+						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {itemsRef.Id}[])");
 					}
 				}
 				else if (type != "object" && !String.IsNullOrEmpty(type))
 				{
 					var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(type, null);
-					TypeAliasDic.Add(item.Key, clrType.FullName);
-					Trace.TraceInformation($"TypeAliasDic.Add({item.Key}, {clrType.FullName}) -- clrType: {clrType.FullName}");
+					TypeAliasDic.Add(refId, clrType.FullName);
+					Trace.TraceInformation($"TypeAliasDic.Add({refId}, {clrType.FullName}) -- clrType: {clrType.FullName}");
 				}
 				else if (type == "object" || String.IsNullOrEmpty(type))//object alias without properties
 				{
@@ -175,33 +174,33 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					typeDeclaration = AddTypeToClassNamespace(currentTypeName, ns);
-					CreateTypeDocComment(item, typeDeclaration);
+					CreateTypeDocComment(refId, schema, typeDeclaration);
 				}
 				else
 				{
-					Trace.TraceInformation($"Type Alias {item.Key} for type {type} is skipped.");
-					RemoveRegisteredSchemaRefId(item.Key);
+					Trace.TraceInformation($"Type Alias {refId} for type {type} is skipped.");
+					RemoveRegisteredSchemaRefId(refId);
 					return;
 				}
 
 				if (typeDeclaration != null)
 				{
-					Trace.TraceInformation($"TS clientClass {currentTypeName} created for {item.Key}");
+					Trace.TraceInformation($"TS clientClass {currentTypeName} created for {refId}");
 				}
 				else
 				{
-					Trace.TraceInformation($"TS Candidate clientClass {currentTypeName} for {item.Key} is skipped");
+					Trace.TraceInformation($"TS Candidate clientClass {currentTypeName} for {refId} is skipped");
 				}
 			}
 			else //for enum
 			{
 				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
-				CreateTypeDocComment(item, typeDeclaration);
+				CreateTypeDocComment(refId, schema, typeDeclaration);
 				AddEnumMembers(typeDeclaration, enumTypeList);
 				Trace.TraceInformation("TS client enum: " + currentTypeName);
 			}
 
-			RemoveRegisteredSchemaRefId(item.Key);
+			RemoveRegisteredSchemaRefId(refId);
 		}
 
 		protected override void AddProperty(KeyValuePair<string, OpenApiSchema> p, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
@@ -362,7 +361,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			AddValidationAttributes(propertySchema, clientProperty);
-			CreateMemberDocComment(p, clientProperty, schema);
+			CreateMemberDocComment(p.Key, p.Value, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);
 		}
 
@@ -408,22 +407,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return result;
 		}
 
-		protected override void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property, OpenApiSchema modelSchema)
+		protected override void CreateMemberDocComment(string refId, OpenApiSchema memberSchema, CodeMemberField property, OpenApiSchema modelSchema)
 		{
-			string typeComment = item.Value.Description;
+			string typeComment = memberSchema.Description;
 			if (!String.IsNullOrEmpty(typeComment))
 			{
 				bool funky = typeComment.Contains("*/");
 				if (funky)
 				{
 					typeComment = typeComment.Replace("*/", "");
-					Trace.TraceWarning($"Component {item.Key} with property {property.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+					Trace.TraceWarning($"Component {refId} with property {property.Name} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
 				}
 			}
 
 			if (settings.DataAnnotationsToComments)
 			{
-				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(item.Value, item.Key, modelSchema, true);
+				List<string> ss = ComponentsHelper.GetCommentsFromAnnotations(memberSchema, refId, modelSchema, true);
 				if (!String.IsNullOrEmpty(typeComment))
 				{
 					ss.Insert(0, typeComment);
@@ -517,9 +516,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return null;
 		}
 
-		protected override void CreateTypeDocComment(KeyValuePair<string, OpenApiSchema> item, CodeTypeMember declaration)
+		protected override void CreateTypeDocComment(string refId, OpenApiSchema typeSchema, CodeTypeMember declaration)
 		{
-			string typeComment = item.Value.Description;
+			string typeComment = typeSchema.Description;
 			if (String.IsNullOrEmpty(typeComment))
 			{
 				return;
@@ -529,7 +528,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (funky)
 			{
 				typeComment = typeComment.Replace("*/", "");
-				Trace.TraceWarning($"Component {item.Key} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
+				Trace.TraceWarning($"Component {refId} has Doc comments containing '*/' which is invalid in JSDoc. Please remove it in the definition.");
 			}
 
 			declaration.Comments.Add(new CodeCommentStatement(typeComment, true));
