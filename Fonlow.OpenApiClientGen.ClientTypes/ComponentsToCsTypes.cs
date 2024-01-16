@@ -404,9 +404,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
 				}
+				//else if (propertySchema.AllOf != null && propertySchema.AllOf.Count > 0)
+				//{
+				//	var reference = propertySchema.AllOf[0].Reference;
+				//	string propertyTypeNs = NameFunc.GetNamespaceOfClassName(reference.Id);
+				//	string propertyTypeName = NameFunc.RefineTypeName(reference.Id, propertyTypeNs);
+				//	string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
+				//	CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
+				//	clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
+				//}
 				else
 				{
-					if (propertySchema.Enum.Count > 0) //for casual enum
+					if (propertySchema.Enum.Count > 0) //for casual enum along with defaultValue
 					{
 						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue, !isRequired || propertySchema.Nullable);
 					}
@@ -434,9 +443,24 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (primitivePropertyType == "array") // for array
 				{
-					Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
-					CodeTypeReference arrayCodeTypeReference = r.Item1;
-					string n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+					CodeTypeReference arrayCodeTypeReference;
+					var foundCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(currentTypeName, ns);
+					string n;
+					if (foundCodeTypeDeclaration == null)
+					{
+						Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
+						arrayCodeTypeReference = r.Item1;
+						n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+					}
+					else
+					{
+						//arrayCodeTypeReference = new CodeTypeReference(currentTypeName);
+						//n = propertyName;
+						Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
+						arrayCodeTypeReference = r.Item1;
+						n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+					}
+
 					clientProperty = CreateProperty(arrayCodeTypeReference, n, defaultValue);
 				}
 				else if (propertySchema.Enum.Count == 0 && propertySchema.Reference != null && !isPrimitiveType) // for complex type
@@ -641,8 +665,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
-			return isNullable ? CreateNullableProperty(r.Item1, propertyName) 
-				: CreateProperty(r.Item1, propertyName, 
+			return isNullable ? CreateNullableProperty(r.Item1, propertyName)
+				: CreateProperty(r.Item1, propertyName,
 				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + defaultValue));
 		}
 
@@ -755,25 +779,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		CodeMemberField CreateProperty(string propertyName, Type type, string defaultValue)
-		{
-			// This is a little hack. Since you cant create auto properties in CodeDOM,
-			//  we make the getter and setter part of the member name.
-			// This leaves behind a trailing semicolon that we comment out.
-			//  Later, we remove the commented out semicolons.
-			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
-
-			CodeMemberField result = new() { Type = TypeRefHelper.TranslateToClientTypeReference(type), Name = memberName };
-			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
-
-			if (!String.IsNullOrEmpty(defaultValue))
-			{
-				result.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DefaultValue", new CodeAttributeArgument(new CodeSnippetExpression(defaultValue))));
-			}
-
-			return result;
-		}
-
 		static CodeMemberField CreateNullableProperty(string propertyName, Type type, Settings settings, bool propertyNullable = false)
 		{
 			//if (!propertyNullable && !settings.UseNullableValueType)
@@ -827,6 +832,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		//	return result;
 		//}
 
+		CodeMemberField CreateProperty(string propertyName, Type type, string defaultValue)
+		{
+			// This is a little hack. Since you cant create auto properties in CodeDOM,
+			//  we make the getter and setter part of the member name.
+			// This leaves behind a trailing semicolon that we comment out.
+			//  Later, we remove the commented out semicolons.
+			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
+
+			CodeMemberField result = new() { Type = TypeRefHelper.TranslateToClientTypeReference(type), Name = memberName };
+			result.Attributes = MemberAttributes.Public | MemberAttributes.Final;
+
+			if (!String.IsNullOrEmpty(defaultValue))
+			{
+				result.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DefaultValue", new CodeAttributeArgument(new CodeSnippetExpression(defaultValue))));
+			}
+
+			return result;
+		}
+
 		CodeMemberField CreateProperty(CodeTypeReference codeTypeReference, string propertyName, string defaultValue)
 		{
 			string memberName = propertyName + (defaultValue == null || !settings.DataAnnotationsEnabled ? " { get; set; }//" : $" {{ get; set; }} = {defaultValue};//");
@@ -871,7 +895,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			if (!string.IsNullOrEmpty(fieldSchema.Pattern))
 			{
 				var escapedPattern = fieldSchema.Pattern.Replace("\"", "\"\"").Replace("\\0", "0o"); //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_octal
-																			   //openapi-directory\APIs\amazonaws.com\AWSMigrationHub\2017-05-31 has the deprecated expression of octal
+																									 //openapi-directory\APIs\amazonaws.com\AWSMigrationHub\2017-05-31 has the deprecated expression of octal
 				var ps = $"@\"{escapedPattern}\"";
 				CodeSnippetExpression patternTextExpression = new(ps);
 				CodeAttributeDeclaration pa = new("System.ComponentModel.DataAnnotations.RegularExpressionAttribute", new CodeAttributeArgument(patternTextExpression));

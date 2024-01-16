@@ -67,7 +67,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		}
 
 		/// <summary>
-		/// Find in specific namespace
+		/// Find if a type had been declared in specific namespace
 		/// </summary>
 		/// <param name="typeName"></param>
 		/// <param name="ns"></param>
