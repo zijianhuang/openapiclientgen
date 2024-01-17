@@ -294,7 +294,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(arrayItemsSchema.Type) || arrayItemsSchema.Type == "string")
-							? arrayItemsSchema.Enum.Cast<OpenApiString>().Select(m => m.Value).ToArray()
+							? GetStringsFromEnumList(arrayItemsSchema.Enum)
 							: arrayItemsSchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 					}
 					catch (InvalidCastException ex)
@@ -519,7 +519,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(propertySchema.Type) || propertySchema.Type == "string")
-							? propertySchema.Enum.Cast<OpenApiPrimitive<string>>().Select(m => m.Value).ToArray()
+							? GetStringsFromEnumList(propertySchema.Enum)
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 					}
@@ -666,6 +666,32 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return existingNamespace;
 		}
+
+		/// <summary>
+		/// Sometimes the reader return one member as OpenApiNull, so a wholesale typecast is not working.
+		/// </summary>
+		/// <param name="enumList"></param>
+		/// <returns></returns>
+		protected string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
+		{
+			return enumList.Select(d =>
+			{
+				if (d is OpenApiPrimitive<string> dString)
+				{
+					return dString.Value;
+				}
+				else if (d is OpenApiNull dNull)
+				{
+					return "null";
+				}
+				else
+				{
+					throw new CodeGenException("Mixed up enum.");
+				}
+			}).ToArray();
+		}
+
+
 	}
 
 }

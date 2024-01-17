@@ -390,7 +390,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else
 				{
-					throw new ArgumentException($"Not yet supported enumMember of {enumMember.GetType()} with {typeDeclaration.Name}");
+					var enumMemberType = enumMember.GetType();
+					throw new ArgumentException($"Not yet supported enumMember of {enumMemberType} with {typeDeclaration.Name}");
 				}
 			}
 		}
@@ -670,30 +671,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			CreateMemberDocComment(refId, propertySchema, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);
-		}
-
-		/// <summary>
-		/// Sometimes the reader return one member as OpenApiNull, so a wholesale typecast is not working.
-		/// </summary>
-		/// <param name="enumList"></param>
-		/// <returns></returns>
-		string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
-		{
-			return enumList.Select(d =>
-			{
-				if (d is OpenApiPrimitive<string> dString)
-				{
-					return dString.Value;
-				}
-				else if (d is OpenApiNull dNull)
-				{
-					return "null";
-				}
-				else
-				{
-					throw new CodeGenException("Mixed up enum.");
-				}
-			}).ToArray();
 		}
 
 		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue, bool isNullable)
