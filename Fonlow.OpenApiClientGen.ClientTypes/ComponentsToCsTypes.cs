@@ -74,7 +74,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId== "DateFieldFont")
+			if (refId == "StatusCodes")
 			{
 				Console.WriteLine(refId);
 			}
@@ -146,6 +146,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 								TypeAliasDic.Add(refId, typeNameX);
 								Trace.TraceInformation($"TypeAliasDic.Add({refId}, {typeNameX}) -- generated: {newTypeName}");
 							}
+						}
+						else if (!String.IsNullOrEmpty(schema.Items.Type)) // add type alias as something like "using Code_frequency_stat = int[];"
+						{
+							var clrType = TypeRefHelper.PrimitiveSwaggerTypeToClrType(schema.Items.Type, schema.Items.Format);
+							var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(clrType.Name, settings.ArrayAs);
+							TypeAliasDic.Add(refId, typeNameX);
 						}
 						else
 						{
@@ -365,6 +371,23 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeDeclaration.Members.Add(clientField);
 					k++;
 				}
+				else if (enumMember is OpenApiNull nullMember) //listennotes.com\2.0 has funky definition of casual enum of type double
+				{
+					string memberName = "_null";
+					CodeMemberField clientField = new()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(k),
+					};
+
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+					}
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
 				else
 				{
 					throw new ArgumentException($"Not yet supported enumMember of {enumMember.GetType()} with {typeDeclaration.Name}");
@@ -375,7 +398,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = NameFunc.RefinePropertyName(refId);
-			if (refId== "sortOrder")
+			if (refId == "sortOrder")
 			{
 				Console.WriteLine("OK");
 			}
@@ -426,7 +449,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum along with defaultValue
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns??settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
 					}
 					else
 					{
@@ -463,11 +486,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						//arrayCodeTypeReference = new CodeTypeReference(currentTypeName);
-						//n = propertyName;
-						Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
-						arrayCodeTypeReference = r.Item1;
-						n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+						//if (TypeAliasDic.TryGet(propertySchema.Reference?.Id, out string aliasTypeName))
+						//{
+						//	arrayCodeTypeReference = new CodeTypeReference(aliasTypeName);
+						//	n = propertyName;
+						//}
+						//else
+						{
+							Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
+							arrayCodeTypeReference = r.Item1;
+							n = String.IsNullOrEmpty(r.Item2) ? propertyName : r.Item2;
+						}
 					}
 
 					clientProperty = CreateProperty(arrayCodeTypeReference, n, defaultValue);
@@ -551,7 +580,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
-							? propertySchema.Enum.Cast<OpenApiPrimitive<string>>().Select(m => m.Value).ToArray()
+							? GetStringsFromEnumList(propertySchema.Enum)
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 						// It's also needed here to provide enums in correct case for the FindEnumDeclaration function
@@ -643,6 +672,30 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			typeDeclaration.Members.Add(clientProperty);
 		}
 
+		/// <summary>
+		/// Sometimes the reader return one member as OpenApiNull, so a wholesale typecast is not working.
+		/// </summary>
+		/// <param name="enumList"></param>
+		/// <returns></returns>
+		string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
+		{
+			return enumList.Select(d =>
+			{
+				if (d is OpenApiPrimitive<string> dString)
+				{
+					return dString.Value;
+				}
+				else if (d is OpenApiNull dNull)
+				{
+					return "null";
+				}
+				else
+				{
+					throw new CodeGenException("Mixed up enum.");
+				}
+			}).ToArray();
+		}
+
 		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns, string defaultValue, bool isNullable)
 		{
 			Tuple<CodeTypeReference, CodeTypeDeclaration> r = GenerateCasualEnum(propertySchema, typeDeclarationName, propertyName, ns);
@@ -704,7 +757,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return "\"" + EscapeString(stringValue.Value) + "\"";
 					}
 
-					if (s.AllOf!=null && s.AllOf.Count > 0)
+					if (s.AllOf != null && s.AllOf.Count > 0)
 					{
 						var typeRef = s.AllOf[0].Reference.Id;
 						var refinedTypeName = NameFunc.RefineTypeName(typeRef, "");
@@ -902,7 +955,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (foundNamespace == null)
 				{
 					foundNamespace = AddNamespaceDeclarationIfNotExist(ns);
-					
+
 				}
 
 				return PodGenHelper.CreatePodClientClass(foundNamespace, typeName);
@@ -925,6 +978,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		void AddTypeAlias(string typeName, string alias)
+		{
+			ClientNamespace.Imports.Add(new CodeNamespaceImport($"{typeName} = {alias}"));
+		}
 	}
 
 }

@@ -264,6 +264,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
 					{
 						AddTypeToCodeDom(arrayTypeSchemaRefId, existingSchema);
+						//AddTypeToCodeDom(arrayTypeWithNs, existingSchema);
 					}
 				}
 
