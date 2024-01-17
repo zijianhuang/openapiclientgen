@@ -486,12 +486,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						//if (TypeAliasDic.TryGet(propertySchema.Reference?.Id, out string aliasTypeName))
-						//{
-						//	arrayCodeTypeReference = new CodeTypeReference(aliasTypeName);
-						//	n = propertyName;
-						//}
-						//else
+						if (TypeAliasDic.TryGet(propertySchema.Reference?.Id, out string aliasTypeName))
+						{
+							arrayCodeTypeReference = new CodeTypeReference(aliasTypeName);
+							n = propertyName;
+						}
+						else
 						{
 							Tuple<CodeTypeReference, string> r = CreateArrayCodeTypeReference(propertySchema, typeDeclaration.Name, propertyName, currentTypeName, ns);
 							arrayCodeTypeReference = r.Item1;
