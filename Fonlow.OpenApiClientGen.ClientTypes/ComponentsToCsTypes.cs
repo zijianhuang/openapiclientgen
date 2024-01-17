@@ -426,7 +426,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum along with defaultValue
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue, !isRequired || propertySchema.Nullable);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns??settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
 					}
 					else
 					{
@@ -582,7 +582,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue, !isRequired || propertySchema.Nullable);
+						clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
 					}
 				}
 				else if (primitivePropertyType != "string" && TypeAliasDic.TryGet(primitivePropertyType, out string aliasTypeName)) //check TypeAliasDic
@@ -597,7 +597,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else // for casual enum
 				{
-					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns, defaultValue, !isRequired || propertySchema.Nullable);
+					clientProperty = GenerateCasualEnumForProperty(propertySchema, typeDeclaration.Name, propertyName, ns ?? settings.ClientNamespace, defaultValue, !isRequired || propertySchema.Nullable);
 				}
 			}
 
@@ -901,7 +901,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				CodeNamespace foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
 				if (foundNamespace == null)
 				{
-					AddNamespaceDeclarationIfNotExist(ns);
+					foundNamespace = AddNamespaceDeclarationIfNotExist(ns);
+					
 				}
 
 				return PodGenHelper.CreatePodClientClass(foundNamespace, typeName);

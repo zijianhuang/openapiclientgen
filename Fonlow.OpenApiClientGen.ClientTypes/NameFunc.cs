@@ -69,15 +69,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				b = "_" + b;
 			}
 
-			b = b.Replace('.', '_').Replace("-", "Minus").Replace(' ', '_').Replace('/', '_')
+			b = b.Replace('.', '_').Replace(' ', '_').Replace('/', '_')
 						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
 						.Replace(":", "")//atlassian api has this.
 						.Replace("*", "_")//aws s3 has this
 						.Replace("+", "Plus")
+						.Replace("-", "Minus")
 						.Replace('$', '_')
 						.Replace('#', '_')
 						.Replace('|', '_')
 						.Replace("'", "_")
+						.Replace(";", "_")
 						.Replace("&", "And")
 						.Replace("%", "Percent")
 						.Replace('[', '_').Replace("]", "")
@@ -146,7 +148,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace('[', '_').Replace("]", "");
-			
+
 			return rs;
 		}
 
@@ -160,6 +162,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace("{", "").Replace("}", "")
+				.Replace("+", "Plus")
+				.Replace("-", "Minus")
 				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace("'", "_")
 				.Replace(' ', '_'));
 		}
@@ -200,7 +204,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public static string[] FindNamespacesInClassNames(IEnumerable<string> names)
 		{
 			var nss = names.Select(n => GetNamespaceOfClassName(n));
-			var r = nss.Distinct().Where(k=>k!=null).ToArray();
+			var r = nss.Distinct().Where(k => k != null).ToArray();
 			return r;
 		}
 

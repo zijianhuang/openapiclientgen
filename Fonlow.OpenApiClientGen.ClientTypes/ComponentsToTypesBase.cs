@@ -447,7 +447,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			if (propertySchema == null)
 			{
-				throw new ArgumentNullException(nameof(propertySchema));
+				//throw new ArgumentNullException(nameof(propertySchema));
+				Console.Error.WriteLine($"actionName: {actionName} and property: {propertyName} not having propertySchema");
+				return null;
 			}
 
 			string schemaType = propertySchema.Type;
@@ -465,7 +467,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					if (propertySchema.Enum.Count > 0) //for casual enum
 					{
-						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, null);
+						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, settings.ClientNamespace);
 						return r.Item1;
 					}
 					else
@@ -542,7 +544,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 						else
 						{
-							var r = GenerateCasualEnum(propertySchema, actionName, propertyName, null);
+							var r = GenerateCasualEnum(propertySchema, actionName, propertyName, settings.ClientNamespace);
 							return r.Item1;
 						}
 					}
@@ -566,7 +568,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, null);
+						var r = GenerateCasualEnum(propertySchema, actionName, propertyName, settings.ClientNamespace);
 						return r.Item1;
 					}
 				}
@@ -649,19 +651,19 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// 
 		/// </summary>
 		/// <param name="classNamespaceText"></param>
-		/// <returns>True: added; False: existing</returns>
-		protected bool AddNamespaceDeclarationIfNotExist(string classNamespaceText)
+		/// <returns></returns>
+		protected CodeNamespace AddNamespaceDeclarationIfNotExist(string classNamespaceText)
 		{
-			var existingNamespaceDeclaration = ComponentsHelper.FindNamespace(codeCompileUnit.Namespaces, classNamespaceText);
-			if (existingNamespaceDeclaration == null)
+			var existingNamespace = ComponentsHelper.FindNamespace(codeCompileUnit.Namespaces, classNamespaceText);
+			if (existingNamespace == null)
 			{
 				var classNamespace = new CodeNamespace(classNamespaceText);
 				codeCompileUnit.Namespaces.Add(classNamespace);
 				ClassNamespaces.Add(classNamespace);
-				return true;
+				return classNamespace;
 			}
 
-			return false;
+			return existingNamespace;
 		}
 	}
 
