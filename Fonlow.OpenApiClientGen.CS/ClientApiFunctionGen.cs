@@ -264,7 +264,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		static void AddNewtonSoftJsonTextReader(CodeStatementCollection statementCollection)
 		{
-			statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))"));
+			statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))"));
 		}
 
 		void AddNewtonSoftJsonSerializerDeserialize(CodeStatementCollection statementCollection)
@@ -433,8 +433,8 @@ namespace Fonlow.OpenApiClientGen.CS
 			else
 			{
 				statementCollection.Add(new CodeSnippetStatement(forAsync
-					? "\t\t\t\tvar stream = await responseMessage.Content.ReadAsStreamAsync();"
-					: "\t\t\t\tvar stream = responseMessage.Content.ReadAsStreamAsync().Result;"));
+					? "\t\t\t\tvar responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();"
+					: "\t\t\t\tvar responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;"));
 			}
 		}
 
@@ -447,7 +447,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			{
 				if (this.stringAsString)
 				{
-					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(stream))"));
+					statementCollection.Add(new CodeSnippetStatement("\t\t\t\tusing (System.IO.StreamReader streamReader = new System.IO.StreamReader(responseMessageStream))"));
 					Add4TStartBacket(statementCollection);
 					statementCollection.Add(new CodeMethodReturnStatement(new CodeSnippetExpression("streamReader.ReadToEnd();")));
 					Add4TEndBacket(statementCollection);

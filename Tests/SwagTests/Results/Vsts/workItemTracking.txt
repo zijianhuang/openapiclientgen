@@ -2361,8 +2361,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkArtifactLink[]>(jsonReader);
@@ -2391,8 +2391,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkArtifactLink[]>(jsonReader);
@@ -2421,8 +2421,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemIcon[]>(jsonReader);
@@ -2451,8 +2451,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemIcon[]>(jsonReader);
@@ -2484,8 +2484,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemIcon>(jsonReader);
@@ -2517,8 +2517,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemIcon>(jsonReader);
@@ -2547,8 +2547,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemRelationType[]>(jsonReader);
@@ -2577,8 +2577,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemRelationType[]>(jsonReader);
@@ -2608,8 +2608,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemRelationType>(jsonReader);
@@ -2639,8 +2639,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemRelationType>(jsonReader);
@@ -2671,8 +2671,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemNextStateOnTransition[]>(jsonReader);
@@ -2703,8 +2703,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemNextStateOnTransition[]>(jsonReader);
@@ -2733,8 +2733,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AccountRecentActivityWorkItemModel2[]>(jsonReader);
@@ -2763,8 +2763,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AccountRecentActivityWorkItemModel2[]>(jsonReader);
@@ -2801,8 +2801,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ArtifactUriQueryResult>(jsonReader);
@@ -2840,8 +2840,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ArtifactUriQueryResult>(jsonReader);
@@ -2929,8 +2929,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode[]>(jsonReader);
@@ -2961,8 +2961,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode[]>(jsonReader);
@@ -2995,8 +2995,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
@@ -3029,8 +3029,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
@@ -3069,8 +3069,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
@@ -3110,8 +3110,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
@@ -3207,8 +3207,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
@@ -3248,8 +3248,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemClassificationNode>(jsonReader);
@@ -3281,8 +3281,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField[]>(jsonReader);
@@ -3313,8 +3313,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField[]>(jsonReader);
@@ -3351,8 +3351,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField>(jsonReader);
@@ -3390,8 +3390,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField>(jsonReader);
@@ -3423,8 +3423,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField>(jsonReader);
@@ -3455,8 +3455,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField>(jsonReader);
@@ -3546,8 +3546,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField>(jsonReader);
@@ -3586,8 +3586,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemField>(jsonReader);
@@ -3624,8 +3624,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProcessMigrationResultModel>(jsonReader);
@@ -3662,8 +3662,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ProcessMigrationResultModel>(jsonReader);
@@ -3697,8 +3697,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem[]>(jsonReader);
@@ -3731,8 +3731,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem[]>(jsonReader);
@@ -3766,8 +3766,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
@@ -3801,8 +3801,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
@@ -3843,8 +3843,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
@@ -3886,8 +3886,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
@@ -3979,8 +3979,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
@@ -4020,8 +4020,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem>(jsonReader);
@@ -4058,8 +4058,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem[]>(jsonReader);
@@ -4096,8 +4096,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<QueryHierarchyItem[]>(jsonReader);
@@ -4128,8 +4128,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDeleteShallowReference[]>(jsonReader);
@@ -4159,8 +4159,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDeleteShallowReference[]>(jsonReader);
@@ -4191,8 +4191,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDelete>(jsonReader);
@@ -4223,8 +4223,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDelete>(jsonReader);
@@ -4314,8 +4314,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDelete>(jsonReader);
@@ -4354,8 +4354,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDelete>(jsonReader);
@@ -4390,8 +4390,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemLinksBatch>(jsonReader);
@@ -4425,8 +4425,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemLinksBatch>(jsonReader);
@@ -4467,8 +4467,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemRevisionsBatch>(jsonReader);
@@ -4509,8 +4509,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemRevisionsBatch>(jsonReader);
@@ -4549,8 +4549,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemRevisionsBatch>(jsonReader);
@@ -4590,8 +4590,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemRevisionsBatch>(jsonReader);
@@ -4621,8 +4621,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemRevisionsBatch>(jsonReader);
@@ -4651,8 +4651,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<ReportingWorkItemRevisionsBatch>(jsonReader);
@@ -4681,8 +4681,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTagDefinition[]>(jsonReader);
@@ -4711,8 +4711,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTagDefinition[]>(jsonReader);
@@ -4741,8 +4741,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTagDefinition>(jsonReader);
@@ -4771,8 +4771,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTagDefinition>(jsonReader);
@@ -4855,8 +4855,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTagDefinition>(jsonReader);
@@ -4892,8 +4892,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTagDefinition>(jsonReader);
@@ -4929,8 +4929,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem[]>(jsonReader);
@@ -4965,8 +4965,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem[]>(jsonReader);
@@ -5000,8 +5000,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem>(jsonReader);
@@ -5035,8 +5035,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem>(jsonReader);
@@ -5070,8 +5070,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem>(jsonReader);
@@ -5105,8 +5105,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem>(jsonReader);
@@ -5138,8 +5138,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDelete>(jsonReader);
@@ -5171,8 +5171,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemDelete>(jsonReader);
@@ -5202,8 +5202,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem[]>(jsonReader);
@@ -5233,8 +5233,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem[]>(jsonReader);
@@ -5264,8 +5264,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem>(jsonReader);
@@ -5295,8 +5295,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem>(jsonReader);
@@ -5326,8 +5326,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemUpdate[]>(jsonReader);
@@ -5357,8 +5357,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemUpdate[]>(jsonReader);
@@ -5388,8 +5388,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemUpdate>(jsonReader);
@@ -5419,8 +5419,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemUpdate>(jsonReader);
@@ -5454,8 +5454,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentList>(jsonReader);
@@ -5489,8 +5489,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentList>(jsonReader);
@@ -5528,8 +5528,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Comment>(jsonReader);
@@ -5568,8 +5568,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Comment>(jsonReader);
@@ -5604,8 +5604,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Comment>(jsonReader);
@@ -5639,8 +5639,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Comment>(jsonReader);
@@ -5730,8 +5730,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Comment>(jsonReader);
@@ -5770,8 +5770,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Comment>(jsonReader);
@@ -5804,8 +5804,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentReaction[]>(jsonReader);
@@ -5837,8 +5837,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentReaction[]>(jsonReader);
@@ -5871,8 +5871,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentReaction>(jsonReader);
@@ -5905,8 +5905,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentReaction>(jsonReader);
@@ -5939,8 +5939,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentReaction>(jsonReader);
@@ -5973,8 +5973,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentReaction>(jsonReader);
@@ -6007,8 +6007,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<IdentityRef[]>(jsonReader);
@@ -6041,8 +6041,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<IdentityRef[]>(jsonReader);
@@ -6071,8 +6071,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentVersion[]>(jsonReader);
@@ -6101,8 +6101,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentVersion[]>(jsonReader);
@@ -6131,8 +6131,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentVersion>(jsonReader);
@@ -6161,8 +6161,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<CommentVersion>(jsonReader);
@@ -6198,8 +6198,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem[]>(jsonReader);
@@ -6236,8 +6236,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItem[]>(jsonReader);
@@ -6268,8 +6268,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeCategory[]>(jsonReader);
@@ -6299,8 +6299,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeCategory[]>(jsonReader);
@@ -6331,8 +6331,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeCategory>(jsonReader);
@@ -6363,8 +6363,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeCategory>(jsonReader);
@@ -6394,8 +6394,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemType[]>(jsonReader);
@@ -6425,8 +6425,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemType[]>(jsonReader);
@@ -6457,8 +6457,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemType>(jsonReader);
@@ -6489,8 +6489,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemType>(jsonReader);
@@ -6522,8 +6522,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeFieldWithReferences[]>(jsonReader);
@@ -6555,8 +6555,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeFieldWithReferences[]>(jsonReader);
@@ -6588,8 +6588,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeFieldWithReferences>(jsonReader);
@@ -6621,8 +6621,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTypeFieldWithReferences>(jsonReader);
@@ -6653,8 +6653,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemStateColor[]>(jsonReader);
@@ -6685,8 +6685,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemStateColor[]>(jsonReader);
@@ -6718,8 +6718,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplateReference[]>(jsonReader);
@@ -6751,8 +6751,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplateReference[]>(jsonReader);
@@ -6790,8 +6790,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplate>(jsonReader);
@@ -6830,8 +6830,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplate>(jsonReader);
@@ -6864,8 +6864,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplate>(jsonReader);
@@ -6897,8 +6897,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplate>(jsonReader);
@@ -6937,8 +6937,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplate>(jsonReader);
@@ -6978,8 +6978,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemTemplate>(jsonReader);
@@ -7074,8 +7074,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemQueryResult>(jsonReader);
@@ -7116,8 +7116,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemQueryResult>(jsonReader);
@@ -7152,8 +7152,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemQueryResult>(jsonReader);
@@ -7187,8 +7187,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<WorkItemQueryResult>(jsonReader);

@@ -2667,7 +2667,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_myconfig_releaseDownloadAccessAsync(string[] volumeIds, string cpksver, string locale, string source)
 		{
-			var requestUri = "myconfig/releaseDownloadAccess?"+String.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : Uri.EscapeDataString(source));
+			var requestUri = "myconfig/releaseDownloadAccess?"+string.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : Uri.EscapeDataString(source));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2693,7 +2693,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_myconfig_releaseDownloadAccess(string[] volumeIds, string cpksver, string locale, string source)
 		{
-			var requestUri = "myconfig/releaseDownloadAccess?"+String.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : Uri.EscapeDataString(source));
+			var requestUri = "myconfig/releaseDownloadAccess?"+string.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&source=" + (source==null? "" : Uri.EscapeDataString(source));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2779,7 +2779,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_myconfig_syncVolumeLicensesAsync(string source, string nonce, string cpksver, string[] features, bool includeNonComicsSeries, string locale, bool showPreorders, string[] volumeIds)
 		{
-			var requestUri = "myconfig/syncVolumeLicenses?source=" + (source==null? "" : Uri.EscapeDataString(source))+"&nonce=" + (nonce==null? "" : Uri.EscapeDataString(nonce))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&"+String.Join("&", features.Select(z => $"features={Uri.EscapeDataString(z.ToString())}"))+"&includeNonComicsSeries="+includeNonComicsSeries+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&showPreorders="+showPreorders+"&"+String.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "myconfig/syncVolumeLicenses?source=" + (source==null? "" : Uri.EscapeDataString(source))+"&nonce=" + (nonce==null? "" : Uri.EscapeDataString(nonce))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&"+string.Join("&", features.Select(z => $"features={Uri.EscapeDataString(z.ToString())}"))+"&includeNonComicsSeries="+includeNonComicsSeries+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&showPreorders="+showPreorders+"&"+string.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2809,7 +2809,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_myconfig_syncVolumeLicenses(string source, string nonce, string cpksver, string[] features, bool includeNonComicsSeries, string locale, bool showPreorders, string[] volumeIds)
 		{
-			var requestUri = "myconfig/syncVolumeLicenses?source=" + (source==null? "" : Uri.EscapeDataString(source))+"&nonce=" + (nonce==null? "" : Uri.EscapeDataString(nonce))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&"+String.Join("&", features.Select(z => $"features={Uri.EscapeDataString(z.ToString())}"))+"&includeNonComicsSeries="+includeNonComicsSeries+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&showPreorders="+showPreorders+"&"+String.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "myconfig/syncVolumeLicenses?source=" + (source==null? "" : Uri.EscapeDataString(source))+"&nonce=" + (nonce==null? "" : Uri.EscapeDataString(nonce))+"&cpksver=" + (cpksver==null? "" : Uri.EscapeDataString(cpksver))+"&"+string.Join("&", features.Select(z => $"features={Uri.EscapeDataString(z.ToString())}"))+"&includeNonComicsSeries="+includeNonComicsSeries+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&showPreorders="+showPreorders+"&"+string.Join("&", volumeIds.Select(z => $"volumeIds={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2899,7 +2899,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_mylibrary_annotations_listAsync(string contentVersion, string layerId, string[] layerIds, int maxResults, string pageToken, bool showDeleted, string source, string updatedMax, string updatedMin, string volumeId)
 		{
-			var requestUri = "mylibrary/annotations?contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&layerId=" + (layerId==null? "" : Uri.EscapeDataString(layerId))+"&"+String.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
+			var requestUri = "mylibrary/annotations?contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&layerId=" + (layerId==null? "" : Uri.EscapeDataString(layerId))+"&"+string.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2931,7 +2931,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_mylibrary_annotations_list(string contentVersion, string layerId, string[] layerIds, int maxResults, string pageToken, bool showDeleted, string source, string updatedMax, string updatedMin, string volumeId)
 		{
-			var requestUri = "mylibrary/annotations?contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&layerId=" + (layerId==null? "" : Uri.EscapeDataString(layerId))+"&"+String.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
+			var requestUri = "mylibrary/annotations?contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&layerId=" + (layerId==null? "" : Uri.EscapeDataString(layerId))+"&"+string.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&showDeleted="+showDeleted+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3021,7 +3021,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_mylibrary_annotations_summaryAsync(string[] layerIds, string volumeId)
 		{
-			var requestUri = "mylibrary/annotations/summary?"+String.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
+			var requestUri = "mylibrary/annotations/summary?"+string.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3045,7 +3045,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_mylibrary_annotations_summary(string[] layerIds, string volumeId)
 		{
-			var requestUri = "mylibrary/annotations/summary?"+String.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
+			var requestUri = "mylibrary/annotations/summary?"+string.Join("&", layerIds.Select(z => $"layerIds={Uri.EscapeDataString(z.ToString())}"))+"&volumeId=" + (volumeId==null? "" : Uri.EscapeDataString(volumeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3744,7 +3744,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_onboarding_listCategoryVolumesAsync(string[] categoryId, string locale, Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating maxAllowedMaturityRating, int pageSize, string pageToken)
 		{
-			var requestUri = "onboarding/listCategoryVolumes?"+String.Join("&", categoryId.Select(z => $"categoryId={Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken));
+			var requestUri = "onboarding/listCategoryVolumes?"+string.Join("&", categoryId.Select(z => $"categoryId={Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3771,7 +3771,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_onboarding_listCategoryVolumes(string[] categoryId, string locale, Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating maxAllowedMaturityRating, int pageSize, string pageToken)
 		{
-			var requestUri = "onboarding/listCategoryVolumes?"+String.Join("&", categoryId.Select(z => $"categoryId={Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken));
+			var requestUri = "onboarding/listCategoryVolumes?"+string.Join("&", categoryId.Select(z => $"categoryId={Uri.EscapeDataString(z.ToString())}"))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxAllowedMaturityRating=" + maxAllowedMaturityRating+"&pageSize="+pageSize+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4012,7 +4012,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_series_getAsync(string[] series_id)
 		{
-			var requestUri = "series/get?"+String.Join("&", series_id.Select(z => $"series_id={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "series/get?"+string.Join("&", series_id.Select(z => $"series_id={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4035,7 +4035,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_series_get(string[] series_id)
 		{
-			var requestUri = "series/get?"+String.Join("&", series_id.Select(z => $"series_id={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "series/get?"+string.Join("&", series_id.Select(z => $"series_id={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4340,7 +4340,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_volumes_mybooks_listAsync(string[] acquireMethod, string country, string locale, int maxResults, string[] processingState, string source, int startIndex)
 		{
-			var requestUri = "volumes/mybooks?"+String.Join("&", acquireMethod.Select(z => $"acquireMethod={Uri.EscapeDataString(z.ToString())}"))+"&country=" + (country==null? "" : Uri.EscapeDataString(country))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+String.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex;
+			var requestUri = "volumes/mybooks?"+string.Join("&", acquireMethod.Select(z => $"acquireMethod={Uri.EscapeDataString(z.ToString())}"))+"&country=" + (country==null? "" : Uri.EscapeDataString(country))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4369,7 +4369,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_volumes_mybooks_list(string[] acquireMethod, string country, string locale, int maxResults, string[] processingState, string source, int startIndex)
 		{
-			var requestUri = "volumes/mybooks?"+String.Join("&", acquireMethod.Select(z => $"acquireMethod={Uri.EscapeDataString(z.ToString())}"))+"&country=" + (country==null? "" : Uri.EscapeDataString(country))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+String.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex;
+			var requestUri = "volumes/mybooks?"+string.Join("&", acquireMethod.Select(z => $"acquireMethod={Uri.EscapeDataString(z.ToString())}"))+"&country=" + (country==null? "" : Uri.EscapeDataString(country))+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4499,7 +4499,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_volumes_useruploaded_listAsync(string locale, int maxResults, string[] processingState, string source, int startIndex, string[] volumeId)
 		{
-			var requestUri = "volumes/useruploaded?locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+String.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex+"&"+String.Join("&", volumeId.Select(z => $"volumeId={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "volumes/useruploaded?locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex+"&"+string.Join("&", volumeId.Select(z => $"volumeId={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4527,7 +4527,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_volumes_useruploaded_list(string locale, int maxResults, string[] processingState, string source, int startIndex, string[] volumeId)
 		{
-			var requestUri = "volumes/useruploaded?locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+String.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex+"&"+String.Join("&", volumeId.Select(z => $"volumeId={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "volumes/useruploaded?locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&"+string.Join("&", processingState.Select(z => $"processingState={Uri.EscapeDataString(z.ToString())}"))+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&startIndex="+startIndex+"&"+string.Join("&", volumeId.Select(z => $"volumeId={Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4800,7 +4800,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Books_layers_annotationData_listAsync(string volumeId, string layerId, string contentVersion, string[] annotationDataId, int h, string locale, int maxResults, string pageToken, int scale, string source, string updatedMax, string updatedMin, int w)
 		{
-			var requestUri = "volumes/"+ (volumeId==null? "" : Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : Uri.EscapeDataString(layerId))+"/data&contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&"+String.Join("&", annotationDataId.Select(z => $"annotationDataId={Uri.EscapeDataString(z.ToString())}"))+"&h="+h+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&scale="+scale+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&w="+w;
+			var requestUri = "volumes/"+ (volumeId==null? "" : Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : Uri.EscapeDataString(layerId))+"/data&contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&"+string.Join("&", annotationDataId.Select(z => $"annotationDataId={Uri.EscapeDataString(z.ToString())}"))+"&h="+h+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&scale="+scale+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&w="+w;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4835,7 +4835,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public void Books_layers_annotationData_list(string volumeId, string layerId, string contentVersion, string[] annotationDataId, int h, string locale, int maxResults, string pageToken, int scale, string source, string updatedMax, string updatedMin, int w)
 		{
-			var requestUri = "volumes/"+ (volumeId==null? "" : Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : Uri.EscapeDataString(layerId))+"/data&contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&"+String.Join("&", annotationDataId.Select(z => $"annotationDataId={Uri.EscapeDataString(z.ToString())}"))+"&h="+h+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&scale="+scale+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&w="+w;
+			var requestUri = "volumes/"+ (volumeId==null? "" : Uri.EscapeDataString(volumeId))+"/layers/"+ (layerId==null? "" : Uri.EscapeDataString(layerId))+"/data&contentVersion=" + (contentVersion==null? "" : Uri.EscapeDataString(contentVersion))+"&"+string.Join("&", annotationDataId.Select(z => $"annotationDataId={Uri.EscapeDataString(z.ToString())}"))+"&h="+h+"&locale=" + (locale==null? "" : Uri.EscapeDataString(locale))+"&maxResults="+maxResults+"&pageToken=" + (pageToken==null? "" : Uri.EscapeDataString(pageToken))+"&scale="+scale+"&source=" + (source==null? "" : Uri.EscapeDataString(source))+"&updatedMax=" + (updatedMax==null? "" : Uri.EscapeDataString(updatedMax))+"&updatedMin=" + (updatedMin==null? "" : Uri.EscapeDataString(updatedMin))+"&w="+w;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -5062,9 +5062,9 @@ namespace MyNS
 		
 		chapter = 1,
 		
-		next_page = 2,
+		nextMinuspage = 2,
 		
-		prev_page = 3,
+		prevMinuspage = 3,
 		
 		scroll = 4,
 		
@@ -5076,7 +5076,7 @@ namespace MyNS
 		
 		mature = 0,
 		
-		not_mature = 1,
+		notMinusmature = 1,
 	}
 	
 	public enum Books_personalizedstream_getMaxAllowedMaturityRating
@@ -5084,7 +5084,7 @@ namespace MyNS
 		
 		mature = 0,
 		
-		not_mature = 1,
+		notMinusmature = 1,
 	}
 	
 	public enum Books_volumes_listDownload
@@ -5098,11 +5098,11 @@ namespace MyNS
 		
 		ebooks = 0,
 		
-		free_ebooks = 1,
+		freeMinusebooks = 1,
 		
 		full = 2,
 		
-		paid_ebooks = 3,
+		paidMinusebooks = 3,
 		
 		@partial = 4,
 	}
@@ -5110,9 +5110,9 @@ namespace MyNS
 	public enum Books_volumes_listLibraryRestrict
 	{
 		
-		my_library = 0,
+		myMinuslibrary = 0,
 		
-		no_restrict = 1,
+		noMinusrestrict = 1,
 	}
 	
 	public enum Books_volumes_listMaxAllowedMaturityRating
@@ -5120,7 +5120,7 @@ namespace MyNS
 		
 		mature = 0,
 		
-		not_mature = 1,
+		notMinusmature = 1,
 	}
 	
 	public enum Books_volumes_listOrderBy
@@ -5146,7 +5146,7 @@ namespace MyNS
 		
 		mature = 0,
 		
-		not_mature = 1,
+		notMinusmature = 1,
 	}
 	
 	public enum Books_volumes_recommended_rateRating
@@ -5160,11 +5160,11 @@ namespace MyNS
 	public enum Books_volumes_associated_listAssociation
 	{
 		
-		end_of_sample = 0,
+		endMinusofMinussample = 0,
 		
-		end_of_volume = 1,
+		endMinusofMinusvolume = 1,
 		
-		related_for_play = 2,
+		relatedMinusforMinusplay = 2,
 	}
 	
 	public enum Books_volumes_associated_listMaxAllowedMaturityRating
@@ -5172,7 +5172,7 @@ namespace MyNS
 		
 		mature = 0,
 		
-		not_mature = 1,
+		notMinusmature = 1,
 	}
 }
 

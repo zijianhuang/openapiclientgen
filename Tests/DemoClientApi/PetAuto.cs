@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace My.Pet.Client
+namespace MyNS
 {
 	using System;
 	using System.Linq;
@@ -16,352 +16,2828 @@ namespace My.Pet.Client
 	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
-	
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class ApiResponse
+
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class BulkCallParameters
 	{
-		
-		[System.Runtime.Serialization.DataMember(Name="code")]
-		public System.Nullable<System.Int32> Code { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="type")]
-		public string Type { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="message")]
-		public string Message { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a cat
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Cat : Pet
-	{
-		
+
 		/// <summary>
-		/// The measured skill for hunting
+		/// Fully qualified URL which will provide the RestXML once the call connects
 		/// Required
 		/// </summary>
-		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="huntingSkill")]
-		public CatHuntingSkill HuntingSkill { get; set; } = CatHuntingSkill.lazy;
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum CatHuntingSkill
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		clueless = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		lazy = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		adventurous = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		aggressive = 3,
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Category
-	{
-		
+		[System.Runtime.Serialization.DataMember()]
+		public string AnswerUrl { get; set; }
+
 		/// <summary>
-		/// Category ID
+		/// Caller Name to be set for the call
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
+		[System.Runtime.Serialization.DataMember()]
+		public string CallerName { get; set; }
+
 		/// <summary>
-		/// Category name
-		/// Min length: 1
+		/// DTMF tone the called party must send to accept the call
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string Name { get; set; }
-		
+		[System.Runtime.Serialization.DataMember()]
+		public string ConfirmKey { get; set; }
+
 		/// <summary>
-		/// Test Sub Category
+		/// Remote URL to fetch with POST HTTP request which must return a RestXML with Play, Wait and/or Speak Elements only (all others are ignored). This RESTXML is played to the called party when he answered
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="sub")]
-		public CategorySub Sub { get; set; }
+		[System.Runtime.Serialization.DataMember()]
+		public string ConfirmSound { get; set; }
+
+		/// <summary>
+		/// Core UUID of the desired FreeSWITCH instance (an Eqivo extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CoreUUID { get; set; }
+
+		/// <summary>
+		/// Any character, except `/` and `,`, which will be used as a separator within several parameters
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Delimiter { get; set; }
+
+		/// <summary>
+		/// Additional [channel variables](https://freeswitch.org/confluence/display/FREESWITCH/Channel+Variables) to be added to the originate FreeSWITCH API call.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ExtraDialString { get; set; }
+
+		/// <summary>
+		/// Phone number to be used as Caller ID
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string From { get; set; }
+
+		/// <summary>
+		/// List of codec(s) to be used for each gateway. Enclose codec groups in single quotes
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayCodecs { get; set; }
+
+		/// <summary>
+		/// List of maximum retry counts for each gateway
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayRetries { get; set; }
+
+		/// <summary>
+		/// List of maximum timeout amounts (in seconds) for each gateway
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayTimeouts { get; set; }
+
+		/// <summary>
+		/// Comma separated FreeSWITCH gateway strings. When multiple gateways are specified, they will be tried sequentially (failover)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Gateways { get; set; }
+
+		/// <summary>
+		/// Schedules the call's hangup at a given time offset (in seconds) after the destination starts ringing
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> HangupOnRing { get; set; }
+
+		/// <summary>
+		/// Fully qualified URL to which the call hangup notification will be POSTed. `HangupCause` is added to the usual call [call notification parameters](#/components/schemas/CallNotificationParameters)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string HangupUrl { get; set; }
+
+		/// <summary>
+		/// Comma separated reject causes
+		/// </summary>
+		[System.ComponentModel.DefaultValue("NO_ANSWER,ORIGINATOR_CANCEL,ALLOTTED_TIMEOUT,NO_USER_RESPONSE,CALL_REJECTED")]
+		[System.Runtime.Serialization.DataMember()]
+		public string RejectCauses { get; set; } = "NO_ANSWER,ORIGINATOR_CANCEL,ALLOTTED_TIMEOUT,NO_USER_RESPONSE,CALL_REJECTED";
+
+		/// <summary>
+		/// Fully qualified URL to which the call ringing notification will be POSTed. `RequestUUID` and `CallUUID` is added to the usual [call notification parameters](#/components/schemas/CallNotificationParameters)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string RingUrl { get; set; }
+
+		/// <summary>
+		/// DTMF tones to be sent when the call is answered. Each occurrence of `w` implies a 0.5 seconds delay whereas `W` will apply a whole second delay. To alter the tone duration (by default, 2000ms), append `@` and the length in milliseconds at the end of the string
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string SendDigits { get; set; }
+
+		/// <summary>
+		/// When set to `true`, DTMF tones will be sent as early media rather than when the call is answered
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> SendOnPreanswer { get; set; }
+
+		/// <summary>
+		/// Schedules the call's hangup at a given time offset (in seconds) after the call is answered
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> TimeLimit { get; set; }
+
+		/// <summary>
+		/// Phone number to be called
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string To { get; set; }
 	}
-	
-	public class CategorySub
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class BulkCallResponse
 	{
-		
+
 		/// <summary>
-		/// Dumb Property
+		/// Response message
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="prop1")]
-		public string Prop1 { get; set; }
-	}
-	
-	/// <summary>
-	/// A representation of a dog
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Dog : Pet
-	{
-		
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public BulkCallResponseMessage Message { get; set; }
+
 		/// <summary>
-		/// The size of the pack the dog is from
+		/// Unique identifiers of each Call request (UUIDv4)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string[] RequestUUID { get; set; }
+
+		/// <summary>
+		/// API server which handled this request (an Eqivo extension)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RestApiServer { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum BulkCallResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "BulkCalls Request Executed")]
+		BulkCalls_Request_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Mandatory Parameters Missing")]
+		Mandatory_Parameters_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "This Delimiter is not allowed")]
+		This_Delimiter_is_not_allowed = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "BulkCalls should be used for at least 2 numbers")]
+		BulkCalls_should_be_used_for_at_least_2_numbers = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "'To' parameter length does not match 'Gateways' Length")]
+		_To__parameter_length_does_not_match__Gateways__Length = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AnswerUrl is not Valid")]
+		AnswerUrl_is_not_Valid = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "HangupUrl is not Valid")]
+		HangupUrl_is_not_Valid = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RingUrl is not Valid")]
+		RingUrl_is_not_Valid = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Unknown Core UUID")]
+		Unknown_Core_UUID = 8,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CallNotificationParameters
+	{
+
+		/// <summary>
+		/// A leg call request's unique identifier
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ALegRequestUUID { get; set; }
+
+		/// <summary>
+		/// A leg call's unique identifier, assigned by FreeSWITCH
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ALegUUID { get; set; }
+
+		/// <summary>
+		/// Answering actor, when answering machine detection is enabled
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<CallNotificationParametersAnsweredBy> AnsweredBy { get; set; }
+
+		/// <summary>
+		/// Call's current status
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public CallNotificationParametersCallStatus CallStatus { get; set; }
+
+		/// <summary>
+		/// Call's unique identifier, assigned by FreeSWITCH
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// Caller name set for the call
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallerName { get; set; }
+
+		/// <summary>
+		/// FreeSWITCH's instance unique identifier (Eqivo extension)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CoreUUID { get; set; }
+
+		/// <summary>
+		/// Call's direction
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public CallNotificationParametersDirection Direction { get; set; }
+
+		/// <summary>
+		/// Original call destination (before diversion)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ForwardedFrom { get; set; }
+
+		/// <summary>
+		/// Caller ID set for the call
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string From { get; set; }
+
+		/// <summary>
+		/// Actual answering machine detection assessment duration (in milliseconds)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Int32> MachineDetectionDuration { get; set; }
+
+		/// <summary>
+		/// Eqivo Rest API server which controls the call (Eqivo extension)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RestApiServer { get; set; }
+
+		/// <summary>
+		/// Unique identifier of the scheduled hangup task
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ScheduledHangupId { get; set; }
+
+		/// <summary>
+		/// Called phone number
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string To { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CallNotificationParametersAnsweredBy
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		machine_start = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		machine_end_beep = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		machine_end_other = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		human = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		unknown = 4,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CallNotificationParametersCallStatus
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ringing = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "early-media")]
+		earlyMinusmedia = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		answer = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "in-progress")]
+		inMinusprogress = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		completed = 4,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CallNotificationParametersDirection
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		inbound = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		outbound = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CallParameters
+	{
+
+		/// <summary>
+		/// Fully qualified URL which will provide the RestXML once the call connects
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string AnswerUrl { get; set; }
+
+		/// <summary>
+		/// When set to `true`, the call flow execution is blocked until answering machine detection is complete (an Eqivo extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> AsyncAMD { get; set; }
+
+		/// <summary>
+		/// Fully qualified URL to which the answering machine detection result will be sent. `AnsweredBy` and `MachineDetectionDuration` are appended to the usual [call notification parameters](#/components/schemas/CallNotificationParameters) (an Eqivo extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string AsyncAmdStatusCallback { get; set; }
+
+		/// <summary>
+		/// HTTP method to be used when answering machine detection is completed (an Eqivo extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<CallParametersAsyncAmdStatusCallbackMethod> AsyncAmdStatusCallbackMethod { get; set; }
+
+		/// <summary>
+		/// Caller Name to be set for the call
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CallerName { get; set; }
+
+		/// <summary>
+		/// Core UUID of the desired FreeSWITCH instance (an Eqivo extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CoreUUID { get; set; }
+
+		/// <summary>
+		/// Additional [channel variables](https://freeswitch.org/confluence/display/FREESWITCH/Channel+Variables) to be added to the originate FreeSWITCH API call.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ExtraDialString { get; set; }
+
+		/// <summary>
+		/// Phone number to be used as Caller ID
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string From { get; set; }
+
+		/// <summary>
+		/// List of codec(s) to be used for each gateway. Enclose codec groups in single quotes
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayCodecs { get; set; }
+
+		/// <summary>
+		/// List of maximum retry counts for each gateway
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayRetries { get; set; }
+
+		/// <summary>
+		/// List of maximum timeout amounts (in seconds) for each gateway
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayTimeouts { get; set; }
+
+		/// <summary>
+		/// Comma separated FreeSWITCH gateway strings. When multiple gateways are specified, they will be tried sequentially (failover)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Gateways { get; set; }
+
+		/// <summary>
+		/// Schedules the call's hangup at a given time offset (in seconds) after the destination starts ringing
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> HangupOnRing { get; set; }
+
+		/// <summary>
+		/// Fully qualified URL to which the call hangup notification will be POSTed. `HangupCause` is added to the usual call [call notification parameters](#/components/schemas/CallNotificationParameters)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string HangupUrl { get; set; }
+
+		/// <summary>
+		/// Enables answering machine detection; optionally, it waits until the greeting message has been played back (an Eqivo extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<CallParametersMachineDetection> MachineDetection { get; set; }
+
+		/// <summary>
+		/// Initial silence threshold (in milliseconds, an Eqivo extension)
+		/// Minimum: 2000
+		/// Maximum: 10000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(2000, 10000)]
+		public System.Nullable<System.Int32> MachineDetectionSilenceTimeout { get; set; }
+
+		/// <summary>
+		/// Silence threshold (in milliseconds, an Eqivo extension)
+		/// Minimum: 500
+		/// Maximum: 5000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(500, 5000)]
+		public System.Nullable<System.Int32> MachineDetectionSpeechEndThreshold { get; set; }
+
+		/// <summary>
+		/// Speech activity/utterance threshold (in milliseconds, an Eqivo extension)
+		/// Minimum: 1000
+		/// Maximum: 6000
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1000, 6000)]
+		public System.Nullable<System.Int32> MachineDetectionSpeechThreshold { get; set; }
+
+		/// <summary>
+		/// Amount of time (in seconds) allotted for answering machine detection assessment (an Eqivo extension)
+		/// Minimum: 3
+		/// Maximum: 59
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(3, 59)]
+		public System.Nullable<System.Int32> MachineDetectionTimeout { get; set; }
+
+		/// <summary>
+		/// Fully qualified URL to which the call ringing notification will be POSTed. `RequestUUID` and `CallUUID` is added to the usual [call notification parameters](#/components/schemas/CallNotificationParameters)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string RingUrl { get; set; }
+
+		/// <summary>
+		/// DTMF tones to be sent when the call is answered. Each occurrence of `w` implies a 0.5 seconds delay whereas `W` will apply a whole second delay. To alter the tone duration (by default, 2000ms), append `@` and the length in milliseconds at the end of the string
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string SendDigits { get; set; }
+
+		/// <summary>
+		/// When set to `true`, DTMF tones will be sent as early media rather than when the call is answered
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> SendOnPreanswer { get; set; }
+
+		/// <summary>
+		/// Schedules the call's hangup at a given time offset (in seconds) after the call is answered
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> TimeLimit { get; set; }
+
+		/// <summary>
+		/// Phone number to be called
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string To { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CallParametersAsyncAmdStatusCallbackMethod
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		POST = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		GET = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CallParametersMachineDetection
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Enable = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DetectMessageEnd = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CallResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public CallResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Unique identifier of the Call request (UUIDv4)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RequestUUID { get; set; }
+
+		/// <summary>
+		/// API server which handled this request (an Eqivo extension)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RestApiServer { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CallResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Call Request Executed")]
+		Call_Request_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Mandatory Parameters Missing")]
+		Mandatory_Parameters_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AnswerUrl is not Valid")]
+		AnswerUrl_is_not_Valid = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "HangupUrl is not Valid")]
+		HangupUrl_is_not_Valid = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RingUrl is not Valid")]
+		RingUrl_is_not_Valid = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Unknown Core UUID")]
+		Unknown_Core_UUID = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CancelScheduledHangupParameters
+	{
+
+		/// <summary>
+		/// Unique identifier returned when scheduled hangup was originally requested
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string SchedHangupId { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CancelScheduledHangupResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public CancelScheduledHangupResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CancelScheduledHangupResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Scheduled Hangup Cancelation Executed")]
+		Scheduled_Hangup_Cancelation_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SchedHangupId Parameter must be present")]
+		SchedHangupId_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Scheduled Hangup Cancelation Failed -- ID not found")]
+		Scheduled_Hangup_Cancelation_Failed_MinusMinus_ID_not_found = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Scheduled Hangup Cancelation Failed")]
+		Scheduled_Hangup_Cancelation_Failed = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CancelScheduledPlayParameters
+	{
+
+		/// <summary>
+		/// Unique identifier returned when scheduled playback was originally requested
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string SchedPlayId { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class CancelScheduledPlayResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public CancelScheduledPlayResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum CancelScheduledPlayResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Scheduled Play Cancelation Executed")]
+		Scheduled_Play_Cancelation_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SchedPlayId Parameter must be present")]
+		SchedPlayId_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Scheduled Play Cancelation Failed -- ID not found")]
+		Scheduled_Play_Cancelation_Failed_MinusMinus_ID_not_found = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Scheduled Play Cancelation Failed")]
+		Scheduled_Play_Cancelation_Failed = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceDeafParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceDeafResponse
+	{
+
+		/// <summary>
+		/// List of affected members
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string[] Members { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceDeafResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceDeafResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Deaf Executed")]
+		Conference_Deaf_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Deaf Failed -- Conference not found")]
+		Conference_Deaf_Failed_MinusMinus_Conference_not_found = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceHangupParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceHangupResponse
+	{
+
+		/// <summary>
+		/// List of affected members
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string[] Members { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceHangupResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceHangupResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Hangup Executed")]
+		Conference_Hangup_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Hangup Failed -- Conference not found")]
+		Conference_Hangup_Failed_MinusMinus_Conference_not_found = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceKickParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceKickResponse
+	{
+
+		/// <summary>
+		/// List of affected members
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string[] Members { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceKickResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceKickResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Kick Executed")]
+		Conference_Kick_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Kick Failed -- Conference not found")]
+		Conference_Kick_Failed_MinusMinus_Conference_not_found = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceListMembersParameters
+	{
+
+		/// <summary>
+		/// Restricts listed calls to the provided values (comma separated call UUID list)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUIDFilter { get; set; }
+
+		/// <summary>
+		/// Name of the conference
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// Restricts listed members to deaf ones
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> DeafFilter { get; set; }
+
+		/// <summary>
+		/// Restricts listed members to the provided values (comma separated member ID list)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberFilter { get; set; }
+
+		/// <summary>
+		/// Restricts listed members to muted ones
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> MutedFilter { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceListMembersResponse
+	{
+
+		/// <summary>
+		/// List of established conferences
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string List { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceListMembersResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceListMembersResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference ListMembers Executed")]
+		Conference_ListMembers_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference ListMembers Failed to parse result")]
+		Conference_ListMembers_Failed_to_parse_result = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference ListMembers Failed -- Conference not found")]
+		Conference_ListMembers_Failed_MinusMinus_Conference_not_found = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceListParameters
+	{
+
+		/// <summary>
+		/// Restricts listed calls to the provided values (comma separated call UUID list)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUIDFilter { get; set; }
+
+		/// <summary>
+		/// Restricts listed members to deaf ones
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> DeafFilter { get; set; }
+
+		/// <summary>
+		/// Restricts listed members to the provided values (comma separated member ID list)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberFilter { get; set; }
+
+		/// <summary>
+		/// Restricts listed members to muted ones
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> MutedFilter { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceListResponse
+	{
+
+		/// <summary>
+		/// List of established conferences
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string List { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceListResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceListResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference List Executed")]
+		Conference_List_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference List Failed to parse result")]
+		Conference_List_Failed_to_parse_result = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceMuteParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceMuteResponse
+	{
+
+		/// <summary>
+		/// List of affected members
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string[] Members { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceMuteResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceMuteResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Mute Executed")]
+		Conference_Mute_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Mute Failed -- Conference not found")]
+		Conference_Mute_Failed_MinusMinus_Conference_not_found = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferencePlayParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// Path/URI of the media file to be played
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string FilePath { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferencePlayResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferencePlayResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferencePlayResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Play Executed")]
+		Conference_Play_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "FilePath Parameter must be present")]
+		FilePath_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Play Failed -- Conference not found")]
+		Conference_Play_Failed_MinusMinus_Conference_not_found = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Play Failed")]
+		Conference_Play_Failed = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceRecordStartParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// File format (extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<ConferenceRecordStartParametersFileFormat> FileFormat { get; set; }
+
+		/// <summary>
+		/// Recording file name (without extension); if empty, a timestamp based file name will be generated
+		/// </summary>
+		[System.ComponentModel.DefaultValue("")]
+		[System.Runtime.Serialization.DataMember()]
+		public string FileName { get; set; } = "";
+
+		/// <summary>
+		/// Directory path/URI where the recording file will be saved
+		/// </summary>
+		[System.ComponentModel.DefaultValue("")]
+		[System.Runtime.Serialization.DataMember()]
+		public string FilePath { get; set; } = "";
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceRecordStartParametersFileFormat
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		wav = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		mp3 = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceRecordStartResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceRecordStartResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Directory path/URI where the recording file will be saved
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RecordFile { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceRecordStartResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference RecordStart Executed")]
+		Conference_RecordStart_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "FileFormat Parameter must be")]
+		FileFormat_Parameter_must_be = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference RecordStart Failed")]
+		Conference_RecordStart_Failed = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference RecordStart Failed -- Conference not found")]
+		Conference_RecordStart_Failed_MinusMinus_Conference_not_found = 4,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceRecordStopParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// Full path to recording file, as returned by ConferenceRecordStart; `all` shorthand is also available
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RecordFile { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceRecordStopResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceRecordStopResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceRecordStopResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference RecordStop Executed")]
+		Conference_RecordStop_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordFile Parameter must be present")]
+		RecordFile_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference RecordStop Failed")]
+		Conference_RecordStop_Failed = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference RecordStop Failed -- Conference not found")]
+		Conference_RecordStop_Failed_MinusMinus_Conference_not_found = 4,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceSpeakParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+
+		/// <summary>
+		/// Text to be synthesized
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Text { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceSpeakResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceSpeakResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceSpeakResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Speak Executed")]
+		Conference_Speak_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Text Parameter must be present")]
+		Text_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Speak Failed -- Conference not found")]
+		Conference_Speak_Failed_MinusMinus_Conference_not_found = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Speak Failed")]
+		Conference_Speak_Failed = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceUndeafParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceUndeafResponse
+	{
+
+		/// <summary>
+		/// List of affected members
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string[] Members { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceUndeafResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceUndeafResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Undeaf Executed")]
+		Conference_Undeaf_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Undeaf Failed -- Conference not found")]
+		Conference_Undeaf_Failed_MinusMinus_Conference_not_found = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceUnmuteParameters
+	{
+
+		/// <summary>
+		/// Name of the conference in question
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string ConferenceName { get; set; }
+
+		/// <summary>
+		/// List of comma separated member IDs to be affected; `all` shorthand is available too.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string MemberID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ConferenceUnmuteResponse
+	{
+
+		/// <summary>
+		/// List of affected members
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string[] Members { get; set; }
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceUnmuteResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ConferenceUnmuteResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Unmute Executed")]
+		Conference_Unmute_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConferenceName Parameter must be present")]
+		ConferenceName_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "MemberID Parameter must be present")]
+		MemberID_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Conference Unmute Failed -- Conference not found")]
+		Conference_Unmute_Failed_MinusMinus_Conference_not_found = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class GroupCallParameters
+	{
+
+		/// <summary>
+		/// Fully qualified URL which will provide the RestXML once the call connects
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string AnswerUrl { get; set; }
+
+		/// <summary>
+		/// Caller Name to be set for the call
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CallerName { get; set; }
+
+		/// <summary>
+		/// DTMF tone the called party must send to accept the call
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ConfirmKey { get; set; }
+
+		/// <summary>
+		/// Remote URL to fetch with POST HTTP request which must return a RestXML with Play, Wait and/or Speak Elements only (all others are ignored). This RESTXML is played to the called party when he answered
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ConfirmSound { get; set; }
+
+		/// <summary>
+		/// Core UUID of the desired FreeSWITCH instance (an Eqivo extension)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CoreUUID { get; set; }
+
+		/// <summary>
+		/// Any character, except `/` and `,`, which will be used as a separator within several parameters
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Delimiter { get; set; }
+
+		/// <summary>
+		/// Additional [channel variables](https://freeswitch.org/confluence/display/FREESWITCH/Channel+Variables) to be added to the originate FreeSWITCH API call.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string ExtraDialString { get; set; }
+
+		/// <summary>
+		/// Phone number to be used as Caller ID
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string From { get; set; }
+
+		/// <summary>
+		/// List of codec(s) to be used for each gateway. Enclose codec groups in single quotes
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayCodecs { get; set; }
+
+		/// <summary>
+		/// List of maximum retry counts for each gateway
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayRetries { get; set; }
+
+		/// <summary>
+		/// List of maximum timeout amounts (in seconds) for each gateway
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string GatewayTimeouts { get; set; }
+
+		/// <summary>
+		/// Comma separated FreeSWITCH gateway strings. When multiple gateways are specified, they will be tried sequentially (failover)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Gateways { get; set; }
+
+		/// <summary>
+		/// Schedules the call's hangup at a given time offset (in seconds) after the destination starts ringing
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> HangupOnRing { get; set; }
+
+		/// <summary>
+		/// Fully qualified URL to which the call hangup notification will be POSTed. `HangupCause` is added to the usual call [call notification parameters](#/components/schemas/CallNotificationParameters)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string HangupUrl { get; set; }
+
+		/// <summary>
+		/// Comma separated reject causes
+		/// </summary>
+		[System.ComponentModel.DefaultValue("NO_ANSWER,ORIGINATOR_CANCEL,ALLOTTED_TIMEOUT,NO_USER_RESPONSE,CALL_REJECTED")]
+		[System.Runtime.Serialization.DataMember()]
+		public string RejectCauses { get; set; } = "NO_ANSWER,ORIGINATOR_CANCEL,ALLOTTED_TIMEOUT,NO_USER_RESPONSE,CALL_REJECTED";
+
+		/// <summary>
+		/// Fully qualified URL to which the call ringing notification will be POSTed. `RequestUUID` and `CallUUID` is added to the usual [call notification parameters](#/components/schemas/CallNotificationParameters)
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string RingUrl { get; set; }
+
+		/// <summary>
+		/// DTMF tones to be sent when the call is answered. Each occurrence of `w` implies a 0.5 seconds delay whereas `W` will apply a whole second delay. To alter the tone duration (by default, 2000ms), append `@` and the length in milliseconds at the end of the string
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string SendDigits { get; set; }
+
+		/// <summary>
+		/// When set to `true`, DTMF tones will be sent as early media rather than when the call is answered
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> SendOnPreanswer { get; set; }
+
+		/// <summary>
+		/// Schedules the call's hangup at a given time offset (in seconds) after the call is answered
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> TimeLimit { get; set; }
+
+		/// <summary>
+		/// Phone number to be called
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string To { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class GroupCallResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public GroupCallResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Unique identifier of the Call request (UUIDv4)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RequestUUID { get; set; }
+
+		/// <summary>
+		/// API server which handled this request (an Eqivo extension)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RestApiServer { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum GroupCallResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "GroupCall Request Executed")]
+		GroupCall_Request_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Mandatory Parameters Missing")]
+		Mandatory_Parameters_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "This Delimiter is not allowed")]
+		This_Delimiter_is_not_allowed = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "GroupCall should be used for at least 2 numbers")]
+		GroupCall_should_be_used_for_at_least_2_numbers = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "'To' parameter length does not match 'Gateways' Length")]
+		_To__parameter_length_does_not_match__Gateways__Length = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AnswerUrl is not Valid")]
+		AnswerUrl_is_not_Valid = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "HangupUrl is not Valid")]
+		HangupUrl_is_not_Valid = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RingUrl is not Valid")]
+		RingUrl_is_not_Valid = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ConfirmSound is not Valid")]
+		ConfirmSound_is_not_Valid = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Unknown Core UUID")]
+		Unknown_Core_UUID = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "GroupCall Request Failed")]
+		GroupCall_Request_Failed = 10,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class HangupAllCallsParameters
+	{
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class HangupAllCallsResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public HangupAllCallsResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum HangupAllCallsResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "All Calls Hungup")]
+		All_Calls_Hungup = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Hangup Call Failed")]
+		Hangup_Call_Failed = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class HangupCallParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call (when established); this parameter is mutually exclusive with RequestUUID
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// Unique identifier of the API request (when the call is not established yet); this parameter is mutually exclusive with CallUUID
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string RequestUUID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class HangupCallResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public HangupCallResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum HangupCallResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Hangup Call Executed")]
+		Hangup_Call_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID or RequestUUID Parameter must be present")]
+		CallUUID_or_RequestUUID_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Both CallUUID and RequestUUID Parameters cannot be present")]
+		Both_CallUUID_and_RequestUUID_Parameters_cannot_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Hangup Call Failed")]
+		Hangup_Call_Failed = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call to play media into
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// Call leg(s) for which the media will be played; `aleg` refers to the initial call leg, `bleg` refers to the bridged call leg, if applicable.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<PlayParametersLegs> Legs { get; set; }
+
+		/// <summary>
+		/// Maximum amount of time (in seconds) to playback the media
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> Length { get; set; }
+
+		/// <summary>
+		/// Loops the media file(s) indefinitely
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> Loop { get; set; }
+
+		/// <summary>
+		/// Whether the media should be mixed with the call's audio stream
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> Mix { get; set; }
+
+		/// <summary>
+		/// Comma separated list of file paths/URIs to be played
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Sounds { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayParametersLegs
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		aleg = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		bleg = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		both = 2,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public PlayResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Play Executed")]
+		Play_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter Missing")]
+		CallUUID_Parameter_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Sounds Parameter Missing")]
+		Sounds_Parameter_Missing = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Legs Parameter is Invalid")]
+		Legs_Parameter_is_Invalid = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Length Parameter must be a positive integer")]
+		Length_Parameter_must_be_a_positive_integer = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Sounds Parameter is Invalid")]
+		Sounds_Parameter_is_Invalid = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Play Failed -- Call not found")]
+		Play_Failed_MinusMinus_Call_not_found = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Play Failed")]
+		Play_Failed = 7,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayStopParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class PlayStopResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public PlayStopResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum PlayStopResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayStop Executed")]
+		PlayStop_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter Missing")]
+		CallUUID_Parameter_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayStop Failed -- Call not found")]
+		PlayStop_Failed_MinusMinus_Call_not_found = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PlayStop Failed")]
+		PlayStop_Failed = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class RecordStartParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call to be recorded
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// File format (extension)
+		/// </summary>
+		[System.ComponentModel.DefaultValue(ConferenceRecordStartParametersFileFormat.mp3)]
+		[System.Runtime.Serialization.DataMember()]
+		public ConferenceRecordStartParametersFileFormat FileFormat { get; set; } = ConferenceRecordStartParametersFileFormat.mp3;
+
+		/// <summary>
+		/// Recording file name (without extension); if empty, a timestamp based file name will be generated
+		/// </summary>
+		[System.ComponentModel.DefaultValue("")]
+		[System.Runtime.Serialization.DataMember()]
+		public string FileName { get; set; } = "";
+
+		/// <summary>
+		/// Directory path/URI where the recording file will be saved
+		/// </summary>
+		[System.ComponentModel.DefaultValue("")]
+		[System.Runtime.Serialization.DataMember()]
+		public string FilePath { get; set; } = "";
+
+		/// <summary>
+		/// Maximum recording length, in seconds
+		/// Minimum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public System.Nullable<System.Int32> TimeLimit { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class RecordStartResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public RecordStartResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Directory path/URI where the recording file will be saved
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RecordFile { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum RecordStartResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordStart Executed")]
+		RecordStart_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter must be present")]
+		CallUUID_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "FileFormat Parameter must be")]
+		FileFormat_Parameter_must_be = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordStart Failed: invalid TimeLimit")]
+		RecordStart_Failed_invalid_TimeLimit = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordStart Failed -- Call not found")]
+		RecordStart_Failed_MinusMinus_Call_not_found = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordStart Failed")]
+		RecordStart_Failed = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class RecordStopParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// Full path to recording file, as returned by RecordStart; `all` shorthand is also available
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string RecordFile { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class RecordStopResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public RecordStopResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum RecordStopResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordStop Executed")]
+		RecordStop_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter must be present")]
+		CallUUID_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordFile Parameter must be present")]
+		RecordFile_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordStop Failed -- Call not found")]
+		RecordStop_Failed_MinusMinus_Call_not_found = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "RecordStop Failed")]
+		RecordStop_Failed = 4,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ScheduleHangupParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// Time (in seconds) after which the call in question will be hung up
 		/// Required
 		/// Minimum: 1
 		/// </summary>
-		[System.ComponentModel.DefaultValue(1)]
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="packSize")]
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public int PackSize { get; set; } = 1;
+		public int Time { get; set; }
 	}
-	
-	/// <summary>
-	/// A representation of a honey bee
-	/// </summary>
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class HoneyBee : Pet
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class ScheduleHangupResponse
 	{
-		
+
 		/// <summary>
-		/// Average amount of honey produced per day in ounces
+		/// Response message
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
-		public float HoneyPerDay { get; set; }
+		[System.Runtime.Serialization.DataMember()]
+		public ScheduleHangupResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Unique identifier of the scheduled hangup request (UUIDv4)
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string SchedHangupId { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
 	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Order
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum ScheduleHangupResponseMessage
 	{
-		
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ScheduleHangup Executed")]
+		ScheduleHangup_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter must be present")]
+		CallUUID_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Time Parameter must be present")]
+		Time_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Time Parameter must be > 0!")]
+		Time_Parameter_must_be_>_0! = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ScheduleHangup Failed -- Call not found")]
+		ScheduleHangup_Failed_MinusMinus_Call_not_found = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "ScheduleHangup Failed")]
+		ScheduleHangup_Failed = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SchedulePlayParameters
+	{
+
 		/// <summary>
-		/// Order ID
+		/// Unique identifier of the call to play media into
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
 		/// <summary>
-		/// Pet ID
+		/// Call leg(s) for which the media will be played; `aleg` refers to the initial call leg, `bleg` refers to the bridged call leg, if applicable.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="petId")]
-		public System.Nullable<System.Int64> PetId { get; set; }
-		
+		[System.ComponentModel.DefaultValue(PlayParametersLegs.aleg)]
+		[System.Runtime.Serialization.DataMember()]
+		public PlayParametersLegs Legs { get; set; } = PlayParametersLegs.aleg;
+
 		/// <summary>
+		/// Maximum amount of time (in seconds) to playback the media
 		/// Minimum: 1
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="quantity")]
+		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
-		public System.Nullable<System.Int32> Quantity { get; set; }
-		
+		public System.Nullable<System.Int32> Length { get; set; }
+
 		/// <summary>
-		/// Estimated ship date
+		/// Loops the media file(s) indefinitely
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="shipDate")]
-		public System.Nullable<System.DateTimeOffset> ShipDate { get; set; }
-		
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> Loop { get; set; }
+
 		/// <summary>
-		/// Order Status
+		/// Whether the media should be mixed with the call's audio stream
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="status")]
-		public System.Nullable<OrderStatus> Status { get; set; }
-		
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<System.Boolean> Mix { get; set; }
+
 		/// <summary>
-		/// Indicates whenever order was completed or not
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="complete")]
-		public System.Nullable<System.Boolean> Complete { get; set; }
-		
-		/// <summary>
-		/// Unique Request Id
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="requestId")]
-		public string RequestId { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum OrderStatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		placed = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		approved = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		delivered = 2,
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Pet
-	{
-		
-		/// <summary>
-		/// Pet ID
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		/// <summary>
-		/// Categories this pet belongs to
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="category")]
-		public Category Category { get; set; }
-		
-		/// <summary>
-		/// The name given to a pet
+		/// Comma separated list of file paths/URIs to be played
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		public string Name { get; set; }
-		
+		[System.Runtime.Serialization.DataMember()]
+		public string Sounds { get; set; }
+
 		/// <summary>
-		/// The list of URL to a cute photos featuring pet
+		/// Time (in seconds) after which the media will be playedback
 		/// Required
-		/// Maximum items: 20
+		/// Minimum: 1
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		[System.Runtime.Serialization.DataMember(Name="photoUrls")]
-		[System.ComponentModel.DataAnnotations.MaxLength(20)]
-		public string[] PhotoUrls { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="friend")]
-		public Pet Friend { get; set; }
-		
-		/// <summary>
-		/// Tags attached to the pet
-		/// Minimum items: 1
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="tags")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public Tag[] Tags { get; set; }
-		
-		/// <summary>
-		/// Pet status in the store
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="status")]
-		public System.Nullable<PetStatus> Status { get; set; }
-		
-		/// <summary>
-		/// Type of a pet
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="petType")]
-		public string PetType { get; set; }
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(1, System.Int32.MaxValue)]
+		public int Time { get; set; }
 	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class Tag
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SchedulePlayResponse
 	{
-		
+
 		/// <summary>
-		/// Tag ID
+		/// Response message
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public SchedulePlayResponseMessage Message { get; set; }
+
 		/// <summary>
-		/// Tag name
-		/// Min length: 1
+		/// Unique identifier of the scheduled playback request (UUIDv4)
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="name")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string Name { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string SchedPlayId { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
 	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public enum PetStatus
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum SchedulePlayResponseMessage
 	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		available = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		pending = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		sold = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Play Executed")]
+		Play_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter Missing")]
+		CallUUID_Parameter_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Sounds Parameter Missing")]
+		Sounds_Parameter_Missing = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Time Parameter Missing")]
+		Time_Parameter_Missing = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Time Parameter must be > 0")]
+		Time_Parameter_must_be_>_0 = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Legs Parameter is Invalid")]
+		Legs_Parameter_is_Invalid = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Length Parameter must be a positive integer")]
+		Length_Parameter_must_be_a_positive_integer = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Sounds Parameter is Invalid")]
+		Sounds_Parameter_is_Invalid = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Play Failed -- Call not found")]
+		Play_Failed_MinusMinus_Call_not_found = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Play Failed")]
+		Play_Failed = 9,
 	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="http://pet.domain/2020/03")]
-	public class User
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SendDigitsParameters
 	{
-		
-		[System.Runtime.Serialization.DataMember(Name="id")]
-		public System.Nullable<System.Int64> Id { get; set; }
-		
-		[System.Runtime.Serialization.DataMember(Name="pet")]
-		public Pet Pet { get; set; }
-		
+
 		/// <summary>
-		/// User supplied username
-		/// Min length: 4
+		/// Unique identifier of the call to send DTMF to
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="username")]
-		[System.ComponentModel.DataAnnotations.MinLength(4)]
-		public string Username { get; set; }
-		
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
 		/// <summary>
-		/// User first name
-		/// Min length: 1
+		/// DTMF tones to be sent; each occurrence of `w` implies a 0.5 seconds delay whereas `W` will apply a whole second delay. To alter the tone duration (by default, 2000ms), append `@` and the length in milliseconds at the end of the string
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="firstName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string FirstName { get; set; }
-		
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Digits { get; set; }
+
 		/// <summary>
-		/// User last name
-		/// Min length: 1
+		/// Call leg(s) to which DTMFs will be sent; `aleg` refers to the initial call leg, `bleg` refers to the bridged call leg, if applicable.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="lastName")]
-		[System.ComponentModel.DataAnnotations.MinLength(1)]
-		public string LastName { get; set; }
-		
-		/// <summary>
-		/// User email address
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="email")]
-		public string Email { get; set; }
-		
-		/// <summary>
-		/// User password, MUST contain a mix of upper and lower case letters, as well as digits
-		/// Min length: 8
-		/// Pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="password")]
-		[System.ComponentModel.DataAnnotations.MinLength(8)]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/")]
-		public string Password { get; set; }
-		
-		/// <summary>
-		/// User phone number in international format
-		/// Pattern: /^\+(?:[0-9]-?){6,14}[0-9]$/
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="phone")]
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute(@"/^\+(?:[0-9]-?){6,14}[0-9]$/")]
-		public string Phone { get; set; }
-		
-		/// <summary>
-		/// User status
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name="userStatus")]
-		public System.Nullable<System.Int32> UserStatus { get; set; }
+		[System.ComponentModel.DefaultValue(PlayParametersLegs.aleg)]
+		[System.Runtime.Serialization.DataMember()]
+		public PlayParametersLegs Leg { get; set; } = PlayParametersLegs.aleg;
 	}
-	
-	public partial class PetClient
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SendDigitsResponse
 	{
-		
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public SendDigitsResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum SendDigitsResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SendDigits Executed")]
+		SendDigits_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter Missing")]
+		CallUUID_Parameter_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Digits Parameter Missing")]
+		Digits_Parameter_Missing = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Invalid Leg Parameter")]
+		Invalid_Leg_Parameter = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SendDigits Failed -- Call not found")]
+		SendDigits_Failed_MinusMinus_Call_not_found = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SendDigits Failed")]
+		SendDigits_Failed = 5,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SoundTouchParameters
+	{
+
+		/// <summary>
+		/// Media stream to be altered, incoming or outgoing
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		public System.Nullable<SoundTouchParametersAudioDirection> AudioDirection { get; set; }
+
+		/// <summary>
+		/// Unique identifier of the call to send DTMF to
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// Adjust the pitch
+		/// Minimum: 0
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(0, System.Single.MaxValue)]
+		public System.Nullable<System.Single> Pitch { get; set; }
+
+		/// <summary>
+		/// Adjust the pitch in octaves
+		/// Minimum: -1
+		/// Maximum: 1
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(-1, 1)]
+		public System.Nullable<System.Single> PitchOctaves { get; set; }
+
+		/// <summary>
+		/// Adjust the pitch in semitones
+		/// Minimum: -14
+		/// Maximum: 14
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(-14, 14)]
+		public System.Nullable<System.Single> PitchSemiTones { get; set; }
+
+		/// <summary>
+		/// Adjust the rate
+		/// Minimum: 0
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(0, System.Single.MaxValue)]
+		public System.Nullable<System.Single> Rate { get; set; }
+
+		/// <summary>
+		/// Adjust the tempo
+		/// Minimum: 0
+		/// </summary>
+		[System.Runtime.Serialization.DataMember()]
+		[System.ComponentModel.DataAnnotations.Range(0, System.Single.MaxValue)]
+		public System.Nullable<System.Single> Tempo { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum SoundTouchParametersAudioDirection
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "in")]
+		_in = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "out")]
+		_out = 1,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SoundTouchResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public SoundTouchResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum SoundTouchResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SoundTouch Executed")]
+		SoundTouch_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter Missing")]
+		CallUUID_Parameter_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "AudioDirection Parameter Must be 'in' or 'out'")]
+		AudioDirection_Parameter_Must_be__in__or__out_ = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PitchSemiTones Parameter must be float")]
+		PitchSemiTones_Parameter_must_be_float = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PitchSemiTones Parameter must be between -14 and 14")]
+		PitchSemiTones_Parameter_must_be_between_Minus14_and_14 = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PitchOctaves Parameter must be float")]
+		PitchOctaves_Parameter_must_be_float = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "PitchOctaves Parameter must be between -1 and 1")]
+		PitchOctaves_Parameter_must_be_between_Minus1_and_1 = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Pitch Parameter must be float")]
+		Pitch_Parameter_must_be_float = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Pitch Parameter must be > 0")]
+		Pitch_Parameter_must_be_>_0 = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Rate Parameter must be float")]
+		Rate_Parameter_must_be_float = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Rate Parameter must be > 0")]
+		Rate_Parameter_must_be_>_0 = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Tempo Parameter must be float")]
+		Tempo_Parameter_must_be_float = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Tempo Parameter must be > 0")]
+		Tempo_Parameter_must_be_>_0 = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SoundTouch Failed -- Call not found")]
+		SoundTouch_Failed_MinusMinus_Call_not_found = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SoundTouch Failed")]
+		SoundTouch_Failed = 14,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SoundTouchStopParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class SoundTouchStopResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public SoundTouchStopResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum SoundTouchStopResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SoundTouchStop Executed")]
+		SoundTouchStop_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter Missing")]
+		CallUUID_Parameter_Missing = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SoundTouchStop Failed -- Call not found")]
+		SoundTouchStop_Failed_MinusMinus_Call_not_found = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "SoundTouchStop Failed")]
+		SoundTouchStop_Failed = 3,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class TransferCallParameters
+	{
+
+		/// <summary>
+		/// Unique identifier of the call
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string CallUUID { get; set; }
+
+		/// <summary>
+		/// Absolute URL which will return the updated RestXML flow
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public string Url { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class TransferCallResponse
+	{
+
+		/// <summary>
+		/// Response message
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public TransferCallResponseMessage Message { get; set; }
+
+		/// <summary>
+		/// Whether the request was successful or not
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember()]
+		public bool Success { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum TransferCallResponseMessage
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Transfer Call Executed")]
+		Transfer_Call_Executed = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "CallUUID Parameter must be present")]
+		CallUUID_Parameter_must_be_present = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Url Parameter must be present")]
+		Url_Parameter_must_be_present = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Url is not Valid")]
+		Url_is_not_Valid = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Transfer Call Failed -- Call not found")]
+		Transfer_Call_Failed_MinusMinus_Call_not_found = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "Transfer Call Failed")]
+		Transfer_Call_Failed = 5,
+	}
+
+	public partial class Misc
+	{
+
 		private System.Net.Http.HttpClient client;
-		
+
 		private JsonSerializerSettings jsonSerializerSettings;
-		
-		public PetClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+
+		public Misc(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings = null)
 		{
 			if (client == null)
 				throw new ArgumentNullException("Null HttpClient.", "client");
@@ -372,604 +2848,33 @@ namespace My.Pet.Client
 			this.client = client;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
-		
+
 		/// <summary>
-		/// Add a new pet to the store
-		/// Add new pet to the store inventory.
-		/// AddPet pet
+		/// /v0.1/HangupAllCalls/
+		/// Hangs up all established calls
+		/// CallPost v0.1/HangupAllCalls/
 		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task AddPetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>Response</returns>
+		public async Task<HangupAllCallsResponse> CallPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "pet";
+			var requestUri = "v0.1/HangupAllCalls/";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Update an existing pet
-		/// UpdatePet pet
-		/// </summary>
-		/// <param name="requestBody">Pet object that needs to be added to the store</param>
-		public async Task UpdatePetAsync(Pet requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Find pet by ID
-		/// Returns a single pet
-		/// GetPetById pet/{petId}
-		/// </summary>
-		/// <param name="petId">ID of pet to return</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet> GetPetByIdAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/"+petId;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessage = await client.SendAsync(httpRequestMessage);
+				try
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet>(jsonReader);
+					responseMessage.EnsureSuccessStatusCodeEx();
+					var stream = await responseMessage.Content.ReadAsStreamAsync();
+					using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+					{
+						var serializer = JsonSerializer.Create(jsonSerializerSettings);
+						return serializer.Deserialize<HangupAllCallsResponse>(jsonReader);
+					}
 				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Deletes a pet
-		/// DeletePet pet/{petId}
-		/// </summary>
-		/// <param name="petId">Pet id to delete</param>
-		public async Task DeletePetAsync(long petId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/"+petId;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Finds Pets by status
-		/// Multiple status values can be provided with comma separated strings
-		/// FindPetsByStatus pet/findByStatus
-		/// </summary>
-		/// <param name="status">Status values that need to be considered for filter</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				finally
 				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet[]>(jsonReader);
+					responseMessage.Dispose();
 				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Finds Pets by tags
-		/// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
-		/// FindPetsByTags pet/findByTags
-		/// </summary>
-		/// <param name="tags">Tags to filter by</param>
-		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Pet[]>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Returns pet inventories by status
-		/// Returns a map of status codes to quantities
-		/// GetInventory store/inventory
-		/// </summary>
-		/// <returns>successful operation</returns>
-		public async Task<System.Collections.Generic.Dictionary<string, int>> GetInventoryAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/inventory";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<System.Collections.Generic.Dictionary<string, int>>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Place an order for a pet
-		/// PlaceOrder store/order
-		/// </summary>
-		/// <param name="requestBody">order placed for purchasing the pet</param>
-		/// <returns>successful operation</returns>
-		public async Task<Order> PlaceOrderAsync(Order requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Order>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Find purchase order by ID
-		/// For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
-		/// GetOrderById store/order/{orderId}
-		/// </summary>
-		/// <param name="orderId">ID of pet that needs to be fetched</param>
-		/// <returns>successful operation</returns>
-		public async Task<Order> GetOrderByIdAsync(long orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order/"+orderId;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Order>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete purchase order by ID
-		/// For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
-		/// DeleteOrder store/order/{orderId}
-		/// </summary>
-		/// <param name="orderId">ID of the order that needs to be deleted</param>
-		public async Task DeleteOrderAsync(string orderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "store/order/"+ (orderId==null? "" : Uri.EscapeDataString(orderId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Create user
-		/// This can only be done by the logged in user.
-		/// CreateUser user
-		/// </summary>
-		/// <param name="requestBody">Created user object</param>
-		public async Task CreateUserAsync(User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Get user by user name
-		/// GetUserByName user/{username}
-		/// </summary>
-		/// <param name="username">The name that needs to be fetched. Use user1 for testing. </param>
-		/// <returns>successful operation</returns>
-		public async Task<User> GetUserByNameAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<User>(jsonReader);
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Updated user
-		/// This can only be done by the logged in user.
-		/// UpdateUser user/{username}
-		/// </summary>
-		/// <param name="username">name that need to be deleted</param>
-		/// <param name="requestBody">Updated user object</param>
-		public async Task UpdateUserAsync(string username, User requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Delete user
-		/// This can only be done by the logged in user.
-		/// DeleteUser user/{username}
-		/// </summary>
-		/// <param name="username">The name that needs to be deleted</param>
-		public async Task DeleteUserAsync(string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/"+ (username==null? "" : Uri.EscapeDataString(username));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithArrayInput user/createWithArray
-		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithArrayInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/createWithArray";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Creates list of users with given input array
-		/// CreateUsersWithListInput user/createWithList
-		/// </summary>
-		/// <param name="requestBody">List of user object</param>
-		public async Task CreateUsersWithListInputAsync(User[] requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/createWithList";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
-			{
-			using (var requestWriter = new System.IO.StringWriter())
-			{
-			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
-			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
-			httpRequestMessage.Content = content;
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Logs user into the system
-		/// LoginUser user/login
-		/// </summary>
-		/// <param name="username">The user name for login</param>
-		/// <param name="password">The password for login in clear text</param>
-		/// <returns>successful operation</returns>
-		public async Task<string> LoginUserAsync(string username, string password, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/login?username=" + (username==null? "" : Uri.EscapeDataString(username))+"&password=" + (password==null? "" : Uri.EscapeDataString(password));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
-				{
-				return jsonReader.ReadAsString();
-				}
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
-			}
-		}
-		
-		/// <summary>
-		/// Logs out current logged in user session
-		/// LogoutUser user/logout
-		/// </summary>
-		public async Task LogoutUserAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
-		{
-			var requestUri = "user/logout";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
-			{
-			if (handleHeaders != null)
-			{
-				handleHeaders(httpRequestMessage.Headers);
-			}
-
-			var responseMessage = await client.SendAsync(httpRequestMessage);
-			try
-			{
-				responseMessage.EnsureSuccessStatusCodeEx();
-			}
-			finally
-			{
-				responseMessage.Dispose();
-			}
 			}
 		}
 	}

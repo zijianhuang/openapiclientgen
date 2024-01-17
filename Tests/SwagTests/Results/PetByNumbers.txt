@@ -324,15 +324,15 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Pet[]> FindPetsByTagsAsync(float[] tags)
 		{
-			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
+			var requestUri = "pet/findByNumbers?"+string.Join("&", tags.Select(z => $"tags={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -354,15 +354,15 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Pet[] FindPetsByTags(float[] tags)
 		{
-			var requestUri = "pet/findByNumbers?"+String.Join("&", tags.Select(z => $"tags={z}"));
+			var requestUri = "pet/findByNumbers?"+string.Join("&", tags.Select(z => $"tags={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);

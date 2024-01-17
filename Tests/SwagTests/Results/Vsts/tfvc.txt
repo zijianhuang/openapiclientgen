@@ -1228,8 +1228,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChange[]>(jsonReader);
@@ -1262,8 +1262,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChange[]>(jsonReader);
@@ -1293,8 +1293,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssociatedWorkItem[]>(jsonReader);
@@ -1324,8 +1324,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssociatedWorkItem[]>(jsonReader);
@@ -1361,8 +1361,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangesetRef[]>(jsonReader);
@@ -1399,8 +1399,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangesetRef[]>(jsonReader);
@@ -1433,8 +1433,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcItem[]>(jsonReader);
@@ -1466,8 +1466,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcItem[]>(jsonReader);
@@ -1504,8 +1504,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcShelveset>(jsonReader);
@@ -1542,8 +1542,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcShelveset>(jsonReader);
@@ -1575,8 +1575,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChange[]>(jsonReader);
@@ -1608,8 +1608,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChange[]>(jsonReader);
@@ -1639,8 +1639,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssociatedWorkItem[]>(jsonReader);
@@ -1670,8 +1670,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<AssociatedWorkItem[]>(jsonReader);
@@ -1704,8 +1704,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcBranchRef[]>(jsonReader);
@@ -1738,8 +1738,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcBranchRef[]>(jsonReader);
@@ -1794,15 +1794,15 @@ namespace MyNS
 					int searchCriteria_toId, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&maxCommentLength="+maxCommentLength+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+String.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria_mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&maxCommentLength="+maxCommentLength+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangesetRef[]>(jsonReader);
@@ -1857,15 +1857,15 @@ namespace MyNS
 					int searchCriteria_toId, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&maxCommentLength="+maxCommentLength+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+String.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria_mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&maxCommentLength="+maxCommentLength+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangesetRef[]>(jsonReader);
@@ -1903,8 +1903,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangesetRef>(jsonReader);
@@ -1943,8 +1943,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangesetRef>(jsonReader);
@@ -2007,15 +2007,15 @@ namespace MyNS
 					int searchCriteria_toId, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets/"+id+"&maxChangeCount="+maxChangeCount+"&includeDetails="+includeDetails+"&includeWorkItems="+includeWorkItems+"&maxCommentLength="+maxCommentLength+"&includeSourceRename="+includeSourceRename+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+String.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria_mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets/"+id+"&maxChangeCount="+maxChangeCount+"&includeDetails="+includeDetails+"&includeWorkItems="+includeWorkItems+"&maxCommentLength="+maxCommentLength+"&includeSourceRename="+includeSourceRename+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangeset>(jsonReader);
@@ -2077,15 +2077,15 @@ namespace MyNS
 					int searchCriteria_toId, 
 					string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets/"+id+"&maxChangeCount="+maxChangeCount+"&includeDetails="+includeDetails+"&includeWorkItems="+includeWorkItems+"&maxCommentLength="+maxCommentLength+"&includeSourceRename="+includeSourceRename+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+String.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria_mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/tfvc/changesets/"+id+"&maxChangeCount="+maxChangeCount+"&includeDetails="+includeDetails+"&includeWorkItems="+includeWorkItems+"&maxCommentLength="+maxCommentLength+"&includeSourceRename="+includeSourceRename+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcChangeset>(jsonReader);
@@ -2121,8 +2121,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<string[]>(jsonReader);
@@ -2159,8 +2159,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<string[]>(jsonReader);
@@ -2195,8 +2195,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcItem[]>(jsonReader);
@@ -2230,8 +2230,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcItem[]>(jsonReader);
@@ -2269,8 +2269,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcLabelRef[]>(jsonReader);
@@ -2308,8 +2308,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcLabelRef[]>(jsonReader);
@@ -2346,8 +2346,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcLabel>(jsonReader);
@@ -2384,8 +2384,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<TfvcLabel>(jsonReader);

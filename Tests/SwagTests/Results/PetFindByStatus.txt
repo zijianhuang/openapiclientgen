@@ -193,15 +193,15 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
+			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -223,15 +223,15 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Pet[] FindPetsByStatus(PetStatus[] status)
 		{
-			var requestUri = "pet/findByStatus?"+String.Join("&", status.Select(z => $"status={z}"));
+			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -260,8 +260,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -290,8 +290,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -320,8 +320,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
-				var stream = await responseMessage.Content.ReadAsStreamAsync();
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = await responseMessage.Content.ReadAsStreamAsync();
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
@@ -350,8 +350,8 @@ namespace MyNS
 			try
 			{
 				responseMessage.EnsureSuccessStatusCode();
-				var stream = responseMessage.Content.ReadAsStreamAsync().Result;
-				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(stream)))
+				var responseMessageStream = responseMessage.Content.ReadAsStreamAsync().Result;
+				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
 				return serializer.Deserialize<Pet[]>(jsonReader);
