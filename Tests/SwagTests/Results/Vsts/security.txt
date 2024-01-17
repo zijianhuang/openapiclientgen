@@ -326,7 +326,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AccessControlEntry[]> Access_Control_Entries_Set_Access_Control_EntriesAsync(string securityNamespaceId, string organization, string api_version, JObject requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -364,7 +364,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AccessControlEntry[] Access_Control_Entries_Set_Access_Control_Entries(string securityNamespaceId, string organization, string api_version, JObject requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -404,7 +404,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<bool> Access_Control_Entries_Remove_Access_Control_EntriesAsync(string securityNamespaceId, string organization, string token, string descriptors, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : System.Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -437,7 +437,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public bool Access_Control_Entries_Remove_Access_Control_Entries(string securityNamespaceId, string organization, string token, string descriptors, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrolentries/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : System.Uri.EscapeDataString(descriptors))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -472,7 +472,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AccessControlList[]> Access_Control_Lists_QueryAsync(string securityNamespaceId, string organization, string token, string descriptors, bool includeExtendedInfo, bool recurse, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&includeExtendedInfo="+includeExtendedInfo+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : System.Uri.EscapeDataString(descriptors))+"&includeExtendedInfo="+includeExtendedInfo+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -507,7 +507,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AccessControlList[] Access_Control_Lists_Query(string securityNamespaceId, string organization, string token, string descriptors, bool includeExtendedInfo, bool recurse, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : Uri.EscapeDataString(descriptors))+"&includeExtendedInfo="+includeExtendedInfo+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&descriptors=" + (descriptors==null? "" : System.Uri.EscapeDataString(descriptors))+"&includeExtendedInfo="+includeExtendedInfo+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -539,7 +539,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Access_Control_Lists_Set_Access_Control_ListsAsync(string securityNamespaceId, string organization, string api_version, VssJsonCollectionWrapper requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -572,7 +572,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Access_Control_Lists_Set_Access_Control_Lists(string securityNamespaceId, string organization, string api_version, VssJsonCollectionWrapper requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -606,7 +606,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<bool> Access_Control_Lists_Remove_Access_Control_ListsAsync(string securityNamespaceId, string organization, string tokens, bool recurse, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : System.Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -639,7 +639,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public bool Access_Control_Lists_Remove_Access_Control_Lists(string securityNamespaceId, string organization, string tokens, bool recurse, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/accesscontrollists/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&tokens=" + (tokens==null? "" : System.Uri.EscapeDataString(tokens))+"&recurse="+recurse+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -674,7 +674,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<bool[]> Permissions_Has_PermissionsAsync(string securityNamespaceId, string organization, int permissions, string tokens, bool alwaysAllowAdministrators, string delimiter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&alwaysAllowAdministrators="+alwaysAllowAdministrators+"&delimiter=" + (delimiter==null? "" : Uri.EscapeDataString(delimiter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&tokens=" + (tokens==null? "" : System.Uri.EscapeDataString(tokens))+"&alwaysAllowAdministrators="+alwaysAllowAdministrators+"&delimiter=" + (delimiter==null? "" : System.Uri.EscapeDataString(delimiter))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -709,7 +709,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public bool[] Permissions_Has_Permissions(string securityNamespaceId, string organization, int permissions, string tokens, bool alwaysAllowAdministrators, string delimiter, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&tokens=" + (tokens==null? "" : Uri.EscapeDataString(tokens))+"&alwaysAllowAdministrators="+alwaysAllowAdministrators+"&delimiter=" + (delimiter==null? "" : Uri.EscapeDataString(delimiter))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&tokens=" + (tokens==null? "" : System.Uri.EscapeDataString(tokens))+"&alwaysAllowAdministrators="+alwaysAllowAdministrators+"&delimiter=" + (delimiter==null? "" : System.Uri.EscapeDataString(delimiter))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -743,7 +743,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AccessControlEntry> Permissions_Remove_PermissionAsync(string securityNamespaceId, string descriptor, string organization, int permissions, string token, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&descriptor=" + (descriptor==null? "" : Uri.EscapeDataString(descriptor))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&descriptor=" + (descriptor==null? "" : System.Uri.EscapeDataString(descriptor))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -777,7 +777,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AccessControlEntry Permissions_Remove_Permission(string securityNamespaceId, string descriptor, string organization, int permissions, string token, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&descriptor=" + (descriptor==null? "" : Uri.EscapeDataString(descriptor))+"&token=" + (token==null? "" : Uri.EscapeDataString(token))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissions/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"/"+permissions+"&descriptor=" + (descriptor==null? "" : System.Uri.EscapeDataString(descriptor))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -808,7 +808,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PermissionEvaluationBatch> Permissions_Has_Permissions_BatchAsync(string organization, string api_version, PermissionEvaluationBatch requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/security/permissionevaluationbatch&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/security/permissionevaluationbatch&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -846,7 +846,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PermissionEvaluationBatch Permissions_Has_Permissions_Batch(string organization, string api_version, PermissionEvaluationBatch requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/security/permissionevaluationbatch&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/security/permissionevaluationbatch&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -885,7 +885,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<SecurityNamespaceDescription[]> Security_Namespaces_QueryAsync(string organization, string securityNamespaceId, bool localOnly, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/securitynamespaces/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&localOnly="+localOnly+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/securitynamespaces/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&localOnly="+localOnly+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -917,7 +917,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public SecurityNamespaceDescription[] Security_Namespaces_Query(string organization, string securityNamespaceId, bool localOnly, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/securitynamespaces/"+ (securityNamespaceId==null? "" : Uri.EscapeDataString(securityNamespaceId))+"&localOnly="+localOnly+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/securitynamespaces/"+ (securityNamespaceId==null? "" : System.Uri.EscapeDataString(securityNamespaceId))+"&localOnly="+localOnly+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

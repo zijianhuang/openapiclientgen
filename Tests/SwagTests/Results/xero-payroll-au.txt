@@ -2211,7 +2211,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<Employees> GetEmployeesAsync(string @where, string order, int page)
 		{
-			var requestUri = "Employees?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "Employees?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2242,7 +2242,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public Employees GetEmployees(string @where, string order, int page)
 		{
-			var requestUri = "Employees?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "Employees?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2341,7 +2341,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<Employees> GetEmployeeAsync(string EmployeeId)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId));
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : System.Uri.EscapeDataString(EmployeeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2370,7 +2370,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public Employees GetEmployee(string EmployeeId)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId));
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : System.Uri.EscapeDataString(EmployeeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2400,7 +2400,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public async Task<Employees> UpdateEmployeeAsync(string EmployeeId, Employee[] requestBody)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId));
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : System.Uri.EscapeDataString(EmployeeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2437,7 +2437,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public Employees UpdateEmployee(string EmployeeId, Employee[] requestBody)
 		{
-			var requestUri = "Employees/"+ (EmployeeId==null? "" : Uri.EscapeDataString(EmployeeId));
+			var requestUri = "Employees/"+ (EmployeeId==null? "" : System.Uri.EscapeDataString(EmployeeId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2475,7 +2475,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<LeaveApplications> GetLeaveApplicationsAsync(string @where, string order, int page)
 		{
-			var requestUri = "LeaveApplications?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "LeaveApplications?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2506,7 +2506,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public LeaveApplications GetLeaveApplications(string @where, string order, int page)
 		{
-			var requestUri = "LeaveApplications?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "LeaveApplications?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2605,7 +2605,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<LeaveApplications> GetLeaveApplicationAsync(string LeaveApplicationId)
 		{
-			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : Uri.EscapeDataString(LeaveApplicationId));
+			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : System.Uri.EscapeDataString(LeaveApplicationId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2634,7 +2634,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public LeaveApplications GetLeaveApplication(string LeaveApplicationId)
 		{
-			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : Uri.EscapeDataString(LeaveApplicationId));
+			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : System.Uri.EscapeDataString(LeaveApplicationId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2663,7 +2663,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public async Task<LeaveApplications> UpdateLeaveApplicationAsync(string LeaveApplicationId, LeaveApplication[] requestBody)
 		{
-			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : Uri.EscapeDataString(LeaveApplicationId));
+			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : System.Uri.EscapeDataString(LeaveApplicationId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2699,7 +2699,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public LeaveApplications UpdateLeaveApplication(string LeaveApplicationId, LeaveApplication[] requestBody)
 		{
-			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : Uri.EscapeDataString(LeaveApplicationId));
+			var requestUri = "LeaveApplications/"+ (LeaveApplicationId==null? "" : System.Uri.EscapeDataString(LeaveApplicationId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2737,7 +2737,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<PayItems> GetPayItemsAsync(string @where, string order, int page)
 		{
-			var requestUri = "PayItems?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "PayItems?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2768,7 +2768,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public PayItems GetPayItems(string @where, string order, int page)
 		{
-			var requestUri = "PayItems?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "PayItems?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2869,7 +2869,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<PayrollCalendars> GetPayrollCalendarsAsync(string @where, string order, int page)
 		{
-			var requestUri = "PayrollCalendars?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "PayrollCalendars?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2900,7 +2900,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public PayrollCalendars GetPayrollCalendars(string @where, string order, int page)
 		{
-			var requestUri = "PayrollCalendars?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "PayrollCalendars?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2999,7 +2999,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<PayrollCalendars> GetPayrollCalendarAsync(string PayrollCalendarID)
 		{
-			var requestUri = "PayrollCalendars/"+ (PayrollCalendarID==null? "" : Uri.EscapeDataString(PayrollCalendarID));
+			var requestUri = "PayrollCalendars/"+ (PayrollCalendarID==null? "" : System.Uri.EscapeDataString(PayrollCalendarID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3028,7 +3028,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public PayrollCalendars GetPayrollCalendar(string PayrollCalendarID)
 		{
-			var requestUri = "PayrollCalendars/"+ (PayrollCalendarID==null? "" : Uri.EscapeDataString(PayrollCalendarID));
+			var requestUri = "PayrollCalendars/"+ (PayrollCalendarID==null? "" : System.Uri.EscapeDataString(PayrollCalendarID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3059,7 +3059,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<PayRuns> GetPayRunsAsync(string @where, string order, int page)
 		{
-			var requestUri = "PayRuns?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "PayRuns?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3090,7 +3090,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public PayRuns GetPayRuns(string @where, string order, int page)
 		{
-			var requestUri = "PayRuns?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "PayRuns?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3189,7 +3189,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<PayRuns> GetPayRunAsync(string PayRunID)
 		{
-			var requestUri = "PayRuns/"+ (PayRunID==null? "" : Uri.EscapeDataString(PayRunID));
+			var requestUri = "PayRuns/"+ (PayRunID==null? "" : System.Uri.EscapeDataString(PayRunID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3218,7 +3218,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public PayRuns GetPayRun(string PayRunID)
 		{
-			var requestUri = "PayRuns/"+ (PayRunID==null? "" : Uri.EscapeDataString(PayRunID));
+			var requestUri = "PayRuns/"+ (PayRunID==null? "" : System.Uri.EscapeDataString(PayRunID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3248,7 +3248,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public async Task<PayRuns> UpdatePayRunAsync(string PayRunID, PayRun[] requestBody)
 		{
-			var requestUri = "PayRuns/"+ (PayRunID==null? "" : Uri.EscapeDataString(PayRunID));
+			var requestUri = "PayRuns/"+ (PayRunID==null? "" : System.Uri.EscapeDataString(PayRunID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3285,7 +3285,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public PayRuns UpdatePayRun(string PayRunID, PayRun[] requestBody)
 		{
-			var requestUri = "PayRuns/"+ (PayRunID==null? "" : Uri.EscapeDataString(PayRunID));
+			var requestUri = "PayRuns/"+ (PayRunID==null? "" : System.Uri.EscapeDataString(PayRunID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3321,7 +3321,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<PayslipObject> GetPayslipAsync(string PayslipID)
 		{
-			var requestUri = "Payslip/"+ (PayslipID==null? "" : Uri.EscapeDataString(PayslipID));
+			var requestUri = "Payslip/"+ (PayslipID==null? "" : System.Uri.EscapeDataString(PayslipID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3350,7 +3350,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public PayslipObject GetPayslip(string PayslipID)
 		{
-			var requestUri = "Payslip/"+ (PayslipID==null? "" : Uri.EscapeDataString(PayslipID));
+			var requestUri = "Payslip/"+ (PayslipID==null? "" : System.Uri.EscapeDataString(PayslipID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3380,7 +3380,7 @@ namespace MyNS
 		/// <returns>A successful request - currently returns empty array for JSON</returns>
 		public async Task<Payslips> UpdatePayslipAsync(string PayslipID, PayslipLines[] requestBody)
 		{
-			var requestUri = "Payslip/"+ (PayslipID==null? "" : Uri.EscapeDataString(PayslipID));
+			var requestUri = "Payslip/"+ (PayslipID==null? "" : System.Uri.EscapeDataString(PayslipID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3417,7 +3417,7 @@ namespace MyNS
 		/// <returns>A successful request - currently returns empty array for JSON</returns>
 		public Payslips UpdatePayslip(string PayslipID, PayslipLines[] requestBody)
 		{
-			var requestUri = "Payslip/"+ (PayslipID==null? "" : Uri.EscapeDataString(PayslipID));
+			var requestUri = "Payslip/"+ (PayslipID==null? "" : System.Uri.EscapeDataString(PayslipID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3511,7 +3511,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<SuperFunds> GetSuperfundsAsync(string @where, string order, int page)
 		{
-			var requestUri = "Superfunds?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "Superfunds?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3542,7 +3542,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public SuperFunds GetSuperfunds(string @where, string order, int page)
 		{
-			var requestUri = "Superfunds?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "Superfunds?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3641,7 +3641,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<SuperFunds> GetSuperfundAsync(string SuperFundID)
 		{
-			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : Uri.EscapeDataString(SuperFundID));
+			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : System.Uri.EscapeDataString(SuperFundID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3670,7 +3670,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public SuperFunds GetSuperfund(string SuperFundID)
 		{
-			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : Uri.EscapeDataString(SuperFundID));
+			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : System.Uri.EscapeDataString(SuperFundID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3700,7 +3700,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public async Task<SuperFunds> UpdateSuperfundAsync(string SuperFundID, SuperFund[] requestBody)
 		{
-			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : Uri.EscapeDataString(SuperFundID));
+			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : System.Uri.EscapeDataString(SuperFundID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3737,7 +3737,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public SuperFunds UpdateSuperfund(string SuperFundID, SuperFund[] requestBody)
 		{
-			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : Uri.EscapeDataString(SuperFundID));
+			var requestUri = "Superfunds/"+ (SuperFundID==null? "" : System.Uri.EscapeDataString(SuperFundID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3774,7 +3774,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<SuperFundProducts> GetSuperfundProductsAsync(string ABN, string USI)
 		{
-			var requestUri = "SuperfundProducts?ABN=" + (ABN==null? "" : Uri.EscapeDataString(ABN))+"&USI=" + (USI==null? "" : Uri.EscapeDataString(USI));
+			var requestUri = "SuperfundProducts?ABN=" + (ABN==null? "" : System.Uri.EscapeDataString(ABN))+"&USI=" + (USI==null? "" : System.Uri.EscapeDataString(USI));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3804,7 +3804,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public SuperFundProducts GetSuperfundProducts(string ABN, string USI)
 		{
-			var requestUri = "SuperfundProducts?ABN=" + (ABN==null? "" : Uri.EscapeDataString(ABN))+"&USI=" + (USI==null? "" : Uri.EscapeDataString(USI));
+			var requestUri = "SuperfundProducts?ABN=" + (ABN==null? "" : System.Uri.EscapeDataString(ABN))+"&USI=" + (USI==null? "" : System.Uri.EscapeDataString(USI));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3835,7 +3835,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<Timesheets> GetTimesheetsAsync(string @where, string order, int page)
 		{
-			var requestUri = "Timesheets?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "Timesheets?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3866,7 +3866,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public Timesheets GetTimesheets(string @where, string order, int page)
 		{
-			var requestUri = "Timesheets?where=" + (where==null? "" : Uri.EscapeDataString(where))+"&order=" + (order==null? "" : Uri.EscapeDataString(order))+"&page="+page;
+			var requestUri = "Timesheets?where=" + (where==null? "" : System.Uri.EscapeDataString(where))+"&order=" + (order==null? "" : System.Uri.EscapeDataString(order))+"&page="+page;
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3965,7 +3965,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<TimesheetObject> GetTimesheetAsync(string TimesheetID)
 		{
-			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : Uri.EscapeDataString(TimesheetID));
+			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : System.Uri.EscapeDataString(TimesheetID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3994,7 +3994,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public TimesheetObject GetTimesheet(string TimesheetID)
 		{
-			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : Uri.EscapeDataString(TimesheetID));
+			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : System.Uri.EscapeDataString(TimesheetID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4024,7 +4024,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public async Task<Timesheets> UpdateTimesheetAsync(string TimesheetID, Timesheet[] requestBody)
 		{
-			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : Uri.EscapeDataString(TimesheetID));
+			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : System.Uri.EscapeDataString(TimesheetID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4061,7 +4061,7 @@ namespace MyNS
 		/// <returns>A successful request</returns>
 		public Timesheets UpdateTimesheet(string TimesheetID, Timesheet[] requestBody)
 		{
-			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : Uri.EscapeDataString(TimesheetID));
+			var requestUri = "Timesheets/"+ (TimesheetID==null? "" : System.Uri.EscapeDataString(TimesheetID));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

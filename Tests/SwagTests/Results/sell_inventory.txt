@@ -2199,7 +2199,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<InventoryLocationResponse> GetInventoryLocationAsync(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2228,7 +2228,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public InventoryLocationResponse GetInventoryLocation(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2257,7 +2257,7 @@ namespace MyNS
 		/// <param name="requestBody">Inventory Location details</param>
 		public async Task CreateInventoryLocationAsync(string merchantLocationKey, InventoryLocationFull requestBody)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2287,7 +2287,7 @@ namespace MyNS
 		/// <param name="requestBody">Inventory Location details</param>
 		public void CreateInventoryLocation(string merchantLocationKey, InventoryLocationFull requestBody)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2316,7 +2316,7 @@ namespace MyNS
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to indicate the inventory location to be deleted. Max length: 36</param>
 		public async Task DeleteInventoryLocationAsync(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2338,7 +2338,7 @@ namespace MyNS
 		/// <param name="merchantLocationKey">A unique merchant-defined key (ID) for an inventory location. This value is passed in at the end of the call URI to indicate the inventory location to be deleted. Max length: 36</param>
 		public void DeleteInventoryLocation(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey));
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2361,7 +2361,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<string> DisableInventoryLocationAsync(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/disable";
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/disable";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2389,7 +2389,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public string DisableInventoryLocation(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/disable";
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/disable";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2417,7 +2417,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<string> EnableInventoryLocationAsync(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/enable";
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/enable";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2445,7 +2445,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public string EnableInventoryLocation(string merchantLocationKey)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/enable";
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/enable";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2474,7 +2474,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<LocationResponse> GetInventoryLocationsAsync(string limit, string offset)
 		{
-			var requestUri = "location?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
+			var requestUri = "location?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2504,7 +2504,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public LocationResponse GetInventoryLocations(string limit, string offset)
 		{
-			var requestUri = "location?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
+			var requestUri = "location?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2533,7 +2533,7 @@ namespace MyNS
 		/// <param name="requestBody">The inventory location details to be updated (other than the address and geo co-ordinates).</param>
 		public async Task UpdateInventoryLocationAsync(string merchantLocationKey, InventoryLocation requestBody)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2563,7 +2563,7 @@ namespace MyNS
 		/// <param name="requestBody">The inventory location details to be updated (other than the address and geo co-ordinates).</param>
 		public void UpdateInventoryLocation(string merchantLocationKey, InventoryLocation requestBody)
 		{
-			var requestUri = "location/"+ (merchantLocationKey==null? "" : Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
+			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2593,7 +2593,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<InventoryItemWithSkuLocaleGroupid> GetInventoryItemAsync(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2622,7 +2622,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public InventoryItemWithSkuLocaleGroupid GetInventoryItem(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2652,7 +2652,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BaseResponse> CreateOrReplaceInventoryItemAsync(string sku, InventoryItem requestBody)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2689,7 +2689,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BaseResponse CreateOrReplaceInventoryItem(string sku, InventoryItem requestBody)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2724,7 +2724,7 @@ namespace MyNS
 		/// <param name="sku">This is the seller-defined SKU value of the product whose inventory item record you wish to delete. Max length: 50.</param>
 		public async Task DeleteInventoryItemAsync(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2746,7 +2746,7 @@ namespace MyNS
 		/// <param name="sku">This is the seller-defined SKU value of the product whose inventory item record you wish to delete. Max length: 50.</param>
 		public void DeleteInventoryItem(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku));
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2770,7 +2770,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<InventoryItems> GetInventoryItemsAsync(string limit, string offset)
 		{
-			var requestUri = "inventory_item?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
+			var requestUri = "inventory_item?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2800,7 +2800,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public InventoryItems GetInventoryItems(string limit, string offset)
 		{
-			var requestUri = "inventory_item?limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
+			var requestUri = "inventory_item?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3045,7 +3045,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Compatibility> GetProductCompatibilityAsync(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3074,7 +3074,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Compatibility GetProductCompatibility(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3104,7 +3104,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BaseResponse> CreateOrReplaceProductCompatibilityAsync(string sku, Compatibility requestBody)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3141,7 +3141,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BaseResponse CreateOrReplaceProductCompatibility(string sku, Compatibility requestBody)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3176,7 +3176,7 @@ namespace MyNS
 		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
 		public async Task DeleteProductCompatibilityAsync(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3198,7 +3198,7 @@ namespace MyNS
 		/// <param name="sku">A SKU (stock keeping unit) is an unique identifier defined by a seller for a product</param>
 		public void DeleteProductCompatibility(string sku)
 		{
-			var requestUri = "inventory_item/"+ (sku==null? "" : Uri.EscapeDataString(sku))+"/product_compatibility";
+			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3225,7 +3225,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<Offers> GetOffersAsync(string sku, string marketplace_id, string format, string limit, string offset)
 		{
-			var requestUri = "offer?sku=" + (sku==null? "" : Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
+			var requestUri = "offer?sku=" + (sku==null? "" : System.Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3258,7 +3258,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public Offers GetOffers(string sku, string marketplace_id, string format, string limit, string offset)
 		{
-			var requestUri = "offer?sku=" + (sku==null? "" : Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : Uri.EscapeDataString(offset));
+			var requestUri = "offer?sku=" + (sku==null? "" : System.Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3345,7 +3345,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<EbayOfferDetailsWithAll> GetOfferAsync(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3374,7 +3374,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public EbayOfferDetailsWithAll GetOffer(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3404,7 +3404,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<OfferResponse> UpdateOfferAsync(string offerId, EbayOfferDetailsWithId requestBody)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3441,7 +3441,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public OfferResponse UpdateOffer(string offerId, EbayOfferDetailsWithId requestBody)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3476,7 +3476,7 @@ namespace MyNS
 		/// <param name="offerId">The unique identifier of the offer to delete. The unique identifier of the offer (offerId) is passed in at the end of the call URI.</param>
 		public async Task DeleteOfferAsync(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3498,7 +3498,7 @@ namespace MyNS
 		/// <param name="offerId">The unique identifier of the offer to delete. The unique identifier of the offer (offerId) is passed in at the end of the call URI.</param>
 		public void DeleteOffer(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId));
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3521,7 +3521,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PublishResponse> PublishOfferAsync(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/publish/";
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/publish/";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3550,7 +3550,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public PublishResponse PublishOffer(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/publish/";
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/publish/";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3925,7 +3925,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<WithdrawResponse> WithdrawOfferAsync(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/withdraw";
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/withdraw";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3954,7 +3954,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public WithdrawResponse WithdrawOffer(string offerId)
 		{
-			var requestUri = "offer/"+ (offerId==null? "" : Uri.EscapeDataString(offerId))+"/withdraw";
+			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/withdraw";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3983,7 +3983,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<InventoryItemGroup> GetInventoryItemGroupAsync(string inventoryItemGroupKey)
 		{
-			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
+			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4012,7 +4012,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public InventoryItemGroup GetInventoryItemGroup(string inventoryItemGroupKey)
 		{
-			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
+			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4042,7 +4042,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<BaseResponse> CreateOrReplaceInventoryItemGroupAsync(string inventoryItemGroupKey, InventoryItemGroup requestBody)
 		{
-			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
+			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4079,7 +4079,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public BaseResponse CreateOrReplaceInventoryItemGroup(string inventoryItemGroupKey, InventoryItemGroup requestBody)
 		{
-			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
+			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4114,7 +4114,7 @@ namespace MyNS
 		/// <param name="inventoryItemGroupKey">The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to delete is passed in at the end of the call URI.</param>
 		public async Task DeleteInventoryItemGroupAsync(string inventoryItemGroupKey)
 		{
-			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
+			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4136,7 +4136,7 @@ namespace MyNS
 		/// <param name="inventoryItemGroupKey">The unique identifier of an inventory item group. This value is assigned by the seller when an inventory item group is created. The inventoryItemGroupKey value for the inventory item group to delete is passed in at the end of the call URI.</param>
 		public void DeleteInventoryItemGroup(string inventoryItemGroupKey)
 		{
-			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : Uri.EscapeDataString(inventoryItemGroupKey));
+			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

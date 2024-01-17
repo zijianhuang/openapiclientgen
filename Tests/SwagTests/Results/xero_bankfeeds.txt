@@ -2112,7 +2112,7 @@ namespace MyNS
 		/// <returns>success returns a FeedConnection object matching the id in response</returns>
 		public async Task<FeedConnection> GetFeedConnectionAsync(string id)
 		{
-			var requestUri = "FeedConnections/"+ (id==null? "" : Uri.EscapeDataString(id));
+			var requestUri = "FeedConnections/"+ (id==null? "" : System.Uri.EscapeDataString(id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2142,7 +2142,7 @@ namespace MyNS
 		/// <returns>success returns a FeedConnection object matching the id in response</returns>
 		public FeedConnection GetFeedConnection(string id)
 		{
-			var requestUri = "FeedConnections/"+ (id==null? "" : Uri.EscapeDataString(id));
+			var requestUri = "FeedConnections/"+ (id==null? "" : System.Uri.EscapeDataString(id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2350,7 +2350,7 @@ namespace MyNS
 		/// <returns>search results matching id for single statement</returns>
 		public async Task<Statement> GetStatementAsync(string statementId)
 		{
-			var requestUri = "Statements/"+ (statementId==null? "" : Uri.EscapeDataString(statementId));
+			var requestUri = "Statements/"+ (statementId==null? "" : System.Uri.EscapeDataString(statementId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2380,7 +2380,7 @@ namespace MyNS
 		/// <returns>search results matching id for single statement</returns>
 		public Statement GetStatement(string statementId)
 		{
-			var requestUri = "Statements/"+ (statementId==null? "" : Uri.EscapeDataString(statementId));
+			var requestUri = "Statements/"+ (statementId==null? "" : System.Uri.EscapeDataString(statementId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

@@ -192,7 +192,7 @@ namespace MyNS
 		/// <returns>A session token containing information about corresponding a PAT.</returns>
 		public async Task<SessionTokenResult> Token_Get_Personal_Access_Token_GetAsync(bool isPublic, string api_version, string requestBody)
 		{
-			var requestUri = "_apis/tokenadmin/tokengetpersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadmin/tokengetpersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -227,7 +227,7 @@ namespace MyNS
 		/// <returns>A session token containing information about corresponding a PAT.</returns>
 		public SessionTokenResult Token_Get_Personal_Access_Token_Get(bool isPublic, string api_version, string requestBody)
 		{
-			var requestUri = "_apis/tokenadmin/tokengetpersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadmin/tokengetpersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -262,7 +262,7 @@ namespace MyNS
 		/// <returns>A session token has been revoked</returns>
 		public async Task Token_Revoke_Personal_Access_Token_Revoke_Personal_Access_TokenAsync(bool isPublic, string api_version, string requestBody)
 		{
-			var requestUri = "_apis/tokenadmin/tokenrevokepersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadmin/tokenrevokepersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -291,7 +291,7 @@ namespace MyNS
 		/// <returns>A session token has been revoked</returns>
 		public void Token_Revoke_Personal_Access_Token_Revoke_Personal_Access_Token(bool isPublic, string api_version, string requestBody)
 		{
-			var requestUri = "_apis/tokenadmin/tokenrevokepersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadmin/tokenrevokepersonalaccesstoken?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -326,7 +326,7 @@ namespace MyNS
 		/// <returns>An an array containing all the session token objects corresponding to the user's PATs.</returns>
 		public async Task<TokenAdminPagedSessionTokens> Personal_Access_Tokens_ListAsync(string organization, string subjectDescriptor, int pageSize, string continuationToken, bool isPublic, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/tokenadmin/personalaccesstokens/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tokenadmin/personalaccesstokens/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -360,7 +360,7 @@ namespace MyNS
 		/// <returns>An an array containing all the session token objects corresponding to the user's PATs.</returns>
 		public TokenAdminPagedSessionTokens Personal_Access_Tokens_List(string organization, string subjectDescriptor, int pageSize, string continuationToken, bool isPublic, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/tokenadmin/personalaccesstokens/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tokenadmin/personalaccesstokens/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -396,7 +396,7 @@ namespace MyNS
 		/// <param name="requestBody">The revocation rule to create. The rule must specify a space-separated list of scopes, after which preexisting OAuth authorizations that match that any of the scopes will be rejected. For a list of all OAuth scopes supported by VSTS, see: https://docs.microsoft.com/en-us/vsts/integrate/get-started/authentication/oauth?view=vsts#scopes The rule may also specify the time before which to revoke tokens.</param>
 		public async Task Revocation_Rules_CreateAsync(string organization, string api_version, TokenAdminRevocationRule requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocationrules&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocationrules&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -433,7 +433,7 @@ namespace MyNS
 		/// <param name="requestBody">The revocation rule to create. The rule must specify a space-separated list of scopes, after which preexisting OAuth authorizations that match that any of the scopes will be rejected. For a list of all OAuth scopes supported by VSTS, see: https://docs.microsoft.com/en-us/vsts/integrate/get-started/authentication/oauth?view=vsts#scopes The rule may also specify the time before which to revoke tokens.</param>
 		public void Revocation_Rules_Create(string organization, string api_version, TokenAdminRevocationRule requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocationrules&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocationrules&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -465,7 +465,7 @@ namespace MyNS
 		/// <param name="requestBody">The list of objects containing the authorization IDs of the OAuth authorizations, such as session tokens retrieved by listed a users PATs, that should be revoked.</param>
 		public async Task Revocations_Revoke_AuthorizationsAsync(string organization, bool isPublic, string api_version, TokenAdminRevocation[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocations&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocations&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -497,7 +497,7 @@ namespace MyNS
 		/// <param name="requestBody">The list of objects containing the authorization IDs of the OAuth authorizations, such as session tokens retrieved by listed a users PATs, that should be revoked.</param>
 		public void Revocations_Revoke_Authorizations(string organization, bool isPublic, string api_version, TokenAdminRevocation[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocations&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tokenadmin/revocations&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

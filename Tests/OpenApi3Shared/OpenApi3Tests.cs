@@ -7297,7 +7297,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_googleapis_com_logging_v2()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\googleapis.com\logging\v2\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\googleapis.com\logging\v2\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]

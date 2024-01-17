@@ -174,7 +174,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PermissionsReport[]> Permissions_Report_ListAsync(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -204,7 +204,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PermissionsReport[] Permissions_Report_List(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -235,7 +235,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<ReferenceLinks> Permissions_Report_CreateAsync(string organization, string api_version, PermissionsReportRequest requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -273,7 +273,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public ReferenceLinks Permissions_Report_Create(string organization, string api_version, PermissionsReportRequest requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -311,7 +311,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PermissionsReport> Permissions_Report_GetAsync(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -342,7 +342,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PermissionsReport Permissions_Report_Get(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -373,7 +373,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Permissions_Report_Download_DownloadAsync(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : Uri.EscapeDataString(id))+"/download&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/download&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -398,7 +398,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Permissions_Report_Download_Download(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : Uri.EscapeDataString(id))+"/download&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/permissionsreport/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/download&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

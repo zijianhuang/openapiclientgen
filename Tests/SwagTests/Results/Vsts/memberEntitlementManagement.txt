@@ -1095,7 +1095,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GroupEntitlement[]> Group_Entitlements_ListAsync(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1125,7 +1125,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GroupEntitlement[] Group_Entitlements_List(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1156,7 +1156,7 @@ namespace MyNS
 		/// <param name="requestBody">GroupEntitlement object specifying License Rule, Extensions Rule for the group. Based on the rules the members of the group will be given licenses and extensions. The Group Entitlement can be used to add the group to another project level groups</param>
 		public async Task Group_Entitlements_AddAsync(string organization, Group_Entitlements_AddRuleOption ruleOption, string api_version, GroupEntitlement requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + ruleOption+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + ruleOption+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1188,7 +1188,7 @@ namespace MyNS
 		/// <param name="requestBody">GroupEntitlement object specifying License Rule, Extensions Rule for the group. Based on the rules the members of the group will be given licenses and extensions. The Group Entitlement can be used to add the group to another project level groups</param>
 		public void Group_Entitlements_Add(string organization, Group_Entitlements_AddRuleOption ruleOption, string api_version, GroupEntitlement requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + ruleOption+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements&ruleOption=" + ruleOption+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1222,7 +1222,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GroupEntitlement> Group_Entitlements_GetAsync(string organization, string groupId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1255,7 +1255,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GroupEntitlement Group_Entitlements_Get(string organization, string groupId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1288,7 +1288,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GroupEntitlementOperationReference> Group_Entitlements_DeleteAsync(string organization, string groupId, Group_Entitlements_AddRuleOption ruleOption, bool removeGroupMembership, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&ruleOption=" + ruleOption+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&ruleOption=" + ruleOption+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1321,7 +1321,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GroupEntitlementOperationReference Group_Entitlements_Delete(string organization, string groupId, Group_Entitlements_AddRuleOption ruleOption, bool removeGroupMembership, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"&ruleOption=" + ruleOption+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/groupentitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&ruleOption=" + ruleOption+"&removeGroupMembership="+removeGroupMembership+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1354,7 +1354,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PagedGraphMemberList> Members_GetAsync(string organization, string groupId, int maxResults, string pagingToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/members&maxResults="+maxResults+"&pagingToken=" + (pagingToken==null? "" : Uri.EscapeDataString(pagingToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/members&maxResults="+maxResults+"&pagingToken=" + (pagingToken==null? "" : System.Uri.EscapeDataString(pagingToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1387,7 +1387,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PagedGraphMemberList Members_Get(string organization, string groupId, int maxResults, string pagingToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/members&maxResults="+maxResults+"&pagingToken=" + (pagingToken==null? "" : Uri.EscapeDataString(pagingToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/members&maxResults="+maxResults+"&pagingToken=" + (pagingToken==null? "" : System.Uri.EscapeDataString(pagingToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1419,7 +1419,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Members_AddAsync(string organization, string groupId, string memberId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : System.Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1445,7 +1445,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Members_Add(string organization, string groupId, string memberId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : System.Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1471,7 +1471,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Members_Remove_Member_From_GroupAsync(string organization, string groupId, string memberId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : System.Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1497,7 +1497,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Members_Remove_Member_From_Group(string organization, string groupId, string memberId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/GroupEntitlements/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/members/"+ (memberId==null? "" : System.Uri.EscapeDataString(memberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1525,7 +1525,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PagedGraphMemberList> User_Entitlements_Search_User_EntitlementsAsync(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1559,7 +1559,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PagedGraphMemberList User_Entitlements_Search_User_Entitlements(string organization, string continuationToken, User_Entitlements_Search_User_EntitlementsSelect select, string filter, string orderBy, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&select=" + select+"&$filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&$orderBy=" + (orderBy==null? "" : System.Uri.EscapeDataString(orderBy))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1590,7 +1590,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<UserEntitlementsPostResponse> User_Entitlements_AddAsync(string organization, string api_version, UserEntitlement requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1628,7 +1628,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public UserEntitlementsPostResponse User_Entitlements_Add(string organization, string api_version, UserEntitlement requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1666,7 +1666,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<UserEntitlement> User_Entitlements_GetAsync(string organization, string userId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1697,7 +1697,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public UserEntitlement User_Entitlements_Get(string organization, string userId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1731,7 +1731,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task User_Entitlements_DeleteAsync(string organization, string userId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1759,7 +1759,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void User_Entitlements_Delete(string organization, string userId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlements/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1784,7 +1784,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<UsersSummary> User_Entitlement_Summary_GetAsync(string organization, string select, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlementsummary&select=" + (select==null? "" : Uri.EscapeDataString(select))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlementsummary&select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1815,7 +1815,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public UsersSummary User_Entitlement_Summary_Get(string organization, string select, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/userentitlementsummary&select=" + (select==null? "" : Uri.EscapeDataString(select))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/userentitlementsummary&select=" + (select==null? "" : System.Uri.EscapeDataString(select))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

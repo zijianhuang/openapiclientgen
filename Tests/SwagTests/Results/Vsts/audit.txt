@@ -414,7 +414,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AuditActionInfo[]> Actions_ListAsync(string organization, string areaName, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/actions&areaName=" + (areaName==null? "" : Uri.EscapeDataString(areaName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/actions&areaName=" + (areaName==null? "" : System.Uri.EscapeDataString(areaName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -445,7 +445,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AuditActionInfo[] Actions_List(string organization, string areaName, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/actions&areaName=" + (areaName==null? "" : Uri.EscapeDataString(areaName))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/actions&areaName=" + (areaName==null? "" : System.Uri.EscapeDataString(areaName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -480,7 +480,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AuditLogQueryResult> Audit_Log_QueryAsync(string organization, System.DateTimeOffset startTime, System.DateTimeOffset endTime, int batchSize, string continuationToken, bool skipAggregation, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/auditlog&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&batchSize="+batchSize+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&skipAggregation="+skipAggregation+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/auditlog&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&batchSize="+batchSize+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&skipAggregation="+skipAggregation+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -515,7 +515,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AuditLogQueryResult Audit_Log_Query(string organization, System.DateTimeOffset startTime, System.DateTimeOffset endTime, int batchSize, string continuationToken, bool skipAggregation, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/auditlog&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&batchSize="+batchSize+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&skipAggregation="+skipAggregation+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/auditlog&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&batchSize="+batchSize+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&skipAggregation="+skipAggregation+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -548,7 +548,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Download_Log_Download_LogAsync(string organization, string format, System.DateTimeOffset startTime, System.DateTimeOffset endTime, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/downloadlog&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/downloadlog&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -575,7 +575,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Download_Log_Download_Log(string organization, string format, System.DateTimeOffset startTime, System.DateTimeOffset endTime, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/downloadlog&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/downloadlog&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -599,7 +599,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AuditStream[]> Streams_Query_All_StreamsAsync(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -629,7 +629,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AuditStream[] Streams_Query_All_Streams(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -660,7 +660,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AuditStream> Streams_Update_StreamAsync(string organization, string api_version, AuditStream requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -698,7 +698,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AuditStream Streams_Update_Stream(string organization, string api_version, AuditStream requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -737,7 +737,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AuditStream> Streams_CreateAsync(string organization, int daysToBackfill, string api_version, AuditStream requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -776,7 +776,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AuditStream Streams_Create(string organization, int daysToBackfill, string api_version, AuditStream requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams&daysToBackfill="+daysToBackfill+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -814,7 +814,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AuditStream> Streams_Query_Stream_By_IdAsync(string organization, int streamId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -845,7 +845,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AuditStream Streams_Query_Stream_By_Id(string organization, int streamId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -877,7 +877,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AuditStream> Streams_Update_StatusAsync(string organization, int streamId, AuditStreamStatus status, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&status=" + status+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&status=" + status+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -909,7 +909,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AuditStream Streams_Update_Status(string organization, int streamId, AuditStreamStatus status, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&status=" + status+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&status=" + status+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -940,7 +940,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Streams_DeleteAsync(string organization, int streamId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -965,7 +965,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Streams_Delete(string organization, int streamId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/audit/streams/"+streamId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

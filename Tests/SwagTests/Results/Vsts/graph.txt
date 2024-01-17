@@ -775,7 +775,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphDescriptorResult> Descriptors_GetAsync(string storageKey, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/descriptors/"+ (storageKey==null? "" : Uri.EscapeDataString(storageKey))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/descriptors/"+ (storageKey==null? "" : System.Uri.EscapeDataString(storageKey))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -806,7 +806,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphDescriptorResult Descriptors_Get(string storageKey, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/descriptors/"+ (storageKey==null? "" : Uri.EscapeDataString(storageKey))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/descriptors/"+ (storageKey==null? "" : System.Uri.EscapeDataString(storageKey))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -845,7 +845,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphGroup[]> Groups_ListAsync(string organization, string scopeDescriptor, string subjectTypes, string continuationToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : System.Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -884,7 +884,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphGroup[] Groups_List(string organization, string scopeDescriptor, string subjectTypes, string continuationToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&subjectTypes=" + (subjectTypes==null? "" : System.Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -924,7 +924,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphGroup> Groups_CreateAsync(string organization, string scopeDescriptor, string groupDescriptors, string api_version, GraphGroupCreationContext requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&groupDescriptors=" + (groupDescriptors==null? "" : Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&groupDescriptors=" + (groupDescriptors==null? "" : System.Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -971,7 +971,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphGroup Groups_Create(string organization, string scopeDescriptor, string groupDescriptors, string api_version, GraphGroupCreationContext requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&groupDescriptors=" + (groupDescriptors==null? "" : Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&groupDescriptors=" + (groupDescriptors==null? "" : System.Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1012,7 +1012,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphGroup> Groups_GetAsync(string organization, string groupDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : System.Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1046,7 +1046,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphGroup Groups_Get(string organization, string groupDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : System.Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1080,7 +1080,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Groups_DeleteAsync(string organization, string groupDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : System.Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1108,7 +1108,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Groups_Delete(string organization, string groupDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/groups/"+ (groupDescriptor==null? "" : System.Uri.EscapeDataString(groupDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1138,7 +1138,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphMembership[]> Memberships_ListAsync(string organization, string subjectDescriptor, Memberships_ListDirection direction, int depth, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&direction=" + direction+"&depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&direction=" + direction+"&depth="+depth+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1174,7 +1174,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphMembership[] Memberships_List(string organization, string subjectDescriptor, Memberships_ListDirection direction, int depth, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&direction=" + direction+"&depth="+depth+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&direction=" + direction+"&depth="+depth+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1206,7 +1206,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphMembership> Memberships_GetAsync(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1238,7 +1238,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphMembership Memberships_Get(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1270,7 +1270,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphMembership> Memberships_AddAsync(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1302,7 +1302,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphMembership Memberships_Add(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1334,7 +1334,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Memberships_Remove_MembershipAsync(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1360,7 +1360,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Memberships_Remove_Membership(string organization, string subjectDescriptor, string containerDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/memberships/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/"+ (containerDescriptor==null? "" : System.Uri.EscapeDataString(containerDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1385,7 +1385,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphMembershipState> Membership_States_GetAsync(string organization, string subjectDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/membershipstates/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/membershipstates/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1416,7 +1416,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphMembershipState Membership_States_Get(string organization, string subjectDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/membershipstates/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/membershipstates/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1445,7 +1445,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Request_Access_Request_AccessAsync(string organization, string api_version, JToken requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/requestaccess&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/requestaccess&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1475,7 +1475,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Request_Access_Request_Access(string organization, string api_version, JToken requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/requestaccess&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/requestaccess&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1506,7 +1506,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphStorageKeyResult> Storage_Keys_GetAsync(string subjectDescriptor, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/storagekeys/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/storagekeys/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1536,7 +1536,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphStorageKeyResult Storage_Keys_Get(string subjectDescriptor, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/storagekeys/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/storagekeys/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1567,7 +1567,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<System.Collections.Generic.Dictionary<string, GraphSubject>> Subject_Lookup_Lookup_SubjectsAsync(string organization, string api_version, GraphSubjectLookup requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/subjectlookup&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/subjectlookup&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1605,7 +1605,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public System.Collections.Generic.Dictionary<string, GraphSubject> Subject_Lookup_Lookup_Subjects(string organization, string api_version, GraphSubjectLookup requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/subjectlookup&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/subjectlookup&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1643,7 +1643,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphSubject[]> Subject_Query_QueryAsync(string organization, string api_version, GraphSubjectQuery requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/subjectquery&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/subjectquery&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1681,7 +1681,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphSubject[] Subject_Query_Query(string organization, string api_version, GraphSubjectQuery requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/subjectquery&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/subjectquery&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1717,7 +1717,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Avatar> Avatars_GetAsync(string subjectDescriptor, string organization, AvatarSize size, string format, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&size=" + size+"&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&size=" + size+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1746,7 +1746,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Avatar Avatars_Get(string subjectDescriptor, string organization, AvatarSize size, string format, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&size=" + size+"&format=" + (format==null? "" : Uri.EscapeDataString(format))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&size=" + size+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1775,7 +1775,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Avatars_Set_AvatarAsync(string subjectDescriptor, string organization, string api_version, Avatar requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1805,7 +1805,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Avatars_Set_Avatar(string subjectDescriptor, string organization, string api_version, Avatar requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1835,7 +1835,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Avatars_DeleteAsync(string subjectDescriptor, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1858,7 +1858,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Avatars_Delete(string subjectDescriptor, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Subjects/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"/avatars&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1889,7 +1889,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphUser[]> Users_ListAsync(string organization, string subjectTypes, string continuationToken, string scopeDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : System.Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1926,7 +1926,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphUser[] Users_List(string organization, string subjectTypes, string continuationToken, string scopeDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users&subjectTypes=" + (subjectTypes==null? "" : System.Uri.EscapeDataString(subjectTypes))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&scopeDescriptor=" + (scopeDescriptor==null? "" : System.Uri.EscapeDataString(scopeDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1972,7 +1972,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphUser> Users_CreateAsync(string organization, string groupDescriptors, string api_version, GraphUserCreationContext requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&groupDescriptors=" + (groupDescriptors==null? "" : Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users&groupDescriptors=" + (groupDescriptors==null? "" : System.Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2025,7 +2025,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphUser Users_Create(string organization, string groupDescriptors, string api_version, GraphUserCreationContext requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users&groupDescriptors=" + (groupDescriptors==null? "" : Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users&groupDescriptors=" + (groupDescriptors==null? "" : System.Uri.EscapeDataString(groupDescriptors))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2063,7 +2063,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphUser> Users_GetAsync(string organization, string userDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2094,7 +2094,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphUser Users_Get(string organization, string userDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2127,7 +2127,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Users_DeleteAsync(string organization, string userDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2154,7 +2154,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Users_Delete(string organization, string userDescriptor, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2180,7 +2180,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphUser> Users_UpdateAsync(string organization, string userDescriptor, string api_version, GraphUserUpdateContext requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2219,7 +2219,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphUser Users_Update(string organization, string userDescriptor, string api_version, GraphUserUpdateContext requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2255,7 +2255,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<GraphProviderInfo> Provider_Info_GetAsync(string userDescriptor, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"/providerinfo&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"/providerinfo&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2284,7 +2284,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public GraphProviderInfo Provider_Info_Get(string userDescriptor, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/graph/Users/"+ (userDescriptor==null? "" : Uri.EscapeDataString(userDescriptor))+"/providerinfo&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/graph/Users/"+ (userDescriptor==null? "" : System.Uri.EscapeDataString(userDescriptor))+"/providerinfo&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

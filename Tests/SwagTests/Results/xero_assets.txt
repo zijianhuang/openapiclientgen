@@ -618,7 +618,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public async Task<Asset> GetAssetByIdAsync(string id)
 		{
-			var requestUri = "Assets/"+ (id==null? "" : Uri.EscapeDataString(id));
+			var requestUri = "Assets/"+ (id==null? "" : System.Uri.EscapeDataString(id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -650,7 +650,7 @@ namespace MyNS
 		/// <returns>search results matching criteria</returns>
 		public Asset GetAssetById(string id)
 		{
-			var requestUri = "Assets/"+ (id==null? "" : Uri.EscapeDataString(id));
+			var requestUri = "Assets/"+ (id==null? "" : System.Uri.EscapeDataString(id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

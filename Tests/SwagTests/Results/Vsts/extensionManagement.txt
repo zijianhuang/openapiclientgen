@@ -1759,7 +1759,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<InstalledExtension[]> Installed_Extensions_ListAsync(string organization, bool includeDisabledExtensions, bool includeErrors, string assetTypes, bool includeInstallationIssues, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&includeDisabledExtensions="+includeDisabledExtensions+"&includeErrors="+includeErrors+"&assetTypes=" + (assetTypes==null? "" : Uri.EscapeDataString(assetTypes))+"&includeInstallationIssues="+includeInstallationIssues+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&includeDisabledExtensions="+includeDisabledExtensions+"&includeErrors="+includeErrors+"&assetTypes=" + (assetTypes==null? "" : System.Uri.EscapeDataString(assetTypes))+"&includeInstallationIssues="+includeInstallationIssues+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1791,7 +1791,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public InstalledExtension[] Installed_Extensions_List(string organization, bool includeDisabledExtensions, bool includeErrors, string assetTypes, bool includeInstallationIssues, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&includeDisabledExtensions="+includeDisabledExtensions+"&includeErrors="+includeErrors+"&assetTypes=" + (assetTypes==null? "" : Uri.EscapeDataString(assetTypes))+"&includeInstallationIssues="+includeInstallationIssues+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&includeDisabledExtensions="+includeDisabledExtensions+"&includeErrors="+includeErrors+"&assetTypes=" + (assetTypes==null? "" : System.Uri.EscapeDataString(assetTypes))+"&includeInstallationIssues="+includeInstallationIssues+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1821,7 +1821,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<InstalledExtension> Installed_Extensions_UpdateAsync(string organization, string api_version, InstalledExtension requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1858,7 +1858,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public InstalledExtension Installed_Extensions_Update(string organization, string api_version, InstalledExtension requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1897,7 +1897,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<InstalledExtension> Installed_Extensions_GetAsync(string organization, string publisherName, string extensionName, string assetTypes, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : Uri.EscapeDataString(extensionName))+"&assetTypes=" + (assetTypes==null? "" : Uri.EscapeDataString(assetTypes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : System.Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : System.Uri.EscapeDataString(extensionName))+"&assetTypes=" + (assetTypes==null? "" : System.Uri.EscapeDataString(assetTypes))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1929,7 +1929,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public InstalledExtension Installed_Extensions_Get(string organization, string publisherName, string extensionName, string assetTypes, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : Uri.EscapeDataString(extensionName))+"&assetTypes=" + (assetTypes==null? "" : Uri.EscapeDataString(assetTypes))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : System.Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : System.Uri.EscapeDataString(extensionName))+"&assetTypes=" + (assetTypes==null? "" : System.Uri.EscapeDataString(assetTypes))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1961,7 +1961,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Installed_Extensions_Uninstall_Extension_By_NameAsync(string organization, string publisherName, string extensionName, string reason, string reasonCode, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : Uri.EscapeDataString(extensionName))+"&reason=" + (reason==null? "" : Uri.EscapeDataString(reason))+"&reasonCode=" + (reasonCode==null? "" : Uri.EscapeDataString(reasonCode))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : System.Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : System.Uri.EscapeDataString(extensionName))+"&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason))+"&reasonCode=" + (reasonCode==null? "" : System.Uri.EscapeDataString(reasonCode))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1987,7 +1987,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Installed_Extensions_Uninstall_Extension_By_Name(string organization, string publisherName, string extensionName, string reason, string reasonCode, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : Uri.EscapeDataString(extensionName))+"&reason=" + (reason==null? "" : Uri.EscapeDataString(reason))+"&reasonCode=" + (reasonCode==null? "" : Uri.EscapeDataString(reasonCode))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : System.Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : System.Uri.EscapeDataString(extensionName))+"&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason))+"&reasonCode=" + (reasonCode==null? "" : System.Uri.EscapeDataString(reasonCode))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2013,7 +2013,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<InstalledExtension> Installed_Extensions_Install_Extension_By_NameAsync(string organization, string publisherName, string extensionName, string version, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : Uri.EscapeDataString(extensionName))+"/"+ (version==null? "" : Uri.EscapeDataString(version))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : System.Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : System.Uri.EscapeDataString(extensionName))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2045,7 +2045,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public InstalledExtension Installed_Extensions_Install_Extension_By_Name(string organization, string publisherName, string extensionName, string version, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : Uri.EscapeDataString(extensionName))+"/"+ (version==null? "" : Uri.EscapeDataString(version))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/extensionmanagement/installedextensionsbyname/"+ (publisherName==null? "" : System.Uri.EscapeDataString(publisherName))+"/"+ (extensionName==null? "" : System.Uri.EscapeDataString(extensionName))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

@@ -179,7 +179,7 @@ namespace MyNS
 		/// <returns>Expected response to a valid request</returns>
 		public async Task<Pet> ShowPetByIdAsync(string petId)
 		{
-			var requestUri = "pets/"+ (petId==null? "" : Uri.EscapeDataString(petId));
+			var requestUri = "pets/"+ (petId==null? "" : System.Uri.EscapeDataString(petId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -208,7 +208,7 @@ namespace MyNS
 		/// <returns>Expected response to a valid request</returns>
 		public Pet ShowPetById(string petId)
 		{
-			var requestUri = "pets/"+ (petId==null? "" : Uri.EscapeDataString(petId));
+			var requestUri = "pets/"+ (petId==null? "" : System.Uri.EscapeDataString(petId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

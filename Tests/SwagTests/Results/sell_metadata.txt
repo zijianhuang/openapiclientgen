@@ -462,7 +462,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<SalesTaxJurisdictions> GetSalesTaxJurisdictionsAsync(string countryCode)
 		{
-			var requestUri = "country/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/sales_tax_jurisdiction";
+			var requestUri = "country/"+ (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"/sales_tax_jurisdiction";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -491,7 +491,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public SalesTaxJurisdictions GetSalesTaxJurisdictions(string countryCode)
 		{
-			var requestUri = "country/"+ (countryCode==null? "" : Uri.EscapeDataString(countryCode))+"/sales_tax_jurisdiction";
+			var requestUri = "country/"+ (countryCode==null? "" : System.Uri.EscapeDataString(countryCode))+"/sales_tax_jurisdiction";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -521,7 +521,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<AutomotivePartsCompatibilityPolicyResponse> GetAutomotivePartsCompatibilityPoliciesAsync(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_automotive_parts_compatibility_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_automotive_parts_compatibility_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -551,7 +551,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public AutomotivePartsCompatibilityPolicyResponse GetAutomotivePartsCompatibilityPolicies(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_automotive_parts_compatibility_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_automotive_parts_compatibility_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -581,7 +581,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ItemConditionPolicyResponse> GetItemConditionPoliciesAsync(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_item_condition_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_item_condition_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -611,7 +611,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ItemConditionPolicyResponse GetItemConditionPolicies(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_item_condition_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_item_condition_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -641,7 +641,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListingStructurePolicyResponse> GetListingStructurePoliciesAsync(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_listing_structure_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_listing_structure_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -671,7 +671,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ListingStructurePolicyResponse GetListingStructurePolicies(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_listing_structure_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_listing_structure_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -701,7 +701,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<NegotiatedPricePolicyResponse> GetNegotiatedPricePoliciesAsync(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_negotiated_price_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_negotiated_price_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -731,7 +731,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public NegotiatedPricePolicyResponse GetNegotiatedPricePolicies(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_negotiated_price_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_negotiated_price_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -761,7 +761,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ProductAdoptionPolicyResponse> GetProductAdoptionPoliciesAsync(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_product_adoption_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_product_adoption_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -791,7 +791,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ProductAdoptionPolicyResponse GetProductAdoptionPolicies(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_product_adoption_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_product_adoption_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -821,7 +821,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ReturnPolicyResponse> GetReturnPoliciesAsync(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_return_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_return_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -851,7 +851,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public ReturnPolicyResponse GetReturnPolicies(string filter, string marketplace_id)
 		{
-			var requestUri = "marketplace/"+ (marketplace_id==null? "" : Uri.EscapeDataString(marketplace_id))+"/get_return_policies?filter=" + (filter==null? "" : Uri.EscapeDataString(filter));
+			var requestUri = "marketplace/"+ (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"/get_return_policies?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

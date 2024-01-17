@@ -138,7 +138,7 @@ namespace MyNS
 		/// <returns>Success - return response of type Connections array with 0 to n Connection</returns>
 		public async Task<Connection[]> GetConnectionsAsync(string authEventId)
 		{
-			var requestUri = "connections?authEventId=" + (authEventId==null? "" : Uri.EscapeDataString(authEventId));
+			var requestUri = "connections?authEventId=" + (authEventId==null? "" : System.Uri.EscapeDataString(authEventId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -168,7 +168,7 @@ namespace MyNS
 		/// <returns>Success - return response of type Connections array with 0 to n Connection</returns>
 		public Connection[] GetConnections(string authEventId)
 		{
-			var requestUri = "connections?authEventId=" + (authEventId==null? "" : Uri.EscapeDataString(authEventId));
+			var requestUri = "connections?authEventId=" + (authEventId==null? "" : System.Uri.EscapeDataString(authEventId));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -197,7 +197,7 @@ namespace MyNS
 		/// <param name="id">Unique identifier for retrieving single object</param>
 		public async Task DeleteConnectionAsync(string id)
 		{
-			var requestUri = "connections/"+ (id==null? "" : Uri.EscapeDataString(id));
+			var requestUri = "connections/"+ (id==null? "" : System.Uri.EscapeDataString(id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -220,7 +220,7 @@ namespace MyNS
 		/// <param name="id">Unique identifier for retrieving single object</param>
 		public void DeleteConnection(string id)
 		{
-			var requestUri = "connections/"+ (id==null? "" : Uri.EscapeDataString(id));
+			var requestUri = "connections/"+ (id==null? "" : System.Uri.EscapeDataString(id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

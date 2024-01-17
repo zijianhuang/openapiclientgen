@@ -148,7 +148,7 @@ namespace MyNS
 		/// <param name="requestBody">The list of identities containing the authorization IDs of the OAuth authorizations, such as session tokens retrieved by listed a users PATs, that should be checked for global access tokens.</param>
 		public async Task ListAsync(bool isPublic, string api_version, TokenAdminRevocation[] requestBody)
 		{
-			var requestUri = "_apis/tokenadministration/tokenlistglobalidentities?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadministration/tokenlistglobalidentities?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -179,7 +179,7 @@ namespace MyNS
 		/// <param name="requestBody">The list of identities containing the authorization IDs of the OAuth authorizations, such as session tokens retrieved by listed a users PATs, that should be checked for global access tokens.</param>
 		public void List(bool isPublic, string api_version, TokenAdminRevocation[] requestBody)
 		{
-			var requestUri = "_apis/tokenadministration/tokenlistglobalidentities?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadministration/tokenlistglobalidentities?isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -213,7 +213,7 @@ namespace MyNS
 		/// <returns>An an array containing all the session token objects corresponding to the user's PATs.</returns>
 		public async Task<TokenAdminPagedSessionTokens> ListAsync(string subjectDescriptor, int pageSize, string continuationToken, bool isPublic, string api_version, string[] requestBody)
 		{
-			var requestUri = "_apis/tokenadministration/tokenpersonalaccesstokens/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadministration/tokenpersonalaccesstokens/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -253,7 +253,7 @@ namespace MyNS
 		/// <returns>An an array containing all the session token objects corresponding to the user's PATs.</returns>
 		public TokenAdminPagedSessionTokens List(string subjectDescriptor, int pageSize, string continuationToken, bool isPublic, string api_version, string[] requestBody)
 		{
-			var requestUri = "_apis/tokenadministration/tokenpersonalaccesstokens/"+ (subjectDescriptor==null? "" : Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadministration/tokenpersonalaccesstokens/"+ (subjectDescriptor==null? "" : System.Uri.EscapeDataString(subjectDescriptor))+"&pageSize="+pageSize+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -291,7 +291,7 @@ namespace MyNS
 		/// <param name="requestBody">The list of objects containing the authorization IDs of the OAuth authorizations, such as session tokens retrieved by listed a users PATs, that should be revoked.</param>
 		public async Task Revoke_AuthorizationsAsync(string hostId, bool isPublic, string api_version, TokenAdministrationRevocation requestBody)
 		{
-			var requestUri = "_apis/tokenadministration/tokenrevocations?hostId=" + (hostId==null? "" : Uri.EscapeDataString(hostId))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadministration/tokenrevocations?hostId=" + (hostId==null? "" : System.Uri.EscapeDataString(hostId))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -323,7 +323,7 @@ namespace MyNS
 		/// <param name="requestBody">The list of objects containing the authorization IDs of the OAuth authorizations, such as session tokens retrieved by listed a users PATs, that should be revoked.</param>
 		public void Revoke_Authorizations(string hostId, bool isPublic, string api_version, TokenAdministrationRevocation requestBody)
 		{
-			var requestUri = "_apis/tokenadministration/tokenrevocations?hostId=" + (hostId==null? "" : Uri.EscapeDataString(hostId))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = "_apis/tokenadministration/tokenrevocations?hostId=" + (hostId==null? "" : System.Uri.EscapeDataString(hostId))+"&isPublic="+isPublic+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

@@ -264,7 +264,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<AdminBehavior[]> Behaviors_ListAsync(string organization, string processId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processadmin/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -295,7 +295,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public AdminBehavior[] Behaviors_List(string organization, string processId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processadmin/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -326,7 +326,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Processes_Export_Process_TemplateAsync(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/export/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/export/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -351,7 +351,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Processes_Export_Process_Template(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/export/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/export/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -376,7 +376,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<ProcessPromoteStatus> Processes_Import_Process_Template_StatusAsync(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/status/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/status/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -407,7 +407,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public ProcessPromoteStatus Processes_Import_Process_Template_Status(string organization, string id, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/status/"+ (id==null? "" : Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/status/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

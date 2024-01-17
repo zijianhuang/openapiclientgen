@@ -555,7 +555,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<WidgetTypesResponse> Widget_Types_Get_Widget_TypesAsync(string organization, Widget_Types_Get_Widget_TypesScope scope, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + scope+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + scope+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -586,7 +586,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public WidgetTypesResponse Widget_Types_Get_Widget_Types(string organization, Widget_Types_Get_Widget_TypesScope scope, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + scope+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes&$scope=" + scope+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -618,7 +618,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<WidgetMetadataResponse> Widget_Types_Get_Widget_MetadataAsync(string organization, string contributionId, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes/"+ (contributionId==null? "" : Uri.EscapeDataString(contributionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes/"+ (contributionId==null? "" : System.Uri.EscapeDataString(contributionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -650,7 +650,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public WidgetMetadataResponse Widget_Types_Get_Widget_Metadata(string organization, string contributionId, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes/"+ (contributionId==null? "" : Uri.EscapeDataString(contributionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/dashboard/widgettypes/"+ (contributionId==null? "" : System.Uri.EscapeDataString(contributionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -682,7 +682,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Dashboard[]> Dashboards_ListAsync(string organization, string project, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -714,7 +714,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Dashboard[] Dashboards_List(string organization, string project, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -746,7 +746,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<DashboardGroup> Dashboards_Replace_DashboardsAsync(string organization, string project, string team, string api_version, DashboardGroup requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -785,7 +785,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public DashboardGroup Dashboards_Replace_Dashboards(string organization, string project, string team, string api_version, DashboardGroup requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -825,7 +825,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Dashboard> Dashboards_CreateAsync(string organization, string project, string team, string api_version, Dashboard requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -865,7 +865,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Dashboard Dashboards_Create(string organization, string project, string team, string api_version, Dashboard requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -904,7 +904,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Dashboard> Dashboards_GetAsync(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -936,7 +936,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Dashboard Dashboards_Get(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -970,7 +970,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Dashboard> Dashboards_Replace_DashboardAsync(string organization, string project, string dashboardId, string team, string api_version, Dashboard requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1011,7 +1011,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Dashboard Dashboards_Replace_Dashboard(string organization, string project, string dashboardId, string team, string api_version, Dashboard requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1051,7 +1051,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Dashboards_DeleteAsync(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1078,7 +1078,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Dashboards_Delete(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1105,7 +1105,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Widget[]> Widgets_Get_WidgetsAsync(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1138,7 +1138,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Widget[] Widgets_Get_Widgets(string organization, string project, string dashboardId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1172,7 +1172,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Widget[]> Widgets_Replace_WidgetsAsync(string organization, string project, string dashboardId, string team, string api_version, Widget[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1213,7 +1213,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Widget[] Widgets_Replace_Widgets(string organization, string project, string dashboardId, string team, string api_version, Widget[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1254,7 +1254,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Widget> Widgets_CreateAsync(string organization, string project, string dashboardId, string team, string api_version, Widget requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1295,7 +1295,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Widget Widgets_Create(string organization, string project, string dashboardId, string team, string api_version, Widget requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1336,7 +1336,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Widget[]> Widgets_Update_WidgetsAsync(string organization, string project, string dashboardId, string team, string api_version, Widget[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1377,7 +1377,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Widget[] Widgets_Update_Widgets(string organization, string project, string dashboardId, string team, string api_version, Widget[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1418,7 +1418,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Widget> Widgets_Get_WidgetAsync(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1452,7 +1452,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Widget Widgets_Get_Widget(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1487,7 +1487,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Widget> Widgets_Replace_WidgetAsync(string organization, string project, string dashboardId, string widgetId, string team, string api_version, Widget requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1529,7 +1529,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Widget Widgets_Replace_Widget(string organization, string project, string dashboardId, string widgetId, string team, string api_version, Widget requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1570,7 +1570,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Dashboard> Widgets_DeleteAsync(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1604,7 +1604,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Dashboard Widgets_Delete(string organization, string project, string dashboardId, string widgetId, string team, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1639,7 +1639,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Widget> Widgets_Update_WidgetAsync(string organization, string project, string dashboardId, string widgetId, string team, string api_version, Widget requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1681,7 +1681,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Widget Widgets_Update_Widget(string organization, string project, string dashboardId, string widgetId, string team, string api_version, Widget requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/"+ (team==null? "" : Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (team==null? "" : System.Uri.EscapeDataString(team))+"/_apis/dashboard/dashboards/"+ (dashboardId==null? "" : System.Uri.EscapeDataString(dashboardId))+"/widgets/"+ (widgetId==null? "" : System.Uri.EscapeDataString(widgetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

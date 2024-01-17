@@ -1023,7 +1023,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Process[]> Processes_ListAsync(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/process/processes&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/process/processes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1053,7 +1053,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Process[] Processes_List(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/process/processes&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/process/processes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1084,7 +1084,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Process> Processes_GetAsync(string organization, string processId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/process/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/process/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1115,7 +1115,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Process Processes_Get(string organization, string processId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/process/processes/"+ (processId==null? "" : Uri.EscapeDataString(processId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/process/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1146,7 +1146,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TeamProjectReference[]> Projects_ListAsync(string organization, Projects_ListStateFilter stateFilter, int top, int skip, string continuationToken, bool getDefaultTeamImageUrl, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + stateFilter+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + stateFilter+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1177,7 +1177,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TeamProjectReference[] Projects_List(string organization, Projects_ListStateFilter stateFilter, int top, int skip, string continuationToken, bool getDefaultTeamImageUrl, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + stateFilter+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects&stateFilter=" + stateFilter+"&$top="+top+"&$skip="+skip+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&getDefaultTeamImageUrl="+getDefaultTeamImageUrl+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1208,7 +1208,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<OperationReference> Projects_CreateAsync(string organization, string api_version, TeamProject requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1246,7 +1246,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public OperationReference Projects_Create(string organization, string api_version, TeamProject requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1285,7 +1285,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TeamProject> Projects_GetAsync(string organization, string projectId, bool includeCapabilities, bool includeHistory, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"&includeCapabilities="+includeCapabilities+"&includeHistory="+includeHistory+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"&includeCapabilities="+includeCapabilities+"&includeHistory="+includeHistory+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1317,7 +1317,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TeamProject Projects_Get(string organization, string projectId, bool includeCapabilities, bool includeHistory, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"&includeCapabilities="+includeCapabilities+"&includeHistory="+includeHistory+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"&includeCapabilities="+includeCapabilities+"&includeHistory="+includeHistory+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1348,7 +1348,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<OperationReference> Projects_DeleteAsync(string organization, string projectId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1379,7 +1379,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public OperationReference Projects_Delete(string organization, string projectId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1411,7 +1411,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<OperationReference> Projects_UpdateAsync(string organization, string projectId, string api_version, TeamProject requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1450,7 +1450,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public OperationReference Projects_Update(string organization, string projectId, string api_version, TeamProject requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1489,7 +1489,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Avatar_Set_Project_AvatarAsync(string organization, string projectId, string api_version, ProjectAvatar requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1522,7 +1522,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Avatar_Set_Project_Avatar(string organization, string projectId, string api_version, ProjectAvatar requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1554,7 +1554,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Avatar_Remove_Project_AvatarAsync(string organization, string projectId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1579,7 +1579,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Avatar_Remove_Project_Avatar(string organization, string projectId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/avatar&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1605,7 +1605,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<ProjectProperty[]> Projects_Get_Project_PropertiesAsync(string organization, string projectId, string keys, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/properties&keys=" + (keys==null? "" : Uri.EscapeDataString(keys))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/properties&keys=" + (keys==null? "" : System.Uri.EscapeDataString(keys))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1637,7 +1637,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public ProjectProperty[] Projects_Get_Project_Properties(string organization, string projectId, string keys, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/properties&keys=" + (keys==null? "" : Uri.EscapeDataString(keys))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/properties&keys=" + (keys==null? "" : System.Uri.EscapeDataString(keys))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1671,7 +1671,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<WebApiTeam[]> Teams_Get_TeamsAsync(string organization, string projectId, bool mine, int top, int skip, bool expandIdentity, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1705,7 +1705,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public WebApiTeam[] Teams_Get_Teams(string organization, string projectId, bool mine, int top, int skip, bool expandIdentity, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1743,7 +1743,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<WebApiTeam> Teams_CreateAsync(string organization, string projectId, string api_version, WebApiTeam requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1788,7 +1788,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public WebApiTeam Teams_Create(string organization, string projectId, string api_version, WebApiTeam requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1828,7 +1828,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<WebApiTeam> Teams_GetAsync(string organization, string projectId, string teamId, bool expandIdentity, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1861,7 +1861,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public WebApiTeam Teams_Get(string organization, string projectId, string teamId, bool expandIdentity, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1893,7 +1893,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Teams_DeleteAsync(string organization, string projectId, string teamId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1919,7 +1919,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Teams_Delete(string organization, string projectId, string teamId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1945,7 +1945,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<WebApiTeam> Teams_UpdateAsync(string organization, string projectId, string teamId, string api_version, WebApiTeam requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1984,7 +1984,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public WebApiTeam Teams_Update(string organization, string projectId, string teamId, string api_version, WebApiTeam requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2023,7 +2023,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TeamMember[]> Teams_Get_Team_Members_With_Extended_PropertiesAsync(string organization, string projectId, string teamId, int top, int skip, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"/members&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"/members&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2055,7 +2055,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TeamMember[] Teams_Get_Team_Members_With_Extended_Properties(string organization, string projectId, string teamId, int top, int skip, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : Uri.EscapeDataString(teamId))+"/members&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/projects/"+ (projectId==null? "" : System.Uri.EscapeDataString(projectId))+"/teams/"+ (teamId==null? "" : System.Uri.EscapeDataString(teamId))+"/members&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2089,7 +2089,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<WebApiTeam[]> Teams_Get_All_TeamsAsync(string organization, bool mine, int top, int skip, bool expandIdentity, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2123,7 +2123,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public WebApiTeam[] Teams_Get_All_Teams(string organization, bool mine, int top, int skip, bool expandIdentity, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/teams&$mine="+mine+"&$top="+top+"&$skip="+skip+"&$expandIdentity="+expandIdentity+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

@@ -2188,7 +2188,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<INotificationDiagnosticLog[]> Diagnostic_Logs_ListAsync(string source, string organization, string entryId, System.DateTimeOffset startTime, System.DateTimeOffset endTime, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/diagnosticlogs/"+ (source==null? "" : Uri.EscapeDataString(source))+"/entries/"+ (entryId==null? "" : Uri.EscapeDataString(entryId))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/diagnosticlogs/"+ (source==null? "" : System.Uri.EscapeDataString(source))+"/entries/"+ (entryId==null? "" : System.Uri.EscapeDataString(entryId))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2222,7 +2222,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public INotificationDiagnosticLog[] Diagnostic_Logs_List(string source, string organization, string entryId, System.DateTimeOffset startTime, System.DateTimeOffset endTime, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/diagnosticlogs/"+ (source==null? "" : Uri.EscapeDataString(source))+"/entries/"+ (entryId==null? "" : Uri.EscapeDataString(entryId))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/diagnosticlogs/"+ (source==null? "" : System.Uri.EscapeDataString(source))+"/entries/"+ (entryId==null? "" : System.Uri.EscapeDataString(entryId))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2253,7 +2253,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationEventType[]> Event_Types_ListAsync(string organization, string publisherId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes&publisherId=" + (publisherId==null? "" : Uri.EscapeDataString(publisherId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes&publisherId=" + (publisherId==null? "" : System.Uri.EscapeDataString(publisherId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2284,7 +2284,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationEventType[] Event_Types_List(string organization, string publisherId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes&publisherId=" + (publisherId==null? "" : Uri.EscapeDataString(publisherId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes&publisherId=" + (publisherId==null? "" : System.Uri.EscapeDataString(publisherId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2315,7 +2315,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationEventType> Event_Types_GetAsync(string eventType, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes/"+ (eventType==null? "" : Uri.EscapeDataString(eventType))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes/"+ (eventType==null? "" : System.Uri.EscapeDataString(eventType))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2346,7 +2346,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationEventType Event_Types_Get(string eventType, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes/"+ (eventType==null? "" : Uri.EscapeDataString(eventType))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes/"+ (eventType==null? "" : System.Uri.EscapeDataString(eventType))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2375,7 +2375,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationAdminSettings> Settings_GetAsync(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2404,7 +2404,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationAdminSettings Settings_Get(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2433,7 +2433,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationAdminSettings> Settings_UpdateAsync(string organization, string api_version, NotificationAdminSettingsUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2469,7 +2469,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationAdminSettings Settings_Update(string organization, string api_version, NotificationAdminSettingsUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2507,7 +2507,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscriber> Subscribers_GetAsync(string subscriberId, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2538,7 +2538,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscriber Subscribers_Get(string subscriberId, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2569,7 +2569,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscriber> Subscribers_UpdateAsync(string subscriberId, string organization, string api_version, NotificationSubscriberUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2607,7 +2607,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscriber Subscribers_Update(string subscriberId, string organization, string api_version, NotificationSubscriberUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2644,7 +2644,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscription[]> Subscriptions_QueryAsync(string organization, string api_version, SubscriptionQuery requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptionquery&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptionquery&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2681,7 +2681,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscription[] Subscriptions_Query(string organization, string api_version, SubscriptionQuery requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptionquery&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptionquery&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2720,7 +2720,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscription[]> Subscriptions_ListAsync(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : System.Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2752,7 +2752,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscription[] Subscriptions_List(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : System.Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2782,7 +2782,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscription> Subscriptions_CreateAsync(string organization, string api_version, NotificationSubscriptionCreateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2819,7 +2819,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscription Subscriptions_Create(string organization, string api_version, NotificationSubscriptionCreateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2856,7 +2856,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscription> Subscriptions_GetAsync(string subscriptionId, string organization, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2886,7 +2886,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscription Subscriptions_Get(string subscriptionId, string organization, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2916,7 +2916,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Subscriptions_DeleteAsync(string subscriptionId, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2940,7 +2940,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Subscriptions_Delete(string subscriptionId, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2964,7 +2964,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscription> Subscriptions_UpdateAsync(string subscriptionId, string organization, string api_version, NotificationSubscriptionUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3001,7 +3001,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscription Subscriptions_Update(string subscriptionId, string organization, string api_version, NotificationSubscriptionUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3039,7 +3039,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<SubscriptionDiagnostics> Diagnostics_GetAsync(string subscriptionId, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3070,7 +3070,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public SubscriptionDiagnostics Diagnostics_Get(string subscriptionId, string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3101,7 +3101,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<SubscriptionDiagnostics> Diagnostics_UpdateAsync(string subscriptionId, string organization, string api_version, UpdateSubscripitonDiagnosticsParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3139,7 +3139,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public SubscriptionDiagnostics Diagnostics_Update(string subscriptionId, string organization, string api_version, UpdateSubscripitonDiagnosticsParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3177,7 +3177,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<SubscriptionUserSettings> Subscriptions_Update_Subscription_User_SettingsAsync(string subscriptionId, string userId, string organization, string api_version, SubscriptionUserSettings requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/Subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/usersettings/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/Subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/usersettings/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3215,7 +3215,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public SubscriptionUserSettings Subscriptions_Update_Subscription_User_Settings(string subscriptionId, string userId, string organization, string api_version, SubscriptionUserSettings requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/Subscriptions/"+ (subscriptionId==null? "" : Uri.EscapeDataString(subscriptionId))+"/usersettings/"+ (userId==null? "" : Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/Subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/usersettings/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3252,7 +3252,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<NotificationSubscriptionTemplate[]> Subscriptions_Get_Subscription_TemplatesAsync(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptiontemplates&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptiontemplates&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3282,7 +3282,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public NotificationSubscriptionTemplate[] Subscriptions_Get_Subscription_Templates(string organization, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/notification/subscriptiontemplates&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptiontemplates&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

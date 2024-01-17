@@ -1915,7 +1915,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestSuite[]> Test__Suites_Get_Suites_By_Test_Case_IdAsync(string organization, int testCaseId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/testplan/suites&testCaseId="+testCaseId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/testplan/suites&testCaseId="+testCaseId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1946,7 +1946,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestSuite[] Test__Suites_Get_Suites_By_Test_Case_Id(string organization, int testCaseId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/testplan/suites&testCaseId="+testCaseId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/testplan/suites&testCaseId="+testCaseId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1978,7 +1978,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestConfiguration[]> Configurations_ListAsync(string organization, string project, string continuationToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2010,7 +2010,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestConfiguration[] Configurations_List(string organization, string project, string continuationToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2042,7 +2042,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestConfiguration> Configurations_CreateAsync(string organization, string project, string api_version, TestConfigurationCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2081,7 +2081,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestConfiguration Configurations_Create(string organization, string project, string api_version, TestConfigurationCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2120,7 +2120,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Configurations_DeleteAsync(string organization, string project, int testConfiguartionId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2146,7 +2146,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Configurations_Delete(string organization, string project, int testConfiguartionId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2173,7 +2173,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestConfiguration> Configurations_UpdateAsync(string organization, string project, int testConfiguartionId, string api_version, TestConfigurationCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2213,7 +2213,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestConfiguration Configurations_Update(string organization, string project, int testConfiguartionId, string api_version, TestConfigurationCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations&testConfiguartionId="+testConfiguartionId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2252,7 +2252,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestConfiguration> Configurations_GetAsync(string organization, string project, int testConfigurationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations/"+testConfigurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations/"+testConfigurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2284,7 +2284,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestConfiguration Configurations_Get(string organization, string project, int testConfigurationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/configurations/"+testConfigurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/configurations/"+testConfigurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2319,7 +2319,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestPlan[]> Test__Plans_ListAsync(string organization, string project, string owner, string continuationToken, bool includePlanDetails, bool filterActivePlans, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans&owner=" + (owner==null? "" : Uri.EscapeDataString(owner))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&includePlanDetails="+includePlanDetails+"&filterActivePlans="+filterActivePlans+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans&owner=" + (owner==null? "" : System.Uri.EscapeDataString(owner))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&includePlanDetails="+includePlanDetails+"&filterActivePlans="+filterActivePlans+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2354,7 +2354,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestPlan[] Test__Plans_List(string organization, string project, string owner, string continuationToken, bool includePlanDetails, bool filterActivePlans, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans&owner=" + (owner==null? "" : Uri.EscapeDataString(owner))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&includePlanDetails="+includePlanDetails+"&filterActivePlans="+filterActivePlans+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans&owner=" + (owner==null? "" : System.Uri.EscapeDataString(owner))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&includePlanDetails="+includePlanDetails+"&filterActivePlans="+filterActivePlans+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2386,7 +2386,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestPlan> Test__Plans_CreateAsync(string organization, string project, string api_version, TestPlanCreateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2425,7 +2425,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestPlan Test__Plans_Create(string organization, string project, string api_version, TestPlanCreateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2464,7 +2464,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestPlan> Test__Plans_GetAsync(string organization, string project, int planId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2496,7 +2496,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestPlan Test__Plans_Get(string organization, string project, int planId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2528,7 +2528,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Test__Plans_DeleteAsync(string organization, string project, int planId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2554,7 +2554,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Test__Plans_Delete(string organization, string project, int planId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2581,7 +2581,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestPlan> Test__Plans_UpdateAsync(string organization, string project, int planId, string api_version, TestPlanUpdateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2621,7 +2621,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestPlan Test__Plans_Update(string organization, string project, int planId, string api_version, TestPlanUpdateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/plans/"+planId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2663,7 +2663,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestSuite[]> Test__Suites_Get_Test_Suites_For_PlanAsync(string organization, string project, int planId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string continuationToken, bool asTreeView, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2698,7 +2698,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestSuite[] Test__Suites_Get_Test_Suites_For_Plan(string organization, string project, int planId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string continuationToken, bool asTreeView, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&expand=" + expand+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&asTreeView="+asTreeView+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2731,7 +2731,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestSuite> Test__Suites_CreateAsync(string organization, string project, int planId, string api_version, TestSuiteCreateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2771,7 +2771,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestSuite Test__Suites_Create(string organization, string project, int planId, string api_version, TestSuiteCreateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2812,7 +2812,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestSuite> Test__Suites_GetAsync(string organization, string project, int planId, int suiteId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2846,7 +2846,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestSuite Test__Suites_Get(string organization, string project, int planId, int suiteId, Test__Suites_Get_Test_Suites_For_PlanExpand expand, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + expand+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2879,7 +2879,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Test__Suites_DeleteAsync(string organization, string project, int planId, int suiteId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -2906,7 +2906,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Test__Suites_Delete(string organization, string project, int planId, int suiteId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -2934,7 +2934,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestSuite> Test__Suites_UpdateAsync(string organization, string project, int planId, int suiteId, string api_version, TestSuiteUpdateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2975,7 +2975,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestSuite Test__Suites_Update(string organization, string project, int planId, int suiteId, string api_version, TestSuiteUpdateParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/suites/"+suiteId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3022,7 +3022,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestCase[]> Suite_Test_Case_Get_Test_Case_ListAsync(string organization, string project, int planId, int suiteId, string testIds, string configurationIds, string witFields, string continuationToken, bool returnIdentityRef, bool expand, Suite_Test_Case_Get_Test_Case_ListExcludeFlags excludeFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + excludeFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : System.Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : System.Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : System.Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + excludeFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3062,7 +3062,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestCase[] Suite_Test_Case_Get_Test_Case_List(string organization, string project, int planId, int suiteId, string testIds, string configurationIds, string witFields, string continuationToken, bool returnIdentityRef, bool expand, Suite_Test_Case_Get_Test_Case_ListExcludeFlags excludeFlags, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + excludeFlags+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&testIds=" + (testIds==null? "" : System.Uri.EscapeDataString(testIds))+"&configurationIds=" + (configurationIds==null? "" : System.Uri.EscapeDataString(configurationIds))+"&witFields=" + (witFields==null? "" : System.Uri.EscapeDataString(witFields))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&expand="+expand+"&excludeFlags=" + excludeFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3096,7 +3096,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestCase[]> Suite_Test_Case_AddAsync(string organization, string project, int planId, int suiteId, string api_version, SuiteTestCaseCreateUpdateParameters[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3137,7 +3137,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestCase[] Suite_Test_Case_Add(string organization, string project, int planId, int suiteId, string api_version, SuiteTestCaseCreateUpdateParameters[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3178,7 +3178,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestCase[]> Suite_Test_Case_UpdateAsync(string organization, string project, int planId, int suiteId, string api_version, SuiteTestCaseCreateUpdateParameters[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3219,7 +3219,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestCase[] Suite_Test_Case_Update(string organization, string project, int planId, int suiteId, string api_version, SuiteTestCaseCreateUpdateParameters[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3262,7 +3262,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestCase[]> Suite_Test_Case_Get_Test_CaseAsync(string organization, string project, int planId, int suiteId, string testCaseIds, string witFields, bool returnIdentityRef, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : System.Uri.EscapeDataString(testCaseIds))+"&witFields=" + (witFields==null? "" : System.Uri.EscapeDataString(witFields))+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3298,7 +3298,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestCase[] Suite_Test_Case_Get_Test_Case(string organization, string project, int planId, int suiteId, string testCaseIds, string witFields, bool returnIdentityRef, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&witFields=" + (witFields==null? "" : Uri.EscapeDataString(witFields))+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : System.Uri.EscapeDataString(testCaseIds))+"&witFields=" + (witFields==null? "" : System.Uri.EscapeDataString(witFields))+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3332,7 +3332,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Suite_Test_Case_Remove_Test_Cases_From_SuiteAsync(string organization, string project, int planId, int suiteId, string testCaseIds, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : System.Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3360,7 +3360,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Suite_Test_Case_Remove_Test_Cases_From_Suite(string organization, string project, int planId, int suiteId, string testCaseIds, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestCase/"+ (testCaseIds==null? "" : System.Uri.EscapeDataString(testCaseIds))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3393,7 +3393,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestPoint[]> Test_Point_Get_Points_ListAsync(string organization, string project, int planId, int suiteId, string testPointIds, string testCaseId, string continuationToken, bool returnIdentityRef, bool includePointDetails, bool isRecursive, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&testPointIds=" + (testPointIds==null? "" : Uri.EscapeDataString(testPointIds))+"&testCaseId=" + (testCaseId==null? "" : Uri.EscapeDataString(testCaseId))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&isRecursive="+isRecursive+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&testPointIds=" + (testPointIds==null? "" : System.Uri.EscapeDataString(testPointIds))+"&testCaseId=" + (testCaseId==null? "" : System.Uri.EscapeDataString(testCaseId))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&isRecursive="+isRecursive+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3432,7 +3432,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestPoint[] Test_Point_Get_Points_List(string organization, string project, int planId, int suiteId, string testPointIds, string testCaseId, string continuationToken, bool returnIdentityRef, bool includePointDetails, bool isRecursive, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&testPointIds=" + (testPointIds==null? "" : Uri.EscapeDataString(testPointIds))+"&testCaseId=" + (testCaseId==null? "" : Uri.EscapeDataString(testCaseId))+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&isRecursive="+isRecursive+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&testPointIds=" + (testPointIds==null? "" : System.Uri.EscapeDataString(testPointIds))+"&testCaseId=" + (testCaseId==null? "" : System.Uri.EscapeDataString(testCaseId))+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&isRecursive="+isRecursive+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3468,7 +3468,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestPoint[]> Test_Point_UpdateAsync(string organization, string project, int planId, int suiteId, bool includePointDetails, bool returnIdentityRef, string api_version, TestPointUpdateParams[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&includePointDetails="+includePointDetails+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&includePointDetails="+includePointDetails+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3511,7 +3511,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestPoint[] Test_Point_Update(string organization, string project, int planId, int suiteId, bool includePointDetails, bool returnIdentityRef, string api_version, TestPointUpdateParams[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&includePointDetails="+includePointDetails+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint&includePointDetails="+includePointDetails+"&returnIdentityRef="+returnIdentityRef+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3554,7 +3554,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestPoint[]> Test_Point_Get_PointsAsync(string organization, string project, int planId, int suiteId, string pointIds, bool returnIdentityRef, bool includePointDetails, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint/"+ (pointIds==null? "" : Uri.EscapeDataString(pointIds))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint/"+ (pointIds==null? "" : System.Uri.EscapeDataString(pointIds))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3590,7 +3590,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestPoint[] Test_Point_Get_Points(string organization, string project, int planId, int suiteId, string pointIds, bool returnIdentityRef, bool includePointDetails, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint/"+ (pointIds==null? "" : Uri.EscapeDataString(pointIds))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/"+planId+"/Suites/"+suiteId+"/TestPoint/"+ (pointIds==null? "" : System.Uri.EscapeDataString(pointIds))+"&returnIdentityRef="+returnIdentityRef+"&includePointDetails="+includePointDetails+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3623,7 +3623,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<CloneTestPlanOperationInformation> Test_Plan_Clone_Clone_Test_PlanAsync(string organization, string project, bool deepClone, string api_version, CloneTestPlanParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3663,7 +3663,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public CloneTestPlanOperationInformation Test_Plan_Clone_Clone_Test_Plan(string organization, string project, bool deepClone, string api_version, CloneTestPlanParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3702,7 +3702,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<CloneTestPlanOperationInformation> Test_Plan_Clone_GetAsync(string organization, string project, int cloneOperationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3734,7 +3734,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public CloneTestPlanOperationInformation Test_Plan_Clone_Get(string organization, string project, int cloneOperationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Plans/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3766,7 +3766,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<SuiteEntry[]> Test__Suite__Entry_ListAsync(string organization, string project, int suiteId, SuiteEntryUpdateParamsSuiteEntryType suiteEntryType, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&suiteEntryType=" + suiteEntryType+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&suiteEntryType=" + suiteEntryType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -3798,7 +3798,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public SuiteEntry[] Test__Suite__Entry_List(string organization, string project, int suiteId, SuiteEntryUpdateParamsSuiteEntryType suiteEntryType, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&suiteEntryType=" + suiteEntryType+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&suiteEntryType=" + suiteEntryType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -3831,7 +3831,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<SuiteEntry[]> Test__Suite__Entry_Reorder_Suite_EntriesAsync(string organization, string project, int suiteId, string api_version, SuiteEntryUpdateParams[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3871,7 +3871,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public SuiteEntry[] Test__Suite__Entry_Reorder_Suite_Entries(string organization, string project, int suiteId, string api_version, SuiteEntryUpdateParams[] requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/suiteentry/"+suiteId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3911,7 +3911,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<CloneTestSuiteOperationInformation> Test_Suite_Clone_Clone_Test_SuiteAsync(string organization, string project, bool deepClone, string api_version, CloneTestSuiteParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3951,7 +3951,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public CloneTestSuiteOperationInformation Test_Suite_Clone_Clone_Test_Suite(string organization, string project, bool deepClone, string api_version, CloneTestSuiteParams requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation&deepClone="+deepClone+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3990,7 +3990,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<CloneTestSuiteOperationInformation> Test_Suite_Clone_GetAsync(string organization, string project, int cloneOperationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4022,7 +4022,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public CloneTestSuiteOperationInformation Test_Suite_Clone_Get(string organization, string project, int cloneOperationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/Suites/CloneOperation/"+cloneOperationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4054,7 +4054,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Test_Cases_DeleteAsync(string organization, string project, int testCaseId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/testcases/"+testCaseId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/testcases/"+testCaseId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4080,7 +4080,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Test_Cases_Delete(string organization, string project, int testCaseId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/testcases/"+testCaseId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/testcases/"+testCaseId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4106,7 +4106,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestVariable[]> Variables_ListAsync(string organization, string project, string continuationToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4138,7 +4138,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestVariable[] Variables_List(string organization, string project, string continuationToken, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4170,7 +4170,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestVariable> Variables_CreateAsync(string organization, string project, string api_version, TestVariableCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4209,7 +4209,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestVariable Variables_Create(string organization, string project, string api_version, TestVariableCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4248,7 +4248,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestVariable> Variables_GetAsync(string organization, string project, int testVariableId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4280,7 +4280,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestVariable Variables_Get(string organization, string project, int testVariableId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4312,7 +4312,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task Variables_DeleteAsync(string organization, string project, int testVariableId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -4338,7 +4338,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public void Variables_Delete(string organization, string project, int testVariableId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -4365,7 +4365,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<TestVariable> Variables_UpdateAsync(string organization, string project, int testVariableId, string api_version, TestVariableCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4405,7 +4405,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public TestVariable Variables_Update(string organization, string project, int testVariableId, string api_version, TestVariableCreateUpdateParameters requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testplan/variables/"+testVariableId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

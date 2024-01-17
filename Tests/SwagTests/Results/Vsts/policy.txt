@@ -345,7 +345,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyConfiguration[]> Configurations_ListAsync(string organization, string project, string scope, int top, string continuationToken, string policyType, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations&scope=" + (scope==null? "" : Uri.EscapeDataString(scope))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&policyType=" + (policyType==null? "" : Uri.EscapeDataString(policyType))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations&scope=" + (scope==null? "" : System.Uri.EscapeDataString(scope))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&policyType=" + (policyType==null? "" : System.Uri.EscapeDataString(policyType))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -386,7 +386,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyConfiguration[] Configurations_List(string organization, string project, string scope, int top, string continuationToken, string policyType, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations&scope=" + (scope==null? "" : Uri.EscapeDataString(scope))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : Uri.EscapeDataString(continuationToken))+"&policyType=" + (policyType==null? "" : Uri.EscapeDataString(policyType))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations&scope=" + (scope==null? "" : System.Uri.EscapeDataString(scope))+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&policyType=" + (policyType==null? "" : System.Uri.EscapeDataString(policyType))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -418,7 +418,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyConfiguration> Configurations_GetAsync(string organization, string project, int configurationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -450,7 +450,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyConfiguration Configurations_Get(string organization, string project, int configurationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -483,7 +483,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyConfiguration> Configurations_UpdateAsync(string organization, string project, int configurationId, string api_version, PolicyConfiguration requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -523,7 +523,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyConfiguration Configurations_Update(string organization, string project, int configurationId, string api_version, PolicyConfiguration requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -562,7 +562,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyConfiguration> Configurations_CreateAsync(string organization, string project, int configurationId, string api_version, PolicyConfiguration requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -601,7 +601,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyConfiguration Configurations_Create(string organization, string project, int configurationId, string api_version, PolicyConfiguration requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -639,7 +639,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		public async Task Configurations_DeleteAsync(string organization, string project, int configurationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -664,7 +664,7 @@ namespace MyNS
 		/// <param name="api_version">Version of the API to use.  This should be set to '6.0-preview.1' to use this version of the api.</param>
 		public void Configurations_Delete(string organization, string project, int configurationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -692,7 +692,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyConfiguration[]> Revisions_ListAsync(string organization, string project, int configurationId, int top, int skip, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -726,7 +726,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyConfiguration[] Revisions_List(string organization, string project, int configurationId, int top, int skip, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -759,7 +759,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyConfiguration> Revisions_GetAsync(string organization, string project, int configurationId, int revisionId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions/"+revisionId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions/"+revisionId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -792,7 +792,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyConfiguration Revisions_Get(string organization, string project, int configurationId, int revisionId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions/"+revisionId+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/configurations/"+configurationId+"/revisions/"+revisionId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -833,7 +833,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyEvaluationRecord[]> Evaluations_ListAsync(string organization, string project, string artifactId, bool includeNotApplicable, int top, int skip, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations&artifactId=" + (artifactId==null? "" : Uri.EscapeDataString(artifactId))+"&includeNotApplicable="+includeNotApplicable+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/evaluations&artifactId=" + (artifactId==null? "" : System.Uri.EscapeDataString(artifactId))+"&includeNotApplicable="+includeNotApplicable+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -874,7 +874,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyEvaluationRecord[] Evaluations_List(string organization, string project, string artifactId, bool includeNotApplicable, int top, int skip, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations&artifactId=" + (artifactId==null? "" : Uri.EscapeDataString(artifactId))+"&includeNotApplicable="+includeNotApplicable+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/evaluations&artifactId=" + (artifactId==null? "" : System.Uri.EscapeDataString(artifactId))+"&includeNotApplicable="+includeNotApplicable+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -910,7 +910,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyEvaluationRecord> Evaluations_GetAsync(string organization, string project, string evaluationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : System.Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -946,7 +946,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyEvaluationRecord Evaluations_Get(string organization, string project, string evaluationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : System.Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -985,7 +985,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyEvaluationRecord> Evaluations_Requeue_Policy_EvaluationAsync(string organization, string project, string evaluationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : System.Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1024,7 +1024,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyEvaluationRecord Evaluations_Requeue_Policy_Evaluation(string organization, string project, string evaluationId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/evaluations/"+ (evaluationId==null? "" : System.Uri.EscapeDataString(evaluationId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1055,7 +1055,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyType[]> Types_ListAsync(string organization, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/types&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/types&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1086,7 +1086,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyType[] Types_List(string organization, string project, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/types&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/types&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
@@ -1118,7 +1118,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<PolicyType> Types_GetAsync(string organization, string project, string typeId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/types/"+ (typeId==null? "" : Uri.EscapeDataString(typeId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/types/"+ (typeId==null? "" : System.Uri.EscapeDataString(typeId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -1150,7 +1150,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public PolicyType Types_Get(string organization, string project, string typeId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/policy/types/"+ (typeId==null? "" : Uri.EscapeDataString(typeId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/policy/types/"+ (typeId==null? "" : System.Uri.EscapeDataString(typeId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

@@ -82,7 +82,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<SessionResponse> Provenance_CreateSessionAsync(string organization, string protocol, string project, string api_version, SessionRequest requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/provenance/session/"+ (protocol==null? "" : Uri.EscapeDataString(protocol))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/provenance/session/"+ (protocol==null? "" : System.Uri.EscapeDataString(protocol))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -122,7 +122,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public SessionResponse Provenance_CreateSession(string organization, string protocol, string project, string api_version, SessionRequest requestBody)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/"+ (project==null? "" : Uri.EscapeDataString(project))+"/_apis/provenance/session/"+ (protocol==null? "" : Uri.EscapeDataString(protocol))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/provenance/session/"+ (protocol==null? "" : System.Uri.EscapeDataString(protocol))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

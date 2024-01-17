@@ -324,7 +324,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Pet[]> FindPetsByTagsAsync(string[] tags)
 		{
-			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -354,7 +354,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Pet[] FindPetsByTags(string[] tags)
 		{
-			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "pet/findByTags?"+string.Join("&", tags.Select(z => $"tags={System.Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;

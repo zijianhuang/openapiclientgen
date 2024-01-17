@@ -138,7 +138,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<Operation> Operations_GetAsync(string operationId, string organization, string pluginId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/operations/"+ (operationId==null? "" : Uri.EscapeDataString(operationId))+"&pluginId=" + (pluginId==null? "" : Uri.EscapeDataString(pluginId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/operations/"+ (operationId==null? "" : System.Uri.EscapeDataString(operationId))+"&pluginId=" + (pluginId==null? "" : System.Uri.EscapeDataString(pluginId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await client.SendAsync(httpRequestMessage);
@@ -172,7 +172,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public Operation Operations_Get(string operationId, string organization, string pluginId, string api_version)
 		{
-			var requestUri = ""+ (organization==null? "" : Uri.EscapeDataString(organization))+"/_apis/operations/"+ (operationId==null? "" : Uri.EscapeDataString(operationId))+"&pluginId=" + (pluginId==null? "" : Uri.EscapeDataString(pluginId))+"&api-version=" + (api_version==null? "" : Uri.EscapeDataString(api_version));
+			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/operations/"+ (operationId==null? "" : System.Uri.EscapeDataString(operationId))+"&pluginId=" + (pluginId==null? "" : System.Uri.EscapeDataString(pluginId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 			var responseMessage = client.SendAsync(httpRequestMessage).Result;
