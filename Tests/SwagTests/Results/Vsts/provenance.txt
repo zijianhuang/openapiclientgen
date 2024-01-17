@@ -54,19 +54,19 @@ namespace MyNS
 	public partial class MyClient
 	{
 		
-		private System.Net.Http.HttpClient client;
+		private System.Net.Http.HttpClient httpClient;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
 		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
+			if (httpClient == null)
+				throw new ArgumentNullException("Null HttpClient.", "httpClient");
 
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
+			if (httpClient.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "httpClient");
 
-			this.client = client;
+			this.httpClient = httpClient;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
@@ -91,7 +91,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -131,7 +131,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

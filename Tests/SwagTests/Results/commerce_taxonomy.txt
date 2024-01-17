@@ -451,19 +451,19 @@ namespace MyNS
 	public partial class MyClient
 	{
 		
-		private System.Net.Http.HttpClient client;
+		private System.Net.Http.HttpClient httpClient;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
 		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
+			if (httpClient == null)
+				throw new ArgumentNullException("Null HttpClient.", "httpClient");
 
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
+			if (httpClient.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "httpClient");
 
-			this.client = client;
+			this.httpClient = httpClient;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
@@ -479,7 +479,7 @@ namespace MyNS
 			var requestUri = "get_default_category_tree_id?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -509,7 +509,7 @@ namespace MyNS
 			var requestUri = "get_default_category_tree_id?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -539,7 +539,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -569,7 +569,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -600,7 +600,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_subtree?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -631,7 +631,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_subtree?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -662,7 +662,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_suggestions&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -693,7 +693,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_suggestions&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -723,7 +723,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_item_aspects_for_category?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -753,7 +753,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_item_aspects_for_category?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -784,7 +784,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_properties&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -815,7 +815,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_properties&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -848,7 +848,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_property_values&compatibility_property=" + (compatibility_property==null? "" : System.Uri.EscapeDataString(compatibility_property))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -881,7 +881,7 @@ namespace MyNS
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_property_values&compatibility_property=" + (compatibility_property==null? "" : System.Uri.EscapeDataString(compatibility_property))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

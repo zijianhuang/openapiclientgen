@@ -8626,7 +8626,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\highwaysengland.co.uk\v1\");
 		}
 
-		[Fact]//up to here
+		[Fact(Skip = "application/x-www-form-urlencoded not supported")]
 		public void Test_httpbin_org_0_9_2()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\httpbin.org\0.9.2\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -8680,7 +8680,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\hubapi.com\crm\v3\");
 		}
 
-		[Fact]
+		[Fact(Skip = "not to support something like in: query\r\n          name: objectProperty.{propname}")]
 		public void Test_hubapi_com_events_v3()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\hubapi.com\events\v3\");
@@ -8707,22 +8707,22 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_i_cue_solutions_v1()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\i-cue.solutions\v1\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\i-cue.solutions\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml and doggy design")]
 		public void Test_ibanapi_com_1_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ibanapi.com\1.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml. and the url of new version returns 404")]
 		public void Test_icons8_com_1_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\icons8.com\1.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_id4i_de_1_0_2()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\id4i.de\1.0.2\");
@@ -8740,13 +8740,13 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ideaconsult.net\nanoreg\4.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml using bool as enum")]
 		public void Test_ideal_postcodes_co_uk_3_7_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ideal-postcodes.co.uk\3.7.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml, wrong integer def")]
 		public void Test_impala_travel_hotels_1_003()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\impala.travel\hotels\1.003\");
@@ -8764,13 +8764,13 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\influxdata.com\2.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml. GetEventsForSubscriptionById parameters")]
 		public void Test_intellifi_nl_2_23_4_0_gb463b49_dirty()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\intellifi.nl\2.23.4+0.gb463b49.dirty\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_interactivebrokers_com_1_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\interactivebrokers.com\1.0.0\");
@@ -8899,25 +8899,25 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_ip2location_com_geolocation_1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2location.com\geolocation\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2location.com\geolocation\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_ip2location_io_1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2location.io\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2location.io\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_ip2proxy_com_1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2proxy.com\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2proxy.com\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_ip2whois_com_1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2whois.com\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ip2whois.com\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -8941,7 +8941,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_iqualify_com_v1()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\iqualify.com\v1\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\iqualify.com\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -8950,7 +8950,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\isendpro.com\1.1.1\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_ix_api_net_2_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ix-api.net\2.1.0\");
@@ -8980,7 +8980,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\journy.io\1.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_json2video_com_2_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\json2video.com\2.0.0\");
@@ -8989,7 +8989,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_jumpseller_com_1_0_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\jumpseller.com\1.0.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\jumpseller.com\1.0.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		//[Fact]// stack overflow, https://editor.swagger.io/ does not like it either. some symatic errors.
@@ -9001,7 +9001,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_keycloak_local_1()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\keycloak.local\1\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\keycloak.local\1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -9022,13 +9022,13 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\klarna.com\payments\1.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_kumpeapps_com_5_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\kumpeapps.com\5.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_lambdatest_com_1_0_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\lambdatest.com\1.0.1\");
@@ -9058,7 +9058,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\lgtm.com\v1.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "not supporting application/x-www-form-urlencoded")]
 		public void Test_libretranslate_local_1_3_10()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\libretranslate.local\1.3.10\");

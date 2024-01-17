@@ -257,7 +257,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			CodeMemberField clientField = new()
 			{
 				Attributes = MemberAttributes.Private,
-				Name = "client",
+				Name = "httpClient",
 				Type = new CodeTypeReference("System.Net.Http.HttpClient")
 			};
 			targetClass.Members.Add(clientField);
@@ -281,20 +281,20 @@ namespace Fonlow.OpenApiClientGen.CS
 
 			// Add parameters.
 			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
-				"System.Net.Http.HttpClient", "client"));
+				"System.Net.Http.HttpClient", "httpClient"));
 
 			constructor.Parameters.Add(new CodeParameterDeclarationExpression(
 				settings.UseSystemTextJson ? "JsonSerializerOptions" : "JsonSerializerSettings", "jsonSerializerSettings=null"));
 
-			constructor.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (client == null)
-				throw new ArgumentNullException(""Null HttpClient."", ""client"");
+			constructor.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (httpClient == null)
+				throw new ArgumentNullException(""Null HttpClient."", ""httpClient"");
 "));
-			constructor.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (client.BaseAddress == null)
-				throw new ArgumentNullException(""HttpClient has no BaseAddress"", ""client"");
+			constructor.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"if (httpClient.BaseAddress == null)
+				throw new ArgumentNullException(""HttpClient has no BaseAddress"", ""httpClient"");
 "));
 			// Add field initialization logic
-			sharedContext.ClientReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "client");
-			constructor.Statements.Add(new CodeAssignStatement(sharedContext.ClientReference, new CodeArgumentReferenceExpression("client")));
+			sharedContext.ClientReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "httpClient");
+			constructor.Statements.Add(new CodeAssignStatement(sharedContext.ClientReference, new CodeArgumentReferenceExpression("httpClient")));
 
 			sharedContext.JsonSettingsReference = new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "jsonSerializerSettings");
 			constructor.Statements.Add(new CodeAssignStatement(sharedContext.JsonSettingsReference, new CodeArgumentReferenceExpression("jsonSerializerSettings")));

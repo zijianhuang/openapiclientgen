@@ -79,10 +79,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						.Replace('#', '_')
 						.Replace('|', '_')
 						.Replace("'", "_")
+						.Replace("=", "_")
 						.Replace(">", "_")
 						.Replace("<", "_")
 						.Replace("!", "_")
 						.Replace(";", "_")
+						.Replace("`", "_")
 						.Replace("&", "And")
 						.Replace("%", "Percent")
 						.Replace('[', '_').Replace("]", "")
@@ -167,7 +169,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				.Replace("{", "").Replace("}", "")
 				.Replace("+", "Plus")
 				.Replace("-", "Minus")
-				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace("'", "_")
+				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace("'", "_").Replace("`", "_")
 				.Replace(' ', '_'));
 		}
 

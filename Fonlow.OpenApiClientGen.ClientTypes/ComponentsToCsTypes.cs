@@ -371,6 +371,24 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					typeDeclaration.Members.Add(clientField);
 					k++;
 				}
+				else if (enumMember is OpenApiFloat floatMember)
+				{
+					string memberName = "_" + floatMember.Value.ToString();
+					double floatValue = floatMember.Value;
+					CodeMemberField clientField = new()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(floatValue),
+					};
+
+					if (settings.DecorateDataModelWithDataContract)
+					{
+						clientField.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.EnumMemberAttribute"));
+					}
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
 				else if (enumMember is OpenApiNull nullMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
 					string memberName = "_null";

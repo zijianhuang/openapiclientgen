@@ -515,19 +515,19 @@ namespace MyNS
 	public partial class MyClient
 	{
 		
-		private System.Net.Http.HttpClient client;
+		private System.Net.Http.HttpClient httpClient;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
 		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
+			if (httpClient == null)
+				throw new ArgumentNullException("Null HttpClient.", "httpClient");
 
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
+			if (httpClient.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "httpClient");
 
-			this.client = client;
+			this.httpClient = httpClient;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
@@ -544,7 +544,7 @@ namespace MyNS
 			var requestUri = "customer_service_metric/"+ (customer_service_metric_type==null? "" : System.Uri.EscapeDataString(customer_service_metric_type))+"/"+ (evaluation_type==null? "" : System.Uri.EscapeDataString(evaluation_type))+"&evaluation_marketplace_id=" + (evaluation_marketplace_id==null? "" : System.Uri.EscapeDataString(evaluation_marketplace_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -575,7 +575,7 @@ namespace MyNS
 			var requestUri = "customer_service_metric/"+ (customer_service_metric_type==null? "" : System.Uri.EscapeDataString(customer_service_metric_type))+"/"+ (evaluation_type==null? "" : System.Uri.EscapeDataString(evaluation_type))+"&evaluation_marketplace_id=" + (evaluation_marketplace_id==null? "" : System.Uri.EscapeDataString(evaluation_marketplace_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -603,7 +603,7 @@ namespace MyNS
 			var requestUri = "seller_standards_profile";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -631,7 +631,7 @@ namespace MyNS
 			var requestUri = "seller_standards_profile";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -661,7 +661,7 @@ namespace MyNS
 			var requestUri = "seller_standards_profile/"+ (program==null? "" : System.Uri.EscapeDataString(program))+"/"+ (cycle==null? "" : System.Uri.EscapeDataString(cycle));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -691,7 +691,7 @@ namespace MyNS
 			var requestUri = "seller_standards_profile/"+ (program==null? "" : System.Uri.EscapeDataString(program))+"/"+ (cycle==null? "" : System.Uri.EscapeDataString(cycle));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -723,7 +723,7 @@ namespace MyNS
 			var requestUri = "traffic_report?dimension=" + (dimension==null? "" : System.Uri.EscapeDataString(dimension))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&metric=" + (metric==null? "" : System.Uri.EscapeDataString(metric))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -755,7 +755,7 @@ namespace MyNS
 			var requestUri = "traffic_report?dimension=" + (dimension==null? "" : System.Uri.EscapeDataString(dimension))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&metric=" + (metric==null? "" : System.Uri.EscapeDataString(metric))+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

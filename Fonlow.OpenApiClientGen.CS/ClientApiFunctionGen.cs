@@ -284,7 +284,8 @@ namespace Fonlow.OpenApiClientGen.CS
 		{
 			var cancellationToken = settings.CancellationTokenEnabled? ", cancellationToken" : String.Empty;
 			method.Statements.Add(new CodeVariableDeclarationStatement(
-				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await client.SendAsync(httpRequestMessage{cancellationToken})") : new CodeSnippetExpression($"client.SendAsync(httpRequestMessage{cancellationToken}).Result")));
+				new CodeTypeReference("var"), "responseMessage", forAsync ? new CodeSnippetExpression($"await httpClient.SendAsync(httpRequestMessage{cancellationToken})") 
+				: new CodeSnippetExpression($"httpClient.SendAsync(httpRequestMessage{cancellationToken}).Result")));
 		}
 
 		void RenderPostOrPutImplementation(OperationType httpMethod)

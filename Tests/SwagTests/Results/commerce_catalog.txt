@@ -1113,19 +1113,19 @@ namespace MyNS
 	public partial class MyClient
 	{
 		
-		private System.Net.Http.HttpClient client;
+		private System.Net.Http.HttpClient httpClient;
 		
 		private JsonSerializerSettings jsonSerializerSettings;
 		
-		public MyClient(System.Net.Http.HttpClient client, JsonSerializerSettings jsonSerializerSettings=null)
+		public MyClient(System.Net.Http.HttpClient httpClient, JsonSerializerSettings jsonSerializerSettings=null)
 		{
-			if (client == null)
-				throw new ArgumentNullException("Null HttpClient.", "client");
+			if (httpClient == null)
+				throw new ArgumentNullException("Null HttpClient.", "httpClient");
 
-			if (client.BaseAddress == null)
-				throw new ArgumentNullException("HttpClient has no BaseAddress", "client");
+			if (httpClient.BaseAddress == null)
+				throw new ArgumentNullException("HttpClient has no BaseAddress", "httpClient");
 
-			this.client = client;
+			this.httpClient = httpClient;
 			this.jsonSerializerSettings = jsonSerializerSettings;
 		}
 		
@@ -1140,7 +1140,7 @@ namespace MyNS
 			var requestUri = "change_request/"+ (change_request_id==null? "" : System.Uri.EscapeDataString(change_request_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1169,7 +1169,7 @@ namespace MyNS
 			var requestUri = "change_request/"+ (change_request_id==null? "" : System.Uri.EscapeDataString(change_request_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1200,7 +1200,7 @@ namespace MyNS
 			var requestUri = "change_request?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1231,7 +1231,7 @@ namespace MyNS
 			var requestUri = "change_request?filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1265,7 +1265,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1294,7 +1294,7 @@ namespace MyNS
 			requestSerializer.Serialize(requestWriter, requestBody);
 			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1318,7 +1318,7 @@ namespace MyNS
 			var requestUri = "product/"+ (epid==null? "" : System.Uri.EscapeDataString(epid));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1347,7 +1347,7 @@ namespace MyNS
 			var requestUri = "product/"+ (epid==null? "" : System.Uri.EscapeDataString(epid));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1383,7 +1383,7 @@ namespace MyNS
 			var requestUri = "product_summary/search?aspect_filter=" + (aspect_filter==null? "" : System.Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : System.Uri.EscapeDataString(category_ids))+"&fieldgroups=" + (fieldgroups==null? "" : System.Uri.EscapeDataString(fieldgroups))+"&gtin=" + (gtin==null? "" : System.Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&mpn=" + (mpn==null? "" : System.Uri.EscapeDataString(mpn))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1419,7 +1419,7 @@ namespace MyNS
 			var requestUri = "product_summary/search?aspect_filter=" + (aspect_filter==null? "" : System.Uri.EscapeDataString(aspect_filter))+"&category_ids=" + (category_ids==null? "" : System.Uri.EscapeDataString(category_ids))+"&fieldgroups=" + (fieldgroups==null? "" : System.Uri.EscapeDataString(fieldgroups))+"&gtin=" + (gtin==null? "" : System.Uri.EscapeDataString(gtin))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&mpn=" + (mpn==null? "" : System.Uri.EscapeDataString(mpn))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset))+"&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1450,7 +1450,7 @@ namespace MyNS
 			var requestUri = "get_product_metadata?epid=" + (epid==null? "" : System.Uri.EscapeDataString(epid))+"&other_applicable_category_ids=" + (other_applicable_category_ids==null? "" : System.Uri.EscapeDataString(other_applicable_category_ids))+"&primary_category_id=" + (primary_category_id==null? "" : System.Uri.EscapeDataString(primary_category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1481,7 +1481,7 @@ namespace MyNS
 			var requestUri = "get_product_metadata?epid=" + (epid==null? "" : System.Uri.EscapeDataString(epid))+"&other_applicable_category_ids=" + (other_applicable_category_ids==null? "" : System.Uri.EscapeDataString(other_applicable_category_ids))+"&primary_category_id=" + (primary_category_id==null? "" : System.Uri.EscapeDataString(primary_category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1511,7 +1511,7 @@ namespace MyNS
 			var requestUri = "get_product_metadata_for_categories?other_applicable_category_ids=" + (other_applicable_category_ids==null? "" : System.Uri.EscapeDataString(other_applicable_category_ids))+"&primary_category_id=" + (primary_category_id==null? "" : System.Uri.EscapeDataString(primary_category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = await client.SendAsync(httpRequestMessage);
+			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();
@@ -1541,7 +1541,7 @@ namespace MyNS
 			var requestUri = "get_product_metadata_for_categories?other_applicable_category_ids=" + (other_applicable_category_ids==null? "" : System.Uri.EscapeDataString(other_applicable_category_ids))+"&primary_category_id=" + (primary_category_id==null? "" : System.Uri.EscapeDataString(primary_category_id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
-			var responseMessage = client.SendAsync(httpRequestMessage).Result;
+			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
 			{
 				responseMessage.EnsureSuccessStatusCodeEx();

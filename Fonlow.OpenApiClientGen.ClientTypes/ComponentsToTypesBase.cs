@@ -80,6 +80,16 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 			ComponentsSchemas = components.Schemas;//.OrderBy(d => d.Value.Reference != null).OrderBy(k => k.Value.Properties.Count > 0).OrderBy(g => g.Value.AllOf.Count > 0).OrderBy(d => d.Value.Type != "array"); //so simple complex types will be handled first to be referenced by more complex ones.
+			if (components.RequestBodies != null)
+			{
+				var stronglyTypedRequestBodies = ExtractRequestBodiesOfApplicationJson(components.RequestBodies);
+				foreach (var t in stronglyTypedRequestBodies)
+				{
+					ComponentsSchemas.Add(t);
+				}
+
+			}
+
 			var classNamespaceNames = NameFunc.FindNamespacesInClassNames(ComponentsSchemas.Keys);
 
 			if (classNamespaceNames.Length > 0)
@@ -129,7 +139,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				string classNamespaceText = NameFunc.GetNamespaceOfClassName(refId);
 				if (string.IsNullOrEmpty(classNamespaceText))
 				{
-					classNamespaceText=settings.ClientNamespace;
+					classNamespaceText = settings.ClientNamespace;
 				}
 
 				CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, refId, classNamespaceText);  // ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
@@ -213,7 +223,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				refToType = propertySchema.AnyOf[0];
 			}
-			
+
 			if (refToType == null)
 			{
 				Trace.TraceWarning($"Property '{propertyKey}' of {currentTypeName} may be of type object.");
@@ -306,7 +316,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingDeclaration != null)
 					{
 						string existingTypeName = existingDeclaration.Name;
-						CodeTypeReference enumArrayReference = settings.ArrayAs== ArrayAsIEnumerableDerived.Array ? TypeRefHelper.CreateArrayOfCustomTypeReference(existingTypeName, 1) : new CodeTypeReference(TypeRefHelper.ArrayAsIEnumerableDerivedToType(existingTypeName, settings.ArrayAs));
+						CodeTypeReference enumArrayReference = settings.ArrayAs == ArrayAsIEnumerableDerived.Array ? TypeRefHelper.CreateArrayOfCustomTypeReference(existingTypeName, 1) : new CodeTypeReference(TypeRefHelper.ArrayAsIEnumerableDerivedToType(existingTypeName, settings.ArrayAs));
 						return Tuple.Create(enumArrayReference, String.Empty);
 					}
 
@@ -691,6 +701,33 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}).ToArray();
 		}
 
+		KeyValuePair<string, OpenApiSchema>[] ExtractRequestBodiesOfApplicationJson(IDictionary<string, OpenApiRequestBody> requestBodies)
+		{
+			var stronglyTypedBodies = requestBodies.Where(d =>
+			{
+				//d.Value.Content.ContainsKey("application/json");
+				if (d.Value.Content.TryGetValue("application/json", out OpenApiMediaType mediaTypeObject))
+				{
+					if (mediaTypeObject.Schema.Reference != null || mediaTypeObject.Schema.Properties==null || mediaTypeObject.Schema.Properties.Count == 0)
+					{
+						return false;
+					}
+
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			});
+
+			IEnumerable<KeyValuePair<string, OpenApiSchema>> r = stronglyTypedBodies.Select(d =>
+			{
+				return new KeyValuePair<string, OpenApiSchema>(d.Key, d.Value.Content["application/json"].Schema);
+			});
+
+			return r.ToArray();
+		}
 
 	}
 

@@ -77,7 +77,6 @@ namespace Fonlow.OpenApiClientGen
 
 			Console.WriteLine("Processing...");
 			Trace.TraceInformation(doc.Info.FormatOpenApiInfo());
-
 			Fonlow.CodeDom.Web.CodeGen.GenerateClientAPIs(settings, doc.Paths, doc.Components, Directory.GetCurrentDirectory());
 
 			Console.WriteLine("Done");
