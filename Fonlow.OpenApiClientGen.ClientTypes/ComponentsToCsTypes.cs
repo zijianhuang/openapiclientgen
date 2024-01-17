@@ -254,10 +254,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
-			if (typeDeclaration.Name== "ResourceType")
-			{
-				Console.WriteLine("here");
-			}
+			//if (typeDeclaration.Name== "ResourceType")
+			//{
+			//	Console.WriteLine("here");
+			//}
 			int k = 0;
 			foreach (IOpenApiAny enumMember in enumTypeList)
 			{
@@ -702,6 +702,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 
 						return "\"" + EscapeString(stringValue.Value) + "\"";
+					}
+
+					if (s.AllOf!=null && s.AllOf.Count > 0)
+					{
+						var typeRef = s.AllOf[0].Reference.Id;
+						var refinedTypeName = NameFunc.RefineTypeName(typeRef, "");
+						return $"{refinedTypeName}.{stringValue.Value}";
 					}
 
 					return stringValue.Value;
