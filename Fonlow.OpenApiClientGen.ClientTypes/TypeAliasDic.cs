@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Fonlow.OpenApiClientGen.ClientTypes
 {
@@ -11,11 +12,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public void Add(string alias, string typeName)
 		{
+			if (string.IsNullOrEmpty(alias))
+			{
+				return;
+			}
+
 			dic.TryAdd(alias, typeName);
 		}
 
 		public bool TryGet(string alias, out string typeName)
 		{
+			if (string.IsNullOrEmpty(alias))
+			{
+				typeName = null;
+				return false;
+			}
+
 			bool r = dic.TryGetValue(alias, out typeName);
 			if (!r)
 			{

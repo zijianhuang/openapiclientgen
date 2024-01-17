@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		readonly string actionName;
 
 		/// <summary>
-		/// 
+		/// OpenAPI responses to the return type reference, according to the 200 response.
 		/// </summary>
 		/// <param name="op"></param>
 		/// <returns>item2 indicates whether return is a string.</returns>
@@ -36,7 +36,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						codeTypeReference = com2CodeDom.PropertySchemaToCodeTypeReference(content.Schema, actionName, "Return");
-
 					}
 					catch (ArgumentException ex)
 					{
