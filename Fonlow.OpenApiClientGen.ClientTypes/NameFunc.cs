@@ -169,11 +169,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
+			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace(';', '_').Replace('-', '_').Replace('.', '_').Replace(',', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace("{", "").Replace("}", "")
 				.Replace("+", "Plus")
 				.Replace("-", "Minus")
+				.Replace("=", "_")
+				.Replace("{", "_")
+				.Replace("}", "_")
 				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace('$', '_').Replace("'", "_").Replace("`", "_")
 				.Replace(' ', '_'));
 		}
