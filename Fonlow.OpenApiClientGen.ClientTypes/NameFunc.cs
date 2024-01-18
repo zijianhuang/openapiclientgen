@@ -43,6 +43,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s + "_";
 			}
 
+			if (Char.IsDigit(s[0]))
+			{
+				s = "_" + s;
+			}
+
 			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
 			return ToTitleCase(rs).Replace('-', '_')
@@ -169,7 +174,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				.Replace("{", "").Replace("}", "")
 				.Replace("+", "Plus")
 				.Replace("-", "Minus")
-				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace("'", "_").Replace("`", "_")
+				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace('$', '_').Replace("'", "_").Replace("`", "_")
 				.Replace(' ', '_'));
 		}
 

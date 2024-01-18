@@ -417,7 +417,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 			string propertyName = NameFunc.RefinePropertyName(refId);
-			if (refId == "sortOrder")
+			if (propertyName == string.Empty)
+			{
+				throw new ArgumentException($"doggy refId: {refId}; currentTypeName: {currentTypeName}");
+			}
+
+			if (refId == "error-errors-item")
 			{
 				Console.WriteLine("OK");
 			}

@@ -20,194 +20,460 @@ namespace MyNS
 
 	[System.Runtime.Serialization.DataContract(Namespace = "")]
 	[System.SerializableAttribute()]
-	public class DetectionsElement
+	public class Activity
 	{
 
 		/// <summary>
-		/// Confidence value
-		/// Minimum: 0
-		/// Maximum: 1
+		/// The type of activity - what action was done by the member. This is a legacy field, use activity_type_key instead.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "confidence")]
-		[System.ComponentModel.DataAnnotations.Range(0, 1)]
-		public System.Nullable<System.Single> Confidence { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "activity_type")]
+		public string Activity_type { get; set; }
 
 		/// <summary>
-		/// Language code
+		/// The key for a custom activity type for the workspace. Will create a new activity type if it does not exist.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "language")]
-		public string Language { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "activity_type_key")]
+		public string Activity_type_key { get; set; }
+
+		/// <summary>
+		/// A description of the activity; displayed in the timeline
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "description")]
+		public string Description { get; set; }
+
+		/// <summary>
+		/// Supply a key that must be unique or leave blank to have one generated.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "key")]
+		public string Key { get; set; }
+
+		/// <summary>
+		/// A URL for the activity; displayed in the timeline
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "link")]
+		public string Link { get; set; }
+
+		/// <summary>
+		/// The text for the timeline link
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "link_text")]
+		public string Link_text { get; set; }
+
+		/// <summary>
+		/// The date and time the activity occurred; defaults to now
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "occurred_at")]
+		public string Occurred_at { get; set; }
+
+		/// <summary>
+		/// Key-value pairs to provide contextual metadata about an activity.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "properties")]
+		public string Properties { get; set; }
+
+		/// <summary>
+		/// A title for the activity; displayed in the timeline
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "title")]
+		public string Title { get; set; }
+
+		/// <summary>
+		/// A custom weight to be used in filters and reports; defaults to 1.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "weight")]
+		public string Weight { get; set; }
 	}
 
 	[System.Runtime.Serialization.DataContract(Namespace = "")]
 	[System.SerializableAttribute()]
-	public class Error_response
+	public class Activity_and_identity
 	{
 
+		[System.Runtime.Serialization.DataMember(Name = "activity")]
+		public Activity_with_member Activity { get; set; }
+
 		/// <summary>
-		/// Error message
+		/// Represents an email address, a profile on networks like github and twitter, or a record in another system.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "error")]
-		public string Error { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "identity")]
+		public Identity Identity { get; set; }
 	}
 
+	/// <summary>
+	/// Represents an email address, a profile on networks like github and twitter, or a record in another system.
+	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace = "")]
 	[System.SerializableAttribute()]
-	public class Error_slow_down
+	public class Identity
 	{
 
 		/// <summary>
-		/// Reason for slow down
+		/// The email of the person in the source system
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "error")]
-		public string Error { get; set; }
-	}
-
-	[System.Runtime.Serialization.DataContract(Namespace = "")]
-	[System.SerializableAttribute()]
-	public class Frontend_settings
-	{
+		[System.Runtime.Serialization.DataMember(Name = "email")]
+		public string Email { get; set; }
 
 		/// <summary>
-		/// Whether the API key database is enabled.
+		/// The name of the person in the source system
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "apiKeys")]
-		public System.Nullable<System.Boolean> ApiKeys { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
 
 		/// <summary>
-		/// Character input limit for this language (-1 indicates no limit)
+		/// The type of source: known values include github, twitter, discourse, email, linkedin, devto. Custom values can also be used
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "charLimit")]
-		public System.Nullable<System.Int32> CharLimit { get; set; }
-
-		/// <summary>
-		/// Frontend translation timeout
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "frontendTimeout")]
-		public System.Nullable<System.Int32> FrontendTimeout { get; set; }
-
-		/// <summary>
-		/// Whether an API key is required.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "keyRequired")]
-		public System.Nullable<System.Boolean> KeyRequired { get; set; }
-
-		[System.Runtime.Serialization.DataMember(Name = "language")]
-		public Frontend_settingsLanguage Language { get; set; }
-
-		/// <summary>
-		/// Whether submitting suggestions is enabled.
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "suggestions")]
-		public System.Nullable<System.Boolean> Suggestions { get; set; }
-
-		/// <summary>
-		/// Supported files format
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "supportedFilesFormat")]
-		public string[] SupportedFilesFormat { get; set; }
-	}
-
-	public class Frontend_settingsLanguage
-	{
-
+		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name = "source")]
-		public Frontend_settingsLanguageSource Source { get; set; }
+		public string Source { get; set; }
 
-		[System.Runtime.Serialization.DataMember(Name = "target")]
-		public Frontend_settingsLanguageTarget Target { get; set; }
+		/// <summary>
+		/// Specifies the location of the source, such as the host of a Discourse instance
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "source_host")]
+		public string Source_host { get; set; }
+
+		/// <summary>
+		/// The uid of the person in the source system
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "uid")]
+		public string Uid { get; set; }
+
+		/// <summary>
+		/// For custom identities, an optional link to the profile on the source system
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		public string Url { get; set; }
+
+		/// <summary>
+		/// The username of the person in the source system
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "username")]
+		public string Username { get; set; }
 	}
 
-	public class Frontend_settingsLanguageSource
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Activity_with_member : Activity
 	{
 
-		/// <summary>
-		/// Language code
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "code")]
-		public string Code { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "member")]
+		public Member Member { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Member
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "bio")]
+		public string Bio { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "birthday")]
+		public string Birthday { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "company")]
+		public string Company { get; set; }
 
 		/// <summary>
-		/// Human-readable language name (in English)
+		/// The member's DEV username
 		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "devto")]
+		public string Devto { get; set; }
+
+		/// <summary>
+		/// The member's email
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "email")]
+		public string Email { get; set; }
+
+		/// <summary>
+		/// The member's GitHub username
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "github")]
+		public string Github { get; set; }
+
+		/// <summary>
+		/// The member's LinkedIn username, without the in/ or pub/
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "linkedin")]
+		public string Linkedin { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "location")]
+		public string Location { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "pronouns")]
+		public string Pronouns { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "shipping_address")]
+		public string Shipping_address { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "slug")]
+		public string Slug { get; set; }
+
+		/// <summary>
+		/// Deprecated: Please use the tags attribute instead
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "tag_list")]
+		public string Tag_list { get; set; }
+
+		/// <summary>
+		/// Replaces all tags for the member; comma-separated string or array
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "tags")]
+		public string Tags { get; set; }
+
+		/// <summary>
+		/// Adds tags to member; comma-separated string or array
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "tags_to_add")]
+		public string Tags_to_add { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "teammate")]
+		public System.Nullable<System.Boolean> Teammate { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "title")]
+		public string Title { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "tshirt")]
+		public string Tshirt { get; set; }
+
+		/// <summary>
+		/// The member's Twitter username
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "twitter")]
+		public string Twitter { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		public string Url { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Alert
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "activity_types")]
+		public string[] Activity_types { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "event_type")]
+		public string Event_type { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "member_tags")]
+		public string[] Member_tags { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
 	}
 
-	public class Frontend_settingsLanguageTarget
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Custom_or_post_activity
 	{
-
-		/// <summary>
-		/// Language code
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "code")]
-		public string Code { get; set; }
-
-		/// <summary>
-		/// Human-readable language name (in English)
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "name")]
-		public string Name { get; set; }
 	}
 
 	[System.Runtime.Serialization.DataContract(Namespace = "")]
 	[System.SerializableAttribute()]
-	public class LanguagesElement
+	public class Destination
 	{
 
-		/// <summary>
-		/// Language code
-		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "code")]
-		public string Code { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "alerts")]
+		public Alert[] Alerts { get; set; }
 
 		/// <summary>
-		/// Human-readable language name (in English)
+		/// Required
 		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name = "name")]
 		public string Name { get; set; }
 
 		/// <summary>
-		/// Supported target language codes
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "targets")]
-		public string[] Targets { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		public string Url { get; set; }
 	}
 
 	[System.Runtime.Serialization.DataContract(Namespace = "")]
 	[System.SerializableAttribute()]
-	public class Suggest_response
+	public class Member_and_identity
 	{
 
 		/// <summary>
-		/// Whether submission was successful
+		/// Represents an email address, a profile on networks like github and twitter, or a record in another system.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "success")]
-		public System.Nullable<System.Boolean> Success { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "identity")]
+		public Identity Identity { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "member")]
+		public Member Member { get; set; }
 	}
 
 	[System.Runtime.Serialization.DataContract(Namespace = "")]
 	[System.SerializableAttribute()]
-	public class Translate
+	public class Note
 	{
 
 		/// <summary>
-		/// Translated text(s)
+		/// Required
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "translatedText")]
-		public string TranslatedText { get; set; }
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "body")]
+		public string Body { get; set; }
 	}
 
 	[System.Runtime.Serialization.DataContract(Namespace = "")]
 	[System.SerializableAttribute()]
-	public class Translate_file
+	public class Organization
 	{
 
 		/// <summary>
-		/// Translated file url
+		/// The unique identifier of the organization in your CRM.
 		/// </summary>
-		[System.Runtime.Serialization.DataMember(Name = "translatedFileUrl")]
-		public string TranslatedFileUrl { get; set; }
+		[System.Runtime.Serialization.DataMember(Name = "crm_uid")]
+		public string Crm_uid { get; set; }
+
+		/// <summary>
+		/// A link to the organization profile in your CRM.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "crm_url")]
+		public string Crm_url { get; set; }
+
+		/// <summary>
+		/// The date the organization became a customer.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "deal_closed_date")]
+		public string Deal_closed_date { get; set; }
+
+		/// <summary>
+		/// The current stage of the organization in the marketing or sales process.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "lifecycle_stage")]
+		public string Lifecycle_stage { get; set; }
+
+		/// <summary>
+		/// The email of the team member who is in charge of the organization.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "owner_email")]
+		public string Owner_email { get; set; }
+
+		/// <summary>
+		/// The name of the team member who is in charge of the organization.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "owner_name")]
+		public string Owner_name { get; set; }
+
+		/// <summary>
+		/// The pricing plan the organization is on.
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "price_plan")]
+		public string Price_plan { get; set; }
+
+		/// <summary>
+		/// The name of the CRM you use for tracking the organization.
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "source")]
+		public string Source { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Post_activity
+	{
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "activity_type")]
+		public Post_activityActivity_type Activity_type { get; set; }
+
+		/// <summary>
+		/// The date and time at which the content was published; defaults to now
+		/// </summary>
+		[System.Runtime.Serialization.DataMember(Name = "occurred_at")]
+		public string Occurred_at { get; set; }
+
+		/// <summary>
+		/// The url representing the post
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		public string Url { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public enum Post_activityActivity_type
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		content = 0,
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Post_activity_with_member : Post_activity
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "member")]
+		public Member Member { get; set; }
+	}
+
+	[System.Runtime.Serialization.DataContract(Namespace = "")]
+	[System.SerializableAttribute()]
+	public class Webhook_subscription
+	{
+
+		[System.Runtime.Serialization.DataMember(Name = "activity_tags")]
+		public string[] Activity_tags { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "activity_types")]
+		public string[] Activity_types { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "event_type")]
+		public string Event_type { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "member_tags")]
+		public string[] Member_tags { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "name")]
+		public string Name { get; set; }
+
+		[System.Runtime.Serialization.DataMember(Name = "secret")]
+		public string Secret { get; set; }
+
+		/// <summary>
+		/// Required
+		/// </summary>
+		[System.ComponentModel.DataAnnotations.Required()]
+		[System.Runtime.Serialization.DataMember(Name = "url")]
+		public string Url { get; set; }
 	}
 
 	public partial class Misc
@@ -230,13 +496,154 @@ namespace MyNS
 		}
 
 		/// <summary>
-		/// Detect the language of a single text
-		/// TranslatePost detect
+		/// Get info about the current user
+		/// UsersGet user
 		/// </summary>
-		/// <returns>Detections</returns>
-		public async Task TranslatePostAsync(PostDetect requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>success</returns>
+		public async Task UsersGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "detect";
+			var requestUri = "user";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Get all workspaces for the current user
+		/// WorkspacesGet workspaces
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task WorkspacesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "workspaces";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Get a workspace
+		/// WorkspacesGetByWorkspace_slugAndInclude_orbit_level_counts workspaces/{workspace_slug}
+		/// </summary>
+		/// <param name="include_orbit_level_counts">Include the number of members by Orbit Level in the attributes</param>
+		/// <returns>success</returns>
+		public async Task WorkspacesGetByWorkspace_slugAndInclude_orbit_level_countsAsync(string workspace_slug, bool include_orbit_level_counts, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "workspaces/" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "&include_orbit_level_counts=" + include_orbit_level_counts;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// List activities for a workspace
+		/// ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndType {workspace_slug}/activities
+		/// </summary>
+		/// <param name="member_tags">The list of tags to filter against. Separate tags with `,` to do an intersection (AND), or with `|` to do a union (OR)</param>
+		/// <param name="orbit">The list of orbit levels to filter against. Accepted values are 1, 2, 3, 4, n. In the request, a format like `23` would include levels 2 and 3. `n` is for members with no orbit level.</param>
+		/// <param name="activity_type">Comma separated list of activity types</param>
+		/// <param name="company_">Comma separated list of companies. The union (OR) of companies is applied.</param>
+		/// <param name="title_">Comma separated list of job titles. The union (OR) of job titles is applied.</param>
+		/// <param name="regions_">Comma separated list of regions. The union (OR) of regions is applied.</param>
+		/// <param name="countries_">Comma separated list of countries. The union (OR) of countries is applied.</param>
+		/// <param name="cities_">Comma separated list of cities. The union (OR) of cities is applied.</param>
+		/// <param name="start_date">Filter activities after this date. Format: YYYY-MM-DD.</param>
+		/// <param name="end_date">Filter activities before this date. Format: YYYY-MM-DD.</param>
+		/// <param name="relative">Relative timeframes. Format: this_<integer>_<period>, with period in [days, weeks, months, years]. For example, this_30_days.</param>
+		/// <param name="type">Deprecated in favor of the activity_type parameter.</param>
+		/// <returns>success</returns>
+		public async Task ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeAsync(
+					string workspace_slug,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeAffiliation affiliation,
+					string member_tags,
+					string orbit,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeActivity_type activity_type,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeIdentity identity,
+					string company_,
+					string title_,
+					string regions_,
+					string countries_,
+					string cities_,
+					string start_date,
+					string end_date,
+					string relative,
+					string page,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeItems items,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeSort sort,
+					string type,
+					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/activities&affiliation=" + affiliation + "&member_tags=" + (member_tags == null ? "" : System.Uri.EscapeDataString(member_tags)) + "&orbit=" + (orbit == null ? "" : System.Uri.EscapeDataString(orbit)) + "&activity_type=" + activity_type + "&identity=" + identity + "&company[]=" + (company_ == null ? "" : System.Uri.EscapeDataString(company_)) + "&title[]=" + (title_ == null ? "" : System.Uri.EscapeDataString(title_)) + "&regions[]=" + (regions_ == null ? "" : System.Uri.EscapeDataString(regions_)) + "&countries[]=" + (countries_ == null ? "" : System.Uri.EscapeDataString(countries_)) + "&cities[]=" + (cities_ == null ? "" : System.Uri.EscapeDataString(cities_)) + "&start_date=" + (start_date == null ? "" : System.Uri.EscapeDataString(start_date)) + "&end_date=" + (end_date == null ? "" : System.Uri.EscapeDataString(end_date)) + "&relative=" + (relative == null ? "" : System.Uri.EscapeDataString(relative)) + "&page=" + (page == null ? "" : System.Uri.EscapeDataString(page)) + "&direction=" + direction + "&items=" + items + "&sort=" + sort + "&type=" + (type == null ? "" : System.Uri.EscapeDataString(type));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Create a Custom or a Content activity for a new or existing member
+		/// Use this method when you know an identity of the member (github, email, twitter, etc.) but not their Orbit ID. Pass fields in the member object to update the member in addition to creating the activity.
+		/// ActivitiesPostByWorkspace_slug {workspace_slug}/activities
+		/// </summary>
+		public async Task ActivitiesPostByWorkspace_slugAsync(string workspace_slug, Activity_and_identity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/activities";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 				using (var requestWriter = new System.IO.StringWriter())
@@ -264,13 +671,13 @@ namespace MyNS
 		}
 
 		/// <summary>
-		/// Retrieve frontend specific settings
-		/// FrontendGet frontend/settings
+		/// Get an activity in the workspace
+		/// ActivitiesGetByWorkspace_slugAndId {workspace_slug}/activities/{id}
 		/// </summary>
-		/// <returns>frontend settings</returns>
-		public async Task FrontendGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>success</returns>
+		public async Task ActivitiesGetByWorkspace_slugAndIdAsync(string workspace_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "frontend/settings";
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/activities/" + (id == null ? "" : System.Uri.EscapeDataString(id));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 				if (handleHeaders != null)
@@ -291,13 +698,13 @@ namespace MyNS
 		}
 
 		/// <summary>
-		/// Retrieve list of supported languages
-		/// TranslateGet languages
+		/// List all activity types for a workspace
+		/// Activity_TypesGetByWorkspace_slug {workspace_slug}/activity_types
 		/// </summary>
-		/// <returns>List of languages</returns>
-		public async Task TranslateGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <returns>success</returns>
+		public async Task Activity_TypesGetByWorkspace_slugAsync(string workspace_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "languages";
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/activity_types";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
 			{
 				if (handleHeaders != null)
@@ -318,13 +725,76 @@ namespace MyNS
 		}
 
 		/// <summary>
-		/// Translate text from a language to another
-		/// TranslatePost translate
+		/// List members in a workspace
+		/// MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndType {workspace_slug}/members
 		/// </summary>
-		/// <returns>Translated text</returns>
-		public async Task TranslatePostAsync(PostDetect requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		/// <param name="member_tags">The list of tags to filter against. Separate tags with `,` to do an intersection (AND), or with `|` to do a union (OR)</param>
+		/// <param name="orbit">The list of orbit levels to filter against. Accepted values are 1, 2, 3, 4, n. In the request, a format like `23` would include levels 2 and 3. `n` is for members with no orbit level.</param>
+		/// <param name="activity_type">Comma separated list of activity types</param>
+		/// <param name="company_">Comma separated list of companies. The union (OR) of companies is applied.</param>
+		/// <param name="title_">Comma separated list of job titles. The union (OR) of job titles is applied.</param>
+		/// <param name="regions_">Comma separated list of regions. The union (OR) of regions is applied.</param>
+		/// <param name="countries_">Comma separated list of countries. The union (OR) of countries is applied.</param>
+		/// <param name="cities_">Comma separated list of cities. The union (OR) of cities is applied.</param>
+		/// <param name="start_date">Filter activities after this date. Format: YYYY-MM-DD.</param>
+		/// <param name="end_date">Filter activities before this date. Format: YYYY-MM-DD.</param>
+		/// <param name="relative">Relative timeframes. Format: this_<integer>_<period>, with period in [days, weeks, months, years]. For example, this_30_days.</param>
+		/// <param name="type">Deprecated in favor of the activity_type parameter.</param>
+		/// <returns>success</returns>
+		public async Task MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeAsync(
+					string workspace_slug,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeAffiliation affiliation,
+					string member_tags,
+					string orbit,
+					MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeActivity_type activity_type,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeIdentity identity,
+					string company_,
+					string title_,
+					string regions_,
+					string countries_,
+					string cities_,
+					string start_date,
+					string end_date,
+					string relative,
+					string query,
+					string page,
+					ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction,
+					MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeItems items,
+					string activities_count_min,
+					string activities_count_max,
+					MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeSort sort,
+					string type,
+					Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "translate";
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members&affiliation=" + affiliation + "&member_tags=" + (member_tags == null ? "" : System.Uri.EscapeDataString(member_tags)) + "&orbit=" + (orbit == null ? "" : System.Uri.EscapeDataString(orbit)) + "&activity_type=" + activity_type + "&identity=" + identity + "&company[]=" + (company_ == null ? "" : System.Uri.EscapeDataString(company_)) + "&title[]=" + (title_ == null ? "" : System.Uri.EscapeDataString(title_)) + "&regions[]=" + (regions_ == null ? "" : System.Uri.EscapeDataString(regions_)) + "&countries[]=" + (countries_ == null ? "" : System.Uri.EscapeDataString(countries_)) + "&cities[]=" + (cities_ == null ? "" : System.Uri.EscapeDataString(cities_)) + "&start_date=" + (start_date == null ? "" : System.Uri.EscapeDataString(start_date)) + "&end_date=" + (end_date == null ? "" : System.Uri.EscapeDataString(end_date)) + "&relative=" + (relative == null ? "" : System.Uri.EscapeDataString(relative)) + "&query=" + (query == null ? "" : System.Uri.EscapeDataString(query)) + "&page=" + (page == null ? "" : System.Uri.EscapeDataString(page)) + "&direction=" + direction + "&items=" + items + "&activities_count_min=" + (activities_count_min == null ? "" : System.Uri.EscapeDataString(activities_count_min)) + "&activities_count_max=" + (activities_count_max == null ? "" : System.Uri.EscapeDataString(activities_count_max)) + "&sort=" + sort + "&type=" + (type == null ? "" : System.Uri.EscapeDataString(type));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Create or update a member
+		/// This method is useful when you know a member's identity in another system and want to create or update the corresponding Orbit member. Identities can be specified in the identity object or member attributes like member.github. If no member exists, a new member will be created and linked to any provided identities.
+		/// MembersPostByWorkspace_slug {workspace_slug}/members
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task MembersPostByWorkspace_slugAsync(string workspace_slug, Member_and_identity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members";
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 			{
 				using (var requestWriter = new System.IO.StringWriter())
@@ -350,6 +820,1185 @@ namespace MyNS
 				}
 			}
 		}
+
+		/// <summary>
+		/// Find a member by an identity
+		/// Provide a source and one of username/uid/email params to return a member with that identity, if one exists. Common values for source include github, twitter, and email.
+		/// MembersGetByWorkspace_slugAndSourceAndSource_hostAndUidAndUsernameAndEmailAndGithub {workspace_slug}/members/find
+		/// </summary>
+		/// <param name="github">Deprecated, please use source=github and username=<username> instead</param>
+		/// <returns>success</returns>
+		public async Task MembersGetByWorkspace_slugAndSourceAndSource_hostAndUidAndUsernameAndEmailAndGithubAsync(string workspace_slug, string source, string source_host, string uid, string username, string email, string github, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/find&source=" + (source == null ? "" : System.Uri.EscapeDataString(source)) + "&source_host=" + (source_host == null ? "" : System.Uri.EscapeDataString(source_host)) + "&uid=" + (uid == null ? "" : System.Uri.EscapeDataString(uid)) + "&username=" + (username == null ? "" : System.Uri.EscapeDataString(username)) + "&email=" + (email == null ? "" : System.Uri.EscapeDataString(email)) + "&github=" + (github == null ? "" : System.Uri.EscapeDataString(github));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Delete a member
+		/// MembersDeleteByWorkspace_slugAndMember_slug {workspace_slug}/members/{member_slug}
+		/// </summary>
+		public async Task MembersDeleteByWorkspace_slugAndMember_slugAsync(string workspace_slug, string member_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Get a member
+		/// MembersGetByWorkspace_slugAndMember_slug {workspace_slug}/members/{member_slug}
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task MembersGetByWorkspace_slugAndMember_slugAsync(string workspace_slug, string member_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Update a member
+		/// MembersPutByWorkspace_slugAndMember_slug {workspace_slug}/members/{member_slug}
+		/// </summary>
+		public async Task MembersPutByWorkspace_slugAndMember_slugAsync(string workspace_slug, string member_slug, Member requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// List activities for a member
+		/// ActivitiesGetByWorkspace_slugAndMember_slugAndPageAndDirectionAndItemsAndSortAndActivity_typeAndType {workspace_slug}/members/{member_slug}/activities
+		/// </summary>
+		/// <param name="type">Deprecated in favor of the activity_type parameter.</param>
+		/// <returns>success</returns>
+		public async Task ActivitiesGetByWorkspace_slugAndMember_slugAndPageAndDirectionAndItemsAndSortAndActivity_typeAndTypeAsync(string workspace_slug, string member_slug, string page, ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction, ActivitiesGetByWorkspace_slugAndMember_slugAndPageAndDirectionAndItemsAndSortAndActivity_typeAndTypeItems items, ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeSort sort, string activity_type, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/activities&page=" + (page == null ? "" : System.Uri.EscapeDataString(page)) + "&direction=" + direction + "&items=" + items + "&sort=" + sort + "&activity_type=" + (activity_type == null ? "" : System.Uri.EscapeDataString(activity_type)) + "&type=" + (type == null ? "" : System.Uri.EscapeDataString(type));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Create a Custom or a Content activity for a member
+		/// ActivitiesPostByWorkspace_slugAndMember_slug {workspace_slug}/members/{member_slug}/activities
+		/// </summary>
+		public async Task ActivitiesPostByWorkspace_slugAndMember_slugAsync(string workspace_slug, string member_slug, Custom_or_post_activity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/activities";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Delete a post activity
+		/// ActivitiesDeleteByWorkspace_slugAndMember_slugAndId {workspace_slug}/members/{member_slug}/activities/{id}
+		/// </summary>
+		public async Task ActivitiesDeleteByWorkspace_slugAndMember_slugAndIdAsync(string workspace_slug, string member_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/activities/" + (id == null ? "" : System.Uri.EscapeDataString(id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Update a custom activity for a member
+		/// ActivitiesPutByWorkspace_slugAndMember_slugAndId {workspace_slug}/members/{member_slug}/activities/{id}
+		/// </summary>
+		public async Task ActivitiesPutByWorkspace_slugAndMember_slugAndIdAsync(string workspace_slug, string member_slug, string id, Activity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/activities/" + (id == null ? "" : System.Uri.EscapeDataString(id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Remove identity from a member
+		/// MembersDeleteByWorkspace_slugAndMember_slug {workspace_slug}/members/{member_slug}/identities
+		/// </summary>
+		public async Task MembersDeleteByWorkspace_slugAndMember_slugAsync(string workspace_slug, string member_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/identities";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Add identity to a member
+		/// MembersPostByWorkspace_slugAndMember_slug {workspace_slug}/members/{member_slug}/identities
+		/// </summary>
+		public async Task MembersPostByWorkspace_slugAndMember_slugAsync(string workspace_slug, string member_slug, Identity requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/identities";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Get the member's notes
+		/// NotesGetByWorkspace_slugAndMember_slugAndPage {workspace_slug}/members/{member_slug}/notes
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task NotesGetByWorkspace_slugAndMember_slugAndPageAsync(string workspace_slug, string member_slug, string page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/notes&page=" + (page == null ? "" : System.Uri.EscapeDataString(page));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Create a note
+		/// NotesPostByWorkspace_slugAndMember_slug {workspace_slug}/members/{member_slug}/notes
+		/// </summary>
+		public async Task NotesPostByWorkspace_slugAndMember_slugAsync(string workspace_slug, string member_slug, Note requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/notes";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Update a note
+		/// NotesPutByWorkspace_slugAndMember_slugAndId {workspace_slug}/members/{member_slug}/notes/{id}
+		/// </summary>
+		public async Task NotesPutByWorkspace_slugAndMember_slugAndIdAsync(string workspace_slug, string member_slug, string id, Note requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/members/" + (member_slug == null ? "" : System.Uri.EscapeDataString(member_slug)) + "/notes/" + (id == null ? "" : System.Uri.EscapeDataString(id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// List organizations in a workspace
+		/// OrganizationsGetByWorkspace_slugAndQueryAndPageAndDirectionAndItemsAndSort {workspace_slug}/organizations
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task OrganizationsGetByWorkspace_slugAndQueryAndPageAndDirectionAndItemsAndSortAsync(string workspace_slug, string query, string page, ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction, OrganizationsGetByWorkspace_slugAndQueryAndPageAndDirectionAndItemsAndSortItems items, OrganizationsGetByWorkspace_slugAndQueryAndPageAndDirectionAndItemsAndSortSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/organizations&query=" + (query == null ? "" : System.Uri.EscapeDataString(query)) + "&page=" + (page == null ? "" : System.Uri.EscapeDataString(page)) + "&direction=" + direction + "&items=" + items + "&sort=" + sort;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Get an organization
+		/// OrganizationsGetByWorkspace_slugAndOrganization_id {workspace_slug}/organizations/{organization_id}
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task OrganizationsGetByWorkspace_slugAndOrganization_idAsync(string workspace_slug, string organization_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/organizations/" + (organization_id == null ? "" : System.Uri.EscapeDataString(organization_id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Update an organization
+		/// OrganizationsPutByWorkspace_slugAndOrganization_id {workspace_slug}/organizations/{organization_id}
+		/// </summary>
+		public async Task OrganizationsPutByWorkspace_slugAndOrganization_idAsync(string workspace_slug, string organization_id, Organization requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/organizations/" + (organization_id == null ? "" : System.Uri.EscapeDataString(organization_id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// List member activities in an organization
+		/// ActivitiesGetByWorkspace_slugAndOrganization_idAndPageAndDirectionAndItemsAndSortAndActivity_type {workspace_slug}/organizations/{organization_id}/activities
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task ActivitiesGetByWorkspace_slugAndOrganization_idAndPageAndDirectionAndItemsAndSortAndActivity_typeAsync(string workspace_slug, string organization_id, string page, ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection direction, ActivitiesGetByWorkspace_slugAndOrganization_idAndPageAndDirectionAndItemsAndSortAndActivity_typeItems items, ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeSort sort, ActivitiesGetByWorkspace_slugAndOrganization_idAndPageAndDirectionAndItemsAndSortAndActivity_typeActivity_type activity_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/organizations/" + (organization_id == null ? "" : System.Uri.EscapeDataString(organization_id)) + "/activities&page=" + (page == null ? "" : System.Uri.EscapeDataString(page)) + "&direction=" + direction + "&items=" + items + "&sort=" + sort + "&activity_type=" + activity_type;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// List members in an organization
+		/// MembersGetByWorkspace_slugAndOrganization_idAndPageAndItems {workspace_slug}/organizations/{organization_id}/members
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task MembersGetByWorkspace_slugAndOrganization_idAndPageAndItemsAsync(string workspace_slug, string organization_id, string page, MembersGetByWorkspace_slugAndOrganization_idAndPageAndItemsItems items, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/organizations/" + (organization_id == null ? "" : System.Uri.EscapeDataString(organization_id)) + "/members&page=" + (page == null ? "" : System.Uri.EscapeDataString(page)) + "&items=" + items;
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Get a workspace stats
+		/// ReportsGetByWorkspace_slugAndStart_dateAndEnd_dateAndRelativeAndPropertiesAndActivity_typeAndType {workspace_slug}/reports
+		/// </summary>
+		/// <param name="start_date">Filter activities after this date. Format: YYYY-MM-DD.</param>
+		/// <param name="end_date">Filter activities before this date. Format: YYYY-MM-DD.</param>
+		/// <param name="relative">Relative timeframes. Format: this_<integer>_<period>, with period in [days, weeks, months, years]. For example, this_30_days.</param>
+		/// <param name="type">Deprecated in favor of the activity_type parameter.</param>
+		/// <returns>success</returns>
+		public async Task ReportsGetByWorkspace_slugAndStart_dateAndEnd_dateAndRelativeAndPropertiesAndActivity_typeAndTypeAsync(string workspace_slug, string start_date, string end_date, string relative, string properties, string activity_type, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/reports&start_date=" + (start_date == null ? "" : System.Uri.EscapeDataString(start_date)) + "&end_date=" + (end_date == null ? "" : System.Uri.EscapeDataString(end_date)) + "&relative=" + (relative == null ? "" : System.Uri.EscapeDataString(relative)) + "&properties=" + (properties == null ? "" : System.Uri.EscapeDataString(properties)) + "&activity_type=" + (activity_type == null ? "" : System.Uri.EscapeDataString(activity_type)) + "&type=" + (type == null ? "" : System.Uri.EscapeDataString(type));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// List webhooks in a workspace
+		/// WebhooksGetByWorkspace_slug {workspace_slug}/webhooks
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task WebhooksGetByWorkspace_slugAsync(string workspace_slug, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/webhooks";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Create a webhook
+		/// WebhooksPostByWorkspace_slug {workspace_slug}/webhooks
+		/// </summary>
+		public async Task WebhooksPostByWorkspace_slugAsync(string workspace_slug, Webhook_subscription requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/webhooks";
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Delete a webhook
+		/// WebhooksDeleteByWorkspace_slugAndId {workspace_slug}/webhooks/{id}
+		/// </summary>
+		public async Task WebhooksDeleteByWorkspace_slugAndIdAsync(string workspace_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/webhooks/" + (id == null ? "" : System.Uri.EscapeDataString(id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Get a webhook
+		/// WebhooksGetByWorkspace_slugAndId {workspace_slug}/webhooks/{id}
+		/// </summary>
+		/// <returns>success</returns>
+		public async Task WebhooksGetByWorkspace_slugAndIdAsync(string workspace_slug, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/webhooks/" + (id == null ? "" : System.Uri.EscapeDataString(id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			{
+				if (handleHeaders != null)
+				{
+					handleHeaders(httpRequestMessage.Headers);
+				}
+
+				var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+				try
+				{
+					responseMessage.EnsureSuccessStatusCodeEx();
+				}
+				finally
+				{
+					responseMessage.Dispose();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Update a webhook
+		/// WebhooksPutByWorkspace_slugAndId {workspace_slug}/webhooks/{id}
+		/// </summary>
+		public async Task WebhooksPutByWorkspace_slugAndIdAsync(string workspace_slug, string id, Webhook_subscription requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		{
+			var requestUri = "" + (workspace_slug == null ? "" : System.Uri.EscapeDataString(workspace_slug)) + "/webhooks/" + (id == null ? "" : System.Uri.EscapeDataString(id));
+			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			{
+				using (var requestWriter = new System.IO.StringWriter())
+				{
+					var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
+					requestSerializer.Serialize(requestWriter, requestBody);
+					var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+					httpRequestMessage.Content = content;
+					if (handleHeaders != null)
+					{
+						handleHeaders(httpRequestMessage.Headers);
+					}
+
+					var responseMessage = await httpClient.SendAsync(httpRequestMessage);
+					try
+					{
+						responseMessage.EnsureSuccessStatusCodeEx();
+					}
+					finally
+					{
+						responseMessage.Dispose();
+					}
+				}
+			}
+		}
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeAffiliation
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		member = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		teammate = 1,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeActivity_type
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:topic:created")]
+		discoursetopiccreated = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:post:liked")]
+		discoursepostliked = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:user:created")]
+		discourseusercreated = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:post:created")]
+		discoursepostcreated = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "slack:message:sent")]
+		slackmessagesent = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "slack:thread:replied")]
+		slackthreadreplied = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "slack:channel:joined")]
+		slackchanneljoined = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "note:created")]
+		notecreated = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "post:created")]
+		postcreated = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "issues:opened")]
+		issuesopened = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:message:sent")]
+		discordmessagesent = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "issue_comment:created")]
+		issue_commentcreated = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:thread:replied")]
+		discordthreadreplied = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "custom:happened")]
+		customhappened = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "dev:comment")]
+		devcomment = 14,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:message:replied")]
+		discordmessagereplied = 15,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:server:joined")]
+		discordserverjoined = 16,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:conversation:started")]
+		insidedconversationstarted = 17,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "fork:created")]
+		forkcreated = 18,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:idea:replied")]
+		insidedideareplied = 19,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:article:created")]
+		insidedarticlecreated = 20,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discussions:discussion_created")]
+		discussionsdiscussion_created = 21,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:question:replied")]
+		insidedquestionreplied = 22,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discussions:comment")]
+		discussionscomment = 23,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discussions:reply")]
+		discussionsreply = 24,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:article:replied")]
+		insidedarticlereplied = 25,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:question:asked")]
+		insidedquestionasked = 26,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:conversation:replied")]
+		insidedconversationreplied = 27,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:idea:submitted")]
+		insidedideasubmitted = 28,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "reddit:comment")]
+		redditcomment = 29,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "reddit:post")]
+		redditpost = 30,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "stackoverflow:answer")]
+		stackoverflowanswer = 31,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "linkedin:comment")]
+		linkedincomment = 32,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pull_requests:opened")]
+		pull_requestsopened = 33,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pull_requests:merged")]
+		pull_requestsmerged = 34,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "star:created")]
+		starcreated = 35,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "stackoverflow:question")]
+		stackoverflowquestion = 36,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "tweet:sent")]
+		tweetsent = 37,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "twitter:followed")]
+		twitterfollowed = 38,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "youtube:comment")]
+		youtubecomment = 39,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeIdentity
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		github = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		twitter = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		email = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		discourse = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		linkedin = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		devto = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		slack = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		discord = 7,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		ASC = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		DESC = 1,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeItems
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "10")]
+		_10 = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "50")]
+		_50 = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "100")]
+		_100 = 2,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeSort
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		occurred_at = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		member = 1,
+	}
+
+	public enum MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeActivity_type
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:topic:created")]
+		discoursetopiccreated = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:post:liked")]
+		discoursepostliked = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:user:created")]
+		discourseusercreated = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discourse:post:created")]
+		discoursepostcreated = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "slack:message:sent")]
+		slackmessagesent = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "slack:thread:replied")]
+		slackthreadreplied = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "slack:channel:joined")]
+		slackchanneljoined = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "note:created")]
+		notecreated = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "post:created")]
+		postcreated = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "issues:opened")]
+		issuesopened = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:message:sent")]
+		discordmessagesent = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "issue_comment:created")]
+		issue_commentcreated = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:thread:replied")]
+		discordthreadreplied = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "custom:happened")]
+		customhappened = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "dev:comment")]
+		devcomment = 14,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:message:replied")]
+		discordmessagereplied = 15,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discord:server:joined")]
+		discordserverjoined = 16,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:conversation:started")]
+		insidedconversationstarted = 17,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "fork:created")]
+		forkcreated = 18,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:idea:replied")]
+		insidedideareplied = 19,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:article:created")]
+		insidedarticlecreated = 20,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discussions:discussion_created")]
+		discussionsdiscussion_created = 21,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:question:replied")]
+		insidedquestionreplied = 22,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discussions:comment")]
+		discussionscomment = 23,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "discussions:reply")]
+		discussionsreply = 24,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:article:replied")]
+		insidedarticlereplied = 25,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:question:asked")]
+		insidedquestionasked = 26,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:conversation:replied")]
+		insidedconversationreplied = 27,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "insided:idea:submitted")]
+		insidedideasubmitted = 28,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "reddit:comment")]
+		redditcomment = 29,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "reddit:post")]
+		redditpost = 30,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "stackoverflow:answer")]
+		stackoverflowanswer = 31,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "linkedin:comment")]
+		linkedincomment = 32,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pull_requests:opened")]
+		pull_requestsopened = 33,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "pull_requests:merged")]
+		pull_requestsmerged = 34,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "star:created")]
+		starcreated = 35,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "stackoverflow:question")]
+		stackoverflowquestion = 36,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "tweet:sent")]
+		tweetsent = 37,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "twitter:followed")]
+		twitterfollowed = 38,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "youtube:comment")]
+		youtubecomment = 39,
+	}
+
+	public enum MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeItems
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "10")]
+		_10 = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "50")]
+		_50 = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "100")]
+		_100 = 2,
+	}
+
+	public enum MembersGetByWorkspace_slugAndAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeSort
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		activities_count = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		company = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		created_at = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		first_activity = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		github_followers = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		id = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		last_activity = 6,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		location = 7,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		love = 8,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		name = 9,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		orbit = 10,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		reach = 11,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		title = 12,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		twitter_followers = 13,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		updated_at = 14,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndMember_slugAndPageAndDirectionAndItemsAndSortAndActivity_typeAndTypeItems
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "10")]
+		_10 = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "50")]
+		_50 = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "100")]
+		_100 = 2,
+	}
+
+	public enum OrganizationsGetByWorkspace_slugAndQueryAndPageAndDirectionAndItemsAndSortItems
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "10")]
+		_10 = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "50")]
+		_50 = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "100")]
+		_100 = 2,
+	}
+
+	public enum OrganizationsGetByWorkspace_slugAndQueryAndPageAndDirectionAndItemsAndSortSort
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		name = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		website = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		members_count = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		employees_count = 3,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndOrganization_idAndPageAndDirectionAndItemsAndSortAndActivity_typeItems
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "10")]
+		_10 = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "50")]
+		_50 = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "100")]
+		_100 = 2,
+	}
+
+	public enum ActivitiesGetByWorkspace_slugAndOrganization_idAndPageAndDirectionAndItemsAndSortAndActivity_typeActivity_type
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		content = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		custom = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		discord = 2,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		discourse = 3,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		github = 4,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		slack = 5,
+
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		twitter = 6,
+	}
+
+	public enum MembersGetByWorkspace_slugAndOrganization_idAndPageAndItemsItems
+	{
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "10")]
+		_10 = 0,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "50")]
+		_50 = 1,
+
+		[System.Runtime.Serialization.EnumMemberAttribute(Value = "100")]
+		_100 = 2,
 	}
 }
 
