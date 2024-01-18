@@ -31,7 +31,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="s"></param>
 		/// <param name="nsInType"></param>
 		/// <returns></returns>
-		public static string RefineTypeName(string s, string nsInType)
+		public static string RefineTypeName(string s, string nsInType, bool dotsToNamespaces=false)
 		{
 			if (String.IsNullOrEmpty(s))
 			{
@@ -50,9 +50,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
-			return ToTitleCase(rs).Replace('-', '_')
+			var r= ToTitleCase(rs).Replace('-', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
+			return dotsToNamespaces ? r : r.Replace(".", string.Empty);
 		}
 
 		public static string RefineEnumMemberName(string s, Settings settings = null)

@@ -92,7 +92,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var classNamespaceNames = NameFunc.FindNamespacesInClassNames(ComponentsSchemas.Keys);
 
-			if (classNamespaceNames.Length > 0)
+			if (settings.DotsToNamespaces && classNamespaceNames.Length > 0)
 			{
 				var groupedComponentsSchemas = ComponentsSchemas
 					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
@@ -136,7 +136,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			var schema = ComponentsSchemas[refId];
 			if (schema != null)
 			{
-				string classNamespaceText = NameFunc.GetNamespaceOfClassName(refId);
+				string classNamespaceText = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : string.Empty;
 				if (string.IsNullOrEmpty(classNamespaceText))
 				{
 					classNamespaceText = settings.ClientNamespace;
@@ -264,8 +264,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			else if (arrayItemsSchema.Reference != null) //array of custom type
 			{
 				string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
-				var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
-				var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
+				var arrayTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId) : string.Empty;
+				var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs, settings.DotsToNamespaces);
 				var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
 				var existingType = FindCodeTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
 				if (existingType == null) // Referencing to a type not yet added to namespace
@@ -354,8 +354,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema)
 		{
-			string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+			string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
+			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 			{
@@ -469,8 +469,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Reference != null)
 				{
-					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
+					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					return ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 				}

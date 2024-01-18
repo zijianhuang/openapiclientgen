@@ -71,8 +71,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			var ns = NameFunc.GetNamespaceOfClassName(refId);
-			var currentTypeName = NameFunc.RefineTypeName(refId, ns);
+			var ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : string.Empty;
+			var currentTypeName = NameFunc.RefineTypeName(refId, ns, settings.DotsToNamespaces);
 
 			RegisterSchemaRefIdToBeAdded(refId);
 
@@ -139,8 +139,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return;
 					}
 
-					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
-					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
+					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(itemsRef.Id) : string.Empty;
+					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
 					var existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
@@ -223,8 +223,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Reference != null)
 				{
-					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
+					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, tsInterfacePropertyName, isRequired); //TS

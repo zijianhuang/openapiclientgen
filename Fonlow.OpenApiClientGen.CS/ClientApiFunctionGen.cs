@@ -69,7 +69,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			this.parameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
 			{
-				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
+				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath, settings.DotsToNamespaces);
 				if (kc != null)
 				{
 					this.requestBodyCodeTypeReference = kc.Item1;
