@@ -142,7 +142,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return "_" + s;
 			}
 
-			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_')
+			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_').Replace(':', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace('[', '_').Replace("]", "");
 

@@ -484,7 +484,7 @@ namespace MyNS
 		/// <summary>
 		/// This value is the Value Add Tax (VAT) rate for the item, if any. When a VAT percentage is specified, the item's VAT information appears on the listing's View Item page. In addition, the seller can choose to print an invoice that includes the item's net price, VAT percent, VAT amount, and total price. Since VAT rates vary depending on the item and on the user's country of residence, a seller is responsible for entering the correct VAT rate; it is not calculated by eBay. To use VAT, a seller must be a business seller with a VAT-ID registered with eBay, and must be listing the item on a VAT-enabled site. Max applicable length is 6 characters, including the decimal (e.g., 12.345). The scale is 3 decimal places. (If you pass in 12.3456, eBay may round up the value to 12.346). This field will be returned if set for the offer.
 		/// </summary>
-		public System.Nullable<System.Single> VatPercentage { get; set; }
+		public System.Nullable<System.Double> VatPercentage { get; set; }
 	}
 	
 	/// <summary>
@@ -633,12 +633,12 @@ namespace MyNS
 		/// <summary>
 		/// The actual height (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Height { get; set; }
+		public System.Nullable<System.Double> Height { get; set; }
 		
 		/// <summary>
 		/// The actual length (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Length { get; set; }
+		public System.Nullable<System.Double> Length { get; set; }
 		
 		/// <summary>
 		/// The unit of measurement used to specify the dimensions of a shipping package. All fields of the dimensions container are required if package dimensions are specified. If the English system of measurement is being used, the applicable values for dimension units are FEET and INCH. If the metric system of measurement is being used, the applicable values for weight units are METER and CENTIMETER. The metric system is used by most countries outside of the US. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/LengthUnitOfMeasureEnum.html'>eBay API documentation</a>
@@ -648,7 +648,7 @@ namespace MyNS
 		/// <summary>
 		/// The actual width (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Width { get; set; }
+		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
 	/// <summary>
@@ -665,7 +665,7 @@ namespace MyNS
 		/// <summary>
 		/// The actual weight (in the measurement unit specified in the unit field) of the shipping package. Both the unit and value fields are required if the weight container is used. If a shipping package weighed 20.5 ounces, the container would look as follows: &quot;weight&quot;: {  &quot;value&quot;: 20.5,  &quot;unit&quot;: &quot;OUNCE&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Value { get; set; }
+		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
 	/// <summary>
@@ -1511,12 +1511,12 @@ namespace MyNS
 		/// <summary>
 		/// The latitude (North-South) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
 		/// </summary>
-		public System.Nullable<System.Single> Latitude { get; set; }
+		public System.Nullable<System.Double> Latitude { get; set; }
 		
 		/// <summary>
 		/// The longitude (East-West) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
 		/// </summary>
-		public System.Nullable<System.Single> Longitude { get; set; }
+		public System.Nullable<System.Double> Longitude { get; set; }
 	}
 	
 	/// <summary>

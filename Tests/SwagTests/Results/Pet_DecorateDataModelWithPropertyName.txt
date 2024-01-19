@@ -123,7 +123,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[Newtonsoft.Json.JsonProperty(PropertyName="honeyPerDay")]
-		public float HoneyPerDay { get; set; }
+		public double HoneyPerDay { get; set; }
 	}
 	
 	public class Order

@@ -785,7 +785,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiFloat floatValue)
 			{
-				return floatValue.Value.ToString();
+				return floatValue.Value.ToString() + "F";
 			}
 
 			if (s.Default is OpenApiDouble doubleValue)

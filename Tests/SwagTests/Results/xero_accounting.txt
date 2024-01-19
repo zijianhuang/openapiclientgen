@@ -760,7 +760,7 @@ namespace MyNS
 		/// <summary>
 		/// Length of the file content
 		/// </summary>
-		public System.Nullable<System.Single> ContentLength { get; set; }
+		public System.Nullable<System.Double> ContentLength { get; set; }
 		
 		/// <summary>
 		/// Include the file with the online invoice

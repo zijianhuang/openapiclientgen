@@ -113,7 +113,7 @@ namespace MyNS
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public float HoneyPerDay { get; set; }
+		public double HoneyPerDay { get; set; }
 	}
 	
 	public class Order
@@ -322,7 +322,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public async Task<Pet[]> FindPetsByTagsAsync(float[] tags)
+		public async Task<Pet[]> FindPetsByTagsAsync(double[] tags)
 		{
 			var requestUri = "pet/findByNumbers?"+string.Join("&", tags.Select(z => $"tags={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
@@ -352,7 +352,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="tags">Tags to filter by</param>
 		/// <returns>successful operation</returns>
-		public Pet[] FindPetsByTags(float[] tags)
+		public Pet[] FindPetsByTags(double[] tags)
 		{
 			var requestUri = "pet/findByNumbers?"+string.Join("&", tags.Select(z => $"tags={z}"));
 			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))

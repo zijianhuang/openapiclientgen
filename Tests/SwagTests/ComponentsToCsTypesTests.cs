@@ -351,7 +351,7 @@ namespace MyNS
 		public System.Collections.Generic.Dictionary<string, double> DoubleDict { get; set; }//;
 		
 		[System.Text.Json.Serialization.JsonPropertyName(""numberDict"")]
-		public System.Collections.Generic.Dictionary<string, float> NumberDict { get; set; }//;
+		public System.Collections.Generic.Dictionary<string, double> NumberDict { get; set; }//;
 		
 		[System.Text.Json.Serialization.JsonPropertyName(""tagDict"")]
 		public System.Collections.Generic.Dictionary<string, Tag> TagDict { get; set; }//;

@@ -159,7 +159,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{"number_float", typeof(float) },
 			{"number_double", typeof(double) },
 			{"number_decimal", typeof(decimal) },
-			{"number", typeof(float) },
+			{"number", typeof(double) }, //C# by default use double for number literal
 			{"string", typeof(string) },
 			{"boolean", typeof(bool) },
 			{"string_date", typeof(DateOnly) },

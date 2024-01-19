@@ -11008,7 +11008,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\tvmaze.com\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml. typo? in parameter names")]
 		public void Test_twilio_com_api_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\api\1.52.0\");
@@ -11038,25 +11038,25 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_chat_v1\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_twilio_com_twilio_chat_v2_1_52_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_chat_v2\1.52.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_chat_v2\1.52.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_chat_v3_1_52_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_chat_v3\1.52.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_chat_v3\1.52.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
 		public void Test_twilio_com_twilio_content_v1_1_52_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_content_v1\1.52.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_content_v1\1.52.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_conversations_v1_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_conversations_v1\1.52.0\");
@@ -11110,7 +11110,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_ip_messaging_v1\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_ip_messaging_v2_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_ip_messaging_v2\1.52.0\");
@@ -11134,7 +11134,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_media_v1\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_messaging_v1_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_messaging_v1\1.52.0\");
@@ -11164,7 +11164,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_numbers_v1\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_numbers_v2_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_numbers_v2\1.52.0\");
@@ -11176,7 +11176,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_oauth_v1\1.51.1\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_preview_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_preview\1.52.0\");
@@ -11224,7 +11224,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_studio_v2\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_supersim_v1_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_supersim_v1\1.52.0\");
@@ -11248,19 +11248,19 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_trunking_v1\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_trusthub_v1_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_trusthub_v1\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_verify_v2_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_verify_v2\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_video_v1_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_video_v1\1.52.0\");
@@ -11272,7 +11272,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_voice_v1\1.52.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml")]
 		public void Test_twilio_com_twilio_wireless_v1_1_52_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\twilio.com\twilio_wireless_v1\1.52.0\");
@@ -11302,16 +11302,16 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\up.com.au\v1\");
 		}
 
-		[Fact]
+		[Fact(Skip ="3.1")]
 		public void Test_urlbox_io_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\urlbox.io\v1\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml: mojo as enum members")]
 		public void Test_useapi_net_1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\useapi.net\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\useapi.net\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -11350,7 +11350,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\velopayments.com\2.35.57\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_vercel_com_0_0_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vercel.com\0.0.1\");
@@ -11386,7 +11386,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\visma.net\1.0.14.784\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_visma_net_9_66_02_1023()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\visma.net\9.66.02.1023\");
@@ -11401,7 +11401,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_visualstudio_com_v1()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\visualstudio.com\v1\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\visualstudio.com\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -11413,7 +11413,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_vocadb_net_1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vocadb.net\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vocadb.net\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -11446,10 +11446,10 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vonage.com\vgis\1.0.1\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml, duplicated paths")]
 		public void Test_vtex_local_Catalog_API_1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Catalog-API\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Catalog-API\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -11464,7 +11464,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Checkout-API\1.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml: properties:\r\n                value:\r\n                  default: \"500.0\"\r\n                  format: number\r\n                  type: integer")]
 		public void Test_vtex_local_Customer_Credit_API_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Customer-Credit-API\1.0\");
@@ -11482,7 +11482,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\GiftCard-Hub-API\1.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml")]
 		public void Test_vtex_local_Headless_CMS_API_0_31_2()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Headless-CMS-API\0.31.2\");
@@ -11491,7 +11491,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_vtex_local_Intelligent_Search_API_0_1_12()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Intelligent-Search-API\0.1.12\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Intelligent-Search-API\0.1.12\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -11512,7 +11512,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Marketplace-APIs\1.0\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml: Length:\r\n          default: 10\r\n          description: Length of the SKU.\r\n          format: decimal\r\n          type: integer")]
 		public void Test_vtex_local_Marketplace_APIs__1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Marketplace-APIs-\1.0\");

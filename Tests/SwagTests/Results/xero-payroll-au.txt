@@ -714,7 +714,7 @@ namespace MyNS
 		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public float EmployeeNumber { get; set; }
+		public double EmployeeNumber { get; set; }
 	}
 	
 	public enum EmployeeStatus
@@ -1254,7 +1254,7 @@ namespace MyNS
 		/// <summary>
 		/// The number of units on a timesheet line
 		/// </summary>
-		public float[] NumberOfUnits { get; set; }
+		public double[] NumberOfUnits { get; set; }
 		
 		/// <summary>
 		/// Last modified timestamp

@@ -131,7 +131,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
-		public float HoneyPerDay { get; set; }
+		public double HoneyPerDay { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://openapidemo.com/09/2019")]
