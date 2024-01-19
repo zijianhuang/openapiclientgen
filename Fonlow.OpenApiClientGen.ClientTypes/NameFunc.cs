@@ -52,6 +52,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var r= ToTitleCase(rs).Replace('-', '_')
 				.Replace("(", "").Replace(")", "")
+				.Replace("&", "And")
+				.Replace("?", "_")
 				.Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
 			return dotsToNamespaces ? r : r.Replace(".", string.Empty);
 		}
@@ -154,7 +156,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace(';', '_').Replace('-', '_').Replace('.', '_').Replace(',', '_')
+			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace(';', '_').Replace('-', '_').Replace('.', '_').Replace(',', '_').Replace('?', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace("{", "").Replace("}", "")
 				.Replace("+", "Plus")
