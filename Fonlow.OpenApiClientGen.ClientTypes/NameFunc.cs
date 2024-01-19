@@ -161,10 +161,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				.Replace("{", "").Replace("}", "")
 				.Replace("+", "Plus")
 				.Replace("-", "Minus")
+				.Replace("%", "Percent")
 				.Replace("=", "_")
 				.Replace("{", "_")
 				.Replace("}", "_")
-				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace('$', '_').Replace("'", "_").Replace("`", "_")
+				.Replace('[', '_').Replace(']', '_').Replace("/", "Slash").Replace('#', '_').Replace('@', '_').Replace('$', '_').Replace("'", "_").Replace("`", "_")
 				.Replace(' ', '_'));
 		}
 
