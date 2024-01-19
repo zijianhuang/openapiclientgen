@@ -85,7 +85,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var stronglyTypedRequestBodies = ExtractRequestBodiesOfApplicationJson(components.RequestBodies);
 				foreach (var t in stronglyTypedRequestBodies)
 				{
-					ComponentsSchemas.Add(t);
+					if (!ComponentsSchemas.TryAdd(t.Key, t.Value))
+					{
+						Console.Error.WriteLine($"duplicated: {t.Key}");
+					}
 				}
 
 			}

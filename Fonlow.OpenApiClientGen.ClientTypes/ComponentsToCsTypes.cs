@@ -355,12 +355,13 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
+					//MS openapi parrser may intepret 0 or 1 as double rather than integer and this cause the value become 0D or 1D. And some openApi definitions actually float or double as enum member.
 					string memberName = "_" + doubleMember.Value.ToString();
 					double doubleValue = doubleMember.Value;
 					CodeMemberField clientField = new()
 					{
 						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(doubleValue),
+						InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
 					};
 
 					if (settings.DecorateDataModelWithDataContract)
