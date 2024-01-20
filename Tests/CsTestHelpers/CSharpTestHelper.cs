@@ -9,6 +9,9 @@ using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// For integration testing: generate, assert against existing copy optionaly and build optionally
+	/// </summary>
 	public class CSharpTestHelper
 	{
 		readonly protected ITestOutputHelper output;
@@ -55,7 +58,7 @@ namespace SwagTests
 
 			if (TestingSettings.Instance.Build)
 			{
-				var r = CSharpValidation.CompileThenSave(s, null, mySettings != null && mySettings.UseSystemTextJson);
+				var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null && mySettings.UseSystemTextJson);
 
 				if (!r.Success)
 				{

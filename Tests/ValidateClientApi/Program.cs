@@ -14,7 +14,7 @@ namespace ValidateClientApi
 
 			var path = args[0];
 			var csharpCodes = System.IO.File.ReadAllText(path);
-			var result = CSharpValidation.CompileThenSave(csharpCodes, null);
+			var result = CSharpValidation.CompileThenSaveAssembly(csharpCodes, null);
 			if (result.Success)
 			{
 				Console.WriteLine("Generated codes pass compilation.");

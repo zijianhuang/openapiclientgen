@@ -74,11 +74,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId == "StatusCodes")
-			{
-				Console.WriteLine(refId);
-			}
-			string ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : string.Empty;
+			string ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : settings.ClientNamespace;
 			string currentTypeName = NameFunc.RefineTypeName(refId, ns, settings.DotsToNamespaces);
 			if (settings.UsePascalCase)
 			{
@@ -92,6 +88,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
 			CodeTypeDeclaration typeDeclaration = null;
+
+			CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, currentTypeName, ns);
+			if (existingType != null)
+			{
+				Console.WriteLine($"{refId} exists in CodeDOM");
+				return;
+			}
+
 			if (isForClass)
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))

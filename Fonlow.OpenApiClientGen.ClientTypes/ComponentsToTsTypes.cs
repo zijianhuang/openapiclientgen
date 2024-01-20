@@ -71,7 +71,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			var ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : string.Empty;
+			var ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : settings.ClientNamespace;
 			var currentTypeName = NameFunc.RefineTypeName(refId, ns, settings.DotsToNamespaces);
 
 			RegisterSchemaRefIdToBeAdded(refId);
@@ -81,6 +81,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
 			CodeTypeDeclaration typeDeclaration = null;
+
+			CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, currentTypeName, ns);
+			if (existingType != null)
+			{
+				Console.WriteLine($"{refId} exists in CodeDOM");
+				return;
+			}
+
 			if (isForClass)
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
@@ -622,17 +630,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			if (String.IsNullOrEmpty(ns))
 			{
-				return PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName);
+				return PodGenHelper.CreatePodClientInterface(ClientNamespace, typeName); // type as interface
 			}
 			else
 			{
 				var foundNamespace = ClassNamespaces.Find(d => d.Name == ns);
 				if (foundNamespace == null)
 				{
-					AddNamespaceDeclarationIfNotExist(ns);
+					foundNamespace = AddNamespaceDeclarationIfNotExist(ns);
 				}
 
-				return PodGenHelper.CreatePodClientInterface(foundNamespace, typeName);
+				return PodGenHelper.CreatePodClientInterface(foundNamespace, typeName); //type as interface
 			}
 		}
 

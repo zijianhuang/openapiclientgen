@@ -31,10 +31,24 @@ namespace SwagTests
 			return TranslateDefToCode(defFilePath, settings);
 		}
 
+		const string resultsDir = "Results";
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="openapiDir">Like ..\..\..\..\openapi-directory20240114\APIs\github.com\api.github.com\1.1.4\</param>
+		/// <param name="mySettings"></param>
 		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings= null)
 		{ 
 			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings ?? CodeGenSettings.Default);
-			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
+			var csFilePath = CreateUniqueFileName(openapiDir);
+			if (!Directory.Exists(resultsDir))
+			{
+				Directory.CreateDirectory(resultsDir);
+			}
+
+			File.WriteAllText(csFilePath, s);
+			var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
 			if (!r.Success)
 			{
 				output.WriteLine("CSharp Compilation Errors:");
@@ -50,7 +64,7 @@ namespace SwagTests
 		public string GenerateFromOpenApiAndBuildWithError(string openapiDir, Settings mySettings)
 		{
 			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings);
-			var r = CSharpValidation.CompileThenSave(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
+			var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
 			if (!r.Success)
 			{
 				StringBuilder sb = new();
@@ -64,6 +78,25 @@ namespace SwagTests
 			}
 
 			return null;
+		}
+
+		static string CreateUniqueFileName(string defDirName)
+		{
+			var idx = defDirName.IndexOf("\\APIs\\");
+			var whatAfter = defDirName.Substring(idx + 6);
+			return $"{resultsDir}\\{RefinePropertyName(whatAfter)}.cs";
+		}
+
+		static string RefinePropertyName(string s)
+		{
+			if (String.IsNullOrEmpty(s))
+			{
+				return s;
+			}
+
+			return s.Replace("\\", "_").Replace("$", "").Replace(':', '_').Replace('-', '_').Replace('.', '_')
+				.Replace('[', '_').Replace(']', '_').Replace('(', '_').Replace(')', '_').Replace('/', '_').Replace('#', '_')
+				.Replace(' ', '_').Replace('+', '_').Replace('~', '_');
 		}
 	}
 }

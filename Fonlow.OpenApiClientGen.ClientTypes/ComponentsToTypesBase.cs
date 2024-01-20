@@ -134,22 +134,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		/// <summary>
+		/// Add Type for RefId if not existing in the entire codeCompileUnit.Namespaces.
+		/// If RefId is separated by dots and DotsToNamespsaces is true, this is also addressed.
+		/// </summary>
+		/// <param name="refId"></param>
 		void AddTypeForRefIdIfNotExist(string refId)
 		{
 			var schema = ComponentsSchemas[refId];
 			if (schema != null)
 			{
-				string classNamespaceText = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : string.Empty;
-				if (string.IsNullOrEmpty(classNamespaceText))
-				{
-					classNamespaceText = settings.ClientNamespace;
-				}
-
-				CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, refId, classNamespaceText);  // ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
-				if (existingType == null)
-				{
-					AddTypeToCodeDom(refId, schema);
-				}
+				AddTypeToCodeDom(refId, schema);
 			}
 		}
 
@@ -277,7 +272,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
 					{
 						AddTypeToCodeDom(arrayTypeSchemaRefId, existingSchema);
-						//AddTypeToCodeDom(arrayTypeWithNs, existingSchema);
 					}
 				}
 
@@ -362,7 +356,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 			{
-				//AddTypeToCodeDom(complexType, propertySchema);
 				AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
 			}
 
