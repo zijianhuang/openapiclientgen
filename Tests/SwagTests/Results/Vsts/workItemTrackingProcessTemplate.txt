@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -265,7 +264,7 @@ namespace MyNS
 		public async Task<AdminBehavior[]> Behaviors_ListAsync(string organization, string processId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -296,7 +295,7 @@ namespace MyNS
 		public AdminBehavior[] Behaviors_List(string organization, string processId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -327,7 +326,7 @@ namespace MyNS
 		public async Task Processes_Export_Process_TemplateAsync(string organization, string id, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/export/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -352,7 +351,7 @@ namespace MyNS
 		public void Processes_Export_Process_Template(string organization, string id, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/export/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -377,7 +376,7 @@ namespace MyNS
 		public async Task<ProcessPromoteStatus> Processes_Import_Process_Template_StatusAsync(string organization, string id, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/status/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -408,7 +407,7 @@ namespace MyNS
 		public ProcessPromoteStatus Processes_Import_Process_Template_Status(string organization, string id, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processadmin/processes/status/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

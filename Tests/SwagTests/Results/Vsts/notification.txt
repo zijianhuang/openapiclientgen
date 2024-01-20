@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -2189,7 +2188,7 @@ namespace MyNS
 		public async Task<INotificationDiagnosticLog[]> Diagnostic_Logs_ListAsync(string source, string organization, string entryId, System.DateTimeOffset startTime, System.DateTimeOffset endTime, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/diagnosticlogs/"+ (source==null? "" : System.Uri.EscapeDataString(source))+"/entries/"+ (entryId==null? "" : System.Uri.EscapeDataString(entryId))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2223,7 +2222,7 @@ namespace MyNS
 		public INotificationDiagnosticLog[] Diagnostic_Logs_List(string source, string organization, string entryId, System.DateTimeOffset startTime, System.DateTimeOffset endTime, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/diagnosticlogs/"+ (source==null? "" : System.Uri.EscapeDataString(source))+"/entries/"+ (entryId==null? "" : System.Uri.EscapeDataString(entryId))+"&startTime=" + startTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&endTime=" + endTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2254,7 +2253,7 @@ namespace MyNS
 		public async Task<NotificationEventType[]> Event_Types_ListAsync(string organization, string publisherId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes&publisherId=" + (publisherId==null? "" : System.Uri.EscapeDataString(publisherId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2285,7 +2284,7 @@ namespace MyNS
 		public NotificationEventType[] Event_Types_List(string organization, string publisherId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes&publisherId=" + (publisherId==null? "" : System.Uri.EscapeDataString(publisherId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2316,7 +2315,7 @@ namespace MyNS
 		public async Task<NotificationEventType> Event_Types_GetAsync(string eventType, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes/"+ (eventType==null? "" : System.Uri.EscapeDataString(eventType))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2347,7 +2346,7 @@ namespace MyNS
 		public NotificationEventType Event_Types_Get(string eventType, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/eventtypes/"+ (eventType==null? "" : System.Uri.EscapeDataString(eventType))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2376,7 +2375,7 @@ namespace MyNS
 		public async Task<NotificationAdminSettings> Settings_GetAsync(string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2405,7 +2404,7 @@ namespace MyNS
 		public NotificationAdminSettings Settings_Get(string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2434,13 +2433,13 @@ namespace MyNS
 		public async Task<NotificationAdminSettings> Settings_UpdateAsync(string organization, string api_version, NotificationAdminSettingsUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2470,13 +2469,13 @@ namespace MyNS
 		public NotificationAdminSettings Settings_Update(string organization, string api_version, NotificationAdminSettingsUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/settings&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2508,7 +2507,7 @@ namespace MyNS
 		public async Task<NotificationSubscriber> Subscribers_GetAsync(string subscriberId, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2539,7 +2538,7 @@ namespace MyNS
 		public NotificationSubscriber Subscribers_Get(string subscriberId, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2570,13 +2569,13 @@ namespace MyNS
 		public async Task<NotificationSubscriber> Subscribers_UpdateAsync(string subscriberId, string organization, string api_version, NotificationSubscriberUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2608,13 +2607,13 @@ namespace MyNS
 		public NotificationSubscriber Subscribers_Update(string subscriberId, string organization, string api_version, NotificationSubscriberUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscribers/"+ (subscriberId==null? "" : System.Uri.EscapeDataString(subscriberId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2645,13 +2644,13 @@ namespace MyNS
 		public async Task<NotificationSubscription[]> Subscriptions_QueryAsync(string organization, string api_version, SubscriptionQuery requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptionquery&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2682,13 +2681,13 @@ namespace MyNS
 		public NotificationSubscription[] Subscriptions_Query(string organization, string api_version, SubscriptionQuery requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptionquery&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2721,7 +2720,7 @@ namespace MyNS
 		public async Task<NotificationSubscription[]> Subscriptions_ListAsync(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : System.Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2753,7 +2752,7 @@ namespace MyNS
 		public NotificationSubscription[] Subscriptions_List(string organization, string targetId, string ids, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&targetId=" + (targetId==null? "" : System.Uri.EscapeDataString(targetId))+"&ids=" + (ids==null? "" : System.Uri.EscapeDataString(ids))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2783,13 +2782,13 @@ namespace MyNS
 		public async Task<NotificationSubscription> Subscriptions_CreateAsync(string organization, string api_version, NotificationSubscriptionCreateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2820,13 +2819,13 @@ namespace MyNS
 		public NotificationSubscription Subscriptions_Create(string organization, string api_version, NotificationSubscriptionCreateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2857,7 +2856,7 @@ namespace MyNS
 		public async Task<NotificationSubscription> Subscriptions_GetAsync(string subscriptionId, string organization, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2887,7 +2886,7 @@ namespace MyNS
 		public NotificationSubscription Subscriptions_Get(string subscriptionId, string organization, SubscriptionQueryQueryFlags queryFlags, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&queryFlags=" + queryFlags+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2917,7 +2916,7 @@ namespace MyNS
 		public async Task Subscriptions_DeleteAsync(string subscriptionId, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2941,7 +2940,7 @@ namespace MyNS
 		public void Subscriptions_Delete(string subscriptionId, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2965,13 +2964,13 @@ namespace MyNS
 		public async Task<NotificationSubscription> Subscriptions_UpdateAsync(string subscriptionId, string organization, string api_version, NotificationSubscriptionUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3002,13 +3001,13 @@ namespace MyNS
 		public NotificationSubscription Subscriptions_Update(string subscriptionId, string organization, string api_version, NotificationSubscriptionUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3040,7 +3039,7 @@ namespace MyNS
 		public async Task<SubscriptionDiagnostics> Diagnostics_GetAsync(string subscriptionId, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3071,7 +3070,7 @@ namespace MyNS
 		public SubscriptionDiagnostics Diagnostics_Get(string subscriptionId, string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3102,13 +3101,13 @@ namespace MyNS
 		public async Task<SubscriptionDiagnostics> Diagnostics_UpdateAsync(string subscriptionId, string organization, string api_version, UpdateSubscripitonDiagnosticsParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3140,13 +3139,13 @@ namespace MyNS
 		public SubscriptionDiagnostics Diagnostics_Update(string subscriptionId, string organization, string api_version, UpdateSubscripitonDiagnosticsParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/diagnostics&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3178,13 +3177,13 @@ namespace MyNS
 		public async Task<SubscriptionUserSettings> Subscriptions_Update_Subscription_User_SettingsAsync(string subscriptionId, string userId, string organization, string api_version, SubscriptionUserSettings requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/Subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/usersettings/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3216,13 +3215,13 @@ namespace MyNS
 		public SubscriptionUserSettings Subscriptions_Update_Subscription_User_Settings(string subscriptionId, string userId, string organization, string api_version, SubscriptionUserSettings requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/Subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/usersettings/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3253,7 +3252,7 @@ namespace MyNS
 		public async Task<NotificationSubscriptionTemplate[]> Subscriptions_Get_Subscription_TemplatesAsync(string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptiontemplates&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3283,7 +3282,7 @@ namespace MyNS
 		public NotificationSubscriptionTemplate[] Subscriptions_Get_Subscription_Templates(string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/notification/subscriptiontemplates&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

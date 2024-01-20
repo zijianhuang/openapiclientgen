@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -478,7 +477,7 @@ namespace MyNS
 		public async Task<Assets> GetAssetsAsync(AssetStatusQueryParam status, int page, int pageSize, GetAssetsOrderBy orderBy, GetAssetsSortDirection sortDirection, GetAssetsFilterBy filterBy)
 		{
 			var requestUri = "Assets?status=" + status+"&page="+page+"&pageSize="+pageSize+"&orderBy=" + orderBy+"&sortDirection=" + sortDirection+"&filterBy=" + filterBy;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -513,7 +512,7 @@ namespace MyNS
 		public Assets GetAssets(AssetStatusQueryParam status, int page, int pageSize, GetAssetsOrderBy orderBy, GetAssetsSortDirection sortDirection, GetAssetsFilterBy filterBy)
 		{
 			var requestUri = "Assets?status=" + status+"&page="+page+"&pageSize="+pageSize+"&orderBy=" + orderBy+"&sortDirection=" + sortDirection+"&filterBy=" + filterBy;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -543,13 +542,13 @@ namespace MyNS
 		public async Task<Asset> CreateAssetAsync(Asset requestBody)
 		{
 			var requestUri = "Assets";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -580,13 +579,13 @@ namespace MyNS
 		public Asset CreateAsset(Asset requestBody)
 		{
 			var requestUri = "Assets";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -619,7 +618,7 @@ namespace MyNS
 		public async Task<Asset> GetAssetByIdAsync(string id)
 		{
 			var requestUri = "Assets/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -651,7 +650,7 @@ namespace MyNS
 		public Asset GetAssetById(string id)
 		{
 			var requestUri = "Assets/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -680,7 +679,7 @@ namespace MyNS
 		public async Task<AssetType[]> GetAssetTypesAsync()
 		{
 			var requestUri = "AssetTypes";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -709,7 +708,7 @@ namespace MyNS
 		public AssetType[] GetAssetTypes()
 		{
 			var requestUri = "AssetTypes";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -739,13 +738,13 @@ namespace MyNS
 		public async Task<AssetType> CreateAssetTypeAsync(AssetType requestBody)
 		{
 			var requestUri = "AssetTypes";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -776,13 +775,13 @@ namespace MyNS
 		public AssetType CreateAssetType(AssetType requestBody)
 		{
 			var requestUri = "AssetTypes";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -812,7 +811,7 @@ namespace MyNS
 		public async Task<Setting> GetAssetSettingsAsync()
 		{
 			var requestUri = "Settings";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -841,7 +840,7 @@ namespace MyNS
 		public Setting GetAssetSettings()
 		{
 			var requestUri = "Settings";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

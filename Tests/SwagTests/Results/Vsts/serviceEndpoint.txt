@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -1636,13 +1635,13 @@ namespace MyNS
 		public async Task<ServiceEndpoint[]> Endpoints_Update_Service_EndpointsAsync(string organization, string api_version, ServiceEndpoint[] requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1674,13 +1673,13 @@ namespace MyNS
 		public ServiceEndpoint[] Endpoints_Update_Service_Endpoints(string organization, string api_version, ServiceEndpoint[] requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1710,13 +1709,13 @@ namespace MyNS
 		public async Task<ServiceEndpoint> Endpoints_CreateAsync(string organization, string api_version, ServiceEndpoint requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1746,13 +1745,13 @@ namespace MyNS
 		public ServiceEndpoint Endpoints_Create(string organization, string api_version, ServiceEndpoint requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1782,13 +1781,13 @@ namespace MyNS
 		public async Task<ServiceEndpoint> Endpoints_Update_Service_EndpointAsync(string organization, string endpointId, string operation, string api_version, ServiceEndpoint requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&operation=" + (operation==null? "" : System.Uri.EscapeDataString(operation))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1818,13 +1817,13 @@ namespace MyNS
 		public ServiceEndpoint Endpoints_Update_Service_Endpoint(string organization, string endpointId, string operation, string api_version, ServiceEndpoint requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&operation=" + (operation==null? "" : System.Uri.EscapeDataString(operation))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1854,7 +1853,7 @@ namespace MyNS
 		public async Task Endpoints_DeleteAsync(string organization, string endpointId, string projectIds, bool deep, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&projectIds=" + (projectIds==null? "" : System.Uri.EscapeDataString(projectIds))+"&deep="+deep+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1877,7 +1876,7 @@ namespace MyNS
 		public void Endpoints_Delete(string organization, string endpointId, string projectIds, bool deep, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&projectIds=" + (projectIds==null? "" : System.Uri.EscapeDataString(projectIds))+"&deep="+deep+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1900,13 +1899,13 @@ namespace MyNS
 		public async Task Endpoints_Share_Service_EndpointAsync(string organization, string endpointId, string api_version, ServiceEndpointProjectReference[] requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1930,13 +1929,13 @@ namespace MyNS
 		public void Endpoints_Share_Service_Endpoint(string organization, string endpointId, string api_version, ServiceEndpointProjectReference[] requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1963,7 +1962,7 @@ namespace MyNS
 		public async Task<ServiceEndpointType[]> Types_ListAsync(string organization, string type, string scheme, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/types&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&scheme=" + (scheme==null? "" : System.Uri.EscapeDataString(scheme))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1995,7 +1994,7 @@ namespace MyNS
 		public ServiceEndpointType[] Types_List(string organization, string type, string scheme, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/serviceendpoint/types&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&scheme=" + (scheme==null? "" : System.Uri.EscapeDataString(scheme))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2029,7 +2028,7 @@ namespace MyNS
 		public async Task<ServiceEndpointExecutionRecord[]> Executionhistory_ListAsync(string organization, string project, string endpointId, int top, long continuationToken, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"/executionhistory&top="+top+"&continuationToken="+continuationToken+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2063,7 +2062,7 @@ namespace MyNS
 		public ServiceEndpointExecutionRecord[] Executionhistory_List(string organization, string project, string endpointId, int top, long continuationToken, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"/executionhistory&top="+top+"&continuationToken="+continuationToken+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2095,13 +2094,13 @@ namespace MyNS
 		public async Task<string[]> Endpointproxy_QueryAsync(string organization, string project, string api_version, DataSourceBinding requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpointproxy&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2134,13 +2133,13 @@ namespace MyNS
 		public string[] Endpointproxy_Query(string organization, string project, string api_version, DataSourceBinding requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpointproxy&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2178,7 +2177,7 @@ namespace MyNS
 		public async Task<ServiceEndpoint[]> Endpoints_Get_Service_Endpoints_By_NamesAsync(string organization, string project, string endpointNames, string type, string authSchemes, string owner, bool includeFailed, bool includeDetails, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints&endpointNames=" + (endpointNames==null? "" : System.Uri.EscapeDataString(endpointNames))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&authSchemes=" + (authSchemes==null? "" : System.Uri.EscapeDataString(authSchemes))+"&owner=" + (owner==null? "" : System.Uri.EscapeDataString(owner))+"&includeFailed="+includeFailed+"&includeDetails="+includeDetails+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2215,7 +2214,7 @@ namespace MyNS
 		public ServiceEndpoint[] Endpoints_Get_Service_Endpoints_By_Names(string organization, string project, string endpointNames, string type, string authSchemes, string owner, bool includeFailed, bool includeDetails, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints&endpointNames=" + (endpointNames==null? "" : System.Uri.EscapeDataString(endpointNames))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&authSchemes=" + (authSchemes==null? "" : System.Uri.EscapeDataString(authSchemes))+"&owner=" + (owner==null? "" : System.Uri.EscapeDataString(owner))+"&includeFailed="+includeFailed+"&includeDetails="+includeDetails+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2248,13 +2247,13 @@ namespace MyNS
 		public async Task<ServiceEndpoint[]> Endpoints_Get_Service_Endpoints_With_Refreshed_AuthenticationAsync(string organization, string project, string endpointIds, string api_version, RefreshAuthenticationParameters[] requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints&endpointIds=" + (endpointIds==null? "" : System.Uri.EscapeDataString(endpointIds))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2288,13 +2287,13 @@ namespace MyNS
 		public ServiceEndpoint[] Endpoints_Get_Service_Endpoints_With_Refreshed_Authentication(string organization, string project, string endpointIds, string api_version, RefreshAuthenticationParameters[] requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints&endpointIds=" + (endpointIds==null? "" : System.Uri.EscapeDataString(endpointIds))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2328,7 +2327,7 @@ namespace MyNS
 		public async Task<ServiceEndpoint> Endpoints_GetAsync(string organization, string project, string endpointId, Endpoints_GetActionFilter actionFilter, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2361,7 +2360,7 @@ namespace MyNS
 		public ServiceEndpoint Endpoints_Get(string organization, string project, string endpointId, Endpoints_GetActionFilter actionFilter, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/serviceendpoint/endpoints/"+ (endpointId==null? "" : System.Uri.EscapeDataString(endpointId))+"&actionFilter=" + actionFilter+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

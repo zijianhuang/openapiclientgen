@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -168,13 +167,13 @@ namespace MyNS
 		public async Task<TranslateResponse> TranslateAsync(TranslateRequest requestBody)
 		{
 			var requestUri = "translate";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -203,13 +202,13 @@ namespace MyNS
 		public TranslateResponse Translate(TranslateRequest requestBody)
 		{
 			var requestUri = "translate";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

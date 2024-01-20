@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	
 	
@@ -76,7 +75,7 @@ namespace MyNS
 		public async Task<DataSetList> ListDataSetsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
 			{
@@ -112,7 +111,7 @@ namespace MyNS
 		public async Task<string> ListSearchableFieldsAsync(string dataset, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = ""+ (dataset==null? "" : System.Uri.EscapeDataString(dataset))+"/"+ (version==null? "" : System.Uri.EscapeDataString(version))+"/fields";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
 			{

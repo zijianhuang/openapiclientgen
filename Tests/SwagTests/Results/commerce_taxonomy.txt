@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -477,7 +476,7 @@ namespace MyNS
 		public async Task<BaseCategoryTree> GetDefaultCategoryTreeIdAsync(string marketplace_id)
 		{
 			var requestUri = "get_default_category_tree_id?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -507,7 +506,7 @@ namespace MyNS
 		public BaseCategoryTree GetDefaultCategoryTreeId(string marketplace_id)
 		{
 			var requestUri = "get_default_category_tree_id?marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -537,7 +536,7 @@ namespace MyNS
 		public async Task<CategoryTree> GetCategoryTreeAsync(string category_tree_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -567,7 +566,7 @@ namespace MyNS
 		public CategoryTree GetCategoryTree(string category_tree_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -598,7 +597,7 @@ namespace MyNS
 		public async Task<CategorySubtree> GetCategorySubtreeAsync(string category_id, string category_tree_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_subtree?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -629,7 +628,7 @@ namespace MyNS
 		public CategorySubtree GetCategorySubtree(string category_id, string category_tree_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_subtree?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -660,7 +659,7 @@ namespace MyNS
 		public async Task<CategorySuggestionResponse> GetCategorySuggestionsAsync(string category_tree_id, string q)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_suggestions&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -691,7 +690,7 @@ namespace MyNS
 		public CategorySuggestionResponse GetCategorySuggestions(string category_tree_id, string q)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_category_suggestions&q=" + (q==null? "" : System.Uri.EscapeDataString(q));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -721,7 +720,7 @@ namespace MyNS
 		public async Task<AspectMetadata> GetItemAspectsForCategoryAsync(string category_id, string category_tree_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_item_aspects_for_category?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -751,7 +750,7 @@ namespace MyNS
 		public AspectMetadata GetItemAspectsForCategory(string category_id, string category_tree_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_item_aspects_for_category?category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -782,7 +781,7 @@ namespace MyNS
 		public async Task<GetCompatibilityMetadataResponse> GetCompatibilityPropertiesAsync(string category_tree_id, string category_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_properties&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -813,7 +812,7 @@ namespace MyNS
 		public GetCompatibilityMetadataResponse GetCompatibilityProperties(string category_tree_id, string category_id)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_properties&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -846,7 +845,7 @@ namespace MyNS
 		public async Task<GetCompatibilityPropertyValuesResponse> GetCompatibilityPropertyValuesAsync(string category_tree_id, string compatibility_property, string category_id, string filter)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_property_values&compatibility_property=" + (compatibility_property==null? "" : System.Uri.EscapeDataString(compatibility_property))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -879,7 +878,7 @@ namespace MyNS
 		public GetCompatibilityPropertyValuesResponse GetCompatibilityPropertyValues(string category_tree_id, string compatibility_property, string category_id, string filter)
 		{
 			var requestUri = "category_tree/"+ (category_tree_id==null? "" : System.Uri.EscapeDataString(category_tree_id))+"/get_compatibility_property_values&compatibility_property=" + (compatibility_property==null? "" : System.Uri.EscapeDataString(compatibility_property))+"&category_id=" + (category_id==null? "" : System.Uri.EscapeDataString(category_id))+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

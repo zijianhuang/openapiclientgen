@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -3346,7 +3345,7 @@ namespace MyNS
 		public async Task<TestLog[]> Testlog_Get_Test_Result_LogsAsync(string organization, string project, int runId, int resultId, TestLogReferenceType type, string directoryPath, string fileNamePrefix, bool fetchMetaData, int top, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/results/"+resultId+"/testlog&type=" + type+"&directoryPath=" + (directoryPath==null? "" : System.Uri.EscapeDataString(directoryPath))+"&fileNamePrefix=" + (fileNamePrefix==null? "" : System.Uri.EscapeDataString(fileNamePrefix))+"&fetchMetaData="+fetchMetaData+"&top="+top+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3384,7 +3383,7 @@ namespace MyNS
 		public TestLog[] Testlog_Get_Test_Result_Logs(string organization, string project, int runId, int resultId, TestLogReferenceType type, string directoryPath, string fileNamePrefix, bool fetchMetaData, int top, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/results/"+resultId+"/testlog&type=" + type+"&directoryPath=" + (directoryPath==null? "" : System.Uri.EscapeDataString(directoryPath))+"&fileNamePrefix=" + (fileNamePrefix==null? "" : System.Uri.EscapeDataString(fileNamePrefix))+"&fetchMetaData="+fetchMetaData+"&top="+top+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3419,7 +3418,7 @@ namespace MyNS
 		public async Task<TestLogStoreEndpointDetails> Testlogstoreendpoint_Get_Test_Log_Store_Endpoint_Details_For_Result_LogAsync(string organization, string project, int runId, int resultId, TestLogReferenceType type, string filePath, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/results/"+resultId+"/testlogstoreendpoint&type=" + type+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3454,7 +3453,7 @@ namespace MyNS
 		public TestLogStoreEndpointDetails Testlogstoreendpoint_Get_Test_Log_Store_Endpoint_Details_For_Result_Log(string organization, string project, int runId, int resultId, TestLogReferenceType type, string filePath, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/results/"+resultId+"/testlogstoreendpoint&type=" + type+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3490,7 +3489,7 @@ namespace MyNS
 		public async Task<TestLogStoreEndpointDetails> Testlogstoreendpoint_Test_Log_Store_Endpoint_Details_For_ResultAsync(string organization, string project, int runId, int resultId, int subResultId, string filePath, TestLogReferenceType type, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/results/"+resultId+"/testlogstoreendpoint&subResultId="+subResultId+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&type=" + type+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3526,7 +3525,7 @@ namespace MyNS
 		public TestLogStoreEndpointDetails Testlogstoreendpoint_Test_Log_Store_Endpoint_Details_For_Result(string organization, string project, int runId, int resultId, int subResultId, string filePath, TestLogReferenceType type, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/results/"+resultId+"/testlogstoreendpoint&subResultId="+subResultId+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&type=" + type+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3563,7 +3562,7 @@ namespace MyNS
 		public async Task<TestLog[]> Testlog_Get_Test_Run_LogsAsync(string organization, string project, int runId, TestLogReferenceType type, string directoryPath, string fileNamePrefix, bool fetchMetaData, int top, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/testlog&type=" + type+"&directoryPath=" + (directoryPath==null? "" : System.Uri.EscapeDataString(directoryPath))+"&fileNamePrefix=" + (fileNamePrefix==null? "" : System.Uri.EscapeDataString(fileNamePrefix))+"&fetchMetaData="+fetchMetaData+"&top="+top+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3600,7 +3599,7 @@ namespace MyNS
 		public TestLog[] Testlog_Get_Test_Run_Logs(string organization, string project, int runId, TestLogReferenceType type, string directoryPath, string fileNamePrefix, bool fetchMetaData, int top, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/testlog&type=" + type+"&directoryPath=" + (directoryPath==null? "" : System.Uri.EscapeDataString(directoryPath))+"&fileNamePrefix=" + (fileNamePrefix==null? "" : System.Uri.EscapeDataString(fileNamePrefix))+"&fetchMetaData="+fetchMetaData+"&top="+top+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3634,7 +3633,7 @@ namespace MyNS
 		public async Task<TestLogStoreEndpointDetails> Testlogstoreendpoint_Get_Test_Log_Store_Endpoint_Details_For_Run_LogAsync(string organization, string project, int runId, TestLogReferenceType type, string filePath, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/testlogstoreendpoint&type=" + type+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3668,7 +3667,7 @@ namespace MyNS
 		public TestLogStoreEndpointDetails Testlogstoreendpoint_Get_Test_Log_Store_Endpoint_Details_For_Run_Log(string organization, string project, int runId, TestLogReferenceType type, string filePath, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/testlogstoreendpoint&type=" + type+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3703,7 +3702,7 @@ namespace MyNS
 		public async Task<TestLogStoreEndpointDetails> Testlogstoreendpoint_Test_Log_Store_Endpoint_Details_For_RunAsync(string organization, string project, int runId, Testlogstoreendpoint_Test_Log_Store_Endpoint_Details_For_RunTestLogStoreOperationType testLogStoreOperationType, string filePath, TestLogReferenceType type, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/testlogstoreendpoint&testLogStoreOperationType=" + testLogStoreOperationType+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&type=" + type+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3738,7 +3737,7 @@ namespace MyNS
 		public TestLogStoreEndpointDetails Testlogstoreendpoint_Test_Log_Store_Endpoint_Details_For_Run(string organization, string project, int runId, Testlogstoreendpoint_Test_Log_Store_Endpoint_Details_For_RunTestLogStoreOperationType testLogStoreOperationType, string filePath, TestLogReferenceType type, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/testresults/runs/"+runId+"/testlogstoreendpoint&testLogStoreOperationType=" + testLogStoreOperationType+"&filePath=" + (filePath==null? "" : System.Uri.EscapeDataString(filePath))+"&type=" + type+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

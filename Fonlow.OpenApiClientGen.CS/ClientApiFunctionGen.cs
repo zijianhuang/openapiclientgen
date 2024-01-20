@@ -227,7 +227,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeSnippetExpression(uriText)));
 
 			method.Statements.Add(new CodeSnippetStatement(
-				"\t\t\t" + $@"using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+				"\t\t\t" + $@"using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.{httpMethod}, requestUri))
 			{{"
 			));
 
@@ -335,7 +335,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			AddRequestUriWithQueryAssignmentStatement();
 
 			method.Statements.Add(new CodeSnippetStatement(
-				"\t\t\t" + $@"using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.{httpMethod}, requestUri))
+				"\t\t\t" + $@"using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.{httpMethod}, requestUri))
 			{{"
 				));
 
@@ -345,7 +345,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				if (settings.UseSystemTextJson)
 				{
 					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var contentJson = JsonSerializer.Serialize(requestBody, jsonSerializerSettings);"));
-					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var content = new StringContent(contentJson, System.Text.Encoding.UTF8, ""application/json"");"));
+					method.Statements.Add(new CodeSnippetStatement("\t\t\t" + @"var content = new System.Net.HttpStringContent(contentJson, System.Text.Encoding.UTF8, ""application/json"");"));
 				}
 				else
 				{
@@ -360,7 +360,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 
 					method.Statements.Add(new CodeSnippetStatement(
-						"\t\t\t" + @"var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, ""application/json"");"
+						"\t\t\t" + @"var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, ""application/json"");"
 					));
 				}
 

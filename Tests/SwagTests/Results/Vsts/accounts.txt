@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -216,7 +215,7 @@ namespace MyNS
 		public async Task<Account[]> Accounts_ListAsync(string ownerId, string memberId, string properties, string api_version)
 		{
 			var requestUri = "_apis/accounts?ownerId=" + (ownerId==null? "" : System.Uri.EscapeDataString(ownerId))+"&memberId=" + (memberId==null? "" : System.Uri.EscapeDataString(memberId))+"&properties=" + (properties==null? "" : System.Uri.EscapeDataString(properties))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -247,7 +246,7 @@ namespace MyNS
 		public Account[] Accounts_List(string ownerId, string memberId, string properties, string api_version)
 		{
 			var requestUri = "_apis/accounts?ownerId=" + (ownerId==null? "" : System.Uri.EscapeDataString(ownerId))+"&memberId=" + (memberId==null? "" : System.Uri.EscapeDataString(memberId))+"&properties=" + (properties==null? "" : System.Uri.EscapeDataString(properties))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

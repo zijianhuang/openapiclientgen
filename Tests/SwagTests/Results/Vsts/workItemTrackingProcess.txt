@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -1542,7 +1541,7 @@ namespace MyNS
 		public async Task<ProcessInfo[]> Processes_ListAsync(string organization, Processes_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1572,7 +1571,7 @@ namespace MyNS
 		public ProcessInfo[] Processes_List(string organization, Processes_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1603,13 +1602,13 @@ namespace MyNS
 		public async Task<ProcessInfo> Processes_CreateAsync(string organization, string api_version, CreateProcessModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1641,13 +1640,13 @@ namespace MyNS
 		public ProcessInfo Processes_Create(string organization, string api_version, CreateProcessModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1679,7 +1678,7 @@ namespace MyNS
 		public async Task<ProcessBehavior[]> Behaviors_ListAsync(string organization, string processId, Behaviors_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1710,7 +1709,7 @@ namespace MyNS
 		public ProcessBehavior[] Behaviors_List(string organization, string processId, Behaviors_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1741,13 +1740,13 @@ namespace MyNS
 		public async Task<ProcessBehavior> Behaviors_CreateAsync(string organization, string processId, string api_version, ProcessBehaviorCreateRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1779,13 +1778,13 @@ namespace MyNS
 		public ProcessBehavior Behaviors_Create(string organization, string processId, string api_version, ProcessBehaviorCreateRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1818,7 +1817,7 @@ namespace MyNS
 		public async Task<ProcessBehavior> Behaviors_GetAsync(string organization, string processId, string behaviorRefName, Behaviors_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1850,7 +1849,7 @@ namespace MyNS
 		public ProcessBehavior Behaviors_Get(string organization, string processId, string behaviorRefName, Behaviors_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1882,13 +1881,13 @@ namespace MyNS
 		public async Task<ProcessBehavior> Behaviors_UpdateAsync(string organization, string processId, string behaviorRefName, string api_version, ProcessBehaviorUpdateRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1921,13 +1920,13 @@ namespace MyNS
 		public ProcessBehavior Behaviors_Update(string organization, string processId, string behaviorRefName, string api_version, ProcessBehaviorUpdateRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1960,7 +1959,7 @@ namespace MyNS
 		public async Task Behaviors_DeleteAsync(string organization, string processId, string behaviorRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1986,7 +1985,7 @@ namespace MyNS
 		public void Behaviors_Delete(string organization, string processId, string behaviorRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2012,7 +2011,7 @@ namespace MyNS
 		public async Task<ProcessWorkItemType[]> Work_Item_Types_ListAsync(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2044,7 +2043,7 @@ namespace MyNS
 		public ProcessWorkItemType[] Work_Item_Types_List(string organization, string processId, Work_Item_Types_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2075,13 +2074,13 @@ namespace MyNS
 		public async Task<ProcessWorkItemType> Work_Item_Types_CreateAsync(string organization, string processId, string api_version, CreateProcessWorkItemTypeRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2113,13 +2112,13 @@ namespace MyNS
 		public ProcessWorkItemType Work_Item_Types_Create(string organization, string processId, string api_version, CreateProcessWorkItemTypeRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2153,7 +2152,7 @@ namespace MyNS
 		public async Task<ProcessWorkItemType> Work_Item_Types_GetAsync(string organization, string processId, string witRefName, Work_Item_Types_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2186,7 +2185,7 @@ namespace MyNS
 		public ProcessWorkItemType Work_Item_Types_Get(string organization, string processId, string witRefName, Work_Item_Types_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2218,7 +2217,7 @@ namespace MyNS
 		public async Task Work_Item_Types_DeleteAsync(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2244,7 +2243,7 @@ namespace MyNS
 		public void Work_Item_Types_Delete(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2270,13 +2269,13 @@ namespace MyNS
 		public async Task<ProcessWorkItemType> Work_Item_Types_UpdateAsync(string organization, string processId, string witRefName, string api_version, UpdateProcessWorkItemTypeRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2309,13 +2308,13 @@ namespace MyNS
 		public ProcessWorkItemType Work_Item_Types_Update(string organization, string processId, string witRefName, string api_version, UpdateProcessWorkItemTypeRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2348,7 +2347,7 @@ namespace MyNS
 		public async Task<ProcessWorkItemTypeField[]> Fields_ListAsync(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2380,7 +2379,7 @@ namespace MyNS
 		public ProcessWorkItemTypeField[] Fields_List(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2412,13 +2411,13 @@ namespace MyNS
 		public async Task<ProcessWorkItemTypeField> Fields_AddAsync(string organization, string processId, string witRefName, string api_version, AddProcessWorkItemTypeFieldRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2451,13 +2450,13 @@ namespace MyNS
 		public ProcessWorkItemTypeField Fields_Add(string organization, string processId, string witRefName, string api_version, AddProcessWorkItemTypeFieldRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2491,7 +2490,7 @@ namespace MyNS
 		public async Task<ProcessWorkItemTypeField> Fields_GetAsync(string organization, string processId, string witRefName, string fieldRefName, Fields_GetExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : System.Uri.EscapeDataString(fieldRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2524,7 +2523,7 @@ namespace MyNS
 		public ProcessWorkItemTypeField Fields_Get(string organization, string processId, string witRefName, string fieldRefName, Fields_GetExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : System.Uri.EscapeDataString(fieldRefName))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2557,7 +2556,7 @@ namespace MyNS
 		public async Task Fields_Remove_Work_Item_Type_FieldAsync(string organization, string processId, string witRefName, string fieldRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : System.Uri.EscapeDataString(fieldRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2584,7 +2583,7 @@ namespace MyNS
 		public void Fields_Remove_Work_Item_Type_Field(string organization, string processId, string witRefName, string fieldRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : System.Uri.EscapeDataString(fieldRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2611,13 +2610,13 @@ namespace MyNS
 		public async Task<ProcessWorkItemTypeField> Fields_UpdateAsync(string organization, string processId, string witRefName, string fieldRefName, string api_version, UpdateProcessWorkItemTypeFieldRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : System.Uri.EscapeDataString(fieldRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2651,13 +2650,13 @@ namespace MyNS
 		public ProcessWorkItemTypeField Fields_Update(string organization, string processId, string witRefName, string fieldRefName, string api_version, UpdateProcessWorkItemTypeFieldRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/fields/"+ (fieldRefName==null? "" : System.Uri.EscapeDataString(fieldRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2690,7 +2689,7 @@ namespace MyNS
 		public async Task<FormLayout> Layout_GetAsync(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2722,7 +2721,7 @@ namespace MyNS
 		public FormLayout Layout_Get(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2756,13 +2755,13 @@ namespace MyNS
 		public async Task<Control> Controls_CreateAsync(string organization, string processId, string witRefName, string groupId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2797,13 +2796,13 @@ namespace MyNS
 		public Control Controls_Create(string organization, string processId, string witRefName, string groupId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2840,13 +2839,13 @@ namespace MyNS
 		public async Task<Control> Controls_Move_Control_To_GroupAsync(string organization, string processId, string witRefName, string groupId, string controlId, string removeFromGroupId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&removeFromGroupId=" + (removeFromGroupId==null? "" : System.Uri.EscapeDataString(removeFromGroupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2883,13 +2882,13 @@ namespace MyNS
 		public Control Controls_Move_Control_To_Group(string organization, string processId, string witRefName, string groupId, string controlId, string removeFromGroupId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&removeFromGroupId=" + (removeFromGroupId==null? "" : System.Uri.EscapeDataString(removeFromGroupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2924,7 +2923,7 @@ namespace MyNS
 		public async Task Controls_Remove_Control_From_GroupAsync(string organization, string processId, string witRefName, string groupId, string controlId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2952,7 +2951,7 @@ namespace MyNS
 		public void Controls_Remove_Control_From_Group(string organization, string processId, string witRefName, string groupId, string controlId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2981,13 +2980,13 @@ namespace MyNS
 		public async Task<Control> Controls_UpdateAsync(string organization, string processId, string witRefName, string groupId, string controlId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3023,13 +3022,13 @@ namespace MyNS
 		public Control Controls_Update(string organization, string processId, string witRefName, string groupId, string controlId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"/controls/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3063,13 +3062,13 @@ namespace MyNS
 		public async Task<Page> Pages_AddAsync(string organization, string processId, string witRefName, string api_version, Page requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3103,13 +3102,13 @@ namespace MyNS
 		public Page Pages_Add(string organization, string processId, string witRefName, string api_version, Page requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3143,13 +3142,13 @@ namespace MyNS
 		public async Task<Page> Pages_UpdateAsync(string organization, string processId, string witRefName, string api_version, Page requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3183,13 +3182,13 @@ namespace MyNS
 		public Page Pages_Update(string organization, string processId, string witRefName, string api_version, Page requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3223,7 +3222,7 @@ namespace MyNS
 		public async Task Pages_Remove_PageAsync(string organization, string processId, string witRefName, string pageId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3250,7 +3249,7 @@ namespace MyNS
 		public void Pages_Remove_Page(string organization, string processId, string witRefName, string pageId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3279,13 +3278,13 @@ namespace MyNS
 		public async Task<Group> Groups_AddAsync(string organization, string processId, string witRefName, string pageId, string sectionId, string api_version, Group requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3321,13 +3320,13 @@ namespace MyNS
 		public Group Groups_Add(string organization, string processId, string witRefName, string pageId, string sectionId, string api_version, Group requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3365,13 +3364,13 @@ namespace MyNS
 		public async Task<Group> Groups_Move_Group_To_SectionAsync(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string removeFromSectionId, string api_version, Group requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&removeFromSectionId=" + (removeFromSectionId==null? "" : System.Uri.EscapeDataString(removeFromSectionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3409,13 +3408,13 @@ namespace MyNS
 		public Group Groups_Move_Group_To_Section(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string removeFromSectionId, string api_version, Group requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&removeFromSectionId=" + (removeFromSectionId==null? "" : System.Uri.EscapeDataString(removeFromSectionId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3451,7 +3450,7 @@ namespace MyNS
 		public async Task Groups_Remove_GroupAsync(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3480,7 +3479,7 @@ namespace MyNS
 		public void Groups_Remove_Group(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3510,13 +3509,13 @@ namespace MyNS
 		public async Task<Group> Groups_UpdateAsync(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string api_version, Group requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3553,13 +3552,13 @@ namespace MyNS
 		public Group Groups_Update(string organization, string processId, string witRefName, string pageId, string sectionId, string groupId, string api_version, Group requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/pages/"+ (pageId==null? "" : System.Uri.EscapeDataString(pageId))+"/sections/"+ (sectionId==null? "" : System.Uri.EscapeDataString(sectionId))+"/groups/"+ (groupId==null? "" : System.Uri.EscapeDataString(groupId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3592,7 +3591,7 @@ namespace MyNS
 		public async Task<Control[]> System_Controls_ListAsync(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/systemcontrols&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3624,7 +3623,7 @@ namespace MyNS
 		public Control[] System_Controls_List(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/systemcontrols&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3657,7 +3656,7 @@ namespace MyNS
 		public async Task<Control[]> System_Controls_DeleteAsync(string organization, string processId, string witRefName, string controlId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/systemcontrols/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3690,7 +3689,7 @@ namespace MyNS
 		public Control[] System_Controls_Delete(string organization, string processId, string witRefName, string controlId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/systemcontrols/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3723,13 +3722,13 @@ namespace MyNS
 		public async Task<Control> System_Controls_UpdateAsync(string organization, string processId, string witRefName, string controlId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/systemcontrols/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3763,13 +3762,13 @@ namespace MyNS
 		public Control System_Controls_Update(string organization, string processId, string witRefName, string controlId, string api_version, Control requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/layout/systemcontrols/"+ (controlId==null? "" : System.Uri.EscapeDataString(controlId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3802,7 +3801,7 @@ namespace MyNS
 		public async Task<ProcessRule[]> Rules_ListAsync(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3834,7 +3833,7 @@ namespace MyNS
 		public ProcessRule[] Rules_List(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3866,13 +3865,13 @@ namespace MyNS
 		public async Task<ProcessRule> Rules_AddAsync(string organization, string processId, string witRefName, string api_version, CreateProcessRuleRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3905,13 +3904,13 @@ namespace MyNS
 		public ProcessRule Rules_Add(string organization, string processId, string witRefName, string api_version, CreateProcessRuleRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3945,7 +3944,7 @@ namespace MyNS
 		public async Task<ProcessRule> Rules_GetAsync(string organization, string processId, string witRefName, string ruleId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3978,7 +3977,7 @@ namespace MyNS
 		public ProcessRule Rules_Get(string organization, string processId, string witRefName, string ruleId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4011,13 +4010,13 @@ namespace MyNS
 		public async Task<ProcessRule> Rules_UpdateAsync(string organization, string processId, string witRefName, string ruleId, string api_version, UpdateProcessRuleRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4051,13 +4050,13 @@ namespace MyNS
 		public ProcessRule Rules_Update(string organization, string processId, string witRefName, string ruleId, string api_version, UpdateProcessRuleRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4091,7 +4090,7 @@ namespace MyNS
 		public async Task Rules_DeleteAsync(string organization, string processId, string witRefName, string ruleId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4118,7 +4117,7 @@ namespace MyNS
 		public void Rules_Delete(string organization, string processId, string witRefName, string ruleId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/rules/"+ (ruleId==null? "" : System.Uri.EscapeDataString(ruleId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4144,7 +4143,7 @@ namespace MyNS
 		public async Task<WorkItemStateResultModel[]> States_ListAsync(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4176,7 +4175,7 @@ namespace MyNS
 		public WorkItemStateResultModel[] States_List(string organization, string processId, string witRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4208,13 +4207,13 @@ namespace MyNS
 		public async Task<WorkItemStateResultModel> States_CreateAsync(string organization, string processId, string witRefName, string api_version, WorkItemStateInputModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4247,13 +4246,13 @@ namespace MyNS
 		public WorkItemStateResultModel States_Create(string organization, string processId, string witRefName, string api_version, WorkItemStateInputModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4287,7 +4286,7 @@ namespace MyNS
 		public async Task<WorkItemStateResultModel> States_GetAsync(string organization, string processId, string witRefName, string stateId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4320,7 +4319,7 @@ namespace MyNS
 		public WorkItemStateResultModel States_Get(string organization, string processId, string witRefName, string stateId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4353,13 +4352,13 @@ namespace MyNS
 		public async Task<WorkItemStateResultModel> States_Hide_State_DefinitionAsync(string organization, string processId, string witRefName, string stateId, string api_version, HideStateModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4393,13 +4392,13 @@ namespace MyNS
 		public WorkItemStateResultModel States_Hide_State_Definition(string organization, string processId, string witRefName, string stateId, string api_version, HideStateModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4433,7 +4432,7 @@ namespace MyNS
 		public async Task States_DeleteAsync(string organization, string processId, string witRefName, string stateId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4460,7 +4459,7 @@ namespace MyNS
 		public void States_Delete(string organization, string processId, string witRefName, string stateId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4487,13 +4486,13 @@ namespace MyNS
 		public async Task<WorkItemStateResultModel> States_UpdateAsync(string organization, string processId, string witRefName, string stateId, string api_version, WorkItemStateInputModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4527,13 +4526,13 @@ namespace MyNS
 		public WorkItemStateResultModel States_Update(string organization, string processId, string witRefName, string stateId, string api_version, WorkItemStateInputModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workItemTypes/"+ (witRefName==null? "" : System.Uri.EscapeDataString(witRefName))+"/states/"+ (stateId==null? "" : System.Uri.EscapeDataString(stateId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4566,7 +4565,7 @@ namespace MyNS
 		public async Task<WorkItemTypeBehavior[]> Work_Item_Types_Behaviors_ListAsync(string organization, string processId, string witRefNameForBehaviors, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4598,7 +4597,7 @@ namespace MyNS
 		public WorkItemTypeBehavior[] Work_Item_Types_Behaviors_List(string organization, string processId, string witRefNameForBehaviors, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4630,13 +4629,13 @@ namespace MyNS
 		public async Task<WorkItemTypeBehavior> Work_Item_Types_Behaviors_AddAsync(string organization, string processId, string witRefNameForBehaviors, string api_version, WorkItemTypeBehavior requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4669,13 +4668,13 @@ namespace MyNS
 		public WorkItemTypeBehavior Work_Item_Types_Behaviors_Add(string organization, string processId, string witRefNameForBehaviors, string api_version, WorkItemTypeBehavior requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4708,13 +4707,13 @@ namespace MyNS
 		public async Task<WorkItemTypeBehavior> Work_Item_Types_Behaviors_UpdateAsync(string organization, string processId, string witRefNameForBehaviors, string api_version, WorkItemTypeBehavior requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4747,13 +4746,13 @@ namespace MyNS
 		public WorkItemTypeBehavior Work_Item_Types_Behaviors_Update(string organization, string processId, string witRefNameForBehaviors, string api_version, WorkItemTypeBehavior requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4787,7 +4786,7 @@ namespace MyNS
 		public async Task<WorkItemTypeBehavior> Work_Item_Types_Behaviors_GetAsync(string organization, string processId, string witRefNameForBehaviors, string behaviorRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4820,7 +4819,7 @@ namespace MyNS
 		public WorkItemTypeBehavior Work_Item_Types_Behaviors_Get(string organization, string processId, string witRefNameForBehaviors, string behaviorRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4853,7 +4852,7 @@ namespace MyNS
 		public async Task Work_Item_Types_Behaviors_Remove_Behavior_From_Work_Item_TypeAsync(string organization, string processId, string witRefNameForBehaviors, string behaviorRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4880,7 +4879,7 @@ namespace MyNS
 		public void Work_Item_Types_Behaviors_Remove_Behavior_From_Work_Item_Type(string organization, string processId, string witRefNameForBehaviors, string behaviorRefName, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processId==null? "" : System.Uri.EscapeDataString(processId))+"/workitemtypesbehaviors/"+ (witRefNameForBehaviors==null? "" : System.Uri.EscapeDataString(witRefNameForBehaviors))+"/behaviors/"+ (behaviorRefName==null? "" : System.Uri.EscapeDataString(behaviorRefName))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4904,7 +4903,7 @@ namespace MyNS
 		public async Task<ProcessInfo> Processes_GetAsync(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : System.Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4934,7 +4933,7 @@ namespace MyNS
 		public ProcessInfo Processes_Get(string organization, string processTypeId, Processes_ListExpand expand, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : System.Uri.EscapeDataString(processTypeId))+"&$expand=" + expand+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4964,7 +4963,7 @@ namespace MyNS
 		public async Task Processes_DeleteAsync(string organization, string processTypeId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : System.Uri.EscapeDataString(processTypeId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4988,7 +4987,7 @@ namespace MyNS
 		public void Processes_Delete(string organization, string processTypeId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : System.Uri.EscapeDataString(processTypeId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -5012,13 +5011,13 @@ namespace MyNS
 		public async Task<ProcessInfo> Processes_Edit_ProcessAsync(string organization, string processTypeId, string api_version, UpdateProcessModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : System.Uri.EscapeDataString(processTypeId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -5049,13 +5048,13 @@ namespace MyNS
 		public ProcessInfo Processes_Edit_Process(string organization, string processTypeId, string api_version, UpdateProcessModel requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/"+ (processTypeId==null? "" : System.Uri.EscapeDataString(processTypeId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -5086,7 +5085,7 @@ namespace MyNS
 		public async Task<PickListMetadata[]> Lists_ListAsync(string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -5116,7 +5115,7 @@ namespace MyNS
 		public PickListMetadata[] Lists_List(string organization, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -5147,13 +5146,13 @@ namespace MyNS
 		public async Task<PickList> Lists_CreateAsync(string organization, string api_version, PickList requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -5185,13 +5184,13 @@ namespace MyNS
 		public PickList Lists_Create(string organization, string api_version, PickList requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -5223,7 +5222,7 @@ namespace MyNS
 		public async Task<PickList> Lists_GetAsync(string organization, string listId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : System.Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -5254,7 +5253,7 @@ namespace MyNS
 		public PickList Lists_Get(string organization, string listId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : System.Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -5285,13 +5284,13 @@ namespace MyNS
 		public async Task<PickList> Lists_UpdateAsync(string organization, string listId, string api_version, PickList requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : System.Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -5323,13 +5322,13 @@ namespace MyNS
 		public PickList Lists_Update(string organization, string listId, string api_version, PickList requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : System.Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -5361,7 +5360,7 @@ namespace MyNS
 		public async Task Lists_DeleteAsync(string organization, string listId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : System.Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -5386,7 +5385,7 @@ namespace MyNS
 		public void Lists_Delete(string organization, string listId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/work/processes/lists/"+ (listId==null? "" : System.Uri.EscapeDataString(listId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

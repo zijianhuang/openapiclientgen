@@ -4228,7 +4228,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\apiz.ebay.com\sell-finances\v1.15.0\");
 		}
 
-		[Fact(Skip ="casual type in api not created?")]
+		[Fact(Skip ="dynamic object not supported")]
 		public void Test_appcenter_ms_v0_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\appcenter.ms\v0.1\");
@@ -4332,7 +4332,7 @@ namespace OpenApiDirTests
 		  type: string
 		 */
 
-		[Fact(Skip ="fix this later")]
+		[Fact(Skip = "doggy yaml:     resourceId:\r\n     maxLength: 36\r\n      type: string")]
 		public void Test_ato_gov_au_0_0_6()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\ato.gov.au\0.0.6\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -4380,7 +4380,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bclaws.ca\bclaws\1.0.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip ="Fix later")]
+		[Fact()]
 		public void Test_beezup_com_2_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\beezup.com\2.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));

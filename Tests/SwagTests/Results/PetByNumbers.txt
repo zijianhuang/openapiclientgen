@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -325,7 +324,7 @@ namespace MyNS
 		public async Task<Pet[]> FindPetsByTagsAsync(double[] tags)
 		{
 			var requestUri = "pet/findByNumbers?"+string.Join("&", tags.Select(z => $"tags={z}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -355,7 +354,7 @@ namespace MyNS
 		public Pet[] FindPetsByTags(double[] tags)
 		{
 			var requestUri = "pet/findByNumbers?"+string.Join("&", tags.Select(z => $"tags={z}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

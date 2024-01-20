@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -139,7 +138,7 @@ namespace MyNS
 		public async Task<Connection[]> GetConnectionsAsync(string authEventId)
 		{
 			var requestUri = "connections?authEventId=" + (authEventId==null? "" : System.Uri.EscapeDataString(authEventId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -169,7 +168,7 @@ namespace MyNS
 		public Connection[] GetConnections(string authEventId)
 		{
 			var requestUri = "connections?authEventId=" + (authEventId==null? "" : System.Uri.EscapeDataString(authEventId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -198,7 +197,7 @@ namespace MyNS
 		public async Task DeleteConnectionAsync(string id)
 		{
 			var requestUri = "connections/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -221,7 +220,7 @@ namespace MyNS
 		public void DeleteConnection(string id)
 		{
 			var requestUri = "connections/"+ (id==null? "" : System.Uri.EscapeDataString(id));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
