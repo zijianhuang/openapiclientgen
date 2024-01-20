@@ -74,6 +74,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
+			if (refId== "exclusionFilters")
+			{
+				Debug.WriteLine("aaa");
+			}
 			string ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : settings.ClientNamespace;
 			string currentTypeName = NameFunc.RefineTypeName(refId, ns, settings.DotsToNamespaces);
 			if (settings.UsePascalCase)
@@ -167,8 +171,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(itemsRef.Id) : string.Empty;
-					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
-					CodeTypeDeclaration existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
+					string itemsRefTypeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
+					CodeTypeDeclaration existing = FindCodeTypeDeclarationInNamespaces(itemsRefTypeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
 						AddTypeToCodeDom(itemsRef.Id, FindSchema(itemsRef.Id));
@@ -184,7 +188,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(itemsRef.Id, settings.ArrayAs);
+						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(itemsRefTypeName, settings.ArrayAs);
 						TypeAliasDic.Add(refId, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {typeNameX})");
 					}
