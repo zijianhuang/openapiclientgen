@@ -4630,7 +4630,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\circleci.com\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip = "fix this: addParticipantCommunity")]
+		[Fact(Skip = "application/x-www-form-urlencoded: not supproted")]
 		public void Test_circuitsandbox_net_2_9_235()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\circuitsandbox.net\2.9.235\");
@@ -4648,13 +4648,13 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\clever.com\1.2.0\");
 		}
 
-		[Fact(Skip ="Strange. standalone build OK, but C# compiler could not find some types which are actually there.")]
+		[Fact()]
 		public void Test_clickmeter_com_v2()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\clickmeter.com\v2\");
 		}
 
-		[Fact(Skip ="Fix later")]
+		[Fact()]
 		public void Test_clicksend_com_1_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\clicksend.com\1.0.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -4678,7 +4678,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\climatekuul.com\1.0\");
 		}
 
-		[Fact(Skip ="Fix later")]
+		[Fact(Skip = "multipart/form-data not supported")]
 		public void Test_cloudmersive_com_ocr_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\cloudmersive.com\ocr\v1\");
@@ -4754,7 +4754,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\codesearch.debian.net\1.4.0\");
 		}
 
-		[Fact(Skip ="Fix this. Very complex nested structure with casual types")]
+		[Fact()]
 		public void Test_collegefootballdata_com_4_4_12()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\collegefootballdata.com\4.4.12\");

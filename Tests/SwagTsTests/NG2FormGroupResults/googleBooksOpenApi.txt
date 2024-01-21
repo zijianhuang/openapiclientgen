@@ -766,6 +766,9 @@ export namespace MyNS {
 		DictlayerdataDictWordsDerivatives?: Array<DictlayerdataDictWordsDerivatives>;
 		DictlayerdataDictWordsExamples?: Array<DictlayerdataDictWordsExamples>;
 		DictlayerdataDictWordsSenses?: Array<DictlayerdataDictWordsSenses>;
+
+		/** The words with different meanings but not related words, e.g. "go" (game) and "go" (verb). */
+		source?: DictlayerdataDictWordsSource;
 	}
 	export interface DictlayerdataDictWordsFormProperties {
 	}
@@ -776,6 +779,7 @@ export namespace MyNS {
 	}
 
 	export interface DictlayerdataDictWordsDerivatives {
+		source?: DictlayerdataDictWordsDerivativesSource;
 		text?: string | null;
 	}
 	export interface DictlayerdataDictWordsDerivativesFormProperties {
@@ -788,7 +792,24 @@ export namespace MyNS {
 
 	}
 
+	export interface DictlayerdataDictWordsDerivativesSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+	export interface DictlayerdataDictWordsDerivativesSourceFormProperties {
+		attribution: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateDictlayerdataDictWordsDerivativesSourceFormGroup() {
+		return new FormGroup<DictlayerdataDictWordsDerivativesSourceFormProperties>({
+			attribution: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DictlayerdataDictWordsExamples {
+		source?: DictlayerdataDictWordsExamplesSource;
 		text?: string | null;
 	}
 	export interface DictlayerdataDictWordsExamplesFormProperties {
@@ -801,12 +822,29 @@ export namespace MyNS {
 
 	}
 
+	export interface DictlayerdataDictWordsExamplesSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+	export interface DictlayerdataDictWordsExamplesSourceFormProperties {
+		attribution: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateDictlayerdataDictWordsExamplesSourceFormGroup() {
+		return new FormGroup<DictlayerdataDictWordsExamplesSourceFormProperties>({
+			attribution: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DictlayerdataDictWordsSenses {
 		DictlayerdataDictWordsSensesConjugations?: Array<DictlayerdataDictWordsSensesConjugations>;
 		DictlayerdataDictWordsSensesDefinitions?: Array<DictlayerdataDictWordsSensesDefinitions>;
 		partOfSpeech?: string | null;
 		pronunciation?: string | null;
 		pronunciationUrl?: string | null;
+		source?: DictlayerdataDictWordsSensesSource;
 		syllabification?: string | null;
 		DictlayerdataDictWordsSensesSynonyms?: Array<DictlayerdataDictWordsSensesSynonyms>;
 	}
@@ -857,6 +895,7 @@ export namespace MyNS {
 	}
 
 	export interface DictlayerdataDictWordsSensesDefinitionsExamples {
+		source?: DictlayerdataDictWordsSensesDefinitionsExamplesSource;
 		text?: string | null;
 	}
 	export interface DictlayerdataDictWordsSensesDefinitionsExamplesFormProperties {
@@ -869,7 +908,40 @@ export namespace MyNS {
 
 	}
 
+	export interface DictlayerdataDictWordsSensesDefinitionsExamplesSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+	export interface DictlayerdataDictWordsSensesDefinitionsExamplesSourceFormProperties {
+		attribution: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateDictlayerdataDictWordsSensesDefinitionsExamplesSourceFormGroup() {
+		return new FormGroup<DictlayerdataDictWordsSensesDefinitionsExamplesSourceFormProperties>({
+			attribution: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DictlayerdataDictWordsSensesSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+	export interface DictlayerdataDictWordsSensesSourceFormProperties {
+		attribution: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateDictlayerdataDictWordsSensesSourceFormGroup() {
+		return new FormGroup<DictlayerdataDictWordsSensesSourceFormProperties>({
+			attribution: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DictlayerdataDictWordsSensesSynonyms {
+		source?: DictlayerdataDictWordsSensesSynonymsSource;
 		text?: string | null;
 	}
 	export interface DictlayerdataDictWordsSensesSynonymsFormProperties {
@@ -878,6 +950,38 @@ export namespace MyNS {
 	export function CreateDictlayerdataDictWordsSensesSynonymsFormGroup() {
 		return new FormGroup<DictlayerdataDictWordsSensesSynonymsFormProperties>({
 			text: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DictlayerdataDictWordsSensesSynonymsSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+	export interface DictlayerdataDictWordsSensesSynonymsSourceFormProperties {
+		attribution: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateDictlayerdataDictWordsSensesSynonymsSourceFormGroup() {
+		return new FormGroup<DictlayerdataDictWordsSensesSynonymsSourceFormProperties>({
+			attribution: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface DictlayerdataDictWordsSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+	export interface DictlayerdataDictWordsSourceFormProperties {
+		attribution: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateDictlayerdataDictWordsSourceFormGroup() {
+		return new FormGroup<DictlayerdataDictWordsSourceFormProperties>({
+			attribution: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -904,7 +1008,7 @@ export namespace MyNS {
 	}
 
 	export interface DiscoveryclustersClusters {
-		banner_with_content_container?: DiscoveryclustersBanner_with_content_container;
+		banner_with_content_container?: DiscoveryclustersClustersBanner_with_content_container;
 		subTitle?: string | null;
 		title?: string | null;
 		totalVolumes?: number | null;
@@ -927,7 +1031,7 @@ export namespace MyNS {
 
 	}
 
-	export interface DiscoveryclustersBanner_with_content_container {
+	export interface DiscoveryclustersClustersBanner_with_content_container {
 		fillColorArgb?: string | null;
 		imageUrl?: string | null;
 		maskColorArgb?: string | null;
@@ -935,7 +1039,7 @@ export namespace MyNS {
 		moreButtonUrl?: string | null;
 		textColorArgb?: string | null;
 	}
-	export interface DiscoveryclustersBanner_with_content_containerFormProperties {
+	export interface DiscoveryclustersClustersBanner_with_content_containerFormProperties {
 		fillColorArgb: FormControl<string | null | undefined>,
 		imageUrl: FormControl<string | null | undefined>,
 		maskColorArgb: FormControl<string | null | undefined>,
@@ -943,8 +1047,8 @@ export namespace MyNS {
 		moreButtonUrl: FormControl<string | null | undefined>,
 		textColorArgb: FormControl<string | null | undefined>,
 	}
-	export function CreateDiscoveryclustersBanner_with_content_containerFormGroup() {
-		return new FormGroup<DiscoveryclustersBanner_with_content_containerFormProperties>({
+	export function CreateDiscoveryclustersClustersBanner_with_content_containerFormGroup() {
+		return new FormGroup<DiscoveryclustersClustersBanner_with_content_containerFormProperties>({
 			fillColorArgb: new FormControl<string | null | undefined>(undefined),
 			imageUrl: new FormControl<string | null | undefined>(undefined),
 			maskColorArgb: new FormControl<string | null | undefined>(undefined),
@@ -1338,6 +1442,9 @@ export namespace MyNS {
 		/** The date on which this book is available for sale. */
 		onSaleDate?: Date | null;
 
+		/** The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.) */
+		retailPrice?: VolumeSaleInfoRetailPrice;
+
 		/** Whether or not this book is available for sale or offered for free in the Google eBookstore for the country listed above. Possible values are FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or FOR_PREORDER. */
 		saleability?: string | null;
 	}
@@ -1401,11 +1508,14 @@ export namespace MyNS {
 		/** Indicates whether the offer is giftable. */
 		giftable?: boolean | null;
 
+		/** Offer list (=undiscounted) price in Micros. */
+		listPrice?: VolumeSaleInfoOffersListPrice;
+
 		/** The rental duration (for rental offers only). */
-		rentalDuration?: VolumeSaleInfoRentalDuration;
+		rentalDuration?: VolumeSaleInfoOffersRentalDuration;
 
 		/** Offer retail (=discounted) price in Micros */
-		retailPrice?: VolumeSaleInfoRetailPrice;
+		retailPrice?: VolumeSaleInfoOffersRetailPrice;
 	}
 	export interface VolumeSaleInfoOffersFormProperties {
 
@@ -1423,33 +1533,73 @@ export namespace MyNS {
 
 	}
 
-	export interface VolumeSaleInfoRentalDuration {
+	export interface VolumeSaleInfoOffersListPrice {
+		amountInMicros?: number | null;
+		currencyCode?: string | null;
+	}
+	export interface VolumeSaleInfoOffersListPriceFormProperties {
+		amountInMicros: FormControl<number | null | undefined>,
+		currencyCode: FormControl<string | null | undefined>,
+	}
+	export function CreateVolumeSaleInfoOffersListPriceFormGroup() {
+		return new FormGroup<VolumeSaleInfoOffersListPriceFormProperties>({
+			amountInMicros: new FormControl<number | null | undefined>(undefined),
+			currencyCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VolumeSaleInfoOffersRentalDuration {
 		count?: number | null;
 		unit?: string | null;
 	}
-	export interface VolumeSaleInfoRentalDurationFormProperties {
+	export interface VolumeSaleInfoOffersRentalDurationFormProperties {
 		count: FormControl<number | null | undefined>,
 		unit: FormControl<string | null | undefined>,
 	}
-	export function CreateVolumeSaleInfoRentalDurationFormGroup() {
-		return new FormGroup<VolumeSaleInfoRentalDurationFormProperties>({
+	export function CreateVolumeSaleInfoOffersRentalDurationFormGroup() {
+		return new FormGroup<VolumeSaleInfoOffersRentalDurationFormProperties>({
 			count: new FormControl<number | null | undefined>(undefined),
 			unit: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
-	export interface VolumeSaleInfoRetailPrice {
+	export interface VolumeSaleInfoOffersRetailPrice {
 		amountInMicros?: number | null;
 		currencyCode?: string | null;
 	}
-	export interface VolumeSaleInfoRetailPriceFormProperties {
+	export interface VolumeSaleInfoOffersRetailPriceFormProperties {
 		amountInMicros: FormControl<number | null | undefined>,
+		currencyCode: FormControl<string | null | undefined>,
+	}
+	export function CreateVolumeSaleInfoOffersRetailPriceFormGroup() {
+		return new FormGroup<VolumeSaleInfoOffersRetailPriceFormProperties>({
+			amountInMicros: new FormControl<number | null | undefined>(undefined),
+			currencyCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface VolumeSaleInfoRetailPrice {
+
+		/** Amount in the currency listed below. (In LITE projection.) */
+		amount?: number | null;
+
+		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
+		currencyCode?: string | null;
+	}
+	export interface VolumeSaleInfoRetailPriceFormProperties {
+
+		/** Amount in the currency listed below. (In LITE projection.) */
+		amount: FormControl<number | null | undefined>,
+
+		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
 		currencyCode: FormControl<string | null | undefined>,
 	}
 	export function CreateVolumeSaleInfoRetailPriceFormGroup() {
 		return new FormGroup<VolumeSaleInfoRetailPriceFormProperties>({
-			amountInMicros: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<number | null | undefined>(undefined),
 			currencyCode: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2815,7 +2965,7 @@ export namespace MyNS {
 		isComplete?: boolean | null;
 		seriesFormatType?: string | null;
 		seriesId?: string | null;
-		seriesSubscriptionReleaseInfo?: SeriesSeriesSubscriptionReleaseInfo;
+		seriesSubscriptionReleaseInfo?: SeriesSeriesSeriesSubscriptionReleaseInfo;
 		seriesType?: string | null;
 		subscriptionId?: string | null;
 		title?: string | null;
@@ -2846,7 +2996,7 @@ export namespace MyNS {
 
 	}
 
-	export interface SeriesSeriesSubscriptionReleaseInfo {
+	export interface SeriesSeriesSeriesSubscriptionReleaseInfo {
 
 		/** Cancellation date of the series subscription (or when it ends). */
 		cancellationTimestampUs?: string | null;
@@ -2856,7 +3006,7 @@ export namespace MyNS {
 		/** series subscription type. */
 		seriesSubscriptionType?: string | null;
 	}
-	export interface SeriesSeriesSubscriptionReleaseInfoFormProperties {
+	export interface SeriesSeriesSeriesSubscriptionReleaseInfoFormProperties {
 
 		/** Cancellation date of the series subscription (or when it ends). */
 		cancellationTimestampUs: FormControl<string | null | undefined>,
@@ -2864,8 +3014,8 @@ export namespace MyNS {
 		/** series subscription type. */
 		seriesSubscriptionType: FormControl<string | null | undefined>,
 	}
-	export function CreateSeriesSeriesSubscriptionReleaseInfoFormGroup() {
-		return new FormGroup<SeriesSeriesSubscriptionReleaseInfoFormProperties>({
+	export function CreateSeriesSeriesSeriesSubscriptionReleaseInfoFormGroup() {
+		return new FormGroup<SeriesSeriesSeriesSubscriptionReleaseInfoFormProperties>({
 			cancellationTimestampUs: new FormControl<string | null | undefined>(undefined),
 			seriesSubscriptionType: new FormControl<string | null | undefined>(undefined),
 		});

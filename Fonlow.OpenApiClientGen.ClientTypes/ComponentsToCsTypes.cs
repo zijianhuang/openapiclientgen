@@ -74,7 +74,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId== "signinPayload")
+			if (refId== "BoxScore")
 			{
 				Debug.WriteLine("aaa");
 			}
@@ -431,7 +431,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				throw new ArgumentException($"doggy refId: {refId}; currentTypeName: {currentTypeName}");
 			}
 
-			if (refId == "error-errors-item")
+			if (currentTypeName== "BoxScoreTeams" && refId=="ppa")
 			{
 				Console.WriteLine("OK");
 			}

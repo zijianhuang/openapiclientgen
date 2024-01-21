@@ -320,7 +320,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					var casualTypeName = settings.PrefixWithTypeName ? typeDeclarationName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);
 					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
-					AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
+					AddProperties(casualTypeDeclaration, arrayItemsSchema, casualTypeName, ns);
 					if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
 					{
 						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1), casualTypeName);
