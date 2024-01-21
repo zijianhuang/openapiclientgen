@@ -4398,7 +4398,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bhagavadgita.io\1.0\");
 		}
 
-		[Fact(Skip ="type integer with default false. doggy")]
+		[Fact(Skip ="doggy yaml: type integer with default false. doggy")]
 		public void Test_biapi_pro_2_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\biapi.pro\2.0\");
@@ -4410,7 +4410,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bigdatacloud.net\1.0.0\");
 		}
 
-		[Fact(Skip ="fix later")]
+		[Fact()]
 		public void Test_bigoven_com_partner()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bigoven.com\partner\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -4428,7 +4428,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bikewise.org\v2\");
 		}
 
-		[Fact(Skip ="fix later")]
+		[Fact(Skip = "dynamic object Article_PatchArticleModel not supported")]
 		public void Test_billbee_io_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\billbee.io\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -4446,10 +4446,10 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bintable.com\1.0.0-oas3\");
 		}
 
-		[Fact(Skip ="enum with null as member. MS parser consider it is OpenApiNull, fix this when 3.1 comes out")]
+		[Fact(Skip = "doggy yaml: circular reference to Pipeline_variable2 itself, not properties or items")]
 		public void Test_bitbucket_org_2_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bitbucket.org\2.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bitbucket.org\2.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -4482,7 +4482,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\botschaft.local\0.1.0\");
 		}
 
-		[Fact(Skip ="bool as enum member")]
+		[Fact(Skip ="doggy yaml: bool as enum member")]
 		public void Test_box_com_2_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\box.com\2.0.0\");
@@ -4500,7 +4500,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\braze.com\1.0.0\");
 		}
 
-		[Fact(Skip ="strange. Code compiled successfully in standalone, but not in CS provider")]
+		[Fact()]
 		public void Test_breadcrumbs_one_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\breadcrumbs.one\v1\");
@@ -4534,7 +4534,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bulksms.com\1.0.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip ="fix this later")]
+		[Fact()]
 		public void Test_bungie_net_2_18_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\bungie.net\2.18.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -4552,7 +4552,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\byautomata.io\1.0.1\");
 		}
 
-		[Fact(Skip ="fix this")]
+		[Fact()]
 		public void Test_c19qrserver_local_1_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\c19qrserver.local\1.1\");

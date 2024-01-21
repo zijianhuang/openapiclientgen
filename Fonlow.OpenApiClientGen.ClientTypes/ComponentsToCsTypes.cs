@@ -74,7 +74,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId== "exclusionFilters")
+			if (refId== "signinPayload")
 			{
 				Debug.WriteLine("aaa");
 			}

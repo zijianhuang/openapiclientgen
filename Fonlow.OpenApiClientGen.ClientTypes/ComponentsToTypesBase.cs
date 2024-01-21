@@ -113,11 +113,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
-						CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, kv.Key, classNamespaceText);
-						if (existingType == null)
-						{
-							AddTypeToCodeDom(kv.Key, kv.Value);
-						}
+						AddTypeToCodeDom(kv.Key, kv.Value);
 					}
 				}
 			}
@@ -697,14 +693,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}).ToArray();
 		}
 
+		/// <summary>
+		/// Extract those with content type application/json, and the properties.count is greater than 0.
+		/// </summary>
+		/// <param name="requestBodies"></param>
+		/// <returns></returns>
 		KeyValuePair<string, OpenApiSchema>[] ExtractRequestBodiesOfApplicationJson(IDictionary<string, OpenApiRequestBody> requestBodies)
 		{
 			var stronglyTypedBodies = requestBodies.Where(d =>
 			{
-				//d.Value.Content.ContainsKey("application/json");
 				if (d.Value.Content.TryGetValue("application/json", out OpenApiMediaType mediaTypeObject))
 				{
-					if (mediaTypeObject.Schema.Reference != null || mediaTypeObject.Schema.Properties==null || mediaTypeObject.Schema.Properties.Count == 0)
+					if (mediaTypeObject.Schema.Reference == null && (mediaTypeObject.Schema.Properties==null || mediaTypeObject.Schema.Properties.Count == 0))
 					{
 						return false;
 					}
