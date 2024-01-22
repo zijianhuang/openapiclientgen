@@ -30,10 +30,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return ps.Select(p =>
 			{
 				var refinedName = NameFunc.RefineParameterName(p.Name);
-				if (p.Schema?.Reference?.Id == "code-scanning-alert-state")
-				{
-					Console.WriteLine("OK");
-				}
 				var r = new ParameterDescription()
 				{
 					Name = refinedName, //azure.com\apimanagement-apimapis has $ in query parameter
@@ -49,11 +45,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p) //if parameter is not simple type
 				};
-
-				if (r.ParameterTypeReference !=null && r.ParameterTypeReference.BaseType == "Code_scanning_alert_state")
-				{
-					Console.WriteLine("OK");
-				}
 
 				return r;
 			}

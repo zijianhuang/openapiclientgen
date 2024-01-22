@@ -2,6 +2,7 @@ using Xunit;
 using Xunit.Abstractions;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using SwagTests;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OpenApiDirTests
 {
@@ -4834,7 +4835,7 @@ namespace OpenApiDirTests
 					  type: integer
 		 */
 
-		[Fact(Skip ="Strange. Standalone compilation OK")]
+		[Fact()]
 		public void Test_credas_co_uk_pi_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\credas.co.uk\pi\v1\");
@@ -4864,7 +4865,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\d7networks.com\1.0.2\");
 		}
 
-		[Fact(Skip ="Fix this")]
+		[Fact(Skip = "multipart/form-data not supported")]
 		public void Test_daniweb_com_4()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\daniweb.com\4\");
@@ -4882,7 +4883,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\datasette.local\v1\");
 		}
 
-		[Fact(Skip ="Fix this.")]
+		[Fact(Skip = "application/x-www-form-urlencoded not supported")]
 		public void Test_datumbox_com_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\datumbox.com\1.0\");
@@ -4954,7 +4955,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\docker.com\engine\1.33\");
 		}
 
-		[Fact(Skip ="Fix this")]
+		[Fact(Skip = "application/scim+json not supported")]
 		public void Test_docker_com_hub_beta()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\docker.com\hub\beta\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -4978,7 +4979,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\domainsdb.info\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip ="Strange. Standalone compilation OK")]
+		[Fact()]
 		public void Test_doqs_dev_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\doqs.dev\1.0\");
@@ -5230,7 +5231,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\fec.gov\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip = "Fix this. AuthorsCreator2 should be AuthorsCreator")]
+		[Fact()]
 		public void Test_figshare_com_2_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\figshare.com\2.0.0\");
@@ -8614,13 +8615,17 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\hetzner.cloud\1.0.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip ="Strange. standalone compilation ok")]
+		[Fact(Skip ="generated function name is too long. But overall OK")]
 		public void Test_hhs_gov_2()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\hhs.gov\2\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
+		//    (1621,41): error CS7013: Name 'ResourcesMedia_jsonGetByMaxAndOffsetAndSortAndOrderAndMediaTypesAndNameAndCollectionIdAndNameContainsAndDescriptionContainsAndSourceUrlAndSourceUrlContainsAndCustomThumbnailUrlAndCustomThumbnailUrlContainsAndDateContentAuthoredAndDateContentUpdatedAndDateContentPublishedAndDateContentReviewedAndDateSyndicationCapturedAndDateSyndicationUpdatedAndContentAuthoredSinceDateAndContentAuthoredBeforeDateAndContentAuthoredInRangeAndContentUpdatedSinceDateAndContentUpdatedBeforeDateAndContentUpdatedInRangeAndContentPublishedSinceDateAndContentPublishedBeforeDateAndContentPublishedInRangeAndContentReviewedSinceDateAndContentReviewedBeforeDateAndContentReviewedInRangeAndSyndicationCapturedSinceDateAndSyndicationCapturedBeforeDateAndSyndicationCapturedInRangeAndSyndicationUpdatedSinceDateAndSyndicationUpdatedBeforeDateAndSyndicationUpdatedInRangeAndSyndicationVisibleSinceDateAndSyndicationVisibleBeforeDateAndSyndicationVisibleInRangeAndLanguageIdAndLanguageNameAndLanguageIsoCodeAndHashAndHashContainsAndSourceIdAndSourceNameAndSourceNameContainsAndSourceAcronymAndSourceAcronymContainsAndTagIdsAndRestrictToSetAndCreatedByAsync' exceeds the maximum length allowed in metadata.
+		//error CS7013: Name '<ResourcesMedia_jsonGetByMaxAndOffsetAndSortAndOrderAndMediaTypesAndNameAndCollectionIdAndNameContainsAndDescriptionContainsAndSourceUrlAndSourceUrlContainsAndCustomThumbnailUrlAndCustomThumbnailUrlContainsAndDateContentAuthoredAndDateContentUpdatedAndDateContentPublishedAndDateContentReviewedAndDateSyndicationCapturedAndDateSyndicationUpdatedAndContentAuthoredSinceDateAndContentAuthoredBeforeDateAndContentAuthoredInRangeAndContentUpdatedSinceDateAndContentUpdatedBeforeDateAndContentUpdatedInRangeAndContentPublishedSinceDateAndContentPublishedBeforeDateAndContentPublishedInRangeAndContentReviewedSinceDateAndContentReviewedBeforeDateAndContentReviewedInRangeAndSyndicationCapturedSinceDateAndSyndicationCapturedBeforeDateAndSyndicationCapturedInRangeAndSyndicationUpdatedSinceDateAndSyndicationUpdatedBeforeDateAndSyndicationUpdatedInRangeAndSyndicationVisibleSinceDateAndSyndicationVisibleBeforeDateAndSyndicationVisibleInRangeAndLanguageIdAndLanguageNameAndLanguageIsoCodeAndHashAndHashContainsAndSourceIdAndSourceNameAndSourceNameContainsAndSourceAcronymAndSourceAcronymContainsAndTagIdsAndRestrictToSetAndCreatedByAsync>d__10' exceeds the maximum length allowed in metadata.
+	
 
-		[Fact]
+
+			[Fact]
 		public void Test_highwaysengland_co_uk_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\highwaysengland.co.uk\v1\");
@@ -9340,7 +9345,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\mineskin.org\1.0.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip ="fix this")]
+		[Fact(Skip = "doggy yaml:     ip:\r\n      in: query\r\n      name: ip address\r\n      required: false\r\n      schema:\r\n        example: 192.168.1.1\r\n        format: ipv4\r\n        type: string")]
 		public void Test_mist_com_0_37_7()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\mist.com\0.37.7\");
@@ -9814,7 +9819,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\openbanking.org.uk\v1.3\");
 		}
 
-		[Fact(Skip ="fix this")]
+		[Fact(Skip = "doggy yaml, the options in OneOf of paymentInitiation are all strings. Why not string at the first place?")]
 		public void Test_openbankingproject_ch_1_3_8_2020_12_14___Swiss_edition_1_3_8_1_CH()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\openbankingproject.ch\1.3.8_2020-12-14 - Swiss edition 1.3.8.1-CH\");
@@ -9850,7 +9855,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\openlinksw.com\osdb\1.0.0\");
 		}
 
-		[Fact(Skip ="strange. standalone compilation ok")]
+		[Fact()]
 		public void Test_openpolicy_local_0_28_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\openpolicy.local\0.28.0\");
@@ -9874,7 +9879,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\opentargets.io\19.02.1\");
 		}
 
-		[Fact(Skip ="fix this")]
+		[Fact()]
 		public void Test_openuv_io_v1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\openuv.io\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -10174,7 +10179,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\pressassociation.io\2.0\");
 		}
 
-		[Fact(Skip ="Fix this")]
+		[Fact()]
 		public void Test_probely_com_1_2_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\probely.com\1.2.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -10408,7 +10413,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\sendgrid.com\1.0.0\");
 		}
 
-		[Fact(Skip ="Fix this. Some troubles with default enum value")]
+		[Fact()]
 		public void Test_shipengine_com_1_1_202304191404()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\shipengine.com\1.1.202304191404\");

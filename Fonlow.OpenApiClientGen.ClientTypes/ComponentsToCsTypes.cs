@@ -74,7 +74,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId== "BoxScore")
+			if (refId == "BoxScore")
 			{
 				Debug.WriteLine("aaa");
 			}
@@ -268,10 +268,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
-			//if (typeDeclaration.Name== "ResourceType")
-			//{
-			//	Console.WriteLine("here");
-			//}
 			int k = 0;
 			foreach (IOpenApiAny enumMember in enumTypeList)
 			{
@@ -425,16 +421,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
+#if DEBUG
+			if (currentTypeName == "Batch" && refId== "label_layout")
+			{
+				Debug.WriteLine("aa");
+			}
+#endif
 			string propertyName = NameFunc.RefinePropertyName(refId);
 			if (propertyName == string.Empty)
 			{
 				throw new ArgumentException($"doggy refId: {refId}; currentTypeName: {currentTypeName}");
 			}
 
-			if (currentTypeName== "BoxScoreTeams" && refId=="ppa")
-			{
-				Console.WriteLine("OK");
-			}
 			if (settings.UsePascalCase)
 			{
 				propertyName = propertyName.ToPascalCase();
@@ -640,7 +638,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string existingTypeName = existingDeclaration.Name;
 						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
-						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + defaultValue);
+						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + NameFunc.RefineEnumValue(defaultValue));
 					}
 					else
 					{
@@ -738,7 +736,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return isNullable ? CreateNullableProperty(r.Item1, propertyName)
 				: CreateProperty(r.Item1, propertyName,
-				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + defaultValue));
+				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + NameFunc.RefineEnumValue(defaultValue)));
 		}
 
 		string GetDefaultValue(OpenApiSchema s)
@@ -770,7 +768,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						var typeRef = s.AllOf[0].Reference.Id;
 						var refinedTypeName = NameFunc.RefineTypeName(typeRef, "");
-						return $"{refinedTypeName}.{stringValue.Value}";
+						return $"{refinedTypeName}.{NameFunc.RefineEnumValue(stringValue.Value)}";
 					}
 
 					return stringValue.Value;
