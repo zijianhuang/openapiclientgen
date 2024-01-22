@@ -9327,7 +9327,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\microsoft.com\cognitiveservices-Training\3.2\");
 		}
 
-		[Fact(Skip ="It takes forever.")]
+		[Fact()] //takes around 15 seconds to generate and compiler
 		public void Test_microsoft_com_graph_1_0_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\microsoft.com\graph\1.0.1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));

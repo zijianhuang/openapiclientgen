@@ -359,14 +359,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
-					//MS openapi parrser may intepret 0 or 1 as double rather than integer and this cause the value become 0D or 1D. And some openApi definitions actually float or double as enum member.
+					//MS openapi parser may intepret 0 or 1 as double rather than integer and this cause the value become 0D or 1D. And some openApi definitions actually float or double as enum member.
+					//MS operapi parser intepret NaN as double and then double.NaN
 					string memberName = NameFunc.RefineEnumMemberName(doubleMember.Value.ToString());
 					double doubleValue = doubleMember.Value;
-					CodeMemberField clientField = new()
-					{
-						Name = memberName,
-						InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
-					};
+					CodeMemberField clientField = memberName == "NaN" ?
+						new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(k) ,
+						}
+						:
+						new()
+						{
+							Name = memberName,
+							InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
+						};
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
@@ -422,7 +430,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 #if DEBUG
-			if (currentTypeName == "Batch" && refId== "label_layout")
+			if (currentTypeName == "Batch" && refId == "label_layout")
 			{
 				Debug.WriteLine("aa");
 			}
