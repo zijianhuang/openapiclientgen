@@ -10503,7 +10503,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\sms77.io\1.0.0\");
 		}
 
-		[Fact(Skip ="fix this. tolerate some strange symbols in function name and parameter name")]
+		[Fact()]
 		public void Test_snyk_io_1_0_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\snyk.io\1.0.0\");
@@ -11595,10 +11595,10 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Profile-System\1.0\");
 		}
 
-		[Fact(Skip = "fix this. duplicated CouponsPostPostBody")]
+		[Fact(Skip = "doggy yaml, dirty api function design, Updates information of a specific coupon and Creates a single new coupon use the same http url signature. the first one should have been Put.")]
 		public void Test_vtex_local_Promotions__1_0()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Promotions-\1.0\");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Promotions-\1.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -11637,7 +11637,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Subscriptions-API-(v2)\1.0\");
 		}
 
-		[Fact(Skip ="fix this. duplicated types")]
+		[Fact(Skip ="doggy yaml.")]
 		public void Test_vtex_local_Subscriptions_API__v3__1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\vtex.local\Subscriptions-API-(v3)\1.0\");

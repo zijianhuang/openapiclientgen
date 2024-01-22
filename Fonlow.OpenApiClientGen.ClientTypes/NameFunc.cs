@@ -162,6 +162,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				.Replace("+", "Plus")
 				.Replace("-", "Minus")
 				.Replace("%", "Percent")
+				.Replace("&", "And")
 				.Replace("=", "_")
 				.Replace("{", "_")
 				.Replace("}", "_")
