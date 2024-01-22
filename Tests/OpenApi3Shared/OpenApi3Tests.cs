@@ -9333,7 +9333,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\microsoft.com\graph\1.0.1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact(Skip ="too large 57MB")]
+		[Fact(Skip ="too large 57MB. Graph 1.0.1 (25MB) is OK anyway.")]
 		public void Test_microsoft_com_graph_beta_1_0_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory20240114\APIs\microsoft.com\graph-beta\1.0.1\");

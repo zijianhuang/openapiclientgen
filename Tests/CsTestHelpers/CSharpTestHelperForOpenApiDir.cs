@@ -7,6 +7,7 @@ using Fonlow.OpenApiClientGen.CS;
 using Xunit.Abstractions;
 using System;
 using System.Text;
+using TestHelpers;
 
 namespace SwagTests
 {
@@ -47,18 +48,30 @@ namespace SwagTests
 				Directory.CreateDirectory(resultsDir);
 			}
 
-			File.WriteAllText(csFilePath, s);
-			var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
-			if (!r.Success)
+			if (TestingSettings.Instance.UpdateGenerated)
 			{
-				output.WriteLine("CSharp Compilation Errors:");
-				foreach (var ms in r.Diagnostics)
-				{
-					output.WriteLine(ms.ToString());
-				}
+				File.WriteAllText(csFilePath, s);
+			}
+			else
+			{
+				string expected = File.ReadAllText(csFilePath);
+				Assert.Equal(expected, s);
 			}
 
-			Assert.True(r.Success);
+			if (TestingSettings.Instance.Build)
+			{
+				var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);
+				if (!r.Success)
+				{
+					output.WriteLine("CSharp Compilation Errors:");
+					foreach (var ms in r.Diagnostics)
+					{
+						output.WriteLine(ms.ToString());
+					}
+				}
+
+				Assert.True(r.Success);
+			}
 		}
 
 		public string GenerateFromOpenApiAndBuildWithError(string openapiDir, Settings mySettings)
@@ -84,7 +97,7 @@ namespace SwagTests
 		{
 			var idx = defDirName.IndexOf("\\APIs\\");
 			var whatAfter = defDirName.Substring(idx + 6);
-			return $"{resultsDir}\\{RefinePropertyName(whatAfter)}.cs";
+			return $"{resultsDir}\\{RefinePropertyName(whatAfter)}.txt";
 		}
 
 		static string RefinePropertyName(string s)
