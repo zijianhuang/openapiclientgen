@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Fonlow.OpenApiClientGen.ClientTypes;
 using Microsoft.Extensions.Configuration;
 
 namespace TestHelpers
@@ -58,4 +59,15 @@ namespace TestHelpers
 		public bool UpdateGenerated { get; }
 
 	}
+
+	public interface ITestHelper
+	{
+		void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings);
+	}
+
+	public interface IOpenApiDirTestHelper : ITestHelper
+	{
+		void GenerateFromOpenApiAndBuild(string openapiDir, Fonlow.OpenApiClientGen.ClientTypes.Settings mySettings = null);
+	}
+
 }

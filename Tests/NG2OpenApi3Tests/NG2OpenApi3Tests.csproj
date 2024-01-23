@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -33,18 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Fonlow.OpenApiClientGen.ClientTypes\Fonlow.OpenApiClientGen.ClientTypes.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.Aurelia\OpenApiClientGenCore.Aurelia.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.Axios\OpenApiClientGenCore.Axios.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.Fetch\OpenApiClientGenCore.Fetch.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.JQ\OpenApiClientGenCore.JQ.csproj" />
     <ProjectReference Include="..\..\OpenApiClientGenCore.NG2FormGroup\OpenApiClientGenCore.NG2FormGroup.csproj" />
-    <ProjectReference Include="..\..\OpenApiClientGenCore.NG2\OpenApiClientGenCore.NG2.csproj" />
     <ProjectReference Include="..\TsTestHelpers\TsTestHelpers.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(ProjectDir)SwagMock\*.* $(TargetDir)SwagMock\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)AureliaResults\*.* $(TargetDir)AureliaResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)AxiosResults\*.* $(TargetDir)AxiosResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)FetchResults\*.* $(TargetDir)FetchResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)JqResults\*.* $(TargetDir)JqResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)NG2FormGroupResults\*.* $(TargetDir)NG2FormGroupResults\ /D /Y /S&#xD;&#xA;xcopy $(ProjectDir)NG2Results\*.* $(TargetDir)NG2Results\ /D /Y /S&#xD;&#xA;" />
-  </Target>
+  <Import Project="..\OpenApi3Shared\OpenApi3Shared.projitems" Label="Shared" />
 
 </Project>

@@ -12,7 +12,7 @@ namespace SwagTests
 	/// <summary>
 	/// For integration testing: generate, assert against existing copy optionaly and build optionally
 	/// </summary>
-	public class CSharpTestHelper
+	public class CSharpTestHelper: ITestHelper
 	{
 		readonly protected ITestOutputHelper output;
 		public CSharpTestHelper(ITestOutputHelper output)
@@ -29,6 +29,12 @@ namespace SwagTests
 		static protected string TranslateDefToCode(string filePath, Settings settings)
 		{
 			OpenApiDocument doc = ReadDef(filePath);
+			if (doc.Components==null && doc.Paths == null)
+			{
+				throw new CodeGenException("Cannot read def correctly. This may be due to the bug in the parser or the def is doggy.");
+				//somehow ms openapi parser can not recognize openapi: 3.1.0 in \APIs\adyen.com\CheckoutService\37\ however, throw proper exception for the other 3.1 def files.
+			}
+
 			ControllersClientApiGen gen = new(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();

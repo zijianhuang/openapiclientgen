@@ -80,6 +80,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OpenApi3Shared", "Tests\Ope
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsOpenApi3Tests", "Tests\CsOpenApi3Tests\CsOpenApi3Tests.csproj", "{22A8A878-5965-4D3F-B48D-8F44B1892C7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NG2OpenApi3Tests", "Tests\NG2OpenApi3Tests\NG2OpenApi3Tests.csproj", "{984F2849-DC1E-47C4-A757-E7256D21260F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -198,6 +200,10 @@ Global
 		{22A8A878-5965-4D3F-B48D-8F44B1892C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22A8A878-5965-4D3F-B48D-8F44B1892C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22A8A878-5965-4D3F-B48D-8F44B1892C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{984F2849-DC1E-47C4-A757-E7256D21260F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{984F2849-DC1E-47C4-A757-E7256D21260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{984F2849-DC1E-47C4-A757-E7256D21260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{984F2849-DC1E-47C4-A757-E7256D21260F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -228,6 +234,7 @@ Global
 		{8F4A7BB0-81FD-4EDD-8B6D-12D165ABCC2C} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{657D2FE2-8A71-4097-99D9-524FF81AD1E3} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{22A8A878-5965-4D3F-B48D-8F44B1892C7B} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
+		{984F2849-DC1E-47C4-A757-E7256D21260F} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BEA7BD1-2BD3-4E85-8E05-D98DE5C44574}
@@ -239,5 +246,6 @@ Global
 		Tests\OpenApi3Shared\OpenApi3Shared.projitems*{657d2fe2-8a71-4097-99d9-524ff81ad1e3}*SharedItemsImports = 13
 		Tests\SwaggerDirShared\SwaggerDirShared.projitems*{8f4a7bb0-81fd-4edd-8b6d-12d165abcc2c}*SharedItemsImports = 13
 		Tests\OpenApiDirShared\OpenApiDirShared.projitems*{917c07f5-e9f5-4116-b6b1-cdbd8aeef717}*SharedItemsImports = 13
+		Tests\OpenApi3Shared\OpenApi3Shared.projitems*{984f2849-dc1e-47c4-a757-e7256d21260f}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

@@ -11,7 +11,7 @@ using TestHelpers;
 
 namespace SwagTests
 {
-	public class CSharpTestHelperForOpenApiDir: CSharpTestHelper
+	public class CSharpTestHelperForOpenApiDir: CSharpTestHelper, IOpenApiDirTestHelper
 	{
 		public CSharpTestHelperForOpenApiDir(ITestOutputHelper output, string defaultDefName): base(output)
 		{

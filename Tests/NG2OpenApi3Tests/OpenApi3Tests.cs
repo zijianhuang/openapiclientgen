@@ -8,12 +8,11 @@ namespace OpenApiDirTests
 {
 	public partial class OpenApi3Tests
 	{
-		readonly IOpenApiDirTestHelper helper;
+		readonly IOpenApiDirTestHelper helper; 
 		const string openDirName= "openapi-directory20240114";
 		public OpenApi3Tests(ITestOutputHelper output)
 		{
-			helper = new CSharpTestHelperForOpenApiDir(output, "openapi.yaml");
+			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output);
 		}
-
 	}
 }

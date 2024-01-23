@@ -17,7 +17,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			"null", "object", "operator", "out", "override", "params", "private", "protected", "public", "readonly", "ref", "return", "sbyte", "sealed", "short",
 			"sizeof", "stackalloc", "static", "string", "struct", "switch", "this", "throw", "true", "try", "typeof", "uint", "ulong", "unchecked", "unsafe", "ushort",
 			"using", "virtual", "void", "volatile", "while", "Task", "HttpMethod", "System",
-		"package"  //TS/JS reserved words
+
+		"package", "export", "extends", "import", "instanceof", "super", "this", "yield", "with", "function", "in", "delete", "default", "debugger"  //TS/JS reserved words
 		};
 
 		public static bool IsKeyword(string s)
@@ -31,7 +32,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="s"></param>
 		/// <param name="nsInType"></param>
 		/// <returns></returns>
-		public static string RefineTypeName(string s, string nsInType, bool dotsToNamespaces=false)
+		public static string RefineTypeName(string s, string nsInType, bool dotsToNamespaces = false)
 		{
 			if (String.IsNullOrEmpty(s))
 			{
@@ -50,7 +51,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
-			var r= ToTitleCase(rs).Replace('-', '_')
+			var r = ToTitleCase(rs).Replace('-', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace("&", "And")
 				.Replace("?", "_")

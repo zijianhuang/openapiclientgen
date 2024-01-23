@@ -2,7 +2,6 @@ using Xunit;
 using Xunit.Abstractions;
 using Fonlow.OpenApiClientGen.ClientTypes;
 using SwagTests;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace OpenApiDirTests
 {
@@ -146,115 +145,115 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\BinLookupService\53\");
 		}
 
-		[Fact(Skip ="3.1")]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_BinLookupService_54()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\BinLookupService\54\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_37()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\37\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_40()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\40\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_41()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\41\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_46()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\46\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_49()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\49\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_50()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\50\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_51()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\51\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_52()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\52\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_53()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\53\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_64()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\64\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_65()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\65\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_66()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\66\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_67()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\67\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_68()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\68\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_69()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\69\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_70()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService\70\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutService_v71_71()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutService-v71\71\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_CheckoutUtilityService_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\CheckoutUtilityService\1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -411,67 +410,67 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\NotificationConfigurationService\6\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_25()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\25\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_30()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\30\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_40()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\40\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_46()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\46\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_49()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\49\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_50()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\50\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_51()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\51\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_52()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\52\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_64()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\64\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_67()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\67\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PaymentService_68()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PaymentService\68\");
@@ -489,13 +488,13 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PayoutService\40\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PayoutService_46()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PayoutService\46\");
 		}
 
-		[Fact]
+		[Fact(Skip = "3.1")]
 		public void Test_adyen_com_PayoutService_49()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\adyen.com\PayoutService\49\");
@@ -669,7 +668,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\amadeus.com\amadeus-travel-recommendations\1.0.3\");
 		}
 
-		[Fact]
+		[Fact(Skip ="possible bug in ms openapi parser")]
 		public void Test_amadeus_com_amadeus_trip_parser_3_0_1()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\amadeus.com\amadeus-trip-parser\3.0.1\");
@@ -2934,7 +2933,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\anchore.io\0.1.20\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml: default_view declared twice in inheritence")] //C# compiler won't raise error, however, NG2FormGroup does not like it.
 		public void Test_apache_org_airflow_2_5_3()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\apache.org\airflow\2.5.3\");
@@ -4541,7 +4540,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\bungie.net\2.18.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
-		[Fact]
+		[Fact(Skip ="possible bug in ms openapi parser")]
 		public void Test_bunq_com_1_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\bunq.com\1.0\");

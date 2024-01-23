@@ -12,7 +12,7 @@ namespace SwagTests
 	/// For Angular 2+. Generate codes, ng build and assert the build result.
 	/// The ng build is done in folder NG2TestBed.
 	/// </summary>
-	public class NG2TestHelper : TsTestHelper
+	public class NG2TestHelper : TsTestHelper, ITestHelper
 	{
 		readonly ITestOutputHelper output;
 		readonly bool buildToValidate;
@@ -38,9 +38,11 @@ namespace SwagTests
 			{
 				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
 			}
-
-			string expected = ReadFromResults(expectedFile);
-			Assert.Equal(expected, s);
+			else
+			{
+				string expected = ReadFromResults(expectedFile);
+				Assert.Equal(expected, s);
+			}
 
 			if (buildToValidate)
 			{
@@ -61,8 +63,8 @@ namespace SwagTests
 					ContainerNameStrategy = ContainerNameStrategy.None,
 					ActionNameStrategy = ActionNameStrategy.Default,
 					DataAnnotationsToComments = true,
-				}); 
-				
+				});
+
 				Assert.Equal(0, CheckNGBuild(s));
 			}
 		}
@@ -110,7 +112,8 @@ namespace SwagTests
 				if (buildProcessCode != 0)
 				{
 					return buildProcessCode;
-				}else if (warningCode != 0)
+				}
+				else if (warningCode != 0)
 				{
 					return warningCode;
 				}
