@@ -31,7 +31,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="s"></param>
 		/// <param name="nsInType"></param>
 		/// <returns></returns>
-		public static string RefineTypeName(string s, string nsInType)
+		public static string RefineTypeName(string s, string nsInType, bool dotsToNamespaces=false)
 		{
 			if (String.IsNullOrEmpty(s))
 			{
@@ -50,9 +50,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var rs = (!String.IsNullOrEmpty(nsInType) && s.StartsWith(nsInType)) ? s.Remove(0, nsInType.Length + 1) : s;//nsInType.Length+1 to remove the dot after namespace
 
-			return ToTitleCase(rs).Replace('-', '_')
+			var r= ToTitleCase(rs).Replace('-', '_')
 				.Replace("(", "").Replace(")", "")
+				.Replace("&", "And")
+				.Replace("?", "_")
 				.Replace('[', '_').Replace("]", ""); // for something like PartialFindResult[ActivityEntryForApiContract]
+			return dotsToNamespaces ? r : r.Replace(".", string.Empty);
 		}
 
 		public static string RefineEnumMemberName(string s, Settings settings = null)
@@ -84,10 +87,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						.Replace('#', '_')
 						.Replace('|', '_')
 						.Replace("'", "_")
-						.Replace("=", "_")
-						.Replace(">", "_")
-						.Replace("<", "_")
-						.Replace("!", "_")
+						.Replace("=", "Equal")
+						.Replace(">", "Greater")
+						.Replace("<", "LessThan")
+						.Replace("!", "Exclamation")
 						.Replace(";", "_")
 						.Replace("`", "_")
 						.Replace("&", "And")
@@ -106,41 +109,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static string RefineEnumValue(string s)
 		{
-			return RefineEnumMemberName(s);
-			//if (String.IsNullOrEmpty(s))
-			//{
-			//	return s;
-			//}
+			var b = RefineEnumMemberName(s);
 
-			//if (IsKeyword(s))
-			//{
-			//	return "_" + s;
-			//}
+			if (int.TryParse(b, out _))
+			{
+				System.Diagnostics.Debug.Assert(b != "-1");
+				b = "_" + b;
+			}
 
-			//if (String.IsNullOrEmpty(s)) //Xero may have enum member empty. NSwag translate it to 'Empty' but I prefer underscore.
-			//{
-			//	return "_";
-			//}
+			b = b.Replace('.', '_').Replace("-", "Minus").Replace(' ', '_').Replace('/', '_')
+						.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
+						.Replace(":", "")//atlassian api has this.
+						.Replace("+", "Plus");
 
-			//var b = s;
+			if (!Char.IsLetter(b[0]) && b[0] != '_' && Char.IsDigit(b[0]))
+			{
+				b = "_" + b;
+			}
 
-			//if (int.TryParse(b, out _))
-			//{
-			//	System.Diagnostics.Debug.Assert(b != "-1");
-			//	b = "_" + b;
-			//}
-
-			//b = b.Replace('.', '_').Replace("-", "Minus").Replace(' ', '_').Replace('/', '_')
-			//			.Replace("(", "").Replace(")", "") //amazon ec2 api , enum with dot and hyphen in enum members
-			//			.Replace(":", "")//atlassian api has this.
-			//			.Replace("+", "Plus");
-
-			//if (!Char.IsLetter(b[0]) && b[0] != '_' && Char.IsDigit(b[0]))
-			//{
-			//	b = "_" + b;
-			//}
-
-			//return b;
+			return b;
 		}
 
 		public static string RefineParameterName(string s)
@@ -155,7 +142,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return "_" + s;
 			}
 
-			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_')
+			var rs = s.Replace('-', '_').Replace("$", "").Replace('.', '_').Replace(':', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace('[', '_').Replace("]", "");
 
@@ -169,15 +156,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 
-			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace(';', '_').Replace('-', '_').Replace('.', '_').Replace(',', '_')
+			return NameFunc.ToTitleCase(s.Replace("$", "").Replace(':', '_').Replace(';', '_').Replace('-', '_').Replace('.', '_').Replace(',', '_').Replace('?', '_')
 				.Replace("(", "").Replace(")", "")
 				.Replace("{", "").Replace("}", "")
 				.Replace("+", "Plus")
 				.Replace("-", "Minus")
+				.Replace("%", "Percent")
+				.Replace("&", "And")
 				.Replace("=", "_")
 				.Replace("{", "_")
 				.Replace("}", "_")
-				.Replace('[', '_').Replace(']', '_').Replace('/', '_').Replace('#', '_').Replace('@', '_').Replace('$', '_').Replace("'", "_").Replace("`", "_")
+				.Replace('[', '_').Replace(']', '_').Replace("/", "Slash").Replace('#', '_').Replace('@', '_').Replace('$', '_').Replace("'", "_").Replace("`", "_")
 				.Replace(' ', '_'));
 		}
 

@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	
 	
@@ -95,7 +94,7 @@ namespace MyNS
 		/// Average amount of honey produced per day in ounces
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
-		public float HoneyPerDay { get; set; }
+		public double HoneyPerDay { get; set; }
 	}
 	
 	public class Pet
@@ -194,7 +193,7 @@ namespace MyNS
 		public async Task<Pet[]> FindPetsByStatusAsync(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -224,7 +223,7 @@ namespace MyNS
 		public Pet[] FindPetsByStatus(PetStatus[] status)
 		{
 			var requestUri = "pet/findByStatus?"+string.Join("&", status.Select(z => $"status={z}"));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -254,7 +253,7 @@ namespace MyNS
 		public async Task<Pet[]> FindPetsByStatus2Async(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -284,7 +283,7 @@ namespace MyNS
 		public Pet[] FindPetsByStatus2(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus2?status=" + status;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -314,7 +313,7 @@ namespace MyNS
 		public async Task<Pet[]> FindPetsByStatus3Async(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -344,7 +343,7 @@ namespace MyNS
 		public Pet[] FindPetsByStatus3(PetStatus status)
 		{
 			var requestUri = "pet/findByStatus3?status=" + status;
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -382,7 +381,7 @@ namespace MyNS
 		public async Task<Pet> ListBackupJobsAsync(string nextToken, int maxResults, string resourceArn, ListBackupJobsState state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
 		{
 			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"&state=" + state+"&backupVaultName=" + (backupVaultName==null? "" : System.Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -420,7 +419,7 @@ namespace MyNS
 		public Pet ListBackupJobs(string nextToken, int maxResults, string resourceArn, ListBackupJobsState state, string backupVaultName, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string resourceType, string MaxResults, string NextToken)
 		{
 			var requestUri = "backup-jobs/?nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken))+"&maxResults="+maxResults+"&resourceArn=" + (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"&state=" + state+"&backupVaultName=" + (backupVaultName==null? "" : System.Uri.EscapeDataString(backupVaultName))+"&createdBefore=" + createdBefore.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&createdAfter=" + createdAfter.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&resourceType=" + (resourceType==null? "" : System.Uri.EscapeDataString(resourceType))+"&MaxResults=" + (MaxResults==null? "" : System.Uri.EscapeDataString(MaxResults))+"&NextToken=" + (NextToken==null? "" : System.Uri.EscapeDataString(NextToken));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

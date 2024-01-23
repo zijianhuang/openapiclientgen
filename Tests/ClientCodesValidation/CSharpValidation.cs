@@ -19,10 +19,10 @@ namespace Fonlow.OpenApiClientGen.CS
 		/// <param name="csharpCodes"></param>
 		/// <param name="assemblyPath"></param>
 		/// <returns></returns>
-		public static EmitResult CompileThenSave(string csharpCodes, string assemblyPath, bool useSystemTextJson = false)
+		public static EmitResult CompileThenSaveAssembly(string csharpCodes, string assemblyPath, bool useSystemTextJson = false)
 		{
 			var tree = SyntaxFactory.ParseSyntaxTree(csharpCodes);
-			return CompileThenSave(tree, assemblyPath, useSystemTextJson);
+			return CompileThenSaveAssembly(tree, assemblyPath, useSystemTextJson);
 		}
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		public static EmitResult CompileThenSave(Stream stream, string assemblyPath, bool useSystemTextJson = false)
 		{
 			var tree = SyntaxFactory.ParseSyntaxTree(SourceText.From(stream));
-			return CompileThenSave(tree, assemblyPath, useSystemTextJson);
+			return CompileThenSaveAssembly(tree, assemblyPath, useSystemTextJson);
 		}
 
 		/// <summary>
@@ -43,7 +43,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		/// <param name="tree"></param>
 		/// <param name="assemblyPath"></param>
 		/// <returns></returns>
-		public static EmitResult CompileThenSave(SyntaxTree tree, string assemblyPath, bool useSystemTextJson)
+		public static EmitResult CompileThenSaveAssembly(SyntaxTree tree, string assemblyPath, bool useSystemTextJson)
 		{
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
 			CodeGeneratorOptions options = new() { BracingStyle = "C", IndentString = "\t" };

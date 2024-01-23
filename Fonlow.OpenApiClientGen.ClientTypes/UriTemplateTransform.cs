@@ -38,7 +38,7 @@ namespace Fonlow.CodeDom.Web
 				bool queryExists = newUriText.Contains("?");
 				newUriText += queryExists ? "&" : "?";
 
-				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference.ArrayRank == 0)
+				if (d.ParameterDescriptor.ParameterType == typeofString && d.ParameterTypeReference?.ArrayRank == 0)
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
@@ -73,7 +73,7 @@ namespace Fonlow.CodeDom.Web
 
 					return replaced;
 				}
-				else if (d.ParameterTypeReference.ArrayRank > 0)
+				else if (d.ParameterTypeReference?.ArrayRank > 0)
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{

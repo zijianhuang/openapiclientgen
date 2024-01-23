@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -1222,7 +1221,7 @@ namespace MyNS
 		public async Task<TfvcChange[]> Changesets_Get_Changeset_ChangesAsync(string organization, int id, int skip, int top, string continuationToken, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/changesets/"+id+"/changes&$skip="+skip+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1256,7 +1255,7 @@ namespace MyNS
 		public TfvcChange[] Changesets_Get_Changeset_Changes(string organization, int id, int skip, int top, string continuationToken, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/changesets/"+id+"/changes&$skip="+skip+"&$top="+top+"&continuationToken=" + (continuationToken==null? "" : System.Uri.EscapeDataString(continuationToken))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1287,7 +1286,7 @@ namespace MyNS
 		public async Task<AssociatedWorkItem[]> Changesets_Get_Changeset_Work_ItemsAsync(string organization, int id, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/changesets/"+id+"/workItems&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1318,7 +1317,7 @@ namespace MyNS
 		public AssociatedWorkItem[] Changesets_Get_Changeset_Work_Items(string organization, int id, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/changesets/"+id+"/workItems&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1349,13 +1348,13 @@ namespace MyNS
 		public async Task<TfvcChangesetRef[]> Changesets_Get_Batched_ChangesetsAsync(string organization, string api_version, TfvcChangesetsRequestData requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/changesetsbatch&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1387,13 +1386,13 @@ namespace MyNS
 		public TfvcChangesetRef[] Changesets_Get_Batched_Changesets(string organization, string api_version, TfvcChangesetsRequestData requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/changesetsbatch&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1427,7 +1426,7 @@ namespace MyNS
 		public async Task<TfvcItem[]> Labels_Get_Label_ItemsAsync(string organization, string labelId, int top, int skip, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/labels/"+ (labelId==null? "" : System.Uri.EscapeDataString(labelId))+"/items&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1460,7 +1459,7 @@ namespace MyNS
 		public TfvcItem[] Labels_Get_Label_Items(string organization, string labelId, int top, int skip, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/labels/"+ (labelId==null? "" : System.Uri.EscapeDataString(labelId))+"/items&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1498,7 +1497,7 @@ namespace MyNS
 		public async Task<TfvcShelveset> Shelvesets_GetAsync(string organization, string shelvesetId, bool requestData_includeDetails, bool requestData_includeLinks, bool requestData_includeWorkItems, int requestData_maxChangeCount, int requestData_maxCommentLength, string requestData_name, string requestData_owner, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/shelvesets&shelvesetId=" + (shelvesetId==null? "" : System.Uri.EscapeDataString(shelvesetId))+"&requestData.includeDetails="+requestData_includeDetails+"&requestData.includeLinks="+requestData_includeLinks+"&requestData.includeWorkItems="+requestData_includeWorkItems+"&requestData.maxChangeCount="+requestData_maxChangeCount+"&requestData.maxCommentLength="+requestData_maxCommentLength+"&requestData.name=" + (requestData_name==null? "" : System.Uri.EscapeDataString(requestData_name))+"&requestData.owner=" + (requestData_owner==null? "" : System.Uri.EscapeDataString(requestData_owner))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1536,7 +1535,7 @@ namespace MyNS
 		public TfvcShelveset Shelvesets_Get(string organization, string shelvesetId, bool requestData_includeDetails, bool requestData_includeLinks, bool requestData_includeWorkItems, int requestData_maxChangeCount, int requestData_maxCommentLength, string requestData_name, string requestData_owner, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/shelvesets&shelvesetId=" + (shelvesetId==null? "" : System.Uri.EscapeDataString(shelvesetId))+"&requestData.includeDetails="+requestData_includeDetails+"&requestData.includeLinks="+requestData_includeLinks+"&requestData.includeWorkItems="+requestData_includeWorkItems+"&requestData.maxChangeCount="+requestData_maxChangeCount+"&requestData.maxCommentLength="+requestData_maxCommentLength+"&requestData.name=" + (requestData_name==null? "" : System.Uri.EscapeDataString(requestData_name))+"&requestData.owner=" + (requestData_owner==null? "" : System.Uri.EscapeDataString(requestData_owner))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1569,7 +1568,7 @@ namespace MyNS
 		public async Task<TfvcChange[]> Shelvesets_Get_Shelveset_ChangesAsync(string organization, string shelvesetId, int top, int skip, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/shelvesets/changes&shelvesetId=" + (shelvesetId==null? "" : System.Uri.EscapeDataString(shelvesetId))+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1602,7 +1601,7 @@ namespace MyNS
 		public TfvcChange[] Shelvesets_Get_Shelveset_Changes(string organization, string shelvesetId, int top, int skip, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/shelvesets/changes&shelvesetId=" + (shelvesetId==null? "" : System.Uri.EscapeDataString(shelvesetId))+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1633,7 +1632,7 @@ namespace MyNS
 		public async Task<AssociatedWorkItem[]> Shelvesets_Get_Shelveset_Work_ItemsAsync(string organization, string shelvesetId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/shelvesets/workitems&shelvesetId=" + (shelvesetId==null? "" : System.Uri.EscapeDataString(shelvesetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1664,7 +1663,7 @@ namespace MyNS
 		public AssociatedWorkItem[] Shelvesets_Get_Shelveset_Work_Items(string organization, string shelvesetId, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/_apis/tfvc/shelvesets/workitems&shelvesetId=" + (shelvesetId==null? "" : System.Uri.EscapeDataString(shelvesetId))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1698,7 +1697,7 @@ namespace MyNS
 		public async Task<TfvcBranchRef[]> Branches_Get_Branch_RefsAsync(string organization, string scopePath, string project, bool includeDeleted, bool includeLinks, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/branches&scopePath=" + (scopePath==null? "" : System.Uri.EscapeDataString(scopePath))+"&includeDeleted="+includeDeleted+"&includeLinks="+includeLinks+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1732,7 +1731,7 @@ namespace MyNS
 		public TfvcBranchRef[] Branches_Get_Branch_Refs(string organization, string scopePath, string project, bool includeDeleted, bool includeLinks, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/branches&scopePath=" + (scopePath==null? "" : System.Uri.EscapeDataString(scopePath))+"&includeDeleted="+includeDeleted+"&includeLinks="+includeLinks+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1795,7 +1794,7 @@ namespace MyNS
 					string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&maxCommentLength="+maxCommentLength+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : System.Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : System.Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : System.Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : System.Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1858,7 +1857,7 @@ namespace MyNS
 					string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&maxCommentLength="+maxCommentLength+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : System.Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : System.Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : System.Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : System.Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1891,13 +1890,13 @@ namespace MyNS
 		public async Task<TfvcChangesetRef> Changesets_CreateAsync(string organization, string project, string api_version, TfvcChangeset requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1931,13 +1930,13 @@ namespace MyNS
 		public TfvcChangesetRef Changesets_Create(string organization, string project, string api_version, TfvcChangeset requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/changesets&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2008,7 +2007,7 @@ namespace MyNS
 					string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/changesets/"+id+"&maxChangeCount="+maxChangeCount+"&includeDetails="+includeDetails+"&includeWorkItems="+includeWorkItems+"&maxCommentLength="+maxCommentLength+"&includeSourceRename="+includeSourceRename+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : System.Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : System.Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : System.Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : System.Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2078,7 +2077,7 @@ namespace MyNS
 					string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/changesets/"+id+"&maxChangeCount="+maxChangeCount+"&includeDetails="+includeDetails+"&includeWorkItems="+includeWorkItems+"&maxCommentLength="+maxCommentLength+"&includeSourceRename="+includeSourceRename+"&$skip="+skip+"&$top="+top+"&$orderby=" + (orderby==null? "" : System.Uri.EscapeDataString(orderby))+"&searchCriteria.author=" + (searchCriteria_author==null? "" : System.Uri.EscapeDataString(searchCriteria_author))+"&searchCriteria.followRenames="+searchCriteria_followRenames+"&searchCriteria.fromDate=" + (searchCriteria_fromDate==null? "" : System.Uri.EscapeDataString(searchCriteria_fromDate))+"&searchCriteria.fromId="+searchCriteria_fromId+"&searchCriteria.includeLinks="+searchCriteria_includeLinks+"&searchCriteria.itemPath=" + (searchCriteria_itemPath==null? "" : System.Uri.EscapeDataString(searchCriteria_itemPath))+"&"+string.Join("&", searchCriteria_mappings.Select(z => $"searchCriteria.mappings={z}"))+"&searchCriteria.toDate=" + (searchCriteria_toDate==null? "" : System.Uri.EscapeDataString(searchCriteria_toDate))+"&searchCriteria.toId="+searchCriteria_toId+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2109,13 +2108,13 @@ namespace MyNS
 		public async Task<string[]> Items_Get_Items_BatchAsync(string organization, string project, string api_version, TfvcItemRequestData requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/itembatch&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2147,13 +2146,13 @@ namespace MyNS
 		public string[] Items_Get_Items_Batch(string organization, string project, string api_version, TfvcItemRequestData requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/itembatch&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2189,7 +2188,7 @@ namespace MyNS
 		public async Task<TfvcItem[]> Items_ListAsync(string organization, string project, string scopePath, TfvcItemDescriptorRecursionLevel recursionLevel, bool includeLinks, string versionDescriptor_version, TfvcItemDescriptorVersionOption versionDescriptor_versionOption, TfvcItemDescriptorVersionType versionDescriptor_versionType, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/items&scopePath=" + (scopePath==null? "" : System.Uri.EscapeDataString(scopePath))+"&recursionLevel=" + recursionLevel+"&includeLinks="+includeLinks+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOption=" + versionDescriptor_versionOption+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2224,7 +2223,7 @@ namespace MyNS
 		public TfvcItem[] Items_List(string organization, string project, string scopePath, TfvcItemDescriptorRecursionLevel recursionLevel, bool includeLinks, string versionDescriptor_version, TfvcItemDescriptorVersionOption versionDescriptor_versionOption, TfvcItemDescriptorVersionType versionDescriptor_versionType, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/items&scopePath=" + (scopePath==null? "" : System.Uri.EscapeDataString(scopePath))+"&recursionLevel=" + recursionLevel+"&includeLinks="+includeLinks+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOption=" + versionDescriptor_versionOption+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2263,7 +2262,7 @@ namespace MyNS
 		public async Task<TfvcLabelRef[]> Labels_ListAsync(string organization, string project, bool requestData_includeLinks, string requestData_itemLabelFilter, string requestData_labelScope, int requestData_maxItemCount, string requestData_name, string requestData_owner, int top, int skip, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/labels&requestData.includeLinks="+requestData_includeLinks+"&requestData.itemLabelFilter=" + (requestData_itemLabelFilter==null? "" : System.Uri.EscapeDataString(requestData_itemLabelFilter))+"&requestData.labelScope=" + (requestData_labelScope==null? "" : System.Uri.EscapeDataString(requestData_labelScope))+"&requestData.maxItemCount="+requestData_maxItemCount+"&requestData.name=" + (requestData_name==null? "" : System.Uri.EscapeDataString(requestData_name))+"&requestData.owner=" + (requestData_owner==null? "" : System.Uri.EscapeDataString(requestData_owner))+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2302,7 +2301,7 @@ namespace MyNS
 		public TfvcLabelRef[] Labels_List(string organization, string project, bool requestData_includeLinks, string requestData_itemLabelFilter, string requestData_labelScope, int requestData_maxItemCount, string requestData_name, string requestData_owner, int top, int skip, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/labels&requestData.includeLinks="+requestData_includeLinks+"&requestData.itemLabelFilter=" + (requestData_itemLabelFilter==null? "" : System.Uri.EscapeDataString(requestData_itemLabelFilter))+"&requestData.labelScope=" + (requestData_labelScope==null? "" : System.Uri.EscapeDataString(requestData_labelScope))+"&requestData.maxItemCount="+requestData_maxItemCount+"&requestData.name=" + (requestData_name==null? "" : System.Uri.EscapeDataString(requestData_name))+"&requestData.owner=" + (requestData_owner==null? "" : System.Uri.EscapeDataString(requestData_owner))+"&$top="+top+"&$skip="+skip+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2340,7 +2339,7 @@ namespace MyNS
 		public async Task<TfvcLabel> Labels_GetAsync(string organization, string labelId, string project, bool requestData_includeLinks, string requestData_itemLabelFilter, string requestData_labelScope, int requestData_maxItemCount, string requestData_name, string requestData_owner, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/labels/"+ (labelId==null? "" : System.Uri.EscapeDataString(labelId))+"&requestData.includeLinks="+requestData_includeLinks+"&requestData.itemLabelFilter=" + (requestData_itemLabelFilter==null? "" : System.Uri.EscapeDataString(requestData_itemLabelFilter))+"&requestData.labelScope=" + (requestData_labelScope==null? "" : System.Uri.EscapeDataString(requestData_labelScope))+"&requestData.maxItemCount="+requestData_maxItemCount+"&requestData.name=" + (requestData_name==null? "" : System.Uri.EscapeDataString(requestData_name))+"&requestData.owner=" + (requestData_owner==null? "" : System.Uri.EscapeDataString(requestData_owner))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2378,7 +2377,7 @@ namespace MyNS
 		public TfvcLabel Labels_Get(string organization, string labelId, string project, bool requestData_includeLinks, string requestData_itemLabelFilter, string requestData_labelScope, int requestData_maxItemCount, string requestData_name, string requestData_owner, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/tfvc/labels/"+ (labelId==null? "" : System.Uri.EscapeDataString(labelId))+"&requestData.includeLinks="+requestData_includeLinks+"&requestData.itemLabelFilter=" + (requestData_itemLabelFilter==null? "" : System.Uri.EscapeDataString(requestData_itemLabelFilter))+"&requestData.labelScope=" + (requestData_labelScope==null? "" : System.Uri.EscapeDataString(requestData_labelScope))+"&requestData.maxItemCount="+requestData_maxItemCount+"&requestData.name=" + (requestData_name==null? "" : System.Uri.EscapeDataString(requestData_name))+"&requestData.owner=" + (requestData_owner==null? "" : System.Uri.EscapeDataString(requestData_owner))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

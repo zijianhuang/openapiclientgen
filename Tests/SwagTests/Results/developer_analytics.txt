@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -196,7 +195,7 @@ namespace MyNS
 		public async Task<RateLimitsResponse> GetRateLimitsAsync(string api_context, string api_name)
 		{
 			var requestUri = "rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -226,7 +225,7 @@ namespace MyNS
 		public RateLimitsResponse GetRateLimits(string api_context, string api_name)
 		{
 			var requestUri = "rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -256,7 +255,7 @@ namespace MyNS
 		public async Task<RateLimitsResponse> GetUserRateLimitsAsync(string api_context, string api_name)
 		{
 			var requestUri = "user_rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -286,7 +285,7 @@ namespace MyNS
 		public RateLimitsResponse GetUserRateLimits(string api_context, string api_name)
 		{
 			var requestUri = "user_rate_limit/?api_context=" + (api_context==null? "" : System.Uri.EscapeDataString(api_context))+"&api_name=" + (api_name==null? "" : System.Uri.EscapeDataString(api_name));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

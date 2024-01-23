@@ -19,7 +19,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="op"></param>
 		/// <returns>bool is whether to support generating codes for this.</returns>
-		public Tuple<CodeTypeReference, string, bool> GetBodyContent(OpenApiOperation op, string httpMethod, string path)
+		public Tuple<CodeTypeReference, string, bool> GetBodyContent(OpenApiOperation op, string httpMethod, string path, bool dotsToNamespaces)
 		{
 			if (op.RequestBody != null && op.RequestBody.Content != null)
 			{
@@ -40,8 +40,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						}
 					}
 
-					var ns = NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id);
-					string typeName = NameFunc.RefineTypeName(op.RequestBody.Reference.Id, ns);
+					var ns = dotsToNamespaces ? NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id) : string.Empty;
+					string typeName = NameFunc.RefineTypeName(op.RequestBody.Reference.Id, ns, dotsToNamespaces);
 					CodeTypeReference codeTypeReference = new(NameFunc.CombineNamespaceWithClassName(ns, typeName));
 					return Tuple.Create(codeTypeReference, description, true);
 				}

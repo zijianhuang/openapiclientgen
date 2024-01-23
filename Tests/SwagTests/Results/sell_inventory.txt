@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -484,7 +483,7 @@ namespace MyNS
 		/// <summary>
 		/// This value is the Value Add Tax (VAT) rate for the item, if any. When a VAT percentage is specified, the item's VAT information appears on the listing's View Item page. In addition, the seller can choose to print an invoice that includes the item's net price, VAT percent, VAT amount, and total price. Since VAT rates vary depending on the item and on the user's country of residence, a seller is responsible for entering the correct VAT rate; it is not calculated by eBay. To use VAT, a seller must be a business seller with a VAT-ID registered with eBay, and must be listing the item on a VAT-enabled site. Max applicable length is 6 characters, including the decimal (e.g., 12.345). The scale is 3 decimal places. (If you pass in 12.3456, eBay may round up the value to 12.346). This field will be returned if set for the offer.
 		/// </summary>
-		public System.Nullable<System.Single> VatPercentage { get; set; }
+		public System.Nullable<System.Double> VatPercentage { get; set; }
 	}
 	
 	/// <summary>
@@ -633,12 +632,12 @@ namespace MyNS
 		/// <summary>
 		/// The actual height (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Height { get; set; }
+		public System.Nullable<System.Double> Height { get; set; }
 		
 		/// <summary>
 		/// The actual length (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Length { get; set; }
+		public System.Nullable<System.Double> Length { get; set; }
 		
 		/// <summary>
 		/// The unit of measurement used to specify the dimensions of a shipping package. All fields of the dimensions container are required if package dimensions are specified. If the English system of measurement is being used, the applicable values for dimension units are FEET and INCH. If the metric system of measurement is being used, the applicable values for weight units are METER and CENTIMETER. The metric system is used by most countries outside of the US. For implementation help, refer to <a href='https://developer.ebay.com/devzone/rest/api-ref/inventory/types/LengthUnitOfMeasureEnum.html'>eBay API documentation</a>
@@ -648,7 +647,7 @@ namespace MyNS
 		/// <summary>
 		/// The actual width (in the measurement unit specified in the unit field) of the shipping package. All fields of the dimensions container are required if package dimensions are specified. If a shipping package measured 21.5 inches in length, 15.0 inches in width, and 12.0 inches in height, the dimensions container would look as follows: &quot;dimensions&quot;: {  &quot;length&quot;: 21.5,  &quot;width&quot;: 15.0,  &quot;height&quot;: 12.0,  &quot;unit&quot;: &quot;INCH&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Width { get; set; }
+		public System.Nullable<System.Double> Width { get; set; }
 	}
 	
 	/// <summary>
@@ -665,7 +664,7 @@ namespace MyNS
 		/// <summary>
 		/// The actual weight (in the measurement unit specified in the unit field) of the shipping package. Both the unit and value fields are required if the weight container is used. If a shipping package weighed 20.5 ounces, the container would look as follows: &quot;weight&quot;: {  &quot;value&quot;: 20.5,  &quot;unit&quot;: &quot;OUNCE&quot;  }
 		/// </summary>
-		public System.Nullable<System.Single> Value { get; set; }
+		public System.Nullable<System.Double> Value { get; set; }
 	}
 	
 	/// <summary>
@@ -1511,12 +1510,12 @@ namespace MyNS
 		/// <summary>
 		/// The latitude (North-South) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
 		/// </summary>
-		public System.Nullable<System.Single> Latitude { get; set; }
+		public System.Nullable<System.Double> Latitude { get; set; }
 		
 		/// <summary>
 		/// The longitude (East-West) component of the geographic coordinate. This field is required if a geoCoordinates container is used. This field is returned if geographical coordinates are set for the inventory location.
 		/// </summary>
-		public System.Nullable<System.Single> Longitude { get; set; }
+		public System.Nullable<System.Double> Longitude { get; set; }
 	}
 	
 	/// <summary>
@@ -2200,7 +2199,7 @@ namespace MyNS
 		public async Task<InventoryLocationResponse> GetInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2229,7 +2228,7 @@ namespace MyNS
 		public InventoryLocationResponse GetInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2258,13 +2257,13 @@ namespace MyNS
 		public async Task CreateInventoryLocationAsync(string merchantLocationKey, InventoryLocationFull requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2288,13 +2287,13 @@ namespace MyNS
 		public void CreateInventoryLocation(string merchantLocationKey, InventoryLocationFull requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2317,7 +2316,7 @@ namespace MyNS
 		public async Task DeleteInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2339,7 +2338,7 @@ namespace MyNS
 		public void DeleteInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2362,7 +2361,7 @@ namespace MyNS
 		public async Task<string> DisableInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/disable";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2390,7 +2389,7 @@ namespace MyNS
 		public string DisableInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/disable";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2418,7 +2417,7 @@ namespace MyNS
 		public async Task<string> EnableInventoryLocationAsync(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/enable";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2446,7 +2445,7 @@ namespace MyNS
 		public string EnableInventoryLocation(string merchantLocationKey)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/enable";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2475,7 +2474,7 @@ namespace MyNS
 		public async Task<LocationResponse> GetInventoryLocationsAsync(string limit, string offset)
 		{
 			var requestUri = "location?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2505,7 +2504,7 @@ namespace MyNS
 		public LocationResponse GetInventoryLocations(string limit, string offset)
 		{
 			var requestUri = "location?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2534,13 +2533,13 @@ namespace MyNS
 		public async Task UpdateInventoryLocationAsync(string merchantLocationKey, InventoryLocation requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2564,13 +2563,13 @@ namespace MyNS
 		public void UpdateInventoryLocation(string merchantLocationKey, InventoryLocation requestBody)
 		{
 			var requestUri = "location/"+ (merchantLocationKey==null? "" : System.Uri.EscapeDataString(merchantLocationKey))+"/update_location_details";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2594,7 +2593,7 @@ namespace MyNS
 		public async Task<InventoryItemWithSkuLocaleGroupid> GetInventoryItemAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2623,7 +2622,7 @@ namespace MyNS
 		public InventoryItemWithSkuLocaleGroupid GetInventoryItem(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2653,13 +2652,13 @@ namespace MyNS
 		public async Task<BaseResponse> CreateOrReplaceInventoryItemAsync(string sku, InventoryItem requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2690,13 +2689,13 @@ namespace MyNS
 		public BaseResponse CreateOrReplaceInventoryItem(string sku, InventoryItem requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2725,7 +2724,7 @@ namespace MyNS
 		public async Task DeleteInventoryItemAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2747,7 +2746,7 @@ namespace MyNS
 		public void DeleteInventoryItem(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2771,7 +2770,7 @@ namespace MyNS
 		public async Task<InventoryItems> GetInventoryItemsAsync(string limit, string offset)
 		{
 			var requestUri = "inventory_item?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2801,7 +2800,7 @@ namespace MyNS
 		public InventoryItems GetInventoryItems(string limit, string offset)
 		{
 			var requestUri = "inventory_item?limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2830,13 +2829,13 @@ namespace MyNS
 		public async Task<BulkPriceQuantityResponse> BulkUpdatePriceQuantityAsync(BulkPriceQuantity requestBody)
 		{
 			var requestUri = "bulk_update_price_quantity";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2866,13 +2865,13 @@ namespace MyNS
 		public BulkPriceQuantityResponse BulkUpdatePriceQuantity(BulkPriceQuantity requestBody)
 		{
 			var requestUri = "bulk_update_price_quantity";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2902,13 +2901,13 @@ namespace MyNS
 		public async Task<BulkInventoryItemResponse> BulkCreateOrReplaceInventoryItemAsync(BulkInventoryItem requestBody)
 		{
 			var requestUri = "bulk_create_or_replace_inventory_item";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -2938,13 +2937,13 @@ namespace MyNS
 		public BulkInventoryItemResponse BulkCreateOrReplaceInventoryItem(BulkInventoryItem requestBody)
 		{
 			var requestUri = "bulk_create_or_replace_inventory_item";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -2974,13 +2973,13 @@ namespace MyNS
 		public async Task<BulkGetInventoryItemResponse> BulkGetInventoryItemAsync(BulkGetInventoryItem requestBody)
 		{
 			var requestUri = "bulk_get_inventory_item";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3010,13 +3009,13 @@ namespace MyNS
 		public BulkGetInventoryItemResponse BulkGetInventoryItem(BulkGetInventoryItem requestBody)
 		{
 			var requestUri = "bulk_get_inventory_item";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3046,7 +3045,7 @@ namespace MyNS
 		public async Task<Compatibility> GetProductCompatibilityAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3075,7 +3074,7 @@ namespace MyNS
 		public Compatibility GetProductCompatibility(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3105,13 +3104,13 @@ namespace MyNS
 		public async Task<BaseResponse> CreateOrReplaceProductCompatibilityAsync(string sku, Compatibility requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3142,13 +3141,13 @@ namespace MyNS
 		public BaseResponse CreateOrReplaceProductCompatibility(string sku, Compatibility requestBody)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3177,7 +3176,7 @@ namespace MyNS
 		public async Task DeleteProductCompatibilityAsync(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3199,7 +3198,7 @@ namespace MyNS
 		public void DeleteProductCompatibility(string sku)
 		{
 			var requestUri = "inventory_item/"+ (sku==null? "" : System.Uri.EscapeDataString(sku))+"/product_compatibility";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3226,7 +3225,7 @@ namespace MyNS
 		public async Task<Offers> GetOffersAsync(string sku, string marketplace_id, string format, string limit, string offset)
 		{
 			var requestUri = "offer?sku=" + (sku==null? "" : System.Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3259,7 +3258,7 @@ namespace MyNS
 		public Offers GetOffers(string sku, string marketplace_id, string format, string limit, string offset)
 		{
 			var requestUri = "offer?sku=" + (sku==null? "" : System.Uri.EscapeDataString(sku))+"&marketplace_id=" + (marketplace_id==null? "" : System.Uri.EscapeDataString(marketplace_id))+"&format=" + (format==null? "" : System.Uri.EscapeDataString(format))+"&limit=" + (limit==null? "" : System.Uri.EscapeDataString(limit))+"&offset=" + (offset==null? "" : System.Uri.EscapeDataString(offset));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3287,13 +3286,13 @@ namespace MyNS
 		public async Task CreateOfferAsync(EbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "offer";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3316,13 +3315,13 @@ namespace MyNS
 		public void CreateOffer(EbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "offer";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3346,7 +3345,7 @@ namespace MyNS
 		public async Task<EbayOfferDetailsWithAll> GetOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3375,7 +3374,7 @@ namespace MyNS
 		public EbayOfferDetailsWithAll GetOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3405,13 +3404,13 @@ namespace MyNS
 		public async Task<OfferResponse> UpdateOfferAsync(string offerId, EbayOfferDetailsWithId requestBody)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3442,13 +3441,13 @@ namespace MyNS
 		public OfferResponse UpdateOffer(string offerId, EbayOfferDetailsWithId requestBody)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3477,7 +3476,7 @@ namespace MyNS
 		public async Task DeleteOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3499,7 +3498,7 @@ namespace MyNS
 		public void DeleteOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3522,7 +3521,7 @@ namespace MyNS
 		public async Task<PublishResponse> PublishOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/publish/";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3551,7 +3550,7 @@ namespace MyNS
 		public PublishResponse PublishOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/publish/";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3580,13 +3579,13 @@ namespace MyNS
 		public async Task<PublishResponse> PublishOfferByInventoryItemGroupAsync(PublishByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/publish_by_inventory_item_group/";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3616,13 +3615,13 @@ namespace MyNS
 		public PublishResponse PublishOfferByInventoryItemGroup(PublishByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/publish_by_inventory_item_group/";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3651,13 +3650,13 @@ namespace MyNS
 		public async Task WithdrawOfferByInventoryItemGroupAsync(WithdrawByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/withdraw_by_inventory_item_group";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3680,13 +3679,13 @@ namespace MyNS
 		public void WithdrawOfferByInventoryItemGroup(WithdrawByInventoryItemGroupRequest requestBody)
 		{
 			var requestUri = "offer/withdraw_by_inventory_item_group";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3710,13 +3709,13 @@ namespace MyNS
 		public async Task<FeesSummaryResponse> GetListingFeesAsync(OfferKeysWithId requestBody)
 		{
 			var requestUri = "offer/get_listing_fees";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3746,13 +3745,13 @@ namespace MyNS
 		public FeesSummaryResponse GetListingFees(OfferKeysWithId requestBody)
 		{
 			var requestUri = "offer/get_listing_fees";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3782,13 +3781,13 @@ namespace MyNS
 		public async Task<BulkOfferResponse> BulkCreateOfferAsync(BulkEbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "bulk_create_offer";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3818,13 +3817,13 @@ namespace MyNS
 		public BulkOfferResponse BulkCreateOffer(BulkEbayOfferDetailsWithKeys requestBody)
 		{
 			var requestUri = "bulk_create_offer";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3854,13 +3853,13 @@ namespace MyNS
 		public async Task<BulkPublishResponse> BulkPublishOfferAsync(BulkOffer requestBody)
 		{
 			var requestUri = "bulk_publish_offer";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3890,13 +3889,13 @@ namespace MyNS
 		public BulkPublishResponse BulkPublishOffer(BulkOffer requestBody)
 		{
 			var requestUri = "bulk_publish_offer";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3926,7 +3925,7 @@ namespace MyNS
 		public async Task<WithdrawResponse> WithdrawOfferAsync(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/withdraw";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -3955,7 +3954,7 @@ namespace MyNS
 		public WithdrawResponse WithdrawOffer(string offerId)
 		{
 			var requestUri = "offer/"+ (offerId==null? "" : System.Uri.EscapeDataString(offerId))+"/withdraw";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -3984,7 +3983,7 @@ namespace MyNS
 		public async Task<InventoryItemGroup> GetInventoryItemGroupAsync(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4013,7 +4012,7 @@ namespace MyNS
 		public InventoryItemGroup GetInventoryItemGroup(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4043,13 +4042,13 @@ namespace MyNS
 		public async Task<BaseResponse> CreateOrReplaceInventoryItemGroupAsync(string inventoryItemGroupKey, InventoryItemGroup requestBody)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4080,13 +4079,13 @@ namespace MyNS
 		public BaseResponse CreateOrReplaceInventoryItemGroup(string inventoryItemGroupKey, InventoryItemGroup requestBody)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4115,7 +4114,7 @@ namespace MyNS
 		public async Task DeleteInventoryItemGroupAsync(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4137,7 +4136,7 @@ namespace MyNS
 		public void DeleteInventoryItemGroup(string inventoryItemGroupKey)
 		{
 			var requestUri = "inventory_item_group/"+ (inventoryItemGroupKey==null? "" : System.Uri.EscapeDataString(inventoryItemGroupKey));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -4160,13 +4159,13 @@ namespace MyNS
 		public async Task<BulkMigrateListingResponse> BulkMigrateListingAsync(BulkMigrateListing requestBody)
 		{
 			var requestUri = "bulk_migrate_listing";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -4196,13 +4195,13 @@ namespace MyNS
 		public BulkMigrateListingResponse BulkMigrateListing(BulkMigrateListing requestBody)
 		{
 			var requestUri = "bulk_migrate_listing";
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

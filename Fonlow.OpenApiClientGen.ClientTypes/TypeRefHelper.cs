@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="content"></param>
 		/// <returns></returns>
-		public static CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content)
+		public static CodeTypeReference OpenApiMediaTypeToCodeTypeReference(OpenApiMediaType content, bool dotsToNamespaces)
 		{
 			if (content.Schema == null)
 			{
@@ -31,8 +31,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					OpenApiSchema arrayItemsSchema = content.Schema.Items;
 					if (arrayItemsSchema.Reference != null) //array of custom type
 					{
-						string ns = NameFunc.GetNamespaceOfClassName(arrayItemsSchema.Reference.Id);
-						string arrayTypeName = NameFunc.RefineTypeName(arrayItemsSchema.Reference.Id, ns);
+						string ns = dotsToNamespaces ? NameFunc.GetNamespaceOfClassName(arrayItemsSchema.Reference.Id) : string.Empty;
+						string arrayTypeName = NameFunc.RefineTypeName(arrayItemsSchema.Reference.Id, ns, dotsToNamespaces);
 						CodeTypeReference arrayCodeTypeReference = CreateArrayOfCustomTypeReference(CombineNamespaceWithClassName(ns, arrayTypeName), 1);
 						return arrayCodeTypeReference;
 					}
@@ -159,7 +159,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{"number_float", typeof(float) },
 			{"number_double", typeof(double) },
 			{"number_decimal", typeof(decimal) },
-			{"number", typeof(float) },
+			{"number", typeof(double) }, //C# by default use double for number literal
 			{"string", typeof(string) },
 			{"boolean", typeof(bool) },
 			{"string_date", typeof(DateOnly) },

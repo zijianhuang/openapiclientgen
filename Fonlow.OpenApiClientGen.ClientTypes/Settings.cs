@@ -232,6 +232,11 @@
 		public bool CreateFolder { get; set; }
 
 		/// <summary>
+		/// Type name with dots will have the dotted segments become namespace. APIs\presalytics.io\ooxml\0.1.0 has this, with namespace and type name collisions.
+		/// </summary>
+		public bool DotsToNamespaces { get; set; }
+
+		/// <summary>
 		/// Meta for plugins that generate TypeScript/JavaScript codes.
 		/// </summary>
 		public JSPlugin[] Plugins { get; set; }

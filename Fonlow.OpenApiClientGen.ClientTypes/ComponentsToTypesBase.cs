@@ -85,14 +85,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var stronglyTypedRequestBodies = ExtractRequestBodiesOfApplicationJson(components.RequestBodies);
 				foreach (var t in stronglyTypedRequestBodies)
 				{
-					ComponentsSchemas.Add(t);
+					if (!ComponentsSchemas.TryAdd(t.Key, t.Value))
+					{
+						Console.Error.WriteLine($"duplicated: {t.Key}");
+					}
 				}
 
 			}
 
 			var classNamespaceNames = NameFunc.FindNamespacesInClassNames(ComponentsSchemas.Keys);
 
-			if (classNamespaceNames.Length > 0)
+			if (settings.DotsToNamespaces && classNamespaceNames.Length > 0)
 			{
 				var groupedComponentsSchemas = ComponentsSchemas
 					.GroupBy(d => NameFunc.GetNamespaceOfClassName(d.Key))
@@ -110,11 +113,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					foreach (var kv in groupedTypes.OrderBy(t => t.Key))
 					{
-						CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, kv.Key, classNamespaceText);
-						if (existingType == null)
-						{
-							AddTypeToCodeDom(kv.Key, kv.Value);
-						}
+						AddTypeToCodeDom(kv.Key, kv.Value);
 					}
 				}
 			}
@@ -131,22 +130,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
+		/// <summary>
+		/// Add Type for RefId if not existing in the entire codeCompileUnit.Namespaces.
+		/// If RefId is separated by dots and DotsToNamespsaces is true, this is also addressed.
+		/// </summary>
+		/// <param name="refId"></param>
 		void AddTypeForRefIdIfNotExist(string refId)
 		{
 			var schema = ComponentsSchemas[refId];
 			if (schema != null)
 			{
-				string classNamespaceText = NameFunc.GetNamespaceOfClassName(refId);
-				if (string.IsNullOrEmpty(classNamespaceText))
-				{
-					classNamespaceText = settings.ClientNamespace;
-				}
-
-				CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, refId, classNamespaceText);  // ComponentsHelper.FindTypeDeclarationInNamespace(NameFunc.RefineTypeName(kv.Key, ""), classNamespace); //classNamespace contains more classes soon
-				if (existingType == null)
-				{
-					AddTypeToCodeDom(refId, schema);
-				}
+				AddTypeToCodeDom(refId, schema);
 			}
 		}
 
@@ -264,8 +258,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			else if (arrayItemsSchema.Reference != null) //array of custom type
 			{
 				string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
-				var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
-				var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
+				var arrayTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId) : string.Empty;
+				var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs, settings.DotsToNamespaces);
 				var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
 				var existingType = FindCodeTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
 				if (existingType == null) // Referencing to a type not yet added to namespace
@@ -274,7 +268,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (existingSchema != null && !RegisteredSchemaRefIdExists(arrayTypeSchemaRefId))
 					{
 						AddTypeToCodeDom(arrayTypeSchemaRefId, existingSchema);
-						//AddTypeToCodeDom(arrayTypeWithNs, existingSchema);
 					}
 				}
 
@@ -327,7 +320,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					var casualTypeName = settings.PrefixWithTypeName ? typeDeclarationName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);
 					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
-					AddProperties(casualTypeDeclaration, arrayItemsSchema, currentTypeName, ns);
+					AddProperties(casualTypeDeclaration, arrayItemsSchema, casualTypeName, ns);
 					if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
 					{
 						return Tuple.Create(ComponentsHelper.CreateArrayOfCustomTypeReference(casualTypeName, 1), casualTypeName);
@@ -354,12 +347,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema)
 		{
-			string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+			string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
+			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 			{
-				//AddTypeToCodeDom(complexType, propertySchema);
 				AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
 			}
 
@@ -469,8 +461,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Reference != null)
 				{
-					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
+					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					return ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 				}
@@ -701,14 +693,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}).ToArray();
 		}
 
+		/// <summary>
+		/// Extract those with content type application/json, and the properties.count is greater than 0.
+		/// </summary>
+		/// <param name="requestBodies"></param>
+		/// <returns></returns>
 		KeyValuePair<string, OpenApiSchema>[] ExtractRequestBodiesOfApplicationJson(IDictionary<string, OpenApiRequestBody> requestBodies)
 		{
 			var stronglyTypedBodies = requestBodies.Where(d =>
 			{
-				//d.Value.Content.ContainsKey("application/json");
 				if (d.Value.Content.TryGetValue("application/json", out OpenApiMediaType mediaTypeObject))
 				{
-					if (mediaTypeObject.Schema.Reference != null || mediaTypeObject.Schema.Properties==null || mediaTypeObject.Schema.Properties.Count == 0)
+					if (mediaTypeObject.Schema.Reference == null && (mediaTypeObject.Schema.Properties==null || mediaTypeObject.Schema.Properties.Count == 0))
 					{
 						return false;
 					}

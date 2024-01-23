@@ -319,14 +319,29 @@ export namespace MyNS {
 		DictlayerdataDictWordsDerivatives?: Array<DictlayerdataDictWordsDerivatives>;
 		DictlayerdataDictWordsExamples?: Array<DictlayerdataDictWordsExamples>;
 		DictlayerdataDictWordsSenses?: Array<DictlayerdataDictWordsSenses>;
+
+		/** The words with different meanings but not related words, e.g. "go" (game) and "go" (verb). */
+		source?: DictlayerdataDictWordsSource;
 	}
 
 	export interface DictlayerdataDictWordsDerivatives {
+		source?: DictlayerdataDictWordsDerivativesSource;
 		text?: string | null;
 	}
 
+	export interface DictlayerdataDictWordsDerivativesSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+
 	export interface DictlayerdataDictWordsExamples {
+		source?: DictlayerdataDictWordsExamplesSource;
 		text?: string | null;
+	}
+
+	export interface DictlayerdataDictWordsExamplesSource {
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface DictlayerdataDictWordsSenses {
@@ -335,6 +350,7 @@ export namespace MyNS {
 		partOfSpeech?: string | null;
 		pronunciation?: string | null;
 		pronunciationUrl?: string | null;
+		source?: DictlayerdataDictWordsSensesSource;
 		syllabification?: string | null;
 		DictlayerdataDictWordsSensesSynonyms?: Array<DictlayerdataDictWordsSensesSynonyms>;
 	}
@@ -350,11 +366,33 @@ export namespace MyNS {
 	}
 
 	export interface DictlayerdataDictWordsSensesDefinitionsExamples {
+		source?: DictlayerdataDictWordsSensesDefinitionsExamplesSource;
 		text?: string | null;
 	}
 
+	export interface DictlayerdataDictWordsSensesDefinitionsExamplesSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+
+	export interface DictlayerdataDictWordsSensesSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+
 	export interface DictlayerdataDictWordsSensesSynonyms {
+		source?: DictlayerdataDictWordsSensesSynonymsSource;
 		text?: string | null;
+	}
+
+	export interface DictlayerdataDictWordsSensesSynonymsSource {
+		attribution?: string | null;
+		url?: string | null;
+	}
+
+	export interface DictlayerdataDictWordsSource {
+		attribution?: string | null;
+		url?: string | null;
 	}
 
 	export interface Discoveryclusters {
@@ -366,7 +404,7 @@ export namespace MyNS {
 	}
 
 	export interface DiscoveryclustersClusters {
-		banner_with_content_container?: DiscoveryclustersBanner_with_content_container;
+		banner_with_content_container?: DiscoveryclustersClustersBanner_with_content_container;
 		subTitle?: string | null;
 		title?: string | null;
 		totalVolumes?: number | null;
@@ -374,7 +412,7 @@ export namespace MyNS {
 		volumes?: Array<Volume>;
 	}
 
-	export interface DiscoveryclustersBanner_with_content_container {
+	export interface DiscoveryclustersClustersBanner_with_content_container {
 		fillColorArgb?: string | null;
 		imageUrl?: string | null;
 		maskColorArgb?: string | null;
@@ -566,6 +604,9 @@ export namespace MyNS {
 		/** The date on which this book is available for sale. */
 		onSaleDate?: Date | null;
 
+		/** The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.) */
+		retailPrice?: VolumeSaleInfoRetailPrice;
+
 		/** Whether or not this book is available for sale or offered for free in the Google eBookstore for the country listed above. Possible values are FOR_SALE, FOR_RENTAL_ONLY, FOR_SALE_AND_RENTAL, FREE, NOT_FOR_SALE, or FOR_PREORDER. */
 		saleability?: string | null;
 	}
@@ -587,20 +628,37 @@ export namespace MyNS {
 		/** Indicates whether the offer is giftable. */
 		giftable?: boolean | null;
 
+		/** Offer list (=undiscounted) price in Micros. */
+		listPrice?: VolumeSaleInfoOffersListPrice;
+
 		/** The rental duration (for rental offers only). */
-		rentalDuration?: VolumeSaleInfoRentalDuration;
+		rentalDuration?: VolumeSaleInfoOffersRentalDuration;
 
 		/** Offer retail (=discounted) price in Micros */
-		retailPrice?: VolumeSaleInfoRetailPrice;
+		retailPrice?: VolumeSaleInfoOffersRetailPrice;
 	}
 
-	export interface VolumeSaleInfoRentalDuration {
+	export interface VolumeSaleInfoOffersListPrice {
+		amountInMicros?: number | null;
+		currencyCode?: string | null;
+	}
+
+	export interface VolumeSaleInfoOffersRentalDuration {
 		count?: number | null;
 		unit?: string | null;
 	}
 
-	export interface VolumeSaleInfoRetailPrice {
+	export interface VolumeSaleInfoOffersRetailPrice {
 		amountInMicros?: number | null;
+		currencyCode?: string | null;
+	}
+
+	export interface VolumeSaleInfoRetailPrice {
+
+		/** Amount in the currency listed below. (In LITE projection.) */
+		amount?: number | null;
+
+		/** An ISO 4217, three-letter currency code. (In LITE projection.) */
 		currencyCode?: string | null;
 	}
 
@@ -1173,13 +1231,13 @@ export namespace MyNS {
 		isComplete?: boolean | null;
 		seriesFormatType?: string | null;
 		seriesId?: string | null;
-		seriesSubscriptionReleaseInfo?: SeriesSeriesSubscriptionReleaseInfo;
+		seriesSubscriptionReleaseInfo?: SeriesSeriesSeriesSubscriptionReleaseInfo;
 		seriesType?: string | null;
 		subscriptionId?: string | null;
 		title?: string | null;
 	}
 
-	export interface SeriesSeriesSubscriptionReleaseInfo {
+	export interface SeriesSeriesSeriesSubscriptionReleaseInfo {
 
 		/** Cancellation date of the series subscription (or when it ends). */
 		cancellationTimestampUs?: string | null;

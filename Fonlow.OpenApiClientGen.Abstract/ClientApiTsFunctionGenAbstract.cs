@@ -51,7 +51,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.ParameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
 			{
-				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath);
+				Tuple<CodeTypeReference, string, bool> kc = bodyContentRefBuilder.GetBodyContent(apiOperation, httpMethod.ToString(), relativePath, settings.DotsToNamespaces);
 				if (kc != null)
 				{
 					this.RequestBodyCodeTypeReference = kc.Item1;

@@ -138,7 +138,7 @@ namespace Fonlow.OpenApiClientGen.CS
 				new CodeNamespaceImport("System.Linq"),
 				new CodeNamespaceImport("System.Collections.Generic"),
 				new CodeNamespaceImport("System.Threading.Tasks"),
-				new CodeNamespaceImport("System.Net.Http"),
+				//new CodeNamespaceImport("System.Net.Http"), explicitly use classes in generated codes to avoid openapi def defines the same names like HttpMethod
 			});
 
 			if (settings.UseSystemTextJson)

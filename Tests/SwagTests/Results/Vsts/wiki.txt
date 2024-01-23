@@ -13,7 +13,6 @@ namespace MyNS
 	using System.Linq;
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
-	using System.Net.Http;
 	using Newtonsoft.Json;
 	using Fonlow.Net.Http;
 	
@@ -972,7 +971,7 @@ namespace MyNS
 		public async Task<WikiV2[]> Wikis_ListAsync(string organization, string project, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1003,7 +1002,7 @@ namespace MyNS
 		public WikiV2[] Wikis_List(string organization, string project, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1034,13 +1033,13 @@ namespace MyNS
 		public async Task Wikis_CreateAsync(string organization, string project, string api_version, WikiCreateParametersV2 requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1066,13 +1065,13 @@ namespace MyNS
 		public void Wikis_Create(string organization, string project, string api_version, WikiCreateParametersV2 requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1099,7 +1098,7 @@ namespace MyNS
 		public async Task<WikiV2> Wikis_GetAsync(string organization, string wikiIdentifier, string project, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1131,7 +1130,7 @@ namespace MyNS
 		public WikiV2 Wikis_Get(string organization, string wikiIdentifier, string project, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1163,7 +1162,7 @@ namespace MyNS
 		public async Task<WikiV2> Wikis_DeleteAsync(string organization, string wikiIdentifier, string project, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1195,7 +1194,7 @@ namespace MyNS
 		public WikiV2 Wikis_Delete(string organization, string wikiIdentifier, string project, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1228,13 +1227,13 @@ namespace MyNS
 		public async Task<WikiV2> Wikis_UpdateAsync(string organization, string wikiIdentifier, string project, string api_version, WikiUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1268,13 +1267,13 @@ namespace MyNS
 		public WikiV2 Wikis_Update(string organization, string wikiIdentifier, string project, string api_version, WikiUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1311,13 +1310,13 @@ namespace MyNS
 		public async Task Page_Moves_CreateAsync(string organization, string project, string wikiIdentifier, string comment, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version, WikiPageMoveParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pagemoves&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1348,13 +1347,13 @@ namespace MyNS
 		public void Page_Moves_Create(string organization, string project, string wikiIdentifier, string comment, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version, WikiPageMoveParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pagemoves&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1387,7 +1386,7 @@ namespace MyNS
 		public async Task<WikiPage> Pages_Get_PageAsync(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1425,7 +1424,7 @@ namespace MyNS
 		public WikiPage Pages_Get_Page(string organization, string project, string wikiIdentifier, string path, Pages_Get_PageRecursionLevel recursionLevel, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, bool includeContent, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&recursionLevel=" + recursionLevel+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1463,13 +1462,13 @@ namespace MyNS
 		public async Task<WikiPage> Pages_Create_Or_UpdateAsync(string organization, string project, string wikiIdentifier, string path, string comment, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version, WikiPageCreateOrUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1508,13 +1507,13 @@ namespace MyNS
 		public WikiPage Pages_Create_Or_Update(string organization, string project, string wikiIdentifier, string path, string comment, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version, WikiPageCreateOrUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Put, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1552,7 +1551,7 @@ namespace MyNS
 		public async Task<WikiPage> Pages_Delete_PageAsync(string organization, string project, string wikiIdentifier, string path, string comment, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1589,7 +1588,7 @@ namespace MyNS
 		public WikiPage Pages_Delete_Page(string organization, string project, string wikiIdentifier, string path, string comment, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages&path=" + (path==null? "" : System.Uri.EscapeDataString(path))+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1624,7 +1623,7 @@ namespace MyNS
 		public async Task<WikiPage> Pages_Get_Page_By_IdAsync(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1659,7 +1658,7 @@ namespace MyNS
 		public WikiPage Pages_Get_Page_By_Id(string organization, string project, string wikiIdentifier, int id, Pages_Get_PageRecursionLevel recursionLevel, bool includeContent, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&recursionLevel=" + recursionLevel+"&includeContent="+includeContent+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1693,7 +1692,7 @@ namespace MyNS
 		public async Task<WikiPage> Pages_Delete_Page_By_IdAsync(string organization, string project, string wikiIdentifier, int id, string comment, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1727,7 +1726,7 @@ namespace MyNS
 		public WikiPage Pages_Delete_Page_By_Id(string organization, string project, string wikiIdentifier, int id, string comment, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Delete, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1762,13 +1761,13 @@ namespace MyNS
 		public async Task<WikiPage> Pages_UpdateAsync(string organization, string project, string wikiIdentifier, int id, string comment, string api_version, WikiPageCreateOrUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1804,13 +1803,13 @@ namespace MyNS
 		public WikiPage Pages_Update(string organization, string project, string wikiIdentifier, int id, string comment, string api_version, WikiPageCreateOrUpdateParameters requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+id+"&comment=" + (comment==null? "" : System.Uri.EscapeDataString(comment))+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Patch, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1845,7 +1844,7 @@ namespace MyNS
 		public async Task<WikiPageDetail> Page_Stats_GetAsync(string organization, string project, string wikiIdentifier, int pageId, int pageViewsForDays, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+pageId+"/stats&pageViewsForDays="+pageViewsForDays+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1879,7 +1878,7 @@ namespace MyNS
 		public WikiPageDetail Page_Stats_Get(string organization, string project, string wikiIdentifier, int pageId, int pageViewsForDays, string api_version)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pages/"+pageId+"/stats&pageViewsForDays="+pageViewsForDays+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try
@@ -1915,13 +1914,13 @@ namespace MyNS
 		public async Task<WikiPageDetail[]> Pages_Batch_GetAsync(string organization, string project, string wikiIdentifier, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version, WikiPagesBatchRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pagesbatch&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
 			try
@@ -1958,13 +1957,13 @@ namespace MyNS
 		public WikiPageDetail[] Pages_Batch_Get(string organization, string project, string wikiIdentifier, string versionDescriptor_version, GitVersionDescriptorVersionOptions versionDescriptor_versionOptions, GitVersionDescriptorVersionType versionDescriptor_versionType, string api_version, WikiPagesBatchRequest requestBody)
 		{
 			var requestUri = ""+ (organization==null? "" : System.Uri.EscapeDataString(organization))+"/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/_apis/wiki/wikis/"+ (wikiIdentifier==null? "" : System.Uri.EscapeDataString(wikiIdentifier))+"/pagesbatch&versionDescriptor.version=" + (versionDescriptor_version==null? "" : System.Uri.EscapeDataString(versionDescriptor_version))+"&versionDescriptor.versionOptions=" + versionDescriptor_versionOptions+"&versionDescriptor.versionType=" + versionDescriptor_versionType+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
-			using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
+			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
 			{
 			var requestSerializer = JsonSerializer.Create(jsonSerializerSettings);
 			requestSerializer.Serialize(requestWriter, requestBody);
-			var content = new StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
+			var content = new System.Net.Http.StringContent(requestWriter.ToString(), System.Text.Encoding.UTF8, "application/json");
 			httpRequestMessage.Content = content;
 			var responseMessage = httpClient.SendAsync(httpRequestMessage).Result;
 			try

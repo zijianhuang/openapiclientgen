@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						ParameterBinder = ParameterLocationToParameterBinder(p.In),
 					},
 
-					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p)
+					ParameterTypeReference = OpenApiParameterToCodeTypeReference(p) //if parameter is not simple type
 				};
 
 				return r;

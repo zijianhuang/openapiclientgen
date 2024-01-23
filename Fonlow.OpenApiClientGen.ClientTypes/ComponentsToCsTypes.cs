@@ -74,12 +74,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId == "StatusCodes")
+			if (refId == "BoxScore")
 			{
-				Console.WriteLine(refId);
+				Debug.WriteLine("aaa");
 			}
-			string ns = NameFunc.GetNamespaceOfClassName(refId);
-			string currentTypeName = NameFunc.RefineTypeName(refId, ns);
+			string ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : settings.ClientNamespace;
+			string currentTypeName = NameFunc.RefineTypeName(refId, ns, settings.DotsToNamespaces);
 			if (settings.UsePascalCase)
 			{
 				currentTypeName = currentTypeName.ToPascalCase();
@@ -92,6 +92,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			IList<IOpenApiAny> enumTypeList = schema.Enum; //maybe empty
 			bool isForClass = enumTypeList.Count == 0;
 			CodeTypeDeclaration typeDeclaration = null;
+
+			CodeTypeDeclaration existingType = ComponentsHelper.FindTypeDeclarationInNamespaces(codeCompileUnit.Namespaces, currentTypeName, ns);
+			if (existingType != null)
+			{
+				Console.WriteLine($"{refId} exists in CodeDOM");
+				return;
+			}
+
 			if (isForClass)
 			{
 				if (schema.Properties.Count > 0 || (schema.Properties.Count == 0 && allOfBaseTypeSchemaList.Count > 1))
@@ -162,9 +170,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						return;
 					}
 
-					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
-					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
-					CodeTypeDeclaration existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
+					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(itemsRef.Id) : string.Empty;
+					string itemsRefTypeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
+					CodeTypeDeclaration existing = FindCodeTypeDeclarationInNamespaces(itemsRefTypeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
 						AddTypeToCodeDom(itemsRef.Id, FindSchema(itemsRef.Id));
@@ -180,7 +188,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 					else
 					{
-						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(itemsRef.Id, settings.ArrayAs);
+						var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(itemsRefTypeName, settings.ArrayAs);
 						TypeAliasDic.Add(refId, typeNameX);
 						Trace.TraceInformation($"TypeAliasDic.Add({refId}, {typeNameX})");
 					}
@@ -260,10 +268,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public override void AddEnumMembers(CodeTypeDeclaration typeDeclaration, IList<IOpenApiAny> enumTypeList)
 		{
-			//if (typeDeclaration.Name== "ResourceType")
-			//{
-			//	Console.WriteLine("here");
-			//}
 			int k = 0;
 			foreach (IOpenApiAny enumMember in enumTypeList)
 			{
@@ -355,13 +359,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
-					string memberName = "_" + doubleMember.Value.ToString();
+					//MS openapi parser may intepret 0 or 1 as double rather than integer and this cause the value become 0D or 1D. And some openApi definitions actually float or double as enum member.
+					//MS operapi parser intepret NaN as double and then double.NaN
+					string memberName = NameFunc.RefineEnumMemberName(doubleMember.Value.ToString());
 					double doubleValue = doubleMember.Value;
-					CodeMemberField clientField = new()
-					{
-						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(doubleValue),
-					};
+					CodeMemberField clientField = memberName == "NaN" ?
+						new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(k) ,
+						}
+						:
+						new()
+						{
+							Name = memberName,
+							InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
+						};
 
 					if (settings.DecorateDataModelWithDataContract)
 					{
@@ -416,16 +429,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
+#if DEBUG
+			if (currentTypeName == "Batch" && refId == "label_layout")
+			{
+				Debug.WriteLine("aa");
+			}
+#endif
 			string propertyName = NameFunc.RefinePropertyName(refId);
 			if (propertyName == string.Empty)
 			{
 				throw new ArgumentException($"doggy refId: {refId}; currentTypeName: {currentTypeName}");
 			}
 
-			if (refId == "error-errors-item")
-			{
-				Console.WriteLine("OK");
-			}
 			if (settings.UsePascalCase)
 			{
 				propertyName = propertyName.ToPascalCase();
@@ -454,8 +469,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (propertySchema.Reference != null)
 				{
-					string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
-					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
+					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
+					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
@@ -631,7 +646,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string existingTypeName = existingDeclaration.Name;
 						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
-						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + defaultValue);
+						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + NameFunc.RefineEnumValue(defaultValue));
 					}
 					else
 					{
@@ -729,7 +744,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return isNullable ? CreateNullableProperty(r.Item1, propertyName)
 				: CreateProperty(r.Item1, propertyName,
-				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + defaultValue));
+				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + NameFunc.RefineEnumValue(defaultValue)));
 		}
 
 		string GetDefaultValue(OpenApiSchema s)
@@ -761,7 +776,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						var typeRef = s.AllOf[0].Reference.Id;
 						var refinedTypeName = NameFunc.RefineTypeName(typeRef, "");
-						return $"{refinedTypeName}.{stringValue.Value}";
+						return $"{refinedTypeName}.{NameFunc.RefineEnumValue(stringValue.Value)}";
 					}
 
 					return stringValue.Value;
@@ -784,7 +799,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			if (s.Default is OpenApiFloat floatValue)
 			{
-				return floatValue.Value.ToString();
+				return floatValue.Value.ToString() + "F";
 			}
 
 			if (s.Default is OpenApiDouble doubleValue)

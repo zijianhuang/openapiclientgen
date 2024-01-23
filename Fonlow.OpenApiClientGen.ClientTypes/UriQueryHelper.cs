@@ -23,6 +23,10 @@ namespace Fonlow.CodeDom.Web
 			{
 				throw new CodeGenException($"When CreateuriQuery, path {uriText} triggers error: {ex.Message}");
 			}
+			catch (IndexOutOfRangeException ex)
+			{
+				throw new CodeGenException($"Something wrong with {uriText}, no parameters?");
+			}
 
 			if (parameterNames.Length == 0 && parameterDescriptions.Length == 0)
 				return null;

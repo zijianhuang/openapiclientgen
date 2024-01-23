@@ -46,8 +46,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenApiClientGenCore.JQ", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NG2Tests", "Tests\NG2Tests\NG2Tests.csproj", "{1EBC3FD0-2B56-43D0-AFE5-3FC77B82D168}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSTests", "Tests\CSTests\CSTests.csproj", "{49672CC3-D716-408C-A143-33211C9B464C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsSwagger2Tests", "Tests\CsSwagger2Tests\CsSwagger2Tests.csproj", "{442E12DB-6824-44D9-864A-54A26FEB3097}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateCases", "Tests\GenerateCases\GenerateCases.csproj", "{5309D429-9D5A-4175-9602-F770EE3A3198}"
@@ -80,7 +78,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SwaggerDirShared", "Tests\S
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OpenApi3Shared", "Tests\OpenApi3Shared\OpenApi3Shared.shproj", "{657D2FE2-8A71-4097-99D9-524FF81AD1E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsOpenApi3Tests", "Tests\CsOpenApi3Tests\CsOpenApi3Tests.csproj", "{22A8A878-5965-4D3F-B48D-8F44B1892C7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsOpenApi3Tests", "Tests\CsOpenApi3Tests\CsOpenApi3Tests.csproj", "{22A8A878-5965-4D3F-B48D-8F44B1892C7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,10 +142,6 @@ Global
 		{1EBC3FD0-2B56-43D0-AFE5-3FC77B82D168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EBC3FD0-2B56-43D0-AFE5-3FC77B82D168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EBC3FD0-2B56-43D0-AFE5-3FC77B82D168}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49672CC3-D716-408C-A143-33211C9B464C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49672CC3-D716-408C-A143-33211C9B464C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49672CC3-D716-408C-A143-33211C9B464C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49672CC3-D716-408C-A143-33211C9B464C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{442E12DB-6824-44D9-864A-54A26FEB3097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{442E12DB-6824-44D9-864A-54A26FEB3097}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{442E12DB-6824-44D9-864A-54A26FEB3097}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -218,7 +212,6 @@ Global
 		{741BB21F-9B74-4088-B9BF-4EC83860DD66} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
 		{815C31E3-F57D-488B-8C86-216B58512C56} = {C6D5C60F-4996-4F2B-80DD-BBE5FA1906C6}
 		{1EBC3FD0-2B56-43D0-AFE5-3FC77B82D168} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
-		{49672CC3-D716-408C-A143-33211C9B464C} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{442E12DB-6824-44D9-864A-54A26FEB3097} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{5309D429-9D5A-4175-9602-F770EE3A3198} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
 		{CC503714-47BB-42F3-A703-0271470FAD82} = {94751FE7-3D6A-42AA-B1CB-29F23A1F89F1}
@@ -243,7 +236,6 @@ Global
 		Tests\OpenApiDirShared\OpenApiDirShared.projitems*{1ebc3fd0-2b56-43d0-afe5-3fc77b82d168}*SharedItemsImports = 5
 		Tests\SwaggerDirShared\SwaggerDirShared.projitems*{1ebc3fd0-2b56-43d0-afe5-3fc77b82d168}*SharedItemsImports = 5
 		Tests\OpenApi3Shared\OpenApi3Shared.projitems*{22a8a878-5965-4d3f-b48d-8f44b1892c7b}*SharedItemsImports = 5
-		Tests\OpenApiDirShared\OpenApiDirShared.projitems*{49672cc3-d716-408c-a143-33211c9b464c}*SharedItemsImports = 5
 		Tests\OpenApi3Shared\OpenApi3Shared.projitems*{657d2fe2-8a71-4097-99d9-524ff81ad1e3}*SharedItemsImports = 13
 		Tests\SwaggerDirShared\SwaggerDirShared.projitems*{8f4a7bb0-81fd-4edd-8b6d-12d165abcc2c}*SharedItemsImports = 13
 		Tests\OpenApiDirShared\OpenApiDirShared.projitems*{917c07f5-e9f5-4116-b6b1-cdbd8aeef717}*SharedItemsImports = 13
