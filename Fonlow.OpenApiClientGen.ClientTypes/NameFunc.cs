@@ -59,7 +59,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return dotsToNamespaces ? r : r.Replace(".", string.Empty);
 		}
 
-		public static string RefineEnumMemberName(string s, Settings settings = null)
+		public static string RefineEnumMemberName(string s, ISettings settings = null)
 		{
 			if (String.IsNullOrEmpty(s))
 			{

@@ -23,7 +23,7 @@ namespace SwagTests
 			});
 		}
 
-		static string TranslateDefToCsTypesWithSettings(string filePath, Settings settings)
+		static string TranslateDefToCsTypesWithSettings(string filePath, ISettings settings)
 		{
 			OpenApiDocument doc = ReadJson(filePath);
 			System.CodeDom.CodeCompileUnit codeCompileUnit = new();

@@ -67,7 +67,7 @@ namespace Fonlow.OpenApiClientGen
 			System.Diagnostics.Trace.Listeners.Add(listener);
 
 			string settingsString = File.ReadAllText(settingsFile);
-			ClientTypes.Settings settings = System.Text.Json.JsonSerializer.Deserialize<ClientTypes.Settings>(settingsString);
+			ClientTypes.ISettings settings = System.Text.Json.JsonSerializer.Deserialize<ClientTypes.Settings>(settingsString);
 
 			OpenApiDocument doc;
 			using (FileStream stream = new(defFile, FileMode.Open, FileAccess.Read))

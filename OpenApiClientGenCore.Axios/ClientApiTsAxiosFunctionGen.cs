@@ -29,9 +29,9 @@ namespace Fonlow.CodeDom.Web.Ts
 		string returnTypeText = null;
 		string typeCast = null;
 		//string contentType;
-		readonly Settings settings;
+		readonly ISettings settings;
 
-		public ClientApiTsAxiosFunctionGen(Settings settings, JSOutput jsOutput) : base()
+		public ClientApiTsAxiosFunctionGen(ISettings settings, JSOutput jsOutput) : base()
 		{
 			this.settings = settings;
 

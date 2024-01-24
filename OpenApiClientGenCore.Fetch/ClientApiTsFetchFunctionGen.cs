@@ -19,9 +19,9 @@ namespace Fonlow.CodeDom.Web.Ts
 		string returnTypeText = null;
 		string typeCast = null;
 		readonly string contentType;
-		readonly Settings settings;
+		readonly ISettings settings;
 
-		public ClientApiTsFetchFunctionGen(Settings settings, JSOutput jsOutput) : base()
+		public ClientApiTsFetchFunctionGen(ISettings settings, JSOutput jsOutput) : base()
 		{
 			this.settings = settings;
 

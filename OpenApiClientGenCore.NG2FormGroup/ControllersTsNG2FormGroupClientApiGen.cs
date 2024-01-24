@@ -5,7 +5,7 @@ namespace Fonlow.CodeDom.Web.Ts
 {
 	public class ControllersTsNG2FormGroupClientApiGen : ControllersTsNG2ClientApiGen
 	{
-		public ControllersTsNG2FormGroupClientApiGen(Settings settings, JSOutput jsOutput) : base(settings, jsOutput)
+		public ControllersTsNG2FormGroupClientApiGen(ISettings settings, JSOutput jsOutput) : base(settings, jsOutput)
 		{
 
 		}

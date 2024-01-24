@@ -20,7 +20,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	public class ComponentsToTsTypes : ComponentsToTypesBase
 	{
 		readonly JSOutput jsOutput;
-		public ComponentsToTsTypes(Settings settings, JSOutput jsOutput, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
+		public ComponentsToTsTypes(ISettings settings, JSOutput jsOutput, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{
 			this.jsOutput = jsOutput;
 		}
@@ -548,14 +548,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				if (enumMember is OpenApiString stringMember)
 				{
+#if DEBUG
+					if (stringMember.Value== "-1")
+					{
+						Debug.WriteLine("haha");
+					}
+#endif
 					var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(stringMember.Value);
-					string memberName = isValidEnumName ? stringMember.Value : (!string.IsNullOrEmpty(stringMember.Value) && Char.IsDigit(stringMember.Value[0]) ? NameFunc.RefineEnumMemberName(stringMember.Value)
-						: $"'{stringMember.Value}'");
+					string memberName = isValidEnumName ? stringMember.Value 
+						: (!string.IsNullOrEmpty(stringMember.Value) && Char.IsDigit(stringMember.Value[0]) ? NameFunc.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")
+						: $"'{NameFunc.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")}'"
+						);
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
 						Name = memberName,
-						InitExpression = settings.EnumToString ? new CodePrimitiveExpression("'" + memberName + "'") : new CodePrimitiveExpression(intValue),
+						InitExpression = settings.EnumToString ? new CodePrimitiveExpression("'" + stringMember.Value.Replace("'", "\\'") + "'") : new CodePrimitiveExpression(intValue),
 					};
 
 					typeDeclaration.Members.Add(clientField);

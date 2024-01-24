@@ -21,7 +21,7 @@ namespace Fonlow.CodeDom.Web
 		/// and the class must have a constructor without parameter that calls a base constructor with proper options type and parameters type.</param>
 		/// <param name="jsOutput"></param>
 		/// <returns>ICommand object. Null if not found</returns>
-		public static ControllersTsClientApiGenBase CreateImplementationsFromAssembly(string assemblyFilePath, Settings settings, JSOutput jsOutput)
+		public static ControllersTsClientApiGenBase CreateImplementationsFromAssembly(string assemblyFilePath, ISettings settings, JSOutput jsOutput)
 		{
 			Assembly assembly;
 			try

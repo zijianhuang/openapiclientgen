@@ -16,9 +16,9 @@ namespace SwagTests
 
 		readonly CSharpTestHelper helper;
 
-		void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings = null)
+		void GenerateAndAssertAndBuild(string filePath, string expectedFile, ISettings mySettings = null)
 		{
-			Settings settings = mySettings ?? CodeGenSettings.Default;
+			ISettings settings = mySettings ?? CodeGenSettings.Default;
 			helper.GenerateAndAssertAndBuild(filePath, expectedFile, settings);
 		}
 

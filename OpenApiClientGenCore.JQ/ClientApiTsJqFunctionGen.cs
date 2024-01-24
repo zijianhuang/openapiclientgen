@@ -12,10 +12,10 @@ namespace Fonlow.CodeDom.Web.Ts
 	/// </summary>
 	public class ClientApiTsJqFunctionGen : ClientApiTsFunctionGenBase
 	{
-		readonly Settings settings;
+		readonly ISettings settings;
 		readonly string contentType;
 
-		public ClientApiTsJqFunctionGen(Settings settings, JSOutput jsOutput) : base()
+		public ClientApiTsJqFunctionGen(ISettings settings, JSOutput jsOutput) : base()
 		{
 			this.settings = settings;
 

@@ -8,7 +8,7 @@ namespace Fonlow.CodeDom.Web
 {
 	public static class CodeGen
 	{
-		public static void GenerateClientAPIs(Settings settings, OpenApiPaths paths, OpenApiComponents components, string outputBasePath)
+		public static void GenerateClientAPIs(ISettings settings, OpenApiPaths paths, OpenApiComponents components, string outputBasePath)
 		{
 			string currentDir = System.IO.Directory.GetCurrentDirectory();
 			if (settings.ClientLibraryProjectFolderName != null)

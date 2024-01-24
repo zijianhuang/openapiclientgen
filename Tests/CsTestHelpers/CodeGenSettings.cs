@@ -4,9 +4,9 @@ namespace SwagTests
 {
 	public static class CodeGenSettings
 	{
-		public static readonly Settings Default = WithActionNameStrategy(ActionNameStrategy.Default);
+		public static readonly ISettings Default = WithActionNameStrategy(ActionNameStrategy.Default);
 
-		public static Settings WithActionNameStrategy(ActionNameStrategy ans)
+		public static ISettings WithActionNameStrategy(ActionNameStrategy ans)
 		{
 			return new Settings()
 			{
@@ -16,11 +16,12 @@ namespace SwagTests
 				ActionNameStrategy = ans,
 				GenerateBothAsyncAndSync = false,
 				DecorateDataModelWithSerializable = true,
-				DecorateDataModelWithDataContract=true,
+				DecorateDataModelWithDataContract = true,
 				UseEnsureSuccessStatusCodeEx = true,
 				DataAnnotationsEnabled = true,
 				DataAnnotationsToComments = true,
 				HandleHttpRequestHeaders = true,
+				EnumToString = true,
 			};
 		}
 	}

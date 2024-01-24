@@ -12,9 +12,9 @@ namespace SwagTests
 			helper = new CSharpTestHelperForOpenApiDir(output, "swagger.yaml");
 		}
 
-		void GenerateFromOpenApiAndBuild(string filePath, Settings mySettings = null)
+		void GenerateFromOpenApiAndBuild(string filePath, ISettings mySettings = null)
 		{
-			Settings settings = mySettings ?? Swagger2CodeGenSettings.Default;
+			ISettings settings = mySettings ?? Swagger2CodeGenSettings.Default;
 			helper.GenerateFromOpenApiAndBuild(filePath, settings);
 		}
 

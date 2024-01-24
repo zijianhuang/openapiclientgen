@@ -26,7 +26,7 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		static protected string TranslateDefToCode(string filePath, Settings settings)
+		static protected string TranslateDefToCode(string filePath, ISettings settings)
 		{
 			OpenApiDocument doc = ReadDef(filePath);
 			if (doc.Components==null && doc.Paths == null)
@@ -51,7 +51,7 @@ namespace SwagTests
 		/// <param name="filePath"></param>
 		/// <param name="expectedFile"></param>
 		/// <param name="mySettings"></param>
-		public void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings)
+		public void GenerateAndAssertAndBuild(string filePath, string expectedFile, ISettings mySettings)
 		{
 			string s = TranslateDefToCode(filePath, mySettings);
 			if (TestingSettings.Instance.UpdateGenerated)

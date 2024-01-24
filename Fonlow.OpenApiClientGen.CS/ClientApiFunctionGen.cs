@@ -28,7 +28,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		NameComposer nameComposer;
 		ParametersRefBuilder parametersRefBuilder;
 		BodyContentRefBuilder bodyContentRefBuilder;
-		Settings settings;
+		ISettings settings;
 		string actionName;
 		bool forAsync;
 		bool stringAsString;
@@ -39,7 +39,7 @@ namespace Fonlow.OpenApiClientGen.CS
 
 		string statementOfEnsureSuccessStatusCode;
 
-		public CodeMemberMethod CreateApiFunction(Settings settings, string relativePath, OperationType httpMethod,
+		public CodeMemberMethod CreateApiFunction(ISettings settings, string relativePath, OperationType httpMethod,
 			OpenApiOperation apiOperation, ComponentsToCsTypes coms2CsTypes, bool forAsync, bool useEnsureSuccessStatusCodeEx)
 		{
 			if (!(new OperationType[] { OperationType.Get, OperationType.Post, OperationType.Put, OperationType.Delete, OperationType.Patch }).Any(d => d == httpMethod))

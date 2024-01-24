@@ -4,7 +4,7 @@ namespace SwagTests
 {
 	public static class CodeGenSettings
 	{
-		public static readonly Settings Default = new()
+		public static readonly ISettings Default = new Settings()
 		{
 			ClientNamespace = "MyNS",
 			ContainerClassName = "MyClient",
@@ -13,7 +13,7 @@ namespace SwagTests
 			DataAnnotationsToComments = true,
 		};
 
-		public static Settings WithActionNameStrategy(ActionNameStrategy ans)
+		public static ISettings WithActionNameStrategy(ActionNameStrategy ans)
 		{
 			return new Settings()
 			{
@@ -24,6 +24,7 @@ namespace SwagTests
 
 				DataAnnotationsToComments = true,
 				HandleHttpRequestHeaders = true,
+				EnumToString=true
 			};
 		}
 	}

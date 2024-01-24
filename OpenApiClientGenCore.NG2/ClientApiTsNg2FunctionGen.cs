@@ -28,9 +28,9 @@ namespace Fonlow.CodeDom.Web.Ts
 
 		string returnTypeText = null;
 
-		readonly Settings settings;
+		readonly ISettings settings;
 
-		public ClientApiTsNG2FunctionGen(Settings settings, JSOutput jsOutput) : base()
+		public ClientApiTsNG2FunctionGen(ISettings settings, JSOutput jsOutput) : base()
 		{
 			this.settings = settings;
 

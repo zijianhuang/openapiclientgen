@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public class ComponentsToCsTypes : ComponentsToTypesBase
 	{
-		public ComponentsToCsTypes(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
+		public ComponentsToCsTypes(ISettings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{
 		}
 
@@ -863,7 +863,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		}
 
-		static CodeMemberField CreateNullableProperty(string propertyName, Type type, Settings settings, bool propertyNullable = false)
+		static CodeMemberField CreateNullableProperty(string propertyName, Type type, ISettings settings, bool propertyNullable = false)
 		{
 			//if (!propertyNullable && !settings.UseNullableValueType)
 			//{

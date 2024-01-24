@@ -33,7 +33,7 @@ namespace SwagTests
 		/// </summary>
 		/// <param name="openapiDir"></param>
 		/// <param name="mySettings"></param>
-		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings = null)
+		public void GenerateFromOpenApiAndBuild(string openapiDir, ISettings mySettings = null)
 		{
 			var m = (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod();
 			var targetFilePath = CreateUniqueFileName(openapiDir);

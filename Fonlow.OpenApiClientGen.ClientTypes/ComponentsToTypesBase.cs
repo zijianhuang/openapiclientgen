@@ -16,7 +16,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public abstract class ComponentsToTypesBase : IComponentToCodeDom
 	{
-		public ComponentsToTypesBase(Settings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
+		public ComponentsToTypesBase(ISettings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace)
 		{
 			this.codeCompileUnit = codeCompileUnit;
 			this.settings = settings;
@@ -28,7 +28,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected readonly CodeCompileUnit codeCompileUnit;
 
-		protected readonly Settings settings;
+		protected readonly ISettings settings;
 
 		protected IDictionary<string, OpenApiSchema> ComponentsSchemas { get; private set; }
 

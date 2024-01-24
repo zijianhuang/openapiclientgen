@@ -19,7 +19,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		protected CodeCompileUnit CodeCompileUnit { get; private set; }
 
 		CodeNamespace clientNamespace;
-		protected Settings settings;
+		protected ISettings settings;
 		readonly JSOutput jsOutput;
 
 		readonly NameComposer nameComposer;
@@ -31,7 +31,7 @@ namespace Fonlow.CodeDom.Web.Ts
 		/// <param name="jsOutput"></param>
 		/// <param name="apiFunctionGen"></param>
 		/// <remarks>The client data types should better be generated through SvcUtil.exe with the DC option. The client namespace will then be the original namespace plus suffix ".client". </remarks>
-		protected ControllersTsClientApiGenBase(Settings settings, JSOutput jsOutput, Func<ClientApiTsFunctionGenAbstract> apiFunctionGenFactory)
+		protected ControllersTsClientApiGenBase(ISettings settings, JSOutput jsOutput, Func<ClientApiTsFunctionGenAbstract> apiFunctionGenFactory)
 		{
 			this.settings = settings;
 			this.jsOutput = jsOutput;

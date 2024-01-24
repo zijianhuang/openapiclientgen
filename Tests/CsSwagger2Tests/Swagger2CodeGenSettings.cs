@@ -4,7 +4,7 @@ namespace SwagTests
 {
 	public static class Swagger2CodeGenSettings
 	{
-		public static readonly Settings Default = new()
+		public static readonly ISettings Default = new Settings()
 		{
 			ClientNamespace = "MyNS",
 			PathPrefixToRemove = "/api",
@@ -19,7 +19,7 @@ namespace SwagTests
 			DataAnnotationsToComments = true,
 		};
 
-		public static Settings WithActionNameStrategy(ActionNameStrategy ans)
+		public static ISettings WithActionNameStrategy(ActionNameStrategy ans)
 		{
 			return new Settings()
 			{

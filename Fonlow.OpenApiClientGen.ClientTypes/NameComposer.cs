@@ -13,7 +13,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public class NameComposer
 	{
-		public NameComposer(Settings settings)
+		public NameComposer(ISettings settings)
 		{
 			this.settings = settings;
 			if (settings.ActionNameStrategy == ActionNameStrategy.NormalizedOperationId)
@@ -27,7 +27,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 		}
 
-		readonly Settings settings;
+		readonly ISettings settings;
 
 		/// <summary>
 		/// Construct action name according to OpenApiOperaton, httpMethod and ActionNameStrategy.

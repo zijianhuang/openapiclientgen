@@ -62,12 +62,12 @@ namespace TestHelpers
 
 	public interface ITestHelper
 	{
-		void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings);
+		void GenerateAndAssertAndBuild(string filePath, string expectedFile, ISettings mySettings);
 	}
 
 	public interface IOpenApiDirTestHelper : ITestHelper
 	{
-		void GenerateFromOpenApiAndBuild(string openapiDir, Fonlow.OpenApiClientGen.ClientTypes.Settings mySettings = null);
+		void GenerateFromOpenApiAndBuild(string openapiDir, ISettings mySettings = null);
 	}
 
 }

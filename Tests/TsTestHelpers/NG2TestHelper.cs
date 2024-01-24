@@ -23,7 +23,7 @@ namespace SwagTests
 			this.buildToValidate = testingSettings.Build;
 		}
 
-		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, Settings settings = null)
+		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, ISettings settings = null)
 		{
 			string s = TranslateDefToCode(openApiFile, settings ?? new Settings()
 			{
@@ -50,7 +50,7 @@ namespace SwagTests
 			}
 		}
 
-		public void GenerateAndAssertBuild(string openApiFile, string expectedFile, Settings settings = null)
+		public void GenerateAndAssertBuild(string openApiFile, string expectedFile, ISettings settings = null)
 		{
 			GenerateAndAssert(openApiFile, expectedFile, settings);
 

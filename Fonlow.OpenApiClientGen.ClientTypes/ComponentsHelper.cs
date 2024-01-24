@@ -118,7 +118,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="arrayRank"></param>
 		/// <param name="settings"></param>
 		/// <returns></returns>
-		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank, Settings settings = null)
+		public static CodeTypeReference CreateArrayOfCustomTypeReference(string typeName, int arrayRank, ISettings settings = null)
 		{
 			if (settings != null)
 			{

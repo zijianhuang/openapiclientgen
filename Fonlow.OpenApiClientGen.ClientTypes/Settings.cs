@@ -58,7 +58,7 @@
 		ReadOnlyCollection = 8,
 	}
 
-	public class Settings
+	public class Settings : ISettings
 	{
 		/// <summary>
 		/// The generated codes should be contained in a namespace. The default is My.Namespace.

@@ -38,7 +38,7 @@ namespace Fonlow.OpenApiClientGen.CS
 		/// </summary>
 		/// <param name="codeGenParameters"></param>
 		/// <remarks>The client data types should better be generated through SvcUtil.exe with the DC option. The client namespace will then be the original namespace plus suffix ".client". </remarks>
-		public ControllersClientApiGen(Settings settings)
+		public ControllersClientApiGen(ISettings settings)
 		{
 			this.settings = settings;
 			codeCompileUnit = new CodeCompileUnit();
@@ -46,7 +46,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			nameComposer = new NameComposer(settings);
 		}
 
-		readonly Settings settings;
+		readonly ISettings settings;
 
 		readonly NameComposer nameComposer;
 

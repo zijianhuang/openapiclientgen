@@ -26,7 +26,7 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-	    string TranslateDefToCodeUponOpenApiDirWith1Def(string openapiDir, Settings settings)
+	    string TranslateDefToCodeUponOpenApiDirWith1Def(string openapiDir, ISettings settings)
 		{
 			var defFilePath = Path.Combine(openapiDir, defaultDefName);
 			return TranslateDefToCode(defFilePath, settings);
@@ -39,7 +39,7 @@ namespace SwagTests
 		/// </summary>
 		/// <param name="openapiDir">Like ..\..\..\..\openapi-directory20240114\APIs\github.com\api.github.com\1.1.4\</param>
 		/// <param name="mySettings"></param>
-		public void GenerateFromOpenApiAndBuild(string openapiDir, Settings mySettings= null)
+		public void GenerateFromOpenApiAndBuild(string openapiDir, ISettings mySettings= null)
 		{ 
 			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings ?? CodeGenSettings.Default);
 			var csFilePath = CreateUniqueFileName(openapiDir);
@@ -74,7 +74,7 @@ namespace SwagTests
 			}
 		}
 
-		public string GenerateFromOpenApiAndBuildWithError(string openapiDir, Settings mySettings)
+		public string GenerateFromOpenApiAndBuildWithError(string openapiDir, ISettings mySettings)
 		{
 			string s = TranslateDefToCodeUponOpenApiDirWith1Def(openapiDir, mySettings);
 			var r = CSharpValidation.CompileThenSaveAssembly(s, null, mySettings != null ? mySettings.UseSystemTextJson : false);

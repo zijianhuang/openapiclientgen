@@ -40,7 +40,7 @@ namespace SwagTests
 		/// <param name="defFilePath"></param>
 		/// <param name="mySettings"></param>
 		/// <returns>Codes generated</returns>
-		public string TranslateDefToCode(string defFilePath, Settings mySettings = null)
+		public string TranslateDefToCode(string defFilePath, ISettings mySettings = null)
 		{
 			static string CreateTsPath(string folder, string fileName)
 			{
@@ -72,7 +72,7 @@ namespace SwagTests
 
 			OpenApiDocument doc = ReadOpenApiDef(defFilePath);
 
-			Settings settings = mySettings ?? new Settings()
+			ISettings settings = mySettings ?? new Settings()
 			{
 				ClientNamespace = "MyNS",
 				PathPrefixToRemove = "/api",
@@ -107,7 +107,7 @@ namespace SwagTests
 		/// <param name="openApiFile"></param>
 		/// <param name="expectedFile"></param>
 		/// <param name="mySettings"></param>
-		public void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
+		public void GenerateAndAssert(string openApiFile, string expectedFile, ISettings mySettings = null)
 		{
 			string s = TranslateDefToCode(openApiFile, mySettings);
 			if (testingSettings.UpdateGenerated)
