@@ -4966,7 +4966,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\docusign.net\v2.1\");
 		}
 
-		[Fact]
+		[Fact(Skip = "doggy yaml: times_by_month")] //C# tolerate 2', but JS won't 
 		public void Test_dodo_ac_1_6_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\dodo.ac\1.6.0\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
@@ -5143,7 +5143,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_envoice_in_v1()
 		{
-			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\envoice.in\v1\");
+			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\envoice.in\v1\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -5221,7 +5221,7 @@ namespace OpenApiDirTests
 		[Fact]
 		public void Test_facecheck_id_v1_02()
 		{
-			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\facecheck.id\v1.02\");
+			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\facecheck.id\v1.02\", CodeGenSettings.WithActionNameStrategy(ActionNameStrategy.PathMethodQueryParameters));
 		}
 
 		[Fact]
@@ -5260,7 +5260,7 @@ namespace OpenApiDirTests
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\firstinspires.org\1.0.0\");
 		}
 
-		[Fact]
+		[Fact(Skip ="doggy yaml. dirty inheritance")]
 		public void Test_flat_io_2_13_0()
 		{
 			helper.GenerateFromOpenApiAndBuild(@$"..\..\..\..\{openDirName}\APIs\flat.io\2.13.0\");

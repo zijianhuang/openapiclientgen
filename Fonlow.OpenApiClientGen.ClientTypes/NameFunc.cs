@@ -18,7 +18,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			"sizeof", "stackalloc", "static", "string", "struct", "switch", "this", "throw", "true", "try", "typeof", "uint", "ulong", "unchecked", "unsafe", "ushort",
 			"using", "virtual", "void", "volatile", "while", "Task", "HttpMethod", "System",
 
-		"package", "export", "extends", "import", "instanceof", "super", "this", "yield", "with", "function", "in", "delete", "default", "debugger"  //TS/JS reserved words
+			//TS/JS reserved words
+			"package", "export", "extends", "import", "instanceof", "super", "this", "yield", "with", "function", "in", "delete", "default", "debugger", "var"
 		};
 
 		public static bool IsKeyword(string s)
