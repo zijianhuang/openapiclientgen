@@ -674,24 +674,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="enumList"></param>
 		/// <returns></returns>
-		protected string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
-		{
-			return enumList.Select(d =>
-			{
-				if (d is OpenApiPrimitive<string> dString)
-				{
-					return dString.Value;
-				}
-				else if (d is OpenApiNull dNull)
-				{
-					return "null";
-				}
-				else
-				{
-					throw new CodeGenException("Mixed up enum.");
-				}
-			}).ToArray();
-		}
+		protected abstract string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList);
 
 		/// <summary>
 		/// Extract those with content type application/json, and the properties.count is greater than 0.

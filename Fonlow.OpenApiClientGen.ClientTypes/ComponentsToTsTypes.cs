@@ -315,12 +315,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					try
 					{
 						enumMemberNames = (String.IsNullOrEmpty(primitivePropertyType) || primitivePropertyType == "string")
-							? propertySchema.Enum.Cast<OpenApiPrimitive<string>>().Select(m =>
-							{
-								var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(m.Value);
-								return isValidEnumName ? m.Value
-								: (!string.IsNullOrEmpty(m.Value) && Char.IsDigit(m.Value[0]) ? NameFunc.RefineEnumMemberName(m.Value) : $"'{m.Value}'");
-							}).ToArray()
+							? GetStringsFromEnumList(propertySchema.Enum)
 							: propertySchema.Enum.Cast<OpenApiInteger>().Select(m => "_" + m.Value.ToString()).ToArray();
 
 					}
@@ -370,6 +365,27 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			AddValidationAttributes(propertySchema, clientProperty);
 			CreateMemberDocComment(refId, propertySchema, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);
+		}
+
+		protected override string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
+		{
+			return enumList.Select(d =>
+			{
+				if (d is OpenApiPrimitive<string> dString)
+				{
+					var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(dString.Value);
+					return isValidEnumName ? dString.Value
+					: (!string.IsNullOrEmpty(dString.Value) && Char.IsDigit(dString.Value[0]) ? NameFunc.RefineEnumMemberName(dString.Value) : $"'{dString.Value}'");
+				}
+				else if (d is OpenApiNull dNull)
+				{
+					return "null";
+				}
+				else
+				{
+					throw new CodeGenException("Mixed up enum.");
+				}
+			}).ToArray();
 		}
 
 		void SetClientPropertyTypeInfo(CodeMemberField p, bool isComplex, bool isArray)
@@ -610,12 +626,44 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
-					string memberName = "_" + doubleMember.Value.ToString();
-					int intValue = k;
+					string memberName = NameFunc.RefineEnumMemberName(doubleMember.Value.ToString());
+					double doubleValue = doubleMember.Value;
+					CodeMemberField clientField = memberName == "NaN" ?
+						new()
+						{
+							Name = memberName,
+							InitExpression = new CodePrimitiveExpression(k),
+						}
+						:
+						new()
+						{
+							Name = memberName,
+							InitExpression = double.IsInteger(doubleValue) ? new CodePrimitiveExpression(Convert.ToInt32(doubleValue)) : new CodePrimitiveExpression(doubleValue),
+						};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiFloat floatMember)
+				{
+					string memberName = "_" + floatMember.Value.ToString();
+					double floatValue = floatMember.Value;
 					CodeMemberField clientField = new()
 					{
 						Name = memberName,
-						InitExpression = new CodePrimitiveExpression(intValue),
+						InitExpression = new CodePrimitiveExpression(floatValue),
+					};
+
+					typeDeclaration.Members.Add(clientField);
+					k++;
+				}
+				else if (enumMember is OpenApiNull nullMember) //listennotes.com\2.0 has funky definition of casual enum of type double
+				{
+					string memberName = "_null";
+					CodeMemberField clientField = new()
+					{
+						Name = memberName,
+						InitExpression = new CodePrimitiveExpression(k),
 					};
 
 					typeDeclaration.Members.Add(clientField);

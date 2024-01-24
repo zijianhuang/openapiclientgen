@@ -613,7 +613,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.DataTypeAttribute", new CodeAttributeArgument(new CodeSnippetExpression("System.ComponentModel.DataAnnotationsDataType.Date"))));
 					}
 				}
-				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for enum
+				else if (propertySchema.Enum.Count > 0 && primitivePropertyType == "string") // for string enum
 				{
 					string[] enumMemberNames;
 					try
@@ -996,6 +996,25 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		void AddTypeAlias(string typeName, string alias)
 		{
 			ClientNamespace.Imports.Add(new CodeNamespaceImport($"{typeName} = {alias}"));
+		}
+
+		protected override string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
+		{
+			return enumList.Select(d =>
+			{
+				if (d is OpenApiPrimitive<string> dString)
+				{
+					return dString.Value;
+				}
+				else if (d is OpenApiNull dNull)
+				{
+					return "null";
+				}
+				else
+				{
+					throw new CodeGenException("Mixed up enum.");
+				}
+			}).ToArray();
 		}
 	}
 
