@@ -97,16 +97,16 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						return newUriText.Replace($"{{{d.Name}}}", $"\"+ ({d.Name}==null? \"\" : System.Uri.EscapeDataString({d.Name}))+\"");
+						return newUriText.Replace($"{{{d.QName}}}", $"\"+ ({d.Name}==null? \"\" : System.Uri.EscapeDataString({d.Name}))+\"");
 					}
 					else
 					{
-						return newUriText.Replace($"{{{d.Name}}}", $"\"+{d.Name}+\"");
+						return newUriText.Replace($"{{{d.QName}}}", $"\"+{d.Name}+\"");
 					}
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset)
 				{
-					return newUriText.Replace($"{{{d.Name}}}", $"\"+{d.Name}.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\")+\"");
+					return newUriText.Replace($"{{{d.QName}}}", $"\"+{d.Name}.ToUniversalTime().ToString(\"yyyy-MM-ddTHH:mm:ss.fffffffZ\")+\"");
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTimeNullable || d.ParameterDescriptor.ParameterType == typeofDateTimeOffsetNullable)
 				{
@@ -143,7 +143,7 @@ namespace Fonlow.CodeDom.Web
 				}
 				else
 				{
-					return newUriText.Replace($"{{{d.Name}}}", $"\"+{d.Name}+\"");
+					return newUriText.Replace($"{{{d.QName}}}", $"\"+{d.Name}+\"");
 				}
 			}
 		}
@@ -195,16 +195,16 @@ namespace Fonlow.CodeDom.Web
 				{
 					if (d.ParameterTypeReference.BaseType == "System.String")
 					{
-						return newUriText.Replace($"{{{d.Name}}}", $"' + ({d.Name} == null ? '' : encodeURIComponent({d.Name})) + '");
+						return newUriText.Replace($"{{{d.QName}}}", $"' + ({d.Name} == null ? '' : encodeURIComponent({d.Name})) + '");
 					}
 					else
 					{
-						return newUriText.Replace($"{{{d.Name}}}", $"' + {d.Name} + '");
+						return newUriText.Replace($"{{{d.QName}}}", $"' + {d.Name} + '");
 					}
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTime || d.ParameterDescriptor.ParameterType == typeofDateTimeOffset || d.ParameterDescriptor.ParameterType == typeofDateOnly)
 				{
-					return newUriText.Replace($"{{{d.Name}}}", $"' + {d.Name}{questionMarkForSafeTransform}.toISOString() + '");
+					return newUriText.Replace($"{{{d.QName}}}", $"' + {d.Name}{questionMarkForSafeTransform}.toISOString() + '");
 				}
 				else if (d.ParameterDescriptor.ParameterType == typeofDateTimeNullable || d.ParameterDescriptor.ParameterType == typeofDateTimeOffsetNullable || d.ParameterDescriptor.ParameterType == typeofDateOnlyNullable)
 				{
@@ -243,7 +243,7 @@ namespace Fonlow.CodeDom.Web
 				}
 				else
 				{
-					return newUriText.Replace($"{{{d.Name}}}", $"' + {d.Name} + '");
+					return newUriText.Replace($"{{{d.QName}}}", $"' + {d.Name} + '");
 				}
 			}
 

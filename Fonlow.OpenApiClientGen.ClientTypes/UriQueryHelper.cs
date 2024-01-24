@@ -1,5 +1,6 @@
 ﻿using Fonlow.OpenApiClientGen.ClientTypes;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using Tavis.UriTemplates;
 
@@ -48,6 +49,12 @@ namespace Fonlow.CodeDom.Web
 
 		public static string CreateUriQueryForTs(string uriText, ParameterDescription[] parameterDescriptions)
 		{
+#if DEBUG
+			if (uriText== "mimic/agent/{agentNum}/store/get/{var}")
+			{
+				Debug.WriteLine("hehe");
+			}
+#endif
 			UriTemplate template = new(uriText);
 			string[] parameterNames;
 			try
