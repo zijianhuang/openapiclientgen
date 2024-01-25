@@ -263,7 +263,7 @@ namespace MyNS
 		
 		rename = 4,
 		
-		delete = 5,
+		_delete = 5,
 		
 		undelete = 6,
 		
@@ -731,7 +731,7 @@ namespace MyNS
 		
 		add = 1,
 		
-		delete = 2,
+		_delete = 2,
 		
 		edit = 3,
 	}
@@ -1592,7 +1592,7 @@ namespace MyNS
 		
 		edit = 1,
 		
-		delete = 2,
+		_delete = 2,
 		
 		add = 3,
 		
@@ -3894,7 +3894,7 @@ namespace MyNS
 		
 		rename = 4,
 		
-		delete = 5,
+		_delete = 5,
 		
 		undelete = 6,
 		
@@ -3999,7 +3999,7 @@ namespace MyNS
 		
 		rename = 4,
 		
-		delete = 5,
+		_delete = 5,
 		
 		undelete = 6,
 		

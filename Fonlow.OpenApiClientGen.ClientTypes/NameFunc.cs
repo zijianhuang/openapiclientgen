@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -16,10 +17,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			"fixed", "float", "for", "foreach", "goto", "if", "implicit", "in", "int", "interface", "internal", "is", "lock", "long", "namespace", "new",
 			"null", "object", "operator", "out", "override", "params", "private", "protected", "public", "readonly", "ref", "return", "sbyte", "sealed", "short",
 			"sizeof", "stackalloc", "static", "string", "struct", "switch", "this", "throw", "true", "try", "typeof", "uint", "ulong", "unchecked", "unsafe", "ushort",
-			"using", "virtual", "void", "volatile", "while", "Task", "HttpMethod", "System",
+			"using", "virtual", "void", "volatile", "while", "Task", "HttpMethod", "System", "await",
 
 			//TS/JS reserved words
-			"package", "export", "extends", "import", "instanceof", "super", "this", "yield", "with", "function", "in", "delete", "default", "debugger", "var"
+			"package", "export", "extends", "import", "instanceof", "super", "this", "yield", "with", "function", "in", "delete", "default", "debugger", "var", "let",
+			"throws", "arguments", "synchronized", "eval", "final"
 		};
 
 		public static bool IsKeyword(string s)
@@ -62,6 +64,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static string RefineEnumMemberName(string s, ISettings settings = null)
 		{
+#if DEBUG
+			if (s == "1.0")
+			{
+				Debug.WriteLine("ccc");
+			}
+#endif
 			if (String.IsNullOrEmpty(s))
 			{
 				return "_";
@@ -74,7 +82,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			var b = s;
 
-			if (int.TryParse(b, out _)) // some apis define negative value
+			if (double.TryParse(b, out _)) // some apis define negative value
 			{
 				b = "_" + b;
 			}
@@ -111,6 +119,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public static string RefineEnumValue(string s)
 		{
+#if DEBUG
+			if (s == "-1")
+			{
+				Debug.WriteLine("ccc");
+			}
+#endif
 			var b = RefineEnumMemberName(s);
 
 			if (int.TryParse(b, out _))

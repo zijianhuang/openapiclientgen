@@ -13,6 +13,16 @@ namespace SwagTests
 			DataAnnotationsToComments = true,
 		};
 
+		public static readonly ISettings DefaultEnumToString = new Settings()
+		{
+			ClientNamespace = "MyNS",
+			ContainerClassName = "MyClient",
+			ContainerNameStrategy = ContainerNameStrategy.None,
+			ActionNameStrategy = ActionNameStrategy.Default,
+			DataAnnotationsToComments = true,
+			EnumToString = true
+		};
+
 		public static ISettings WithActionNameStrategy(ActionNameStrategy ans)
 		{
 			return new Settings()

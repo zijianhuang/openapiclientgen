@@ -646,8 +646,8 @@ namespace MyNS
 	public enum Databases_CreateImportOperationExtensionName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		import = 0,
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="import")]
+		_import = 0,
 	}
 }
 

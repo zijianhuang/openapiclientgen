@@ -80,7 +80,7 @@ namespace MyNS
 		
 		rename = 4,
 		
-		delete = 5,
+		_delete = 5,
 		
 		undelete = 6,
 		

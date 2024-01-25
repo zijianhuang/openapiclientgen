@@ -858,8 +858,8 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		bot = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		function = 3,
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="function")]
+		_function = 3,
 	}
 	
 	/// <summary>
@@ -1011,7 +1011,7 @@ namespace MyNS
 		/// Indicates the type of bot service
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kind")]
-		public Kind Kind { get; set; }
+		public System.Nullable<ResourceKind> Kind { get; set; }
 		
 		/// <summary>
 		/// Specifies the location of the resource.
@@ -1042,6 +1042,23 @@ namespace MyNS
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="type")]
 		public string Type { get; set; }
+	}
+	
+	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/01")]
+	public enum ResourceKind
+	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		sdk = 0,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		designer = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		bot = 2,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="function")]
+		_function = 3,
 	}
 	
 	/// <summary>

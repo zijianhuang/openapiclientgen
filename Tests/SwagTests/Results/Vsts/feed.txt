@@ -240,7 +240,7 @@ namespace MyNS
 		
 		addOrUpdate = 0,
 		
-		delete = 1,
+		_delete = 1,
 		
 		permanentDelete = 2,
 	}
@@ -844,7 +844,7 @@ namespace MyNS
 		
 		addOrUpdate = 0,
 		
-		delete = 1,
+		_delete = 1,
 		
 		permanentDelete = 2,
 	}

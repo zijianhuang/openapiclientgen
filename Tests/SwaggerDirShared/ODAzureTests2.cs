@@ -429,7 +429,7 @@ namespace SwagTests
 		[Fact]
 		public void Test_azure_com_redis_2019_07_01()
 		{
-			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\azure.com\redis\2019-07-01");
+			helper.GenerateFromOpenApiAndBuild(@"..\..\..\..\openapi-directory\APIs\azure.com\redis\2019-07-01", CodeGenSettings.DefaultEnumToString);
 		}
 
 		[Fact]

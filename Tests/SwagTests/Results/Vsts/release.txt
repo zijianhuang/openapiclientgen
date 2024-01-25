@@ -4394,7 +4394,7 @@ namespace MyNS
 		
 		update = 1,
 		
-		delete = 2,
+		_delete = 2,
 		
 		undelete = 3,
 	}

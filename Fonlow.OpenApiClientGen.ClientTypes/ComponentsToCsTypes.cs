@@ -74,7 +74,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="item">Reference Id and its schema</param>
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
-			if (refId == "BoxScore")
+			if (refId == "BoundingBox")
 			{
 				Debug.WriteLine("aaa");
 			}
@@ -430,9 +430,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		protected override void AddProperty(string refId, OpenApiSchema propertySchema, CodeTypeDeclaration typeDeclaration, OpenApiSchema schema, string currentTypeName, string ns)
 		{
 #if DEBUG
-			if (currentTypeName == "Batch" && refId == "label_layout")
+			if (propertySchema.Reference?.Id == "BoundingBox")
 			{
-				Debug.WriteLine("aa");
+				Debug.WriteLine("bbbbb");
 			}
 #endif
 			string propertyName = NameFunc.RefinePropertyName(refId);

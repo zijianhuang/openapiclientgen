@@ -1780,7 +1780,7 @@ namespace MyNS
 		/// <returns>Response of get patch schedules.</returns>
 		public async Task<RedisPatchSchedule> PatchSchedules_GetAsync(string resourceGroupName, string name, PatchSchedules_GetDefault _default, string api_version, string subscriptionId)
 		{
-			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Cache/Redis/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"/patchSchedules/{default}&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Cache/Redis/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"/patchSchedules/"+_default+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -1814,7 +1814,7 @@ namespace MyNS
 		/// <returns>The patch schedule was successfully updated.</returns>
 		public async Task<RedisPatchSchedule> PatchSchedules_CreateOrUpdateAsync(string resourceGroupName, string name, PatchSchedules_CreateOrUpdateDefault _default, string api_version, string subscriptionId, RedisPatchSchedule requestBody)
 		{
-			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Cache/Redis/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"/patchSchedules/{default}&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Cache/Redis/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"/patchSchedules/"+_default+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1854,7 +1854,7 @@ namespace MyNS
 		/// <returns>Success.</returns>
 		public async Task PatchSchedules_DeleteAsync(string resourceGroupName, string name, PatchSchedules_DeleteDefault _default, string api_version, string subscriptionId)
 		{
-			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Cache/Redis/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"/patchSchedules/{default}&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
+			var requestUri = "subscriptions/"+ (subscriptionId==null? "" : System.Uri.EscapeDataString(subscriptionId))+"/resourceGroups/"+ (resourceGroupName==null? "" : System.Uri.EscapeDataString(resourceGroupName))+"/providers/Microsoft.Cache/Redis/"+ (name==null? "" : System.Uri.EscapeDataString(name))+"/patchSchedules/"+_default+"&api-version=" + (api_version==null? "" : System.Uri.EscapeDataString(api_version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);

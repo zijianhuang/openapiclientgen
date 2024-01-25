@@ -1521,7 +1521,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Absolute_bytes_difference> MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/bytes-difference/absolute/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/bytes-difference/absolute/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1583,7 +1583,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Absolute_bytes_difference_per_page> MetricsBytes_differenceAbsolutePer_page_project_page_title_editor_type_granularity_start_endGetAsync(string project, string page_title, MetricsBytes_differenceAbsolutePer_page_project_page_title_editor_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/bytes-difference/absolute/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (page_title==null? "" : System.Uri.EscapeDataString(page_title))+"/"+editor_type+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/bytes-difference/absolute/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{page_title}/{editor_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1647,7 +1647,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Net_bytes_difference> MetricsBytes_differenceNetAggregate_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsBytes_differenceNetAggregate_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceNetAggregate_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/bytes-difference/net/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/bytes-difference/net/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1709,7 +1709,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Net_bytes_difference_per_page> MetricsBytes_differenceNetPer_page_project_page_title_editor_type_granularity_start_endGetAsync(string project, string page_title, MetricsBytes_differenceNetPer_page_project_page_title_editor_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/bytes-difference/net/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (page_title==null? "" : System.Uri.EscapeDataString(page_title))+"/"+editor_type+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/bytes-difference/net/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{page_title}/{editor_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1778,7 +1778,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Edited_pages> MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetAsync(string project, MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetEditor_type editor_type, MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetPage_type page_type, MetricsEdited_pagesAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetActivity_level activity_level, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/edited-pages/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+activity_level+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/edited-pages/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/{activity_level}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1843,7 +1843,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<New_pages> MetricsEdited_pagesNew_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsEdited_pagesNew_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsEdited_pagesNew_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/edited-pages/new/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/edited-pages/new/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1904,7 +1904,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Top_edited_pages_by_abs_bytes_diff> MetricsEdited_pagesTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEdited_pagesTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEdited_pagesTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/edited-pages/top-by-absolute-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
+			var requestUri = "metrics/edited-pages/top-by-absolute-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1966,7 +1966,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Top_edited_pages_by_edits> MetricsEdited_pagesTop_by_edits_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEdited_pagesTop_by_edits_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEdited_pagesTop_by_edits_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/edited-pages/top-by-edits/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
+			var requestUri = "metrics/edited-pages/top-by-edits/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2027,7 +2027,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Top_edited_pages_by_net_bytes_diff> MetricsEdited_pagesTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEdited_pagesTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEdited_pagesTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/edited-pages/top-by-net-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
+			var requestUri = "metrics/edited-pages/top-by-net-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2096,7 +2096,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Editors> MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetAsync(string project, MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetEditor_type editor_type, MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetPage_type page_type, MetricsEditorsAggregate_project_editor_type_page_type_activity_level_granularity_start_endGetActivity_level activity_level, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/editors/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+activity_level+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/editors/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/{activity_level}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2159,7 +2159,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Top_editors_by_abs_bytes_diff> MetricsEditorsTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEditorsTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEditorsTop_by_absolute_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/editors/top-by-absolute-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
+			var requestUri = "metrics/editors/top-by-absolute-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2222,7 +2222,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Top_editors_by_edits> MetricsEditorsTop_by_edits_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEditorsTop_by_edits_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEditorsTop_by_edits_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/editors/top-by-edits/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
+			var requestUri = "metrics/editors/top-by-edits/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2285,7 +2285,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Top_editors_by_net_bytes_diff> MetricsEditorsTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetAsync(string project, MetricsEditorsTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetEditor_type editor_type, MetricsEditorsTop_by_net_bytes_difference_project_editor_type_page_type_year_month_dayGetPage_type page_type, string year, string month, string day, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/editors/top-by-net-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
+			var requestUri = "metrics/editors/top-by-net-bytes-difference/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+ (year==null? "" : System.Uri.EscapeDataString(year))+"/"+ (month==null? "" : System.Uri.EscapeDataString(month))+"/"+ (day==null? "" : System.Uri.EscapeDataString(day));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2350,7 +2350,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Edits> MetricsEditsAggregate_project_editor_type_page_type_granularity_start_endGetAsync(string project, MetricsEditsAggregate_project_editor_type_page_type_granularity_start_endGetEditor_type editor_type, MetricsEditsAggregate_project_editor_type_page_type_granularity_start_endGetPage_type page_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/edits/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+editor_type+"/"+page_type+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/edits/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{editor_type}/{page_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2412,7 +2412,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Edits_per_page> MetricsEditsPer_page_project_page_title_editor_type_granularity_start_endGetAsync(string project, string page_title, MetricsEditsPer_page_project_page_title_editor_type_granularity_start_endGetEditor_type editor_type, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/edits/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+ (page_title==null? "" : System.Uri.EscapeDataString(page_title))+"/"+editor_type+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/edits/per-page/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{page_title}/{editor_type}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2466,7 +2466,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Pagecounts_project> MetricsLegacyPagecountsAggregate_project_access_site_granularity_start_endGetAsync(string project, MetricsLegacyPagecountsAggregate_project_access_site_granularity_start_endGetAccess_site access_site, MetricsLegacyPagecountsAggregate_project_access_site_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/legacy/pagecounts/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+access_site+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/legacy/pagecounts/aggregate/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{access_site}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2792,7 +2792,7 @@ namespace MyNS
 		/// <returns>The list of values</returns>
 		public async Task<Unique_devices> MetricsUnique_devices_project_access_site_granularity_start_endGetAsync(string project, MetricsUnique_devices_project_access_site_granularity_start_endGetAccess_site access_site, MetricsBytes_differenceAbsoluteAggregate_project_editor_type_page_type_granularity_start_endGetGranularity granularity, string start, string end, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "metrics/unique-devices/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/"+access_site+"/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
+			var requestUri = "metrics/unique-devices/"+ (project==null? "" : System.Uri.EscapeDataString(project))+"/{access_site}/"+granularity+"/"+ (start==null? "" : System.Uri.EscapeDataString(start))+"/"+ (end==null? "" : System.Uri.EscapeDataString(end));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)

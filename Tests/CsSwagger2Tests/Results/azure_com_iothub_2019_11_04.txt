@@ -1684,11 +1684,11 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		export = 1,
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
+		_export = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		import = 2,
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="import")]
+		_import = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		backup = 3,
