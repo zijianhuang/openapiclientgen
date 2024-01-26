@@ -200,14 +200,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CustomKeyStoreType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_CLOUDHSM")]
 		AWS_CLOUDHSM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_KEY_STORE")]
 		EXTERNAL_KEY_STORE = 1,
 	}
 	
@@ -235,14 +236,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum XksProxyConnectivityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUBLIC_ENDPOINT")]
 		PUBLIC_ENDPOINT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_ENDPOINT_SERVICE")]
 		VPC_ENDPOINT_SERVICE = 1,
 	}
 	
@@ -379,56 +381,57 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GrantOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Decrypt")]
 		Decrypt = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Encrypt")]
 		Encrypt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKey")]
 		GenerateDataKey = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyWithoutPlaintext")]
 		GenerateDataKeyWithoutPlaintext = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReEncryptFrom")]
 		ReEncryptFrom = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReEncryptTo")]
 		ReEncryptTo = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sign")]
 		Sign = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Verify")]
 		Verify = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetPublicKey")]
 		GetPublicKey = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateGrant")]
 		CreateGrant = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RetireGrant")]
 		RetireGrant = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeKey")]
 		DescribeKey = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyPair")]
 		GenerateDataKeyPair = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateDataKeyPairWithoutPlaintext")]
 		GenerateDataKeyPairWithoutPlaintext = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GenerateMac")]
 		GenerateMac = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyMac")]
 		VerifyMac = 15,
 	}
 	
@@ -566,89 +569,94 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum KeyUsageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIGN_VERIFY")]
 		SIGN_VERIFY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENCRYPT_DECRYPT")]
 		ENCRYPT_DECRYPT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GENERATE_VERIFY_MAC")]
 		GENERATE_VERIFY_MAC = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum KeyState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
 		Creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
 		Enabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
 		Disabled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingDeletion")]
 		PendingDeletion = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingImport")]
 		PendingImport = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingReplicaDeletion")]
 		PendingReplicaDeletion = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unavailable")]
 		Unavailable = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updating")]
 		Updating = 7,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum OriginType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_KMS")]
 		AWS_KMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL")]
 		EXTERNAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_CLOUDHSM")]
 		AWS_CLOUDHSM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_KEY_STORE")]
 		EXTERNAL_KEY_STORE = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ExpirationModelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_MATERIAL_EXPIRES")]
 		KEY_MATERIAL_EXPIRES = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KEY_MATERIAL_DOES_NOT_EXPIRE")]
 		KEY_MATERIAL_DOES_NOT_EXPIRE = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum KeyManagerType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS")]
 		AWS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER")]
 		CUSTOMER = 1,
 	}
 	
@@ -656,101 +664,104 @@ namespace MyNS
 	/// This enum has been deprecated. Instead, use the KeySpec enum.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CustomerMasterKeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
 		RSA_4096 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P256")]
 		ECC_NIST_P256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P384")]
 		ECC_NIST_P384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P521")]
 		ECC_NIST_P521 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_SECG_P256K1")]
 		ECC_SECG_P256K1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYMMETRIC_DEFAULT")]
 		SYMMETRIC_DEFAULT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_224")]
 		HMAC_224 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_256")]
 		HMAC_256 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_384")]
 		HMAC_384 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_512")]
 		HMAC_512 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2")]
 		SM2 = 12,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EncryptionAlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYMMETRIC_DEFAULT")]
 		SYMMETRIC_DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_1")]
 		RSAES_OAEP_SHA_1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_256")]
 		RSAES_OAEP_SHA_256 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2PKE")]
 		SM2PKE = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SigningAlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PSS_SHA_256")]
 		RSASSA_PSS_SHA_256 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PSS_SHA_384")]
 		RSASSA_PSS_SHA_384 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PSS_SHA_512")]
 		RSASSA_PSS_SHA_512 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PKCS1_V1_5_SHA_256")]
 		RSASSA_PKCS1_V1_5_SHA_256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PKCS1_V1_5_SHA_384")]
 		RSASSA_PKCS1_V1_5_SHA_384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSASSA_PKCS1_V1_5_SHA_512")]
 		RSASSA_PKCS1_V1_5_SHA_512 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECDSA_SHA_256")]
 		ECDSA_SHA_256 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECDSA_SHA_384")]
 		ECDSA_SHA_384 = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECDSA_SHA_512")]
 		ECDSA_SHA_512 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2DSA")]
 		SM2DSA = 9,
 	}
 	
@@ -773,14 +784,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MultiRegionKeyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIMARY")]
 		PRIMARY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLICA")]
 		REPLICA = 1,
 	}
 	
@@ -800,20 +812,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MacAlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_224")]
 		HMAC_SHA_224 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_256")]
 		HMAC_SHA_256 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_384")]
 		HMAC_SHA_384 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA_512")]
 		HMAC_SHA_512 = 3,
 	}
 	
@@ -992,11 +1005,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum KeyEncryptionMechanism
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_256")]
 		RSAES_OAEP_SHA_256 = 0,
 	}
 	
@@ -1127,83 +1141,85 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ConnectionStateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTED")]
 		CONNECTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONNECTING")]
 		CONNECTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCONNECTED")]
 		DISCONNECTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISCONNECTING")]
 		DISCONNECTING = 4,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ConnectionErrorCodeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CREDENTIALS")]
 		INVALID_CREDENTIALS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER_NOT_FOUND")]
 		CLUSTER_NOT_FOUND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NETWORK_ERRORS")]
 		NETWORK_ERRORS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_ERROR")]
 		INTERNAL_ERROR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_CLOUDHSM_HSMS")]
 		INSUFFICIENT_CLOUDHSM_HSMS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOCKED_OUT")]
 		USER_LOCKED_OUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_NOT_FOUND")]
 		USER_NOT_FOUND = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="USER_LOGGED_IN")]
 		USER_LOGGED_IN = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBNET_NOT_FOUND")]
 		SUBNET_NOT_FOUND = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET")]
 		INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_ACCESS_DENIED")]
 		XKS_PROXY_ACCESS_DENIED = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_NOT_REACHABLE")]
 		XKS_PROXY_NOT_REACHABLE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND")]
 		XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_INVALID_RESPONSE")]
 		XKS_PROXY_INVALID_RESPONSE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_INVALID_CONFIGURATION")]
 		XKS_PROXY_INVALID_CONFIGURATION = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION")]
 		XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_TIMED_OUT")]
 		XKS_PROXY_TIMED_OUT = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XKS_PROXY_INVALID_TLS_CONFIGURATION")]
 		XKS_PROXY_INVALID_TLS_CONFIGURATION = 17,
 	}
 	
@@ -1448,14 +1464,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DataKeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256")]
 		AES_256 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128")]
 		AES_128 = 1,
 	}
 	
@@ -1484,32 +1501,33 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DataKeyPairSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
 		RSA_4096 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P256")]
 		ECC_NIST_P256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P384")]
 		ECC_NIST_P384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P521")]
 		ECC_NIST_P521 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_SECG_P256K1")]
 		ECC_SECG_P256K1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2")]
 		SM2 = 7,
 	}
 	
@@ -1804,38 +1822,40 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AlgorithmSpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_PKCS1_V1_5")]
 		RSAES_PKCS1_V1_5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_1")]
 		RSAES_OAEP_SHA_1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSAES_OAEP_SHA_256")]
 		RSAES_OAEP_SHA_256 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_AES_KEY_WRAP_SHA_1")]
 		RSA_AES_KEY_WRAP_SHA_1 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_AES_KEY_WRAP_SHA_256")]
 		RSA_AES_KEY_WRAP_SHA_256 = 4,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum WrappingKeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
 		RSA_4096 = 2,
 	}
 	
@@ -2470,14 +2490,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RAW")]
 		RAW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIGEST")]
 		DIGEST = 1,
 	}
 	
@@ -2756,47 +2777,48 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum KeySpec
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_2048")]
 		RSA_2048 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_3072")]
 		RSA_3072 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_4096")]
 		RSA_4096 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P256")]
 		ECC_NIST_P256 = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P384")]
 		ECC_NIST_P384 = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_NIST_P521")]
 		ECC_NIST_P521 = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECC_SECG_P256K1")]
 		ECC_SECG_P256K1 = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYMMETRIC_DEFAULT")]
 		SYMMETRIC_DEFAULT = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_224")]
 		HMAC_224 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_256")]
 		HMAC_256 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_384")]
 		HMAC_384 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_512")]
 		HMAC_512 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SM2")]
 		SM2 = 12,
 	}
 	

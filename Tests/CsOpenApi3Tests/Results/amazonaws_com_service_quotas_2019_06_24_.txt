@@ -237,29 +237,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PeriodUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MICROSECOND")]
 		MICROSECOND = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MILLISECOND")]
 		MILLISECOND = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECOND")]
 		SECOND = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MINUTE")]
 		MINUTE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
 		HOUR = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY")]
 		DAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK")]
 		WEEK = 6,
 	}
 	
@@ -279,20 +280,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENCY_ACCESS_DENIED_ERROR")]
 		DEPENDENCY_ACCESS_DENIED_ERROR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENCY_THROTTLING_ERROR")]
 		DEPENDENCY_THROTTLING_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEPENDENCY_SERVICE_ERROR")]
 		DEPENDENCY_SERVICE_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_QUOTA_NOT_AVAILABLE_ERROR")]
 		SERVICE_QUOTA_NOT_AVAILABLE_ERROR = 3,
 	}
 	
@@ -326,14 +328,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ServiceQuotaTemplateAssociationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATED")]
 		ASSOCIATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISASSOCIATED")]
 		DISASSOCIATED = 1,
 	}
 	
@@ -404,23 +407,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RequestStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASE_OPENED")]
 		CASE_OPENED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVED")]
 		APPROVED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DENIED")]
 		DENIED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CASE_CLOSED")]
 		CASE_CLOSED = 4,
 	}
 	

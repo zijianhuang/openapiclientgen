@@ -108,68 +108,72 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CurrencyCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CNY")]
 		CNY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="USD")]
 		USD = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanRateUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Hrs")]
 		Hrs = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lambda-GB-Second")]
 		LambdaMinusGBMinusSecond = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Request")]
 		Request = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanProductType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2")]
 		EC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fargate")]
 		Fargate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Lambda")]
 		Lambda = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SageMaker")]
 		SageMaker = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanRateServiceCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonEC2")]
 		AmazonEC2 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonECS")]
 		AmazonECS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonEKS")]
 		AmazonEKS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSLambda")]
 		AWSLambda = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AmazonSageMaker")]
 		AmazonSageMaker = 4,
 	}
 	
@@ -189,32 +193,33 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanRateFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceType")]
 		instanceType = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDescription")]
 		productDescription = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tenancy")]
 		tenancy = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productType")]
 		productType = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="serviceCode")]
 		serviceCode = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="usageType")]
 		usageType = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="operation")]
 		operation = 7,
 	}
 	
@@ -294,6 +299,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanState
 	{
@@ -304,13 +310,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment-failed")]
 		paymentMinusfailed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="active")]
 		active = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="retired")]
 		retired = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
 		queued = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued-deleted")]
@@ -318,21 +324,23 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Compute")]
 		Compute = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC2Instance")]
 		EC2Instance = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SageMaker")]
 		SageMaker = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanPaymentOption
 	{
@@ -369,23 +377,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlansFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
 		region = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ec2-instance-family")]
 		ec2MinusinstanceMinusfamily = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="commitment")]
 		commitment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="upfront")]
 		upfront = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="term")]
 		term = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="savings-plan-type")]
@@ -394,10 +403,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment-option")]
 		paymentMinusoption = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="start")]
 		start = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="end")]
 		end = 8,
 	}
 	
@@ -492,26 +501,27 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanRateFilterAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
 		instanceFamily = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceType")]
 		instanceType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDescription")]
 		productDescription = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tenancy")]
 		tenancy = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productId")]
 		productId = 5,
 	}
 	
@@ -588,14 +598,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanOfferingFilterAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
 		instanceFamily = 1,
 	}
 	
@@ -806,14 +817,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanOfferingPropertyKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
 		instanceFamily = 1,
 	}
 	
@@ -848,23 +860,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SavingsPlanRatePropertyKey
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="region")]
 		region = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceType")]
 		instanceType = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="instanceFamily")]
 		instanceFamily = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDescription")]
 		productDescription = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tenancy")]
 		tenancy = 4,
 	}
 	

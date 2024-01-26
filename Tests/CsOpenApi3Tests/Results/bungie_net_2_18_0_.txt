@@ -238,6 +238,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ApplicationsApplicationScopes
 	{
@@ -289,6 +290,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ApplicationsApplicationStatus
 	{
@@ -310,6 +312,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ApplicationsDeveloperRole
 	{
@@ -328,6 +331,7 @@ namespace MyNS
 	/// The types of credentials the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.CredentialType.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BungieCredentialType
 	{
@@ -379,6 +383,7 @@ namespace MyNS
 	/// The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BungieMembershipType
 	{
@@ -808,6 +813,7 @@ namespace MyNS
 	/// A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ComponentsComponentPrivacySetting
 	{
@@ -1142,6 +1148,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ContentModelsContentPropertyDataTypeEnum
 	{
@@ -1597,6 +1604,7 @@ namespace MyNS
 	/// The various known UI styles in which an item can be highlighted. It'll be up to you to determine what you want to show based on this highlighting, BNet doesn't have any assets that correspond to these states. And yeah, RiseOfIron and Comet have their own special highlight states. Don't ask me, I can't imagine they're still used.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyActivityGraphNodeHighlightType
 	{
@@ -1717,6 +1725,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyAdvancedAwaResponseReason
 	{
@@ -1735,6 +1744,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyAdvancedAwaType
 	{
@@ -1771,6 +1781,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyAdvancedAwaUserSelection
 	{
@@ -1974,6 +1985,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyBucketCategory
 	{
@@ -1995,6 +2007,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyBucketScope
 	{
@@ -3461,6 +3474,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDamageType
 	{
@@ -4222,6 +4236,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyActivityDefinitionDirectActivityModeType
 	{
@@ -4593,6 +4608,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyActivityPlaylistItemDefinitionDirectActivityModeType
 	{
@@ -8571,6 +8587,7 @@ namespace MyNS
 	/// BNet's custom categorization of reward sources. We took a look at the existing ways that items could be spawned, and tried to make high-level categorizations of them. This needs to be re-evaluated for Destiny 2.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyRewardSourceCategory
 	{
@@ -9247,6 +9264,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyTalentNodeStepDamageTypes
 	{
@@ -9295,6 +9313,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyTalentNodeStepGuardianAttributes
 	{
@@ -9331,6 +9350,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyTalentNodeStepImpactEffects
 	{
@@ -9361,6 +9381,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyTalentNodeStepLightAbilities
 	{
@@ -9391,6 +9412,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsDestinyTalentNodeStepWeaponPerformances
 	{
@@ -11959,6 +11981,7 @@ namespace MyNS
 	/// If for some reason the indicated property is not populated, fall back to the MilestoneDefinition.displayProperties.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsMilestonesDestinyMilestoneDisplayPreference
 	{
@@ -12040,6 +12063,7 @@ namespace MyNS
 	/// The type of milestone. Milestones can be Tutorials, one-time/triggered/non-repeating but not necessarily tutorials, or Repeating Milestones.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDefinitionsMilestonesDestinyMilestoneType
 	{
@@ -13506,6 +13530,7 @@ namespace MyNS
 	/// An enumeration representing the potential difficulty levels of an activity. Their names are... more qualitative than quantitative.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyActivityDifficultyTier
 	{
@@ -13539,6 +13564,7 @@ namespace MyNS
 	/// Activity Modes are grouped into a few possible broad categories.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyActivityModeCategory
 	{
@@ -13557,6 +13583,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyActivityNavPointType
 	{
@@ -13614,6 +13641,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyAmmunitionType
 	{
@@ -13638,6 +13666,7 @@ namespace MyNS
 	/// A plug can optionally have a "Breaker Type": a special ability that can affect units in unique ways. Activating this plug can grant one of these types.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyBreakerType
 	{
@@ -13656,6 +13685,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyClass
 	{
@@ -13678,6 +13708,7 @@ namespace MyNS
 	///(All joking aside, please note the caveat I mention around the Invisible flag: there are cases where it is in the best interest of your users to honor these flags even if you're a "show all the data" person. Collector-oriented compulsion is a very unfortunate and real thing, and I would hate to instill that compulsion in others through showing them items that they cannot earn. Please consider this when you are making your own apps/sites.)
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyCollectibleState
 	{
@@ -13712,6 +13743,7 @@ namespace MyNS
 	///When making one of these requests, you will pass one or more of these components as a comma separated list in the "?components=" querystring parameter. For instance, if you want baseline Profile data, Character Data, and character progressions, you would pass "?components=Profiles,Characters,CharacterProgressions" You may use either the numerical or string values.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyComponentType
 	{
@@ -13835,6 +13867,7 @@ namespace MyNS
 	/// Represents the socket energy types for Armor 2.0, Ghosts 2.0, and Stasis subclasses.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyEnergyType
 	{
@@ -13898,6 +13931,7 @@ namespace MyNS
 	/// A player can choose to restrict requests to join their Fireteam to specific states. These are the possible states a user can choose.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyGamePrivacySetting
 	{
@@ -13922,6 +13956,7 @@ namespace MyNS
 	/// A flags enumeration/bitmask indicating the versions of the game that a given user has purchased.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyGameVersions
 	{
@@ -13971,6 +14006,7 @@ namespace MyNS
 	///AssumedWorstCase = The unlocks and checks being used for this calculation are of an unknown type and are used for unknown purposes. For instance, if some great person decided that an unlock value should be globally scoped, but then the game changes it using character-specific data in a way that BNet doesn't know about. Because of the open-ended potential for this to occur, many unlock checks for "globally" scoped unlock data may be assumed as the worst case unless it has been specifically whitelisted as otherwise. That sucks, but them's the breaks.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyGatingScope
 	{
@@ -13998,6 +14034,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyGender
 	{
@@ -14016,6 +14053,7 @@ namespace MyNS
 	/// Represents a potential state of an Activity Graph node.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyGraphNodeState
 	{
@@ -14040,6 +14078,7 @@ namespace MyNS
 	/// Determines how items are sorted in an inventory bucket.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyItemSortType
 	{
@@ -14060,6 +14099,7 @@ namespace MyNS
 	///NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyItemSubType
 	{
@@ -14165,6 +14205,7 @@ namespace MyNS
 	/// I keep updating these because they're so damn convenient. I guess I shouldn't fight it.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyItemType
 	{
@@ -14258,6 +14299,7 @@ namespace MyNS
 	/// A Flags enumeration representing the reasons why a person can't join this user's fireteam.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyJoinClosedReasons
 	{
@@ -14288,6 +14330,7 @@ namespace MyNS
 	/// Some Objectives provide perks, generally as part of providing some kind of interesting modifier for a Challenge or Quest. This indicates when the Perk is granted.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyObjectiveGrantStyle
 	{
@@ -14306,6 +14349,7 @@ namespace MyNS
 	/// If the objective has a known UI label, this enumeration will represent it.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyObjectiveUiStyle
 	{
@@ -14336,6 +14380,7 @@ namespace MyNS
 	/// A flags enumeration that represents a Fireteam Member's status.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyPartyMemberStates
 	{
@@ -14360,6 +14405,7 @@ namespace MyNS
 	/// A hint for how the presentation node should be displayed when shown in a list. How you use this is your UI is up to you.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyPresentationDisplayStyle
 	{
@@ -14390,6 +14436,7 @@ namespace MyNS
 	/// I know this doesn't look like a Flags Enumeration/bitmask right now, but I assure you it is. This is the possible states that a Presentation Node can be in, and it is almost certain that its potential states will increase in the future. So don't treat it like a straight up enumeration.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyPresentationNodeState
 	{
@@ -14405,6 +14452,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyPresentationNodeType
 	{
@@ -14432,6 +14480,7 @@ namespace MyNS
 	/// A hint for what screen should be shown when this presentation node is clicked into. How you use this is your UI is up to you.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyPresentationScreenStyle
 	{
@@ -14450,6 +14499,7 @@ namespace MyNS
 	/// Represents the different kinds of acquisition behavior for progression reward items.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyProgressionRewardItemAcquisitionBehavior
 	{
@@ -14465,6 +14515,7 @@ namespace MyNS
 	/// Represents the different states a progression reward item can be in.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyProgressionRewardItemState
 	{
@@ -14489,6 +14540,7 @@ namespace MyNS
 	/// There are many Progressions in Destiny (think Character Level, or Reputation). These are the various "Scopes" of Progressions, which affect many things: * Where/if they are stored * How they are calculated * Where they can be used in other game logic
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyProgressionScope
 	{
@@ -14525,6 +14577,7 @@ namespace MyNS
 	/// If progression is earned, this determines whether the progression shows visual effects on the character or its item - or neither.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyProgressionStepDisplayEffect
 	{
@@ -14540,6 +14593,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyRace
 	{
@@ -14561,6 +14615,7 @@ namespace MyNS
 	/// A Flags enumeration/bitmask where each bit represents a possible state that a Record/Triumph can be in.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyRecordState
 	{
@@ -14591,6 +14646,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyRecordToastStyle
 	{
@@ -14627,6 +14683,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyRecordValueStyle
 	{
@@ -14651,6 +14708,7 @@ namespace MyNS
 	/// There's a lot of places where we need to know scope on more than just a profile or character level. For everything else, there's this more generic sense of scope.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyScope
 	{
@@ -14666,6 +14724,7 @@ namespace MyNS
 	/// Represents the possible and known UI styles used by the game for rendering Socket Categories.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinySocketCategoryStyle
 	{
@@ -14699,6 +14758,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinySocketVisibility
 	{
@@ -14742,6 +14802,7 @@ namespace MyNS
 	///* CharacterAverage = apply a weighted average using the related DestinyStatGroupDefinition on the DestinyInventoryItemDefinition across the character's equipped items. See both of those definitions for details. * Character = don't aggregate: the stat should be located and used directly on the character. * Item = don't aggregate: the stat should be located and used directly on the item.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyStatAggregationType
 	{
@@ -14760,6 +14821,7 @@ namespace MyNS
 	/// At last, stats have categories. Use this for whatever purpose you might wish.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyStatCategory
 	{
@@ -14868,6 +14930,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyTalentNodeState
 	{
@@ -14941,6 +15004,7 @@ namespace MyNS
 	/// If you're showing an unlock value in the UI, this is the format in which it should be shown. You'll have to build your own algorithms on the client side to determine how best to render these options.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyUnlockValueUIStyle
 	{
@@ -14995,6 +15059,7 @@ namespace MyNS
 	/// Indicates the type of filter to apply to Vendor results.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyVendorFilter
 	{
@@ -15010,6 +15075,7 @@ namespace MyNS
 	/// When a Vendor Interaction provides rewards, they'll either let you choose one or let you have all of them. This determines which it will be.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyVendorInteractionRewardSelection
 	{
@@ -15028,6 +15094,7 @@ namespace MyNS
 	/// The action that happens when the user attempts to refund an item.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyVendorItemRefundPolicy
 	{
@@ -15046,6 +15113,7 @@ namespace MyNS
 	/// The possible states of Destiny Profile Records. IMPORTANT: Any given item can theoretically have many of these states simultaneously: as a result, this was altered to be a flags enumeration/bitmask for v3.2.0.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyVendorItemState
 	{
@@ -15121,6 +15189,7 @@ namespace MyNS
 	/// Describes the type of progression that a vendor has.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyVendorProgressionType
 	{
@@ -15139,6 +15208,7 @@ namespace MyNS
 	/// This determines the type of reply that a Vendor will have during an Interaction.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyDestinyVendorReplyType
 	{
@@ -15217,6 +15287,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyEntitiesCharactersDestinyCharacterActivitiesComponentCurrentActivityModeType
 	{
@@ -16273,6 +16344,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyEntitiesItemsDestinyItemInstanceComponentBreakerType
 	{
@@ -16830,6 +16902,7 @@ namespace MyNS
 	/// The reasons why an item cannot be equipped, if any. Many flags can be set, or "None" if
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyEquipFailureReason
 	{
@@ -16863,6 +16936,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyEquippingItemBlockAttributes
 	{
@@ -16878,6 +16952,7 @@ namespace MyNS
 	/// For historical reasons, this list will have both D1 and D2-relevant Activity Modes in it. Please don't take this to mean that some D1-only feature is coming back!
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyHistoricalStatsDefinitionsDestinyActivityModeType
 	{
@@ -17226,6 +17301,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyHistoricalStatsDefinitionsDestinyHistoricalStatsDefinitionMergeMethod
 	{
@@ -17241,6 +17317,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyHistoricalStatsDefinitionsDestinyStatsCategoryType
 	{
@@ -17298,6 +17375,7 @@ namespace MyNS
 	/// If the enum value is > 100, it is a "special" group that cannot be queried for directly (special cases apply to when they are returned, and are not relevant in general cases)
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyHistoricalStatsDefinitionsDestinyStatsGroupType
 	{
@@ -17331,6 +17409,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyHistoricalStatsDefinitionsDestinyStatsMergeMethod
 	{
@@ -17346,6 +17425,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyHistoricalStatsDefinitionsPeriodType
 	{
@@ -17364,6 +17444,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyHistoricalStatsDefinitionsUnitType
 	{
@@ -17968,6 +18049,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyItemBindStatus
 	{
@@ -17986,6 +18068,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyItemLocation
 	{
@@ -18010,6 +18093,7 @@ namespace MyNS
 	/// Indicates how a perk should be shown, or if it should be, in the game UI. Maybe useful for those of you trying to filter out internal-use-only perks (or for those of you trying to figure out what they do!)
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyItemPerkVisibility
 	{
@@ -18028,6 +18112,7 @@ namespace MyNS
 	/// A flags enumeration/bitmask where each bit represents a different possible state that the item can be in that may effect how the item is displayed to the user and what actions can be performed against it.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyItemState
 	{
@@ -18091,6 +18176,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyMilestonesDestinyMilestoneActivityActivityModeType
 	{
@@ -18382,6 +18468,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyMilestonesDestinyMilestoneActivityVariantActivityModeType
 	{
@@ -18905,6 +18992,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyMilestonesDestinyPublicMilestoneActivityActivityModeType
 	{
@@ -19190,6 +19278,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyMilestonesDestinyPublicMilestoneActivityVariantActivityModeType
 	{
@@ -19455,6 +19544,7 @@ namespace MyNS
 	///For category matching, use the plug's "plugCategoryIdentifier" property, comparing it to
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyPlugAvailabilityMode
 	{
@@ -19473,6 +19563,7 @@ namespace MyNS
 	/// If the plug has a specific custom style, this enumeration will represent that style/those styles.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyPlugUiStyles
 	{
@@ -19745,6 +19836,7 @@ namespace MyNS
 	///Unfortunately, because Intrinsic sockets are a whole separate array, it is no longer sufficient to know the index into that array to know which socket we're talking about. You have to know whether it's in the default "socketEntries" or if it's in the "intrinsic" list.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyRequestsActionsDestinySocketArrayType
 	{
@@ -20178,6 +20270,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyResponsesDestinyProfileUserInfoCardUnpairedGameVersions
 	{
@@ -20926,6 +21019,7 @@ namespace MyNS
 	/// For instance, a socket could have plugs that are sourced from its own definition, as well as plugs that are sourced from Character-scoped AND profile-scoped Plug Sets. Only by combining plug data for every indicated source will you be able to know all of the plugs available for a socket.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinySocketPlugSources
 	{
@@ -20950,6 +21044,7 @@ namespace MyNS
 	/// Indicates the type of actions that can be performed
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinySocketTypeActionType
 	{
@@ -20969,6 +21064,7 @@ namespace MyNS
 	///NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinySpecialItemType
 	{
@@ -21002,6 +21098,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyTierType
 	{
@@ -21032,6 +21129,7 @@ namespace MyNS
 	/// Whether you can transfer an item, and why not if you can't.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyTransferStatuses
 	{
@@ -21053,6 +21151,7 @@ namespace MyNS
 	/// Display categories can have custom sort orders. These are the possible options.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyVendorDisplayCategorySortOrder
 	{
@@ -21068,6 +21167,7 @@ namespace MyNS
 	/// An enumeration of the known UI interactions for Vendors.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyVendorInteractionType
 	{
@@ -21107,6 +21207,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DestinyVendorItemStatus
 	{
@@ -21932,6 +22033,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ExceptionsPlatformErrorCodes
 	{
@@ -24470,6 +24572,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FireteamFireteamDateRange
 	{
@@ -24594,6 +24697,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FireteamFireteamPlatform
 	{
@@ -24621,6 +24725,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FireteamFireteamPlatformInviteResult
 	{
@@ -24642,6 +24747,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FireteamFireteamPublicSearchOption
 	{
@@ -24744,6 +24850,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FireteamFireteamSlotSearch
 	{
@@ -24759,6 +24866,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumCommunityContentSortMode
 	{
@@ -24774,6 +24882,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumMediaType
 	{
@@ -24792,6 +24901,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumPostPopularity
 	{
@@ -24816,6 +24926,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumPostSortEnum
 	{
@@ -24864,6 +24975,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumRecruitmentIntensityLabel
 	{
@@ -24879,6 +24991,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumRecruitmentToneLabel
 	{
@@ -24894,6 +25007,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumTopicsCategoryFiltersEnum
 	{
@@ -24927,6 +25041,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumTopicsQuickDateEnum
 	{
@@ -24948,6 +25063,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumForumTopicsSortEnum
 	{
@@ -25517,6 +25633,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumsForumFlagsEnum
 	{
@@ -25550,6 +25667,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ForumsForumPostCategoryEnums
 	{
@@ -25628,6 +25746,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GlobalAlertLevel
 	{
@@ -25646,6 +25765,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GlobalAlertType
 	{
@@ -25658,6 +25778,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2Capabilities
 	{
@@ -25688,6 +25809,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2ChatSecuritySetting
 	{
@@ -25749,6 +25871,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupAllianceStatus
 	{
@@ -25824,6 +25947,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupApplicationResolveState
 	{
@@ -25902,6 +26026,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupDateRange
 	{
@@ -25977,6 +26102,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupEditActionChatSecurity
 	{
@@ -25989,6 +26115,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupEditActionDefaultPublicity
 	{
@@ -26004,6 +26131,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupEditActionHomepage
 	{
@@ -26019,6 +26147,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupEditActionMembershipOption
 	{
@@ -26034,6 +26163,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupHomepage
 	{
@@ -26085,6 +26215,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupMemberCountFilter
 	{
@@ -26214,6 +26345,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupOptionalConversationEditRequestChatSecurity
 	{
@@ -26275,6 +26407,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupOptionsEditActionHostGuidedGamePermissionOverride
 	{
@@ -26290,6 +26423,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupOptionsEditActionJoinLevel
 	{
@@ -26314,6 +26448,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupPostPublicity
 	{
@@ -26329,6 +26464,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupPotentialMemberStatus
 	{
@@ -26429,6 +26565,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupQueryGroupMemberCountFilter
 	{
@@ -26543,6 +26680,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupSortBy
 	{
@@ -26561,6 +26699,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupType
 	{
@@ -26594,6 +26733,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2GroupsForMemberFilter
 	{
@@ -26612,6 +26752,7 @@ namespace MyNS
 	/// Used for setting the guided game permission level override (admins and founders can always host guided games).
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2HostGuidedGamesPermissionLevel
 	{
@@ -26627,6 +26768,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2MembershipOption
 	{
@@ -26645,6 +26787,7 @@ namespace MyNS
 	/// The member levels used by all V2 Groups API. Individual group types use their own mappings in their native storage (general uses BnetDbGroupMemberType and D2 clans use ClanMemberLevel), but they are all translated to this in the runtime api. These runtime values should NEVER be stored anywhere, so the values can be changed as necessary.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GroupsV2RuntimeGroupMemberType
 	{
@@ -26669,6 +26812,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IgnoresIgnoreLength
 	{
@@ -26711,6 +26855,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IgnoresIgnoreStatus
 	{
@@ -27982,6 +28127,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SocialFriendsFriendRelationshipState
 	{
@@ -28027,6 +28173,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SocialFriendsPlatformFriendDestinyMembershipType
 	{
@@ -28081,6 +28228,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SocialFriendsPlatformFriendType
 	{
@@ -28102,6 +28250,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SocialFriendsPresenceOnlineStateFlags
 	{
@@ -28117,6 +28266,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SocialFriendsPresenceStatus
 	{
@@ -28129,6 +28279,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum StreamingDropStateEnum
 	{
@@ -28292,6 +28443,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TokensPartnerOfferHistoryResponseMembershipType
 	{
@@ -28385,6 +28537,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TokensTwitchDropHistoryResponseClaimState
 	{
@@ -28562,6 +28715,7 @@ namespace MyNS
 	/// The known entity types that you can have returned from Trending.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TrendingTrendingEntryType
 	{
@@ -28710,6 +28864,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserOptInFlags
 	{
@@ -28810,6 +28965,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema1
 	{
@@ -31348,6 +31504,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema10
 	{
@@ -31399,6 +31556,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema100
 	{
@@ -31453,6 +31611,7 @@ namespace MyNS
 	/// The possible states of Destiny Profile Records. IMPORTANT: Any given item can theoretically have many of these states simultaneously: as a result, this was altered to be a flags enumeration/bitmask for v3.2.0.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema101
 	{
@@ -31529,6 +31688,7 @@ namespace MyNS
 	///Unfortunately, because Intrinsic sockets are a whole separate array, it is no longer sufficient to know the index into that array to know which socket we're talking about. You have to know whether it's in the default "socketEntries" or if it's in the "intrinsic" list.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema102
 	{
@@ -31541,6 +31701,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema103
 	{
@@ -31559,6 +31720,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema104
 	{
@@ -31613,6 +31775,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema105
 	{
@@ -31661,6 +31824,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema106
 	{
@@ -31673,6 +31837,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema107
 	{
@@ -31688,6 +31853,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema108
 	{
@@ -31709,6 +31875,7 @@ namespace MyNS
 	/// The known entity types that you can have returned from Trending.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema109
 	{
@@ -31751,6 +31918,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema11
 	{
@@ -31769,6 +31937,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema110
 	{
@@ -31796,6 +31965,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema111
 	{
@@ -31817,6 +31987,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema112
 	{
@@ -31829,6 +32000,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema113
 	{
@@ -31844,6 +32016,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema114
 	{
@@ -31862,6 +32035,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema115
 	{
@@ -31883,6 +32057,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema116
 	{
@@ -31919,6 +32094,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema117
 	{
@@ -31937,6 +32113,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema118
 	{
@@ -31949,6 +32126,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema12
 	{
@@ -31973,6 +32151,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema13
 	{
@@ -31988,6 +32167,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema14
 	{
@@ -32000,6 +32180,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema15
 	{
@@ -32012,6 +32193,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema16
 	{
@@ -32027,6 +32209,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema17
 	{
@@ -32042,6 +32225,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema18
 	{
@@ -32057,6 +32241,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema19
 	{
@@ -32091,6 +32276,7 @@ namespace MyNS
 	///When making one of these requests, you will pass one or more of these components as a comma separated list in the "?components=" querystring parameter. For instance, if you want baseline Profile data, Character Data, and character progressions, you would pass "?components=Profiles,Characters,CharacterProgressions" You may use either the numerical or string values.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema2
 	{
@@ -32214,6 +32400,7 @@ namespace MyNS
 	/// Used for setting the guided game permission level override (admins and founders can always host guided games).
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema20
 	{
@@ -32232,6 +32419,7 @@ namespace MyNS
 	/// The member levels used by all V2 Groups API. Individual group types use their own mappings in their native storage (general uses BnetDbGroupMemberType and D2 clans use ClanMemberLevel), but they are all translated to this in the runtime api. These runtime values should NEVER be stored anywhere, so the values can be changed as necessary.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema21
 	{
@@ -32259,6 +32447,7 @@ namespace MyNS
 	/// Represents the different states a progression reward item can be in.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema22
 	{
@@ -32283,6 +32472,7 @@ namespace MyNS
 	/// There are many Progressions in Destiny (think Character Level, or Reputation). These are the various "Scopes" of Progressions, which affect many things: * Where/if they are stored * How they are calculated * Where they can be used in other game logic
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema23
 	{
@@ -32319,6 +32509,7 @@ namespace MyNS
 	/// If progression is earned, this determines whether the progression shows visual effects on the character or its item - or neither.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema24
 	{
@@ -32338,6 +32529,7 @@ namespace MyNS
 	///NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema25
 	{
@@ -32377,6 +32569,7 @@ namespace MyNS
 	/// I keep updating these because they're so damn convenient. I guess I shouldn't fight it.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema26
 	{
@@ -32472,6 +32665,7 @@ namespace MyNS
 	///NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema27
 	{
@@ -32571,6 +32765,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema28
 	{
@@ -32592,6 +32787,7 @@ namespace MyNS
 	/// A plug can optionally have a "Breaker Type": a special ability that can affect units in unique ways. Activating this plug can grant one of these types.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema29
 	{
@@ -32613,6 +32809,7 @@ namespace MyNS
 	/// If the enum value is > 100, it is a "special" group that cannot be queried for directly (special cases apply to when they are returned, and are not relevant in general cases)
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema3
 	{
@@ -32646,6 +32843,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema30
 	{
@@ -32676,6 +32874,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema31
 	{
@@ -32697,6 +32896,7 @@ namespace MyNS
 	/// Indicates the type of actions that can be performed
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema32
 	{
@@ -32715,6 +32915,7 @@ namespace MyNS
 	/// Represents the possible and known UI styles used by the game for rendering Socket Categories.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema33
 	{
@@ -32748,6 +32949,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema34
 	{
@@ -32775,6 +32977,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema35
 	{
@@ -32787,6 +32990,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema36
 	{
@@ -32808,6 +33012,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema37
 	{
@@ -32833,6 +33038,7 @@ namespace MyNS
 	///* CharacterAverage = apply a weighted average using the related DestinyStatGroupDefinition on the DestinyInventoryItemDefinition across the character's equipped items. See both of those definitions for details. * Character = don't aggregate: the stat should be located and used directly on the character. * Item = don't aggregate: the stat should be located and used directly on the item.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema38
 	{
@@ -32851,6 +33057,7 @@ namespace MyNS
 	/// At last, stats have categories. Use this for whatever purpose you might wish.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema39
 	{
@@ -32872,6 +33079,7 @@ namespace MyNS
 	/// For historical reasons, this list will have both D1 and D2-relevant Activity Modes in it. Please don't take this to mean that some D1-only feature is coming back!
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema4
 	{
@@ -33130,6 +33338,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema40
 	{
@@ -33142,6 +33351,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema41
 	{
@@ -33163,6 +33373,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema42
 	{
@@ -33181,6 +33392,7 @@ namespace MyNS
 	/// Describes the type of progression that a vendor has.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema43
 	{
@@ -33199,6 +33411,7 @@ namespace MyNS
 	/// Display categories can have custom sort orders. These are the possible options.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema44
 	{
@@ -33214,6 +33427,7 @@ namespace MyNS
 	/// An enumeration of the known UI interactions for Vendors.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema45
 	{
@@ -33256,6 +33470,7 @@ namespace MyNS
 	/// When a Vendor Interaction provides rewards, they'll either let you choose one or let you have all of them. This determines which it will be.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema46
 	{
@@ -33274,6 +33489,7 @@ namespace MyNS
 	/// This determines the type of reply that a Vendor will have during an Interaction.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema47
 	{
@@ -33292,6 +33508,7 @@ namespace MyNS
 	/// Determines how items are sorted in an inventory bucket.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema48
 	{
@@ -33310,6 +33527,7 @@ namespace MyNS
 	/// The action that happens when the user attempts to refund an item.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema49
 	{
@@ -33325,6 +33543,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema5
 	{
@@ -33356,6 +33575,7 @@ namespace MyNS
 	///AssumedWorstCase = The unlocks and checks being used for this calculation are of an unknown type and are used for unknown purposes. For instance, if some great person decided that an unlock value should be globally scoped, but then the game changes it using character-specific data in a way that BNet doesn't know about. Because of the open-ended potential for this to occur, many unlock checks for "globally" scoped unlock data may be assumed as the worst case unless it has been specifically whitelisted as otherwise. That sucks, but them's the breaks.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema50
 	{
@@ -33386,6 +33606,7 @@ namespace MyNS
 	/// The various known UI styles in which an item can be highlighted. It'll be up to you to determine what you want to show based on this highlighting, BNet doesn't have any assets that correspond to these states. And yeah, RiseOfIron and Comet have their own special highlight states. Don't ask me, I can't imagine they're still used.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema51
 	{
@@ -33410,6 +33631,7 @@ namespace MyNS
 	/// If you're showing an unlock value in the UI, this is the format in which it should be shown. You'll have to build your own algorithms on the client side to determine how best to render these options.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema52
 	{
@@ -33464,6 +33686,7 @@ namespace MyNS
 	/// If the objective has a known UI label, this enumeration will represent it.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema53
 	{
@@ -33494,6 +33717,7 @@ namespace MyNS
 	/// Some Objectives provide perks, generally as part of providing some kind of interesting modifier for a Challenge or Quest. This indicates when the Perk is granted.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema54
 	{
@@ -33509,6 +33733,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema55
 	{
@@ -33560,6 +33785,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema56
 	{
@@ -33590,6 +33816,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema57
 	{
@@ -33626,6 +33853,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema58
 	{
@@ -33656,6 +33884,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema59
 	{
@@ -33680,6 +33909,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema6
 	{
@@ -33695,6 +33925,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema60
 	{
@@ -33755,6 +33986,7 @@ namespace MyNS
 	/// Activity Modes are grouped into a few possible broad categories.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema61
 	{
@@ -33776,6 +34008,7 @@ namespace MyNS
 	/// Represents a potential state of an Activity Graph node.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema62
 	{
@@ -33800,6 +34033,7 @@ namespace MyNS
 	/// BNet's custom categorization of reward sources. We took a look at the existing ways that items could be spawned, and tried to make high-level categorizations of them. This needs to be re-evaluated for Destiny 2.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema63
 	{
@@ -33818,6 +34052,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema64
 	{
@@ -33845,6 +34080,7 @@ namespace MyNS
 	/// There's a lot of places where we need to know scope on more than just a profile or character level. For everything else, there's this more generic sense of scope.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema65
 	{
@@ -33860,6 +34096,7 @@ namespace MyNS
 	/// A hint for how the presentation node should be displayed when shown in a list. How you use this is your UI is up to you.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema66
 	{
@@ -33890,6 +34127,7 @@ namespace MyNS
 	/// A hint for what screen should be shown when this presentation node is clicked into. How you use this is your UI is up to you.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema67
 	{
@@ -33905,6 +34143,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema68
 	{
@@ -33926,6 +34165,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema69
 	{
@@ -33965,6 +34205,7 @@ namespace MyNS
 	/// The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema7
 	{
@@ -34004,6 +34245,7 @@ namespace MyNS
 	/// If the plug has a specific custom style, this enumeration will represent that style/those styles.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema70
 	{
@@ -34023,6 +34265,7 @@ namespace MyNS
 	///For category matching, use the plug's "plugCategoryIdentifier" property, comparing it to
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema71
 	{
@@ -34041,6 +34284,7 @@ namespace MyNS
 	/// Represents the socket energy types for Armor 2.0, Ghosts 2.0, and Stasis subclasses.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema72
 	{
@@ -34073,6 +34317,7 @@ namespace MyNS
 	/// For instance, a socket could have plugs that are sourced from its own definition, as well as plugs that are sourced from Character-scoped AND profile-scoped Plug Sets. Only by combining plug data for every indicated source will you be able to know all of the plugs available for a socket.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema73
 	{
@@ -34097,6 +34342,7 @@ namespace MyNS
 	/// Indicates how a perk should be shown, or if it should be, in the game UI. Maybe useful for those of you trying to filter out internal-use-only perks (or for those of you trying to figure out what they do!)
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema74
 	{
@@ -34115,6 +34361,7 @@ namespace MyNS
 	/// Represents the different kinds of acquisition behavior for progression reward items.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema75
 	{
@@ -34127,6 +34374,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema76
 	{
@@ -34142,6 +34390,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema77
 	{
@@ -34157,6 +34406,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema78
 	{
@@ -34172,6 +34422,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema79
 	{
@@ -34193,6 +34444,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema8
 	{
@@ -34220,6 +34472,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema80
 	{
@@ -34238,6 +34491,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema81
 	{
@@ -34280,6 +34534,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema82
 	{
@@ -34298,6 +34553,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema83
 	{
@@ -34319,6 +34575,7 @@ namespace MyNS
 	/// Whether you can transfer an item, and why not if you can't.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema84
 	{
@@ -34340,6 +34597,7 @@ namespace MyNS
 	/// A flags enumeration/bitmask where each bit represents a different possible state that the item can be in that may effect how the item is displayed to the user and what actions can be performed against it.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema85
 	{
@@ -34367,6 +34625,7 @@ namespace MyNS
 	/// A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema86
 	{
@@ -34385,6 +34644,7 @@ namespace MyNS
 	/// A flags enumeration/bitmask indicating the versions of the game that a given user has purchased.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema87
 	{
@@ -34427,6 +34687,7 @@ namespace MyNS
 	/// I know this doesn't look like a Flags Enumeration/bitmask right now, but I assure you it is. This is the possible states that a Presentation Node can be in, and it is almost certain that its potential states will increase in the future. So don't treat it like a straight up enumeration.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema88
 	{
@@ -34445,6 +34706,7 @@ namespace MyNS
 	/// A Flags enumeration/bitmask where each bit represents a possible state that a Record/Triumph can be in.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema89
 	{
@@ -34478,6 +34740,7 @@ namespace MyNS
 	/// The types of credentials the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.CredentialType.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema9
 	{
@@ -34530,6 +34793,7 @@ namespace MyNS
 	///(All joking aside, please note the caveat I mention around the Invisible flag: there are cases where it is in the best interest of your users to honor these flags even if you're a "show all the data" person. Collector-oriented compulsion is a very unfortunate and real thing, and I would hate to instill that compulsion in others through showing them items that they cannot earn. Please consider this when you are making your own apps/sites.)
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema90
 	{
@@ -34563,6 +34827,7 @@ namespace MyNS
 	/// A flags enumeration that represents a Fireteam Member's status.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema91
 	{
@@ -34587,6 +34852,7 @@ namespace MyNS
 	/// A player can choose to restrict requests to join their Fireteam to specific states. These are the possible states a user can choose.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema92
 	{
@@ -34611,6 +34877,7 @@ namespace MyNS
 	/// A Flags enumeration representing the reasons why a person can't join this user's fireteam.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema93
 	{
@@ -34638,6 +34905,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema94
 	{
@@ -34660,6 +34928,7 @@ namespace MyNS
 	/// If for some reason the indicated property is not populated, fall back to the MilestoneDefinition.displayProperties.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema95
 	{
@@ -34678,6 +34947,7 @@ namespace MyNS
 	/// The type of milestone. Milestones can be Tutorials, one-time/triggered/non-repeating but not necessarily tutorials, or Repeating Milestones.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema96
 	{
@@ -34705,6 +34975,7 @@ namespace MyNS
 	/// An enumeration representing the potential difficulty levels of an activity. Their names are... more qualitative than quantitative.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema97
 	{
@@ -34738,6 +35009,7 @@ namespace MyNS
 	/// The reasons why an item cannot be equipped, if any. Many flags can be set, or "None" if
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema98
 	{
@@ -34771,6 +35043,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Schema99
 	{

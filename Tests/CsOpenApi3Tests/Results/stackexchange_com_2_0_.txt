@@ -12094,171 +12094,171 @@ namespace MyNS
 	public enum AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
 		desc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
 		asc = 1,
 	}
 	
 	public enum AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activity")]
 		activity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="votes")]
 		votes = 2,
 	}
 	
 	public enum Answers_idsCommentsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="votes")]
 		votes = 1,
 	}
 	
 	public enum BadgesGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rank")]
 		rank = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="type")]
 		type = 2,
 	}
 	
 	public enum BadgesNameGetByInnameAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rank")]
 		rank = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 1,
 	}
 	
 	public enum MeGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="reputation")]
 		reputation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="modified")]
 		modified = 3,
 	}
 	
 	public enum MeFavoritesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activity")]
 		activity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="votes")]
 		votes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="added")]
 		added = 3,
 	}
 	
 	public enum MeSuggested_editsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="approval")]
 		approval = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rejection")]
 		rejection = 2,
 	}
 	
 	public enum MeTagsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="popular")]
 		popular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activity")]
 		activity = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 2,
 	}
 	
 	public enum MeTags_tagsTop_questionsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activity")]
 		activity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="votes")]
 		votes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="hot")]
 		hot = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="week")]
 		week = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="month")]
 		month = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
 		relevance = 6,
 	}
 	
 	public enum Questions_idsLinkedGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activity")]
 		activity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="votes")]
 		votes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rank")]
 		rank = 3,
 	}
 	
 	public enum SearchGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndIntitleAndNottaggedSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activity")]
 		activity = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="votes")]
 		votes = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
 		relevance = 3,
 	}
 	
@@ -12315,39 +12315,39 @@ namespace MyNS
 	public enum TagsSynonymsGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creation")]
 		creation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="applied")]
 		applied = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activity")]
 		activity = 2,
 	}
 	
 	public enum Tags_tagTop_answerers_periodGetByPagesizeAndPageAndFilterAndCallbackAndSitePeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="all_time")]
 		all_time = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="month")]
 		month = 1,
 	}
 	
 	public enum Users_idsBadgesGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rank")]
 		rank = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="type")]
 		type = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="awarded")]
 		awarded = 3,
 	}
 }

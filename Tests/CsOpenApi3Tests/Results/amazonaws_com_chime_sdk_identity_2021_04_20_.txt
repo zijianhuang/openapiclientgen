@@ -166,11 +166,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RespondsTo
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STANDARD_MESSAGES")]
 		STANDARD_MESSAGES = 0,
 	}
 	
@@ -198,32 +199,34 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum StandardMessages
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTO")]
 		AUTO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MENTIONS")]
 		MENTIONS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TargetedMessages
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 1,
 	}
 	
@@ -237,11 +240,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ExpirationCriterion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED_TIMESTAMP")]
 		CREATED_TIMESTAMP = 0,
 	}
 	
@@ -471,17 +475,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AppInstanceUserEndpointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS")]
 		APNS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_SANDBOX")]
 		APNS_SANDBOX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GCM")]
 		GCM = 2,
 	}
 	
@@ -524,26 +529,28 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EndpointStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
 		INACTIVE = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EndpointStatusReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_DEVICE_TOKEN")]
 		INVALID_DEVICE_TOKEN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_PINPOINT_ARN")]
 		INVALID_PINPOINT_ARN = 1,
 	}
 	
@@ -830,14 +837,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AllowMessages
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 1,
 	}
 	

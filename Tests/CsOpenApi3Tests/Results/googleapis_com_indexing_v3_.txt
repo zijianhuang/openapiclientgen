@@ -87,17 +87,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UrlNotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_NOTIFICATION_TYPE_UNSPECIFIED")]
 		URL_NOTIFICATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_UPDATED")]
 		URL_UPDATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL_DELETED")]
 		URL_DELETED = 2,
 	}
 	

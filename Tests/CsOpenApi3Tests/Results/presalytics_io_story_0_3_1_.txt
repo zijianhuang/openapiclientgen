@@ -174,21 +174,22 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Manage_eventAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="create")]
 		create = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="fire")]
 		fire = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="change")]
 		change = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		delete = 3,
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
+		_delete = 3,
 	}
 	
 	/// <summary>

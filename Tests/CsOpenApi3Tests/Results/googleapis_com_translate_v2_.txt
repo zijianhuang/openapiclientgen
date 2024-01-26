@@ -427,10 +427,10 @@ namespace MyNS
 	public enum Language_translations_listFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
 		html = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
 		text = 1,
 	}
 }

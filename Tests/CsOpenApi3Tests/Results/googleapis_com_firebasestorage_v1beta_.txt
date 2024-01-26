@@ -78,44 +78,45 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GoogleFirebaseStorageControlplaneV1alphaMigrateLocationDestructivelyMetadataState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATE_UNSPECIFIED")]
 		STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING_TEMP_BUCKET")]
 		CREATING_TEMP_BUCKET = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFERRING_TO_TEMP")]
 		TRANSFERRING_TO_TEMP = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING_SOURCE_BUCKET")]
 		DELETING_SOURCE_BUCKET = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATING_DESTINATION_BUCKET")]
 		CREATING_DESTINATION_BUCKET = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFERRING_TO_DESTINATION")]
 		TRANSFERRING_TO_DESTINATION = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETING_TEMP_BUCKET")]
 		DELETING_TEMP_BUCKET = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
 		SUCCEEDED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLING_BACK")]
 		ROLLING_BACK = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ROLLED_BACK")]
 		ROLLED_BACK = 11,
 	}
 	

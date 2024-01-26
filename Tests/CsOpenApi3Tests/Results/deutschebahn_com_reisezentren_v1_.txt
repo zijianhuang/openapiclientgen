@@ -115,11 +115,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TravelCenterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Reisezentrum")]
 		Reisezentrum = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mobility Center")]

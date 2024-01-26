@@ -1906,10 +1906,10 @@ namespace MyNS
 	public enum AreGamesInProgressFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="XML")]
 		XML = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
 		JSON = 1,
 	}
 }

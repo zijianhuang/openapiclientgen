@@ -4809,68 +4809,68 @@ namespace MyNS
 	public enum Books_myconfig_requestAccessLicenseTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LICENSE_TYPES_UNDEFINED")]
 		LICENSE_TYPES_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTH")]
 		BOTH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONCURRENT")]
 		CONCURRENT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNLOAD")]
 		DOWNLOAD = 3,
 	}
 	
 	public enum Books_mylibrary_bookshelves_addVolumeReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REASON_UNDEFINED")]
 		REASON_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_PREX")]
 		IOS_PREX = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IOS_SEARCH")]
 		IOS_SEARCH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDING")]
 		ONBOARDING = 3,
 	}
 	
 	public enum Books_mylibrary_bookshelves_removeVolumeReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REASON_UNDEFINED")]
 		REASON_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONBOARDING")]
 		ONBOARDING = 1,
 	}
 	
 	public enum Books_mylibrary_bookshelves_volumes_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROJECTION_UNDEFINED")]
 		PROJECTION_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
 		FULL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LITE")]
 		LITE = 2,
 	}
 	
 	public enum Books_mylibrary_readingpositions_setPositionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTION_UNDEFINED")]
 		ACTION_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bookmark")]
 		bookmark = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="chapter")]
 		chapter = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="next-page")]
@@ -4879,20 +4879,20 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="prev-page")]
 		prevMinuspage = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="scroll")]
 		scroll = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="search")]
 		search = 6,
 	}
 	
 	public enum Books_onboarding_listCategoryVolumesMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -4902,10 +4902,10 @@ namespace MyNS
 	public enum Books_personalizedstream_getMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -4915,39 +4915,39 @@ namespace MyNS
 	public enum Books_volumes_listDownload
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWNLOAD_UNDEFINED")]
 		DOWNLOAD_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EPUB")]
 		EPUB = 1,
 	}
 	
 	public enum Books_volumes_listFilter
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_UNDEFINED")]
 		FILTER_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ebooks")]
 		ebooks = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="free-ebooks")]
 		freeMinusebooks = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="paid-ebooks")]
 		paidMinusebooks = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="partial")]
 		@partial = 5,
 	}
 	
 	public enum Books_volumes_listLibraryRestrict
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LIBRARY_RESTRICT_UNDEFINED")]
 		LIBRARY_RESTRICT_UNDEFINED = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="my-library")]
@@ -4960,10 +4960,10 @@ namespace MyNS
 	public enum Books_volumes_listMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -4973,39 +4973,39 @@ namespace MyNS
 	public enum Books_volumes_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ORDER_BY_UNDEFINED")]
 		ORDER_BY_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
 		newest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
 		relevance = 2,
 	}
 	
 	public enum Books_volumes_listPrintType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRINT_TYPE_UNDEFINED")]
 		PRINT_TYPE_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOOKS")]
 		BOOKS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAGAZINES")]
 		MAGAZINES = 3,
 	}
 	
 	public enum Books_volumes_recommended_listMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]
@@ -5015,20 +5015,20 @@ namespace MyNS
 	public enum Books_volumes_recommended_rateRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RATING_UNDEFINED")]
 		RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HAVE_IT")]
 		HAVE_IT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_INTERESTED")]
 		NOT_INTERESTED = 2,
 	}
 	
 	public enum Books_volumes_associated_listAssociation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASSOCIATION_UNDEFINED")]
 		ASSOCIATION_UNDEFINED = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="end-of-sample")]
@@ -5044,10 +5044,10 @@ namespace MyNS
 	public enum Books_volumes_associated_listMaxAllowedMaturityRating
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MAX_ALLOWED_MATURITY_RATING_UNDEFINED")]
 		MAX_ALLOWED_MATURITY_RATING_UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MATURE")]
 		MATURE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="not-mature")]

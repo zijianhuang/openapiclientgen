@@ -331,6 +331,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ImageRatio
 	{
@@ -346,6 +347,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AttractionType
 	{
@@ -353,10 +355,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="event")]
 		_event = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="venue")]
 		venue = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="attraction")]
 		attraction = 2,
 	}
 	
@@ -941,23 +943,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EventStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="onsale")]
 		onsale = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="offsale")]
 		offsale = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="canceled")]
 		canceled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="postponed")]
 		postponed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rescheduled")]
 		rescheduled = 4,
 	}
 	
@@ -1115,11 +1118,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PriceRangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
 		standard = 0,
 	}
 	
@@ -1286,6 +1290,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EventType
 	{
@@ -1293,10 +1298,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="event")]
 		_event = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="venue")]
 		venue = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="attraction")]
 		attraction = 2,
 	}
 	
@@ -1341,6 +1346,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EventImagesType
 	{
@@ -1569,11 +1575,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RelationshipType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="duplicate")]
 		duplicate = 0,
 	}
 	
@@ -1614,6 +1621,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TwitterHandle
 	{
@@ -1903,6 +1911,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VenueType
 	{
@@ -1910,10 +1919,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="event")]
 		_event = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="venue")]
 		venue = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="attraction")]
 		attraction = 2,
 	}
 	
@@ -2504,7 +2513,7 @@ namespace MyNS
 	public enum DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ticketmaster")]
 		ticketmaster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" universe")]
@@ -2520,7 +2529,7 @@ namespace MyNS
 	public enum DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2533,7 +2542,7 @@ namespace MyNS
 	public enum DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2543,7 +2552,7 @@ namespace MyNS
 	public enum DiscoveryV2AttractionsGetBySortAndClassificationNameAndClassificationIdAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeSpellcheck
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2553,7 +2562,7 @@ namespace MyNS
 	public enum DiscoveryV2Attractions_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2563,7 +2572,7 @@ namespace MyNS
 	public enum DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ticketmaster")]
 		ticketmaster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" universe")]
@@ -2579,7 +2588,7 @@ namespace MyNS
 	public enum DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2592,7 +2601,7 @@ namespace MyNS
 	public enum DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2602,7 +2611,7 @@ namespace MyNS
 	public enum DiscoveryV2ClassificationsGetBySortAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeSpellcheck
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2612,7 +2621,7 @@ namespace MyNS
 	public enum DiscoveryV2ClassificationsGenres_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2622,7 +2631,7 @@ namespace MyNS
 	public enum DiscoveryV2ClassificationsSegments_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2632,7 +2641,7 @@ namespace MyNS
 	public enum DiscoveryV2ClassificationsSubgenres_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2642,7 +2651,7 @@ namespace MyNS
 	public enum DiscoveryV2Classifications_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2652,7 +2661,7 @@ namespace MyNS
 	public enum DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTBA
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2665,7 +2674,7 @@ namespace MyNS
 	public enum DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTBD
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2678,17 +2687,17 @@ namespace MyNS
 	public enum DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="miles")]
 		miles = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="km")]
 		km = 1,
 	}
 	
 	public enum DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ticketmaster")]
 		ticketmaster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" universe")]
@@ -2704,7 +2713,7 @@ namespace MyNS
 	public enum DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2717,7 +2726,7 @@ namespace MyNS
 	public enum DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2727,7 +2736,7 @@ namespace MyNS
 	public enum DiscoveryV2EventsGetBySortAndStartDateTimeAndEndDateTimeAndOnsaleStartDateTimeAndOnsaleOnStartDateAndOnsaleOnAfterStartDateAndOnsaleEndDateTimeAndCityAndCountryCodeAndStateCodeAndPostalCodeAndVenueIdAndAttractionIdAndSegmentIdAndSegmentNameAndClassificationNameAndClassificationIdAndMarketIdAndPromoterIdAndDmaIdAndIncludeTBAAndIncludeTBDAndClientVisibilityAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeSpellcheck
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2737,7 +2746,7 @@ namespace MyNS
 	public enum DiscoveryV2Events_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2747,7 +2756,7 @@ namespace MyNS
 	public enum DiscoveryV2Events_idImagesGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2757,7 +2766,7 @@ namespace MyNS
 	public enum DiscoveryV2SuggestGetByKeywordAndSourceAndLatlongAndRadiusAndUnitAndSizeAndIncludeFuzzyAndClientVisibilityAndCountryCodeAndIncludeTBAAndIncludeTBDAndSegmentIdAndGeoPointAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ticketmaster")]
 		ticketmaster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" universe")]
@@ -2773,7 +2782,7 @@ namespace MyNS
 	public enum DiscoveryV2SuggestGetByKeywordAndSourceAndLatlongAndRadiusAndUnitAndSizeAndIncludeFuzzyAndClientVisibilityAndCountryCodeAndIncludeTBAAndIncludeTBDAndSegmentIdAndGeoPointAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeFuzzy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2783,7 +2792,7 @@ namespace MyNS
 	public enum DiscoveryV2SuggestGetByKeywordAndSourceAndLatlongAndRadiusAndUnitAndSizeAndIncludeFuzzyAndClientVisibilityAndCountryCodeAndIncludeTBAAndIncludeTBDAndSegmentIdAndGeoPointAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTBA
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2796,7 +2805,7 @@ namespace MyNS
 	public enum DiscoveryV2SuggestGetByKeywordAndSourceAndLatlongAndRadiusAndUnitAndSizeAndIncludeFuzzyAndClientVisibilityAndCountryCodeAndIncludeTBAAndIncludeTBDAndSegmentIdAndGeoPointAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTBD
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2809,7 +2818,7 @@ namespace MyNS
 	public enum DiscoveryV2SuggestGetByKeywordAndSourceAndLatlongAndRadiusAndUnitAndSizeAndIncludeFuzzyAndClientVisibilityAndCountryCodeAndIncludeTBAAndIncludeTBDAndSegmentIdAndGeoPointAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2819,7 +2828,7 @@ namespace MyNS
 	public enum DiscoveryV2SuggestGetByKeywordAndSourceAndLatlongAndRadiusAndUnitAndSizeAndIncludeFuzzyAndClientVisibilityAndCountryCodeAndIncludeTBAAndIncludeTBDAndSegmentIdAndGeoPointAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeSpellcheck
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2829,7 +2838,7 @@ namespace MyNS
 	public enum DiscoveryV2VenuesGetBySortAndStateCodeAndCountryCodeAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ticketmaster")]
 		ticketmaster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" universe")]
@@ -2845,7 +2854,7 @@ namespace MyNS
 	public enum DiscoveryV2VenuesGetBySortAndStateCodeAndCountryCodeAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeTest
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2858,7 +2867,7 @@ namespace MyNS
 	public enum DiscoveryV2VenuesGetBySortAndStateCodeAndCountryCodeAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2868,7 +2877,7 @@ namespace MyNS
 	public enum DiscoveryV2VenuesGetBySortAndStateCodeAndCountryCodeAndLatlongAndRadiusAndUnitAndGeoPointAndKeywordAndIdAndSourceAndIncludeTestAndPageAndSizeAndLocaleAndIncludeLicensedContentAndIncludeSpellcheckIncludeSpellcheck
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]
@@ -2878,7 +2887,7 @@ namespace MyNS
 	public enum DiscoveryV2Venues_idGetByLocaleAndIncludeLicensedContentIncludeLicensedContent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="yes")]
 		yes = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value=" no")]

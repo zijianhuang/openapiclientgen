@@ -1899,28 +1899,28 @@ namespace MyNS
 	public enum UserFollowsNetworksGetByEmbedEmbed
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="network")]
 		network = 0,
 	}
 	
 	public enum UserFollowsPeopleGetByEmbedEmbed
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="person")]
 		person = 0,
 	}
 	
 	public enum UserFollowsShowsGetByEmbedEmbed
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="show")]
 		show = 0,
 	}
 	
 	public enum UserFollowsWebchannelsGetByEmbedEmbed
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webchannel")]
 		webchannel = 0,
 	}
 }

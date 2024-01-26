@@ -1115,13 +1115,13 @@ namespace MyNS
 	public enum Pagespeedonline_pagespeedapi_runpagespeedStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STRATEGY_UNSPECIFIED")]
 		STRATEGY_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESKTOP")]
 		DESKTOP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
 		MOBILE = 2,
 	}
 }

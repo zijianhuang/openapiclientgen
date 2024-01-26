@@ -118,23 +118,23 @@ namespace MyNS
 	public enum V1OrderFeedbackPostByIdAndKeyAndFormatAndActionAndNotesFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 1,
 	}
 	
 	public enum V1OrderFeedbackPostByIdAndKeyAndFormatAndActionAndNotesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APPROVE")]
 		APPROVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT")]
 		REJECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECT_BLACKLIST")]
 		REJECT_BLACKLIST = 2,
 	}
 }

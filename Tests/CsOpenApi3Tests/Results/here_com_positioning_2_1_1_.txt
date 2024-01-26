@@ -1484,7 +1484,7 @@ namespace MyNS
 	public enum PostLocateContent_Encoding
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="gzip")]
 		gzip = 0,
 	}
 	

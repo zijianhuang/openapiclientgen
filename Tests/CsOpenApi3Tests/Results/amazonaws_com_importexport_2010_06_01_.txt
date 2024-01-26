@@ -168,14 +168,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CreateJobOutputJobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Import")]
 		Import = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Export")]
 		Export = 1,
 	}
 	
@@ -635,14 +636,15 @@ namespace MyNS
 	/// Specifies whether the job to initiate is an import or export job.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum JobType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Import")]
 		Import = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Export")]
 		Export = 1,
 	}
 	
@@ -1068,7 +1070,7 @@ namespace MyNS
 	public enum GET_CancelJobOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelJob")]
 		CancelJob = 0,
 	}
 	
@@ -1089,7 +1091,7 @@ namespace MyNS
 	public enum GET_CreateJobOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateJob")]
 		CreateJob = 0,
 	}
 	
@@ -1110,7 +1112,7 @@ namespace MyNS
 	public enum GET_GetShippingLabelOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetShippingLabel")]
 		GetShippingLabel = 0,
 	}
 	
@@ -1131,7 +1133,7 @@ namespace MyNS
 	public enum GET_GetStatusOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetStatus")]
 		GetStatus = 0,
 	}
 	
@@ -1152,7 +1154,7 @@ namespace MyNS
 	public enum GET_ListJobsOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListJobs")]
 		ListJobs = 0,
 	}
 	
@@ -1173,7 +1175,7 @@ namespace MyNS
 	public enum GET_UpdateJobOperation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateJob")]
 		UpdateJob = 0,
 	}
 	

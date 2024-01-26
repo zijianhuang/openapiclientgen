@@ -30,29 +30,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
 		MONDAY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
 		TUESDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
 		WEDNESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
 		THURSDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
 		FRIDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
 		SATURDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
 		SUNDAY = 6,
 	}
 	
@@ -146,14 +147,15 @@ namespace MyNS
 	/// Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AuthenticationStrategy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIMPLE")]
 		SIMPLE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LDAP")]
 		LDAP = 1,
 	}
 	
@@ -352,29 +354,30 @@ namespace MyNS
 	/// The broker's status.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BrokerState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATION_IN_PROGRESS")]
 		CREATION_IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATION_FAILED")]
 		CREATION_FAILED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETION_IN_PROGRESS")]
 		DELETION_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
 		RUNNING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBOOT_IN_PROGRESS")]
 		REBOOT_IN_PROGRESS = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRITICAL_ACTION_REQUIRED")]
 		CRITICAL_ACTION_REQUIRED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REPLICA")]
 		REPLICA = 6,
 	}
 	
@@ -419,17 +422,18 @@ namespace MyNS
 	/// The broker's deployment mode.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DeploymentMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_INSTANCE")]
 		SINGLE_INSTANCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE_STANDBY_MULTI_AZ")]
 		ACTIVE_STANDBY_MULTI_AZ = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLUSTER_MULTI_AZ")]
 		CLUSTER_MULTI_AZ = 2,
 	}
 	
@@ -456,14 +460,15 @@ namespace MyNS
 	/// The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EngineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVEMQ")]
 		ACTIVEMQ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RABBITMQ")]
 		RABBITMQ = 1,
 	}
 	
@@ -607,14 +612,15 @@ namespace MyNS
 	/// <p>The broker's storage type.</p> <important><p>EFS is not supported for RabbitMQ engine type.</p></important>
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BrokerStorageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EBS")]
 		EBS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFS")]
 		EFS = 1,
 	}
 	
@@ -647,17 +653,18 @@ namespace MyNS
 	/// The type of change pending for the ActiveMQ user.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ChangeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE")]
 		CREATE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPDATE")]
 		UPDATE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETE")]
 		DELETE = 2,
 	}
 	
@@ -707,14 +714,15 @@ namespace MyNS
 	/// Specifies whether a broker is a part of a data replication pair.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DataReplicationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRDR")]
 		CRDR = 1,
 	}
 	
@@ -1230,17 +1238,18 @@ namespace MyNS
 	/// The reason for which the configuration elements or attributes were sanitized.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SanitizationWarningReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOWED_ELEMENT_REMOVED")]
 		DISALLOWED_ELEMENT_REMOVED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISALLOWED_ATTRIBUTE_REMOVED")]
 		DISALLOWED_ATTRIBUTE_REMOVED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ATTRIBUTE_VALUE_REMOVED")]
 		INVALID_ATTRIBUTE_VALUE_REMOVED = 2,
 	}
 	
@@ -1585,14 +1594,15 @@ namespace MyNS
 	/// The Promote mode requested.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PromoteMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SWITCHOVER")]
 		SWITCHOVER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILOVER")]
 		FAILOVER = 1,
 	}
 	
@@ -1875,7 +1885,7 @@ namespace MyNS
 		/// <param name="resource_arn">The Amazon Resource Name (ARN) of the resource tag.</param>
 		public async Task CreateTagsAsync(string resource_arn, CreateTagsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn));
+			var requestUri = "v1/tags/{resource_arn}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1910,7 +1920,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListTagsResponse> ListTagsAsync(string resource_arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn));
+			var requestUri = "v1/tags/{resource_arn}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1945,7 +1955,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<CreateUserResponse> CreateUserAsync(string broker_id, string username, CreateUserPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id))+"/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			var requestUri = "v1/brokers/{broker_id}/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1987,7 +1997,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteUserResponse> DeleteUserAsync(string broker_id, string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id))+"/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			var requestUri = "v1/brokers/{broker_id}/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2022,7 +2032,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DescribeUserResponse> DescribeUserAsync(string broker_id, string username, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id))+"/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			var requestUri = "v1/brokers/{broker_id}/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2057,7 +2067,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateUserResponse> UpdateUserAsync(string broker_id, string username, UpdateUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id))+"/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
+			var requestUri = "v1/brokers/{broker_id}/users/"+ (username==null? "" : System.Uri.EscapeDataString(username));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2098,7 +2108,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteBrokerResponse> DeleteBrokerAsync(string broker_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id));
+			var requestUri = "v1/brokers/{broker_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2132,7 +2142,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DescribeBrokerResponse> DescribeBrokerAsync(string broker_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id));
+			var requestUri = "v1/brokers/{broker_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2166,7 +2176,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateBrokerResponse> UpdateBrokerAsync(string broker_id, UpdateBrokerPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id));
+			var requestUri = "v1/brokers/{broker_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2207,7 +2217,7 @@ namespace MyNS
 		/// <param name="tagKeys">An array of tag keys to delete</param>
 		public async Task DeleteTagsAsync(string resource_arn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "v1/tags/{resource_arn}#tagKeys?"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2309,7 +2319,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DescribeConfigurationResponse> DescribeConfigurationAsync(string configuration_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/configurations/"+ (configuration_id==null? "" : System.Uri.EscapeDataString(configuration_id));
+			var requestUri = "v1/configurations/{configuration_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2343,7 +2353,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateConfigurationResponse> UpdateConfigurationAsync(string configuration_id, UpdateConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/configurations/"+ (configuration_id==null? "" : System.Uri.EscapeDataString(configuration_id));
+			var requestUri = "v1/configurations/{configuration_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2385,7 +2395,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DescribeConfigurationRevisionResponse> DescribeConfigurationRevisionAsync(string configuration_id, string configuration_revision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/configurations/"+ (configuration_id==null? "" : System.Uri.EscapeDataString(configuration_id))+"/revisions/"+ (configuration_revision==null? "" : System.Uri.EscapeDataString(configuration_revision));
+			var requestUri = "v1/configurations/{configuration_id}/revisions/{configuration_revision}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2421,7 +2431,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListConfigurationRevisionsResponse> ListConfigurationRevisionsAsync(string configuration_id, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/configurations/"+ (configuration_id==null? "" : System.Uri.EscapeDataString(configuration_id))+"/revisions&maxResults="+maxResults+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
+			var requestUri = "v1/configurations/{configuration_id}/revisions?maxResults="+maxResults+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2457,7 +2467,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListUsersResponse> ListUsersAsync(string broker_id, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id))+"/users&maxResults="+maxResults+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
+			var requestUri = "v1/brokers/{broker_id}/users?maxResults="+maxResults+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2491,7 +2501,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PromoteResponse> PromoteAsync(string broker_id, PromotePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id))+"/promote";
+			var requestUri = "v1/brokers/{broker_id}/promote";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2532,7 +2542,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<RebootBrokerResponse> RebootBrokerAsync(string broker_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/brokers/"+ (broker_id==null? "" : System.Uri.EscapeDataString(broker_id))+"/reboot";
+			var requestUri = "v1/brokers/{broker_id}/reboot";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);

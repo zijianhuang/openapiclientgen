@@ -224,74 +224,75 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum QueueAttributeName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="All")]
 		All = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Policy")]
 		Policy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VisibilityTimeout")]
 		VisibilityTimeout = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MaximumMessageSize")]
 		MaximumMessageSize = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageRetentionPeriod")]
 		MessageRetentionPeriod = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateNumberOfMessages")]
 		ApproximateNumberOfMessages = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateNumberOfMessagesNotVisible")]
 		ApproximateNumberOfMessagesNotVisible = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatedTimestamp")]
 		CreatedTimestamp = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LastModifiedTimestamp")]
 		LastModifiedTimestamp = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QueueArn")]
 		QueueArn = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateNumberOfMessagesDelayed")]
 		ApproximateNumberOfMessagesDelayed = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DelaySeconds")]
 		DelaySeconds = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReceiveMessageWaitTimeSeconds")]
 		ReceiveMessageWaitTimeSeconds = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RedrivePolicy")]
 		RedrivePolicy = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FifoQueue")]
 		FifoQueue = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ContentBasedDeduplication")]
 		ContentBasedDeduplication = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KmsMasterKeyId")]
 		KmsMasterKeyId = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KmsDataKeyReusePeriodSeconds")]
 		KmsDataKeyReusePeriodSeconds = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeduplicationScope")]
 		DeduplicationScope = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FifoThroughputLimit")]
 		FifoThroughputLimit = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RedriveAllowPolicy")]
 		RedriveAllowPolicy = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SqsManagedSseEnabled")]
 		SqsManagedSseEnabled = 21,
 	}
 	
@@ -998,44 +999,46 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MessageSystemAttributeName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SenderId")]
 		SenderId = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SentTimestamp")]
 		SentTimestamp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateReceiveCount")]
 		ApproximateReceiveCount = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApproximateFirstReceiveTimestamp")]
 		ApproximateFirstReceiveTimestamp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SequenceNumber")]
 		SequenceNumber = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageDeduplicationId")]
 		MessageDeduplicationId = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageGroupId")]
 		MessageGroupId = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSTraceHeader")]
 		AWSTraceHeader = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeadLetterQueueSourceArn")]
 		DeadLetterQueueSourceArn = 8,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MessageSystemAttributeNameForSends
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWSTraceHeader")]
 		AWSTraceHeader = 0,
 	}
 	
@@ -2014,7 +2017,7 @@ namespace MyNS
 	public enum GET_AddPermissionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddPermission")]
 		AddPermission = 0,
 	}
 	
@@ -2035,7 +2038,7 @@ namespace MyNS
 	public enum GET_CancelMessageMoveTaskAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelMessageMoveTask")]
 		CancelMessageMoveTask = 0,
 	}
 	
@@ -2056,7 +2059,7 @@ namespace MyNS
 	public enum GET_ChangeMessageVisibilityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChangeMessageVisibility")]
 		ChangeMessageVisibility = 0,
 	}
 	
@@ -2077,7 +2080,7 @@ namespace MyNS
 	public enum GET_ChangeMessageVisibilityBatchAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChangeMessageVisibilityBatch")]
 		ChangeMessageVisibilityBatch = 0,
 	}
 	
@@ -2098,7 +2101,7 @@ namespace MyNS
 	public enum GET_CreateQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateQueue")]
 		CreateQueue = 0,
 	}
 	
@@ -2119,7 +2122,7 @@ namespace MyNS
 	public enum GET_DeleteMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteMessage")]
 		DeleteMessage = 0,
 	}
 	
@@ -2140,7 +2143,7 @@ namespace MyNS
 	public enum GET_DeleteMessageBatchAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteMessageBatch")]
 		DeleteMessageBatch = 0,
 	}
 	
@@ -2161,7 +2164,7 @@ namespace MyNS
 	public enum GET_DeleteQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteQueue")]
 		DeleteQueue = 0,
 	}
 	
@@ -2182,7 +2185,7 @@ namespace MyNS
 	public enum GET_GetQueueAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetQueueAttributes")]
 		GetQueueAttributes = 0,
 	}
 	
@@ -2203,7 +2206,7 @@ namespace MyNS
 	public enum GET_GetQueueUrlAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetQueueUrl")]
 		GetQueueUrl = 0,
 	}
 	
@@ -2224,7 +2227,7 @@ namespace MyNS
 	public enum GET_ListDeadLetterSourceQueuesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListDeadLetterSourceQueues")]
 		ListDeadLetterSourceQueues = 0,
 	}
 	
@@ -2245,7 +2248,7 @@ namespace MyNS
 	public enum GET_ListMessageMoveTasksAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListMessageMoveTasks")]
 		ListMessageMoveTasks = 0,
 	}
 	
@@ -2266,7 +2269,7 @@ namespace MyNS
 	public enum GET_ListQueueTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListQueueTags")]
 		ListQueueTags = 0,
 	}
 	
@@ -2287,7 +2290,7 @@ namespace MyNS
 	public enum GET_ListQueuesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListQueues")]
 		ListQueues = 0,
 	}
 	
@@ -2308,7 +2311,7 @@ namespace MyNS
 	public enum GET_PurgeQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurgeQueue")]
 		PurgeQueue = 0,
 	}
 	
@@ -2329,7 +2332,7 @@ namespace MyNS
 	public enum GET_ReceiveMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReceiveMessage")]
 		ReceiveMessage = 0,
 	}
 	
@@ -2350,7 +2353,7 @@ namespace MyNS
 	public enum GET_RemovePermissionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemovePermission")]
 		RemovePermission = 0,
 	}
 	
@@ -2371,7 +2374,7 @@ namespace MyNS
 	public enum GET_SendMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendMessage")]
 		SendMessage = 0,
 	}
 	
@@ -2392,7 +2395,7 @@ namespace MyNS
 	public enum GET_SendMessageBatchAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendMessageBatch")]
 		SendMessageBatch = 0,
 	}
 	
@@ -2413,7 +2416,7 @@ namespace MyNS
 	public enum GET_SetQueueAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetQueueAttributes")]
 		SetQueueAttributes = 0,
 	}
 	
@@ -2434,7 +2437,7 @@ namespace MyNS
 	public enum GET_StartMessageMoveTaskAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartMessageMoveTask")]
 		StartMessageMoveTask = 0,
 	}
 	
@@ -2455,7 +2458,7 @@ namespace MyNS
 	public enum GET_TagQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TagQueue")]
 		TagQueue = 0,
 	}
 	
@@ -2476,7 +2479,7 @@ namespace MyNS
 	public enum GET_UntagQueueAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UntagQueue")]
 		UntagQueue = 0,
 	}
 	

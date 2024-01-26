@@ -45,14 +45,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DiscovererState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STARTED")]
 		STARTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STOPPED")]
 		STOPPED = 1,
 	}
 	
@@ -174,17 +175,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CodeGenerationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_IN_PROGRESS")]
 		CREATE_IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_COMPLETE")]
 		CREATE_COMPLETE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_FAILED")]
 		CREATE_FAILED = 2,
 	}
 	
@@ -417,14 +419,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OpenApi3")]
 		OpenApi3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSONSchemaDraft4")]
 		JSONSchemaDraft4 = 1,
 	}
 	
@@ -1841,7 +1844,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resource_arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn));
+			var requestUri = "tags/{resource_arn}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1874,7 +1877,7 @@ namespace MyNS
 		/// <param name="resource_arn">The ARN of the resource.</param>
 		public async Task TagResourceAsync(string resource_arn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn));
+			var requestUri = "tags/{resource_arn}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2005,7 +2008,7 @@ namespace MyNS
 		/// <param name="tagKeys">Keys of key-value pairs.</param>
 		public async Task UntagResourceAsync(string resource_arn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "tags/{resource_arn}#tagKeys?"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)

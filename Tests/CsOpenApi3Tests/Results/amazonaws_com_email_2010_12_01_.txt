@@ -75,32 +75,33 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EventType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="send")]
 		send = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="reject")]
 		reject = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bounce")]
 		bounce = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="complaint")]
 		complaint = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivery")]
 		delivery = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="open")]
 		open = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="click")]
 		click = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="renderingFailure")]
 		renderingFailure = 7,
 	}
 	
@@ -174,17 +175,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DimensionValueSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="messageTag")]
 		messageTag = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="emailHeader")]
 		emailHeader = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="linkTag")]
 		linkTag = 2,
 	}
 	
@@ -306,14 +308,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ReceiptFilterPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Block")]
 		Block = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Allow")]
 		Allow = 1,
 	}
 	
@@ -327,14 +330,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TlsPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Require")]
 		Require = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Optional")]
 		Optional = 1,
 	}
 	
@@ -471,14 +475,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum InvocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Event")]
 		Event = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestResponse")]
 		RequestResponse = 1,
 	}
 	
@@ -502,11 +507,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum StopScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RuleSet")]
 		RuleSet = 0,
 	}
 	
@@ -553,6 +559,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SNSActionEncoding
 	{
@@ -560,7 +567,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="UTF-8")]
 		UTFMinus8 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Base64")]
 		Base64 = 1,
 	}
 	
@@ -887,20 +894,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ConfigurationSetAttribute
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="eventDestinations")]
 		eventDestinations = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="trackingOptions")]
 		trackingOptions = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="deliveryOptions")]
 		deliveryOptions = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="reputationOptions")]
 		reputationOptions = 3,
 	}
 	
@@ -1461,26 +1469,27 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BounceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DoesNotExist")]
 		DoesNotExist = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageTooLarge")]
 		MessageTooLarge = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExceededQuota")]
 		ExceededQuota = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ContentRejected")]
 		ContentRejected = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Undefined")]
 		Undefined = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryFailure")]
 		TemporaryFailure = 5,
 	}
 	
@@ -1523,23 +1532,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DsnAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
 		failed = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="delayed")]
 		delayed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
 		delivered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="relayed")]
 		relayed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="expanded")]
 		expanded = 4,
 	}
 	
@@ -1581,50 +1591,51 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BulkEmailStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
 		Success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MessageRejected")]
 		MessageRejected = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MailFromDomainNotVerified")]
 		MailFromDomainNotVerified = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationSetDoesNotExist")]
 		ConfigurationSetDoesNotExist = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemplateDoesNotExist")]
 		TemplateDoesNotExist = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountSuspended")]
 		AccountSuspended = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountThrottled")]
 		AccountThrottled = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountDailyQuotaExceeded")]
 		AccountDailyQuotaExceeded = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidSendingPoolName")]
 		InvalidSendingPoolName = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AccountSendingPaused")]
 		AccountSendingPaused = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigurationSetSendingPaused")]
 		ConfigurationSetSendingPaused = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidParameterValue")]
 		InvalidParameterValue = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TransientFailure")]
 		TransientFailure = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
 		Failed = 13,
 	}
 	
@@ -1966,14 +1977,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BehaviorOnMXFailure
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UseDefaultValue")]
 		UseDefaultValue = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RejectMessage")]
 		RejectMessage = 1,
 	}
 	
@@ -2189,20 +2201,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CustomMailFromStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
 		Success = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryFailure")]
 		TemporaryFailure = 3,
 	}
 	
@@ -2497,23 +2510,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VerificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Success")]
 		Success = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TemporaryFailure")]
 		TemporaryFailure = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotStarted")]
 		NotStarted = 4,
 	}
 	
@@ -2710,14 +2724,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IdentityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EmailAddress")]
 		EmailAddress = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Domain")]
 		Domain = 1,
 	}
 	
@@ -2883,17 +2898,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum NotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bounce")]
 		Bounce = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Complaint")]
 		Complaint = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Delivery")]
 		Delivery = 2,
 	}
 	
@@ -5844,7 +5860,7 @@ namespace MyNS
 	public enum GET_CloneReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CloneReceiptRuleSet")]
 		CloneReceiptRuleSet = 0,
 	}
 	
@@ -5876,7 +5892,7 @@ namespace MyNS
 	public enum GET_CreateConfigurationSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateConfigurationSet")]
 		CreateConfigurationSet = 0,
 	}
 	
@@ -5927,7 +5943,7 @@ namespace MyNS
 	public enum GET_CreateConfigurationSetEventDestinationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateConfigurationSetEventDestination")]
 		CreateConfigurationSetEventDestination = 0,
 	}
 	
@@ -5955,7 +5971,7 @@ namespace MyNS
 	public enum GET_CreateConfigurationSetTrackingOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateConfigurationSetTrackingOptions")]
 		CreateConfigurationSetTrackingOptions = 0,
 	}
 	
@@ -5976,7 +5992,7 @@ namespace MyNS
 	public enum GET_CreateCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateCustomVerificationEmailTemplate")]
 		CreateCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -6015,7 +6031,7 @@ namespace MyNS
 	public enum GET_CreateReceiptFilterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateReceiptFilter")]
 		CreateReceiptFilter = 0,
 	}
 	
@@ -6062,7 +6078,7 @@ namespace MyNS
 	public enum GET_CreateReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateReceiptRule")]
 		CreateReceiptRule = 0,
 	}
 	
@@ -6083,7 +6099,7 @@ namespace MyNS
 	public enum GET_CreateReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateReceiptRuleSet")]
 		CreateReceiptRuleSet = 0,
 	}
 	
@@ -6124,7 +6140,7 @@ namespace MyNS
 	public enum GET_CreateTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateTemplate")]
 		CreateTemplate = 0,
 	}
 	
@@ -6145,7 +6161,7 @@ namespace MyNS
 	public enum GET_DeleteConfigurationSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteConfigurationSet")]
 		DeleteConfigurationSet = 0,
 	}
 	
@@ -6166,7 +6182,7 @@ namespace MyNS
 	public enum GET_DeleteConfigurationSetEventDestinationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteConfigurationSetEventDestination")]
 		DeleteConfigurationSetEventDestination = 0,
 	}
 	
@@ -6187,7 +6203,7 @@ namespace MyNS
 	public enum GET_DeleteConfigurationSetTrackingOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteConfigurationSetTrackingOptions")]
 		DeleteConfigurationSetTrackingOptions = 0,
 	}
 	
@@ -6208,7 +6224,7 @@ namespace MyNS
 	public enum GET_DeleteCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteCustomVerificationEmailTemplate")]
 		DeleteCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -6229,7 +6245,7 @@ namespace MyNS
 	public enum GET_DeleteIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteIdentity")]
 		DeleteIdentity = 0,
 	}
 	
@@ -6250,7 +6266,7 @@ namespace MyNS
 	public enum GET_DeleteIdentityPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteIdentityPolicy")]
 		DeleteIdentityPolicy = 0,
 	}
 	
@@ -6271,7 +6287,7 @@ namespace MyNS
 	public enum GET_DeleteReceiptFilterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteReceiptFilter")]
 		DeleteReceiptFilter = 0,
 	}
 	
@@ -6292,7 +6308,7 @@ namespace MyNS
 	public enum GET_DeleteReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteReceiptRule")]
 		DeleteReceiptRule = 0,
 	}
 	
@@ -6313,7 +6329,7 @@ namespace MyNS
 	public enum GET_DeleteReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteReceiptRuleSet")]
 		DeleteReceiptRuleSet = 0,
 	}
 	
@@ -6334,7 +6350,7 @@ namespace MyNS
 	public enum GET_DeleteTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteTemplate")]
 		DeleteTemplate = 0,
 	}
 	
@@ -6355,7 +6371,7 @@ namespace MyNS
 	public enum GET_DeleteVerifiedEmailAddressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteVerifiedEmailAddress")]
 		DeleteVerifiedEmailAddress = 0,
 	}
 	
@@ -6376,7 +6392,7 @@ namespace MyNS
 	public enum GET_DescribeActiveReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeActiveReceiptRuleSet")]
 		DescribeActiveReceiptRuleSet = 0,
 	}
 	
@@ -6397,7 +6413,7 @@ namespace MyNS
 	public enum GET_DescribeConfigurationSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeConfigurationSet")]
 		DescribeConfigurationSet = 0,
 	}
 	
@@ -6418,7 +6434,7 @@ namespace MyNS
 	public enum GET_DescribeReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReceiptRule")]
 		DescribeReceiptRule = 0,
 	}
 	
@@ -6439,7 +6455,7 @@ namespace MyNS
 	public enum GET_DescribeReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReceiptRuleSet")]
 		DescribeReceiptRuleSet = 0,
 	}
 	
@@ -6460,7 +6476,7 @@ namespace MyNS
 	public enum GET_GetAccountSendingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetAccountSendingEnabled")]
 		GetAccountSendingEnabled = 0,
 	}
 	
@@ -6481,7 +6497,7 @@ namespace MyNS
 	public enum GET_GetCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetCustomVerificationEmailTemplate")]
 		GetCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -6502,7 +6518,7 @@ namespace MyNS
 	public enum GET_GetIdentityDkimAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityDkimAttributes")]
 		GetIdentityDkimAttributes = 0,
 	}
 	
@@ -6523,7 +6539,7 @@ namespace MyNS
 	public enum GET_GetIdentityMailFromDomainAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityMailFromDomainAttributes")]
 		GetIdentityMailFromDomainAttributes = 0,
 	}
 	
@@ -6544,7 +6560,7 @@ namespace MyNS
 	public enum GET_GetIdentityNotificationAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityNotificationAttributes")]
 		GetIdentityNotificationAttributes = 0,
 	}
 	
@@ -6565,7 +6581,7 @@ namespace MyNS
 	public enum GET_GetIdentityPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityPolicies")]
 		GetIdentityPolicies = 0,
 	}
 	
@@ -6586,7 +6602,7 @@ namespace MyNS
 	public enum GET_GetIdentityVerificationAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetIdentityVerificationAttributes")]
 		GetIdentityVerificationAttributes = 0,
 	}
 	
@@ -6607,7 +6623,7 @@ namespace MyNS
 	public enum GET_GetSendQuotaAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSendQuota")]
 		GetSendQuota = 0,
 	}
 	
@@ -6628,7 +6644,7 @@ namespace MyNS
 	public enum GET_GetSendStatisticsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSendStatistics")]
 		GetSendStatistics = 0,
 	}
 	
@@ -6649,7 +6665,7 @@ namespace MyNS
 	public enum GET_GetTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetTemplate")]
 		GetTemplate = 0,
 	}
 	
@@ -6670,7 +6686,7 @@ namespace MyNS
 	public enum GET_ListConfigurationSetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListConfigurationSets")]
 		ListConfigurationSets = 0,
 	}
 	
@@ -6691,7 +6707,7 @@ namespace MyNS
 	public enum GET_ListCustomVerificationEmailTemplatesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListCustomVerificationEmailTemplates")]
 		ListCustomVerificationEmailTemplates = 0,
 	}
 	
@@ -6712,7 +6728,7 @@ namespace MyNS
 	public enum GET_ListIdentitiesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListIdentities")]
 		ListIdentities = 0,
 	}
 	
@@ -6733,7 +6749,7 @@ namespace MyNS
 	public enum GET_ListIdentityPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListIdentityPolicies")]
 		ListIdentityPolicies = 0,
 	}
 	
@@ -6754,7 +6770,7 @@ namespace MyNS
 	public enum GET_ListReceiptFiltersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListReceiptFilters")]
 		ListReceiptFilters = 0,
 	}
 	
@@ -6775,7 +6791,7 @@ namespace MyNS
 	public enum GET_ListReceiptRuleSetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListReceiptRuleSets")]
 		ListReceiptRuleSets = 0,
 	}
 	
@@ -6796,7 +6812,7 @@ namespace MyNS
 	public enum GET_ListTemplatesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTemplates")]
 		ListTemplates = 0,
 	}
 	
@@ -6817,7 +6833,7 @@ namespace MyNS
 	public enum GET_ListVerifiedEmailAddressesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListVerifiedEmailAddresses")]
 		ListVerifiedEmailAddresses = 0,
 	}
 	
@@ -6845,7 +6861,7 @@ namespace MyNS
 	public enum GET_PutConfigurationSetDeliveryOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutConfigurationSetDeliveryOptions")]
 		PutConfigurationSetDeliveryOptions = 0,
 	}
 	
@@ -6866,7 +6882,7 @@ namespace MyNS
 	public enum GET_PutIdentityPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutIdentityPolicy")]
 		PutIdentityPolicy = 0,
 	}
 	
@@ -6887,7 +6903,7 @@ namespace MyNS
 	public enum GET_ReorderReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReorderReceiptRuleSet")]
 		ReorderReceiptRuleSet = 0,
 	}
 	
@@ -6925,7 +6941,7 @@ namespace MyNS
 	public enum GET_SendBounceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendBounce")]
 		SendBounce = 0,
 	}
 	
@@ -6946,7 +6962,7 @@ namespace MyNS
 	public enum GET_SendBulkTemplatedEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendBulkTemplatedEmail")]
 		SendBulkTemplatedEmail = 0,
 	}
 	
@@ -6967,7 +6983,7 @@ namespace MyNS
 	public enum GET_SendCustomVerificationEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendCustomVerificationEmail")]
 		SendCustomVerificationEmail = 0,
 	}
 	
@@ -7019,7 +7035,7 @@ namespace MyNS
 	public enum GET_SendEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendEmail")]
 		SendEmail = 0,
 	}
 	
@@ -7051,7 +7067,7 @@ namespace MyNS
 	public enum GET_SendRawEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendRawEmail")]
 		SendRawEmail = 0,
 	}
 	
@@ -7085,7 +7101,7 @@ namespace MyNS
 	public enum GET_SendTemplatedEmailAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendTemplatedEmail")]
 		SendTemplatedEmail = 0,
 	}
 	
@@ -7106,7 +7122,7 @@ namespace MyNS
 	public enum GET_SetActiveReceiptRuleSetAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetActiveReceiptRuleSet")]
 		SetActiveReceiptRuleSet = 0,
 	}
 	
@@ -7127,7 +7143,7 @@ namespace MyNS
 	public enum GET_SetIdentityDkimEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityDkimEnabled")]
 		SetIdentityDkimEnabled = 0,
 	}
 	
@@ -7148,7 +7164,7 @@ namespace MyNS
 	public enum GET_SetIdentityFeedbackForwardingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityFeedbackForwardingEnabled")]
 		SetIdentityFeedbackForwardingEnabled = 0,
 	}
 	
@@ -7169,7 +7185,7 @@ namespace MyNS
 	public enum GET_SetIdentityHeadersInNotificationsEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityHeadersInNotificationsEnabled")]
 		SetIdentityHeadersInNotificationsEnabled = 0,
 	}
 	
@@ -7190,7 +7206,7 @@ namespace MyNS
 	public enum GET_SetIdentityMailFromDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityMailFromDomain")]
 		SetIdentityMailFromDomain = 0,
 	}
 	
@@ -7211,7 +7227,7 @@ namespace MyNS
 	public enum GET_SetIdentityNotificationTopicAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetIdentityNotificationTopic")]
 		SetIdentityNotificationTopic = 0,
 	}
 	
@@ -7232,7 +7248,7 @@ namespace MyNS
 	public enum GET_SetReceiptRulePositionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetReceiptRulePosition")]
 		SetReceiptRulePosition = 0,
 	}
 	
@@ -7253,7 +7269,7 @@ namespace MyNS
 	public enum GET_TestRenderTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TestRenderTemplate")]
 		TestRenderTemplate = 0,
 	}
 	
@@ -7274,7 +7290,7 @@ namespace MyNS
 	public enum GET_UpdateAccountSendingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateAccountSendingEnabled")]
 		UpdateAccountSendingEnabled = 0,
 	}
 	
@@ -7325,7 +7341,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetEventDestinationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetEventDestination")]
 		UpdateConfigurationSetEventDestination = 0,
 	}
 	
@@ -7346,7 +7362,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetReputationMetricsEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetReputationMetricsEnabled")]
 		UpdateConfigurationSetReputationMetricsEnabled = 0,
 	}
 	
@@ -7367,7 +7383,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetSendingEnabledAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetSendingEnabled")]
 		UpdateConfigurationSetSendingEnabled = 0,
 	}
 	
@@ -7395,7 +7411,7 @@ namespace MyNS
 	public enum GET_UpdateConfigurationSetTrackingOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateConfigurationSetTrackingOptions")]
 		UpdateConfigurationSetTrackingOptions = 0,
 	}
 	
@@ -7416,7 +7432,7 @@ namespace MyNS
 	public enum GET_UpdateCustomVerificationEmailTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateCustomVerificationEmailTemplate")]
 		UpdateCustomVerificationEmailTemplate = 0,
 	}
 	
@@ -7463,7 +7479,7 @@ namespace MyNS
 	public enum GET_UpdateReceiptRuleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateReceiptRule")]
 		UpdateReceiptRule = 0,
 	}
 	
@@ -7504,7 +7520,7 @@ namespace MyNS
 	public enum GET_UpdateTemplateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateTemplate")]
 		UpdateTemplate = 0,
 	}
 	
@@ -7525,7 +7541,7 @@ namespace MyNS
 	public enum GET_VerifyDomainDkimAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyDomainDkim")]
 		VerifyDomainDkim = 0,
 	}
 	
@@ -7546,7 +7562,7 @@ namespace MyNS
 	public enum GET_VerifyDomainIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyDomainIdentity")]
 		VerifyDomainIdentity = 0,
 	}
 	
@@ -7567,7 +7583,7 @@ namespace MyNS
 	public enum GET_VerifyEmailAddressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyEmailAddress")]
 		VerifyEmailAddress = 0,
 	}
 	
@@ -7588,7 +7604,7 @@ namespace MyNS
 	public enum GET_VerifyEmailIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifyEmailIdentity")]
 		VerifyEmailIdentity = 0,
 	}
 	

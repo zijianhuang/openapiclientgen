@@ -290,10 +290,10 @@ namespace MyNS
 	public enum GET_lists_formatSort_order
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
 		DESC = 1,
 	}
 	

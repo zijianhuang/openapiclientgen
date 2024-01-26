@@ -296,26 +296,28 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Number_details_updateMessagesCallbackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
 		app = 0,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Number_details_updateVoiceCallbackType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sip")]
 		sip = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tel")]
 		tel = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
 		app = 2,
 	}
 	
@@ -507,7 +509,7 @@ namespace MyNS
 	public enum GetAvailableNumbersType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="landline")]
 		landline = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="mobile-lvn")]
@@ -533,16 +535,16 @@ namespace MyNS
 	public enum GetAvailableNumbersFeatures
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
 		SMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
 		VOICE = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS,VOICE")]
 		SMSVOICE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MMS")]
 		MMS = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS,MMS")]

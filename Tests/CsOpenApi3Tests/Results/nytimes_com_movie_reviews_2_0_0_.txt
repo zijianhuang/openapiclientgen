@@ -171,7 +171,7 @@ namespace MyNS
 		/// <returns>An array of Movie Critics</returns>
 		public async Task<Critics_resource_type_jsonGetReturn> Critics_resource_type_jsonGetAsync(string resource_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "critics/"+ (resource_type==null? "" : System.Uri.EscapeDataString(resource_type))+".json";
+			var requestUri = "critics/{resource_type}.json";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -278,7 +278,7 @@ namespace MyNS
 		/// <returns>An array of Movies</returns>
 		public async Task<Reviews_resource_type_jsonGetByOffsetAndOrderReturn> Reviews_resource_type_jsonGetByOffsetAndOrderAsync(Reviews_resource_type_jsonGetByOffsetAndOrderResource_type resource_type, int offset, Reviews_resource_type_jsonGetByOffsetAndOrderOrder order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "reviews/"+resource_type+".json?offset="+offset+"&order=" + order;
+			var requestUri = "reviews/{resource_type}.json?offset="+offset+"&order=" + order;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -324,10 +324,10 @@ namespace MyNS
 	public enum ReviewsSearch_jsonGetByQueryAndCritics_pickAndReviewerAndPublication_dateAndOpening_dateAndOffsetAndOrderCritics_pick
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Y")]
 		Y = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="N")]
 		N = 1,
 	}
 	
@@ -350,10 +350,10 @@ namespace MyNS
 	public enum Reviews_resource_type_jsonGetByOffsetAndOrderResource_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="picks")]
 		picks = 1,
 	}
 	

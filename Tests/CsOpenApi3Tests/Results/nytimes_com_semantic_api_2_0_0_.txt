@@ -302,7 +302,7 @@ namespace MyNS
 		/// <returns>An array of Concepts</returns>
 		public async Task<Name_concept_type_specific_concept_jsonGetByFieldsAndQueryReturn> Name_concept_type_specific_concept_jsonGetByFieldsAndQueryAsync(Name_concept_type_specific_concept_jsonGetByFieldsAndQueryConcept_type concept_type, string specific_concept, Name_concept_type_specific_concept_jsonGetByFieldsAndQueryFields fields, string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "name/"+concept_type+"/"+ (specific_concept==null? "" : System.Uri.EscapeDataString(specific_concept))+".json&fields=" + fields+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query));
+			var requestUri = "name/{concept_type}/{specific_concept}.json?fields=" + fields+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -380,50 +380,50 @@ namespace MyNS
 	public enum Name_concept_type_specific_concept_jsonGetByFieldsAndQueryConcept_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nytd_geo")]
 		nytd_geo = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nytd_per")]
 		nytd_per = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nytd_org")]
 		nytd_org = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nytd_des")]
 		nytd_des = 3,
 	}
 	
 	public enum Name_concept_type_specific_concept_jsonGetByFieldsAndQueryFields
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pages")]
 		pages = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ticker_symbol")]
 		ticker_symbol = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="links")]
 		links = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="taxonomy")]
 		taxonomy = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="combinations")]
 		combinations = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="geocodes")]
 		geocodes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="article_list")]
 		article_list = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="scope_notes")]
 		scope_notes = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="search_api_query")]
 		search_api_query = 9,
 	}
 	

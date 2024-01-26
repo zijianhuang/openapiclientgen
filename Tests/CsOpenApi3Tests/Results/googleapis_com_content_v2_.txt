@@ -11536,29 +11536,29 @@ namespace MyNS
 	public enum Content_orderreturns_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURN_CREATION_TIME_DESC")]
 		RETURN_CREATION_TIME_DESC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURN_CREATION_TIME_ASC")]
 		RETURN_CREATION_TIME_ASC = 1,
 	}
 	
 	public enum Content_orders_gettestordertemplateTemplateName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE1")]
 		TEMPLATE1 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE2")]
 		TEMPLATE2 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE1A")]
 		TEMPLATE1A = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE1B")]
 		TEMPLATE1B = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPLATE3")]
 		TEMPLATE3 = 4,
 	}
 }

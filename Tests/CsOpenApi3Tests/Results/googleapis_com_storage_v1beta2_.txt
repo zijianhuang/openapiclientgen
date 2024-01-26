@@ -1659,7 +1659,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Storage_objects_deleteAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1694,7 +1694,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Object> Storage_objects_getAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1735,7 +1735,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Object> Storage_objects_patchAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Object requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1783,7 +1783,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Object> Storage_objects_updateAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, Object requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1826,7 +1826,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControls> Storage_objectAccessControls_listAsync(string bucket, string _object, string generation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1862,7 +1862,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_insertAsync(string bucket, string _object, string generation, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1906,7 +1906,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Storage_objectAccessControls_deleteAsync(string bucket, string _object, string entity, string generation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1937,7 +1937,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_getAsync(string bucket, string _object, string entity, string generation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1974,7 +1974,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_patchAsync(string bucket, string _object, string entity, string generation, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2018,7 +2018,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_updateAsync(string bucket, string _object, string entity, string generation, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2203,10 +2203,10 @@ namespace MyNS
 	public enum Storage_buckets_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="noAcl")]
 		noAcl = 1,
 	}
 }

@@ -233,6 +233,7 @@ namespace MyNS
 	/// Font style enum representing Regular, Bold, Italic, BoldItalic
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FontStyle
 	{
@@ -434,6 +435,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum XOriginPoint
 	{
@@ -449,6 +451,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum YOriginPoint
 	{
@@ -544,9 +547,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Basic method to verify api is up and running
-		/// PdfGet api/pdf
+		/// ApiPdfGet api/pdf
 		/// </summary>
-		public async Task PdfGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ApiPdfGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pdf";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -570,11 +573,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Concatenate multiple pdf files into single pdf file..
-		/// PdfPost api/pdf/pdfconcat
+		/// ApiPdfPdfconcatPost api/pdf/pdfconcat
 		/// </summary>
 		/// <param name="requestBody">PdfConcat Request. Add two or more pdf files and concatenate pages into single pdf document.</param>
 		/// <returns>Returns the newly created pdf file. Either the file directly or serialized as Json if Accept-header is set to application/json</returns>
-		public async Task<PdfResponseDto> PdfPostAsync(PdfConcatenationRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PdfResponseDto> ApiPdfPdfconcatPostAsync(PdfConcatenationRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pdf/pdfconcat";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -611,11 +614,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Generate an image of to provided pdf file
-		/// PdfPost api/pdf/pdftoimage
+		/// ApiPdfPdftoimagePost api/pdf/pdftoimage
 		/// </summary>
 		/// <param name="requestBody">PdfToImage Request. Create an image of a page in an existing pdf document.</param>
 		/// <returns>Generate an image of the provided pdf file. Either the image file directly or serialized as Json if Accept-header is set to application/json</returns>
-		public async Task<ImageResponseDto> PdfPostAsync(PdfToImageRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ImageResponseDto> ApiPdfPdftoimagePostAsync(PdfToImageRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pdf/pdftoimage";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -652,11 +655,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Write text on a page in a pdf document.
-		/// PdfPost api/pdf/pdfwritestring
+		/// ApiPdfPdfwritestringPost api/pdf/pdfwritestring
 		/// </summary>
 		/// <param name="requestBody">PdfWriteString Request. Write string on page in pdf document</param>
 		/// <returns>Returns the newly created pdf file. Either the file directly or serialized as Json if Accept-header is set to application/json</returns>
-		public async Task<PdfResponseDto> PdfPostAsync(PdfWriteStringRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PdfResponseDto> ApiPdfPdfwritestringPostAsync(PdfWriteStringRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pdf/pdfwritestring";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -693,11 +696,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Generate pdf file from url using the excellent tool wkhtmltopdf.
-		/// PdfPost api/pdf/wkhtmltopdf
+		/// ApiPdfWkhtmltopdfPost api/pdf/wkhtmltopdf
 		/// </summary>
 		/// <param name="requestBody">WkHtmlToPdf Request. Generate pdf from html, either from url or base64 encoded html string</param>
 		/// <returns>Returns the newly created pdf file. Either the file directly or serialized as Json if Accept-header is set to application/json</returns>
-		public async Task<PdfResponseDto> PdfPostAsync(WkHtmlToPdfRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PdfResponseDto> ApiPdfWkhtmltopdfPostAsync(WkHtmlToPdfRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pdf/wkhtmltopdf";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -734,11 +737,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create pdf-file from complete XSL-FO document.
-		/// PdfPost api/pdf/xslfo
+		/// ApiPdfXslfoPost api/pdf/xslfo
 		/// </summary>
 		/// <param name="requestBody">XSL-FO Request, the basic XSL-FO request. Post your XSL-FO document and digital resources, either as 'multipart/form-data' or 'application/json'</param>
 		/// <returns>Returns the newly created pdf file. Either the file directly or serialized as Json if Accept-header is set to application/json</returns>
-		public async Task<PdfResponseDto> PdfPostAsync(FoRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PdfResponseDto> ApiPdfXslfoPostAsync(FoRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pdf/xslfo";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -775,11 +778,11 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create pdf-file from transforming xml document with Xsl-Fo transform document.
-		/// PdfPost api/pdf/xslfowithtransform
+		/// ApiPdfXslfowithtransformPost api/pdf/xslfowithtransform
 		/// </summary>
 		/// <param name="requestBody">XSL-FO Transform Request. The XSL-FO is transformed on the supplied xml data document. Post your XSL-FO transform document and xml data document aloing with your digital resources, either as 'multipart/form-data' or 'application/json'</param>
 		/// <returns>Returns the newly created pdf file. Either the file directly or serialized as Json if Accept-header is set to application/json</returns>
-		public async Task<PdfResponseDto> PdfPostAsync(FoTransformRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PdfResponseDto> ApiPdfXslfowithtransformPostAsync(FoTransformRequestDto requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/pdf/xslfowithtransform";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))

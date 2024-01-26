@@ -1,0 +1,1 @@
+Integration tests for testing generated C# codes with System.Text.Json against PetWebApi launched by StartPetsApi.ps1.

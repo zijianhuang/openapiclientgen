@@ -716,87 +716,87 @@ namespace MyNS
 	public enum RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmContentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsonp")]
 		jsonp = 2,
 	}
 	
 	public enum RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmReport
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="effectiveSettings")]
 		effectiveSettings = 0,
 	}
 	
 	public enum RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmRouteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="fastest")]
 		fastest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="shortest")]
 		shortest = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="eco")]
 		eco = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="thrilling")]
 		thrilling = 3,
 	}
 	
 	public enum RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmTravelMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="car")]
 		car = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="truck")]
 		truck = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="taxi")]
 		taxi = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bus")]
 		bus = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="van")]
 		van = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="motorcycle")]
 		motorcycle = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bicycle")]
 		bicycle = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pedestrian")]
 		pedestrian = 7,
 	}
 	
 	public enum RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="low")]
 		low = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="normal")]
 		normal = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="high")]
 		high = 2,
 	}
 	
 	public enum RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmVehicleEngineType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="combustion")]
 		combustion = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="electric")]
 		electric = 1,
 	}
 	
@@ -817,43 +817,43 @@ namespace MyNS
 	public enum RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmAlternativeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="anyRoute")]
 		anyRoute = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="betterRoute")]
 		betterRoute = 1,
 	}
 	
 	public enum RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmInstructionsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="coded")]
 		coded = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="text")]
 		text = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagged")]
 		tagged = 2,
 	}
 	
 	public enum RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmRouteRepresentation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="polyline")]
 		polyline = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
 		none = 1,
 	}
 	
 	public enum RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmComputeTravelTimeFor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
 		none = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
 		all = 1,
 	}
 	

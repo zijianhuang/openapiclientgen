@@ -230,10 +230,10 @@ namespace MyNS
 	public enum List_and_search_media_itemsOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ascending")]
 		ascending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="descending")]
 		descending = 1,
 	}
 	

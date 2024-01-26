@@ -305,47 +305,48 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum @__EndpointTypesElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH")]
 		PUSH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GCM")]
 		GCM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS")]
 		APNS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_SANDBOX")]
 		APNS_SANDBOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP")]
 		APNS_VOIP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP_SANDBOX")]
 		APNS_VOIP_SANDBOX = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM")]
 		ADM = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
 		SMS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
 		VOICE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
 		EMAIL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAIDU")]
 		BAIDU = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
 		CUSTOM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_APP")]
 		IN_APP = 12,
 	}
 	
@@ -431,17 +432,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Action
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPEN_APP")]
 		OPEN_APP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEEP_LINK")]
 		DEEP_LINK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="URL")]
 		URL = 2,
 	}
 	
@@ -506,14 +508,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSACTIONAL")]
 		TRANSACTIONAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROMOTIONAL")]
 		PROMOTIONAL = 1,
 	}
 	
@@ -596,17 +599,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Alignment
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEFT")]
 		LEFT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CENTER")]
 		CENTER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RIGHT")]
 		RIGHT = 2,
 	}
 	
@@ -681,17 +685,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ButtonAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
 		LINK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEEP_LINK")]
 		DEEP_LINK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSE")]
 		CLOSE = 2,
 	}
 	
@@ -731,26 +736,27 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Layout
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BOTTOM_BANNER")]
 		BOTTOM_BANNER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOP_BANNER")]
 		TOP_BANNER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OVERLAYS")]
 		OVERLAYS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_FEED")]
 		MOBILE_FEED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MIDDLE_BANNER")]
 		MIDDLE_BANNER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CAROUSEL")]
 		CAROUSEL = 5,
 	}
 	
@@ -855,14 +861,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DimensionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUSIVE")]
 		INCLUSIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUSIVE")]
 		EXCLUSIVE = 1,
 	}
 	
@@ -873,41 +880,43 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FilterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SYSTEM")]
 		SYSTEM = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENDPOINT")]
 		ENDPOINT = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Frequency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ONCE")]
 		ONCE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOURLY")]
 		HOURLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAILY")]
 		DAILY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEKLY")]
 		WEEKLY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTHLY")]
 		MONTHLY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EVENT")]
 		EVENT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_APP_EVENT")]
 		IN_APP_EVENT = 6,
 	}
 	
@@ -939,29 +948,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CampaignStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
 		SCHEDULED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTING")]
 		EXECUTING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_NEXT_RUN")]
 		PENDING_NEXT_RUN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
 		COMPLETED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
 		PAUSED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELETED")]
 		DELETED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID")]
 		INVALID = 6,
 	}
 	
@@ -1023,14 +1033,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERY")]
 		DELIVERY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER")]
 		FILTER = 1,
 	}
 	
@@ -1240,35 +1251,36 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum JobStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATED")]
 		CREATED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PREPARING_FOR_INITIALIZATION")]
 		PREPARING_FOR_INITIALIZATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIALIZING")]
 		INITIALIZING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PROCESSING")]
 		PROCESSING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_JOB")]
 		PENDING_JOB = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETING")]
 		COMPLETING = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
 		COMPLETED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILING")]
 		FAILING = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 8,
 	}
 	
@@ -1404,14 +1416,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Format
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CSV")]
 		CSV = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="JSON")]
 		JSON = 1,
 	}
 	
@@ -1693,26 +1706,27 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum State
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DRAFT")]
 		DRAFT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
 		CANCELLED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOSED")]
 		CLOSED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAUSED")]
 		PAUSED = 5,
 	}
 	
@@ -1786,14 +1800,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum @__TimezoneEstimationMethodsElement
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PHONE_NUMBER")]
 		PHONE_NUMBER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="POSTAL_CODE")]
 		POSTAL_CODE = 1,
 	}
 	
@@ -2122,32 +2137,34 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Duration
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HR_24")]
 		HR_24 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_7")]
 		DAY_7 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_14")]
 		DAY_14 = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY_30")]
 		DAY_30 = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RecencyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INACTIVE")]
 		INACTIVE = 1,
 	}
 	
@@ -2344,29 +2361,31 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SegmentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIMENSIONAL")]
 		DIMENSIONAL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IMPORT")]
 		IMPORT = 1,
 	}
 	
@@ -4116,23 +4135,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TemplateType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
 		EMAIL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
 		SMS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
 		VOICE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH")]
 		PUSH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INAPP")]
 		INAPP = 4,
 	}
 	
@@ -4838,20 +4858,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum JourneyRunStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
 		SCHEDULED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RUNNING")]
 		RUNNING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
 		COMPLETED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
 		CANCELLED = 3,
 	}
 	
@@ -6392,47 +6413,48 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ChannelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PUSH")]
 		PUSH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GCM")]
 		GCM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS")]
 		APNS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_SANDBOX")]
 		APNS_SANDBOX = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP")]
 		APNS_VOIP = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APNS_VOIP_SANDBOX")]
 		APNS_VOIP_SANDBOX = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM")]
 		ADM = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
 		SMS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
 		VOICE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
 		EMAIL = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAIDU")]
 		BAIDU = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOM")]
 		CUSTOM = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_APP")]
 		IN_APP = 12,
 	}
 	
@@ -6962,14 +6984,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Operator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
 		ANY = 1,
 	}
 	
@@ -7272,29 +7295,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AttributeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCLUSIVE")]
 		INCLUSIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXCLUSIVE")]
 		EXCLUSIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONTAINS")]
 		CONTAINS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BEFORE")]
 		BEFORE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AFTER")]
 		AFTER = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ON")]
 		ON = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BETWEEN")]
 		BETWEEN = 6,
 	}
 	
@@ -8115,29 +8139,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DeliveryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESSFUL")]
 		SUCCESSFUL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="THROTTLED")]
 		THROTTLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TEMPORARY_FAILURE")]
 		TEMPORARY_FAILURE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMANENT_FAILURE")]
 		PERMANENT_FAILURE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN_FAILURE")]
 		UNKNOWN_FAILURE = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPT_OUT")]
 		OPT_OUT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DUPLICATE")]
 		DUPLICATE = 6,
 	}
 	
@@ -8799,17 +8824,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Include
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 2,
 	}
 	
@@ -9081,17 +9107,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
 		ANY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 2,
 	}
 	
@@ -9727,29 +9754,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONDAY")]
 		MONDAY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TUESDAY")]
 		TUESDAY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEDNESDAY")]
 		WEDNESDAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="THURSDAY")]
 		THURSDAY = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FRIDAY")]
 		FRIDAY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SATURDAY")]
 		SATURDAY = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUNDAY")]
 		SUNDAY = 6,
 	}
 	
@@ -9880,7 +9908,7 @@ namespace MyNS
 		/// <param name="application_id">The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</param>
 		public async Task CreateCampaignAsync(string application_id, CreateCampaignPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns";
+			var requestUri = "v1/apps/{application_id}/campaigns";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -9917,7 +9945,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetCampaignsResponse> GetCampaignsAsync(string application_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/campaigns?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -9950,7 +9978,7 @@ namespace MyNS
 		/// <param name="template_name">The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</param>
 		public async Task CreateEmailTemplateAsync(string template_name, CreateEmailTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/email";
+			var requestUri = "v1/templates/{template_name}/email";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -9985,7 +10013,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task DeleteEmailTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/email&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/email?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10014,7 +10042,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetEmailTemplateResponse> GetEmailTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/email&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/email?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10049,7 +10077,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task UpdateEmailTemplateAsync(bool create_new_version, string template_name, string version, UpdateEmailTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/email?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/email?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10083,7 +10111,7 @@ namespace MyNS
 		/// <param name="application_id">The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</param>
 		public async Task CreateExportJobAsync(string application_id, CreateExportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/jobs/export";
+			var requestUri = "v1/apps/{application_id}/jobs/export";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10120,7 +10148,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetExportJobsResponse> GetExportJobsAsync(string application_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/jobs/export&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/jobs/export?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10153,7 +10181,7 @@ namespace MyNS
 		/// <param name="application_id">The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</param>
 		public async Task CreateImportJobAsync(string application_id, CreateImportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/jobs/import";
+			var requestUri = "v1/apps/{application_id}/jobs/import";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10190,7 +10218,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetImportJobsResponse> GetImportJobsAsync(string application_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/jobs/import&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/jobs/import?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10223,7 +10251,7 @@ namespace MyNS
 		/// <param name="template_name">The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</param>
 		public async Task CreateInAppTemplateAsync(string template_name, CreateInAppTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/inapp";
+			var requestUri = "v1/templates/{template_name}/inapp";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10258,7 +10286,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task DeleteInAppTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/inapp&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/inapp?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10287,7 +10315,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetInAppTemplateResponse> GetInAppTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/inapp&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/inapp?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10322,7 +10350,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task UpdateInAppTemplateAsync(bool create_new_version, string template_name, string version, UpdateInAppTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/inapp?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/inapp?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10356,7 +10384,7 @@ namespace MyNS
 		/// <param name="application_id">The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</param>
 		public async Task CreateJourneyAsync(string application_id, CreateJourneyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys";
+			var requestUri = "v1/apps/{application_id}/journeys";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10393,7 +10421,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListJourneysResponse> ListJourneysAsync(string application_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/journeys?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10426,7 +10454,7 @@ namespace MyNS
 		/// <param name="template_name">The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</param>
 		public async Task CreatePushTemplateAsync(string template_name, CreatePushTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/push";
+			var requestUri = "v1/templates/{template_name}/push";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10461,7 +10489,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task DeletePushTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/push&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/push?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10490,7 +10518,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetPushTemplateResponse> GetPushTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/push&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/push?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10525,7 +10553,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task UpdatePushTemplateAsync(bool create_new_version, string template_name, string version, UpdatePushTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/push?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/push?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10627,7 +10655,7 @@ namespace MyNS
 		/// <param name="application_id">The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</param>
 		public async Task CreateSegmentAsync(string application_id, CreateSegmentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments";
+			var requestUri = "v1/apps/{application_id}/segments";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10664,7 +10692,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSegmentsResponse> GetSegmentsAsync(string application_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/segments?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10697,7 +10725,7 @@ namespace MyNS
 		/// <param name="template_name">The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</param>
 		public async Task CreateSmsTemplateAsync(string template_name, CreateSmsTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/sms";
+			var requestUri = "v1/templates/{template_name}/sms";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10732,7 +10760,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task DeleteSmsTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/sms&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/sms?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10761,7 +10789,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSmsTemplateResponse> GetSmsTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/sms&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/sms?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10796,7 +10824,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task UpdateSmsTemplateAsync(bool create_new_version, string template_name, string version, UpdateSmsTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/sms?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/sms?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10830,7 +10858,7 @@ namespace MyNS
 		/// <param name="template_name">The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</param>
 		public async Task CreateVoiceTemplateAsync(string template_name, CreateVoiceTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/voice";
+			var requestUri = "v1/templates/{template_name}/voice";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10865,7 +10893,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task DeleteVoiceTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/voice&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/voice?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10894,7 +10922,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetVoiceTemplateResponse> GetVoiceTemplateAsync(string template_name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/voice&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/voice?version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10929,7 +10957,7 @@ namespace MyNS
 		/// <param name="version"><p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul></param>
 		public async Task UpdateVoiceTemplateAsync(bool create_new_version, string template_name, string version, UpdateVoiceTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/voice?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/templates/{template_name}/voice?create-new-version="+create_new_version+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10964,7 +10992,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteAdmChannelResponse> DeleteAdmChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/adm";
+			var requestUri = "v1/apps/{application_id}/channels/adm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10998,7 +11026,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetAdmChannelResponse> GetAdmChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/adm";
+			var requestUri = "v1/apps/{application_id}/channels/adm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11032,7 +11060,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateAdmChannelResponse> UpdateAdmChannelAsync(string application_id, UpdateAdmChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/adm";
+			var requestUri = "v1/apps/{application_id}/channels/adm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11073,7 +11101,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteApnsChannelResponse> DeleteApnsChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns";
+			var requestUri = "v1/apps/{application_id}/channels/apns";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11107,7 +11135,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetApnsChannelResponse> GetApnsChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns";
+			var requestUri = "v1/apps/{application_id}/channels/apns";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11141,7 +11169,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateApnsChannelResponse> UpdateApnsChannelAsync(string application_id, UpdateApnsChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns";
+			var requestUri = "v1/apps/{application_id}/channels/apns";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11182,7 +11210,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteApnsSandboxChannelResponse> DeleteApnsSandboxChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_sandbox";
+			var requestUri = "v1/apps/{application_id}/channels/apns_sandbox";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11216,7 +11244,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetApnsSandboxChannelResponse> GetApnsSandboxChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_sandbox";
+			var requestUri = "v1/apps/{application_id}/channels/apns_sandbox";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11250,7 +11278,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateApnsSandboxChannelResponse> UpdateApnsSandboxChannelAsync(string application_id, UpdateApnsSandboxChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_sandbox";
+			var requestUri = "v1/apps/{application_id}/channels/apns_sandbox";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11291,7 +11319,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteApnsVoipChannelResponse> DeleteApnsVoipChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_voip";
+			var requestUri = "v1/apps/{application_id}/channels/apns_voip";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11325,7 +11353,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetApnsVoipChannelResponse> GetApnsVoipChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_voip";
+			var requestUri = "v1/apps/{application_id}/channels/apns_voip";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11359,7 +11387,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateApnsVoipChannelResponse> UpdateApnsVoipChannelAsync(string application_id, UpdateApnsVoipChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_voip";
+			var requestUri = "v1/apps/{application_id}/channels/apns_voip";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11400,7 +11428,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteApnsVoipSandboxChannelResponse> DeleteApnsVoipSandboxChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_voip_sandbox";
+			var requestUri = "v1/apps/{application_id}/channels/apns_voip_sandbox";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11434,7 +11462,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetApnsVoipSandboxChannelResponse> GetApnsVoipSandboxChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_voip_sandbox";
+			var requestUri = "v1/apps/{application_id}/channels/apns_voip_sandbox";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11468,7 +11496,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateApnsVoipSandboxChannelResponse> UpdateApnsVoipSandboxChannelAsync(string application_id, UpdateApnsVoipSandboxChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/apns_voip_sandbox";
+			var requestUri = "v1/apps/{application_id}/channels/apns_voip_sandbox";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11509,7 +11537,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteAppResponse> DeleteAppAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id));
+			var requestUri = "v1/apps/{application_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11543,7 +11571,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetAppResponse> GetAppAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id));
+			var requestUri = "v1/apps/{application_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11577,7 +11605,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteBaiduChannelResponse> DeleteBaiduChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/baidu";
+			var requestUri = "v1/apps/{application_id}/channels/baidu";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11611,7 +11639,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetBaiduChannelResponse> GetBaiduChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/baidu";
+			var requestUri = "v1/apps/{application_id}/channels/baidu";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11645,7 +11673,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateBaiduChannelResponse> UpdateBaiduChannelAsync(string application_id, UpdateBaiduChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/baidu";
+			var requestUri = "v1/apps/{application_id}/channels/baidu";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11687,7 +11715,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteCampaignResponse> DeleteCampaignAsync(string application_id, string campaign_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id));
+			var requestUri = "v1/apps/{application_id}/campaigns/{campaign_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11722,7 +11750,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetCampaignResponse> GetCampaignAsync(string application_id, string campaign_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id));
+			var requestUri = "v1/apps/{application_id}/campaigns/{campaign_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11757,7 +11785,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateCampaignResponse> UpdateCampaignAsync(string application_id, string campaign_id, UpdateCampaignPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id));
+			var requestUri = "v1/apps/{application_id}/campaigns/{campaign_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11798,7 +11826,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteEmailChannelResponse> DeleteEmailChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/email";
+			var requestUri = "v1/apps/{application_id}/channels/email";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11832,7 +11860,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetEmailChannelResponse> GetEmailChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/email";
+			var requestUri = "v1/apps/{application_id}/channels/email";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11866,7 +11894,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateEmailChannelResponse> UpdateEmailChannelAsync(string application_id, UpdateEmailChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/email";
+			var requestUri = "v1/apps/{application_id}/channels/email";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -11907,7 +11935,7 @@ namespace MyNS
 		/// <param name="endpoint_id">The unique identifier for the endpoint.</param>
 		public async Task DeleteEndpointAsync(string application_id, string endpoint_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/endpoints/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id));
+			var requestUri = "v1/apps/{application_id}/endpoints/{endpoint_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11936,7 +11964,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetEndpointResponse> GetEndpointAsync(string application_id, string endpoint_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/endpoints/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id));
+			var requestUri = "v1/apps/{application_id}/endpoints/{endpoint_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11970,7 +11998,7 @@ namespace MyNS
 		/// <param name="endpoint_id">The unique identifier for the endpoint.</param>
 		public async Task UpdateEndpointAsync(string application_id, string endpoint_id, UpdateEndpointPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/endpoints/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id));
+			var requestUri = "v1/apps/{application_id}/endpoints/{endpoint_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12005,7 +12033,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteEventStreamResponse> DeleteEventStreamAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/eventstream";
+			var requestUri = "v1/apps/{application_id}/eventstream";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12039,7 +12067,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetEventStreamResponse> GetEventStreamAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/eventstream";
+			var requestUri = "v1/apps/{application_id}/eventstream";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12073,7 +12101,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<PutEventStreamResponse> PutEventStreamAsync(string application_id, PutEventStreamPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/eventstream";
+			var requestUri = "v1/apps/{application_id}/eventstream";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12114,7 +12142,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteGcmChannelResponse> DeleteGcmChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/gcm";
+			var requestUri = "v1/apps/{application_id}/channels/gcm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12148,7 +12176,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetGcmChannelResponse> GetGcmChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/gcm";
+			var requestUri = "v1/apps/{application_id}/channels/gcm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12182,7 +12210,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateGcmChannelResponse> UpdateGcmChannelAsync(string application_id, UpdateGcmChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/gcm";
+			var requestUri = "v1/apps/{application_id}/channels/gcm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12224,7 +12252,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteJourneyResponse> DeleteJourneyAsync(string application_id, string journey_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12259,7 +12287,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetJourneyResponse> GetJourneyAsync(string application_id, string journey_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12294,7 +12322,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateJourneyResponse> UpdateJourneyAsync(string application_id, string journey_id, UpdateJourneyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12335,7 +12363,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteRecommenderConfigurationResponse> DeleteRecommenderConfigurationAsync(string recommender_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/recommenders/"+ (recommender_id==null? "" : System.Uri.EscapeDataString(recommender_id));
+			var requestUri = "v1/recommenders/{recommender_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12369,7 +12397,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetRecommenderConfigurationResponse> GetRecommenderConfigurationAsync(string recommender_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/recommenders/"+ (recommender_id==null? "" : System.Uri.EscapeDataString(recommender_id));
+			var requestUri = "v1/recommenders/{recommender_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12403,7 +12431,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateRecommenderConfigurationResponse> UpdateRecommenderConfigurationAsync(string recommender_id, UpdateRecommenderConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/recommenders/"+ (recommender_id==null? "" : System.Uri.EscapeDataString(recommender_id));
+			var requestUri = "v1/recommenders/{recommender_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12445,7 +12473,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteSegmentResponse> DeleteSegmentAsync(string application_id, string segment_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments/"+ (segment_id==null? "" : System.Uri.EscapeDataString(segment_id));
+			var requestUri = "v1/apps/{application_id}/segments/{segment_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12480,7 +12508,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSegmentResponse> GetSegmentAsync(string application_id, string segment_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments/"+ (segment_id==null? "" : System.Uri.EscapeDataString(segment_id));
+			var requestUri = "v1/apps/{application_id}/segments/{segment_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12515,7 +12543,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateSegmentResponse> UpdateSegmentAsync(string application_id, string segment_id, UpdateSegmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments/"+ (segment_id==null? "" : System.Uri.EscapeDataString(segment_id));
+			var requestUri = "v1/apps/{application_id}/segments/{segment_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12556,7 +12584,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteSmsChannelResponse> DeleteSmsChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/sms";
+			var requestUri = "v1/apps/{application_id}/channels/sms";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12590,7 +12618,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSmsChannelResponse> GetSmsChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/sms";
+			var requestUri = "v1/apps/{application_id}/channels/sms";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12624,7 +12652,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateSmsChannelResponse> UpdateSmsChannelAsync(string application_id, UpdateSmsChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/sms";
+			var requestUri = "v1/apps/{application_id}/channels/sms";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12665,7 +12693,7 @@ namespace MyNS
 		/// <param name="user_id">The unique identifier for the user.</param>
 		public async Task DeleteUserEndpointsAsync(string application_id, string user_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id));
+			var requestUri = "v1/apps/{application_id}/users/{user_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12694,7 +12722,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetUserEndpointsResponse> GetUserEndpointsAsync(string application_id, string user_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/users/"+ (user_id==null? "" : System.Uri.EscapeDataString(user_id));
+			var requestUri = "v1/apps/{application_id}/users/{user_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12728,7 +12756,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<DeleteVoiceChannelResponse> DeleteVoiceChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/voice";
+			var requestUri = "v1/apps/{application_id}/channels/voice";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12762,7 +12790,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetVoiceChannelResponse> GetVoiceChannelAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/voice";
+			var requestUri = "v1/apps/{application_id}/channels/voice";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12796,7 +12824,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateVoiceChannelResponse> UpdateVoiceChannelAsync(string application_id, UpdateVoiceChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels/voice";
+			var requestUri = "v1/apps/{application_id}/channels/voice";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12842,7 +12870,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetApplicationDateRangeKpiResponse> GetApplicationDateRangeKpiAsync(string application_id, System.DateTimeOffset end_time, string kpi_name, string next_token, string page_size, System.DateTimeOffset start_time, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/kpis/daterange/"+ (kpi_name==null? "" : System.Uri.EscapeDataString(kpi_name))+"&end-time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&start-time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "v1/apps/{application_id}/kpis/daterange/{kpi_name}?end-time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&start-time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12876,7 +12904,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetApplicationSettingsResponse> GetApplicationSettingsAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/settings";
+			var requestUri = "v1/apps/{application_id}/settings";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12910,7 +12938,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateApplicationSettingsResponse> UpdateApplicationSettingsAsync(string application_id, UpdateApplicationSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/settings";
+			var requestUri = "v1/apps/{application_id}/settings";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12954,7 +12982,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetCampaignActivitiesResponse> GetCampaignActivitiesAsync(string application_id, string campaign_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/activities&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/campaigns/{campaign_id}/activities?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12994,7 +13022,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetCampaignDateRangeKpiResponse> GetCampaignDateRangeKpiAsync(string application_id, string campaign_id, System.DateTimeOffset end_time, string kpi_name, string next_token, string page_size, System.DateTimeOffset start_time, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/kpis/daterange/"+ (kpi_name==null? "" : System.Uri.EscapeDataString(kpi_name))+"&end-time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&start-time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "v1/apps/{application_id}/campaigns/{campaign_id}/kpis/daterange/{kpi_name}?end-time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&start-time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13030,7 +13058,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetCampaignVersionResponse> GetCampaignVersionAsync(string application_id, string campaign_id, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/apps/{application_id}/campaigns/{campaign_id}/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13067,7 +13095,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetCampaignVersionsResponse> GetCampaignVersionsAsync(string application_id, string campaign_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/campaigns/"+ (campaign_id==null? "" : System.Uri.EscapeDataString(campaign_id))+"/versions&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/campaigns/{campaign_id}/versions?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13101,7 +13129,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetChannelsResponse> GetChannelsAsync(string application_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/channels";
+			var requestUri = "v1/apps/{application_id}/channels";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13136,7 +13164,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetExportJobResponse> GetExportJobAsync(string application_id, string job_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/jobs/export/"+ (job_id==null? "" : System.Uri.EscapeDataString(job_id));
+			var requestUri = "v1/apps/{application_id}/jobs/export/{job_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13171,7 +13199,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetImportJobResponse> GetImportJobAsync(string application_id, string job_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/jobs/import/"+ (job_id==null? "" : System.Uri.EscapeDataString(job_id));
+			var requestUri = "v1/apps/{application_id}/jobs/import/{job_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13206,7 +13234,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetInAppMessagesResponse> GetInAppMessagesAsync(string application_id, string endpoint_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/endpoints/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/inappmessages";
+			var requestUri = "v1/apps/{application_id}/endpoints/{endpoint_id}/inappmessages";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13246,7 +13274,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetJourneyDateRangeKpiResponse> GetJourneyDateRangeKpiAsync(string application_id, System.DateTimeOffset end_time, string journey_id, string kpi_name, string next_token, string page_size, System.DateTimeOffset start_time, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id))+"/kpis/daterange/"+ (kpi_name==null? "" : System.Uri.EscapeDataString(kpi_name))+"&end-time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&start-time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}/kpis/daterange/{kpi_name}?end-time=" + end_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&start-time=" + start_time.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13284,7 +13312,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetJourneyExecutionActivityMetricsResponse> GetJourneyExecutionActivityMetricsAsync(string application_id, string journey_activity_id, string journey_id, string next_token, string page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id))+"/activities/"+ (journey_activity_id==null? "" : System.Uri.EscapeDataString(journey_activity_id))+"/execution-metrics&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}/activities/{journey_activity_id}/execution-metrics?next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13321,7 +13349,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetJourneyExecutionMetricsResponse> GetJourneyExecutionMetricsAsync(string application_id, string journey_id, string next_token, string page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id))+"/execution-metrics&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}/execution-metrics?next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13360,7 +13388,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetJourneyRunExecutionActivityMetricsResponse> GetJourneyRunExecutionActivityMetricsAsync(string application_id, string journey_activity_id, string journey_id, string next_token, string page_size, string run_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id))+"/runs/"+ (run_id==null? "" : System.Uri.EscapeDataString(run_id))+"/activities/"+ (journey_activity_id==null? "" : System.Uri.EscapeDataString(journey_activity_id))+"/execution-metrics&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}/runs/{run_id}/activities/{journey_activity_id}/execution-metrics?next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13398,7 +13426,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetJourneyRunExecutionMetricsResponse> GetJourneyRunExecutionMetricsAsync(string application_id, string journey_id, string next_token, string page_size, string run_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id))+"/runs/"+ (run_id==null? "" : System.Uri.EscapeDataString(run_id))+"/execution-metrics&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}/runs/{run_id}/execution-metrics?next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13435,7 +13463,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetJourneyRunsResponse> GetJourneyRunsAsync(string application_id, string journey_id, string page_size, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id))+"/runs&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}/runs?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13472,7 +13500,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSegmentExportJobsResponse> GetSegmentExportJobsAsync(string application_id, string page_size, string segment_id, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments/"+ (segment_id==null? "" : System.Uri.EscapeDataString(segment_id))+"/jobs/export&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/segments/{segment_id}/jobs/export?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13509,7 +13537,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSegmentImportJobsResponse> GetSegmentImportJobsAsync(string application_id, string page_size, string segment_id, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments/"+ (segment_id==null? "" : System.Uri.EscapeDataString(segment_id))+"/jobs/import&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/segments/{segment_id}/jobs/import?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13545,7 +13573,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSegmentVersionResponse> GetSegmentVersionAsync(string application_id, string segment_id, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments/"+ (segment_id==null? "" : System.Uri.EscapeDataString(segment_id))+"/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/apps/{application_id}/segments/{segment_id}/versions/"+ (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13582,7 +13610,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<GetSegmentVersionsResponse> GetSegmentVersionsAsync(string application_id, string page_size, string segment_id, string token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/segments/"+ (segment_id==null? "" : System.Uri.EscapeDataString(segment_id))+"/versions&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
+			var requestUri = "v1/apps/{application_id}/segments/{segment_id}/versions?page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size))+"&token=" + (token==null? "" : System.Uri.EscapeDataString(token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13616,7 +13644,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resource_arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn));
+			var requestUri = "v1/tags/{resource_arn}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13649,7 +13677,7 @@ namespace MyNS
 		/// <param name="resource_arn">The Amazon Resource Name (ARN) of the resource.</param>
 		public async Task TagResourceAsync(string resource_arn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn));
+			var requestUri = "v1/tags/{resource_arn}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -13687,7 +13715,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ListTemplateVersionsResponse> ListTemplateVersionsAsync(string next_token, string page_size, string template_name, string template_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/"+ (template_type==null? "" : System.Uri.EscapeDataString(template_type))+"/versions?next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
+			var requestUri = "v1/templates/{template_name}/{template_type}/versions?next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&page-size=" + (page_size==null? "" : System.Uri.EscapeDataString(page_size));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -13797,7 +13825,7 @@ namespace MyNS
 		/// <param name="application_id">The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</param>
 		public async Task PutEventsAsync(string application_id, PutEventsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/events";
+			var requestUri = "v1/apps/{application_id}/events";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -13833,7 +13861,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<RemoveAttributesResponse> RemoveAttributesAsync(string application_id, string attribute_type, RemoveAttributesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/attributes/"+ (attribute_type==null? "" : System.Uri.EscapeDataString(attribute_type));
+			var requestUri = "v1/apps/{application_id}/attributes/{attribute_type}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -13874,7 +13902,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<SendMessagesResponse> SendMessagesAsync(string application_id, SendMessagesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/messages";
+			var requestUri = "v1/apps/{application_id}/messages";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -13915,7 +13943,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<SendOTPMessageResponse> SendOTPMessageAsync(string application_id, SendOTPMessagePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/otp";
+			var requestUri = "v1/apps/{application_id}/otp";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -13956,7 +13984,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<SendUsersMessagesResponse> SendUsersMessagesAsync(string application_id, SendUsersMessagesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/users-messages";
+			var requestUri = "v1/apps/{application_id}/users-messages";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -13997,7 +14025,7 @@ namespace MyNS
 		/// <param name="tagKeys">The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</param>
 		public async Task UntagResourceAsync(string resource_arn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/tags/"+ (resource_arn==null? "" : System.Uri.EscapeDataString(resource_arn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "v1/tags/{resource_arn}#tagKeys?"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -14024,7 +14052,7 @@ namespace MyNS
 		/// <param name="application_id">The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</param>
 		public async Task UpdateEndpointsBatchAsync(string application_id, UpdateEndpointsBatchPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/endpoints";
+			var requestUri = "v1/apps/{application_id}/endpoints";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -14060,7 +14088,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateJourneyStateResponse> UpdateJourneyStateAsync(string application_id, string journey_id, UpdateJourneyStatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/journeys/"+ (journey_id==null? "" : System.Uri.EscapeDataString(journey_id))+"/state";
+			var requestUri = "v1/apps/{application_id}/journeys/{journey_id}/state";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -14102,7 +14130,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<UpdateTemplateActiveVersionResponse> UpdateTemplateActiveVersionAsync(string template_name, string template_type, UpdateTemplateActiveVersionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/templates/"+ (template_name==null? "" : System.Uri.EscapeDataString(template_name))+"/"+ (template_type==null? "" : System.Uri.EscapeDataString(template_type))+"/active-version";
+			var requestUri = "v1/templates/{template_name}/{template_type}/active-version";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -14143,7 +14171,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<VerifyOTPMessageResponse> VerifyOTPMessageAsync(string application_id, VerifyOTPMessagePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/apps/"+ (application_id==null? "" : System.Uri.EscapeDataString(application_id))+"/verify-otp";
+			var requestUri = "v1/apps/{application_id}/verify-otp";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

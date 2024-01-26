@@ -4047,7 +4047,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Storage_objects_deleteAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -4084,7 +4084,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Object> Storage_objects_getAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, bool softDeleted, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection+"&softDeleted="+softDeleted+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection+"&softDeleted="+softDeleted+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -4128,7 +4128,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Object> Storage_objects_patchAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, bool overrideUnlockedRetention, Storage_objects_patchPredefinedAcl predefinedAcl, Storage_buckets_listProjection projection, string userProject, Object requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&overrideUnlockedRetention="+overrideUnlockedRetention+"&predefinedAcl=" + predefinedAcl+"&projection=" + projection+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&overrideUnlockedRetention="+overrideUnlockedRetention+"&predefinedAcl=" + predefinedAcl+"&projection=" + projection+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4179,7 +4179,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Object> Storage_objects_updateAsync(string bucket, string _object, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, bool overrideUnlockedRetention, Storage_objects_updatePredefinedAcl predefinedAcl, Storage_buckets_listProjection projection, string userProject, Object requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&overrideUnlockedRetention="+overrideUnlockedRetention+"&predefinedAcl=" + predefinedAcl+"&projection=" + projection+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&overrideUnlockedRetention="+overrideUnlockedRetention+"&predefinedAcl=" + predefinedAcl+"&projection=" + projection+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4223,7 +4223,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControls> Storage_objectAccessControls_listAsync(string bucket, string _object, string generation, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -4260,7 +4260,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_insertAsync(string bucket, string _object, string generation, string userProject, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4305,7 +4305,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task Storage_objectAccessControls_deleteAsync(string bucket, string _object, string entity, string generation, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -4337,7 +4337,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_getAsync(string bucket, string _object, string entity, string generation, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -4375,7 +4375,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_patchAsync(string bucket, string _object, string entity, string generation, string userProject, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4420,7 +4420,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ObjectAccessControl> Storage_objectAccessControls_updateAsync(string bucket, string _object, string entity, string generation, string userProject, ObjectAccessControl requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/acl/"+ (entity==null? "" : System.Uri.EscapeDataString(entity))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4464,7 +4464,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Policy> Storage_objects_getIamPolicyAsync(string bucket, string _object, string generation, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/iam&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/iam&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -4501,7 +4501,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Policy> Storage_objects_setIamPolicyAsync(string bucket, string _object, string generation, string userProject, Policy requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/iam&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/iam&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -4546,7 +4546,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<TestIamPermissionsResponse> Storage_objects_testIamPermissionsAsync(string bucket, string _object, string[] permissions, string generation, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/iam/testPermissions&"+string.Join("&", permissions.Select(z => $"permissions={System.Uri.EscapeDataString(z.ToString())}"))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/iam/testPermissions&"+string.Join("&", permissions.Select(z => $"permissions={System.Uri.EscapeDataString(z.ToString())}"))+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -4589,7 +4589,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Object> Storage_objects_restoreAsync(string bucket, string _object, bool copySourceAcl, string generation, string ifGenerationMatch, string ifGenerationNotMatch, string ifMetagenerationMatch, string ifMetagenerationNotMatch, Storage_buckets_listProjection projection, string userProject, Object requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/{object}/restore&copySourceAcl="+copySourceAcl+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
+			var requestUri = "b/"+ (bucket==null? "" : System.Uri.EscapeDataString(bucket))+"/o/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/restore&copySourceAcl="+copySourceAcl+"&generation=" + (generation==null? "" : System.Uri.EscapeDataString(generation))+"&ifGenerationMatch=" + (ifGenerationMatch==null? "" : System.Uri.EscapeDataString(ifGenerationMatch))+"&ifGenerationNotMatch=" + (ifGenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifGenerationNotMatch))+"&ifMetagenerationMatch=" + (ifMetagenerationMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationMatch))+"&ifMetagenerationNotMatch=" + (ifMetagenerationNotMatch==null? "" : System.Uri.EscapeDataString(ifMetagenerationNotMatch))+"&projection=" + projection+"&userProject=" + (userProject==null? "" : System.Uri.EscapeDataString(userProject));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -5173,265 +5173,265 @@ namespace MyNS
 	public enum Storage_buckets_listProjection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="noAcl")]
 		noAcl = 1,
 	}
 	
 	public enum Storage_buckets_insertPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicReadWrite")]
 		publicReadWrite = 4,
 	}
 	
 	public enum Storage_buckets_insertPredefinedDefaultObjectAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_buckets_patchPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicReadWrite")]
 		publicReadWrite = 4,
 	}
 	
 	public enum Storage_buckets_patchPredefinedDefaultObjectAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_buckets_updatePredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicReadWrite")]
 		publicReadWrite = 4,
 	}
 	
 	public enum Storage_buckets_updatePredefinedDefaultObjectAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_insertPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_patchPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_updatePredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_composeDestinationPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_copyDestinationPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 	
 	public enum Storage_objects_rewriteDestinationPredefinedAcl
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="authenticatedRead")]
 		authenticatedRead = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerFullControl")]
 		bucketOwnerFullControl = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bucketOwnerRead")]
 		bucketOwnerRead = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="private")]
 		_private = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="projectPrivate")]
 		projectPrivate = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicRead")]
 		publicRead = 5,
 	}
 }

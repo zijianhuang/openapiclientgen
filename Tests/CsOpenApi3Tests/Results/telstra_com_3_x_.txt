@@ -96,17 +96,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ErrorLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="body")]
 		body = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="path")]
 		path = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="query")]
 		query = 2,
 	}
 	
@@ -296,14 +297,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MessageGetDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="outgoing")]
 		outgoing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="incoming")]
 		incoming = 1,
 	}
 	
@@ -338,23 +340,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MessageGetStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
 		queued = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
 		sent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
 		delivered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
 		expired = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="undeliverable")]
 		undeliverable = 4,
 	}
 	
@@ -1652,7 +1655,7 @@ namespace MyNS
 		///</param>
 		public async Task DeleteNumberAsync(string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "virtual-numbers/"+ (virtual_number==null? "" : System.Uri.EscapeDataString(virtual_number));
+			var requestUri = "virtual-numbers/{virtual_number}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1683,7 +1686,7 @@ namespace MyNS
 		///</returns>
 		public async Task<Virtual_number> GetVirtualNumberAsync(string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "virtual-numbers/"+ (virtual_number==null? "" : System.Uri.EscapeDataString(virtual_number));
+			var requestUri = "virtual-numbers/{virtual_number}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1723,7 +1726,7 @@ namespace MyNS
 		///</returns>
 		public async Task<Virtual_number> UpdateNumberAsync(string virtual_number, NumberPut requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "virtual-numbers/"+ (virtual_number==null? "" : System.Uri.EscapeDataString(virtual_number));
+			var requestUri = "virtual-numbers/{virtual_number}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1773,7 +1776,7 @@ namespace MyNS
 		/// <returns>Successful Response</returns>
 		public async Task<string> GetRecipientOptoutsAsync(int limit, int offset, string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "virtual-numbers/"+ (virtual_number==null? "" : System.Uri.EscapeDataString(virtual_number))+"/optouts?limit="+limit+"&offset="+offset;
+			var requestUri = "virtual-numbers/{virtual_number}/optouts?limit="+limit+"&offset="+offset;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1809,16 +1812,16 @@ namespace MyNS
 	public enum GetMessagesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="queued")]
 		queued = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sent")]
 		sent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="delivered")]
 		delivered = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="expired")]
 		expired = 3,
 	}
 	

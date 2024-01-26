@@ -419,13 +419,13 @@ namespace MyNS
 	public enum Map_versionNumberCopyrights__formatGetByCallbackFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsonp")]
 		jsonp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 2,
 	}
 	
@@ -521,36 +521,36 @@ namespace MyNS
 	public enum Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewLayer
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="basic")]
 		basic = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="hybrid")]
 		hybrid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="labels")]
 		labels = 2,
 	}
 	
 	public enum Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="main")]
 		main = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="night")]
 		night = 1,
 	}
 	
 	public enum Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="png")]
 		png = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpg")]
 		jpg = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpeg")]
 		jpeg = 2,
 	}
 	
@@ -630,10 +630,10 @@ namespace MyNS
 	public enum Map_versionNumberStaticimageGetByLayerAndStyleAndFormatAndZoomAndCenterAndWidthAndHeightAndBboxAndViewView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unified")]
 		Unified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
 		IN = 1,
 	}
 	
@@ -647,7 +647,7 @@ namespace MyNS
 	public enum Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="main")]
 		main = 0,
 	}
 	
@@ -727,13 +727,13 @@ namespace MyNS
 	public enum Map_versionNumberTile_layer_style_zoom_X_Y_pbfGetByViewAndLanguageView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unified")]
 		Unified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL")]
 		IL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
 		IN = 2,
 	}
 	
@@ -820,10 +820,10 @@ namespace MyNS
 	public enum Map_versionNumberTile_layer_style_zoom_X_Y__formatGetByTileSizeAndViewFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jpg")]
 		jpg = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="png")]
 		png = 1,
 	}
 	
@@ -847,7 +847,7 @@ namespace MyNS
 	public enum Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionRequest
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetMap")]
 		GetMap = 0,
 	}
 	
@@ -874,7 +874,7 @@ namespace MyNS
 	public enum Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionLayers
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="basic")]
 		basic = 0,
 	}
 	
@@ -888,7 +888,7 @@ namespace MyNS
 	public enum Map_versionNumberWmsGetByRequestAndSrsAndBboxAndWidthAndHeightAndFormatAndLayersAndStylesAndServiceAndVersionService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WMS")]
 		WMS = 0,
 	}
 	
@@ -909,7 +909,7 @@ namespace MyNS
 	public enum Map_versionNumberWmsGetByServiceAndRequestAndVersionRequest
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetCapabilities")]
 		GetCapabilities = 0,
 	}
 	

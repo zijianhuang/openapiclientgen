@@ -192,20 +192,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GameEsrb_ratingName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone")]
 		Everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone 10+")]
 		Everyone_10Plus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Teen")]
 		Teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mature")]
 		Mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Adults Only")]
@@ -216,20 +217,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GameEsrb_ratingSlug
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone")]
 		everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone-10-plus")]
 		everyoneMinus10Minusplus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teen")]
 		teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="mature")]
 		mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="adults-only")]
@@ -528,20 +530,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GameSingleEsrb_ratingName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone")]
 		Everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Everyone 10+")]
 		Everyone_10Plus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Teen")]
 		Teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mature")]
 		Mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Adults Only")]
@@ -552,20 +555,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GameSingleEsrb_ratingSlug
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone")]
 		everyone = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="everyone-10-plus")]
 		everyoneMinus10Minusplus = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teen")]
 		teen = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="mature")]
 		mature = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="adults-only")]

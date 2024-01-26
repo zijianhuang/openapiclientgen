@@ -932,7 +932,7 @@ namespace MyNS
 	public enum GET_BatchDeleteAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchDeleteAttributes")]
 		BatchDeleteAttributes = 0,
 	}
 	
@@ -953,7 +953,7 @@ namespace MyNS
 	public enum GET_BatchPutAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchPutAttributes")]
 		BatchPutAttributes = 0,
 	}
 	
@@ -974,7 +974,7 @@ namespace MyNS
 	public enum GET_CreateDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDomain")]
 		CreateDomain = 0,
 	}
 	
@@ -1008,7 +1008,7 @@ namespace MyNS
 	public enum GET_DeleteAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteAttributes")]
 		DeleteAttributes = 0,
 	}
 	
@@ -1029,7 +1029,7 @@ namespace MyNS
 	public enum GET_DeleteDomainAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDomain")]
 		DeleteDomain = 0,
 	}
 	
@@ -1050,7 +1050,7 @@ namespace MyNS
 	public enum GET_DomainMetadataAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DomainMetadata")]
 		DomainMetadata = 0,
 	}
 	
@@ -1071,7 +1071,7 @@ namespace MyNS
 	public enum GET_GetAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetAttributes")]
 		GetAttributes = 0,
 	}
 	
@@ -1092,7 +1092,7 @@ namespace MyNS
 	public enum GET_ListDomainsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListDomains")]
 		ListDomains = 0,
 	}
 	
@@ -1126,7 +1126,7 @@ namespace MyNS
 	public enum GET_PutAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutAttributes")]
 		PutAttributes = 0,
 	}
 	
@@ -1147,7 +1147,7 @@ namespace MyNS
 	public enum GET_SelectAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Select")]
 		Select = 0,
 	}
 	

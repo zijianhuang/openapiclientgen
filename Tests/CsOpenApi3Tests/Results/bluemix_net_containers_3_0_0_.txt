@@ -3150,7 +3150,7 @@ namespace MyNS
 		/// <returns>OK. The namespace that you chose is already used in Bluemix. Choose another namespace and re-run the API call.</returns>
 		public async Task<Namespace> RegistryNamespaces_namespaceGetAsync(string _namespace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "registry/namespaces/{namespace}";
+			var requestUri = "registry/namespaces/"+ (_namespace==null? "" : System.Uri.EscapeDataString(_namespace));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -3192,7 +3192,7 @@ namespace MyNS
 		/// <param name="_namespace">The name for your namespace to create your private Docker images registry in Bluemix. You cannot change the name afterward. The namespace can be 4-30 characters long, must start with at least one letter or number, and can only contain lowercase letters, numbers or underscores (_). You can test the availability of your namespace by calling the `GET /registry/namespaces/<namespace>` endpoint. When a HTTP code `404 Not Found` is returned, the namespace is available in Bluemix. </param>
 		public async Task RegistryNamespaces_namespacePutAsync(string _namespace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "registry/namespaces/{namespace}";
+			var requestUri = "registry/namespaces/"+ (_namespace==null? "" : System.Uri.EscapeDataString(_namespace));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);

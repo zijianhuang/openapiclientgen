@@ -532,39 +532,39 @@ namespace MyNS
 	public enum FeatureCategoriesGetByOutputFormatOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 1,
 	}
 	
 	public enum NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="kml")]
 		kml = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="csv")]
 		csv = 3,
 	}
 	
 	public enum NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="featureType")]
 		featureType = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="decisionDate")]
 		decisionDate = 2,
 	}
 	
@@ -612,10 +612,10 @@ namespace MyNS
 	public enum NamesChangesGetByOutputFormatAndFromDateAndToDateAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexOutputStyle
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="summary")]
 		summary = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="detail")]
 		detail = 1,
 	}
 	
@@ -796,16 +796,16 @@ namespace MyNS
 	public enum NamesNotOfficialSearchGetByOutputFormatAndNameAndExactSpellingAndFeatureClassAndFeatureCategoryAndFeatureTypeAndSortByAndOutputSRSAndEmbedAndOutputStyleAndItemsPerPageAndStartIndexSortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="relevance")]
 		relevance = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="featureType")]
 		featureType = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="decisionDate")]
 		decisionDate = 3,
 	}
 	
@@ -955,19 +955,19 @@ namespace MyNS
 	public enum Names_nameId__outputFormatGetOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="kml")]
 		kml = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="csv")]
 		csv = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
 		html = 4,
 	}
 }

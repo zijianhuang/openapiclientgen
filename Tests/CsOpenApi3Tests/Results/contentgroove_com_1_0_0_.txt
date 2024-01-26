@@ -1051,19 +1051,19 @@ namespace MyNS
 	public enum GetClipsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
 		created_at = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-created_at")]
 		Minuscreated_at = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="original_created_at")]
 		original_created_at = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-original_created_at")]
 		Minusoriginal_created_at = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-name")]
@@ -1162,19 +1162,19 @@ namespace MyNS
 	public enum GetMediasSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
 		created_at = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-created_at")]
 		Minuscreated_at = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="original_created_at")]
 		original_created_at = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-original_created_at")]
 		Minusoriginal_created_at = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-name")]
@@ -1254,19 +1254,19 @@ namespace MyNS
 	public enum GetWebhookSubscriptionsSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
 		created_at = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-created_at")]
 		Minuscreated_at = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="original_created_at")]
 		original_created_at = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-original_created_at")]
 		Minusoriginal_created_at = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="-name")]

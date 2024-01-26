@@ -183,41 +183,42 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum BulkCheckResponseBulkErrorCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_UNSPECIFIED")]
 		ERROR_CODE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_INVALID_QUERY")]
 		ERROR_CODE_INVALID_QUERY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_FETCH_ERROR")]
 		ERROR_CODE_FETCH_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_FAILED_SSL_VALIDATION")]
 		ERROR_CODE_FAILED_SSL_VALIDATION = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_REDIRECT")]
 		ERROR_CODE_REDIRECT = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_TOO_LARGE")]
 		ERROR_CODE_TOO_LARGE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_MALFORMED_HTTP_RESPONSE")]
 		ERROR_CODE_MALFORMED_HTTP_RESPONSE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_WRONG_CONTENT_TYPE")]
 		ERROR_CODE_WRONG_CONTENT_TYPE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_MALFORMED_CONTENT")]
 		ERROR_CODE_MALFORMED_CONTENT = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE")]
 		ERROR_CODE_SECURE_ASSET_INCLUDES_INSECURE = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERROR_CODE_FETCH_BUDGET_EXHAUSTED")]
 		ERROR_CODE_FETCH_BUDGET_EXHAUSTED = 10,
 	}
 	

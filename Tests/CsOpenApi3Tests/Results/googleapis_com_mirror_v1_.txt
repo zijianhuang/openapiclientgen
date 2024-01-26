@@ -1585,10 +1585,10 @@ namespace MyNS
 	public enum Mirror_timeline_listOrderBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="displayTime")]
 		displayTime = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="writeTime")]
 		writeTime = 1,
 	}
 }

@@ -747,60 +747,60 @@ namespace MyNS
 	public enum Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="geojson")]
 		geojson = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xhtml")]
 		xhtml = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="kml")]
 		kml = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="gml")]
 		gml = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="csv")]
 		csv = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="shpz")]
 		shpz = 6,
 	}
 	
 	public enum Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointLocationDescriptor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="any")]
 		any = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="accessPoint")]
 		accessPoint = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="frontDoorPoint")]
 		frontDoorPoint = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="parcelPoint")]
 		parcelPoint = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rooftopPoint")]
 		rooftopPoint = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="routingPoint")]
 		routingPoint = 5,
 	}
 	
 	public enum Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointInterpolation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="adaptive")]
 		adaptive = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="linear")]
 		linear = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
 		none = 2,
 	}
 	
@@ -835,89 +835,89 @@ namespace MyNS
 	public enum Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointUnitDesignator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="APT")]
 		APT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLDG")]
 		BLDG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BSMT")]
 		BSMT = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FLR")]
 		FLR = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOBBY")]
 		LOBBY = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LWR")]
 		LWR = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAD")]
 		PAD = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PH")]
 		PH = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REAR")]
 		REAR = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RM")]
 		RM = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIDE")]
 		SIDE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SITE")]
 		SITE = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUITE")]
 		SUITE = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TH")]
 		TH = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIT")]
 		UNIT = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UPPR")]
 		UPPR = 15,
 	}
 	
 	public enum Addresses__outputFormatGetByAddressStringAndLocationDescriptorAndMaxResultsAndInterpolationAndEchoAndBriefAndAutoCompleteAndSetBackAndOutputSRSAndMinScoreAndMatchPrecisionAndMatchPrecisionNotAndSiteNameAndUnitDesignatorAndUnitNumberAndUnitNumberSuffixAndCivicNumberAndCivicNumberSuffixAndStreetNameAndStreetTypeAndStreetDirectionAndStreetQualifierAndLocalityNameAndProvinceCodeAndLocalitiesAndNotLocalitiesAndBboxAndCentreAndMaxDistanceAndExtrapolateAndParcelPointStreetDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="N")]
 		N = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
 		S = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="E")]
 		E = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="W")]
 		W = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
 		O = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NE")]
 		NE = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NO")]
 		NO = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NW")]
 		NW = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SE")]
 		SE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SO")]
 		SO = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SW")]
 		SW = 10,
 	}
 	

@@ -662,7 +662,7 @@ namespace MyNS
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
 	[System.SerializableAttribute()]
-	public class Function
+	public class function_
 	{
 		
 		/// <summary>
@@ -792,7 +792,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="functions")]
-		public Function[] Functions { get; set; }
+		public function_[] Functions { get; set; }
 		
 		/// <summary>
 		/// Total sum of items in the list.
@@ -3060,7 +3060,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="functionId">Function unique ID.</param>
 		/// <returns>Function</returns>
-		public async Task<Function> FunctionsGetAsync(string functionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<function_> FunctionsGetAsync(string functionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "functions/"+ (functionId==null? "" : System.Uri.EscapeDataString(functionId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -3078,7 +3078,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Function>(jsonReader);
+				return serializer.Deserialize<function_>(jsonReader);
 				}
 			}
 			finally
@@ -3095,7 +3095,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="functionId">Function unique ID.</param>
 		/// <returns>Function</returns>
-		public async Task<Function> FunctionsUpdateAsync(string functionId, FunctionsUpdatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<function_> FunctionsUpdateAsync(string functionId, FunctionsUpdatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "functions/"+ (functionId==null? "" : System.Uri.EscapeDataString(functionId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -3119,7 +3119,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Function>(jsonReader);
+				return serializer.Deserialize<function_>(jsonReader);
 				}
 			}
 			finally
@@ -3247,7 +3247,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="functionId">Function unique ID.</param>
 		/// <returns>Function</returns>
-		public async Task<Function> FunctionsUpdateTagAsync(string functionId, FunctionsUpdateTagPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<function_> FunctionsUpdateTagAsync(string functionId, FunctionsUpdateTagPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "functions/"+ (functionId==null? "" : System.Uri.EscapeDataString(functionId))+"/tag";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
@@ -3271,7 +3271,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<Function>(jsonReader);
+				return serializer.Deserialize<function_>(jsonReader);
 				}
 			}
 			finally

@@ -1339,7 +1339,7 @@ namespace MyNS
 		/// <param name="field_name">Name of the field to remove score from</param>
 		public async Task DeletescorebyfieldAsync(string acronym, string id, string field_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "api/dataentities/"+ (acronym==null? "" : System.Uri.EscapeDataString(acronym))+"/documents/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/score/"+ (field_name==null? "" : System.Uri.EscapeDataString(field_name));
+			var requestUri = "api/dataentities/"+ (acronym==null? "" : System.Uri.EscapeDataString(acronym))+"/documents/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/score/{field_name}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1369,7 +1369,7 @@ namespace MyNS
 		/// <param name="field_name">Name of the field to score</param>
 		public async Task PutscorebyfieldAsync(string acronym, string id, string field_name, PutscorebyfieldRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "api/dataentities/"+ (acronym==null? "" : System.Uri.EscapeDataString(acronym))+"/documents/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/score/"+ (field_name==null? "" : System.Uri.EscapeDataString(field_name));
+			var requestUri = "api/dataentities/"+ (acronym==null? "" : System.Uri.EscapeDataString(acronym))+"/documents/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/score/{field_name}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -1513,7 +1513,7 @@ namespace MyNS
 		/// <param name="field">Field to attach the file to, as described in admin</param>
 		public async Task RetrieveattachmentAsync(string acronym, string id, string field, string file_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "api/dataentities/"+ (acronym==null? "" : System.Uri.EscapeDataString(acronym))+"/documents/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/"+ (field==null? "" : System.Uri.EscapeDataString(field))+"/attachments/"+ (file_name==null? "" : System.Uri.EscapeDataString(file_name));
+			var requestUri = "api/dataentities/"+ (acronym==null? "" : System.Uri.EscapeDataString(acronym))+"/documents/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/"+ (field==null? "" : System.Uri.EscapeDataString(field))+"/attachments/{file_name}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)

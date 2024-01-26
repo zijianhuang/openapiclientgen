@@ -285,10 +285,10 @@ namespace MyNS
 	public enum StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="newest")]
 		newest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="oldest")]
 		oldest = 1,
 	}
 	

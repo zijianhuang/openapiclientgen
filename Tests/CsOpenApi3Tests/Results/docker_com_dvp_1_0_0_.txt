@@ -33,35 +33,38 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DatasetModelName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pulls")]
 		pulls = 0,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TimespanType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="months")]
 		months = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="weeks")]
 		weeks = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DataviewType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="raw")]
 		raw = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="summary")]
 		summary = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="repo-summary")]
@@ -69,11 +72,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DatasetType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pulls")]
 		pulls = 0,
 	}
 	
@@ -356,7 +360,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<NamespaceMetadata> GetNamespaceAsync(string _namespace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "namespaces/{namespace}";
+			var requestUri = "namespaces/"+ (_namespace==null? "" : System.Uri.EscapeDataString(_namespace));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -391,7 +395,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<YearData> GetNamespaceYearsAsync(string _namespace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "namespaces/{namespace}/pulls/exports/years";
+			var requestUri = "namespaces/"+ (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"/pulls/exports/years";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -428,7 +432,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<TimespanData> GetNamespaceTimespansAsync(string _namespace, int year, TimespanType timespantype, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "namespaces/{namespace}/pulls/exports/years/"+year+"/"+timespantype;
+			var requestUri = "namespaces/"+ (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"/pulls/exports/years/"+year+"/"+timespantype;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -466,7 +470,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<TimespanModel> GetNamespaceTimespanMetadataAsync(string _namespace, int year, TimespanType timespantype, int timespan, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "namespaces/{namespace}/pulls/exports/years/"+year+"/"+timespantype+"/"+timespan;
+			var requestUri = "namespaces/"+ (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"/pulls/exports/years/"+year+"/"+timespantype+"/"+timespan;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -505,7 +509,7 @@ namespace MyNS
 		/// <returns>Success</returns>
 		public async Task<ResponseData> GetNamespaceDataByTimespanAsync(string _namespace, int year, TimespanType timespantype, int timespan, DataviewType dataview, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "namespaces/{namespace}/pulls/exports/years/"+year+"/"+timespantype+"/"+timespan+"/"+dataview;
+			var requestUri = "namespaces/"+ (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"/pulls/exports/years/"+year+"/"+timespantype+"/"+timespan+"/"+dataview;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)

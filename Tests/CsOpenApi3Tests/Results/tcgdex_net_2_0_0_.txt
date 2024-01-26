@@ -725,7 +725,7 @@ namespace MyNS
 		/// <returns>Get the Energy cards containing the specified energy-type</returns>
 		public async Task<CardResume[]> Energy_types_energy_typeGetAsync(string energy_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "energy-types/"+ (energy_type==null? "" : System.Uri.EscapeDataString(energy_type));
+			var requestUri = "energy-types/{energy_type}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -981,7 +981,7 @@ namespace MyNS
 		/// <returns>Get every cards respecting the specified regulation-mark</returns>
 		public async Task<CardResume[]> Regulation_marks_regulation_markGetAsync(string regulation_mark, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "regulation-marks/"+ (regulation_mark==null? "" : System.Uri.EscapeDataString(regulation_mark));
+			var requestUri = "regulation-marks/{regulation_mark}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1399,7 +1399,7 @@ namespace MyNS
 		/// <returns>Get the cards containing with the specified trainer-type</returns>
 		public async Task<CardResume[]> Trainer_types_trainer_typeGetAsync(string trainer_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "trainer-types/"+ (trainer_type==null? "" : System.Uri.EscapeDataString(trainer_type));
+			var requestUri = "trainer-types/{trainer_type}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)

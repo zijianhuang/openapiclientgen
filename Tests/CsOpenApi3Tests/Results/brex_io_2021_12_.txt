@@ -1296,10 +1296,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OG")]
 		OG = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EN")]
 		EN = 2,
 	}
 	
@@ -1309,16 +1309,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="mini")]
 		mini = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="master")]
 		master = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="refresh")]
 		refresh = 4,
 	}
 	
@@ -1328,13 +1328,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EN")]
 		EN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ES")]
 		ES = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FR")]
 		FR = 3,
 	}
 	
@@ -1344,10 +1344,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="B")]
 		B = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
 		P = 2,
 	}
 	

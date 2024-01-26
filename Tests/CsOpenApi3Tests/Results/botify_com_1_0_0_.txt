@@ -2315,16 +2315,16 @@ namespace MyNS
 	public enum GetUrlsArea
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
 		current = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disappeared")]
 		disappeared = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
 		_new = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="search_engines_orphans")]
 		search_engines_orphans = 3,
 	}
 	
@@ -2353,32 +2353,32 @@ namespace MyNS
 	public enum GetUrlsAggsArea
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
 		current = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disappeared")]
 		disappeared = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
 		_new = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="search_engines_orphans")]
 		search_engines_orphans = 3,
 	}
 	
 	public enum GetUrlsDatamodelArea
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
 		current = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disappeared")]
 		disappeared = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
 		_new = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="search_engines_orphans")]
 		search_engines_orphans = 3,
 	}
 	
@@ -2407,23 +2407,23 @@ namespace MyNS
 	public enum CreateUrlsExportArea
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
 		current = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disappeared")]
 		disappeared = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
 		_new = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="search_engines_orphans")]
 		search_engines_orphans = 3,
 	}
 	
 	public enum GetUrlsSuggestedFiltersArea
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
 		current = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]
@@ -2477,10 +2477,10 @@ namespace MyNS
 	public enum GetProjectUrlsAggsArea
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
 		current = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disappeared")]
 		disappeared = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="new")]

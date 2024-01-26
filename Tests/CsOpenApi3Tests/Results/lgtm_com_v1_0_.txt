@@ -107,17 +107,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Language_statsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="failure")]
 		failure = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
 		pending = 2,
 	}
 	
@@ -320,17 +321,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Codereview_languagesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="failure")]
 		failure = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
 		success = 2,
 	}
 	
@@ -359,17 +361,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HealthStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
 		UNKNOWN = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UP")]
 		UP = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWN")]
 		DOWN = 2,
 	}
 	
@@ -477,29 +480,31 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum OperationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="done")]
 		done = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum OperationTask_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="analysis")]
 		analysis = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="codereview")]
 		codereview = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="queryjob")]
 		queryjob = 2,
 	}
 	
@@ -546,6 +551,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Project_language_statsGrade
 	{
@@ -553,19 +559,19 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="A+")]
 		APlus = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="A")]
 		A = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="B")]
 		B = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="C")]
 		C = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="D")]
 		D = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="E")]
 		E = 5,
 	}
 	
@@ -744,14 +750,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Queryjob_results_overview_entryStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
 		error = 1,
 	}
 	
@@ -834,7 +841,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Analysis> GetAnalysisAsync(string analysis_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "analyses/"+ (analysis_id==null? "" : System.Uri.EscapeDataString(analysis_id));
+			var requestUri = "analyses/{analysis_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -890,7 +897,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<string> GetAlertsAsync(string analysis_id, string sarif_version, bool excluded_files, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "analyses/"+ (analysis_id==null? "" : System.Uri.EscapeDataString(analysis_id))+"/alerts&sarif-version=" + (sarif_version==null? "" : System.Uri.EscapeDataString(sarif_version))+"&excluded-files="+excluded_files;
+			var requestUri = "analyses/{analysis_id}/alerts?sarif-version=" + (sarif_version==null? "" : System.Uri.EscapeDataString(sarif_version))+"&excluded-files="+excluded_files;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -933,7 +940,7 @@ namespace MyNS
 		///</param>
 		public async Task RequestAnalysisAsync(long project_id, string commit, string[] language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "analyses/"+project_id+"?commit=" + (commit==null? "" : System.Uri.EscapeDataString(commit))+"&"+string.Join("&", language.Select(z => $"language={System.Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "analyses/{project_id}?commit=" + (commit==null? "" : System.Uri.EscapeDataString(commit))+"&"+string.Join("&", language.Select(z => $"language={System.Uri.EscapeDataString(z.ToString())}"));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -961,7 +968,7 @@ namespace MyNS
 		/// <returns>Success. Data returned.</returns>
 		public async Task<Analysis> GetAnalysisForCommitAsync(long project_id, string commit_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "analyses/"+project_id+"/commits/"+ (commit_id==null? "" : System.Uri.EscapeDataString(commit_id));
+			var requestUri = "analyses/{project_id}/commits/{commit_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1001,7 +1008,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Code_review[]> GetCodeReviewAsync(string review_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "codereviews/"+ (review_id==null? "" : System.Uri.EscapeDataString(review_id));
+			var requestUri = "codereviews/{review_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1043,7 +1050,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task GetIssueAsync(long project_id, string alert_key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "issues/"+project_id+"/"+ (alert_key==null? "" : System.Uri.EscapeDataString(alert_key));
+			var requestUri = "issues/{project_id}/{alert_key}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1106,7 +1113,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Operation> GetOperationAsync(long operation_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "operations/"+operation_id;
+			var requestUri = "operations/{operation_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1186,7 +1193,7 @@ namespace MyNS
 		/// <returns>Success. Details of the deleted project returned.</returns>
 		public async Task<Project_details> DeleteProjectAsync(long project_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "projects/"+project_id;
+			var requestUri = "projects/{project_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1224,7 +1231,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Project_details> GetProjectAsync(long project_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "projects/"+project_id;
+			var requestUri = "projects/{project_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1271,7 +1278,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task GetProjectConfigAsync(long project_id, GetProjectConfigSource source, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "projects/"+project_id+"/settings/analysis-configuration?source=" + source;
+			var requestUri = "projects/{project_id}/settings/analysis-configuration?source=" + source;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1343,7 +1350,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Queryjob> GetQueryJobAsync(string queryjob_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "queryjobs/"+ (queryjob_id==null? "" : System.Uri.EscapeDataString(queryjob_id));
+			var requestUri = "queryjobs/{queryjob_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1389,7 +1396,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Queryjob_results_overview> GetQueryJobResultsOverviewAsync(string queryjob_id, string start, int limit, string filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "queryjobs/"+ (queryjob_id==null? "" : System.Uri.EscapeDataString(queryjob_id))+"/results&start=" + (start==null? "" : System.Uri.EscapeDataString(start))+"&limit="+limit+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
+			var requestUri = "queryjobs/{queryjob_id}/results?start=" + (start==null? "" : System.Uri.EscapeDataString(start))+"&limit="+limit+"&filter=" + (filter==null? "" : System.Uri.EscapeDataString(filter));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1429,7 +1436,7 @@ namespace MyNS
 		/// <returns>Success. The result contains three items: column headers, data, and pagination information.</returns>
 		public async Task<Queryjob_project_results> GetQueryJobResultsForProjectAsync(string queryjob_id, string project_id, int start, int limit, bool nofilter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "queryjobs/"+ (queryjob_id==null? "" : System.Uri.EscapeDataString(queryjob_id))+"/results/"+ (project_id==null? "" : System.Uri.EscapeDataString(project_id))+"&start="+start+"&limit="+limit+"&nofilter="+nofilter;
+			var requestUri = "queryjobs/{queryjob_id}/results/{project_id}?start="+start+"&limit="+limit+"&nofilter="+nofilter;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1465,7 +1472,7 @@ namespace MyNS
 		/// <param name="session_id">The id of the upload session.</param>
 		public async Task AbortUploadAsync(string session_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "snapshots/uploads/"+ (session_id==null? "" : System.Uri.EscapeDataString(session_id));
+			var requestUri = "snapshots/uploads/{session_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1496,7 +1503,7 @@ namespace MyNS
 		/// <param name="session_id">The id of the upload session.</param>
 		public async Task CompleteUploadAsync(string session_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "snapshots/uploads/"+ (session_id==null? "" : System.Uri.EscapeDataString(session_id));
+			var requestUri = "snapshots/uploads/{session_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -1525,7 +1532,7 @@ namespace MyNS
 		/// <param name="language">The language of the database to download.</param>
 		public async Task GetSnapshotAsync(long project_id, string language, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "snapshots/"+project_id+"/"+ (language==null? "" : System.Uri.EscapeDataString(language));
+			var requestUri = "snapshots/{project_id}/"+ (language==null? "" : System.Uri.EscapeDataString(language));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1565,7 +1572,7 @@ namespace MyNS
 		/// <returns>Success.</returns>
 		public async Task<Upload_session> InitSnapshotUploadAsync(long project_id, string language, string commit, System.DateTimeOffset date, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "snapshots/"+project_id+"/"+ (language==null? "" : System.Uri.EscapeDataString(language))+"&commit=" + (commit==null? "" : System.Uri.EscapeDataString(commit))+"&date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
+			var requestUri = "snapshots/{project_id}/"+ (language==null? "" : System.Uri.EscapeDataString(language))+"&commit=" + (commit==null? "" : System.Uri.EscapeDataString(commit))+"&date=" + date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -1667,7 +1674,7 @@ namespace MyNS
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Metric> GetMetricAsync(string metric_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "system/metrics/"+ (metric_id==null? "" : System.Uri.EscapeDataString(metric_id));
+			var requestUri = "system/metrics/{metric_id}";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -1697,23 +1704,23 @@ namespace MyNS
 	public enum AddProjectMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sparse")]
 		sparse = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="upload")]
 		upload = 2,
 	}
 	
 	public enum GetProjectConfigSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="repository")]
 		repository = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="administrator")]
 		administrator = 1,
 	}
 }

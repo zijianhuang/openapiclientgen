@@ -216,41 +216,43 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GoogleCloudAdvisorynotificationsV1TextLocalizationState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_UNSPECIFIED")]
 		LOCALIZATION_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_NOT_APPLICABLE")]
 		LOCALIZATION_STATE_NOT_APPLICABLE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_PENDING")]
 		LOCALIZATION_STATE_PENDING = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCALIZATION_STATE_COMPLETED")]
 		LOCALIZATION_STATE_COMPLETED = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GoogleCloudAdvisorynotificationsV1NotificationNotificationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_UNSPECIFIED")]
 		NOTIFICATION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_SECURITY_PRIVACY_ADVISORY")]
 		NOTIFICATION_TYPE_SECURITY_PRIVACY_ADVISORY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_SENSITIVE_ACTIONS")]
 		NOTIFICATION_TYPE_SENSITIVE_ACTIONS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_SECURITY_MSA")]
 		NOTIFICATION_TYPE_SECURITY_MSA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_TYPE_THREAT_HORIZONS")]
 		NOTIFICATION_TYPE_THREAT_HORIZONS = 4,
 	}
 	
@@ -448,13 +450,13 @@ namespace MyNS
 	public enum Advisorynotifications_projects_locations_notifications_listView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOTIFICATION_VIEW_UNSPECIFIED")]
 		NOTIFICATION_VIEW_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC")]
 		BASIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FULL")]
 		FULL = 2,
 	}
 }

@@ -129,14 +129,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EnrolledServiceEnrollmentLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENROLLMENT_LEVEL_UNSPECIFIED")]
 		ENROLLMENT_LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BLOCK_ALL")]
 		BLOCK_ALL = 1,
 	}
 	
@@ -180,29 +181,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AccessReasonType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CUSTOMER_INITIATED_SUPPORT")]
 		CUSTOMER_INITIATED_SUPPORT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_INITIATED_SERVICE")]
 		GOOGLE_INITIATED_SERVICE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_INITIATED_REVIEW")]
 		GOOGLE_INITIATED_REVIEW = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="THIRD_PARTY_DATA_REQUEST")]
 		THIRD_PARTY_DATA_REQUEST = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_RESPONSE_TO_PRODUCTION_ALERT")]
 		GOOGLE_RESPONSE_TO_PRODUCTION_ALERT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLOUD_INITIATED_ACCESS")]
 		CLOUD_INITIATED_ACCESS = 6,
 	}
 	
@@ -351,113 +353,114 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SignatureInfoGoogleKeyAlgorithm
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED")]
 		CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GOOGLE_SYMMETRIC_ENCRYPTION")]
 		GOOGLE_SYMMETRIC_ENCRYPTION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128_GCM")]
 		AES_128_GCM = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256_GCM")]
 		AES_256_GCM = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128_CBC")]
 		AES_128_CBC = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256_CBC")]
 		AES_256_CBC = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_128_CTR")]
 		AES_128_CTR = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AES_256_CTR")]
 		AES_256_CTR = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_2048_SHA256")]
 		RSA_SIGN_PSS_2048_SHA256 = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_3072_SHA256")]
 		RSA_SIGN_PSS_3072_SHA256 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_4096_SHA256")]
 		RSA_SIGN_PSS_4096_SHA256 = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PSS_4096_SHA512")]
 		RSA_SIGN_PSS_4096_SHA512 = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_2048_SHA256")]
 		RSA_SIGN_PKCS1_2048_SHA256 = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_3072_SHA256")]
 		RSA_SIGN_PKCS1_3072_SHA256 = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_4096_SHA256")]
 		RSA_SIGN_PKCS1_4096_SHA256 = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_PKCS1_4096_SHA512")]
 		RSA_SIGN_PKCS1_4096_SHA512 = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_RAW_PKCS1_2048")]
 		RSA_SIGN_RAW_PKCS1_2048 = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_RAW_PKCS1_3072")]
 		RSA_SIGN_RAW_PKCS1_3072 = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_SIGN_RAW_PKCS1_4096")]
 		RSA_SIGN_RAW_PKCS1_4096 = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_2048_SHA256")]
 		RSA_DECRYPT_OAEP_2048_SHA256 = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_3072_SHA256")]
 		RSA_DECRYPT_OAEP_3072_SHA256 = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_4096_SHA256")]
 		RSA_DECRYPT_OAEP_4096_SHA256 = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_4096_SHA512")]
 		RSA_DECRYPT_OAEP_4096_SHA512 = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_2048_SHA1")]
 		RSA_DECRYPT_OAEP_2048_SHA1 = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_3072_SHA1")]
 		RSA_DECRYPT_OAEP_3072_SHA1 = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RSA_DECRYPT_OAEP_4096_SHA1")]
 		RSA_DECRYPT_OAEP_4096_SHA1 = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_SIGN_P256_SHA256")]
 		EC_SIGN_P256_SHA256 = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_SIGN_P384_SHA384")]
 		EC_SIGN_P384_SHA384 = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EC_SIGN_SECP256K1_SHA256")]
 		EC_SIGN_SECP256K1_SHA256 = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA256")]
 		HMAC_SHA256 = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA1")]
 		HMAC_SHA1 = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA384")]
 		HMAC_SHA384 = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA512")]
 		HMAC_SHA512 = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HMAC_SHA224")]
 		HMAC_SHA224 = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXTERNAL_SYMMETRIC_ENCRYPTION")]
 		EXTERNAL_SYMMETRIC_ENCRYPTION = 34,
 	}
 	

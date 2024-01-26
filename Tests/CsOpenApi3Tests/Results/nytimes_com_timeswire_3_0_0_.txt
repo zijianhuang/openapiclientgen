@@ -249,7 +249,7 @@ namespace MyNS
 		/// <returns>An array of Articles</returns>
 		public async Task<Content_source_section_time_period_jsonGetByLimitAndOffsetReturn> Content_source_section_time_period_jsonGetByLimitAndOffsetAsync(Content_source_section_jsonGetByLimitAndOffsetSource source, string section, int time_period, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "content/"+source+"/"+ (section==null? "" : System.Uri.EscapeDataString(section))+"/"+time_period+".json&limit="+limit+"&offset="+offset;
+			var requestUri = "content/"+source+"/"+ (section==null? "" : System.Uri.EscapeDataString(section))+"/{time_period}.json&limit="+limit+"&offset="+offset;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -295,13 +295,13 @@ namespace MyNS
 	public enum Content_source_section_jsonGetByLimitAndOffsetSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="all")]
 		all = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nyt")]
 		nyt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="iht")]
 		iht = 2,
 	}
 	

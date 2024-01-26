@@ -214,14 +214,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CodeSigningPolicy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Warn")]
 		Warn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enforce")]
 		Enforce = 1,
 	}
 	
@@ -316,17 +317,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EventSourcePosition
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRIM_HORIZON")]
 		TRIM_HORIZON = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LATEST")]
 		LATEST = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AT_TIMESTAMP")]
 		AT_TIMESTAMP = 2,
 	}
 	
@@ -409,32 +411,33 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SourceAccessType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_AUTH")]
 		BASIC_AUTH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_SUBNET")]
 		VPC_SUBNET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VPC_SECURITY_GROUP")]
 		VPC_SECURITY_GROUP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SASL_SCRAM_512_AUTH")]
 		SASL_SCRAM_512_AUTH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SASL_SCRAM_256_AUTH")]
 		SASL_SCRAM_256_AUTH = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIRTUAL_HOST")]
 		VIRTUAL_HOST = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CLIENT_CERTIFICATE_TLS_AUTH")]
 		CLIENT_CERTIFICATE_TLS_AUTH = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVER_ROOT_CA_CERTIFICATE")]
 		SERVER_ROOT_CA_CERTIFICATE = 7,
 	}
 	
@@ -457,11 +460,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FunctionResponseType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ReportBatchItemFailures")]
 		ReportBatchItemFailures = 0,
 	}
 	
@@ -520,14 +524,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FullDocument
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdateLookup")]
 		UpdateLookup = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Default")]
 		Default = 1,
 	}
 	
@@ -646,11 +651,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Runtime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs")]
 		nodejs = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3")]
@@ -674,13 +680,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs16.x")]
 		nodejs16_x = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8")]
 		java8 = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8.al2")]
 		java8_al2 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java11")]
 		java11 = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python2.7")]
@@ -710,7 +716,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnetcore3.1")]
 		dotnetcore3_1 = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnet6")]
 		dotnet6 = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3-edge")]
@@ -725,7 +731,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby2.7")]
 		ruby2_7 = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided")]
 		provided = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided.al2")]
@@ -737,7 +743,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python3.10")]
 		python3_10 = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java17")]
 		java17 = 29,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby3.2")]
@@ -826,14 +832,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TracingMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PassThrough")]
 		PassThrough = 1,
 	}
 	
@@ -859,182 +866,186 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum State
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
 		Active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
 		Inactive = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
 		Failed = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum StateReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Idle")]
 		Idle = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Creating")]
 		Creating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Restoring")]
 		Restoring = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EniLimitExceeded")]
 		EniLimitExceeded = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InsufficientRolePermissions")]
 		InsufficientRolePermissions = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidConfiguration")]
 		InvalidConfiguration = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalError")]
 		InternalError = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SubnetOutOfIPAddresses")]
 		SubnetOutOfIPAddresses = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidSubnet")]
 		InvalidSubnet = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidSecurityGroup")]
 		InvalidSecurityGroup = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImageDeleted")]
 		ImageDeleted = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImageAccessDenied")]
 		ImageAccessDenied = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImage")]
 		InvalidImage = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMSKeyAccessDenied")]
 		KMSKeyAccessDenied = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMSKeyNotFound")]
 		KMSKeyNotFound = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidStateKMSKey")]
 		InvalidStateKMSKey = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisabledKMSKey")]
 		DisabledKMSKey = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSIOError")]
 		EFSIOError = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSMountConnectivityError")]
 		EFSMountConnectivityError = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSMountFailure")]
 		EFSMountFailure = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSMountTimeout")]
 		EFSMountTimeout = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidRuntime")]
 		InvalidRuntime = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidZipFileException")]
 		InvalidZipFileException = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FunctionError")]
 		FunctionError = 23,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum LastUpdateStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Successful")]
 		Successful = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
 		Failed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InProgress")]
 		InProgress = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum LastUpdateStatusReasonCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EniLimitExceeded")]
 		EniLimitExceeded = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InsufficientRolePermissions")]
 		InsufficientRolePermissions = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidConfiguration")]
 		InvalidConfiguration = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InternalError")]
 		InternalError = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SubnetOutOfIPAddresses")]
 		SubnetOutOfIPAddresses = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidSubnet")]
 		InvalidSubnet = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidSecurityGroup")]
 		InvalidSecurityGroup = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImageDeleted")]
 		ImageDeleted = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ImageAccessDenied")]
 		ImageAccessDenied = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidImage")]
 		InvalidImage = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMSKeyAccessDenied")]
 		KMSKeyAccessDenied = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KMSKeyNotFound")]
 		KMSKeyNotFound = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidStateKMSKey")]
 		InvalidStateKMSKey = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisabledKMSKey")]
 		DisabledKMSKey = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSIOError")]
 		EFSIOError = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSMountConnectivityError")]
 		EFSMountConnectivityError = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSMountFailure")]
 		EFSMountFailure = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EFSMountTimeout")]
 		EFSMountTimeout = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidRuntime")]
 		InvalidRuntime = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvalidZipFileException")]
 		InvalidZipFileException = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FunctionError")]
 		FunctionError = 20,
 	}
 	
@@ -1062,14 +1073,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PackageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Zip")]
 		Zip = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Image")]
 		Image = 1,
 	}
 	
@@ -1122,14 +1134,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Architecture
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="x86_64")]
 		x86_64 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="arm64")]
 		arm64 = 1,
 	}
 	
@@ -1165,26 +1178,28 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SnapStartApplyOn
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PublishedVersions")]
 		PublishedVersions = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
 		None = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SnapStartOptimizationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="On")]
 		On = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Off")]
 		Off = 1,
 	}
 	
@@ -1283,14 +1298,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FunctionUrlAuthType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NONE")]
 		NONE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWS_IAM")]
 		AWS_IAM = 1,
 	}
 	
@@ -1322,14 +1338,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum InvokeMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BUFFERED")]
 		BUFFERED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESPONSE_STREAM")]
 		RESPONSE_STREAM = 1,
 	}
 	
@@ -1666,17 +1683,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ProvisionedConcurrencyStatusEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
 		IN_PROGRESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="READY")]
 		READY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 2,
 	}
 	
@@ -1702,17 +1720,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UpdateRuntimeOn
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Auto")]
 		Auto = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Manual")]
 		Manual = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FunctionUpdate")]
 		FunctionUpdate = 2,
 	}
 	
@@ -2824,20 +2843,22 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EndPointType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KAFKA_BOOTSTRAP_SERVERS")]
 		KAFKA_BOOTSTRAP_SERVERS = 0,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FunctionVersion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALL")]
 		ALL = 0,
 	}
 	
@@ -2938,29 +2959,31 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum InvocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Event")]
 		Event = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestResponse")]
 		RequestResponse = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DryRun")]
 		DryRun = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum LogType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
 		None = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tail")]
 		Tail = 1,
 	}
 	
@@ -2987,14 +3010,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ResponseStreamingInvocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RequestResponse")]
 		RequestResponse = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DryRun")]
 		DryRun = 1,
 	}
 	
@@ -6425,11 +6449,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CreateFunctionPostBodyRuntime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs")]
 		nodejs = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3")]
@@ -6453,13 +6478,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs16.x")]
 		nodejs16_x = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8")]
 		java8 = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8.al2")]
 		java8_al2 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java11")]
 		java11 = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python2.7")]
@@ -6489,7 +6514,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnetcore3.1")]
 		dotnetcore3_1 = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnet6")]
 		dotnet6 = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3-edge")]
@@ -6504,7 +6529,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby2.7")]
 		ruby2_7 = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided")]
 		provided = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided.al2")]
@@ -6516,7 +6541,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python3.10")]
 		python3_10 = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java17")]
 		java17 = 29,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby3.2")]
@@ -7204,11 +7229,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UpdateFunctionConfigurationPutBodyRuntime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs")]
 		nodejs = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3")]
@@ -7232,13 +7258,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs16.x")]
 		nodejs16_x = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8")]
 		java8 = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8.al2")]
 		java8_al2 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java11")]
 		java11 = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python2.7")]
@@ -7268,7 +7294,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnetcore3.1")]
 		dotnetcore3_1 = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnet6")]
 		dotnet6 = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3-edge")]
@@ -7283,7 +7309,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby2.7")]
 		ruby2_7 = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided")]
 		provided = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided.al2")]
@@ -7295,7 +7321,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python3.10")]
 		python3_10 = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java17")]
 		java17 = 29,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby3.2")]
@@ -7349,7 +7375,7 @@ namespace MyNS
 	public enum GetLayerVersionByArnFind
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LayerVersion")]
 		LayerVersion = 0,
 	}
 	
@@ -7400,7 +7426,7 @@ namespace MyNS
 	public enum ListLayerVersionsCompatibleRuntime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs")]
 		nodejs = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3")]
@@ -7424,13 +7450,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs16.x")]
 		nodejs16_x = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8")]
 		java8 = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8.al2")]
 		java8_al2 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java11")]
 		java11 = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python2.7")]
@@ -7460,7 +7486,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnetcore3.1")]
 		dotnetcore3_1 = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnet6")]
 		dotnet6 = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3-edge")]
@@ -7475,7 +7501,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby2.7")]
 		ruby2_7 = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided")]
 		provided = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided.al2")]
@@ -7487,7 +7513,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python3.10")]
 		python3_10 = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java17")]
 		java17 = 29,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby3.2")]
@@ -7562,7 +7588,7 @@ namespace MyNS
 	public enum ListLayersCompatibleRuntime
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs")]
 		nodejs = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3")]
@@ -7586,13 +7612,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs16.x")]
 		nodejs16_x = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8")]
 		java8 = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="java8.al2")]
 		java8_al2 = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java11")]
 		java11 = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python2.7")]
@@ -7622,7 +7648,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnetcore3.1")]
 		dotnetcore3_1 = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="dotnet6")]
 		dotnet6 = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="nodejs4.3-edge")]
@@ -7637,7 +7663,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby2.7")]
 		ruby2_7 = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided")]
 		provided = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="provided.al2")]
@@ -7649,7 +7675,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="python3.10")]
 		python3_10 = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="java17")]
 		java17 = 29,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ruby3.2")]

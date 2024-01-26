@@ -193,6 +193,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VehicleMotStatus
 	{
@@ -206,11 +207,12 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not valid")]
 		Not_valid = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Valid")]
 		Valid = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VehicleTaxStatus
 	{
@@ -218,13 +220,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="Not Taxed for on Road Use")]
 		Not_Taxed_for_on_Road_Use = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SORN")]
 		SORN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Taxed")]
 		Taxed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Untaxed")]
 		Untaxed = 3,
 	}
 	

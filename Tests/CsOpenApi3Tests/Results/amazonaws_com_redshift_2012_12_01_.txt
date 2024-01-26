@@ -75,14 +75,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ReservedNodeOfferingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Regular")]
 		Regular = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Upgradable")]
 		Upgradable = 1,
 	}
 	
@@ -204,26 +205,27 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DataShareStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_AUTHORIZATION")]
 		PENDING_AUTHORIZATION = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHORIZED")]
 		AUTHORIZED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAUTHORIZED")]
 		DEAUTHORIZED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
 		REJECTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
 		AVAILABLE = 5,
 	}
 	
@@ -336,14 +338,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AuthorizationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Authorized")]
 		Authorized = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Revoking")]
 		Revoking = 1,
 	}
 	
@@ -1069,17 +1072,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ScheduleState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MODIFYING")]
 		MODIFYING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 2,
 	}
 	
@@ -1114,32 +1118,34 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AquaStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="applying")]
 		applying = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AquaConfigurationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="enabled")]
 		enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disabled")]
 		disabled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="auto")]
 		auto = 2,
 	}
 	
@@ -1180,26 +1186,27 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ReservedNodeExchangeStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REQUESTED")]
 		REQUESTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
 		PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
 		IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETRYING")]
 		RETRYING = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
 		SUCCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 5,
 	}
 	
@@ -1891,14 +1898,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ScheduledActionState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
 		DISABLED = 1,
 	}
 	
@@ -2062,11 +2070,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UsageLimitFeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="spectrum")]
 		spectrum = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="concurrency-scaling")]
@@ -2077,11 +2086,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UsageLimitLimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="time")]
 		time = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-scanned")]
@@ -2089,32 +2099,34 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UsageLimitPeriod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="daily")]
 		daily = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="weekly")]
 		weekly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="monthly")]
 		monthly = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UsageLimitBreachAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="log")]
 		log = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="emit-metric")]
 		emitMinusmetric = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disable")]
 		disable = 2,
 	}
 	
@@ -2372,29 +2384,31 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SnapshotAttributeToSortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_TYPE")]
 		SOURCE_TYPE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTAL_SIZE")]
 		TOTAL_SIZE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CREATE_TIME")]
 		CREATE_TIME = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SortByOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
 		DESC = 1,
 	}
 	
@@ -2669,14 +2683,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum LogDestinationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="s3")]
 		s3 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cloudwatch")]
 		cloudwatch = 1,
 	}
 	
@@ -2711,47 +2726,49 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum NodeConfigurationOptionsFilterName
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NodeType")]
 		NodeType = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NumberOfNodes")]
 		NumberOfNodes = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimatedDiskUtilizationPercent")]
 		EstimatedDiskUtilizationPercent = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Mode")]
 		Mode = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum OperatorType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="eq")]
 		eq = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="lt")]
 		lt = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="gt")]
 		gt = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="le")]
 		le = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ge")]
 		ge = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="in")]
 		_in = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="between")]
 		between = 6,
 	}
 	
@@ -2869,6 +2886,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ScheduledActionFilterName
 	{
@@ -3244,6 +3262,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ParameterApplyType
 	{
@@ -3251,7 +3270,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="static")]
 		_static = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="dynamic")]
 		dynamic = 1,
 	}
 	
@@ -3475,23 +3494,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum TableRestoreStatusType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
 		PENDING = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN_PROGRESS")]
 		IN_PROGRESS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCEEDED")]
 		SUCCEEDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELED")]
 		CANCELED = 4,
 	}
 	
@@ -3618,6 +3638,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ActionType
 	{
@@ -4615,35 +4636,37 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DataShareStatusForConsumer
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AVAILABLE")]
 		AVAILABLE = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DataShareStatusForProducer
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACTIVE")]
 		ACTIVE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AUTHORIZED")]
 		AUTHORIZED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING_AUTHORIZATION")]
 		PENDING_AUTHORIZATION = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEAUTHORIZED")]
 		DEAUTHORIZED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
 		REJECTED = 4,
 	}
 	
@@ -5334,11 +5357,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster")]
 		cluster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster-parameter-group")]
@@ -5600,17 +5624,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ScheduledActionTypeValues
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResizeCluster")]
 		ResizeCluster = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PauseCluster")]
 		PauseCluster = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResumeCluster")]
 		ResumeCluster = 2,
 	}
 	
@@ -6039,6 +6064,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ReservedNodeExchangeActionType
 	{
@@ -6134,11 +6160,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
 		standard = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="high-performance")]
@@ -6661,20 +6688,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PartnerIntegrationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
 		Inactive = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RuntimeFailure")]
 		RuntimeFailure = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConnectionFailure")]
 		ConnectionFailure = 3,
 	}
 	
@@ -11274,7 +11302,7 @@ namespace MyNS
 	public enum GET_AcceptReservedNodeExchangeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AcceptReservedNodeExchange")]
 		AcceptReservedNodeExchange = 0,
 	}
 	
@@ -11295,7 +11323,7 @@ namespace MyNS
 	public enum GET_AddPartnerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddPartner")]
 		AddPartner = 0,
 	}
 	
@@ -11316,7 +11344,7 @@ namespace MyNS
 	public enum GET_AssociateDataShareConsumerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssociateDataShareConsumer")]
 		AssociateDataShareConsumer = 0,
 	}
 	
@@ -11337,7 +11365,7 @@ namespace MyNS
 	public enum GET_AuthorizeClusterSecurityGroupIngressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeClusterSecurityGroupIngress")]
 		AuthorizeClusterSecurityGroupIngress = 0,
 	}
 	
@@ -11358,7 +11386,7 @@ namespace MyNS
 	public enum GET_AuthorizeDataShareAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeDataShare")]
 		AuthorizeDataShare = 0,
 	}
 	
@@ -11379,7 +11407,7 @@ namespace MyNS
 	public enum GET_AuthorizeEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeEndpointAccess")]
 		AuthorizeEndpointAccess = 0,
 	}
 	
@@ -11400,7 +11428,7 @@ namespace MyNS
 	public enum GET_AuthorizeSnapshotAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeSnapshotAccess")]
 		AuthorizeSnapshotAccess = 0,
 	}
 	
@@ -11421,7 +11449,7 @@ namespace MyNS
 	public enum GET_BatchDeleteClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchDeleteClusterSnapshots")]
 		BatchDeleteClusterSnapshots = 0,
 	}
 	
@@ -11442,7 +11470,7 @@ namespace MyNS
 	public enum GET_BatchModifyClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BatchModifyClusterSnapshots")]
 		BatchModifyClusterSnapshots = 0,
 	}
 	
@@ -11463,7 +11491,7 @@ namespace MyNS
 	public enum GET_CancelResizeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CancelResize")]
 		CancelResize = 0,
 	}
 	
@@ -11484,7 +11512,7 @@ namespace MyNS
 	public enum GET_CopyClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CopyClusterSnapshot")]
 		CopyClusterSnapshot = 0,
 	}
 	
@@ -11505,7 +11533,7 @@ namespace MyNS
 	public enum GET_CreateAuthenticationProfileAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateAuthenticationProfile")]
 		CreateAuthenticationProfile = 0,
 	}
 	
@@ -11526,7 +11554,7 @@ namespace MyNS
 	public enum GET_CreateClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateCluster")]
 		CreateCluster = 0,
 	}
 	
@@ -11547,7 +11575,7 @@ namespace MyNS
 	public enum GET_CreateClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterParameterGroup")]
 		CreateClusterParameterGroup = 0,
 	}
 	
@@ -11568,7 +11596,7 @@ namespace MyNS
 	public enum GET_CreateClusterSecurityGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterSecurityGroup")]
 		CreateClusterSecurityGroup = 0,
 	}
 	
@@ -11589,7 +11617,7 @@ namespace MyNS
 	public enum GET_CreateClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterSnapshot")]
 		CreateClusterSnapshot = 0,
 	}
 	
@@ -11610,7 +11638,7 @@ namespace MyNS
 	public enum GET_CreateClusterSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateClusterSubnetGroup")]
 		CreateClusterSubnetGroup = 0,
 	}
 	
@@ -11631,7 +11659,7 @@ namespace MyNS
 	public enum GET_CreateCustomDomainAssociationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateCustomDomainAssociation")]
 		CreateCustomDomainAssociation = 0,
 	}
 	
@@ -11652,7 +11680,7 @@ namespace MyNS
 	public enum GET_CreateEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateEndpointAccess")]
 		CreateEndpointAccess = 0,
 	}
 	
@@ -11673,7 +11701,7 @@ namespace MyNS
 	public enum GET_CreateEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateEventSubscription")]
 		CreateEventSubscription = 0,
 	}
 	
@@ -11694,7 +11722,7 @@ namespace MyNS
 	public enum GET_CreateHsmClientCertificateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateHsmClientCertificate")]
 		CreateHsmClientCertificate = 0,
 	}
 	
@@ -11715,7 +11743,7 @@ namespace MyNS
 	public enum GET_CreateHsmConfigurationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateHsmConfiguration")]
 		CreateHsmConfiguration = 0,
 	}
 	
@@ -11749,7 +11777,7 @@ namespace MyNS
 	public enum GET_CreateScheduledActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateScheduledAction")]
 		CreateScheduledAction = 0,
 	}
 	
@@ -11770,7 +11798,7 @@ namespace MyNS
 	public enum GET_CreateSnapshotCopyGrantAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateSnapshotCopyGrant")]
 		CreateSnapshotCopyGrant = 0,
 	}
 	
@@ -11791,7 +11819,7 @@ namespace MyNS
 	public enum GET_CreateSnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateSnapshotSchedule")]
 		CreateSnapshotSchedule = 0,
 	}
 	
@@ -11812,7 +11840,7 @@ namespace MyNS
 	public enum GET_CreateTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateTags")]
 		CreateTags = 0,
 	}
 	
@@ -11833,7 +11861,7 @@ namespace MyNS
 	public enum GET_CreateUsageLimitFeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="spectrum")]
 		spectrum = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="concurrency-scaling")]
@@ -11846,7 +11874,7 @@ namespace MyNS
 	public enum GET_CreateUsageLimitLimitType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="time")]
 		time = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="data-scanned")]
@@ -11856,20 +11884,20 @@ namespace MyNS
 	public enum GET_CreateUsageLimitBreachAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="log")]
 		log = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="emit-metric")]
 		emitMinusmetric = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disable")]
 		disable = 2,
 	}
 	
 	public enum GET_CreateUsageLimitAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateUsageLimit")]
 		CreateUsageLimit = 0,
 	}
 	
@@ -11890,7 +11918,7 @@ namespace MyNS
 	public enum GET_DeauthorizeDataShareAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeauthorizeDataShare")]
 		DeauthorizeDataShare = 0,
 	}
 	
@@ -11911,7 +11939,7 @@ namespace MyNS
 	public enum GET_DeleteAuthenticationProfileAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteAuthenticationProfile")]
 		DeleteAuthenticationProfile = 0,
 	}
 	
@@ -11932,7 +11960,7 @@ namespace MyNS
 	public enum GET_DeleteClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteCluster")]
 		DeleteCluster = 0,
 	}
 	
@@ -11953,7 +11981,7 @@ namespace MyNS
 	public enum GET_DeleteClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterParameterGroup")]
 		DeleteClusterParameterGroup = 0,
 	}
 	
@@ -11974,7 +12002,7 @@ namespace MyNS
 	public enum GET_DeleteClusterSecurityGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterSecurityGroup")]
 		DeleteClusterSecurityGroup = 0,
 	}
 	
@@ -11995,7 +12023,7 @@ namespace MyNS
 	public enum GET_DeleteClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterSnapshot")]
 		DeleteClusterSnapshot = 0,
 	}
 	
@@ -12016,7 +12044,7 @@ namespace MyNS
 	public enum GET_DeleteClusterSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteClusterSubnetGroup")]
 		DeleteClusterSubnetGroup = 0,
 	}
 	
@@ -12037,7 +12065,7 @@ namespace MyNS
 	public enum GET_DeleteCustomDomainAssociationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteCustomDomainAssociation")]
 		DeleteCustomDomainAssociation = 0,
 	}
 	
@@ -12058,7 +12086,7 @@ namespace MyNS
 	public enum GET_DeleteEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEndpointAccess")]
 		DeleteEndpointAccess = 0,
 	}
 	
@@ -12079,7 +12107,7 @@ namespace MyNS
 	public enum GET_DeleteEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEventSubscription")]
 		DeleteEventSubscription = 0,
 	}
 	
@@ -12100,7 +12128,7 @@ namespace MyNS
 	public enum GET_DeleteHsmClientCertificateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteHsmClientCertificate")]
 		DeleteHsmClientCertificate = 0,
 	}
 	
@@ -12121,7 +12149,7 @@ namespace MyNS
 	public enum GET_DeleteHsmConfigurationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteHsmConfiguration")]
 		DeleteHsmConfiguration = 0,
 	}
 	
@@ -12142,7 +12170,7 @@ namespace MyNS
 	public enum GET_DeletePartnerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletePartner")]
 		DeletePartner = 0,
 	}
 	
@@ -12163,7 +12191,7 @@ namespace MyNS
 	public enum GET_DeleteScheduledActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteScheduledAction")]
 		DeleteScheduledAction = 0,
 	}
 	
@@ -12184,7 +12212,7 @@ namespace MyNS
 	public enum GET_DeleteSnapshotCopyGrantAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteSnapshotCopyGrant")]
 		DeleteSnapshotCopyGrant = 0,
 	}
 	
@@ -12205,7 +12233,7 @@ namespace MyNS
 	public enum GET_DeleteSnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteSnapshotSchedule")]
 		DeleteSnapshotSchedule = 0,
 	}
 	
@@ -12226,7 +12254,7 @@ namespace MyNS
 	public enum GET_DeleteTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteTags")]
 		DeleteTags = 0,
 	}
 	
@@ -12247,7 +12275,7 @@ namespace MyNS
 	public enum GET_DeleteUsageLimitAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteUsageLimit")]
 		DeleteUsageLimit = 0,
 	}
 	
@@ -12268,7 +12296,7 @@ namespace MyNS
 	public enum GET_DescribeAccountAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAccountAttributes")]
 		DescribeAccountAttributes = 0,
 	}
 	
@@ -12289,7 +12317,7 @@ namespace MyNS
 	public enum GET_DescribeAuthenticationProfilesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAuthenticationProfiles")]
 		DescribeAuthenticationProfiles = 0,
 	}
 	
@@ -12310,7 +12338,7 @@ namespace MyNS
 	public enum GET_DescribeClusterDbRevisionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterDbRevisions")]
 		DescribeClusterDbRevisions = 0,
 	}
 	
@@ -12331,7 +12359,7 @@ namespace MyNS
 	public enum GET_DescribeClusterParameterGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterParameterGroups")]
 		DescribeClusterParameterGroups = 0,
 	}
 	
@@ -12352,7 +12380,7 @@ namespace MyNS
 	public enum GET_DescribeClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterParameters")]
 		DescribeClusterParameters = 0,
 	}
 	
@@ -12373,7 +12401,7 @@ namespace MyNS
 	public enum GET_DescribeClusterSecurityGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterSecurityGroups")]
 		DescribeClusterSecurityGroups = 0,
 	}
 	
@@ -12394,7 +12422,7 @@ namespace MyNS
 	public enum GET_DescribeClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterSnapshots")]
 		DescribeClusterSnapshots = 0,
 	}
 	
@@ -12415,7 +12443,7 @@ namespace MyNS
 	public enum GET_DescribeClusterSubnetGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterSubnetGroups")]
 		DescribeClusterSubnetGroups = 0,
 	}
 	
@@ -12436,7 +12464,7 @@ namespace MyNS
 	public enum GET_DescribeClusterTracksAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterTracks")]
 		DescribeClusterTracks = 0,
 	}
 	
@@ -12457,7 +12485,7 @@ namespace MyNS
 	public enum GET_DescribeClusterVersionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusterVersions")]
 		DescribeClusterVersions = 0,
 	}
 	
@@ -12478,7 +12506,7 @@ namespace MyNS
 	public enum GET_DescribeClustersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeClusters")]
 		DescribeClusters = 0,
 	}
 	
@@ -12499,7 +12527,7 @@ namespace MyNS
 	public enum GET_DescribeCustomDomainAssociationsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeCustomDomainAssociations")]
 		DescribeCustomDomainAssociations = 0,
 	}
 	
@@ -12520,7 +12548,7 @@ namespace MyNS
 	public enum GET_DescribeDataSharesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDataShares")]
 		DescribeDataShares = 0,
 	}
 	
@@ -12541,7 +12569,7 @@ namespace MyNS
 	public enum GET_DescribeDataSharesForConsumerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDataSharesForConsumer")]
 		DescribeDataSharesForConsumer = 0,
 	}
 	
@@ -12562,7 +12590,7 @@ namespace MyNS
 	public enum GET_DescribeDataSharesForProducerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDataSharesForProducer")]
 		DescribeDataSharesForProducer = 0,
 	}
 	
@@ -12583,7 +12611,7 @@ namespace MyNS
 	public enum GET_DescribeDefaultClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDefaultClusterParameters")]
 		DescribeDefaultClusterParameters = 0,
 	}
 	
@@ -12604,7 +12632,7 @@ namespace MyNS
 	public enum GET_DescribeEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEndpointAccess")]
 		DescribeEndpointAccess = 0,
 	}
 	
@@ -12625,7 +12653,7 @@ namespace MyNS
 	public enum GET_DescribeEndpointAuthorizationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEndpointAuthorization")]
 		DescribeEndpointAuthorization = 0,
 	}
 	
@@ -12646,7 +12674,7 @@ namespace MyNS
 	public enum GET_DescribeEventCategoriesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventCategories")]
 		DescribeEventCategories = 0,
 	}
 	
@@ -12667,7 +12695,7 @@ namespace MyNS
 	public enum GET_DescribeEventSubscriptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventSubscriptions")]
 		DescribeEventSubscriptions = 0,
 	}
 	
@@ -12688,7 +12716,7 @@ namespace MyNS
 	public enum GET_DescribeEventsSourceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster")]
 		cluster = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="cluster-parameter-group")]
@@ -12707,7 +12735,7 @@ namespace MyNS
 	public enum GET_DescribeEventsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEvents")]
 		DescribeEvents = 0,
 	}
 	
@@ -12728,7 +12756,7 @@ namespace MyNS
 	public enum GET_DescribeHsmClientCertificatesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeHsmClientCertificates")]
 		DescribeHsmClientCertificates = 0,
 	}
 	
@@ -12749,7 +12777,7 @@ namespace MyNS
 	public enum GET_DescribeHsmConfigurationsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeHsmConfigurations")]
 		DescribeHsmConfigurations = 0,
 	}
 	
@@ -12770,7 +12798,7 @@ namespace MyNS
 	public enum GET_DescribeLoggingStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoggingStatus")]
 		DescribeLoggingStatus = 0,
 	}
 	
@@ -12804,7 +12832,7 @@ namespace MyNS
 	public enum GET_DescribeNodeConfigurationOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeNodeConfigurationOptions")]
 		DescribeNodeConfigurationOptions = 0,
 	}
 	
@@ -12825,7 +12853,7 @@ namespace MyNS
 	public enum GET_DescribeOrderableClusterOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeOrderableClusterOptions")]
 		DescribeOrderableClusterOptions = 0,
 	}
 	
@@ -12846,7 +12874,7 @@ namespace MyNS
 	public enum GET_DescribePartnersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribePartners")]
 		DescribePartners = 0,
 	}
 	
@@ -12867,7 +12895,7 @@ namespace MyNS
 	public enum GET_DescribeReservedNodeExchangeStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReservedNodeExchangeStatus")]
 		DescribeReservedNodeExchangeStatus = 0,
 	}
 	
@@ -12888,7 +12916,7 @@ namespace MyNS
 	public enum GET_DescribeReservedNodeOfferingsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReservedNodeOfferings")]
 		DescribeReservedNodeOfferings = 0,
 	}
 	
@@ -12909,7 +12937,7 @@ namespace MyNS
 	public enum GET_DescribeReservedNodesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeReservedNodes")]
 		DescribeReservedNodes = 0,
 	}
 	
@@ -12930,7 +12958,7 @@ namespace MyNS
 	public enum GET_DescribeResizeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeResize")]
 		DescribeResize = 0,
 	}
 	
@@ -12951,7 +12979,7 @@ namespace MyNS
 	public enum GET_DescribeScheduledActionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeScheduledActions")]
 		DescribeScheduledActions = 0,
 	}
 	
@@ -12972,7 +13000,7 @@ namespace MyNS
 	public enum GET_DescribeSnapshotCopyGrantsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeSnapshotCopyGrants")]
 		DescribeSnapshotCopyGrants = 0,
 	}
 	
@@ -12993,7 +13021,7 @@ namespace MyNS
 	public enum GET_DescribeSnapshotSchedulesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeSnapshotSchedules")]
 		DescribeSnapshotSchedules = 0,
 	}
 	
@@ -13014,7 +13042,7 @@ namespace MyNS
 	public enum GET_DescribeStorageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeStorage")]
 		DescribeStorage = 0,
 	}
 	
@@ -13035,7 +13063,7 @@ namespace MyNS
 	public enum GET_DescribeTableRestoreStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeTableRestoreStatus")]
 		DescribeTableRestoreStatus = 0,
 	}
 	
@@ -13056,7 +13084,7 @@ namespace MyNS
 	public enum GET_DescribeTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeTags")]
 		DescribeTags = 0,
 	}
 	
@@ -13077,7 +13105,7 @@ namespace MyNS
 	public enum GET_DescribeUsageLimitsFeatureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="spectrum")]
 		spectrum = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="concurrency-scaling")]
@@ -13090,7 +13118,7 @@ namespace MyNS
 	public enum GET_DescribeUsageLimitsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeUsageLimits")]
 		DescribeUsageLimits = 0,
 	}
 	
@@ -13111,7 +13139,7 @@ namespace MyNS
 	public enum GET_DisableLoggingAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableLogging")]
 		DisableLogging = 0,
 	}
 	
@@ -13132,7 +13160,7 @@ namespace MyNS
 	public enum GET_DisableSnapshotCopyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableSnapshotCopy")]
 		DisableSnapshotCopy = 0,
 	}
 	
@@ -13153,7 +13181,7 @@ namespace MyNS
 	public enum GET_DisassociateDataShareConsumerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisassociateDataShareConsumer")]
 		DisassociateDataShareConsumer = 0,
 	}
 	
@@ -13174,7 +13202,7 @@ namespace MyNS
 	public enum GET_EnableLoggingAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableLogging")]
 		EnableLogging = 0,
 	}
 	
@@ -13195,7 +13223,7 @@ namespace MyNS
 	public enum GET_EnableSnapshotCopyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableSnapshotCopy")]
 		EnableSnapshotCopy = 0,
 	}
 	
@@ -13216,7 +13244,7 @@ namespace MyNS
 	public enum GET_GetClusterCredentialsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetClusterCredentials")]
 		GetClusterCredentials = 0,
 	}
 	
@@ -13237,7 +13265,7 @@ namespace MyNS
 	public enum GET_GetClusterCredentialsWithIAMAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetClusterCredentialsWithIAM")]
 		GetClusterCredentialsWithIAM = 0,
 	}
 	
@@ -13268,7 +13296,7 @@ namespace MyNS
 	public enum GET_GetReservedNodeExchangeConfigurationOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetReservedNodeExchangeConfigurationOptions")]
 		GetReservedNodeExchangeConfigurationOptions = 0,
 	}
 	
@@ -13289,7 +13317,7 @@ namespace MyNS
 	public enum GET_GetReservedNodeExchangeOfferingsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetReservedNodeExchangeOfferings")]
 		GetReservedNodeExchangeOfferings = 0,
 	}
 	
@@ -13310,7 +13338,7 @@ namespace MyNS
 	public enum GET_ModifyAquaConfigurationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyAquaConfiguration")]
 		ModifyAquaConfiguration = 0,
 	}
 	
@@ -13331,7 +13359,7 @@ namespace MyNS
 	public enum GET_ModifyAuthenticationProfileAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyAuthenticationProfile")]
 		ModifyAuthenticationProfile = 0,
 	}
 	
@@ -13352,7 +13380,7 @@ namespace MyNS
 	public enum GET_ModifyClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyCluster")]
 		ModifyCluster = 0,
 	}
 	
@@ -13373,7 +13401,7 @@ namespace MyNS
 	public enum GET_ModifyClusterDbRevisionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterDbRevision")]
 		ModifyClusterDbRevision = 0,
 	}
 	
@@ -13394,7 +13422,7 @@ namespace MyNS
 	public enum GET_ModifyClusterIamRolesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterIamRoles")]
 		ModifyClusterIamRoles = 0,
 	}
 	
@@ -13415,7 +13443,7 @@ namespace MyNS
 	public enum GET_ModifyClusterMaintenanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterMaintenance")]
 		ModifyClusterMaintenance = 0,
 	}
 	
@@ -13436,7 +13464,7 @@ namespace MyNS
 	public enum GET_ModifyClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterParameterGroup")]
 		ModifyClusterParameterGroup = 0,
 	}
 	
@@ -13457,7 +13485,7 @@ namespace MyNS
 	public enum GET_ModifyClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterSnapshot")]
 		ModifyClusterSnapshot = 0,
 	}
 	
@@ -13478,7 +13506,7 @@ namespace MyNS
 	public enum GET_ModifyClusterSnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterSnapshotSchedule")]
 		ModifyClusterSnapshotSchedule = 0,
 	}
 	
@@ -13499,7 +13527,7 @@ namespace MyNS
 	public enum GET_ModifyClusterSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyClusterSubnetGroup")]
 		ModifyClusterSubnetGroup = 0,
 	}
 	
@@ -13520,7 +13548,7 @@ namespace MyNS
 	public enum GET_ModifyCustomDomainAssociationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyCustomDomainAssociation")]
 		ModifyCustomDomainAssociation = 0,
 	}
 	
@@ -13541,7 +13569,7 @@ namespace MyNS
 	public enum GET_ModifyEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyEndpointAccess")]
 		ModifyEndpointAccess = 0,
 	}
 	
@@ -13562,7 +13590,7 @@ namespace MyNS
 	public enum GET_ModifyEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyEventSubscription")]
 		ModifyEventSubscription = 0,
 	}
 	
@@ -13596,7 +13624,7 @@ namespace MyNS
 	public enum GET_ModifyScheduledActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyScheduledAction")]
 		ModifyScheduledAction = 0,
 	}
 	
@@ -13617,7 +13645,7 @@ namespace MyNS
 	public enum GET_ModifySnapshotCopyRetentionPeriodAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifySnapshotCopyRetentionPeriod")]
 		ModifySnapshotCopyRetentionPeriod = 0,
 	}
 	
@@ -13638,7 +13666,7 @@ namespace MyNS
 	public enum GET_ModifySnapshotScheduleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifySnapshotSchedule")]
 		ModifySnapshotSchedule = 0,
 	}
 	
@@ -13659,20 +13687,20 @@ namespace MyNS
 	public enum GET_ModifyUsageLimitBreachAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="log")]
 		log = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="emit-metric")]
 		emitMinusmetric = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disable")]
 		disable = 2,
 	}
 	
 	public enum GET_ModifyUsageLimitAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyUsageLimit")]
 		ModifyUsageLimit = 0,
 	}
 	
@@ -13693,7 +13721,7 @@ namespace MyNS
 	public enum GET_PauseClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PauseCluster")]
 		PauseCluster = 0,
 	}
 	
@@ -13714,7 +13742,7 @@ namespace MyNS
 	public enum GET_PurchaseReservedNodeOfferingAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PurchaseReservedNodeOffering")]
 		PurchaseReservedNodeOffering = 0,
 	}
 	
@@ -13735,7 +13763,7 @@ namespace MyNS
 	public enum GET_RebootClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RebootCluster")]
 		RebootCluster = 0,
 	}
 	
@@ -13756,7 +13784,7 @@ namespace MyNS
 	public enum GET_RejectDataShareAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RejectDataShare")]
 		RejectDataShare = 0,
 	}
 	
@@ -13777,7 +13805,7 @@ namespace MyNS
 	public enum GET_ResetClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResetClusterParameterGroup")]
 		ResetClusterParameterGroup = 0,
 	}
 	
@@ -13798,7 +13826,7 @@ namespace MyNS
 	public enum GET_ResizeClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResizeCluster")]
 		ResizeCluster = 0,
 	}
 	
@@ -13819,7 +13847,7 @@ namespace MyNS
 	public enum GET_RestoreFromClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreFromClusterSnapshot")]
 		RestoreFromClusterSnapshot = 0,
 	}
 	
@@ -13840,7 +13868,7 @@ namespace MyNS
 	public enum GET_RestoreTableFromClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreTableFromClusterSnapshot")]
 		RestoreTableFromClusterSnapshot = 0,
 	}
 	
@@ -13861,7 +13889,7 @@ namespace MyNS
 	public enum GET_ResumeClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResumeCluster")]
 		ResumeCluster = 0,
 	}
 	
@@ -13882,7 +13910,7 @@ namespace MyNS
 	public enum GET_RevokeClusterSecurityGroupIngressAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevokeClusterSecurityGroupIngress")]
 		RevokeClusterSecurityGroupIngress = 0,
 	}
 	
@@ -13903,7 +13931,7 @@ namespace MyNS
 	public enum GET_RevokeEndpointAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevokeEndpointAccess")]
 		RevokeEndpointAccess = 0,
 	}
 	
@@ -13924,7 +13952,7 @@ namespace MyNS
 	public enum GET_RevokeSnapshotAccessAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RevokeSnapshotAccess")]
 		RevokeSnapshotAccess = 0,
 	}
 	
@@ -13945,7 +13973,7 @@ namespace MyNS
 	public enum GET_RotateEncryptionKeyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RotateEncryptionKey")]
 		RotateEncryptionKey = 0,
 	}
 	
@@ -13966,7 +13994,7 @@ namespace MyNS
 	public enum GET_UpdatePartnerStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UpdatePartnerStatus")]
 		UpdatePartnerStatus = 0,
 	}
 	

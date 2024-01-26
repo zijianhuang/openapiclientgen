@@ -5357,7 +5357,7 @@ namespace MyNS
 	public enum ActionsGetByIdAndSortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -5366,7 +5366,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -5375,7 +5375,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -5384,7 +5384,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -5393,7 +5393,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -5402,7 +5402,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -5415,13 +5415,13 @@ namespace MyNS
 	public enum ActionsGetByIdAndSortAndStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
 		running = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
 		success = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
 		error = 2,
 	}
 	
@@ -5548,17 +5548,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ActionsGetByIdAndSortAndStatusReturnActionsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="success")]
 		success = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
 		running = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="error")]
 		error = 2,
 	}
 	
@@ -5747,7 +5748,7 @@ namespace MyNS
 	public enum CertificatesGetBySortAndNameAndLabel_selectorAndTypeSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -5756,7 +5757,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -5765,7 +5766,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:desc")]
 		namedesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -5778,10 +5779,10 @@ namespace MyNS
 	public enum CertificatesGetBySortAndNameAndLabel_selectorAndTypeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="uploaded")]
 		uploaded = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="managed")]
 		managed = 1,
 	}
 	
@@ -5928,35 +5929,37 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CertificatesGetBySortAndNameAndLabel_selectorAndTypeReturnCertificatesStatusIssuance
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
 		pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="completed")]
 		completed = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
 		failed = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CertificatesGetBySortAndNameAndLabel_selectorAndTypeReturnCertificatesStatusRenewal
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="scheduled")]
 		scheduled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
 		pending = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="failed")]
 		failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unavailable")]
 		unavailable = 3,
 	}
 	
@@ -6422,7 +6425,7 @@ namespace MyNS
 	public enum Certificates_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -6431,7 +6434,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -6440,7 +6443,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -6449,7 +6452,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -6458,7 +6461,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -6467,7 +6470,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -7092,7 +7095,7 @@ namespace MyNS
 	public enum FirewallsGetBySortAndNameAndLabel_selectorSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -7101,7 +7104,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -7110,7 +7113,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:desc")]
 		namedesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -7229,11 +7232,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FirewallsGetBySortAndNameAndLabel_selectorReturnFirewallsApplied_toApplied_to_resourcesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="server")]
 		server = 0,
 	}
 	
@@ -7262,14 +7266,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FirewallsGetBySortAndNameAndLabel_selectorReturnFirewallsApplied_toType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="server")]
 		server = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="label_selector")]
 		label_selector = 1,
 	}
 	
@@ -7320,6 +7325,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FirewallsGetBySortAndNameAndLabel_selectorReturnFirewallsRulesDirection
 	{
@@ -7332,23 +7338,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FirewallsGetBySortAndNameAndLabel_selectorReturnFirewallsRulesProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tcp")]
 		tcp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="udp")]
 		udp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="icmp")]
 		icmp = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="esp")]
 		esp = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="gre")]
 		gre = 4,
 	}
 	
@@ -7540,6 +7547,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum FirewallsPostPostBodyRulesDirection
 	{
@@ -7727,6 +7735,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Firewalls_idGetReturnFirewallRulesDirection
 	{
@@ -7930,6 +7939,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Firewalls_idPutReturnFirewallRulesDirection
 	{
@@ -7944,7 +7954,7 @@ namespace MyNS
 	public enum Firewalls_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -7953,7 +7963,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -7962,7 +7972,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -7971,7 +7981,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -7980,7 +7990,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -7989,7 +7999,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -8361,6 +8371,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Firewalls_idActionsSet_rulesPostPostBodyRulesDirection
 	{
@@ -8494,7 +8505,7 @@ namespace MyNS
 	public enum Floating_ipsGetByNameAndLabel_selectorAndSortSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -8503,7 +8514,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -8728,14 +8739,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Floating_ipsGetByNameAndLabel_selectorAndSortReturnFloating_ipsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ipv4")]
 		ipv4 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ipv6")]
 		ipv6 = 1,
 	}
 	
@@ -9285,7 +9297,7 @@ namespace MyNS
 	public enum Floating_ips_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -9294,7 +9306,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -9303,7 +9315,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -9312,7 +9324,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -9321,7 +9333,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -9330,7 +9342,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -9623,7 +9635,7 @@ namespace MyNS
 	public enum ImagesGetBySortAndTypeAndStatusAndBound_toAndInclude_deprecatedAndNameAndLabel_selectorAndArchitectureSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -9632,7 +9644,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -9641,7 +9653,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:desc")]
 		namedesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -9654,26 +9666,26 @@ namespace MyNS
 	public enum ImagesGetBySortAndTypeAndStatusAndBound_toAndInclude_deprecatedAndNameAndLabel_selectorAndArchitectureType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="system")]
 		system = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="snapshot")]
 		snapshot = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="backup")]
 		backup = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
 		app = 3,
 	}
 	
 	public enum ImagesGetBySortAndTypeAndStatusAndBound_toAndInclude_deprecatedAndNameAndLabel_selectorAndArchitectureStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="available")]
 		available = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creating")]
 		creating = 1,
 	}
 	
@@ -9850,23 +9862,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ImagesGetBySortAndTypeAndStatusAndBound_toAndInclude_deprecatedAndNameAndLabel_selectorAndArchitectureReturnImagesOs_flavor
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ubuntu")]
 		ubuntu = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="centos")]
 		centos = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="debian")]
 		debian = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="fedora")]
 		fedora = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
 		unknown = 4,
 	}
 	
@@ -9883,38 +9896,40 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ImagesGetBySortAndTypeAndStatusAndBound_toAndInclude_deprecatedAndNameAndLabel_selectorAndArchitectureReturnImagesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="available")]
 		available = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creating")]
 		creating = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unavailable")]
 		unavailable = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ImagesGetBySortAndTypeAndStatusAndBound_toAndInclude_deprecatedAndNameAndLabel_selectorAndArchitectureReturnImagesType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="system")]
 		system = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="app")]
 		app = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="snapshot")]
 		snapshot = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="backup")]
 		backup = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="temporary")]
 		temporary = 4,
 	}
 	
@@ -10181,11 +10196,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Images_idPutPutBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="snapshot")]
 		snapshot = 0,
 	}
 	
@@ -10369,7 +10385,7 @@ namespace MyNS
 	public enum Images_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -10378,7 +10394,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -10387,7 +10403,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -10396,7 +10412,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -10405,7 +10421,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -10414,7 +10430,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -10805,18 +10821,20 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IsosGetByNameAndArchitectureAndInclude_architecture_wildcardReturnIsosArchitecture
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="x86")]
 		x86 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="arm")]
 		arm = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IsosGetByNameAndArchitectureAndInclude_architecture_wildcardReturnIsosType
 	{
@@ -10955,6 +10973,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Isos_idGetReturnIsoType
 	{
@@ -11275,7 +11294,7 @@ namespace MyNS
 	public enum Load_balancersGetBySortAndNameAndLabel_selectorSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -11284,7 +11303,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -11293,7 +11312,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:desc")]
 		namedesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -11452,14 +11471,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersAlgorithmType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="round_robin")]
 		round_robin = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="least_connections")]
 		least_connections = 1,
 	}
 	
@@ -11896,14 +11916,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersServicesHealth_checkProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tcp")]
 		tcp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="http")]
 		http = 1,
 	}
 	
@@ -11942,17 +11963,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersServicesProtocol
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tcp")]
 		tcp = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="http")]
 		http = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="https")]
 		https = 2,
 	}
 	
@@ -12015,17 +12037,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsHealth_statusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="healthy")]
 		healthy = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unhealthy")]
 		unhealthy = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
 		unknown = 2,
 	}
 	
@@ -12116,17 +12139,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Load_balancersGetBySortAndNameAndLabel_selectorReturnLoad_balancersTargetsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="server")]
 		server = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="label_selector")]
 		label_selector = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ip")]
 		ip = 2,
 	}
 	
@@ -14130,7 +14154,7 @@ namespace MyNS
 	public enum Load_balancers_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -14139,7 +14163,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -14148,7 +14172,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -14157,7 +14181,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -14166,7 +14190,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -14175,7 +14199,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -15070,16 +15094,16 @@ namespace MyNS
 	public enum Load_balancers_idMetricsGetByTypeAndStartAndEndAndStepType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="open_connections")]
 		open_connections = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="connections_per_second")]
 		connections_per_second = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="requests_per_second")]
 		requests_per_second = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="bandwidth")]
 		bandwidth = 3,
 	}
 	
@@ -15526,17 +15550,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum NetworksGetByNameAndLabel_selectorReturnNetworksSubnetsType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cloud")]
 		cloud = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="server")]
 		server = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="vswitch")]
 		vswitch = 2,
 	}
 	
@@ -15976,7 +16001,7 @@ namespace MyNS
 	public enum Networks_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -15985,7 +16010,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -15994,7 +16019,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -16003,7 +16028,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -16012,7 +16037,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -16021,7 +16046,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -16444,7 +16469,7 @@ namespace MyNS
 	public enum Placement_groupsGetBySortAndNameAndLabel_selectorAndTypeSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -16453,7 +16478,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -16462,7 +16487,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:desc")]
 		namedesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -16475,7 +16500,7 @@ namespace MyNS
 	public enum Placement_groupsGetBySortAndNameAndLabel_selectorAndTypeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="spread")]
 		spread = 0,
 	}
 	
@@ -17358,7 +17383,7 @@ namespace MyNS
 	public enum Primary_ipsGetByNameAndLabel_selectorAndIpAndSortSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -17367,7 +17392,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -18540,14 +18565,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Server_typesGetByNameReturnServer_typesCpu_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="shared")]
 		shared = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="dedicated")]
 		dedicated = 1,
 	}
 	
@@ -18620,14 +18646,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Server_typesGetByNameReturnServer_typesStorage_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="local")]
 		local = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="network")]
 		network = 1,
 	}
 	
@@ -18805,7 +18832,7 @@ namespace MyNS
 	public enum ServersGetByNameAndLabel_selectorAndSortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -18814,7 +18841,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -18823,7 +18850,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:desc")]
 		namedesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -18836,31 +18863,31 @@ namespace MyNS
 	public enum ServersGetByNameAndLabel_selectorAndSortAndStatusStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="initializing")]
 		initializing = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="starting")]
 		starting = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
 		running = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="stopping")]
 		stopping = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="off")]
 		off = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
 		deleting = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rebuilding")]
 		rebuilding = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="migrating")]
 		migrating = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
 		unknown = 8,
 	}
 	
@@ -19470,6 +19497,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersIsoType
 	{
@@ -19620,14 +19648,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersPublic_netFirewallsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="applied")]
 		applied = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
 		pending = 1,
 	}
 	
@@ -19872,35 +19901,36 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ServersGetByNameAndLabel_selectorAndSortAndStatusReturnServersStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="running")]
 		running = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="initializing")]
 		initializing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="starting")]
 		starting = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="stopping")]
 		stopping = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="off")]
 		off = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="deleting")]
 		deleting = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="migrating")]
 		migrating = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rebuilding")]
 		rebuilding = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
 		unknown = 8,
 	}
 	
@@ -20693,6 +20723,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Servers_idGetReturnServerIsoType
 	{
@@ -21634,6 +21665,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Servers_idPutReturnServerIsoType
 	{
@@ -22026,7 +22058,7 @@ namespace MyNS
 	public enum Servers_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -22035,7 +22067,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -22044,7 +22076,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -22053,7 +22085,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -22062,7 +22094,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -22071,7 +22103,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]
@@ -22423,14 +22455,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Servers_idActionsCreate_imagePostPostBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="snapshot")]
 		snapshot = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="backup")]
 		backup = 1,
 	}
 	
@@ -22463,14 +22496,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Servers_idActionsEnable_rescuePostPostBodyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="linux64")]
 		linux64 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="linux32")]
 		linux32 = 1,
 	}
 	
@@ -22608,13 +22642,13 @@ namespace MyNS
 	public enum Servers_idMetricsGetByTypeAndStartAndEndAndStepType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cpu")]
 		cpu = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="disk")]
 		disk = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="network")]
 		network = 2,
 	}
 	
@@ -22680,7 +22714,7 @@ namespace MyNS
 	public enum Ssh_keysGetBySortAndNameAndFingerprintAndLabel_selectorSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -22689,7 +22723,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -22999,7 +23033,7 @@ namespace MyNS
 	public enum VolumesGetByStatusAndSortAndNameAndLabel_selectorSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -23008,7 +23042,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:asc")]
@@ -23017,7 +23051,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="name:desc")]
 		namedesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created")]
 		created = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="created:asc")]
@@ -23277,14 +23311,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VolumesGetByStatusAndSortAndNameAndLabel_selectorReturnVolumesStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="creating")]
 		creating = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="available")]
 		available = 1,
 	}
 	
@@ -23732,7 +23767,7 @@ namespace MyNS
 	public enum Volumes_idActionsGetBySortAndStatusSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:asc")]
@@ -23741,7 +23776,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="id:desc")]
 		iddesc = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="command")]
 		command = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:asc")]
@@ -23750,7 +23785,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="command:desc")]
 		commanddesc = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="status")]
 		status = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:asc")]
@@ -23759,7 +23794,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="status:desc")]
 		statusdesc = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress")]
 		progress = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:asc")]
@@ -23768,7 +23803,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="progress:desc")]
 		progressdesc = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="started")]
 		started = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:asc")]
@@ -23777,7 +23812,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="started:desc")]
 		starteddesc = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished")]
 		finished = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="finished:asc")]

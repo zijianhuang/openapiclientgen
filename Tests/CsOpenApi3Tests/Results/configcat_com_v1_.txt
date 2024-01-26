@@ -18,17 +18,18 @@ namespace MyNS
 	
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AccessType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="readOnly")]
 		readOnly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
 		custom = 2,
 	}
 	
@@ -148,464 +149,466 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AuditLogItemModelAuditLogTypeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productCreated")]
 		productCreated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productChanged")]
 		productChanged = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productOwnershipTransferred")]
 		productOwnershipTransferred = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDeleted")]
 		productDeleted = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productsReordered")]
 		productsReordered = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvited")]
 		teamMemberInvited = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationRevoked")]
 		teamMemberInvitationRevoked = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberJoined")]
 		teamMemberJoined = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberPermissionGroupChanged")]
 		teamMemberPermissionGroupChanged = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberRemoved")]
 		teamMemberRemoved = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberLeft")]
 		teamMemberLeft = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationChanged")]
 		teamMemberInvitationChanged = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationResent")]
 		teamMemberInvitationResent = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationRejected")]
 		teamMemberInvitationRejected = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configCreated")]
 		configCreated = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configChanged")]
 		configChanged = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configDeleted")]
 		configDeleted = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configsReordered")]
 		configsReordered = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentCreated")]
 		environmentCreated = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentChanged")]
 		environmentChanged = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentDeleted")]
 		environmentDeleted = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentsReordered")]
 		environmentsReordered = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingCreated")]
 		settingCreated = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingChanged")]
 		settingChanged = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingDeleted")]
 		settingDeleted = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingsReordered")]
 		settingsReordered = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingValueChanged")]
 		settingValueChanged = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webHookCreated")]
 		webHookCreated = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webHookChanged")]
 		webHookChanged = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webHookDeleted")]
 		webHookDeleted = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriptionChanged")]
 		subscriptionChanged = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupCreated")]
 		permissionGroupCreated = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupChanged")]
 		permissionGroupChanged = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupDeleted")]
 		permissionGroupDeleted = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupDefault")]
 		permissionGroupDefault = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="apiKeyAdded")]
 		apiKeyAdded = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="apiKeyRemoved")]
 		apiKeyRemoved = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationAdded")]
 		integrationAdded = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationChanged")]
 		integrationChanged = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationRemoved")]
 		integrationRemoved = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="apiKeyConnected")]
 		apiKeyConnected = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationLinkAdded")]
 		integrationLinkAdded = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationLinkRemoved")]
 		integrationLinkRemoved = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdded")]
 		organizationAdded = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationRemoved")]
 		organizationRemoved = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationChanged")]
 		organizationChanged = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationSubscriptionTypeChanged")]
 		organizationSubscriptionTypeChanged = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdminChanged")]
 		organizationAdminChanged = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdminLeft")]
 		organizationAdminLeft = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdminDisabled2FA")]
 		organizationAdminDisabled2FA = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagAdded")]
 		tagAdded = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagChanged")]
 		tagChanged = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagRemoved")]
 		tagRemoved = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingTagAdded")]
 		settingTagAdded = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingTagRemoved")]
 		settingTagRemoved = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicApiAccessTokenAdded")]
 		publicApiAccessTokenAdded = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicApiAccessTokenRemoved")]
 		publicApiAccessTokenRemoved = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainAdded")]
 		domainAdded = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainVerified")]
 		domainVerified = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainRemoved")]
 		domainRemoved = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainSamlConfigured")]
 		domainSamlConfigured = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainSamlDeleted")]
 		domainSamlDeleted = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="autoProvisioningConfigurationChanged")]
 		autoProvisioningConfigurationChanged = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberJoined")]
 		organizationMemberJoined = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberProductJoinRequested")]
 		organizationMemberProductJoinRequested = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberProductJoinRequestRejected")]
 		organizationMemberProductJoinRequestRejected = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberProductJoinRequestApproved")]
 		organizationMemberProductJoinRequestApproved = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="codeReferencesUploaded")]
 		codeReferencesUploaded = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="codeReferenceDeleted")]
 		codeReferenceDeleted = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="codeReferenceStaleBranchDeleted")]
 		codeReferenceStaleBranchDeleted = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="segmentCreated")]
 		segmentCreated = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="segmentChanged")]
 		segmentChanged = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="segmentDeleted")]
 		segmentDeleted = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhookSigningKeyDeleted")]
 		webhookSigningKeyDeleted = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhookSigningKeyCreated")]
 		webhookSigningKeyCreated = 74,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AuditLogType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productCreated")]
 		productCreated = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productChanged")]
 		productChanged = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productOwnershipTransferred")]
 		productOwnershipTransferred = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productDeleted")]
 		productDeleted = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="productsReordered")]
 		productsReordered = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvited")]
 		teamMemberInvited = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationRevoked")]
 		teamMemberInvitationRevoked = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberJoined")]
 		teamMemberJoined = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberPermissionGroupChanged")]
 		teamMemberPermissionGroupChanged = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberRemoved")]
 		teamMemberRemoved = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberLeft")]
 		teamMemberLeft = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationChanged")]
 		teamMemberInvitationChanged = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationResent")]
 		teamMemberInvitationResent = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teamMemberInvitationRejected")]
 		teamMemberInvitationRejected = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configCreated")]
 		configCreated = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configChanged")]
 		configChanged = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configDeleted")]
 		configDeleted = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="configsReordered")]
 		configsReordered = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentCreated")]
 		environmentCreated = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentChanged")]
 		environmentChanged = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentDeleted")]
 		environmentDeleted = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="environmentsReordered")]
 		environmentsReordered = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingCreated")]
 		settingCreated = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingChanged")]
 		settingChanged = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingDeleted")]
 		settingDeleted = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingsReordered")]
 		settingsReordered = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingValueChanged")]
 		settingValueChanged = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webHookCreated")]
 		webHookCreated = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webHookChanged")]
 		webHookChanged = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webHookDeleted")]
 		webHookDeleted = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscriptionChanged")]
 		subscriptionChanged = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupCreated")]
 		permissionGroupCreated = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupChanged")]
 		permissionGroupChanged = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupDeleted")]
 		permissionGroupDeleted = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="permissionGroupDefault")]
 		permissionGroupDefault = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="apiKeyAdded")]
 		apiKeyAdded = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="apiKeyRemoved")]
 		apiKeyRemoved = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationAdded")]
 		integrationAdded = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationChanged")]
 		integrationChanged = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationRemoved")]
 		integrationRemoved = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="apiKeyConnected")]
 		apiKeyConnected = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationLinkAdded")]
 		integrationLinkAdded = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="integrationLinkRemoved")]
 		integrationLinkRemoved = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdded")]
 		organizationAdded = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationRemoved")]
 		organizationRemoved = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationChanged")]
 		organizationChanged = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationSubscriptionTypeChanged")]
 		organizationSubscriptionTypeChanged = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdminChanged")]
 		organizationAdminChanged = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdminLeft")]
 		organizationAdminLeft = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationAdminDisabled2FA")]
 		organizationAdminDisabled2FA = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagAdded")]
 		tagAdded = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagChanged")]
 		tagChanged = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="tagRemoved")]
 		tagRemoved = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingTagAdded")]
 		settingTagAdded = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="settingTagRemoved")]
 		settingTagRemoved = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicApiAccessTokenAdded")]
 		publicApiAccessTokenAdded = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="publicApiAccessTokenRemoved")]
 		publicApiAccessTokenRemoved = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainAdded")]
 		domainAdded = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainVerified")]
 		domainVerified = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainRemoved")]
 		domainRemoved = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainSamlConfigured")]
 		domainSamlConfigured = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="domainSamlDeleted")]
 		domainSamlDeleted = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="autoProvisioningConfigurationChanged")]
 		autoProvisioningConfigurationChanged = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberJoined")]
 		organizationMemberJoined = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberProductJoinRequested")]
 		organizationMemberProductJoinRequested = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberProductJoinRequestRejected")]
 		organizationMemberProductJoinRequestRejected = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="organizationMemberProductJoinRequestApproved")]
 		organizationMemberProductJoinRequestApproved = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="codeReferencesUploaded")]
 		codeReferencesUploaded = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="codeReferenceDeleted")]
 		codeReferenceDeleted = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="codeReferenceStaleBranchDeleted")]
 		codeReferenceStaleBranchDeleted = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="segmentCreated")]
 		segmentCreated = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="segmentChanged")]
 		segmentChanged = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="segmentDeleted")]
 		segmentDeleted = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhookSigningKeyDeleted")]
 		webhookSigningKeyDeleted = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webhookSigningKeyCreated")]
 		webhookSigningKeyCreated = 74,
 	}
 	
@@ -1021,17 +1024,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IntegrationLinkModelIntegrationLinkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="trello")]
 		trello = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jira")]
 		jira = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="monday")]
 		monday = 2,
 	}
 	
@@ -1100,74 +1104,76 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RolloutRuleModelComparator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isOneOf")]
 		isOneOf = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isNotOneOf")]
 		isNotOneOf = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="contains")]
 		contains = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="doesNotContain")]
 		doesNotContain = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerIsOneOf")]
 		semVerIsOneOf = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerIsNotOneOf")]
 		semVerIsNotOneOf = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerLess")]
 		semVerLess = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerLessOrEquals")]
 		semVerLessOrEquals = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerGreater")]
 		semVerGreater = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerGreaterOrEquals")]
 		semVerGreaterOrEquals = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberEquals")]
 		numberEquals = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberDoesNotEqual")]
 		numberDoesNotEqual = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberLess")]
 		numberLess = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberLessOrEquals")]
 		numberLessOrEquals = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberGreater")]
 		numberGreater = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberGreaterOrEquals")]
 		numberGreaterOrEquals = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sensitiveIsOneOf")]
 		sensitiveIsOneOf = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sensitiveIsNotOneOf")]
 		sensitiveIsNotOneOf = 17,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RolloutRuleModelSegmentComparator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isIn")]
 		isIn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isNotIn")]
 		isNotIn = 1,
 	}
 	
@@ -1208,11 +1214,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SettingDataModelSettingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
 		boolean = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
@@ -1405,17 +1412,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CreateOrUpdateEnvironmentAccessModelEnvironmentAccessType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="readOnly")]
 		readOnly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
 		none = 2,
 	}
 	
@@ -1666,11 +1674,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CreateSettingInitialValuesSettingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
 		boolean = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
@@ -1788,17 +1797,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EnvironmentAccessType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="full")]
 		full = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="readOnly")]
 		readOnly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="none")]
 		none = 2,
 	}
 	
@@ -1963,17 +1973,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IntegrationLinkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="trello")]
 		trello = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jira")]
 		jira = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="monday")]
 		monday = 2,
 	}
 	
@@ -2067,17 +2078,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum JsonPointerKind
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unspecified")]
 		unspecified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="plain")]
 		plain = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="uriEncoded")]
 		uriEncoded = 2,
 	}
 	
@@ -2094,29 +2106,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PatchOperationOp
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
 		add = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="remove")]
 		remove = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="replace")]
 		replace = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="move")]
 		move = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="copy")]
 		copy = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="test")]
 		test = 6,
 	}
 	
@@ -2154,29 +2167,30 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum OperationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="unknown")]
 		unknown = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
 		add = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="remove")]
 		remove = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="replace")]
 		replace = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="move")]
 		move = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="copy")]
 		copy = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="test")]
 		test = 6,
 	}
 	
@@ -2553,62 +2567,63 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RolloutRuleComparator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isOneOf")]
 		isOneOf = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isNotOneOf")]
 		isNotOneOf = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="contains")]
 		contains = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="doesNotContain")]
 		doesNotContain = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerIsOneOf")]
 		semVerIsOneOf = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerIsNotOneOf")]
 		semVerIsNotOneOf = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerLess")]
 		semVerLess = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerLessOrEquals")]
 		semVerLessOrEquals = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerGreater")]
 		semVerGreater = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="semVerGreaterOrEquals")]
 		semVerGreaterOrEquals = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberEquals")]
 		numberEquals = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberDoesNotEqual")]
 		numberDoesNotEqual = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberLess")]
 		numberLess = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberLessOrEquals")]
 		numberLessOrEquals = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberGreater")]
 		numberGreater = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="numberGreaterOrEquals")]
 		numberGreaterOrEquals = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sensitiveIsOneOf")]
 		sensitiveIsOneOf = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sensitiveIsNotOneOf")]
 		sensitiveIsNotOneOf = 17,
 	}
 	
@@ -2625,14 +2640,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SegmentComparator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isIn")]
 		isIn = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="isNotIn")]
 		isNotIn = 1,
 	}
 	
@@ -3032,11 +3048,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SettingModelSettingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
 		boolean = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
@@ -3231,11 +3248,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SettingModel_haljsonSettingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
 		boolean = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
@@ -3249,11 +3267,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SettingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
 		boolean = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
@@ -3670,11 +3689,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SettingValueModel_haljson_embeddedSettingSettingType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="boolean")]
 		boolean = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="string")]
@@ -4160,10 +4180,10 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Code_ReferencesPost v1/code-references
+		/// V1Code_referencesPost v1/code-references
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task Code_ReferencesPostAsync(CodeReferenceRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Code_referencesPostAsync(CodeReferenceRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/code-references";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -4193,10 +4213,10 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Code_ReferencesPost v1/code-references/delete-reports
+		/// V1Code_referencesDelete_reportsPost v1/code-references/delete-reports
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task Code_ReferencesPostAsync(DeleteRepositoryReportsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Code_referencesDelete_reportsPostAsync(DeleteRepositoryReportsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/code-references/delete-reports";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -4228,10 +4248,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete Config
 		/// This endpoint removes a Config identified by the `configId` parameter.
-		/// Delete_config v1/configs/{configId}
+		/// V1Configs_configIdDelete v1/configs/{configId}
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
-		public async Task Delete_configAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Configs_configIdDeleteAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -4257,11 +4277,11 @@ namespace MyNS
 		/// Get Config
 		/// This endpoint returns the metadata of a Config
 		/// identified by the `configId`.
-		/// Get_config v1/configs/{configId}
+		/// V1Configs_configIdGet v1/configs/{configId}
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
 		/// <returns>When everything is ok, the config data returned.</returns>
-		public async Task<ConfigModel> Get_configAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ConfigModel> V1Configs_configIdGetAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -4292,10 +4312,10 @@ namespace MyNS
 		/// <summary>
 		/// Update Config
 		/// This endpoint updates a Config identified by the `configId` parameter.
-		/// Update_config v1/configs/{configId}
+		/// V1Configs_configIdPut v1/configs/{configId}
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
-		public async Task<ConfigModel> Update_configAsync(string configId, UpdateConfigRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ConfigModel> V1Configs_configIdPutAsync(string configId, UpdateConfigRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -4333,10 +4353,10 @@ namespace MyNS
 		/// <summary>
 		/// List Deleted Settings
 		/// This endpoint returns the list of Feature Flags and Settings that were deleted from the given Config.
-		/// Get_deleted_settings v1/configs/{configId}/deleted-settings
+		/// V1Configs_configIdDeleted_settingsGet v1/configs/{configId}/deleted-settings
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
-		public async Task<SettingModel[]> Get_deleted_settingsAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingModel[]> V1Configs_configIdDeleted_settingsGetAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId))+"/deleted-settings";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -4367,11 +4387,11 @@ namespace MyNS
 		/// <summary>
 		/// Get SDK Key
 		/// This endpoint returns the SDK Key for your Config in a specified Environment.
-		/// Get_sdk_keys v1/configs/{configId}/environments/{environmentId}
+		/// V1Configs_configIdEnvironments_environmentIdGet v1/configs/{configId}/environments/{environmentId}
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
 		/// <param name="environmentId">The identifier of the Environment.</param>
-		public async Task<SdkKeysModel> Get_sdk_keysAsync(string configId, string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SdkKeysModel> V1Configs_configIdEnvironments_environmentIdGetAsync(string configId, string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId))+"/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -4412,12 +4432,12 @@ namespace MyNS
 		/// Targeting and Percentage Rules configuration of the actual Feature Flag or Setting
 		/// in an **ordered** collection, which means the order of the returned rules is matching to the
 		/// evaluation order. You can read more about these rules [here](https://configcat.com/docs/advanced/targeting/).
-		/// Get_setting_values v1/configs/{configId}/environments/{environmentId}/values
+		/// V1Configs_configIdEnvironments_environmentIdValuesGet v1/configs/{configId}/environments/{environmentId}/values
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <returns>When everything is ok, the setting values returned.</returns>
-		public async Task<ConfigSettingValuesModel> Get_setting_valuesAsync(string configId, string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ConfigSettingValuesModel> V1Configs_configIdEnvironments_environmentIdValuesGetAsync(string configId, string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId))+"/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/values";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -4510,13 +4530,13 @@ namespace MyNS
 		/// 
 		/// - **Targeting rules**: When you want to add or update a targenting rule, the `comparator`, `comparisonAttribute`, and `comparisonValue` members are required.
 		/// - **Segment rules**: When you want to add add or update a segment rule, the `segmentId` which identifies the desired segment and the `segmentComparator` members are required.
-		/// Post_setting_values v1/configs/{configId}/environments/{environmentId}/values
+		/// V1Configs_configIdEnvironments_environmentIdValuesPostByReason v1/configs/{configId}/environments/{environmentId}/values
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <param name="reason">The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.</param>
 		/// <returns>When everything is ok, the updated setting values returned.</returns>
-		public async Task<ConfigSettingValuesModel> Post_setting_valuesAsync(string configId, string environmentId, string reason, UpdateSettingValuesWithIdModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ConfigSettingValuesModel> V1Configs_configIdEnvironments_environmentIdValuesPostByReasonAsync(string configId, string environmentId, string reason, UpdateSettingValuesWithIdModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId))+"/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/values&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -4555,10 +4575,10 @@ namespace MyNS
 		/// List Flags
 		/// This endpoint returns the list of the Feature Flags and Settings defined in a
 		/// specified Config, identified by the `configId` parameter.
-		/// Get_settings v1/configs/{configId}/settings
+		/// V1Configs_configIdSettingsGet v1/configs/{configId}/settings
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
-		public async Task<SettingModel[]> Get_settingsAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingModel[]> V1Configs_configIdSettingsGetAsync(string configId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId))+"/settings";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -4592,10 +4612,10 @@ namespace MyNS
 		/// identified by the `configId` parameter.
 		/// 
 		/// **Important:** The `key` attribute must be unique within the given Config.
-		/// Create_setting v1/configs/{configId}/settings
+		/// V1Configs_configIdSettingsPost v1/configs/{configId}/settings
 		/// </summary>
 		/// <param name="configId">The identifier of the Config.</param>
-		public async Task Create_settingAsync(string configId, CreateSettingInitialValues requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Configs_configIdSettingsPostAsync(string configId, CreateSettingInitialValues requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/configs/"+ (configId==null? "" : System.Uri.EscapeDataString(configId))+"/settings";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -4627,10 +4647,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete Environment
 		/// This endpoint removes an Environment identified by the `environmentId` parameter.
-		/// Delete_environment v1/environments/{environmentId}
+		/// V1Environments_environmentIdDelete v1/environments/{environmentId}
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
-		public async Task Delete_environmentAsync(string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Environments_environmentIdDeleteAsync(string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -4656,11 +4676,11 @@ namespace MyNS
 		/// Get Environment
 		/// This endpoint returns the metadata of an Environment
 		/// identified by the `environmentId`.
-		/// Get_environment v1/environments/{environmentId}
+		/// V1Environments_environmentIdGet v1/environments/{environmentId}
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <returns>When everything is ok, the environment data returned.</returns>
-		public async Task<EnvironmentModel> Get_environmentAsync(string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EnvironmentModel> V1Environments_environmentIdGetAsync(string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -4691,10 +4711,10 @@ namespace MyNS
 		/// <summary>
 		/// Update Environment
 		/// This endpoint updates an Environment identified by the `environmentId` parameter.
-		/// Update_environment v1/environments/{environmentId}
+		/// V1Environments_environmentIdPut v1/environments/{environmentId}
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
-		public async Task<EnvironmentModel> Update_environmentAsync(string environmentId, UpdateEnvironmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EnvironmentModel> V1Environments_environmentIdPutAsync(string environmentId, UpdateEnvironmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -4731,14 +4751,14 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete Integration link
-		/// Delete_integration_link v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}
+		/// V1Environments_environmentIdSettings_settingIdIntegrationLinks_integrationLinkType_keyDelete v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <param name="settingId">The id of the Setting.</param>
 		/// <param name="integrationLinkType">The integration's type.</param>
 		/// <param name="key">The key of the integration link.</param>
 		/// <returns>When everything is ok.</returns>
-		public async Task<DeleteIntegrationLinkModel> Delete_integration_linkAsync(string environmentId, int settingId, IntegrationLinkModelIntegrationLinkType integrationLinkType, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<DeleteIntegrationLinkModel> V1Environments_environmentIdSettings_settingIdIntegrationLinks_integrationLinkType_keyDeleteAsync(string environmentId, int settingId, IntegrationLinkModelIntegrationLinkType integrationLinkType, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/settings/"+settingId+"/integrationLinks/"+integrationLinkType+"/"+ (key==null? "" : System.Uri.EscapeDataString(key));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -4768,14 +4788,14 @@ namespace MyNS
 		
 		/// <summary>
 		/// Add or update Integration link
-		/// Add_or_update_integration_link v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}
+		/// V1Environments_environmentIdSettings_settingIdIntegrationLinks_integrationLinkType_keyPost v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key}
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <param name="settingId">The id of the Setting.</param>
 		/// <param name="integrationLinkType">The integration link's type.</param>
 		/// <param name="key">The key of the integration link.</param>
 		/// <returns>When everything is ok, the integration link data returned.</returns>
-		public async Task<IntegrationLinkModel> Add_or_update_integration_linkAsync(string environmentId, int settingId, IntegrationLinkModelIntegrationLinkType integrationLinkType, string key, AddOrUpdateIntegrationLinkModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<IntegrationLinkModel> V1Environments_environmentIdSettings_settingIdIntegrationLinks_integrationLinkType_keyPostAsync(string environmentId, int settingId, IntegrationLinkModelIntegrationLinkType integrationLinkType, string key, AddOrUpdateIntegrationLinkModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/settings/"+settingId+"/integrationLinks/"+integrationLinkType+"/"+ (key==null? "" : System.Uri.EscapeDataString(key));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -4823,12 +4843,12 @@ namespace MyNS
 		/// Targeting and Percentage Rules configuration of the actual Feature Flag or Setting
 		/// in an **ordered** collection, which means the order of the returned rules is matching to the
 		/// evaluation order. You can read more about these rules [here](https://configcat.com/docs/advanced/targeting/).
-		/// Get_setting_value v1/environments/{environmentId}/settings/{settingId}/value
+		/// V1Environments_environmentIdSettings_settingIdValueGet v1/environments/{environmentId}/settings/{settingId}/value
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <param name="settingId">The id of the Setting.</param>
 		/// <returns>When everything is ok, the setting value data returned.</returns>
-		public async Task<SettingValueModel> Get_setting_valueAsync(string environmentId, int settingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingValueModel> V1Environments_environmentIdSettings_settingIdValueGetAsync(string environmentId, int settingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/settings/"+settingId+"/value";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -4917,13 +4937,13 @@ namespace MyNS
 		/// 
 		/// - **Targeting rules**: When you want to add or update a targenting rule, the `comparator`, `comparisonAttribute`, and `comparisonValue` members are required.
 		/// - **Segment rules**: When you want to add add or update a segment rule, the `segmentId` which identifies the desired segment and the `segmentComparator` members are required.
-		/// Update_setting_value v1/environments/{environmentId}/settings/{settingId}/value
+		/// V1Environments_environmentIdSettings_settingIdValuePatchByReason v1/environments/{environmentId}/settings/{settingId}/value
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <param name="settingId">The id of the Setting.</param>
 		/// <param name="reason">The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.</param>
 		/// <returns>When the patch was successful.</returns>
-		public async Task<SettingValueModel> Update_setting_valueAsync(string environmentId, int settingId, string reason, JsonPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingValueModel> V1Environments_environmentIdSettings_settingIdValuePatchByReasonAsync(string environmentId, int settingId, string reason, JsonPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/settings/"+settingId+"/value&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
@@ -5004,12 +5024,12 @@ namespace MyNS
 		/// 
 		/// - **Targeting rules**: When you want to add or update a targenting rule, the `comparator`, `comparisonAttribute`, and `comparisonValue` members are required.
 		/// - **Segment rules**: When you want to add add or update a segment rule, the `segmentId` which identifies the desired segment and the `segmentComparator` members are required.
-		/// Replace_setting_value v1/environments/{environmentId}/settings/{settingId}/value
+		/// V1Environments_environmentIdSettings_settingIdValuePutByReason v1/environments/{environmentId}/settings/{settingId}/value
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <param name="settingId">The id of the Setting.</param>
 		/// <param name="reason">The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.</param>
-		public async Task<SettingValueModel> Replace_setting_valueAsync(string environmentId, int settingId, string reason, UpdateSettingValueModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingValueModel> V1Environments_environmentIdSettings_settingIdValuePutByReasonAsync(string environmentId, int settingId, string reason, UpdateSettingValueModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/settings/"+settingId+"/value&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -5046,12 +5066,12 @@ namespace MyNS
 		
 		/// <summary>
 		/// Get Integration link
-		/// Get_integration_link_details v1/integrationLink/{integrationLinkType}/{key}/details
+		/// V1IntegrationLink_integrationLinkType_keyDetailsGet v1/integrationLink/{integrationLinkType}/{key}/details
 		/// </summary>
 		/// <param name="integrationLinkType">The integration link's type.</param>
 		/// <param name="key">The key of the integration link.</param>
 		/// <returns>When everything is ok, the details for the integration link returned.</returns>
-		public async Task<IntegrationLinkDetailsModel> Get_integration_link_detailsAsync(IntegrationLinkModelIntegrationLinkType integrationLinkType, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<IntegrationLinkDetailsModel> V1IntegrationLink_integrationLinkType_keyDetailsGetAsync(IntegrationLinkModelIntegrationLinkType integrationLinkType, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/integrationLink/"+integrationLinkType+"/"+ (key==null? "" : System.Uri.EscapeDataString(key))+"/details";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5080,10 +5100,10 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Integration_linksPost v1/jira/Connect
+		/// V1JiraConnectPost v1/jira/Connect
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task Integration_linksPostAsync(ConnectRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1JiraConnectPostAsync(ConnectRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jira/Connect";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5113,13 +5133,13 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// Jira_add_or_update_integration_link v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}
+		/// V1JiraEnvironments_environmentIdSettings_settingIdIntegrationLinks_keyPost v1/jira/environments/{environmentId}/settings/{settingId}/integrationLinks/{key}
 		/// </summary>
 		/// <param name="environmentId">The identifier of the Environment.</param>
 		/// <param name="settingId">The id of the Setting.</param>
 		/// <param name="key">The key of the integration link.</param>
 		/// <returns>When everything is ok, the integration link data returned.</returns>
-		public async Task<IntegrationLinkModel> Jira_add_or_update_integration_linkAsync(string environmentId, int settingId, string key, AddOrUpdateJiraIntegrationLinkModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<IntegrationLinkModel> V1JiraEnvironments_environmentIdSettings_settingIdIntegrationLinks_keyPostAsync(string environmentId, int settingId, string key, AddOrUpdateJiraIntegrationLinkModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/jira/environments/"+ (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"/settings/"+settingId+"/integrationLinks/"+ (key==null? "" : System.Uri.EscapeDataString(key));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5156,9 +5176,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Get authenticated user details
-		/// Get_me v1/me
+		/// V1MeGet v1/me
 		/// </summary>
-		public async Task<MeModel> Get_meAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<MeModel> V1MeGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/me";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5189,9 +5209,9 @@ namespace MyNS
 		/// <summary>
 		/// List Organizations
 		/// This endpoint returns the list of the Organizations that belongs to the user.
-		/// Get_organizations v1/organizations
+		/// V1OrganizationsGet v1/organizations
 		/// </summary>
-		public async Task<OrganizationModel[]> Get_organizationsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<OrganizationModel[]> V1OrganizationsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/organizations";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5223,7 +5243,7 @@ namespace MyNS
 		/// List Audit log items for Organization
 		/// This endpoint returns the list of Audit log items for a given Organization
 		/// and the result can be optionally filtered by Product and/or Config and/or Environment.
-		/// Get_organization_auditlogs v1/organizations/{organizationId}/auditlogs
+		/// V1Organizations_organizationIdAuditlogsGetByProductIdAndConfigIdAndEnvironmentIdAndAuditLogTypeAndFromUtcDateTimeAndToUtcDateTime v1/organizations/{organizationId}/auditlogs
 		/// </summary>
 		/// <param name="organizationId">The identifier of the Organization.</param>
 		/// <param name="productId">The identifier of the Product.</param>
@@ -5232,7 +5252,7 @@ namespace MyNS
 		/// <param name="auditLogType">Filter Audit logs by Audit log type.</param>
 		/// <param name="fromUtcDateTime">Filter Audit logs by starting UTC date.</param>
 		/// <param name="toUtcDateTime">Filter Audit logs by ending UTC date.</param>
-		public async Task<AuditLogItemModel[]> Get_organization_auditlogsAsync(string organizationId, string productId, string configId, string environmentId, AuditLogItemModelAuditLogTypeEnum auditLogType, System.DateTimeOffset fromUtcDateTime, System.DateTimeOffset toUtcDateTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<AuditLogItemModel[]> V1Organizations_organizationIdAuditlogsGetByProductIdAndConfigIdAndEnvironmentIdAndAuditLogTypeAndFromUtcDateTimeAndToUtcDateTimeAsync(string organizationId, string productId, string configId, string environmentId, AuditLogItemModelAuditLogTypeEnum auditLogType, System.DateTimeOffset fromUtcDateTime, System.DateTimeOffset toUtcDateTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/organizations/"+ (organizationId==null? "" : System.Uri.EscapeDataString(organizationId))+"/auditlogs&productId=" + (productId==null? "" : System.Uri.EscapeDataString(productId))+"&configId=" + (configId==null? "" : System.Uri.EscapeDataString(configId))+"&environmentId=" + (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"&auditLogType=" + auditLogType+"&fromUtcDateTime=" + fromUtcDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toUtcDateTime=" + toUtcDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5264,10 +5284,10 @@ namespace MyNS
 		/// List Organization Members
 		/// This endpoint returns the list of Members that belongs
 		/// to the given Organization, identified by the `organizationId` parameter.
-		/// Get_organization_members v1/organizations/{organizationId}/members
+		/// V1Organizations_organizationIdMembersGet v1/organizations/{organizationId}/members
 		/// </summary>
 		/// <param name="organizationId">The identifier of the Organization.</param>
-		public async Task<UserModel[]> Get_organization_membersAsync(string organizationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UserModel[]> V1Organizations_organizationIdMembersGetAsync(string organizationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/organizations/"+ (organizationId==null? "" : System.Uri.EscapeDataString(organizationId))+"/members";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5299,11 +5319,11 @@ namespace MyNS
 		/// Delete Member from Organization
 		/// This endpoint removes a Member identified by the `userId` from the
 		/// given Organization identified by the `organizationId` parameter.
-		/// Delete_organization_member v1/organizations/{organizationId}/members/{userId}
+		/// V1Organizations_organizationIdMembers_userIdDelete v1/organizations/{organizationId}/members/{userId}
 		/// </summary>
 		/// <param name="organizationId">The identifier of the Organization.</param>
 		/// <param name="userId">The identifier of the Member.</param>
-		public async Task Delete_organization_memberAsync(string organizationId, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Organizations_organizationIdMembers_userIdDeleteAsync(string organizationId, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/organizations/"+ (organizationId==null? "" : System.Uri.EscapeDataString(organizationId))+"/members/"+ (userId==null? "" : System.Uri.EscapeDataString(userId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -5330,12 +5350,12 @@ namespace MyNS
 		/// This endpoint adds a Member identified by the `userId` to one or more Permission Groups.
 		/// This endpoint can also be used to move a Member between Permission Groups within a Product.
 		/// Only a single Permission Group can be set per Product.
-		/// Add_member_to_group v1/organizations/{organizationId}/members/{userId}
+		/// V1Organizations_organizationIdMembers_userIdPost v1/organizations/{organizationId}/members/{userId}
 		/// </summary>
 		/// <param name="organizationId">The identifier of the Organization.</param>
 		/// <param name="userId">The identifier of the Member.</param>
 		/// <returns>When the addition was successful.</returns>
-		public async Task Add_member_to_groupAsync(string organizationId, string userId, AddUserToGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Organizations_organizationIdMembers_userIdPostAsync(string organizationId, string userId, AddUserToGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/organizations/"+ (organizationId==null? "" : System.Uri.EscapeDataString(organizationId))+"/members/"+ (userId==null? "" : System.Uri.EscapeDataString(userId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5368,10 +5388,10 @@ namespace MyNS
 		/// Create Product
 		/// This endpoint creates a new Product in a specified Organization
 		/// identified by the `organizationId` parameter, which can be obtained from the [List Organizations](#operation/get-organizations) endpoint.
-		/// Create_product v1/organizations/{organizationId}/products
+		/// V1Organizations_organizationIdProductsPost v1/organizations/{organizationId}/products
 		/// </summary>
 		/// <param name="organizationId">The identifier of the Organization.</param>
-		public async Task Create_productAsync(string organizationId, CreateProductRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Organizations_organizationIdProductsPostAsync(string organizationId, CreateProductRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/organizations/"+ (organizationId==null? "" : System.Uri.EscapeDataString(organizationId))+"/products";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5403,10 +5423,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete Permission Group
 		/// This endpoint removes a Permission Group identified by the `permissionGroupId` parameter.
-		/// Delete_permission_group v1/permissions/{permissionGroupId}
+		/// V1Permissions_permissionGroupIdDelete v1/permissions/{permissionGroupId}
 		/// </summary>
 		/// <param name="permissionGroupId">The identifier of the Permission Group.</param>
-		public async Task Delete_permission_groupAsync(long permissionGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Permissions_permissionGroupIdDeleteAsync(long permissionGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/permissions/"+permissionGroupId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -5432,11 +5452,11 @@ namespace MyNS
 		/// Get Permission Group
 		/// This endpoint returns the metadata of a Permission Group
 		/// identified by the `permissionGroupId`.
-		/// Get_permission_group v1/permissions/{permissionGroupId}
+		/// V1Permissions_permissionGroupIdGet v1/permissions/{permissionGroupId}
 		/// </summary>
 		/// <param name="permissionGroupId">The identifier of the Permission Group.</param>
 		/// <returns>When everything is ok, the permission group data returned.</returns>
-		public async Task<PermissionGroupModel> Get_permission_groupAsync(long permissionGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PermissionGroupModel> V1Permissions_permissionGroupIdGetAsync(long permissionGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/permissions/"+permissionGroupId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5467,10 +5487,10 @@ namespace MyNS
 		/// <summary>
 		/// Update Permission Group
 		/// This endpoint updates a Permission Group identified by the `permissionGroupId` parameter.
-		/// Update_permission_group v1/permissions/{permissionGroupId}
+		/// V1Permissions_permissionGroupIdPut v1/permissions/{permissionGroupId}
 		/// </summary>
 		/// <param name="permissionGroupId">The identifier of the Permission Group.</param>
-		public async Task<PermissionGroupModel> Update_permission_groupAsync(long permissionGroupId, UpdatePermissionGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PermissionGroupModel> V1Permissions_permissionGroupIdPutAsync(long permissionGroupId, UpdatePermissionGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/permissions/"+permissionGroupId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -5508,9 +5528,9 @@ namespace MyNS
 		/// <summary>
 		/// List Products
 		/// This endpoint returns the list of the Products that belongs to the user.
-		/// Get_products v1/products
+		/// V1ProductsGet v1/products
 		/// </summary>
-		public async Task<ProductModel[]> Get_productsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ProductModel[]> V1ProductsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5541,10 +5561,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete Product
 		/// This endpoint removes a Product identified by the `productId` parameter.
-		/// Delete_product v1/products/{productId}
+		/// V1Products_productIdDelete v1/products/{productId}
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task Delete_productAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdDeleteAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -5570,11 +5590,11 @@ namespace MyNS
 		/// Get Product
 		/// This endpoint returns the metadata of a Product
 		/// identified by the `productId`.
-		/// Get_product v1/products/{productId}
+		/// V1Products_productIdGet v1/products/{productId}
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
 		/// <returns>When everything is ok, the product data returned.</returns>
-		public async Task<ProductModel> Get_productAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ProductModel> V1Products_productIdGetAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5605,10 +5625,10 @@ namespace MyNS
 		/// <summary>
 		/// Update Product
 		/// This endpoint updates a Product identified by the `productId` parameter.
-		/// Update_product v1/products/{productId}
+		/// V1Products_productIdPut v1/products/{productId}
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task<ProductModel> Update_productAsync(string productId, UpdateProductRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ProductModel> V1Products_productIdPutAsync(string productId, UpdateProductRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -5647,7 +5667,7 @@ namespace MyNS
 		/// List Audit log items for Product
 		/// This endpoint returns the list of Audit log items for a given Product
 		/// and the result can be optionally filtered by Config and/or Environment.
-		/// Get_auditlogs v1/products/{productId}/auditlogs
+		/// V1Products_productIdAuditlogsGetByConfigIdAndEnvironmentIdAndAuditLogTypeAndFromUtcDateTimeAndToUtcDateTime v1/products/{productId}/auditlogs
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
 		/// <param name="configId">The identifier of the Config.</param>
@@ -5655,7 +5675,7 @@ namespace MyNS
 		/// <param name="auditLogType">Filter Audit logs by Audit log type.</param>
 		/// <param name="fromUtcDateTime">Filter Audit logs by starting UTC date.</param>
 		/// <param name="toUtcDateTime">Filter Audit logs by ending UTC date.</param>
-		public async Task<AuditLogItemModel[]> Get_auditlogsAsync(string productId, string configId, string environmentId, AuditLogItemModelAuditLogTypeEnum auditLogType, System.DateTimeOffset fromUtcDateTime, System.DateTimeOffset toUtcDateTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<AuditLogItemModel[]> V1Products_productIdAuditlogsGetByConfigIdAndEnvironmentIdAndAuditLogTypeAndFromUtcDateTimeAndToUtcDateTimeAsync(string productId, string configId, string environmentId, AuditLogItemModelAuditLogTypeEnum auditLogType, System.DateTimeOffset fromUtcDateTime, System.DateTimeOffset toUtcDateTime, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/auditlogs&configId=" + (configId==null? "" : System.Uri.EscapeDataString(configId))+"&environmentId=" + (environmentId==null? "" : System.Uri.EscapeDataString(environmentId))+"&auditLogType=" + auditLogType+"&fromUtcDateTime=" + fromUtcDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&toUtcDateTime=" + toUtcDateTime.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5687,10 +5707,10 @@ namespace MyNS
 		/// List Configs
 		/// This endpoint returns the list of the Configs that belongs to the given Product identified by the
 		/// `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Get_configs v1/products/{productId}/configs
+		/// V1Products_productIdConfigsGet v1/products/{productId}/configs
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task<ConfigModel[]> Get_configsAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ConfigModel[]> V1Products_productIdConfigsGetAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/configs";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5722,10 +5742,10 @@ namespace MyNS
 		/// Create Config
 		/// This endpoint creates a new Config in a specified Product
 		/// identified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Create_config v1/products/{productId}/configs
+		/// V1Products_productIdConfigsPost v1/products/{productId}/configs
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task Create_configAsync(string productId, CreateConfigRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdConfigsPostAsync(string productId, CreateConfigRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/configs";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5758,10 +5778,10 @@ namespace MyNS
 		/// List Environments
 		/// This endpoint returns the list of the Environments that belongs to the given Product identified by the
 		/// `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Get_environments v1/products/{productId}/environments
+		/// V1Products_productIdEnvironmentsGet v1/products/{productId}/environments
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task<EnvironmentModel[]> Get_environmentsAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EnvironmentModel[]> V1Products_productIdEnvironmentsGetAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/environments";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5793,10 +5813,10 @@ namespace MyNS
 		/// Create Environment
 		/// This endpoint creates a new Environment in a specified Product
 		/// identified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Create_environment v1/products/{productId}/environments
+		/// V1Products_productIdEnvironmentsPost v1/products/{productId}/environments
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task Create_environmentAsync(string productId, CreateEnvironmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdEnvironmentsPostAsync(string productId, CreateEnvironmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/environments";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5829,10 +5849,10 @@ namespace MyNS
 		/// List Product Members
 		/// This endpoint returns the list of Members that belongs
 		/// to the given Product, identified by the `productId` parameter.
-		/// Get_product_members v1/products/{productId}/members
+		/// V1Products_productIdMembersGet v1/products/{productId}/members
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task<MemberModel[]> Get_product_membersAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<MemberModel[]> V1Products_productIdMembersGetAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/members";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5863,11 +5883,11 @@ namespace MyNS
 		/// <summary>
 		/// Invite Member
 		/// This endpoint invites a Member into the given Product identified by the `productId` parameter.
-		/// Invite_member v1/products/{productId}/members/invite
+		/// V1Products_productIdMembersInvitePost v1/products/{productId}/members/invite
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
 		/// <returns>When the invite was successful.</returns>
-		public async Task Invite_memberAsync(string productId, InviteMembersRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdMembersInvitePostAsync(string productId, InviteMembersRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/members/invite";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5900,11 +5920,11 @@ namespace MyNS
 		/// Delete Member from Product
 		/// This endpoint removes a Member identified by the `userId` from the
 		/// given Product identified by the `productId` parameter.
-		/// Delete_product_member v1/products/{productId}/members/{userId}
+		/// V1Products_productIdMembers_userIdDelete v1/products/{productId}/members/{userId}
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
 		/// <param name="userId">The identifier of the Member.</param>
-		public async Task Delete_product_memberAsync(string productId, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdMembers_userIdDeleteAsync(string productId, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/members/"+ (userId==null? "" : System.Uri.EscapeDataString(userId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -5930,10 +5950,10 @@ namespace MyNS
 		/// List Permission Groups
 		/// This endpoint returns the list of the Permission Groups that belongs to the given Product identified by the
 		/// `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Get_permission_groups v1/products/{productId}/permissions
+		/// V1Products_productIdPermissionsGet v1/products/{productId}/permissions
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task<PermissionGroupModel[]> Get_permission_groupsAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PermissionGroupModel[]> V1Products_productIdPermissionsGetAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/permissions";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5965,10 +5985,10 @@ namespace MyNS
 		/// Create Permission Group
 		/// This endpoint creates a new Permission Group in a specified Product
 		/// identified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Create_permission_group v1/products/{productId}/permissions
+		/// V1Products_productIdPermissionsPost v1/products/{productId}/permissions
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task Create_permission_groupAsync(string productId, CreatePermissionGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdPermissionsPostAsync(string productId, CreatePermissionGroupRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/permissions";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6001,10 +6021,10 @@ namespace MyNS
 		/// List Segments
 		/// This endpoint returns the list of the Segments that belongs to the given Product identified by the
 		/// `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Get_segments v1/products/{productId}/segments
+		/// V1Products_productIdSegmentsGet v1/products/{productId}/segments
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task<SegmentListModel[]> Get_segmentsAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SegmentListModel[]> V1Products_productIdSegmentsGetAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/segments";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6036,10 +6056,10 @@ namespace MyNS
 		/// Create Segment
 		/// This endpoint creates a new Segment in a specified Product
 		/// identified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Create_segment v1/products/{productId}/segments
+		/// V1Products_productIdSegmentsPost v1/products/{productId}/segments
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task Create_segmentAsync(string productId, CreateSegmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdSegmentsPostAsync(string productId, CreateSegmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/segments";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6072,10 +6092,10 @@ namespace MyNS
 		/// List Tags
 		/// This endpoint returns the list of the Tags in a
 		/// specified Product, identified by the `productId` parameter.
-		/// Get_tags v1/products/{productId}/tags
+		/// V1Products_productIdTagsGet v1/products/{productId}/tags
 		/// </summary>
 		/// <param name="productId">The identifier of the Product.</param>
-		public async Task<TagModel[]> Get_tagsAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<TagModel[]> V1Products_productIdTagsGetAsync(string productId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/tags";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6107,10 +6127,10 @@ namespace MyNS
 		/// Create Tag
 		/// This endpoint creates a new Tag in a specified Product
 		/// identified by the `productId` parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
-		/// Create_tag v1/products/{productId}/tags
+		/// V1Products_productIdTagsPost v1/products/{productId}/tags
 		/// </summary>
 		/// <param name="productId">The identifier of the Organization.</param>
-		public async Task Create_tagAsync(string productId, CreateTagModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Products_productIdTagsPostAsync(string productId, CreateTagModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/products/"+ (productId==null? "" : System.Uri.EscapeDataString(productId))+"/tags";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6142,10 +6162,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete Segment
 		/// This endpoint removes a Segment identified by the `segmentId` parameter.
-		/// Delete_segment v1/segments/{segmentId}
+		/// V1Segments_segmentIdDelete v1/segments/{segmentId}
 		/// </summary>
 		/// <param name="segmentId">The identifier of the Segment.</param>
-		public async Task Delete_segmentAsync(string segmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Segments_segmentIdDeleteAsync(string segmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/segments/"+ (segmentId==null? "" : System.Uri.EscapeDataString(segmentId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -6171,11 +6191,11 @@ namespace MyNS
 		/// Get Segment
 		/// This endpoint returns the metadata of a Segment
 		/// identified by the `segmentId`.
-		/// Get_segment v1/segments/{segmentId}
+		/// V1Segments_segmentIdGet v1/segments/{segmentId}
 		/// </summary>
 		/// <param name="segmentId">The identifier of the Segment.</param>
 		/// <returns>When everything is ok, the config data returned.</returns>
-		public async Task<SegmentModel> Get_segmentAsync(string segmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SegmentModel> V1Segments_segmentIdGetAsync(string segmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/segments/"+ (segmentId==null? "" : System.Uri.EscapeDataString(segmentId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6206,10 +6226,10 @@ namespace MyNS
 		/// <summary>
 		/// Update Segment
 		/// This endpoint updates a Segment identified by the `segmentId` parameter.
-		/// Update_segment v1/segments/{segmentId}
+		/// V1Segments_segmentIdPut v1/segments/{segmentId}
 		/// </summary>
 		/// <param name="segmentId">The identifier of the Segment.</param>
-		public async Task<SegmentModel> Update_segmentAsync(string segmentId, UpdateSegmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SegmentModel> V1Segments_segmentIdPutAsync(string segmentId, UpdateSegmentModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/segments/"+ (segmentId==null? "" : System.Uri.EscapeDataString(segmentId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -6248,10 +6268,10 @@ namespace MyNS
 		/// Delete Flag
 		/// This endpoint removes a Feature Flag or Setting from a specified Config,
 		/// identified by the `configId` parameter.
-		/// Delete_setting v1/settings/{settingId}
+		/// V1Settings_settingIdDelete v1/settings/{settingId}
 		/// </summary>
 		/// <param name="settingId">The identifier of the Setting.</param>
-		public async Task Delete_settingAsync(int settingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Settings_settingIdDeleteAsync(int settingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/settings/"+settingId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -6277,11 +6297,11 @@ namespace MyNS
 		/// Get Flag
 		/// This endpoint returns the metadata attributes of a Feature Flag or Setting
 		/// identified by the `settingId` parameter.
-		/// Get_setting v1/settings/{settingId}
+		/// V1Settings_settingIdGet v1/settings/{settingId}
 		/// </summary>
 		/// <param name="settingId">The identifier of the Setting.</param>
 		/// <returns>When everything is ok, the setting data returned.</returns>
-		public async Task<SettingModel> Get_settingAsync(int settingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingModel> V1Settings_settingIdGetAsync(int settingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/settings/"+settingId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6375,11 +6395,11 @@ namespace MyNS
 		/// ]
 		/// }
 		/// ```
-		/// Update_setting v1/settings/{settingId}
+		/// V1Settings_settingIdPatch v1/settings/{settingId}
 		/// </summary>
 		/// <param name="settingId">The identifier of the Setting.</param>
 		/// <returns>When the update was successful.</returns>
-		public async Task<SettingModel> Update_settingAsync(int settingId, JsonPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingModel> V1Settings_settingIdPatchAsync(int settingId, JsonPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/settings/"+settingId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
@@ -6427,10 +6447,10 @@ namespace MyNS
 		/// Targeting and Percentage Rules configuration of the actual Feature Flag or Setting
 		/// in an **ordered** collection, which means the order of the returned rules is matching to the
 		/// evaluation order. You can read more about these rules [here](https://configcat.com/docs/advanced/targeting/).
-		/// Get_setting_value_by_sdkkey v1/settings/{settingKeyOrId}/value
+		/// V1Settings_settingKeyOrIdValueGet v1/settings/{settingKeyOrId}/value
 		/// </summary>
 		/// <param name="settingKeyOrId">The key or id of the Setting.</param>
-		public async Task<SettingValueModel> Get_setting_value_by_sdkkeyAsync(string settingKeyOrId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingValueModel> V1Settings_settingKeyOrIdValueGetAsync(string settingKeyOrId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/settings/"+ (settingKeyOrId==null? "" : System.Uri.EscapeDataString(settingKeyOrId))+"/value";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6515,11 +6535,11 @@ namespace MyNS
 		/// "value": true
 		/// }
 		/// ```
-		/// Update_setting_value_by_sdkkey v1/settings/{settingKeyOrId}/value
+		/// V1Settings_settingKeyOrIdValuePatchByReason v1/settings/{settingKeyOrId}/value
 		/// </summary>
 		/// <param name="settingKeyOrId">The key or id of the Setting.</param>
 		/// <param name="reason">The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.</param>
-		public async Task<SettingValueModel> Update_setting_value_by_sdkkeyAsync(string settingKeyOrId, string reason, JsonPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingValueModel> V1Settings_settingKeyOrIdValuePatchByReasonAsync(string settingKeyOrId, string reason, JsonPatch requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/settings/"+ (settingKeyOrId==null? "" : System.Uri.EscapeDataString(settingKeyOrId))+"/value&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Patch, requestUri))
@@ -6596,11 +6616,11 @@ namespace MyNS
 		/// "value": true
 		/// }
 		/// ```
-		/// Replace_setting_value_by_sdkkey v1/settings/{settingKeyOrId}/value
+		/// V1Settings_settingKeyOrIdValuePutByReason v1/settings/{settingKeyOrId}/value
 		/// </summary>
 		/// <param name="settingKeyOrId">The key or id of the Setting.</param>
 		/// <param name="reason">The reason note for the Audit Log if the Product's "Config changes require a reason" preference is turned on.</param>
-		public async Task<SettingValueModel> Replace_setting_value_by_sdkkeyAsync(string settingKeyOrId, string reason, UpdateSettingValueModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingValueModel> V1Settings_settingKeyOrIdValuePutByReasonAsync(string settingKeyOrId, string reason, UpdateSettingValueModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/settings/"+ (settingKeyOrId==null? "" : System.Uri.EscapeDataString(settingKeyOrId))+"/value&reason=" + (reason==null? "" : System.Uri.EscapeDataString(reason));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -6638,10 +6658,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete Tag
 		/// This endpoint deletes a Tag identified by the `tagId` parameter. To remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting) endpoint.
-		/// Delete_tag v1/tags/{tagId}
+		/// V1Tags_tagIdDelete v1/tags/{tagId}
 		/// </summary>
 		/// <param name="tagId">The identifier of the Tag.</param>
-		public async Task Delete_tagAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Tags_tagIdDeleteAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tags/"+tagId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -6667,11 +6687,11 @@ namespace MyNS
 		/// Get Tag
 		/// This endpoint returns the metadata of a Tag
 		/// identified by the `tagId`.
-		/// Get_tag v1/tags/{tagId}
+		/// V1Tags_tagIdGet v1/tags/{tagId}
 		/// </summary>
 		/// <param name="tagId">The identifier of the Tag.</param>
 		/// <returns>When everything is ok, the tag data returned.</returns>
-		public async Task<TagModel> Get_tagAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<TagModel> V1Tags_tagIdGetAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tags/"+tagId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6702,10 +6722,10 @@ namespace MyNS
 		/// <summary>
 		/// Update Tag
 		/// This endpoint updates a Tag identified by the `tagId` parameter.
-		/// Update_tag v1/tags/{tagId}
+		/// V1Tags_tagIdPut v1/tags/{tagId}
 		/// </summary>
 		/// <param name="tagId">The identifier of the Tag.</param>
-		public async Task<TagModel> Update_tagAsync(long tagId, UpdateTagModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<TagModel> V1Tags_tagIdPutAsync(long tagId, UpdateTagModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tags/"+tagId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -6744,11 +6764,11 @@ namespace MyNS
 		/// List Settings by Tag
 		/// This endpoint returns the list of the Settings that
 		/// has the specified Tag, identified by the `tagId` parameter.
-		/// Get_settings_by_tag v1/tags/{tagId}/settings
+		/// V1Tags_tagIdSettingsGet v1/tags/{tagId}/settings
 		/// </summary>
 		/// <param name="tagId">The identifier of the Tag.</param>
 		/// <returns>When everything is ok, the settings data returned.</returns>
-		public async Task<SettingModel[]> Get_settings_by_tagAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SettingModel[]> V1Tags_tagIdSettingsGetAsync(long tagId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/tags/"+tagId+"/settings";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))

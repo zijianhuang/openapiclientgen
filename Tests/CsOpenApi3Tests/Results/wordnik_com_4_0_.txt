@@ -1385,40 +1385,40 @@ namespace MyNS
 	public enum GetDefinitionsPartOfSpeech
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="noun")]
 		noun = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="adjective")]
 		adjective = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="verb")]
 		verb = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="adverb")]
 		adverb = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="interjection")]
 		interjection = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pronoun")]
 		pronoun = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="preposition")]
 		preposition = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="abbreviation")]
 		abbreviation = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="affix")]
 		affix = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="article")]
 		article = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="auxiliary-verb")]
 		auxiliaryMinusverb = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="conjunction")]
 		conjunction = 11,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="definite-article")]
@@ -1430,10 +1430,10 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="given-name")]
 		givenMinusname = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="idiom")]
 		idiom = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="imperative")]
 		imperative = 16,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="noun-plural")]
@@ -1457,7 +1457,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="proper-noun-posessive")]
 		properMinusnounMinusposessive = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="suffix")]
 		suffix = 24,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="verb-intransitive")]
@@ -1543,16 +1543,16 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
 		wiktionary = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
 		webster = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
 		wordnet = 4,
 	}
 	
@@ -1582,22 +1582,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cmu")]
 		cmu = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="macmillan")]
 		macmillan = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
 		wiktionary = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
 		webster = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
 		wordnet = 6,
 	}
 	
@@ -1607,13 +1607,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="arpabet")]
 		arpabet = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="gcide-diacritical")]
 		gcideMinusdiacritical = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IPA")]
 		IPA = 3,
 	}
 	
@@ -1630,16 +1630,16 @@ namespace MyNS
 	public enum GetRelatedWordsRelationshipTypes
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="synonym")]
 		synonym = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="antonym")]
 		antonym = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="variant")]
 		variant = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="equivalent")]
 		equivalent = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="cross-reference")]
@@ -1648,25 +1648,25 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="related-word")]
 		relatedMinusword = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rhyme")]
 		rhyme = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="form")]
 		form = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="etymologically-related-term")]
 		etymologicallyMinusrelatedMinusterm = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="hypernym")]
 		hypernym = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="hyponym")]
 		hyponym = 10,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="inflected-form")]
 		inflectedMinusform = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="primary")]
 		primary = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="same-context")]
@@ -1678,7 +1678,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="verb-stem")]
 		verbMinusstem = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="has_topic")]
 		has_topic = 16,
 	}
 	
@@ -1695,20 +1695,20 @@ namespace MyNS
 	public enum GetRandomWordsSortBy
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="alpha")]
 		alpha = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="count")]
 		count = 1,
 	}
 	
 	public enum GetRandomWordsSortOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="asc")]
 		asc = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="desc")]
 		desc = 1,
 	}
 	
@@ -1718,22 +1718,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cmu")]
 		cmu = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="macmillan")]
 		macmillan = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
 		wiktionary = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
 		webster = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
 		wordnet = 6,
 	}
 	
@@ -1743,22 +1743,22 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ahd-5")]
 		ahdMinus5 = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="century")]
 		century = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="cmu")]
 		cmu = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="macmillan")]
 		macmillan = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wiktionary")]
 		wiktionary = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="webster")]
 		webster = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="wordnet")]
 		wordnet = 6,
 	}
 	

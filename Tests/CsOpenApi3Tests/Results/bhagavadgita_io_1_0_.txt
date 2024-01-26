@@ -272,7 +272,7 @@ namespace MyNS
 	public enum ChapterGetByAccess_tokenAndLanguageLanguage
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="hi")]
 		hi = 0,
 	}
 	

@@ -1379,11 +1379,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ApplyMethod
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="immediate")]
 		immediate = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending-reboot")]
@@ -2570,6 +2571,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SourceType
 	{
@@ -5143,7 +5145,7 @@ namespace MyNS
 	public enum GET_AddSourceIdentifierToSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddSourceIdentifierToSubscription")]
 		AddSourceIdentifierToSubscription = 0,
 	}
 	
@@ -5164,7 +5166,7 @@ namespace MyNS
 	public enum GET_AddTagsToResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddTagsToResource")]
 		AddTagsToResource = 0,
 	}
 	
@@ -5185,7 +5187,7 @@ namespace MyNS
 	public enum GET_ApplyPendingMaintenanceActionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApplyPendingMaintenanceAction")]
 		ApplyPendingMaintenanceAction = 0,
 	}
 	
@@ -5206,7 +5208,7 @@ namespace MyNS
 	public enum GET_CopyDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CopyDBClusterParameterGroup")]
 		CopyDBClusterParameterGroup = 0,
 	}
 	
@@ -5227,7 +5229,7 @@ namespace MyNS
 	public enum GET_CopyDBClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CopyDBClusterSnapshot")]
 		CopyDBClusterSnapshot = 0,
 	}
 	
@@ -5248,7 +5250,7 @@ namespace MyNS
 	public enum GET_CreateDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBCluster")]
 		CreateDBCluster = 0,
 	}
 	
@@ -5269,7 +5271,7 @@ namespace MyNS
 	public enum GET_CreateDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBClusterParameterGroup")]
 		CreateDBClusterParameterGroup = 0,
 	}
 	
@@ -5290,7 +5292,7 @@ namespace MyNS
 	public enum GET_CreateDBClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBClusterSnapshot")]
 		CreateDBClusterSnapshot = 0,
 	}
 	
@@ -5311,7 +5313,7 @@ namespace MyNS
 	public enum GET_CreateDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBInstance")]
 		CreateDBInstance = 0,
 	}
 	
@@ -5332,7 +5334,7 @@ namespace MyNS
 	public enum GET_CreateDBSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateDBSubnetGroup")]
 		CreateDBSubnetGroup = 0,
 	}
 	
@@ -5353,7 +5355,7 @@ namespace MyNS
 	public enum GET_CreateEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateEventSubscription")]
 		CreateEventSubscription = 0,
 	}
 	
@@ -5374,7 +5376,7 @@ namespace MyNS
 	public enum GET_CreateGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateGlobalCluster")]
 		CreateGlobalCluster = 0,
 	}
 	
@@ -5395,7 +5397,7 @@ namespace MyNS
 	public enum GET_DeleteDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBCluster")]
 		DeleteDBCluster = 0,
 	}
 	
@@ -5416,7 +5418,7 @@ namespace MyNS
 	public enum GET_DeleteDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBClusterParameterGroup")]
 		DeleteDBClusterParameterGroup = 0,
 	}
 	
@@ -5437,7 +5439,7 @@ namespace MyNS
 	public enum GET_DeleteDBClusterSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBClusterSnapshot")]
 		DeleteDBClusterSnapshot = 0,
 	}
 	
@@ -5458,7 +5460,7 @@ namespace MyNS
 	public enum GET_DeleteDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBInstance")]
 		DeleteDBInstance = 0,
 	}
 	
@@ -5479,7 +5481,7 @@ namespace MyNS
 	public enum GET_DeleteDBSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteDBSubnetGroup")]
 		DeleteDBSubnetGroup = 0,
 	}
 	
@@ -5500,7 +5502,7 @@ namespace MyNS
 	public enum GET_DeleteEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEventSubscription")]
 		DeleteEventSubscription = 0,
 	}
 	
@@ -5521,7 +5523,7 @@ namespace MyNS
 	public enum GET_DeleteGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteGlobalCluster")]
 		DeleteGlobalCluster = 0,
 	}
 	
@@ -5542,7 +5544,7 @@ namespace MyNS
 	public enum GET_DescribeCertificatesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeCertificates")]
 		DescribeCertificates = 0,
 	}
 	
@@ -5563,7 +5565,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterParameterGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterParameterGroups")]
 		DescribeDBClusterParameterGroups = 0,
 	}
 	
@@ -5584,7 +5586,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterParameters")]
 		DescribeDBClusterParameters = 0,
 	}
 	
@@ -5605,7 +5607,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterSnapshotAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterSnapshotAttributes")]
 		DescribeDBClusterSnapshotAttributes = 0,
 	}
 	
@@ -5626,7 +5628,7 @@ namespace MyNS
 	public enum GET_DescribeDBClusterSnapshotsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusterSnapshots")]
 		DescribeDBClusterSnapshots = 0,
 	}
 	
@@ -5647,7 +5649,7 @@ namespace MyNS
 	public enum GET_DescribeDBClustersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBClusters")]
 		DescribeDBClusters = 0,
 	}
 	
@@ -5668,7 +5670,7 @@ namespace MyNS
 	public enum GET_DescribeDBEngineVersionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBEngineVersions")]
 		DescribeDBEngineVersions = 0,
 	}
 	
@@ -5689,7 +5691,7 @@ namespace MyNS
 	public enum GET_DescribeDBInstancesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBInstances")]
 		DescribeDBInstances = 0,
 	}
 	
@@ -5710,7 +5712,7 @@ namespace MyNS
 	public enum GET_DescribeDBSubnetGroupsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeDBSubnetGroups")]
 		DescribeDBSubnetGroups = 0,
 	}
 	
@@ -5731,7 +5733,7 @@ namespace MyNS
 	public enum GET_DescribeEngineDefaultClusterParametersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEngineDefaultClusterParameters")]
 		DescribeEngineDefaultClusterParameters = 0,
 	}
 	
@@ -5752,7 +5754,7 @@ namespace MyNS
 	public enum GET_DescribeEventCategoriesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventCategories")]
 		DescribeEventCategories = 0,
 	}
 	
@@ -5773,7 +5775,7 @@ namespace MyNS
 	public enum GET_DescribeEventSubscriptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEventSubscriptions")]
 		DescribeEventSubscriptions = 0,
 	}
 	
@@ -5816,7 +5818,7 @@ namespace MyNS
 	public enum GET_DescribeEventsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeEvents")]
 		DescribeEvents = 0,
 	}
 	
@@ -5837,7 +5839,7 @@ namespace MyNS
 	public enum GET_DescribeGlobalClustersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeGlobalClusters")]
 		DescribeGlobalClusters = 0,
 	}
 	
@@ -5858,7 +5860,7 @@ namespace MyNS
 	public enum GET_DescribeOrderableDBInstanceOptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeOrderableDBInstanceOptions")]
 		DescribeOrderableDBInstanceOptions = 0,
 	}
 	
@@ -5879,7 +5881,7 @@ namespace MyNS
 	public enum GET_DescribePendingMaintenanceActionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribePendingMaintenanceActions")]
 		DescribePendingMaintenanceActions = 0,
 	}
 	
@@ -5900,7 +5902,7 @@ namespace MyNS
 	public enum GET_FailoverDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailoverDBCluster")]
 		FailoverDBCluster = 0,
 	}
 	
@@ -5921,7 +5923,7 @@ namespace MyNS
 	public enum GET_ListTagsForResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTagsForResource")]
 		ListTagsForResource = 0,
 	}
 	
@@ -5952,7 +5954,7 @@ namespace MyNS
 	public enum GET_ModifyDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBCluster")]
 		ModifyDBCluster = 0,
 	}
 	
@@ -5973,7 +5975,7 @@ namespace MyNS
 	public enum GET_ModifyDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBClusterParameterGroup")]
 		ModifyDBClusterParameterGroup = 0,
 	}
 	
@@ -5994,7 +5996,7 @@ namespace MyNS
 	public enum GET_ModifyDBClusterSnapshotAttributeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBClusterSnapshotAttribute")]
 		ModifyDBClusterSnapshotAttribute = 0,
 	}
 	
@@ -6015,7 +6017,7 @@ namespace MyNS
 	public enum GET_ModifyDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBInstance")]
 		ModifyDBInstance = 0,
 	}
 	
@@ -6036,7 +6038,7 @@ namespace MyNS
 	public enum GET_ModifyDBSubnetGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyDBSubnetGroup")]
 		ModifyDBSubnetGroup = 0,
 	}
 	
@@ -6057,7 +6059,7 @@ namespace MyNS
 	public enum GET_ModifyEventSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyEventSubscription")]
 		ModifyEventSubscription = 0,
 	}
 	
@@ -6078,7 +6080,7 @@ namespace MyNS
 	public enum GET_ModifyGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyGlobalCluster")]
 		ModifyGlobalCluster = 0,
 	}
 	
@@ -6099,7 +6101,7 @@ namespace MyNS
 	public enum GET_RebootDBInstanceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RebootDBInstance")]
 		RebootDBInstance = 0,
 	}
 	
@@ -6120,7 +6122,7 @@ namespace MyNS
 	public enum GET_RemoveFromGlobalClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveFromGlobalCluster")]
 		RemoveFromGlobalCluster = 0,
 	}
 	
@@ -6141,7 +6143,7 @@ namespace MyNS
 	public enum GET_RemoveSourceIdentifierFromSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveSourceIdentifierFromSubscription")]
 		RemoveSourceIdentifierFromSubscription = 0,
 	}
 	
@@ -6162,7 +6164,7 @@ namespace MyNS
 	public enum GET_RemoveTagsFromResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveTagsFromResource")]
 		RemoveTagsFromResource = 0,
 	}
 	
@@ -6183,7 +6185,7 @@ namespace MyNS
 	public enum GET_ResetDBClusterParameterGroupAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ResetDBClusterParameterGroup")]
 		ResetDBClusterParameterGroup = 0,
 	}
 	
@@ -6204,7 +6206,7 @@ namespace MyNS
 	public enum GET_RestoreDBClusterFromSnapshotAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreDBClusterFromSnapshot")]
 		RestoreDBClusterFromSnapshot = 0,
 	}
 	
@@ -6225,7 +6227,7 @@ namespace MyNS
 	public enum GET_RestoreDBClusterToPointInTimeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RestoreDBClusterToPointInTime")]
 		RestoreDBClusterToPointInTime = 0,
 	}
 	
@@ -6246,7 +6248,7 @@ namespace MyNS
 	public enum GET_StartDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="StartDBCluster")]
 		StartDBCluster = 0,
 	}
 	
@@ -6267,7 +6269,7 @@ namespace MyNS
 	public enum GET_StopDBClusterAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="StopDBCluster")]
 		StopDBCluster = 0,
 	}
 	

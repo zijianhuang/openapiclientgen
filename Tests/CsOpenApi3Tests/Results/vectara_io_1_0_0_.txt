@@ -30,17 +30,18 @@ namespace MyNS
 	/// - RESPONSE: Use response semantics.  Usage of this is rare.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CorpusKeySemantics
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEFAULT")]
 		DEFAULT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUERY")]
 		QUERY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESPONSE")]
 		RESPONSE = 2,
 	}
 	
@@ -211,44 +212,46 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AdminFilterAttributeLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_LEVEL__UNDEFINED")]
 		FILTER_ATTRIBUTE_LEVEL__UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_LEVEL__DOCUMENT")]
 		FILTER_ATTRIBUTE_LEVEL__DOCUMENT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_LEVEL__DOCUMENT_PART")]
 		FILTER_ATTRIBUTE_LEVEL__DOCUMENT_PART = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AdminFilterAttributeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_TYPE__UNDEFINED")]
 		FILTER_ATTRIBUTE_TYPE__UNDEFINED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_TYPE__INTEGER")]
 		FILTER_ATTRIBUTE_TYPE__INTEGER = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_TYPE__INTEGER_LIST")]
 		FILTER_ATTRIBUTE_TYPE__INTEGER_LIST = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_TYPE__REAL")]
 		FILTER_ATTRIBUTE_TYPE__REAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_TYPE__REAL_LIST")]
 		FILTER_ATTRIBUTE_TYPE__REAL_LIST = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_TYPE__TEXT")]
 		FILTER_ATTRIBUTE_TYPE__TEXT = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FILTER_ATTRIBUTE_TYPE__TEXT_LIST")]
 		FILTER_ATTRIBUTE_TYPE__TEXT_LIST = 6,
 	}
 	
@@ -289,350 +292,351 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ComvectaraStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
 		FAILURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
 		UNKNOWN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ARGUMENT")]
 		INVALID_ARGUMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEADLINE_EXCEEDED")]
 		DEADLINE_EXCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_EXISTS")]
 		ALREADY_EXISTS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
 		PERMISSION_DENIED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_EXHAUSTED")]
 		RESOURCE_EXHAUSTED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_PRECONDITION")]
 		FAILED_PRECONDITION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
 		ABORTED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_RANGE")]
 		OUT_OF_RANGE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIMPLEMENTED")]
 		UNIMPLEMENTED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
 		INTERNAL = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
 		UNAVAILABLE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LOSS")]
 		DATA_LOSS = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHENTICATED")]
 		UNAUTHENTICATED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_REQUEST")]
 		BAD_REQUEST = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHORIZED")]
 		UNAUTHORIZED = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORBIDDEN")]
 		FORBIDDEN = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
 		NOT_FOUND = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_NOT_ALLOWED")]
 		METHOD_NOT_ALLOWED = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFLICT")]
 		CONFLICT = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED_MEDIA_TYPE")]
 		UNSUPPORTED_MEDIA_TYPE = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_REQUESTS")]
 		TOO_MANY_REQUESTS = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_SERVER_ERROR")]
 		INTERNAL_SERVER_ERROR = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IMPLEMENTED")]
 		NOT_IMPLEMENTED = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_UNAVAILABLE")]
 		SERVICE_UNAVAILABLE = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_STORAGE")]
 		INSUFFICIENT_STORAGE = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNPARSEABLE_RESPONSE")]
 		UNPARSEABLE_RESPONSE = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_CUSTOMER")]
 		DISABLED_CUSTOMER = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CUSTOMER_ID")]
 		INVALID_CUSTOMER_ID = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_CORPUS")]
 		DISABLED_CORPUS = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CORPUS_ID")]
 		INVALID_CORPUS_ID = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_API_KEY")]
 		DISABLED_API_KEY = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED_API_KEY")]
 		EXPIRED_API_KEY = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_API_KEY")]
 		INVALID_API_KEY = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CMK_INACCESSIBLE")]
 		CMK_INACCESSIBLE = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__DISABLED_CORPUS")]
 		QRY__DISABLED_CORPUS = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__DOCUMENT_DB_FAILURE")]
 		QRY__DOCUMENT_DB_FAILURE = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__ENCODER_FAILURE")]
 		QRY__ENCODER_FAILURE = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INTERRUPTED")]
 		QRY__INTERRUPTED = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_CORPUS")]
 		QRY__INVALID_CORPUS = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_START")]
 		QRY__INVALID_START = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_NUM_RESULTS")]
 		QRY__INVALID_NUM_RESULTS = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_CONTEXT")]
 		QRY__INVALID_CONTEXT = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__MISSING_QUERY")]
 		QRY__MISSING_QUERY = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__MISSING_CORPUS")]
 		QRY__MISSING_CORPUS = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TIMEOUT")]
 		QRY__TIMEOUT = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TOO_MANY_CORPORA")]
 		QRY__TOO_MANY_CORPORA = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TOO_MANY_QUERIES")]
 		QRY__TOO_MANY_QUERIES = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__VECTOR_INDEX_FAILURE")]
 		QRY__VECTOR_INDEX_FAILURE = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_DIMENSION")]
 		QRY__INVALID_DIMENSION = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_CLIENTKEY")]
 		QRY__INVALID_CLIENTKEY = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__DECRYPTION_FAILURE")]
 		QRY__DECRYPTION_FAILURE = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_RERANKER")]
 		QRY__INVALID_RERANKER = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__PARTIAL_RERANK")]
 		QRY__PARTIAL_RERANK = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__RERANK_FAILURE")]
 		QRY__RERANK_FAILURE = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TOO_MANY_RESULT_ROWS")]
 		QRY__TOO_MANY_RESULT_ROWS = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__PARTIAL_RETRIEVAL")]
 		QRY__PARTIAL_RETRIEVAL = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__INVALID_JSON")]
 		CX_SPECS__INVALID_JSON = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__UNREGISTERED_TYPE")]
 		CX_SPECS__UNREGISTERED_TYPE = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__MISSING_SPEC")]
 		CX_SPECS__MISSING_SPEC = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__MISSING_TYPE")]
 		CX_SPECS__MISSING_TYPE = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__UNPARSEABLE_SPEC")]
 		CX_SPECS__UNPARSEABLE_SPEC = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_CUSTOMER_ID")]
 		ADM__INVALID_CUSTOMER_ID = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_CORPUS_ID")]
 		ADM__INVALID_CORPUS_ID = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_ENCODER_ID")]
 		ADM__INVALID_ENCODER_ID = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_ROLE_ID")]
 		ADM__INVALID_ROLE_ID = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__ROLE_ALREADY_EXISTS")]
 		ADM__ROLE_ALREADY_EXISTS = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__ONLY_ONE_OWNER_SUPPORTED")]
 		ADM__ONLY_ONE_OWNER_SUPPORTED = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_PERMISSION")]
 		ADM__INVALID_PERMISSION = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__ROLECREATION_FAILURE")]
 		ADM__ROLECREATION_FAILURE = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__USER_EMAIL_NOT_AVAIALBLE")]
 		ADM__USER_EMAIL_NOT_AVAIALBLE = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__USERNAME_NOT_AVAILABLE")]
 		ADM__USERNAME_NOT_AVAILABLE = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_NAME")]
 		ADM__SIGNUP_MISSING_NAME = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_ORG")]
 		ADM__SIGNUP_MISSING_ORG = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_EMAIL")]
 		ADM__SIGNUP_MISSING_EMAIL = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_PAYMENT")]
 		ADM__SIGNUP_MISSING_PAYMENT = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_PLAN")]
 		ADM__SIGNUP_MISSING_PLAN = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_PASSWORD")]
 		ADM__SIGNUP_MISSING_PASSWORD = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_NAME")]
 		ADM__SIGNUP_INVALID_NAME = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_ORG")]
 		ADM__SIGNUP_INVALID_ORG = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_EMAIL")]
 		ADM__SIGNUP_INVALID_EMAIL = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_PAYMENT")]
 		ADM__SIGNUP_INVALID_PAYMENT = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_PLAN")]
 		ADM__SIGNUP_INVALID_PLAN = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_PASSWORD")]
 		ADM__SIGNUP_INVALID_PASSWORD = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_ACCOUNT_ALIAS")]
 		ADM__SIGNUP_INVALID_ACCOUNT_ALIAS = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_EMAIL_VALIDATION_CODE")]
 		ADM__SIGNUP_INVALID_EMAIL_VALIDATION_CODE = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_COUNTRY_CODE")]
 		ADM__SIGNUP_MISSING_COUNTRY_CODE = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_ROOT_EMAIL_NOT_AVAILABLE")]
 		ADM__SIGNUP_ROOT_EMAIL_NOT_AVAILABLE = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CUST_MARK_DELETE_FAILED")]
 		ADM__CUST_MARK_DELETE_FAILED = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CUST_FAISS_DEALLOC_FAILED")]
 		ADM__CUST_FAISS_DEALLOC_FAILED = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CORPUS_LIMIT_REACHED")]
 		ADM__CORPUS_LIMIT_REACHED = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__STRIPE_CARD_DECLINED")]
 		ADM__STRIPE_CARD_DECLINED = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__STRIPE_PROCESSING_ERROR")]
 		ADM__STRIPE_PROCESSING_ERROR = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__EMAIL_VALIDATION_REQUEST_NOT_FOUND")]
 		ADM__EMAIL_VALIDATION_REQUEST_NOT_FOUND = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__EMAIL_NOT_VALIDATED")]
 		ADM__EMAIL_NOT_VALIDATED = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__NO_CURRENT_PLAN")]
 		ADM__CHANGE_PLAN__NO_CURRENT_PLAN = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__REQUIRES_MANUAL_CHANGE")]
 		ADM__CHANGE_PLAN__REQUIRES_MANUAL_CHANGE = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__INVALID_PLAN_ID")]
 		ADM__CHANGE_PLAN__INVALID_PLAN_ID = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__NO_PAYMENT_SOURCE")]
 		ADM__CHANGE_PLAN__NO_PAYMENT_SOURCE = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__INVALID_EFFECTIVE_DATE")]
 		ADM__CHANGE_PLAN__INVALID_EFFECTIVE_DATE = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__CONFLICTING_CHANGE")]
 		ADM__CHANGE_PLAN__CONFLICTING_CHANGE = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCM__MISCONFIGURED_CONNECTION")]
 		SCM__MISCONFIGURED_CONNECTION = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATS_DB_READ_FAILURE")]
 		STATS_DB_READ_FAILURE = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VDB__TEXT_READ_FAILURE")]
 		VDB__TEXT_READ_FAILURE = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__LOW_RECALL")]
 		REBUILD__LOW_RECALL = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__INDEX_UPLOAD_FAILURE")]
 		REBUILD__INDEX_UPLOAD_FAILURE = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__UPDATE_JOURNAL_FAILURE")]
 		REBUILD__UPDATE_JOURNAL_FAILURE = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__UPDATE_FAISSPARAMS_FAILURE")]
 		REBUILD__UPDATE_FAISSPARAMS_FAILURE = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__NO_DATA")]
 		REBUILD__NO_DATA = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__EVALUATION")]
 		REBUILD__EVALUATION = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDX__TRANSIENT_PARTIAL_DELETION_FAILURE")]
 		IDX__TRANSIENT_PARTIAL_DELETION_FAILURE = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDX__PERMANENT_PARTIAL_DELETION_FAILURE")]
 		IDX__PERMANENT_PARTIAL_DELETION_FAILURE = 113,
 	}
 	
@@ -1318,350 +1322,351 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VectaraStatusCode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
 		FAILURE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
 		UNKNOWN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_ARGUMENT")]
 		INVALID_ARGUMENT = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEADLINE_EXCEEDED")]
 		DEADLINE_EXCEEDED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ALREADY_EXISTS")]
 		ALREADY_EXISTS = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PERMISSION_DENIED")]
 		PERMISSION_DENIED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESOURCE_EXHAUSTED")]
 		RESOURCE_EXHAUSTED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED_PRECONDITION")]
 		FAILED_PRECONDITION = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ABORTED")]
 		ABORTED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OUT_OF_RANGE")]
 		OUT_OF_RANGE = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNIMPLEMENTED")]
 		UNIMPLEMENTED = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL")]
 		INTERNAL = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAVAILABLE")]
 		UNAVAILABLE = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DATA_LOSS")]
 		DATA_LOSS = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHENTICATED")]
 		UNAUTHENTICATED = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BAD_REQUEST")]
 		BAD_REQUEST = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNAUTHORIZED")]
 		UNAUTHORIZED = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FORBIDDEN")]
 		FORBIDDEN = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_FOUND")]
 		NOT_FOUND = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="METHOD_NOT_ALLOWED")]
 		METHOD_NOT_ALLOWED = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFLICT")]
 		CONFLICT = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNSUPPORTED_MEDIA_TYPE")]
 		UNSUPPORTED_MEDIA_TYPE = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOO_MANY_REQUESTS")]
 		TOO_MANY_REQUESTS = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERNAL_SERVER_ERROR")]
 		INTERNAL_SERVER_ERROR = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NOT_IMPLEMENTED")]
 		NOT_IMPLEMENTED = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SERVICE_UNAVAILABLE")]
 		SERVICE_UNAVAILABLE = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSUFFICIENT_STORAGE")]
 		INSUFFICIENT_STORAGE = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNPARSEABLE_RESPONSE")]
 		UNPARSEABLE_RESPONSE = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_CUSTOMER")]
 		DISABLED_CUSTOMER = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CUSTOMER_ID")]
 		INVALID_CUSTOMER_ID = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_CORPUS")]
 		DISABLED_CORPUS = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_CORPUS_ID")]
 		INVALID_CORPUS_ID = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED_API_KEY")]
 		DISABLED_API_KEY = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXPIRED_API_KEY")]
 		EXPIRED_API_KEY = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVALID_API_KEY")]
 		INVALID_API_KEY = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CMK_INACCESSIBLE")]
 		CMK_INACCESSIBLE = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__DISABLED_CORPUS")]
 		QRY__DISABLED_CORPUS = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__DOCUMENT_DB_FAILURE")]
 		QRY__DOCUMENT_DB_FAILURE = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__ENCODER_FAILURE")]
 		QRY__ENCODER_FAILURE = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INTERRUPTED")]
 		QRY__INTERRUPTED = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_CORPUS")]
 		QRY__INVALID_CORPUS = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_START")]
 		QRY__INVALID_START = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_NUM_RESULTS")]
 		QRY__INVALID_NUM_RESULTS = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_CONTEXT")]
 		QRY__INVALID_CONTEXT = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__MISSING_QUERY")]
 		QRY__MISSING_QUERY = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__MISSING_CORPUS")]
 		QRY__MISSING_CORPUS = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TIMEOUT")]
 		QRY__TIMEOUT = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TOO_MANY_CORPORA")]
 		QRY__TOO_MANY_CORPORA = 48,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TOO_MANY_QUERIES")]
 		QRY__TOO_MANY_QUERIES = 49,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__VECTOR_INDEX_FAILURE")]
 		QRY__VECTOR_INDEX_FAILURE = 50,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_DIMENSION")]
 		QRY__INVALID_DIMENSION = 51,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_CLIENTKEY")]
 		QRY__INVALID_CLIENTKEY = 52,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__DECRYPTION_FAILURE")]
 		QRY__DECRYPTION_FAILURE = 53,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__INVALID_RERANKER")]
 		QRY__INVALID_RERANKER = 54,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__PARTIAL_RERANK")]
 		QRY__PARTIAL_RERANK = 55,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__RERANK_FAILURE")]
 		QRY__RERANK_FAILURE = 56,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__TOO_MANY_RESULT_ROWS")]
 		QRY__TOO_MANY_RESULT_ROWS = 57,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QRY__PARTIAL_RETRIEVAL")]
 		QRY__PARTIAL_RETRIEVAL = 58,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__INVALID_JSON")]
 		CX_SPECS__INVALID_JSON = 59,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__UNREGISTERED_TYPE")]
 		CX_SPECS__UNREGISTERED_TYPE = 60,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__MISSING_SPEC")]
 		CX_SPECS__MISSING_SPEC = 61,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__MISSING_TYPE")]
 		CX_SPECS__MISSING_TYPE = 62,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CX_SPECS__UNPARSEABLE_SPEC")]
 		CX_SPECS__UNPARSEABLE_SPEC = 63,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_CUSTOMER_ID")]
 		ADM__INVALID_CUSTOMER_ID = 64,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_CORPUS_ID")]
 		ADM__INVALID_CORPUS_ID = 65,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_ENCODER_ID")]
 		ADM__INVALID_ENCODER_ID = 66,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_ROLE_ID")]
 		ADM__INVALID_ROLE_ID = 67,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__ROLE_ALREADY_EXISTS")]
 		ADM__ROLE_ALREADY_EXISTS = 68,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__ONLY_ONE_OWNER_SUPPORTED")]
 		ADM__ONLY_ONE_OWNER_SUPPORTED = 69,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__INVALID_PERMISSION")]
 		ADM__INVALID_PERMISSION = 70,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__ROLECREATION_FAILURE")]
 		ADM__ROLECREATION_FAILURE = 71,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__USER_EMAIL_NOT_AVAIALBLE")]
 		ADM__USER_EMAIL_NOT_AVAIALBLE = 72,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__USERNAME_NOT_AVAILABLE")]
 		ADM__USERNAME_NOT_AVAILABLE = 73,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_NAME")]
 		ADM__SIGNUP_MISSING_NAME = 74,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_ORG")]
 		ADM__SIGNUP_MISSING_ORG = 75,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_EMAIL")]
 		ADM__SIGNUP_MISSING_EMAIL = 76,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_PAYMENT")]
 		ADM__SIGNUP_MISSING_PAYMENT = 77,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_PLAN")]
 		ADM__SIGNUP_MISSING_PLAN = 78,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_PASSWORD")]
 		ADM__SIGNUP_MISSING_PASSWORD = 79,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_NAME")]
 		ADM__SIGNUP_INVALID_NAME = 80,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_ORG")]
 		ADM__SIGNUP_INVALID_ORG = 81,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_EMAIL")]
 		ADM__SIGNUP_INVALID_EMAIL = 82,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_PAYMENT")]
 		ADM__SIGNUP_INVALID_PAYMENT = 83,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_PLAN")]
 		ADM__SIGNUP_INVALID_PLAN = 84,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_PASSWORD")]
 		ADM__SIGNUP_INVALID_PASSWORD = 85,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_ACCOUNT_ALIAS")]
 		ADM__SIGNUP_INVALID_ACCOUNT_ALIAS = 86,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_INVALID_EMAIL_VALIDATION_CODE")]
 		ADM__SIGNUP_INVALID_EMAIL_VALIDATION_CODE = 87,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_MISSING_COUNTRY_CODE")]
 		ADM__SIGNUP_MISSING_COUNTRY_CODE = 88,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__SIGNUP_ROOT_EMAIL_NOT_AVAILABLE")]
 		ADM__SIGNUP_ROOT_EMAIL_NOT_AVAILABLE = 89,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CUST_MARK_DELETE_FAILED")]
 		ADM__CUST_MARK_DELETE_FAILED = 90,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CUST_FAISS_DEALLOC_FAILED")]
 		ADM__CUST_FAISS_DEALLOC_FAILED = 91,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CORPUS_LIMIT_REACHED")]
 		ADM__CORPUS_LIMIT_REACHED = 92,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__STRIPE_CARD_DECLINED")]
 		ADM__STRIPE_CARD_DECLINED = 93,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__STRIPE_PROCESSING_ERROR")]
 		ADM__STRIPE_PROCESSING_ERROR = 94,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__EMAIL_VALIDATION_REQUEST_NOT_FOUND")]
 		ADM__EMAIL_VALIDATION_REQUEST_NOT_FOUND = 95,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__EMAIL_NOT_VALIDATED")]
 		ADM__EMAIL_NOT_VALIDATED = 96,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__NO_CURRENT_PLAN")]
 		ADM__CHANGE_PLAN__NO_CURRENT_PLAN = 97,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__REQUIRES_MANUAL_CHANGE")]
 		ADM__CHANGE_PLAN__REQUIRES_MANUAL_CHANGE = 98,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__INVALID_PLAN_ID")]
 		ADM__CHANGE_PLAN__INVALID_PLAN_ID = 99,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__NO_PAYMENT_SOURCE")]
 		ADM__CHANGE_PLAN__NO_PAYMENT_SOURCE = 100,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__INVALID_EFFECTIVE_DATE")]
 		ADM__CHANGE_PLAN__INVALID_EFFECTIVE_DATE = 101,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADM__CHANGE_PLAN__CONFLICTING_CHANGE")]
 		ADM__CHANGE_PLAN__CONFLICTING_CHANGE = 102,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCM__MISCONFIGURED_CONNECTION")]
 		SCM__MISCONFIGURED_CONNECTION = 103,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STATS_DB_READ_FAILURE")]
 		STATS_DB_READ_FAILURE = 104,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VDB__TEXT_READ_FAILURE")]
 		VDB__TEXT_READ_FAILURE = 105,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__LOW_RECALL")]
 		REBUILD__LOW_RECALL = 106,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__INDEX_UPLOAD_FAILURE")]
 		REBUILD__INDEX_UPLOAD_FAILURE = 107,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__UPDATE_JOURNAL_FAILURE")]
 		REBUILD__UPDATE_JOURNAL_FAILURE = 108,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__UPDATE_FAISSPARAMS_FAILURE")]
 		REBUILD__UPDATE_FAISSPARAMS_FAILURE = 109,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__NO_DATA")]
 		REBUILD__NO_DATA = 110,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REBUILD__EVALUATION")]
 		REBUILD__EVALUATION = 111,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDX__TRANSIENT_PARTIAL_DELETION_FAILURE")]
 		IDX__TRANSIENT_PARTIAL_DELETION_FAILURE = 112,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IDX__PERMANENT_PARTIAL_DELETION_FAILURE")]
 		IDX__PERMANENT_PARTIAL_DELETION_FAILURE = 113,
 	}
 	

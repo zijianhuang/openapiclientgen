@@ -419,11 +419,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Post_activityActivity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="content")]
 		content = 0,
 	}
 	
@@ -1529,10 +1530,10 @@ namespace MyNS
 	public enum _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeAffiliation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="member")]
 		member = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="teammate")]
 		teammate = 1,
 	}
 	
@@ -1663,38 +1664,38 @@ namespace MyNS
 	public enum _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeIdentity
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="github")]
 		github = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="twitter")]
 		twitter = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="email")]
 		email = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="discourse")]
 		discourse = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="linkedin")]
 		linkedin = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="devto")]
 		devto = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="slack")]
 		slack = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="discord")]
 		discord = 7,
 	}
 	
 	public enum _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ASC")]
 		ASC = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESC")]
 		DESC = 1,
 	}
 	
@@ -1714,10 +1715,10 @@ namespace MyNS
 	public enum _workspace_slugActivitiesGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndPageAndDirectionAndItemsAndSortAndTypeSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="occurred_at")]
 		occurred_at = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="member")]
 		member = 1,
 	}
 	
@@ -1861,49 +1862,49 @@ namespace MyNS
 	public enum _workspace_slugMembersGetByAffiliationAndMember_tagsAndOrbitAndActivity_typeAndIdentityAndCompany_AndTitle_AndRegions_AndCountries_AndCities_AndStart_dateAndEnd_dateAndRelativeAndQueryAndPageAndDirectionAndItemsAndActivities_count_minAndActivities_count_maxAndSortAndTypeSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="activities_count")]
 		activities_count = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="company")]
 		company = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="created_at")]
 		created_at = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="first_activity")]
 		first_activity = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="github_followers")]
 		github_followers = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="id")]
 		id = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="last_activity")]
 		last_activity = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="location")]
 		location = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="love")]
 		love = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="orbit")]
 		orbit = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="reach")]
 		reach = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="title")]
 		title = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="twitter_followers")]
 		twitter_followers = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="updated_at")]
 		updated_at = 14,
 	}
 	
@@ -1936,16 +1937,16 @@ namespace MyNS
 	public enum _workspace_slugOrganizationsGetByQueryAndPageAndDirectionAndItemsAndSortSort
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="name")]
 		name = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="website")]
 		website = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="members_count")]
 		members_count = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="employees_count")]
 		employees_count = 3,
 	}
 	
@@ -1965,25 +1966,25 @@ namespace MyNS
 	public enum _workspace_slugOrganizations_organization_idActivitiesGetByPageAndDirectionAndItemsAndSortAndActivity_typeActivity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="content")]
 		content = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="custom")]
 		custom = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="discord")]
 		discord = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="discourse")]
 		discourse = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="github")]
 		github = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="slack")]
 		slack = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="twitter")]
 		twitter = 6,
 	}
 	

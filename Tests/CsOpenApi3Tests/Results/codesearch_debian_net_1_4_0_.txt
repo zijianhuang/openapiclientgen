@@ -188,10 +188,10 @@ namespace MyNS
 	public enum SearchMatch_mode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="literal")]
 		literal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="regexp")]
 		regexp = 1,
 	}
 }

@@ -23173,10 +23173,10 @@ namespace MyNS
 	public enum Calendar_datesExportGetByCalendar_category_idAndApi_keyAndDescriptionAndSort_nulls_lastAndSort_null_onlyAndPageAndMax_end_dateAndSummaryAndMin_end_dateAndSort_hide_nullAndMin_start_dateAndPer_pageAndMax_start_dateAndRendererAndSortAndEvent_idRenderer
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ics")]
 		ics = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="csv")]
 		csv = 1,
 	}
 	
@@ -23186,7 +23186,7 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-file")]
 		eMinusfile = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="paper")]
 		paper = 1,
 	}
 	
@@ -23196,13 +23196,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="H")]
 		H = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
 		S = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
 		P = 3,
 	}
 	
@@ -23212,20 +23212,20 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEM")]
 		DEM = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REP")]
 		REP = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OTHER")]
 		OTHER = 3,
 	}
 	
 	public enum CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byAggregate_by
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="office")]
 		office = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="office-state")]
@@ -23244,13 +23244,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="H")]
 		H = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
 		S = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
 		P = 3,
 	}
 	
@@ -23260,13 +23260,13 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="H")]
 		H = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
 		S = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
 		P = 3,
 	}
 	
@@ -23276,30 +23276,30 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-file")]
 		eMinusfile = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="paper")]
 		paper = 1,
 	}
 	
 	public enum Communication_costsAggregatesGetByApi_keyAndSupport_oppose_indicatorAndCycleAndSort_null_onlyAndPageAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndSortSupport_oppose_indicator
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
 		S = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
 		O = 1,
 	}
 	
 	public enum Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="house")]
 		house = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="senate")]
 		senate = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="president")]
 		president = 2,
 	}
 	
@@ -23309,39 +23309,39 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-file")]
 		eMinusfile = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="paper")]
 		paper = 1,
 	}
 	
 	public enum LegalSearchGetByCase_statutory_citationAndAf_min_rtb_dateAndAf_report_yearAndQAndFrom_hitAndAo_requestor_typeAndCase_max_close_dateAndAo_is_pendingAndAf_fd_fine_amountAndCase_min_open_dateAndAo_min_issue_dateAndSortAndAo_citation_require_allAndCase_doc_category_idAndAo_statusAndAf_max_rtb_dateAndAf_rtb_fine_amountAndCase_respondentsAndAo_entity_nameAndAo_requestorAndAo_categoryAndAo_regulatory_citationAndCase_regulatory_citationAndCase_citation_require_allAndCase_dispositionsAndAo_nameAndAf_max_fd_dateAndAo_max_request_dateAndMur_typeAndHits_returnedAndCase_election_cyclesAndCase_min_close_dateAndAo_max_issue_dateAndAf_committee_idAndAf_min_fd_dateAndCase_max_open_dateAndApi_keyAndAo_min_request_dateAndAo_noAndTypeAndCase_noAndAo_statutory_citationAndAf_nameMur_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="archived")]
 		archived = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="current")]
 		current = 1,
 	}
 	
 	public enum LegalSearchGetByCase_statutory_citationAndAf_min_rtb_dateAndAf_report_yearAndQAndFrom_hitAndAo_requestor_typeAndCase_max_close_dateAndAo_is_pendingAndAf_fd_fine_amountAndCase_min_open_dateAndAo_min_issue_dateAndSortAndAo_citation_require_allAndCase_doc_category_idAndAo_statusAndAf_max_rtb_dateAndAf_rtb_fine_amountAndCase_respondentsAndAo_entity_nameAndAo_requestorAndAo_categoryAndAo_regulatory_citationAndCase_regulatory_citationAndCase_citation_require_allAndCase_dispositionsAndAo_nameAndAf_max_fd_dateAndAo_max_request_dateAndMur_typeAndHits_returnedAndCase_election_cyclesAndCase_min_close_dateAndAo_max_issue_dateAndAf_committee_idAndAf_min_fd_dateAndCase_max_open_dateAndApi_keyAndAo_min_request_dateAndAo_noAndTypeAndCase_noAndAo_statutory_citationAndAf_nameType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="admin_fines")]
 		admin_fines = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="adrs")]
 		adrs = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="advisory_opinions")]
 		advisory_opinions = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="murs")]
 		murs = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="regulations")]
 		regulations = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="statutes")]
 		statutes = 5,
 	}
 	
@@ -23351,14 +23351,14 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="e-file")]
 		eMinusfile = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="paper")]
 		paper = 1,
 	}
 	
 	public enum Reports_entity_typeGetByMax_party_coordinated_expendituresAndMax_debts_owed_expendituresAndMin_receipts_amountAndMin_debts_owed_amountAndMax_receipt_dateAndSort_hide_nullAndCandidate_idAndSortAndQ_spenderAndMax_receipts_amountAndFiler_typeAndReport_typeAndMax_total_contributionsAndSort_nulls_lastAndMax_independent_expendituresAndMin_total_contributionsAndMin_party_coordinated_expendituresAndBeginning_image_numberAndMin_receipt_dateAndIs_amendedAndMax_disbursements_amountAndMax_cash_on_hand_end_period_amountAndAmendment_indicatorAndCycleAndSort_null_onlyAndMin_independent_expendituresAndPer_pageAndQ_filerAndApi_keyAndCommittee_typeAndPageAndYearAndCommittee_idAndMin_cash_on_hand_end_period_amountAndMin_disbursements_amountAndMost_recentEntity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="presidential")]
 		presidential = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pac-party")]
@@ -23377,26 +23377,26 @@ namespace MyNS
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="")]
 		_ = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="H")]
 		H = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="S")]
 		S = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="P")]
 		P = 3,
 	}
 	
 	public enum Totals_entity_typeGetByTreasurer_nameAndMax_disbursementsAndCommittee_stateAndCycleAndSort_null_onlyAndSponsor_candidate_idAndMin_disbursementsAndMin_last_cash_on_hand_end_periodAndMax_last_cash_on_hand_end_periodAndSort_hide_nullAndPer_pageAndFiling_frequencyAndSortAndMax_last_debts_owed_by_committeeAndMin_first_f1_dateAndCommittee_designationAndApi_keyAndMax_receiptsAndCommittee_typeAndSort_nulls_lastAndPageAndCommittee_idAndMin_last_debts_owed_by_committeeAndMax_first_f1_dateAndOrganization_typeAndMin_receiptsEntity_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="presidential")]
 		presidential = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pac")]
 		pac = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="party")]
 		party = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pac-party")]

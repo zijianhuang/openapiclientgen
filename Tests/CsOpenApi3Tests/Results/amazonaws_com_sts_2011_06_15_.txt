@@ -825,7 +825,7 @@ namespace MyNS
 	public enum GET_AssumeRoleAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssumeRole")]
 		AssumeRole = 0,
 	}
 	
@@ -846,7 +846,7 @@ namespace MyNS
 	public enum GET_AssumeRoleWithSAMLAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssumeRoleWithSAML")]
 		AssumeRoleWithSAML = 0,
 	}
 	
@@ -867,7 +867,7 @@ namespace MyNS
 	public enum GET_AssumeRoleWithWebIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AssumeRoleWithWebIdentity")]
 		AssumeRoleWithWebIdentity = 0,
 	}
 	
@@ -888,7 +888,7 @@ namespace MyNS
 	public enum GET_DecodeAuthorizationMessageAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DecodeAuthorizationMessage")]
 		DecodeAuthorizationMessage = 0,
 	}
 	
@@ -909,7 +909,7 @@ namespace MyNS
 	public enum GET_GetAccessKeyInfoAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetAccessKeyInfo")]
 		GetAccessKeyInfo = 0,
 	}
 	
@@ -930,7 +930,7 @@ namespace MyNS
 	public enum GET_GetCallerIdentityAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetCallerIdentity")]
 		GetCallerIdentity = 0,
 	}
 	
@@ -951,7 +951,7 @@ namespace MyNS
 	public enum GET_GetFederationTokenAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetFederationToken")]
 		GetFederationToken = 0,
 	}
 	
@@ -972,7 +972,7 @@ namespace MyNS
 	public enum GET_GetSessionTokenAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSessionToken")]
 		GetSessionToken = 0,
 	}
 	

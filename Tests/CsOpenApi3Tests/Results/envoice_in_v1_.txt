@@ -57,155 +57,156 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ActivityType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Created")]
 		Created = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Draft")]
 		Draft = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cloned")]
 		Cloned = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SentViaEmail")]
 		SentViaEmail = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SentViaSms")]
 		SentViaSms = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SentReminderViaEmail")]
 		SentReminderViaEmail = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SentReminderViaSms")]
 		SentReminderViaSms = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Opened")]
 		Opened = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Viewed")]
 		Viewed = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
 		Rejected = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Updated")]
 		Updated = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Paid")]
 		Paid = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unpaid")]
 		Unpaid = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overdue")]
 		Overdue = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewManualPayment")]
 		NewManualPayment = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithPaypal")]
 		NewPaymentWithPaypal = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithStripe")]
 		NewPaymentWithStripe = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithPayoneer")]
 		NewPaymentWithPayoneer = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SentToAccountant")]
 		SentToAccountant = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DownloadedAsPdf")]
 		DownloadedAsPdf = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MarkAsPaidByTheClient")]
 		MarkAsPaidByTheClient = 20,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OpenedAttachment")]
 		OpenedAttachment = 21,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithSquare")]
 		NewPaymentWithSquare = 22,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithKlikAndPay")]
 		NewPaymentWithKlikAndPay = 23,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithRazorpay")]
 		NewPaymentWithRazorpay = 24,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithWepay")]
 		NewPaymentWithWepay = 25,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithHalkbank")]
 		NewPaymentWithHalkbank = 26,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ChangeStatus")]
 		ChangeStatus = 27,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OrderUpdated")]
 		OrderUpdated = 28,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OrderCreated")]
 		OrderCreated = 29,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithTwoCheckout")]
 		NewPaymentWithTwoCheckout = 30,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithPaymentWall")]
 		NewPaymentWithPaymentWall = 31,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithBamboraEU")]
 		NewPaymentWithBamboraEU = 32,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithBamboraNA")]
 		NewPaymentWithBamboraNA = 33,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Void")]
 		Void = 34,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithNlb")]
 		NewPaymentWithNlb = 35,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithAuthorizeNet")]
 		NewPaymentWithAuthorizeNet = 36,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NewPaymentWithBraintree")]
 		NewPaymentWithBraintree = 37,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationCreated")]
 		EstimationCreated = 38,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationDraft")]
 		EstimationDraft = 39,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationCloned")]
 		EstimationCloned = 40,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationSentViaEmail")]
 		EstimationSentViaEmail = 41,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationOpened")]
 		EstimationOpened = 42,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationViewed")]
 		EstimationViewed = 43,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationAccepted")]
 		EstimationAccepted = 44,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationRejected")]
 		EstimationRejected = 45,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationUpdated")]
 		EstimationUpdated = 46,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EstimationDownloadedAsPdf")]
 		EstimationDownloadedAsPdf = 47,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InvoiceDigitallySigned")]
 		InvoiceDigitallySigned = 48,
 	}
 	
@@ -306,32 +307,33 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ChangeOrderStatusApiModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PendingPayment")]
 		PendingPayment = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Processing")]
 		Processing = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Shipped")]
 		Shipped = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Completed")]
 		Completed = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OnHold")]
 		OnHold = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
 		Cancelled = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Refunded")]
 		Refunded = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
 		Failed = 7,
 	}
 	
@@ -354,23 +356,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ChangeStatusApiModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Draft")]
 		Draft = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Paid")]
 		Paid = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unpaid")]
 		Unpaid = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Overdue")]
 		Overdue = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Void")]
 		Void = 4,
 	}
 	
@@ -813,14 +816,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EstimationAttachmentApiModelType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="External")]
 		External = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Uploaded")]
 		Uploaded = 1,
 	}
 	
@@ -843,17 +847,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum EstimationChangeStatusApiModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Draft")]
 		Draft = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Accepted")]
 		Accepted = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected")]
 		Rejected = 2,
 	}
 	
@@ -1806,71 +1811,72 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PaymentType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
 		Other = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Paypal")]
 		Paypal = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Stripe")]
 		Stripe = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Payoneer")]
 		Payoneer = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Bank")]
 		Bank = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cash")]
 		Cash = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cheque")]
 		Cheque = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Ach")]
 		Ach = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sepa")]
 		Sepa = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Square")]
 		Square = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KlikAndPay")]
 		KlikAndPay = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Razorpay")]
 		Razorpay = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Wepay")]
 		Wepay = 12,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Halkbank")]
 		Halkbank = 13,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TwoCheckout")]
 		TwoCheckout = 14,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PaymentWall")]
 		PaymentWall = 15,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BamboraEU")]
 		BamboraEU = 16,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BamboraNA")]
 		BamboraNA = 17,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Nlb")]
 		Nlb = 18,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AuthorizeNet")]
 		AuthorizeNet = 19,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Braintree")]
 		Braintree = 20,
 	}
 	
@@ -2285,65 +2291,68 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum InvoiceRecurringApiModelDayOfWeek
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Sunday")]
 		Sunday = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monday")]
 		Monday = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Tuesday")]
 		Tuesday = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Wednesday")]
 		Wednesday = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Thursday")]
 		Thursday = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Friday")]
 		Friday = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Saturday")]
 		Saturday = 6,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum InvoiceRecurringApiModelRecurrancePattern
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Daily")]
 		Daily = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Weekly")]
 		Weekly = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
 		Monthly = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
 		Yearly = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum InvoiceRecurringApiModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
 		Active = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
 		Cancelled = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Finished")]
 		Finished = 3,
 	}
 	
@@ -2795,14 +2804,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum InvoiceMessageType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendInvoice")]
 		SendInvoice = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SendInvoiceReminder")]
 		SendInvoiceReminder = 1,
 	}
 	
@@ -3695,77 +3705,81 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserSettingsInvoiceTemplate
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Default")]
 		Default = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Template1")]
 		Template1 = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Template2")]
 		Template2 = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserSettingsProfession
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Other")]
 		Other = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DesignAndCreative")]
 		DesignAndCreative = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SoftwareDevelopment")]
 		SoftwareDevelopment = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ContentWritingAndMarketing")]
 		ContentWritingAndMarketing = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Freelancers")]
 		Freelancers = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Consultants")]
 		Consultants = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Smes")]
 		Smes = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enterprise")]
 		Enterprise = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ECommerce")]
 		ECommerce = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Individual")]
 		Individual = 9,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserSettingsReferralProgram
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Enabled")]
 		Enabled = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Disabled")]
 		Disabled = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserSettingsStoreCheckoutFields
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ShowMinimumRequiredFields")]
 		ShowMinimumRequiredFields = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ShowAllFields")]
 		ShowAllFields = 1,
 	}
 	
@@ -3785,17 +3799,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Normal")]
 		Normal = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fraudlent")]
 		Fraudlent = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Locked")]
 		Locked = 2,
 	}
 	
@@ -3884,83 +3899,88 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SubscriptionPlanRecurrence
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Monthly")]
 		Monthly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Yearly")]
 		Yearly = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SubscriptionPlanStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ActiveTrial")]
 		ActiveTrial = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ExpiredTrial")]
 		ExpiredTrial = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
 		Active = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Canceled")]
 		Canceled = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fraudlent")]
 		Fraudlent = 4,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SubscriptionPlanSystemCancelationReason
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FailToCaptureFee")]
 		FailToCaptureFee = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Fraud")]
 		Fraud = 1,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Anonymous")]
 		Anonymous = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Customer")]
 		Customer = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SystemAdministrator")]
 		SystemAdministrator = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Collaborator")]
 		Collaborator = 3,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserYearsOfExperience
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="One")]
 		One = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OneToThree")]
 		OneToThree = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ThreeToFive")]
 		ThreeToFive = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SixPlus")]
 		SixPlus = 3,
 	}
 	
@@ -4086,17 +4106,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ProductDetailsApiModelStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Active")]
 		Active = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="NotAvailable")]
 		NotAvailable = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inactive")]
 		Inactive = 2,
 	}
 	
@@ -4536,17 +4557,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PaymentGatewayConnectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OAuth")]
 		OAuth = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="InputFields")]
 		InputFields = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dropdown")]
 		Dropdown = 2,
 	}
 	
@@ -4572,14 +4594,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PaymentGatewayInputFieldType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Input")]
 		Input = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Dropdown")]
 		Dropdown = 1,
 	}
 	
@@ -5202,20 +5225,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum QueuedInvoiceStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled")]
 		Cancelled = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Failed")]
 		Failed = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Processed")]
 		Processed = 3,
 	}
 	
@@ -5283,17 +5307,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SearchRequestOrder
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="None")]
 		None = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Asc")]
 		Asc = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Desc")]
 		Desc = 2,
 	}
 	
@@ -5588,10 +5613,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all clients for the account
-		/// ClientApi_All api/client/all
+		/// ApiClientAllGet api/client/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ClientDetailsApiModel[]> ClientApi_AllAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ClientDetailsApiModel[]> ApiClientAllGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/client/all";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5621,10 +5646,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Check if the provided client can be deleted
-		/// ClientApi_CanDelete api/client/candelete
+		/// ApiClientCandeleteGetById api/client/candelete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<bool> ClientApi_CanDeleteAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<bool> ApiClientCandeleteGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/client/candelete?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5654,10 +5679,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing client
-		/// ClientApi_Delete api/client/delete
+		/// ApiClientDeletePost api/client/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> ClientApi_DeleteAsync(ClientDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiClientDeletePostAsync(ClientDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/client/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5694,10 +5719,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return client details. Activities and invoices included.
-		/// ClientApi_Details api/client/details
+		/// ApiClientDetailsGetById api/client/details
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ClientDetailsApiModel> ClientApi_DetailsAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ClientDetailsApiModel> ApiClientDetailsGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/client/details?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5727,10 +5752,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create a client
-		/// ClientApi_New api/client/new
+		/// ApiClientNewPost api/client/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> ClientApi_NewAsync(ClientCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiClientNewPostAsync(ClientCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/client/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5767,9 +5792,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update an existing client
-		/// ClientApi_Update api/client/update
+		/// ApiClientUpdatePost api/client/update
 		/// </summary>
-		public async Task ClientApi_UpdateAsync(ClientUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ApiClientUpdatePostAsync(ClientUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/client/update";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5800,10 +5825,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all estimation for the account
-		/// EstimationApi_All api/estimation/all
+		/// ApiEstimationAllGetByQueryOptions_pageAndQueryOptions_pageSize api/estimation/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ListResult_EstimationDetailsApiModel_> EstimationApi_AllAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListResult_EstimationDetailsApiModel_> ApiEstimationAllGetByQueryOptions_pageAndQueryOptions_pageSizeAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/all?queryOptions.page="+queryOptions_page+"&queryOptions.pageSize="+queryOptions_pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5833,10 +5858,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Change estimation status
-		/// EstimationApi_ChangeStatus api/estimation/changestatus
+		/// ApiEstimationChangestatusPost api/estimation/changestatus
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<bool> EstimationApi_ChangeStatusAsync(EstimationChangeStatusApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<bool> ApiEstimationChangestatusPostAsync(EstimationChangeStatusApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/changestatus";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5873,10 +5898,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Convert the estimation to an invoice
-		/// EstimationApi_Convert api/estimation/convert
+		/// ApiEstimationConvertPost api/estimation/convert
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceFullDetailsApiModel> EstimationApi_ConvertAsync(int requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceFullDetailsApiModel> ApiEstimationConvertPostAsync(int requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/convert";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5913,10 +5938,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing estimation
-		/// EstimationApi_Delete api/estimation/delete
+		/// ApiEstimationDeletePost api/estimation/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> EstimationApi_DeleteAsync(EstimationDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiEstimationDeletePostAsync(EstimationDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -5953,10 +5978,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return estimation data
-		/// EstimationApi_Details api/estimation/details
+		/// ApiEstimationDetailsGetById api/estimation/details
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<EstimationFullDetailsApiModel> EstimationApi_DetailsAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EstimationFullDetailsApiModel> ApiEstimationDetailsGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/details?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -5986,10 +6011,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create an estimation
-		/// EstimationApi_New api/estimation/new
+		/// ApiEstimationNewPost api/estimation/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<EstimationFullDetailsApiModel> EstimationApi_NewAsync(EstimationCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EstimationFullDetailsApiModel> ApiEstimationNewPostAsync(EstimationCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6026,10 +6051,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Send the provided estimation to the client
-		/// EstimationApi_SendToClient api/estimation/sendtoclient
+		/// ApiEstimationSendtoclientPost api/estimation/sendtoclient
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> EstimationApi_SendToClientAsync(SendEstimationToClientApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiEstimationSendtoclientPostAsync(SendEstimationToClientApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/sendtoclient";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6066,10 +6091,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Retrieve the status of the estimation
-		/// EstimationApi_Status api/estimation/status
+		/// ApiEstimationStatusGetById api/estimation/status
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<EstimationChangeStatusApiModelStatus> EstimationApi_StatusAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EstimationChangeStatusApiModelStatus> ApiEstimationStatusGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/status?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6099,10 +6124,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update an existing estimation
-		/// EstimationApi_Update api/estimation/update
+		/// ApiEstimationUpdatePost api/estimation/update
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<EstimationFullDetailsApiModel> EstimationApi_UpdateAsync(EstimationUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EstimationFullDetailsApiModel> ApiEstimationUpdatePostAsync(EstimationUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/update";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6139,10 +6164,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return the unique url to the client's invoice
-		/// EstimationApi_Uri api/estimation/uri
+		/// ApiEstimationUriGetById api/estimation/uri
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<EstimationUriApiModel> EstimationApi_UriAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<EstimationUriApiModel> ApiEstimationUriGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/estimation/uri?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6172,10 +6197,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all of the platform supported countries
-		/// GeneralApi_Countries api/general/countries
+		/// ApiGeneralCountriesGet api/general/countries
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<CountryDetailsApiModel[]> GeneralApi_CountriesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CountryDetailsApiModel[]> ApiGeneralCountriesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/general/countries";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6205,10 +6230,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all of the platform supported currencies
-		/// GeneralApi_Currencies api/general/currencies
+		/// ApiGeneralCurrenciesGet api/general/currencies
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<CurrencyDetailsApiModel[]> GeneralApi_CurrenciesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CurrencyDetailsApiModel[]> ApiGeneralCurrenciesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/general/currencies";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6238,10 +6263,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all of the platform supported Date Formats
-		/// GeneralApi_DateFormats api/general/dateformats
+		/// ApiGeneralDateformatsGet api/general/dateformats
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<string[]> GeneralApi_DateFormatsAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string[]> ApiGeneralDateformatsGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/general/dateformats";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6271,10 +6296,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all of the platform supported UI languages
-		/// GeneralApi_UiLanguages api/general/uilanguages
+		/// ApiGeneralUilanguagesGet api/general/uilanguages
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<UILanguageDetailsApiModel[]> GeneralApi_UiLanguagesAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UILanguageDetailsApiModel[]> ApiGeneralUilanguagesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/general/uilanguages";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6304,10 +6329,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all invoices for the account
-		/// InvoiceApi_All api/invoice/all
+		/// ApiInvoiceAllGetByQueryOptions_pageAndQueryOptions_pageSize api/invoice/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ListResult_InvoiceDetailsApiModel_> InvoiceApi_AllAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListResult_InvoiceDetailsApiModel_> ApiInvoiceAllGetByQueryOptions_pageAndQueryOptions_pageSizeAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/all?queryOptions.page="+queryOptions_page+"&queryOptions.pageSize="+queryOptions_pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6337,10 +6362,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all invoice categories for the account
-		/// InvoiceGetByQuery api/invoice/allcategories
+		/// ApiInvoiceAllcategoriesGetByQuery api/invoice/allcategories
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ListResult_InvoiceCategoryApiModel_> InvoiceGetByQueryAsync(string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListResult_InvoiceCategoryApiModel_> ApiInvoiceAllcategoriesGetByQueryAsync(string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/allcategories?query=" + (query==null? "" : System.Uri.EscapeDataString(query));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6370,10 +6395,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Change invoice status
-		/// InvoiceApi_ChangeStatus api/invoice/changestatus
+		/// ApiInvoiceChangestatusPost api/invoice/changestatus
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<bool> InvoiceApi_ChangeStatusAsync(ChangeStatusApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<bool> ApiInvoiceChangestatusPostAsync(ChangeStatusApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/changestatus";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6410,10 +6435,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing invoice
-		/// InvoiceApi_Delete api/invoice/delete
+		/// ApiInvoiceDeletePost api/invoice/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> InvoiceApi_DeleteAsync(InvoiceDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiInvoiceDeletePostAsync(InvoiceDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6450,10 +6475,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing invoice category
-		/// InvoicePost api/invoice/deletecategory
+		/// ApiInvoiceDeletecategoryPost api/invoice/deletecategory
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> InvoicePostAsync(InvoiceCategoryDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiInvoiceDeletecategoryPostAsync(InvoiceCategoryDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/deletecategory";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6490,10 +6515,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return invoice data
-		/// InvoiceApi_Details api/invoice/details
+		/// ApiInvoiceDetailsGetById api/invoice/details
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceFullDetailsApiModel> InvoiceApi_DetailsAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceFullDetailsApiModel> ApiInvoiceDetailsGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/details?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6523,10 +6548,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create an invoice
-		/// InvoiceApi_New api/invoice/new
+		/// ApiInvoiceNewPost api/invoice/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceFullDetailsApiModel> InvoiceApi_NewAsync(InvoiceCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceFullDetailsApiModel> ApiInvoiceNewPostAsync(InvoiceCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6563,10 +6588,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create an invoice category
-		/// InvoicePost api/invoice/newcategory
+		/// ApiInvoiceNewcategoryPost api/invoice/newcategory
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceCategoryApiModel> InvoicePostAsync(InvoiceCategoryCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceCategoryApiModel> ApiInvoiceNewcategoryPostAsync(InvoiceCategoryCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/newcategory";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6603,10 +6628,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return the PDF for the invoice
-		/// InvoiceApi_Pdf api/invoice/pdf
+		/// ApiInvoicePdfGetByIdAndSignedVersion api/invoice/pdf
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceUriApiModel> InvoiceApi_PdfAsync(int id, bool signedVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceUriApiModel> ApiInvoicePdfGetByIdAndSignedVersionAsync(int id, bool signedVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/pdf?id="+id+"&signedVersion="+signedVersion;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6636,10 +6661,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Send the provided invoice to the accountant
-		/// InvoiceApi_SendToAccountant api/invoice/sendtoaccountant
+		/// ApiInvoiceSendtoaccountantPost api/invoice/sendtoaccountant
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> InvoiceApi_SendToAccountantAsync(SendInvoiceToAccountantApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiInvoiceSendtoaccountantPostAsync(SendInvoiceToAccountantApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/sendtoaccountant";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6676,10 +6701,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Send the provided invoice to the client
-		/// InvoiceApi_SendToClient api/invoice/sendtoclient
+		/// ApiInvoiceSendtoclientPost api/invoice/sendtoclient
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> InvoiceApi_SendToClientAsync(SendInvoiceToClientApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiInvoiceSendtoclientPostAsync(SendInvoiceToClientApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/sendtoclient";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6716,10 +6741,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Retrieve the status of the invoice
-		/// InvoiceApi_Status api/invoice/status
+		/// ApiInvoiceStatusGetById api/invoice/status
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ChangeStatusApiModelStatus> InvoiceApi_StatusAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ChangeStatusApiModelStatus> ApiInvoiceStatusGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/status?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6749,10 +6774,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update an existing invoice
-		/// InvoiceApi_Update api/invoice/update
+		/// ApiInvoiceUpdatePost api/invoice/update
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceFullDetailsApiModel> InvoiceApi_UpdateAsync(InvoiceUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceFullDetailsApiModel> ApiInvoiceUpdatePostAsync(InvoiceUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/update";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6789,10 +6814,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update an existing invoice category
-		/// InvoicePost api/invoice/updatecategory
+		/// ApiInvoiceUpdatecategoryPost api/invoice/updatecategory
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceCategoryApiModel> InvoicePostAsync(InvoiceCategoryUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceCategoryApiModel> ApiInvoiceUpdatecategoryPostAsync(InvoiceCategoryUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/updatecategory";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6829,10 +6854,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return the unique url to the client's invoice
-		/// InvoiceApi_Uri api/invoice/uri
+		/// ApiInvoiceUriGetById api/invoice/uri
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<InvoiceUriApiModel> InvoiceApi_UriAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<InvoiceUriApiModel> ApiInvoiceUriGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/invoice/uri?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6862,10 +6887,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all orders for the account
-		/// OrderApi_All api/order/all
+		/// ApiOrderAllGetByQueryOptions_pageAndQueryOptions_pageSize api/order/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ListResult_OrderDetailsApiModel_> OrderApi_AllAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListResult_OrderDetailsApiModel_> ApiOrderAllGetByQueryOptions_pageAndQueryOptions_pageSizeAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/order/all?queryOptions.page="+queryOptions_page+"&queryOptions.pageSize="+queryOptions_pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -6895,9 +6920,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Change order shipping details
-		/// OrderApi_ChangeShippingDetails api/order/changeshippingdetails
+		/// ApiOrderChangeshippingdetailsPostByOrderId api/order/changeshippingdetails
 		/// </summary>
-		public async Task OrderApi_ChangeShippingDetailsAsync(int orderId, OrderShippingDetailsApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ApiOrderChangeshippingdetailsPostByOrderIdAsync(int orderId, OrderShippingDetailsApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/order/changeshippingdetails?orderId="+orderId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6928,9 +6953,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Change order status
-		/// OrderApi_ChangeStatus api/order/changestatus
+		/// ApiOrderChangestatusPost api/order/changestatus
 		/// </summary>
-		public async Task OrderApi_ChangeStatusAsync(ChangeOrderStatusApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ApiOrderChangestatusPostAsync(ChangeOrderStatusApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/order/changestatus";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -6961,10 +6986,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing order
-		/// OrderApi_Delete api/order/delete
+		/// ApiOrderDeletePost api/order/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> OrderApi_DeleteAsync(OrderDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiOrderDeletePostAsync(OrderDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/order/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7001,10 +7026,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return order details
-		/// OrderApi_Details api/order/details
+		/// ApiOrderDetailsGetById api/order/details
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<OrderFullDetailsApiModel> OrderApi_DetailsAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<OrderFullDetailsApiModel> ApiOrderDetailsGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/order/details?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7034,10 +7059,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create an order
-		/// OrderApi_New api/order/new
+		/// ApiOrderNewPost api/order/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> OrderApi_NewAsync(OrderCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiOrderNewPostAsync(OrderCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/order/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7074,10 +7099,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all supported payment gateways (no currencies means all are supported)
-		/// PaymentApi_Supported api/payment/supported
+		/// ApiPaymentSupportedGet api/payment/supported
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<PaymentGatewayDetailsApiModel[]> PaymentApi_SupportedAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PaymentGatewayDetailsApiModel[]> ApiPaymentSupportedGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/payment/supported";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7107,10 +7132,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create a payment link
-		/// PaymentLinkApi_All api/paymentlink/all
+		/// ApiPaymentlinkAllGetByQueryOptions_pageAndQueryOptions_pageSize api/paymentlink/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ListResult_PaymentLink_> PaymentLinkApi_AllAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListResult_PaymentLink_> ApiPaymentlinkAllGetByQueryOptions_pageAndQueryOptions_pageSizeAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/paymentlink/all?queryOptions.page="+queryOptions_page+"&queryOptions.pageSize="+queryOptions_pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7140,10 +7165,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing payment link
-		/// PaymentLinkApi_Delete api/paymentlink/delete
+		/// ApiPaymentlinkDeletePost api/paymentlink/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> PaymentLinkApi_DeleteAsync(PaymentLink requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiPaymentlinkDeletePostAsync(PaymentLink requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/paymentlink/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7180,10 +7205,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create a payment link
-		/// PaymentLinkApi_New api/paymentlink/new
+		/// ApiPaymentlinkNewPost api/paymentlink/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> PaymentLinkApi_NewAsync(PaymentLink requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiPaymentlinkNewPostAsync(PaymentLink requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/paymentlink/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7220,10 +7245,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return the unique url to the client's payment link
-		/// PaymentLinkApi_Uri api/paymentlink/uri
+		/// ApiPaymentlinkUriGetById api/paymentlink/uri
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<PaymentLinkUriApiModel> PaymentLinkApi_UriAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PaymentLinkUriApiModel> ApiPaymentlinkUriGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/paymentlink/uri?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7253,10 +7278,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all products for the account
-		/// ProductApi_All api/product/all
+		/// ApiProductAllGetByQueryOptions_pageAndQueryOptions_pageSize api/product/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ListResult_ProductDetailsApiModel_> ProductApi_AllAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListResult_ProductDetailsApiModel_> ApiProductAllGetByQueryOptions_pageAndQueryOptions_pageSizeAsync(int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/product/all?queryOptions.page="+queryOptions_page+"&queryOptions.pageSize="+queryOptions_pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7286,10 +7311,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing product
-		/// ProductApi_Delete api/product/delete
+		/// ApiProductDeletePost api/product/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> ProductApi_DeleteAsync(ProductDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiProductDeletePostAsync(ProductDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/product/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7326,10 +7351,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return product details
-		/// ProductApi_Details api/product/details
+		/// ApiProductDetailsGetById api/product/details
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<ProductFullDetailsApiModel> ProductApi_DetailsAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ProductFullDetailsApiModel> ApiProductDetailsGetByIdAsync(int id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/product/details?id="+id;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7359,10 +7384,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create a product
-		/// ProductApi_New api/product/new
+		/// ApiProductNewPost api/product/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> ProductApi_NewAsync(ProductCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiProductNewPostAsync(ProductCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/product/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7399,9 +7424,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update an existing product
-		/// ProductApi_Update api/product/update
+		/// ApiProductUpdatePost api/product/update
 		/// </summary>
-		public async Task ProductApi_UpdateAsync(ProductUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ApiProductUpdatePostAsync(ProductUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/product/update";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7432,10 +7457,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all taxes for the account
-		/// TaxApi_All api/tax/all
+		/// ApiTaxAllGet api/tax/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<TaxDetailsApiModel[]> TaxApi_AllAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<TaxDetailsApiModel[]> ApiTaxAllGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tax/all";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7465,10 +7490,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing tax
-		/// TaxApi_Delete api/tax/delete
+		/// ApiTaxDeletePost api/tax/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> TaxApi_DeleteAsync(TaxDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiTaxDeletePostAsync(TaxDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tax/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7505,10 +7530,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create a tax
-		/// TaxApi_New api/tax/new
+		/// ApiTaxNewPost api/tax/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> TaxApi_NewAsync(TaxCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiTaxNewPostAsync(TaxCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tax/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7545,9 +7570,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update an existing tax
-		/// TaxApi_Update api/tax/update
+		/// ApiTaxUpdatePost api/tax/update
 		/// </summary>
-		public async Task TaxApi_UpdateAsync(TaxUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ApiTaxUpdatePostAsync(TaxUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/tax/update";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7578,10 +7603,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all work types for the account
-		/// WorkTypeApi_All api/worktype/all
+		/// ApiWorktypeAllGet api/worktype/all
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<WorkTypeDetailsApiModel[]> WorkTypeApi_AllAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<WorkTypeDetailsApiModel[]> ApiWorktypeAllGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/worktype/all";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7611,10 +7636,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Delete an existing work type
-		/// WorkTypeApi_Delete api/worktype/delete
+		/// ApiWorktypeDeletePost api/worktype/delete
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> WorkTypeApi_DeleteAsync(WorkTypeDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiWorktypeDeletePostAsync(WorkTypeDeleteApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/worktype/delete";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7651,10 +7676,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return work type details
-		/// WorkTypeApi_Details api/worktype/details
+		/// ApiWorktypeDetailsGetByWorkTypeId api/worktype/details
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<WorkTypeDetailsApiModel> WorkTypeApi_DetailsAsync(int workTypeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<WorkTypeDetailsApiModel> ApiWorktypeDetailsGetByWorkTypeIdAsync(int workTypeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/worktype/details?workTypeId="+workTypeId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7684,10 +7709,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create a work type
-		/// WorkTypeApi_New api/worktype/new
+		/// ApiWorktypeNewPost api/worktype/new
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<int> WorkTypeApi_NewAsync(WorkTypeCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<int> ApiWorktypeNewPostAsync(WorkTypeCreateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/worktype/new";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -7724,10 +7749,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Return all work types for the account that match the query param
-		/// WorkTypeApi_Search api/worktype/search
+		/// ApiWorktypeSearchGetByQueryOptions_queryAndQueryOptions_orderByAndQueryOptions_orderAndQueryOptions_pageAndQueryOptions_pageSize api/worktype/search
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<WorkTypeDetailsApiModel[]> WorkTypeApi_SearchAsync(string queryOptions_query, string queryOptions_orderBy, SearchRequestOrder queryOptions_order, int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<WorkTypeDetailsApiModel[]> ApiWorktypeSearchGetByQueryOptions_queryAndQueryOptions_orderByAndQueryOptions_orderAndQueryOptions_pageAndQueryOptions_pageSizeAsync(string queryOptions_query, string queryOptions_orderBy, SearchRequestOrder queryOptions_order, int queryOptions_page, int queryOptions_pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/worktype/search?queryOptions.query=" + (queryOptions_query==null? "" : System.Uri.EscapeDataString(queryOptions_query))+"&queryOptions.orderBy=" + (queryOptions_orderBy==null? "" : System.Uri.EscapeDataString(queryOptions_orderBy))+"&queryOptions.order=" + queryOptions_order+"&queryOptions.page="+queryOptions_page+"&queryOptions.pageSize="+queryOptions_pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -7757,9 +7782,9 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update an existing work type
-		/// WorkTypeApi_Update api/worktype/update
+		/// ApiWorktypeUpdatePost api/worktype/update
 		/// </summary>
-		public async Task WorkTypeApi_UpdateAsync(WorkTypeUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ApiWorktypeUpdatePostAsync(WorkTypeUpdateApiModel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/worktype/update";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))

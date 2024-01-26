@@ -141,17 +141,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ModelOperationMetadataBasicOperationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_OPERATION_STATUS_UNSPECIFIED")]
 		BASIC_OPERATION_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_OPERATION_STATUS_UPLOADING")]
 		BASIC_OPERATION_STATUS_UPLOADING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BASIC_OPERATION_STATUS_VERIFYING")]
 		BASIC_OPERATION_STATUS_VERIFYING = 2,
 	}
 	

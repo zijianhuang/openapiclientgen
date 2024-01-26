@@ -21,6 +21,7 @@ namespace MyNS
 	/// Baudrate to use for the communication - valid values 300, 600, 1200, 2400, 4800, 9600
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Baudrate
 	{

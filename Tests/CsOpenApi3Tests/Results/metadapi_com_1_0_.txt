@@ -1348,10 +1348,10 @@ namespace MyNS
 	public enum Get_radiusUom
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="mi")]
 		mi = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="km")]
 		km = 1,
 	}
 	

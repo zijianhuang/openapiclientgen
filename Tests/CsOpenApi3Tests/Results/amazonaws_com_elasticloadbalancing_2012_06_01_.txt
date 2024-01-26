@@ -2532,7 +2532,7 @@ namespace MyNS
 	public enum GET_AddTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddTags")]
 		AddTags = 0,
 	}
 	
@@ -2553,7 +2553,7 @@ namespace MyNS
 	public enum GET_ApplySecurityGroupsToLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ApplySecurityGroupsToLoadBalancer")]
 		ApplySecurityGroupsToLoadBalancer = 0,
 	}
 	
@@ -2574,7 +2574,7 @@ namespace MyNS
 	public enum GET_AttachLoadBalancerToSubnetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AttachLoadBalancerToSubnets")]
 		AttachLoadBalancerToSubnets = 0,
 	}
 	
@@ -2634,7 +2634,7 @@ namespace MyNS
 	public enum GET_ConfigureHealthCheckAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfigureHealthCheck")]
 		ConfigureHealthCheck = 0,
 	}
 	
@@ -2655,7 +2655,7 @@ namespace MyNS
 	public enum GET_CreateAppCookieStickinessPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateAppCookieStickinessPolicy")]
 		CreateAppCookieStickinessPolicy = 0,
 	}
 	
@@ -2676,7 +2676,7 @@ namespace MyNS
 	public enum GET_CreateLBCookieStickinessPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLBCookieStickinessPolicy")]
 		CreateLBCookieStickinessPolicy = 0,
 	}
 	
@@ -2697,7 +2697,7 @@ namespace MyNS
 	public enum GET_CreateLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLoadBalancer")]
 		CreateLoadBalancer = 0,
 	}
 	
@@ -2718,7 +2718,7 @@ namespace MyNS
 	public enum GET_CreateLoadBalancerListenersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLoadBalancerListeners")]
 		CreateLoadBalancerListeners = 0,
 	}
 	
@@ -2739,7 +2739,7 @@ namespace MyNS
 	public enum GET_CreateLoadBalancerPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateLoadBalancerPolicy")]
 		CreateLoadBalancerPolicy = 0,
 	}
 	
@@ -2760,7 +2760,7 @@ namespace MyNS
 	public enum GET_DeleteLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteLoadBalancer")]
 		DeleteLoadBalancer = 0,
 	}
 	
@@ -2781,7 +2781,7 @@ namespace MyNS
 	public enum GET_DeleteLoadBalancerListenersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteLoadBalancerListeners")]
 		DeleteLoadBalancerListeners = 0,
 	}
 	
@@ -2802,7 +2802,7 @@ namespace MyNS
 	public enum GET_DeleteLoadBalancerPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteLoadBalancerPolicy")]
 		DeleteLoadBalancerPolicy = 0,
 	}
 	
@@ -2823,7 +2823,7 @@ namespace MyNS
 	public enum GET_DeregisterInstancesFromLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeregisterInstancesFromLoadBalancer")]
 		DeregisterInstancesFromLoadBalancer = 0,
 	}
 	
@@ -2844,7 +2844,7 @@ namespace MyNS
 	public enum GET_DescribeAccountLimitsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeAccountLimits")]
 		DescribeAccountLimits = 0,
 	}
 	
@@ -2865,7 +2865,7 @@ namespace MyNS
 	public enum GET_DescribeInstanceHealthAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeInstanceHealth")]
 		DescribeInstanceHealth = 0,
 	}
 	
@@ -2886,7 +2886,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancerAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancerAttributes")]
 		DescribeLoadBalancerAttributes = 0,
 	}
 	
@@ -2907,7 +2907,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancerPoliciesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancerPolicies")]
 		DescribeLoadBalancerPolicies = 0,
 	}
 	
@@ -2928,7 +2928,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancerPolicyTypesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancerPolicyTypes")]
 		DescribeLoadBalancerPolicyTypes = 0,
 	}
 	
@@ -2949,7 +2949,7 @@ namespace MyNS
 	public enum GET_DescribeLoadBalancersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeLoadBalancers")]
 		DescribeLoadBalancers = 0,
 	}
 	
@@ -2970,7 +2970,7 @@ namespace MyNS
 	public enum GET_DescribeTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DescribeTags")]
 		DescribeTags = 0,
 	}
 	
@@ -2991,7 +2991,7 @@ namespace MyNS
 	public enum GET_DetachLoadBalancerFromSubnetsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DetachLoadBalancerFromSubnets")]
 		DetachLoadBalancerFromSubnets = 0,
 	}
 	
@@ -3012,7 +3012,7 @@ namespace MyNS
 	public enum GET_DisableAvailabilityZonesForLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DisableAvailabilityZonesForLoadBalancer")]
 		DisableAvailabilityZonesForLoadBalancer = 0,
 	}
 	
@@ -3033,7 +3033,7 @@ namespace MyNS
 	public enum GET_EnableAvailabilityZonesForLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EnableAvailabilityZonesForLoadBalancer")]
 		EnableAvailabilityZonesForLoadBalancer = 0,
 	}
 	
@@ -3073,7 +3073,7 @@ namespace MyNS
 	public enum GET_ModifyLoadBalancerAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ModifyLoadBalancerAttributes")]
 		ModifyLoadBalancerAttributes = 0,
 	}
 	
@@ -3094,7 +3094,7 @@ namespace MyNS
 	public enum GET_RegisterInstancesWithLoadBalancerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RegisterInstancesWithLoadBalancer")]
 		RegisterInstancesWithLoadBalancer = 0,
 	}
 	
@@ -3115,7 +3115,7 @@ namespace MyNS
 	public enum GET_RemoveTagsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemoveTags")]
 		RemoveTags = 0,
 	}
 	
@@ -3136,7 +3136,7 @@ namespace MyNS
 	public enum GET_SetLoadBalancerListenerSSLCertificateAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetLoadBalancerListenerSSLCertificate")]
 		SetLoadBalancerListenerSSLCertificate = 0,
 	}
 	
@@ -3157,7 +3157,7 @@ namespace MyNS
 	public enum GET_SetLoadBalancerPoliciesForBackendServerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetLoadBalancerPoliciesForBackendServer")]
 		SetLoadBalancerPoliciesForBackendServer = 0,
 	}
 	
@@ -3178,7 +3178,7 @@ namespace MyNS
 	public enum GET_SetLoadBalancerPoliciesOfListenerAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetLoadBalancerPoliciesOfListener")]
 		SetLoadBalancerPoliciesOfListener = 0,
 	}
 	

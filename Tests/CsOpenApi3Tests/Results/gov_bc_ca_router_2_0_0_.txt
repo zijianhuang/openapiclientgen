@@ -913,13 +913,13 @@ namespace MyNS
 	public enum Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="kml")]
 		kml = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
 		html = 2,
 	}
 	
@@ -954,20 +954,20 @@ namespace MyNS
 	public enum Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionCriteria
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="shortest")]
 		shortest = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="fastest")]
 		fastest = 1,
 	}
 	
 	public enum Directions__outputFormatGetByPointsAndOutputSRSAndCriteriaAndDistanceUnitAndRoundTripAndDepartureAndCorrectSideAndDisableAndRouteDescriptionDistanceUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="km")]
 		km = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="mi")]
 		mi = 1,
 	}
 	
@@ -1058,10 +1058,10 @@ namespace MyNS
 	public enum DistanceBetweenPairs__outputFormatGetByFromPointsAndToPointsAndOutputSRSAndCriteriaAndDistanceUnitAndDepartureAndCorrectSideAndDisableAndRouteDescriptionAndMaxPairsOutputFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="html")]
 		html = 1,
 	}
 	

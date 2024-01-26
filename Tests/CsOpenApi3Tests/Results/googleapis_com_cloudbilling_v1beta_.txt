@@ -39,56 +39,58 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CacheFillRegionsDestinationRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_UNSPECIFIED")]
 		CACHE_FILL_DESTINATION_REGION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_ASIA_PACIFIC")]
 		CACHE_FILL_DESTINATION_REGION_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_EUROPE")]
 		CACHE_FILL_DESTINATION_REGION_EUROPE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_NORTH_AMERICA")]
 		CACHE_FILL_DESTINATION_REGION_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_OCEANIA")]
 		CACHE_FILL_DESTINATION_REGION_OCEANIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_SOUTH_AMERICA")]
 		CACHE_FILL_DESTINATION_REGION_SOUTH_AMERICA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_CHINA")]
 		CACHE_FILL_DESTINATION_REGION_CHINA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_DESTINATION_REGION_OTHERS")]
 		CACHE_FILL_DESTINATION_REGION_OTHERS = 7,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CacheFillRegionsSourceRegion
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_UNSPECIFIED")]
 		CACHE_FILL_SOURCE_REGION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_REGION_ASIA_PACIFIC")]
 		CACHE_FILL_REGION_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_EUROPE")]
 		CACHE_FILL_SOURCE_REGION_EUROPE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_NORTH_AMERICA")]
 		CACHE_FILL_SOURCE_REGION_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_OCEANIA")]
 		CACHE_FILL_SOURCE_REGION_OCEANIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_SOURCE_REGION_SOUTH_AMERICA")]
 		CACHE_FILL_SOURCE_REGION_SOUTH_AMERICA = 5,
 	}
 	
@@ -114,32 +116,33 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CloudCdnEgressWorkloadCacheEgressDestination
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_UNSPECIFIED")]
 		CACHE_EGRESS_DESTINATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_ASIA_PACIFIC")]
 		CACHE_EGRESS_DESTINATION_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_CHINA")]
 		CACHE_EGRESS_DESTINATION_CHINA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_EUROPE")]
 		CACHE_EGRESS_DESTINATION_EUROPE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_NORTH_AMERICA")]
 		CACHE_EGRESS_DESTINATION_NORTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_OCEANIA")]
 		CACHE_EGRESS_DESTINATION_OCEANIA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_LATIN_AMERICA")]
 		CACHE_EGRESS_DESTINATION_LATIN_AMERICA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_EGRESS_DESTINATION_OTHER_DESTINATIONS")]
 		CACHE_EGRESS_DESTINATION_OTHER_DESTINATIONS = 7,
 	}
 	
@@ -249,17 +252,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CloudCdnWorkloadCacheFillOriginService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_ORIGIN_SERVICE_UNSPECIFIED")]
 		CACHE_FILL_ORIGIN_SERVICE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_ORIGIN_SERVICE_GOOGLE_CLOUD_STORAGE_BUCKET")]
 		CACHE_FILL_ORIGIN_SERVICE_GOOGLE_CLOUD_STORAGE_BUCKET = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CACHE_FILL_ORIGIN_SERVICE_BACKEND_SERVICE")]
 		CACHE_FILL_ORIGIN_SERVICE_BACKEND_SERVICE = 2,
 	}
 	
@@ -285,26 +289,27 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CloudInterconnectEgressWorkloadInterconnectConnectionLocation
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_UNSPECIFIED")]
 		INTERCONNECT_CONNECTION_LOCATION_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_ASIA")]
 		INTERCONNECT_CONNECTION_LOCATION_ASIA = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_EUROPE")]
 		INTERCONNECT_CONNECTION_LOCATION_EUROPE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_NORTH_AMERICA")]
 		INTERCONNECT_CONNECTION_LOCATION_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_SOUTH_AMERICA")]
 		INTERCONNECT_CONNECTION_LOCATION_SOUTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_CONNECTION_LOCATION_AUSTRALIA")]
 		INTERCONNECT_CONNECTION_LOCATION_AUSTRALIA = 5,
 	}
 	
@@ -363,77 +368,80 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VlanAttachmentBandwidth
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_UNSPECIFIED")]
 		BANDWIDTH_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_50M")]
 		BANDWIDTH_BPS_50M = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_100M")]
 		BANDWIDTH_BPS_100M = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_200M")]
 		BANDWIDTH_BPS_200M = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_300M")]
 		BANDWIDTH_BPS_300M = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_400M")]
 		BANDWIDTH_BPS_400M = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_500M")]
 		BANDWIDTH_BPS_500M = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_1G")]
 		BANDWIDTH_BPS_1G = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_2G")]
 		BANDWIDTH_BPS_2G = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_5G")]
 		BANDWIDTH_BPS_5G = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_10G")]
 		BANDWIDTH_BPS_10G = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_20G")]
 		BANDWIDTH_BPS_20G = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANDWIDTH_BPS_50G")]
 		BANDWIDTH_BPS_50G = 12,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CloudInterconnectWorkloadInterconnectType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_TYPE_UNSPECIFIED")]
 		INTERCONNECT_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_TYPE_DEDICATED")]
 		INTERCONNECT_TYPE_DEDICATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERCONNECT_TYPE_PARTNER")]
 		INTERCONNECT_TYPE_PARTNER = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CloudInterconnectWorkloadLinkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_TYPE_UNSPECIFIED")]
 		LINK_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_TYPE_ETHERNET_10G_LR")]
 		LINK_TYPE_ETHERNET_10G_LR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK_TYPE_ETHERNET_100G_LR")]
 		LINK_TYPE_ETHERNET_100G_LR = 2,
 	}
 	
@@ -465,50 +473,52 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CloudStorageEgressWorkloadDestinationContinent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_UNSPECIFIED")]
 		DESTINATION_CONTINENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_ASIA_PACIFIC")]
 		DESTINATION_CONTINENT_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_AUTRALIA")]
 		DESTINATION_CONTINENT_AUTRALIA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_EUROPE")]
 		DESTINATION_CONTINENT_EUROPE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_NORTH_AMERICA")]
 		DESTINATION_CONTINENT_NORTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_SOUTH_AMERICA")]
 		DESTINATION_CONTINENT_SOUTH_AMERICA = 5,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CloudStorageEgressWorkloadSourceContinent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_UNSPECIFIED")]
 		SOURCE_CONTINENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_ASIA_PACIFIC")]
 		SOURCE_CONTINENT_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_AUSTRALIA")]
 		SOURCE_CONTINENT_AUSTRALIA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_EUROPE")]
 		SOURCE_CONTINENT_EUROPE = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_NORTH_AMERICA")]
 		SOURCE_CONTINENT_NORTH_AMERICA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SOURCE_CONTINENT_SOUTH_AMERICA")]
 		SOURCE_CONTINENT_SOUTH_AMERICA = 5,
 	}
 	
@@ -702,17 +712,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum VmResourceBasedCudPlan
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMMITMENT_PLAN_UNSPECIFIED")]
 		COMMITMENT_PLAN_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TWELVE_MONTH")]
 		TWELVE_MONTH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="THIRTY_SIX_MONTH")]
 		THIRTY_SIX_MONTH = 2,
 	}
 	
@@ -1011,17 +1022,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PersistentDiskScope
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_UNSPECIFIED")]
 		SCOPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_ZONAL")]
 		SCOPE_ZONAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCOPE_REGIONAL")]
 		SCOPE_REGIONAL = 2,
 	}
 	
@@ -1359,47 +1371,48 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PremiumTierEgressWorkloadDestinationContinent
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_UNSPECIFIED")]
 		DESTINATION_CONTINENT_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_ASIA_PACIFIC")]
 		DESTINATION_CONTINENT_ASIA_PACIFIC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_AFRICA")]
 		DESTINATION_CONTINENT_AFRICA = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_NORTH_AMERICA")]
 		DESTINATION_CONTINENT_NORTH_AMERICA = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_AUTRALIA")]
 		DESTINATION_CONTINENT_AUTRALIA = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_CENTRAL_AMERICA")]
 		DESTINATION_CONTINENT_CENTRAL_AMERICA = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_CHINA")]
 		DESTINATION_CONTINENT_CHINA = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_EASTERN_EUROPE")]
 		DESTINATION_CONTINENT_EASTERN_EUROPE = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_WESTERN_EUROPE")]
 		DESTINATION_CONTINENT_WESTERN_EUROPE = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_EMEA")]
 		DESTINATION_CONTINENT_EMEA = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_INDIA")]
 		DESTINATION_CONTINENT_INDIA = 10,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_MIDDLE_EAST")]
 		DESTINATION_CONTINENT_MIDDLE_EAST = 11,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DESTINATION_CONTINENT_SOUTH_AMERICA")]
 		DESTINATION_CONTINENT_SOUTH_AMERICA = 12,
 	}
 	
@@ -1584,32 +1597,34 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GoogleCloudBillingBillingaccountpricesV1betaAggregationInfoInterval
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_UNSPECIFIED")]
 		INTERVAL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_MONTHLY")]
 		INTERVAL_MONTHLY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INTERVAL_DAILY")]
 		INTERVAL_DAILY = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GoogleCloudBillingBillingaccountpricesV1betaAggregationInfoLevel
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_UNSPECIFIED")]
 		LEVEL_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_ACCOUNT")]
 		LEVEL_ACCOUNT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LEVEL_PROJECT")]
 		LEVEL_PROJECT = 2,
 	}
 	
@@ -2151,20 +2166,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GoogleCloudBillingBillingaccountskugroupskusV1betaGeoTaxonomyType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_UNSPECIFIED")]
 		TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_GLOBAL")]
 		TYPE_GLOBAL = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_REGIONAL")]
 		TYPE_REGIONAL = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TYPE_MULTI_REGIONAL")]
 		TYPE_MULTI_REGIONAL = 3,
 	}
 	

@@ -126,17 +126,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DeviceIdentifierDeviceType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_UNSPECIFIED")]
 		DEVICE_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_ANDROID")]
 		DEVICE_TYPE_ANDROID = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_TYPE_CHROME_OS")]
 		DEVICE_TYPE_CHROME_OS = 2,
 	}
 	
@@ -156,17 +157,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ClaimDeviceRequestSectionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECTION_TYPE_UNSPECIFIED")]
 		SECTION_TYPE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECTION_TYPE_SIM_LOCK")]
 		SECTION_TYPE_SIM_LOCK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SECTION_TYPE_ZERO_TOUCH")]
 		SECTION_TYPE_ZERO_TOUCH = 2,
 	}
 	
@@ -348,20 +350,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CompanyTermsStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_UNSPECIFIED")]
 		TERMS_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_NOT_ACCEPTED")]
 		TERMS_STATUS_NOT_ACCEPTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_ACCEPTED")]
 		TERMS_STATUS_ACCEPTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TERMS_STATUS_STALE")]
 		TERMS_STATUS_STALE = 3,
 	}
 	
@@ -651,14 +654,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DeviceClaimAdditionalService
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ADDITIONAL_SERVICE_UNSPECIFIED")]
 		ADDITIONAL_SERVICE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEVICE_PROTECTION")]
 		DEVICE_PROTECTION = 1,
 	}
 	
@@ -762,20 +766,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum DevicesLongRunningOperationMetadataProcessingStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_STATUS_UNSPECIFIED")]
 		BATCH_PROCESS_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_PENDING")]
 		BATCH_PROCESS_PENDING = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_IN_PROGRESS")]
 		BATCH_PROCESS_IN_PROGRESS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BATCH_PROCESS_PROCESSED")]
 		BATCH_PROCESS_PROCESSED = 3,
 	}
 	
@@ -867,41 +872,42 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PerDeviceStatusInBatchStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_UNSPECIFIED")]
 		SINGLE_DEVICE_STATUS_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_UNKNOWN_ERROR")]
 		SINGLE_DEVICE_STATUS_UNKNOWN_ERROR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_OTHER_ERROR")]
 		SINGLE_DEVICE_STATUS_OTHER_ERROR = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_SUCCESS")]
 		SINGLE_DEVICE_STATUS_SUCCESS = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_PERMISSION_DENIED")]
 		SINGLE_DEVICE_STATUS_PERMISSION_DENIED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER")]
 		SINGLE_DEVICE_STATUS_INVALID_DEVICE_IDENTIFIER = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE")]
 		SINGLE_DEVICE_STATUS_INVALID_SECTION_TYPE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS")]
 		SINGLE_DEVICE_STATUS_SECTION_NOT_YOURS = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_INVALID_TOKEN")]
 		SINGLE_DEVICE_STATUS_INVALID_TOKEN = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_REVOKED_TOKEN")]
 		SINGLE_DEVICE_STATUS_REVOKED_TOKEN = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SINGLE_DEVICE_STATUS_DEVICE_LIMIT_EXCEEDED")]
 		SINGLE_DEVICE_STATUS_DEVICE_LIMIT_EXCEEDED = 10,
 	}
 	
@@ -1128,20 +1134,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum GetDeviceSimLockStateResponseSimLockState
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SIM_LOCK_STATE_UNSPECIFIED")]
 		SIM_LOCK_STATE_UNSPECIFIED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNLOCKED")]
 		UNLOCKED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCKED_TO_PARTNER")]
 		LOCKED_TO_PARTNER = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCKED_TO_OTHER_PARTNER")]
 		LOCKED_TO_OTHER_PARTNER = 3,
 	}
 	

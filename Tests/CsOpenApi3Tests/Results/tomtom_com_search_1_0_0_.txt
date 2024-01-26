@@ -1032,7 +1032,7 @@ namespace MyNS
 	public enum Search_versionNumberAdditionalData__extGetByGeometriesAndGeometriesZoomExt
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 	}
 	
@@ -1119,35 +1119,35 @@ namespace MyNS
 	public enum Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="jsonp")]
 		jsonp = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="js")]
 		js = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 3,
 	}
 	
 	public enum Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewView
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unified")]
 		Unified = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IN")]
 		IN = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PK")]
 		PK = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="IL")]
 		IL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MA")]
 		MA = 4,
 	}
 	

@@ -381,17 +381,18 @@ namespace MyNS
 	/// Enum listing out all supported route types. The following enum values are supported. 1. Transactional : Non-marketing traffic 2. Promotional : Marketing 3. Premium : Premium routes for OTP delivery to the carriers
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum RouteType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Transactional")]
 		Transactional = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Promotional")]
 		Promotional = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Premium")]
 		Premium = 2,
 	}
 	
@@ -399,17 +400,18 @@ namespace MyNS
 	/// Enum listing out all supported number capabilities.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum NumberCapability
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
 		SMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MMS")]
 		MMS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VOICE")]
 		VOICE = 2,
 	}
 	
@@ -499,14 +501,15 @@ namespace MyNS
 	/// Enum listing out all supported destination phone number verification statuses. The following enum values are supported. 1. PENDING : The destination phone number is pending verification. 2. VERIFIED : The destination phone number is verified.
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SMSSandboxPhoneNumberVerificationStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
 		Pending = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Verified")]
 		Verified = 1,
 	}
 	
@@ -1024,6 +1027,7 @@ namespace MyNS
 	/// Supported language code for sending OTP message
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum LanguageCodeString
 	{
@@ -2963,7 +2967,7 @@ namespace MyNS
 	public enum GET_AddPermissionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AddPermission")]
 		AddPermission = 0,
 	}
 	
@@ -2984,7 +2988,7 @@ namespace MyNS
 	public enum GET_CheckIfPhoneNumberIsOptedOutAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CheckIfPhoneNumberIsOptedOut")]
 		CheckIfPhoneNumberIsOptedOut = 0,
 	}
 	
@@ -3005,7 +3009,7 @@ namespace MyNS
 	public enum GET_ConfirmSubscriptionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ConfirmSubscription")]
 		ConfirmSubscription = 0,
 	}
 	
@@ -3026,7 +3030,7 @@ namespace MyNS
 	public enum GET_CreatePlatformApplicationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatePlatformApplication")]
 		CreatePlatformApplication = 0,
 	}
 	
@@ -3047,7 +3051,7 @@ namespace MyNS
 	public enum GET_CreatePlatformEndpointAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreatePlatformEndpoint")]
 		CreatePlatformEndpoint = 0,
 	}
 	
@@ -3111,7 +3115,7 @@ namespace MyNS
 	public enum GET_CreateSMSSandboxPhoneNumberAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateSMSSandboxPhoneNumber")]
 		CreateSMSSandboxPhoneNumber = 0,
 	}
 	
@@ -3132,7 +3136,7 @@ namespace MyNS
 	public enum GET_CreateTopicAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CreateTopic")]
 		CreateTopic = 0,
 	}
 	
@@ -3153,7 +3157,7 @@ namespace MyNS
 	public enum GET_DeleteEndpointAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteEndpoint")]
 		DeleteEndpoint = 0,
 	}
 	
@@ -3174,7 +3178,7 @@ namespace MyNS
 	public enum GET_DeletePlatformApplicationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeletePlatformApplication")]
 		DeletePlatformApplication = 0,
 	}
 	
@@ -3195,7 +3199,7 @@ namespace MyNS
 	public enum GET_DeleteSMSSandboxPhoneNumberAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteSMSSandboxPhoneNumber")]
 		DeleteSMSSandboxPhoneNumber = 0,
 	}
 	
@@ -3216,7 +3220,7 @@ namespace MyNS
 	public enum GET_DeleteTopicAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DeleteTopic")]
 		DeleteTopic = 0,
 	}
 	
@@ -3237,7 +3241,7 @@ namespace MyNS
 	public enum GET_GetDataProtectionPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetDataProtectionPolicy")]
 		GetDataProtectionPolicy = 0,
 	}
 	
@@ -3258,7 +3262,7 @@ namespace MyNS
 	public enum GET_GetEndpointAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetEndpointAttributes")]
 		GetEndpointAttributes = 0,
 	}
 	
@@ -3279,7 +3283,7 @@ namespace MyNS
 	public enum GET_GetPlatformApplicationAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetPlatformApplicationAttributes")]
 		GetPlatformApplicationAttributes = 0,
 	}
 	
@@ -3300,7 +3304,7 @@ namespace MyNS
 	public enum GET_GetSMSAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSMSAttributes")]
 		GetSMSAttributes = 0,
 	}
 	
@@ -3321,7 +3325,7 @@ namespace MyNS
 	public enum GET_GetSMSSandboxAccountStatusAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSMSSandboxAccountStatus")]
 		GetSMSSandboxAccountStatus = 0,
 	}
 	
@@ -3342,7 +3346,7 @@ namespace MyNS
 	public enum GET_GetSubscriptionAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetSubscriptionAttributes")]
 		GetSubscriptionAttributes = 0,
 	}
 	
@@ -3363,7 +3367,7 @@ namespace MyNS
 	public enum GET_GetTopicAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GetTopicAttributes")]
 		GetTopicAttributes = 0,
 	}
 	
@@ -3384,7 +3388,7 @@ namespace MyNS
 	public enum GET_ListEndpointsByPlatformApplicationAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListEndpointsByPlatformApplication")]
 		ListEndpointsByPlatformApplication = 0,
 	}
 	
@@ -3405,7 +3409,7 @@ namespace MyNS
 	public enum GET_ListOriginationNumbersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListOriginationNumbers")]
 		ListOriginationNumbers = 0,
 	}
 	
@@ -3426,7 +3430,7 @@ namespace MyNS
 	public enum GET_ListPhoneNumbersOptedOutAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListPhoneNumbersOptedOut")]
 		ListPhoneNumbersOptedOut = 0,
 	}
 	
@@ -3447,7 +3451,7 @@ namespace MyNS
 	public enum GET_ListPlatformApplicationsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListPlatformApplications")]
 		ListPlatformApplications = 0,
 	}
 	
@@ -3468,7 +3472,7 @@ namespace MyNS
 	public enum GET_ListSMSSandboxPhoneNumbersAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListSMSSandboxPhoneNumbers")]
 		ListSMSSandboxPhoneNumbers = 0,
 	}
 	
@@ -3489,7 +3493,7 @@ namespace MyNS
 	public enum GET_ListSubscriptionsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListSubscriptions")]
 		ListSubscriptions = 0,
 	}
 	
@@ -3510,7 +3514,7 @@ namespace MyNS
 	public enum GET_ListSubscriptionsByTopicAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListSubscriptionsByTopic")]
 		ListSubscriptionsByTopic = 0,
 	}
 	
@@ -3531,7 +3535,7 @@ namespace MyNS
 	public enum GET_ListTagsForResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTagsForResource")]
 		ListTagsForResource = 0,
 	}
 	
@@ -3552,7 +3556,7 @@ namespace MyNS
 	public enum GET_ListTopicsAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ListTopics")]
 		ListTopics = 0,
 	}
 	
@@ -3573,7 +3577,7 @@ namespace MyNS
 	public enum GET_OptInPhoneNumberAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OptInPhoneNumber")]
 		OptInPhoneNumber = 0,
 	}
 	
@@ -3594,7 +3598,7 @@ namespace MyNS
 	public enum GET_PublishAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Publish")]
 		Publish = 0,
 	}
 	
@@ -3615,7 +3619,7 @@ namespace MyNS
 	public enum GET_PublishBatchAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PublishBatch")]
 		PublishBatch = 0,
 	}
 	
@@ -3636,7 +3640,7 @@ namespace MyNS
 	public enum GET_PutDataProtectionPolicyAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PutDataProtectionPolicy")]
 		PutDataProtectionPolicy = 0,
 	}
 	
@@ -3657,7 +3661,7 @@ namespace MyNS
 	public enum GET_RemovePermissionAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RemovePermission")]
 		RemovePermission = 0,
 	}
 	
@@ -3678,7 +3682,7 @@ namespace MyNS
 	public enum GET_SetEndpointAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetEndpointAttributes")]
 		SetEndpointAttributes = 0,
 	}
 	
@@ -3699,7 +3703,7 @@ namespace MyNS
 	public enum GET_SetPlatformApplicationAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetPlatformApplicationAttributes")]
 		SetPlatformApplicationAttributes = 0,
 	}
 	
@@ -3720,7 +3724,7 @@ namespace MyNS
 	public enum GET_SetSMSAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetSMSAttributes")]
 		SetSMSAttributes = 0,
 	}
 	
@@ -3741,7 +3745,7 @@ namespace MyNS
 	public enum GET_SetSubscriptionAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetSubscriptionAttributes")]
 		SetSubscriptionAttributes = 0,
 	}
 	
@@ -3762,7 +3766,7 @@ namespace MyNS
 	public enum GET_SetTopicAttributesAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SetTopicAttributes")]
 		SetTopicAttributes = 0,
 	}
 	
@@ -3783,7 +3787,7 @@ namespace MyNS
 	public enum GET_SubscribeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Subscribe")]
 		Subscribe = 0,
 	}
 	
@@ -3804,7 +3808,7 @@ namespace MyNS
 	public enum GET_TagResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TagResource")]
 		TagResource = 0,
 	}
 	
@@ -3825,7 +3829,7 @@ namespace MyNS
 	public enum GET_UnsubscribeAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Unsubscribe")]
 		Unsubscribe = 0,
 	}
 	
@@ -3846,7 +3850,7 @@ namespace MyNS
 	public enum GET_UntagResourceAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UntagResource")]
 		UntagResource = 0,
 	}
 	
@@ -3867,7 +3871,7 @@ namespace MyNS
 	public enum GET_VerifySMSSandboxPhoneNumberAction
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VerifySMSSandboxPhoneNumber")]
 		VerifySMSSandboxPhoneNumber = 0,
 	}
 	

@@ -431,10 +431,10 @@ namespace MyNS
 	public enum GetCallLogsDirection
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Inbound")]
 		Inbound = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Outbound")]
 		Outbound = 1,
 	}
 }

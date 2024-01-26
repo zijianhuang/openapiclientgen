@@ -276,36 +276,36 @@ namespace MyNS
 	public enum ApiV1DonationsCarbon_calculateGetByOrigin_addressAndDestination_addressAndDistance_miAndWeight_lbAndTransportation_methodTransportation_method
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="air")]
 		air = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="truck")]
 		truck = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="rail")]
 		rail = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="sea")]
 		sea = 3,
 	}
 	
 	public enum ApiV1DonationsCreatePostByAmountAndNonprofit_idAndFunding_sourceAndZip_codeFunding_source
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="merchant")]
 		merchant = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="customer")]
 		customer = 1,
 	}
 	
 	public enum ApiV1DonationsCrypto_calculateGetByCountAndCurrencyCurrency
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="eth")]
 		eth = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="btc")]
 		btc = 1,
 	}
 }

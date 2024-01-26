@@ -418,7 +418,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<Project> ApiProjects_id__formatGetByFormatAsync(long id, ApiProjects_id__formatGetByFormatFormat format, string _format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "api/projects/"+id+"{.format}?format=" + format;
+			var requestUri = "api/projects/"+id+ (_format==null? "" : System.Uri.EscapeDataString(_format))+"?format=" + format+"";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -454,7 +454,7 @@ namespace MyNS
 		/// <returns>Successful response</returns>
 		public async Task<ApiProjects__formatGetByUpdatedSinceAndFormatReturn> ApiProjects__formatGetByUpdatedSinceAndFormatAsync(System.DateOnly updatedSince, ApiProjects_id__formatGetByFormatFormat format, string _format, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "api/projects{.format}?updatedSince="+updatedSince+"&format=" + format;
+			var requestUri = "api/projects"+ (_format==null? "" : System.Uri.EscapeDataString(_format))+"?updatedSince="+updatedSince+"&format=" + format;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -484,10 +484,10 @@ namespace MyNS
 	public enum ApiProjects_id__formatGetByFormatFormat
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
 		json = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="xml")]
 		xml = 1,
 	}
 	

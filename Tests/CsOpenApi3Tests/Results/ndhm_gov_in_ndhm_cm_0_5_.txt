@@ -38,11 +38,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AuthConfirmIdentifierType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
 		MOBILE = 0,
 	}
 	
@@ -55,20 +56,21 @@ namespace MyNS
 	///
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum AuthenticationMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE_OTP")]
 		MOBILE_OTP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECT")]
 		DIRECT = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DEMOGRAPHICS")]
 		DEMOGRAPHICS = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AADHAAR_OTP")]
 		AADHAAR_OTP = 3,
 	}
 	
@@ -133,14 +135,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ConsentAcknowledgementStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
 		OK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNKNOWN")]
 		UNKNOWN = 1,
 	}
 	
@@ -268,20 +271,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HITypeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OPConsultation")]
 		OPConsultation = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Prescription")]
 		Prescription = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DischargeSummary")]
 		DischargeSummary = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DiagnosticReport")]
 		DiagnosticReport = 3,
 	}
 	
@@ -320,20 +324,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PermissionAccessMode
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="VIEW")]
 		VIEW = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STORE")]
 		STORE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUERY")]
 		QUERY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="STREAM")]
 		STREAM = 3,
 	}
 	
@@ -369,23 +374,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PermissionFrequencyUnit
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HOUR")]
 		HOUR = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WEEK")]
 		WEEK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DAY")]
 		DAY = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MONTH")]
 		MONTH = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="YEAR")]
 		YEAR = 4,
 	}
 	
@@ -520,6 +526,7 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ErrorCode
 	{
@@ -643,11 +650,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HIPHealthInformationRequestAcknowledgementHiRequestSessionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACKNOWLEDGED")]
 		ACKNOWLEDGED = 0,
 	}
 	
@@ -874,11 +882,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HIUSubscriptionNotificationAcknowledgmentAcknowledgementStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
 		OK = 0,
 	}
 	
@@ -1022,14 +1031,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HealthInformationNotificationNotificationNotifierType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIU")]
 		HIU = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIP")]
 		HIP = 1,
 	}
 	
@@ -1055,14 +1065,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HealthInformationNotificationNotificationStatusNotificationSessionStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TRANSFERRED")]
 		TRANSFERRED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 1,
 	}
 	
@@ -1088,17 +1099,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HealthInformationNotificationNotificationStatusNotificationStatusResponsesHiStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DELIVERED")]
 		DELIVERED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="OK")]
 		OK = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ERRORED")]
 		ERRORED = 2,
 	}
 	
@@ -1121,14 +1133,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum HeartbeatResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UP")]
 		UP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DOWN")]
 		DOWN = 1,
 	}
 	
@@ -1153,14 +1166,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum IdentifierType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
 		MOBILE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MR")]
 		MR = 1,
 	}
 	
@@ -1184,14 +1198,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MetaCommunicationMedium
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MOBILE")]
 		MOBILE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EMAIL")]
 		EMAIL = 1,
 	}
 	
@@ -1293,20 +1308,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PatientDemographicGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="M")]
 		M = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="F")]
 		F = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
 		O = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="U")]
 		U = 3,
 	}
 	
@@ -1379,17 +1395,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PatientAuthInitRequestQueryPurpose
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
 		LINK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KYC")]
 		KYC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KYC_AND_LINK")]
 		KYC_AND_LINK = 2,
 	}
 	
@@ -1417,14 +1434,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PatientAuthRequesterType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIP")]
 		HIP = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="HIU")]
 		HIU = 1,
 	}
 	
@@ -1551,17 +1569,18 @@ namespace MyNS
 	/// what is the purpose of user auth
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PatientAuthPurpose
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
 		LINK = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KYC")]
 		KYC = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="KYC_AND_LINK")]
 		KYC_AND_LINK = 2,
 	}
 	
@@ -1714,20 +1733,21 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PatientGender
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="M")]
 		M = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="F")]
 		F = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="O")]
 		O = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="U")]
 		U = 3,
 	}
 	
@@ -1871,14 +1891,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PatientLinkReferenceResultLinkAuthenticationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DIRECT")]
 		DIRECT = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MEDIATED")]
 		MEDIATED = 1,
 	}
 	
@@ -1963,14 +1984,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ShareProfileAcknowledgementStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUCCESS")]
 		SUCCESS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILURE")]
 		FAILURE = 1,
 	}
 	
@@ -2014,11 +2036,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum SubscriptionCategory
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LINK")]
 		LINK = 0,
 	}
 	
@@ -2138,9 +2161,9 @@ namespace MyNS
 		/// 1. **more than one definitive match for the given request**
 		/// 2. **no verified identifer was specified**
 		/// 
-		/// DiscoveryPost v0.5/care-contexts/on-discover
+		/// V0_5Care_contextsOn_discoverPost v0.5/care-contexts/on-discover
 		/// </summary>
-		public async Task DiscoveryPostAsync(PatientDiscoveryResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Care_contextsOn_discoverPostAsync(PatientDiscoveryResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/care-contexts/on-discover";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2172,9 +2195,9 @@ namespace MyNS
 		/// <summary>
 		/// Create consent request
 		/// Creates a consent request to get data about a patient by HIU user. CM should call Gateway - ***/v0.5/consent-requests/on-init*** API with the consent-request-id
-		/// ConsentPost v0.5/consent-requests/init
+		/// V0_5Consent_requestsInitPost v0.5/consent-requests/init
 		/// </summary>
-		public async Task ConsentPostAsync(ConsentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Consent_requestsInitPostAsync(ConsentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/consent-requests/init";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2206,9 +2229,9 @@ namespace MyNS
 		/// <summary>
 		/// Get consent request status
 		/// Get status of consent request done previously. CM responds by calling Gateway API - ***/v0.5/consent-requests/on-status***
-		/// ConsentPost v0.5/consent-requests/status
+		/// V0_5Consent_requestsStatusPost v0.5/consent-requests/status
 		/// </summary>
-		public async Task ConsentPostAsync(ConsentRequestStatusRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Consent_requestsStatusPostAsync(ConsentRequestStatusRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/consent-requests/status";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2240,9 +2263,9 @@ namespace MyNS
 		/// <summary>
 		/// Get consent artefact
 		/// This API is called when a HIU makes a request to get a consent artefact. For response please refer to the Gateway ***/v0.5/consents/on-fetch***
-		/// ConsentPost v0.5/consents/fetch
+		/// V0_5ConsentsFetchPost v0.5/consents/fetch
 		/// </summary>
-		public async Task ConsentPostAsync(ConsentFetchRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5ConsentsFetchPostAsync(ConsentFetchRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/consents/fetch";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2275,9 +2298,9 @@ namespace MyNS
 		/// Consent notification
 		/// This API is called by HIP as acknowledgement to notification of consents, in cases of consent revocation and expiration, notified by CM earlier via Gateway API - ***/v0.5/consents/hip/notify***.
 		/// 
-		/// ConsentPost v0.5/consents/hip/on-notify
+		/// V0_5ConsentsHipOn_notifyPost v0.5/consents/hip/on-notify
 		/// </summary>
-		public async Task ConsentPostAsync(HIPConsentNotificationResponse requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5ConsentsHipOn_notifyPostAsync(HIPConsentNotificationResponse requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/consents/hip/on-notify";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2310,9 +2333,9 @@ namespace MyNS
 		/// Consent notification
 		/// This API is called by HIU as acknowledgement to consent notifications, specifically for cases when consent is REVOKED or EXPIRED, notified by CM earlier via Gateway API - ***/v0.5/consents/hiu/notify***.
 		/// 
-		/// ConsentPost v0.5/consents/hiu/on-notify
+		/// V0_5ConsentsHiuOn_notifyPost v0.5/consents/hiu/on-notify
 		/// </summary>
-		public async Task ConsentPostAsync(HIUConsentNotificationResponse requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5ConsentsHiuOn_notifyPostAsync(HIUConsentNotificationResponse requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/consents/hiu/on-notify";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2349,9 +2372,9 @@ namespace MyNS
 		/// 3. HIU on receipt of data would send **sessionStatus** - one of [TRANSFERRED, FAILED]. For example, FAILED when if data was not sent or if invalid data was sent
 		/// 4. HIU would also send **hiStatus** for each *careContextReference* - one of [OK, ERRORED]
 		/// 
-		/// Data_flowPost v0.5/health-information/notify
+		/// V0_5Health_informationNotifyPost v0.5/health-information/notify
 		/// </summary>
-		public async Task Data_flowPostAsync(HealthInformationNotification requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Health_informationNotifyPostAsync(HealthInformationNotification requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/health-information/notify";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2384,9 +2407,9 @@ namespace MyNS
 		/// Health information data request acknowledgement from HIP
 		/// This API is called by HIP to acknowledge Health information request receipt. When HIU requests health information, CM generates a transactionId and makes a health information request to the HIP(s). HIPs acknowledgement to the health-information request is coveyed by this API. Either the **hiRequest** or **error** must be specified. **hiRequest** element returns the same transactionId as before with a status indicating that the request is acknowledged.
 		/// 
-		/// Data_flowPost v0.5/health-information/on-request
+		/// V0_5Health_informationOn_requestPost v0.5/health-information/on-request
 		/// </summary>
-		public async Task Data_flowPostAsync(HIPHealthInformationRequestAcknowledgement requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Health_informationOn_requestPostAsync(HIPHealthInformationRequestAcknowledgement requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/health-information/on-request";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2419,9 +2442,9 @@ namespace MyNS
 		/// Health information data request from HIU
 		/// HIU request for Health information against a consent id. CM would generate a transactionId against each consent and pass it as trnasaction context / correlation id to the HIP and also return the same to HIU via Gateway API - ***/v0.5/health-information/cm/on-request***.
 		/// 
-		/// Data_flowPost v0.5/health-information/request
+		/// V0_5Health_informationRequestPost v0.5/health-information/request
 		/// </summary>
-		public async Task Data_flowPostAsync(HIRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Health_informationRequestPostAsync(HIRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/health-information/request";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2452,10 +2475,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Get consent request status
-		/// MonitoringGet v0.5/heartbeat
+		/// V0_5HeartbeatGet v0.5/heartbeat
 		/// </summary>
 		/// <returns>OK</returns>
-		public async Task<HeartbeatResponse> MonitoringGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<HeartbeatResponse> V0_5HeartbeatGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/heartbeat";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -2488,9 +2511,9 @@ namespace MyNS
 		/// API to submit care-context to CM for HIP initiated linking. The API must accompany the "accessToken" fetched in the users/auth process.
 		/// 1. subsequent usage for accessToken may be invalid if it was meant for one-time usage or if it expired
 		/// 
-		/// LinkPost v0.5/links/link/add-contexts
+		/// V0_5LinksLinkAdd_contextsPost v0.5/links/link/add-contexts
 		/// </summary>
-		public async Task LinkPostAsync(PatientCareContextLinkRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5LinksLinkAdd_contextsPostAsync(PatientCareContextLinkRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/links/link/add-contexts";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2527,9 +2550,9 @@ namespace MyNS
 		/// 3. **Verified that same Consent Manager which made the link request is sending the token**
 		/// 4. **Results of unmasked linked care contexts with patient reference number**
 		/// 
-		/// LinkPost v0.5/links/link/on-confirm
+		/// V0_5LinksLinkOn_confirmPost v0.5/links/link/on-confirm
 		/// </summary>
-		public async Task LinkPostAsync(PatientLinkResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5LinksLinkOn_confirmPostAsync(PatientLinkResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/links/link/on-confirm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2590,9 +2613,9 @@ namespace MyNS
 		/// 1. **Patient reference number is invalid**
 		/// 2. **Care context reference numbers are invalid**
 		/// 
-		/// LinkPost v0.5/links/link/on-init
+		/// V0_5LinksLinkOn_initPost v0.5/links/link/on-init
 		/// </summary>
-		public async Task LinkPostAsync(PatientLinkReferenceResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5LinksLinkOn_initPostAsync(PatientLinkReferenceResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/links/link/on-init";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2625,9 +2648,9 @@ namespace MyNS
 		/// Identify a patient by her consent-manager user-id
 		/// This API is meant for identify to patient given her consent-manager-user-id. CM subsequently makes the /on-find Gateway API call with results.
 		/// 
-		/// IdentificationPost v0.5/patients/find
+		/// V0_5PatientsFindPost v0.5/patients/find
 		/// </summary>
-		public async Task IdentificationPostAsync(PatientIdentificationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5PatientsFindPostAsync(PatientIdentificationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/patients/find";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2660,9 +2683,9 @@ namespace MyNS
 		/// Response to patient's share profile request
 		/// Result of patient share profile request at HIP end.
 		/// 
-		/// ProfilePost v0.5/patients/profile/on-share
+		/// V0_5PatientsProfileOn_sharePost v0.5/patients/profile/on-share
 		/// </summary>
-		public async Task ProfilePostAsync(ShareProfileResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5PatientsProfileOn_sharePostAsync(ShareProfileResult requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/patients/profile/on-share";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2694,9 +2717,9 @@ namespace MyNS
 		/// <summary>
 		/// Request for subscription
 		/// creates a request for subscription. The subscription categories can be for care-contexts linkages or availability of data against existing care-contexts. Note that the requester must have HIU role
-		/// SubscriptionsPost v0.5/subscription-requests/cm/init
+		/// V0_5Subscription_requestsCmInitPost v0.5/subscription-requests/cm/init
 		/// </summary>
-		public async Task SubscriptionsPostAsync(SubscriptionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Subscription_requestsCmInitPostAsync(SubscriptionRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/subscription-requests/cm/init";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2729,9 +2752,9 @@ namespace MyNS
 		/// Callback API for /subscription-requests/hiu/notify to acknowledge receipt of notification.
 		/// This API is called by HIU as acknowledgement to subscription request relevant notifications.
 		/// 
-		/// SubscriptionsPost v0.5/subscription-requests/hiu/on-notify
+		/// V0_5Subscription_requestsHiuOn_notifyPost v0.5/subscription-requests/hiu/on-notify
 		/// </summary>
-		public async Task SubscriptionsPostAsync(HIUSubscriptionRequestNotificationAcknowledgement requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5Subscription_requestsHiuOn_notifyPostAsync(HIUSubscriptionRequestNotificationAcknowledgement requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/subscription-requests/hiu/on-notify";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2764,9 +2787,9 @@ namespace MyNS
 		/// Callback API for /subscriptions/hiu/notify to acknowledge receipt of notification.
 		/// This API is called by HIU as acknowledgement to consent notifications, specifically for cases when consent is REVOKED or EXPIRED.
 		/// 
-		/// SubscriptionsPost v0.5/subscriptions/hiu/on-notify
+		/// V0_5SubscriptionsHiuOn_notifyPost v0.5/subscriptions/hiu/on-notify
 		/// </summary>
-		public async Task SubscriptionsPostAsync(HIUSubscriptionNotificationAcknowledgment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5SubscriptionsHiuOn_notifyPostAsync(HIUSubscriptionNotificationAcknowledgment requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/subscriptions/hiu/on-notify";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2803,9 +2826,9 @@ namespace MyNS
 		/// 3. demographic.identifier is optional, however maybe required if authentication so mandates.
 		/// 4. credential.authCode is required for other MEDIATED authentication like MOBILE_OTP, AADHAAR_OTP.
 		/// 
-		/// User_authPost v0.5/users/auth/confirm
+		/// V0_5UsersAuthConfirmPost v0.5/users/auth/confirm
 		/// </summary>
-		public async Task User_authPostAsync(PatientAuthConfirmRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5UsersAuthConfirmPostAsync(PatientAuthConfirmRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/users/auth/confirm";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2838,9 +2861,9 @@ namespace MyNS
 		/// Get a patient's authentication modes relevant to specified purpose
 		/// This API is meant for identify supported authentication modes for a patient given a specific purpose
 		/// 
-		/// User_authPost v0.5/users/auth/fetch-modes
+		/// V0_5UsersAuthFetch_modesPost v0.5/users/auth/fetch-modes
 		/// </summary>
-		public async Task User_authPostAsync(PatientAuthModeQueryRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5UsersAuthFetch_modesPostAsync(PatientAuthModeQueryRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/users/auth/fetch-modes";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2873,9 +2896,9 @@ namespace MyNS
 		/// Initialize authentication from HIP
 		/// This API is called by HIPs to initiate authentication of users. A transactionId is retuned by the corresponding callback API for confirmation of user auth.
 		/// 
-		/// User_authPost v0.5/users/auth/init
+		/// V0_5UsersAuthInitPost v0.5/users/auth/init
 		/// </summary>
-		public async Task User_authPostAsync(PatientAuthInitRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5UsersAuthInitPostAsync(PatientAuthInitRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/users/auth/init";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -2908,9 +2931,9 @@ namespace MyNS
 		/// callback API from HIU/HIPs as acknowledgement of auth notification (in case of DIRECT auth)
 		/// This API is called by HIU/HIPs to confirm acknowledgement for receipt of auth notification is case of DIRECT authentication.
 		/// 
-		/// User_authPost v0.5/users/auth/on-notify
+		/// V0_5UsersAuthOn_notifyPost v0.5/users/auth/on-notify
 		/// </summary>
-		public async Task User_authPostAsync(PatientAuthNotificationAcknowledgement requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V0_5UsersAuthOn_notifyPostAsync(PatientAuthNotificationAcknowledgement requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v0.5/users/auth/on-notify";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))

@@ -206,32 +206,34 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MFADetailsMfa_type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
 		SMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="YUBIKEY")]
 		YUBIKEY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTP")]
 		TOTP = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserInfoUserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKOFFICE")]
 		BACKOFFICE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYOR")]
 		PAYOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYEE")]
 		PAYEE = 2,
 	}
 	
@@ -347,17 +349,18 @@ namespace MyNS
 	/// The notification category.  One of "payment", "payee", "debit".
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum Category
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="payment")]
 		payment = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="payee")]
 		payee = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="debit")]
 		debit = 2,
 	}
 	
@@ -567,17 +570,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CreateFundingAccountRequestV2Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FBO")]
 		FBO = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WUBS_DECOUPLED")]
 		WUBS_DECOUPLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PRIVATE")]
 		PRIVATE = 2,
 	}
 	
@@ -1208,14 +1212,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CreatePayeeV4Type
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Individual")]
 		Individual = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Company")]
 		Company = 1,
 	}
 	
@@ -1884,11 +1889,12 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum CreatePayorLinkRequestLinkType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PARENT_OF")]
 		PARENT_OF = 0,
 	}
 	
@@ -2047,23 +2053,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PaymentInstructionV3TransmissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAME_DAY_ACH")]
 		SAME_DAY_ACH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIRE")]
 		WIRE = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACH")]
 		ACH = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL")]
 		LOCAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SWIFT")]
 		SWIFT = 4,
 	}
 	
@@ -2260,23 +2267,24 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ErrorLocationType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="requestBody")]
 		requestBody = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="queryParam")]
 		queryParam = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="requestParam")]
 		requestParam = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="header")]
 		header = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="pathParam")]
 		pathParam = 4,
 	}
 	
@@ -5375,17 +5383,18 @@ namespace MyNS
 	/// The type of the MFA device
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum MFAType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SMS")]
 		SMS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="YUBIKEY")]
 		YUBIKEY = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTP")]
 		TOTP = 2,
 	}
 	
@@ -6025,14 +6034,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserResponseMfaStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REGISTERED")]
 		REGISTERED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNREGISTERED")]
 		UNREGISTERED = 1,
 	}
 	
@@ -6051,17 +6061,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserResponseStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
 		PENDING = 2,
 	}
 	
@@ -6777,14 +6788,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PayeeType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPANY")]
 		COMPANY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INDIVIDUAL")]
 		INDIVIDUAL = 1,
 	}
 	
@@ -6792,14 +6804,15 @@ namespace MyNS
 	/// The type of the payee
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum PayeeTypeEnum
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Individual")]
 		Individual = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="Company")]
 		Company = 1,
 	}
 	
@@ -8699,14 +8712,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum ResendTokenRequestTokenType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INVITE_MFA_USER")]
 		INVITE_MFA_USER = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="MFA_REGISTRATION")]
 		MFA_REGISTRATION = 1,
 	}
 	
@@ -9085,14 +9099,15 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UnregisterMFARequestMfaType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="YUBIKEY")]
 		YUBIKEY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="TOTP")]
 		TOTP = 1,
 	}
 	
@@ -9355,47 +9370,50 @@ namespace MyNS
 	///
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ENABLED")]
 		ENABLED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="DISABLED")]
 		DISABLED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PENDING")]
 		PENDING = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKOFFICE")]
 		BACKOFFICE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYOR")]
 		PAYOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYEE")]
 		PAYEE = 2,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum UserType_2
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BACKOFFICE")]
 		BACKOFFICE = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYOR")]
 		PAYOR = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="PAYEE")]
 		PAYEE = 2,
 	}
 	
@@ -9675,11 +9693,11 @@ namespace MyNS
 		/// <p>Using a Base64 encode function Base64Encoder().encode("44a9537d-d55d-4b47-8082-14061c2bcdd8:c396b26b-137a-44fd-87f5-34631f8fd529")</p>
 		/// <p>Included as a Basic Authorization header: -H "Authorization: Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==" </p>
 		/// 
-		/// VeloAuth v1/authenticate
+		/// V1AuthenticatePostByGrant_type v1/authenticate
 		/// </summary>
 		/// <param name="grant_type">OAuth grant type. Should use 'client_credentials'</param>
 		/// <returns>Valid Authenication response</returns>
-		public async Task<AuthResponse> VeloAuthAsync(string grant_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<AuthResponse> V1AuthenticatePostByGrant_typeAsync(string grant_type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/authenticate?grant_type=" + (grant_type==null? "" : System.Uri.EscapeDataString(grant_type));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -9705,12 +9723,12 @@ namespace MyNS
 		/// <summary>
 		/// Get Funding Audit Delta
 		/// Get funding audit deltas for a payor
-		/// ListFundingAuditDeltas v1/deltas/fundings
+		/// V1DeltasFundingsGetByPayorIdAndUpdatedSinceAndPageAndPageSize v1/deltas/fundings
 		/// </summary>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">The number of results to return in a page</param>
 		/// <returns>Funding Account Deltas</returns>
-		public async Task<PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse> ListFundingAuditDeltasAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse> V1DeltasFundingsGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/deltas/fundings?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&updatedSince=" + updatedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&page="+page+"&pageSize="+pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -9741,14 +9759,14 @@ namespace MyNS
 		/// <summary>
 		/// V1 List Payment Changes
 		/// Deprecated (use /v4/payments/deltas instead)
-		/// ListPaymentChanges v1/deltas/payments
+		/// V1DeltasPaymentsGetByPayorIdAndUpdatedSinceAndPageAndPageSize v1/deltas/payments
 		/// </summary>
 		/// <param name="payorId">The Payor ID to find associated Payments</param>
 		/// <param name="updatedSince">The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm</param>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">The number of results to return in a page</param>
 		/// <returns>Details of Payment Changes</returns>
-		public async Task<PaymentDeltaResponseV1> ListPaymentChangesAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PaymentDeltaResponseV1> V1DeltasPaymentsGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/deltas/payments?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&updatedSince=" + updatedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&page="+page+"&pageSize="+pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -9779,10 +9797,10 @@ namespace MyNS
 		/// <summary>
 		/// Get Funding
 		/// Get Funding by Id
-		/// GetFundingByIdV1 v1/fundings/{fundingId}
+		/// V1Fundings_fundingIdGet v1/fundings/{fundingId}
 		/// </summary>
 		/// <returns>Funding response</returns>
-		public async Task<FundingResponse> GetFundingByIdV1Async(string fundingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<FundingResponse> V1Fundings_fundingIdGetAsync(string fundingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/fundings/"+ (fundingId==null? "" : System.Uri.EscapeDataString(fundingId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -9815,9 +9833,9 @@ namespace MyNS
 		/// <p>Given a valid access token in the header then log out the authenticated user or client </p>
 		/// <p>Will revoke the token</p>
 		/// 
-		/// Logout v1/logout
+		/// V1LogoutPost v1/logout
 		/// </summary>
-		public async Task LogoutAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1LogoutPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/logout";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -9840,10 +9858,10 @@ namespace MyNS
 		/// <p>An email with an embedded link will be sent to the receipient of the email address </p>
 		/// <p>The link will contain a token to be used for resetting the password </p>
 		/// 
-		/// ResetPassword v1/password/reset
+		/// V1PasswordResetPost v1/password/reset
 		/// </summary>
 		/// <param name="requestBody">An Email address to send the reset password link to</param>
-		public async Task ResetPasswordAsync(ResetPasswordRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1PasswordResetPostAsync(ResetPasswordRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/password/reset";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -9875,10 +9893,10 @@ namespace MyNS
 		/// <summary>
 		/// List Payment Channel Country Rules
 		/// List the country specific payment channel rules.
-		/// ListPaymentChannelRulesV1 v1/paymentChannelRules
+		/// V1PaymentChannelRulesGet v1/paymentChannelRules
 		/// </summary>
 		/// <returns>List Payment Channel Country Rules</returns>
-		public async Task<PaymentChannelRulesResponse> ListPaymentChannelRulesV1Async(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PaymentChannelRulesResponse> V1PaymentChannelRulesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/paymentChannelRules";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -9909,7 +9927,7 @@ namespace MyNS
 		/// <summary>
 		/// V1 Get Fundings for Payor
 		/// Deprecated (use /v4/paymentaudit/fundings)
-		/// GetFundingsV1 v1/paymentaudit/fundings
+		/// V1PaymentauditFundingsGetByPayorIdAndPageAndPageSizeAndSort v1/paymentaudit/fundings
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="page">Page number. Default is 1.</param>
@@ -9918,7 +9936,7 @@ namespace MyNS
 		///Default is no sort. The supported sort fields are: dateTime and amount.
 		///</param>
 		/// <returns>Get Fundings normal response</returns>
-		public async Task<GetFundingsResponse> GetFundingsV1Async(string payorId, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetFundingsResponse> V1PaymentauditFundingsGetByPayorIdAndPageAndPageSizeAndSortAsync(string payorId, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/paymentaudit/fundings?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -9949,11 +9967,11 @@ namespace MyNS
 		/// <summary>
 		/// V1 Get Payout Statistics
 		/// Deprecated (Use /v4/paymentaudit/payoutStatistics)
-		/// GetPayoutStatsV1 v1/paymentaudit/payoutStatistics
+		/// V1PaymentauditPayoutStatisticsGetByPayorId v1/paymentaudit/payoutStatistics
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID. Required for external users.</param>
 		/// <returns>Payout Statistics response</returns>
-		public async Task<GetPayoutStatistics> GetPayoutStatsV1Async(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetPayoutStatistics> V1PaymentauditPayoutStatisticsGetByPayorIdAsync(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/paymentaudit/payoutStatistics?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -9990,11 +10008,11 @@ namespace MyNS
 		/// <li>the payout must not be in a state of 'instructed'</li>
 		/// </ul>
 		/// 
-		/// WithdrawPayment v1/payments/{paymentId}/withdraw
+		/// V1Payments_paymentIdWithdrawPost v1/payments/{paymentId}/withdraw
 		/// </summary>
 		/// <param name="paymentId">Id of the Payment</param>
 		/// <param name="requestBody">details for withdrawal</param>
-		public async Task WithdrawPaymentAsync(string paymentId, WithdrawPaymentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Payments_paymentIdWithdrawPostAsync(string paymentId, WithdrawPaymentRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payments/"+ (paymentId==null? "" : System.Uri.EscapeDataString(paymentId))+"/withdraw";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10027,7 +10045,7 @@ namespace MyNS
 		/// List Payor Links
 		/// <p>If the payor is set up as part of a hierarchy you can use this API to traverse the hierarchy</p>
 		/// 
-		/// PayorLinksV1 v1/payorLinks
+		/// V1PayorLinksGetByDescendantsOfPayorAndParentOfPayorAndFields v1/payorLinks
 		/// </summary>
 		/// <param name="descendantsOfPayor">The Payor ID from which to start the query to show all descendants</param>
 		/// <param name="parentOfPayor">Query for the parent payor details for this payor id</param>
@@ -10037,7 +10055,7 @@ namespace MyNS
 		///<p>The supported fields are any combination of: primaryContactEmail,kycState</p>
 		///</param>
 		/// <returns>Details of Payor Links</returns>
-		public async Task<PayorLinksResponse> PayorLinksV1Async(string descendantsOfPayor, string parentOfPayor, string fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayorLinksResponse> V1PayorLinksGetByDescendantsOfPayorAndParentOfPayorAndFieldsAsync(string descendantsOfPayor, string parentOfPayor, string fields, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payorLinks?descendantsOfPayor=" + (descendantsOfPayor==null? "" : System.Uri.EscapeDataString(descendantsOfPayor))+"&parentOfPayor=" + (parentOfPayor==null? "" : System.Uri.EscapeDataString(parentOfPayor))+"&fields=" + (fields==null? "" : System.Uri.EscapeDataString(fields));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10068,10 +10086,10 @@ namespace MyNS
 		/// <summary>
 		/// Create a Payor Link
 		/// This endpoint allows you to create a payor link.
-		/// CreatePayorLinks v1/payorLinks
+		/// V1PayorLinksPost v1/payorLinks
 		/// </summary>
 		/// <param name="requestBody">Request to create a payor link</param>
-		public async Task CreatePayorLinksAsync(CreatePayorLinkRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1PayorLinksPostAsync(CreatePayorLinkRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payorLinks";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10105,11 +10123,11 @@ namespace MyNS
 		/// <p>Get a Single Payor by Id.</p>
 		/// <p>deprecated since v2.10 - Use /v2/payors
 		/// 
-		/// GetPayorByIdV1 v1/payors/{payorId}
+		/// V1Payors_payorIdGet v1/payors/{payorId}
 		/// </summary>
 		/// <param name="payorId">The Payor Id</param>
 		/// <returns>Get Payor Details</returns>
-		public async Task<PayorV1> GetPayorByIdV1Async(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayorV1> V1Payors_payorIdGetAsync(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10144,11 +10162,11 @@ namespace MyNS
 		/// <p>For example you might have an SAP application that you wish to integrate with Velo</p>
 		/// <p>You can create an application and then create one or more API keys for the application</p>
 		/// 
-		/// PayorCreateApplicationV1 v1/payors/{payorId}/applications
+		/// V1Payors_payorIdApplicationsPost v1/payors/{payorId}/applications
 		/// </summary>
 		/// <param name="payorId">The Payor Id</param>
 		/// <param name="requestBody">Details of application to create</param>
-		public async Task PayorCreateApplicationV1Async(string payorId, PayorCreateApplicationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Payors_payorIdApplicationsPostAsync(string payorId, PayorCreateApplicationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"/applications";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10183,13 +10201,13 @@ namespace MyNS
 		/// <p>You can create multiple API Keys for a given application</p>
 		/// <p>API Keys are programmatic users for integrating your application with the Velo platform</p>
 		/// 
-		/// PayorCreateApiKeyV1 v1/payors/{payorId}/applications/{applicationId}/keys
+		/// V1Payors_payorIdApplications_applicationIdKeysPost v1/payors/{payorId}/applications/{applicationId}/keys
 		/// </summary>
 		/// <param name="payorId">The Payor Id</param>
 		/// <param name="applicationId">Application ID</param>
 		/// <param name="requestBody">Details of application API key to create</param>
 		/// <returns>HTTP Ok, key created</returns>
-		public async Task<PayorCreateApiKeyResponse> PayorCreateApiKeyV1Async(string payorId, string applicationId, PayorCreateApiKeyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayorCreateApiKeyResponse> V1Payors_payorIdApplications_applicationIdKeysPostAsync(string payorId, string applicationId, PayorCreateApiKeyRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"/applications/"+ (applicationId==null? "" : System.Uri.EscapeDataString(applicationId))+"/keys";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10227,11 +10245,11 @@ namespace MyNS
 		/// <summary>
 		/// Get Branding
 		/// Get the payor branding details.
-		/// PayorGetBranding v1/payors/{payorId}/branding
+		/// V1Payors_payorIdBrandingGet v1/payors/{payorId}/branding
 		/// </summary>
 		/// <param name="payorId">The Payor Id</param>
 		/// <returns>HTTP Ok, key created</returns>
-		public async Task<PayorBrandingResponse> PayorGetBrandingAsync(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayorBrandingResponse> V1Payors_payorIdBrandingGetAsync(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"/branding";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10265,11 +10283,11 @@ namespace MyNS
 		/// or opt into Payor Reminder emails. These emails are typically around payee events
 		/// such as payees registering and onboarding.
 		/// 
-		/// PayorEmailOptOut v1/payors/{payorId}/reminderEmailsUpdate
+		/// V1Payors_payorIdReminderEmailsUpdatePost v1/payors/{payorId}/reminderEmailsUpdate
 		/// </summary>
 		/// <param name="payorId">The Payor Id</param>
 		/// <param name="requestBody">Reminder Emails Opt-Out Request</param>
-		public async Task PayorEmailOptOutAsync(string payorId, PayorEmailOptOutRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Payors_payorIdReminderEmailsUpdatePostAsync(string payorId, PayorEmailOptOutRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"/reminderEmailsUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10303,11 +10321,11 @@ namespace MyNS
 		/// <p>Set notifications for a given source account</p>
 		/// <p>deprecated since 2.34 (use v3 version)</p>
 		/// 
-		/// SetNotificationsRequest v1/sourceAccounts/{sourceAccountId}/notifications
+		/// V1SourceAccounts_sourceAccountIdNotificationsPost v1/sourceAccounts/{sourceAccountId}/notifications
 		/// </summary>
 		/// <param name="sourceAccountId">Source account id</param>
 		/// <param name="requestBody">Body to included minimum balance to set</param>
-		public async Task SetNotificationsRequestAsync(string sourceAccountId, SetNotificationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1SourceAccounts_sourceAccountIdNotificationsPostAsync(string sourceAccountId, SetNotificationsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId))+"/notifications";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10341,10 +10359,10 @@ namespace MyNS
 		/// <p>List the supported countries.</p>
 		/// <p>This version will be retired in March 2020. Use /v2/supportedCountries</p>
 		/// 
-		/// ListSupportedCountriesV1 v1/supportedCountries
+		/// V1SupportedCountriesGet v1/supportedCountries
 		/// </summary>
 		/// <returns>List of Supported Countries</returns>
-		public async Task<SupportedCountriesResponse> ListSupportedCountriesV1Async(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SupportedCountriesResponse> V1SupportedCountriesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/supportedCountries";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10377,12 +10395,12 @@ namespace MyNS
 		/// <p>The second part of login involves validating using an MFA device</p>
 		/// <p>An access token with PRE_AUTH authorities is required</p>
 		/// 
-		/// ValidateAccessToken v1/validate
+		/// V1ValidatePost v1/validate
 		/// </summary>
 		/// <param name="requestBody">An OTP from the user's registered MFA Device
 		///</param>
 		/// <returns>User request has been validated</returns>
-		public async Task<AccessTokenResponse> ValidateAccessTokenAsync(AccessTokenValidationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<AccessTokenResponse> V1ValidatePostAsync(AccessTokenValidationRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/validate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10420,13 +10438,13 @@ namespace MyNS
 		/// <summary>
 		/// List the details about the webhooks for the given payor.
 		/// List the details about the webhooks for the given payor.
-		/// ListWebhooksV1 v1/webhooks
+		/// V1WebhooksGetByPageAndPageSizeAndPayorId v1/webhooks
 		/// </summary>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">The number of results to return in a page</param>
 		/// <param name="payorId">The Payor ID</param>
 		/// <returns>Webhook response</returns>
-		public async Task<WebhooksResponse> ListWebhooksV1Async(int page, int pageSize, string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<WebhooksResponse> V1WebhooksGetByPageAndPageSizeAndPayorIdAsync(int page, int pageSize, string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/webhooks?page="+page+"&pageSize="+pageSize+"&payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10457,9 +10475,9 @@ namespace MyNS
 		/// <summary>
 		/// Create Webhook
 		/// Create Webhook
-		/// CreateWebhookV1 v1/webhooks
+		/// V1WebhooksPost v1/webhooks
 		/// </summary>
-		public async Task CreateWebhookV1Async(CreateWebhookRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1WebhooksPostAsync(CreateWebhookRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/webhooks";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10491,11 +10509,11 @@ namespace MyNS
 		/// <summary>
 		/// Get details about the given webhook.
 		/// Get details about the given webhook.
-		/// GetWebhookV1 v1/webhooks/{webhookId}
+		/// V1Webhooks_webhookIdGet v1/webhooks/{webhookId}
 		/// </summary>
 		/// <param name="webhookId">Webhook id</param>
 		/// <returns>Webhook response</returns>
-		public async Task<WebhookResponse> GetWebhookV1Async(string webhookId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<WebhookResponse> V1Webhooks_webhookIdGetAsync(string webhookId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/webhooks/"+ (webhookId==null? "" : System.Uri.EscapeDataString(webhookId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10526,10 +10544,10 @@ namespace MyNS
 		/// <summary>
 		/// Update Webhook
 		/// Update Webhook
-		/// UpdateWebhookV1 v1/webhooks/{webhookId}
+		/// V1Webhooks_webhookIdPost v1/webhooks/{webhookId}
 		/// </summary>
 		/// <param name="webhookId">Webhook id</param>
-		public async Task UpdateWebhookV1Async(string webhookId, UpdateWebhookRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Webhooks_webhookIdPostAsync(string webhookId, UpdateWebhookRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/webhooks/"+ (webhookId==null? "" : System.Uri.EscapeDataString(webhookId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10559,10 +10577,10 @@ namespace MyNS
 		}
 		
 		/// <summary>
-		/// PingWebhookV1 v1/webhooks/{webhookId}/ping
+		/// V1Webhooks_webhookIdPingPost v1/webhooks/{webhookId}/ping
 		/// </summary>
 		/// <param name="webhookId">Webhook id</param>
-		public async Task PingWebhookV1Async(string webhookId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V1Webhooks_webhookIdPingPostAsync(string webhookId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/webhooks/"+ (webhookId==null? "" : System.Uri.EscapeDataString(webhookId))+"/ping";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10582,10 +10600,10 @@ namespace MyNS
 		/// <summary>
 		/// List Supported Currencies
 		/// List the supported currencies.
-		/// ListSupportedCurrenciesV2 v2/currencies
+		/// V2CurrenciesGet v2/currencies
 		/// </summary>
 		/// <returns>List Supported Currencies</returns>
-		public async Task<SupportedCurrencyResponseV2> ListSupportedCurrenciesV2Async(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SupportedCurrencyResponseV2> V2CurrenciesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/currencies";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10616,7 +10634,7 @@ namespace MyNS
 		/// <summary>
 		/// Get Funding Accounts
 		/// Get the funding accounts.
-		/// GetFundingAccountsV2 v2/fundingAccounts
+		/// V2FundingAccountsGetByPayorIdAndNameAndCountryAndCurrencyAndTypeAndPageAndPageSizeAndSortAndSensitive v2/fundingAccounts
 		/// </summary>
 		/// <param name="name">The descriptive funding account name</param>
 		/// <param name="country">The 2 letter ISO 3166-1 country code (upper case)</param>
@@ -10626,7 +10644,7 @@ namespace MyNS
 		/// <param name="pageSize">The number of results to return in a page</param>
 		/// <param name="sort">List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name.</param>
 		/// <returns>Get Funding Accounts Response</returns>
-		public async Task<ListFundingAccountsResponseV2> GetFundingAccountsV2Async(string payorId, string name, string country, string currency, string type, int page, int pageSize, string sort, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListFundingAccountsResponseV2> V2FundingAccountsGetByPayorIdAndNameAndCountryAndCurrencyAndTypeAndPageAndPageSizeAndSortAndSensitiveAsync(string payorId, string name, string country, string currency, string type, int page, int pageSize, string sort, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/fundingAccounts?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&country=" + (country==null? "" : System.Uri.EscapeDataString(country))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sensitive="+sensitive;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10657,9 +10675,9 @@ namespace MyNS
 		/// <summary>
 		/// Create Funding Account
 		/// Create Funding Account
-		/// CreateFundingAccountV2 v2/fundingAccounts
+		/// V2FundingAccountsPost v2/fundingAccounts
 		/// </summary>
-		public async Task CreateFundingAccountV2Async(CreateFundingAccountRequestV2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2FundingAccountsPostAsync(CreateFundingAccountRequestV2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/fundingAccounts";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10691,10 +10709,10 @@ namespace MyNS
 		/// <summary>
 		/// Get Funding Account
 		/// Get Funding Account by ID
-		/// GetFundingAccountV2 v2/fundingAccounts/{fundingAccountId}
+		/// V2FundingAccounts_fundingAccountIdGetBySensitive v2/fundingAccounts/{fundingAccountId}
 		/// </summary>
 		/// <returns>Funding Account Response</returns>
-		public async Task<FundingAccountResponseV2> GetFundingAccountV2Async(string fundingAccountId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<FundingAccountResponseV2> V2FundingAccounts_fundingAccountIdGetBySensitiveAsync(string fundingAccountId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/fundingAccounts/"+ (fundingAccountId==null? "" : System.Uri.EscapeDataString(fundingAccountId))+"&sensitive="+sensitive;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10726,11 +10744,11 @@ namespace MyNS
 		/// Get Payor
 		/// Get a Single Payor by Id.
 		/// 
-		/// GetPayorByIdV2 v2/payors/{payorId}
+		/// V2Payors_payorIdGet v2/payors/{payorId}
 		/// </summary>
 		/// <param name="payorId">The Payor Id</param>
 		/// <returns>Get Payor Details</returns>
-		public async Task<PayorV2> GetPayorByIdV2Async(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayorV2> V2Payors_payorIdGetAsync(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10761,7 +10779,7 @@ namespace MyNS
 		/// <summary>
 		/// Get list of source accounts
 		/// List source accounts.
-		/// GetSourceAccountsV2 v2/sourceAccounts
+		/// V2SourceAccountsGetByPhysicalAccountNameAndPhysicalAccountIdAndPayorIdAndFundingAccountIdAndPageAndPageSizeAndSort v2/sourceAccounts
 		/// </summary>
 		/// <param name="physicalAccountName">Physical Account Name</param>
 		/// <param name="physicalAccountId">The physical account ID</param>
@@ -10774,7 +10792,7 @@ namespace MyNS
 		///The supported sort fields are - fundingRef, name, balance
 		///</param>
 		/// <returns>List Source Account response</returns>
-		public async Task<ListSourceAccountResponseV2> GetSourceAccountsV2Async(string physicalAccountName, string physicalAccountId, string payorId, string fundingAccountId, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListSourceAccountResponseV2> V2SourceAccountsGetByPhysicalAccountNameAndPhysicalAccountIdAndPayorIdAndFundingAccountIdAndPageAndPageSizeAndSortAsync(string physicalAccountName, string physicalAccountId, string payorId, string fundingAccountId, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/sourceAccounts?physicalAccountName=" + (physicalAccountName==null? "" : System.Uri.EscapeDataString(physicalAccountName))+"&physicalAccountId=" + (physicalAccountId==null? "" : System.Uri.EscapeDataString(physicalAccountId))+"&payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&fundingAccountId=" + (fundingAccountId==null? "" : System.Uri.EscapeDataString(fundingAccountId))+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10805,11 +10823,11 @@ namespace MyNS
 		/// <summary>
 		/// Get Source Account
 		/// Get details about given source account.
-		/// GetSourceAccountV2 v2/sourceAccounts/{sourceAccountId}
+		/// V2SourceAccounts_sourceAccountIdGet v2/sourceAccounts/{sourceAccountId}
 		/// </summary>
 		/// <param name="sourceAccountId">Source account id</param>
 		/// <returns>Source account response</returns>
-		public async Task<SourceAccountResponseV2> GetSourceAccountV2Async(string sourceAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SourceAccountResponseV2> V2SourceAccounts_sourceAccountIdGetAsync(string sourceAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10840,11 +10858,11 @@ namespace MyNS
 		/// <summary>
 		/// Create Funding Request
 		/// Instruct a funding request to transfer funds from the payor’s funding bank to the payor’s balance held within Velo  (202 - accepted, 400 - invalid request body, 404 - source account not found).
-		/// CreateFundingRequestV2 v2/sourceAccounts/{sourceAccountId}/fundingRequest
+		/// V2SourceAccounts_sourceAccountIdFundingRequestPost v2/sourceAccounts/{sourceAccountId}/fundingRequest
 		/// </summary>
 		/// <param name="sourceAccountId">Source account id</param>
 		/// <param name="requestBody">Body to included amount to be funded</param>
-		public async Task CreateFundingRequestV2Async(string sourceAccountId, FundingRequestV2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2SourceAccounts_sourceAccountIdFundingRequestPostAsync(string sourceAccountId, FundingRequestV2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId))+"/fundingRequest";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10876,11 +10894,11 @@ namespace MyNS
 		/// <summary>
 		/// Transfer Funds between source accounts
 		/// Transfer funds between source accounts for a Payor. The 'from' source account is identified in the URL, and is the account which will be debited. The 'to' (destination) source account is in the body, and is the account which will be credited. Both source accounts must belong to the same Payor. There must be sufficient balance in the 'from' source account, otherwise the transfer attempt will fail.
-		/// TransferFundsV2 v2/sourceAccounts/{sourceAccountId}/transfers
+		/// V2SourceAccounts_sourceAccountIdTransfersPost v2/sourceAccounts/{sourceAccountId}/transfers
 		/// </summary>
 		/// <param name="sourceAccountId">The 'from' source account id, which will be debited</param>
 		/// <param name="requestBody">Body</param>
-		public async Task TransferFundsV2Async(string sourceAccountId, TransferRequestV2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2SourceAccounts_sourceAccountIdTransfersPostAsync(string sourceAccountId, TransferRequestV2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId))+"/transfers";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -10912,10 +10930,10 @@ namespace MyNS
 		/// <summary>
 		/// List Supported Countries
 		/// List the supported countries.
-		/// ListSupportedCountriesV2 v2/supportedCountries
+		/// V2SupportedCountriesGet v2/supportedCountries
 		/// </summary>
 		/// <returns>List of Supported Countries</returns>
-		public async Task<SupportedCountriesResponseV2> ListSupportedCountriesV2Async(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SupportedCountriesResponseV2> V2SupportedCountriesGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/supportedCountries";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10946,7 +10964,7 @@ namespace MyNS
 		/// <summary>
 		/// List Users
 		/// Get a paginated response listing the Users
-		/// ListUsers v2/users
+		/// V2UsersGetByTypeAndStatusAndEntityIdAndPayeeTypeAndPageAndPageSizeAndSort v2/users
 		/// </summary>
 		/// <param name="type">The Type of the User.</param>
 		/// <param name="status">The status of the User.</param>
@@ -10959,7 +10977,7 @@ namespace MyNS
 		///The supported sort fields are - email, lastNmae.
 		///</param>
 		/// <returns>Paginated list of Users filtered by query parameters</returns>
-		public async Task<PagedUserResponse> ListUsersAsync(UserInfoUserType type, UserResponseStatus status, string entityId, PayeeType payeeType, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PagedUserResponse> V2UsersGetByTypeAndStatusAndEntityIdAndPayeeTypeAndPageAndPageSizeAndSortAsync(UserInfoUserType type, UserResponseStatus status, string entityId, PayeeType payeeType, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users?type=" + type+"&status=" + status+"&entityId=" + (entityId==null? "" : System.Uri.EscapeDataString(entityId))+"&payeeType=" + payeeType+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -10991,10 +11009,10 @@ namespace MyNS
 		/// Invite a User
 		/// Create a User and invite them to the system
 		/// 
-		/// InviteUser v2/users/invite
+		/// V2UsersInvitePost v2/users/invite
 		/// </summary>
 		/// <param name="requestBody">Details of User to invite</param>
-		public async Task InviteUserAsync(InviteUserRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2UsersInvitePostAsync(InviteUserRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/invite";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11030,10 +11048,10 @@ namespace MyNS
 		/// <p>The backoffice user initiates the request to send the OTP to the user's sms </p>
 		/// <p>The user then reads back the OTP which the backoffice user enters in the verifactionCode property for requests that require it</p>
 		/// 
-		/// RegisterSms v2/users/registration/sms
+		/// V2UsersRegistrationSmsPost v2/users/registration/sms
 		/// </summary>
 		/// <param name="requestBody">a SMS Number to send an OTP to</param>
-		public async Task RegisterSmsAsync(RegisterSmsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2UsersRegistrationSmsPostAsync(RegisterSmsRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/registration/sms";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11066,10 +11084,10 @@ namespace MyNS
 		/// Get Self
 		/// Get the user's details
 		/// 
-		/// GetSelf v2/users/self
+		/// V2UsersSelfGet v2/users/self
 		/// </summary>
 		/// <returns>Get User Details</returns>
-		public async Task<UserResponse> GetSelfAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UserResponse> V2UsersSelfGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/self";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -11102,10 +11120,10 @@ namespace MyNS
 		/// <p>Unregister the MFA device for the user </p>
 		/// <p>If the user does not require further verification then a register new MFA device token will be sent to them via their email address</p>
 		/// 
-		/// UnregisterMFAForSelf v2/users/self/mfa/unregister
+		/// V2UsersSelfMfaUnregisterPost v2/users/self/mfa/unregister
 		/// </summary>
 		/// <param name="requestBody">The MFA Type to unregister</param>
-		public async Task UnregisterMFAForSelfAsync(SelfMFATypeUnregisterRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2UsersSelfMfaUnregisterPostAsync(SelfMFATypeUnregisterRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/self/mfa/unregister";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11138,10 +11156,10 @@ namespace MyNS
 		/// Update Password for self
 		/// Update password for self
 		/// 
-		/// UpdatePasswordSelf v2/users/self/password
+		/// V2UsersSelfPasswordPost v2/users/self/password
 		/// </summary>
 		/// <param name="requestBody">The password</param>
-		public async Task UpdatePasswordSelfAsync(SelfUpdatePasswordRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2UsersSelfPasswordPostAsync(SelfUpdatePasswordRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/self/password";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11174,11 +11192,11 @@ namespace MyNS
 		/// Validate the proposed password
 		/// validate the password and return a score
 		/// 
-		/// ValidatePasswordSelf v2/users/self/password/validate
+		/// V2UsersSelfPasswordValidatePost v2/users/self/password/validate
 		/// </summary>
 		/// <param name="requestBody">The password</param>
 		/// <returns>the password was checked and a score returned</returns>
-		public async Task<ValidatePasswordResponse> ValidatePasswordSelfAsync(PasswordRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ValidatePasswordResponse> V2UsersSelfPasswordValidatePostAsync(PasswordRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/self/password/validate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11218,10 +11236,10 @@ namespace MyNS
 		/// <p>Update the profile details for the given user</p>
 		/// <p>Only Payee user types are supported</p>
 		/// 
-		/// UserDetailsUpdateForSelf v2/users/self/userDetailsUpdate
+		/// V2UsersSelfUserDetailsUpdatePost v2/users/self/userDetailsUpdate
 		/// </summary>
 		/// <param name="requestBody">The details of the user to update</param>
-		public async Task UserDetailsUpdateForSelfAsync(PayeeUserSelfUpdateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2UsersSelfUserDetailsUpdatePostAsync(PayeeUserSelfUpdateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/self/userDetailsUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11254,10 +11272,10 @@ namespace MyNS
 		/// Delete a User
 		/// Delete User by Id.
 		/// 
-		/// DeleteUserByIdV2 v2/users/{userId}
+		/// V2Users_userIdDelete v2/users/{userId}
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
-		public async Task DeleteUserByIdV2Async(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdDeleteAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -11283,11 +11301,11 @@ namespace MyNS
 		/// Get User
 		/// Get a Single User by Id.
 		/// 
-		/// GetUserByIdV2 v2/users/{userId}
+		/// V2Users_userIdGet v2/users/{userId}
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
 		/// <returns>Get User Details</returns>
-		public async Task<UserResponse> GetUserByIdV2Async(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UserResponse> V2Users_userIdGetAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -11322,10 +11340,10 @@ namespace MyNS
 		/// <p>A user cannot disable themself </p>
 		/// <p>When a user is disabled any active access tokens will be revoked and the user will not be able to log in</p>
 		/// 
-		/// DisableUserV2 v2/users/{userId}/disable
+		/// V2Users_userIdDisablePost v2/users/{userId}/disable
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
-		public async Task DisableUserV2Async(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdDisablePostAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/disable";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11350,10 +11368,10 @@ namespace MyNS
 		/// <p>If the user is a payor user and the payor is disabled this operation is not allowed</p>
 		/// <p>If enabling a payor user would breach the limit for master admin payor users the request will be rejected </p>
 		/// 
-		/// EnableUserV2 v2/users/{userId}/enable
+		/// V2Users_userIdEnablePost v2/users/{userId}/enable
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
-		public async Task EnableUserV2Async(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdEnablePostAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/enable";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11375,11 +11393,11 @@ namespace MyNS
 		/// <p>Unregister the MFA device for the user </p>
 		/// <p>If the user does not require further verification then a register new MFA device token will be sent to them via their email address</p>
 		/// 
-		/// UnregisterMFA v2/users/{userId}/mfa/unregister
+		/// V2Users_userIdMfaUnregisterPost v2/users/{userId}/mfa/unregister
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
 		/// <param name="requestBody">The MFA Type to unregister</param>
-		public async Task UnregisterMFAAsync(string userId, UnregisterMFARequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdMfaUnregisterPostAsync(string userId, UnregisterMFARequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/mfa/unregister";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11412,11 +11430,11 @@ namespace MyNS
 		/// Update User Role
 		/// <p>Update the user's Role</p>
 		/// 
-		/// RoleUpdate v2/users/{userId}/roleUpdate
+		/// V2Users_userIdRoleUpdatePost v2/users/{userId}/roleUpdate
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
 		/// <param name="requestBody">The Role to change to</param>
-		public async Task RoleUpdateAsync(string userId, RoleUpdateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdRoleUpdatePostAsync(string userId, RoleUpdateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/roleUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11451,11 +11469,11 @@ namespace MyNS
 		/// <p>The token to resend must already exist for the user </p>
 		/// <p>It will be revoked and a new one issued</p>
 		/// 
-		/// ResendToken v2/users/{userId}/tokens
+		/// V2Users_userIdTokensPost v2/users/{userId}/tokens
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
 		/// <param name="requestBody">The type of token to resend</param>
-		public async Task ResendTokenAsync(string userId, ResendTokenRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdTokensPostAsync(string userId, ResendTokenRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/tokens";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11488,10 +11506,10 @@ namespace MyNS
 		/// Unlock a User
 		/// If a user is locked this endpoint will unlock them
 		/// 
-		/// UnlockUserV2 v2/users/{userId}/unlock
+		/// V2Users_userIdUnlockPost v2/users/{userId}/unlock
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
-		public async Task UnlockUserV2Async(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdUnlockPostAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/unlock";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11513,11 +11531,11 @@ namespace MyNS
 		/// <p>Update the profile details for the given user</p>
 		/// <p>When updating Payor users with the role of payor.master_admin a verificationCode is required</p>
 		/// 
-		/// UserDetailsUpdate v2/users/{userId}/userDetailsUpdate
+		/// V2Users_userIdUserDetailsUpdatePost v2/users/{userId}/userDetailsUpdate
 		/// </summary>
 		/// <param name="userId">The UUID of the User.</param>
 		/// <param name="requestBody">The details of the user to update</param>
-		public async Task UserDetailsUpdateAsync(string userId, UserDetailsUpdateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V2Users_userIdUserDetailsUpdatePostAsync(string userId, UserDetailsUpdateRequest requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/users/"+ (userId==null? "" : System.Uri.EscapeDataString(userId))+"/userDetailsUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11551,7 +11569,7 @@ namespace MyNS
 		/// <p>Use v4 instead</p>
 		/// Get a paginated response listing the payees for a payor.
 		/// 
-		/// ListPayeesV3 v3/payees
+		/// V3PayeesGetByPayorIdAndWatchlistStatusAndDisabledAndOnboardedStatusAndEmailAndDisplayNameAndRemoteIdAndPayeeTypeAndPayeeCountryAndPageAndPageSizeAndSort v3/payees
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="watchlistStatus">The watchlistStatus of the payees.</param>
@@ -11567,7 +11585,7 @@ namespace MyNS
 		/// <param name="sort">List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.
 		///</param>
 		/// <returns>Details of Payee</returns>
-		public async Task<PagedPayeeResponseV3> ListPayeesV3Async(string payorId, string watchlistStatus, bool disabled, string onboardedStatus, string email, string displayName, string remoteId, string payeeType, string payeeCountry, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PagedPayeeResponseV3> V3PayeesGetByPayorIdAndWatchlistStatusAndDisabledAndOnboardedStatusAndEmailAndDisplayNameAndRemoteIdAndPayeeTypeAndPayeeCountryAndPageAndPageSizeAndSortAsync(string payorId, string watchlistStatus, bool disabled, string onboardedStatus, string email, string displayName, string remoteId, string payeeType, string payeeCountry, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&watchlistStatus=" + (watchlistStatus==null? "" : System.Uri.EscapeDataString(watchlistStatus))+"&disabled="+disabled+"&onboardedStatus=" + (onboardedStatus==null? "" : System.Uri.EscapeDataString(onboardedStatus))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&displayName=" + (displayName==null? "" : System.Uri.EscapeDataString(displayName))+"&remoteId=" + (remoteId==null? "" : System.Uri.EscapeDataString(remoteId))+"&payeeType=" + (payeeType==null? "" : System.Uri.EscapeDataString(payeeType))+"&payeeCountry=" + (payeeCountry==null? "" : System.Uri.EscapeDataString(payeeCountry))+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -11605,10 +11623,10 @@ namespace MyNS
 		/// that provided for another payee within the same batch). The validation at this stage is intra-batch only.
 		/// Validation against payees who have already been invited occurs subsequently during processing of the batch.
 		/// 
-		/// CreatePayeeV3 v3/payees
+		/// V3PayeesPost v3/payees
 		/// </summary>
 		/// <param name="requestBody">Post payees to create.</param>
-		public async Task CreatePayeeV3Async(CreatePayeesRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3PayeesPostAsync(CreatePayeesRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11642,11 +11660,11 @@ namespace MyNS
 		/// <p>Use v4 instead</p>
 		/// Fetch the status of a specific batch of payees. The batch is fully processed when status is ACCEPTED and pendingCount is 0 ( 200 - OK, 404 - batch not found ).
 		/// 
-		/// QueryBatchStatusV3 v3/payees/batch/{batchId}
+		/// V3PayeesBatch_batchIdGet v3/payees/batch/{batchId}
 		/// </summary>
 		/// <param name="batchId">Batch Id</param>
 		/// <returns>Get Batch Status</returns>
-		public async Task<QueryBatchResponseV3> QueryBatchStatusV3Async(string batchId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<QueryBatchResponseV3> V3PayeesBatch_batchIdGetAsync(string batchId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/batch/"+ (batchId==null? "" : System.Uri.EscapeDataString(batchId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -11679,14 +11697,14 @@ namespace MyNS
 		/// <p>Use v4 instead</p>
 		/// <p>Get a paginated response listing payee changes.</p>
 		/// 
-		/// ListPayeeChangesV3 v3/payees/deltas
+		/// V3PayeesDeltasGetByPayorIdAndUpdatedSinceAndPageAndPageSize v3/payees/deltas
 		/// </summary>
 		/// <param name="payorId">The Payor ID to find associated Payees</param>
 		/// <param name="updatedSince">The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm</param>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">Page size. Default is 100. Max allowable is 1000.</param>
 		/// <returns>Details of Payee Changes</returns>
-		public async Task<PayeeDeltaResponseV3> ListPayeeChangesV3Async(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayeeDeltaResponseV3> V3PayeesDeltasGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/deltas?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&updatedSince=" + updatedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&page="+page+"&pageSize="+pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -11719,7 +11737,7 @@ namespace MyNS
 		/// <p>Use v4 instead</p>
 		/// <p>Returns a filtered, paginated list of payees associated with a payor, along with invitation status and grace period end date.</p>
 		/// 
-		/// GetPayeesInvitationStatusV3 v3/payees/payors/{payorId}/invitationStatus
+		/// V3PayeesPayors_payorIdInvitationStatusGetByPayeeIdAndInvitationStatusAndPageAndPageSize v3/payees/payors/{payorId}/invitationStatus
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="payeeId">The UUID of the payee.</param>
@@ -11727,7 +11745,7 @@ namespace MyNS
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">Page size. Default is 25. Max allowable is 100.</param>
 		/// <returns>Get Payees with Invitaion status - filters of payeeId and invitationStatus</returns>
-		public async Task<PagedPayeeInvitationStatusResponseV3> GetPayeesInvitationStatusV3Async(string payorId, string payeeId, string invitationStatus, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PagedPayeeInvitationStatusResponseV3> V3PayeesPayors_payorIdInvitationStatusGetByPayeeIdAndInvitationStatusAndPageAndPageSizeAsync(string payorId, string payeeId, string invitationStatus, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"/invitationStatus&payeeId=" + (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"&invitationStatus=" + (invitationStatus==null? "" : System.Uri.EscapeDataString(invitationStatus))+"&page="+page+"&pageSize="+pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -11764,10 +11782,10 @@ namespace MyNS
 		/// <p>* If Payee is in grace period</p>
 		/// <p>* If Payee has existing payments</p>
 		/// 
-		/// DeletePayeeByIdV3 v3/payees/{payeeId}
+		/// V3Payees_payeeIdDelete v3/payees/{payeeId}
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
-		public async Task DeletePayeeByIdV3Async(string payeeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payees_payeeIdDeleteAsync(string payeeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -11794,14 +11812,14 @@ namespace MyNS
 		/// <p>Use v4 instead</p>
 		/// <p>Get Payee by Id</p>
 		/// 
-		/// GetPayeeByIdV3 v3/payees/{payeeId}
+		/// V3Payees_payeeIdGetBySensitive v3/payees/{payeeId}
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="sensitive">Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked.
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>Success response, request completed okay</returns>
-		public async Task<PayeeDetailResponseV3> GetPayeeByIdV3Async(string payeeId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayeeDetailResponseV3> V3Payees_payeeIdGetBySensitiveAsync(string payeeId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"&sensitive="+sensitive;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -11835,12 +11853,12 @@ namespace MyNS
 		/// <p>Resend an invite to the Payee The payee must have already been invited by the payor and not yet accepted or declined</p>
 		/// <p>Any previous invites to the payee by this Payor will be invalidated</p>
 		/// 
-		/// ResendPayeeInviteV3 v3/payees/{payeeId}/invite
+		/// V3Payees_payeeIdInvitePost v3/payees/{payeeId}/invite
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="requestBody">Provide Payor Id in body of request</param>
 		/// <returns>the request was accepted</returns>
-		public async Task ResendPayeeInviteV3Async(string payeeId, InvitePayeeRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payees_payeeIdInvitePostAsync(string payeeId, InvitePayeeRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"/invite";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11874,11 +11892,11 @@ namespace MyNS
 		/// <p>Use v4 instead</p>
 		/// <p>Update payee details for the given Payee Id.<p>
 		/// 
-		/// PayeeDetailsUpdateV3 v3/payees/{payeeId}/payeeDetailsUpdate
+		/// V3Payees_payeeIdPayeeDetailsUpdatePost v3/payees/{payeeId}/payeeDetailsUpdate
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="requestBody">Request to update payee details</param>
-		public async Task PayeeDetailsUpdateV3Async(string payeeId, UpdatePayeeDetailsRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payees_payeeIdPayeeDetailsUpdatePostAsync(string payeeId, UpdatePayeeDetailsRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"/payeeDetailsUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11912,11 +11930,11 @@ namespace MyNS
 		/// <p>Use v4 instead</p>
 		/// <p>Update the remote Id for the given Payee Id.</p>
 		/// 
-		/// PayeesPostByPayeeId v3/payees/{payeeId}/remoteIdUpdate
+		/// V3Payees_payeeIdRemoteIdUpdatePost v3/payees/{payeeId}/remoteIdUpdate
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="requestBody">Request to update payee remote id v3</param>
-		public async Task PayeesPostByPayeeIdAsync(string payeeId, UpdateRemoteIdRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payees_payeeIdRemoteIdUpdatePostAsync(string payeeId, UpdateRemoteIdRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"/remoteIdUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -11948,7 +11966,7 @@ namespace MyNS
 		/// <summary>
 		/// V3 Get List of Payments
 		/// Deprecated (use /v4/paymentaudit/payments instead)
-		/// ListPaymentsAuditV3 v3/paymentaudit/payments
+		/// V3PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndStatusAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndPageAndPageSizeAndSortAndSensitive v3/paymentaudit/payments
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="payorId">The account owner Payor Id. Required for external users.</param>
@@ -11975,12 +11993,12 @@ namespace MyNS
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>Paginated list of payments</returns>
-		public async Task<ListPaymentsResponseV3> ListPaymentsAuditV3Async(
+		public async Task<ListPaymentsResponseV3> V3PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndStatusAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndPageAndPageSizeAndSortAndSensitiveAsync(
 					string payeeId, 
 					string payorId, 
 					string payorName, 
 					string remoteId, 
-					ListPaymentsAuditV3Status status, 
+					V3PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndStatusAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndPageAndPageSizeAndSortAndSensitiveStatus status, 
 					string sourceAccountName, 
 					int sourceAmountFrom, 
 					int sourceAmountTo, 
@@ -12026,14 +12044,14 @@ namespace MyNS
 		/// <summary>
 		/// V3 Get Payment
 		/// Deprecated (use /v4/paymentaudit/payments/<paymentId> instead)
-		/// GetPaymentDetailsV3 v3/paymentaudit/payments/{paymentId}
+		/// V3PaymentauditPayments_paymentIdGetBySensitive v3/paymentaudit/payments/{paymentId}
 		/// </summary>
 		/// <param name="paymentId">Payment Id</param>
 		/// <param name="sensitive">Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked.
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>200 response, request completed okay</returns>
-		public async Task<PaymentResponseV3> GetPaymentDetailsV3Async(string paymentId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PaymentResponseV3> V3PaymentauditPayments_paymentIdGetBySensitiveAsync(string paymentId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/paymentaudit/payments/"+ (paymentId==null? "" : System.Uri.EscapeDataString(paymentId))+"&sensitive="+sensitive;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12064,7 +12082,7 @@ namespace MyNS
 		/// <summary>
 		/// V3 Get Payouts for Payor
 		/// Deprecated (use /v4/paymentaudit/payouts instead)
-		/// GetPayoutsForPayorV3 v3/paymentaudit/payouts
+		/// V3PaymentauditPayoutsGetByPayorIdAndPayoutMemoAndStatusAndSubmittedDateFromAndSubmittedDateToAndPageAndPageSizeAndSort v3/paymentaudit/payouts
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="payoutMemo">Payout Memo filter - case insensitive sub-string match</param>
@@ -12078,7 +12096,7 @@ namespace MyNS
 		///The supported sort fields are: submittedDateTime, instructedDateTime, status.
 		///</param>
 		/// <returns>Payor data found</returns>
-		public async Task<GetPayoutsResponseV3> GetPayoutsForPayorV3Async(string payorId, string payoutMemo, GetPayoutsForPayorV3Status status, System.DateOnly submittedDateFrom, System.DateOnly submittedDateTo, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetPayoutsResponseV3> V3PaymentauditPayoutsGetByPayorIdAndPayoutMemoAndStatusAndSubmittedDateFromAndSubmittedDateToAndPageAndPageSizeAndSortAsync(string payorId, string payoutMemo, V3PaymentauditPayoutsGetByPayorIdAndPayoutMemoAndStatusAndSubmittedDateFromAndSubmittedDateToAndPageAndPageSizeAndSortStatus status, System.DateOnly submittedDateFrom, System.DateOnly submittedDateTo, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/paymentaudit/payouts?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&payoutMemo=" + (payoutMemo==null? "" : System.Uri.EscapeDataString(payoutMemo))+"&status=" + status+"&submittedDateFrom="+submittedDateFrom+"&submittedDateTo="+submittedDateTo+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12109,7 +12127,7 @@ namespace MyNS
 		/// <summary>
 		/// V3 Get Payments for Payout
 		/// Deprecated (use /v4/paymentaudit/payouts/<payoutId> instead)
-		/// GetPaymentsForPayout_PA_V3 v3/paymentaudit/payouts/{payoutId}
+		/// V3PaymentauditPayouts_payoutIdGetByRemoteIdAndStatusAndSourceAmountFromAndSourceAmountToAndPaymentAmountFromAndPaymentAmountToAndSubmittedDateFromAndSubmittedDateToAndPageAndPageSizeAndSortAndSensitive v3/paymentaudit/payouts/{payoutId}
 		/// </summary>
 		/// <param name="payoutId">The id (UUID) of the payout.</param>
 		/// <param name="remoteId">The remote id of the payees.</param>
@@ -12130,7 +12148,7 @@ namespace MyNS
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>200 response, data found okay</returns>
-		public async Task<GetPaymentsForPayoutResponseV3> GetPaymentsForPayout_PA_V3Async(string payoutId, string remoteId, ListPaymentsAuditV3Status status, int sourceAmountFrom, int sourceAmountTo, int paymentAmountFrom, int paymentAmountTo, System.DateOnly submittedDateFrom, System.DateOnly submittedDateTo, int page, int pageSize, string sort, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetPaymentsForPayoutResponseV3> V3PaymentauditPayouts_payoutIdGetByRemoteIdAndStatusAndSourceAmountFromAndSourceAmountToAndPaymentAmountFromAndPaymentAmountToAndSubmittedDateFromAndSubmittedDateToAndPageAndPageSizeAndSortAndSensitiveAsync(string payoutId, string remoteId, V3PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndStatusAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndPageAndPageSizeAndSortAndSensitiveStatus status, int sourceAmountFrom, int sourceAmountTo, int paymentAmountFrom, int paymentAmountTo, System.DateOnly submittedDateFrom, System.DateOnly submittedDateTo, int page, int pageSize, string sort, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/paymentaudit/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId))+"&remoteId=" + (remoteId==null? "" : System.Uri.EscapeDataString(remoteId))+"&status=" + status+"&sourceAmountFrom="+sourceAmountFrom+"&sourceAmountTo="+sourceAmountTo+"&paymentAmountFrom="+paymentAmountFrom+"&paymentAmountTo="+paymentAmountTo+"&submittedDateFrom="+submittedDateFrom+"&submittedDateTo="+submittedDateTo+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort))+"&sensitive="+sensitive;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12161,7 +12179,7 @@ namespace MyNS
 		/// <summary>
 		/// V3 Export Transactions
 		/// Deprecated (use /v4/paymentaudit/transactions instead)
-		/// ExportTransactionsCSVV3 v3/paymentaudit/transactions
+		/// V3PaymentauditTransactionsGetByPayorIdAndStartDateAndEndDate v3/paymentaudit/transactions
 		/// </summary>
 		/// <param name="payorId">The Payor ID for whom you wish to run the report.
 		///For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.
@@ -12169,7 +12187,7 @@ namespace MyNS
 		/// <param name="startDate">Start date, inclusive. Format is YYYY-MM-DD</param>
 		/// <param name="endDate">End date, inclusive. Format is YYYY-MM-DD</param>
 		/// <returns>Export Transactions response</returns>
-		public async Task ExportTransactionsCSVV3Async(string payorId, System.DateOnly startDate, System.DateOnly endDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3PaymentauditTransactionsGetByPayorIdAndStartDateAndEndDateAsync(string payorId, System.DateOnly startDate, System.DateOnly endDate, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/paymentaudit/transactions?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&startDate="+startDate+"&endDate="+endDate;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12198,10 +12216,10 @@ namespace MyNS
 		/// <p>The results can be obtained by issuing a HTTP GET to the URL returned in the location header</p>
 		/// <p>**NOTE:** amount values in payments must be in 'minor units' format. E.g. cents for USD, pence for GBP etc with no decimal places</p>
 		/// 
-		/// SubmitPayoutV3 v3/payouts
+		/// V3PayoutsPost v3/payouts
 		/// </summary>
 		/// <param name="requestBody">Post amount to transfer using stored funding account details.</param>
-		public async Task SubmitPayoutV3Async(CreatePayoutRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3PayoutsPostAsync(CreatePayoutRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12233,10 +12251,10 @@ namespace MyNS
 		/// <summary>
 		/// Withdraw Payout
 		/// Withdraw Payout will remove the payout details from the rails but the payout will still be accessible in payout service in WITHDRAWN status.
-		/// WithdrawPayoutV3 v3/payouts/{payoutId}
+		/// V3Payouts_payoutIdDelete v3/payouts/{payoutId}
 		/// </summary>
 		/// <param name="payoutId">Id of the payout</param>
-		public async Task WithdrawPayoutV3Async(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payouts_payoutIdDeleteAsync(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -12261,11 +12279,11 @@ namespace MyNS
 		/// <summary>
 		/// Get Payout Summary
 		/// Get payout summary - returns the current state of the payout.
-		/// GetPayoutSummaryV3 v3/payouts/{payoutId}
+		/// V3Payouts_payoutIdGet v3/payouts/{payoutId}
 		/// </summary>
 		/// <param name="payoutId">Id of the payout</param>
 		/// <returns>Details of Payout</returns>
-		public async Task<PayoutSummaryResponseV3> GetPayoutSummaryV3Async(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayoutSummaryResponseV3> V3Payouts_payoutIdGetAsync(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12296,11 +12314,11 @@ namespace MyNS
 		/// <summary>
 		/// Instruct Payout
 		/// Instruct a payout to be made for the specified payoutId.
-		/// InstructPayoutV3 v3/payouts/{payoutId}
+		/// V3Payouts_payoutIdPost v3/payouts/{payoutId}
 		/// </summary>
 		/// <param name="payoutId">Id of the payout</param>
 		/// <param name="requestBody">Additional instruct payout parameters</param>
-		public async Task InstructPayoutV3Async(string payoutId, InstructPayoutRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payouts_payoutIdPostAsync(string payoutId, InstructPayoutRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12332,7 +12350,7 @@ namespace MyNS
 		/// <summary>
 		/// Retrieve payments for a payout
 		/// Retrieve payments for a payout
-		/// GetPaymentsForPayoutV3 v3/payouts/{payoutId}/payments
+		/// V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPage v3/payouts/{payoutId}/payments
 		/// </summary>
 		/// <param name="payoutId">Id of the payout</param>
 		/// <param name="status">Payment Status
@@ -12353,7 +12371,7 @@ namespace MyNS
 		/// <param name="pageSize">The number of results to return in a page</param>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <returns>Payments for payout</returns>
-		public async Task<PagedPaymentsResponseV3> GetPaymentsForPayoutV3Async(string payoutId, GetPaymentsForPayoutV3Status status, string remoteId, string payorPaymentId, string sourceAccountName, GetPaymentsForPayoutV3TransmissionType transmissionType, string paymentMemo, int pageSize, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PagedPaymentsResponseV3> V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageAsync(string payoutId, V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageStatus status, string remoteId, string payorPaymentId, string sourceAccountName, V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageTransmissionType transmissionType, string paymentMemo, int pageSize, int page, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId))+"/payments&status=" + status+"&remoteId=" + (remoteId==null? "" : System.Uri.EscapeDataString(remoteId))+"&payorPaymentId=" + (payorPaymentId==null? "" : System.Uri.EscapeDataString(payorPaymentId))+"&sourceAccountName=" + (sourceAccountName==null? "" : System.Uri.EscapeDataString(sourceAccountName))+"&transmissionType=" + transmissionType+"&paymentMemo=" + (paymentMemo==null? "" : System.Uri.EscapeDataString(paymentMemo))+"&pageSize="+pageSize+"&page="+page;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12384,11 +12402,11 @@ namespace MyNS
 		/// <summary>
 		/// Create a quote for the payout
 		/// Create quote for a payout
-		/// CreateQuoteForPayoutV3 v3/payouts/{payoutId}/quote
+		/// V3Payouts_payoutIdQuotePost v3/payouts/{payoutId}/quote
 		/// </summary>
 		/// <param name="payoutId">Id of the payout</param>
 		/// <returns>Quote for payout</returns>
-		public async Task<QuoteResponseV3> CreateQuoteForPayoutV3Async(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<QuoteResponseV3> V3Payouts_payoutIdQuotePostAsync(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId))+"/quote";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12414,10 +12432,10 @@ namespace MyNS
 		/// <summary>
 		/// Deschedule a payout
 		/// Remove the schedule for a scheduled payout
-		/// DeschedulePayout v3/payouts/{payoutId}/schedule
+		/// V3Payouts_payoutIdScheduleDelete v3/payouts/{payoutId}/schedule
 		/// </summary>
 		/// <param name="payoutId">Id of the payout</param>
-		public async Task DeschedulePayoutAsync(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payouts_payoutIdScheduleDeleteAsync(string payoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId))+"/schedule";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -12444,11 +12462,11 @@ namespace MyNS
 		/// <p>Schedule a payout for auto-instruction in the future
 		/// or update existing payout schedule if the payout has been scheduled before.</p>
 		/// 
-		/// ScheduleForPayout v3/payouts/{payoutId}/schedule
+		/// V3Payouts_payoutIdSchedulePost v3/payouts/{payoutId}/schedule
 		/// </summary>
 		/// <param name="payoutId">Id of the payout</param>
 		/// <param name="requestBody">schedule payout parameters</param>
-		public async Task ScheduleForPayoutAsync(string payoutId, SchedulePayoutRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3Payouts_payoutIdSchedulePostAsync(string payoutId, SchedulePayoutRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/payouts/"+ (payoutId==null? "" : System.Uri.EscapeDataString(payoutId))+"/schedule";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12480,7 +12498,7 @@ namespace MyNS
 		/// <summary>
 		/// Get list of source accounts
 		/// List source accounts.
-		/// GetSourceAccountsV3 v3/sourceAccounts
+		/// V3SourceAccountsGetByPhysicalAccountNameAndPhysicalAccountIdAndPayorIdAndFundingAccountIdAndIncludeUserDeletedAndTypeAndPageAndPageSizeAndSort v3/sourceAccounts
 		/// </summary>
 		/// <param name="physicalAccountName">Physical Account Name</param>
 		/// <param name="physicalAccountId">The physical account ID</param>
@@ -12495,7 +12513,7 @@ namespace MyNS
 		///The supported sort fields are - fundingRef, name, balance
 		///</param>
 		/// <returns>List Source Account response</returns>
-		public async Task<ListSourceAccountResponseV3> GetSourceAccountsV3Async(string physicalAccountName, string physicalAccountId, string payorId, string fundingAccountId, string includeUserDeleted, string type, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListSourceAccountResponseV3> V3SourceAccountsGetByPhysicalAccountNameAndPhysicalAccountIdAndPayorIdAndFundingAccountIdAndIncludeUserDeletedAndTypeAndPageAndPageSizeAndSortAsync(string physicalAccountName, string physicalAccountId, string payorId, string fundingAccountId, string includeUserDeleted, string type, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/sourceAccounts?physicalAccountName=" + (physicalAccountName==null? "" : System.Uri.EscapeDataString(physicalAccountName))+"&physicalAccountId=" + (physicalAccountId==null? "" : System.Uri.EscapeDataString(physicalAccountId))+"&payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&fundingAccountId=" + (fundingAccountId==null? "" : System.Uri.EscapeDataString(fundingAccountId))+"&includeUserDeleted=" + (includeUserDeleted==null? "" : System.Uri.EscapeDataString(includeUserDeleted))+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type))+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12526,10 +12544,10 @@ namespace MyNS
 		/// <summary>
 		/// Delete a source account by ID
 		/// Mark a source account as deleted by ID
-		/// DeleteSourceAccountV3 v3/sourceAccounts/{sourceAccountId}
+		/// V3SourceAccounts_sourceAccountIdDelete v3/sourceAccounts/{sourceAccountId}
 		/// </summary>
 		/// <param name="sourceAccountId">Source account id</param>
-		public async Task DeleteSourceAccountV3Async(string sourceAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3SourceAccounts_sourceAccountIdDeleteAsync(string sourceAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -12554,11 +12572,11 @@ namespace MyNS
 		/// <summary>
 		/// Get details about given source account.
 		/// Get details about given source account.
-		/// GetSourceAccountV3 v3/sourceAccounts/{sourceAccountId}
+		/// V3SourceAccounts_sourceAccountIdGet v3/sourceAccounts/{sourceAccountId}
 		/// </summary>
 		/// <param name="sourceAccountId">Source account id</param>
 		/// <returns>Source account response</returns>
-		public async Task<SourceAccountResponseV3> GetSourceAccountV3Async(string sourceAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SourceAccountResponseV3> V3SourceAccounts_sourceAccountIdGetAsync(string sourceAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12590,11 +12608,11 @@ namespace MyNS
 		/// Create Funding Request
 		/// <p>Instruct a funding request to transfer funds from the payor’s funding bank to the payor’s balance held within Velo</p>
 		/// 
-		/// CreateFundingRequestV3 v3/sourceAccounts/{sourceAccountId}/fundingRequest
+		/// V3SourceAccounts_sourceAccountIdFundingRequestPost v3/sourceAccounts/{sourceAccountId}/fundingRequest
 		/// </summary>
 		/// <param name="sourceAccountId">Source account id</param>
 		/// <param name="requestBody">Body to included amount to be funded</param>
-		public async Task CreateFundingRequestV3Async(string sourceAccountId, FundingRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3SourceAccounts_sourceAccountIdFundingRequestPostAsync(string sourceAccountId, FundingRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId))+"/fundingRequest";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12628,11 +12646,11 @@ namespace MyNS
 		/// <p>Set notifications for a given source account</p>
 		/// <p>If the balance falls below the amount set in the request an email notification will be sent to the email address registered in the payor profile</p>
 		/// 
-		/// SetNotificationsRequestV3 v3/sourceAccounts/{sourceAccountId}/notifications
+		/// V3SourceAccounts_sourceAccountIdNotificationsPost v3/sourceAccounts/{sourceAccountId}/notifications
 		/// </summary>
 		/// <param name="sourceAccountId">Source account id</param>
 		/// <param name="requestBody">Body to included minimum balance to set</param>
-		public async Task SetNotificationsRequestV3Async(string sourceAccountId, SetNotificationsRequest_2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3SourceAccounts_sourceAccountIdNotificationsPostAsync(string sourceAccountId, SetNotificationsRequest_2 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId))+"/notifications";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12664,11 +12682,11 @@ namespace MyNS
 		/// <summary>
 		/// Transfer Funds between source accounts
 		/// Transfer funds between source accounts for a Payor. The 'from' source account is identified in the URL, and is the account which will be debited. The 'to' (destination) source account is in the body, and is the account which will be credited. Both source accounts must belong to the same Payor. There must be sufficient balance in the 'from' source account, otherwise the transfer attempt will fail.
-		/// TransferFundsV3 v3/sourceAccounts/{sourceAccountId}/transfers
+		/// V3SourceAccounts_sourceAccountIdTransfersPost v3/sourceAccounts/{sourceAccountId}/transfers
 		/// </summary>
 		/// <param name="sourceAccountId">The 'from' source account id, which will be debited</param>
 		/// <param name="requestBody">Body</param>
-		public async Task TransferFundsV3Async(string sourceAccountId, TransferRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V3SourceAccounts_sourceAccountIdTransfersPostAsync(string sourceAccountId, TransferRequestV3 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v3/sourceAccounts/"+ (sourceAccountId==null? "" : System.Uri.EscapeDataString(sourceAccountId))+"/transfers";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12700,7 +12718,7 @@ namespace MyNS
 		/// <summary>
 		/// List Payees
 		/// Get a paginated response listing the payees for a payor.
-		/// ListPayeesV4 v4/payees
+		/// V4PayeesGetByPayorIdAndWatchlistStatusAndDisabledAndOnboardedStatusAndEmailAndDisplayNameAndRemoteIdAndPayeeTypeAndPayeeCountryAndOfacStatusAndPageAndPageSizeAndSort v4/payees
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="watchlistStatus">The watchlistStatus of the payees.</param>
@@ -12717,7 +12735,7 @@ namespace MyNS
 		/// <param name="sort">List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.
 		///</param>
 		/// <returns>Details of Payee</returns>
-		public async Task<PagedPayeeResponseV4> ListPayeesV4Async(string payorId, string watchlistStatus, bool disabled, string onboardedStatus, string email, string displayName, string remoteId, string payeeType, string payeeCountry, string ofacStatus, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PagedPayeeResponseV4> V4PayeesGetByPayorIdAndWatchlistStatusAndDisabledAndOnboardedStatusAndEmailAndDisplayNameAndRemoteIdAndPayeeTypeAndPayeeCountryAndOfacStatusAndPageAndPageSizeAndSortAsync(string payorId, string watchlistStatus, bool disabled, string onboardedStatus, string email, string displayName, string remoteId, string payeeType, string payeeCountry, string ofacStatus, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&watchlistStatus=" + (watchlistStatus==null? "" : System.Uri.EscapeDataString(watchlistStatus))+"&disabled="+disabled+"&onboardedStatus=" + (onboardedStatus==null? "" : System.Uri.EscapeDataString(onboardedStatus))+"&email=" + (email==null? "" : System.Uri.EscapeDataString(email))+"&displayName=" + (displayName==null? "" : System.Uri.EscapeDataString(displayName))+"&remoteId=" + (remoteId==null? "" : System.Uri.EscapeDataString(remoteId))+"&payeeType=" + (payeeType==null? "" : System.Uri.EscapeDataString(payeeType))+"&payeeCountry=" + (payeeCountry==null? "" : System.Uri.EscapeDataString(payeeCountry))+"&ofacStatus=" + (ofacStatus==null? "" : System.Uri.EscapeDataString(ofacStatus))+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12758,10 +12776,10 @@ namespace MyNS
 		/// <p>The validation at this stage is intra-batch only.</p>
 		/// <p>Validation against payees who have already been invited occurs subsequently during processing of the batch.</p>
 		/// 
-		/// V4CreatePayee v4/payees
+		/// V4PayeesPost v4/payees
 		/// </summary>
 		/// <param name="requestBody">Post payees to create.</param>
-		public async Task V4CreatePayeeAsync(CreatePayeesRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V4PayeesPostAsync(CreatePayeesRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -12794,11 +12812,11 @@ namespace MyNS
 		/// Query Batch Status
 		/// Fetch the status of a specific batch of payees. The batch is fully processed when status is ACCEPTED and pendingCount is 0 ( 200 - OK, 404 - batch not found ).
 		/// 
-		/// QueryBatchStatusV4 v4/payees/batch/{batchId}
+		/// V4PayeesBatch_batchIdGet v4/payees/batch/{batchId}
 		/// </summary>
 		/// <param name="batchId">Batch Id</param>
 		/// <returns>Get Batch Status</returns>
-		public async Task<QueryBatchResponseV4> QueryBatchStatusV4Async(string batchId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<QueryBatchResponseV4> V4PayeesBatch_batchIdGetAsync(string batchId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/batch/"+ (batchId==null? "" : System.Uri.EscapeDataString(batchId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12837,14 +12855,14 @@ namespace MyNS
 		/// - payeeId
 		/// - remoteId
 		/// 
-		/// ListPayeeChangesV4 v4/payees/deltas
+		/// V4PayeesDeltasGetByPayorIdAndUpdatedSinceAndPageAndPageSize v4/payees/deltas
 		/// </summary>
 		/// <param name="payorId">The Payor ID to find associated Payees</param>
 		/// <param name="updatedSince">The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm</param>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">Page size. Default is 100. Max allowable is 1000.</param>
 		/// <returns>Details of Payee Changes</returns>
-		public async Task<PayeeDeltaResponseV4> ListPayeeChangesV4Async(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayeeDeltaResponseV4> V4PayeesDeltasGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/deltas?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&updatedSince=" + updatedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&page="+page+"&pageSize="+pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12876,7 +12894,7 @@ namespace MyNS
 		/// Get Payee Invitation Status
 		/// Returns a filtered, paginated list of payees associated with a payor, along with invitation status and grace period end date.
 		/// 
-		/// GetPayeesInvitationStatusV4 v4/payees/payors/{payorId}/invitationStatus
+		/// V4PayeesPayors_payorIdInvitationStatusGetByPayeeIdAndInvitationStatusAndPageAndPageSize v4/payees/payors/{payorId}/invitationStatus
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="payeeId">The UUID of the payee.</param>
@@ -12884,7 +12902,7 @@ namespace MyNS
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">Page size. Default is 25. Max allowable is 100.</param>
 		/// <returns>Get Payees with Invitaion status - filters of payeeId and invitationStatus</returns>
-		public async Task<PagedPayeeInvitationStatusResponseV4> GetPayeesInvitationStatusV4Async(string payorId, string payeeId, string invitationStatus, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PagedPayeeInvitationStatusResponseV4> V4PayeesPayors_payorIdInvitationStatusGetByPayeeIdAndInvitationStatusAndPageAndPageSizeAsync(string payorId, string payeeId, string invitationStatus, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/payors/"+ (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"/invitationStatus&payeeId=" + (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"&invitationStatus=" + (invitationStatus==null? "" : System.Uri.EscapeDataString(invitationStatus))+"&page="+page+"&pageSize="+pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12920,10 +12938,10 @@ namespace MyNS
 		/// <p>* If Payee is in grace period</p>
 		/// <p>* If Payee has existing payments</p>
 		/// 
-		/// DeletePayeeByIdV4 v4/payees/{payeeId}
+		/// V4Payees_payeeIdDelete v4/payees/{payeeId}
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
-		public async Task DeletePayeeByIdV4Async(string payeeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V4Payees_payeeIdDeleteAsync(string payeeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -12948,14 +12966,14 @@ namespace MyNS
 		/// <summary>
 		/// Get Payee by Id
 		/// Get Payee by Id
-		/// GetPayeeByIdV4 v4/payees/{payeeId}
+		/// V4Payees_payeeIdGetBySensitive v4/payees/{payeeId}
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="sensitive">Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked.
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>Success response, request completed okay</returns>
-		public async Task<PayeeDetailResponseV4> GetPayeeByIdV4Async(string payeeId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PayeeDetailResponseV4> V4Payees_payeeIdGetBySensitiveAsync(string payeeId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"&sensitive="+sensitive;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -12988,12 +13006,12 @@ namespace MyNS
 		/// <p>Resend an invite to the Payee The payee must have already been invited by the payor and not yet accepted or declined</p>
 		/// <p>Any previous invites to the payee by this Payor will be invalidated</p>
 		/// 
-		/// ResendPayeeInviteV4 v4/payees/{payeeId}/invite
+		/// V4Payees_payeeIdInvitePost v4/payees/{payeeId}/invite
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="requestBody">Provide Payor Id in body of request</param>
 		/// <returns>the request was accepted</returns>
-		public async Task ResendPayeeInviteV4Async(string payeeId, InvitePayeeRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V4Payees_payeeIdInvitePostAsync(string payeeId, InvitePayeeRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"/invite";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -13027,11 +13045,11 @@ namespace MyNS
 		/// <p>Update payee details for the given Payee Id.</p>
 		/// <p>Payors may only update the payee details if the payee has not yet onboarded</p>
 		/// 
-		/// PayeeDetailsUpdateV4 v4/payees/{payeeId}/payeeDetailsUpdate
+		/// V4Payees_payeeIdPayeeDetailsUpdatePost v4/payees/{payeeId}/payeeDetailsUpdate
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="requestBody">Request to update payee details</param>
-		public async Task PayeeDetailsUpdateV4Async(string payeeId, UpdatePayeeDetailsRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V4Payees_payeeIdPayeeDetailsUpdatePostAsync(string payeeId, UpdatePayeeDetailsRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"/payeeDetailsUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -13064,11 +13082,11 @@ namespace MyNS
 		/// Update Payee Remote Id
 		/// <p>Update the remote Id for the given Payee Id.</p>
 		/// 
-		/// PayeesPostByPayeeId v4/payees/{payeeId}/remoteIdUpdate
+		/// V4Payees_payeeIdRemoteIdUpdatePost v4/payees/{payeeId}/remoteIdUpdate
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="requestBody">Request to update payee remote id v4</param>
-		public async Task PayeesPostByPayeeIdAsync(string payeeId, UpdateRemoteIdRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V4Payees_payeeIdRemoteIdUpdatePostAsync(string payeeId, UpdateRemoteIdRequestV4 requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payees/"+ (payeeId==null? "" : System.Uri.EscapeDataString(payeeId))+"/remoteIdUpdate";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -13101,7 +13119,7 @@ namespace MyNS
 		/// Get Fundings for Payor
 		/// <p>Get a list of Fundings for a payor.</p>
 		/// 
-		/// GetFundingsV4 v4/paymentaudit/fundings
+		/// V4PaymentauditFundingsGetByPayorIdAndSourceAccountNameAndPageAndPageSizeAndSort v4/paymentaudit/fundings
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID</param>
 		/// <param name="sourceAccountName">The source account name</param>
@@ -13111,7 +13129,7 @@ namespace MyNS
 		///Default is no sort. The supported sort fields are: dateTime and amount.
 		///</param>
 		/// <returns>Get Fundings normal response</returns>
-		public async Task<GetFundingsResponse> GetFundingsV4Async(string payorId, string sourceAccountName, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetFundingsResponse> V4PaymentauditFundingsGetByPayorIdAndSourceAccountNameAndPageAndPageSizeAndSortAsync(string payorId, string sourceAccountName, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/paymentaudit/fundings?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&sourceAccountName=" + (sourceAccountName==null? "" : System.Uri.EscapeDataString(sourceAccountName))+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -13142,7 +13160,7 @@ namespace MyNS
 		/// <summary>
 		/// Get List of Payments
 		/// Get payments for the given payor Id
-		/// ListPaymentsAuditV4 v4/paymentaudit/payments
+		/// V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitive v4/paymentaudit/payments
 		/// </summary>
 		/// <param name="payeeId">The UUID of the payee.</param>
 		/// <param name="payorId">The account owner Payor Id. Required for external users.</param>
@@ -13184,14 +13202,14 @@ namespace MyNS
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>Paginated list of payments</returns>
-		public async Task<ListPaymentsResponseV4> ListPaymentsAuditV4Async(
+		public async Task<ListPaymentsResponseV4> V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitiveAsync(
 					string payeeId, 
 					string payorId, 
 					string payorName, 
 					string remoteId, 
 					string remoteSystemId, 
-					ListPaymentsAuditV3Status status, 
-					ListPaymentsAuditV4TransmissionType transmissionType, 
+					V3PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndStatusAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndPageAndPageSizeAndSortAndSensitiveStatus status, 
+					V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitiveTransmissionType transmissionType, 
 					string sourceAccountName, 
 					int sourceAmountFrom, 
 					int sourceAmountTo, 
@@ -13205,8 +13223,8 @@ namespace MyNS
 					string railsId, 
 					System.DateOnly scheduledForDateFrom, 
 					System.DateOnly scheduledForDateTo, 
-					ListPaymentsAuditV4ScheduleStatus scheduleStatus, 
-					ListPaymentsAuditV4PostInstructFxStatus postInstructFxStatus, 
+					V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitiveScheduleStatus scheduleStatus, 
+					V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitivePostInstructFxStatus postInstructFxStatus, 
 					int page, 
 					int pageSize, 
 					string sort, 
@@ -13243,14 +13261,14 @@ namespace MyNS
 		/// Get Payment
 		/// Get the payment with the given id. This contains the payment history.
 		/// 
-		/// GetPaymentDetailsV4 v4/paymentaudit/payments/{paymentId}
+		/// V4PaymentauditPayments_paymentIdGetBySensitive v4/paymentaudit/payments/{paymentId}
 		/// </summary>
 		/// <param name="paymentId">Payment Id</param>
 		/// <param name="sensitive">Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked.
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>200 response, request completed okay</returns>
-		public async Task<PaymentResponseV4> GetPaymentDetailsV4Async(string paymentId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PaymentResponseV4> V4PaymentauditPayments_paymentIdGetBySensitiveAsync(string paymentId, bool sensitive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/paymentaudit/payments/"+ (paymentId==null? "" : System.Uri.EscapeDataString(paymentId))+"&sensitive="+sensitive;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -13282,11 +13300,11 @@ namespace MyNS
 		/// Get Payout Statistics
 		/// <p>Get payout statistics for a payor.</p>
 		/// 
-		/// GetPayoutStatsV4 v4/paymentaudit/payoutStatistics
+		/// V4PaymentauditPayoutStatisticsGetByPayorId v4/paymentaudit/payoutStatistics
 		/// </summary>
 		/// <param name="payorId">The account owner Payor ID. Required for external users.</param>
 		/// <returns>Payout Statistics response</returns>
-		public async Task<GetPayoutStatistics> GetPayoutStatsV4Async(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetPayoutStatistics> V4PaymentauditPayoutStatisticsGetByPayorIdAsync(string payorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/paymentaudit/payoutStatistics?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -13318,7 +13336,7 @@ namespace MyNS
 		/// Get Payouts for Payor
 		/// Get List of payouts for payor
 		/// 
-		/// GetPayoutsForPayorV4 v4/paymentaudit/payouts
+		/// V4PaymentauditPayoutsGetByPayorIdAndPayoutMemoAndStatusAndSubmittedDateFromAndSubmittedDateToAndFromPayorNameAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPageAndPageSizeAndSort v4/paymentaudit/payouts
 		/// </summary>
 		/// <param name="payorId">The id (UUID) of the payor funding the payout or the payor whose payees are being paid.</param>
 		/// <param name="payoutMemo">Payout Memo filter - case insensitive sub-string match</param>
@@ -13336,7 +13354,7 @@ namespace MyNS
 		///The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId, scheduledFor
 		///</param>
 		/// <returns>Payor data found</returns>
-		public async Task<GetPayoutsResponse> GetPayoutsForPayorV4Async(string payorId, string payoutMemo, GetPayoutsForPayorV3Status status, System.DateOnly submittedDateFrom, System.DateOnly submittedDateTo, string fromPayorName, System.DateOnly scheduledForDateFrom, System.DateOnly scheduledForDateTo, ListPaymentsAuditV4ScheduleStatus scheduleStatus, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetPayoutsResponse> V4PaymentauditPayoutsGetByPayorIdAndPayoutMemoAndStatusAndSubmittedDateFromAndSubmittedDateToAndFromPayorNameAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPageAndPageSizeAndSortAsync(string payorId, string payoutMemo, V3PaymentauditPayoutsGetByPayorIdAndPayoutMemoAndStatusAndSubmittedDateFromAndSubmittedDateToAndPageAndPageSizeAndSortStatus status, System.DateOnly submittedDateFrom, System.DateOnly submittedDateTo, string fromPayorName, System.DateOnly scheduledForDateFrom, System.DateOnly scheduledForDateTo, V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitiveScheduleStatus scheduleStatus, int page, int pageSize, string sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/paymentaudit/payouts?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&payoutMemo=" + (payoutMemo==null? "" : System.Uri.EscapeDataString(payoutMemo))+"&status=" + status+"&submittedDateFrom="+submittedDateFrom+"&submittedDateTo="+submittedDateTo+"&fromPayorName=" + (fromPayorName==null? "" : System.Uri.EscapeDataString(fromPayorName))+"&scheduledForDateFrom="+scheduledForDateFrom+"&scheduledForDateTo="+scheduledForDateTo+"&scheduleStatus=" + scheduleStatus+"&page="+page+"&pageSize="+pageSize+"&sort=" + (sort==null? "" : System.Uri.EscapeDataString(sort));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -13368,7 +13386,7 @@ namespace MyNS
 		/// Get Payments for Payout
 		/// Get List of payments for Payout, allowing for RETURNED status
 		/// 
-		/// GetPaymentsForPayoutV4 v4/paymentaudit/payouts/{payoutId}
+		/// V4PaymentauditPayouts_payoutIdGetByRailsIdAndRemoteIdAndRemoteSystemIdAndStatusAndSourceAmountFromAndSourceAmountToAndPaymentAmountFromAndPaymentAmountToAndSubmittedDateFromAndSubmittedDateToAndTransmissionTypeAndPageAndPageSizeAndSortAndSensitive v4/paymentaudit/payouts/{payoutId}
 		/// </summary>
 		/// <param name="railsId">Payout Rails ID filter - case insensitive match.
 		///Any value is allowed, but you should use one of the supported railsId values.
@@ -13400,19 +13418,19 @@ namespace MyNS
 		///If set to true, and you have permission, the PII values will be returned as their original unmasked values.
 		///</param>
 		/// <returns>200 response, data found okay</returns>
-		public async Task<GetPaymentsForPayoutResponseV4> GetPaymentsForPayoutV4Async(
+		public async Task<GetPaymentsForPayoutResponseV4> V4PaymentauditPayouts_payoutIdGetByRailsIdAndRemoteIdAndRemoteSystemIdAndStatusAndSourceAmountFromAndSourceAmountToAndPaymentAmountFromAndPaymentAmountToAndSubmittedDateFromAndSubmittedDateToAndTransmissionTypeAndPageAndPageSizeAndSortAndSensitiveAsync(
 					string railsId, 
 					string payoutId, 
 					string remoteId, 
 					string remoteSystemId, 
-					ListPaymentsAuditV3Status status, 
+					V3PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndStatusAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndPageAndPageSizeAndSortAndSensitiveStatus status, 
 					int sourceAmountFrom, 
 					int sourceAmountTo, 
 					int paymentAmountFrom, 
 					int paymentAmountTo, 
 					System.DateOnly submittedDateFrom, 
 					System.DateOnly submittedDateTo, 
-					ListPaymentsAuditV4TransmissionType transmissionType, 
+					V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitiveTransmissionType transmissionType, 
 					int page, 
 					int pageSize, 
 					string sort, 
@@ -13448,7 +13466,7 @@ namespace MyNS
 		/// <summary>
 		/// Export Transactions
 		/// Download a CSV file containing payments in a date range. Uses Transfer-Encoding - chunked to stream to the client. Date range is inclusive of both the start and end dates.
-		/// ExportTransactionsCSVV4 v4/paymentaudit/transactions
+		/// V4PaymentauditTransactionsGetByPayorIdAndStartDateAndEndDateAndInclude v4/paymentaudit/transactions
 		/// </summary>
 		/// <param name="payorId"><p>The Payor ID for whom you wish to run the report.</p>
 		///<p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p>
@@ -13463,7 +13481,7 @@ namespace MyNS
 		///<p>Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id</p>
 		///</param>
 		/// <returns>Export Transactions response</returns>
-		public async Task ExportTransactionsCSVV4Async(string payorId, System.DateOnly startDate, System.DateOnly endDate, ExportTransactionsCSVV4Include include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task V4PaymentauditTransactionsGetByPayorIdAndStartDateAndEndDateAndIncludeAsync(string payorId, System.DateOnly startDate, System.DateOnly endDate, V4PaymentauditTransactionsGetByPayorIdAndStartDateAndEndDateAndIncludeInclude include, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/paymentaudit/transactions?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&startDate="+startDate+"&endDate="+endDate+"&include=" + include;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -13488,14 +13506,14 @@ namespace MyNS
 		/// <summary>
 		/// List Payment Changes
 		/// Get a paginated response listing payment changes.
-		/// ListPaymentChangesV4 v4/payments/deltas
+		/// V4PaymentsDeltasGetByPayorIdAndUpdatedSinceAndPageAndPageSize v4/payments/deltas
 		/// </summary>
 		/// <param name="payorId">The Payor ID to find associated Payments</param>
 		/// <param name="updatedSince">The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm</param>
 		/// <param name="page">Page number. Default is 1.</param>
 		/// <param name="pageSize">The number of results to return in a page</param>
 		/// <returns>Details of Payment Changes</returns>
-		public async Task<PaymentDeltaResponse> ListPaymentChangesV4Async(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PaymentDeltaResponse> V4PaymentsDeltasGetByPayorIdAndUpdatedSinceAndPageAndPageSizeAsync(string payorId, System.DateTimeOffset updatedSince, int page, int pageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v4/payments/deltas?payorId=" + (payorId==null? "" : System.Uri.EscapeDataString(payorId))+"&updatedSince=" + updatedSince.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&page="+page+"&pageSize="+pageSize;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -13524,173 +13542,173 @@ namespace MyNS
 		}
 	}
 	
-	public enum ListPaymentsAuditV3Status
+	public enum V3PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndStatusAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndPageAndPageSizeAndSortAndSensitiveStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
 		ACCEPTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="AWAITING_FUNDS")]
 		AWAITING_FUNDS = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FUNDED")]
 		FUNDED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="UNFUNDED")]
 		UNFUNDED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="BANK_PAYMENT_REQUESTED")]
 		BANK_PAYMENT_REQUESTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
 		REJECTED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED_BY_RAILS")]
 		ACCEPTED_BY_RAILS = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIRMED")]
 		CONFIRMED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 8,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURNED")]
 		RETURNED = 9,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WITHDRAWN")]
 		WITHDRAWN = 10,
 	}
 	
-	public enum GetPayoutsForPayorV3Status
+	public enum V3PaymentauditPayoutsGetByPayorIdAndPayoutMemoAndStatusAndSubmittedDateFromAndSubmittedDateToAndPageAndPageSizeAndSortStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
 		ACCEPTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
 		REJECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SUBMITTED")]
 		SUBMITTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="QUOTED")]
 		QUOTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INSTRUCTED")]
 		INSTRUCTED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
 		COMPLETED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INCOMPLETE")]
 		INCOMPLETE = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CONFIRMED")]
 		CONFIRMED = 7,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WITHDRAWN")]
 		WITHDRAWN = 8,
 	}
 	
-	public enum GetPaymentsForPayoutV3Status
+	public enum V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACCEPTED")]
 		ACCEPTED = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REJECTED")]
 		REJECTED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WITHDRAWN")]
 		WITHDRAWN = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WITHDRAWABLE")]
 		WITHDRAWABLE = 3,
 	}
 	
-	public enum GetPaymentsForPayoutV3TransmissionType
+	public enum V3Payouts_payoutIdPaymentsGetByStatusAndRemoteIdAndPayorPaymentIdAndSourceAccountNameAndTransmissionTypeAndPaymentMemoAndPageSizeAndPageTransmissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACH")]
 		ACH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAME_DAY_ACH")]
 		SAME_DAY_ACH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIRE")]
 		WIRE = 2,
 	}
 	
-	public enum ListPaymentsAuditV4TransmissionType
+	public enum V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitiveTransmissionType
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ACH")]
 		ACH = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SAME_DAY_ACH")]
 		SAME_DAY_ACH = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="WIRE")]
 		WIRE = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="LOCAL")]
 		LOCAL = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="GACHO")]
 		GACHO = 4,
 	}
 	
-	public enum ListPaymentsAuditV4ScheduleStatus
+	public enum V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitiveScheduleStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
 		ANY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="SCHEDULED")]
 		SCHEDULED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTED")]
 		EXECUTED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="FAILED")]
 		FAILED = 3,
 	}
 	
-	public enum ListPaymentsAuditV4PostInstructFxStatus
+	public enum V4PaymentauditPaymentsGetByPayeeIdAndPayorIdAndPayorNameAndRemoteIdAndRemoteSystemIdAndStatusAndTransmissionTypeAndSourceAccountNameAndSourceAmountFromAndSourceAmountToAndSourceCurrencyAndPaymentAmountFromAndPaymentAmountToAndPaymentCurrencyAndSubmittedDateFromAndSubmittedDateToAndPaymentMemoAndRailsIdAndScheduledForDateFromAndScheduledForDateToAndScheduleStatusAndPostInstructFxStatusAndPageAndPageSizeAndSortAndSensitivePostInstructFxStatus
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="ANY")]
 		ANY = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="INITIATED")]
 		INITIATED = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="CANCELLED")]
 		CANCELLED = 2,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="EXECUTED")]
 		EXECUTED = 3,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="COMPLETED")]
 		COMPLETED = 4,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RETURNED")]
 		RETURNED = 5,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="RESUBMITTED")]
 		RESUBMITTED = 6,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="REFUNDED")]
 		REFUNDED = 7,
 	}
 	
-	public enum ExportTransactionsCSVV4Include
+	public enum V4PaymentauditTransactionsGetByPayorIdAndStartDateAndEndDateAndIncludeInclude
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="payorOnly")]
 		payorOnly = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="payorAndDescendants")]
 		payorAndDescendants = 1,
 	}
 }

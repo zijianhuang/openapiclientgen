@@ -1,6 +1,4 @@
-Walk through OpenApi definition files, some with swagger.yaml v2.0 and the others with openapi.yaml v3.0, generate NG TS codes and run `ng build`.
-
-In `appsettings.json`, only "Build" is used, while "UpdateGenerated" is always true.
+Walk through OpenApi definition files, some with swagger.yaml v2.0, generate NG TS codes and run `ng build`.
 
 **Remarks:**
 

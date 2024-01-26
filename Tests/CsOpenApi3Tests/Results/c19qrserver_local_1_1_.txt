@@ -287,17 +287,18 @@ namespace MyNS
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
+	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
 	public enum LoginPayloadSource
 	{
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="iOS")]
 		iOS = 0,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="android")]
 		android = 1,
 		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[System.Runtime.Serialization.EnumMemberAttribute(Value="web")]
 		web = 2,
 	}
 	
@@ -396,11 +397,11 @@ namespace MyNS
 		/// <summary>
 		/// Used for changing your password
 		/// Pass in your old password and your new password
-		/// PasswordsPost changePassword
+		/// ChangePasswordPost changePassword
 		/// </summary>
 		/// <param name="requestBody">Change Password Payload</param>
 		/// <returns>Success</returns>
-		public async Task PasswordsPostAsync(ChangePasswordPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task ChangePasswordPostAsync(ChangePasswordPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "changePassword";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -432,11 +433,11 @@ namespace MyNS
 		/// <summary>
 		/// Log in to get an API token
 		/// Submit your email and password to get an API token
-		/// AuthenticationPost login
+		/// LoginPost login
 		/// </summary>
 		/// <param name="requestBody">The login payload</param>
 		/// <returns>Success</returns>
-		public async Task<LoginResponse> AuthenticationPostAsync(LoginPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<LoginResponse> LoginPostAsync(LoginPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "login";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -474,10 +475,10 @@ namespace MyNS
 		/// <summary>
 		/// Log out
 		/// Log out by deleting your token off the server.
-		/// AuthenticationPost logout
+		/// LogoutPost logout
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task AuthenticationPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task LogoutPostAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "logout";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -498,11 +499,11 @@ namespace MyNS
 		/// Used for requesting a password reset code
 		/// The admin should run this on behalf of a user who forgot their password.  The API will generate a password reset code which the admin should then provide to the user. The user can use their client to reset their password. Normally the password reset code is mailed to the user, but I didn't want to do this in this case because I didn't want to  introduce the complicated dependency of having an SMTP server just for this purpose. Doing it this way makes it easy for people to adopt this  API.
 		/// 
-		/// PasswordsPost requestPasswordReset
+		/// RequestPasswordResetPost requestPasswordReset
 		/// </summary>
 		/// <param name="requestBody">Request Password Reset Payload</param>
 		/// <returns>Success</returns>
-		public async Task<RequestPasswordResetResponse> PasswordsPostAsync(RequestPasswordResetPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<RequestPasswordResetResponse> RequestPasswordResetPostAsync(RequestPasswordResetPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "requestPasswordReset";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -539,10 +540,10 @@ namespace MyNS
 		
 		/// <summary>
 		/// Create a new signin record
-		/// Attendees_signinsPost signin
+		/// SigninPost signin
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<SigninResponse> Attendees_signinsPostAsync(SigninPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<SigninResponse> SigninPostAsync(SigninPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "signin";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -581,11 +582,11 @@ namespace MyNS
 		/// Delete a signin record
 		/// Delete a signin record
 		/// 
-		/// Attendees_signinsDeleteBySigninId signin/{signinId}
+		/// Signin_signinIdDelete signin/{signinId}
 		/// </summary>
 		/// <param name="signinId">The ID of the signin record to be deleted.</param>
 		/// <returns>Success</returns>
-		public async Task Attendees_signinsDeleteBySigninIdAsync(int signinId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task Signin_signinIdDeleteAsync(int signinId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "signin/"+signinId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -611,11 +612,11 @@ namespace MyNS
 		/// Retrieve the information associated with a signin record
 		/// Retrieve the information associated with a signin record
 		/// 
-		/// Attendees_signinsGetBySigninId signin/{signinId}
+		/// Signin_signinIdGet signin/{signinId}
 		/// </summary>
 		/// <param name="signinId">The ID of the signin record to be retrieved.</param>
 		/// <returns>Success</returns>
-		public async Task<Signin> Attendees_signinsGetBySigninIdAsync(int signinId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Signin> Signin_signinIdGetAsync(int signinId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "signin/"+signinId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -647,11 +648,11 @@ namespace MyNS
 		/// Update a signin record
 		/// Update a signin record
 		/// 
-		/// Attendees_signinsPutBySigninId signin/{signinId}
+		/// Signin_signinIdPut signin/{signinId}
 		/// </summary>
 		/// <param name="signinId">The ID of the signin record to be retrieved.</param>
 		/// <returns>Success</returns>
-		public async Task<UserRecord> Attendees_signinsPutBySigninIdAsync(int signinId, SigninPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UserRecord> Signin_signinIdPutAsync(int signinId, SigninPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "signin/"+signinId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
@@ -689,12 +690,12 @@ namespace MyNS
 		/// <summary>
 		/// Get signin info
 		/// Returns a list of signin objects sorted by signin ID descending.
-		/// Attendees_signinsGetByLess_thanAndReturn_count signins
+		/// SigninsGetByLess_thanAndReturn_count signins
 		/// </summary>
 		/// <param name="less_than">Return signins with IDs less than this value.</param>
 		/// <param name="return_count">Return this many objects</param>
 		/// <returns>Successful response</returns>
-		public async Task<Signin[]> Attendees_signinsGetByLess_thanAndReturn_countAsync(int less_than, int return_count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Signin[]> SigninsGetByLess_thanAndReturn_countAsync(int less_than, int return_count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "signins?less_than="+less_than+"&return_count="+return_count;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -725,11 +726,11 @@ namespace MyNS
 		/// <summary>
 		/// Create a user
 		/// Use this endpoint to create a team member (user) record
-		/// Team_MembersPost user
+		/// UserPost user
 		/// </summary>
 		/// <param name="requestBody">Create User Payload</param>
 		/// <returns>Success</returns>
-		public async Task<CreateUserResponse> Team_MembersPostAsync(CreateUserPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CreateUserResponse> UserPostAsync(CreateUserPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "user";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -768,11 +769,11 @@ namespace MyNS
 		/// Delete a team member's user record
 		/// To preserve referential integrity in the database, the user account  will not be deleted from the database. Rather, the password will be set to the empty string, effectively preventing that user from logging in. Furthermore, all active sessions for that user will be deleted, as will any password reset tokens.
 		/// 
-		/// Team_MembersDeleteByUserId user/{userId}
+		/// User_userIdDelete user/{userId}
 		/// </summary>
 		/// <param name="userId">The ID of the user record to be deleted.</param>
 		/// <returns>Success</returns>
-		public async Task Team_MembersDeleteByUserIdAsync(int userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task User_userIdDeleteAsync(int userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "user/"+userId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
@@ -798,11 +799,11 @@ namespace MyNS
 		/// Retrieve the information associated with a team member's user record
 		/// Retrieve the information associated with a user's account
 		/// 
-		/// Team_MembersGetByUserId user/{userId}
+		/// User_userIdGet user/{userId}
 		/// </summary>
 		/// <param name="userId">The ID of the user record to be retrieved.</param>
 		/// <returns>Success</returns>
-		public async Task<UserRecord> Team_MembersGetByUserIdAsync(int userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UserRecord> User_userIdGetAsync(int userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "user/"+userId;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -834,10 +835,10 @@ namespace MyNS
 		/// Retrieve the information associated with all team members' user records
 		/// Retrieve the information associated with all team members' user records
 		/// 
-		/// Team_MembersGet users
+		/// UsersGet users
 		/// </summary>
 		/// <returns>Success</returns>
-		public async Task<UserRecord[]> Team_MembersGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UserRecord[]> UsersGetAsync(Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "users";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -869,11 +870,11 @@ namespace MyNS
 		/// Used for resetting your password when you forgot it
 		/// Another endpoint will generate a password reset code for you. You should  use the client app to submit the reset code along with the new password to change your password.
 		/// 
-		/// PasswordsPost verifyPasswordChange
+		/// VerifyPasswordChangePost verifyPasswordChange
 		/// </summary>
 		/// <param name="requestBody">Password Reset Payload</param>
 		/// <returns>Success</returns>
-		public async Task PasswordsPostAsync(PasswordResetPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task VerifyPasswordChangePostAsync(PasswordResetPayload requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "verifyPasswordChange";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))

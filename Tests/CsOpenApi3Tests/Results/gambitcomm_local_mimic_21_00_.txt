@@ -1951,7 +1951,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Add_ipaliasAsync(int agentNum, string IP, int port, string mask, string _interface, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/ipalias/add/"+ (IP==null? "" : System.Uri.EscapeDataString(IP))+"/"+port+"/"+ (mask==null? "" : System.Uri.EscapeDataString(mask))+"/{interface}";
+			var requestUri = "mimic/agent/"+agentNum+"/ipalias/add/"+ (IP==null? "" : System.Uri.EscapeDataString(IP))+"/"+port+"/"+ (mask==null? "" : System.Uri.EscapeDataString(mask))+"/"+ (_interface==null? "" : System.Uri.EscapeDataString(_interface));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -3940,7 +3940,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Protocol_netflow_change_attrAsync(int agentNum, int flowset_uid, int field_num, string attr, string value, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/protocol/msg/netflow/flow/change/"+flowset_uid+"/"+field_num+"/"+ (attr==null? "" : System.Uri.EscapeDataString(attr))+"/"+ (value==null? "" : System.Uri.EscapeDataString(value));
+			var requestUri = "mimic/agent/"+agentNum+"/protocol/msg/netflow/flow/change/{flowset_uid}/{field_num}/"+ (attr==null? "" : System.Uri.EscapeDataString(attr))+"/"+ (value==null? "" : System.Uri.EscapeDataString(value));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -8832,7 +8832,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Set_interfaceAsync(string agentNum, string _interface, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+ (agentNum==null? "" : System.Uri.EscapeDataString(agentNum))+"/set/interface/{interface}";
+			var requestUri = "mimic/agent/"+ (agentNum==null? "" : System.Uri.EscapeDataString(agentNum))+"/set/interface/"+ (_interface==null? "" : System.Uri.EscapeDataString(_interface));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -9363,11 +9363,11 @@ namespace MyNS
 		/// Agent_store_exists mimic/agent/{agentNum}/store/exists/{var}
 		/// </summary>
 		/// <param name="agentNum">Agent of the value space</param>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Agent_store_existsAsync(int agentNum, string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Agent_store_existsAsync(int agentNum, string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/store/exists/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/agent/"+agentNum+"/store/exists/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -9398,11 +9398,11 @@ namespace MyNS
 		/// Agent_store_get mimic/agent/{agentNum}/store/get/{var}
 		/// </summary>
 		/// <param name="agentNum">Agent of the value space</param>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Agent_store_getAsync(int agentNum, string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Agent_store_getAsync(int agentNum, string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/store/get/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/agent/"+agentNum+"/store/get/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -9468,13 +9468,13 @@ namespace MyNS
 		/// Agent_store_lreplace mimic/agent/{agentNum}/store/lreplace/{var}/{index}
 		/// </summary>
 		/// <param name="agentNum">Agent of the value space</param>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <param name="index">Index</param>
 		/// <param name="requestBody">Value</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Agent_store_lreplaceAsync(int agentNum, string var, int index, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Agent_store_lreplaceAsync(int agentNum, string _var, int index, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/store/lreplace/"+ (var==null? "" : System.Uri.EscapeDataString(var))+"/"+index;
+			var requestUri = "mimic/agent/"+agentNum+"/store/lreplace/"+ (_var==null? "" : System.Uri.EscapeDataString(_var))+"/"+index;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -9512,11 +9512,11 @@ namespace MyNS
 		/// Agent_store_persists mimic/agent/{agentNum}/store/persists/{var}
 		/// </summary>
 		/// <param name="agentNum">Agent of the value space</param>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Agent_store_persistsAsync(int agentNum, string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Agent_store_persistsAsync(int agentNum, string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/store/persists/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/agent/"+agentNum+"/store/persists/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -9547,13 +9547,13 @@ namespace MyNS
 		/// Agent_store_set mimic/agent/{agentNum}/store/set/{var}/{persist}
 		/// </summary>
 		/// <param name="agentNum">Agent of the value space</param>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <param name="persist">Persistent setting</param>
 		/// <param name="requestBody">Value</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Agent_store_setAsync(int agentNum, string var, int persist, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Agent_store_setAsync(int agentNum, string _var, int persist, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/store/set/"+ (var==null? "" : System.Uri.EscapeDataString(var))+"/"+persist;
+			var requestUri = "mimic/agent/"+agentNum+"/store/set/"+ (_var==null? "" : System.Uri.EscapeDataString(_var))+"/"+persist;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -9591,11 +9591,11 @@ namespace MyNS
 		/// Agent_store_unset mimic/agent/{agentNum}/store/unset/{var}
 		/// </summary>
 		/// <param name="agentNum">Agent of the value space</param>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Agent_store_unsetAsync(int agentNum, string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Agent_store_unsetAsync(int agentNum, string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/store/unset/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/agent/"+agentNum+"/store/unset/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -9867,7 +9867,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> AddAsync(int agentNum, string _object, string instance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/add/{object}/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
+			var requestUri = "mimic/agent/"+agentNum+"/value/add/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -9898,7 +9898,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Eval_valueAsync(int agentNum, string _object, string instance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/eval/{object}/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
+			var requestUri = "mimic/agent/"+agentNum+"/value/eval/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -9935,7 +9935,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Get_valueAsync(int agentNum, string _object, string instance, string variable, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/get/{object}/"+ (instance==null? "" : System.Uri.EscapeDataString(instance))+"/"+ (variable==null? "" : System.Uri.EscapeDataString(variable));
+			var requestUri = "mimic/agent/"+agentNum+"/value/get/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+ (instance==null? "" : System.Uri.EscapeDataString(instance))+"/"+ (variable==null? "" : System.Uri.EscapeDataString(variable));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -9970,7 +9970,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Get_infoAsync(int agentNum, string _object, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/info/{object}";
+			var requestUri = "mimic/agent/"+agentNum+"/value/info/"+ (_object==null? "" : System.Uri.EscapeDataString(_object));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10005,7 +10005,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string[]> Get_instancesAsync(int agentNum, string _object, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/instances/{object}";
+			var requestUri = "mimic/agent/"+agentNum+"/value/instances/"+ (_object==null? "" : System.Uri.EscapeDataString(_object));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10149,7 +10149,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Get_mibAsync(int agentNum, string _object, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/mib/{object}";
+			var requestUri = "mimic/agent/"+agentNum+"/value/mib/"+ (_object==null? "" : System.Uri.EscapeDataString(_object));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10303,7 +10303,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Get_oidAsync(int agentNum, string _object, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/oid/{object}";
+			var requestUri = "mimic/agent/"+agentNum+"/value/oid/"+ (_object==null? "" : System.Uri.EscapeDataString(_object));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10339,7 +10339,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> RemoveAsync(int agentNum, string _object, string instance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/remove/{object}/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
+			var requestUri = "mimic/agent/"+agentNum+"/value/remove/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10377,7 +10377,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Set_valueAsync(int agentNum, string _object, string instance, string variable, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/set/{object}/"+ (instance==null? "" : System.Uri.EscapeDataString(instance))+"/"+ (variable==null? "" : System.Uri.EscapeDataString(variable));
+			var requestUri = "mimic/agent/"+agentNum+"/value/set/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+ (instance==null? "" : System.Uri.EscapeDataString(instance))+"/"+ (variable==null? "" : System.Uri.EscapeDataString(variable));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -10455,7 +10455,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Get_stateAsync(int agentNum, string _object, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/state/get/{object}";
+			var requestUri = "mimic/agent/"+agentNum+"/value/state/get/"+ (_object==null? "" : System.Uri.EscapeDataString(_object));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -10491,7 +10491,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Set_stateAsync(int agentNum, string _object, int state, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/state/set/{object}/"+state;
+			var requestUri = "mimic/agent/"+agentNum+"/value/state/set/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+state;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -10523,7 +10523,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string> Unset_valueAsync(int agentNum, string _object, string instance, string variable, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/unset/{object}/"+ (instance==null? "" : System.Uri.EscapeDataString(instance))+"/"+ (variable==null? "" : System.Uri.EscapeDataString(variable));
+			var requestUri = "mimic/agent/"+agentNum+"/value/unset/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+ (instance==null? "" : System.Uri.EscapeDataString(instance))+"/"+ (variable==null? "" : System.Uri.EscapeDataString(variable));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -10554,7 +10554,7 @@ namespace MyNS
 		/// <returns>successful operation</returns>
 		public async Task<string[]> Get_variablesAsync(int agentNum, string _object, string instance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/agent/"+agentNum+"/value/variables/{object}/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
+			var requestUri = "mimic/agent/"+agentNum+"/value/variables/"+ (_object==null? "" : System.Uri.EscapeDataString(_object))+"/"+ (instance==null? "" : System.Uri.EscapeDataString(instance));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -11989,11 +11989,11 @@ namespace MyNS
 		/// It returns "1" if the variable exists, else "0".
 		/// Store_exists mimic/store/exists/{var}
 		/// </summary>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Store_existsAsync(string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Store_existsAsync(string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/store/exists/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/store/exists/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12023,11 +12023,11 @@ namespace MyNS
 		/// The value will be returned as a string (like all Tcl values).
 		/// Store_get mimic/store/get/{var}
 		/// </summary>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Store_getAsync(string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Store_getAsync(string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/store/get/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/store/get/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12091,13 +12091,13 @@ namespace MyNS
 		/// These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist.
 		/// Store_lreplace mimic/store/lreplace/{var}/{index}
 		/// </summary>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <param name="index">Index</param>
 		/// <param name="requestBody">Value</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Store_lreplaceAsync(string var, int index, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Store_lreplaceAsync(string _var, int index, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/store/lreplace/"+ (var==null? "" : System.Uri.EscapeDataString(var))+"/"+index;
+			var requestUri = "mimic/store/lreplace/"+ (_var==null? "" : System.Uri.EscapeDataString(_var))+"/"+index;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12134,11 +12134,11 @@ namespace MyNS
 		/// It returns "1" if the variable is persistent, else "0".
 		/// Store_persists mimic/store/persists/{var}
 		/// </summary>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Store_persistsAsync(string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Store_persistsAsync(string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/store/persists/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/store/persists/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -12168,13 +12168,13 @@ namespace MyNS
 		/// Persist 1 means persistent , 0 means non-persistent
 		/// Store_set mimic/store/set/{var}/{persist}
 		/// </summary>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <param name="persist">Persistent setting</param>
 		/// <param name="requestBody">Value</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Store_setAsync(string var, int persist, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Store_setAsync(string _var, int persist, string requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/store/set/"+ (var==null? "" : System.Uri.EscapeDataString(var))+"/"+persist;
+			var requestUri = "mimic/store/set/"+ (_var==null? "" : System.Uri.EscapeDataString(_var))+"/"+persist;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -12211,11 +12211,11 @@ namespace MyNS
 		/// This will cleanup persistent variables if needed
 		/// Store_unset mimic/store/unset/{var}
 		/// </summary>
-		/// <param name="var">Variable name</param>
+		/// <param name="_var">Variable name</param>
 		/// <returns>successful operation</returns>
-		public async Task<string> Store_unsetAsync(string var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<string> Store_unsetAsync(string _var, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "mimic/store/unset/"+ (var==null? "" : System.Uri.EscapeDataString(var));
+			var requestUri = "mimic/store/unset/"+ (_var==null? "" : System.Uri.EscapeDataString(_var));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Put, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
