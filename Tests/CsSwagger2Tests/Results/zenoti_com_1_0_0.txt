@@ -17131,7 +17131,7 @@ namespace MyNS
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/01")]
 	[System.SerializableAttribute()]
-	public class package_
+	public class Package
 	{
 		
 		[System.Runtime.Serialization.DataMember(Name="code")]
@@ -17153,7 +17153,7 @@ namespace MyNS
 		public Service[] Services { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		public System.Nullable<package_Type> Type { get; set; }
+		public System.Nullable<PackageType> Type { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/01")]
@@ -17191,7 +17191,7 @@ namespace MyNS
 	
 	[System.Runtime.Serialization.DataContract(Namespace="http://fonlow.com/TestOpenApi/2024/01")]
 	[System.SerializableAttribute()]
-	public enum package_Type
+	public enum PackageType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

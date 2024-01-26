@@ -1245,7 +1245,7 @@ export namespace MyNS {
 		 * Deletes data blobs and associated metadata. Deletions are permanent if versioning is not enabled for the bucket, or if the generation parameter is used.
 		 * Delete b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} generation If present, permanently deletes a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's current generation matches the given value.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's current generation does not match the given value.
@@ -1253,15 +1253,15 @@ export namespace MyNS {
 		 * @param {string} ifMetagenerationNotMatch Makes the operation conditional on whether the object's current metageneration does not match the given value.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_delete(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)), { observe: 'response', responseType: 'text' });
+		Storage_objects_delete(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Retrieves objects or their associated metadata.
 		 * Get b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's generation matches the given value.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's generation does not match the given value.
@@ -1270,15 +1270,15 @@ export namespace MyNS {
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to noAcl.
 		 * @return {Object} Successful response
 		 */
-		Storage_objects_get(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined): Observable<Object> {
-			return this.http.get<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection, {});
+		Storage_objects_get(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined): Observable<Object> {
+			return this.http.get<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection, {});
 		}
 
 		/**
 		 * Updates a data blob's associated metadata. This method supports patch semantics.
 		 * Patch b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's current generation matches the given value.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's current generation does not match the given value.
@@ -1287,15 +1287,15 @@ export namespace MyNS {
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to full.
 		 * @return {Object} Successful response
 		 */
-		Storage_objects_patch(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, requestBody: Object): Observable<Object> {
-			return this.http.patch<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objects_patch(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, requestBody: Object): Observable<Object> {
+			return this.http.patch<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Updates a data blob's associated metadata.
 		 * Put b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's current generation matches the given value.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's current generation does not match the given value.
@@ -1304,84 +1304,84 @@ export namespace MyNS {
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to full.
 		 * @return {Object} Successful response
 		 */
-		Storage_objects_update(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, requestBody: Object): Observable<Object> {
-			return this.http.put<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objects_update(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, requestBody: Object): Observable<Object> {
+			return this.http.put<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieves ACL entries on the specified object.
 		 * Get b/{bucket}/o/{object}/acl
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @return {ObjectAccessControls} Successful response
 		 */
-		Storage_objectAccessControls_list(bucket: string, _object: string, generation: string | null | undefined): Observable<ObjectAccessControls> {
-			return this.http.get<ObjectAccessControls>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)), {});
+		Storage_objectAccessControls_list(bucket: string, object: string, generation: string | null | undefined): Observable<ObjectAccessControls> {
+			return this.http.get<ObjectAccessControls>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)), {});
 		}
 
 		/**
 		 * Creates a new ACL entry on the specified object.
 		 * Post b/{bucket}/o/{object}/acl
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_insert(bucket: string, _object: string, generation: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
-			return this.http.post<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objectAccessControls_insert(bucket: string, object: string, generation: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
+			return this.http.post<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Permanently deletes the ACL entry for the specified entity on the specified object.
 		 * Delete b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_delete(bucket: string, _object: string, entity: string, generation: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), { observe: 'response', responseType: 'text' });
+		Storage_objectAccessControls_delete(bucket: string, object: string, entity: string, generation: string | null | undefined): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Returns the ACL entry for the specified entity on the specified object.
 		 * Get b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_get(bucket: string, _object: string, entity: string, generation: string | null | undefined): Observable<ObjectAccessControl> {
-			return this.http.get<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), {});
+		Storage_objectAccessControls_get(bucket: string, object: string, entity: string, generation: string | null | undefined): Observable<ObjectAccessControl> {
+			return this.http.get<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), {});
 		}
 
 		/**
 		 * Updates an ACL entry on the specified object. This method supports patch semantics.
 		 * Patch b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_patch(bucket: string, _object: string, entity: string, generation: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
-			return this.http.patch<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objectAccessControls_patch(bucket: string, object: string, entity: string, generation: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
+			return this.http.patch<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Updates an ACL entry on the specified object.
 		 * Put b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object.
+		 * @param {string} object Name of the object.
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_update(bucket: string, _object: string, entity: string, generation: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
-			return this.http.put<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objectAccessControls_update(bucket: string, object: string, entity: string, generation: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
+			return this.http.put<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**

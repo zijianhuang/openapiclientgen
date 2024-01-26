@@ -358,7 +358,7 @@ namespace MyNS
 		archive = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
+		delete = 1,
 	}
 	
 	/// <summary>
@@ -455,26 +455,13 @@ namespace MyNS
 		public string Rule_id { get; set; }
 		
 		[System.Runtime.Serialization.DataMember(Name="transition")]
-		public System.Nullable<AnalysisArchiveTransitionHistoryTransition> Transition { get; set; }
+		public AnalysisArchiveTransitionRuleTransition Transition { get; set; }
 		
 		/// <summary>
 		/// The task that created & updated this entry
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="transition_task_id")]
 		public string Transition_task_id { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
-	public enum AnalysisArchiveTransitionHistoryTransition
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archive")]
-		archive = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
 	}
 	
 	/// <summary>

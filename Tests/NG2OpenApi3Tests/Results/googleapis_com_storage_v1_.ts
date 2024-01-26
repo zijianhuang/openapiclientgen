@@ -3180,7 +3180,7 @@ export namespace MyNS {
 		 * Deletes an object and its metadata. Deletions are permanent if versioning is not enabled for the bucket, or if the generation parameter is used.
 		 * Delete b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, permanently deletes a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -3189,15 +3189,15 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objects_delete(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
+		Storage_objects_delete(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Retrieves an object or its metadata.
 		 * Get b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -3208,15 +3208,15 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {Object} Successful response
 		 */
-		Storage_objects_get(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, softDeleted: boolean | null | undefined, userProject: string | null | undefined): Observable<Object> {
-			return this.http.get<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection + '&softDeleted=' + softDeleted + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
+		Storage_objects_get(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, softDeleted: boolean | null | undefined, userProject: string | null | undefined): Observable<Object> {
+			return this.http.get<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection + '&softDeleted=' + softDeleted + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
 		}
 
 		/**
 		 * Patches an object's metadata.
 		 * Patch b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -3228,15 +3228,15 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request, for Requester Pays buckets.
 		 * @return {Object} Successful response
 		 */
-		Storage_objects_patch(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, overrideUnlockedRetention: boolean | null | undefined, predefinedAcl: Storage_buckets_insertPredefinedDefaultObjectAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<Object> {
-			return this.http.patch<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&overrideUnlockedRetention=' + overrideUnlockedRetention + '&predefinedAcl=' + predefinedAcl + '&projection=' + projection + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objects_patch(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, overrideUnlockedRetention: boolean | null | undefined, predefinedAcl: Storage_buckets_insertPredefinedDefaultObjectAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<Object> {
+			return this.http.patch<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&overrideUnlockedRetention=' + overrideUnlockedRetention + '&predefinedAcl=' + predefinedAcl + '&projection=' + projection + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Updates an object's metadata.
 		 * Put b/{bucket}/o/{object}
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
 		 * @param {string} ifGenerationNotMatch Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
@@ -3248,137 +3248,137 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {Object} Successful response
 		 */
-		Storage_objects_update(bucket: string, _object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, overrideUnlockedRetention: boolean | null | undefined, predefinedAcl: Storage_buckets_insertPredefinedDefaultObjectAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<Object> {
-			return this.http.put<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&overrideUnlockedRetention=' + overrideUnlockedRetention + '&predefinedAcl=' + predefinedAcl + '&projection=' + projection + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objects_update(bucket: string, object: string, generation: string | null | undefined, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, overrideUnlockedRetention: boolean | null | undefined, predefinedAcl: Storage_buckets_insertPredefinedDefaultObjectAcl | null | undefined, projection: Storage_buckets_listProjection | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<Object> {
+			return this.http.put<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&overrideUnlockedRetention=' + overrideUnlockedRetention + '&predefinedAcl=' + predefinedAcl + '&projection=' + projection + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Retrieves ACL entries on the specified object.
 		 * Get b/{bucket}/o/{object}/acl
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {ObjectAccessControls} Successful response
 		 */
-		Storage_objectAccessControls_list(bucket: string, _object: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<ObjectAccessControls> {
-			return this.http.get<ObjectAccessControls>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
+		Storage_objectAccessControls_list(bucket: string, object: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<ObjectAccessControls> {
+			return this.http.get<ObjectAccessControls>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
 		}
 
 		/**
 		 * Creates a new ACL entry on the specified object.
 		 * Post b/{bucket}/o/{object}/acl
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_insert(bucket: string, _object: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
-			return this.http.post<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objectAccessControls_insert(bucket: string, object: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
+			return this.http.post<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Permanently deletes the ACL entry for the specified entity on the specified object.
 		 * Delete b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {void} Successful response
 		 */
-		Storage_objectAccessControls_delete(bucket: string, _object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
+		Storage_objectAccessControls_delete(bucket: string, object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Returns the ACL entry for the specified entity on the specified object.
 		 * Get b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_get(bucket: string, _object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<ObjectAccessControl> {
-			return this.http.get<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
+		Storage_objectAccessControls_get(bucket: string, object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<ObjectAccessControl> {
+			return this.http.get<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
 		}
 
 		/**
 		 * Patches an ACL entry on the specified object.
 		 * Patch b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_patch(bucket: string, _object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
-			return this.http.patch<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objectAccessControls_patch(bucket: string, object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
+			return this.http.patch<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Updates an ACL entry on the specified object.
 		 * Put b/{bucket}/o/{object}/acl/{entity}
 		 * @param {string} bucket Name of a bucket.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} entity The entity holding the permission. Can be user-userId, user-emailAddress, group-groupId, group-emailAddress, allUsers, or allAuthenticatedUsers.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {ObjectAccessControl} Successful response
 		 */
-		Storage_objectAccessControls_update(bucket: string, _object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
-			return this.http.put<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objectAccessControls_update(bucket: string, object: string, entity: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: ObjectAccessControl): Observable<ObjectAccessControl> {
+			return this.http.put<ObjectAccessControl>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/acl/' + (entity == null ? '' : encodeURIComponent(entity)) + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Returns an IAM policy for the specified object.
 		 * Get b/{bucket}/o/{object}/iam
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {Policy} Successful response
 		 */
-		Storage_objects_getIamPolicy(bucket: string, _object: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<Policy> {
-			return this.http.get<Policy>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/iam&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
+		Storage_objects_getIamPolicy(bucket: string, object: string, generation: string | null | undefined, userProject: string | null | undefined): Observable<Policy> {
+			return this.http.get<Policy>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/iam&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
 		}
 
 		/**
 		 * Updates an IAM policy for the specified object.
 		 * Put b/{bucket}/o/{object}/iam
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {Policy} Successful response
 		 */
-		Storage_objects_setIamPolicy(bucket: string, _object: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: Policy): Observable<Policy> {
-			return this.http.put<Policy>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/iam&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objects_setIamPolicy(bucket: string, object: string, generation: string | null | undefined, userProject: string | null | undefined, requestBody: Policy): Observable<Policy> {
+			return this.http.put<Policy>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/iam&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Tests a set of permissions on the given object to see which, if any, are held by the caller.
 		 * Get b/{bucket}/o/{object}/iam/testPermissions
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
 		 * @param {Array<string>} permissions Permissions to test.
 		 * @param {string} generation If present, selects a specific revision of this object (as opposed to the latest version, the default).
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {TestIamPermissionsResponse} Successful response
 		 */
-		Storage_objects_testIamPermissions(bucket: string, _object: string, permissions: Array<string>, generation: string | null | undefined, userProject: string | null | undefined): Observable<TestIamPermissionsResponse> {
-			return this.http.get<TestIamPermissionsResponse>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/iam/testPermissions&' + permissions.map(z => `permissions=${encodeURIComponent(z)}`).join('&') + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
+		Storage_objects_testIamPermissions(bucket: string, object: string, permissions: Array<string>, generation: string | null | undefined, userProject: string | null | undefined): Observable<TestIamPermissionsResponse> {
+			return this.http.get<TestIamPermissionsResponse>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/iam/testPermissions&' + permissions.map(z => `permissions=${encodeURIComponent(z)}`).join('&') + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), {});
 		}
 
 		/**
 		 * Restores a soft-deleted object.
 		 * Post b/{bucket}/o/{object}/restore
 		 * @param {string} bucket Name of the bucket in which the object resides.
-		 * @param {string} _object Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+		 * @param {string} object Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
 		 * @param {boolean} copySourceAcl If true, copies the source object's ACL; otherwise, uses the bucket's default object ACL. The default is false.
 		 * @param {string} generation Selects a specific revision of this object.
 		 * @param {string} ifGenerationMatch Makes the operation conditional on whether the object's one live generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
@@ -3389,8 +3389,8 @@ export namespace MyNS {
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {Object} Successful response
 		 */
-		Storage_objects_restore(bucket: string, _object: string, copySourceAcl: boolean | null | undefined, generation: string, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<Object> {
-			return this.http.post<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (_object == null ? '' : encodeURIComponent(_object)) + '/restore&copySourceAcl=' + copySourceAcl + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Storage_objects_restore(bucket: string, object: string, copySourceAcl: boolean | null | undefined, generation: string, ifGenerationMatch: string | null | undefined, ifGenerationNotMatch: string | null | undefined, ifMetagenerationMatch: string | null | undefined, ifMetagenerationNotMatch: string | null | undefined, projection: Storage_buckets_listProjection | null | undefined, userProject: string | null | undefined, requestBody: Object): Observable<Object> {
+			return this.http.post<Object>(this.baseUri + 'b/' + (bucket == null ? '' : encodeURIComponent(bucket)) + '/o/' + (object == null ? '' : encodeURIComponent(object)) + '/restore&copySourceAcl=' + copySourceAcl + '&generation=' + (generation == null ? '' : encodeURIComponent(generation)) + '&ifGenerationMatch=' + (ifGenerationMatch == null ? '' : encodeURIComponent(ifGenerationMatch)) + '&ifGenerationNotMatch=' + (ifGenerationNotMatch == null ? '' : encodeURIComponent(ifGenerationNotMatch)) + '&ifMetagenerationMatch=' + (ifMetagenerationMatch == null ? '' : encodeURIComponent(ifMetagenerationMatch)) + '&ifMetagenerationNotMatch=' + (ifMetagenerationNotMatch == null ? '' : encodeURIComponent(ifMetagenerationNotMatch)) + '&projection=' + projection + '&userProject=' + (userProject == null ? '' : encodeURIComponent(userProject)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**

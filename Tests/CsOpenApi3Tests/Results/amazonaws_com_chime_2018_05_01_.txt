@@ -13163,7 +13163,7 @@ namespace MyNS
 		/// </summary>
 		/// <param name="meetingId">The Amazon Chime SDK meeting ID.</param>
 		/// <param name="attendeeId">The Amazon Chime SDK attendee ID.</param>
-		public async Task UntagAttendeeAsync(string meetingId, string attendeeId, UntagAttendeeOperation operation, UntagAttendeePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task UntagAttendeeAsync(string meetingId, string attendeeId, DeleteVoiceConnectorTerminationCredentialsOperation operation, UntagAttendeePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "meetings/"+ (meetingId==null? "" : System.Uri.EscapeDataString(meetingId))+"/attendees/"+ (attendeeId==null? "" : System.Uri.EscapeDataString(attendeeId))+"/tags#operation=delete&operation=" + operation;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -13197,7 +13197,7 @@ namespace MyNS
 		/// UntagMeeting meetings/{meetingId}/tags#operation=delete
 		/// </summary>
 		/// <param name="meetingId">The Amazon Chime SDK meeting ID.</param>
-		public async Task UntagMeetingAsync(string meetingId, UntagMeetingOperation operation, UntagMeetingPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task UntagMeetingAsync(string meetingId, DeleteVoiceConnectorTerminationCredentialsOperation operation, UntagMeetingPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "meetings/"+ (meetingId==null? "" : System.Uri.EscapeDataString(meetingId))+"/tags#operation=delete&operation=" + operation;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -15070,7 +15070,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 0,
+		delete = 0,
 	}
 	
 	public class DeleteVoiceConnectorTerminationCredentialsPostBody
@@ -15635,13 +15635,6 @@ namespace MyNS
 		public Tag[] Tags { get; set; }
 	}
 	
-	public enum UntagAttendeeOperation
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 0,
-	}
-	
 	public class UntagAttendeePostBody
 	{
 		
@@ -15656,13 +15649,6 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
 		[System.ComponentModel.DataAnnotations.MaxLength(10)]
 		public string[] TagKeys { get; set; }
-	}
-	
-	public enum UntagMeetingOperation
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 0,
 	}
 	
 	public class UntagMeetingPostBody

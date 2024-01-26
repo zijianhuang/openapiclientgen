@@ -596,7 +596,7 @@ export namespace MyNS {
 		SourceFlowConfig: SourceFlowConfig;
 
 		/** Required */
-		Tasks: Array<Task_>;
+		Tasks: Array<Task>;
 
 		/** Required */
 		TriggerConfig: TriggerConfig;
@@ -803,7 +803,7 @@ export namespace MyNS {
 
 
 	/** A class for modeling different type of tasks. Task implementation varies based on the TaskType. */
-	export interface Task_ {
+	export interface Task {
 		ConnectorOperator?: ConnectorOperator;
 		DestinationField?: string;
 
@@ -816,14 +816,14 @@ export namespace MyNS {
 	}
 
 	/** A class for modeling different type of tasks. Task implementation varies based on the TaskType. */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 		DestinationField: FormControl<string | null | undefined>,
 
 		/** Required */
 		TaskType: FormControl<TaskType | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			DestinationField: new FormControl<string | null | undefined>(undefined),
 			TaskType: new FormControl<TaskType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -6558,7 +6558,7 @@ export namespace MyNS {
 		FlowName?: string;
 		KmsArn?: string;
 		SourceFlowConfig?: SourceFlowConfig;
-		Tasks?: Array<Task_>;
+		Tasks?: Array<Task>;
 		TriggerConfig?: TriggerConfig;
 	}
 	export interface PutIntegrationPutBodyFlowDefinitionFormProperties {

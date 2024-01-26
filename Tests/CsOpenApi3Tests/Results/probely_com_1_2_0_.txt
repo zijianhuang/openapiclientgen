@@ -321,7 +321,7 @@ namespace MyNS
 		edit = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
+		delete = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="trial")]
 		trial = 2,
@@ -9501,44 +9501,13 @@ namespace MyNS
 		///
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="action")]
-		public System.Nullable<Target_actionsPostReturnAction> Action { get; set; }
+		public ActionsElementAction Action { get; set; }
 		
 		/// <summary>
 		/// Label or the action
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		public string Label { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
-	public enum Target_actionsPostReturnAction
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="edit")]
-		edit = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="trial")]
-		trial = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="plan")]
-		plan = 3,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="subscribe")]
-		subscribe = 4,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="unsubscribe")]
-		unsubscribe = 5,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="archive")]
-		archive = 6,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="activate")]
-		activate = 7,
 	}
 	
 	public class TargetsGetByPageAndLengthAndOrderingAndSearchReturn

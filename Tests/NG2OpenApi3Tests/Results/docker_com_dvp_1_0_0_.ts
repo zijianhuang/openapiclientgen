@@ -352,64 +352,64 @@ export namespace MyNS {
 		 * Get namespace
 		 * Gets metadata associated with specified namespace, including extra repos associated with the namespace
 		 * Get namespaces/{namespace}
-		 * @param {string} _namespace Namespace to fetch data for
+		 * @param {string} namespace Namespace to fetch data for
 		 * @return {NamespaceMetadata} Success
 		 */
-		GetNamespace(_namespace: string): Observable<NamespaceMetadata> {
-			return this.http.get<NamespaceMetadata>(this.baseUri + 'namespaces/' + (_namespace == null ? '' : encodeURIComponent(_namespace)), {});
+		GetNamespace(namespace: string): Observable<NamespaceMetadata> {
+			return this.http.get<NamespaceMetadata>(this.baseUri + 'namespaces/' + (namespace == null ? '' : encodeURIComponent(namespace)), {});
 		}
 
 		/**
 		 * Get years with data
 		 * Gets a list of years that have data for the given namespace
 		 * Get namespaces/{namespace}/pulls/exports/years
-		 * @param {string} _namespace Namespace to fetch data for
+		 * @param {string} namespace Namespace to fetch data for
 		 * @return {YearData} Success
 		 */
-		GetNamespaceYears(_namespace: string): Observable<YearData> {
-			return this.http.get<YearData>(this.baseUri + 'namespaces/' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '/pulls/exports/years', {});
+		GetNamespaceYears(namespace: string): Observable<YearData> {
+			return this.http.get<YearData>(this.baseUri + 'namespaces/' + (namespace == null ? '' : encodeURIComponent(namespace)) + '/pulls/exports/years', {});
 		}
 
 		/**
 		 * Get timespans with data
 		 * Gets a list of timespans of the given type that have data for the given namespace and year
 		 * Get namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}
-		 * @param {string} _namespace Namespace to fetch data for
+		 * @param {string} namespace Namespace to fetch data for
 		 * @param {number} year Year to fetch data for
 		 * @param {TimespanType} timespantype Type of timespan to fetch data for
 		 * @return {TimespanData} Success
 		 */
-		GetNamespaceTimespans(_namespace: string, year: number, timespantype: TimespanType): Observable<TimespanData> {
-			return this.http.get<TimespanData>(this.baseUri + 'namespaces/' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '/pulls/exports/years/' + year + '/' + timespantype, {});
+		GetNamespaceTimespans(namespace: string, year: number, timespantype: TimespanType): Observable<TimespanData> {
+			return this.http.get<TimespanData>(this.baseUri + 'namespaces/' + (namespace == null ? '' : encodeURIComponent(namespace)) + '/pulls/exports/years/' + year + '/' + timespantype, {});
 		}
 
 		/**
 		 * Get namespace metadata for timespan
 		 * Gets info about data for the given namespace and timespan
 		 * Get namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}
-		 * @param {string} _namespace Namespace to fetch data for
+		 * @param {string} namespace Namespace to fetch data for
 		 * @param {number} year Year to fetch data for
 		 * @param {TimespanType} timespantype Type of timespan to fetch data for
 		 * @param {number} timespan Timespan to fetch data for
 		 * @return {TimespanModel} Success
 		 */
-		GetNamespaceTimespanMetadata(_namespace: string, year: number, timespantype: TimespanType, timespan: number): Observable<TimespanModel> {
-			return this.http.get<TimespanModel>(this.baseUri + 'namespaces/' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '/pulls/exports/years/' + year + '/' + timespantype + '/' + timespan, {});
+		GetNamespaceTimespanMetadata(namespace: string, year: number, timespantype: TimespanType, timespan: number): Observable<TimespanModel> {
+			return this.http.get<TimespanModel>(this.baseUri + 'namespaces/' + (namespace == null ? '' : encodeURIComponent(namespace)) + '/pulls/exports/years/' + year + '/' + timespantype + '/' + timespan, {});
 		}
 
 		/**
 		 * Get namespace data for timespan
 		 * Gets a list of URLs that can be used to download the pull data for the given namespace and timespan
 		 * Get namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}
-		 * @param {string} _namespace Namespace to fetch data for
+		 * @param {string} namespace Namespace to fetch data for
 		 * @param {number} year Year to fetch data for
 		 * @param {TimespanType} timespantype Type of timespan to fetch data for
 		 * @param {number} timespan Timespan to fetch data for
 		 * @param {DataviewType} dataview Type of data to fetch
 		 * @return {ResponseData} Success
 		 */
-		GetNamespaceDataByTimespan(_namespace: string, year: number, timespantype: TimespanType, timespan: number, dataview: DataviewType): Observable<ResponseData> {
-			return this.http.get<ResponseData>(this.baseUri + 'namespaces/' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '/pulls/exports/years/' + year + '/' + timespantype + '/' + timespan + '/' + dataview, {});
+		GetNamespaceDataByTimespan(namespace: string, year: number, timespantype: TimespanType, timespan: number, dataview: DataviewType): Observable<ResponseData> {
+			return this.http.get<ResponseData>(this.baseUri + 'namespaces/' + (namespace == null ? '' : encodeURIComponent(namespace)) + '/pulls/exports/years/' + year + '/' + timespantype + '/' + timespan + '/' + dataview, {});
 		}
 
 		/**

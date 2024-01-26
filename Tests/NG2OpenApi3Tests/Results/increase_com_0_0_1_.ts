@@ -11872,7 +11872,7 @@ export namespace MyNS {
 
 
 	/** Events are records of things that happened to objects in the API. They also result in webhooks being generated. */
-	export interface event_ {
+	export interface Event {
 
 		/**
 		 * The identifier of the object that generated this Event.
@@ -11908,11 +11908,11 @@ export namespace MyNS {
 		 * A constant representing the object's type. For this resource it will always be `event`.
 		 * Required
 		 */
-		type: event_Type;
+		type: EventType;
 	}
 
 	/** Events are records of things that happened to objects in the API. They also result in webhooks being generated. */
-	export interface event_FormProperties {
+	export interface EventFormProperties {
 
 		/**
 		 * The identifier of the object that generated this Event.
@@ -11948,21 +11948,21 @@ export namespace MyNS {
 		 * A constant representing the object's type. For this resource it will always be `event`.
 		 * Required
 		 */
-		type: FormControl<event_Type | null | undefined>,
+		type: FormControl<EventType | null | undefined>,
 	}
-	export function Createevent_FormGroup() {
-		return new FormGroup<event_FormProperties>({
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
 			associated_object_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			associated_object_type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			category: new FormControl<Create_an_event_subscription_parametersSelected_event_category | null | undefined>(undefined, [Validators.required]),
 			created_at: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			type: new FormControl<event_Type | null | undefined>(undefined, [Validators.required]),
+			type: new FormControl<EventType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
-	export enum event_Type { event = 0 }
+	export enum EventType { event = 0 }
 
 
 	/** A list of Event objects */
@@ -11972,7 +11972,7 @@ export namespace MyNS {
 		 * The contents of the list.
 		 * Required
 		 */
-		data: Array<event_>;
+		data: Array<Event>;
 
 		/**
 		 * A pointer to a place in the list.
@@ -39685,10 +39685,10 @@ export namespace MyNS {
 		/**
 		 * Retrieve an Event
 		 * Get events/{event_id}
-		 * @return {event_} Event
+		 * @return {Event} Event
 		 */
-		Retrieve_an_event(event_id: string): Observable<event_> {
-			return this.http.get<event_>(this.baseUri + 'events/' + (event_id == null ? '' : encodeURIComponent(event_id)), {});
+		Retrieve_an_event(event_id: string): Observable<Event> {
+			return this.http.get<Event>(this.baseUri + 'events/' + (event_id == null ? '' : encodeURIComponent(event_id)), {});
 		}
 
 		/**

@@ -254,7 +254,7 @@ export namespace MyNS {
 		ActivationState: RouteActivationState;
 		AppendSourcePath?: boolean | null;
 		IncludeChildPaths?: boolean | null;
-		Methods?: Array<HttpMethod_>;
+		Methods?: Array<HttpMethod>;
 
 		/** Required */
 		SourcePath: string;
@@ -283,7 +283,7 @@ export namespace MyNS {
 
 	export enum RouteActivationState { ACTIVE = 0, INACTIVE = 1 }
 
-	export enum HttpMethod_ { DELETE = 0, GET = 1, HEAD = 2, OPTIONS = 3, PATCH = 4, POST = 5, PUT = 6 }
+	export enum HttpMethod { DELETE = 0, GET = 1, HEAD = 2, OPTIONS = 3, PATCH = 4, POST = 5, PUT = 6 }
 
 	export interface CreateServiceResponse {
 		ApplicationId?: string;
@@ -696,7 +696,7 @@ export namespace MyNS {
 		Error?: ErrorResponse;
 		IncludeChildPaths?: boolean | null;
 		LastUpdatedTime?: Date;
-		Methods?: Array<HttpMethod_>;
+		Methods?: Array<HttpMethod>;
 		OwnerAccountId?: string;
 		PathResourceToId?: PathResourceToId;
 		RouteId?: string;
@@ -1074,7 +1074,7 @@ export namespace MyNS {
 		Error?: ErrorResponse;
 		IncludeChildPaths?: boolean | null;
 		LastUpdatedTime?: Date;
-		Methods?: Array<HttpMethod_>;
+		Methods?: Array<HttpMethod>;
 		OwnerAccountId?: string;
 		PathResourceToId?: PathResourceToId;
 		RouteId?: string;
@@ -2225,7 +2225,7 @@ export namespace MyNS {
 		ActivationState?: RouteActivationState;
 		AppendSourcePath?: boolean | null;
 		IncludeChildPaths?: boolean | null;
-		Methods?: Array<HttpMethod_>;
+		Methods?: Array<HttpMethod>;
 		SourcePath?: string;
 	}
 	export interface CreateRoutePostBodyUriPathRouteFormProperties {

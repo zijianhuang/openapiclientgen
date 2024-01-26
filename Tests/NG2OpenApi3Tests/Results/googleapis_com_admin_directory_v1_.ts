@@ -6333,7 +6333,7 @@ export namespace MyNS {
 		 * @param {string} customFieldMask A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.
 		 * @param {string} customer The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
 		 * @param {string} domain The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
-		 * @param {Directory_users_listEvent} _event Event on which subscription is intended (if subscribing)
+		 * @param {Directory_users_listEvent} event Event on which subscription is intended (if subscribing)
 		 * @param {number} maxResults Maximum number of results to return.
 		 * @param {Directory_users_listOrderBy} orderBy Property to use for sorting results.
 		 * @param {string} pageToken Token to specify next page in the list
@@ -6344,8 +6344,8 @@ export namespace MyNS {
 		 * @param {Directory_users_listViewType} viewType Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).
 		 * @return {Users} Successful response
 		 */
-		Directory_users_list(customFieldMask: string | null | undefined, customer: string | null | undefined, domain: string | null | undefined, _event: Directory_users_listEvent | null | undefined, maxResults: number | null | undefined, orderBy: Directory_users_listOrderBy | null | undefined, pageToken: string | null | undefined, projection: Directory_users_listProjection | null | undefined, query: string | null | undefined, showDeleted: string | null | undefined, sortOrder: Directory_chromeosdevices_listSortOrder | null | undefined, viewType: Directory_users_listViewType | null | undefined): Observable<Users> {
-			return this.http.get<Users>(this.baseUri + 'admin/directory/v1/users?customFieldMask=' + (customFieldMask == null ? '' : encodeURIComponent(customFieldMask)) + '&customer=' + (customer == null ? '' : encodeURIComponent(customer)) + '&domain=' + (domain == null ? '' : encodeURIComponent(domain)) + '&_event=' + _event + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&projection=' + projection + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&showDeleted=' + (showDeleted == null ? '' : encodeURIComponent(showDeleted)) + '&sortOrder=' + sortOrder + '&viewType=' + viewType, {});
+		Directory_users_list(customFieldMask: string | null | undefined, customer: string | null | undefined, domain: string | null | undefined, event: Directory_users_listEvent | null | undefined, maxResults: number | null | undefined, orderBy: Directory_users_listOrderBy | null | undefined, pageToken: string | null | undefined, projection: Directory_users_listProjection | null | undefined, query: string | null | undefined, showDeleted: string | null | undefined, sortOrder: Directory_chromeosdevices_listSortOrder | null | undefined, viewType: Directory_users_listViewType | null | undefined): Observable<Users> {
+			return this.http.get<Users>(this.baseUri + 'admin/directory/v1/users?customFieldMask=' + (customFieldMask == null ? '' : encodeURIComponent(customFieldMask)) + '&customer=' + (customer == null ? '' : encodeURIComponent(customer)) + '&domain=' + (domain == null ? '' : encodeURIComponent(domain)) + '&event=' + event + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&projection=' + projection + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&showDeleted=' + (showDeleted == null ? '' : encodeURIComponent(showDeleted)) + '&sortOrder=' + sortOrder + '&viewType=' + viewType, {});
 		}
 
 		/**
@@ -6364,7 +6364,7 @@ export namespace MyNS {
 		 * @param {string} customFieldMask Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.
 		 * @param {string} customer Immutable ID of the Google Workspace account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
 		 * @param {string} domain Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead."
-		 * @param {Directory_users_listEvent} _event Events to watch for.
+		 * @param {Directory_users_listEvent} event Events to watch for.
 		 * @param {number} maxResults Maximum number of results to return.
 		 * @param {Directory_users_listOrderBy} orderBy Column to use for sorting results
 		 * @param {string} pageToken Token to specify next page in the list
@@ -6375,8 +6375,8 @@ export namespace MyNS {
 		 * @param {Directory_users_listViewType} viewType Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).
 		 * @return {Channel} Successful response
 		 */
-		Directory_users_watch(customFieldMask: string | null | undefined, customer: string | null | undefined, domain: string | null | undefined, _event: Directory_users_listEvent | null | undefined, maxResults: number | null | undefined, orderBy: Directory_users_listOrderBy | null | undefined, pageToken: string | null | undefined, projection: Directory_users_listProjection | null | undefined, query: string | null | undefined, showDeleted: string | null | undefined, sortOrder: Directory_chromeosdevices_listSortOrder | null | undefined, viewType: Directory_users_listViewType | null | undefined, requestBody: Channel): Observable<Channel> {
-			return this.http.post<Channel>(this.baseUri + 'admin/directory/v1/users/watch?customFieldMask=' + (customFieldMask == null ? '' : encodeURIComponent(customFieldMask)) + '&customer=' + (customer == null ? '' : encodeURIComponent(customer)) + '&domain=' + (domain == null ? '' : encodeURIComponent(domain)) + '&_event=' + _event + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&projection=' + projection + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&showDeleted=' + (showDeleted == null ? '' : encodeURIComponent(showDeleted)) + '&sortOrder=' + sortOrder + '&viewType=' + viewType, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Directory_users_watch(customFieldMask: string | null | undefined, customer: string | null | undefined, domain: string | null | undefined, event: Directory_users_listEvent | null | undefined, maxResults: number | null | undefined, orderBy: Directory_users_listOrderBy | null | undefined, pageToken: string | null | undefined, projection: Directory_users_listProjection | null | undefined, query: string | null | undefined, showDeleted: string | null | undefined, sortOrder: Directory_chromeosdevices_listSortOrder | null | undefined, viewType: Directory_users_listViewType | null | undefined, requestBody: Channel): Observable<Channel> {
+			return this.http.post<Channel>(this.baseUri + 'admin/directory/v1/users/watch?customFieldMask=' + (customFieldMask == null ? '' : encodeURIComponent(customFieldMask)) + '&customer=' + (customer == null ? '' : encodeURIComponent(customer)) + '&domain=' + (domain == null ? '' : encodeURIComponent(domain)) + '&event=' + event + '&maxResults=' + maxResults + '&orderBy=' + orderBy + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&projection=' + projection + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&showDeleted=' + (showDeleted == null ? '' : encodeURIComponent(showDeleted)) + '&sortOrder=' + sortOrder + '&viewType=' + viewType, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -6426,11 +6426,11 @@ export namespace MyNS {
 		 * Lists all aliases for a user.
 		 * Get admin/directory/v1/users/{userKey}/aliases
 		 * @param {string} userKey Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
-		 * @param {Directory_users_aliases_listEvent} _event Events to watch for.
+		 * @param {Directory_users_aliases_listEvent} event Events to watch for.
 		 * @return {Aliases} Successful response
 		 */
-		Directory_users_aliases_list(userKey: string, _event: Directory_users_aliases_listEvent | null | undefined): Observable<Aliases> {
-			return this.http.get<Aliases>(this.baseUri + 'admin/directory/v1/users/' + (userKey == null ? '' : encodeURIComponent(userKey)) + '/aliases&_event=' + _event, {});
+		Directory_users_aliases_list(userKey: string, event: Directory_users_aliases_listEvent | null | undefined): Observable<Aliases> {
+			return this.http.get<Aliases>(this.baseUri + 'admin/directory/v1/users/' + (userKey == null ? '' : encodeURIComponent(userKey)) + '/aliases&event=' + event, {});
 		}
 
 		/**
@@ -6447,11 +6447,11 @@ export namespace MyNS {
 		 * Watches for changes in users list.
 		 * Post admin/directory/v1/users/{userKey}/aliases/watch
 		 * @param {string} userKey Email or immutable ID of the user
-		 * @param {Directory_users_aliases_listEvent} _event Events to watch for.
+		 * @param {Directory_users_aliases_listEvent} event Events to watch for.
 		 * @return {Channel} Successful response
 		 */
-		Directory_users_aliases_watch(userKey: string, _event: Directory_users_aliases_listEvent | null | undefined, requestBody: Channel): Observable<Channel> {
-			return this.http.post<Channel>(this.baseUri + 'admin/directory/v1/users/' + (userKey == null ? '' : encodeURIComponent(userKey)) + '/aliases/watch&_event=' + _event, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Directory_users_aliases_watch(userKey: string, event: Directory_users_aliases_listEvent | null | undefined, requestBody: Channel): Observable<Channel> {
+			return this.http.post<Channel>(this.baseUri + 'admin/directory/v1/users/' + (userKey == null ? '' : encodeURIComponent(userKey)) + '/aliases/watch&event=' + event, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**

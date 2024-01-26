@@ -1021,7 +1021,7 @@ export namespace MyNS {
 
 
 	/** The type that defines the fields for the task details. */
-	export interface Task_ {
+	export interface Task {
 
 		/** The timestamp when the task went into the <code>COMPLETED</code> or <code>COMPLETED_WITH_ERROR</code> state. This state means that eBay has compiled the report for the seller based on the seller’s filter criteria, and the seller can run a <strong>getResultFile</strong> call to download the report. */
 		completionDate?: string | null;
@@ -1049,7 +1049,7 @@ export namespace MyNS {
 	}
 
 	/** The type that defines the fields for the task details. */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 
 		/** The timestamp when the task went into the <code>COMPLETED</code> or <code>COMPLETED_WITH_ERROR</code> state. This state means that eBay has compiled the report for the seller based on the seller’s filter criteria, and the seller can run a <strong>getResultFile</strong> call to download the report. */
 		completionDate: FormControl<string | null | undefined>,
@@ -1072,8 +1072,8 @@ export namespace MyNS {
 		/** The ID of the task that was submitted in the request. */
 		taskId: FormControl<string | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			completionDate: new FormControl<string | null | undefined>(undefined),
 			creationDate: new FormControl<string | null | undefined>(undefined),
 			detailHref: new FormControl<string | null | undefined>(undefined),
@@ -1105,7 +1105,7 @@ export namespace MyNS {
 		prev?: string | null;
 
 		/** An array of the tasks on this page. The tasks are sorted by creation date. An empty array is returned if the filter criteria excludes all tasks. */
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 
 		/** The total number of tasks that match the input criteria. */
 		total?: number | null;
@@ -1601,10 +1601,10 @@ export namespace MyNS {
 		 * This method retrieves the details and status of the specified task. The input is <strong>task_id</strong>. <br /><br />For details of how this method is used, see <a href="/api-docs/sell/static/orders/generating-and-retrieving-order-reports.html">Working with Order Feeds</a> in the Selling Integration Guide.
 		 * Get task/{task_id}
 		 * @param {string} task_id The ID of the task. This ID was generated when the task was created.
-		 * @return {Task_} Success
+		 * @return {Task} Success
 		 */
-		GetTask(task_id: string): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'task/' + (task_id == null ? '' : encodeURIComponent(task_id)), {});
+		GetTask(task_id: string): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'task/' + (task_id == null ? '' : encodeURIComponent(task_id)), {});
 		}
 
 		/**

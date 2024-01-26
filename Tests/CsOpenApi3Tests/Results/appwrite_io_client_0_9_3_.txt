@@ -637,7 +637,7 @@ namespace MyNS
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
 	[System.SerializableAttribute()]
-	public class function_
+	public class Function
 	{
 		
 		/// <summary>

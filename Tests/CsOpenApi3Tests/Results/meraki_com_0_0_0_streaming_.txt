@@ -12779,7 +12779,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 0,
+		delete = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="restrict processing")]
 		restrict_processing = 1,

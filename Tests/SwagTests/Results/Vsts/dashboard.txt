@@ -303,7 +303,7 @@ namespace MyNS
 		
 		edit = 3,
 		
-		_delete = 4,
+		delete = 4,
 		
 		managePermissions = 5,
 	}

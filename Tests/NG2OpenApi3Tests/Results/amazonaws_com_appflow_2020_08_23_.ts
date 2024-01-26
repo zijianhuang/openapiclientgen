@@ -2531,7 +2531,7 @@ export namespace MyNS {
 
 
 	/**  A class for modeling different type of tasks. Task implementation varies based on the <code>TaskType</code>.  */
-	export interface Task_ {
+	export interface Task {
 
 		/** Required */
 		sourceFields: Array<string>;
@@ -2544,14 +2544,14 @@ export namespace MyNS {
 	}
 
 	/**  A class for modeling different type of tasks. Task implementation varies based on the <code>TaskType</code>.  */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 		destinationField: FormControl<string | null | undefined>,
 
 		/** Required */
 		taskType: FormControl<TaskType | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			destinationField: new FormControl<string | null | undefined>(undefined),
 			taskType: new FormControl<TaskType | null | undefined>(undefined, [Validators.required]),
 		});
@@ -3716,7 +3716,7 @@ export namespace MyNS {
 		destinationFlowConfigList?: Array<DestinationFlowConfig>;
 		lastRunExecutionDetails?: ExecutionDetails;
 		triggerConfig?: TriggerConfig;
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 		createdAt?: Date;
 		lastUpdatedAt?: Date;
 		createdBy?: string;
@@ -4386,7 +4386,7 @@ export namespace MyNS {
 		destinationFlowConfigList: Array<DestinationFlowConfig>;
 
 		/** Required */
-		tasks: Array<Task_>;
+		tasks: Array<Task>;
 		tags?: TagMap;
 		metadataCatalogConfig?: MetadataCatalogConfig;
 		clientToken?: string;
@@ -4850,7 +4850,7 @@ export namespace MyNS {
 		destinationFlowConfigList: Array<DestinationFlowConfig>;
 
 		/** Required */
-		tasks: Array<Task_>;
+		tasks: Array<Task>;
 		metadataCatalogConfig?: MetadataCatalogConfig;
 		clientToken?: string;
 	}
@@ -5303,7 +5303,7 @@ export namespace MyNS {
 		 * A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
 		 * Required
 		 */
-		tasks: Array<Task_>;
+		tasks: Array<Task>;
 
 		/** The tags used to organize, track, or control access for your flow. */
 		tags?: {[id: string]: string };
@@ -6349,7 +6349,7 @@ export namespace MyNS {
 		 * A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
 		 * Required
 		 */
-		tasks: Array<Task_>;
+		tasks: Array<Task>;
 
 		/** Specifies the configuration that Amazon AppFlow uses when it catalogs your data. When Amazon AppFlow catalogs your data, it stores metadata in a data catalog. */
 		metadataCatalogConfig?: UpdateFlowPostBodyMetadataCatalogConfig;

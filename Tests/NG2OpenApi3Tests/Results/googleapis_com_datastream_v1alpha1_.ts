@@ -2034,21 +2034,21 @@ export namespace MyNS {
 		/**
 		 * Starts backfill job for the specified stream object.
 		 * Post v1alpha1/{object}:startBackfillJob
-		 * @param {string} _object Required. The name of the stream object resource to start a backfill job for.
+		 * @param {string} object Required. The name of the stream object resource to start a backfill job for.
 		 * @return {StartBackfillJobResponse} Successful response
 		 */
-		Datastream_projects_locations_streams_objects_startBackfillJob(_object: string): Observable<StartBackfillJobResponse> {
-			return this.http.post<StartBackfillJobResponse>(this.baseUri + 'v1alpha1/' + (_object == null ? '' : encodeURIComponent(_object)) + ':startBackfillJob', null, {});
+		Datastream_projects_locations_streams_objects_startBackfillJob(object: string): Observable<StartBackfillJobResponse> {
+			return this.http.post<StartBackfillJobResponse>(this.baseUri + 'v1alpha1/' + (object == null ? '' : encodeURIComponent(object)) + ':startBackfillJob', null, {});
 		}
 
 		/**
 		 * Stops the backfill job for the specified stream object.
 		 * Post v1alpha1/{object}:stopBackfillJob
-		 * @param {string} _object Required. The name of the stream object resource to stop the backfill job for.
+		 * @param {string} object Required. The name of the stream object resource to stop the backfill job for.
 		 * @return {StopBackfillJobResponse} Successful response
 		 */
-		Datastream_projects_locations_streams_objects_stopBackfillJob(_object: string): Observable<StopBackfillJobResponse> {
-			return this.http.post<StopBackfillJobResponse>(this.baseUri + 'v1alpha1/' + (_object == null ? '' : encodeURIComponent(_object)) + ':stopBackfillJob', null, {});
+		Datastream_projects_locations_streams_objects_stopBackfillJob(object: string): Observable<StopBackfillJobResponse> {
+			return this.http.post<StopBackfillJobResponse>(this.baseUri + 'v1alpha1/' + (object == null ? '' : encodeURIComponent(object)) + ':stopBackfillJob', null, {});
 		}
 
 		/**

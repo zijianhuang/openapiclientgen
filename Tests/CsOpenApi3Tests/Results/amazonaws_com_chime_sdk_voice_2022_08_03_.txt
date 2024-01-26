@@ -7321,7 +7321,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 0,
+		delete = 0,
 	}
 	
 	public class DeleteVoiceConnectorTerminationCredentialsPostBody

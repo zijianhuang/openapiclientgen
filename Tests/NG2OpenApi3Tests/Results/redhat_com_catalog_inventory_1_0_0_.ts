@@ -1466,7 +1466,7 @@ export namespace MyNS {
 
 	}
 
-	export interface Task_ {
+	export interface Task {
 		archived_at?: Date | null;
 		child_task_id?: string | null;
 		completed_at?: Date | null;
@@ -1490,7 +1490,7 @@ export namespace MyNS {
 		type?: string | null;
 		updated_at?: Date | null;
 	}
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 		archived_at: FormControl<Date | null | undefined>,
 		child_task_id: FormControl<string | null | undefined>,
 		completed_at: FormControl<Date | null | undefined>,
@@ -1514,8 +1514,8 @@ export namespace MyNS {
 		type: FormControl<string | null | undefined>,
 		updated_at: FormControl<Date | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			archived_at: new FormControl<Date | null | undefined>(undefined),
 			child_task_id: new FormControl<string | null | undefined>(undefined),
 			completed_at: new FormControl<Date | null | undefined>(undefined),
@@ -1539,7 +1539,7 @@ export namespace MyNS {
 	}
 
 	export interface TasksCollection {
-		data?: Array<Task_>;
+		data?: Array<Task>;
 		links?: CollectionLinks;
 		meta?: CollectionMetadata;
 	}
@@ -2127,10 +2127,10 @@ export namespace MyNS {
 		 * Returns a Task object
 		 * Get tasks/{id}
 		 * @param {string} id UUID of task
-		 * @return {Task_} Task info
+		 * @return {Task} Task info
 		 */
-		ShowTask(id: string): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'tasks/' + (id == null ? '' : encodeURIComponent(id)), {});
+		ShowTask(id: string): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'tasks/' + (id == null ? '' : encodeURIComponent(id)), {});
 		}
 
 		/**
@@ -2138,10 +2138,10 @@ export namespace MyNS {
 		 * Updates a Task object
 		 * Patch tasks/{id}
 		 * @param {string} id UUID of task
-		 * @param {Task_} requestBody Task attributes to update
+		 * @param {Task} requestBody Task attributes to update
 		 * @return {void} 
 		 */
-		UpdateTask(id: string, requestBody: Task_): Observable<HttpResponse<string>> {
+		UpdateTask(id: string, requestBody: Task): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'tasks/' + (id == null ? '' : encodeURIComponent(id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 	}

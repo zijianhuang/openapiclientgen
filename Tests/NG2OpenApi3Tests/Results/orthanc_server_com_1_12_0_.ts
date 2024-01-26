@@ -60,12 +60,12 @@ export namespace MyNS {
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {number} limit Limit the number of results
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {number} since Show only the resources since the provided index
 		 * @return {any} 
 		 */
-		InstancesGetByExpandAndFullAndLimitAndRequestedTagsAnd_shortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		InstancesGetByExpandAndFullAndLimitAndRequestedTagsAndShortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -85,12 +85,12 @@ export namespace MyNS {
 		 * Get instances/{id}
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the instance of interest
 		 * @return {any} 
 		 */
-		Instances_idGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Instances_idGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -445,13 +445,13 @@ export namespace MyNS {
 		 * Get DICOM meta-header
 		 * Get the DICOM tags in the meta-header of the DICOM instance. By default, the `full` format is used, which combines hexadecimal tags with human-readable description.
 		 * Get instances/{id}/header
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the DICOM instance of interest
 		 * @return {any} 
 		 */
-		Instances_idHeaderGetBy_shortAndSimplify(_short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/header?_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Instances_idHeaderGetByShortAndSimplify(short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/header?short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -604,13 +604,13 @@ export namespace MyNS {
 		 * Get the instance module of the DICOM instance whose Orthanc identifier is provided in the URL
 		 * Get instances/{id}/module
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the instance of interest
 		 * @return {any} 
 		 */
-		Instances_idModuleGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Instances_idModuleGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -632,12 +632,12 @@ export namespace MyNS {
 		 * Get instances/{id}/patient
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the instance of interest
 		 * @return {any} 
 		 */
-		Instances_idPatientGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/patient?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Instances_idPatientGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/patient?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -699,12 +699,12 @@ export namespace MyNS {
 		 * Get instances/{id}/series
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the instance of interest
 		 * @return {any} 
 		 */
-		Instances_idSeriesGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/series?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Instances_idSeriesGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/series?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -736,12 +736,12 @@ export namespace MyNS {
 		 * Get instances/{id}/study
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the instance of interest
 		 * @return {any} 
 		 */
-		Instances_idStudyGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/study?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Instances_idStudyGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/study?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -749,13 +749,13 @@ export namespace MyNS {
 		 * Get the DICOM tags in the specified format. By default, the `full` format is used, which combines hexadecimal tags with human-readable description.
 		 * Get instances/{id}/tags
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the DICOM instance of interest
 		 * @return {any} 
 		 */
-		Instances_idTagsGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Instances_idTagsGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'instances/' + (id == null ? '' : encodeURIComponent(id)) + '/tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1020,12 +1020,12 @@ export namespace MyNS {
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {number} limit Limit the number of results
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {number} since Show only the resources since the provided index
 		 * @return {any} 
 		 */
-		PatientsGetByExpandAndFullAndLimitAndRequestedTagsAnd_shortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		PatientsGetByExpandAndFullAndLimitAndRequestedTagsAndShortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1045,12 +1045,12 @@ export namespace MyNS {
 		 * Get patients/{id}
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the patient of interest
 		 * @return {any} 
 		 */
-		Patients_idGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Patients_idGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1262,12 +1262,12 @@ export namespace MyNS {
 		 * Get patients/{id}/instances
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the patient of interest
 		 * @return {any} 
 		 */
-		Patients_idInstancesGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/instances?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Patients_idInstancesGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/instances?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1275,13 +1275,13 @@ export namespace MyNS {
 		 * Get the tags of all the child instances of the DICOM patient whose Orthanc identifier is provided in the URL
 		 * Get patients/{id}/instances-tags
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the patient of interest
 		 * @return {any} 
 		 */
-		Patients_idInstances_tagsGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/instances-tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Patients_idInstances_tagsGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/instances-tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1409,13 +1409,13 @@ export namespace MyNS {
 		 * Get the patient module of the DICOM patient whose Orthanc identifier is provided in the URL
 		 * Get patients/{id}/module
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the patient of interest
 		 * @return {any} 
 		 */
-		Patients_idModuleGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Patients_idModuleGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1457,25 +1457,25 @@ export namespace MyNS {
 		 * Get patients/{id}/series
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the patient of interest
 		 * @return {any} 
 		 */
-		Patients_idSeriesGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/series?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Patients_idSeriesGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/series?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Get shared tags
 		 * Extract the DICOM tags whose value is constant across all the child instances of the DICOM patient whose Orthanc identifier is provided in the URL
 		 * Get patients/{id}/shared-tags
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the patient of interest
 		 * @return {any} 
 		 */
-		Patients_idShared_tagsGetBy_shortAndSimplify(_short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/shared-tags?_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Patients_idShared_tagsGetByShortAndSimplify(short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/shared-tags?short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1495,12 +1495,12 @@ export namespace MyNS {
 		 * Get patients/{id}/studies
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the patient of interest
 		 * @return {any} 
 		 */
-		Patients_idStudiesGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/studies?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Patients_idStudiesGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'patients/' + (id == null ? '' : encodeURIComponent(id)) + '/studies?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1648,13 +1648,13 @@ export namespace MyNS {
 		 * List the indices of all the available answers resulting from a query/retrieve operation on some DICOM modality, whose identifier is provided in the URL
 		 * Get queries/{id}/answers
 		 * @param {string} expand If present, retrieve detailed information about the individual answers
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Identifier of the query of interest
 		 * @return {any} 
 		 */
-		Queries_idAnswersGetByExpandAnd_shortAndSimplify(expand: string | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'queries/' + (id == null ? '' : encodeURIComponent(id)) + '/answers?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Queries_idAnswersGetByExpandAndShortAndSimplify(expand: string | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'queries/' + (id == null ? '' : encodeURIComponent(id)) + '/answers?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1673,14 +1673,14 @@ export namespace MyNS {
 		 * Get one answer
 		 * Get the content (DICOM tags) of one answer associated with the query/retrieve operation whose identifier is provided in the URL
 		 * Get queries/{id}/answers/{index}/content
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Identifier of the query of interest
 		 * @param {string} index Index of the answer
 		 * @return {any} 
 		 */
-		Queries_idAnswers_indexContentGetBy_shortAndSimplify(_short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, index: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'queries/' + (id == null ? '' : encodeURIComponent(id)) + '/answers/' + (index == null ? '' : encodeURIComponent(index)) + '/content?_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Queries_idAnswers_indexContentGetByShortAndSimplify(short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, index: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'queries/' + (id == null ? '' : encodeURIComponent(id)) + '/answers/' + (index == null ? '' : encodeURIComponent(index)) + '/content?short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1757,13 +1757,13 @@ export namespace MyNS {
 		 * Get original query arguments
 		 * Get the original DICOM filter associated with the query/retrieve operation whose identifier is provided in the URL
 		 * Get queries/{id}/query
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Identifier of the query of interest
 		 * @return {any} 
 		 */
-		Queries_idQueryGetBy_shortAndSimplify(_short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'queries/' + (id == null ? '' : encodeURIComponent(id)) + '/query?_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Queries_idQueryGetByShortAndSimplify(short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'queries/' + (id == null ? '' : encodeURIComponent(id)) + '/query?short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1785,12 +1785,12 @@ export namespace MyNS {
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {number} limit Limit the number of results
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {number} since Show only the resources since the provided index
 		 * @return {any} 
 		 */
-		SeriesGetByExpandAndFullAndLimitAndRequestedTagsAnd_shortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		SeriesGetByExpandAndFullAndLimitAndRequestedTagsAndShortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1810,12 +1810,12 @@ export namespace MyNS {
 		 * Get series/{id}
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the series of interest
 		 * @return {any} 
 		 */
-		Series_idGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Series_idGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2027,12 +2027,12 @@ export namespace MyNS {
 		 * Get series/{id}/instances
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the series of interest
 		 * @return {any} 
 		 */
-		Series_idInstancesGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/instances?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Series_idInstancesGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/instances?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2040,13 +2040,13 @@ export namespace MyNS {
 		 * Get the tags of all the child instances of the DICOM series whose Orthanc identifier is provided in the URL
 		 * Get series/{id}/instances-tags
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the series of interest
 		 * @return {any} 
 		 */
-		Series_idInstances_tagsGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/instances-tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Series_idInstances_tagsGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/instances-tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2174,13 +2174,13 @@ export namespace MyNS {
 		 * Get the series module of the DICOM series whose Orthanc identifier is provided in the URL
 		 * Get series/{id}/module
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the series of interest
 		 * @return {any} 
 		 */
-		Series_idModuleGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Series_idModuleGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2213,12 +2213,12 @@ export namespace MyNS {
 		 * Get series/{id}/patient
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the series of interest
 		 * @return {any} 
 		 */
-		Series_idPatientGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/patient?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Series_idPatientGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/patient?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2236,13 +2236,13 @@ export namespace MyNS {
 		 * Get shared tags
 		 * Extract the DICOM tags whose value is constant across all the child instances of the DICOM series whose Orthanc identifier is provided in the URL
 		 * Get series/{id}/shared-tags
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the series of interest
 		 * @return {any} 
 		 */
-		Series_idShared_tagsGetBy_shortAndSimplify(_short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/shared-tags?_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Series_idShared_tagsGetByShortAndSimplify(short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/shared-tags?short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2262,12 +2262,12 @@ export namespace MyNS {
 		 * Get series/{id}/study
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the series of interest
 		 * @return {any} 
 		 */
-		Series_idStudyGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/study?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Series_idStudyGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'series/' + (id == null ? '' : encodeURIComponent(id)) + '/study?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2310,12 +2310,12 @@ export namespace MyNS {
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {number} limit Limit the number of results
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {number} since Show only the resources since the provided index
 		 * @return {any} 
 		 */
-		StudiesGetByExpandAndFullAndLimitAndRequestedTagsAnd_shortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		StudiesGetByExpandAndFullAndLimitAndRequestedTagsAndShortAndSince(expand: string | null | undefined, full: boolean | null | undefined, limit: number | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies?expand=' + (expand == null ? '' : encodeURIComponent(expand)) + '&full=' + full + '&limit=' + limit + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short + '&since=' + since, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2335,12 +2335,12 @@ export namespace MyNS {
 		 * Get studies/{id}
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2552,12 +2552,12 @@ export namespace MyNS {
 		 * Get studies/{id}/instances
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idInstancesGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/instances?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idInstancesGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/instances?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2565,13 +2565,13 @@ export namespace MyNS {
 		 * Get the tags of all the child instances of the DICOM study whose Orthanc identifier is provided in the URL
 		 * Get studies/{id}/instances-tags
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idInstances_tagsGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/instances-tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idInstances_tagsGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/instances-tags?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2710,13 +2710,13 @@ export namespace MyNS {
 		 * Get the study module of the DICOM study whose Orthanc identifier is provided in the URL
 		 * Get studies/{id}/module
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idModuleGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idModuleGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/module?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2724,13 +2724,13 @@ export namespace MyNS {
 		 * Get the patient module of the DICOM study whose Orthanc identifier is provided in the URL
 		 * Get studies/{id}/module-patient
 		 * @param {Array<string>} ignore_length Also include the DICOM tags that are provided in this list, even if their associated value is long
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idModule_patientGetByIgnore_lengthAnd_shortAndSimplify(ignore_length: Array<string> | null | undefined, _short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/module-patient?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idModule_patientGetByIgnore_lengthAndShortAndSimplify(ignore_length: Array<string> | null | undefined, short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/module-patient?' + ignore_length?.map(z => `ignore-length=${encodeURIComponent(z)}`).join('&') + '&short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2739,12 +2739,12 @@ export namespace MyNS {
 		 * Get studies/{id}/patient
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idPatientGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/patient?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idPatientGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/patient?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2764,25 +2764,25 @@ export namespace MyNS {
 		 * Get studies/{id}/series
 		 * @param {boolean} full If present, report the DICOM tags in full format (tags indexed by their hexadecimal format, associated with their symbolic name and their value)
 		 * @param {string} requestedTags If present, list the DICOM Tags you want to list in the response.  This argument is a semi-column separated list of DICOM Tags identifiers; e.g: 'requestedTags=0010,0010;PatientBirthDate'.  The tags requested tags are returned in the 'RequestedTags' field in the response.  Note that, if you are requesting tags that are not listed in the Main Dicom Tags stored in DB, building the response might be slow since Orthanc will need to access the DICOM files.  If not specified, Orthanc will return 
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idSeriesGetByFullAndRequestedTagsAnd_short(full: boolean | null | undefined, requestedTags: string | null | undefined, _short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/series?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&_short=' + _short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idSeriesGetByFullAndRequestedTagsAndShort(full: boolean | null | undefined, requestedTags: string | null | undefined, short: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/series?full=' + full + '&requestedTags=' + (requestedTags == null ? '' : encodeURIComponent(requestedTags)) + '&short=' + short, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**
 		 * Get shared tags
 		 * Extract the DICOM tags whose value is constant across all the child instances of the DICOM study whose Orthanc identifier is provided in the URL
 		 * Get studies/{id}/shared-tags
-		 * @param {boolean} _short If present, report the DICOM tags in hexadecimal format
+		 * @param {boolean} short If present, report the DICOM tags in hexadecimal format
 		 * @param {boolean} simplify If present, report the DICOM tags in human-readable format (using the symbolic name of the tags)
 		 * @param {string} id Orthanc identifier of the study of interest
 		 * @return {any} 
 		 */
-		Studies_idShared_tagsGetBy_shortAndSimplify(_short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/shared-tags?_short=' + _short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		Studies_idShared_tagsGetByShortAndSimplify(short: boolean | null | undefined, simplify: boolean | null | undefined, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'studies/' + (id == null ? '' : encodeURIComponent(id)) + '/shared-tags?short=' + short + '&simplify=' + simplify, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**

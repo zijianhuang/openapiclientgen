@@ -3042,7 +3042,7 @@ export namespace MyNS {
 	export enum TaskSetField { TAGS = 0 }
 
 	export interface DescribeTasksResponse {
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 		failures?: Array<Failure>;
 	}
 	export interface DescribeTasksResponseFormProperties {
@@ -3055,7 +3055,7 @@ export namespace MyNS {
 
 
 	/** Details on a task in a cluster. */
-	export interface Task_ {
+	export interface Task {
 		attachments?: Array<Attachment>;
 		attributes?: Array<Attribute>;
 		availabilityZone?: string;
@@ -3095,7 +3095,7 @@ export namespace MyNS {
 	}
 
 	/** Details on a task in a cluster. */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 		availabilityZone: FormControl<string | null | undefined>,
 		capacityProviderName: FormControl<string | null | undefined>,
 		clusterArn: FormControl<string | null | undefined>,
@@ -3126,8 +3126,8 @@ export namespace MyNS {
 		taskDefinitionArn: FormControl<string | null | undefined>,
 		version: FormControl<number | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			availabilityZone: new FormControl<string | null | undefined>(undefined),
 			capacityProviderName: new FormControl<string | null | undefined>(undefined),
 			clusterArn: new FormControl<string | null | undefined>(undefined),
@@ -4278,7 +4278,7 @@ export namespace MyNS {
 	}
 
 	export interface RunTaskResponse {
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 		failures?: Array<Failure>;
 	}
 	export interface RunTaskResponseFormProperties {
@@ -4353,7 +4353,7 @@ export namespace MyNS {
 	}
 
 	export interface StartTaskResponse {
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 		failures?: Array<Failure>;
 	}
 	export interface StartTaskResponseFormProperties {
@@ -4409,7 +4409,7 @@ export namespace MyNS {
 	}
 
 	export interface StopTaskResponse {
-		task?: Task_;
+		task?: Task;
 	}
 	export interface StopTaskResponseFormProperties {
 	}

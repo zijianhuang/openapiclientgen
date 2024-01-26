@@ -1667,7 +1667,7 @@ export namespace MyNS {
 		 * @param {string} zip Zip code to search for facilities. More detailed zip codes can be passed in, but only the first five digits are used to determine facilities to return.
 		 * @param {string} state State in which to search for facilities. Except in rare cases, this is two characters.
 		 * @param {number} lat Latitude of point to search for facilities, in WGS84 coordinate reference system.
-		 * @param {number} _long Longitude of point to search for facilities, in WGS84 coordinate reference system.
+		 * @param {number} long Longitude of point to search for facilities, in WGS84 coordinate reference system.
 		 * @param {number} radius Optional radial distance from specified latitude and longitude to filter facilities search in WGS84 coordinate reference system.
 		 * @param {Array<number>} bbox_ Bounding box (longitude, latitude, longitude, latitude) within which facilities will be returned. (WGS84 coordinate reference system)
 		 * @param {number} visn VISN search of matching facilities.
@@ -1678,8 +1678,8 @@ export namespace MyNS {
 		 * @param {number} per_page Number of results to return per paginated response.
 		 * @return {FacilitiesResponse} Success
 		 */
-		GetFacilitiesByLocation(ids: Array<string> | null | undefined, zip: string | null | undefined, state: string | null | undefined, lat: number | null | undefined, _long: number | null | undefined, radius: number | null | undefined, bbox_: Array<number> | null | undefined, visn: number | null | undefined, type: GetFacilitiesByLocationType | null | undefined, services_: Array<string> | null | undefined, mobile: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<FacilitiesResponse> {
-			return this.http.get<FacilitiesResponse>(this.baseUri + 'facilities?' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&zip=' + (zip == null ? '' : encodeURIComponent(zip)) + '&state=' + (state == null ? '' : encodeURIComponent(state)) + '&lat=' + lat + '&_long=' + _long + '&radius=' + radius + '&' + bbox_?.map(z => `bbox[]=${z}`).join('&') + '&visn=' + visn + '&type=' + type + '&' + services_?.map(z => `services[]=${encodeURIComponent(z)}`).join('&') + '&mobile=' + mobile + '&page=' + page + '&per_page=' + per_page, {});
+		GetFacilitiesByLocation(ids: Array<string> | null | undefined, zip: string | null | undefined, state: string | null | undefined, lat: number | null | undefined, long: number | null | undefined, radius: number | null | undefined, bbox_: Array<number> | null | undefined, visn: number | null | undefined, type: GetFacilitiesByLocationType | null | undefined, services_: Array<string> | null | undefined, mobile: boolean | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<FacilitiesResponse> {
+			return this.http.get<FacilitiesResponse>(this.baseUri + 'facilities?' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&zip=' + (zip == null ? '' : encodeURIComponent(zip)) + '&state=' + (state == null ? '' : encodeURIComponent(state)) + '&lat=' + lat + '&long=' + long + '&radius=' + radius + '&' + bbox_?.map(z => `bbox[]=${z}`).join('&') + '&visn=' + visn + '&type=' + type + '&' + services_?.map(z => `services[]=${encodeURIComponent(z)}`).join('&') + '&mobile=' + mobile + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
 		/**

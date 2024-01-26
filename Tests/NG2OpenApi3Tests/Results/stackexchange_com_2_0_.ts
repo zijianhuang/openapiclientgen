@@ -3546,8 +3546,8 @@ export namespace MyNS {
 		 * @param {string} include String list (semicolon delimited).
 		 * @return {void} OK
 		 */
-		FiltersCreateGetBy_baseAndExcludeAndIncludeAnd_unsafe(_base: string | null | undefined, exclude: string | null | undefined, include: string | null | undefined, _unsafe: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'filters/create?_base=' + (_base == null ? '' : encodeURIComponent(_base)) + '&exclude=' + (exclude == null ? '' : encodeURIComponent(exclude)) + '&include=' + (include == null ? '' : encodeURIComponent(include)) + '&_unsafe=' + _unsafe, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		FiltersCreateGetByBaseAndExcludeAndIncludeAndUnsafe(base: string | null | undefined, exclude: string | null | undefined, include: string | null | undefined, unsafe: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'filters/create?base=' + (base == null ? '' : encodeURIComponent(base)) + '&exclude=' + (exclude == null ? '' : encodeURIComponent(exclude)) + '&include=' + (include == null ? '' : encodeURIComponent(include)) + '&unsafe=' + unsafe, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**

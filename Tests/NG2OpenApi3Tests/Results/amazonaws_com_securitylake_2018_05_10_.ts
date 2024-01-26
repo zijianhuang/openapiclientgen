@@ -646,7 +646,7 @@ export namespace MyNS {
 
 		/** Required */
 		endpoint: string;
-		httpMethod?: HttpMethod_;
+		httpMethod?: HttpMethod;
 
 		/** Required */
 		targetRoleArn: string;
@@ -659,7 +659,7 @@ export namespace MyNS {
 
 		/** Required */
 		endpoint: FormControl<string | null | undefined>,
-		httpMethod: FormControl<HttpMethod_ | null | undefined>,
+		httpMethod: FormControl<HttpMethod | null | undefined>,
 
 		/** Required */
 		targetRoleArn: FormControl<string | null | undefined>,
@@ -669,13 +669,13 @@ export namespace MyNS {
 			authorizationApiKeyName: new FormControl<string | null | undefined>(undefined),
 			authorizationApiKeyValue: new FormControl<string | null | undefined>(undefined),
 			endpoint: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			httpMethod: new FormControl<HttpMethod_ | null | undefined>(undefined),
+			httpMethod: new FormControl<HttpMethod | null | undefined>(undefined),
 			targetRoleArn: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
-	export enum HttpMethod_ { POST = 0, PUT = 1 }
+	export enum HttpMethod { POST = 0, PUT = 1 }
 
 
 	/** The configurations for SQS subscriber notification. */

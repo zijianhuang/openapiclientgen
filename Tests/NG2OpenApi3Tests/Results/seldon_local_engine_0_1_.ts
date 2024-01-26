@@ -528,16 +528,16 @@ export namespace MyNS {
 		 * Post seldon/{namespace}/{deployment}/api/v1.0/feedback
 		 * @return {SeldonMessage} A successful response.
 		 */
-		SendFeedback(_namespace: string, deployment: string, requestBody: Feedback): Observable<SeldonMessage> {
-			return this.http.post<SeldonMessage>(this.baseUri + 'seldon/' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '/api/v1.0/feedback', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		SendFeedback(namespace: string, deployment: string, requestBody: Feedback): Observable<SeldonMessage> {
+			return this.http.post<SeldonMessage>(this.baseUri + 'seldon/' + (namespace == null ? '' : encodeURIComponent(namespace)) + '/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '/api/v1.0/feedback', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Post seldon/{namespace}/{deployment}/api/v1.0/predictions
 		 * @return {SeldonMessage} A successful response.
 		 */
-		Predict(_namespace: string, deployment: string, requestBody: SeldonMessage): Observable<SeldonMessage> {
-			return this.http.post<SeldonMessage>(this.baseUri + 'seldon/' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '/api/v1.0/predictions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Predict(namespace: string, deployment: string, requestBody: SeldonMessage): Observable<SeldonMessage> {
+			return this.http.post<SeldonMessage>(this.baseUri + 'seldon/' + (namespace == null ? '' : encodeURIComponent(namespace)) + '/' + (deployment == null ? '' : encodeURIComponent(deployment)) + '/api/v1.0/predictions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 	}
 

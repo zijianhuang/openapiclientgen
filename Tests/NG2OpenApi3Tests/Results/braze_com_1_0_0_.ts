@@ -839,7 +839,7 @@ export namespace MyNS {
 		 * | 429 Rate Limited | Over rate limit                                                  |
 		 * | 5XX              | Internal server error, you should retry with exponential backoff |
 		 * Get events/data_series
-		 * @param {string} _event (Required) String
+		 * @param {string} event (Required) String
 		 * The name of the custom event for which to return analytics 
 		 * @param {string} length (Required) Integer
 		 * Max number of units (days or hours) before ending_at to include in the returned series - must be between 1 and 100 inclusive
@@ -853,8 +853,8 @@ export namespace MyNS {
 		 * Segment API identifier indicating the analytics enabled segment for which event analytics should be returned
 		 * @return {void} 
 		 */
-		CustomEventsAnalytics(_event: string | null | undefined, length: string | null | undefined, unit: string | null | undefined, ending_at: string | null | undefined, app_id: string | null | undefined, segment_id: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'events/data_series?_event=' + (_event == null ? '' : encodeURIComponent(_event)) + '&length=' + (length == null ? '' : encodeURIComponent(length)) + '&unit=' + (unit == null ? '' : encodeURIComponent(unit)) + '&ending_at=' + (ending_at == null ? '' : encodeURIComponent(ending_at)) + '&app_id=' + (app_id == null ? '' : encodeURIComponent(app_id)) + '&segment_id=' + (segment_id == null ? '' : encodeURIComponent(segment_id)), { observe: 'response', responseType: 'text' });
+		CustomEventsAnalytics(event: string | null | undefined, length: string | null | undefined, unit: string | null | undefined, ending_at: string | null | undefined, app_id: string | null | undefined, segment_id: string | null | undefined): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'events/data_series?event=' + (event == null ? '' : encodeURIComponent(event)) + '&length=' + (length == null ? '' : encodeURIComponent(length)) + '&unit=' + (unit == null ? '' : encodeURIComponent(unit)) + '&ending_at=' + (ending_at == null ? '' : encodeURIComponent(ending_at)) + '&app_id=' + (app_id == null ? '' : encodeURIComponent(app_id)) + '&segment_id=' + (segment_id == null ? '' : encodeURIComponent(segment_id)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

@@ -3880,12 +3880,12 @@ export namespace MyNS {
 		 * The object needs to specify the MIB object with the INDEX clause, usually an object whose name ends with Entry.
 		 * Post mimic/agent/{agentNum}/value/add/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Object (column) of the table in the agent's value space
+		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @param {string} instance Object (column) of the table in the agent's value space
 		 * @return {string} successful operation
 		 */
-		Add(agentNum: number, _object: string, instance: string): Observable<string> {
-			return this.http.post(this.baseUri + 'mimic/agent/' + agentNum + '/value/add/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), null, { responseType: 'text' });
+		Add(agentNum: number, object: string, instance: string): Observable<string> {
+			return this.http.post(this.baseUri + 'mimic/agent/' + agentNum + '/value/add/' + (object == null ? '' : encodeURIComponent(object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), null, { responseType: 'text' });
 		}
 
 		/**
@@ -3893,12 +3893,12 @@ export namespace MyNS {
 		 * Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests.
 		 * Get mimic/agent/{agentNum}/value/eval/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Single instance object or object (column) of the table in the agent's value space.
+		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @return {string} successful operation
 		 */
-		Eval_value(agentNum: number, _object: string, instance: string): Observable<string> {
-			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/eval/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), { responseType: 'text' });
+		Eval_value(agentNum: number, object: string, instance: string): Observable<string> {
+			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/eval/' + (object == null ? '' : encodeURIComponent(object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), { responseType: 'text' });
 		}
 
 		/**
@@ -3906,13 +3906,13 @@ export namespace MyNS {
 		 * Get a variable in the Value Space.
 		 * Get mimic/agent/{agentNum}/value/get/{object}/{instance}/{variable}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Object (column) of the table in the agent's value space
+		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @param {string} instance Object (column) of the table in the agent's value space
 		 * @param {string} variable Object (column) of the table in the agent's value space
 		 * @return {string} successful operation
 		 */
-		Get_value(agentNum: number, _object: string, instance: string, variable: string): Observable<string> {
-			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/get/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)) + '/' + (variable == null ? '' : encodeURIComponent(variable)), { responseType: 'text' });
+		Get_value(agentNum: number, object: string, instance: string, variable: string): Observable<string> {
+			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/get/' + (object == null ? '' : encodeURIComponent(object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)) + '/' + (variable == null ? '' : encodeURIComponent(variable)), { responseType: 'text' });
 		}
 
 		/**
@@ -3920,11 +3920,11 @@ export namespace MyNS {
 		 * Return the syntactical information for the specified object, such as type, size, range, enumerations, and ACCESS.
 		 * Get mimic/agent/{agentNum}/value/info/{object}
 		 * @param {number} agentNum Agent to show the information of the object
-		 * @param {string} _object Object
+		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
-		Get_info(agentNum: number, _object: string): Observable<string> {
-			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/info/' + (_object == null ? '' : encodeURIComponent(_object)), { responseType: 'text' });
+		Get_info(agentNum: number, object: string): Observable<string> {
+			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/info/' + (object == null ? '' : encodeURIComponent(object)), { responseType: 'text' });
 		}
 
 		/**
@@ -3932,11 +3932,11 @@ export namespace MyNS {
 		 * This enables MIB browsing of the MIB on the current agent.
 		 * Get mimic/agent/{agentNum}/value/instances/{object}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Object (column) of the table in the agent's value space
+		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @return {Array<string>} successful operation
 		 */
-		Get_instances(agentNum: number, _object: string): Observable<Array<string>> {
-			return this.http.get<Array<string>>(this.baseUri + 'mimic/agent/' + agentNum + '/value/instances/' + (_object == null ? '' : encodeURIComponent(_object)), {});
+		Get_instances(agentNum: number, object: string): Observable<Array<string>> {
+			return this.http.get<Array<string>>(this.baseUri + 'mimic/agent/' + agentNum + '/value/instances/' + (object == null ? '' : encodeURIComponent(object)), {});
 		}
 
 		/**
@@ -3980,11 +3980,11 @@ export namespace MyNS {
 		 * This will only return a MIB name if the object is unmistakeably defined in a MIB.
 		 * Get mimic/agent/{agentNum}/value/mib/{object}
 		 * @param {number} agentNum Agent to show the MIB
-		 * @param {string} _object Object
+		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
-		Get_mib(agentNum: number, _object: string): Observable<string> {
-			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/mib/' + (_object == null ? '' : encodeURIComponent(_object)), { responseType: 'text' });
+		Get_mib(agentNum: number, object: string): Observable<string> {
+			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/mib/' + (object == null ? '' : encodeURIComponent(object)), { responseType: 'text' });
 		}
 
 		/**
@@ -4028,11 +4028,11 @@ export namespace MyNS {
 		 * Return the numeric OID of the specified object.
 		 * Get mimic/agent/{agentNum}/value/oid/{object}
 		 * @param {number} agentNum Agent to show the OID
-		 * @param {string} _object Object
+		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
-		Get_oid(agentNum: number, _object: string): Observable<string> {
-			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/oid/' + (_object == null ? '' : encodeURIComponent(_object)), { responseType: 'text' });
+		Get_oid(agentNum: number, object: string): Observable<string> {
+			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/oid/' + (object == null ? '' : encodeURIComponent(object)), { responseType: 'text' });
 		}
 
 		/**
@@ -4040,12 +4040,12 @@ export namespace MyNS {
 		 * The object needs to specify the MIB object with the INDEX clause, usually an object whose name ends with Entry.
 		 * Delete mimic/agent/{agentNum}/value/remove/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Object (column) of the table in the agent's value space
+		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @param {string} instance Object (column) of the table in the agent's value space
 		 * @return {string} successful operation
 		 */
-		Remove(agentNum: number, _object: string, instance: string): Observable<string> {
-			return this.http.delete(this.baseUri + 'mimic/agent/' + agentNum + '/value/remove/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), { responseType: 'text' });
+		Remove(agentNum: number, object: string, instance: string): Observable<string> {
+			return this.http.delete(this.baseUri + 'mimic/agent/' + agentNum + '/value/remove/' + (object == null ? '' : encodeURIComponent(object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), { responseType: 'text' });
 		}
 
 		/**
@@ -4053,14 +4053,14 @@ export namespace MyNS {
 		 * NOTE to set a binary string value, specify a string starting with \\x followed by pairs of hexadecimal digits, eg. "\\x 01 23 45". This command also assigns SNMP PDU action scripts for GET* and SET requests on a MIB object. The instance parameter must be 0. The following variables enable actions, g - The specified TCL script will be run on GET or GETNEXT requests. It has to exist under the simulation directory. s - The specified script will be run on SET requests. It has to exist under the simulation directory. This command also controls advanced trap generation functionality. The following variables control trap generation r, tu, c - These variables together represent the rate settings for the trap. r and tu is the actual per second rate and c represents the total duration in seconds for which the trap is sent. As soon as the c variable is set, the trap generation begins, for this reason it should be the last variable set for a particular trap. The following variables have to be set before setting the c variable to modify the behavior of the generated trap(s). OBJECT - An object name when used as a variable is looked up during the trap send and the value of that variable is included in the PDU. OBJECT.i - This type of variable will be used to assign an optional instance for the specified object in the traps varbind. The value of this variable identifies the index. e.g. The commands below will send ifIndex.2 with a value of 5 in the linkUp trap PDU. i - This variable is used to specify any extra version specific information to the trap generation code. Here is what it can be used to represent for various SNMP versions SNMPv1 - [community_string][,[enterprise][,agent_addr]] SNMPv2c - community_string SNMPv2 - source_party,destination_party,context SNMPv3 - user_name,context v - This variable lets the user override the version of the PDU being generated. The possible values are - "1", "2c", "2" and "3". o - This variable is used for traps that need extra variables to be added to the PDU along with the ones defined in the MIB as its variables. This lets the user force extra objects (along with instances if needed). All variables to be sent need to be assigned to the o variable. O - To omit any variables which are defined in the MIB you can use the O (capital o) variable. This needs to be set to the list of OIDs of the variable bindings in the order defined in the MIB. ip - The variable ip is used for generating the trap from the N-th IP alias address. a - This variable associates an action script to the trap or INFORM request. The action script specified in the value of this variable has to exist in the simulation directory. It will be executed before each instance of the trap is sent out. I - This optional variable controls the generation of INFORM PDUs. An INFORM is sent only if the variable is non-zero, else a TRAP is generated. R, T, E - This variable associates an action script to the INFORM request. The action script specified in the value of this variable has to exist in the simulation directory. The action script associated with the R variable will be executed on receiving a INFORM RESPONSE, the one associated with the T variable on a timeout (ie. no response), the one associated with the E variable on a report PDU. eid.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine id for the destination specified by IP-ADDRESS and optionally by PORT. eb.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine boots. et.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine time.
 		 * Put mimic/agent/{agentNum}/value/set/{object}/{instance}/{variable}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Single instance object or object (column) of the table in the agent's value space.
+		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @param {string} variable Variable
 		 * @param {string} requestBody Value
 		 * @return {string} successful operation
 		 */
-		Set_value(agentNum: number, _object: string, instance: string, variable: string, requestBody: string): Observable<string> {
-			return this.http.put(this.baseUri + 'mimic/agent/' + agentNum + '/value/set/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)) + '/' + (variable == null ? '' : encodeURIComponent(variable)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
+		Set_value(agentNum: number, object: string, instance: string, variable: string, requestBody: string): Observable<string> {
+			return this.http.put(this.baseUri + 'mimic/agent/' + agentNum + '/value/set/' + (object == null ? '' : encodeURIComponent(object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)) + '/' + (variable == null ? '' : encodeURIComponent(variable)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, responseType: 'text' });
 		}
 
 		/**
@@ -4080,11 +4080,11 @@ export namespace MyNS {
 		 * To disable traversal into a MIB object and any subtree underneath, set the state to 0, else set the state to 1.
 		 * Get mimic/agent/{agentNum}/value/state/get/{object}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Object
+		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
-		Get_state(agentNum: number, _object: string): Observable<string> {
-			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/state/get/' + (_object == null ? '' : encodeURIComponent(_object)), { responseType: 'text' });
+		Get_state(agentNum: number, object: string): Observable<string> {
+			return this.http.get(this.baseUri + 'mimic/agent/' + agentNum + '/value/state/get/' + (object == null ? '' : encodeURIComponent(object)), { responseType: 'text' });
 		}
 
 		/**
@@ -4092,12 +4092,12 @@ export namespace MyNS {
 		 * To disable traversal into a MIB object and any subtree underneath, set the state to 0, else set the state to 1.
 		 * Put mimic/agent/{agentNum}/value/state/set/{object}/{state}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Object
+		 * @param {string} object Object
 		 * @param {number} state State
 		 * @return {string} successful operation
 		 */
-		Set_state(agentNum: number, _object: string, state: number): Observable<string> {
-			return this.http.put(this.baseUri + 'mimic/agent/' + agentNum + '/value/state/set/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + state, null, { responseType: 'text' });
+		Set_state(agentNum: number, object: string, state: number): Observable<string> {
+			return this.http.put(this.baseUri + 'mimic/agent/' + agentNum + '/value/state/set/' + (object == null ? '' : encodeURIComponent(object)) + '/' + state, null, { responseType: 'text' });
 		}
 
 		/**
@@ -4105,13 +4105,13 @@ export namespace MyNS {
 		 * Only variables that have previously been set can be unset.
 		 * Put mimic/agent/{agentNum}/value/unset/{object}/{instance}/{variable}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Single instance object or object (column) of the table in the agent's value space.
+		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @param {string} variable Variable
 		 * @return {string} successful operation
 		 */
-		Unset_value(agentNum: number, _object: string, instance: string, variable: string): Observable<string> {
-			return this.http.put(this.baseUri + 'mimic/agent/' + agentNum + '/value/unset/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)) + '/' + (variable == null ? '' : encodeURIComponent(variable)), null, { responseType: 'text' });
+		Unset_value(agentNum: number, object: string, instance: string, variable: string): Observable<string> {
+			return this.http.put(this.baseUri + 'mimic/agent/' + agentNum + '/value/unset/' + (object == null ? '' : encodeURIComponent(object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)) + '/' + (variable == null ? '' : encodeURIComponent(variable)), null, { responseType: 'text' });
 		}
 
 		/**
@@ -4119,12 +4119,12 @@ export namespace MyNS {
 		 * This enables variable browsing of the MIB on the current agent.
 		 * Get mimic/agent/{agentNum}/value/variables/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
-		 * @param {string} _object Single instance object or object (column) of the table in the agent's value space.
+		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @return {Array<string>} successful operation
 		 */
-		Get_variables(agentNum: number, _object: string, instance: string): Observable<Array<string>> {
-			return this.http.get<Array<string>>(this.baseUri + 'mimic/agent/' + agentNum + '/value/variables/' + (_object == null ? '' : encodeURIComponent(_object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), {});
+		Get_variables(agentNum: number, object: string, instance: string): Observable<Array<string>> {
+			return this.http.get<Array<string>>(this.baseUri + 'mimic/agent/' + agentNum + '/value/variables/' + (object == null ? '' : encodeURIComponent(object)) + '/' + (instance == null ? '' : encodeURIComponent(instance)), {});
 		}
 
 		/**

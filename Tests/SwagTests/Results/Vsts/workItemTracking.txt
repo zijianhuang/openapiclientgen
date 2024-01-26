@@ -2270,7 +2270,7 @@ namespace MyNS
 	public enum WorkItemTypeTemplateUpdateModelActionType
 	{
 		
-		_import = 0,
+		import = 0,
 		
 		validate = 1,
 	}

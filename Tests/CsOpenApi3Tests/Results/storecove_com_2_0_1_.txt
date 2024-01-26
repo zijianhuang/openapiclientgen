@@ -1439,7 +1439,7 @@ namespace MyNS
 		exempt = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
-		_export = 5,
+		export = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="outside_scope")]
 		outside_scope = 6,
@@ -19889,7 +19889,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
-		_export = 0,
+		export = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="reverse_charge")]
 		reverse_charge = 1,
@@ -19919,7 +19919,7 @@ namespace MyNS
 		/// The tax category. For a description see <<_openapi_tax>>
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="category")]
-		public System.Nullable<TaxSubtotalCategory> Category { get; set; }
+		public TaxCategory Category { get; set; }
 		
 		/// <summary>
 		/// An ISO 3166-1 alpha-2 country code.
@@ -19952,79 +19952,6 @@ namespace MyNS
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="taxableAmount")]
 		public double TaxableAmount { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
-	public enum TaxSubtotalCategory
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
-		standard = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zero_rated")]
-		zero_rated = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reverse_charge")]
-		reverse_charge = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="intra_community")]
-		intra_community = 3,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="exempt")]
-		exempt = 4,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
-		_export = 5,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outside_scope")]
-		outside_scope = 6,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regulation33_exempt")]
-		regulation33_exempt = 7,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nonregulation33_exempt")]
-		nonregulation33_exempt = 8,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deemed_supply")]
-		deemed_supply = 9,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srca_s")]
-		srca_s = 10,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srca_c")]
-		srca_c = 11,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_registered")]
-		not_registered = 12,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="igst")]
-		igst = 13,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cgst")]
-		cgst = 14,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sgst")]
-		sgst = 15,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cess")]
-		cess = 16,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="state_cess")]
-		state_cess = 17,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srovr")]
-		srovr = 18,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srovr_rs")]
-		srovr_rs = 19,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srovr_lvg")]
-		srovr_lvg = 20,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srlvg")]
-		srlvg = 21,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
@@ -22005,7 +21932,7 @@ namespace MyNS
 		/// The tax category.
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="category")]
-		public System.Nullable<PurchaseInvoiceTaxTaxCategory> Category { get; set; }
+		public TaxCategory Category { get; set; }
 		
 		/// <summary>
 		/// Deprecated. The tax category code.
@@ -22030,79 +21957,6 @@ namespace MyNS
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="type")]
 		public System.Nullable<PurchaseInvoiceTaxTaxType> Type { get; set; }
-	}
-	
-	[System.Runtime.Serialization.DataContract(Namespace="")]
-	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-	[System.SerializableAttribute()]
-	public enum PurchaseInvoiceTaxTaxCategory
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="standard")]
-		standard = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="zero_rated")]
-		zero_rated = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="reverse_charge")]
-		reverse_charge = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="intra_community")]
-		intra_community = 3,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="exempt")]
-		exempt = 4,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
-		_export = 5,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="outside_scope")]
-		outside_scope = 6,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="regulation33_exempt")]
-		regulation33_exempt = 7,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="nonregulation33_exempt")]
-		nonregulation33_exempt = 8,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="deemed_supply")]
-		deemed_supply = 9,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srca_s")]
-		srca_s = 10,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srca_c")]
-		srca_c = 11,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="not_registered")]
-		not_registered = 12,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="igst")]
-		igst = 13,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cgst")]
-		cgst = 14,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="sgst")]
-		sgst = 15,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="cess")]
-		cess = 16,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="state_cess")]
-		state_cess = 17,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srovr")]
-		srovr = 18,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srovr_rs")]
-		srovr_rs = 19,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srovr_lvg")]
-		srovr_lvg = 20,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="srlvg")]
-		srlvg = 21,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]

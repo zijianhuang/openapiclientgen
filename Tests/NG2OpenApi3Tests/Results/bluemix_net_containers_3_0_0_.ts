@@ -2816,11 +2816,11 @@ export namespace MyNS {
 		 * - The namespace must start with at least one letter or number.
 		 * - The namespace can only contain lowercase letters, numbers or underscores (_).
 		 * Get registry/namespaces/{namespace}
-		 * @param {string} _namespace The name of the namespace that you would like to use for your organization and for which you would like to check availability in Bluemix.
+		 * @param {string} namespace The name of the namespace that you would like to use for your organization and for which you would like to check availability in Bluemix.
 		 * @return {Namespace} OK. The namespace that you chose is already used in Bluemix. Choose another namespace and re-run the API call.
 		 */
-		RegistryNamespaces_namespaceGet(_namespace: string, headersHandler?: () => HttpHeaders): Observable<Namespace> {
-			return this.http.get<Namespace>(this.baseUri + 'registry/namespaces/' + (_namespace == null ? '' : encodeURIComponent(_namespace)), { headers: headersHandler ? headersHandler() : undefined });
+		RegistryNamespaces_namespaceGet(namespace: string, headersHandler?: () => HttpHeaders): Observable<Namespace> {
+			return this.http.get<Namespace>(this.baseUri + 'registry/namespaces/' + (namespace == null ? '' : encodeURIComponent(namespace)), { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -2833,11 +2833,11 @@ export namespace MyNS {
 		 * - The namespace must start with at least one letter or number.
 		 * - The namespace can only contain lowercase letters, numbers or underscores (_).
 		 * Put registry/namespaces/{namespace}
-		 * @param {string} _namespace The name for your namespace to create your private Docker images registry in Bluemix. You cannot change the name afterward. The namespace can be 4-30 characters long, must start with at least one letter or number, and can only contain lowercase letters, numbers or underscores (_). You can test the availability of your namespace by calling the `GET /registry/namespaces/<namespace>` endpoint. When a HTTP code `404 Not Found` is returned, the namespace is available in Bluemix. 
+		 * @param {string} namespace The name for your namespace to create your private Docker images registry in Bluemix. You cannot change the name afterward. The namespace can be 4-30 characters long, must start with at least one letter or number, and can only contain lowercase letters, numbers or underscores (_). You can test the availability of your namespace by calling the `GET /registry/namespaces/<namespace>` endpoint. When a HTTP code `404 Not Found` is returned, the namespace is available in Bluemix. 
 		 * @return {void} 
 		 */
-		RegistryNamespaces_namespacePut(_namespace: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
-			return this.http.put(this.baseUri + 'registry/namespaces/' + (_namespace == null ? '' : encodeURIComponent(_namespace)), null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
+		RegistryNamespaces_namespacePut(namespace: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+			return this.http.put(this.baseUri + 'registry/namespaces/' + (namespace == null ? '' : encodeURIComponent(namespace)), null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
 		/**

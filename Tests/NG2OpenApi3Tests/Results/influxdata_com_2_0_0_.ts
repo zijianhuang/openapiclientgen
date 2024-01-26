@@ -6879,7 +6879,7 @@ export namespace MyNS {
 
 	export enum TableViewPropertiesType { table = 0 }
 
-	export interface Task_ {
+	export interface Task {
 
 		/** The ID of the authorization used when this task communicates with the query engine. */
 		authorizationID?: string | null;
@@ -6908,7 +6908,7 @@ export namespace MyNS {
 
 		/** Timestamp of latest scheduled, completed run, RFC3339. */
 		latestCompleted?: Date | null;
-		links?: Task_Links;
+		links?: TaskLinks;
 
 		/**
 		 * The name of the task.
@@ -6933,7 +6933,7 @@ export namespace MyNS {
 		type?: string | null;
 		updatedAt?: Date | null;
 	}
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 
 		/** The ID of the authorization used when this task communicates with the query engine. */
 		authorizationID: FormControl<string | null | undefined>,
@@ -6985,8 +6985,8 @@ export namespace MyNS {
 		type: FormControl<string | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			authorizationID: new FormControl<string | null | undefined>(undefined),
 			createdAt: new FormControl<Date | null | undefined>(undefined),
 			cron: new FormControl<string | null | undefined>(undefined),
@@ -7008,7 +7008,7 @@ export namespace MyNS {
 
 	}
 
-	export interface Task_Links {
+	export interface TaskLinks {
 
 		/** URI of resource. */
 		labels?: string | null;
@@ -7028,7 +7028,7 @@ export namespace MyNS {
 		/** URI of resource. */
 		self?: string | null;
 	}
-	export interface Task_LinksFormProperties {
+	export interface TaskLinksFormProperties {
 
 		/** URI of resource. */
 		labels: FormControl<string | null | undefined>,
@@ -7048,8 +7048,8 @@ export namespace MyNS {
 		/** URI of resource. */
 		self: FormControl<string | null | undefined>,
 	}
-	export function CreateTask_LinksFormGroup() {
-		return new FormGroup<Task_LinksFormProperties>({
+	export function CreateTaskLinksFormGroup() {
+		return new FormGroup<TaskLinksFormProperties>({
 			labels: new FormControl<string | null | undefined>(undefined),
 			logs: new FormControl<string | null | undefined>(undefined),
 			members: new FormControl<string | null | undefined>(undefined),
@@ -7166,7 +7166,7 @@ export namespace MyNS {
 
 	export interface Tasks {
 		links?: Links;
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 	}
 	export interface TasksFormProperties {
 	}
@@ -10827,10 +10827,10 @@ export namespace MyNS {
 		 * Retrieve a task
 		 * Get tasks/{taskID}
 		 * @param {string} taskID The task ID.
-		 * @return {Task_} Task details
+		 * @return {Task} Task details
 		 */
-		GetTasksID(taskID: string): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'tasks/' + (taskID == null ? '' : encodeURIComponent(taskID)), {});
+		GetTasksID(taskID: string): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'tasks/' + (taskID == null ? '' : encodeURIComponent(taskID)), {});
 		}
 
 		/**
@@ -10839,10 +10839,10 @@ export namespace MyNS {
 		 * Patch tasks/{taskID}
 		 * @param {string} taskID The task ID.
 		 * @param {TaskUpdateRequest} requestBody Task update to apply
-		 * @return {Task_} Task updated
+		 * @return {Task} Task updated
 		 */
-		PatchTasksID(taskID: string, requestBody: TaskUpdateRequest): Observable<Task_> {
-			return this.http.patch<Task_>(this.baseUri + 'tasks/' + (taskID == null ? '' : encodeURIComponent(taskID)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		PatchTasksID(taskID: string, requestBody: TaskUpdateRequest): Observable<Task> {
+			return this.http.patch<Task>(this.baseUri + 'tasks/' + (taskID == null ? '' : encodeURIComponent(taskID)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**

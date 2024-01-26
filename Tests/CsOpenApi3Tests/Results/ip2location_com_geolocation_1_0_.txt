@@ -38,18 +38,18 @@ namespace MyNS
 		
 		/// <summary>
 		/// Get geolocation information via IP address
-		/// GetBy_packageAndAddonAndIpAndFormatAndLangAndKey 
+		/// GetByPackageAndAddonAndIpAndFormatAndLangAndKey 
 		/// </summary>
-		/// <param name="_package">Web service package of different granularity of return information.</param>
+		/// <param name="package">Web service package of different granularity of return information.</param>
 		/// <param name="addon">Extra information in addition to the above selected package.</param>
 		/// <param name="ip">IP address (IPv4 or IPv6) for reverse IP location lookup purpose. If not present, the server IP address will be used for the location lookup.</param>
 		/// <param name="format">Format of the response message.</param>
 		/// <param name="lang">Translation information. The translation only applicable for continent, country, region and city name for the addon package.</param>
 		/// <param name="key">API Key. Please sign up free trial license key at ip2location.com</param>
 		/// <returns>Get response from IP lookup</returns>
-		public async Task GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyAsync(GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyPackage _package, string[] addon, string ip, GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyFormat format, GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyLang lang, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task GetByPackageAndAddonAndIpAndFormatAndLangAndKeyAsync(GetByPackageAndAddonAndIpAndFormatAndLangAndKeyPackage package, string[] addon, string ip, GetByPackageAndAddonAndIpAndFormatAndLangAndKeyFormat format, GetByPackageAndAddonAndIpAndFormatAndLangAndKeyLang lang, string key, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "?package=" + _package+"&"+string.Join("&", addon.Select(z => $"addon={System.Uri.EscapeDataString(z.ToString())}"))+"&ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&format=" + format+"&lang=" + lang+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
+			var requestUri = "?package=" + package+"&"+string.Join("&", addon.Select(z => $"addon={System.Uri.EscapeDataString(z.ToString())}"))+"&ip=" + (ip==null? "" : System.Uri.EscapeDataString(ip))+"&format=" + format+"&lang=" + lang+"&key=" + (key==null? "" : System.Uri.EscapeDataString(key));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -70,7 +70,7 @@ namespace MyNS
 		}
 	}
 	
-	public enum GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyPackage
+	public enum GetByPackageAndAddonAndIpAndFormatAndLangAndKeyPackage
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="WS1")]
@@ -149,7 +149,7 @@ namespace MyNS
 		WS25 = 24,
 	}
 	
-	public enum GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyFormat
+	public enum GetByPackageAndAddonAndIpAndFormatAndLangAndKeyFormat
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="json")]
@@ -159,7 +159,7 @@ namespace MyNS
 		xml = 1,
 	}
 	
-	public enum GetBy_packageAndAddonAndIpAndFormatAndLangAndKeyLang
+	public enum GetByPackageAndAddonAndIpAndFormatAndLangAndKeyLang
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="ar")]

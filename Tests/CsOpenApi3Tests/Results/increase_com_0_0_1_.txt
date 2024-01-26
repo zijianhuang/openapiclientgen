@@ -10088,7 +10088,7 @@ namespace MyNS
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
 	[System.SerializableAttribute()]
-	public class export_
+	public class Export
 	{
 		
 		/// <summary>
@@ -10137,7 +10137,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		public export_Status Status { get; set; }
+		public ExportStatus Status { get; set; }
 		
 		/// <summary>
 		/// A constant representing the object's type. For this resource it will always be `export`.
@@ -10145,13 +10145,13 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
-		public export_Type Type { get; set; }
+		public ExportType Type { get; set; }
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
 	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
-	public enum export_Status
+	public enum ExportStatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="pending")]
@@ -10164,11 +10164,11 @@ namespace MyNS
 	[System.Runtime.Serialization.DataContract(Namespace="")]
 	[JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
 	[System.SerializableAttribute()]
-	public enum export_Type
+	public enum ExportType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
-		_export = 0,
+		export = 0,
 	}
 	
 	/// <summary>
@@ -10185,7 +10185,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="data")]
-		public export_[] Data { get; set; }
+		public Export[] Data { get; set; }
 		
 		/// <summary>
 		/// A pointer to a place in the list.
@@ -10470,7 +10470,7 @@ namespace MyNS
 		entity_supplemental_document = 11,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
-		_export = 12,
+		export = 12,
 	}
 	
 	[System.Runtime.Serialization.DataContract(Namespace="")]
@@ -15048,7 +15048,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		public export_Status Status { get; set; }
+		public ExportStatus Status { get; set; }
 		
 		/// <summary>
 		/// A constant representing the object's type. For this resource it will always be `pending_transaction`.
@@ -24464,7 +24464,7 @@ namespace MyNS
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="status")]
-		public export_Status Status { get; set; }
+		public ExportStatus Status { get; set; }
 		
 		/// <summary>
 		/// A constant representing the object's type. For this resource it will always be `pending_transaction`.
@@ -32280,7 +32280,7 @@ namespace MyNS
 		/// Create_an_export exports
 		/// </summary>
 		/// <returns>Export</returns>
-		public async Task<export_> Create_an_exportAsync(Create_an_export_parameters requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Export> Create_an_exportAsync(Create_an_export_parameters requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "exports";
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -32304,7 +32304,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<export_>(jsonReader);
+				return serializer.Deserialize<Export>(jsonReader);
 				}
 			}
 			finally
@@ -32320,7 +32320,7 @@ namespace MyNS
 		/// Retrieve_an_export exports/{export_id}
 		/// </summary>
 		/// <returns>Export</returns>
-		public async Task<export_> Retrieve_an_exportAsync(string export_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Export> Retrieve_an_exportAsync(string export_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "exports/"+ (export_id==null? "" : System.Uri.EscapeDataString(export_id));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
@@ -32338,7 +32338,7 @@ namespace MyNS
 				using (JsonReader jsonReader = new JsonTextReader(new System.IO.StreamReader(responseMessageStream)))
 				{
 				var serializer = JsonSerializer.Create(jsonSerializerSettings);
-				return serializer.Deserialize<export_>(jsonReader);
+				return serializer.Deserialize<Export>(jsonReader);
 				}
 			}
 			finally
@@ -32499,9 +32499,9 @@ namespace MyNS
 		/// List_files files
 		/// </summary>
 		/// <returns>File List</returns>
-		public async Task<File_list> List_filesAsync(string cursor, int limit, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, string[] purpose_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<File_list> List_filesAsync(string cursor, int limit, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, FilePurpose[] purpose_in, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "files?cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor))+"&limit="+limit+"&created_at.after=" + created_at_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.before=" + created_at_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.on_or_after=" + created_at_on_or_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.on_or_before=" + created_at_on_or_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", purpose_in.Select(z => $"purpose.in={System.Uri.EscapeDataString(z.ToString())}"));
+			var requestUri = "files?cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor))+"&limit="+limit+"&created_at.after=" + created_at_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.before=" + created_at_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.on_or_after=" + created_at_on_or_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.on_or_before=" + created_at_on_or_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&"+string.Join("&", purpose_in.Select(z => $"purpose.in={z}"));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -32983,7 +32983,7 @@ namespace MyNS
 		/// List_pending_transactions pending_transactions
 		/// </summary>
 		/// <returns>Pending Transaction List</returns>
-		public async Task<Pending_transaction_list> List_pending_transactionsAsync(string cursor, int limit, string account_id, string route_id, string source_id, export_Status[] status_in, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Pending_transaction_list> List_pending_transactionsAsync(string cursor, int limit, string account_id, string route_id, string source_id, ExportStatus[] status_in, System.DateTimeOffset created_at_after, System.DateTimeOffset created_at_before, System.DateTimeOffset created_at_on_or_after, System.DateTimeOffset created_at_on_or_before, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pending_transactions?cursor=" + (cursor==null? "" : System.Uri.EscapeDataString(cursor))+"&limit="+limit+"&account_id=" + (account_id==null? "" : System.Uri.EscapeDataString(account_id))+"&route_id=" + (route_id==null? "" : System.Uri.EscapeDataString(route_id))+"&source_id=" + (source_id==null? "" : System.Uri.EscapeDataString(source_id))+"&"+string.Join("&", status_in.Select(z => $"status.in={z}"))+"&created_at.after=" + created_at_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.before=" + created_at_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.on_or_after=" + created_at_on_or_after.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ")+"&created_at.on_or_before=" + created_at_on_or_before.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffZ");
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))

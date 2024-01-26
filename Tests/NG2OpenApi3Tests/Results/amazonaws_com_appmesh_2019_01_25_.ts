@@ -480,7 +480,7 @@ export namespace MyNS {
 	export interface HttpGatewayRouteMatch {
 		headers?: Array<HttpGatewayRouteHeader>;
 		hostname?: GatewayRouteHostnameMatch;
-		method?: HttpMethod_;
+		method?: HttpMethod;
 		path?: HttpPathMatch;
 		port?: number | null;
 		prefix?: string;
@@ -489,13 +489,13 @@ export namespace MyNS {
 
 	/** An object that represents the criteria for determining a request match. */
 	export interface HttpGatewayRouteMatchFormProperties {
-		method: FormControl<HttpMethod_ | null | undefined>,
+		method: FormControl<HttpMethod | null | undefined>,
 		port: FormControl<number | null | undefined>,
 		prefix: FormControl<string | null | undefined>,
 	}
 	export function CreateHttpGatewayRouteMatchFormGroup() {
 		return new FormGroup<HttpGatewayRouteMatchFormProperties>({
-			method: new FormControl<HttpMethod_ | null | undefined>(undefined),
+			method: new FormControl<HttpMethod | null | undefined>(undefined),
 			port: new FormControl<number | null | undefined>(undefined),
 			prefix: new FormControl<string | null | undefined>(undefined),
 		});
@@ -554,7 +554,7 @@ export namespace MyNS {
 
 	}
 
-	export enum HttpMethod_ { GET = 0, HEAD = 1, POST = 2, PUT = 3, DELETE = 4, CONNECT = 5, OPTIONS = 6, TRACE = 7, PATCH = 8 }
+	export enum HttpMethod { GET = 0, HEAD = 1, POST = 2, PUT = 3, DELETE = 4, CONNECT = 5, OPTIONS = 6, TRACE = 7, PATCH = 8 }
 
 
 	/** An object representing the path to match in the request. */
@@ -1210,7 +1210,7 @@ export namespace MyNS {
 	/** An object that represents the requirements for a route to match HTTP requests for a virtual router. */
 	export interface HttpRouteMatch {
 		headers?: Array<HttpRouteHeader>;
-		method?: HttpMethod_;
+		method?: HttpMethod;
 		path?: HttpPathMatch;
 		port?: number | null;
 		prefix?: string;
@@ -1220,14 +1220,14 @@ export namespace MyNS {
 
 	/** An object that represents the requirements for a route to match HTTP requests for a virtual router. */
 	export interface HttpRouteMatchFormProperties {
-		method: FormControl<HttpMethod_ | null | undefined>,
+		method: FormControl<HttpMethod | null | undefined>,
 		port: FormControl<number | null | undefined>,
 		prefix: FormControl<string | null | undefined>,
 		scheme: FormControl<HttpScheme | null | undefined>,
 	}
 	export function CreateHttpRouteMatchFormGroup() {
 		return new FormGroup<HttpRouteMatchFormProperties>({
-			method: new FormControl<HttpMethod_ | null | undefined>(undefined),
+			method: new FormControl<HttpMethod | null | undefined>(undefined),
 			port: new FormControl<number | null | undefined>(undefined),
 			prefix: new FormControl<string | null | undefined>(undefined),
 			scheme: new FormControl<HttpScheme | null | undefined>(undefined),

@@ -24,13 +24,13 @@ export namespace MyNS {
 		 * Get the exchange rate on a specific date
 		 * Get historical
 		 * @param {string} apikey Authentication key.
-		 * @param {string} _base The source currency.
+		 * @param {string} base The source currency.
 		 * @param {string} target The target currency.
 		 * @param {string} date The date to get the exchange rate.
 		 * @return {HistoricalExchangeRateReturn} Success
 		 */
-		HistoricalExchangeRate(apikey: string, _base: string, target: string, date: string): Observable<HistoricalExchangeRateReturn> {
-			return this.http.get<HistoricalExchangeRateReturn>(this.baseUri + 'historical?apikey=' + (apikey == null ? '' : encodeURIComponent(apikey)) + '&_base=' + (_base == null ? '' : encodeURIComponent(_base)) + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&date=' + (date == null ? '' : encodeURIComponent(date)), {});
+		HistoricalExchangeRate(apikey: string, base: string, target: string, date: string): Observable<HistoricalExchangeRateReturn> {
+			return this.http.get<HistoricalExchangeRateReturn>(this.baseUri + 'historical?apikey=' + (apikey == null ? '' : encodeURIComponent(apikey)) + '&base=' + (base == null ? '' : encodeURIComponent(base)) + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&date=' + (date == null ? '' : encodeURIComponent(date)), {});
 		}
 
 		/**
@@ -38,13 +38,13 @@ export namespace MyNS {
 		 * Get the exchange rate between two currencies.
 		 * Get live
 		 * @param {string} apikey Authentication key.
-		 * @param {string} _base The source currency.
+		 * @param {string} base The source currency.
 		 * @param {string} target The target currency.
 		 * @param {number} amount optional The amount to convert.
 		 * @return {LiveCurrencyExchangeRateReturn} Success
 		 */
-		LiveCurrencyExchangeRate(apikey: string, _base: string, target: string, amount: number | null | undefined): Observable<LiveCurrencyExchangeRateReturn> {
-			return this.http.get<LiveCurrencyExchangeRateReturn>(this.baseUri + 'live?apikey=' + (apikey == null ? '' : encodeURIComponent(apikey)) + '&_base=' + (_base == null ? '' : encodeURIComponent(_base)) + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&amount=' + amount, {});
+		LiveCurrencyExchangeRate(apikey: string, base: string, target: string, amount: number | null | undefined): Observable<LiveCurrencyExchangeRateReturn> {
+			return this.http.get<LiveCurrencyExchangeRateReturn>(this.baseUri + 'live?apikey=' + (apikey == null ? '' : encodeURIComponent(apikey)) + '&base=' + (base == null ? '' : encodeURIComponent(base)) + '&target=' + (target == null ? '' : encodeURIComponent(target)) + '&amount=' + amount, {});
 		}
 
 		/**

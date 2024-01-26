@@ -1260,7 +1260,7 @@ export namespace MyNS {
 
 	}
 
-	export interface Task_ {
+	export interface Task {
 		isbenchmark?: string | null;
 		name?: string | null;
 		status?: string | null;
@@ -1269,7 +1269,7 @@ export namespace MyNS {
 		taskid?: string | null;
 		usestaticdata?: string | null;
 	}
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 		isbenchmark: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
@@ -1278,8 +1278,8 @@ export namespace MyNS {
 		taskid: FormControl<string | null | undefined>,
 		usestaticdata: FormControl<string | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			isbenchmark: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
@@ -1922,10 +1922,10 @@ export namespace MyNS {
 		 * Get tasks list
 		 * Get tasks list
 		 * Get taskmanager/tasks
-		 * @return {Array<Task_>} Successful operation
+		 * @return {Array<Task>} Successful operation
 		 */
-		TaskmanagerTasksGet(headersHandler?: () => HttpHeaders): Observable<Array<Task_>> {
-			return this.http.get<Array<Task_>>(this.baseUri + 'taskmanager/tasks', { headers: headersHandler ? headersHandler() : undefined });
+		TaskmanagerTasksGet(headersHandler?: () => HttpHeaders): Observable<Array<Task>> {
+			return this.http.get<Array<Task>>(this.baseUri + 'taskmanager/tasks', { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**
@@ -1942,10 +1942,10 @@ export namespace MyNS {
 		 * Get task by ID
 		 * Get task by ID
 		 * Get taskmanager/tasks/{taskid}
-		 * @return {Task_} Successful operation
+		 * @return {Task} Successful operation
 		 */
-		TaskmanagerTasks_taskidGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'taskmanager/tasks/' + taskid, { headers: headersHandler ? headersHandler() : undefined });
+		TaskmanagerTasks_taskidGet(taskid: number, headersHandler?: () => HttpHeaders): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'taskmanager/tasks/' + taskid, { headers: headersHandler ? headersHandler() : undefined });
 		}
 
 		/**

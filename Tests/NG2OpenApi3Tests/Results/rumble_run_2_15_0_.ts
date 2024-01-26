@@ -1824,7 +1824,7 @@ export namespace MyNS {
 
 	}
 
-	export interface Task_ {
+	export interface Task {
 		agent_id?: string | null;
 		client_id?: string | null;
 		created_at?: number | null;
@@ -1854,7 +1854,7 @@ export namespace MyNS {
 		type?: string | null;
 		updated_at?: number | null;
 	}
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 		agent_id: FormControl<string | null | undefined>,
 		client_id: FormControl<string | null | undefined>,
 		created_at: FormControl<number | null | undefined>,
@@ -1884,8 +1884,8 @@ export namespace MyNS {
 		type: FormControl<string | null | undefined>,
 		updated_at: FormControl<number | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			agent_id: new FormControl<string | null | undefined>(undefined),
 			client_id: new FormControl<string | null | undefined>(undefined),
 			created_at: new FormControl<number | null | undefined>(undefined),
@@ -2487,10 +2487,10 @@ export namespace MyNS {
 		 * Get all task details across all organizations (up to 1000)
 		 * Get account/tasks
 		 * @param {string} search an optional search string for filtering results
-		 * @return {Array<Task_>} array of tasks
+		 * @return {Array<Task>} array of tasks
 		 */
-		GetAccountTasks(search: string | null | undefined): Observable<Array<Task_>> {
-			return this.http.get<Array<Task_>>(this.baseUri + 'account/tasks?search=' + (search == null ? '' : encodeURIComponent(search)), {});
+		GetAccountTasks(search: string | null | undefined): Observable<Array<Task>> {
+			return this.http.get<Array<Task>>(this.baseUri + 'account/tasks?search=' + (search == null ? '' : encodeURIComponent(search)), {});
 		}
 
 		/**
@@ -3164,31 +3164,31 @@ export namespace MyNS {
 		 * Get org/tasks
 		 * @param {string} status an optional status string for filtering results
 		 * @param {string} search an optional search string for filtering results
-		 * @return {Array<Task_>} array of tasks
+		 * @return {Array<Task>} array of tasks
 		 */
-		GetTasks(status: string | null | undefined, search: string | null | undefined): Observable<Array<Task_>> {
-			return this.http.get<Array<Task_>>(this.baseUri + 'org/tasks?status=' + (status == null ? '' : encodeURIComponent(status)) + '&search=' + (search == null ? '' : encodeURIComponent(search)), {});
+		GetTasks(status: string | null | undefined, search: string | null | undefined): Observable<Array<Task>> {
+			return this.http.get<Array<Task>>(this.baseUri + 'org/tasks?status=' + (status == null ? '' : encodeURIComponent(status)) + '&search=' + (search == null ? '' : encodeURIComponent(search)), {});
 		}
 
 		/**
 		 * Get task details
 		 * Get org/tasks/{task_id}
 		 * @param {string} task_id UUID of the task to retrieve
-		 * @return {Task_} task details
+		 * @return {Task} task details
 		 */
-		GetTask(task_id: string): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'org/tasks/' + (task_id == null ? '' : encodeURIComponent(task_id)), {});
+		GetTask(task_id: string): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'org/tasks/' + (task_id == null ? '' : encodeURIComponent(task_id)), {});
 		}
 
 		/**
 		 * Update task parameters
 		 * Patch org/tasks/{task_id}
 		 * @param {string} task_id UUID of the task to update
-		 * @param {Task_} requestBody task object
-		 * @return {Task_} task details
+		 * @param {Task} requestBody task object
+		 * @return {Task} task details
 		 */
-		UpdateTask(task_id: string, requestBody: Task_): Observable<Task_> {
-			return this.http.patch<Task_>(this.baseUri + 'org/tasks/' + (task_id == null ? '' : encodeURIComponent(task_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		UpdateTask(task_id: string, requestBody: Task): Observable<Task> {
+			return this.http.patch<Task>(this.baseUri + 'org/tasks/' + (task_id == null ? '' : encodeURIComponent(task_id)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**

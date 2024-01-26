@@ -1961,7 +1961,7 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Tasks. */
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 
 		/** Locations that could not be reached. */
 		unreachable?: Array<string>;
@@ -1982,7 +1982,7 @@ export namespace MyNS {
 
 
 	/** A Cloud Batch task. */
-	export interface Task_ {
+	export interface Task {
 
 		/** Task name. The name is generated from the parent TaskGroup name and 'id' field. For example: "projects/123456/locations/us-west1/jobs/job01/taskGroups/group01/tasks/task01". */
 		name?: string | null;
@@ -1992,13 +1992,13 @@ export namespace MyNS {
 	}
 
 	/** A Cloud Batch task. */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 
 		/** Task name. The name is generated from the parent TaskGroup name and 'id' field. For example: "projects/123456/locations/us-west1/jobs/job01/taskGroups/group01/tasks/task01". */
 		name: FormControl<string | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 

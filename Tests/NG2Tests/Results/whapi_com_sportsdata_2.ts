@@ -337,7 +337,7 @@ export namespace MyNS {
 
 	}
 
-	export interface event_ {
+	export interface Event {
 
 		/** Delay in seconds between bet being sent and bet being placed */
 		betInRunningDelay?: string | null;
@@ -432,7 +432,7 @@ export namespace MyNS {
 		 */
 		status: string;
 	}
-	export interface event_FormProperties {
+	export interface EventFormProperties {
 
 		/** Delay in seconds between bet being sent and bet being placed */
 		betInRunningDelay: FormControl<string | null | undefined>,
@@ -515,8 +515,8 @@ export namespace MyNS {
 		 */
 		status: FormControl<string | null | undefined>,
 	}
-	export function Createevent_FormGroup() {
-		return new FormGroup<event_FormProperties>({
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
 			betInRunningDelay: new FormControl<string | null | undefined>(undefined),
 			bettingStatus: new FormControl<string | null | undefined>(undefined),
 			cashinAvailable: new FormControl<boolean | null | undefined>(undefined),
@@ -1039,7 +1039,7 @@ export namespace MyNS {
 	}
 
 	export interface EventsWrapper {
-		events?: Array<event_>;
+		events?: Array<Event>;
 	}
 	export interface EventsWrapperFormProperties {
 	}
@@ -1195,7 +1195,7 @@ export namespace MyNS {
 
 	export interface TopBet {
 		competition?: Competition;
-		event?: event_;
+		event?: Event;
 		market?: Market;
 		selection?: Selection;
 		sport?: Sport;

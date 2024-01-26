@@ -1283,14 +1283,14 @@ export namespace MyNS {
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
 		 * @param {boolean} use_compact_associations If true, returns results in compact associations format
 		 * @param {string} subject Subject CURIE
-		 * @param {string} _object Object CURIE
+		 * @param {string} object Object CURIE
 		 * @param {string} subject_taxon Subject taxon ID, e.g. NCBITaxon:9606 (Includes inferred associations, by default)
 		 * @param {string} object_taxon Object taxon ID, e.g. NCBITaxon:10090 (Includes inferred associations, by default)
 		 * @param {string} relation Filter by relation CURIE, e.g. RO:0002200 (has_phenotype), RO:0002607 (is marker for), RO:HOM0000017 (orthologous to), etc.
 		 * @return {Array<AssociationResults>} Success
 		 */
-		Get_association_by_subject_and_object_category_search(rows: number | null | undefined, start: number | null | undefined, evidence: string | null | undefined, unselect_evidence: boolean | null | undefined, exclude_automatic_assertions: boolean | null | undefined, use_compact_associations: boolean | null | undefined, subject: string | null | undefined, _object: string | null | undefined, subject_taxon: string | null | undefined, object_taxon: string | null | undefined, relation: string | null | undefined): Observable<Array<AssociationResults>> {
-			return this.http.get<Array<AssociationResults>>(this.baseUri + 'association/find/{subject_category}/{object_category}?rows=' + rows + '&start=' + start + '&evidence=' + (evidence == null ? '' : encodeURIComponent(evidence)) + '&unselect_evidence=' + unselect_evidence + '&exclude_automatic_assertions=' + exclude_automatic_assertions + '&use_compact_associations=' + use_compact_associations + '&subject=' + (subject == null ? '' : encodeURIComponent(subject)) + '&_object=' + (_object == null ? '' : encodeURIComponent(_object)) + '&subject_taxon=' + (subject_taxon == null ? '' : encodeURIComponent(subject_taxon)) + '&object_taxon=' + (object_taxon == null ? '' : encodeURIComponent(object_taxon)) + '&relation=' + (relation == null ? '' : encodeURIComponent(relation)), {});
+		Get_association_by_subject_and_object_category_search(rows: number | null | undefined, start: number | null | undefined, evidence: string | null | undefined, unselect_evidence: boolean | null | undefined, exclude_automatic_assertions: boolean | null | undefined, use_compact_associations: boolean | null | undefined, subject: string | null | undefined, object: string | null | undefined, subject_taxon: string | null | undefined, object_taxon: string | null | undefined, relation: string | null | undefined): Observable<Array<AssociationResults>> {
+			return this.http.get<Array<AssociationResults>>(this.baseUri + 'association/find/{subject_category}/{object_category}?rows=' + rows + '&start=' + start + '&evidence=' + (evidence == null ? '' : encodeURIComponent(evidence)) + '&unselect_evidence=' + unselect_evidence + '&exclude_automatic_assertions=' + exclude_automatic_assertions + '&use_compact_associations=' + use_compact_associations + '&subject=' + (subject == null ? '' : encodeURIComponent(subject)) + '&object=' + (object == null ? '' : encodeURIComponent(object)) + '&subject_taxon=' + (subject_taxon == null ? '' : encodeURIComponent(subject_taxon)) + '&object_taxon=' + (object_taxon == null ? '' : encodeURIComponent(object_taxon)) + '&relation=' + (relation == null ? '' : encodeURIComponent(relation)), {});
 		}
 
 		/**
@@ -1335,11 +1335,11 @@ export namespace MyNS {
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
 		 * @param {boolean} use_compact_associations If true, returns results in compact associations format
 		 * @param {string} subject Subject CURIE
-		 * @param {string} _object Object CURIE
+		 * @param {string} object Object CURIE
 		 * @return {Array<AssociationResults>} Success
 		 */
-		Get_association_by_subject_and_assoc_type(rows: number | null | undefined, start: number | null | undefined, evidence: string | null | undefined, unselect_evidence: boolean | null | undefined, exclude_automatic_assertions: boolean | null | undefined, use_compact_associations: boolean | null | undefined, subject: string | null | undefined, _object: string | null | undefined): Observable<Array<AssociationResults>> {
-			return this.http.get<Array<AssociationResults>>(this.baseUri + 'association/type/{association_type}?rows=' + rows + '&start=' + start + '&evidence=' + (evidence == null ? '' : encodeURIComponent(evidence)) + '&unselect_evidence=' + unselect_evidence + '&exclude_automatic_assertions=' + exclude_automatic_assertions + '&use_compact_associations=' + use_compact_associations + '&subject=' + (subject == null ? '' : encodeURIComponent(subject)) + '&_object=' + (_object == null ? '' : encodeURIComponent(_object)), {});
+		Get_association_by_subject_and_assoc_type(rows: number | null | undefined, start: number | null | undefined, evidence: string | null | undefined, unselect_evidence: boolean | null | undefined, exclude_automatic_assertions: boolean | null | undefined, use_compact_associations: boolean | null | undefined, subject: string | null | undefined, object: string | null | undefined): Observable<Array<AssociationResults>> {
+			return this.http.get<Array<AssociationResults>>(this.baseUri + 'association/type/{association_type}?rows=' + rows + '&start=' + start + '&evidence=' + (evidence == null ? '' : encodeURIComponent(evidence)) + '&unselect_evidence=' + unselect_evidence + '&exclude_automatic_assertions=' + exclude_automatic_assertions + '&use_compact_associations=' + use_compact_associations + '&subject=' + (subject == null ? '' : encodeURIComponent(subject)) + '&object=' + (object == null ? '' : encodeURIComponent(object)), {});
 		}
 
 		/**

@@ -5545,7 +5545,7 @@ namespace MyNS
 		///
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="packages")]
-		public package_[] Packages { get; set; }
+		public Package[] Packages { get; set; }
 		
 		/// <summary>
 		/// An optional Return Merchandise Authorization number.  This field is useful for return labels.  You can set it to any string value.
@@ -5652,7 +5652,7 @@ namespace MyNS
 	/// </summary>
 	[System.Runtime.Serialization.DataContract(Namespace="")]
 	[System.SerializableAttribute()]
-	public class package_
+	public class Package
 	{
 		
 		/// <summary>
@@ -6215,7 +6215,7 @@ namespace MyNS
 		///
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="packages")]
-		public package_[] Packages { get; set; }
+		public Package[] Packages { get; set; }
 		
 		/// <summary>
 		/// An optional Return Merchandise Authorization number.  This field is useful for return labels.  You can set it to any string value.

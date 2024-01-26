@@ -283,7 +283,7 @@ export namespace MyNS {
 	export interface BufferTaskResponse {
 
 		/** A unit of scheduled work. */
-		task?: Task_;
+		task?: Task;
 	}
 
 	/** Response message for BufferTask. */
@@ -297,7 +297,7 @@ export namespace MyNS {
 
 
 	/** A unit of scheduled work. */
-	export interface Task_ {
+	export interface Task {
 
 		/** App Engine HTTP request. The message defines the HTTP request that is sent to an App Engine app when the task is dispatched. Using AppEngineHttpRequest requires [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control) Google IAM permission for the project and the following scope: `https://www.googleapis.com/auth/cloud-platform` The task will be delivered to the App Engine app which belongs to the same project as the queue. For more information, see [How Requests are Routed](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed) and how routing is affected by [dispatch files](https://cloud.google.com/appengine/docs/python/config/dispatchref). Traffic is encrypted during transport and never leaves Google datacenters. Because this traffic is carried over a communication mechanism internal to Google, you cannot explicitly set the protocol (for example, HTTP or HTTPS). The request to the handler, however, will appear to have used the HTTP protocol. The AppEngineRouting used to construct the URL that the task is delivered to can be set at the queue-level or task-level: * If app_engine_routing_override is set on the queue, this value is used for all tasks in the queue, no matter what the setting is for the task-level app_engine_routing. The `url` that the task will be sent to is: * `url =` host `+` relative_uri Tasks can be dispatched to secure app handlers, unsecure app handlers, and URIs restricted with [`login: admin`](https://cloud.google.com/appengine/docs/standard/python/config/appref). Because tasks are not run as any user, they cannot be dispatched to URIs restricted with [`login: required`](https://cloud.google.com/appengine/docs/standard/python/config/appref) Task dispatches also do not follow redirects. The task attempt has succeeded if the app's request handler returns an HTTP response code in the range [`200` - `299`]. The task attempt has failed if the app's handler returns a non-2xx response code or Cloud Tasks does not receive response before the deadline. Failed tasks will be retried according to the retry configuration. `503` (Service Unavailable) is considered an App Engine system error instead of an application error and will cause Cloud Tasks' traffic congestion control to temporarily throttle the queue's dispatches. Unlike other types of task targets, a `429` (Too Many Requests) response from an app handler does not cause traffic congestion control to throttle the queue. */
 		appEngineHttpRequest?: AppEngineHttpRequest;
@@ -330,11 +330,11 @@ export namespace MyNS {
 		scheduleTime?: string | null;
 
 		/** Output only. The view specifies which subset of the Task has been returned. */
-		view?: Task_View | null;
+		view?: TaskView | null;
 	}
 
 	/** A unit of scheduled work. */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 
 		/** Output only. The time that the task was created. `create_time` will be truncated to the nearest second. */
 		createTime: FormControl<string | null | undefined>,
@@ -355,17 +355,17 @@ export namespace MyNS {
 		scheduleTime: FormControl<string | null | undefined>,
 
 		/** Output only. The view specifies which subset of the Task has been returned. */
-		view: FormControl<Task_View | null | undefined>,
+		view: FormControl<TaskView | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			createTime: new FormControl<string | null | undefined>(undefined),
 			dispatchCount: new FormControl<number | null | undefined>(undefined),
 			dispatchDeadline: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			responseCount: new FormControl<number | null | undefined>(undefined),
 			scheduleTime: new FormControl<string | null | undefined>(undefined),
-			view: new FormControl<Task_View | null | undefined>(undefined),
+			view: new FormControl<TaskView | null | undefined>(undefined),
 		});
 
 	}
@@ -474,7 +474,7 @@ export namespace MyNS {
 
 	}
 
-	export enum Task_View { VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
+	export enum TaskView { VIEW_UNSPECIFIED = 0, BASIC = 1, FULL = 2 }
 
 
 	/** Describes the customer-managed encryption key (CMEK) configuration associated with a project and location. */
@@ -509,21 +509,21 @@ export namespace MyNS {
 	export interface CreateTaskRequest {
 
 		/** The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource. */
-		responseView?: Task_View | null;
+		responseView?: TaskView | null;
 
 		/** A unit of scheduled work. */
-		task?: Task_;
+		task?: Task;
 	}
 
 	/** Request message for CreateTask. */
 	export interface CreateTaskRequestFormProperties {
 
 		/** The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource. */
-		responseView: FormControl<Task_View | null | undefined>,
+		responseView: FormControl<TaskView | null | undefined>,
 	}
 	export function CreateCreateTaskRequestFormGroup() {
 		return new FormGroup<CreateTaskRequestFormProperties>({
-			responseView: new FormControl<Task_View | null | undefined>(undefined),
+			responseView: new FormControl<TaskView | null | undefined>(undefined),
 		});
 
 	}
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The list of tasks. */
-		tasks?: Array<Task_>;
+		tasks?: Array<Task>;
 	}
 
 	/** Response message for listing tasks using ListTasks. */
@@ -1108,18 +1108,18 @@ export namespace MyNS {
 	export interface RunTaskRequest {
 
 		/** The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource. */
-		responseView?: Task_View | null;
+		responseView?: TaskView | null;
 	}
 
 	/** Request message for forcing a task to run now using RunTask. */
 	export interface RunTaskRequestFormProperties {
 
 		/** The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource. */
-		responseView: FormControl<Task_View | null | undefined>,
+		responseView: FormControl<TaskView | null | undefined>,
 	}
 	export function CreateRunTaskRequestFormGroup() {
 		return new FormGroup<RunTaskRequestFormProperties>({
-			responseView: new FormControl<Task_View | null | undefined>(undefined),
+			responseView: new FormControl<TaskView | null | undefined>(undefined),
 		});
 
 	}
@@ -1194,11 +1194,11 @@ export namespace MyNS {
 		 * Gets a task.
 		 * Get v2/{name}
 		 * @param {string} name Required. The task name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-		 * @param {Task_View} responseView The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource.
-		 * @return {Task_} Successful response
+		 * @param {TaskView} responseView The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource.
+		 * @return {Task} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_get(name: string, responseView: Task_View | null | undefined): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&responseView=' + responseView, {});
+		Cloudtasks_projects_locations_queues_tasks_get(name: string, responseView: TaskView | null | undefined): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + '&responseView=' + responseView, {});
 		}
 
 		/**
@@ -1259,10 +1259,10 @@ export namespace MyNS {
 		 * Forces a task to run now. When this method is called, Cloud Tasks will dispatch the task, even if the task is already running, the queue has reached its RateLimits or is PAUSED. This command is meant to be used for manual debugging. For example, RunTask can be used to retry a failed task after a fix has been made or to manually force a task to be dispatched now. The dispatched task is returned. That is, the task that is returned contains the status after the task is dispatched but before the task is received by its target. If Cloud Tasks receives a successful response from the task's target, then the task will be deleted; otherwise the task's schedule_time will be reset to the time that RunTask was called plus the retry delay specified in the queue's RetryConfig. RunTask returns NOT_FOUND when it is called on a task that has already succeeded or permanently failed.
 		 * Post v2/{name}:run
 		 * @param {string} name Required. The task name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_run(name: string, requestBody: RunTaskRequest): Observable<Task_> {
-			return this.http.post<Task_>(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + ':run', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Cloudtasks_projects_locations_queues_tasks_run(name: string, requestBody: RunTaskRequest): Observable<Task> {
+			return this.http.post<Task>(this.baseUri + 'v2/' + (name == null ? '' : encodeURIComponent(name)) + ':run', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -1294,10 +1294,10 @@ export namespace MyNS {
 		 * @param {string} parent Required. The queue name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
 		 * @param {number} pageSize Maximum page size. Fewer tasks than requested might be returned, even if more tasks exist; use next_page_token in the response to determine if more tasks exist. The maximum page size is 1000. If unspecified, the page size will be the maximum.
 		 * @param {string} pageToken A token identifying the page of results to return. To request the first page results, page_token must be empty. To request the next page of results, page_token must be the value of next_page_token returned from the previous call to ListTasks method. The page token is valid for only 2 hours.
-		 * @param {Task_View} responseView The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource.
+		 * @param {TaskView} responseView The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource.
 		 * @return {ListTasksResponse} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, responseView: Task_View | null | undefined): Observable<ListTasksResponse> {
+		Cloudtasks_projects_locations_queues_tasks_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, responseView: TaskView | null | undefined): Observable<ListTasksResponse> {
 			return this.http.get<ListTasksResponse>(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tasks&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&responseView=' + responseView, {});
 		}
 
@@ -1305,10 +1305,10 @@ export namespace MyNS {
 		 * Creates a task and adds it to a queue. Tasks cannot be updated after creation; there is no UpdateTask command. * The maximum task size is 100KB.
 		 * Post v2/{parent}/tasks
 		 * @param {string} parent Required. The queue name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` The queue must already exist.
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Cloudtasks_projects_locations_queues_tasks_create(parent: string, requestBody: CreateTaskRequest): Observable<Task_> {
-			return this.http.post<Task_>(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tasks', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Cloudtasks_projects_locations_queues_tasks_create(parent: string, requestBody: CreateTaskRequest): Observable<Task> {
+			return this.http.post<Task>(this.baseUri + 'v2/' + (parent == null ? '' : encodeURIComponent(parent)) + '/tasks', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**

@@ -104,8 +104,8 @@ export namespace MyNS {
 
 	}
 
-	export interface event_ {
-		_links?: event__links;
+	export interface Event {
+		_links?: Event_links;
 
 		/** The member ID of the sender */
 		from?: string | null;
@@ -116,7 +116,7 @@ export namespace MyNS {
 		/** The time that the event happened */
 		timestamp?: string | null;
 	}
-	export interface event_FormProperties {
+	export interface EventFormProperties {
 
 		/** The member ID of the sender */
 		from: FormControl<string | null | undefined>,
@@ -127,8 +127,8 @@ export namespace MyNS {
 		/** The time that the event happened */
 		timestamp: FormControl<string | null | undefined>,
 	}
-	export function Createevent_FormGroup() {
-		return new FormGroup<event_FormProperties>({
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
 			from: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<number | null | undefined>(undefined),
 			timestamp: new FormControl<string | null | undefined>(undefined),
@@ -136,25 +136,25 @@ export namespace MyNS {
 
 	}
 
-	export interface event__links {
-		self?: event__linksSelf;
+	export interface Event_links {
+		self?: Event_linksSelf;
 	}
-	export interface event__linksFormProperties {
+	export interface Event_linksFormProperties {
 	}
-	export function Createevent__linksFormGroup() {
-		return new FormGroup<event__linksFormProperties>({
+	export function CreateEvent_linksFormGroup() {
+		return new FormGroup<Event_linksFormProperties>({
 		});
 
 	}
 
-	export interface event__linksSelf {
+	export interface Event_linksSelf {
 		href?: string | null;
 	}
-	export interface event__linksSelfFormProperties {
+	export interface Event_linksSelfFormProperties {
 		href: FormControl<string | null | undefined>,
 	}
-	export function Createevent__linksSelfFormGroup() {
-		return new FormGroup<event__linksSelfFormProperties>({
+	export function CreateEvent_linksSelfFormGroup() {
+		return new FormGroup<Event_linksSelfFormProperties>({
 			href: new FormControl<string | null | undefined>(undefined),
 		});
 

@@ -253,7 +253,7 @@ namespace MyNS
 		exit = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="eval")]
-		_eval = 2,
+		eval = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="fail")]
 		fail = 3,
@@ -541,10 +541,10 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="import")]
-		_import = 0,
+		import = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="package")]
-		_package = 1,
+		package = 1,
 	}
 	
 	public class _200ResultResultAstRules

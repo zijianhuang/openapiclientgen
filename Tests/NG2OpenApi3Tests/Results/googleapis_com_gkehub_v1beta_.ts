@@ -4857,14 +4857,14 @@ export namespace MyNS {
 		 * @param {string} name Required. The Membership resource name the Agent will associate with, in the format `projects/locations/memberships/*`.
 		 * @param {string} imagePullSecretContent Optional. The image pull secret content for the registry, if not public.
 		 * @param {boolean} isUpgrade Optional. If true, generate the resources for upgrade only. Some resources generated only for installation (e.g. secrets) will be excluded.
-		 * @param {string} _namespace Optional. Namespace for GKE Connect agent resources. Defaults to `gke-connect`. The Connect Agent is authorized automatically when run in the default namespace. Otherwise, explicit authorization must be granted with an additional IAM binding.
+		 * @param {string} namespace Optional. Namespace for GKE Connect agent resources. Defaults to `gke-connect`. The Connect Agent is authorized automatically when run in the default namespace. Otherwise, explicit authorization must be granted with an additional IAM binding.
 		 * @param {string} proxy Optional. URI of a proxy if connectivity from the agent to gkeconnect.googleapis.com requires the use of a proxy. Format must be in the form `http(s)://{proxy_address}`, depending on the HTTP/HTTPS protocol supported by the proxy. This will direct the connect agent's outbound traffic through a HTTP(S) proxy.
 		 * @param {string} registry Optional. The registry to fetch the connect agent image from. Defaults to gcr.io/gkeconnect.
 		 * @param {string} version Optional. The Connect agent version to use. Defaults to the most current version.
 		 * @return {GenerateConnectManifestResponse} Successful response
 		 */
-		Gkehub_projects_locations_memberships_generateConnectManifest(name: string, imagePullSecretContent: string | null | undefined, isUpgrade: boolean | null | undefined, _namespace: string | null | undefined, proxy: string | null | undefined, registry: string | null | undefined, version: string | null | undefined): Observable<GenerateConnectManifestResponse> {
-			return this.http.get<GenerateConnectManifestResponse>(this.baseUri + 'v1beta/' + (name == null ? '' : encodeURIComponent(name)) + ':generateConnectManifest&imagePullSecretContent=' + (imagePullSecretContent == null ? '' : encodeURIComponent(imagePullSecretContent)) + '&isUpgrade=' + isUpgrade + '&_namespace=' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '&proxy=' + (proxy == null ? '' : encodeURIComponent(proxy)) + '&registry=' + (registry == null ? '' : encodeURIComponent(registry)) + '&version=' + (version == null ? '' : encodeURIComponent(version)), {});
+		Gkehub_projects_locations_memberships_generateConnectManifest(name: string, imagePullSecretContent: string | null | undefined, isUpgrade: boolean | null | undefined, namespace: string | null | undefined, proxy: string | null | undefined, registry: string | null | undefined, version: string | null | undefined): Observable<GenerateConnectManifestResponse> {
+			return this.http.get<GenerateConnectManifestResponse>(this.baseUri + 'v1beta/' + (name == null ? '' : encodeURIComponent(name)) + ':generateConnectManifest&imagePullSecretContent=' + (imagePullSecretContent == null ? '' : encodeURIComponent(imagePullSecretContent)) + '&isUpgrade=' + isUpgrade + '&namespace=' + (namespace == null ? '' : encodeURIComponent(namespace)) + '&proxy=' + (proxy == null ? '' : encodeURIComponent(proxy)) + '&registry=' + (registry == null ? '' : encodeURIComponent(registry)) + '&version=' + (version == null ? '' : encodeURIComponent(version)), {});
 		}
 
 		/**

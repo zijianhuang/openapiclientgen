@@ -10636,7 +10636,7 @@ export namespace MyNS {
 
 
 	/** Event */
-	export interface event_ {
+	export interface Event {
 
 		/**
 		 * Actor
@@ -10654,20 +10654,20 @@ export namespace MyNS {
 		org?: Actor;
 
 		/** Required */
-		payload: event_Payload;
+		payload: EventPayload;
 
 		/** Required */
 		public: boolean;
 
 		/** Required */
-		repo: event_Repo;
+		repo: EventRepo;
 
 		/** Required */
 		type: string;
 	}
 
 	/** Event */
-	export interface event_FormProperties {
+	export interface EventFormProperties {
 
 		/** Required */
 		created_at: FormControl<Date | null | undefined>,
@@ -10681,8 +10681,8 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<string | null | undefined>,
 	}
-	export function Createevent_FormGroup() {
-		return new FormGroup<event_FormProperties>({
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
 			created_at: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			public: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
@@ -10691,7 +10691,7 @@ export namespace MyNS {
 
 	}
 
-	export interface event_Payload {
+	export interface EventPayload {
 		action?: string | null;
 
 		/** Comments provide a way for people to collaborate on an issue. */
@@ -10699,13 +10699,13 @@ export namespace MyNS {
 
 		/** Issues are a great way to keep track of tasks, enhancements, and bugs for your projects. */
 		issue?: Issue;
-		event_PayloadPages?: Array<event_PayloadPages>;
+		EventPayloadPages?: Array<EventPayloadPages>;
 	}
-	export interface event_PayloadFormProperties {
+	export interface EventPayloadFormProperties {
 		action: FormControl<string | null | undefined>,
 	}
-	export function Createevent_PayloadFormGroup() {
-		return new FormGroup<event_PayloadFormProperties>({
+	export function CreateEventPayloadFormGroup() {
+		return new FormGroup<EventPayloadFormProperties>({
 			action: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -11238,7 +11238,7 @@ export namespace MyNS {
 
 	export enum IssueState_reason { completed = 0, reopened = 1, not_planned = 2 }
 
-	export interface event_PayloadPages {
+	export interface EventPayloadPages {
 		action?: string | null;
 		html_url?: string | null;
 		page_name?: string | null;
@@ -11246,7 +11246,7 @@ export namespace MyNS {
 		summary?: string | null;
 		title?: string | null;
 	}
-	export interface event_PayloadPagesFormProperties {
+	export interface EventPayloadPagesFormProperties {
 		action: FormControl<string | null | undefined>,
 		html_url: FormControl<string | null | undefined>,
 		page_name: FormControl<string | null | undefined>,
@@ -11254,8 +11254,8 @@ export namespace MyNS {
 		summary: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
-	export function Createevent_PayloadPagesFormGroup() {
-		return new FormGroup<event_PayloadPagesFormProperties>({
+	export function CreateEventPayloadPagesFormGroup() {
+		return new FormGroup<EventPayloadPagesFormProperties>({
 			action: new FormControl<string | null | undefined>(undefined),
 			html_url: new FormControl<string | null | undefined>(undefined),
 			page_name: new FormControl<string | null | undefined>(undefined),
@@ -11266,7 +11266,7 @@ export namespace MyNS {
 
 	}
 
-	export interface event_Repo {
+	export interface EventRepo {
 
 		/** Required */
 		id: number;
@@ -11277,7 +11277,7 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 	}
-	export interface event_RepoFormProperties {
+	export interface EventRepoFormProperties {
 
 		/** Required */
 		id: FormControl<number | null | undefined>,
@@ -11288,8 +11288,8 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 	}
-	export function Createevent_RepoFormGroup() {
-		return new FormGroup<event_RepoFormProperties>({
+	export function CreateEventRepoFormGroup() {
+		return new FormGroup<EventRepoFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -32708,10 +32708,10 @@ export namespace MyNS {
 		 * Get events
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_public_events(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'events?per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_public_events(per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'events?per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -33059,10 +33059,10 @@ export namespace MyNS {
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_public_events_for_repo_network(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'networks/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/events&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_public_events_for_repo_network(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'networks/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/events&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -33735,10 +33735,10 @@ export namespace MyNS {
 		 * @param {string} org The organization name. The name is not case sensitive.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_public_org_events(org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'orgs/' + (org == null ? '' : encodeURIComponent(org)) + '/events&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_public_org_events(org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'orgs/' + (org == null ? '' : encodeURIComponent(org)) + '/events&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -35221,7 +35221,7 @@ export namespace MyNS {
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {string} actor Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.
 		 * @param {string} branch Returns workflow runs associated with a branch. Use the name of the branch of the `push`.
-		 * @param {string} _event Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."
+		 * @param {string} event Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."
 		 * @param {ActionsSlashlist_workflow_runs_for_repoStatus} status Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
@@ -35229,8 +35229,8 @@ export namespace MyNS {
 		 * @param {boolean} exclude_pull_requests If `true` pull requests are omitted from the response (empty array).
 		 * @return {ActionsSlashlist_workflow_runs_for_repoReturn} Response
 		 */
-		ActionsSlashlist_workflow_runs_for_repo(owner: string, repo: string, actor: string | null | undefined, branch: string | null | undefined, _event: string | null | undefined, status: ActionsSlashlist_workflow_runs_for_repoStatus | null | undefined, per_page: number | null | undefined, page: number | null | undefined, created: Date | null | undefined, exclude_pull_requests: boolean | null | undefined): Observable<ActionsSlashlist_workflow_runs_for_repoReturn> {
-			return this.http.get<ActionsSlashlist_workflow_runs_for_repoReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/actions/runs&actor=' + (actor == null ? '' : encodeURIComponent(actor)) + '&branch=' + (branch == null ? '' : encodeURIComponent(branch)) + '&_event=' + (_event == null ? '' : encodeURIComponent(_event)) + '&status=' + status + '&per_page=' + per_page + '&page=' + page + '&created=' + created?.toISOString() + '&exclude_pull_requests=' + exclude_pull_requests, {});
+		ActionsSlashlist_workflow_runs_for_repo(owner: string, repo: string, actor: string | null | undefined, branch: string | null | undefined, event: string | null | undefined, status: ActionsSlashlist_workflow_runs_for_repoStatus | null | undefined, per_page: number | null | undefined, page: number | null | undefined, created: Date | null | undefined, exclude_pull_requests: boolean | null | undefined): Observable<ActionsSlashlist_workflow_runs_for_repoReturn> {
+			return this.http.get<ActionsSlashlist_workflow_runs_for_repoReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/actions/runs&actor=' + (actor == null ? '' : encodeURIComponent(actor)) + '&branch=' + (branch == null ? '' : encodeURIComponent(branch)) + '&event=' + (event == null ? '' : encodeURIComponent(event)) + '&status=' + status + '&per_page=' + per_page + '&page=' + page + '&created=' + created?.toISOString() + '&exclude_pull_requests=' + exclude_pull_requests, {});
 		}
 
 		/**
@@ -35587,7 +35587,7 @@ export namespace MyNS {
 		 * @param {number} workflow_id The ID of the workflow. You can also pass the workflow file name as a string.
 		 * @param {string} actor Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.
 		 * @param {string} branch Returns workflow runs associated with a branch. Use the name of the branch of the `push`.
-		 * @param {string} _event Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."
+		 * @param {string} event Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see "[Events that trigger workflows](https://docs.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)."
 		 * @param {ActionsSlashlist_workflow_runs_for_repoStatus} status Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
@@ -35595,8 +35595,8 @@ export namespace MyNS {
 		 * @param {boolean} exclude_pull_requests If `true` pull requests are omitted from the response (empty array).
 		 * @return {ActionsSlashlist_workflow_runsReturn} Response
 		 */
-		ActionsSlashlist_workflow_runs(owner: string, repo: string, workflow_id: number, actor: string | null | undefined, branch: string | null | undefined, _event: string | null | undefined, status: ActionsSlashlist_workflow_runs_for_repoStatus | null | undefined, per_page: number | null | undefined, page: number | null | undefined, created: Date | null | undefined, exclude_pull_requests: boolean | null | undefined): Observable<ActionsSlashlist_workflow_runsReturn> {
-			return this.http.get<ActionsSlashlist_workflow_runsReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/actions/workflows/' + workflow_id + '/runs&actor=' + (actor == null ? '' : encodeURIComponent(actor)) + '&branch=' + (branch == null ? '' : encodeURIComponent(branch)) + '&_event=' + (_event == null ? '' : encodeURIComponent(_event)) + '&status=' + status + '&per_page=' + per_page + '&page=' + page + '&created=' + created?.toISOString() + '&exclude_pull_requests=' + exclude_pull_requests, {});
+		ActionsSlashlist_workflow_runs(owner: string, repo: string, workflow_id: number, actor: string | null | undefined, branch: string | null | undefined, event: string | null | undefined, status: ActionsSlashlist_workflow_runs_for_repoStatus | null | undefined, per_page: number | null | undefined, page: number | null | undefined, created: Date | null | undefined, exclude_pull_requests: boolean | null | undefined): Observable<ActionsSlashlist_workflow_runsReturn> {
+			return this.http.get<ActionsSlashlist_workflow_runsReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/actions/workflows/' + workflow_id + '/runs&actor=' + (actor == null ? '' : encodeURIComponent(actor)) + '&branch=' + (branch == null ? '' : encodeURIComponent(branch)) + '&event=' + (event == null ? '' : encodeURIComponent(event)) + '&status=' + status + '&per_page=' + per_page + '&page=' + page + '&created=' + created?.toISOString() + '&exclude_pull_requests=' + exclude_pull_requests, {});
 		}
 
 		/**
@@ -36303,12 +36303,12 @@ export namespace MyNS {
 		 * @param {string} tool_guid The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.
 		 * @param {number} page Page number of the results to fetch.
 		 * @param {number} per_page The number of results per page (max 100).
-		 * @param {string} _ref The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
+		 * @param {string} ref The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
 		 * @param {Code_scanning_alert_instanceState} state Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
 		 * @return {Array<Code_scanning_alert_items>} Response
 		 */
-		Code_scanningSlashlist_alerts_for_repo(owner: string, repo: string, tool_name: string | null | undefined, tool_guid: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, _ref: string | null | undefined, state: Code_scanning_alert_instanceState | null | undefined): Observable<Array<Code_scanning_alert_items>> {
-			return this.http.get<Array<Code_scanning_alert_items>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/code-scanning/alerts&tool_name=' + (tool_name == null ? '' : encodeURIComponent(tool_name)) + '&tool_guid=' + (tool_guid == null ? '' : encodeURIComponent(tool_guid)) + '&page=' + page + '&per_page=' + per_page + '&_ref=' + (_ref == null ? '' : encodeURIComponent(_ref)) + '&state=' + state, {});
+		Code_scanningSlashlist_alerts_for_repo(owner: string, repo: string, tool_name: string | null | undefined, tool_guid: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, ref: string | null | undefined, state: Code_scanning_alert_instanceState | null | undefined): Observable<Array<Code_scanning_alert_items>> {
+			return this.http.get<Array<Code_scanning_alert_items>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/code-scanning/alerts&tool_name=' + (tool_name == null ? '' : encodeURIComponent(tool_name)) + '&tool_guid=' + (tool_guid == null ? '' : encodeURIComponent(tool_guid)) + '&page=' + page + '&per_page=' + per_page + '&ref=' + (ref == null ? '' : encodeURIComponent(ref)) + '&state=' + state, {});
 		}
 
 		/**
@@ -36348,11 +36348,11 @@ export namespace MyNS {
 		 * @param {number} alert_number The number that identifies an alert. You can find this at the end of the URL for a code scanning alert within GitHub, and in the `number` field in the response from the `GET /repos/{owner}/{repo}/code-scanning/alerts` operation.
 		 * @param {number} page Page number of the results to fetch.
 		 * @param {number} per_page The number of results per page (max 100).
-		 * @param {string} _ref The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
+		 * @param {string} ref The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
 		 * @return {Array<Code_scanning_alert_instance>} Response
 		 */
-		Code_scanningSlashlist_alert_instances(owner: string, repo: string, alert_number: number, page: number | null | undefined, per_page: number | null | undefined, _ref: string | null | undefined): Observable<Array<Code_scanning_alert_instance>> {
-			return this.http.get<Array<Code_scanning_alert_instance>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/code-scanning/alerts/' + alert_number + '/instances&page=' + page + '&per_page=' + per_page + '&_ref=' + (_ref == null ? '' : encodeURIComponent(_ref)), {});
+		Code_scanningSlashlist_alert_instances(owner: string, repo: string, alert_number: number, page: number | null | undefined, per_page: number | null | undefined, ref: string | null | undefined): Observable<Array<Code_scanning_alert_instance>> {
+			return this.http.get<Array<Code_scanning_alert_instance>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/code-scanning/alerts/' + alert_number + '/instances&page=' + page + '&per_page=' + per_page + '&ref=' + (ref == null ? '' : encodeURIComponent(ref)), {});
 		}
 
 		/**
@@ -36377,12 +36377,12 @@ export namespace MyNS {
 		 * @param {string} tool_guid The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.
 		 * @param {number} page Page number of the results to fetch.
 		 * @param {number} per_page The number of results per page (max 100).
-		 * @param {string} _ref The Git reference for the analyses you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
+		 * @param {string} ref The Git reference for the analyses you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
 		 * @param {string} sarif_id Filter analyses belonging to the same SARIF upload.
 		 * @return {Array<Code_scanning_analysis>} Response
 		 */
-		Code_scanningSlashlist_recent_analyses(owner: string, repo: string, tool_name: string | null | undefined, tool_guid: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, _ref: string | null | undefined, sarif_id: string | null | undefined): Observable<Array<Code_scanning_analysis>> {
-			return this.http.get<Array<Code_scanning_analysis>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/code-scanning/analyses&tool_name=' + (tool_name == null ? '' : encodeURIComponent(tool_name)) + '&tool_guid=' + (tool_guid == null ? '' : encodeURIComponent(tool_guid)) + '&page=' + page + '&per_page=' + per_page + '&_ref=' + (_ref == null ? '' : encodeURIComponent(_ref)) + '&sarif_id=' + (sarif_id == null ? '' : encodeURIComponent(sarif_id)), {});
+		Code_scanningSlashlist_recent_analyses(owner: string, repo: string, tool_name: string | null | undefined, tool_guid: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, ref: string | null | undefined, sarif_id: string | null | undefined): Observable<Array<Code_scanning_analysis>> {
+			return this.http.get<Array<Code_scanning_analysis>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/code-scanning/analyses&tool_name=' + (tool_name == null ? '' : encodeURIComponent(tool_name)) + '&tool_guid=' + (tool_guid == null ? '' : encodeURIComponent(tool_guid)) + '&page=' + page + '&per_page=' + per_page + '&ref=' + (ref == null ? '' : encodeURIComponent(ref)) + '&sarif_id=' + (sarif_id == null ? '' : encodeURIComponent(sarif_id)), {});
 		}
 
 		/**
@@ -36837,11 +36837,11 @@ export namespace MyNS {
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {number} page Page number of the results to fetch.
 		 * @param {number} per_page The number of results per page (max 100).
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @return {Commit} Response
 		 */
-		ReposSlashget_commit(owner: string, repo: string, page: number | null | undefined, per_page: number | null | undefined, _ref: string): Observable<Commit> {
-			return this.http.get<Commit>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (_ref == null ? '' : encodeURIComponent(_ref)) + '&page=' + page + '&per_page=' + per_page, {});
+		ReposSlashget_commit(owner: string, repo: string, page: number | null | undefined, per_page: number | null | undefined, ref: string): Observable<Commit> {
+			return this.http.get<Commit>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (ref == null ? '' : encodeURIComponent(ref)) + '&page=' + page + '&per_page=' + per_page, {});
 		}
 
 		/**
@@ -36851,7 +36851,7 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{ref}/check-runs
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @param {string} check_name Returns check runs with the specified `name`.
 		 * @param {Check_runStatus} status Returns check runs with the specified `status`.
 		 * @param {ActionsSlashlist_jobs_for_workflow_runFilter} filter Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.
@@ -36859,8 +36859,8 @@ export namespace MyNS {
 		 * @param {number} page Page number of the results to fetch.
 		 * @return {ChecksSlashlist_for_refReturn} Response
 		 */
-		ChecksSlashlist_for_ref(owner: string, repo: string, _ref: string, check_name: string | null | undefined, status: Check_runStatus | null | undefined, filter: ActionsSlashlist_jobs_for_workflow_runFilter | null | undefined, per_page: number | null | undefined, page: number | null | undefined, app_id: number | null | undefined): Observable<ChecksSlashlist_for_refReturn> {
-			return this.http.get<ChecksSlashlist_for_refReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (_ref == null ? '' : encodeURIComponent(_ref)) + '/check-runs&check_name=' + (check_name == null ? '' : encodeURIComponent(check_name)) + '&status=' + status + '&filter=' + filter + '&per_page=' + per_page + '&page=' + page + '&app_id=' + app_id, {});
+		ChecksSlashlist_for_ref(owner: string, repo: string, ref: string, check_name: string | null | undefined, status: Check_runStatus | null | undefined, filter: ActionsSlashlist_jobs_for_workflow_runFilter | null | undefined, per_page: number | null | undefined, page: number | null | undefined, app_id: number | null | undefined): Observable<ChecksSlashlist_for_refReturn> {
+			return this.http.get<ChecksSlashlist_for_refReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (ref == null ? '' : encodeURIComponent(ref)) + '/check-runs&check_name=' + (check_name == null ? '' : encodeURIComponent(check_name)) + '&status=' + status + '&filter=' + filter + '&per_page=' + per_page + '&page=' + page + '&app_id=' + app_id, {});
 		}
 
 		/**
@@ -36870,15 +36870,15 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{ref}/check-suites
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @param {number} app_id Filters check suites by GitHub App `id`.
 		 * @param {string} check_name Returns check runs with the specified `name`.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
 		 * @return {ChecksSlashlist_suites_for_refReturn} Response
 		 */
-		ChecksSlashlist_suites_for_ref(owner: string, repo: string, _ref: string, app_id: number | null | undefined, check_name: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<ChecksSlashlist_suites_for_refReturn> {
-			return this.http.get<ChecksSlashlist_suites_for_refReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (_ref == null ? '' : encodeURIComponent(_ref)) + '/check-suites&app_id=' + app_id + '&check_name=' + (check_name == null ? '' : encodeURIComponent(check_name)) + '&per_page=' + per_page + '&page=' + page, {});
+		ChecksSlashlist_suites_for_ref(owner: string, repo: string, ref: string, app_id: number | null | undefined, check_name: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<ChecksSlashlist_suites_for_refReturn> {
+			return this.http.get<ChecksSlashlist_suites_for_refReturn>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (ref == null ? '' : encodeURIComponent(ref)) + '/check-suites&app_id=' + app_id + '&check_name=' + (check_name == null ? '' : encodeURIComponent(check_name)) + '&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -36891,13 +36891,13 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{ref}/status
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
 		 * @return {Combined_commit_status} Response
 		 */
-		ReposSlashget_combined_status_for_ref(owner: string, repo: string, _ref: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Combined_commit_status> {
-			return this.http.get<Combined_commit_status>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (_ref == null ? '' : encodeURIComponent(_ref)) + '/status&per_page=' + per_page + '&page=' + page, {});
+		ReposSlashget_combined_status_for_ref(owner: string, repo: string, ref: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Combined_commit_status> {
+			return this.http.get<Combined_commit_status>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (ref == null ? '' : encodeURIComponent(ref)) + '/status&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -36907,13 +36907,13 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/commits/{ref}/statuses
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
 		 * @return {Array<Status>} Response
 		 */
-		ReposSlashlist_commit_statuses_for_ref(owner: string, repo: string, _ref: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Status>> {
-			return this.http.get<Array<Status>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (_ref == null ? '' : encodeURIComponent(_ref)) + '/statuses&per_page=' + per_page + '&page=' + page, {});
+		ReposSlashlist_commit_statuses_for_ref(owner: string, repo: string, ref: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Status>> {
+			return this.http.get<Array<Status>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/commits/' + (ref == null ? '' : encodeURIComponent(ref)) + '/statuses&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -37025,11 +37025,11 @@ export namespace MyNS {
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {string} path path parameter
-		 * @param {string} _ref The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
+		 * @param {string} ref The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
 		 * @return {Array<ReposSlashget_contentReturn>} Response
 		 */
-		ReposSlashget_content(owner: string, repo: string, path: string, _ref: string | null | undefined): Observable<Array<ReposSlashget_contentReturn>> {
-			return this.http.get<Array<ReposSlashget_contentReturn>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/contents/' + (path == null ? '' : encodeURIComponent(path)) + '&_ref=' + (_ref == null ? '' : encodeURIComponent(_ref)), {});
+		ReposSlashget_content(owner: string, repo: string, path: string, ref: string | null | undefined): Observable<Array<ReposSlashget_contentReturn>> {
+			return this.http.get<Array<ReposSlashget_contentReturn>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/contents/' + (path == null ? '' : encodeURIComponent(path)) + '&ref=' + (ref == null ? '' : encodeURIComponent(ref)), {});
 		}
 
 		/**
@@ -37069,15 +37069,15 @@ export namespace MyNS {
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {string} sha The SHA recorded at creation time.
-		 * @param {string} _ref The name of the ref. This can be a branch, tag, or SHA.
+		 * @param {string} ref The name of the ref. This can be a branch, tag, or SHA.
 		 * @param {string} task The name of the task for the deployment (e.g., `deploy` or `deploy:migrations`).
 		 * @param {string} environment The name of the environment that was deployed to (e.g., `staging` or `production`).
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
 		 * @return {Array<Deployment>} Response
 		 */
-		ReposSlashlist_deployments(owner: string, repo: string, sha: string | null | undefined, _ref: string | null | undefined, task: string | null | undefined, environment: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Deployment>> {
-			return this.http.get<Array<Deployment>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/deployments&sha=' + (sha == null ? '' : encodeURIComponent(sha)) + '&_ref=' + (_ref == null ? '' : encodeURIComponent(_ref)) + '&task=' + (task == null ? '' : encodeURIComponent(task)) + '&environment=' + (environment == null ? '' : encodeURIComponent(environment)) + '&per_page=' + per_page + '&page=' + page, {});
+		ReposSlashlist_deployments(owner: string, repo: string, sha: string | null | undefined, ref: string | null | undefined, task: string | null | undefined, environment: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Deployment>> {
+			return this.http.get<Array<Deployment>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/deployments&sha=' + (sha == null ? '' : encodeURIComponent(sha)) + '&ref=' + (ref == null ? '' : encodeURIComponent(ref)) + '&task=' + (task == null ? '' : encodeURIComponent(task)) + '&environment=' + (environment == null ? '' : encodeURIComponent(environment)) + '&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -37355,10 +37355,10 @@ export namespace MyNS {
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_repo_events(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/events&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_repo_events(owner: string, repo: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/events&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -37494,11 +37494,11 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/git/matching-refs/{ref}
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @return {Array<Git_ref>} Response
 		 */
-		GitSlashlist_matching_refs(owner: string, repo: string, _ref: string): Observable<Array<Git_ref>> {
-			return this.http.get<Array<Git_ref>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/matching-refs/' + (_ref == null ? '' : encodeURIComponent(_ref)), {});
+		GitSlashlist_matching_refs(owner: string, repo: string, ref: string): Observable<Array<Git_ref>> {
+			return this.http.get<Array<Git_ref>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/matching-refs/' + (ref == null ? '' : encodeURIComponent(ref)), {});
 		}
 
 		/**
@@ -37508,11 +37508,11 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/git/ref/{ref}
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @return {Git_ref} Response
 		 */
-		GitSlashget_ref(owner: string, repo: string, _ref: string): Observable<Git_ref> {
-			return this.http.get<Git_ref>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/ref/' + (_ref == null ? '' : encodeURIComponent(_ref)), {});
+		GitSlashget_ref(owner: string, repo: string, ref: string): Observable<Git_ref> {
+			return this.http.get<Git_ref>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/ref/' + (ref == null ? '' : encodeURIComponent(ref)), {});
 		}
 
 		/**
@@ -37532,11 +37532,11 @@ export namespace MyNS {
 		 * Delete repos/{owner}/{repo}/git/refs/{ref}
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref ref parameter
+		 * @param {string} ref ref parameter
 		 * @return {void} 
 		 */
-		GitSlashdelete_ref(owner: string, repo: string, _ref: string): Observable<HttpResponse<string>> {
-			return this.http.delete(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/refs/' + (_ref == null ? '' : encodeURIComponent(_ref)), { observe: 'response', responseType: 'text' });
+		GitSlashdelete_ref(owner: string, repo: string, ref: string): Observable<HttpResponse<string>> {
+			return this.http.delete(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/refs/' + (ref == null ? '' : encodeURIComponent(ref)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -37544,11 +37544,11 @@ export namespace MyNS {
 		 * Patch repos/{owner}/{repo}/git/refs/{ref}
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref The name of the fully qualified reference to update. For example, `refs/heads/master`. If the value doesn't start with `refs` and have at least two slashes, it will be rejected.
+		 * @param {string} ref The name of the fully qualified reference to update. For example, `refs/heads/master`. If the value doesn't start with `refs` and have at least two slashes, it will be rejected.
 		 * @return {Git_ref} Response
 		 */
-		GitSlashupdate_ref(owner: string, repo: string, _ref: string, requestBody: GitSlashupdate_refPatchBody): Observable<Git_ref> {
-			return this.http.patch<Git_ref>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/refs/' + (_ref == null ? '' : encodeURIComponent(_ref)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		GitSlashupdate_ref(owner: string, repo: string, ref: string, requestBody: GitSlashupdate_refPatchBody): Observable<Git_ref> {
+			return this.http.patch<Git_ref>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/git/refs/' + (ref == null ? '' : encodeURIComponent(ref)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -38711,15 +38711,15 @@ export namespace MyNS {
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {IssuesSlashlistState} state Either `open`, `closed`, or `all` to filter by state.
 		 * @param {string} head Filter pulls by head user or head organization and branch name in the format of `user:ref-name` or `organization:ref-name`. For example: `github:new-script-format` or `octocat:test-branch`.
-		 * @param {string} _base Filter pulls by base branch name. Example: `gh-pages`.
+		 * @param {string} base Filter pulls by base branch name. Example: `gh-pages`.
 		 * @param {PullsSlashlistSort} sort What to sort results by. `popularity` will sort by the number of comments. `long-running` will sort by date created and will limit the results to pull requests that have been open for more than a month and have had activity within the past month.
 		 * @param {Enterprise_adminSlashlist_public_keysDirection} direction The direction of the sort. Default: `desc` when sort is `created` or sort is not specified, otherwise `asc`.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
 		 * @return {Array<Pull_request_simple>} Response
 		 */
-		PullsSlashlist(owner: string, repo: string, state: IssuesSlashlistState | null | undefined, head: string | null | undefined, _base: string | null | undefined, sort: PullsSlashlistSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Pull_request_simple>> {
-			return this.http.get<Array<Pull_request_simple>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/pulls&state=' + state + '&head=' + (head == null ? '' : encodeURIComponent(head)) + '&_base=' + (_base == null ? '' : encodeURIComponent(_base)) + '&sort=' + sort + '&direction=' + direction + '&per_page=' + per_page + '&page=' + page, {});
+		PullsSlashlist(owner: string, repo: string, state: IssuesSlashlistState | null | undefined, head: string | null | undefined, base: string | null | undefined, sort: PullsSlashlistSort | null | undefined, direction: Enterprise_adminSlashlist_public_keysDirection | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Pull_request_simple>> {
+			return this.http.get<Array<Pull_request_simple>>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/pulls&state=' + state + '&head=' + (head == null ? '' : encodeURIComponent(head)) + '&base=' + (base == null ? '' : encodeURIComponent(base)) + '&sort=' + sort + '&direction=' + direction + '&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -39147,11 +39147,11 @@ export namespace MyNS {
 		 * Get repos/{owner}/{repo}/readme
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
-		 * @param {string} _ref The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
+		 * @param {string} ref The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
 		 * @return {Content_file} Response
 		 */
-		ReposSlashget_readme(owner: string, repo: string, _ref: string | null | undefined): Observable<Content_file> {
-			return this.http.get<Content_file>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/readme&_ref=' + (_ref == null ? '' : encodeURIComponent(_ref)), {});
+		ReposSlashget_readme(owner: string, repo: string, ref: string | null | undefined): Observable<Content_file> {
+			return this.http.get<Content_file>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/readme&ref=' + (ref == null ? '' : encodeURIComponent(ref)), {});
 		}
 
 		/**
@@ -39162,11 +39162,11 @@ export namespace MyNS {
 		 * @param {string} owner The account owner of the repository. The name is not case sensitive.
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @param {string} dir The alternate path to look for a README file
-		 * @param {string} _ref The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
+		 * @param {string} ref The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
 		 * @return {Content_file} Response
 		 */
-		ReposSlashget_readme_in_directory(owner: string, repo: string, dir: string, _ref: string | null | undefined): Observable<Content_file> {
-			return this.http.get<Content_file>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/readme/' + (dir == null ? '' : encodeURIComponent(dir)) + '&_ref=' + (_ref == null ? '' : encodeURIComponent(_ref)), {});
+		ReposSlashget_readme_in_directory(owner: string, repo: string, dir: string, ref: string | null | undefined): Observable<Content_file> {
+			return this.http.get<Content_file>(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/readme/' + (dir == null ? '' : encodeURIComponent(dir)) + '&ref=' + (ref == null ? '' : encodeURIComponent(ref)), {});
 		}
 
 		/**
@@ -39576,8 +39576,8 @@ export namespace MyNS {
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @return {void} 
 		 */
-		ReposSlashdownload_tarball_archive(owner: string, repo: string, _ref: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/tarball/' + (_ref == null ? '' : encodeURIComponent(_ref)), { observe: 'response', responseType: 'text' });
+		ReposSlashdownload_tarball_archive(owner: string, repo: string, ref: string): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/tarball/' + (ref == null ? '' : encodeURIComponent(ref)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -39640,8 +39640,8 @@ export namespace MyNS {
 		 * @param {string} repo The name of the repository. The name is not case sensitive.
 		 * @return {void} 
 		 */
-		ReposSlashdownload_zipball_archive(owner: string, repo: string, _ref: string): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/zipball/' + (_ref == null ? '' : encodeURIComponent(_ref)), { observe: 'response', responseType: 'text' });
+		ReposSlashdownload_zipball_archive(owner: string, repo: string, ref: string): Observable<HttpResponse<string>> {
+			return this.http.get(this.baseUri + 'repos/' + (owner == null ? '' : encodeURIComponent(owner)) + '/' + (repo == null ? '' : encodeURIComponent(repo)) + '/zipball/' + (ref == null ? '' : encodeURIComponent(ref)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -40992,10 +40992,10 @@ export namespace MyNS {
 		 * @param {string} username The handle for the GitHub user account.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_events_for_authenticated_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/events&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_events_for_authenticated_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/events&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -41006,10 +41006,10 @@ export namespace MyNS {
 		 * @param {string} org The organization name. The name is not case sensitive.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_org_events_for_authenticated_user(username: string, org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/events/orgs/' + (org == null ? '' : encodeURIComponent(org)) + '&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_org_events_for_authenticated_user(username: string, org: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/events/orgs/' + (org == null ? '' : encodeURIComponent(org)) + '&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -41018,10 +41018,10 @@ export namespace MyNS {
 		 * @param {string} username The handle for the GitHub user account.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_public_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/events/public&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_public_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/events/public&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -41164,10 +41164,10 @@ export namespace MyNS {
 		 * @param {string} username The handle for the GitHub user account.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_received_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/received_events&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_received_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/received_events&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**
@@ -41176,10 +41176,10 @@ export namespace MyNS {
 		 * @param {string} username The handle for the GitHub user account.
 		 * @param {number} per_page The number of results per page (max 100).
 		 * @param {number} page Page number of the results to fetch.
-		 * @return {Array<event_>} Response
+		 * @return {Array<Event>} Response
 		 */
-		ActivitySlashlist_received_public_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/received_events/public&per_page=' + per_page + '&page=' + page, {});
+		ActivitySlashlist_received_public_events_for_user(username: string, per_page: number | null | undefined, page: number | null | undefined): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + 'users/' + (username == null ? '' : encodeURIComponent(username)) + '/received_events/public&per_page=' + per_page + '&page=' + page, {});
 		}
 
 		/**

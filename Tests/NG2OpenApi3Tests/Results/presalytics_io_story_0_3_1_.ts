@@ -119,7 +119,7 @@ export namespace MyNS {
 
 
 	/** An Story Event object */
-	export interface event_ extends Base_model {
+	export interface Event extends Base_model {
 		attributes?: string | null;
 		chat_prompt?: string | null;
 		conversation_id?: string | null;
@@ -130,7 +130,7 @@ export namespace MyNS {
 	}
 
 	/** An Story Event object */
-	export interface event_FormProperties extends Base_modelFormProperties {
+	export interface EventFormProperties extends Base_modelFormProperties {
 		attributes: FormControl<string | null | undefined>,
 		chat_prompt: FormControl<string | null | undefined>,
 		conversation_id: FormControl<string | null | undefined>,
@@ -139,8 +139,8 @@ export namespace MyNS {
 		is_notify_enabled: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
-	export function Createevent_FormGroup() {
-		return new FormGroup<event_FormProperties>({
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
 			created_at: new FormControl<Date | null | undefined>(undefined),
 			created_by: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
@@ -884,10 +884,10 @@ export namespace MyNS {
 		 * Get a list of Events available to users of this story
 		 * Get {id}/events
 		 * @param {string} id the id from the story object
-		 * @return {Array<event_>} An Array of events
+		 * @return {Array<Event>} An Array of events
 		 */
-		Story_id_events_get(id: string): Observable<Array<event_>> {
-			return this.http.get<Array<event_>>(this.baseUri + (id == null ? '' : encodeURIComponent(id)) + '/events', {});
+		Story_id_events_get(id: string): Observable<Array<Event>> {
+			return this.http.get<Array<Event>>(this.baseUri + (id == null ? '' : encodeURIComponent(id)) + '/events', {});
 		}
 
 		/**

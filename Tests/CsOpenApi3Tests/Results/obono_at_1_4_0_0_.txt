@@ -1228,7 +1228,7 @@ namespace MyNS
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="export")]
-		_export = 0,
+		export = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="beleg")]
 		beleg = 1,

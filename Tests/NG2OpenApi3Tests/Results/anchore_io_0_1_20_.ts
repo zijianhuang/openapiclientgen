@@ -5018,7 +5018,7 @@ export namespace MyNS {
 		 * Returns a listing of images and their respective packages vulnerable to the given vulnerability ID
 		 * Get query/images/by_vulnerability
 		 * @param {string} vulnerability_id The ID of the vulnerability to search for within all images stored in anchore-engine (e.g. CVE-1999-0001)
-		 * @param {string} _namespace Filter results to images within the given vulnerability namespace (e.g. debian:8, ubuntu:14.04)
+		 * @param {string} namespace Filter results to images within the given vulnerability namespace (e.g. debian:8, ubuntu:14.04)
 		 * @param {string} affected_package Filter results to images with vulnable packages with the given package name (e.g. libssl)
 		 * @param {StandaloneVulnerabilitySeverity} severity Filter results to vulnerable package/vulnerability with the given severity
 		 * @param {boolean} vendor_only Filter results to include only vulnerabilities that are not marked as invalid by upstream OS vendor data
@@ -5026,8 +5026,8 @@ export namespace MyNS {
 		 * @param {number} limit Limit the number of records for the requested page. If omitted or set to 0, return all results in a single page
 		 * @return {PaginatedVulnerableImageList} Image lookup success
 		 */
-		Query_images_by_vulnerability(vulnerability_id: string, _namespace: string | null | undefined, affected_package: string | null | undefined, severity: StandaloneVulnerabilitySeverity | null | undefined, vendor_only: boolean | null | undefined, page: number | null | undefined, limit: number | null | undefined): Observable<PaginatedVulnerableImageList> {
-			return this.http.get<PaginatedVulnerableImageList>(this.baseUri + 'query/images/by_vulnerability?vulnerability_id=' + (vulnerability_id == null ? '' : encodeURIComponent(vulnerability_id)) + '&_namespace=' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '&affected_package=' + (affected_package == null ? '' : encodeURIComponent(affected_package)) + '&severity=' + severity + '&vendor_only=' + vendor_only + '&page=' + page + '&limit=' + limit, {});
+		Query_images_by_vulnerability(vulnerability_id: string, namespace: string | null | undefined, affected_package: string | null | undefined, severity: StandaloneVulnerabilitySeverity | null | undefined, vendor_only: boolean | null | undefined, page: number | null | undefined, limit: number | null | undefined): Observable<PaginatedVulnerableImageList> {
+			return this.http.get<PaginatedVulnerableImageList>(this.baseUri + 'query/images/by_vulnerability?vulnerability_id=' + (vulnerability_id == null ? '' : encodeURIComponent(vulnerability_id)) + '&namespace=' + (namespace == null ? '' : encodeURIComponent(namespace)) + '&affected_package=' + (affected_package == null ? '' : encodeURIComponent(affected_package)) + '&severity=' + severity + '&vendor_only=' + vendor_only + '&page=' + page + '&limit=' + limit, {});
 		}
 
 		/**
@@ -5039,11 +5039,11 @@ export namespace MyNS {
 		 * @param {string} affected_package_version Filter results by specified package version (e.g. 4.4-1)
 		 * @param {string} page The page of results to fetch. Pages start at 1
 		 * @param {number} limit Limit the number of records for the requested page. If omitted or set to 0, return all results in a single page
-		 * @param {Array<string>} _namespace Namespace(s) to filter vulnerability records by
+		 * @param {Array<string>} namespace Namespace(s) to filter vulnerability records by
 		 * @return {PaginatedVulnerabilityList} Vulnerability listing paginated
 		 */
-		Query_vulnerabilities(id: Array<string>, affected_package: string | null | undefined, affected_package_version: string | null | undefined, page: string | null | undefined, limit: number | null | undefined, _namespace: Array<string> | null | undefined): Observable<PaginatedVulnerabilityList> {
-			return this.http.get<PaginatedVulnerabilityList>(this.baseUri + 'query/vulnerabilities?' + id.map(z => `id=${encodeURIComponent(z)}`).join('&') + '&affected_package=' + (affected_package == null ? '' : encodeURIComponent(affected_package)) + '&affected_package_version=' + (affected_package_version == null ? '' : encodeURIComponent(affected_package_version)) + '&page=' + (page == null ? '' : encodeURIComponent(page)) + '&limit=' + limit + '&' + _namespace?.map(z => `namespace=${encodeURIComponent(z)}`).join('&'), {});
+		Query_vulnerabilities(id: Array<string>, affected_package: string | null | undefined, affected_package_version: string | null | undefined, page: string | null | undefined, limit: number | null | undefined, namespace: Array<string> | null | undefined): Observable<PaginatedVulnerabilityList> {
+			return this.http.get<PaginatedVulnerabilityList>(this.baseUri + 'query/vulnerabilities?' + id.map(z => `id=${encodeURIComponent(z)}`).join('&') + '&affected_package=' + (affected_package == null ? '' : encodeURIComponent(affected_package)) + '&affected_package_version=' + (affected_package_version == null ? '' : encodeURIComponent(affected_package_version)) + '&page=' + (page == null ? '' : encodeURIComponent(page)) + '&limit=' + limit + '&' + namespace?.map(z => `namespace=${encodeURIComponent(z)}`).join('&'), {});
 		}
 
 		/**

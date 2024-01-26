@@ -189,7 +189,7 @@ namespace MyNS
 		change = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 3,
+		delete = 3,
 	}
 	
 	/// <summary>

@@ -1035,7 +1035,7 @@ namespace MyNS
 		
 		containerImage = 4,
 		
-		_package = 5,
+		package = 5,
 		
 		pullRequest = 6,
 	}
@@ -4267,7 +4267,7 @@ namespace MyNS
 		
 		containerImage = 4,
 		
-		_package = 5,
+		package = 5,
 		
 		pullRequest = 6,
 	}
@@ -4394,7 +4394,7 @@ namespace MyNS
 		
 		update = 1,
 		
-		_delete = 2,
+		delete = 2,
 		
 		undelete = 3,
 	}

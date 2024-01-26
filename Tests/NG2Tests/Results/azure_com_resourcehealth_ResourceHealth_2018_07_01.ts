@@ -740,25 +740,25 @@ export namespace MyNS {
 
 
 	/** Service health event */
-	export interface event_ {
+	export interface Event {
 
 		/** Properties of event. */
-		properties?: event_Properties;
+		properties?: EventProperties;
 	}
 
 	/** Service health event */
-	export interface event_FormProperties {
+	export interface EventFormProperties {
 	}
-	export function Createevent_FormGroup() {
-		return new FormGroup<event_FormProperties>({
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
 		});
 
 	}
 
-	export interface event_Properties {
+	export interface EventProperties {
 
 		/** Article of event. */
-		article?: event_PropertiesArticle;
+		article?: EventPropertiesArticle;
 
 		/** Tells if we want to enable or disable Microsoft Support for this event. */
 		enableChatWithUs?: boolean | null;
@@ -767,13 +767,13 @@ export namespace MyNS {
 		enableMicrosoftSupport?: boolean | null;
 
 		/** Level of event. */
-		eventLevel?: event_PropertiesEventLevel | null;
+		eventLevel?: EventPropertiesEventLevel | null;
 
 		/** Source of event. */
-		eventSource?: event_PropertiesEventSource | null;
+		eventSource?: EventPropertiesEventSource | null;
 
 		/** Type of event. */
-		eventType?: event_PropertiesEventType | null;
+		eventType?: EventPropertiesEventType | null;
 
 		/** Frequently asked questions for the service health event. */
 		faqs?: Array<Faq>;
@@ -800,7 +800,7 @@ export namespace MyNS {
 		lastUpdateTime?: Date | null;
 
 		/** Level of insight. */
-		level?: event_PropertiesLevel | null;
+		level?: EventPropertiesLevel | null;
 
 		/** Useful links of event. */
 		links?: Array<Link>;
@@ -809,7 +809,7 @@ export namespace MyNS {
 		priority?: number | null;
 
 		/** Recommended actions of event. */
-		recommendedActions?: event_PropertiesRecommendedActions;
+		recommendedActions?: EventPropertiesRecommendedActions;
 
 		/** Current status of event. */
 		status?: ImpactedServiceRegionStatus | null;
@@ -820,7 +820,7 @@ export namespace MyNS {
 		/** Title text of event. */
 		title?: string | null;
 	}
-	export interface event_PropertiesFormProperties {
+	export interface EventPropertiesFormProperties {
 
 		/** Tells if we want to enable or disable Microsoft Support for this event. */
 		enableChatWithUs: FormControl<boolean | null | undefined>,
@@ -829,13 +829,13 @@ export namespace MyNS {
 		enableMicrosoftSupport: FormControl<boolean | null | undefined>,
 
 		/** Level of event. */
-		eventLevel: FormControl<event_PropertiesEventLevel | null | undefined>,
+		eventLevel: FormControl<EventPropertiesEventLevel | null | undefined>,
 
 		/** Source of event. */
-		eventSource: FormControl<event_PropertiesEventSource | null | undefined>,
+		eventSource: FormControl<EventPropertiesEventSource | null | undefined>,
 
 		/** Type of event. */
-		eventType: FormControl<event_PropertiesEventType | null | undefined>,
+		eventType: FormControl<EventPropertiesEventType | null | undefined>,
 
 		/** Header text of event. */
 		header: FormControl<string | null | undefined>,
@@ -856,7 +856,7 @@ export namespace MyNS {
 		lastUpdateTime: FormControl<Date | null | undefined>,
 
 		/** Level of insight. */
-		level: FormControl<event_PropertiesLevel | null | undefined>,
+		level: FormControl<EventPropertiesLevel | null | undefined>,
 
 		/** Priority level of the event. */
 		priority: FormControl<number | null | undefined>,
@@ -870,20 +870,20 @@ export namespace MyNS {
 		/** Title text of event. */
 		title: FormControl<string | null | undefined>,
 	}
-	export function Createevent_PropertiesFormGroup() {
-		return new FormGroup<event_PropertiesFormProperties>({
+	export function CreateEventPropertiesFormGroup() {
+		return new FormGroup<EventPropertiesFormProperties>({
 			enableChatWithUs: new FormControl<boolean | null | undefined>(undefined),
 			enableMicrosoftSupport: new FormControl<boolean | null | undefined>(undefined),
-			eventLevel: new FormControl<event_PropertiesEventLevel | null | undefined>(undefined),
-			eventSource: new FormControl<event_PropertiesEventSource | null | undefined>(undefined),
-			eventType: new FormControl<event_PropertiesEventType | null | undefined>(undefined),
+			eventLevel: new FormControl<EventPropertiesEventLevel | null | undefined>(undefined),
+			eventSource: new FormControl<EventPropertiesEventSource | null | undefined>(undefined),
+			eventType: new FormControl<EventPropertiesEventType | null | undefined>(undefined),
 			header: new FormControl<string | null | undefined>(undefined),
 			hirStage: new FormControl<string | null | undefined>(undefined),
 			impactMitigationTime: new FormControl<Date | null | undefined>(undefined),
 			impactStartTime: new FormControl<Date | null | undefined>(undefined),
 			isHIR: new FormControl<boolean | null | undefined>(undefined),
 			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
-			level: new FormControl<event_PropertiesLevel | null | undefined>(undefined),
+			level: new FormControl<EventPropertiesLevel | null | undefined>(undefined),
 			priority: new FormControl<number | null | undefined>(undefined),
 			status: new FormControl<ImpactedServiceRegionStatus | null | undefined>(undefined),
 			summary: new FormControl<string | null | undefined>(undefined),
@@ -892,28 +892,28 @@ export namespace MyNS {
 
 	}
 
-	export interface event_PropertiesArticle {
+	export interface EventPropertiesArticle {
 
 		/** Article content of event. */
 		articleContent?: string | null;
 	}
-	export interface event_PropertiesArticleFormProperties {
+	export interface EventPropertiesArticleFormProperties {
 
 		/** Article content of event. */
 		articleContent: FormControl<string | null | undefined>,
 	}
-	export function Createevent_PropertiesArticleFormGroup() {
-		return new FormGroup<event_PropertiesArticleFormProperties>({
+	export function CreateEventPropertiesArticleFormGroup() {
+		return new FormGroup<EventPropertiesArticleFormProperties>({
 			articleContent: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
-	export enum event_PropertiesEventLevel { Critical = 0, Warning = 1, Informational = 2 }
+	export enum EventPropertiesEventLevel { Critical = 0, Warning = 1, Informational = 2 }
 
-	export enum event_PropertiesEventSource { ResourceHealth = 0, ServiceHealth = 1 }
+	export enum EventPropertiesEventSource { ResourceHealth = 0, ServiceHealth = 1 }
 
-	export enum event_PropertiesEventType { ServiceIssue = 0, PlannedMaintenance = 1, HealthAdvisory = 2, RCA = 3 }
+	export enum EventPropertiesEventType { ServiceIssue = 0, PlannedMaintenance = 1, HealthAdvisory = 2, RCA = 3 }
 
 
 	/** Frequently asked question for the service health event */
@@ -1045,7 +1045,7 @@ export namespace MyNS {
 
 	}
 
-	export enum event_PropertiesLevel { Critical = 0, Warning = 1 }
+	export enum EventPropertiesLevel { Critical = 0, Warning = 1 }
 
 
 	/** Useful links for service health event. */
@@ -1118,10 +1118,10 @@ export namespace MyNS {
 
 	export enum LinkType { Button = 0, Hyperlink = 1 }
 
-	export interface event_PropertiesRecommendedActions {
+	export interface EventPropertiesRecommendedActions {
 
 		/** Recommended actions for the service health event. */
-		event_PropertiesRecommendedActionsActions?: Array<event_PropertiesRecommendedActionsActions>;
+		EventPropertiesRecommendedActionsActions?: Array<EventPropertiesRecommendedActionsActions>;
 
 		/** Recommended action locale for the service health event. */
 		localeCode?: string | null;
@@ -1129,7 +1129,7 @@ export namespace MyNS {
 		/** Recommended action title for the service health event. */
 		message?: string | null;
 	}
-	export interface event_PropertiesRecommendedActionsFormProperties {
+	export interface EventPropertiesRecommendedActionsFormProperties {
 
 		/** Recommended action locale for the service health event. */
 		localeCode: FormControl<string | null | undefined>,
@@ -1137,15 +1137,15 @@ export namespace MyNS {
 		/** Recommended action title for the service health event. */
 		message: FormControl<string | null | undefined>,
 	}
-	export function Createevent_PropertiesRecommendedActionsFormGroup() {
-		return new FormGroup<event_PropertiesRecommendedActionsFormProperties>({
+	export function CreateEventPropertiesRecommendedActionsFormGroup() {
+		return new FormGroup<EventPropertiesRecommendedActionsFormProperties>({
 			localeCode: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
-	export interface event_PropertiesRecommendedActionsActions {
+	export interface EventPropertiesRecommendedActionsActions {
 
 		/** Recommended action text */
 		actionText?: string | null;
@@ -1153,7 +1153,7 @@ export namespace MyNS {
 		/** Recommended action group Id for the service health event. */
 		groupId?: number | null;
 	}
-	export interface event_PropertiesRecommendedActionsActionsFormProperties {
+	export interface EventPropertiesRecommendedActionsActionsFormProperties {
 
 		/** Recommended action text */
 		actionText: FormControl<string | null | undefined>,
@@ -1161,8 +1161,8 @@ export namespace MyNS {
 		/** Recommended action group Id for the service health event. */
 		groupId: FormControl<number | null | undefined>,
 	}
-	export function Createevent_PropertiesRecommendedActionsActionsFormGroup() {
-		return new FormGroup<event_PropertiesRecommendedActionsActionsFormProperties>({
+	export function CreateEventPropertiesRecommendedActionsActionsFormGroup() {
+		return new FormGroup<EventPropertiesRecommendedActionsActionsFormProperties>({
 			actionText: new FormControl<string | null | undefined>(undefined),
 			groupId: new FormControl<number | null | undefined>(undefined),
 		});
@@ -1180,7 +1180,7 @@ export namespace MyNS {
 		 * The list of event.
 		 * Required
 		 */
-		value: Array<event_>;
+		value: Array<Event>;
 	}
 
 	/** The List events operation response. */

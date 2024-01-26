@@ -4031,7 +4031,7 @@ namespace MyNS
 		
 		update = 1,
 		
-		_delete = 2,
+		delete = 2,
 		
 		undelete = 3,
 	}

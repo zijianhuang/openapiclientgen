@@ -1239,7 +1239,7 @@ namespace MyNS
 		
 		edit = 2,
 		
-		_delete = 3,
+		delete = 3,
 		
 		manage = 4,
 		
@@ -1279,7 +1279,7 @@ namespace MyNS
 		
 		edit = 2,
 		
-		_delete = 3,
+		delete = 3,
 		
 		manage = 4,
 		

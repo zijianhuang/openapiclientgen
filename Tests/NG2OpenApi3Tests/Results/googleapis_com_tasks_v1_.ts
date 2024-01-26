@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
-	export interface Task_ {
+	export interface Task {
 
 		/** Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed. */
 		completed?: string | null;
@@ -27,7 +27,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Collection of links. This collection is read-only. */
-		Task_Links?: Array<Task_Links>;
+		TaskLinks?: Array<TaskLinks>;
 
 		/** Notes describing the task. Optional. */
 		notes?: string | null;
@@ -50,7 +50,7 @@ export namespace MyNS {
 		/** Last modification time of the task (as a RFC 3339 timestamp). */
 		updated?: string | null;
 	}
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 
 		/** Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed. */
 		completed: FormControl<string | null | undefined>,
@@ -94,8 +94,8 @@ export namespace MyNS {
 		/** Last modification time of the task (as a RFC 3339 timestamp). */
 		updated: FormControl<string | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			completed: new FormControl<string | null | undefined>(undefined),
 			deleted: new FormControl<boolean | null | undefined>(undefined),
 			due: new FormControl<string | null | undefined>(undefined),
@@ -114,7 +114,7 @@ export namespace MyNS {
 
 	}
 
-	export interface Task_Links {
+	export interface TaskLinks {
 
 		/** The description. In HTML speak: Everything between <a> and </a>. */
 		description?: string | null;
@@ -125,7 +125,7 @@ export namespace MyNS {
 		/** Type of the link, e.g. "email". */
 		type?: string | null;
 	}
-	export interface Task_LinksFormProperties {
+	export interface TaskLinksFormProperties {
 
 		/** The description. In HTML speak: Everything between <a> and </a>. */
 		description: FormControl<string | null | undefined>,
@@ -136,8 +136,8 @@ export namespace MyNS {
 		/** Type of the link, e.g. "email". */
 		type: FormControl<string | null | undefined>,
 	}
-	export function CreateTask_LinksFormGroup() {
-		return new FormGroup<Task_LinksFormProperties>({
+	export function CreateTaskLinksFormGroup() {
+		return new FormGroup<TaskLinksFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
 			link: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
@@ -237,7 +237,7 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** Collection of tasks. */
-		items?: Array<Task_>;
+		items?: Array<Task>;
 
 		/** Type of the resource. This is always "tasks#tasks". */
 		kind?: string | null;
@@ -306,10 +306,10 @@ export namespace MyNS {
 		 * @param {string} tasklist Task list identifier.
 		 * @param {string} parent Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.
 		 * @param {string} previous Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Tasks_tasks_insert(tasklist: string, parent: string | null | undefined, previous: string | null | undefined, requestBody: Task_): Observable<Task_> {
-			return this.http.post<Task_>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Tasks_tasks_insert(tasklist: string, parent: string | null | undefined, previous: string | null | undefined, requestBody: Task): Observable<Task> {
+			return this.http.post<Task>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -328,10 +328,10 @@ export namespace MyNS {
 		 * Get tasks/v1/lists/{tasklist}/tasks/{task}
 		 * @param {string} tasklist Task list identifier.
 		 * @param {string} task Task identifier.
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Tasks_tasks_get(tasklist: string, task: string): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)), {});
+		Tasks_tasks_get(tasklist: string, task: string): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)), {});
 		}
 
 		/**
@@ -339,10 +339,10 @@ export namespace MyNS {
 		 * Patch tasks/v1/lists/{tasklist}/tasks/{task}
 		 * @param {string} tasklist Task list identifier.
 		 * @param {string} task Task identifier.
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Tasks_tasks_patch(tasklist: string, task: string, requestBody: Task_): Observable<Task_> {
-			return this.http.patch<Task_>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Tasks_tasks_patch(tasklist: string, task: string, requestBody: Task): Observable<Task> {
+			return this.http.patch<Task>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -350,10 +350,10 @@ export namespace MyNS {
 		 * Put tasks/v1/lists/{tasklist}/tasks/{task}
 		 * @param {string} tasklist Task list identifier.
 		 * @param {string} task Task identifier.
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Tasks_tasks_update(tasklist: string, task: string, requestBody: Task_): Observable<Task_> {
-			return this.http.put<Task_>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Tasks_tasks_update(tasklist: string, task: string, requestBody: Task): Observable<Task> {
+			return this.http.put<Task>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -363,10 +363,10 @@ export namespace MyNS {
 		 * @param {string} task Task identifier.
 		 * @param {string} parent New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.
 		 * @param {string} previous New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Tasks_tasks_move(tasklist: string, task: string, parent: string | null | undefined, previous: string | null | undefined): Observable<Task_> {
-			return this.http.post<Task_>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)) + '/move&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), null, {});
+		Tasks_tasks_move(tasklist: string, task: string, parent: string | null | undefined, previous: string | null | undefined): Observable<Task> {
+			return this.http.post<Task>(this.baseUri + 'tasks/v1/lists/' + (tasklist == null ? '' : encodeURIComponent(tasklist)) + '/tasks/' + (task == null ? '' : encodeURIComponent(task)) + '/move&parent=' + (parent == null ? '' : encodeURIComponent(parent)) + '&previous=' + (previous == null ? '' : encodeURIComponent(previous)), null, {});
 		}
 
 		/**

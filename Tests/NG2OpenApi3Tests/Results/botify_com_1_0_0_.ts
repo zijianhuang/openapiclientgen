@@ -1262,12 +1262,12 @@ export namespace MyNS {
 
 	}
 
-	export interface string_ {
+	export interface String {
 	}
-	export interface string_FormProperties {
+	export interface StringFormProperties {
 	}
-	export function Createstring_FormGroup() {
-		return new FormGroup<string_FormProperties>({
+	export function CreateStringFormGroup() {
+		return new FormGroup<StringFormProperties>({
 		});
 
 	}

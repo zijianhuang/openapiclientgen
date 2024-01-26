@@ -6287,11 +6287,11 @@ namespace MyNS
 		/// GetRun run/{id}
 		/// </summary>
 		/// <param name="id">The run's ID.</param>
-		/// <param name="_export">The run's export format.</param>
+		/// <param name="export">The run's export format.</param>
 		/// <returns>Success</returns>
-		public async Task<GetRunResponse> GetRunAsync(string id, RunExport[] _export, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetRunResponse> GetRunAsync(string id, RunExport[] export, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "run/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", _export.Select(z => $"export={z}"));
+			var requestUri = "run/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&"+string.Join("&", export.Select(z => $"export={z}"));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -6623,11 +6623,11 @@ namespace MyNS
 		/// </summary>
 		/// <param name="id">The workflow's ID.</param>
 		/// <param name="type">The workflow's type.</param>
-		/// <param name="_export">The export format for the workflow.</param>
+		/// <param name="export">The export format for the workflow.</param>
 		/// <returns>Success</returns>
-		public async Task<GetWorkflowResponse> GetWorkflowAsync(string id, WorkflowType type, WorkflowExport[] _export, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetWorkflowResponse> GetWorkflowAsync(string id, WorkflowType type, WorkflowExport[] export, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "workflow/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&type=" + type+"&"+string.Join("&", _export.Select(z => $"export={z}"));
+			var requestUri = "workflow/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"&type=" + type+"&"+string.Join("&", export.Select(z => $"export={z}"));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)

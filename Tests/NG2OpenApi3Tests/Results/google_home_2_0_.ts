@@ -2860,8 +2860,8 @@ export namespace MyNS {
 		 * Get eureka_info
 		 * @return {Example1} 
 		 */
-		EurekaInfo(_params: string, options: string, nonce: number): Observable<Example1> {
-			return this.http.get<Example1>(this.baseUri + 'eureka_info?_params=' + (_params == null ? '' : encodeURIComponent(_params)) + '&options=' + (options == null ? '' : encodeURIComponent(options)) + '&nonce=' + nonce, {});
+		EurekaInfo(params: string, options: string, nonce: number): Observable<Example1> {
+			return this.http.get<Example1>(this.baseUri + 'eureka_info?params=' + (params == null ? '' : encodeURIComponent(params)) + '&options=' + (options == null ? '' : encodeURIComponent(options)) + '&nonce=' + nonce, {});
 		}
 
 		/**

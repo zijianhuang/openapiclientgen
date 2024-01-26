@@ -342,7 +342,7 @@ export namespace MyNS {
 	export interface MigrationTask {
 		ProgressUpdateStream?: string;
 		MigrationTaskName?: string;
-		Task?: Task_;
+		Task?: Task;
 		UpdateDateTime?: Date;
 		ResourceAttributeList?: Array<ResourceAttribute>;
 	}
@@ -364,7 +364,7 @@ export namespace MyNS {
 
 
 	/** Task object encapsulating task information. */
-	export interface Task_ {
+	export interface Task {
 
 		/** Required */
 		Status: Status;
@@ -373,15 +373,15 @@ export namespace MyNS {
 	}
 
 	/** Task object encapsulating task information. */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 
 		/** Required */
 		Status: FormControl<Status | null | undefined>,
 		StatusDetail: FormControl<string | null | undefined>,
 		ProgressPercent: FormControl<number | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			Status: new FormControl<Status | null | undefined>(undefined, [Validators.required]),
 			StatusDetail: new FormControl<string | null | undefined>(undefined),
 			ProgressPercent: new FormControl<number | null | undefined>(undefined),
@@ -883,7 +883,7 @@ export namespace MyNS {
 		MigrationTaskName: string;
 
 		/** Required */
-		Task: Task_;
+		Task: Task;
 
 		/** Required */
 		UpdateDateTime: Date;

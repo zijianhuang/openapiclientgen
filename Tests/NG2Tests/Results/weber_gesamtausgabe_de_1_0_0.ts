@@ -164,14 +164,14 @@ export namespace MyNS {
 		 * Finds code samples by XML element
 		 * Get code/findByElement/{element}
 		 * @param {string} element The XML element to search for
-		 * @param {string} _namespace The element namespace. Defaults to the TEI namespace
+		 * @param {string} namespace The element namespace. Defaults to the TEI namespace
 		 * @param {Array<string>} docType The WeGA document type
 		 * @param {number} offset Position of first item to retrieve (starting from 1)
 		 * @param {number} limit Number of items to retrieve (200 max)
 		 * @return {Array<CodeSample>} An array of documents
 		 */
-		Code_SamplesGetByElementAnd_namespaceAndDocTypeAndOffsetAndLimit(element: string, _namespace: string | null | undefined, docType: Array<string> | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<Array<CodeSample>> {
-			return this.http.get<Array<CodeSample>>(this.baseUri + 'code/findByElement/' + (element == null ? '' : encodeURIComponent(element)) + '&_namespace=' + (_namespace == null ? '' : encodeURIComponent(_namespace)) + '&' + docType?.map(z => `docType=${encodeURIComponent(z)}`).join('&') + '&offset=' + offset + '&limit=' + limit, {});
+		Code_SamplesGetByElementAndNamespaceAndDocTypeAndOffsetAndLimit(element: string, namespace: string | null | undefined, docType: Array<string> | null | undefined, offset: number | null | undefined, limit: number | null | undefined): Observable<Array<CodeSample>> {
+			return this.http.get<Array<CodeSample>>(this.baseUri + 'code/findByElement/' + (element == null ? '' : encodeURIComponent(element)) + '&namespace=' + (namespace == null ? '' : encodeURIComponent(namespace)) + '&' + docType?.map(z => `docType=${encodeURIComponent(z)}`).join('&') + '&offset=' + offset + '&limit=' + limit, {});
 		}
 
 		/**

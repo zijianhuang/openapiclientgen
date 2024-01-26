@@ -2882,7 +2882,7 @@ export namespace MyNS {
 		apiVersion?: string | null;
 
 		/** List of Tasks. */
-		items?: Array<Task_>;
+		items?: Array<Task>;
 
 		/** The kind of this resource, in this case "TasksList". */
 		kind?: string | null;
@@ -2913,7 +2913,7 @@ export namespace MyNS {
 
 
 	/** Task represents a single run of a container to completion. */
-	export interface Task_ {
+	export interface Task {
 
 		/** Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. */
 		apiVersion?: string | null;
@@ -2932,7 +2932,7 @@ export namespace MyNS {
 	}
 
 	/** Task represents a single run of a container to completion. */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 
 		/** Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. */
 		apiVersion: FormControl<string | null | undefined>,
@@ -2940,8 +2940,8 @@ export namespace MyNS {
 		/** Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. */
 		kind: FormControl<string | null | undefined>,
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 			apiVersion: new FormControl<string | null | undefined>(undefined),
 			kind: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3395,10 +3395,10 @@ export namespace MyNS {
 		 * Get information about a task.
 		 * Get apis/run.googleapis.com/v1/{name}
 		 * @param {string} name Required. The name of the task to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-		 * @return {Task_} Successful response
+		 * @return {Task} Successful response
 		 */
-		Run_namespaces_tasks_get(name: string): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'apis/run.googleapis.com/v1/' + (name == null ? '' : encodeURIComponent(name)), {});
+		Run_namespaces_tasks_get(name: string): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'apis/run.googleapis.com/v1/' + (name == null ? '' : encodeURIComponent(name)), {});
 		}
 
 		/**

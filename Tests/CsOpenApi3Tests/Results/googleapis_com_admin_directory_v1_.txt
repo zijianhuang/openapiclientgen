@@ -8032,7 +8032,7 @@ namespace MyNS
 		/// <param name="sortOrder">Whether to return results in ascending or descending order.</param>
 		/// <param name="viewType">Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](/admin-sdk/directory/v1/guides/manage-users#retrieve_users_non_admin).</param>
 		/// <returns>Successful response</returns>
-		public async Task<Channel> Directory_users_watchAsync(string customFieldMask, string customer, string domain, Directory_users_watchEvent _event, int maxResults, Directory_users_listOrderBy orderBy, string pageToken, Directory_users_listProjection projection, string query, string showDeleted, Directory_chromeosdevices_listSortOrder sortOrder, Directory_users_listViewType viewType, Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Channel> Directory_users_watchAsync(string customFieldMask, string customer, string domain, Directory_users_listEvent _event, int maxResults, Directory_users_listOrderBy orderBy, string pageToken, Directory_users_listProjection projection, string query, string showDeleted, Directory_chromeosdevices_listSortOrder sortOrder, Directory_users_listViewType viewType, Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "admin/directory/v1/users/watch?customFieldMask=" + (customFieldMask==null? "" : System.Uri.EscapeDataString(customFieldMask))+"&customer=" + (customer==null? "" : System.Uri.EscapeDataString(customer))+"&domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&event=" + _event+"&maxResults="+maxResults+"&orderBy=" + orderBy+"&pageToken=" + (pageToken==null? "" : System.Uri.EscapeDataString(pageToken))+"&projection=" + projection+"&query=" + (query==null? "" : System.Uri.EscapeDataString(query))+"&showDeleted=" + (showDeleted==null? "" : System.Uri.EscapeDataString(showDeleted))+"&sortOrder=" + sortOrder+"&viewType=" + viewType;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -8297,7 +8297,7 @@ namespace MyNS
 		/// <param name="userKey">Email or immutable ID of the user</param>
 		/// <param name="_event">Events to watch for.</param>
 		/// <returns>Successful response</returns>
-		public async Task<Channel> Directory_users_aliases_watchAsync(string userKey, Directory_users_aliases_watchEvent _event, Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<Channel> Directory_users_aliases_watchAsync(string userKey, Directory_users_aliases_listEvent _event, Channel requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "admin/directory/v1/users/"+ (userKey==null? "" : System.Uri.EscapeDataString(userKey))+"/aliases/watch&event=" + _event;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
@@ -9513,7 +9513,7 @@ namespace MyNS
 		add = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
+		delete = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="makeAdmin")]
 		makeAdmin = 2,
@@ -9561,25 +9561,6 @@ namespace MyNS
 		domain_public = 1,
 	}
 	
-	public enum Directory_users_watchEvent
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
-		add = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="makeAdmin")]
-		makeAdmin = 2,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="undelete")]
-		undelete = 3,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="update")]
-		update = 4,
-	}
-	
 	public enum Directory_users_aliases_listEvent
 	{
 		
@@ -9587,17 +9568,7 @@ namespace MyNS
 		add = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
-	}
-	
-	public enum Directory_users_aliases_watchEvent
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="add")]
-		add = 0,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute(Value="delete")]
-		_delete = 1,
+		delete = 1,
 	}
 }
 

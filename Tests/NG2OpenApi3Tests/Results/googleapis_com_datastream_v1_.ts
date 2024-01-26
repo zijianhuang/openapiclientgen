@@ -2667,21 +2667,21 @@ export namespace MyNS {
 		/**
 		 * Use this method to start a backfill job for the specified stream object.
 		 * Post v1/{object}:startBackfillJob
-		 * @param {string} _object Required. The name of the stream object resource to start a backfill job for.
+		 * @param {string} object Required. The name of the stream object resource to start a backfill job for.
 		 * @return {StartBackfillJobResponse} Successful response
 		 */
-		Datastream_projects_locations_streams_objects_startBackfillJob(_object: string, requestBody: StartBackfillJobRequest): Observable<StartBackfillJobResponse> {
-			return this.http.post<StartBackfillJobResponse>(this.baseUri + 'v1/' + (_object == null ? '' : encodeURIComponent(_object)) + ':startBackfillJob', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Datastream_projects_locations_streams_objects_startBackfillJob(object: string, requestBody: StartBackfillJobRequest): Observable<StartBackfillJobResponse> {
+			return this.http.post<StartBackfillJobResponse>(this.baseUri + 'v1/' + (object == null ? '' : encodeURIComponent(object)) + ':startBackfillJob', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
 		 * Use this method to stop a backfill job for the specified stream object.
 		 * Post v1/{object}:stopBackfillJob
-		 * @param {string} _object Required. The name of the stream object resource to stop the backfill job for.
+		 * @param {string} object Required. The name of the stream object resource to stop the backfill job for.
 		 * @return {StopBackfillJobResponse} Successful response
 		 */
-		Datastream_projects_locations_streams_objects_stopBackfillJob(_object: string, requestBody: StopBackfillJobRequest): Observable<StopBackfillJobResponse> {
-			return this.http.post<StopBackfillJobResponse>(this.baseUri + 'v1/' + (_object == null ? '' : encodeURIComponent(_object)) + ':stopBackfillJob', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Datastream_projects_locations_streams_objects_stopBackfillJob(object: string, requestBody: StopBackfillJobRequest): Observable<StopBackfillJobResponse> {
+			return this.http.post<StopBackfillJobResponse>(this.baseUri + 'v1/' + (object == null ? '' : encodeURIComponent(object)) + ':stopBackfillJob', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**

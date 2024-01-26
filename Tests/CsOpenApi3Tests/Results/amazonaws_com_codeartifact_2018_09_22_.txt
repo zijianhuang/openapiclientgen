@@ -1664,11 +1664,11 @@ namespace MyNS
 		/// <param name="destination_repository"> The name of the repository into which package versions are copied. </param>
 		/// <param name="format"> The format of the package versions to be copied. </param>
 		/// <param name="_namespace"><p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package that contains the versions to be copied. </param>
+		/// <param name="package"> The name of the package that contains the versions to be copied. </param>
 		/// <returns>Success</returns>
-		public async Task<CopyPackageVersionsResult> CopyPackageVersionsAsync(string domain, string domain_owner, string source_repository, string destination_repository, PackageFormat format, string _namespace, string _package, CopyPackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<CopyPackageVersionsResult> CopyPackageVersionsAsync(string domain, string domain_owner, string source_repository, string destination_repository, PackageFormat format, string _namespace, string package, CopyPackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/versions/copy#domain&source-repository&destination-repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&source-repository=" + (source_repository==null? "" : System.Uri.EscapeDataString(source_repository))+"&destination-repository=" + (destination_repository==null? "" : System.Uri.EscapeDataString(destination_repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package));
+			var requestUri = "v1/package/versions/copy#domain&source-repository&destination-repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&source-repository=" + (source_repository==null? "" : System.Uri.EscapeDataString(source_repository))+"&destination-repository=" + (destination_repository==null? "" : System.Uri.EscapeDataString(destination_repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2050,11 +2050,11 @@ namespace MyNS
 		/// <param name="repository">The name of the repository that contains the package to delete.</param>
 		/// <param name="format">The format of the requested package to delete.</param>
 		/// <param name="_namespace"><p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>.</p> </li> <li> <p> Python and NuGet packages do not contain corresponding components, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package">The name of the package to delete.</param>
+		/// <param name="package">The name of the package to delete.</param>
 		/// <returns>Success</returns>
-		public async Task<DeletePackageResult> DeletePackageAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<DeletePackageResult> DeletePackageAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package));
+			var requestUri = "v1/package#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Delete, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2089,11 +2089,11 @@ namespace MyNS
 		/// <param name="repository">The name of the repository that contains the requested package. </param>
 		/// <param name="format">A format that specifies the type of the requested package.</param>
 		/// <param name="_namespace"><p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package">The name of the requested package.</param>
+		/// <param name="package">The name of the requested package.</param>
 		/// <returns>Success</returns>
-		public async Task<DescribePackageResult> DescribePackageAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<DescribePackageResult> DescribePackageAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package));
+			var requestUri = "v1/package#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2128,11 +2128,11 @@ namespace MyNS
 		/// <param name="repository">The name of the repository that contains the package.</param>
 		/// <param name="format">A format that specifies the type of the package to be updated.</param>
 		/// <param name="_namespace"><p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package">The name of the package to be updated.</param>
+		/// <param name="package">The name of the package to be updated.</param>
 		/// <returns>Success</returns>
-		public async Task<PutPackageOriginConfigurationResult> PutPackageOriginConfigurationAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, PutPackageOriginConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PutPackageOriginConfigurationResult> PutPackageOriginConfigurationAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, PutPackageOriginConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package));
+			var requestUri = "v1/package#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2174,11 +2174,11 @@ namespace MyNS
 		/// <param name="repository"> The name of the repository that contains the package versions to delete. </param>
 		/// <param name="format"> The format of the package versions to delete. </param>
 		/// <param name="_namespace"><p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package with the versions to delete. </param>
+		/// <param name="package"> The name of the package with the versions to delete. </param>
 		/// <returns>Success</returns>
-		public async Task<DeletePackageVersionsResult> DeletePackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, DeletePackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<DeletePackageVersionsResult> DeletePackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, DeletePackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/versions/delete#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package));
+			var requestUri = "v1/package/versions/delete#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2257,12 +2257,12 @@ namespace MyNS
 		/// <param name="repository"> The name of the repository that contains the package version. </param>
 		/// <param name="format"> A format that specifies the type of the requested package version. </param>
 		/// <param name="_namespace"><p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the requested package version. </param>
+		/// <param name="package"> The name of the requested package version. </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). </param>
 		/// <returns>Success</returns>
-		public async Task<DescribePackageVersionResult> DescribePackageVersionAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<DescribePackageVersionResult> DescribePackageVersionAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/version#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/package/version#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2297,11 +2297,11 @@ namespace MyNS
 		/// <param name="repository"> The name of the repository that contains the package versions you want to dispose. </param>
 		/// <param name="format"> A format that specifies the type of package versions you want to dispose. </param>
 		/// <param name="_namespace"><p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package with the versions you want to dispose. </param>
+		/// <param name="package"> The name of the package with the versions you want to dispose. </param>
 		/// <returns>Success</returns>
-		public async Task<DisposePackageVersionsResult> DisposePackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, DisposePackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<DisposePackageVersionsResult> DisposePackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, DisposePackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/versions/dispose#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package));
+			var requestUri = "v1/package/versions/dispose#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -2374,14 +2374,14 @@ namespace MyNS
 		/// <param name="repository"> The repository that contains the package version with the requested asset. </param>
 		/// <param name="format"> A format that specifies the type of the package version with the requested asset file. </param>
 		/// <param name="_namespace"><p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package that contains the requested asset. </param>
+		/// <param name="package"> The name of the package that contains the requested asset. </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). </param>
 		/// <param name="asset"> The name of the requested asset. </param>
 		/// <param name="revision"> The name of the package version revision that contains the requested asset. </param>
 		/// <returns>Success</returns>
-		public async Task<GetPackageVersionAssetResult> GetPackageVersionAssetAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, string version, string asset, string revision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetPackageVersionAssetResult> GetPackageVersionAssetAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, string asset, string revision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/version/asset#domain&repository&format&package&version&asset?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&asset=" + (asset==null? "" : System.Uri.EscapeDataString(asset))+"&revision=" + (revision==null? "" : System.Uri.EscapeDataString(revision));
+			var requestUri = "v1/package/version/asset#domain&repository&format&package&version&asset?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&asset=" + (asset==null? "" : System.Uri.EscapeDataString(asset))+"&revision=" + (revision==null? "" : System.Uri.EscapeDataString(revision));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2416,12 +2416,12 @@ namespace MyNS
 		/// <param name="repository"> The repository that contains the package with the requested readme file. </param>
 		/// <param name="format"> A format that specifies the type of the package version with the requested readme file. </param>
 		/// <param name="_namespace"><p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package version that contains the requested readme file. </param>
+		/// <param name="package"> The name of the package version that contains the requested readme file. </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). </param>
 		/// <returns>Success</returns>
-		public async Task<GetPackageVersionReadmeResult> GetPackageVersionReadmeAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<GetPackageVersionReadmeResult> GetPackageVersionReadmeAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/version/readme#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
+			var requestUri = "v1/package/version/readme#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, requestUri))
 			{
 			if (handleHeaders != null)
@@ -2614,16 +2614,16 @@ namespace MyNS
 		/// <param name="repository"> The name of the repository that contains the package that contains the requested package version assets. </param>
 		/// <param name="format"> The format of the package that contains the requested package version assets. </param>
 		/// <param name="_namespace"><p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package that contains the requested package version assets. </param>
+		/// <param name="package"> The name of the package that contains the requested package version assets. </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). </param>
 		/// <param name="max_results"> The maximum number of results to return per page. </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
-		public async Task<ListPackageVersionAssetsResult> ListPackageVersionAssetsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, string version, int max_results, string next_token, string maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListPackageVersionAssetsResult> ListPackageVersionAssetsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, int max_results, string next_token, string maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/version/assets#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&max-results="+max_results+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&maxResults=" + (maxResults==null? "" : System.Uri.EscapeDataString(maxResults))+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
+			var requestUri = "v1/package/version/assets#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&max-results="+max_results+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&maxResults=" + (maxResults==null? "" : System.Uri.EscapeDataString(maxResults))+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -2653,13 +2653,13 @@ namespace MyNS
 		/// <param name="repository"> The name of the repository that contains the requested package version. </param>
 		/// <param name="format"> The format of the package with the requested dependencies. </param>
 		/// <param name="_namespace"><p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package versions' package. </param>
+		/// <param name="package"> The name of the package versions' package. </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </param>
 		/// <returns>Success</returns>
-		public async Task<ListPackageVersionDependenciesResult> ListPackageVersionDependenciesAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, string version, string next_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListPackageVersionDependenciesResult> ListPackageVersionDependenciesAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, string next_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/version/dependencies#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token));
+			var requestUri = "v1/package/version/dependencies#domain&repository&format&package&version?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -2689,7 +2689,7 @@ namespace MyNS
 		/// <param name="repository"> The name of the repository that contains the requested package versions. </param>
 		/// <param name="format"> The format of the package versions you want to list. </param>
 		/// <param name="_namespace"><p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package for which you want to request package versions. </param>
+		/// <param name="package"> The name of the package for which you want to request package versions. </param>
 		/// <param name="status"> A string that filters the requested package versions by status. </param>
 		/// <param name="sortBy"> How to sort the requested list of package versions. </param>
 		/// <param name="max_results"> The maximum number of results to return per page. </param>
@@ -2698,9 +2698,9 @@ namespace MyNS
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
-		public async Task<ListPackageVersionsResult> ListPackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, PackageVersionStatus status, PackageVersionSortType sortBy, int max_results, string next_token, PackageVersionOriginType originType, string maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<ListPackageVersionsResult> ListPackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, PackageVersionStatus status, PackageVersionSortType sortBy, int max_results, string next_token, PackageVersionOriginType originType, string maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/versions#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package))+"&status=" + status+"&sortBy=" + sortBy+"&max-results="+max_results+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&originType=" + originType+"&maxResults=" + (maxResults==null? "" : System.Uri.EscapeDataString(maxResults))+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
+			var requestUri = "v1/package/versions#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package))+"&status=" + status+"&sortBy=" + sortBy+"&max-results="+max_results+"&next-token=" + (next_token==null? "" : System.Uri.EscapeDataString(next_token))+"&originType=" + originType+"&maxResults=" + (maxResults==null? "" : System.Uri.EscapeDataString(maxResults))+"&nextToken=" + (nextToken==null? "" : System.Uri.EscapeDataString(nextToken));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			var responseMessage = await httpClient.SendAsync(httpRequestMessage);
@@ -2868,14 +2868,14 @@ namespace MyNS
 		/// <param name="repository">The name of the repository that the package version will be published to.</param>
 		/// <param name="format"><p>A format that specifies the type of the package version with the requested asset file.</p> <p>The only supported value is <code>generic</code>.</p></param>
 		/// <param name="_namespace">The namespace of the package version to publish.</param>
-		/// <param name="_package">The name of the package version to publish.</param>
+		/// <param name="package">The name of the package version to publish.</param>
 		/// <param name="version">The package version to publish (for example, <code>3.5.2</code>).</param>
 		/// <param name="asset">The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </param>
 		/// <param name="unfinished"><p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p> <p>Valid values: <code>unfinished</code> </p></param>
 		/// <returns>Success</returns>
-		public async Task<PublishPackageVersionResult> PublishPackageVersionAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, string version, string asset, bool unfinished, PublishPackageVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<PublishPackageVersionResult> PublishPackageVersionAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, string asset, bool unfinished, PublishPackageVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/version/publish#domain&repository&format&package&version&asset&x-amz-content-sha256?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&asset=" + (asset==null? "" : System.Uri.EscapeDataString(asset))+"&unfinished="+unfinished;
+			var requestUri = "v1/package/version/publish#domain&repository&format&package&version&asset&x-amz-content-sha256?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package))+"&version=" + (version==null? "" : System.Uri.EscapeDataString(version))+"&asset=" + (asset==null? "" : System.Uri.EscapeDataString(asset))+"&unfinished="+unfinished;
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())
@@ -3039,11 +3039,11 @@ namespace MyNS
 		/// <param name="repository"> The repository that contains the package versions with the status you want to update. </param>
 		/// <param name="format"> A format that specifies the type of the package with the statuses to update. </param>
 		/// <param name="_namespace"><p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul></param>
-		/// <param name="_package"> The name of the package with the version statuses to update. </param>
+		/// <param name="package"> The name of the package with the version statuses to update. </param>
 		/// <returns>Success</returns>
-		public async Task<UpdatePackageVersionsStatusResult> UpdatePackageVersionsStatusAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string _package, UpdatePackageVersionsStatusPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
+		public async Task<UpdatePackageVersionsStatusResult> UpdatePackageVersionsStatusAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, UpdatePackageVersionsStatusPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
-			var requestUri = "v1/package/versions/update_status#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (_package==null? "" : System.Uri.EscapeDataString(_package));
+			var requestUri = "v1/package/versions/update_status#domain&repository&format&package?domain=" + (domain==null? "" : System.Uri.EscapeDataString(domain))+"&domain-owner=" + (domain_owner==null? "" : System.Uri.EscapeDataString(domain_owner))+"&repository=" + (repository==null? "" : System.Uri.EscapeDataString(repository))+"&format=" + format+"&namespace=" + (_namespace==null? "" : System.Uri.EscapeDataString(_namespace))+"&package=" + (package==null? "" : System.Uri.EscapeDataString(package));
 			using (var httpRequestMessage = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Post, requestUri))
 			{
 			using (var requestWriter = new System.IO.StringWriter())

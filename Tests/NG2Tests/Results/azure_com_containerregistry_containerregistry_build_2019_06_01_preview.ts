@@ -2081,7 +2081,7 @@ export namespace MyNS {
 	 * The task that has the ARM resource and task properties. 
 	 * The task will have all information to schedule a run against it.
 	 */
-	export interface Task_ {
+	export interface Task {
 
 		/** Managed identity for the resource. */
 		identity?: IdentityProperties;
@@ -2094,10 +2094,10 @@ export namespace MyNS {
 	 * The task that has the ARM resource and task properties. 
 	 * The task will have all information to schedule a run against it.
 	 */
-	export interface Task_FormProperties {
+	export interface TaskFormProperties {
 	}
-	export function CreateTask_FormGroup() {
-		return new FormGroup<Task_FormProperties>({
+	export function CreateTaskFormGroup() {
+		return new FormGroup<TaskFormProperties>({
 		});
 
 	}
@@ -2297,7 +2297,7 @@ export namespace MyNS {
 		nextLink?: string | null;
 
 		/** The collection value. */
-		value?: Array<Task_>;
+		value?: Array<Task>;
 	}
 
 	/** The collection of tasks. */
@@ -2847,10 +2847,10 @@ export namespace MyNS {
 		 * @param {string} registryName The name of the container registry.
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
-		 * @return {Task_} The request was successful; the request was well-formed and received properly.
+		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
-		Tasks_Get(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string): Observable<Task_> {
-			return this.http.get<Task_>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
+		Tasks_Get(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string): Observable<Task> {
+			return this.http.get<Task>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), {});
 		}
 
 		/**
@@ -2861,11 +2861,11 @@ export namespace MyNS {
 		 * @param {string} registryName The name of the container registry.
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
-		 * @param {Task_} requestBody The parameters for creating a task.
-		 * @return {Task_} The request was successful; the request was well-formed and received properly.
+		 * @param {Task} requestBody The parameters for creating a task.
+		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
-		Tasks_Create(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string, requestBody: Task_): Observable<Task_> {
-			return this.http.put<Task_>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Tasks_Create(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string, requestBody: Task): Observable<Task> {
+			return this.http.put<Task>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -2891,10 +2891,10 @@ export namespace MyNS {
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
 		 * @param {TaskUpdateParameters} requestBody The parameters for updating a task.
-		 * @return {Task_} The request was successful; the request was well-formed and received properly.
+		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
-		Tasks_Update(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string, requestBody: TaskUpdateParameters): Observable<Task_> {
-			return this.http.patch<Task_>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
+		Tasks_Update(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string, requestBody: TaskUpdateParameters): Observable<Task> {
+			return this.http.patch<Task>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
 		/**
@@ -2905,10 +2905,10 @@ export namespace MyNS {
 		 * @param {string} registryName The name of the container registry.
 		 * @param {string} api_version The client API version.
 		 * @param {string} taskName The name of the container registry task.
-		 * @return {Task_} The request was successful; the request was well-formed and received properly.
+		 * @return {Task} The request was successful; the request was well-formed and received properly.
 		 */
-		Tasks_GetDetails(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string): Observable<Task_> {
-			return this.http.post<Task_>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '/listDetails&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), null, {});
+		Tasks_GetDetails(subscriptionId: string, resourceGroupName: string, registryName: string, api_version: string, taskName: string): Observable<Task> {
+			return this.http.post<Task>(this.baseUri + 'subscriptions/' + (subscriptionId == null ? '' : encodeURIComponent(subscriptionId)) + '/resourceGroups/' + (resourceGroupName == null ? '' : encodeURIComponent(resourceGroupName)) + '/providers/Microsoft.ContainerRegistry/registries/' + (registryName == null ? '' : encodeURIComponent(registryName)) + '/tasks/' + (taskName == null ? '' : encodeURIComponent(taskName)) + '/listDetails&api_version=' + (api_version == null ? '' : encodeURIComponent(api_version)), null, {});
 		}
 	}
 
