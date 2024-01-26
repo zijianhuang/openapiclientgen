@@ -24,9 +24,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			"throws", "arguments", "synchronized", "eval", "final"
 		};
 
+		static readonly HashSet<string> csKeywordsHashSet= new HashSet<string>(csKeywords);
+
 		public static bool IsKeyword(string s)
 		{
-			return csKeywords.Any(d => d == s);
+			return csKeywordsHashSet.Contains(s);
 		}
 
 		/// <summary>
