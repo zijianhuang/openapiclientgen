@@ -11,8 +11,7 @@ If you are using ASP.NET or ASP.NET Core to develop Web API and would support C#
 
 OpenApiClientGen had been tested upon over 1000 Open API definitions in v3 formats and in v2 formats.
 
-* [Open API definitions in YAML or JSON](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/SwagMock)
-* [Generated C# codes](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/Results) and [Integration Tests](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagApiTests) for [Client API codes generated](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/PetAuto.cs) from [pet.yaml](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/pet.yaml)
+*  [pet.yaml](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/pet.yaml), [C# Client API codes generated](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/DemoClientApi/PetAuto.cs) of client API lib, and   [Integration Tests](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagApiTests).
 * [Generated TypeScript codes for Angular 5+](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/SwagTsTests/NG2Results/) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/ng2/src)
 * [Generated TypeScript codes for Angular Reactive Typed Forms](https://github.com/zijianhuang/openapiclientgen/blob/master/Tests/SwagTsTests/NG2FormGroupResults) 
 * [Generated TypeScript codes for Aurelia](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/AureliaResults) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/aurelia/src)
@@ -20,9 +19,6 @@ OpenApiClientGen had been tested upon over 1000 Open API definitions in v3 forma
 * [Generated TypeScript codes for Fetch API](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/FetchResults) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/fetchapi/src)
 * [Generated TypeScript codes for jQuery](https://github.com/zijianhuang/openapiclientgen/tree/master/Tests/SwagTests/JqResults) and [integration tests for pet.yaml](https://github.com/zijianhuang/openapiclientgen/tree/master/jq/src)
 
-**Remarks**
-
-OpenApiClientGen 
 
 ## Installation
 OpenApiClientGen is a .NET Core console app.

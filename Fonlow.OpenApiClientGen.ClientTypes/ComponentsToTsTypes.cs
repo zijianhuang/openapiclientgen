@@ -466,14 +466,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 			
 			return $"'{s.Replace("'", "\\'")}'";
-
-
-			//string memberName = isValidEnumName ? s
-			//: (!string.IsNullOrEmpty(s) && Char.IsDigit(s[0]) ? Renamer.RefineEnumMemberName(s).Replace("'", "\\'")
-			//	: $"'{Renamer.RefineEnumMemberName(s).Replace("'", "\\'")}'"
-			//	);
-			//return rs;
-
 		}
 
 		protected override string[] GetStringsFromEnumList(IList<IOpenApiAny> enumList)
@@ -683,11 +675,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						Debug.WriteLine("haha");
 					}
 #endif
-					//var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(stringMember.Value);
-					//string memberName = isValidEnumName ? stringMember.Value 
-					//	: (!string.IsNullOrEmpty(stringMember.Value) && Char.IsDigit(stringMember.Value[0]) ? Renamer.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")
-					//	: $"'{Renamer.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")}'"
-					//	);
 					var memberName= RefineTsEnumMemberName(stringMember.Value);
 					int intValue = k;
 					CodeMemberField clientField = new()
