@@ -30,6 +30,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected readonly ISettings settings;
 
+		protected abstract IRenamer Renamer { get; }
+
 		protected IDictionary<string, OpenApiSchema> ComponentsSchemas { get; private set; }
 
 		readonly List<string> registeredSchemaRefIds = new();
@@ -121,7 +123,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
 				{
-					var existingType = FindCodeTypeDeclarationInNamespaces(NameFunc.RefineTypeName(item.Key, null), null);
+					var existingType = FindCodeTypeDeclarationInNamespaces(Renamer.RefineTypeName(item.Key, null), null);
 					if (existingType == null)
 					{
 						AddTypeToCodeDom(item.Key, item.Value);
@@ -181,7 +183,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		public Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns)
 		{
-			string casualEnumName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
+			string casualEnumName = typeDeclarationName + Renamer.RefinePropertyName(propertyName);
 			CodeTypeDeclaration existingType = FindCodeTypeDeclarationInNamespaces(casualEnumName, ns);
 			CodeTypeDeclaration casualEnumTypeDeclaration = null;
 			if (existingType == null)
@@ -224,7 +226,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return Tuple.Create(new CodeTypeReference(typeof(object)), true);
 			}
 
-			CodeTypeReference ctr = PropertySchemaToCodeTypeReference(refToType, currentTypeName, NameFunc.RefinePropertyName(propertyKey));
+			CodeTypeReference ctr = PropertySchemaToCodeTypeReference(refToType, currentTypeName, Renamer.RefinePropertyName(propertyKey));
 			bool isClass = !TypeRefHelper.IsPrimitiveStructure(ctr.BaseType);
 			return Tuple.Create(ctr, isClass);
 		}
@@ -259,7 +261,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				string arrayTypeSchemaRefId = arrayItemsSchema.Reference.Id;
 				var arrayTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId) : string.Empty;
-				var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs, settings.DotsToNamespaces);
+				var arrayTypeName = Renamer.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs, settings.DotsToNamespaces);
 				var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
 				var existingType = FindCodeTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
 				if (existingType == null) // Referencing to a type not yet added to namespace
@@ -314,11 +316,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					//warning about bad yaml design.
-					Trace.TraceWarning($"Property {NameFunc.RefineParameterName(propertyName)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
+					Trace.TraceWarning($"Property {Renamer.RefineParameterName(propertyName)} has referenced some enum members {String.Join(", ", enumMemberNames)} which are not of any declared components.");
 				}
 				else if (arrayItemsSchema.Properties != null && arrayItemsSchema.Properties.Count > 0) // for casual type
 				{
-					var casualTypeName = settings.PrefixWithTypeName ? typeDeclarationName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);
+					var casualTypeName = settings.PrefixWithTypeName ? typeDeclarationName + Renamer.RefinePropertyName(propertyName) : Renamer.RefinePropertyName(propertyName);
 					CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, ns);//stay with the namespace of the host class
 					AddProperties(casualTypeDeclaration, arrayItemsSchema, casualTypeName, ns);
 					if (settings.ArrayAs == ArrayAsIEnumerableDerived.Array)
@@ -348,7 +350,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public CodeTypeReference CreateComplexCodeTypeReference(OpenApiSchema propertySchema)
 		{
 			string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+			string complexType = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 			{
@@ -462,7 +464,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (propertySchema.Reference != null)
 				{
 					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+					string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					return ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 				}
@@ -494,7 +496,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
-					string casualTypeName = actionName + NameFunc.RefinePropertyName(propertyName);
+					string casualTypeName = actionName + Renamer.RefinePropertyName(propertyName);
 					var found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
@@ -542,7 +544,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (propertySchema.Reference != null)
 						{
 							AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
-							CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(NameFunc.RefineTypeName(propertySchema.Reference.Id, ""));
+							CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Reference.Id, ""));
 							return codeTypeReference;
 						}
 						else
@@ -566,7 +568,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (propertySchema.Reference != null)
 					{
 						AddTypeForRefIdIfNotExist(propertySchema.Reference.Id);
-						CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(NameFunc.RefineTypeName(propertySchema.Reference.Id, ""));
+						CodeTypeReference codeTypeReference = ComponentsHelper.TranslateTypeNameToClientTypeReference(Renamer.RefineTypeName(propertySchema.Reference.Id, ""));
 						return codeTypeReference;
 					}
 					else

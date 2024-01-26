@@ -16,20 +16,22 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// </summary>
 		/// <param name="com2CodeDom">Provide some CodeCOM lookup functions for registered components.</param>
 		/// <param name="actionName">for prefix of casual types.</param>
-		public ParametersRefBuilder(IComponentToCodeDom com2CodeDom, string actionName)
+		public ParametersRefBuilder(IComponentToCodeDom com2CodeDom, string actionName, IRenamer renamer)
 		{
 			this.com2CodeDom = com2CodeDom;
 			this.actionName = actionName;
+			this.renamer = renamer;	
 		}
 
 		readonly IComponentToCodeDom com2CodeDom;
 		readonly string actionName;
+		readonly IRenamer renamer;
 
 		public ParameterDescription[] OpenApiParametersToParameterDescriptions(IList<OpenApiParameter> ps)
 		{
 			return ps.Select(p =>
 			{
-				var refinedName = NameFunc.RefineParameterName(p.Name);
+				var refinedName = renamer.RefineParameterName(p.Name);
 				var r = new ParameterDescription()
 				{
 					Name = refinedName, //azure.com\apimanagement-apimapis has $ in query parameter

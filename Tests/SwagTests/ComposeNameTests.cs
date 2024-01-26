@@ -16,7 +16,7 @@ namespace SwagTests
 			Composer = new NameComposer(new Settings
 			{
 				PathPrefixToRemove = "/api",
-			});
+			}, new CSharpRenamer());
 		}
 
 		public OpenApiDocument Doc { get; }
@@ -45,7 +45,7 @@ namespace SwagTests
 		public void TestComposeActionNameWithId()
 		{
 			OpenApiPathItem pathItem = doc.Paths["/api/Values/{id}"];
-			string actionName = NameComposer.ComposeActionName(pathItem.Operations[OperationType.Get], OperationType.Get.ToString());
+			string actionName = composer.ComposeActionName(pathItem.Operations[OperationType.Get], OperationType.Get.ToString());
 			Assert.Equal("ValuesGetById", actionName);
 		}
 
@@ -53,7 +53,7 @@ namespace SwagTests
 		public void TestComposeActionName()
 		{
 			OpenApiPathItem pathItem = doc.Paths["/api/Values"];
-			string actionName = NameComposer.ComposeActionName(pathItem.Operations[OperationType.Get], OperationType.Get.ToString());
+			string actionName = composer.ComposeActionName(pathItem.Operations[OperationType.Get], OperationType.Get.ToString());
 			Assert.Equal("ValuesGet", actionName);
 		}
 
@@ -61,7 +61,7 @@ namespace SwagTests
 		public void TestComposeActionNameWithParameters()
 		{
 			OpenApiPathItem pathItem = doc.Paths["/api/Entities/link"];
-			string actionName = NameComposer.ComposeActionName(pathItem.Operations[OperationType.Put], OperationType.Put.ToString());
+			string actionName = composer.ComposeActionName(pathItem.Operations[OperationType.Put], OperationType.Put.ToString());
 			Assert.Equal("EntitiesPutByIdAndRelationship", actionName);
 		}
 

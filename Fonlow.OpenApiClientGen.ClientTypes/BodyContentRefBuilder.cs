@@ -6,14 +6,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 {
 	public class BodyContentRefBuilder
 	{
-		public BodyContentRefBuilder(IComponentToCodeDom com2CodeDom, string actionName)
+		public BodyContentRefBuilder(IComponentToCodeDom com2CodeDom, string actionName, IRenamer renamer)
 		{
 			this.com2CodeDom = com2CodeDom;
 			this.actionName = actionName;
+			this.renamer = renamer;	
+
 		}
 
 		readonly IComponentToCodeDom com2CodeDom;
 		readonly string actionName;
+		readonly IRenamer renamer;
+
 		/// <summary>
 		/// Get CodeTypeReference and description of requestBody of operation.
 		/// </summary>
@@ -41,7 +45,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					var ns = dotsToNamespaces ? NameFunc.GetNamespaceOfClassName(op.RequestBody.Reference.Id) : string.Empty;
-					string typeName = NameFunc.RefineTypeName(op.RequestBody.Reference.Id, ns, dotsToNamespaces);
+					string typeName = renamer.RefineTypeName(op.RequestBody.Reference.Id, ns, dotsToNamespaces);
 					CodeTypeReference codeTypeReference = new(NameFunc.CombineNamespaceWithClassName(ns, typeName));
 					return Tuple.Create(codeTypeReference, description, true);
 				}

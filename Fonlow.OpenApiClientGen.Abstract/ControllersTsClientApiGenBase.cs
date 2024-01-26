@@ -37,7 +37,7 @@ namespace Fonlow.CodeDom.Web.Ts
 			this.jsOutput = jsOutput;
 			this.apiFunctionGenFactory = apiFunctionGenFactory;
 			CodeCompileUnit = new CodeCompileUnit();
-			nameComposer = new NameComposer(settings);
+			nameComposer = new NameComposer(settings, new TypeScriptRenamer());
 
 			TsCodeGenerationOptions options = TsCodeGenerationOptions.Instance;
 			options.BracingStyle = "JS";

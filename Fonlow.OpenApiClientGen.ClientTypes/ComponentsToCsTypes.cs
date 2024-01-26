@@ -18,8 +18,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	{
 		public ComponentsToCsTypes(ISettings settings, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{
+			renamer = new CSharpRenamer();
 		}
 
+		readonly IRenamer renamer;
+
+		protected override IRenamer Renamer => renamer;
 
 		/// <summary>
 		/// Save CS codes generated into a file.
@@ -79,7 +83,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Debug.WriteLine("aaa");
 			}
 			string ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : settings.ClientNamespace;
-			string currentTypeName = NameFunc.RefineTypeName(refId, ns, settings.DotsToNamespaces);
+			string currentTypeName = Renamer.RefineTypeName(refId, ns, settings.DotsToNamespaces);
 			if (settings.UsePascalCase)
 			{
 				currentTypeName = currentTypeName.ToPascalCase();
@@ -115,7 +119,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							return;
 						}
 
-						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, ns); //pointing to parent class
+						string baseTypeName = Renamer.RefineTypeName(allOfRef.Reference.Id, ns); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						if (allOfBaseTypeSchemaList.Count > 1)
@@ -171,7 +175,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(itemsRef.Id) : string.Empty;
-					string itemsRefTypeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
+					string itemsRefTypeName = Renamer.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
 					CodeTypeDeclaration existing = FindCodeTypeDeclarationInNamespaces(itemsRefTypeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
@@ -279,7 +283,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						stringMemberValue = stringMemberValue.ToPascalCase();
 					}
 
-					string memberName = NameFunc.RefineEnumMemberName(stringMemberValue, settings);
+					string memberName = Renamer.RefineEnumMemberName(stringMemberValue, settings);
 					bool hasFunkyMemberName = memberName != stringMemberValue;
 					int intValue = k;
 					CodeMemberField clientField = new()
@@ -305,7 +309,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiInteger intMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
+					string memberName = Renamer.RefineEnumMemberName(intMember.Value.ToString());//take care of negative value
 					int intValue = intMember.Value;
 					CodeMemberField clientField = new()
 					{
@@ -323,7 +327,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiLong longMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(longMember.Value.ToString());
+					string memberName = Renamer.RefineEnumMemberName(longMember.Value.ToString());
 					long longValue = longMember.Value;
 					CodeMemberField clientField = new()
 					{
@@ -341,7 +345,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 				{
-					string memberName = NameFunc.RefineEnumMemberName(passwordMember.Value);
+					string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -361,7 +365,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					//MS openapi parser may intepret 0 or 1 as double rather than integer and this cause the value become 0D or 1D. And some openApi definitions actually float or double as enum member.
 					//MS operapi parser intepret NaN as double and then double.NaN
-					string memberName = NameFunc.RefineEnumMemberName(doubleMember.Value.ToString());
+					string memberName = Renamer.RefineEnumMemberName(doubleMember.Value.ToString());
 					double doubleValue = doubleMember.Value;
 					CodeMemberField clientField = doubleMember.Value.ToString() == "NaN" ?
 						new()
@@ -435,7 +439,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				Debug.WriteLine("bbbbb");
 			}
 #endif
-			string propertyName = NameFunc.RefinePropertyName(refId);
+			string propertyName = Renamer.RefinePropertyName(refId);
 			if (propertyName == string.Empty)
 			{
 				throw new ArgumentException($"doggy refId: {refId}; currentTypeName: {currentTypeName}");
@@ -470,7 +474,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				if (propertySchema.Reference != null)
 				{
 					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+					string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
@@ -479,7 +483,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				//{
 				//	var reference = propertySchema.AllOf[0].Reference;
 				//	string propertyTypeNs = NameFunc.GetNamespaceOfClassName(reference.Id);
-				//	string propertyTypeName = NameFunc.RefineTypeName(reference.Id, propertyTypeNs);
+				//	string propertyTypeName = Renamer.RefineTypeName(reference.Id, propertyTypeNs);
 				//	string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 				//	CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 				//	clientProperty = CreateProperty(ctr, propertyName, defaultValue); //C#
@@ -547,7 +551,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
-					var casualTypeName = settings.PrefixWithTypeName ? currentTypeName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);
+					var casualTypeName = settings.PrefixWithTypeName ? currentTypeName + Renamer.RefinePropertyName(propertyName) : Renamer.RefinePropertyName(propertyName);
 					CodeTypeDeclaration found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
@@ -646,7 +650,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					{
 						string existingTypeName = existingDeclaration.Name;
 						CodeTypeReference enumReference = TypeRefHelper.TranslateToClientTypeReference(existingTypeName);
-						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + NameFunc.RefineEnumValue(defaultValue));
+						clientProperty = CreateProperty(enumReference, propertyName, String.IsNullOrEmpty(defaultValue) ? null : enumReference.BaseType + "." + Renamer.RefineEnumValue(defaultValue));
 					}
 					else
 					{
@@ -744,7 +748,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 			return isNullable ? CreateNullableProperty(r.Item1, propertyName)
 				: CreateProperty(r.Item1, propertyName,
-				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + NameFunc.RefineEnumValue(defaultValue)));
+				defaultValue == null ? null : (r.Item2 == null ? "" : r.Item2.Name + "." + Renamer.RefineEnumValue(defaultValue)));
 		}
 
 		string GetDefaultValue(OpenApiSchema s)
@@ -775,21 +779,21 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					if (s.AllOf != null && s.AllOf.Count > 0)
 					{
 						var typeRef = s.AllOf[0].Reference.Id;
-						var refinedTypeName = NameFunc.RefineTypeName(typeRef, "");
-						return $"{refinedTypeName}.{NameFunc.RefineEnumValue(stringValue.Value)}";
+						var refinedTypeName = Renamer.RefineTypeName(typeRef, "");
+						return $"{refinedTypeName}.{Renamer.RefineEnumValue(stringValue.Value)}";
 					}
 
 					return stringValue.Value;
 				}
 				else //enum
 				{
-					return NameFunc.RefineEnumValue(stringValue.Value);
+					return Renamer.RefineEnumValue(stringValue.Value);
 				}
 			}
 
 			if (s.Default is OpenApiInteger integerValue)
 			{
-				return (s.Enum == null || s.Enum.Count == 0) ? integerValue.Value.ToString() : NameFunc.RefineEnumValue(integerValue.Value.ToString());
+				return (s.Enum == null || s.Enum.Count == 0) ? integerValue.Value.ToString() : Renamer.RefineEnumValue(integerValue.Value.ToString());
 			}
 
 			if (s.Default is OpenApiBoolean boolValue)

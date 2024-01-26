@@ -43,7 +43,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			this.settings = settings;
 			codeCompileUnit = new CodeCompileUnit();
 			sharedContext = new SharedContext();
-			nameComposer = new NameComposer(settings);
+			nameComposer = new NameComposer(settings, new CSharpRenamer());
 		}
 
 		readonly ISettings settings;

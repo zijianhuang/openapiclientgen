@@ -13,9 +13,10 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 	/// </summary>
 	public class NameComposer
 	{
-		public NameComposer(ISettings settings)
+		public NameComposer(ISettings settings, IRenamer renamer)
 		{
 			this.settings = settings;
+			this.renamer = renamer;
 			if (settings.ActionNameStrategy == ActionNameStrategy.NormalizedOperationId)
 			{
 				if (String.IsNullOrEmpty(settings.RegexForNormalizedOperationId))
@@ -28,6 +29,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		}
 
 		readonly ISettings settings;
+		readonly IRenamer renamer;
 
 		/// <summary>
 		/// Construct action name according to OpenApiOperaton, httpMethod and ActionNameStrategy.
@@ -58,7 +60,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				default: throw new InvalidDataException("Impossible");
 			};
 
-			return NameFunc.RefinePropertyName(actionName);
+			return renamer.RefinePropertyName(actionName);
 		}
 
 		public string NormalizeOperationId(string s)
@@ -81,14 +83,14 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="op"></param>
 		/// <param name="httpMethod"></param>
 		/// <returns></returns>
-		public static string ComposeActionName(OpenApiOperation op, string httpMethod)
+		public string ComposeActionName(OpenApiOperation op, string httpMethod)
 		{
 			if (op.Tags == null || op.Tags.Count == 0)
 			{
 				throw new ArgumentException("OpenApiOperation does not contain tags for composing action name.");
 			}
 
-			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => NameFunc.ToTitleCase(NameFunc.RefineParameterName(p.Name))));
+			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => NameFunc.ToTitleCase(renamer.RefineParameterName(p.Name))));
 			return ToTitleCase(op.Tags[0].Name) + httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
 		}
 
@@ -98,9 +100,9 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="op"></param>
 		/// <param name="httpMethod"></param>
 		/// <returns></returns>
-		static string ComposeActionNameForPathAsContainer(OpenApiOperation op, string httpMethod)
+		string ComposeActionNameForPathAsContainer(OpenApiOperation op, string httpMethod)
 		{
-			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => NameFunc.ToTitleCase(NameFunc.RefineParameterName(p.Name))));
+			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Path || p.In == ParameterLocation.Query).Select(p => NameFunc.ToTitleCase(renamer.RefineParameterName(p.Name))));
 			return httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
 		}
 
@@ -113,7 +115,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		string ComposeActionNameWithPath(OpenApiOperation op, string httpMethod, string path)
 		{
-			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Query).Select(p => NameFunc.ToTitleCase(NameFunc.RefineParameterName(p.Name))));
+			string byWhat = String.Join("And", op.Parameters.Where(p => p.In == ParameterLocation.Query).Select(p => NameFunc.ToTitleCase(renamer.RefineParameterName(p.Name))));
 			return PathToActionOrContainerName(path) + httpMethod + (String.IsNullOrEmpty(byWhat) ? String.Empty : "By" + byWhat);
 		}
 

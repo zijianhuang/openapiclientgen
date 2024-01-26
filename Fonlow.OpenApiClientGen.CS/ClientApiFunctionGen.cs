@@ -33,8 +33,11 @@ namespace Fonlow.OpenApiClientGen.CS
 		bool forAsync;
 		bool stringAsString;
 
+		readonly IRenamer renamer;
+
 		public ClientApiFunctionGen()
 		{
+			renamer = new CSharpRenamer();
 		}
 
 		string statementOfEnsureSuccessStatusCode;
@@ -49,7 +52,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			}
 
 			this.settings = settings;
-			this.nameComposer = new NameComposer(settings);
+			this.nameComposer = new NameComposer(settings, renamer);
 			this.apiOperation = apiOperation;
 			statementOfEnsureSuccessStatusCode = useEnsureSuccessStatusCodeEx ? "EnsureSuccessStatusCodeEx" : "EnsureSuccessStatusCode";
 
@@ -70,8 +73,8 @@ namespace Fonlow.OpenApiClientGen.CS
 			if (actionName.EndsWith("Async"))
 				actionName = actionName[0..^5];
 
-			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, actionName);
-			this.parametersRefBuilder = new ParametersRefBuilder(coms2CsTypes, actionName);
+			this.bodyContentRefBuilder = new BodyContentRefBuilder(coms2CsTypes, actionName, renamer);
+			this.parametersRefBuilder = new ParametersRefBuilder(coms2CsTypes, actionName, renamer);
 			this.parameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
 			{

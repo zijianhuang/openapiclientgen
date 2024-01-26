@@ -23,7 +23,12 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public ComponentsToTsTypes(ISettings settings, JSOutput jsOutput, CodeCompileUnit codeCompileUnit, CodeNamespace clientNamespace) : base(settings, codeCompileUnit, clientNamespace)
 		{
 			this.jsOutput = jsOutput;
+			renamer = new TypeScriptRenamer();
 		}
+
+		readonly IRenamer renamer;
+
+		protected override IRenamer Renamer => renamer;
 
 		/// <summary>
 		/// Save TypeScript codes generated into a file.
@@ -72,7 +77,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public override void AddTypeToCodeDom(string refId, OpenApiSchema schema)
 		{
 			var ns = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(refId) : settings.ClientNamespace;
-			var currentTypeName = NameFunc.RefineTypeName(refId, ns, settings.DotsToNamespaces);
+			var currentTypeName = Renamer.RefineTypeName(refId, ns, settings.DotsToNamespaces);
 
 			RegisterSchemaRefIdToBeAdded(refId);
 
@@ -115,7 +120,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 							return;
 						}
 
-						string baseTypeName = NameFunc.RefineTypeName(allOfRef.Reference.Id, ns); //pointing to parent class
+						string baseTypeName = Renamer.RefineTypeName(allOfRef.Reference.Id, ns); //pointing to parent class
 						typeDeclaration.BaseTypes.Add(baseTypeName);
 
 						if (allOfBaseTypeSchemaList.Count > 1)
@@ -166,7 +171,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 
 					string typeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(itemsRef.Id) : string.Empty;
-					string itemsRefTypeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
+					string itemsRefTypeName = Renamer.RefineTypeName(itemsRef.Id, typeNs, settings.DotsToNamespaces);
 					var existing = FindCodeTypeDeclarationInNamespaces(itemsRefTypeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
@@ -236,7 +241,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 #endif
 			var isKeyNameValidTsPropertyName = NameFunc.IsKeyNameValidTsPropertyName(refId);
 			string propertyName = isKeyNameValidTsPropertyName ? refId : $"'{refId}'";
-			string refinedPropertyName = isKeyNameValidTsPropertyName ? refId : NameFunc.RefinePropertyName(refId);
+			string refinedPropertyName = isKeyNameValidTsPropertyName ? refId : Renamer.RefinePropertyName(refId);
 			if (propertyName == currentTypeName)
 			{
 				Trace.TraceWarning($"Property {propertyName} found with the same name of type {currentTypeName}, and it is renamed to {propertyName}1.");
@@ -266,7 +271,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					}
 #endif
 					string propertyTypeNs = settings.DotsToNamespaces ? NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id) : string.Empty;
-					string propertyTypeName = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
+					string propertyTypeName = Renamer.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs, settings.DotsToNamespaces);
 					string propertyTypeWithNs = NameFunc.CombineNamespaceWithClassName(propertyTypeNs, propertyTypeName);
 					CodeTypeReference ctr = ComponentsHelper.TranslateTypeNameToClientTypeReference(propertyTypeWithNs);
 					clientProperty = CreateProperty(ctr, propertyName, isRequired); //TS
@@ -346,7 +351,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					//CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class
 					//AddProperties(casualTypeDeclaration, propertySchema, casualTypeName, null);
 
-					var casualTypeName = settings.PrefixWithTypeName ? currentTypeName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);
+					var casualTypeName = settings.PrefixWithTypeName ? currentTypeName + Renamer.RefinePropertyName(propertyName) : Renamer.RefinePropertyName(propertyName);
 					CodeTypeDeclaration found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
@@ -457,15 +462,15 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				return s;
 			}
 			else if (!string.IsNullOrEmpty(s) && float.TryParse(s, out _)) {
-				return NameFunc.RefineEnumMemberName(s).Replace("'", "\\'");
+				return Renamer.RefineEnumMemberName(s).Replace("'", "\\'");
 			}
 			
 			return $"'{s.Replace("'", "\\'")}'";
 
 
 			//string memberName = isValidEnumName ? s
-			//: (!string.IsNullOrEmpty(s) && Char.IsDigit(s[0]) ? NameFunc.RefineEnumMemberName(s).Replace("'", "\\'")
-			//	: $"'{NameFunc.RefineEnumMemberName(s).Replace("'", "\\'")}'"
+			//: (!string.IsNullOrEmpty(s) && Char.IsDigit(s[0]) ? Renamer.RefineEnumMemberName(s).Replace("'", "\\'")
+			//	: $"'{Renamer.RefineEnumMemberName(s).Replace("'", "\\'")}'"
 			//	);
 			//return rs;
 
@@ -517,7 +522,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <returns></returns>
 		CodeMemberField GenerateCasualEnumForProperty(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string keyName, string ns, bool isRequired)
 		{
-			string casualEnumName = typeDeclarationName + NameFunc.RefinePropertyName(keyName); // make Pascal case like OrderStatus
+			string casualEnumName = typeDeclarationName + Renamer.RefinePropertyName(keyName); // make Pascal case like OrderStatus
 			CodeTypeDeclaration existingType = FindCodeTypeDeclarationInNamespaces(casualEnumName, ns);
 			if (existingType == null)
 			{
@@ -680,8 +685,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 #endif
 					//var isValidEnumName = NameFunc.IsKeyNameValidTsPropertyName(stringMember.Value);
 					//string memberName = isValidEnumName ? stringMember.Value 
-					//	: (!string.IsNullOrEmpty(stringMember.Value) && Char.IsDigit(stringMember.Value[0]) ? NameFunc.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")
-					//	: $"'{NameFunc.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")}'"
+					//	: (!string.IsNullOrEmpty(stringMember.Value) && Char.IsDigit(stringMember.Value[0]) ? Renamer.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")
+					//	: $"'{Renamer.RefineEnumMemberName(stringMember.Value).Replace("'", "\\'")}'"
 					//	);
 					var memberName= RefineTsEnumMemberName(stringMember.Value);
 					int intValue = k;
@@ -696,7 +701,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiInteger intMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(intMember.Value.ToString());
+					string memberName = Renamer.RefineEnumMemberName(intMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -709,7 +714,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiLong longMember)
 				{
-					string memberName = NameFunc.RefineEnumMemberName(longMember.Value.ToString());
+					string memberName = Renamer.RefineEnumMemberName(longMember.Value.ToString());
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -722,7 +727,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiPassword passwordMember) // aws alexaforbusiness has PhoneNumberType defined as password format
 				{
-					string memberName = NameFunc.RefineEnumMemberName(passwordMember.Value);
+					string memberName = Renamer.RefineEnumMemberName(passwordMember.Value);
 					int intValue = k;
 					CodeMemberField clientField = new()
 					{
@@ -735,7 +740,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiDouble doubleMember) //listennotes.com\2.0 has funky definition of casual enum of type double
 				{
-					string memberName = NameFunc.RefineEnumMemberName(doubleMember.Value.ToString());
+					string memberName = Renamer.RefineEnumMemberName(doubleMember.Value.ToString());
 					double doubleValue = doubleMember.Value;
 					CodeMemberField clientField = doubleMember.Value.ToString() == "NaN" ?
 						new()
@@ -755,7 +760,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 				else if (enumMember is OpenApiFloat floatMember)
 				{
-					string memberName = "_" + NameFunc.RefineEnumMemberName(floatMember.Value.ToString());
+					string memberName = "_" + Renamer.RefineEnumMemberName(floatMember.Value.ToString());
 					double floatValue = floatMember.Value;
 					CodeMemberField clientField = new()
 					{

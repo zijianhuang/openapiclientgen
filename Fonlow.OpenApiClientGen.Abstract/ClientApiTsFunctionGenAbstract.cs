@@ -30,8 +30,11 @@ namespace Fonlow.CodeDom.Web.Ts
 		protected string ActionName { get; private set; }
 		protected OperationType HttpMethod { get; private set; }
 
+		readonly IRenamer renamer;
+
 		protected ClientApiTsFunctionGenAbstract()
 		{
+			renamer = new TypeScriptRenamer();
 		}
 
 		public CodeMemberMethod CreateApiFunction(ISettings settings, string relativePath, OperationType httpMethod, OpenApiOperation apiOperation, ComponentsToTsTypes com2TsTypes)
@@ -42,12 +45,12 @@ namespace Fonlow.CodeDom.Web.Ts
 				return null;
 			}
 
-			this.nameComposer = new NameComposer(settings);
+			this.nameComposer = new NameComposer(settings, renamer);
 			this.apiOperation = apiOperation;
 			this.HttpMethod = httpMethod;
 			this.ActionName = nameComposer.GetActionName(apiOperation, httpMethod.ToString(), relativePath);
-			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, ActionName);
-			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName);
+			this.bodyContentRefBuilder = new BodyContentRefBuilder(com2TsTypes, ActionName, renamer);
+			this.parametersRefBuilder = new ParametersRefBuilder(com2TsTypes, ActionName, renamer);
 			this.ParameterDescriptions = parametersRefBuilder.OpenApiParametersToParameterDescriptions(apiOperation.Parameters);
 			if (httpMethod == OperationType.Post || httpMethod == OperationType.Put || httpMethod == OperationType.Patch)
 			{
